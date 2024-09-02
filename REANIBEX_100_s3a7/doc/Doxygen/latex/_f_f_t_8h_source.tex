@@ -1,0 +1,48 @@
+\doxysection{FFT.\+h}
+\hypertarget{_f_f_t_8h_source}{}\label{_f_f_t_8h_source}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/DRD/FFT.h@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/DRD/FFT.h}}
+\mbox{\hyperlink{_f_f_t_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{*\ Name\ \ \ \ \ \ :\ Defibrillable\ Rhythm\ Detector\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{*\ Copyright\ :\ Osatu\ S.Coop\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{*\ Compiler\ \ :\ Renesas\ C/C++\ compiler\ for\ SH2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{*\ Target\ \ \ \ :\ Reanibex\ Series\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{******************************************************************************/}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#ifndef\ FFT\_H}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#define\ FFT\_H}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00023\ \textcolor{comment}{**\ Includes}}
+\DoxyCodeLine{00024\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00027\ \textcolor{comment}{**\ Defines}}
+\DoxyCodeLine{00028\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{comment}{//\ Scale\ definitions}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ EFFTALLSCALE\ \ \ \ (-\/1L)}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#define\ EFFTMIDSCALE\ \ \ \ 0x55555555L}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#define\ EFFTNOSCALE\ \ \ \ \ 0x00000000L}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00036\ \textcolor{comment}{**\ Typedefs}}
+\DoxyCodeLine{00037\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00040\ \textcolor{comment}{**\ Prototypes}}
+\DoxyCodeLine{00041\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00042\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_f_f_t_8h_a7ff38dad8703a91cfdb242c42f476403}{FftReal}}\ \ \ \ (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a2ba621978a511250f7250fb10e05ffbe}{int32\_t}}\ output[],\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a2ba621978a511250f7250fb10e05ffbe}{int32\_t}}\ size,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a2ba621978a511250f7250fb10e05ffbe}{int32\_t}}\ scale);}
+\DoxyCodeLine{00043\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_f_f_t_8h_acf6e4a7efb5cdbcd7b598ee133c477bb}{GenBitRev}}\ \ (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a2ba621978a511250f7250fb10e05ffbe}{int32\_t}}\ size);}
+\DoxyCodeLine{00044\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_f_f_t_8h_a0dc7d7ac7e2748a0b52b3f94ab7bd9ba}{GenTwiddle}}\ (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a2ba621978a511250f7250fb10e05ffbe}{int32\_t}}\ sz);}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*FFT\_H*/}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00049\ \textcolor{comment}{**\ \$Log\$}}
+\DoxyCodeLine{00050\ \textcolor{comment}{**}}
+\DoxyCodeLine{00051\ \textcolor{comment}{**\ end\ of\ Fft.h}}
+\DoxyCodeLine{00052\ \textcolor{comment}{******************************************************************************/}}
+\DoxyCodeLine{00053\ }
+
+\end{DoxyCode}

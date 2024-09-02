@@ -1,0 +1,181 @@
+\doxysection{TEST\+\_\+\+BATTERY\+\_\+t Struct Reference}
+\hypertarget{struct_t_e_s_t___b_a_t_t_e_r_y__t}{}\label{struct_t_e_s_t___b_a_t_t_e_r_y__t}\index{TEST\_BATTERY\_t@{TEST\_BATTERY\_t}}
+
+
+Structure to report the battery test result.  
+
+
+
+
+{\ttfamily \#include $<$DB\+\_\+\+Test.\+h$>$}
+
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \mbox{\hyperlink{struct_t_e_s_t___b_a_t_t_e_r_y__t_aeb1e11143c6a3a439fbeebf2906c9b9b}{sn}} \mbox{[}20\mbox{]}
+\begin{DoxyCompactList}\small\item\em Battery serial number -- format AAAA/21100001. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{struct_t_e_s_t___b_a_t_t_e_r_y__t_a9f47d1d5be051c0eae48b6778b0c8005}{name}} \mbox{[}20\mbox{]}
+\begin{DoxyCompactList}\small\item\em Company name -- (default\+: Bexen\+Cardio) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \mbox{\hyperlink{struct_t_e_s_t___b_a_t_t_e_r_y__t_a2b076180b522984ea33521ea319f4692}{manufacture\+\_\+date}}
+\begin{DoxyCompactList}\small\item\em Manufacture date (YYYY.\+MM.\+DD) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \mbox{\hyperlink{struct_t_e_s_t___b_a_t_t_e_r_y__t_a43aaecdda8770a83716b0ce9c64861d8}{expiration\+\_\+date}}
+\begin{DoxyCompactList}\small\item\em Expiration date (YYYY.\+MM.\+DD) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \mbox{\hyperlink{struct_t_e_s_t___b_a_t_t_e_r_y__t_adbae03665fff79cd04d2a7c508a7979e}{nominal\+\_\+capacity}}
+\begin{DoxyCompactList}\small\item\em Battery nominal capacity (default\+: 4200 m\+Ah) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{struct_t_e_s_t___b_a_t_t_e_r_y__t_abe694202f7b4f2136b9f2e52d7cc275a}{version\+\_\+major}}
+\begin{DoxyCompactList}\small\item\em Battery version (major) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{struct_t_e_s_t___b_a_t_t_e_r_y__t_ab8f8f85a73c65ab443553ee138ee5bdc}{version\+\_\+minor}}
+\begin{DoxyCompactList}\small\item\em Battery version (minor) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \mbox{\hyperlink{struct_t_e_s_t___b_a_t_t_e_r_y__t_a50c653ff5ccb02f968cd382ed304c289}{run\+Time\+\_\+total}}
+\begin{DoxyCompactList}\small\item\em Accumulated run time (in minutes) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \mbox{\hyperlink{struct_t_e_s_t___b_a_t_t_e_r_y__t_a31ea5a2f3d6f837f671ea5d46fe8e1f8}{battery\+\_\+state}}
+\begin{DoxyCompactList}\small\item\em Battery state. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{struct_t_e_s_t___b_a_t_t_e_r_y__t_ac349ee65bc7bbd5e229560f0bae53b91}{n\+Full\+\_\+charges}}
+\begin{DoxyCompactList}\small\item\em Number of full charges. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{struct_t_e_s_t___b_a_t_t_e_r_y__t_adb23ecac64fff48b0a7f8fe395ac1ce3}{rem\+\_\+charge}}
+\begin{DoxyCompactList}\small\item\em Remaining charge percent. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a269259c924dce846340ddbb810db2e3c}{int16\+\_\+t}} \mbox{\hyperlink{struct_t_e_s_t___b_a_t_t_e_r_y__t_afa3ffd12ea4c3dab22e8a0aab8acf5d6}{bat\+\_\+temperature}}
+\begin{DoxyCompactList}\small\item\em Battery temperature. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \mbox{\hyperlink{struct_t_e_s_t___b_a_t_t_e_r_y__t_aa6cac671cd556d415accd85e7195939c}{error\+\_\+code}}
+\begin{DoxyCompactList}\small\item\em Battery error code. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Structure to report the battery test result. 
+
+\doxysubsection{Field Documentation}
+\Hypertarget{struct_t_e_s_t___b_a_t_t_e_r_y__t_afa3ffd12ea4c3dab22e8a0aab8acf5d6}\label{struct_t_e_s_t___b_a_t_t_e_r_y__t_afa3ffd12ea4c3dab22e8a0aab8acf5d6} 
+\index{TEST\_BATTERY\_t@{TEST\_BATTERY\_t}!bat\_temperature@{bat\_temperature}}
+\index{bat\_temperature@{bat\_temperature}!TEST\_BATTERY\_t@{TEST\_BATTERY\_t}}
+\doxysubsubsection{\texorpdfstring{bat\_temperature}{bat\_temperature}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a269259c924dce846340ddbb810db2e3c}{int16\+\_\+t}} TEST\+\_\+\+BATTERY\+\_\+t\+::bat\+\_\+temperature}
+
+
+
+Battery temperature. 
+
+\Hypertarget{struct_t_e_s_t___b_a_t_t_e_r_y__t_a31ea5a2f3d6f837f671ea5d46fe8e1f8}\label{struct_t_e_s_t___b_a_t_t_e_r_y__t_a31ea5a2f3d6f837f671ea5d46fe8e1f8} 
+\index{TEST\_BATTERY\_t@{TEST\_BATTERY\_t}!battery\_state@{battery\_state}}
+\index{battery\_state@{battery\_state}!TEST\_BATTERY\_t@{TEST\_BATTERY\_t}}
+\doxysubsubsection{\texorpdfstring{battery\_state}{battery\_state}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} TEST\+\_\+\+BATTERY\+\_\+t\+::battery\+\_\+state}
+
+
+
+Battery state. 
+
+\Hypertarget{struct_t_e_s_t___b_a_t_t_e_r_y__t_aa6cac671cd556d415accd85e7195939c}\label{struct_t_e_s_t___b_a_t_t_e_r_y__t_aa6cac671cd556d415accd85e7195939c} 
+\index{TEST\_BATTERY\_t@{TEST\_BATTERY\_t}!error\_code@{error\_code}}
+\index{error\_code@{error\_code}!TEST\_BATTERY\_t@{TEST\_BATTERY\_t}}
+\doxysubsubsection{\texorpdfstring{error\_code}{error\_code}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} TEST\+\_\+\+BATTERY\+\_\+t\+::error\+\_\+code}
+
+
+
+Battery error code. 
+
+\Hypertarget{struct_t_e_s_t___b_a_t_t_e_r_y__t_a43aaecdda8770a83716b0ce9c64861d8}\label{struct_t_e_s_t___b_a_t_t_e_r_y__t_a43aaecdda8770a83716b0ce9c64861d8} 
+\index{TEST\_BATTERY\_t@{TEST\_BATTERY\_t}!expiration\_date@{expiration\_date}}
+\index{expiration\_date@{expiration\_date}!TEST\_BATTERY\_t@{TEST\_BATTERY\_t}}
+\doxysubsubsection{\texorpdfstring{expiration\_date}{expiration\_date}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} TEST\+\_\+\+BATTERY\+\_\+t\+::expiration\+\_\+date}
+
+
+
+Expiration date (YYYY.\+MM.\+DD) 
+
+\Hypertarget{struct_t_e_s_t___b_a_t_t_e_r_y__t_a2b076180b522984ea33521ea319f4692}\label{struct_t_e_s_t___b_a_t_t_e_r_y__t_a2b076180b522984ea33521ea319f4692} 
+\index{TEST\_BATTERY\_t@{TEST\_BATTERY\_t}!manufacture\_date@{manufacture\_date}}
+\index{manufacture\_date@{manufacture\_date}!TEST\_BATTERY\_t@{TEST\_BATTERY\_t}}
+\doxysubsubsection{\texorpdfstring{manufacture\_date}{manufacture\_date}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} TEST\+\_\+\+BATTERY\+\_\+t\+::manufacture\+\_\+date}
+
+
+
+Manufacture date (YYYY.\+MM.\+DD) 
+
+\Hypertarget{struct_t_e_s_t___b_a_t_t_e_r_y__t_a9f47d1d5be051c0eae48b6778b0c8005}\label{struct_t_e_s_t___b_a_t_t_e_r_y__t_a9f47d1d5be051c0eae48b6778b0c8005} 
+\index{TEST\_BATTERY\_t@{TEST\_BATTERY\_t}!name@{name}}
+\index{name@{name}!TEST\_BATTERY\_t@{TEST\_BATTERY\_t}}
+\doxysubsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} TEST\+\_\+\+BATTERY\+\_\+t\+::name\mbox{[}20\mbox{]}}
+
+
+
+Company name -- (default\+: Bexen\+Cardio) 
+
+\Hypertarget{struct_t_e_s_t___b_a_t_t_e_r_y__t_ac349ee65bc7bbd5e229560f0bae53b91}\label{struct_t_e_s_t___b_a_t_t_e_r_y__t_ac349ee65bc7bbd5e229560f0bae53b91} 
+\index{TEST\_BATTERY\_t@{TEST\_BATTERY\_t}!nFull\_charges@{nFull\_charges}}
+\index{nFull\_charges@{nFull\_charges}!TEST\_BATTERY\_t@{TEST\_BATTERY\_t}}
+\doxysubsubsection{\texorpdfstring{nFull\_charges}{nFull\_charges}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} TEST\+\_\+\+BATTERY\+\_\+t\+::n\+Full\+\_\+charges}
+
+
+
+Number of full charges. 
+
+\Hypertarget{struct_t_e_s_t___b_a_t_t_e_r_y__t_adbae03665fff79cd04d2a7c508a7979e}\label{struct_t_e_s_t___b_a_t_t_e_r_y__t_adbae03665fff79cd04d2a7c508a7979e} 
+\index{TEST\_BATTERY\_t@{TEST\_BATTERY\_t}!nominal\_capacity@{nominal\_capacity}}
+\index{nominal\_capacity@{nominal\_capacity}!TEST\_BATTERY\_t@{TEST\_BATTERY\_t}}
+\doxysubsubsection{\texorpdfstring{nominal\_capacity}{nominal\_capacity}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} TEST\+\_\+\+BATTERY\+\_\+t\+::nominal\+\_\+capacity}
+
+
+
+Battery nominal capacity (default\+: 4200 m\+Ah) 
+
+\Hypertarget{struct_t_e_s_t___b_a_t_t_e_r_y__t_adb23ecac64fff48b0a7f8fe395ac1ce3}\label{struct_t_e_s_t___b_a_t_t_e_r_y__t_adb23ecac64fff48b0a7f8fe395ac1ce3} 
+\index{TEST\_BATTERY\_t@{TEST\_BATTERY\_t}!rem\_charge@{rem\_charge}}
+\index{rem\_charge@{rem\_charge}!TEST\_BATTERY\_t@{TEST\_BATTERY\_t}}
+\doxysubsubsection{\texorpdfstring{rem\_charge}{rem\_charge}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} TEST\+\_\+\+BATTERY\+\_\+t\+::rem\+\_\+charge}
+
+
+
+Remaining charge percent. 
+
+\Hypertarget{struct_t_e_s_t___b_a_t_t_e_r_y__t_a50c653ff5ccb02f968cd382ed304c289}\label{struct_t_e_s_t___b_a_t_t_e_r_y__t_a50c653ff5ccb02f968cd382ed304c289} 
+\index{TEST\_BATTERY\_t@{TEST\_BATTERY\_t}!runTime\_total@{runTime\_total}}
+\index{runTime\_total@{runTime\_total}!TEST\_BATTERY\_t@{TEST\_BATTERY\_t}}
+\doxysubsubsection{\texorpdfstring{runTime\_total}{runTime\_total}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} TEST\+\_\+\+BATTERY\+\_\+t\+::run\+Time\+\_\+total}
+
+
+
+Accumulated run time (in minutes) 
+
+\Hypertarget{struct_t_e_s_t___b_a_t_t_e_r_y__t_aeb1e11143c6a3a439fbeebf2906c9b9b}\label{struct_t_e_s_t___b_a_t_t_e_r_y__t_aeb1e11143c6a3a439fbeebf2906c9b9b} 
+\index{TEST\_BATTERY\_t@{TEST\_BATTERY\_t}!sn@{sn}}
+\index{sn@{sn}!TEST\_BATTERY\_t@{TEST\_BATTERY\_t}}
+\doxysubsubsection{\texorpdfstring{sn}{sn}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} TEST\+\_\+\+BATTERY\+\_\+t\+::sn\mbox{[}20\mbox{]}}
+
+
+
+Battery serial number -- format AAAA/21100001. 
+
+\Hypertarget{struct_t_e_s_t___b_a_t_t_e_r_y__t_abe694202f7b4f2136b9f2e52d7cc275a}\label{struct_t_e_s_t___b_a_t_t_e_r_y__t_abe694202f7b4f2136b9f2e52d7cc275a} 
+\index{TEST\_BATTERY\_t@{TEST\_BATTERY\_t}!version\_major@{version\_major}}
+\index{version\_major@{version\_major}!TEST\_BATTERY\_t@{TEST\_BATTERY\_t}}
+\doxysubsubsection{\texorpdfstring{version\_major}{version\_major}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} TEST\+\_\+\+BATTERY\+\_\+t\+::version\+\_\+major}
+
+
+
+Battery version (major) 
+
+\Hypertarget{struct_t_e_s_t___b_a_t_t_e_r_y__t_ab8f8f85a73c65ab443553ee138ee5bdc}\label{struct_t_e_s_t___b_a_t_t_e_r_y__t_ab8f8f85a73c65ab443553ee138ee5bdc} 
+\index{TEST\_BATTERY\_t@{TEST\_BATTERY\_t}!version\_minor@{version\_minor}}
+\index{version\_minor@{version\_minor}!TEST\_BATTERY\_t@{TEST\_BATTERY\_t}}
+\doxysubsubsection{\texorpdfstring{version\_minor}{version\_minor}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} TEST\+\_\+\+BATTERY\+\_\+t\+::version\+\_\+minor}
+
+
+
+Battery version (minor) 
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\mbox{\hyperlink{_d_b___test_8h}{DB\+\_\+\+Test.\+h}}\end{DoxyCompactItemize}

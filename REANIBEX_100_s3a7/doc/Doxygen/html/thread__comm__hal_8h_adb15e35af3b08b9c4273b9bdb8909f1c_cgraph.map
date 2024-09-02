@@ -1,0 +1,15 @@
+<map id="Comm_Sigfox_Send_Position" name="Comm_Sigfox_Send_Position">
+<area shape="rect" id="Node000001" title="Send R100 GPS Position." alt="" coords="5,31,199,57"/>
+<area shape="rect" id="Node000002" href="$bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8c.html#afa38aea6b87f9d40759ebff441976f80" title="Send data frame through Sigfox." alt="" coords="247,31,419,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="199,41,231,41,231,47,199,47"/>
+<area shape="rect" id="Node000003" href="$bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8c.html#a6a4751afa8f2a1eadbdd2e6a45a3bd70" title="Waits for a response to a given command." alt="" coords="467,5,655,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="419,32,451,28,452,33,420,37"/>
+<area shape="rect" id="Node000005" href="$bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8c.html#a5ded076c0aca8daa8d70b37657a64656" title="Send a command to the Sigfox module through UART." alt="" coords="481,56,641,83"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="420,51,466,56,465,61,419,56"/>
+<area shape="rect" id="Node000004" href="$_comm_8c.html#a612240bf37db565f46ad4dc6c7298898" title="Get a received module response." alt="" coords="703,5,875,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="655,16,688,16,688,21,655,21"/>
+<area shape="rect" id="Node000006" href="$_comm_8c.html#aceced6fe6160f18c11e8d0ea46cfe881" title="Send a string through the UART." alt="" coords="725,56,853,83"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="642,67,710,67,710,72,642,72"/>
+<area shape="rect" id="Node000007" href="$thread__sys_mon__entry_8c.html#a33ca5a33ab10af89dcb290e9d052b724" title="Function that report if the devioce is in test mode montador or not." alt="" coords="923,56,1086,83"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="853,67,907,67,907,72,853,72"/>
+</map>

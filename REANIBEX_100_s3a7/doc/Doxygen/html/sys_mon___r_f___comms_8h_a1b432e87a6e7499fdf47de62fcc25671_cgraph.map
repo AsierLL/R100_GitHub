@@ -1,0 +1,24 @@
+<map id="Send_Sigfox_Test" name="Send_Sigfox_Test">
+<area shape="rect" id="Node000001" title="Function to send test results by Sigfox." alt="" coords="5,136,132,163"/>
+<area shape="rect" id="Node000002" href="$thread__comm__hal_8c.html#a14b282886d75e45f70a7ffe548732dba" title="Returns the selected Comms UART." alt="" coords="182,5,358,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="78,134,119,89,147,63,178,42,190,36,193,40,181,46,150,68,123,92,82,137"/>
+<area shape="rect" id="Node000003" href="$thread__comm__entry_8c.html#a6f2ca4d1ab63af942461484f1451146c" title="Checks if sigfox initialization process completed." alt="" coords="180,56,360,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="99,133,179,99,213,86,215,91,181,104,101,138"/>
+<area shape="rect" id="Node000004" href="$thread__comm__entry_8c.html#a9794cf5219f147950deb93abcab25b78" title="Generate and send electrodes and battery expiration dates." alt="" coords="189,157,351,200"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="133,156,174,162,173,167,132,161"/>
+<area shape="rect" id="Node000005" href="$sys_mon___battery_8c.html#ae8f3f32f49df7702f6405467130ce8fd" title="Function that report if the battery is DEMO or not." alt="" coords="408,136,568,163"/>
+<area shape="poly" id="edge12_Node000001_Node000005" title=" " alt="" coords="132,144,180,143,360,143,392,143,392,149,360,148,180,148,132,149"/>
+<area shape="rect" id="Node000007" href="$thread__comm__entry_8c.html#a2b830ebc982c1f3df32402823b6bb3c0" title="Function to send the test result to Sigfox cloud." alt="" coords="189,275,351,317"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="82,161,122,209,150,236,181,260,189,265,186,270,178,265,147,241,118,213,78,165"/>
+<area shape="rect" id="Node000010" href="$thread__comm__entry_8c.html#aae63ed01fe3ee64c1d194e97ca3877b3" title="Open Sigfox Communication." alt="" coords="200,224,340,251"/>
+<area shape="poly" id="edge10_Node000001_Node000010" title=" " alt="" coords="92,161,132,185,181,210,199,216,197,221,179,214,130,190,89,165"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="351,165,392,159,393,165,352,170"/>
+<area shape="rect" id="Node000006" href="$thread__comm__entry_8c.html#af7921d111a91795221d7b493716d54c3" title="Process events related to All COMM modules." alt="" coords="418,224,559,251"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="352,198,422,217,420,222,351,203"/>
+<area shape="poly" id="edge9_Node000007_Node000006" title=" " alt="" coords="351,272,420,253,422,258,352,277"/>
+<area shape="rect" id="Node000008" href="$thread__defibrillator__hal_8c.html#a3e86b71d391996bf2ffc968da01e5326" title="Read the Vbatt value from the main supply voltage." alt="" coords="430,283,546,309"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="351,293,414,293,414,299,351,299"/>
+<area shape="rect" id="Node000009" href="$thread__defibrillator__hal_8c.html#a1732c6fa09148497f9b79f530fb94a8a" title="report the current state of the defibrillator" alt="" coords="616,283,733,309"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="547,293,601,293,601,299,547,299"/>
+<area shape="poly" id="edge11_Node000010_Node000006" title=" " alt="" coords="341,235,402,235,402,240,341,240"/>
+</map>

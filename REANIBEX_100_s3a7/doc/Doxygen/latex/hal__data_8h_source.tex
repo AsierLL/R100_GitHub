@@ -1,0 +1,93 @@
+\doxysection{hal\+\_\+data.\+h}
+\hypertarget{hal__data_8h_source}{}\label{hal__data_8h_source}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/synergy\_gen/hal\_data.h@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/synergy\_gen/hal\_data.h}}
+\mbox{\hyperlink{hal__data_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ generated\ HAL\ header\ file\ -\/\ do\ not\ edit\ */}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#ifndef\ HAL\_DATA\_H\_}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#define\ HAL\_DATA\_H\_}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}bsp\_api.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{common__data_8h}{common\_data.h}}"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}r\_flash\_lp.h"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}r\_flash\_api.h"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}r\_iwdt.h"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}r\_wdt\_api.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}r\_dtc.h"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}r\_transfer\_api.h"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}r\_sci\_uart.h"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}r\_uart\_api.h"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}r\_icu.h"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}r\_external\_irq\_api.h"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}r\_rtc.h"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}r\_rtc\_api.h"{}}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00020\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}}
+\DoxyCodeLine{00021\ \{}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00023\ \textcolor{comment}{/*\ Flash\ on\ Flash\ LP\ Instance.\ */}}
+\DoxyCodeLine{00024\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ flash\_instance\_t\ \mbox{\hyperlink{hal__data_8h_a42b74b53fe4fdc9ad53fd02d41948773}{g\_flash0}};}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#ifndef\ NULL}}
+\DoxyCodeLine{00026\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}}(flash\_callback\_args\_t\ *p\_args);}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00029\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ wdt\_instance\_t\ \mbox{\hyperlink{hal__data_8h_ae4e5904dd1372ff7b4cca5ec5f6389da}{iWDT}};}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#ifndef\ NULL}}
+\DoxyCodeLine{00031\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}}(wdt\_callback\_args\_t\ *p\_args);}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00033\ \textcolor{comment}{/*\ Transfer\ on\ DTC\ Instance.\ */}}
+\DoxyCodeLine{00034\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ transfer\_instance\_t\ \mbox{\hyperlink{hal__data_8h_a660a37aaf733243c5eb543c3adc165d6}{g\_transfer3}};}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#ifndef\ NULL}}
+\DoxyCodeLine{00036\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}}(transfer\_callback\_args\_t\ *p\_args);}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00038\ \textcolor{comment}{/*\ Transfer\ on\ DTC\ Instance.\ */}}
+\DoxyCodeLine{00039\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ transfer\_instance\_t\ \mbox{\hyperlink{hal__data_8h_adc094da97389cd561c76e311f652e7e1}{g\_transfer2}};}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#ifndef\ NULL}}
+\DoxyCodeLine{00041\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}}(transfer\_callback\_args\_t\ *p\_args);}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00044\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ uart\_instance\_t\ \mbox{\hyperlink{hal__data_8h_a52be76f229d078c70b7833b57952afae}{commUART}};}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#ifdef\ NULL}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00047\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}}(\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ channel,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ level);}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#ifndef\ comm\_uart\_callback}}
+\DoxyCodeLine{00050\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{hal__data_8h_abde378d1792873c09f0d4948c1fd3c19}{comm\_uart\_callback}}(uart\_callback\_args\_t\ *p\_args);}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00052\ \textcolor{comment}{/*\ External\ IRQ\ on\ ICU\ Instance.\ */}}
+\DoxyCodeLine{00053\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ external\_irq\_instance\_t\ \mbox{\hyperlink{hal__data_8h_a618724019cfe7d46450d1e82cca62d3d}{on\_off\_irq}};}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#ifndef\ irq\_callback}}
+\DoxyCodeLine{00055\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{hal__data_8h_afd85454a6a83951bf747aeb36945277a}{irq\_callback}}(external\_irq\_callback\_args\_t\ *p\_args);}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00057\ \textcolor{comment}{/*\ External\ IRQ\ on\ ICU\ Instance.\ */}}
+\DoxyCodeLine{00058\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ external\_irq\_instance\_t\ \mbox{\hyperlink{hal__data_8h_afb1cd18caabf206353226b9d5026b32a}{cover\_open\_irq}};}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#ifndef\ irq\_callback}}
+\DoxyCodeLine{00060\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{hal__data_8h_afd85454a6a83951bf747aeb36945277a}{irq\_callback}}(external\_irq\_callback\_args\_t\ *p\_args);}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00063\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ rtc\_instance\_t\ \mbox{\hyperlink{hal__data_8h_a744ab8007f5bcdc4376d84ec917931c3}{iRTC}};}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#ifndef\ NULL}}
+\DoxyCodeLine{00065\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}}(rtc\_callback\_args\_t\ *p\_args);}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00067\ \textcolor{comment}{/*\ Transfer\ on\ DTC\ Instance.\ */}}
+\DoxyCodeLine{00068\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ transfer\_instance\_t\ \mbox{\hyperlink{hal__data_8h_abe6d5b28a84f9e1ab48617ceff2e4819}{g\_transfer1}};}
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#ifndef\ NULL}}
+\DoxyCodeLine{00070\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}}(transfer\_callback\_args\_t\ *p\_args);}
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00072\ \textcolor{comment}{/*\ Transfer\ on\ DTC\ Instance.\ */}}
+\DoxyCodeLine{00073\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ transfer\_instance\_t\ \mbox{\hyperlink{hal__data_8h_af20efd435b0685054a670fb544a857f5}{g\_transfer0}};}
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\#ifndef\ NULL}}
+\DoxyCodeLine{00075\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}}(transfer\_callback\_args\_t\ *p\_args);}
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00078\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ uart\_instance\_t\ \mbox{\hyperlink{hal__data_8h_a5c8fc33bb927a15fc78e0d2306d2d1e5}{traceUART}};}
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#ifdef\ NULL}}
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00081\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}}(\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ channel,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ level);}
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\#ifndef\ trace\_uart\_callback}}
+\DoxyCodeLine{00084\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{hal__data_8h_a5adc996c1a730574fa6dd131142ab2ad}{trace\_uart\_callback}}(uart\_callback\_args\_t\ *p\_args);}
+\DoxyCodeLine{00085\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00086\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{hal__data_8h_a95cc00314e8ac515b001cabd41c7f8c3}{hal\_entry}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00087\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{hal__data_8h_aef7df059039eab3db1578b79eb2f6d86}{g\_hal\_init}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00088\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00089\ \}\ \textcolor{comment}{/*\ extern\ "{}C"{}\ */}}
+\DoxyCodeLine{00090\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00091\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ HAL\_DATA\_H\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

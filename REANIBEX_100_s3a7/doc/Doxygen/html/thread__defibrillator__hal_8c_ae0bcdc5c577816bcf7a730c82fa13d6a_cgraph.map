@@ -1,0 +1,19 @@
+<map id="Defib_Start_Charge" name="Defib_Start_Charge">
+<area shape="rect" id="Node000001" title="start the charge process of the main cap" alt="" coords="5,132,139,159"/>
+<area shape="rect" id="Node000002" href="$sys_mon___battery_8c.html#a6a908c00382961d78f2da4ee84cb4263" title="Computes the remaining capacity in the battery." alt="" coords="202,56,342,83"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="101,129,186,92,205,85,207,90,188,97,103,134"/>
+<area shape="rect" id="Node000006" href="$sys_mon___battery_8c.html#aa6c128d869ee1d53d1902c4248f0c006" title="Get temperature value in battery." alt="" coords="187,107,357,133"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="139,134,171,130,172,135,139,140"/>
+<area shape="rect" id="Node000007" href="$thread__defibrillator__hal_8c.html#ae57fee576eb2206f531dd7ee69bc2218" title="scan all analog inputs" alt="" coords="223,157,321,184"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="139,151,208,160,208,165,139,156"/>
+<area shape="rect" id="Node000009" href="$thread__defibrillator__hal_8c.html#a3b5f744526d52e5790b359f0bfad7055" title="set the overcharge alarm to a charge voltage" alt="" coords="213,208,331,235"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="103,157,188,194,207,200,205,205,186,198,101,162"/>
+<area shape="rect" id="Node000003" href="$sys_mon___battery_8c.html#af6e0839479117b02185cb5786de7d15b" title="Computes the difference time between two dates (in days) (date_1 &#45; date_2)" alt="" coords="433,5,537,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="331,53,417,32,418,37,332,58"/>
+<area shape="rect" id="Node000004" href="$device__init_8c.html#ac9272954c69640cbc76d2ea99e68bc43" title="Function for accessing NFC device info struct." alt="" coords="412,56,559,83"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="342,67,396,67,396,72,342,72"/>
+<area shape="rect" id="Node000005" href="$sys_mon___battery_8c.html#ae8f3f32f49df7702f6405467130ce8fd" title="Function that report if the battery is DEMO or not." alt="" coords="405,107,565,133"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="332,81,412,100,411,105,331,86"/>
+<area shape="rect" id="Node000008" href="$device__init_8c.html#a2f7047dc1ce0a3687c48872ed81aff5f" title="Function for accessing device info variable." alt="" coords="428,157,542,184"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="321,168,412,168,412,173,321,173"/>
+</map>

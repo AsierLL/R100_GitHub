@@ -1,0 +1,91 @@
+\doxysection{atca\+\_\+config.\+h}
+\hypertarget{atca__config_8h_source}{}\label{atca__config_8h_source}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/SCE/atca\_config.h@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/SCE/atca\_config.h}}
+\mbox{\hyperlink{atca__config_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ Auto-\/generated\ config\ file\ atca\_config.h\ */}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#ifndef\ ATCA\_CONFIG\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#define\ ATCA\_CONFIG\_H}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{comment}{/*\ Included\ HALS\ */}}
+\DoxyCodeLine{00006\ \textcolor{comment}{/*\ \#undef\ ATCA\_HAL\_KIT\_UART\ */}}
+\DoxyCodeLine{00007\ \textcolor{comment}{/*\ \#undef\ ATCA\_HAL\_KIT\_HID\ */}}
+\DoxyCodeLine{00008\ \textcolor{comment}{/*\ \#undef\ ATCA\_HAL\_I2C\ */}}
+\DoxyCodeLine{00009\ \textcolor{comment}{/*\ \#undef\ ATCA\_HAL\_SPI\ */}}
+\DoxyCodeLine{00010\ \textcolor{comment}{/*\ \#undef\ ATCA\_HAL\_KIT\_BRIDGE\ */}}
+\DoxyCodeLine{00011\ \textcolor{comment}{/*\ \#undef\ ATCA\_HAL\_CUSTOM\ */}}
+\DoxyCodeLine{00012\ \textcolor{comment}{/*\ \#undef\ ATCA\_HAL\_SWI\_UART\ */}}
+\DoxyCodeLine{00013\ \textcolor{comment}{/*\ \#undef\ ATCA\_HAL\_1WIRE\ */}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#define\ ATCA\_HAL\_I2C}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00018\ \textcolor{comment}{/*\ \#undef\ ATCA\_HAL\_LEGACY\_API\ */}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{comment}{/*\ Included\ device\ support\ */}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ ATCA\_ATECC608\_SUPPORT}}
+\DoxyCodeLine{00024\ \textcolor{comment}{/*\ \#undef\ ATCA\_TA100\_SUPPORT\ */}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#define\ ATCA\_ECC204\_SUPPORT}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00028\ \textcolor{comment}{/*\ \#undef\ ATCA\_ATECC608A\_SUPPORT\ */}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00033\ \textcolor{comment}{/*\ \#undef\ ATCA\_NO\_POLL\ */}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{comment}{/*\ \(\backslash\)brief\ How\ long\ to\ wait\ after\ an\ initial\ wake\ failure\ for\ the\ POST\ to}}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ complete.}}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ *\ If\ Power-\/on\ self\ test\ (POST)\ is\ enabled,\ the\ self\ test\ will\ run\ on\ waking}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ *\ from\ sleep\ or\ during\ power-\/on,\ which\ delays\ the\ wake\ reply.}}
+\DoxyCodeLine{00040\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#ifndef\ ATCA\_POST\_DELAY\_MSEC}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#define\ ATCA\_POST\_DELAY\_MSEC\ 25}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{comment}{/*****************\ Diagnostic\ \&\ Test\ Configuration\ Section\ *****************/}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00048\ \textcolor{comment}{/*\ \#undef\ ATCA\_PRINTF\ */}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00051\ \textcolor{comment}{/*\ \#undef\ ATCA\_TESTS\_ENABLED\ */}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{comment}{/********************\ Features\ Configuration\ Section\ ***********************/}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00056\ \textcolor{comment}{/*\ \#undef\ ATCA\_TNGTLS\_SUPPORT\ */}}
+\DoxyCodeLine{00057\ \textcolor{comment}{/*\ \#undef\ ATCA\_TNGLORA\_SUPPORT\ */}}
+\DoxyCodeLine{00058\ \textcolor{comment}{/*\ \#undef\ ATCA\_TFLEX\_SUPPORT\ */}}
+\DoxyCodeLine{00059\ \textcolor{comment}{/*\ \#undef\ ATCA\_TNG\_LEGACY\_SUPPORT\ */}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00063\ \textcolor{comment}{/*\ \#undef\ ATCA\_MBEDTLS\ */}}
+\DoxyCodeLine{00064\ \textcolor{comment}{/*\ \#undef\ ATCA\_OPENSSL\ */}}
+\DoxyCodeLine{00065\ \textcolor{comment}{/*\ \#undef\ ATCA\_WOLFSSL\ */}}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#ifdef\ ATCA\_WOLFSSL}}
+\DoxyCodeLine{00068\ \textcolor{comment}{/*\ \#undef\ WOLFSSL\_USER\_SETTINGS\ */}}
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#ifdef\ WIN32}}
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#define\ WIN32\_LEAN\_AND\_MEAN}}
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00075\ \textcolor{comment}{/*\ \#undef\ ATCA\_LIBRARY\_CONF\ */}}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00078\ \textcolor{comment}{/*\ \#undef\ ATCA\_USE\_ATCAB\_FUNCTIONS\ */}}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00081\ \textcolor{comment}{/*\ \#undef\ ATCA\_ENABLE\_DEPRECATED\ */}}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00085\ \textcolor{comment}{/*\ \#undef\ ATCA\_TA100\_AES\_AUTH\_SUPPORT\ */}}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00088\ \textcolor{comment}{/*\ \#undef\ ATCA\_TA100\_FCE\_SUPPORT\ */}}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \textcolor{comment}{/********************\ Platform\ Configuration\ Section\ ***********************/}}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00093\ \textcolor{comment}{/*\ \#undef\ ATCA\_NO\_HEAP\ */}}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00096\ \textcolor{preprocessor}{\#define\ ATCA\_PLATFORM\_MALLOC\ \ \ \ malloc}}
+\DoxyCodeLine{00097\ \textcolor{preprocessor}{\#define\ ATCA\_PLATFORM\_FREE\ \ \ \ \ \ free}}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \textcolor{comment}{//\#define\ atca\_delay\_ms\ \ \ hal\_delay\_ms}}
+\DoxyCodeLine{00100\ \textcolor{comment}{//\#define\ atca\_delay\_us\ \ \ hal\_delay\_us}}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ ATCA\_CONFIG\_H}}
+
+\end{DoxyCode}

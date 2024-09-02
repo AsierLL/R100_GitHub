@@ -1,0 +1,120 @@
+\doxysection{C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\+SCE/atca\+\_\+hal.h File Reference}
+\hypertarget{atca__hal_8h}{}\label{atca__hal_8h}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/SCE/atca\_hal.h@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/SCE/atca\_hal.h}}
+
+
+low-\/level HAL -\/ methods used to setup indirection to physical layer interface  
+
+
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include "{}atca\+\_\+config.\+h"{}}\newline
+{\ttfamily \#include "{}atca\+\_\+status.\+h"{}}\newline
+{\ttfamily \#include "{}atca\+\_\+iface.\+h"{}}\newline
+Include dependency graph for atca\+\_\+hal.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{atca__hal_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{atca__hal_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structatca__hal__kit__phy__t}{atca\+\_\+hal\+\_\+kit\+\_\+phy\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__hal___ga8bec71e1581c804c34ee5239109e0aaf}{ATCA\+\_\+\+POLLING\+\_\+\+INIT\+\_\+\+TIME\+\_\+\+MSEC}}~1
+\item 
+\#define \mbox{\hyperlink{group__hal___ga608ef7949677dac87e1c76c826e6bf40}{ATCA\+\_\+\+POLLING\+\_\+\+FREQUENCY\+\_\+\+TIME\+\_\+\+MSEC}}~2
+\item 
+\#define \mbox{\hyperlink{group__hal___ga3fec2247165d648a94cea3d0cbfd662f}{ATCA\+\_\+\+POLLING\+\_\+\+MAX\+\_\+\+TIME\+\_\+\+MSEC}}~2500
+\item 
+\#define \mbox{\hyperlink{group__hal___ga734f1a991d97db530d1d43657faa3e96}{hal\+\_\+malloc}}~\mbox{\hyperlink{atca__config_8h_adbc2385fb7498f0b78384b2244a64328}{ATCA\+\_\+\+PLATFORM\+\_\+\+MALLOC}}
+\item 
+\#define \mbox{\hyperlink{group__hal___gab9288899d6d6b917030fa44329234944}{hal\+\_\+free}}~\mbox{\hyperlink{atca__config_8h_a659e8df188244eae9becc59a74c81ece}{ATCA\+\_\+\+PLATFORM\+\_\+\+FREE}}
+\item 
+\#define \mbox{\hyperlink{group__hal___ga4f60d6c21f0543b2187329461cffd466}{hal\+\_\+memset\+\_\+s}}~\mbox{\hyperlink{atca__helpers_8h_ac37b319dabc5b9492a422f6d3d4e118b}{atcab\+\_\+memset\+\_\+s}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group__hal___ga63592210c9f6bba65e47bee41ba33aad}{ATCA\+\_\+\+HAL\+\_\+\+CONTROL}} \{ \newline
+\mbox{\hyperlink{group__hal___gga63592210c9f6bba65e47bee41ba33aada67b7cb6d7acd443c7ce155f79e24e8a3}{ATCA\+\_\+\+HAL\+\_\+\+CONTROL\+\_\+\+WAKE}} = 0
+, \mbox{\hyperlink{group__hal___gga63592210c9f6bba65e47bee41ba33aada68f29ce1dae672fba4d0bd72a2520787}{ATCA\+\_\+\+HAL\+\_\+\+CONTROL\+\_\+\+IDLE}} = 1
+, \mbox{\hyperlink{group__hal___gga63592210c9f6bba65e47bee41ba33aada2d7aafbda814952834385918b0b71fb2}{ATCA\+\_\+\+HAL\+\_\+\+CONTROL\+\_\+\+SLEEP}} = 2
+, \mbox{\hyperlink{group__hal___gga63592210c9f6bba65e47bee41ba33aada707f9990e8082bd03fc6d3b57f4554dd}{ATCA\+\_\+\+HAL\+\_\+\+CONTROL\+\_\+\+RESET}} = 3
+, \newline
+\mbox{\hyperlink{group__hal___gga63592210c9f6bba65e47bee41ba33aada353f3f565c16842ce1cd1353a9967e0f}{ATCA\+\_\+\+HAL\+\_\+\+CONTROL\+\_\+\+SELECT}} = 4
+, \mbox{\hyperlink{group__hal___gga63592210c9f6bba65e47bee41ba33aadae67d200e332beb287624f9e077718b7c}{ATCA\+\_\+\+HAL\+\_\+\+CONTROL\+\_\+\+DESELECT}} = 5
+, \mbox{\hyperlink{group__hal___gga63592210c9f6bba65e47bee41ba33aada0af7e182f6bfea47544cb3ec2fce26c9}{ATCA\+\_\+\+HAL\+\_\+\+CHANGE\+\_\+\+BAUD}} = 6
+, \mbox{\hyperlink{group__hal___gga63592210c9f6bba65e47bee41ba33aada9416d42f10d7aaa9affeaed33927d3b4}{ATCA\+\_\+\+HAL\+\_\+\+FLUSH\+\_\+\+BUFFER}} = 7
+, \newline
+\mbox{\hyperlink{group__hal___gga63592210c9f6bba65e47bee41ba33aadaefe1d680f11ecfc9ed6a86eb80bac8ff}{ATCA\+\_\+\+HAL\+\_\+\+CONTROL\+\_\+\+DIRECTION}} = 8
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{group__hal___gaf17e547bf330b9b561fd34437f09e616}{hal\+\_\+iface\+\_\+init}} (\mbox{\hyperlink{struct_a_t_c_a_iface_cfg}{ATCAIface\+Cfg}} \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{struct_a_t_c_a_h_a_l__t}{ATCAHAL\+\_\+t}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}hal, \mbox{\hyperlink{struct_a_t_c_a_h_a_l__t}{ATCAHAL\+\_\+t}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}phy)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{group__hal___ga4be1afccb41f28f6ce620b1d5197befc}{hal\+\_\+iface\+\_\+release}} (\mbox{\hyperlink{group__interface_gac7f674d4a0afb12d2f3c9c5e98cb1089}{ATCAIface\+Type}}, void \texorpdfstring{$\ast$}{*}hal\+\_\+data)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{group__hal___ga6ce92f1d10000eb6618fc74c2ca92d76}{hal\+\_\+check\+\_\+wake}} (const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}response, int response\+\_\+size)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{group__hal___ga17df8d983df73e2e8f62f1236f157909}{hal\+\_\+i2c\+\_\+init}} (\mbox{\hyperlink{group__interface_ga75c11126f3fe81df3d6c27f5bb393303}{ATCAIface}} iface, \mbox{\hyperlink{struct_a_t_c_a_iface_cfg}{ATCAIface\+Cfg}} \texorpdfstring{$\ast$}{*}cfg)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{group__hal___gafbe53519362f18c2688d10da6f7c618f}{hal\+\_\+i2c\+\_\+post\+\_\+init}} (\mbox{\hyperlink{group__interface_ga75c11126f3fe81df3d6c27f5bb393303}{ATCAIface}} iface)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{group__hal___gacc9a889e19d2f1a475a39391565b66dd}{hal\+\_\+i2c\+\_\+send}} (\mbox{\hyperlink{group__interface_ga75c11126f3fe81df3d6c27f5bb393303}{ATCAIface}} iface, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} word\+\_\+address, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}txdata, int txlength)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{group__hal___ga41a2b07d55558b9726abe28fd8431e90}{hal\+\_\+i2c\+\_\+receive}} (\mbox{\hyperlink{group__interface_ga75c11126f3fe81df3d6c27f5bb393303}{ATCAIface}} iface, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} word\+\_\+address, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}rxdata, \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \texorpdfstring{$\ast$}{*}rxlength)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{group__hal___ga4f82572f05b8587d98bc38601453863e}{hal\+\_\+i2c\+\_\+control}} (\mbox{\hyperlink{group__interface_ga75c11126f3fe81df3d6c27f5bb393303}{ATCAIface}} iface, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} option, void \texorpdfstring{$\ast$}{*}param, size\+\_\+t paramlen)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{group__hal___gad4df1b6755e2d5b5d9e810371e45ca8c}{hal\+\_\+i2c\+\_\+wake}} (\mbox{\hyperlink{group__interface_ga75c11126f3fe81df3d6c27f5bb393303}{ATCAIface}} iface)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{group__hal___ga9317303ada721ff3f97e7aad69437a30}{hal\+\_\+i2c\+\_\+idle}} (\mbox{\hyperlink{group__interface_ga75c11126f3fe81df3d6c27f5bb393303}{ATCAIface}} iface)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{group__hal___ga3f89bae6a625d5f37abdcc99408def27}{hal\+\_\+i2c\+\_\+sleep}} (\mbox{\hyperlink{group__interface_ga75c11126f3fe81df3d6c27f5bb393303}{ATCAIface}} iface)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{group__hal___gac382cc4431d2d1c721c21a453ba36c22}{hal\+\_\+i2c\+\_\+release}} (void \texorpdfstring{$\ast$}{*}hal\+\_\+data)
+\item 
+void \mbox{\hyperlink{group__hal___ga0544f36422b5e9a8890fb9c90fc5eb55}{atca\+\_\+delay\+\_\+ms}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} ms)
+\begin{DoxyCompactList}\small\item\em Timer API for legacy implementations. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__hal___ga847db2fb4380f9365db262e4a41fa3e1}{atca\+\_\+delay\+\_\+us}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} us)
+\item 
+void \mbox{\hyperlink{group__hal___ga3df335e46c7e798a1d4b8949d00c13d3}{hal\+\_\+rtos\+\_\+delay\+\_\+ms}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} ms)
+\begin{DoxyCompactList}\small\item\em Timer API implemented at the HAL level. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__hal___ga57165466685c07db56639eefa2c7762c}{hal\+\_\+delay\+\_\+ms}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} ms)
+\item 
+void \mbox{\hyperlink{group__hal___ga7430997881f872935a85edfd41d9df17}{hal\+\_\+delay\+\_\+us}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} us)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{group__hal___gab289a3949663589ac6be71d72fb18278}{hal\+\_\+create\+\_\+mutex}} (void \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}pp\+Mutex, char \texorpdfstring{$\ast$}{*}p\+Name)
+\begin{DoxyCompactList}\small\item\em Optional hal interfaces. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{group__hal___ga4589d7b3e951f40b7928f1cf31f7ddf3}{hal\+\_\+destroy\+\_\+mutex}} (void \texorpdfstring{$\ast$}{*}p\+Mutex)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{group__hal___gad4cd02ff7ae4e75844eab4e84eb61994}{hal\+\_\+lock\+\_\+mutex}} (void \texorpdfstring{$\ast$}{*}p\+Mutex)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{group__hal___ga31fd8170a49623686543f6247b883bd1}{hal\+\_\+unlock\+\_\+mutex}} (void \texorpdfstring{$\ast$}{*}p\+Mutex)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{group__hal___ga43e975cd670652e6ae76f390b2e82218}{hal\+\_\+iface\+\_\+register\+\_\+hal}} (\mbox{\hyperlink{group__interface_gac7f674d4a0afb12d2f3c9c5e98cb1089}{ATCAIface\+Type}} iface\+\_\+type, \mbox{\hyperlink{struct_a_t_c_a_h_a_l__t}{ATCAHAL\+\_\+t}} \texorpdfstring{$\ast$}{*}hal, \mbox{\hyperlink{struct_a_t_c_a_h_a_l__t}{ATCAHAL\+\_\+t}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}old\+\_\+hal, \mbox{\hyperlink{struct_a_t_c_a_h_a_l__t}{ATCAHAL\+\_\+t}} \texorpdfstring{$\ast$}{*}phy, \mbox{\hyperlink{struct_a_t_c_a_h_a_l__t}{ATCAHAL\+\_\+t}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}old\+\_\+phy)
+\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{group__hal___gac5acbcb3cee22506992d838cd8a3e8ae}{hal\+\_\+is\+\_\+command\+\_\+word}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} word\+\_\+address)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+low-\/level HAL -\/ methods used to setup indirection to physical layer interface 
+
+\begin{DoxyCopyright}{Copyright}
+(c) 2015-\/2020 Microchip Technology Inc. and its subsidiaries. 
+\end{DoxyCopyright}

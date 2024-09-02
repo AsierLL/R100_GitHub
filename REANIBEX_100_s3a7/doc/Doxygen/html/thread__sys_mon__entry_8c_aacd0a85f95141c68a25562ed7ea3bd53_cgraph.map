@@ -1,0 +1,85 @@
+<map id="Execute_Test_Defib_Montador" name="Execute_Test_Defib_Montador">
+<area shape="rect" id="Node000001" title="Function that executes the GPS test." alt="" coords="5,656,143,699"/>
+<area shape="rect" id="Node000002" href="$thread__audio__entry_8c.html#a7bc63559c8d1198f7036bf7d08def712" title="Function that performs an operation with the message player." alt="" coords="223,56,338,83"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="78,655,121,499,188,283,228,179,264,96,269,98,233,181,193,285,126,501,83,656"/>
+<area shape="rect" id="Node000007" href="$sys_mon___battery_8c.html#a478330b379be96e504e4f945b4fb823b" title=" " alt="" coords="191,296,370,323"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="79,655,117,541,149,468,188,397,218,361,248,331,252,335,222,365,193,400,153,470,122,543,84,657"/>
+<area shape="rect" id="Node000015" href="$thread__sys_mon__entry_8c.html#aa3ddb4058ff8853f1771e5bb44003be8" title="Check that the battery voltage is in range." alt="" coords="201,411,360,437"/>
+<area shape="poly" id="edge17_Node000001_Node000015" title=" " alt="" coords="91,654,256,448,261,451,95,657"/>
+<area shape="rect" id="Node000019" href="$thread__defibrillator__hal_8c.html#a6e81b634f93bb25286835f828f840c94" title="charge the main capacitor to a predefined value applying a hysteresis ..." alt="" coords="231,563,330,589"/>
+<area shape="poly" id="edge21_Node000001_Node000019" title=" " alt="" coords="118,653,237,594,239,599,121,658"/>
+<area shape="rect" id="Node000031" href="$thread__defibrillator__hal_8c.html#a1732c6fa09148497f9b79f530fb94a8a" title="report the current state of the defibrillator" alt="" coords="454,765,570,792"/>
+<area shape="poly" id="edge37_Node000001_Node000031" title=" " alt="" coords="143,680,251,696,312,708,371,726,395,738,419,751,440,758,439,763,417,756,393,743,369,730,311,714,250,701,143,685"/>
+<area shape="rect" id="Node000032" href="$thread__defibrillator__hal_8c.html#a3e86b71d391996bf2ffc968da01e5326" title="Read the Vbatt value from the main supply voltage." alt="" coords="222,740,339,767"/>
+<area shape="poly" id="edge38_Node000001_Node000032" title=" " alt="" coords="133,697,192,719,227,732,225,737,190,724,131,702"/>
+<area shape="rect" id="Node000033" href="$thread__defibrillator__hal_8c.html#a51d3d1bc2120f01ddcb0ed702a23e913" title="Read the Vc value from the main capacitor." alt="" coords="230,791,331,817"/>
+<area shape="poly" id="edge40_Node000001_Node000033" title=" " alt="" coords="96,697,138,738,192,776,216,787,214,792,189,781,134,742,93,701"/>
+<area shape="rect" id="Node000034" href="$thread__defibrillator__hal_8c.html#a5c83cfd8a63ac9b016942a91160874ee" title="shock the patient over a known impedance" alt="" coords="233,639,328,665"/>
+<area shape="poly" id="edge41_Node000001_Node000034" title=" " alt="" coords="143,666,217,657,218,662,143,672"/>
+<area shape="rect" id="Node000036" href="$thread__sys_mon__entry_8c.html#aea83c8517300aa0759f0088c0f2dfa2f" title="Pass time doing nothing, but refreshing the watchdog !!!" alt="" coords="232,892,329,919"/>
+<area shape="poly" id="edge44_Node000001_Node000036" title=" " alt="" coords="85,698,100,735,122,782,153,830,192,871,219,887,216,892,189,875,149,833,118,784,95,737,80,700"/>
+<area shape="rect" id="Node000037" href="$thread__sys_mon__entry_8c.html#aab815986ee52dfb7489873f856e3ecb9" title="Refresh the watchdog timer." alt="" coords="463,867,562,893"/>
+<area shape="poly" id="edge46_Node000001_Node000037" title=" " alt="" coords="88,698,104,728,127,764,156,799,192,827,238,844,305,857,448,873,447,878,304,862,237,849,189,832,153,802,122,767,99,731,83,700"/>
+<area shape="rect" id="Node000003" href="$thread__audio__entry_8c.html#a05b96411bbd2b24e86ae0cc21146b4cb" title="Function that loads and plays a message." alt="" coords="439,5,586,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="337,54,432,33,433,39,338,60"/>
+<area shape="rect" id="Node000005" href="$thread__audio__entry_8c.html#a2c1714b5b8e79621e3a35b0624309f63" title="Stops the audio engine in a predefined sequence." alt="" coords="445,56,580,83"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="338,67,429,67,429,72,338,72"/>
+<area shape="rect" id="Node000004" href="$thread__audio__entry_8c.html#a29f40d7e3dc151283bfb0e69dbd8b132" title="Get an audio frame from the audio file." alt="" coords="654,5,829,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="586,16,639,16,639,21,586,21"/>
+<area shape="rect" id="Node000006" href="$thread__audio__hal_8c.html#a5afdd4d24f2faf92baea80c7b0cedfdc" title="stops the audio reproduction" alt="" coords="697,56,786,83"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="580,67,682,67,682,72,580,72"/>
+<area shape="rect" id="Node000008" href="$_i2_c__1_8c.html#a2e6bf5a5dca9d0a7f02f9295037d25e3" title="Function to read the temperature from the temperature sensor." alt="" coords="431,220,594,247"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="323,293,454,250,455,255,325,298"/>
+<area shape="rect" id="Node000014" href="$thread__pat_mon__hal_8c.html#a38356e80b22420c57c34439af0dc1250" title="report the temperature value in degrees be careful, the PGA gain is 4" alt="" coords="427,296,598,323"/>
+<area shape="poly" id="edge16_Node000007_Node000014" title=" " alt="" coords="370,307,411,307,411,312,370,312"/>
+<area shape="rect" id="Node000009" href="$_i2_c__1_8c.html#a8721bef7537e00756c8c6e8ec8b4c3b4" title="Function to get a data byte from the i2C device." alt="" coords="689,309,794,336"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="548,245,655,288,689,301,687,306,653,293,546,250"/>
+<area shape="rect" id="Node000010" href="$_i2_c__1_8c.html#a58c06ede2d56b3068be6703981e4030a" title="Generate the START condition in the i2C line." alt="" coords="889,120,1025,147"/>
+<area shape="poly" id="edge9_Node000008_Node000010" title=" " alt="" coords="528,217,581,178,616,158,654,143,710,130,767,123,873,123,873,128,767,129,710,135,655,148,618,163,584,183,531,222"/>
+<area shape="rect" id="Node000011" href="$_i2_c__1_8c.html#abe5880e856c1c213a8e0074d876f9b70" title="Generate the STOP condition in the i2C line." alt="" coords="889,183,1025,209"/>
+<area shape="poly" id="edge10_Node000008_Node000011" title=" " alt="" coords="594,224,873,200,874,206,594,229"/>
+<area shape="rect" id="Node000012" href="$_i2_c__1_8c.html#a3be7740fdada1288f4bf53c6f8a4c84a" title="Function to send a data byte to the i2C device." alt="" coords="906,233,1008,260"/>
+<area shape="poly" id="edge11_Node000008_Node000012" title=" " alt="" coords="594,235,654,237,890,243,890,248,654,243,594,240"/>
+<area shape="rect" id="Node000013" href="$_i2_c__1_8c.html#a3080b1378acb455e5962e81def2b88ba" title="Function to write data at specific address." alt="" coords="699,157,784,184"/>
+<area shape="poly" id="edge12_Node000008_Node000013" title=" " alt="" coords="563,217,683,184,685,189,565,222"/>
+<area shape="poly" id="edge13_Node000013_Node000010" title=" " alt="" coords="784,161,873,145,874,150,785,166"/>
+<area shape="poly" id="edge14_Node000013_Node000011" title=" " alt="" coords="785,173,874,184,873,189,784,178"/>
+<area shape="poly" id="edge15_Node000013_Node000012" title=" " alt="" coords="779,182,878,219,897,225,895,231,876,224,777,187"/>
+<area shape="rect" id="Node000016" href="$_d_b___episode_8c.html#ad9d862bce53be58f17e8d75fa3e8b15f" title="Writes an event in the episode block." alt="" coords="662,360,821,387"/>
+<area shape="poly" id="edge18_Node000015_Node000016" title=" " alt="" coords="349,407,418,396,537,383,647,375,647,381,537,389,418,401,349,413"/>
+<area shape="rect" id="Node000018" href="$_trace_8c.html#a8947b81ae09bdb57459cd1c81c78ab37" title="Print a trace string inserting the time stamp." alt="" coords="486,411,539,437"/>
+<area shape="poly" id="edge20_Node000015_Node000018" title=" " alt="" coords="360,421,470,421,470,427,360,427"/>
+<area shape="rect" id="Node000017" href="$sys_mon___battery_8c.html#ae8f3f32f49df7702f6405467130ce8fd" title="Function that report if the battery is DEMO or not." alt="" coords="877,397,1037,424"/>
+<area shape="poly" id="edge19_Node000016_Node000017" title=" " alt="" coords="822,385,862,392,861,397,821,390"/>
+<area shape="rect" id="Node000020" href="$thread__defibrillator__hal_8c.html#ae0bcdc5c577816bcf7a730c82fa13d6a" title="start the charge process of the main cap" alt="" coords="446,563,579,589"/>
+<area shape="poly" id="edge22_Node000019_Node000020" title=" " alt="" coords="330,573,430,573,430,579,330,579"/>
+<area shape="rect" id="Node000026" href="$device__init_8c.html#a2f7047dc1ce0a3687c48872ed81aff5f" title="Function for accessing device info variable." alt="" coords="900,639,1014,665"/>
+<area shape="poly" id="edge36_Node000019_Node000026" title=" " alt="" coords="331,583,418,599,675,628,884,645,884,650,674,633,418,604,330,589"/>
+<area shape="rect" id="Node000028" href="$thread__defibrillator__hal_8c.html#ab375925948ca3cd49a4f463e009ed9da" title="start the complete discharge of the main cap" alt="" coords="437,512,587,539"/>
+<area shape="poly" id="edge31_Node000019_Node000028" title=" " alt="" coords="329,563,432,540,433,545,330,568"/>
+<area shape="rect" id="Node000030" href="$thread__defibrillator__hal_8c.html#ae8b16e9b9a65c0819957023d975c77a9" title="start the complete discharge of the main cap to 0V" alt="" coords="418,461,606,488"/>
+<area shape="poly" id="edge34_Node000019_Node000030" title=" " alt="" coords="301,560,353,529,417,498,436,491,438,496,419,502,355,534,304,565"/>
+<area shape="rect" id="Node000021" href="$sys_mon___battery_8c.html#a6a908c00382961d78f2da4ee84cb4263" title="Computes the remaining capacity in the battery." alt="" coords="672,512,811,539"/>
+<area shape="poly" id="edge23_Node000020_Node000021" title=" " alt="" coords="575,559,662,540,664,545,577,565"/>
+<area shape="rect" id="Node000024" href="$sys_mon___battery_8c.html#aa6c128d869ee1d53d1902c4248f0c006" title="Get temperature value in battery." alt="" coords="656,563,827,589"/>
+<area shape="poly" id="edge27_Node000020_Node000024" title=" " alt="" coords="579,573,641,573,641,579,579,579"/>
+<area shape="rect" id="Node000025" href="$thread__defibrillator__hal_8c.html#ae57fee576eb2206f531dd7ee69bc2218" title="scan all analog inputs" alt="" coords="692,664,791,691"/>
+<area shape="poly" id="edge28_Node000020_Node000025" title=" " alt="" coords="546,587,697,655,694,660,543,592"/>
+<area shape="rect" id="Node000027" href="$thread__defibrillator__hal_8c.html#a3b5f744526d52e5790b359f0bfad7055" title="set the overcharge alarm to a charge voltage" alt="" coords="682,461,801,488"/>
+<area shape="poly" id="edge30_Node000020_Node000027" title=" " alt="" coords="578,560,605,548,619,536,628,524,637,511,653,498,667,490,669,495,656,502,641,514,633,527,623,540,608,553,580,565"/>
+<area shape="poly" id="edge26_Node000021_Node000017" title=" " alt="" coords="799,509,827,498,882,466,927,432,930,436,885,470,830,502,801,514"/>
+<area shape="rect" id="Node000022" href="$sys_mon___battery_8c.html#af6e0839479117b02185cb5786de7d15b" title="Computes the difference time between two dates (in days) (date_1 &#45; date_2)" alt="" coords="905,537,1009,564"/>
+<area shape="poly" id="edge24_Node000021_Node000022" title=" " alt="" coords="812,531,889,540,889,545,811,536"/>
+<area shape="rect" id="Node000023" href="$device__init_8c.html#ac9272954c69640cbc76d2ea99e68bc43" title="Function for accessing NFC device info struct." alt="" coords="883,487,1031,513"/>
+<area shape="poly" id="edge25_Node000021_Node000023" title=" " alt="" coords="811,515,868,508,868,513,812,520"/>
+<area shape="poly" id="edge29_Node000025_Node000026" title=" " alt="" coords="791,669,884,658,884,663,791,674"/>
+<area shape="poly" id="edge33_Node000028_Node000027" title=" " alt="" coords="575,509,666,488,667,494,577,514"/>
+<area shape="rect" id="Node000029" href="$thread__defibrillator__hal_8c.html#a7e29bee81774c04a8f8ee6b99f50e1e9" title="stop the charge process and maintain the energy in the main cap" alt="" coords="675,411,808,437"/>
+<area shape="poly" id="edge32_Node000028_Node000029" title=" " alt="" coords="581,509,605,498,619,486,628,473,637,460,653,447,663,441,666,446,656,452,641,464,633,476,623,489,608,502,583,514"/>
+<area shape="poly" id="edge35_Node000030_Node000029" title=" " alt="" coords="575,458,662,439,664,444,577,463"/>
+<area shape="poly" id="edge39_Node000032_Node000031" title=" " alt="" coords="339,757,439,768,438,773,339,762"/>
+<area shape="poly" id="edge43_Node000034_Node000025" title=" " alt="" coords="328,652,677,671,677,677,328,657"/>
+<area shape="rect" id="Node000035" href="$thread__defibrillator__hal_8c.html#a30b02e48578477bebad7e2c87742b427" title="get the phase 1 time for a predefined patient impedance Assume that the impedance table finishes with..." alt="" coords="448,715,576,741"/>
+<area shape="poly" id="edge42_Node000034_Node000035" title=" " alt="" coords="325,663,455,707,454,712,323,668"/>
+<area shape="poly" id="edge45_Node000036_Node000037" title=" " alt="" coords="329,897,447,884,448,890,329,903"/>
+</map>

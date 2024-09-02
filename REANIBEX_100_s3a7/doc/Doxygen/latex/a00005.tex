@@ -1,0 +1,504 @@
+\doxysection{C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\+DB\+\_\+\+Episode.h File Reference}
+\hypertarget{a00005}{}\label{a00005}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/DB\_Episode.h@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/DB\_Episode.h}}
+
+
+Episode header file.  
+
+
+{\ttfamily \#include $<$device\+\_\+init.\+h$>$}\newline
+{\ttfamily \#include "{}types\+\_\+basic.\+h"{}}\newline
+{\ttfamily \#include "{}drd.\+h"{}}\newline
+{\ttfamily \#include "{}sys\+Mon\+\_\+\+Battery.\+h"{}}\newline
+{\ttfamily \#include "{}thread\+\_\+sys\+Mon\+\_\+entry.\+h"{}}\newline
+{\ttfamily \#include "{}event\+\_\+ids.\+h"{}}\newline
+Include dependency graph for DB\+\_\+\+Episode.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{a00262}{DB\+\_\+\+EPISODE\+\_\+\+HEADER\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Episode file header (stored in a single episode block) \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{a00266}{DB\+\_\+\+DATA\+\_\+\+DEFAULT\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Structure to hold default data before writing to episode file. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{a00270}{DB\+\_\+\+EPISODE\+\_\+\+BLOCK\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Structure to hold data before writing to file in multiples of cluster size. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{a00274}{DB\+\_\+\+RESAMPLE\+\_\+\+BLOCK\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Structure to hold resampled data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{a00005_a8f79b424651b6078289aa5ae9527cc0e}{EPISODE\+\_\+\+MAJOR\+\_\+\+VERSION}}~0x02
+\begin{DoxyCompactList}\small\item\em Episode Major version. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{a00005_a08300d382902fd6d799bc56df1b9be64}{EPISODE\+\_\+\+MINOR\+\_\+\+VERSION}}~0x00
+\begin{DoxyCompactList}\small\item\em Episode Minor version. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{a00005_a617e579d27d22e2133bc6f0a5f7ed4e8}{EPISODE\+\_\+\+BLOCK\+\_\+\+SZ}}~(1024)
+\begin{DoxyCompactList}\small\item\em Episode block total size. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{a00005_a9b2f80c0ddbb03bfd365a4690b7edfa4}{EPISODE\+\_\+\+BLOCK\+\_\+\+DATA\+\_\+\+SZ}}~(1008)
+\begin{DoxyCompactList}\small\item\em Episode block\textquotesingle{}s data size. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{a00005_a97f13bedc46d5fb1be02fb79331d41fb}{EPISODE\+\_\+\+BLOCK\+\_\+\+ECG\+\_\+\+SZ}}~(400)
+\begin{DoxyCompactList}\small\item\em Number of ECG samples in a single block. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{a00005_ab33b9cecd56a25a560a0ee057dcae1c0}{EPISODE\+\_\+\+BLOCK\+\_\+\+ZP\+\_\+\+SZ}}~(40)
+\begin{DoxyCompactList}\small\item\em Number of ZP samples in a single block. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{a00005_a2c787d60cd94caad908855afc2926b64}{EPISODE\+\_\+\+BLOCK\+\_\+\+HEADER\+\_\+\+SZ}}~(12)
+\begin{DoxyCompactList}\small\item\em Aize of the header in a single episode block. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{a00005_ac15777f98cc63ef527c985b845295838}{EPISODE\+\_\+\+BLOCK\+\_\+\+ZP\+\_\+\+ADD}}~(\mbox{\hyperlink{a00005_a2c787d60cd94caad908855afc2926b64}{EPISODE\+\_\+\+BLOCK\+\_\+\+HEADER\+\_\+\+SZ}} + (\mbox{\hyperlink{a00005_a97f13bedc46d5fb1be02fb79331d41fb}{EPISODE\+\_\+\+BLOCK\+\_\+\+ECG\+\_\+\+SZ}}\texorpdfstring{$\ast$}{*}2/5))
+\item 
+\#define \mbox{\hyperlink{a00005_a13d1ecf8967fbe0c2a96aeb56f0b84a9}{EPISODE\+\_\+\+BLOCK\+\_\+\+DATA\+\_\+\+AUX\+\_\+\+ADD}}~(\mbox{\hyperlink{a00005_ac15777f98cc63ef527c985b845295838}{EPISODE\+\_\+\+BLOCK\+\_\+\+ZP\+\_\+\+ADD}} + 32)
+\item 
+\#define \mbox{\hyperlink{a00005_af34964888be47697d98a6a827f504452}{NUM\+\_\+\+EPISODES}}~(11)
+\begin{DoxyCompactList}\small\item\em Maximum number of episodes in a single u\+SD card. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{a00005_ae8390147d81885ac4a084aed1b126fb2}{NUM\+\_\+\+BLOCKS\+\_\+\+EPISODE}}~(200000)
+\begin{DoxyCompactList}\small\item\em Maximum number of blocks in a single episode. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{a00005_ab0daf7b0515dcf910dd203ce39690262}{DB\+\_\+\+DATA\+\_\+\+DRD\+\_\+t}}~\mbox{\hyperlink{a00458}{DRD\+\_\+\+DATA\+\_\+t}}
+\item 
+\#define \mbox{\hyperlink{a00005_a9442218a0ec67bfa69e27c64b232676c}{DATA\+\_\+\+AUX\+\_\+\+SIZE}}~52
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{a00005_ab8fc373ec3a7672c42f21c63e0eec755}{EPISODE\+\_\+\+STS\+\_\+e}} \{ \mbox{\hyperlink{a00005_ab8fc373ec3a7672c42f21c63e0eec755a26a6e89460029bfca163c97edca91603}{e\+EPISODE\+\_\+\+OK}} = 0
+, \mbox{\hyperlink{a00005_ab8fc373ec3a7672c42f21c63e0eec755a944a8be0f935add733ed0710eac697d1}{e\+EPISODE\+\_\+\+GETTING\+\_\+\+FULL}}
+, \mbox{\hyperlink{a00005_ab8fc373ec3a7672c42f21c63e0eec755a3e90b78a895b65e2afb6b4144cf071bc}{e\+EPISODE\+\_\+\+FULL}}
+ \}
+\begin{DoxyCompactList}\small\item\em Episode status. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{a00005_a8ec64ed0774b599aa39b325893f8ebea}{BLOCK\+\_\+\+DATA\+\_\+e}} \{ \mbox{\hyperlink{a00005_a8ec64ed0774b599aa39b325893f8ebeaaa292784651f3fbb4a73b38f28fbc519a}{e\+BLOCK\+\_\+\+DATA\+\_\+\+DEFAULT}} = 0
+, \mbox{\hyperlink{a00005_a8ec64ed0774b599aa39b325893f8ebeaa2a4ca1f03eb199c279c355e7a58ddb40}{e\+BLOCK\+\_\+\+DATA\+\_\+\+DRD}} = 1
+ \}
+\begin{DoxyCompactList}\small\item\em Block types (for auxiliary data) \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{a00005_aa7df144d6752524dc1d8e2603a26b414}{ECG\+\_\+\+FORMAT\+\_\+e}} \{ \mbox{\hyperlink{a00005_aa7df144d6752524dc1d8e2603a26b414a22fa2a2897deda0e77350c9a254d4102}{e\+ECG\+\_\+\+FORMAT\+\_\+\+NONE}} = 0
+, \mbox{\hyperlink{a00005_aa7df144d6752524dc1d8e2603a26b414a8d693ec493afc3450d66e0990c814984}{e\+ECG\+\_\+\+FORMAT\+\_\+\+RAW}} = 1
+, \mbox{\hyperlink{a00005_aa7df144d6752524dc1d8e2603a26b414aef0e02ee0a15430854f34ba7c09a14b8}{e\+ECG\+\_\+\+FORMAT\+\_\+\+SPIHT}} = 2
+ \}
+\begin{DoxyCompactList}\small\item\em ECG format. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a00005_aeab7d8f7e1373bfc139d706f0bdbd614}{COMPILE\+\_\+\+ASSERT}} (sizeof(\mbox{\hyperlink{a00262}{DB\+\_\+\+EPISODE\+\_\+\+HEADER\+\_\+t}})==\mbox{\hyperlink{a00005_a617e579d27d22e2133bc6f0a5f7ed4e8}{EPISODE\+\_\+\+BLOCK\+\_\+\+SZ}})
+\item 
+\mbox{\hyperlink{a00005_a926735f68055d642e0dd51776e2f9fee}{COMPILE\+\_\+\+ASSERT}} (sizeof(\mbox{\hyperlink{a00005_ab0daf7b0515dcf910dd203ce39690262}{DB\+\_\+\+DATA\+\_\+\+DRD\+\_\+t}})==48)
+\item 
+\mbox{\hyperlink{a00005_a53a5200149434beea2a6ae3d2ade3f35}{COMPILE\+\_\+\+ASSERT}} (sizeof(\mbox{\hyperlink{a00266}{DB\+\_\+\+DATA\+\_\+\+DEFAULT\+\_\+t}})==\mbox{\hyperlink{a00005_a9442218a0ec67bfa69e27c64b232676c}{DATA\+\_\+\+AUX\+\_\+\+SIZE}})
+\item 
+\mbox{\hyperlink{a00005_a1f23c83f6b60da4b7233d45fff3b97a9}{COMPILE\+\_\+\+ASSERT}} (sizeof(\mbox{\hyperlink{a00270}{DB\+\_\+\+EPISODE\+\_\+\+BLOCK\+\_\+t}})==\mbox{\hyperlink{a00005_a617e579d27d22e2133bc6f0a5f7ed4e8}{EPISODE\+\_\+\+BLOCK\+\_\+\+SZ}})
+\item 
+\mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{a00005_ae56ae470098d9e90ed6cb233c89e7d8d}{DB\+\_\+\+Episode\+\_\+\+Create}} (void)
+\begin{DoxyCompactList}\small\item\em Creates a new episode file. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{a00005_a9c7992d33427de65e7c491a76d976754}{DB\+\_\+\+Episode\+\_\+\+Write}} (void)
+\begin{DoxyCompactList}\small\item\em Collects the episode block data and write to the episode file. This way, the write sizes are multiple of cluster sizes, thus achieving max performance. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a00005_ad211c99edc4c2cf00a79de123ff7ad8e}{DB\+\_\+\+Episode\+\_\+\+Close}} (\mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} patient\+\_\+conn)
+\begin{DoxyCompactList}\small\item\em Close episode file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a00005_ad9d862bce53be58f17e8d75fa3e8b15f}{DB\+\_\+\+Episode\+\_\+\+Set\+\_\+\+Event}} (\mbox{\hyperlink{a00020_a8a69d5479d2e704ca706ac22f660b3be}{REG\+\_\+\+EVENTS\+\_\+e}} \mbox{\hyperlink{a00023_aa2a57ae34e4f78ad4834b87e905bda7b}{event\+\_\+id}})
+\begin{DoxyCompactList}\small\item\em Writes an event in the episode block. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a00005_ac9e8a02838035c248ba503b677bff241}{DB\+\_\+\+Episode\+\_\+\+Resample}} (\mbox{\hyperlink{a00137_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Name)
+\begin{DoxyCompactList}\small\item\em Resamples an episode from 5\+:1. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{a00005_a30c87ad6d4062ea23617671673984c64}{DB\+\_\+\+Is\+\_\+\+Episode\+\_\+\+Sent}} (void)
+\begin{DoxyCompactList}\small\item\em checks if a episode has been send to the external server \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{a00005_aae2ed6b9070e9d0d148ac200c57f58fa}{Check\+\_\+\+Episode\+\_\+\+Present}} (\mbox{\hyperlink{a00137_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Name)
+\begin{DoxyCompactList}\small\item\em checks if a episode is present in the folder \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a00005_abfccf54135995b02c5adb82e5135925f}{DB\+\_\+\+Episode\+\_\+\+Delete}} (\mbox{\hyperlink{a00137_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Name)
+\begin{DoxyCompactList}\small\item\em deletes a episode \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a00005_a65dd6d370a11890d74934543b3a33fb9}{DB\+\_\+\+Episode\+\_\+\+Get\+\_\+\+Current\+\_\+\+Filename}} (void)
+\begin{DoxyCompactList}\small\item\em Returns the last Episode name. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a00005_a5d56dbd9be0eebd29dccd8fd8534f189}{DB\+\_\+\+Episode\+\_\+\+Set\+\_\+\+Current\+\_\+\+Filename}} (\mbox{\hyperlink{a00137_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Name)
+\begin{DoxyCompactList}\small\item\em Sets an episode filename (for sending WEE files from Test) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Episode header file. 
+
+\begin{DoxyVersion}{Version}
+v1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+20/06/2018 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+ltorres 
+\end{DoxyAuthor}
+\begin{DoxyWarning}{Warning}
+author date version .-\/ Edition 
+\end{DoxyWarning}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{a00257__bug000002}{Bug}}]\end{DoxyRefDesc}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{a00005_a9442218a0ec67bfa69e27c64b232676c}\label{a00005_a9442218a0ec67bfa69e27c64b232676c} 
+\index{DB\_Episode.h@{DB\_Episode.h}!DATA\_AUX\_SIZE@{DATA\_AUX\_SIZE}}
+\index{DATA\_AUX\_SIZE@{DATA\_AUX\_SIZE}!DB\_Episode.h@{DB\_Episode.h}}
+\doxysubsubsection{\texorpdfstring{DATA\_AUX\_SIZE}{DATA\_AUX\_SIZE}}
+{\footnotesize\ttfamily \#define DATA\+\_\+\+AUX\+\_\+\+SIZE~52}
+
+\Hypertarget{a00005_ab0daf7b0515dcf910dd203ce39690262}\label{a00005_ab0daf7b0515dcf910dd203ce39690262} 
+\index{DB\_Episode.h@{DB\_Episode.h}!DB\_DATA\_DRD\_t@{DB\_DATA\_DRD\_t}}
+\index{DB\_DATA\_DRD\_t@{DB\_DATA\_DRD\_t}!DB\_Episode.h@{DB\_Episode.h}}
+\doxysubsubsection{\texorpdfstring{DB\_DATA\_DRD\_t}{DB\_DATA\_DRD\_t}}
+{\footnotesize\ttfamily \#define DB\+\_\+\+DATA\+\_\+\+DRD\+\_\+t~\mbox{\hyperlink{a00458}{DRD\+\_\+\+DATA\+\_\+t}}}
+
+\Hypertarget{a00005_a13d1ecf8967fbe0c2a96aeb56f0b84a9}\label{a00005_a13d1ecf8967fbe0c2a96aeb56f0b84a9} 
+\index{DB\_Episode.h@{DB\_Episode.h}!EPISODE\_BLOCK\_DATA\_AUX\_ADD@{EPISODE\_BLOCK\_DATA\_AUX\_ADD}}
+\index{EPISODE\_BLOCK\_DATA\_AUX\_ADD@{EPISODE\_BLOCK\_DATA\_AUX\_ADD}!DB\_Episode.h@{DB\_Episode.h}}
+\doxysubsubsection{\texorpdfstring{EPISODE\_BLOCK\_DATA\_AUX\_ADD}{EPISODE\_BLOCK\_DATA\_AUX\_ADD}}
+{\footnotesize\ttfamily \#define EPISODE\+\_\+\+BLOCK\+\_\+\+DATA\+\_\+\+AUX\+\_\+\+ADD~(\mbox{\hyperlink{a00005_ac15777f98cc63ef527c985b845295838}{EPISODE\+\_\+\+BLOCK\+\_\+\+ZP\+\_\+\+ADD}} + 32)}
+
+\Hypertarget{a00005_a9b2f80c0ddbb03bfd365a4690b7edfa4}\label{a00005_a9b2f80c0ddbb03bfd365a4690b7edfa4} 
+\index{DB\_Episode.h@{DB\_Episode.h}!EPISODE\_BLOCK\_DATA\_SZ@{EPISODE\_BLOCK\_DATA\_SZ}}
+\index{EPISODE\_BLOCK\_DATA\_SZ@{EPISODE\_BLOCK\_DATA\_SZ}!DB\_Episode.h@{DB\_Episode.h}}
+\doxysubsubsection{\texorpdfstring{EPISODE\_BLOCK\_DATA\_SZ}{EPISODE\_BLOCK\_DATA\_SZ}}
+{\footnotesize\ttfamily \#define EPISODE\+\_\+\+BLOCK\+\_\+\+DATA\+\_\+\+SZ~(1008)}
+
+
+
+Episode block\textquotesingle{}s data size. 
+
+\Hypertarget{a00005_a97f13bedc46d5fb1be02fb79331d41fb}\label{a00005_a97f13bedc46d5fb1be02fb79331d41fb} 
+\index{DB\_Episode.h@{DB\_Episode.h}!EPISODE\_BLOCK\_ECG\_SZ@{EPISODE\_BLOCK\_ECG\_SZ}}
+\index{EPISODE\_BLOCK\_ECG\_SZ@{EPISODE\_BLOCK\_ECG\_SZ}!DB\_Episode.h@{DB\_Episode.h}}
+\doxysubsubsection{\texorpdfstring{EPISODE\_BLOCK\_ECG\_SZ}{EPISODE\_BLOCK\_ECG\_SZ}}
+{\footnotesize\ttfamily \#define EPISODE\+\_\+\+BLOCK\+\_\+\+ECG\+\_\+\+SZ~(400)}
+
+
+
+Number of ECG samples in a single block. 
+
+\Hypertarget{a00005_a2c787d60cd94caad908855afc2926b64}\label{a00005_a2c787d60cd94caad908855afc2926b64} 
+\index{DB\_Episode.h@{DB\_Episode.h}!EPISODE\_BLOCK\_HEADER\_SZ@{EPISODE\_BLOCK\_HEADER\_SZ}}
+\index{EPISODE\_BLOCK\_HEADER\_SZ@{EPISODE\_BLOCK\_HEADER\_SZ}!DB\_Episode.h@{DB\_Episode.h}}
+\doxysubsubsection{\texorpdfstring{EPISODE\_BLOCK\_HEADER\_SZ}{EPISODE\_BLOCK\_HEADER\_SZ}}
+{\footnotesize\ttfamily \#define EPISODE\+\_\+\+BLOCK\+\_\+\+HEADER\+\_\+\+SZ~(12)}
+
+
+
+Aize of the header in a single episode block. 
+
+\Hypertarget{a00005_a617e579d27d22e2133bc6f0a5f7ed4e8}\label{a00005_a617e579d27d22e2133bc6f0a5f7ed4e8} 
+\index{DB\_Episode.h@{DB\_Episode.h}!EPISODE\_BLOCK\_SZ@{EPISODE\_BLOCK\_SZ}}
+\index{EPISODE\_BLOCK\_SZ@{EPISODE\_BLOCK\_SZ}!DB\_Episode.h@{DB\_Episode.h}}
+\doxysubsubsection{\texorpdfstring{EPISODE\_BLOCK\_SZ}{EPISODE\_BLOCK\_SZ}}
+{\footnotesize\ttfamily \#define EPISODE\+\_\+\+BLOCK\+\_\+\+SZ~(1024)}
+
+
+
+Episode block total size. 
+
+\Hypertarget{a00005_ac15777f98cc63ef527c985b845295838}\label{a00005_ac15777f98cc63ef527c985b845295838} 
+\index{DB\_Episode.h@{DB\_Episode.h}!EPISODE\_BLOCK\_ZP\_ADD@{EPISODE\_BLOCK\_ZP\_ADD}}
+\index{EPISODE\_BLOCK\_ZP\_ADD@{EPISODE\_BLOCK\_ZP\_ADD}!DB\_Episode.h@{DB\_Episode.h}}
+\doxysubsubsection{\texorpdfstring{EPISODE\_BLOCK\_ZP\_ADD}{EPISODE\_BLOCK\_ZP\_ADD}}
+{\footnotesize\ttfamily \#define EPISODE\+\_\+\+BLOCK\+\_\+\+ZP\+\_\+\+ADD~(\mbox{\hyperlink{a00005_a2c787d60cd94caad908855afc2926b64}{EPISODE\+\_\+\+BLOCK\+\_\+\+HEADER\+\_\+\+SZ}} + (\mbox{\hyperlink{a00005_a97f13bedc46d5fb1be02fb79331d41fb}{EPISODE\+\_\+\+BLOCK\+\_\+\+ECG\+\_\+\+SZ}}\texorpdfstring{$\ast$}{*}2/5))}
+
+\Hypertarget{a00005_ab33b9cecd56a25a560a0ee057dcae1c0}\label{a00005_ab33b9cecd56a25a560a0ee057dcae1c0} 
+\index{DB\_Episode.h@{DB\_Episode.h}!EPISODE\_BLOCK\_ZP\_SZ@{EPISODE\_BLOCK\_ZP\_SZ}}
+\index{EPISODE\_BLOCK\_ZP\_SZ@{EPISODE\_BLOCK\_ZP\_SZ}!DB\_Episode.h@{DB\_Episode.h}}
+\doxysubsubsection{\texorpdfstring{EPISODE\_BLOCK\_ZP\_SZ}{EPISODE\_BLOCK\_ZP\_SZ}}
+{\footnotesize\ttfamily \#define EPISODE\+\_\+\+BLOCK\+\_\+\+ZP\+\_\+\+SZ~(40)}
+
+
+
+Number of ZP samples in a single block. 
+
+\Hypertarget{a00005_a8f79b424651b6078289aa5ae9527cc0e}\label{a00005_a8f79b424651b6078289aa5ae9527cc0e} 
+\index{DB\_Episode.h@{DB\_Episode.h}!EPISODE\_MAJOR\_VERSION@{EPISODE\_MAJOR\_VERSION}}
+\index{EPISODE\_MAJOR\_VERSION@{EPISODE\_MAJOR\_VERSION}!DB\_Episode.h@{DB\_Episode.h}}
+\doxysubsubsection{\texorpdfstring{EPISODE\_MAJOR\_VERSION}{EPISODE\_MAJOR\_VERSION}}
+{\footnotesize\ttfamily \#define EPISODE\+\_\+\+MAJOR\+\_\+\+VERSION~0x02}
+
+
+
+Episode Major version. 
+
+\Hypertarget{a00005_a08300d382902fd6d799bc56df1b9be64}\label{a00005_a08300d382902fd6d799bc56df1b9be64} 
+\index{DB\_Episode.h@{DB\_Episode.h}!EPISODE\_MINOR\_VERSION@{EPISODE\_MINOR\_VERSION}}
+\index{EPISODE\_MINOR\_VERSION@{EPISODE\_MINOR\_VERSION}!DB\_Episode.h@{DB\_Episode.h}}
+\doxysubsubsection{\texorpdfstring{EPISODE\_MINOR\_VERSION}{EPISODE\_MINOR\_VERSION}}
+{\footnotesize\ttfamily \#define EPISODE\+\_\+\+MINOR\+\_\+\+VERSION~0x00}
+
+
+
+Episode Minor version. 
+
+\Hypertarget{a00005_ae8390147d81885ac4a084aed1b126fb2}\label{a00005_ae8390147d81885ac4a084aed1b126fb2} 
+\index{DB\_Episode.h@{DB\_Episode.h}!NUM\_BLOCKS\_EPISODE@{NUM\_BLOCKS\_EPISODE}}
+\index{NUM\_BLOCKS\_EPISODE@{NUM\_BLOCKS\_EPISODE}!DB\_Episode.h@{DB\_Episode.h}}
+\doxysubsubsection{\texorpdfstring{NUM\_BLOCKS\_EPISODE}{NUM\_BLOCKS\_EPISODE}}
+{\footnotesize\ttfamily \#define NUM\+\_\+\+BLOCKS\+\_\+\+EPISODE~(200000)}
+
+
+
+Maximum number of blocks in a single episode. 
+
+\Hypertarget{a00005_af34964888be47697d98a6a827f504452}\label{a00005_af34964888be47697d98a6a827f504452} 
+\index{DB\_Episode.h@{DB\_Episode.h}!NUM\_EPISODES@{NUM\_EPISODES}}
+\index{NUM\_EPISODES@{NUM\_EPISODES}!DB\_Episode.h@{DB\_Episode.h}}
+\doxysubsubsection{\texorpdfstring{NUM\_EPISODES}{NUM\_EPISODES}}
+{\footnotesize\ttfamily \#define NUM\+\_\+\+EPISODES~(11)}
+
+
+
+Maximum number of episodes in a single u\+SD card. 
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{a00005_a8ec64ed0774b599aa39b325893f8ebea}\label{a00005_a8ec64ed0774b599aa39b325893f8ebea} 
+\index{DB\_Episode.h@{DB\_Episode.h}!BLOCK\_DATA\_e@{BLOCK\_DATA\_e}}
+\index{BLOCK\_DATA\_e@{BLOCK\_DATA\_e}!DB\_Episode.h@{DB\_Episode.h}}
+\doxysubsubsection{\texorpdfstring{BLOCK\_DATA\_e}{BLOCK\_DATA\_e}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{a00005_a8ec64ed0774b599aa39b325893f8ebea}{BLOCK\+\_\+\+DATA\+\_\+e}}}
+
+
+
+Block types (for auxiliary data) 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eBLOCK\_DATA\_DEFAULT@{eBLOCK\_DATA\_DEFAULT}!DB\_Episode.h@{DB\_Episode.h}}\index{DB\_Episode.h@{DB\_Episode.h}!eBLOCK\_DATA\_DEFAULT@{eBLOCK\_DATA\_DEFAULT}}}\Hypertarget{a00005_a8ec64ed0774b599aa39b325893f8ebeaaa292784651f3fbb4a73b38f28fbc519a}\label{a00005_a8ec64ed0774b599aa39b325893f8ebeaaa292784651f3fbb4a73b38f28fbc519a} 
+e\+BLOCK\+\_\+\+DATA\+\_\+\+DEFAULT&Default data. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eBLOCK\_DATA\_DRD@{eBLOCK\_DATA\_DRD}!DB\_Episode.h@{DB\_Episode.h}}\index{DB\_Episode.h@{DB\_Episode.h}!eBLOCK\_DATA\_DRD@{eBLOCK\_DATA\_DRD}}}\Hypertarget{a00005_a8ec64ed0774b599aa39b325893f8ebeaa2a4ca1f03eb199c279c355e7a58ddb40}\label{a00005_a8ec64ed0774b599aa39b325893f8ebeaa2a4ca1f03eb199c279c355e7a58ddb40} 
+e\+BLOCK\+\_\+\+DATA\+\_\+\+DRD&DRD result. \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{a00005_aa7df144d6752524dc1d8e2603a26b414}\label{a00005_aa7df144d6752524dc1d8e2603a26b414} 
+\index{DB\_Episode.h@{DB\_Episode.h}!ECG\_FORMAT\_e@{ECG\_FORMAT\_e}}
+\index{ECG\_FORMAT\_e@{ECG\_FORMAT\_e}!DB\_Episode.h@{DB\_Episode.h}}
+\doxysubsubsection{\texorpdfstring{ECG\_FORMAT\_e}{ECG\_FORMAT\_e}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{a00005_aa7df144d6752524dc1d8e2603a26b414}{ECG\+\_\+\+FORMAT\+\_\+e}}}
+
+
+
+ECG format. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eECG\_FORMAT\_NONE@{eECG\_FORMAT\_NONE}!DB\_Episode.h@{DB\_Episode.h}}\index{DB\_Episode.h@{DB\_Episode.h}!eECG\_FORMAT\_NONE@{eECG\_FORMAT\_NONE}}}\Hypertarget{a00005_aa7df144d6752524dc1d8e2603a26b414a22fa2a2897deda0e77350c9a254d4102}\label{a00005_aa7df144d6752524dc1d8e2603a26b414a22fa2a2897deda0e77350c9a254d4102} 
+e\+ECG\+\_\+\+FORMAT\+\_\+\+NONE&No ecg. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eECG\_FORMAT\_RAW@{eECG\_FORMAT\_RAW}!DB\_Episode.h@{DB\_Episode.h}}\index{DB\_Episode.h@{DB\_Episode.h}!eECG\_FORMAT\_RAW@{eECG\_FORMAT\_RAW}}}\Hypertarget{a00005_aa7df144d6752524dc1d8e2603a26b414a8d693ec493afc3450d66e0990c814984}\label{a00005_aa7df144d6752524dc1d8e2603a26b414a8d693ec493afc3450d66e0990c814984} 
+e\+ECG\+\_\+\+FORMAT\+\_\+\+RAW&Uncompressed. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eECG\_FORMAT\_SPIHT@{eECG\_FORMAT\_SPIHT}!DB\_Episode.h@{DB\_Episode.h}}\index{DB\_Episode.h@{DB\_Episode.h}!eECG\_FORMAT\_SPIHT@{eECG\_FORMAT\_SPIHT}}}\Hypertarget{a00005_aa7df144d6752524dc1d8e2603a26b414aef0e02ee0a15430854f34ba7c09a14b8}\label{a00005_aa7df144d6752524dc1d8e2603a26b414aef0e02ee0a15430854f34ba7c09a14b8} 
+e\+ECG\+\_\+\+FORMAT\+\_\+\+SPIHT&SPIHT compressed. \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{a00005_ab8fc373ec3a7672c42f21c63e0eec755}\label{a00005_ab8fc373ec3a7672c42f21c63e0eec755} 
+\index{DB\_Episode.h@{DB\_Episode.h}!EPISODE\_STS\_e@{EPISODE\_STS\_e}}
+\index{EPISODE\_STS\_e@{EPISODE\_STS\_e}!DB\_Episode.h@{DB\_Episode.h}}
+\doxysubsubsection{\texorpdfstring{EPISODE\_STS\_e}{EPISODE\_STS\_e}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{a00005_ab8fc373ec3a7672c42f21c63e0eec755}{EPISODE\+\_\+\+STS\+\_\+e}}}
+
+
+
+Episode status. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eEPISODE\_OK@{eEPISODE\_OK}!DB\_Episode.h@{DB\_Episode.h}}\index{DB\_Episode.h@{DB\_Episode.h}!eEPISODE\_OK@{eEPISODE\_OK}}}\Hypertarget{a00005_ab8fc373ec3a7672c42f21c63e0eec755a26a6e89460029bfca163c97edca91603}\label{a00005_ab8fc373ec3a7672c42f21c63e0eec755a26a6e89460029bfca163c97edca91603} 
+e\+EPISODE\+\_\+\+OK&Fine, spare space. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eEPISODE\_GETTING\_FULL@{eEPISODE\_GETTING\_FULL}!DB\_Episode.h@{DB\_Episode.h}}\index{DB\_Episode.h@{DB\_Episode.h}!eEPISODE\_GETTING\_FULL@{eEPISODE\_GETTING\_FULL}}}\Hypertarget{a00005_ab8fc373ec3a7672c42f21c63e0eec755a944a8be0f935add733ed0710eac697d1}\label{a00005_ab8fc373ec3a7672c42f21c63e0eec755a944a8be0f935add733ed0710eac697d1} 
+e\+EPISODE\+\_\+\+GETTING\+\_\+\+FULL&Running out of space. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eEPISODE\_FULL@{eEPISODE\_FULL}!DB\_Episode.h@{DB\_Episode.h}}\index{DB\_Episode.h@{DB\_Episode.h}!eEPISODE\_FULL@{eEPISODE\_FULL}}}\Hypertarget{a00005_ab8fc373ec3a7672c42f21c63e0eec755a3e90b78a895b65e2afb6b4144cf071bc}\label{a00005_ab8fc373ec3a7672c42f21c63e0eec755a3e90b78a895b65e2afb6b4144cf071bc} 
+e\+EPISODE\+\_\+\+FULL&Out of space. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{a00005_aae2ed6b9070e9d0d148ac200c57f58fa}\label{a00005_aae2ed6b9070e9d0d148ac200c57f58fa} 
+\index{DB\_Episode.h@{DB\_Episode.h}!Check\_Episode\_Present@{Check\_Episode\_Present}}
+\index{Check\_Episode\_Present@{Check\_Episode\_Present}!DB\_Episode.h@{DB\_Episode.h}}
+\doxysubsubsection{\texorpdfstring{Check\_Episode\_Present()}{Check\_Episode\_Present()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} Check\+\_\+\+Episode\+\_\+\+Present (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00137_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+checks if a episode is present in the folder 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Name} & pointer to a filename to raster\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if present, FALSE if not 
+\end{DoxyReturn}
+\Hypertarget{a00005_a53a5200149434beea2a6ae3d2ade3f35}\label{a00005_a53a5200149434beea2a6ae3d2ade3f35} 
+\index{DB\_Episode.h@{DB\_Episode.h}!COMPILE\_ASSERT@{COMPILE\_ASSERT}}
+\index{COMPILE\_ASSERT@{COMPILE\_ASSERT}!DB\_Episode.h@{DB\_Episode.h}}
+\doxysubsubsection{\texorpdfstring{COMPILE\_ASSERT()}{COMPILE\_ASSERT()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily COMPILE\+\_\+\+ASSERT (\begin{DoxyParamCaption}\item[{sizeof(\mbox{\hyperlink{a00266}{DB\+\_\+\+DATA\+\_\+\+DEFAULT\+\_\+t}})}]{ = {\ttfamily =\mbox{\hyperlink{a00005_a9442218a0ec67bfa69e27c64b232676c}{DATA\+\_\+\+AUX\+\_\+\+SIZE}}} }\end{DoxyParamCaption})}
+
+\Hypertarget{a00005_a926735f68055d642e0dd51776e2f9fee}\label{a00005_a926735f68055d642e0dd51776e2f9fee} 
+\index{DB\_Episode.h@{DB\_Episode.h}!COMPILE\_ASSERT@{COMPILE\_ASSERT}}
+\index{COMPILE\_ASSERT@{COMPILE\_ASSERT}!DB\_Episode.h@{DB\_Episode.h}}
+\doxysubsubsection{\texorpdfstring{COMPILE\_ASSERT()}{COMPILE\_ASSERT()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily COMPILE\+\_\+\+ASSERT (\begin{DoxyParamCaption}\item[{sizeof(\mbox{\hyperlink{a00005_ab0daf7b0515dcf910dd203ce39690262}{DB\+\_\+\+DATA\+\_\+\+DRD\+\_\+t}})}]{ = {\ttfamily =48} }\end{DoxyParamCaption})}
+
+\Hypertarget{a00005_a1f23c83f6b60da4b7233d45fff3b97a9}\label{a00005_a1f23c83f6b60da4b7233d45fff3b97a9} 
+\index{DB\_Episode.h@{DB\_Episode.h}!COMPILE\_ASSERT@{COMPILE\_ASSERT}}
+\index{COMPILE\_ASSERT@{COMPILE\_ASSERT}!DB\_Episode.h@{DB\_Episode.h}}
+\doxysubsubsection{\texorpdfstring{COMPILE\_ASSERT()}{COMPILE\_ASSERT()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily COMPILE\+\_\+\+ASSERT (\begin{DoxyParamCaption}\item[{sizeof(\mbox{\hyperlink{a00270}{DB\+\_\+\+EPISODE\+\_\+\+BLOCK\+\_\+t}})}]{ = {\ttfamily =\mbox{\hyperlink{a00005_a617e579d27d22e2133bc6f0a5f7ed4e8}{EPISODE\+\_\+\+BLOCK\+\_\+\+SZ}}} }\end{DoxyParamCaption})}
+
+\Hypertarget{a00005_aeab7d8f7e1373bfc139d706f0bdbd614}\label{a00005_aeab7d8f7e1373bfc139d706f0bdbd614} 
+\index{DB\_Episode.h@{DB\_Episode.h}!COMPILE\_ASSERT@{COMPILE\_ASSERT}}
+\index{COMPILE\_ASSERT@{COMPILE\_ASSERT}!DB\_Episode.h@{DB\_Episode.h}}
+\doxysubsubsection{\texorpdfstring{COMPILE\_ASSERT()}{COMPILE\_ASSERT()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily COMPILE\+\_\+\+ASSERT (\begin{DoxyParamCaption}\item[{sizeof(\mbox{\hyperlink{a00262}{DB\+\_\+\+EPISODE\+\_\+\+HEADER\+\_\+t}})}]{ = {\ttfamily =\mbox{\hyperlink{a00005_a617e579d27d22e2133bc6f0a5f7ed4e8}{EPISODE\+\_\+\+BLOCK\+\_\+\+SZ}}} }\end{DoxyParamCaption})}
+
+\Hypertarget{a00005_ad211c99edc4c2cf00a79de123ff7ad8e}\label{a00005_ad211c99edc4c2cf00a79de123ff7ad8e} 
+\index{DB\_Episode.h@{DB\_Episode.h}!DB\_Episode\_Close@{DB\_Episode\_Close}}
+\index{DB\_Episode\_Close@{DB\_Episode\_Close}!DB\_Episode.h@{DB\_Episode.h}}
+\doxysubsubsection{\texorpdfstring{DB\_Episode\_Close()}{DB\_Episode\_Close()}}
+{\footnotesize\ttfamily void DB\+\_\+\+Episode\+\_\+\+Close (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}}}]{patient\+\_\+conn }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Close episode file. 
+
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\Hypertarget{a00005_ae56ae470098d9e90ed6cb233c89e7d8d}\label{a00005_ae56ae470098d9e90ed6cb233c89e7d8d} 
+\index{DB\_Episode.h@{DB\_Episode.h}!DB\_Episode\_Create@{DB\_Episode\_Create}}
+\index{DB\_Episode\_Create@{DB\_Episode\_Create}!DB\_Episode.h@{DB\_Episode.h}}
+\doxysubsubsection{\texorpdfstring{DB\_Episode\_Create()}{DB\_Episode\_Create()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} DB\+\_\+\+Episode\+\_\+\+Create (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Creates a new episode file. 
+
+\begin{DoxyReturn}{Returns}
+operation result (true or false) 
+\end{DoxyReturn}
+\Hypertarget{a00005_abfccf54135995b02c5adb82e5135925f}\label{a00005_abfccf54135995b02c5adb82e5135925f} 
+\index{DB\_Episode.h@{DB\_Episode.h}!DB\_Episode\_Delete@{DB\_Episode\_Delete}}
+\index{DB\_Episode\_Delete@{DB\_Episode\_Delete}!DB\_Episode.h@{DB\_Episode.h}}
+\doxysubsubsection{\texorpdfstring{DB\_Episode\_Delete()}{DB\_Episode\_Delete()}}
+{\footnotesize\ttfamily void DB\+\_\+\+Episode\+\_\+\+Delete (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00137_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+deletes a episode 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Name} & pointer to a filename\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\Hypertarget{a00005_a65dd6d370a11890d74934543b3a33fb9}\label{a00005_a65dd6d370a11890d74934543b3a33fb9} 
+\index{DB\_Episode.h@{DB\_Episode.h}!DB\_Episode\_Get\_Current\_Filename@{DB\_Episode\_Get\_Current\_Filename}}
+\index{DB\_Episode\_Get\_Current\_Filename@{DB\_Episode\_Get\_Current\_Filename}!DB\_Episode.h@{DB\_Episode.h}}
+\doxysubsubsection{\texorpdfstring{DB\_Episode\_Get\_Current\_Filename()}{DB\_Episode\_Get\_Current\_Filename()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \texorpdfstring{$\ast$}{*} DB\+\_\+\+Episode\+\_\+\+Get\+\_\+\+Current\+\_\+\+Filename (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Returns the last Episode name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to a test filename 
+\end{DoxyReturn}
+\Hypertarget{a00005_ac9e8a02838035c248ba503b677bff241}\label{a00005_ac9e8a02838035c248ba503b677bff241} 
+\index{DB\_Episode.h@{DB\_Episode.h}!DB\_Episode\_Resample@{DB\_Episode\_Resample}}
+\index{DB\_Episode\_Resample@{DB\_Episode\_Resample}!DB\_Episode.h@{DB\_Episode.h}}
+\doxysubsubsection{\texorpdfstring{DB\_Episode\_Resample()}{DB\_Episode\_Resample()}}
+{\footnotesize\ttfamily void DB\+\_\+\+Episode\+\_\+\+Resample (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00137_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Resamples an episode from 5\+:1. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Name} & pointer to the name of the episode to resample\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\Hypertarget{a00005_a5d56dbd9be0eebd29dccd8fd8534f189}\label{a00005_a5d56dbd9be0eebd29dccd8fd8534f189} 
+\index{DB\_Episode.h@{DB\_Episode.h}!DB\_Episode\_Set\_Current\_Filename@{DB\_Episode\_Set\_Current\_Filename}}
+\index{DB\_Episode\_Set\_Current\_Filename@{DB\_Episode\_Set\_Current\_Filename}!DB\_Episode.h@{DB\_Episode.h}}
+\doxysubsubsection{\texorpdfstring{DB\_Episode\_Set\_Current\_Filename()}{DB\_Episode\_Set\_Current\_Filename()}}
+{\footnotesize\ttfamily void DB\+\_\+\+Episode\+\_\+\+Set\+\_\+\+Current\+\_\+\+Filename (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00137_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Sets an episode filename (for sending WEE files from Test) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\Hypertarget{a00005_ad9d862bce53be58f17e8d75fa3e8b15f}\label{a00005_ad9d862bce53be58f17e8d75fa3e8b15f} 
+\index{DB\_Episode.h@{DB\_Episode.h}!DB\_Episode\_Set\_Event@{DB\_Episode\_Set\_Event}}
+\index{DB\_Episode\_Set\_Event@{DB\_Episode\_Set\_Event}!DB\_Episode.h@{DB\_Episode.h}}
+\doxysubsubsection{\texorpdfstring{DB\_Episode\_Set\_Event()}{DB\_Episode\_Set\_Event()}}
+{\footnotesize\ttfamily void DB\+\_\+\+Episode\+\_\+\+Set\+\_\+\+Event (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00020_a8a69d5479d2e704ca706ac22f660b3be}{REG\+\_\+\+EVENTS\+\_\+e}}}]{event\+\_\+id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Writes an event in the episode block. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event\+\_\+id} & \mbox{[}in\mbox{]} event identifier to register\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\Hypertarget{a00005_a9c7992d33427de65e7c491a76d976754}\label{a00005_a9c7992d33427de65e7c491a76d976754} 
+\index{DB\_Episode.h@{DB\_Episode.h}!DB\_Episode\_Write@{DB\_Episode\_Write}}
+\index{DB\_Episode\_Write@{DB\_Episode\_Write}!DB\_Episode.h@{DB\_Episode.h}}
+\doxysubsubsection{\texorpdfstring{DB\_Episode\_Write()}{DB\_Episode\_Write()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} DB\+\_\+\+Episode\+\_\+\+Write (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Collects the episode block data and write to the episode file. This way, the write sizes are multiple of cluster sizes, thus achieving max performance. 
+
+\begin{DoxyReturn}{Returns}
+operation result 
+\end{DoxyReturn}
+\Hypertarget{a00005_a30c87ad6d4062ea23617671673984c64}\label{a00005_a30c87ad6d4062ea23617671673984c64} 
+\index{DB\_Episode.h@{DB\_Episode.h}!DB\_Is\_Episode\_Sent@{DB\_Is\_Episode\_Sent}}
+\index{DB\_Is\_Episode\_Sent@{DB\_Is\_Episode\_Sent}!DB\_Episode.h@{DB\_Episode.h}}
+\doxysubsubsection{\texorpdfstring{DB\_Is\_Episode\_Sent()}{DB\_Is\_Episode\_Sent()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} DB\+\_\+\+Is\+\_\+\+Episode\+\_\+\+Sent (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+checks if a episode has been send to the external server 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if sent, FALSE if not 
+\end{DoxyReturn}

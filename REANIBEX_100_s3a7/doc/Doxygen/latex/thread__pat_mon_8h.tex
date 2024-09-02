@@ -1,0 +1,125 @@
+\doxysection{C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/synergy\+\_\+gen/thread\+\_\+pat\+Mon.h File Reference}
+\hypertarget{thread__pat_mon_8h}{}\label{thread__pat_mon_8h}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/synergy\_gen/thread\_patMon.h@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/synergy\_gen/thread\_patMon.h}}
+{\ttfamily \#include "{}bsp\+\_\+api.\+h"{}}\newline
+{\ttfamily \#include "{}tx\+\_\+api.\+h"{}}\newline
+{\ttfamily \#include "{}hal\+\_\+data.\+h"{}}\newline
+{\ttfamily \#include "{}r\+\_\+icu.\+h"{}}\newline
+{\ttfamily \#include "{}r\+\_\+external\+\_\+irq\+\_\+api.\+h"{}}\newline
+{\ttfamily \#include "{}r\+\_\+dac.\+h"{}}\newline
+{\ttfamily \#include "{}r\+\_\+dac\+\_\+api.\+h"{}}\newline
+{\ttfamily \#include "{}sf\+\_\+spi.\+h"{}}\newline
+{\ttfamily \#include "{}sf\+\_\+spi\+\_\+api.\+h"{}}\newline
+Include dependency graph for thread\+\_\+pat\+Mon.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__pat_mon_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__pat_mon_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{thread__pat_mon_8h_acba6891b85ed8b43afb29b84f25a1162}{thread\+\_\+pat\+Mon\+\_\+entry}} (void)
+\begin{DoxyCompactList}\small\item\em A description of the function. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{thread__pat_mon_8h_ac4ee9c57661e2fe83c4532e88ba5beae}{g\+\_\+irq8\+\_\+callback}} (external\+\_\+irq\+\_\+callback\+\_\+args\+\_\+t \texorpdfstring{$\ast$}{*}p\+\_\+args)
+\begin{DoxyCompactList}\small\item\em IRQ8 interrupt callback process. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const external\+\_\+irq\+\_\+instance\+\_\+t \mbox{\hyperlink{thread__pat_mon_8h_a35f833e66fc266dfd54a90bb8f952916}{g\+\_\+external\+\_\+irq}}
+\item 
+const dac\+\_\+instance\+\_\+t \mbox{\hyperlink{thread__pat_mon_8h_ade68b76b76a90f22b7562549511fff45}{g\+\_\+dac0}}
+\item 
+const sf\+\_\+spi\+\_\+instance\+\_\+t \mbox{\hyperlink{thread__pat_mon_8h_a74fcce906e07d60ed79947d334c723c5}{spi\+\_\+patmon}}
+\item 
+TX\+\_\+\+EVENT\+\_\+\+FLAGS\+\_\+\+GROUP \mbox{\hyperlink{thread__pat_mon_8h_acd82f8b72ed5ce773c71fe9c008a6d0d}{g\+\_\+events\+\_\+\+Pat\+Mon}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{thread__pat_mon_8h_ac4ee9c57661e2fe83c4532e88ba5beae}\label{thread__pat_mon_8h_ac4ee9c57661e2fe83c4532e88ba5beae} 
+\index{thread\_patMon.h@{thread\_patMon.h}!g\_irq8\_callback@{g\_irq8\_callback}}
+\index{g\_irq8\_callback@{g\_irq8\_callback}!thread\_patMon.h@{thread\_patMon.h}}
+\doxysubsubsection{\texorpdfstring{g\_irq8\_callback()}{g\_irq8\_callback()}}
+{\footnotesize\ttfamily void g\+\_\+irq8\+\_\+callback (\begin{DoxyParamCaption}\item[{external\+\_\+irq\+\_\+callback\+\_\+args\+\_\+t \texorpdfstring{$\ast$}{*}}]{p\+\_\+args }\end{DoxyParamCaption})}
+
+
+
+IRQ8 interrupt callback process. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em IRQ} & identifier\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\Hypertarget{thread__pat_mon_8h_acba6891b85ed8b43afb29b84f25a1162}\label{thread__pat_mon_8h_acba6891b85ed8b43afb29b84f25a1162} 
+\index{thread\_patMon.h@{thread\_patMon.h}!thread\_patMon\_entry@{thread\_patMon\_entry}}
+\index{thread\_patMon\_entry@{thread\_patMon\_entry}!thread\_patMon.h@{thread\_patMon.h}}
+\doxysubsubsection{\texorpdfstring{thread\_patMon\_entry()}{thread\_patMon\_entry()}}
+{\footnotesize\ttfamily void thread\+\_\+pat\+Mon\+\_\+entry (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+A description of the function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000023}{Todo}}]pending things to be done\end{DoxyRefDesc}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__pat_mon_8h_acba6891b85ed8b43afb29b84f25a1162_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__pat_mon_8h_acba6891b85ed8b43afb29b84f25a1162_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{thread__pat_mon_8h_ade68b76b76a90f22b7562549511fff45}\label{thread__pat_mon_8h_ade68b76b76a90f22b7562549511fff45} 
+\index{thread\_patMon.h@{thread\_patMon.h}!g\_dac0@{g\_dac0}}
+\index{g\_dac0@{g\_dac0}!thread\_patMon.h@{thread\_patMon.h}}
+\doxysubsubsection{\texorpdfstring{g\_dac0}{g\_dac0}}
+{\footnotesize\ttfamily const dac\+\_\+instance\+\_\+t g\+\_\+dac0\hspace{0.3cm}{\ttfamily [extern]}}
+
+DAC on DAC Instance. \Hypertarget{thread__pat_mon_8h_acd82f8b72ed5ce773c71fe9c008a6d0d}\label{thread__pat_mon_8h_acd82f8b72ed5ce773c71fe9c008a6d0d} 
+\index{thread\_patMon.h@{thread\_patMon.h}!g\_events\_PatMon@{g\_events\_PatMon}}
+\index{g\_events\_PatMon@{g\_events\_PatMon}!thread\_patMon.h@{thread\_patMon.h}}
+\doxysubsubsection{\texorpdfstring{g\_events\_PatMon}{g\_events\_PatMon}}
+{\footnotesize\ttfamily TX\+\_\+\+EVENT\+\_\+\+FLAGS\+\_\+\+GROUP g\+\_\+events\+\_\+\+Pat\+Mon\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{thread__pat_mon_8h_a35f833e66fc266dfd54a90bb8f952916}\label{thread__pat_mon_8h_a35f833e66fc266dfd54a90bb8f952916} 
+\index{thread\_patMon.h@{thread\_patMon.h}!g\_external\_irq@{g\_external\_irq}}
+\index{g\_external\_irq@{g\_external\_irq}!thread\_patMon.h@{thread\_patMon.h}}
+\doxysubsubsection{\texorpdfstring{g\_external\_irq}{g\_external\_irq}}
+{\footnotesize\ttfamily const external\+\_\+irq\+\_\+instance\+\_\+t g\+\_\+external\+\_\+irq\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{thread__pat_mon_8h_a74fcce906e07d60ed79947d334c723c5}\label{thread__pat_mon_8h_a74fcce906e07d60ed79947d334c723c5} 
+\index{thread\_patMon.h@{thread\_patMon.h}!spi\_patmon@{spi\_patmon}}
+\index{spi\_patmon@{spi\_patmon}!thread\_patMon.h@{thread\_patMon.h}}
+\doxysubsubsection{\texorpdfstring{spi\_patmon}{spi\_patmon}}
+{\footnotesize\ttfamily const sf\+\_\+spi\+\_\+instance\+\_\+t spi\+\_\+patmon\hspace{0.3cm}{\ttfamily [extern]}}
+

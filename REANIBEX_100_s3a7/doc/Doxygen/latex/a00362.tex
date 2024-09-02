@@ -1,0 +1,193 @@
+\doxysection{NFC\+\_\+\+DEVICE\+\_\+\+COM\+\_\+t Struct Reference}
+\hypertarget{a00362}{}\label{a00362}\index{NFC\_DEVICE\_COM\_t@{NFC\_DEVICE\_COM\_t}}
+
+
+Device communication credentials.  
+
+
+
+
+{\ttfamily \#include $<$device\+\_\+init.\+h$>$}
+
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{a00362_ae036cd20b84b73739d31d5ea8617eb56}{wpa\+\_\+eap\+\_\+enabled}}
+\begin{DoxyCompactList}\small\item\em Use to define connection mode (0-\/Open; 1-\/Password;2-\/TLS;3-\/PEAP) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{a00362_a78522efae97835d1b24d26b3927c24d9}{advs}}
+\begin{DoxyCompactList}\small\item\em Advanced settings (0-\/No;1-\/Only IP;2-\/Only DNS;3-\/IP + DNS) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{a00362_a7f757822c8b86627ec2f72a74afc4786}{reserved\+\_\+2}} \mbox{[}6\mbox{]}
+\begin{DoxyCompactList}\small\item\em \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} Reserved for future use \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{a00362_a8418d9bd966d2cf17d8c0d29a900149d}{wlan\+\_\+ssid}} \mbox{[}32\mbox{]}
+\begin{DoxyCompactList}\small\item\em Wifi WLAN SSID (Net name) MAX\+: 32 characters. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{a00362_ac11198ea39bf73cda469b95c0d09b27e}{wlan\+\_\+pass}} \mbox{[}32\mbox{]}
+\begin{DoxyCompactList}\small\item\em Wifi WLAN Passkey MAX\+: 32 characters. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{a00362_abad272daa906c642868eb3dd1eae881d}{router\+\_\+pass\+\_\+key}} \mbox{[}32\mbox{]}
+\begin{DoxyCompactList}\small\item\em Wifi WLAN Router Passkey MAX\+: 32 characters. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{a00362_a01309c303f94ec59e6ba0a89a165ee27}{eap\+\_\+cnf}} \mbox{[}32\mbox{]}
+\begin{DoxyCompactList}\small\item\em Wifi WLAN EAP Identity Configuration MAX\+: 32 characters. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{a00362_ae46f7420209a6f26c41d032689c47721}{eap\+\_\+pass}} \mbox{[}32\mbox{]}
+\begin{DoxyCompactList}\small\item\em Wifi WLAN EAP Password Configuration MAX\+: 32 characters. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{a00362_a8aaddb22ac3457d1ced1f9ef617904d7}{ip}} \mbox{[}16\mbox{]}
+\begin{DoxyCompactList}\small\item\em Estatic IP address. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{a00362_a60336d64ea3da5b6c34506e8bd739f33}{mask}} \mbox{[}16\mbox{]}
+\begin{DoxyCompactList}\small\item\em Subnet mask. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{a00362_ac532103c25e87b1437e1f2f8485be28a}{gateway}} \mbox{[}16\mbox{]}
+\begin{DoxyCompactList}\small\item\em Gateway. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{a00362_a3ccd35c7bd121df39776239a05f2344a}{pdns}} \mbox{[}16\mbox{]}
+\begin{DoxyCompactList}\small\item\em Primary DNS. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{a00362_a5d9dd267e4098b5f57cb0b78f5edb232}{sdns}} \mbox{[}16\mbox{]}
+\begin{DoxyCompactList}\small\item\em Secondary DNS. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{a00362_abfa507f5a46524356003ef023b65f403}{wifi\+\_\+dat\+\_\+key}} \mbox{[}32\mbox{]}
+\begin{DoxyCompactList}\small\item\em Wifi data validation key. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Device communication credentials. 
+
+\doxysubsection{Field Documentation}
+\Hypertarget{a00362_a78522efae97835d1b24d26b3927c24d9}\label{a00362_a78522efae97835d1b24d26b3927c24d9} 
+\index{NFC\_DEVICE\_COM\_t@{NFC\_DEVICE\_COM\_t}!advs@{advs}}
+\index{advs@{advs}!NFC\_DEVICE\_COM\_t@{NFC\_DEVICE\_COM\_t}}
+\doxysubsubsection{\texorpdfstring{advs}{advs}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} NFC\+\_\+\+DEVICE\+\_\+\+COM\+\_\+t\+::advs}
+
+
+
+Advanced settings (0-\/No;1-\/Only IP;2-\/Only DNS;3-\/IP + DNS) 
+
+\Hypertarget{a00362_a01309c303f94ec59e6ba0a89a165ee27}\label{a00362_a01309c303f94ec59e6ba0a89a165ee27} 
+\index{NFC\_DEVICE\_COM\_t@{NFC\_DEVICE\_COM\_t}!eap\_cnf@{eap\_cnf}}
+\index{eap\_cnf@{eap\_cnf}!NFC\_DEVICE\_COM\_t@{NFC\_DEVICE\_COM\_t}}
+\doxysubsubsection{\texorpdfstring{eap\_cnf}{eap\_cnf}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} NFC\+\_\+\+DEVICE\+\_\+\+COM\+\_\+t\+::eap\+\_\+cnf\mbox{[}32\mbox{]}}
+
+
+
+Wifi WLAN EAP Identity Configuration MAX\+: 32 characters. 
+
+\Hypertarget{a00362_ae46f7420209a6f26c41d032689c47721}\label{a00362_ae46f7420209a6f26c41d032689c47721} 
+\index{NFC\_DEVICE\_COM\_t@{NFC\_DEVICE\_COM\_t}!eap\_pass@{eap\_pass}}
+\index{eap\_pass@{eap\_pass}!NFC\_DEVICE\_COM\_t@{NFC\_DEVICE\_COM\_t}}
+\doxysubsubsection{\texorpdfstring{eap\_pass}{eap\_pass}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} NFC\+\_\+\+DEVICE\+\_\+\+COM\+\_\+t\+::eap\+\_\+pass\mbox{[}32\mbox{]}}
+
+
+
+Wifi WLAN EAP Password Configuration MAX\+: 32 characters. 
+
+\Hypertarget{a00362_ac532103c25e87b1437e1f2f8485be28a}\label{a00362_ac532103c25e87b1437e1f2f8485be28a} 
+\index{NFC\_DEVICE\_COM\_t@{NFC\_DEVICE\_COM\_t}!gateway@{gateway}}
+\index{gateway@{gateway}!NFC\_DEVICE\_COM\_t@{NFC\_DEVICE\_COM\_t}}
+\doxysubsubsection{\texorpdfstring{gateway}{gateway}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} NFC\+\_\+\+DEVICE\+\_\+\+COM\+\_\+t\+::gateway\mbox{[}16\mbox{]}}
+
+
+
+Gateway. 
+
+\Hypertarget{a00362_a8aaddb22ac3457d1ced1f9ef617904d7}\label{a00362_a8aaddb22ac3457d1ced1f9ef617904d7} 
+\index{NFC\_DEVICE\_COM\_t@{NFC\_DEVICE\_COM\_t}!ip@{ip}}
+\index{ip@{ip}!NFC\_DEVICE\_COM\_t@{NFC\_DEVICE\_COM\_t}}
+\doxysubsubsection{\texorpdfstring{ip}{ip}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} NFC\+\_\+\+DEVICE\+\_\+\+COM\+\_\+t\+::ip\mbox{[}16\mbox{]}}
+
+
+
+Estatic IP address. 
+
+\Hypertarget{a00362_a60336d64ea3da5b6c34506e8bd739f33}\label{a00362_a60336d64ea3da5b6c34506e8bd739f33} 
+\index{NFC\_DEVICE\_COM\_t@{NFC\_DEVICE\_COM\_t}!mask@{mask}}
+\index{mask@{mask}!NFC\_DEVICE\_COM\_t@{NFC\_DEVICE\_COM\_t}}
+\doxysubsubsection{\texorpdfstring{mask}{mask}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} NFC\+\_\+\+DEVICE\+\_\+\+COM\+\_\+t\+::mask\mbox{[}16\mbox{]}}
+
+
+
+Subnet mask. 
+
+\Hypertarget{a00362_a3ccd35c7bd121df39776239a05f2344a}\label{a00362_a3ccd35c7bd121df39776239a05f2344a} 
+\index{NFC\_DEVICE\_COM\_t@{NFC\_DEVICE\_COM\_t}!pdns@{pdns}}
+\index{pdns@{pdns}!NFC\_DEVICE\_COM\_t@{NFC\_DEVICE\_COM\_t}}
+\doxysubsubsection{\texorpdfstring{pdns}{pdns}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} NFC\+\_\+\+DEVICE\+\_\+\+COM\+\_\+t\+::pdns\mbox{[}16\mbox{]}}
+
+
+
+Primary DNS. 
+
+\Hypertarget{a00362_a7f757822c8b86627ec2f72a74afc4786}\label{a00362_a7f757822c8b86627ec2f72a74afc4786} 
+\index{NFC\_DEVICE\_COM\_t@{NFC\_DEVICE\_COM\_t}!reserved\_2@{reserved\_2}}
+\index{reserved\_2@{reserved\_2}!NFC\_DEVICE\_COM\_t@{NFC\_DEVICE\_COM\_t}}
+\doxysubsubsection{\texorpdfstring{reserved\_2}{reserved\_2}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} NFC\+\_\+\+DEVICE\+\_\+\+COM\+\_\+t\+::reserved\+\_\+2\mbox{[}6\mbox{]}}
+
+
+
+\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} Reserved for future use 
+
+\Hypertarget{a00362_abad272daa906c642868eb3dd1eae881d}\label{a00362_abad272daa906c642868eb3dd1eae881d} 
+\index{NFC\_DEVICE\_COM\_t@{NFC\_DEVICE\_COM\_t}!router\_pass\_key@{router\_pass\_key}}
+\index{router\_pass\_key@{router\_pass\_key}!NFC\_DEVICE\_COM\_t@{NFC\_DEVICE\_COM\_t}}
+\doxysubsubsection{\texorpdfstring{router\_pass\_key}{router\_pass\_key}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} NFC\+\_\+\+DEVICE\+\_\+\+COM\+\_\+t\+::router\+\_\+pass\+\_\+key\mbox{[}32\mbox{]}}
+
+
+
+Wifi WLAN Router Passkey MAX\+: 32 characters. 
+
+\Hypertarget{a00362_a5d9dd267e4098b5f57cb0b78f5edb232}\label{a00362_a5d9dd267e4098b5f57cb0b78f5edb232} 
+\index{NFC\_DEVICE\_COM\_t@{NFC\_DEVICE\_COM\_t}!sdns@{sdns}}
+\index{sdns@{sdns}!NFC\_DEVICE\_COM\_t@{NFC\_DEVICE\_COM\_t}}
+\doxysubsubsection{\texorpdfstring{sdns}{sdns}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} NFC\+\_\+\+DEVICE\+\_\+\+COM\+\_\+t\+::sdns\mbox{[}16\mbox{]}}
+
+
+
+Secondary DNS. 
+
+\Hypertarget{a00362_abfa507f5a46524356003ef023b65f403}\label{a00362_abfa507f5a46524356003ef023b65f403} 
+\index{NFC\_DEVICE\_COM\_t@{NFC\_DEVICE\_COM\_t}!wifi\_dat\_key@{wifi\_dat\_key}}
+\index{wifi\_dat\_key@{wifi\_dat\_key}!NFC\_DEVICE\_COM\_t@{NFC\_DEVICE\_COM\_t}}
+\doxysubsubsection{\texorpdfstring{wifi\_dat\_key}{wifi\_dat\_key}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} NFC\+\_\+\+DEVICE\+\_\+\+COM\+\_\+t\+::wifi\+\_\+dat\+\_\+key\mbox{[}32\mbox{]}}
+
+
+
+Wifi data validation key. 
+
+\Hypertarget{a00362_ac11198ea39bf73cda469b95c0d09b27e}\label{a00362_ac11198ea39bf73cda469b95c0d09b27e} 
+\index{NFC\_DEVICE\_COM\_t@{NFC\_DEVICE\_COM\_t}!wlan\_pass@{wlan\_pass}}
+\index{wlan\_pass@{wlan\_pass}!NFC\_DEVICE\_COM\_t@{NFC\_DEVICE\_COM\_t}}
+\doxysubsubsection{\texorpdfstring{wlan\_pass}{wlan\_pass}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} NFC\+\_\+\+DEVICE\+\_\+\+COM\+\_\+t\+::wlan\+\_\+pass\mbox{[}32\mbox{]}}
+
+
+
+Wifi WLAN Passkey MAX\+: 32 characters. 
+
+\Hypertarget{a00362_a8418d9bd966d2cf17d8c0d29a900149d}\label{a00362_a8418d9bd966d2cf17d8c0d29a900149d} 
+\index{NFC\_DEVICE\_COM\_t@{NFC\_DEVICE\_COM\_t}!wlan\_ssid@{wlan\_ssid}}
+\index{wlan\_ssid@{wlan\_ssid}!NFC\_DEVICE\_COM\_t@{NFC\_DEVICE\_COM\_t}}
+\doxysubsubsection{\texorpdfstring{wlan\_ssid}{wlan\_ssid}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} NFC\+\_\+\+DEVICE\+\_\+\+COM\+\_\+t\+::wlan\+\_\+ssid\mbox{[}32\mbox{]}}
+
+
+
+Wifi WLAN SSID (Net name) MAX\+: 32 characters. 
+
+\Hypertarget{a00362_ae036cd20b84b73739d31d5ea8617eb56}\label{a00362_ae036cd20b84b73739d31d5ea8617eb56} 
+\index{NFC\_DEVICE\_COM\_t@{NFC\_DEVICE\_COM\_t}!wpa\_eap\_enabled@{wpa\_eap\_enabled}}
+\index{wpa\_eap\_enabled@{wpa\_eap\_enabled}!NFC\_DEVICE\_COM\_t@{NFC\_DEVICE\_COM\_t}}
+\doxysubsubsection{\texorpdfstring{wpa\_eap\_enabled}{wpa\_eap\_enabled}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} NFC\+\_\+\+DEVICE\+\_\+\+COM\+\_\+t\+::wpa\+\_\+eap\+\_\+enabled}
+
+
+
+Use to define connection mode (0-\/Open; 1-\/Password;2-\/TLS;3-\/PEAP) 
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\mbox{\hyperlink{a00017}{device\+\_\+init.\+h}}\end{DoxyCompactItemize}

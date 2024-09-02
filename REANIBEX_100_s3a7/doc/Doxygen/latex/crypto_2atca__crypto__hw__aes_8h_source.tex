@@ -1,0 +1,64 @@
+\doxysection{atca\+\_\+crypto\+\_\+hw\+\_\+aes.\+h}
+\hypertarget{crypto_2atca__crypto__hw__aes_8h_source}{}\label{crypto_2atca__crypto__hw__aes_8h_source}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/SCE/crypto/atca\_crypto\_hw\_aes.h@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/SCE/crypto/atca\_crypto\_hw\_aes.h}}
+\mbox{\hyperlink{crypto_2atca__crypto__hw__aes_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#ifndef\ ATCA\_CRYPTO\_HW\_AES\_H}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#define\ ATCA\_CRYPTO\_HW\_AES\_H}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{cryptoauthlib_8h}{cryptoauthlib.h}}"{}}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structatca__aes__cbc__ctx}{atca\_aes\_cbc\_ctx}}}
+\DoxyCodeLine{00034\ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{structatca__device}{ATCADevice}}\ \mbox{\hyperlink{structatca__aes__cbc__ctx_a3bb9a00ddef406a68fc49eaed0af462a}{device}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \mbox{\hyperlink{structatca__aes__cbc__ctx_adf0672e464635e07c75c99eac9a5171e}{key\_id}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \mbox{\hyperlink{structatca__aes__cbc__ctx_ade3fefdae1ae69edfb7ffcd5ebf91d1b}{key\_block}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \mbox{\hyperlink{structatca__aes__cbc__ctx_a8a675314201770ad3eb6b5051deab4d0}{ciphertext}}[\mbox{\hyperlink{cryptoauthlib_8h_a71e52612e6d56f7412a113fcc4fb57d4}{ATCA\_AES128\_BLOCK\_SIZE}}];\ }
+\DoxyCodeLine{00039\ \}\ \mbox{\hyperlink{atca__crypto__hw__aes_8h_a927afea55b7a5011e14795d735b47ad7}{atca\_aes\_cbc\_ctx\_t}};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structatca__aes__cmac__ctx}{atca\_aes\_cmac\_ctx}}}
+\DoxyCodeLine{00043\ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{structatca__aes__cbc__ctx}{atca\_aes\_cbc\_ctx\_t}}\ \mbox{\hyperlink{structatca__aes__cmac__ctx_ae147782ddf6facdecee430f7ca331c79}{cbc\_ctx}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structatca__aes__cmac__ctx_ada020bc6157d385dd66b4bfb3e2fdaaf}{block\_size}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structatca__aes__cmac__ctx_af0fd29d41df7ee738085d29356e4dfd3}{block}}[\mbox{\hyperlink{cryptoauthlib_8h_a71e52612e6d56f7412a113fcc4fb57d4}{ATCA\_AES128\_BLOCK\_SIZE}}];\ }
+\DoxyCodeLine{00047\ \}\ \mbox{\hyperlink{atca__crypto__hw__aes_8h_a71a000f89238de0205da742995a0cb34}{atca\_aes\_cmac\_ctx\_t}};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structatca__aes__ctr__ctx}{atca\_aes\_ctr\_ctx}}}
+\DoxyCodeLine{00051\ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \mbox{\hyperlink{structatca__device}{ATCADevice}}\ \mbox{\hyperlink{structatca__aes__ctr__ctx_abb6d14ff135d1b4169684a90a29d6971}{device}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00053\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \mbox{\hyperlink{structatca__aes__ctr__ctx_adc650c5be609220bb35f5e1d131a1710}{key\_id}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00054\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \mbox{\hyperlink{structatca__aes__ctr__ctx_a6ca9b9a80591e65ea2ddf80e7bc7edb1}{key\_block}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00055\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \mbox{\hyperlink{structatca__aes__ctr__ctx_a9a9750b38654d7c90ea1299b9246ceb8}{cb}}[\mbox{\hyperlink{cryptoauthlib_8h_a71e52612e6d56f7412a113fcc4fb57d4}{ATCA\_AES128\_BLOCK\_SIZE}}];\ }
+\DoxyCodeLine{00056\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \mbox{\hyperlink{structatca__aes__ctr__ctx_a75db55a82ea2671d53dca47a3df3531c}{counter\_size}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00057\ \}\mbox{\hyperlink{atca__crypto__hw__aes_8h_a52b18f051752d214a2d5b485270f5b15}{atca\_aes\_ctr\_ctx\_t}};}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structatca__aes__cbcmac__ctx}{atca\_aes\_cbcmac\_ctx}}}
+\DoxyCodeLine{00061\ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \mbox{\hyperlink{structatca__aes__cbc__ctx}{atca\_aes\_cbc\_ctx\_t}}\ \mbox{\hyperlink{structatca__aes__cbcmac__ctx_ace429896d28d054b1fd570f752555577}{cbc\_ctx}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00063\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structatca__aes__cbcmac__ctx_a434f8485e67c2b6b9329b2a8665c27a5}{block\_size}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00064\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structatca__aes__cbcmac__ctx_a4bafb434eab70a066922d026b6b96ab8}{block}}[\mbox{\hyperlink{cryptoauthlib_8h_a71e52612e6d56f7412a113fcc4fb57d4}{ATCA\_AES128\_BLOCK\_SIZE}}];\ }
+\DoxyCodeLine{00065\ \}\ \mbox{\hyperlink{atca__crypto__hw__aes_8h_a66efe80a50daaa4b54840233d1b45b01}{atca\_aes\_cbcmac\_ctx\_t}};}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structatca__aes__ccm__ctx}{atca\_aes\_ccm\_ctx}}}
+\DoxyCodeLine{00069\ \{}
+\DoxyCodeLine{00070\ \ \ \ \ \mbox{\hyperlink{structatca__aes__cbcmac__ctx}{atca\_aes\_cbcmac\_ctx\_t}}\ \mbox{\hyperlink{structatca__aes__ccm__ctx_a5b5505b1ac824fed728354abd7988fde}{cbc\_mac\_ctx}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00071\ \ \ \ \ \mbox{\hyperlink{structatca__aes__ctr__ctx}{atca\_aes\_ctr\_ctx\_t}}\ \ \ \ \mbox{\hyperlink{structatca__aes__ccm__ctx_aead7fa06964146cdb255c1231f671dc5}{ctr\_ctx}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00072\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structatca__aes__ccm__ctx_a25dcf590a4005c31d068f1c88486e898}{iv\_size}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00073\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structatca__aes__ccm__ctx_a250b1ee7a9803c2953b530cfae359044}{M}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00074\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structatca__aes__ccm__ctx_ac54e1210d01dba00fd2901356ff7ae82}{counter}}[\mbox{\hyperlink{cryptoauthlib_8h_a71e52612e6d56f7412a113fcc4fb57d4}{ATCA\_AES128\_BLOCK\_SIZE}}];\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00075\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structatca__aes__ccm__ctx_a20332e05fee3a791038eb2ab750ddb48}{partial\_aad}}[\mbox{\hyperlink{cryptoauthlib_8h_a71e52612e6d56f7412a113fcc4fb57d4}{ATCA\_AES128\_BLOCK\_SIZE}}];\ \ \ \ \ \ }
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structatca__aes__ccm__ctx_a072a32c9fc877e96e41bc55b7964f92d}{partial\_aad\_size}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structatca__aes__ccm__ctx_ac1131f962e3e11a01f221de4e20f2f06}{text\_size}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00078\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structatca__aes__ccm__ctx_adb529a6ba4ae7dc5da7aecb40ad02984}{enc\_cb}}[\mbox{\hyperlink{cryptoauthlib_8h_a71e52612e6d56f7412a113fcc4fb57d4}{ATCA\_AES128\_BLOCK\_SIZE}}];\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00079\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structatca__aes__ccm__ctx_a91db7fe40ea08f09d3b70b8ebce7c9d3}{data\_size}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00080\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structatca__aes__ccm__ctx_a367692afc017a404d894cb9a690d5664}{ciphertext\_block}}[\mbox{\hyperlink{cryptoauthlib_8h_a71e52612e6d56f7412a113fcc4fb57d4}{ATCA\_AES128\_BLOCK\_SIZE}}];\ }
+\DoxyCodeLine{00081\ \}\ \mbox{\hyperlink{atca__crypto__hw__aes_8h_acb4e183cce26d955cfa293502252563c}{atca\_aes\_ccm\_ctx\_t}};}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

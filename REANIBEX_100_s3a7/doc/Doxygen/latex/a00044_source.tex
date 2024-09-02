@@ -1,0 +1,44 @@
+\doxysection{R100\+\_\+\+Errors\+\_\+cfg.\+h}
+\hypertarget{a00044_source}{}\label{a00044_source}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/R100\_Errors\_cfg.h@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/R100\_Errors\_cfg.h}}
+\mbox{\hyperlink{a00044}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/*\ Errors\ configuration\ (destinations\ and\ actions)\ header\ file\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00003\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00004\ \textcolor{comment}{/*\ This\ file\ is\ automatically\ generated\ form\ excel\ sheet\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00005\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00006\ \textcolor{comment}{/*\ Author:\ egarcia\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00007\ \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ R100\_ERRORS\_CFG\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ R100\_ERRORS\_CFG\_H}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ MAX\_ERRORS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 256\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00012\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00013\ \textcolor{comment}{**\ Includes}}
+\DoxyCodeLine{00014\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{a00038}{R100\_Errors.h}}"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{a00137}{types\_basic.h}}"{}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Application\ types}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00020\ \textcolor{comment}{**\ Typedefs}}
+\DoxyCodeLine{00021\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \mbox{\hyperlink{a00390_aab016aabcbc45c8b4c96bf97c3641ecd}{warning\_error}};\ \ \ \ \ }
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \mbox{\hyperlink{a00390_a86bf07611b18fe061d10a3b7f117e558}{user\_indication}};\ \ \ }
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \mbox{\hyperlink{a00390_a44ead83d51610d732af87d3737ad692b}{daily\_monthly}};\ \ \ \ \ }
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \mbox{\hyperlink{a00390_abed62d562f257f63c5538a828d133995}{led\_flashing}};\ \ \ \ \ \ }
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{a00137_a40bb5262bf908c328fbcfbe5d29d0201}{char\_t}}\ \ \ \ text[50];\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00030\ \}\mbox{\hyperlink{a00390}{ERRORS\_CFG\_t}};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00033\ \textcolor{comment}{**\ Globals}}
+\DoxyCodeLine{00034\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00037\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a00390}{ERRORS\_CFG\_t}}\ \mbox{\hyperlink{a00044_aa95afe1b5580ab091f0ff865b6eaf50c}{R100\_Errors\_cfg}}[\mbox{\hyperlink{a00044_aee6f4b0b74820d727dd8fba4f5efa061}{MAX\_ERRORS}}];}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ R100\_ERRORS\_CFG\_H*/}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00040\ \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+
+\end{DoxyCode}

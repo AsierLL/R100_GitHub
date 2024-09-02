@@ -1,0 +1,18 @@
+<map id="Execute_Periodic_Gps_Init" name="Execute_Periodic_Gps_Init">
+<area shape="rect" id="Node000001" title="Function that executes the gps position periodically." alt="" coords="5,107,184,133"/>
+<area shape="rect" id="Node000002" href="$thread__comm__hal_8c.html#a14b282886d75e45f70a7ffe548732dba" title="Returns the selected Comms UART." alt="" coords="232,5,408,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="116,104,167,73,231,42,249,35,250,40,233,46,170,78,119,108"/>
+<area shape="rect" id="Node000003" href="$thread__comm__entry_8c.html#a4423c957a2af025ce72fc5bb391da5ef" title="Ask GPS Position." alt="" coords="232,56,408,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="157,103,242,84,243,89,158,109"/>
+<area shape="rect" id="Node000006" href="$thread__comm__entry_8c.html#a8aad2fb078dfeb930ac0e1afe880e7a5" title="Open GPS Communication." alt="" coords="254,107,386,133"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="184,117,238,117,238,123,184,123"/>
+<area shape="rect" id="Node000007" href="$thread__comm__hal_8c.html#a7bec2de2a4a0bd5ee235fc2c4579cee6" title="Returns if Comms UART is free." alt="" coords="244,157,396,184"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="158,131,243,151,242,156,157,137"/>
+<area shape="rect" id="Node000008" href="$thread__comm__entry_8c.html#a1ed8688e4f2bb331195db3b77d38b9eb" title="Returns if Comms UART is free." alt="" coords="251,208,389,235"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="119,132,170,162,233,194,250,200,249,205,231,198,167,167,116,136"/>
+<area shape="rect" id="Node000004" href="$sys_mon___battery_8c.html#ae8f3f32f49df7702f6405467130ce8fd" title="Function that report if the battery is DEMO or not." alt="" coords="456,56,616,83"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="408,67,440,67,440,72,408,72"/>
+<area shape="rect" id="Node000005" href="$thread__comm__entry_8c.html#af7921d111a91795221d7b493716d54c3" title="Process events related to All COMM modules." alt="" coords="466,107,607,133"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="381,81,462,100,461,105,380,86"/>
+<area shape="poly" id="edge6_Node000006_Node000005" title=" " alt="" coords="386,117,450,117,450,123,386,123"/>
+</map>

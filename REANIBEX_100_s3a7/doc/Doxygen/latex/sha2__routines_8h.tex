@@ -1,0 +1,88 @@
+\doxysection{C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\+SCE/crypto/hashes/sha2\+\_\+routines.h File Reference}
+\hypertarget{sha2__routines_8h}{}\label{sha2__routines_8h}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/SCE/crypto/hashes/sha2\_routines.h@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/SCE/crypto/hashes/sha2\_routines.h}}
+
+
+Software implementation of the SHA256 algorithm.  
+
+
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+Include dependency graph for sha2\+\_\+routines.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=233pt]{sha2__routines_8h__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structsw__sha256__ctx}{sw\+\_\+sha256\+\_\+ctx}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{sha2__routines_8h_a81efbc0fc101b06a914f7ff9e2fbc0e9}{SHA256\+\_\+\+DIGEST\+\_\+\+SIZE}}~(32)
+\item 
+\#define \mbox{\hyperlink{sha2__routines_8h_a9c1fe69ad43d4ca74b84303a0ed64f2f}{SHA256\+\_\+\+BLOCK\+\_\+\+SIZE}}~(64)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{sha2__routines_8h_acfb7028e6f10d29c548cbecdbfa53ac8}{sw\+\_\+sha256\+\_\+init}} (\mbox{\hyperlink{structsw__sha256__ctx}{sw\+\_\+sha256\+\_\+ctx}} \texorpdfstring{$\ast$}{*}ctx)
+\item 
+void \mbox{\hyperlink{sha2__routines_8h_a7f5d8ad85631d77bfdb10dfb728bfbce}{sw\+\_\+sha256\+\_\+update}} (\mbox{\hyperlink{structsw__sha256__ctx}{sw\+\_\+sha256\+\_\+ctx}} \texorpdfstring{$\ast$}{*}ctx, const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}message, \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} len)
+\item 
+void \mbox{\hyperlink{sha2__routines_8h_ace8eb02759b23942f866ddcd2057390a}{sw\+\_\+sha256\+\_\+final}} (\mbox{\hyperlink{structsw__sha256__ctx}{sw\+\_\+sha256\+\_\+ctx}} \texorpdfstring{$\ast$}{*}ctx, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} digest\mbox{[}\mbox{\hyperlink{sha2__routines_8h_a81efbc0fc101b06a914f7ff9e2fbc0e9}{SHA256\+\_\+\+DIGEST\+\_\+\+SIZE}}\mbox{]})
+\item 
+void \mbox{\hyperlink{sha2__routines_8h_a5f6c75bec312e0d2faa7d645b62c3898}{sw\+\_\+sha256}} (const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}message, unsigned int len, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} digest\mbox{[}\mbox{\hyperlink{sha2__routines_8h_a81efbc0fc101b06a914f7ff9e2fbc0e9}{SHA256\+\_\+\+DIGEST\+\_\+\+SIZE}}\mbox{]})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Software implementation of the SHA256 algorithm. 
+
+\begin{DoxyCopyright}{Copyright}
+(c) 2015-\/2020 Microchip Technology Inc. and its subsidiaries. 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{sha2__routines_8h_a9c1fe69ad43d4ca74b84303a0ed64f2f}\label{sha2__routines_8h_a9c1fe69ad43d4ca74b84303a0ed64f2f} 
+\index{sha2\_routines.h@{sha2\_routines.h}!SHA256\_BLOCK\_SIZE@{SHA256\_BLOCK\_SIZE}}
+\index{SHA256\_BLOCK\_SIZE@{SHA256\_BLOCK\_SIZE}!sha2\_routines.h@{sha2\_routines.h}}
+\doxysubsubsection{\texorpdfstring{SHA256\_BLOCK\_SIZE}{SHA256\_BLOCK\_SIZE}}
+{\footnotesize\ttfamily \#define SHA256\+\_\+\+BLOCK\+\_\+\+SIZE~(64)}
+
+\Hypertarget{sha2__routines_8h_a81efbc0fc101b06a914f7ff9e2fbc0e9}\label{sha2__routines_8h_a81efbc0fc101b06a914f7ff9e2fbc0e9} 
+\index{sha2\_routines.h@{sha2\_routines.h}!SHA256\_DIGEST\_SIZE@{SHA256\_DIGEST\_SIZE}}
+\index{SHA256\_DIGEST\_SIZE@{SHA256\_DIGEST\_SIZE}!sha2\_routines.h@{sha2\_routines.h}}
+\doxysubsubsection{\texorpdfstring{SHA256\_DIGEST\_SIZE}{SHA256\_DIGEST\_SIZE}}
+{\footnotesize\ttfamily \#define SHA256\+\_\+\+DIGEST\+\_\+\+SIZE~(32)}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{sha2__routines_8h_a5f6c75bec312e0d2faa7d645b62c3898}\label{sha2__routines_8h_a5f6c75bec312e0d2faa7d645b62c3898} 
+\index{sha2\_routines.h@{sha2\_routines.h}!sw\_sha256@{sw\_sha256}}
+\index{sw\_sha256@{sw\_sha256}!sha2\_routines.h@{sha2\_routines.h}}
+\doxysubsubsection{\texorpdfstring{sw\_sha256()}{sw\_sha256()}}
+{\footnotesize\ttfamily void sw\+\_\+sha256 (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{message,  }\item[{unsigned int}]{len,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{digest\mbox{[}\+SHA256\+\_\+\+DIGEST\+\_\+\+SIZE\mbox{]} }\end{DoxyParamCaption})}
+
+\Hypertarget{sha2__routines_8h_ace8eb02759b23942f866ddcd2057390a}\label{sha2__routines_8h_ace8eb02759b23942f866ddcd2057390a} 
+\index{sha2\_routines.h@{sha2\_routines.h}!sw\_sha256\_final@{sw\_sha256\_final}}
+\index{sw\_sha256\_final@{sw\_sha256\_final}!sha2\_routines.h@{sha2\_routines.h}}
+\doxysubsubsection{\texorpdfstring{sw\_sha256\_final()}{sw\_sha256\_final()}}
+{\footnotesize\ttfamily void sw\+\_\+sha256\+\_\+final (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structsw__sha256__ctx}{sw\+\_\+sha256\+\_\+ctx}} \texorpdfstring{$\ast$}{*}}]{ctx,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{digest\mbox{[}\+SHA256\+\_\+\+DIGEST\+\_\+\+SIZE\mbox{]} }\end{DoxyParamCaption})}
+
+\Hypertarget{sha2__routines_8h_acfb7028e6f10d29c548cbecdbfa53ac8}\label{sha2__routines_8h_acfb7028e6f10d29c548cbecdbfa53ac8} 
+\index{sha2\_routines.h@{sha2\_routines.h}!sw\_sha256\_init@{sw\_sha256\_init}}
+\index{sw\_sha256\_init@{sw\_sha256\_init}!sha2\_routines.h@{sha2\_routines.h}}
+\doxysubsubsection{\texorpdfstring{sw\_sha256\_init()}{sw\_sha256\_init()}}
+{\footnotesize\ttfamily void sw\+\_\+sha256\+\_\+init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structsw__sha256__ctx}{sw\+\_\+sha256\+\_\+ctx}} \texorpdfstring{$\ast$}{*}}]{ctx }\end{DoxyParamCaption})}
+
+\Hypertarget{sha2__routines_8h_a7f5d8ad85631d77bfdb10dfb728bfbce}\label{sha2__routines_8h_a7f5d8ad85631d77bfdb10dfb728bfbce} 
+\index{sha2\_routines.h@{sha2\_routines.h}!sw\_sha256\_update@{sw\_sha256\_update}}
+\index{sw\_sha256\_update@{sw\_sha256\_update}!sha2\_routines.h@{sha2\_routines.h}}
+\doxysubsubsection{\texorpdfstring{sw\_sha256\_update()}{sw\_sha256\_update()}}
+{\footnotesize\ttfamily void sw\+\_\+sha256\+\_\+update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structsw__sha256__ctx}{sw\+\_\+sha256\+\_\+ctx}} \texorpdfstring{$\ast$}{*}}]{ctx,  }\item[{const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{message,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}}}]{len }\end{DoxyParamCaption})}
+

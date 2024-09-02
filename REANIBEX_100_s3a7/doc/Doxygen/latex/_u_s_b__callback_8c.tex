@@ -1,0 +1,232 @@
+\doxysection{C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\+Resources/\+USB\+\_\+callback.c File Reference}
+\hypertarget{_u_s_b__callback_8c}{}\label{_u_s_b__callback_8c}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/Resources/USB\_callback.c@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/Resources/USB\_callback.c}}
+
+
+All functions related to manage USB and SD storage.  
+
+
+{\ttfamily \#include "{}bsp\+\_\+api.\+h"{}}\newline
+{\ttfamily \#include "{}ux\+\_\+api.\+h"{}}\newline
+{\ttfamily \#include "{}types\+\_\+basic.\+h"{}}\newline
+{\ttfamily \#include "{}common\+\_\+data.\+h"{}}\newline
+Include dependency graph for USB\+\_\+callback.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_u_s_b__callback_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_u_s_b__callback_8c_a303aa4f94feae97dc68360b03ca1a275}{USB\+\_\+\+ACCESS\+\_\+\+KEY}}~"{}ESTEFANYDAT"{}
+\begin{DoxyCompactList}\small\item\em Key to unlock the access to u\+SD through USB port. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_u_s_b__callback_8c_adf6c0fa6f3cacdca37834092f14d1e43}{u\+SD\+\_\+\+LOCKED}}~1
+\item 
+\#define \mbox{\hyperlink{_u_s_b__callback_8c_a8aa78f2650fcaeddfbce5cea8264cf96}{u\+SD\+\_\+\+UNLOCKED}}~0
+\item 
+\#define \mbox{\hyperlink{_u_s_b__callback_8c_a2d996237e082b78b41771b5aa1a6eae1}{KEY\+\_\+\+SIZE}}~12
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+UINT \mbox{\hyperlink{_u_s_b__callback_8c_a1e14afe8823a6736eca2487785391a75}{ux\+\_\+device\+\_\+msc\+\_\+media\+\_\+status}} (VOID \texorpdfstring{$\ast$}{*}storage, ULONG lun, ULONG media\+\_\+id, ULONG \texorpdfstring{$\ast$}{*}media\+\_\+status)
+\begin{DoxyCompactList}\small\item\em USBX media status callback function. \end{DoxyCompactList}\item 
+UINT \mbox{\hyperlink{_u_s_b__callback_8c_a9dbba7d6ee9deaefb1fe6517c1a94b9d}{ux\+\_\+device\+\_\+msc\+\_\+media\+\_\+read}} (VOID \texorpdfstring{$\ast$}{*}storage, ULONG lun, UCHAR \texorpdfstring{$\ast$}{*}data\+\_\+pointer, ULONG number\+\_\+blocks, ULONG lba, ULONG \texorpdfstring{$\ast$}{*}media\+\_\+status)
+\begin{DoxyCompactList}\small\item\em USBX read media callback function. \end{DoxyCompactList}\item 
+UINT \mbox{\hyperlink{_u_s_b__callback_8c_a10ce442cd5d69665eaac13abedc55745}{ux\+\_\+device\+\_\+msc\+\_\+media\+\_\+write}} (VOID \texorpdfstring{$\ast$}{*}storage, ULONG lun, UCHAR \texorpdfstring{$\ast$}{*}data\+\_\+pointer, ULONG number\+\_\+blocks, ULONG lba, ULONG \texorpdfstring{$\ast$}{*}media\+\_\+status)
+\begin{DoxyCompactList}\small\item\em USBX write media callback function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{_u_s_b__callback_8c_a24798e9531a4d1be4cbe10160d6a82aa}{access\+\_\+key}} \mbox{[}\mbox{\hyperlink{_u_s_b__callback_8c_a2d996237e082b78b41771b5aa1a6eae1}{KEY\+\_\+\+SIZE}}\mbox{]}
+\begin{DoxyCompactList}\small\item\em USB asscess key. \end{DoxyCompactList}\item 
+static FX\+\_\+\+MEDIA \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{_u_s_b__callback_8c_aca72fda2b1efebc18972c8df610ff63b}{sd\+\_\+media}} = (FX\+\_\+\+MEDIA \texorpdfstring{$\ast$}{*})\mbox{\hyperlink{_s_c_e_2types__basic_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}}
+\begin{DoxyCompactList}\small\item\em handler of the SD media card \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{_u_s_b__callback_8c_a3cd285fec2fa7c206bad9a680bbe0747}{u\+SD\+\_\+state}} = 3
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+All functions related to manage USB and SD storage. 
+
+\begin{DoxyVersion}{Version}
+v1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+16/01/2018 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+ltorres 
+\end{DoxyAuthor}
+\begin{DoxyWarning}{Warning}
+author date version .-\/ Edition 
+\end{DoxyWarning}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000063}{Bug}}]\end{DoxyRefDesc}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{_u_s_b__callback_8c_a2d996237e082b78b41771b5aa1a6eae1}\label{_u_s_b__callback_8c_a2d996237e082b78b41771b5aa1a6eae1} 
+\index{USB\_callback.c@{USB\_callback.c}!KEY\_SIZE@{KEY\_SIZE}}
+\index{KEY\_SIZE@{KEY\_SIZE}!USB\_callback.c@{USB\_callback.c}}
+\doxysubsubsection{\texorpdfstring{KEY\_SIZE}{KEY\_SIZE}}
+{\footnotesize\ttfamily \#define KEY\+\_\+\+SIZE~12}
+
+\Hypertarget{_u_s_b__callback_8c_a303aa4f94feae97dc68360b03ca1a275}\label{_u_s_b__callback_8c_a303aa4f94feae97dc68360b03ca1a275} 
+\index{USB\_callback.c@{USB\_callback.c}!USB\_ACCESS\_KEY@{USB\_ACCESS\_KEY}}
+\index{USB\_ACCESS\_KEY@{USB\_ACCESS\_KEY}!USB\_callback.c@{USB\_callback.c}}
+\doxysubsubsection{\texorpdfstring{USB\_ACCESS\_KEY}{USB\_ACCESS\_KEY}}
+{\footnotesize\ttfamily \#define USB\+\_\+\+ACCESS\+\_\+\+KEY~"{}ESTEFANYDAT"{}}
+
+
+
+Key to unlock the access to u\+SD through USB port. 
+
+\Hypertarget{_u_s_b__callback_8c_adf6c0fa6f3cacdca37834092f14d1e43}\label{_u_s_b__callback_8c_adf6c0fa6f3cacdca37834092f14d1e43} 
+\index{USB\_callback.c@{USB\_callback.c}!uSD\_LOCKED@{uSD\_LOCKED}}
+\index{uSD\_LOCKED@{uSD\_LOCKED}!USB\_callback.c@{USB\_callback.c}}
+\doxysubsubsection{\texorpdfstring{uSD\_LOCKED}{uSD\_LOCKED}}
+{\footnotesize\ttfamily \#define u\+SD\+\_\+\+LOCKED~1}
+
+\Hypertarget{_u_s_b__callback_8c_a8aa78f2650fcaeddfbce5cea8264cf96}\label{_u_s_b__callback_8c_a8aa78f2650fcaeddfbce5cea8264cf96} 
+\index{USB\_callback.c@{USB\_callback.c}!uSD\_UNLOCKED@{uSD\_UNLOCKED}}
+\index{uSD\_UNLOCKED@{uSD\_UNLOCKED}!USB\_callback.c@{USB\_callback.c}}
+\doxysubsubsection{\texorpdfstring{uSD\_UNLOCKED}{uSD\_UNLOCKED}}
+{\footnotesize\ttfamily \#define u\+SD\+\_\+\+UNLOCKED~0}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_u_s_b__callback_8c_a9dbba7d6ee9deaefb1fe6517c1a94b9d}\label{_u_s_b__callback_8c_a9dbba7d6ee9deaefb1fe6517c1a94b9d} 
+\index{USB\_callback.c@{USB\_callback.c}!ux\_device\_msc\_media\_read@{ux\_device\_msc\_media\_read}}
+\index{ux\_device\_msc\_media\_read@{ux\_device\_msc\_media\_read}!USB\_callback.c@{USB\_callback.c}}
+\doxysubsubsection{\texorpdfstring{ux\_device\_msc\_media\_read()}{ux\_device\_msc\_media\_read()}}
+{\footnotesize\ttfamily UINT ux\+\_\+device\+\_\+msc\+\_\+media\+\_\+read (\begin{DoxyParamCaption}\item[{VOID \texorpdfstring{$\ast$}{*}}]{storage,  }\item[{ULONG}]{lun,  }\item[{UCHAR \texorpdfstring{$\ast$}{*}}]{data\+\_\+pointer,  }\item[{ULONG}]{number\+\_\+blocks,  }\item[{ULONG}]{lba,  }\item[{ULONG \texorpdfstring{$\ast$}{*}}]{media\+\_\+status }\end{DoxyParamCaption})}
+
+
+
+USBX read media callback function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em storage} & instance of the storage class \\
+\hline
+{\em lun} & LUN (logical unit number) \\
+\hline
+{\em data\+\_\+pointer} & address of the buffer to be used for reading \\
+\hline
+{\em number\+\_\+blocks} & the number of sectors to read/write \\
+\hline
+{\em lba} & the sector address to read \\
+\hline
+{\em media\+\_\+status} & must be filled out exactly like the media status callback return value\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uint UX\+\_\+\+SUCCESS or UX\+\_\+\+ERROR indicating the operation result 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_u_s_b__callback_8c_a9dbba7d6ee9deaefb1fe6517c1a94b9d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_u_s_b__callback_8c_a1e14afe8823a6736eca2487785391a75}\label{_u_s_b__callback_8c_a1e14afe8823a6736eca2487785391a75} 
+\index{USB\_callback.c@{USB\_callback.c}!ux\_device\_msc\_media\_status@{ux\_device\_msc\_media\_status}}
+\index{ux\_device\_msc\_media\_status@{ux\_device\_msc\_media\_status}!USB\_callback.c@{USB\_callback.c}}
+\doxysubsubsection{\texorpdfstring{ux\_device\_msc\_media\_status()}{ux\_device\_msc\_media\_status()}}
+{\footnotesize\ttfamily UINT ux\+\_\+device\+\_\+msc\+\_\+media\+\_\+status (\begin{DoxyParamCaption}\item[{VOID \texorpdfstring{$\ast$}{*}}]{storage,  }\item[{ULONG}]{lun,  }\item[{ULONG}]{media\+\_\+id,  }\item[{ULONG \texorpdfstring{$\ast$}{*}}]{media\+\_\+status }\end{DoxyParamCaption})}
+
+
+
+USBX media status callback function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em storage} & instance of the storage class \\
+\hline
+{\em lun} & LUN (logical unit number) \\
+\hline
+{\em media\+\_\+id} & is not currently used (always zero) \\
+\hline
+{\em media\+\_\+status} & must be filled out exactly like the media status callback return value\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uint media status error code (see USBX Device Stack User Guide) 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_u_s_b__callback_8c_a1e14afe8823a6736eca2487785391a75_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_u_s_b__callback_8c_a10ce442cd5d69665eaac13abedc55745}\label{_u_s_b__callback_8c_a10ce442cd5d69665eaac13abedc55745} 
+\index{USB\_callback.c@{USB\_callback.c}!ux\_device\_msc\_media\_write@{ux\_device\_msc\_media\_write}}
+\index{ux\_device\_msc\_media\_write@{ux\_device\_msc\_media\_write}!USB\_callback.c@{USB\_callback.c}}
+\doxysubsubsection{\texorpdfstring{ux\_device\_msc\_media\_write()}{ux\_device\_msc\_media\_write()}}
+{\footnotesize\ttfamily UINT ux\+\_\+device\+\_\+msc\+\_\+media\+\_\+write (\begin{DoxyParamCaption}\item[{VOID \texorpdfstring{$\ast$}{*}}]{storage,  }\item[{ULONG}]{lun,  }\item[{UCHAR \texorpdfstring{$\ast$}{*}}]{data\+\_\+pointer,  }\item[{ULONG}]{number\+\_\+blocks,  }\item[{ULONG}]{lba,  }\item[{ULONG \texorpdfstring{$\ast$}{*}}]{media\+\_\+status }\end{DoxyParamCaption})}
+
+
+
+USBX write media callback function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em storage} & instance of the storage class \\
+\hline
+{\em lun} & LUN (logical unit number) \\
+\hline
+{\em data\+\_\+pointer} & address of the buffer to be used for writing \\
+\hline
+{\em number\+\_\+blocks} & the number of sectors to read/write \\
+\hline
+{\em lba} & the sector address to read \\
+\hline
+{\em media\+\_\+status} & must be filled out exactly like the media status callback return value\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+uint UX\+\_\+\+SUCCESS or UX\+\_\+\+ERROR indicating the operation result 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_u_s_b__callback_8c_a10ce442cd5d69665eaac13abedc55745_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{_u_s_b__callback_8c_a24798e9531a4d1be4cbe10160d6a82aa}\label{_u_s_b__callback_8c_a24798e9531a4d1be4cbe10160d6a82aa} 
+\index{USB\_callback.c@{USB\_callback.c}!access\_key@{access\_key}}
+\index{access\_key@{access\_key}!USB\_callback.c@{USB\_callback.c}}
+\doxysubsubsection{\texorpdfstring{access\_key}{access\_key}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} access\+\_\+key\mbox{[}\mbox{\hyperlink{_u_s_b__callback_8c_a2d996237e082b78b41771b5aa1a6eae1}{KEY\+\_\+\+SIZE}}\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+USB asscess key. 
+
+\Hypertarget{_u_s_b__callback_8c_aca72fda2b1efebc18972c8df610ff63b}\label{_u_s_b__callback_8c_aca72fda2b1efebc18972c8df610ff63b} 
+\index{USB\_callback.c@{USB\_callback.c}!sd\_media@{sd\_media}}
+\index{sd\_media@{sd\_media}!USB\_callback.c@{USB\_callback.c}}
+\doxysubsubsection{\texorpdfstring{sd\_media}{sd\_media}}
+{\footnotesize\ttfamily FX\+\_\+\+MEDIA\texorpdfstring{$\ast$}{*} sd\+\_\+media = (FX\+\_\+\+MEDIA \texorpdfstring{$\ast$}{*})\mbox{\hyperlink{_s_c_e_2types__basic_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+handler of the SD media card 
+
+\Hypertarget{_u_s_b__callback_8c_a3cd285fec2fa7c206bad9a680bbe0747}\label{_u_s_b__callback_8c_a3cd285fec2fa7c206bad9a680bbe0747} 
+\index{USB\_callback.c@{USB\_callback.c}!uSD\_state@{uSD\_state}}
+\index{uSD\_state@{uSD\_state}!USB\_callback.c@{USB\_callback.c}}
+\doxysubsubsection{\texorpdfstring{uSD\_state}{uSD\_state}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} u\+SD\+\_\+state = 3\hspace{0.3cm}{\ttfamily [static]}}
+
+enable a number of writing operations before lock the device 1 -\/-\/\texorpdfstring{$>$}{>} locked device 0 -\/-\/\texorpdfstring{$>$}{>} unlocked device 

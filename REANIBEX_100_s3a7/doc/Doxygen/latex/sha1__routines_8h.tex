@@ -1,0 +1,147 @@
+\doxysection{C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\+SCE/crypto/hashes/sha1\+\_\+routines.h File Reference}
+\hypertarget{sha1__routines_8h}{}\label{sha1__routines_8h}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/SCE/crypto/hashes/sha1\_routines.h@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/SCE/crypto/hashes/sha1\_routines.h}}
+
+
+Software implementation of the SHA1 algorithm.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+Include dependency graph for sha1\+\_\+routines.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=325pt]{sha1__routines_8h__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_c_l___hash_context}{CL\+\_\+\+Hash\+Context}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{sha1__routines_8h_a2c0958af86f0590374e4324757c537f2}{U8}}~\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}
+\item 
+\#define \mbox{\hyperlink{sha1__routines_8h_ad0b4d315e0f0b5d356886ec69d4bed08}{U16}}~\mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}}
+\item 
+\#define \mbox{\hyperlink{sha1__routines_8h_a8f953f379d243081b950adb7f194b2e8}{U32}}~\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}}
+\item 
+\#define \mbox{\hyperlink{sha1__routines_8h_a3015d84f1e64c03564961de070d25328}{memcpy\+\_\+P}}~memmove
+\item 
+\#define \mbox{\hyperlink{sha1__routines_8h_a3541bc4d0b928b2faa9ca63a100d1b75}{strcpy\+\_\+P}}~strcpy
+\item 
+\#define \mbox{\hyperlink{sha1__routines_8h_a45e79c30522d47f4c30922b3d5b06b46}{\+\_\+\+WDRESET}}()
+\item 
+\#define \mbox{\hyperlink{sha1__routines_8h_a46388d9db8422abfea56ae2323f7a77c}{\+\_\+\+NOP}}()
+\item 
+\#define \mbox{\hyperlink{sha1__routines_8h_a56a88d6165ee36c482ddc9b82826dd47}{left\+Rotate}}(x,  n)~(x) = (((x) $<$$<$ (n)) \texorpdfstring{$\vert$}{|} ((x) $>$$>$ (32 -\/ (n))))
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{sha1__routines_8h_a6f06fe48f7cacc212305b862b46fd9aa}{sha\+Engine}} (\mbox{\hyperlink{sha1__routines_8h_a8f953f379d243081b950adb7f194b2e8}{U32}} \texorpdfstring{$\ast$}{*}buf, \mbox{\hyperlink{sha1__routines_8h_a8f953f379d243081b950adb7f194b2e8}{U32}} \texorpdfstring{$\ast$}{*}h)
+\item 
+void \mbox{\hyperlink{sha1__routines_8h_affa9482d686cc435d640d67d7fa79772}{CL\+\_\+hash\+Init}} (\mbox{\hyperlink{struct_c_l___hash_context}{CL\+\_\+\+Hash\+Context}} \texorpdfstring{$\ast$}{*}ctx)
+\item 
+void \mbox{\hyperlink{sha1__routines_8h_a55a33e7a22aff4aca4bccf39897bc5f1}{CL\+\_\+hash\+Update}} (\mbox{\hyperlink{struct_c_l___hash_context}{CL\+\_\+\+Hash\+Context}} \texorpdfstring{$\ast$}{*}ctx, const \mbox{\hyperlink{sha1__routines_8h_a2c0958af86f0590374e4324757c537f2}{U8}} \texorpdfstring{$\ast$}{*}src, int nbytes)
+\item 
+void \mbox{\hyperlink{sha1__routines_8h_a672902e6406b4e4e2af33c70ec7a001c}{CL\+\_\+hash\+Final}} (\mbox{\hyperlink{struct_c_l___hash_context}{CL\+\_\+\+Hash\+Context}} \texorpdfstring{$\ast$}{*}ctx, \mbox{\hyperlink{sha1__routines_8h_a2c0958af86f0590374e4324757c537f2}{U8}} \texorpdfstring{$\ast$}{*}dest)
+\item 
+void \mbox{\hyperlink{sha1__routines_8h_a955169bbbce9b4712cafb9b7372b5ffa}{CL\+\_\+hash}} (\mbox{\hyperlink{sha1__routines_8h_a2c0958af86f0590374e4324757c537f2}{U8}} \texorpdfstring{$\ast$}{*}msg, int msg\+Bytes, \mbox{\hyperlink{sha1__routines_8h_a2c0958af86f0590374e4324757c537f2}{U8}} \texorpdfstring{$\ast$}{*}dest)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Software implementation of the SHA1 algorithm. 
+
+\begin{DoxyCopyright}{Copyright}
+(c) 2015-\/2020 Microchip Technology Inc. and its subsidiaries. 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{sha1__routines_8h_a46388d9db8422abfea56ae2323f7a77c}\label{sha1__routines_8h_a46388d9db8422abfea56ae2323f7a77c} 
+\index{sha1\_routines.h@{sha1\_routines.h}!\_NOP@{\_NOP}}
+\index{\_NOP@{\_NOP}!sha1\_routines.h@{sha1\_routines.h}}
+\doxysubsubsection{\texorpdfstring{\_NOP}{\_NOP}}
+{\footnotesize\ttfamily \#define \+\_\+\+NOP(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{sha1__routines_8h_a45e79c30522d47f4c30922b3d5b06b46}\label{sha1__routines_8h_a45e79c30522d47f4c30922b3d5b06b46} 
+\index{sha1\_routines.h@{sha1\_routines.h}!\_WDRESET@{\_WDRESET}}
+\index{\_WDRESET@{\_WDRESET}!sha1\_routines.h@{sha1\_routines.h}}
+\doxysubsubsection{\texorpdfstring{\_WDRESET}{\_WDRESET}}
+{\footnotesize\ttfamily \#define \+\_\+\+WDRESET(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{sha1__routines_8h_a56a88d6165ee36c482ddc9b82826dd47}\label{sha1__routines_8h_a56a88d6165ee36c482ddc9b82826dd47} 
+\index{sha1\_routines.h@{sha1\_routines.h}!leftRotate@{leftRotate}}
+\index{leftRotate@{leftRotate}!sha1\_routines.h@{sha1\_routines.h}}
+\doxysubsubsection{\texorpdfstring{leftRotate}{leftRotate}}
+{\footnotesize\ttfamily \#define left\+Rotate(\begin{DoxyParamCaption}\item[{}]{x,  }\item[{}]{n }\end{DoxyParamCaption})~(x) = (((x) $<$$<$ (n)) \texorpdfstring{$\vert$}{|} ((x) $>$$>$ (32 -\/ (n))))}
+
+\Hypertarget{sha1__routines_8h_a3015d84f1e64c03564961de070d25328}\label{sha1__routines_8h_a3015d84f1e64c03564961de070d25328} 
+\index{sha1\_routines.h@{sha1\_routines.h}!memcpy\_P@{memcpy\_P}}
+\index{memcpy\_P@{memcpy\_P}!sha1\_routines.h@{sha1\_routines.h}}
+\doxysubsubsection{\texorpdfstring{memcpy\_P}{memcpy\_P}}
+{\footnotesize\ttfamily \#define memcpy\+\_\+P~memmove}
+
+\Hypertarget{sha1__routines_8h_a3541bc4d0b928b2faa9ca63a100d1b75}\label{sha1__routines_8h_a3541bc4d0b928b2faa9ca63a100d1b75} 
+\index{sha1\_routines.h@{sha1\_routines.h}!strcpy\_P@{strcpy\_P}}
+\index{strcpy\_P@{strcpy\_P}!sha1\_routines.h@{sha1\_routines.h}}
+\doxysubsubsection{\texorpdfstring{strcpy\_P}{strcpy\_P}}
+{\footnotesize\ttfamily \#define strcpy\+\_\+P~strcpy}
+
+\Hypertarget{sha1__routines_8h_ad0b4d315e0f0b5d356886ec69d4bed08}\label{sha1__routines_8h_ad0b4d315e0f0b5d356886ec69d4bed08} 
+\index{sha1\_routines.h@{sha1\_routines.h}!U16@{U16}}
+\index{U16@{U16}!sha1\_routines.h@{sha1\_routines.h}}
+\doxysubsubsection{\texorpdfstring{U16}{U16}}
+{\footnotesize\ttfamily \#define U16~\mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}}}
+
+\Hypertarget{sha1__routines_8h_a8f953f379d243081b950adb7f194b2e8}\label{sha1__routines_8h_a8f953f379d243081b950adb7f194b2e8} 
+\index{sha1\_routines.h@{sha1\_routines.h}!U32@{U32}}
+\index{U32@{U32}!sha1\_routines.h@{sha1\_routines.h}}
+\doxysubsubsection{\texorpdfstring{U32}{U32}}
+{\footnotesize\ttfamily \#define U32~\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}}}
+
+\Hypertarget{sha1__routines_8h_a2c0958af86f0590374e4324757c537f2}\label{sha1__routines_8h_a2c0958af86f0590374e4324757c537f2} 
+\index{sha1\_routines.h@{sha1\_routines.h}!U8@{U8}}
+\index{U8@{U8}!sha1\_routines.h@{sha1\_routines.h}}
+\doxysubsubsection{\texorpdfstring{U8}{U8}}
+{\footnotesize\ttfamily \#define U8~\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{sha1__routines_8h_a955169bbbce9b4712cafb9b7372b5ffa}\label{sha1__routines_8h_a955169bbbce9b4712cafb9b7372b5ffa} 
+\index{sha1\_routines.h@{sha1\_routines.h}!CL\_hash@{CL\_hash}}
+\index{CL\_hash@{CL\_hash}!sha1\_routines.h@{sha1\_routines.h}}
+\doxysubsubsection{\texorpdfstring{CL\_hash()}{CL\_hash()}}
+{\footnotesize\ttfamily void CL\+\_\+hash (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sha1__routines_8h_a2c0958af86f0590374e4324757c537f2}{U8}} \texorpdfstring{$\ast$}{*}}]{msg,  }\item[{int}]{msg\+Bytes,  }\item[{\mbox{\hyperlink{sha1__routines_8h_a2c0958af86f0590374e4324757c537f2}{U8}} \texorpdfstring{$\ast$}{*}}]{dest }\end{DoxyParamCaption})}
+
+\Hypertarget{sha1__routines_8h_a672902e6406b4e4e2af33c70ec7a001c}\label{sha1__routines_8h_a672902e6406b4e4e2af33c70ec7a001c} 
+\index{sha1\_routines.h@{sha1\_routines.h}!CL\_hashFinal@{CL\_hashFinal}}
+\index{CL\_hashFinal@{CL\_hashFinal}!sha1\_routines.h@{sha1\_routines.h}}
+\doxysubsubsection{\texorpdfstring{CL\_hashFinal()}{CL\_hashFinal()}}
+{\footnotesize\ttfamily void CL\+\_\+hash\+Final (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_c_l___hash_context}{CL\+\_\+\+Hash\+Context}} \texorpdfstring{$\ast$}{*}}]{ctx,  }\item[{\mbox{\hyperlink{sha1__routines_8h_a2c0958af86f0590374e4324757c537f2}{U8}} \texorpdfstring{$\ast$}{*}}]{dest }\end{DoxyParamCaption})}
+
+\Hypertarget{sha1__routines_8h_affa9482d686cc435d640d67d7fa79772}\label{sha1__routines_8h_affa9482d686cc435d640d67d7fa79772} 
+\index{sha1\_routines.h@{sha1\_routines.h}!CL\_hashInit@{CL\_hashInit}}
+\index{CL\_hashInit@{CL\_hashInit}!sha1\_routines.h@{sha1\_routines.h}}
+\doxysubsubsection{\texorpdfstring{CL\_hashInit()}{CL\_hashInit()}}
+{\footnotesize\ttfamily void CL\+\_\+hash\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_c_l___hash_context}{CL\+\_\+\+Hash\+Context}} \texorpdfstring{$\ast$}{*}}]{ctx }\end{DoxyParamCaption})}
+
+\Hypertarget{sha1__routines_8h_a55a33e7a22aff4aca4bccf39897bc5f1}\label{sha1__routines_8h_a55a33e7a22aff4aca4bccf39897bc5f1} 
+\index{sha1\_routines.h@{sha1\_routines.h}!CL\_hashUpdate@{CL\_hashUpdate}}
+\index{CL\_hashUpdate@{CL\_hashUpdate}!sha1\_routines.h@{sha1\_routines.h}}
+\doxysubsubsection{\texorpdfstring{CL\_hashUpdate()}{CL\_hashUpdate()}}
+{\footnotesize\ttfamily void CL\+\_\+hash\+Update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_c_l___hash_context}{CL\+\_\+\+Hash\+Context}} \texorpdfstring{$\ast$}{*}}]{ctx,  }\item[{const \mbox{\hyperlink{sha1__routines_8h_a2c0958af86f0590374e4324757c537f2}{U8}} \texorpdfstring{$\ast$}{*}}]{src,  }\item[{int}]{nbytes }\end{DoxyParamCaption})}
+
+\Hypertarget{sha1__routines_8h_a6f06fe48f7cacc212305b862b46fd9aa}\label{sha1__routines_8h_a6f06fe48f7cacc212305b862b46fd9aa} 
+\index{sha1\_routines.h@{sha1\_routines.h}!shaEngine@{shaEngine}}
+\index{shaEngine@{shaEngine}!sha1\_routines.h@{sha1\_routines.h}}
+\doxysubsubsection{\texorpdfstring{shaEngine()}{shaEngine()}}
+{\footnotesize\ttfamily void sha\+Engine (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sha1__routines_8h_a8f953f379d243081b950adb7f194b2e8}{U32}} \texorpdfstring{$\ast$}{*}}]{buf,  }\item[{\mbox{\hyperlink{sha1__routines_8h_a8f953f379d243081b950adb7f194b2e8}{U32}} \texorpdfstring{$\ast$}{*}}]{h }\end{DoxyParamCaption})}
+

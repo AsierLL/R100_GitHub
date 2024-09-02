@@ -1,0 +1,11 @@
+<map id="thread_hmi_entry" name="thread_hmi_entry">
+<area shape="rect" id="Node000001" title="Defines HMI thread behavior." alt="" coords="5,31,127,57"/>
+<area shape="rect" id="Node000002" href="$_keypad_8c.html#a839fe2480871da309772427ea7a49cf5" title="Refresh the blinking leds." alt="" coords="175,5,276,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="127,32,159,26,160,32,127,37"/>
+<area shape="rect" id="Node000003" href="$thread__hmi__entry_8c.html#a1e504b5226ce074c028976ce3e4995e9" title="Check keys status to report to the core Assume that this function is called every 40 msecs." alt="" coords="181,56,270,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="127,51,166,57,165,63,127,56"/>
+<area shape="rect" id="Node000004" href="$_keypad_8c.html#a65899dc7cce4138cd4488d27daff459d" title="Read from Key&#45;board." alt="" coords="349,31,430,57"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="269,60,332,50,333,55,270,65"/>
+<area shape="rect" id="Node000005" href="$thread__core__entry_8c.html#ab5cc7004066a53f633a1891cc016a473" title="Process events related to DRD." alt="" coords="324,81,454,108"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="270,73,309,80,308,85,269,79"/>
+</map>

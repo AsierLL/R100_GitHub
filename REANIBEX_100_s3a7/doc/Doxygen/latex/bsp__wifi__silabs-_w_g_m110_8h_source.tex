@@ -1,0 +1,195 @@
+\doxysection{bsp\+\_\+wifi\+\_\+silabs-\/\+WGM110.h}
+\hypertarget{bsp__wifi__silabs-_w_g_m110_8h_source}{}\label{bsp__wifi__silabs-_w_g_m110_8h_source}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/BSP/bsp\_wifi\_silabs-\/WGM110.h@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/BSP/bsp\_wifi\_silabs-\/WGM110.h}}
+\mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Name\ \ \ \ \ \ :\ R100\_S3A7\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ :\ Osatu\ S.\ Coop\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Compiler\ \ :\ GNU\ ARM\ Embedded\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ Target\ \ \ \ :\ Reanibex\ Serie\ 100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ ******************************************************************************/}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#ifndef\ BSP\_WIFI\_SILABS\_H\_}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#define\ BSP\_WIFI\_SILABS\_H\_}}
+\DoxyCodeLine{00022\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ **Includes}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_r100___errors_8h}{R100\_Errors.h}}"{}}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ "{}types\_basic.h"{}}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ **\ Defines}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ TRY\_AGAIN\ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{comment}{//\ Response\ data}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#define\ BGLIB\_RESP\_NO\_BYTES\ \ 0}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#define\ BGLIB\_RESP\_1\_BYTE\ \ \ \ 1}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#define\ BGLIB\_RESP\_2\_BYTES\ \ \ 2}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#define\ BGLIB\_RESP\_3\_BYTES\ \ \ 3}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#define\ BGLIB\_RESP\_4\_BYTES\ \ \ 4}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#define\ BGLIB\_RESP\_8\_BYTES\ \ \ 8}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#define\ BGLIB\_RESP\_9\_BYTES\ \ \ 9}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#define\ BGLIB\_RESP\_16\_BYTES\ \ 16}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#define\ BGLIB\_RESP\_18\_BYTES\ \ 18}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#define\ BGLIB\_RESP\_19\_BYTES\ \ 19}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{comment}{//\ Event\ Data}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#define\ BGLIB\_MAX\_EVT\ \ 5\ }}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#define\ BGLIB\_NO\_EVT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#define\ BGLIB\_EVT\_HW\_UART\_CONF\ \ \ \ \ \ \ \ \ \ \ \ \ \ 13}}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#define\ BGLIB\_EVT\_GET\_MAC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 11}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#define\ BGLIB\_EVT\_WIFI\_ON\_OFF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 6}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#define\ BGLIB\_EVT\_SCAN\_RESULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 16}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ BGLIB\_EVT\_CONNECTED\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 12}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#define\ BGLIB\_EVT\_TCPIP\_CONF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 17}}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#define\ BGLIB\_EVT\_TCPIP\_ENDP\_STS\ \ \ \ \ \ \ \ \ \ \ \ 17}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#define\ BGLIB\_EVT\_TCPIP\_UDP\_DATA\ \ \ \ \ \ \ \ \ \ \ \ 13}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#define\ BGLIB\_EVT\_TCPIP\_DNS\_HOSTNAME\ \ \ \ \ \ \ \ 11}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#define\ BGLIB\_EVT\_DNS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 9}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#define\ BGLIB\_EVT\_ENDP\_STS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 12}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#define\ BGLIB\_EVT\_ENDP\_DATA\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 13}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#define\ BGLIB\_EVT\_ENDP\_DATA\_6\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 6}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#define\ BGLIB\_EVT\_ENDP\_DATA\_5\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 5}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#define\ BGLIB\_EVT\_ENDP\_DATA\_2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 2}}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#define\ BGLIB\_EVT\_RESPONSE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 8}}
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#define\ BGLIB\_EVT\_TLS\_VERIFY\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 7}}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#define\ BGLIB\_EVT\_X509\_CERT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 8}}
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#define\ BGLIB\_EVT\_X509\_ADD\_CERT\_FINISH\ \ \ \ \ \ 7}}
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#define\ BGLIB\_EVT\_X509\_CERT\_FINGER\ \ \ \ \ \ \ \ \ \ 16}}
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#define\ BGLIB\_EVT\_X509\_CERT\_SUB\ \ \ \ \ \ \ \ \ \ \ \ \ 6}}
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#define\ BGLIB\_EVT\_X509\_CERT\_SUB\_LEN\ \ \ \ \ \ \ \ \ 54}}
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#define\ BGLIB\_EVT\_X509\_CERT\_LIST\ \ \ \ \ \ \ \ \ \ \ \ 4}}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#define\ MAX\_WIFI\_HEADER\_BYTES\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 129\ \ \ \ \ }}
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\#define\ MAX\_WIFI\_TEST\_FRAME\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 153\ \ \ \ \ }}
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#define\ MAX\_WIFI\_ALERT\_GPS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 141\ \ \ \ \ }}
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#define\ MAX\_WIFI\_READ\_FILE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 253\ \ \ \ \ }}
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#define\ WIFI\_ID\_PAYLOAD\_SIZE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 2\ \ \ \ \ \ \ }}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#define\ NONE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ }}
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#define\ TLS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1\ \ \ }}
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\#define\ PEAP\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 2\ \ \ }}
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#define\ MSCHAPv2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 3\ \ \ }}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \textcolor{preprocessor}{\#define\ DHCP\_ON\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1\ \ \ }}
+\DoxyCodeLine{00085\ \textcolor{preprocessor}{\#define\ DHCP\_OFF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ }}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \textcolor{preprocessor}{\#define\ PORT\_HOST\_ALIVE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 20000}}
+\DoxyCodeLine{00088\ \textcolor{preprocessor}{\#define\ PORT\_DATA\_FRAME\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 20001}}
+\DoxyCodeLine{00089\ \textcolor{preprocessor}{\#define\ PORT\_TEST\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 20002}}
+\DoxyCodeLine{00090\ \textcolor{preprocessor}{\#define\ PORT\_EPI\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 20003}}
+\DoxyCodeLine{00091\ \textcolor{preprocessor}{\#define\ PORT\_FW\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 20004}}
+\DoxyCodeLine{00092\ \textcolor{preprocessor}{\#define\ PORT\_CFG\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 20005}}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \textcolor{preprocessor}{\#define\ CERT\_FOLDER\_NAME\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}CERT"{}\ \ \ \ \ \ }}
+\DoxyCodeLine{00095\ \textcolor{preprocessor}{\#define\ CERT\_FILENAME\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}cert.dat"{}\ \ }}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00098\ \textcolor{comment}{\ **\ Typedefs}}
+\DoxyCodeLine{00099\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00100\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00101\ \{}
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordtype}{char}\ evt[50];}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \}\ \mbox{\hyperlink{structwifi__evt__t}{wifi\_evt\_t}};}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \textcolor{preprocessor}{\#pragma\ pack(1)}}
+\DoxyCodeLine{00107\ \textcolor{comment}{//\ Wifi\ protocol\ first\ package\ to\ be\ sended}}
+\DoxyCodeLine{00108\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00109\ \{}
+\DoxyCodeLine{00110\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ \ \ \ \mbox{\hyperlink{struct_w_i_f_i___h_e_a_d_e_r__t_a34398c9f6b80301402a73ccd84048378}{version}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00111\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ s\_n[16];\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00112\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ \mbox{\hyperlink{struct_w_i_f_i___h_e_a_d_e_r__t_ade9db099bd0814201dfdea4d760e5cd1}{id}};\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00113\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ password[64];\ \ \ }
+\DoxyCodeLine{00114\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\_t}}\ \ \ \ \mbox{\hyperlink{struct_w_i_f_i___h_e_a_d_e_r__t_ad3533b2a1738a2797d9a272536c11337}{file\_size}};\ \ \ \ \ \ }
+\DoxyCodeLine{00115\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \mbox{\hyperlink{struct_w_i_f_i___h_e_a_d_e_r__t_aea0a71866b53c53e7b6d0d69328fcd3c}{wifi\_cheksum}};\ \ \ }
+\DoxyCodeLine{00116\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ ssid[32];\ \ \ \ \ \ \ }
+\DoxyCodeLine{00117\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ \mbox{\hyperlink{struct_w_i_f_i___h_e_a_d_e_r__t_a16476d6cdea5af3dfa00dd455a6e8415}{rssid}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00118\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ \mbox{\hyperlink{struct_w_i_f_i___h_e_a_d_e_r__t_a15fc9cf02a53c9aa29c76df0b7e8b97b}{must\_be\_0x55}};\ \ \ }
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ \}\ \mbox{\hyperlink{struct_w_i_f_i___h_e_a_d_e_r__t}{WIFI\_HEADER\_t}};}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a7d682f56a8c1ced1f87258fbb4579cd2}{COMPILE\_ASSERT}}((\textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_w_i_f_i___h_e_a_d_e_r__t}{WIFI\_HEADER\_t}})\ ==\ \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_a82cff3a7aacbae977acb329be0286819}{MAX\_WIFI\_HEADER\_BYTES}}));}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00125\ \{}
+\DoxyCodeLine{00126\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \mbox{\hyperlink{struct_w_i_f_i___p_a_y_l_o_a_d__t_a202bd547632a09f7a9dd0c370d8929e4}{id\_payload}};\ \ \ \ \ }
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \}\mbox{\hyperlink{struct_w_i_f_i___p_a_y_l_o_a_d__t}{WIFI\_PAYLOAD\_t}};}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ \textcolor{preprocessor}{\#pragma\ pack()}}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00132\ \textcolor{comment}{//\ structure\ to\ know\ if\ you\ have\ to\ load\ certificates}}
+\DoxyCodeLine{00133\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00134\ \{}
+\DoxyCodeLine{00135\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a40bb5262bf908c328fbcfbe5d29d0201}{char\_t}}\ wifi\_fingerprint[16];\ \ \ \ }
+\DoxyCodeLine{00136\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \mbox{\hyperlink{struct_w_i_f_i___c_e_r_t__t_a202920dd923783b331f00001c3692a93}{wifi\_load\_eap}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00137\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \mbox{\hyperlink{struct_w_i_f_i___c_e_r_t__t_a0b08d4911493c310f4692a9d874b1274}{wifi\_load\_tls}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00139\ \}\mbox{\hyperlink{struct_w_i_f_i___c_e_r_t__t}{WIFI\_CERT\_t}};}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00141\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00142\ \textcolor{comment}{\ **\ Globals}}
+\DoxyCodeLine{00143\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00145\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00146\ \textcolor{comment}{\ **\ Prototypes}}
+\DoxyCodeLine{00147\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00149\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_adb7a018f1bb07d857ad68f50ff060997}{Wifi\_Initialize\_BGLib}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00150\ \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\_ID\_e}}\ \ \ \ \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_a8089c2753e0d6f822691ba934ac6eaf5}{Wifi\_Set\_Operating\_Mode}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00151\ \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\_ID\_e}}\ \ \ \ \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_a49fb3f4209cc581931376a8782b66a49}{Wifi\_Check\_Module\_Status}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00152\ \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\_ID\_e}}\ \ \ \ \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_abae4cf27e47c032f0f26b2f77b773648}{Wifi\_Configure\_Module\_Uart}}\ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00153\ \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\_ID\_e}}\ \ \ \ \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_a496be96f131aa1adca8dad2fd7061395}{Wifi\_Get\_Module\_Status}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00154\ \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\_ID\_e}}\ \ \ \ \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_a38347cc9ea2702829f7d84710086dd7a}{Wifi\_Get\_Module\_MAC\_Address}}\ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00155\ \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\_ID\_e}}\ \ \ \ \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_ab0d87361c94f4f901e9a009d62203827}{Wifi\_Get\_RSSI}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00156\ \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\_ID\_e}}\ \ \ \ \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_a1b826a0d21e95c22f0a573dd7a5429ee}{Wifi\_Configure\_TCPIP\_DHCP\_Settings}}\ \ \ \ (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\_t}}\ dhcp);}
+\DoxyCodeLine{00157\ \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\_ID\_e}}\ \ \ \ \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_acc961764e51b751a91686c070452e374}{Wifi\_Configure\_DNS\_Settings}}\ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00159\ \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\_ID\_e}}\ \ \ \ \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_a131e8f6711186a9da9bec9bff8730647}{Wifi\_Set\_Wifi\_Radio\_On}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00160\ \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\_ID\_e}}\ \ \ \ \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_a5e6789110605df58b21c15813993ecec}{Wifi\_Set\_Wifi\_Radio\_Off}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00162\ \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\_ID\_e}}\ \ \ \ \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_a42ac38edd6c0a955425367880bfecd3f}{Wifi\_Scan\_Network}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00164\ \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\_ID\_e}}\ \ \ \ \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_a55aad59239beee7c625ef1480115d787}{Wifi\_Load\_EAP\_TLS\_Cert}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00165\ \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\_ID\_e}}\ \ \ \ \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_a6fcc98353f9429f5732450389558c88c}{Wifi\_Load\_Server\_TLS\_Cacert}}\ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00166\ \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\_ID\_e}}\ \ \ \ \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_a7e8230c89c388139fc583139a2beb691}{Wifi\_Load\_EAP\_CA\_Cert}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00167\ \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\_ID\_e}}\ \ \ \ \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_a8925c99a5fdb7d5a2ab4736fd46a29e5}{Wifi\_Load\_EAP\_PEAP\_Cert}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ peap);}
+\DoxyCodeLine{00168\ \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\_ID\_e}}\ \ \ \ \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_afdc36b688c99cc7e9bb2fe8513118a1a}{Wifi\_No\_Load\_EAP\_TLS\_Cert}}\ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a40bb5262bf908c328fbcfbe5d29d0201}{char\_t}}*\ fingerprint);}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00170\ \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\_ID\_e}}\ \ \ \ \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_a34598b4dd7f45c72e2c71cb393446e43}{Wifi\_Config\_Certs}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\_t}}\ write\_read,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ eap,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ tls,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a40bb5262bf908c328fbcfbe5d29d0201}{char\_t}}*\ write\_fingerprint);}
+\DoxyCodeLine{00171\ \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\_ID\_e}}\ \ \ \ \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_af5b6814c179a062a84ef416012b52070}{Wifi\_Reset\_Certs\_Store}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00172\ }
+\DoxyCodeLine{00173\ \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\_ID\_e}}\ \ \ \ \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_a7ecf9128dd50ba1a157224384cfa215e}{Wifi\_Set\_Password}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ eap);}
+\DoxyCodeLine{00174\ \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\_ID\_e}}\ \ \ \ \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_ac8b4cae41fb1a2cebefddb7c10837b6e}{Wifi\_Connect\_Network}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00175\ \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\_ID\_e}}\ \ \ \ \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_a795b8325fcb76410bb9fdbee3254ca90}{Wifi\_Disconnect\_Network}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00177\ \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\_ID\_e}}\ \ \ \ \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_a81a4e4083b610dbb21ca775d13c9e6ec}{Wifi\_Module\_Reset}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00178\ }
+\DoxyCodeLine{00179\ \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\_ID\_e}}\ \ \ \ \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_a76a52ecb5bd6b0f2c2b5b5f0c59feff8}{Wifi\_Open\_TCP\_Client}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00180\ \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\_ID\_e}}\ \ \ \ \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_ace9d1100d1cb32d4f6ddd04d7f7e291e}{Wifi\_Close\_TCP\_Client}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00181\ \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\_ID\_e}}\ \ \ \ \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_aeacca39b2c852502e88afc9d71c38476}{Wifi\_Open\_UDP\_Client}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00182\ \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\_ID\_e}}\ \ \ \ \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_a0c77368245dd6a5e13e27231e0902ac0}{Wifi\_Close\_UDP\_Client}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00183\ \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\_ID\_e}}\ \ \ \ \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_a7e40e7d60e10b885e5ee6aeb2b5a8171}{Wifi\_Start\_UDP\_Server}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00184\ \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\_ID\_e}}\ \ \ \ \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_a2f64e4476e6ef1d96abb4a27def96aaf}{Wifi\_Close\_UDP\_Server}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00185\ }
+\DoxyCodeLine{00186\ \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\_ID\_e}}\ \ \ \ \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_aee5a5834eeaf73cf2e7e8470d956d57d}{Wifi\_Open\_TLS\_Client}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00187\ \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\_ID\_e}}\ \ \ \ \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_a38026853cc249ed56816db34de0500e0}{Wifi\_Close\_TLS\_Client}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00188\ }
+\DoxyCodeLine{00189\ \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\_ID\_e}}\ \ \ \ \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_a61a184f51f8d89e0f7cecade0732dae5}{Wifi\_Is\_Host\_Alive}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00190\ \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\_ID\_e}}\ \ \ \ \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_ab2d30132091d65f9cc64adcf346c4607}{Wifi\_Send\_Data\_Frame}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}*\ data,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ size\_data,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ frame\_type);}
+\DoxyCodeLine{00191\ \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\_ID\_e}}\ \ \ \ \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_a69cdbda6b544229acb4b866b2e26edb4}{Wifi\_Send\_Test}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00192\ \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\_ID\_e}}\ \ \ \ \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_a4d809acbf2bea224f2bea6d3e9b951d5}{Wifi\_Send\_Test\_Result}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00193\ \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\_ID\_e}}\ \ \ \ \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_a786eafab9b14cb881758ba2729af3f08}{Wifi\_Send\_Episode}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00194\ \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\_ID\_e}}\ \ \ \ \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_a03ce170a4b98e4f7a315afad2f3ee24c}{Wifi\_Send\_Episode\_Result}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00195\ \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\_ID\_e}}\ \ \ \ \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_a2dc45a78a54fd39ac066b6492047e4c2}{Wifi\_Receive\_Firmware}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00196\ \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\_ID\_e}}\ \ \ \ \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_ac5c857d89b9b970102e0250632018ac2}{Wifi\_Receive\_Firmware\_Result}}\ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00197\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_a8805d98a2439f4943e9a3ca175154e56}{Wifi\_Delete\_Firmware}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00198\ \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\_ID\_e}}\ \ \ \ \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_a35d5dc2d9b2d927b7f5010fd8d4f8256}{Wifi\_Receive\_Configuration}}\ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00199\ \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\_ID\_e}}\ \ \ \ \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_ac9f124d0da81d17346031b87f575c581}{Wifi\_Receive\_Configuration\_Result}}\ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00200\ }
+\DoxyCodeLine{00201\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ BSP\_BSP\_WIFI\_ZENTRI\_H\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

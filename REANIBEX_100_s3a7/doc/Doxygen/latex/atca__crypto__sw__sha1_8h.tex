@@ -1,0 +1,36 @@
+\doxysection{C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\+SCE/crypto/atca\+\_\+crypto\+\_\+sw\+\_\+sha1.h File Reference}
+\hypertarget{atca__crypto__sw__sha1_8h}{}\label{atca__crypto__sw__sha1_8h}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/SCE/crypto/atca\_crypto\_sw\_sha1.h@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/SCE/crypto/atca\_crypto\_sw\_sha1.h}}
+
+
+Wrapper API for SHA 1 routines.  
+
+
+{\ttfamily \#include "{}atca\+\_\+crypto\+\_\+sw.\+h"{}}\newline
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+Include dependency graph for atca\+\_\+crypto\+\_\+sw\+\_\+sha1.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{atca__crypto__sw__sha1_8h__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{group__atcac___gabed03bcc1228768534ef4ee49df0ad09}{atcac\+\_\+sw\+\_\+sha1\+\_\+init}} (\mbox{\hyperlink{structatcac__sha1__ctx}{atcac\+\_\+sha1\+\_\+ctx}} \texorpdfstring{$\ast$}{*}ctx)
+\item 
+int \mbox{\hyperlink{group__atcac___ga65ff558306a88e0fbe2fc82bbe6a9c03}{atcac\+\_\+sw\+\_\+sha1\+\_\+update}} (\mbox{\hyperlink{structatcac__sha1__ctx}{atcac\+\_\+sha1\+\_\+ctx}} \texorpdfstring{$\ast$}{*}ctx, const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}data, size\+\_\+t data\+\_\+size)
+\item 
+int \mbox{\hyperlink{group__atcac___ga5589df2a639f61a4dc4ccedc9b5a5453}{atcac\+\_\+sw\+\_\+sha1\+\_\+finish}} (\mbox{\hyperlink{structatcac__sha1__ctx}{atcac\+\_\+sha1\+\_\+ctx}} \texorpdfstring{$\ast$}{*}ctx, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} digest\mbox{[}\mbox{\hyperlink{atca__crypto__sw_8h_adb94a0991eb670ff1bf90253dfea0bfa}{ATCA\+\_\+\+SHA1\+\_\+\+DIGEST\+\_\+\+SIZE}}\mbox{]})
+\item 
+int \mbox{\hyperlink{group__atcac___ga84b866657bf319dab2924c2db3a1e990}{atcac\+\_\+sw\+\_\+sha1}} (const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}data, size\+\_\+t data\+\_\+size, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} digest\mbox{[}\mbox{\hyperlink{atca__crypto__sw_8h_adb94a0991eb670ff1bf90253dfea0bfa}{ATCA\+\_\+\+SHA1\+\_\+\+DIGEST\+\_\+\+SIZE}}\mbox{]})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Wrapper API for SHA 1 routines. 
+
+\begin{DoxyCopyright}{Copyright}
+(c) 2015-\/2020 Microchip Technology Inc. and its subsidiaries. 
+\end{DoxyCopyright}

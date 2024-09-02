@@ -1,0 +1,132 @@
+<map id="Process_Comm_All_Modules" name="Process_Comm_All_Modules">
+<area shape="rect" id="Node000001" title="Process events related to All COMM modules." alt="" coords="5,868,198,895"/>
+<area shape="rect" id="Node000002" href="$thread__comm__hal_8c.html#a1d081723eb366e271a59daa0289b3c8e" title="Initialization of GPS module." alt="" coords="246,1205,395,1232"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="114,894,304,1191,300,1194,109,896"/>
+<area shape="rect" id="Node000011" href="$thread__comm__hal_8c.html#afc169aa2e842d15739e9b0752d29e835" title="Prints Module Information." alt="" coords="246,91,395,133"/>
+<area shape="poly" id="edge13_Node000001_Node000011" title=" " alt="" coords="104,867,306,148,311,149,109,868"/>
+<area shape="rect" id="Node000015" href="$thread__comm__hal_8c.html#af6bf58158a9a7b9220ee08afcba32292" title="Initialization of Wifi module." alt="" coords="249,657,392,684"/>
+<area shape="poly" id="edge17_Node000001_Node000015" title=" " alt="" coords="115,866,292,693,296,697,119,869"/>
+<area shape="rect" id="Node000046" href="$thread__sys_mon__entry_8c.html#ab5d13add30041382fa545103a702582f" title="Function that sets the non volatile data error." alt="" coords="701,1117,854,1160"/>
+<area shape="poly" id="edge80_Node000001_Node000046" title=" " alt="" coords="138,893,365,983,680,1103,698,1109,696,1114,678,1108,363,988,136,898"/>
+<area shape="rect" id="Node000003" href="$thread__comm__hal_8c.html#a63b3e38ecaf443421eb673e2342e2f08" title="Select Uart to send and receive data. This function sets the SN74CBT Multiplexer/Demultiplexer via th..." alt="" coords="470,1205,604,1232"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="395,1216,455,1216,455,1221,395,1221"/>
+<area shape="rect" id="Node000010" href="$_comm_8c.html#ae40e9c681ca7b454e790d494b96c2284" title="Change SCI3 (UART) baud rate." alt="" coords="443,1256,631,1283"/>
+<area shape="poly" id="edge12_Node000002_Node000010" title=" " alt="" coords="381,1230,463,1249,462,1254,380,1235"/>
+<area shape="rect" id="Node000004" href="$_i2_c__2_8c.html#aba3d08d9b33082a1c0aa61ae3e6b5e23" title="Function to read a byte data from a specific address." alt="" coords="972,1285,1084,1312"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="606,1228,633,1242,650,1263,657,1285,664,1305,681,1322,718,1338,757,1347,798,1350,838,1348,915,1334,978,1315,980,1320,917,1339,839,1353,797,1355,756,1352,716,1343,678,1326,659,1308,652,1287,645,1265,630,1246,604,1232"/>
+<area shape="rect" id="Node000009" href="$_i2_c__2_8c.html#abb5323ebe9e05f1fe983ee0c53fa732e" title="Function to write a data byte at specific address." alt="" coords="972,1235,1084,1261"/>
+<area shape="poly" id="edge8_Node000003_Node000009" title=" " alt="" coords="605,1220,956,1241,956,1246,605,1225"/>
+<area shape="rect" id="Node000005" href="$_i2_c__2_8c.html#aa504ef0b681fc32e47f923cc52b93067" title="Function to get a data byte from the i2C device." alt="" coords="1214,1336,1318,1363"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="1084,1308,1199,1332,1197,1338,1083,1313"/>
+<area shape="rect" id="Node000006" href="$_i2_c__2_8c.html#afb25d38eef88c072ab6ce216e1965501" title="Generate the START condition in the i2C line." alt="" coords="1198,1184,1334,1211"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="1083,1289,1108,1282,1131,1271,1145,1259,1154,1247,1163,1233,1178,1220,1189,1215,1191,1219,1182,1225,1167,1237,1158,1250,1149,1263,1133,1276,1109,1287,1084,1294"/>
+<area shape="rect" id="Node000007" href="$_i2_c__2_8c.html#a24d35a4dc09bc8d6c5be604be9a2102b" title="Generate the STOP condition in the i2C line." alt="" coords="1198,1235,1333,1261"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="1083,1284,1184,1263,1185,1268,1084,1290"/>
+<area shape="rect" id="Node000008" href="$_i2_c__2_8c.html#a5a45bd2c0aa3fd6619ad4e682466200c" title="Function to send a data byte to the i2C device." alt="" coords="1215,1285,1317,1312"/>
+<area shape="poly" id="edge7_Node000004_Node000008" title=" " alt="" coords="1084,1296,1199,1296,1199,1301,1084,1301"/>
+<area shape="poly" id="edge9_Node000009_Node000006" title=" " alt="" coords="1084,1234,1184,1212,1185,1217,1085,1239"/>
+<area shape="poly" id="edge10_Node000009_Node000007" title=" " alt="" coords="1084,1245,1182,1245,1182,1251,1084,1251"/>
+<area shape="poly" id="edge11_Node000009_Node000008" title=" " alt="" coords="1085,1257,1200,1282,1198,1287,1084,1262"/>
+<area shape="rect" id="Node000012" href="$_d_b___test_8c.html#a29b3330272af11e7475fe7645d1256ce" title="Stores Sigfox module info in a file." alt="" coords="464,23,611,49"/>
+<area shape="poly" id="edge14_Node000011_Node000012" title=" " alt="" coords="381,88,442,65,480,52,482,57,444,71,382,93"/>
+<area shape="rect" id="Node000013" href="$_trace_8c.html#a8947b81ae09bdb57459cd1c81c78ab37" title="Print a trace string inserting the time stamp." alt="" coords="511,124,564,151"/>
+<area shape="poly" id="edge15_Node000011_Node000013" title=" " alt="" coords="396,118,496,130,495,135,395,123"/>
+<area shape="rect" id="Node000014" href="$_trace_8c.html#abbe04e9d8a6f964c5a4f18901a95b0de" title="Print a trace string inserting the time stamp." alt="" coords="737,5,818,32"/>
+<area shape="poly" id="edge16_Node000011_Node000014" title=" " alt="" coords="395,100,507,83,631,59,722,34,724,39,632,64,507,88,396,105"/>
+<area shape="poly" id="edge25_Node000015_Node000003" title=" " alt="" coords="326,684,337,784,361,938,377,1018,397,1091,419,1151,445,1192,458,1202,454,1206,441,1195,415,1154,392,1093,372,1019,355,938,332,785,320,685"/>
+<area shape="poly" id="edge26_Node000015_Node000010" title=" " alt="" coords="325,684,335,793,358,962,374,1050,394,1131,417,1198,431,1223,445,1242,448,1245,444,1249,441,1246,426,1226,413,1200,389,1133,369,1051,352,963,330,794,320,685"/>
+<area shape="poly" id="edge27_Node000015_Node000013" title=" " alt="" coords="321,656,333,560,358,413,375,337,394,266,416,208,441,168,466,150,495,140,496,145,469,154,445,171,421,210,399,268,380,338,363,414,339,561,326,657"/>
+<area shape="rect" id="Node000016" href="$thread__comm__hal_8c.html#acd0f72ce82a8c749fe1171bd48269e66" title="Reset Wifi, Sigfox or GPS module." alt="" coords="457,1155,618,1181"/>
+<area shape="poly" id="edge18_Node000015_Node000016" title=" " alt="" coords="328,684,370,821,404,918,445,1015,483,1084,520,1140,515,1143,479,1087,441,1017,399,920,365,823,323,685"/>
+<area shape="rect" id="Node000019" href="$bsp__wifi__silabs-_w_g_m110_8c.html#a34598b4dd7f45c72e2c71cb393446e43" title="Update of the cert.dat file to know which certificates have been loaded." alt="" coords="715,224,840,251"/>
+<area shape="poly" id="edge28_Node000015_Node000019" title=" " alt="" coords="320,656,328,602,348,523,364,481,384,438,410,399,441,365,465,347,489,338,534,334,579,332,604,326,630,314,644,301,653,288,662,274,678,260,699,250,702,255,681,265,666,277,658,291,648,305,633,318,606,331,580,338,534,339,490,343,468,352,445,369,414,402,389,441,368,483,353,525,334,603,326,657"/>
+<area shape="rect" id="Node000020" href="$bsp__wifi__silabs-_w_g_m110_8c.html#acc961764e51b751a91686c070452e374" title="Configure DNS settings of the device." alt="" coords="708,528,847,571"/>
+<area shape="poly" id="edge29_Node000015_Node000020" title=" " alt="" coords="354,654,442,623,573,588,692,562,694,568,575,593,444,628,356,659"/>
+<area shape="rect" id="Node000023" href="$bsp__wifi__silabs-_w_g_m110_8c.html#a1b826a0d21e95c22f0a573dd7a5429ee" title="Configure IP settings of the device." alt="" coords="703,595,852,637"/>
+<area shape="poly" id="edge32_Node000015_Node000023" title=" " alt="" coords="391,659,443,652,687,623,688,629,443,657,392,664"/>
+<area shape="rect" id="Node000024" href="$bsp__wifi__silabs-_w_g_m110_8c.html#ac8b4cae41fb1a2cebefddb7c10837b6e" title="Start a connection establishment procedure with an Access Point." alt="" coords="701,661,854,688"/>
+<area shape="poly" id="edge34_Node000015_Node000024" title=" " alt="" coords="392,669,686,671,686,677,392,674"/>
+<area shape="rect" id="Node000025" href="$bsp__wifi__silabs-_w_g_m110_8c.html#a38347cc9ea2702829f7d84710086dd7a" title="Get Wifi module MAC Address." alt="" coords="459,911,615,953"/>
+<area shape="poly" id="edge36_Node000015_Node000025" title=" " alt="" coords="328,683,341,725,364,782,398,843,420,872,445,897,449,900,445,904,441,901,416,875,394,846,359,784,336,726,323,685"/>
+<area shape="rect" id="Node000028" href="$bsp__wifi__silabs-_w_g_m110_8c.html#ab0d87361c94f4f901e9a009d62203827" title="The received signal strength indication (RSSI) in dBm units. RSSI: &lt; &#45;30 dBm = Very good; &#45;40 / &#45;60 d..." alt="" coords="483,277,591,304"/>
+<area shape="poly" id="edge40_Node000015_Node000028" title=" " alt="" coords="320,657,326,596,344,507,360,457,380,408,407,362,441,321,467,303,470,308,445,325,412,365,385,410,365,459,349,508,331,597,325,657"/>
+<area shape="rect" id="Node000029" href="$bsp__wifi__silabs-_w_g_m110_8c.html#adb7a018f1bb07d857ad68f50ff060997" title="Initialize library,and provide output function." alt="" coords="467,860,607,887"/>
+<area shape="poly" id="edge43_Node000015_Node000029" title=" " alt="" coords="329,683,345,716,369,761,403,807,445,846,454,852,451,856,441,850,399,810,365,763,340,719,325,685"/>
+<area shape="rect" id="Node000032" href="$bsp__wifi__silabs-_w_g_m110_8c.html#a8925c99a5fdb7d5a2ab4736fd46a29e5" title="Load EAP certs to connect using PEAP&#45;MSCHAPv2." alt="" coords="444,379,630,405"/>
+<area shape="poly" id="edge46_Node000015_Node000032" title=" " alt="" coords="322,656,334,612,357,550,392,484,415,452,441,425,463,410,466,414,445,429,419,456,397,486,362,553,339,614,327,658"/>
+<area shape="rect" id="Node000035" href="$bsp__wifi__silabs-_w_g_m110_8c.html#a55aad59239beee7c625ef1480115d787" title="Load EAP certs to connect using EAP&#45;TLS." alt="" coords="451,225,624,252"/>
+<area shape="poly" id="edge52_Node000015_Node000035" title=" " alt="" coords="319,657,321,587,336,482,351,424,373,366,402,311,441,263,446,259,450,263,445,267,407,314,378,368,356,425,341,483,327,588,324,657"/>
+<area shape="rect" id="Node000036" href="$bsp__wifi__silabs-_w_g_m110_8c.html#a6fcc98353f9429f5732450389558c88c" title="Load Server TLS CA cert if present in SD and if not present in module flash." alt="" coords="702,107,853,149"/>
+<area shape="poly" id="edge57_Node000015_Node000036" title=" " alt="" coords="321,657,334,567,359,433,376,364,395,300,417,247,441,211,530,186,686,147,688,152,531,191,445,215,422,250,400,302,381,365,364,434,339,568,326,657"/>
+<area shape="rect" id="Node000037" href="$bsp__wifi__silabs-_w_g_m110_8c.html#afdc36b688c99cc7e9bb2fe8513118a1a" title="Configuration EAP certs to connect using EAP&#45;TLS." alt="" coords="679,427,876,453"/>
+<area shape="poly" id="edge60_Node000015_Node000037" title=" " alt="" coords="323,656,336,618,360,567,395,515,416,492,442,472,494,447,551,433,609,426,664,425,664,430,609,431,552,438,496,452,444,477,420,496,399,518,365,570,341,620,328,658"/>
+<area shape="rect" id="Node000038" href="$bsp__wifi__silabs-_w_g_m110_8c.html#a74403d55a1180374e5b56690e0237a48" title="Reset Certificates Store." alt="" coords="457,708,617,735"/>
+<area shape="poly" id="edge63_Node000015_Node000038" title=" " alt="" coords="381,682,463,701,462,706,380,687"/>
+<area shape="rect" id="Node000039" href="$bsp__wifi__silabs-_w_g_m110_8c.html#a42ac38edd6c0a955425367880bfecd3f" title="Scan for an Access Point." alt="" coords="470,977,604,1004"/>
+<area shape="poly" id="edge65_Node000015_Node000039" title=" " alt="" coords="326,684,334,737,354,812,370,853,390,893,415,931,445,963,457,972,454,977,441,967,410,934,385,896,365,855,349,814,329,738,320,685"/>
+<area shape="rect" id="Node000048" href="$bsp__wifi__silabs-_w_g_m110_8c.html#a8089c2753e0d6f822691ba934ac6eaf5" title="Wifi set operating mode: 1&#45;client;2&#45;Access Point;4&#45;WIFI direct." alt="" coords="451,759,623,785"/>
+<area shape="poly" id="edge74_Node000015_Node000048" title=" " alt="" coords="342,682,387,713,444,744,461,751,459,756,442,749,384,718,339,687"/>
+<area shape="rect" id="Node000049" href="$bsp__wifi__silabs-_w_g_m110_8c.html#a7ecf9128dd50ba1a157224384cfa215e" title="Set password to connection." alt="" coords="470,809,604,836"/>
+<area shape="poly" id="edge76_Node000015_Node000049" title=" " alt="" coords="333,683,377,738,408,769,444,795,457,801,454,806,442,800,405,773,373,741,329,686"/>
+<area shape="rect" id="Node000050" href="$bsp__wifi__silabs-_w_g_m110_8c.html#a131e8f6711186a9da9bec9bff8730647" title="Turn On Wifi module Radio." alt="" coords="456,487,619,513"/>
+<area shape="poly" id="edge78_Node000015_Node000050" title=" " alt="" coords="329,655,374,600,406,567,442,538,478,517,481,522,444,542,410,571,378,603,334,658"/>
+<area shape="rect" id="Node000017" href="$thread__comm__hal_8c.html#aba10912e5156af563d72a637fe9b7a78" title="Reset Wifi, Sigfox or GPS module." alt="" coords="706,1285,849,1312"/>
+<area shape="poly" id="edge19_Node000016_Node000017" title=" " alt="" coords="603,1179,633,1191,687,1226,749,1274,746,1278,684,1231,630,1196,601,1184"/>
+<area shape="rect" id="Node000018" href="$thread__comm__hal_8c.html#a4e3f9bfdd5df0ab92a1713930d545237" title="Reset Wifi, Sigfox or GPS module." alt="" coords="705,1184,850,1211"/>
+<area shape="poly" id="edge22_Node000016_Node000018" title=" " alt="" coords="619,1175,690,1184,690,1189,618,1180"/>
+<area shape="poly" id="edge20_Node000017_Node000004" title=" " alt="" coords="850,1296,956,1296,956,1301,850,1301"/>
+<area shape="poly" id="edge21_Node000017_Node000009" title=" " alt="" coords="847,1282,956,1260,957,1265,848,1287"/>
+<area shape="poly" id="edge23_Node000018_Node000004" title=" " alt="" coords="802,1209,857,1240,925,1271,958,1281,956,1287,923,1276,855,1244,800,1214"/>
+<area shape="poly" id="edge24_Node000018_Node000009" title=" " alt="" coords="848,1209,957,1231,956,1236,847,1214"/>
+<area shape="rect" id="Node000021" href="$bsp__wifi__silabs-_w_g_m110_8c.html#ab4402b6cb5049aeeb75bee03bdcb303b" title="Waits for a response to a given command." alt="" coords="941,477,1115,504"/>
+<area shape="poly" id="edge30_Node000020_Node000021" title=" " alt="" coords="847,531,952,506,953,511,848,536"/>
+<area shape="rect" id="Node000022" href="$_comm_8c.html#a612240bf37db565f46ad4dc6c7298898" title="Get a received module response." alt="" coords="1180,376,1351,403"/>
+<area shape="poly" id="edge31_Node000021_Node000022" title=" " alt="" coords="1060,474,1218,407,1220,411,1062,479"/>
+<area shape="poly" id="edge33_Node000023_Node000021" title=" " alt="" coords="847,592,875,580,939,546,993,511,996,515,941,550,877,585,849,597"/>
+<area shape="poly" id="edge35_Node000024_Node000021" title=" " alt="" coords="849,658,874,647,916,617,952,582,1007,515,1011,519,956,586,919,621,877,652,852,663"/>
+<area shape="poly" id="edge38_Node000025_Node000021" title=" " alt="" coords="615,914,773,878,839,859,874,844,909,808,939,766,963,721,982,674,1008,586,1020,519,1026,520,1013,587,987,676,967,723,943,769,913,812,877,849,841,864,774,883,617,919"/>
+<area shape="rect" id="Node000026" href="$thread__comm__hal_8c.html#a3697cab536e0621953d66a141e99310d" title="Checks if a MAC address has a valid format." alt="" coords="689,1016,866,1043"/>
+<area shape="poly" id="edge37_Node000025_Node000026" title=" " alt="" coords="609,951,633,963,657,983,667,993,681,1002,695,1008,693,1013,678,1006,663,997,653,987,630,968,606,956"/>
+<area shape="rect" id="Node000027" href="$bsp__wifi__silabs-_w_g_m110_8c.html#a0f3088ec6157ac9e9142bc42972bbe45" title="Parse WGM110 MAC Address format (HEX) to ASCII and save it." alt="" coords="693,1067,862,1093"/>
+<area shape="poly" id="edge39_Node000025_Node000027" title=" " alt="" coords="616,952,633,963,651,987,657,1010,664,1032,681,1053,687,1057,684,1061,678,1057,659,1034,652,1011,646,989,629,967,613,956"/>
+<area shape="poly" id="edge41_Node000028_Node000014" title=" " alt="" coords="591,283,612,275,629,262,645,242,653,223,657,183,659,140,665,117,677,93,705,62,736,38,740,43,709,66,682,96,670,119,664,141,662,183,659,224,650,245,633,266,614,279,592,288"/>
+<area shape="poly" id="edge42_Node000028_Node000021" title=" " alt="" coords="592,297,724,327,802,351,877,382,946,423,1001,465,998,469,943,427,874,386,800,356,723,332,591,302"/>
+<area shape="rect" id="Node000030" href="$bsp__wifi__silabs-_w_g_m110_8c.html#a7bf71780fcef8cecc8a18f5377b86e24" title="Function called when a message needs to be written to the serial port." alt="" coords="704,965,851,992"/>
+<area shape="poly" id="edge44_Node000029_Node000030" title=" " alt="" coords="609,885,633,896,649,910,658,925,666,938,681,951,691,957,689,961,678,956,662,942,653,927,645,914,630,901,606,890"/>
+<area shape="rect" id="Node000031" href="$_comm_8c.html#aab482bf1737ccffd871eaa85a6f25021" title="Send a string through the UART to the wifi module." alt="" coords="950,965,1106,992"/>
+<area shape="poly" id="edge45_Node000030_Node000031" title=" " alt="" coords="851,976,934,976,934,981,851,981"/>
+<area shape="poly" id="edge47_Node000032_Node000021" title=" " alt="" coords="631,386,749,390,813,399,876,412,940,437,994,466,992,471,938,442,875,417,813,404,748,396,631,391"/>
+<area shape="rect" id="Node000033" href="$bsp__wifi__silabs-_w_g_m110_8c.html#a7e8230c89c388139fc583139a2beb691" title="Load EAP CA certificate to connect." alt="" coords="693,275,862,301"/>
+<area shape="poly" id="edge48_Node000032_Node000033" title=" " alt="" coords="582,376,630,358,736,307,739,311,632,362,584,381"/>
+<area shape="poly" id="edge49_Node000033_Node000021" title=" " alt="" coords="839,299,877,318,920,352,958,391,1012,463,1008,466,954,395,916,356,874,322,836,304"/>
+<area shape="rect" id="Node000034" href="$bsp__wifi__silabs-_w_g_m110_8c.html#ae5a5d8faa49a0c799b9bc3808e91e616" title="Waits for a response to a given command." alt="" coords="924,275,1132,301"/>
+<area shape="poly" id="edge50_Node000033_Node000034" title=" " alt="" coords="862,285,908,285,908,291,862,291"/>
+<area shape="poly" id="edge51_Node000034_Node000022" title=" " alt="" coords="1062,299,1220,367,1218,372,1060,304"/>
+<area shape="poly" id="edge55_Node000035_Node000019" title=" " alt="" coords="624,236,699,235,699,240,624,241"/>
+<area shape="poly" id="edge53_Node000035_Node000021" title=" " alt="" coords="602,222,674,209,754,199,827,197,855,201,877,210,900,231,909,255,915,282,926,312,1013,463,1008,465,921,314,910,283,904,257,895,234,874,214,854,206,826,203,755,204,675,214,603,227"/>
+<area shape="poly" id="edge56_Node000035_Node000033" title=" " alt="" coords="606,250,695,268,694,274,605,255"/>
+<area shape="poly" id="edge54_Node000035_Node000034" title=" " alt="" coords="557,223,592,196,629,161,643,142,650,124,659,107,678,92,731,70,777,63,824,70,877,92,903,108,926,127,966,172,997,219,1017,259,1012,262,992,222,962,175,923,131,900,112,874,97,822,75,777,68,732,75,681,97,664,110,655,126,647,144,633,164,595,200,560,227"/>
+<area shape="poly" id="edge58_Node000036_Node000021" title=" " alt="" coords="854,148,878,166,892,185,901,202,909,236,914,271,926,312,970,396,1011,463,1007,466,965,398,921,314,908,272,904,237,896,204,888,187,874,170,850,152"/>
+<area shape="poly" id="edge59_Node000036_Node000034" title=" " alt="" coords="841,148,877,166,947,215,1003,262,999,266,944,219,874,170,838,152"/>
+<area shape="poly" id="edge61_Node000037_Node000021" title=" " alt="" coords="848,451,944,471,943,476,847,457"/>
+<area shape="poly" id="edge62_Node000037_Node000034" title=" " alt="" coords="800,424,990,307,993,312,803,429"/>
+<area shape="poly" id="edge64_Node000038_Node000021" title=" " alt="" coords="618,732,677,736,744,734,811,722,844,712,874,698,900,680,924,659,964,610,994,560,1013,518,1018,520,998,562,968,613,928,663,904,685,877,702,846,717,813,728,744,739,677,741,618,737"/>
+<area shape="rect" id="Node000040" href="$secure__crypto_8c.html#ad76358be60b9987ce85bc2dee9fb8457" title="Function to encrypt data." alt="" coords="697,915,858,941"/>
+<area shape="poly" id="edge66_Node000039_Node000040" title=" " alt="" coords="590,974,679,951,708,943,709,948,680,956,592,979"/>
+<area shape="poly" id="edge72_Node000039_Node000046" title=" " alt="" coords="567,1002,600,1022,633,1046,648,1062,657,1076,666,1090,681,1103,688,1108,685,1112,678,1107,662,1093,652,1079,643,1065,630,1050,597,1026,565,1007"/>
+<area shape="rect" id="Node000041" href="$_bexlib_8h.html#ac884a84e207cf1d1b5f3d66d5a8ad8fb" title=" " alt="" coords="968,915,1088,941"/>
+<area shape="poly" id="edge67_Node000040_Node000041" title=" " alt="" coords="859,925,952,925,952,931,859,931"/>
+<area shape="rect" id="Node000042" href="$secure__crypto_8c.html#af7c91f21e106a9c4f7190aa91088341b" title="Function to initialize the ATECC608B secure element." alt="" coords="961,864,1095,891"/>
+<area shape="poly" id="edge68_Node000040_Node000042" title=" " alt="" coords="847,911,945,891,946,896,848,917"/>
+<area shape="rect" id="Node000043" href="$group__atcab__.html#gacdc4fa3d2f2f6d197af8c10ab1f288b8" title=" " alt="" coords="1227,864,1304,891"/>
+<area shape="poly" id="edge69_Node000042_Node000043" title=" " alt="" coords="1095,875,1212,875,1212,880,1095,880"/>
+<area shape="rect" id="Node000044" href="$group__hal__.html#gad4df1b6755e2d5b5d9e810371e45ca8c" title=" " alt="" coords="1216,915,1315,941"/>
+<area shape="poly" id="edge70_Node000042_Node000044" title=" " alt="" coords="1095,889,1202,912,1200,917,1093,894"/>
+<area shape="rect" id="Node000045" href="$_bexlib_8h.html#a303154c70ed1538bd946df8696a78bce" title=" " alt="" coords="1224,813,1307,840"/>
+<area shape="poly" id="edge71_Node000042_Node000045" title=" " alt="" coords="1093,861,1209,836,1210,841,1095,866"/>
+<area shape="rect" id="Node000047" href="$thread__sys_mon__entry_8c.html#a9c961ad97558f92f8f4d44373bca3702" title="Determine if an error requires a SAT service or not." alt="" coords="979,1125,1077,1152"/>
+<area shape="poly" id="edge73_Node000046_Node000047" title=" " alt="" coords="855,1136,963,1136,963,1141,855,1141"/>
+<area shape="poly" id="edge75_Node000048_Node000021" title=" " alt="" coords="624,783,683,787,748,783,814,770,845,758,874,743,904,721,929,694,952,663,971,632,999,569,1017,518,1022,520,1004,571,976,634,956,666,934,697,907,725,877,748,847,763,815,775,749,789,683,792,624,789"/>
+<area shape="poly" id="edge77_Node000049_Node000021" title=" " alt="" coords="605,832,667,838,737,836,809,823,843,810,874,792,907,765,936,731,959,694,978,654,1005,578,1019,519,1024,520,1010,580,983,657,964,696,940,734,911,768,877,797,845,815,810,828,738,842,667,843,605,838"/>
+<area shape="poly" id="edge79_Node000050_Node000021" title=" " alt="" coords="619,496,925,490,925,495,619,501"/>
+</map>

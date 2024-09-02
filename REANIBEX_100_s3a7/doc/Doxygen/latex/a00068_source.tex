@@ -1,0 +1,64 @@
+\doxysection{thread\+\_\+acc\+\_\+entry.\+h}
+\hypertarget{a00068_source}{}\label{a00068_source}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/thread\_acc\_entry.h@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/thread\_acc\_entry.h}}
+\mbox{\hyperlink{a00068}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Name\ \ \ \ \ \ :\ R100\_S3A7\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ :\ Osatu\ S.\ Coop\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Compiler\ \ :\ GNU\ ARM\ Embedded\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ Target\ \ \ \ :\ Reanibex\ Serie\ 100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ ******************************************************************************/}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#ifndef\ THREAD\_ACC\_ENTRY\_H\_}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#define\ THREAD\_ACC\_ENTRY\_H\_}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ INCLUDES}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ "{}tx\_api.h"{}}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ "{}tx\_trace.h"{}}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ "{}tx\_timer.h"{}}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ *\ EXTERNS}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ *\ GLOBALS}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ **\ Macros}}
+\DoxyCodeLine{00040\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#define\ ACC\_INT\_COUNT\_MAX\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 10\ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{//\ ACC\ counter\ to\ send\ message}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00044\ \textcolor{comment}{\ **\ Typedefs}}
+\DoxyCodeLine{00045\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00046\ \textcolor{comment}{//\ Enum\ to\ comunicate\ between\ SysMon\ and\ ACC\ threads}}
+\DoxyCodeLine{00047\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00048\ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \mbox{\hyperlink{a00068_acaefd6781196cdc4562943185f5b73a3ac4d04de661a45d1d37b2b26e690f2155}{ACC\_STATUS\_OK}}\ =\ 0,\ \ \ \ \ \ \textcolor{comment}{//\ OK\ state\ for\ the\ ACC\ thread\ to\ do\ a\ POWER\_OFF}}
+\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{a00068_acaefd6781196cdc4562943185f5b73a3ac2e66c3d9b58deff96e58e744a289e1e}{ACC\_STATUS\_PON}}\ =\ 1,\ \ \ \ \ \textcolor{comment}{//\ PON\ state\ so\ that\ the\ ACC\ thread\ does\ not\ make\ a\ POWER\_OFF}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \}\mbox{\hyperlink{a00068_acaefd6781196cdc4562943185f5b73a3}{EV\_ACC\_e}};}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00056\ \textcolor{comment}{\ *\ PROTOTYPES}}
+\DoxyCodeLine{00057\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00068_ac4851b82463d39763ebfcd65a3e0c5a6}{ACC\_Cal\_Mov}}\ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00060\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00068_ab6b357f9bb0bcdbf7a472663b7387252}{ACC\_Send\_Comms}}\ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00061\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00068_aa98126332a2b636efcbe5711b5007ad0}{ACC\_Kill}}\ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00062\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00068_a69f0d150ddd9259af14040615b58607c}{Led\_Blink\_ACC}}\ \ \ (\mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\_t}}\ force);}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ THREAD\_ACC\_ENTRY\_H\_\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00067\ \textcolor{comment}{\ **\ \$Log\$}}
+\DoxyCodeLine{00068\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00069\ \textcolor{comment}{\ **\ end\ of\ thread\_acc\_entry.h}}
+\DoxyCodeLine{00070\ \textcolor{comment}{\ ******************************************************************************/}}
+
+\end{DoxyCode}

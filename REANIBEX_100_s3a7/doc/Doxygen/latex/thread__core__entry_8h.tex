@@ -1,0 +1,348 @@
+\doxysection{C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/thread\+\_\+core\+\_\+entry.h File Reference}
+\hypertarget{thread__core__entry_8h}{}\label{thread__core__entry_8h}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/thread\_core\_entry.h@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/thread\_core\_entry.h}}
+
+
+Header with functions related to the core task.  
+
+
+{\ttfamily \#include $<$device\+\_\+init.\+h$>$}\newline
+{\ttfamily \#include "{}types\+\_\+app.\+h"{}}\newline
+{\ttfamily \#include "{}event\+\_\+ids.\+h"{}}\newline
+{\ttfamily \#include "{}thread\+\_\+sys\+Mon\+\_\+entry.\+h"{}}\newline
+Include dependency graph for thread\+\_\+core\+\_\+entry.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__core__entry_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__core__entry_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{thread__core__entry_8h_a0e00cc7e2e408fe040f4f7ba70b5c3f9}{LED\+\_\+\+VALUE\+\_\+\+OFF}}~IOPORT\+\_\+\+LEVEL\+\_\+\+LOW
+\item 
+\#define \mbox{\hyperlink{thread__core__entry_8h_aaeede0ae638066aa6f9a1d863a773ba4}{LED\+\_\+\+VALUE\+\_\+\+ON}}~IOPORT\+\_\+\+LEVEL\+\_\+\+HIGH
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{thread__core__entry_8h_a45cfcc998186af39961ade62a140bc31}{FSM\+\_\+\+R100\+\_\+\+AED}} (\mbox{\hyperlink{event__ids_8h_a610cd7de90c58acf8dfb3345f1e53697}{EVENT\+\_\+\+ID\+\_\+e}} aed\+\_\+event)
+\item 
+void \mbox{\hyperlink{thread__core__entry_8h_a6f4a81c7e67ef4f60fb3d68b4f9acc19}{Pastime\+\_\+\+While\+\_\+\+Audio\+\_\+\+Playing}} (void)
+\begin{DoxyCompactList}\small\item\em pass time while the audio message is playing \end{DoxyCompactList}\item 
+\mbox{\hyperlink{thread__pat_mon__hal_8h_a71de8cbe1b830973cbf1b3b2dd5b57ba}{RCP\+\_\+\+BREAK\+\_\+t}} \mbox{\hyperlink{thread__core__entry_8h_a3eb1c7bea6a7e44589b65a1a98fc1de3}{Pastime\+\_\+\+While\+\_\+\+Audio\+\_\+\+Playing\+\_\+with\+\_\+\+Break\+\_\+\+PT}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} delay)
+\begin{DoxyCompactList}\small\item\em pass time while the audio message is playing \end{DoxyCompactList}\item 
+\mbox{\hyperlink{thread__pat_mon__hal_8h_a71de8cbe1b830973cbf1b3b2dd5b57ba}{RCP\+\_\+\+BREAK\+\_\+t}} \mbox{\hyperlink{thread__core__entry_8h_a4c91aeda537a55c0e8f54abe253a0c4b}{Pastime\+\_\+\+While\+\_\+\+Audio\+\_\+\+Playing\+\_\+with\+\_\+\+Break\+\_\+\+PT\+\_\+\+OC}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} delay)
+\begin{DoxyCompactList}\small\item\em pass time while the audio message is playing \end{DoxyCompactList}\item 
+\mbox{\hyperlink{thread__pat_mon__hal_8h_a71de8cbe1b830973cbf1b3b2dd5b57ba}{RCP\+\_\+\+BREAK\+\_\+t}} \mbox{\hyperlink{thread__core__entry_8h_a7ee6fc368635a86cdeb84f3d6c692329}{Pastime\+\_\+\+While\+\_\+\+Audio\+\_\+\+Playing\+\_\+with\+\_\+\+Break\+\_\+\+PT\+\_\+\+CC}} (void)
+\begin{DoxyCompactList}\small\item\em pass time while the audio message is playing \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{thread__core__entry_8h_afe7922236ddc997c50ed61aeaca4c204}{Is\+\_\+\+Patient\+\_\+\+Type\+\_\+\+Change}} (void)
+\begin{DoxyCompactList}\small\item\em Check if patient type has changed. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{thread__core__entry_8h_a12572cc8f7aa64bfff52a5e69376529b}{Get\+\_\+\+RCP\+\_\+\+Rate}} (void)
+\begin{DoxyCompactList}\small\item\em Return the configured RCP rate. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{thread__core__entry_8h_ab5cc7004066a53f633a1891cc016a473}{Send\+\_\+\+Core\+\_\+\+Queue}} (\mbox{\hyperlink{event__ids_8h_a610cd7de90c58acf8dfb3345f1e53697}{EVENT\+\_\+\+ID\+\_\+e}} ev)
+\begin{DoxyCompactList}\small\item\em Process events related to DRD. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{types__app_8h_a72bf2916658241ff5c65acd6d8a5ed4c}{WORKING\+\_\+\+MODE\+\_\+e}} \mbox{\hyperlink{thread__core__entry_8h_a866cc90724d82d3674cec36af3a6656b}{curr\+\_\+working\+\_\+mode}}
+\item 
+\mbox{\hyperlink{struct_d_e_v_i_c_e___s_e_t_t_i_n_g_s__t}{DEVICE\+\_\+\+SETTINGS\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{thread__core__entry_8h_a7696debdbb4df854622a71c3cbacadc5}{p\+Device\+\_\+\+Settings}}
+\item 
+\mbox{\hyperlink{struct_a_e_d___s_e_t_t_i_n_g_s__t}{AED\+\_\+\+SETTINGS\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{thread__core__entry_8h_a1b517e767cd50ebf84e6f84fa8fe59d6}{p\+Aed\+\_\+\+Settings}}
+\item 
+\mbox{\hyperlink{struct_m_i_s_c___s_e_t_t_i_n_g_s__t}{MISC\+\_\+\+SETTINGS\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{thread__core__entry_8h_a0ab3bf0c9b8d8a9f0af67be61ddc0752}{p\+Misc\+\_\+\+Settings}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header with functions related to the core task. 
+
+\begin{DoxyVersion}{Version}
+v1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+16/01/2018 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+ltorres 
+\end{DoxyAuthor}
+\begin{DoxyWarning}{Warning}
+author date version .-\/ Edition 
+\end{DoxyWarning}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000078}{Bug}}]\end{DoxyRefDesc}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{thread__core__entry_8h_a0e00cc7e2e408fe040f4f7ba70b5c3f9}\label{thread__core__entry_8h_a0e00cc7e2e408fe040f4f7ba70b5c3f9} 
+\index{thread\_core\_entry.h@{thread\_core\_entry.h}!LED\_VALUE\_OFF@{LED\_VALUE\_OFF}}
+\index{LED\_VALUE\_OFF@{LED\_VALUE\_OFF}!thread\_core\_entry.h@{thread\_core\_entry.h}}
+\doxysubsubsection{\texorpdfstring{LED\_VALUE\_OFF}{LED\_VALUE\_OFF}}
+{\footnotesize\ttfamily \#define LED\+\_\+\+VALUE\+\_\+\+OFF~IOPORT\+\_\+\+LEVEL\+\_\+\+LOW}
+
+\Hypertarget{thread__core__entry_8h_aaeede0ae638066aa6f9a1d863a773ba4}\label{thread__core__entry_8h_aaeede0ae638066aa6f9a1d863a773ba4} 
+\index{thread\_core\_entry.h@{thread\_core\_entry.h}!LED\_VALUE\_ON@{LED\_VALUE\_ON}}
+\index{LED\_VALUE\_ON@{LED\_VALUE\_ON}!thread\_core\_entry.h@{thread\_core\_entry.h}}
+\doxysubsubsection{\texorpdfstring{LED\_VALUE\_ON}{LED\_VALUE\_ON}}
+{\footnotesize\ttfamily \#define LED\+\_\+\+VALUE\+\_\+\+ON~IOPORT\+\_\+\+LEVEL\+\_\+\+HIGH}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{thread__core__entry_8h_a45cfcc998186af39961ade62a140bc31}\label{thread__core__entry_8h_a45cfcc998186af39961ade62a140bc31} 
+\index{thread\_core\_entry.h@{thread\_core\_entry.h}!FSM\_R100\_AED@{FSM\_R100\_AED}}
+\index{FSM\_R100\_AED@{FSM\_R100\_AED}!thread\_core\_entry.h@{thread\_core\_entry.h}}
+\doxysubsubsection{\texorpdfstring{FSM\_R100\_AED()}{FSM\_R100\_AED()}}
+{\footnotesize\ttfamily void FSM\+\_\+\+R100\+\_\+\+AED (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{event__ids_8h_a610cd7de90c58acf8dfb3345f1e53697}{EVENT\+\_\+\+ID\+\_\+e}}}]{aed\+\_\+event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{thread__core__entry_8h_a45cfcc998186af39961ade62a140bc31_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__core__entry_8h_a45cfcc998186af39961ade62a140bc31_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__core__entry_8h_a12572cc8f7aa64bfff52a5e69376529b}\label{thread__core__entry_8h_a12572cc8f7aa64bfff52a5e69376529b} 
+\index{thread\_core\_entry.h@{thread\_core\_entry.h}!Get\_RCP\_Rate@{Get\_RCP\_Rate}}
+\index{Get\_RCP\_Rate@{Get\_RCP\_Rate}!thread\_core\_entry.h@{thread\_core\_entry.h}}
+\doxysubsubsection{\texorpdfstring{Get\_RCP\_Rate()}{Get\_RCP\_Rate()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} Get\+\_\+\+RCP\+\_\+\+Rate (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Return the configured RCP rate. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+RCP rate (100, 110 or 120) 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__core__entry_8h_a12572cc8f7aa64bfff52a5e69376529b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__core__entry_8h_afe7922236ddc997c50ed61aeaca4c204}\label{thread__core__entry_8h_afe7922236ddc997c50ed61aeaca4c204} 
+\index{thread\_core\_entry.h@{thread\_core\_entry.h}!Is\_Patient\_Type\_Change@{Is\_Patient\_Type\_Change}}
+\index{Is\_Patient\_Type\_Change@{Is\_Patient\_Type\_Change}!thread\_core\_entry.h@{thread\_core\_entry.h}}
+\doxysubsubsection{\texorpdfstring{Is\_Patient\_Type\_Change()}{Is\_Patient\_Type\_Change()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} Is\+\_\+\+Patient\+\_\+\+Type\+\_\+\+Change (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Check if patient type has changed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The connected electrodes type 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__core__entry_8h_afe7922236ddc997c50ed61aeaca4c204_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__core__entry_8h_a6f4a81c7e67ef4f60fb3d68b4f9acc19}\label{thread__core__entry_8h_a6f4a81c7e67ef4f60fb3d68b4f9acc19} 
+\index{thread\_core\_entry.h@{thread\_core\_entry.h}!Pastime\_While\_Audio\_Playing@{Pastime\_While\_Audio\_Playing}}
+\index{Pastime\_While\_Audio\_Playing@{Pastime\_While\_Audio\_Playing}!thread\_core\_entry.h@{thread\_core\_entry.h}}
+\doxysubsubsection{\texorpdfstring{Pastime\_While\_Audio\_Playing()}{Pastime\_While\_Audio\_Playing()}}
+{\footnotesize\ttfamily void Pastime\+\_\+\+While\+\_\+\+Audio\+\_\+\+Playing (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+pass time while the audio message is playing 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__core__entry_8h_a6f4a81c7e67ef4f60fb3d68b4f9acc19_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__core__entry_8h_a6f4a81c7e67ef4f60fb3d68b4f9acc19_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__core__entry_8h_a3eb1c7bea6a7e44589b65a1a98fc1de3}\label{thread__core__entry_8h_a3eb1c7bea6a7e44589b65a1a98fc1de3} 
+\index{thread\_core\_entry.h@{thread\_core\_entry.h}!Pastime\_While\_Audio\_Playing\_with\_Break\_PT@{Pastime\_While\_Audio\_Playing\_with\_Break\_PT}}
+\index{Pastime\_While\_Audio\_Playing\_with\_Break\_PT@{Pastime\_While\_Audio\_Playing\_with\_Break\_PT}!thread\_core\_entry.h@{thread\_core\_entry.h}}
+\doxysubsubsection{\texorpdfstring{Pastime\_While\_Audio\_Playing\_with\_Break\_PT()}{Pastime\_While\_Audio\_Playing\_with\_Break\_PT()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{thread__pat_mon__hal_8h_a71de8cbe1b830973cbf1b3b2dd5b57ba}{RCP\+\_\+\+BREAK\+\_\+t}} Pastime\+\_\+\+While\+\_\+\+Audio\+\_\+\+Playing\+\_\+with\+\_\+\+Break\+\_\+\+PT (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}}}]{delay }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+pass time while the audio message is playing 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__core__entry_8h_a3eb1c7bea6a7e44589b65a1a98fc1de3_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__core__entry_8h_a3eb1c7bea6a7e44589b65a1a98fc1de3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__core__entry_8h_a7ee6fc368635a86cdeb84f3d6c692329}\label{thread__core__entry_8h_a7ee6fc368635a86cdeb84f3d6c692329} 
+\index{thread\_core\_entry.h@{thread\_core\_entry.h}!Pastime\_While\_Audio\_Playing\_with\_Break\_PT\_CC@{Pastime\_While\_Audio\_Playing\_with\_Break\_PT\_CC}}
+\index{Pastime\_While\_Audio\_Playing\_with\_Break\_PT\_CC@{Pastime\_While\_Audio\_Playing\_with\_Break\_PT\_CC}!thread\_core\_entry.h@{thread\_core\_entry.h}}
+\doxysubsubsection{\texorpdfstring{Pastime\_While\_Audio\_Playing\_with\_Break\_PT\_CC()}{Pastime\_While\_Audio\_Playing\_with\_Break\_PT\_CC()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{thread__pat_mon__hal_8h_a71de8cbe1b830973cbf1b3b2dd5b57ba}{RCP\+\_\+\+BREAK\+\_\+t}} Pastime\+\_\+\+While\+\_\+\+Audio\+\_\+\+Playing\+\_\+with\+\_\+\+Break\+\_\+\+PT\+\_\+\+CC (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+pass time while the audio message is playing 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+if the loop has been break or not RCP\+\_\+\+BREAK\+\_\+\+NONE -\/-\/\texorpdfstring{$>$}{>} no break RCP\+\_\+\+BREAK\+\_\+\+ZP -\/-\/\texorpdfstring{$>$}{>} break due to impedance change RCP\+\_\+\+BREAK\+\_\+\+PATIENT\+\_\+\+TYPE -\/-\/\texorpdfstring{$>$}{>} break due to patient type change 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__core__entry_8h_a7ee6fc368635a86cdeb84f3d6c692329_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__core__entry_8h_a7ee6fc368635a86cdeb84f3d6c692329_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__core__entry_8h_a4c91aeda537a55c0e8f54abe253a0c4b}\label{thread__core__entry_8h_a4c91aeda537a55c0e8f54abe253a0c4b} 
+\index{thread\_core\_entry.h@{thread\_core\_entry.h}!Pastime\_While\_Audio\_Playing\_with\_Break\_PT\_OC@{Pastime\_While\_Audio\_Playing\_with\_Break\_PT\_OC}}
+\index{Pastime\_While\_Audio\_Playing\_with\_Break\_PT\_OC@{Pastime\_While\_Audio\_Playing\_with\_Break\_PT\_OC}!thread\_core\_entry.h@{thread\_core\_entry.h}}
+\doxysubsubsection{\texorpdfstring{Pastime\_While\_Audio\_Playing\_with\_Break\_PT\_OC()}{Pastime\_While\_Audio\_Playing\_with\_Break\_PT\_OC()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{thread__pat_mon__hal_8h_a71de8cbe1b830973cbf1b3b2dd5b57ba}{RCP\+\_\+\+BREAK\+\_\+t}} Pastime\+\_\+\+While\+\_\+\+Audio\+\_\+\+Playing\+\_\+with\+\_\+\+Break\+\_\+\+PT\+\_\+\+OC (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}}}]{delay }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+pass time while the audio message is playing 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+if the loop has been break or not RCP\+\_\+\+BREAK\+\_\+\+NONE -\/-\/\texorpdfstring{$>$}{>} no break RCP\+\_\+\+BREAK\+\_\+\+ZP -\/-\/\texorpdfstring{$>$}{>} break due to impedance change RCP\+\_\+\+BREAK\+\_\+\+PATIENT\+\_\+\+TYPE -\/-\/\texorpdfstring{$>$}{>} break due to patient type change 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__core__entry_8h_a4c91aeda537a55c0e8f54abe253a0c4b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__core__entry_8h_a4c91aeda537a55c0e8f54abe253a0c4b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__core__entry_8h_ab5cc7004066a53f633a1891cc016a473}\label{thread__core__entry_8h_ab5cc7004066a53f633a1891cc016a473} 
+\index{thread\_core\_entry.h@{thread\_core\_entry.h}!Send\_Core\_Queue@{Send\_Core\_Queue}}
+\index{Send\_Core\_Queue@{Send\_Core\_Queue}!thread\_core\_entry.h@{thread\_core\_entry.h}}
+\doxysubsubsection{\texorpdfstring{Send\_Core\_Queue()}{Send\_Core\_Queue()}}
+{\footnotesize\ttfamily void Send\+\_\+\+Core\+\_\+\+Queue (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{event__ids_8h_a610cd7de90c58acf8dfb3345f1e53697}{EVENT\+\_\+\+ID\+\_\+e}}}]{ev }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Process events related to DRD. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ev} & event identifier \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__core__entry_8h_ab5cc7004066a53f633a1891cc016a473_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{thread__core__entry_8h_a866cc90724d82d3674cec36af3a6656b}\label{thread__core__entry_8h_a866cc90724d82d3674cec36af3a6656b} 
+\index{thread\_core\_entry.h@{thread\_core\_entry.h}!curr\_working\_mode@{curr\_working\_mode}}
+\index{curr\_working\_mode@{curr\_working\_mode}!thread\_core\_entry.h@{thread\_core\_entry.h}}
+\doxysubsubsection{\texorpdfstring{curr\_working\_mode}{curr\_working\_mode}}
+{\footnotesize\ttfamily \mbox{\hyperlink{types__app_8h_a72bf2916658241ff5c65acd6d8a5ed4c}{WORKING\+\_\+\+MODE\+\_\+e}} curr\+\_\+working\+\_\+mode\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{thread__core__entry_8h_a1b517e767cd50ebf84e6f84fa8fe59d6}\label{thread__core__entry_8h_a1b517e767cd50ebf84e6f84fa8fe59d6} 
+\index{thread\_core\_entry.h@{thread\_core\_entry.h}!pAed\_Settings@{pAed\_Settings}}
+\index{pAed\_Settings@{pAed\_Settings}!thread\_core\_entry.h@{thread\_core\_entry.h}}
+\doxysubsubsection{\texorpdfstring{pAed\_Settings}{pAed\_Settings}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_a_e_d___s_e_t_t_i_n_g_s__t}{AED\+\_\+\+SETTINGS\+\_\+t}}\texorpdfstring{$\ast$}{*} p\+Aed\+\_\+\+Settings\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{thread__core__entry_8h_a7696debdbb4df854622a71c3cbacadc5}\label{thread__core__entry_8h_a7696debdbb4df854622a71c3cbacadc5} 
+\index{thread\_core\_entry.h@{thread\_core\_entry.h}!pDevice\_Settings@{pDevice\_Settings}}
+\index{pDevice\_Settings@{pDevice\_Settings}!thread\_core\_entry.h@{thread\_core\_entry.h}}
+\doxysubsubsection{\texorpdfstring{pDevice\_Settings}{pDevice\_Settings}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_d_e_v_i_c_e___s_e_t_t_i_n_g_s__t}{DEVICE\+\_\+\+SETTINGS\+\_\+t}}\texorpdfstring{$\ast$}{*} p\+Device\+\_\+\+Settings\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{thread__core__entry_8h_a0ab3bf0c9b8d8a9f0af67be61ddc0752}\label{thread__core__entry_8h_a0ab3bf0c9b8d8a9f0af67be61ddc0752} 
+\index{thread\_core\_entry.h@{thread\_core\_entry.h}!pMisc\_Settings@{pMisc\_Settings}}
+\index{pMisc\_Settings@{pMisc\_Settings}!thread\_core\_entry.h@{thread\_core\_entry.h}}
+\doxysubsubsection{\texorpdfstring{pMisc\_Settings}{pMisc\_Settings}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_m_i_s_c___s_e_t_t_i_n_g_s__t}{MISC\+\_\+\+SETTINGS\+\_\+t}}\texorpdfstring{$\ast$}{*} p\+Misc\+\_\+\+Settings\hspace{0.3cm}{\ttfamily [extern]}}
+

@@ -1,0 +1,201 @@
+\doxysection{C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\+SCE/host/atca\+\_\+host.h File Reference}
+\hypertarget{host_2atca__host_8h}{}\label{host_2atca__host_8h}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/SCE/host/atca\_host.h@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/SCE/host/atca\_host.h}}
+
+
+Definitions and Prototypes for ATCA Utility Functions.  
+
+
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include "{}cryptoauthlib.\+h"{}}\newline
+{\ttfamily \#include "{}calib/calib\+\_\+basic.\+h"{}}\newline
+Include dependency graph for atca\+\_\+host.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{host_2atca__host_8h__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structatca__temp__key}{atca\+\_\+temp\+\_\+key}}
+\begin{DoxyCompactList}\small\item\em Structure to hold Temp\+Key fields. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structatca__include__data__in__out}{atca\+\_\+include\+\_\+data\+\_\+in\+\_\+out}}
+\begin{DoxyCompactList}\small\item\em Input / output parameters for function atca\+\_\+include\+\_\+data(). \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structatca__nonce__in__out}{atca\+\_\+nonce\+\_\+in\+\_\+out}}
+\begin{DoxyCompactList}\small\item\em Input/output parameters for function atca\+\_\+nonce(). \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structatca__io__decrypt__in__out}{atca\+\_\+io\+\_\+decrypt\+\_\+in\+\_\+out}}
+\item 
+struct \mbox{\hyperlink{structatca__verify__mac}{atca\+\_\+verify\+\_\+mac}}
+\item 
+struct \mbox{\hyperlink{structatca__secureboot__enc__in__out}{atca\+\_\+secureboot\+\_\+enc\+\_\+in\+\_\+out}}
+\item 
+struct \mbox{\hyperlink{structatca__secureboot__mac__in__out}{atca\+\_\+secureboot\+\_\+mac\+\_\+in\+\_\+out}}
+\item 
+struct \mbox{\hyperlink{structatca__mac__in__out}{atca\+\_\+mac\+\_\+in\+\_\+out}}
+\begin{DoxyCompactList}\small\item\em Input/output parameters for function atca\+\_\+mac(). \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structatca__hmac__in__out}{atca\+\_\+hmac\+\_\+in\+\_\+out}}
+\begin{DoxyCompactList}\small\item\em Input/output parameters for function atca\+\_\+hmac(). \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structatca__gen__dig__in__out}{atca\+\_\+gen\+\_\+dig\+\_\+in\+\_\+out}}
+\begin{DoxyCompactList}\small\item\em Input/output parameters for function \doxylink{group__atcah_ga6f6043ba8eebbaab6e6f3b4fa5e31ad4}{atcah\+\_\+gen\+\_\+dig()}. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structatca__write__mac__in__out}{atca\+\_\+write\+\_\+mac\+\_\+in\+\_\+out}}
+\begin{DoxyCompactList}\small\item\em Input/output parameters for function \doxylink{group__atcah_ga47853951c57803eff1432780bf360057}{atcah\+\_\+write\+\_\+auth\+\_\+mac()} and \doxylink{group__atcah_gaed8aa58875c6bdf46a937313e69c6ebb}{atcah\+\_\+privwrite\+\_\+auth\+\_\+mac()}. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structatca__derive__key__in__out}{atca\+\_\+derive\+\_\+key\+\_\+in\+\_\+out}}
+\begin{DoxyCompactList}\small\item\em Input/output parameters for function \doxylink{group__atcah_ga02b3479eaee1bd1741675c2a1249ffda}{atcah\+\_\+derive\+\_\+key()}. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structatca__derive__key__mac__in__out}{atca\+\_\+derive\+\_\+key\+\_\+mac\+\_\+in\+\_\+out}}
+\begin{DoxyCompactList}\small\item\em Input/output parameters for function \doxylink{group__atcah_ga60fc543b3df6fa1dedfbf59e5bde554b}{atcah\+\_\+derive\+\_\+key\+\_\+mac()}. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structatca__decrypt__in__out}{atca\+\_\+decrypt\+\_\+in\+\_\+out}}
+\begin{DoxyCompactList}\small\item\em Input/output parameters for function atca\+\_\+decrypt(). \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structatca__check__mac__in__out}{atca\+\_\+check\+\_\+mac\+\_\+in\+\_\+out}}
+\begin{DoxyCompactList}\small\item\em Input/output parameters for function \doxylink{group__atcah_ga5b457cd0ccba73864eee4030b6079ba7}{atcah\+\_\+check\+\_\+mac()}. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structatca__verify__in__out}{atca\+\_\+verify\+\_\+in\+\_\+out}}
+\begin{DoxyCompactList}\small\item\em Input/output parameters for function atcah\+\_\+verify(). \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structatca__gen__key__in__out}{atca\+\_\+gen\+\_\+key\+\_\+in\+\_\+out}}
+\begin{DoxyCompactList}\small\item\em Input/output parameters for calculating the Pub\+Key digest put into Temp\+Key by the Gen\+Key command with the \doxylink{group__atcah_gabf2abd4bd62f47537756c9ab109050c0}{atcah\+\_\+gen\+\_\+key\+\_\+msg()} function. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structatca__sign__internal__in__out}{atca\+\_\+sign\+\_\+internal\+\_\+in\+\_\+out}}
+\begin{DoxyCompactList}\small\item\em Input/output parameters for calculating the message and digest used by the Sign(internal) command. Used with the \doxylink{group__atcah_ga680045caed6e8f6e136e1a2dc3fe1c9e}{atcah\+\_\+sign\+\_\+internal\+\_\+msg()} function. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structatca__session__key__in__out}{atca\+\_\+session\+\_\+key\+\_\+in\+\_\+out}}
+\begin{DoxyCompactList}\small\item\em Input/\+Output paramters for calculating the session key by the nonce command. Used with the \doxylink{group__atcah_ga567b3f9245252c2876c3ff54661a144f}{atcah\+\_\+gen\+\_\+session\+\_\+key()} function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{Indent}\textbf{ Definitions for ATECC Message Sizes to Calculate a SHA256 Hash}\par
+{\em "{}\texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|}"{} is the concatenation operator. The number in braces is the length of the hash input value in bytes. }\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__atcah_gaebdc2d83274268bb48fc45e87aef38af}{ATCA\+\_\+\+MSG\+\_\+\+SIZE\+\_\+\+NONCE}}~(55)
+\begin{DoxyCompactList}\small\item\em Rand\+Out\{32\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Num\+In\{20\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Op\+Code\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Mode\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} LSB of Param2\{1\}. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__atcah_ga2b5993f5b7254d8c6e50794824cf47b6}{ATCA\+\_\+\+MSG\+\_\+\+SIZE\+\_\+\+MAC}}~(88)
+\begin{DoxyCompactList}\small\item\em (Key or Temp\+Key)\{32\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} (Challenge or Temp\+Key)\{32\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Op\+Code\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Mode\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Param2\{2\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} (OTP0\+\_\+7 or 0)\{8\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} (OTP8\+\_\+10 or 0)\{3\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} SN8\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} (SN4\+\_\+7 or 0)\{4\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} SN0\+\_\+1\{2\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} (SN2\+\_\+3 or 0)\{2\} \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__atcah_gae9245f524128f65f77f65002a5a7265f}{ATCA\+\_\+\+MSG\+\_\+\+SIZE\+\_\+\+HMAC}}~(88)
+\item 
+\#define \mbox{\hyperlink{group__atcah_ga656372cab66beeb5a333e9a33e342017}{ATCA\+\_\+\+MSG\+\_\+\+SIZE\+\_\+\+GEN\+\_\+\+DIG}}~(96)
+\begin{DoxyCompactList}\small\item\em Key\+Id\{32\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Op\+Code\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Param1\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Param2\{2\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} SN8\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} SN0\+\_\+1\{2\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} 0\{25\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Temp\+Key\{32\}. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__atcah_ga1f445a11e4da099fec31efd43eadc234}{ATCA\+\_\+\+MSG\+\_\+\+SIZE\+\_\+\+DERIVE\+\_\+\+KEY}}~(96)
+\begin{DoxyCompactList}\small\item\em Key\+Id\{32\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Op\+Code\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Param1\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Param2\{2\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} SN8\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} SN0\+\_\+1\{2\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} 0\{25\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Temp\+Key\{32\}. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__atcah_ga4ef7d31c60616cf5177f415e32607d10}{ATCA\+\_\+\+MSG\+\_\+\+SIZE\+\_\+\+DERIVE\+\_\+\+KEY\+\_\+\+MAC}}~(39)
+\begin{DoxyCompactList}\small\item\em Key\+Id\{32\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Op\+Code\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Param1\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Param2\{2\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} SN8\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} SN0\+\_\+1\{2\}. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__atcah_gafd8064c07a5f22cdb087c88e1b87c1be}{ATCA\+\_\+\+MSG\+\_\+\+SIZE\+\_\+\+ENCRYPT\+\_\+\+MAC}}~(96)
+\begin{DoxyCompactList}\small\item\em Key\+Id\{32\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Op\+Code\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Param1\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Param2\{2\}\texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} SN8\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} SN0\+\_\+1\{2\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} 0\{25\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Temp\+Key\{32\}. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__atcah_ga56b92d82ffddbd86c99107b12043f8db}{ATCA\+\_\+\+MSG\+\_\+\+SIZE\+\_\+\+SESSION\+\_\+\+KEY}}~(96)
+\begin{DoxyCompactList}\small\item\em Transport\+Key\{32\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} 0x15\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} 0x00\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Key\+Id\{2\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} SN8\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} SN0\+\_\+1\{2\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} 0\{25\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Nonce\{32\}. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__atcah_ga1039bfbe7e13d614814341bdee6afa7b}{ATCA\+\_\+\+MSG\+\_\+\+SIZE\+\_\+\+PRIVWRITE\+\_\+\+MAC}}~(96)
+\begin{DoxyCompactList}\small\item\em Key\+Id\{32\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Op\+Code\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Param1\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Param2\{2\}\texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} SN8\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} SN0\+\_\+1\{2\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} 0\{21\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Plain\+Text\{36\}. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__atcah_gab51341e9f564bc8f85c2e822835a8bcb}{ATCA\+\_\+\+COMMAND\+\_\+\+HEADER\+\_\+\+SIZE}}~( 4)
+\item 
+\#define \mbox{\hyperlink{group__atcah_ga5398e83ccfca8ada7cb609c1e34d2cc4}{ATCA\+\_\+\+GENDIG\+\_\+\+ZEROS\+\_\+\+SIZE}}~(25)
+\item 
+\#define \mbox{\hyperlink{group__atcah_ga43496218f8a98faad996489af047272f}{ATCA\+\_\+\+WRITE\+\_\+\+MAC\+\_\+\+ZEROS\+\_\+\+SIZE}}~(25)
+\item 
+\#define \mbox{\hyperlink{group__atcah_ga9c24dfde4798589fd98c2583d170aeb1}{ATCA\+\_\+\+PRIVWRITE\+\_\+\+MAC\+\_\+\+ZEROS\+\_\+\+SIZE}}~(21)
+\item 
+\#define \mbox{\hyperlink{group__atcah_ga6a06f47cbc2023edba7e8b0f2f4b08bb}{ATCA\+\_\+\+PRIVWRITE\+\_\+\+PLAIN\+\_\+\+TEXT\+\_\+\+SIZE}}~(36)
+\item 
+\#define \mbox{\hyperlink{group__atcah_ga7204dddd2ff69a1139a6a8d8f6c62c9c}{ATCA\+\_\+\+DERIVE\+\_\+\+KEY\+\_\+\+ZEROS\+\_\+\+SIZE}}~(25)
+\item 
+\#define \mbox{\hyperlink{group__atcah_ga81922e26e59a7cea775992c18c5975b9}{ATCA\+\_\+\+HMAC\+\_\+\+BLOCK\+\_\+\+SIZE}}~(64)
+\item 
+\#define \mbox{\hyperlink{group__atcah_gaeb6c1ee0fb04b12d185eee8bb766068c}{ENCRYPTION\+\_\+\+KEY\+\_\+\+SIZE}}~(64)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Default Fixed Byte Values of Serial Number (SN\mbox{[}0\+:1\mbox{]} and SN\mbox{[}8\mbox{]})}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__atcah_ga1a026ad1d6e4ccd5c32f7f0462877b39}{ATCA\+\_\+\+SN\+\_\+0\+\_\+\+DEF}}~(0x01)
+\item 
+\#define \mbox{\hyperlink{group__atcah_ga5e4f22a404b71cabba4fd7085dff5e7c}{ATCA\+\_\+\+SN\+\_\+1\+\_\+\+DEF}}~(0x23)
+\item 
+\#define \mbox{\hyperlink{group__atcah_ga232f0d699ece83f51d63e5a66d254be5}{ATCA\+\_\+\+SN\+\_\+8\+\_\+\+DEF}}~(0x\+EE)
+\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}\textbf{ Definition for Temp\+Key Mode}\par
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__atcah_ga05323075c94849bf70e84f5a5931f058}{MAC\+\_\+\+MODE\+\_\+\+USE\+\_\+\+TEMPKEY\+\_\+\+MASK}}~((\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}})0x03)
+\begin{DoxyCompactList}\small\item\em mode mask for MAC command when using Temp\+Key \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{structatca__temp__key}{atca\+\_\+temp\+\_\+key}} \mbox{\hyperlink{group__atcah_ga2eb5b7f0471f9f14bd78c63104fb4cfe}{atca\+\_\+temp\+\_\+key\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Structure to hold Temp\+Key fields. \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{structatca__nonce__in__out}{atca\+\_\+nonce\+\_\+in\+\_\+out}} \mbox{\hyperlink{group__atcah_ga22be37d60bd8f57e367424fb0c7bacf4}{atca\+\_\+nonce\+\_\+in\+\_\+out\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{structatca__io__decrypt__in__out}{atca\+\_\+io\+\_\+decrypt\+\_\+in\+\_\+out}} \mbox{\hyperlink{group__atcah_gac5efe11aed6a5a47c36b748e71a35945}{atca\+\_\+io\+\_\+decrypt\+\_\+in\+\_\+out\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{structatca__verify__mac}{atca\+\_\+verify\+\_\+mac}} \mbox{\hyperlink{group__atcah_gaae7f658ac9525d887e70d918fc34bb31}{atca\+\_\+verify\+\_\+mac\+\_\+in\+\_\+out\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{structatca__secureboot__enc__in__out}{atca\+\_\+secureboot\+\_\+enc\+\_\+in\+\_\+out}} \mbox{\hyperlink{group__atcah_ga9675f5082f8c90b306414bebae70db75}{atca\+\_\+secureboot\+\_\+enc\+\_\+in\+\_\+out\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{structatca__secureboot__mac__in__out}{atca\+\_\+secureboot\+\_\+mac\+\_\+in\+\_\+out}} \mbox{\hyperlink{group__atcah_ga78f53ab779c77227c305ad4d4be118df}{atca\+\_\+secureboot\+\_\+mac\+\_\+in\+\_\+out\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{structatca__mac__in__out}{atca\+\_\+mac\+\_\+in\+\_\+out}} \mbox{\hyperlink{group__atcah_ga6835354266e1c13a133959aaeb8bfdba}{atca\+\_\+mac\+\_\+in\+\_\+out\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{structatca__gen__dig__in__out}{atca\+\_\+gen\+\_\+dig\+\_\+in\+\_\+out}} \mbox{\hyperlink{group__atcah_ga572abeaaabf22c386ebcba19b4f6236c}{atca\+\_\+gen\+\_\+dig\+\_\+in\+\_\+out\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Input/output parameters for function \doxylink{group__atcah_ga6f6043ba8eebbaab6e6f3b4fa5e31ad4}{atcah\+\_\+gen\+\_\+dig()}. \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{structatca__write__mac__in__out}{atca\+\_\+write\+\_\+mac\+\_\+in\+\_\+out}} \mbox{\hyperlink{group__atcah_gac077314e00956519884e609b44b9cbce}{atca\+\_\+write\+\_\+mac\+\_\+in\+\_\+out\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Input/output parameters for function \doxylink{group__atcah_ga47853951c57803eff1432780bf360057}{atcah\+\_\+write\+\_\+auth\+\_\+mac()} and \doxylink{group__atcah_gaed8aa58875c6bdf46a937313e69c6ebb}{atcah\+\_\+privwrite\+\_\+auth\+\_\+mac()}. \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{structatca__check__mac__in__out}{atca\+\_\+check\+\_\+mac\+\_\+in\+\_\+out}} \mbox{\hyperlink{group__atcah_ga62321bafeb0a9dd7c4ce657ece10109f}{atca\+\_\+check\+\_\+mac\+\_\+in\+\_\+out\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Input/output parameters for function \doxylink{group__atcah_ga5b457cd0ccba73864eee4030b6079ba7}{atcah\+\_\+check\+\_\+mac()}. \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{structatca__verify__in__out}{atca\+\_\+verify\+\_\+in\+\_\+out}} \mbox{\hyperlink{group__atcah_ga41028ecf36e87d294e91e551102dda5f}{atca\+\_\+verify\+\_\+in\+\_\+out\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{structatca__gen__key__in__out}{atca\+\_\+gen\+\_\+key\+\_\+in\+\_\+out}} \mbox{\hyperlink{group__atcah_gada8cf14261301ec18458cbcbbe3d9b32}{atca\+\_\+gen\+\_\+key\+\_\+in\+\_\+out\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Input/output parameters for calculating the Pub\+Key digest put into Temp\+Key by the Gen\+Key command with the \doxylink{group__atcah_gabf2abd4bd62f47537756c9ab109050c0}{atcah\+\_\+gen\+\_\+key\+\_\+msg()} function. \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{structatca__sign__internal__in__out}{atca\+\_\+sign\+\_\+internal\+\_\+in\+\_\+out}} \mbox{\hyperlink{group__atcah_ga1fdcaf886974acc1fcdfc3bace49b700}{atca\+\_\+sign\+\_\+internal\+\_\+in\+\_\+out\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Input/output parameters for calculating the message and digest used by the Sign(internal) command. Used with the \doxylink{group__atcah_ga680045caed6e8f6e136e1a2dc3fe1c9e}{atcah\+\_\+sign\+\_\+internal\+\_\+msg()} function. \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{structatca__session__key__in__out}{atca\+\_\+session\+\_\+key\+\_\+in\+\_\+out}} \mbox{\hyperlink{group__atcah_gab6d36ecdb6ea5e3c4024e2d10e82cd6e}{atca\+\_\+session\+\_\+key\+\_\+in\+\_\+out\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Input/\+Output paramters for calculating the session key by the nonce command. Used with the \doxylink{group__atcah_ga567b3f9245252c2876c3ff54661a144f}{atcah\+\_\+gen\+\_\+session\+\_\+key()} function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{group__atcah_ga9ee18575f8b4c1560f9e5c741403ef1b}{atcah\+\_\+nonce}} (struct \mbox{\hyperlink{structatca__nonce__in__out}{atca\+\_\+nonce\+\_\+in\+\_\+out}} \texorpdfstring{$\ast$}{*}param)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{group__atcah_ga44361cadf1819cea687208eeadd57059}{atcah\+\_\+mac}} (struct \mbox{\hyperlink{structatca__mac__in__out}{atca\+\_\+mac\+\_\+in\+\_\+out}} \texorpdfstring{$\ast$}{*}param)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{group__atcah_ga5b457cd0ccba73864eee4030b6079ba7}{atcah\+\_\+check\+\_\+mac}} (struct \mbox{\hyperlink{structatca__check__mac__in__out}{atca\+\_\+check\+\_\+mac\+\_\+in\+\_\+out}} \texorpdfstring{$\ast$}{*}param)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{group__atcah_gab17435577e546d2954bd697f21e6d3cc}{atcah\+\_\+hmac}} (struct \mbox{\hyperlink{structatca__hmac__in__out}{atca\+\_\+hmac\+\_\+in\+\_\+out}} \texorpdfstring{$\ast$}{*}param)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{group__atcah_ga6f6043ba8eebbaab6e6f3b4fa5e31ad4}{atcah\+\_\+gen\+\_\+dig}} (struct \mbox{\hyperlink{structatca__gen__dig__in__out}{atca\+\_\+gen\+\_\+dig\+\_\+in\+\_\+out}} \texorpdfstring{$\ast$}{*}param)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{group__atcah_ga43ef2dc1159f28fbb100a2b9bf150c0c}{atcah\+\_\+gen\+\_\+mac}} (struct \mbox{\hyperlink{structatca__gen__dig__in__out}{atca\+\_\+gen\+\_\+dig\+\_\+in\+\_\+out}} \texorpdfstring{$\ast$}{*}param)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{group__atcah_ga47853951c57803eff1432780bf360057}{atcah\+\_\+write\+\_\+auth\+\_\+mac}} (struct \mbox{\hyperlink{structatca__write__mac__in__out}{atca\+\_\+write\+\_\+mac\+\_\+in\+\_\+out}} \texorpdfstring{$\ast$}{*}param)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{group__atcah_gaed8aa58875c6bdf46a937313e69c6ebb}{atcah\+\_\+privwrite\+\_\+auth\+\_\+mac}} (struct \mbox{\hyperlink{structatca__write__mac__in__out}{atca\+\_\+write\+\_\+mac\+\_\+in\+\_\+out}} \texorpdfstring{$\ast$}{*}param)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{group__atcah_ga02b3479eaee1bd1741675c2a1249ffda}{atcah\+\_\+derive\+\_\+key}} (struct \mbox{\hyperlink{structatca__derive__key__in__out}{atca\+\_\+derive\+\_\+key\+\_\+in\+\_\+out}} \texorpdfstring{$\ast$}{*}param)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{group__atcah_ga60fc543b3df6fa1dedfbf59e5bde554b}{atcah\+\_\+derive\+\_\+key\+\_\+mac}} (struct \mbox{\hyperlink{structatca__derive__key__mac__in__out}{atca\+\_\+derive\+\_\+key\+\_\+mac\+\_\+in\+\_\+out}} \texorpdfstring{$\ast$}{*}param)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{group__atcah_ga89408b8338dd9f43c4ba85b2a082c3ae}{atcah\+\_\+decrypt}} (struct \mbox{\hyperlink{structatca__decrypt__in__out}{atca\+\_\+decrypt\+\_\+in\+\_\+out}} \texorpdfstring{$\ast$}{*}param)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{group__atcah_gad7e2217cd71b77b6c1b08f2f2f6f0a3e}{atcah\+\_\+sha256}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a2ba621978a511250f7250fb10e05ffbe}{int32\+\_\+t}} len, const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}message, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}digest)
+\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group__atcah_ga279403b5a0f207a4fbba496fb663ec79}{atcah\+\_\+include\+\_\+data}} (struct \mbox{\hyperlink{structatca__include__data__in__out}{atca\+\_\+include\+\_\+data\+\_\+in\+\_\+out}} \texorpdfstring{$\ast$}{*}param)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{group__atcah_gabf2abd4bd62f47537756c9ab109050c0}{atcah\+\_\+gen\+\_\+key\+\_\+msg}} (struct \mbox{\hyperlink{structatca__gen__key__in__out}{atca\+\_\+gen\+\_\+key\+\_\+in\+\_\+out}} \texorpdfstring{$\ast$}{*}param)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{group__atcah_ga316e7eeaeedc7a30824294280488e24e}{atcah\+\_\+config\+\_\+to\+\_\+sign\+\_\+internal}} (\mbox{\hyperlink{group__device_gafb234ccd6a80d09c0efbe336c2354267}{ATCADevice\+Type}} device\+\_\+type, struct \mbox{\hyperlink{structatca__sign__internal__in__out}{atca\+\_\+sign\+\_\+internal\+\_\+in\+\_\+out}} \texorpdfstring{$\ast$}{*}param, const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}config)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{group__atcah_ga680045caed6e8f6e136e1a2dc3fe1c9e}{atcah\+\_\+sign\+\_\+internal\+\_\+msg}} (\mbox{\hyperlink{group__device_gafb234ccd6a80d09c0efbe336c2354267}{ATCADevice\+Type}} device\+\_\+type, struct \mbox{\hyperlink{structatca__sign__internal__in__out}{atca\+\_\+sign\+\_\+internal\+\_\+in\+\_\+out}} \texorpdfstring{$\ast$}{*}param)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{group__atcah_ga03632bc31f21bec0d13d4f0cab198958}{atcah\+\_\+verify\+\_\+mac}} (\mbox{\hyperlink{group__atcah_gaae7f658ac9525d887e70d918fc34bb31}{atca\+\_\+verify\+\_\+mac\+\_\+in\+\_\+out\+\_\+t}} \texorpdfstring{$\ast$}{*}param)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{group__atcah_ga4c89f8023aec521281824c0e35713baa}{atcah\+\_\+secureboot\+\_\+enc}} (\mbox{\hyperlink{group__atcah_ga9675f5082f8c90b306414bebae70db75}{atca\+\_\+secureboot\+\_\+enc\+\_\+in\+\_\+out\+\_\+t}} \texorpdfstring{$\ast$}{*}param)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{group__atcah_gaa795bec90432fbfa194913d8b4098fab}{atcah\+\_\+secureboot\+\_\+mac}} (\mbox{\hyperlink{group__atcah_ga78f53ab779c77227c305ad4d4be118df}{atca\+\_\+secureboot\+\_\+mac\+\_\+in\+\_\+out\+\_\+t}} \texorpdfstring{$\ast$}{*}param)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{group__atcah_ga809ad14c1d8da45d5f74fa4c55373638}{atcah\+\_\+encode\+\_\+counter\+\_\+match}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} counter, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}counter\+\_\+match)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{group__atcah_gaa0df5937081037684ce2894a8cc2c1e5}{atcah\+\_\+io\+\_\+decrypt}} (struct \mbox{\hyperlink{structatca__io__decrypt__in__out}{atca\+\_\+io\+\_\+decrypt\+\_\+in\+\_\+out}} \texorpdfstring{$\ast$}{*}param)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{group__atcah_ga860db9cfc460c8c46b1c9c218cf2e110}{atcah\+\_\+ecc204\+\_\+write\+\_\+auth\+\_\+mac}} (struct \mbox{\hyperlink{structatca__write__mac__in__out}{atca\+\_\+write\+\_\+mac\+\_\+in\+\_\+out}} \texorpdfstring{$\ast$}{*}param)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{group__atcah_ga567b3f9245252c2876c3ff54661a144f}{atcah\+\_\+gen\+\_\+session\+\_\+key}} (\mbox{\hyperlink{group__atcah_gab6d36ecdb6ea5e3c4024e2d10e82cd6e}{atca\+\_\+session\+\_\+key\+\_\+in\+\_\+out\+\_\+t}} \texorpdfstring{$\ast$}{*}param)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Definitions and Prototypes for ATCA Utility Functions. 
+
+\begin{DoxyCopyright}{Copyright}
+(c) 2015-\/2020 Microchip Technology Inc. and its subsidiaries. 
+\end{DoxyCopyright}

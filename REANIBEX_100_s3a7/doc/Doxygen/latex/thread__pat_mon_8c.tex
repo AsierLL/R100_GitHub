@@ -1,0 +1,233 @@
+\doxysection{C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/synergy\+\_\+gen/thread\+\_\+pat\+Mon.c File Reference}
+\hypertarget{thread__pat_mon_8c}{}\label{thread__pat_mon_8c}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/synergy\_gen/thread\_patMon.c@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/synergy\_gen/thread\_patMon.c}}
+{\ttfamily \#include "{}thread\+\_\+pat\+Mon.\+h"{}}\newline
+Include dependency graph for thread\+\_\+pat\+Mon.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__pat_mon_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{thread__pat_mon_8c_ab6734fa1c448b8736507139f71493b67}{thread\+\_\+pat\+Mon\+\_\+create}} (void)
+\item 
+static void \mbox{\hyperlink{thread__pat_mon_8c_af7843a5586e10a54c15edd3436330f3d}{thread\+\_\+pat\+Mon\+\_\+func}} (ULONG thread\+\_\+input)
+\item 
+static \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} thread\+\_\+pat\+Mon\+\_\+stack\mbox{[}2048\mbox{]} \mbox{\hyperlink{thread__pat_mon_8c_affbe442a4f7901540f9e277e63fc10bc}{BSP\+\_\+\+PLACE\+\_\+\+IN\+\_\+\+SECTION\+\_\+\+V2}} ("{}.stack.\+thread\+\_\+pat\+Mon"{})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+TX\+\_\+\+THREAD \mbox{\hyperlink{thread__pat_mon_8c_a30e06e45627c594d271724f091a5747d}{thread\+\_\+pat\+Mon}}
+\begin{DoxyCompactList}\small\item\em Thread descriptor. \end{DoxyCompactList}\item 
+const external\+\_\+irq\+\_\+instance\+\_\+t \mbox{\hyperlink{thread__pat_mon_8c_a35f833e66fc266dfd54a90bb8f952916}{g\+\_\+external\+\_\+irq}}
+\item 
+dac\+\_\+instance\+\_\+ctrl\+\_\+t \mbox{\hyperlink{thread__pat_mon_8c_a5f7b31bda7993d1638d88efee67c364e}{g\+\_\+dac0\+\_\+ctrl}}
+\item 
+const dac\+\_\+cfg\+\_\+t \mbox{\hyperlink{thread__pat_mon_8c_a836d873c99879cbb7ba06aacb0fef610}{g\+\_\+dac0\+\_\+cfg}}
+\item 
+const dac\+\_\+instance\+\_\+t \mbox{\hyperlink{thread__pat_mon_8c_ade68b76b76a90f22b7562549511fff45}{g\+\_\+dac0}}
+\item 
+const spi\+\_\+cfg\+\_\+t \mbox{\hyperlink{thread__pat_mon_8c_ae0c8756e120ebcc27f7f811b98dcbfc8}{spi\+\_\+patmon\+\_\+spi\+\_\+cfg}}
+\item 
+sf\+\_\+spi\+\_\+instance\+\_\+ctrl\+\_\+t \mbox{\hyperlink{thread__pat_mon_8c_a624881e811cd562b9342ade915871cb7}{spi\+\_\+patmon\+\_\+ctrl}}
+\item 
+const sf\+\_\+spi\+\_\+cfg\+\_\+t \mbox{\hyperlink{thread__pat_mon_8c_a94ef09b22431f4f27beaace580860067}{spi\+\_\+patmon\+\_\+cfg}}
+\item 
+const sf\+\_\+spi\+\_\+instance\+\_\+t \mbox{\hyperlink{thread__pat_mon_8c_a74fcce906e07d60ed79947d334c723c5}{spi\+\_\+patmon}}
+\item 
+TX\+\_\+\+EVENT\+\_\+\+FLAGS\+\_\+\+GROUP \mbox{\hyperlink{thread__pat_mon_8c_acd82f8b72ed5ce773c71fe9c008a6d0d}{g\+\_\+events\+\_\+\+Pat\+Mon}}
+\item 
+bool \mbox{\hyperlink{thread__pat_mon_8c_aaef7f0cb4b99eeac7cee1b472e370b7b}{g\+\_\+ssp\+\_\+common\+\_\+initialized}}
+\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \mbox{\hyperlink{thread__pat_mon_8c_a00a0c803cac86fb4d0f23cdc5524b5ed}{g\+\_\+ssp\+\_\+common\+\_\+thread\+\_\+count}}
+\item 
+TX\+\_\+\+SEMAPHORE \mbox{\hyperlink{thread__pat_mon_8c_a1846945310283a1dc8b0adefd0e6be71}{g\+\_\+ssp\+\_\+common\+\_\+initialized\+\_\+semaphore}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{thread__pat_mon_8c_affbe442a4f7901540f9e277e63fc10bc}\label{thread__pat_mon_8c_affbe442a4f7901540f9e277e63fc10bc} 
+\index{thread\_patMon.c@{thread\_patMon.c}!BSP\_PLACE\_IN\_SECTION\_V2@{BSP\_PLACE\_IN\_SECTION\_V2}}
+\index{BSP\_PLACE\_IN\_SECTION\_V2@{BSP\_PLACE\_IN\_SECTION\_V2}!thread\_patMon.c@{thread\_patMon.c}}
+\doxysubsubsection{\texorpdfstring{BSP\_PLACE\_IN\_SECTION\_V2()}{BSP\_PLACE\_IN\_SECTION\_V2()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} thread\+\_\+pat\+Mon\+\_\+stack\mbox{[}2048\mbox{]} BSP\+\_\+\+PLACE\+\_\+\+IN\+\_\+\+SECTION\+\_\+\+V2 (\begin{DoxyParamCaption}\item[{"{}.stack.\+thread\+\_\+pat\+Mon"{}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{thread__pat_mon_8c_ab6734fa1c448b8736507139f71493b67}\label{thread__pat_mon_8c_ab6734fa1c448b8736507139f71493b67} 
+\index{thread\_patMon.c@{thread\_patMon.c}!thread\_patMon\_create@{thread\_patMon\_create}}
+\index{thread\_patMon\_create@{thread\_patMon\_create}!thread\_patMon.c@{thread\_patMon.c}}
+\doxysubsubsection{\texorpdfstring{thread\_patMon\_create()}{thread\_patMon\_create()}}
+{\footnotesize\ttfamily void thread\+\_\+pat\+Mon\+\_\+create (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__pat_mon_8c_ab6734fa1c448b8736507139f71493b67_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{thread__pat_mon_8c_ab6734fa1c448b8736507139f71493b67_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__pat_mon_8c_af7843a5586e10a54c15edd3436330f3d}\label{thread__pat_mon_8c_af7843a5586e10a54c15edd3436330f3d} 
+\index{thread\_patMon.c@{thread\_patMon.c}!thread\_patMon\_func@{thread\_patMon\_func}}
+\index{thread\_patMon\_func@{thread\_patMon\_func}!thread\_patMon.c@{thread\_patMon.c}}
+\doxysubsubsection{\texorpdfstring{thread\_patMon\_func()}{thread\_patMon\_func()}}
+{\footnotesize\ttfamily static void thread\+\_\+pat\+Mon\+\_\+func (\begin{DoxyParamCaption}\item[{ULONG}]{thread\+\_\+input }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__pat_mon_8c_af7843a5586e10a54c15edd3436330f3d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__pat_mon_8c_af7843a5586e10a54c15edd3436330f3d_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{thread__pat_mon_8c_ade68b76b76a90f22b7562549511fff45}\label{thread__pat_mon_8c_ade68b76b76a90f22b7562549511fff45} 
+\index{thread\_patMon.c@{thread\_patMon.c}!g\_dac0@{g\_dac0}}
+\index{g\_dac0@{g\_dac0}!thread\_patMon.c@{thread\_patMon.c}}
+\doxysubsubsection{\texorpdfstring{g\_dac0}{g\_dac0}}
+{\footnotesize\ttfamily const dac\+\_\+instance\+\_\+t g\+\_\+dac0}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{\ .p\_ctrl\ =\ \&\mbox{\hyperlink{thread__pat_mon_8c_a5f7b31bda7993d1638d88efee67c364e}{g\_dac0\_ctrl}},\ .p\_cfg\ =\ \&\mbox{\hyperlink{thread__pat_mon_8c_a836d873c99879cbb7ba06aacb0fef610}{g\_dac0\_cfg}},\ .p\_api\ =\ \&g\_dac\_on\_dac\ \}}
+
+\end{DoxyCode}
+DAC on DAC Instance. \Hypertarget{thread__pat_mon_8c_a836d873c99879cbb7ba06aacb0fef610}\label{thread__pat_mon_8c_a836d873c99879cbb7ba06aacb0fef610} 
+\index{thread\_patMon.c@{thread\_patMon.c}!g\_dac0\_cfg@{g\_dac0\_cfg}}
+\index{g\_dac0\_cfg@{g\_dac0\_cfg}!thread\_patMon.c@{thread\_patMon.c}}
+\doxysubsubsection{\texorpdfstring{g\_dac0\_cfg}{g\_dac0\_cfg}}
+{\footnotesize\ttfamily const dac\+\_\+cfg\+\_\+t g\+\_\+dac0\+\_\+cfg}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{\ .channel\ =\ 0,\ .ad\_da\_synchronized\ =\ \textcolor{keyword}{false},\ .data\_format\ =\ DAC\_DATA\_FORMAT\_FLUSH\_LEFT,\ .output\_amplifier\_enabled\ =}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{false},}
+\DoxyCodeLine{\ \ .p\_extend\ =\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}}\ \}}
+
+\end{DoxyCode}
+\Hypertarget{thread__pat_mon_8c_a5f7b31bda7993d1638d88efee67c364e}\label{thread__pat_mon_8c_a5f7b31bda7993d1638d88efee67c364e} 
+\index{thread\_patMon.c@{thread\_patMon.c}!g\_dac0\_ctrl@{g\_dac0\_ctrl}}
+\index{g\_dac0\_ctrl@{g\_dac0\_ctrl}!thread\_patMon.c@{thread\_patMon.c}}
+\doxysubsubsection{\texorpdfstring{g\_dac0\_ctrl}{g\_dac0\_ctrl}}
+{\footnotesize\ttfamily dac\+\_\+instance\+\_\+ctrl\+\_\+t g\+\_\+dac0\+\_\+ctrl}
+
+\Hypertarget{thread__pat_mon_8c_acd82f8b72ed5ce773c71fe9c008a6d0d}\label{thread__pat_mon_8c_acd82f8b72ed5ce773c71fe9c008a6d0d} 
+\index{thread\_patMon.c@{thread\_patMon.c}!g\_events\_PatMon@{g\_events\_PatMon}}
+\index{g\_events\_PatMon@{g\_events\_PatMon}!thread\_patMon.c@{thread\_patMon.c}}
+\doxysubsubsection{\texorpdfstring{g\_events\_PatMon}{g\_events\_PatMon}}
+{\footnotesize\ttfamily TX\+\_\+\+EVENT\+\_\+\+FLAGS\+\_\+\+GROUP g\+\_\+events\+\_\+\+Pat\+Mon}
+
+\Hypertarget{thread__pat_mon_8c_a35f833e66fc266dfd54a90bb8f952916}\label{thread__pat_mon_8c_a35f833e66fc266dfd54a90bb8f952916} 
+\index{thread\_patMon.c@{thread\_patMon.c}!g\_external\_irq@{g\_external\_irq}}
+\index{g\_external\_irq@{g\_external\_irq}!thread\_patMon.c@{thread\_patMon.c}}
+\doxysubsubsection{\texorpdfstring{g\_external\_irq}{g\_external\_irq}}
+{\footnotesize\ttfamily const external\+\_\+irq\+\_\+instance\+\_\+t g\+\_\+external\+\_\+irq}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{\ .p\_ctrl\ =\ \&g\_external\_irq\_ctrl,\ .p\_cfg\ =\ \&g\_external\_irq\_cfg,\ .p\_api\ =\ \&g\_external\_irq\_on\_icu\ \}}
+
+\end{DoxyCode}
+\Hypertarget{thread__pat_mon_8c_aaef7f0cb4b99eeac7cee1b472e370b7b}\label{thread__pat_mon_8c_aaef7f0cb4b99eeac7cee1b472e370b7b} 
+\index{thread\_patMon.c@{thread\_patMon.c}!g\_ssp\_common\_initialized@{g\_ssp\_common\_initialized}}
+\index{g\_ssp\_common\_initialized@{g\_ssp\_common\_initialized}!thread\_patMon.c@{thread\_patMon.c}}
+\doxysubsubsection{\texorpdfstring{g\_ssp\_common\_initialized}{g\_ssp\_common\_initialized}}
+{\footnotesize\ttfamily bool g\+\_\+ssp\+\_\+common\+\_\+initialized\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{thread__pat_mon_8c_a1846945310283a1dc8b0adefd0e6be71}\label{thread__pat_mon_8c_a1846945310283a1dc8b0adefd0e6be71} 
+\index{thread\_patMon.c@{thread\_patMon.c}!g\_ssp\_common\_initialized\_semaphore@{g\_ssp\_common\_initialized\_semaphore}}
+\index{g\_ssp\_common\_initialized\_semaphore@{g\_ssp\_common\_initialized\_semaphore}!thread\_patMon.c@{thread\_patMon.c}}
+\doxysubsubsection{\texorpdfstring{g\_ssp\_common\_initialized\_semaphore}{g\_ssp\_common\_initialized\_semaphore}}
+{\footnotesize\ttfamily TX\+\_\+\+SEMAPHORE g\+\_\+ssp\+\_\+common\+\_\+initialized\+\_\+semaphore\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{thread__pat_mon_8c_a00a0c803cac86fb4d0f23cdc5524b5ed}\label{thread__pat_mon_8c_a00a0c803cac86fb4d0f23cdc5524b5ed} 
+\index{thread\_patMon.c@{thread\_patMon.c}!g\_ssp\_common\_thread\_count@{g\_ssp\_common\_thread\_count}}
+\index{g\_ssp\_common\_thread\_count@{g\_ssp\_common\_thread\_count}!thread\_patMon.c@{thread\_patMon.c}}
+\doxysubsubsection{\texorpdfstring{g\_ssp\_common\_thread\_count}{g\_ssp\_common\_thread\_count}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} g\+\_\+ssp\+\_\+common\+\_\+thread\+\_\+count\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{thread__pat_mon_8c_a74fcce906e07d60ed79947d334c723c5}\label{thread__pat_mon_8c_a74fcce906e07d60ed79947d334c723c5} 
+\index{thread\_patMon.c@{thread\_patMon.c}!spi\_patmon@{spi\_patmon}}
+\index{spi\_patmon@{spi\_patmon}!thread\_patMon.c@{thread\_patMon.c}}
+\doxysubsubsection{\texorpdfstring{spi\_patmon}{spi\_patmon}}
+{\footnotesize\ttfamily const sf\+\_\+spi\+\_\+instance\+\_\+t spi\+\_\+patmon}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{\ .p\_ctrl\ =\ \&\mbox{\hyperlink{thread__pat_mon_8c_a624881e811cd562b9342ade915871cb7}{spi\_patmon\_ctrl}},\ .p\_cfg\ =\ \&\mbox{\hyperlink{thread__pat_mon_8c_a94ef09b22431f4f27beaace580860067}{spi\_patmon\_cfg}},\ .p\_api\ =\ \&g\_sf\_spi\_on\_sf\_spi\ \}}
+
+\end{DoxyCode}
+\Hypertarget{thread__pat_mon_8c_a94ef09b22431f4f27beaace580860067}\label{thread__pat_mon_8c_a94ef09b22431f4f27beaace580860067} 
+\index{thread\_patMon.c@{thread\_patMon.c}!spi\_patmon\_cfg@{spi\_patmon\_cfg}}
+\index{spi\_patmon\_cfg@{spi\_patmon\_cfg}!thread\_patMon.c@{thread\_patMon.c}}
+\doxysubsubsection{\texorpdfstring{spi\_patmon\_cfg}{spi\_patmon\_cfg}}
+{\footnotesize\ttfamily const sf\+\_\+spi\+\_\+cfg\+\_\+t spi\+\_\+patmon\+\_\+cfg}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{\ .p\_bus\ =\ (sf\_spi\_bus\_t\ *)\ \&\mbox{\hyperlink{common__data_8c_a9c429bf9cd974c89feedc2f37f98939a}{spi\_bus0}},\ .chip\_select\ =\ IOPORT\_PORT\_01\_PIN\_03,\ .chip\_select\_level\_active\ =}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ IOPORT\_LEVEL\_LOW,}
+\DoxyCodeLine{\ \ .p\_lower\_lvl\_cfg\ =\ \&\mbox{\hyperlink{thread__pat_mon_8c_ae0c8756e120ebcc27f7f811b98dcbfc8}{spi\_patmon\_spi\_cfg}},\ \}}
+
+\end{DoxyCode}
+\Hypertarget{thread__pat_mon_8c_a624881e811cd562b9342ade915871cb7}\label{thread__pat_mon_8c_a624881e811cd562b9342ade915871cb7} 
+\index{thread\_patMon.c@{thread\_patMon.c}!spi\_patmon\_ctrl@{spi\_patmon\_ctrl}}
+\index{spi\_patmon\_ctrl@{spi\_patmon\_ctrl}!thread\_patMon.c@{thread\_patMon.c}}
+\doxysubsubsection{\texorpdfstring{spi\_patmon\_ctrl}{spi\_patmon\_ctrl}}
+{\footnotesize\ttfamily sf\+\_\+spi\+\_\+instance\+\_\+ctrl\+\_\+t spi\+\_\+patmon\+\_\+ctrl}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{\ .p\_lower\_lvl\_ctrl\ =\ \&\mbox{\hyperlink{common__data_8c_a6ac7636c3b5001438376e3642316bad8}{g\_spi0\_ctrl}},\ \}}
+
+\end{DoxyCode}
+\Hypertarget{thread__pat_mon_8c_ae0c8756e120ebcc27f7f811b98dcbfc8}\label{thread__pat_mon_8c_ae0c8756e120ebcc27f7f811b98dcbfc8} 
+\index{thread\_patMon.c@{thread\_patMon.c}!spi\_patmon\_spi\_cfg@{spi\_patmon\_spi\_cfg}}
+\index{spi\_patmon\_spi\_cfg@{spi\_patmon\_spi\_cfg}!thread\_patMon.c@{thread\_patMon.c}}
+\doxysubsubsection{\texorpdfstring{spi\_patmon\_spi\_cfg}{spi\_patmon\_spi\_cfg}}
+{\footnotesize\ttfamily const spi\+\_\+cfg\+\_\+t spi\+\_\+patmon\+\_\+spi\+\_\+cfg}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{\ .channel\ =\ \mbox{\hyperlink{common__data_8h_a1bff7625c7d23e95751bbc1ca6c860d9}{spi\_bus0\_CHANNEL}},\ .operating\_mode\ =\ \mbox{\hyperlink{common__data_8h_a73d3a6ac052519ad2a0fc20329d9ba9b}{spi\_bus0\_OPERATING\_MODE}},\ .clk\_phase\ =\ SPI\_CLK\_PHASE\_EDGE\_EVEN,}
+\DoxyCodeLine{\ \ .clk\_polarity\ =\ SPI\_CLK\_POLARITY\_LOW,\ .mode\_fault\ =\ \mbox{\hyperlink{common__data_8h_a3877c86ddc0b11b0ced39619deceb64f}{spi\_bus0\_MODE\_FAULT}},\ .bit\_order\ =\ \mbox{\hyperlink{common__data_8h_aea6cc698b4a4f6a28f46625d8630bc4c}{spi\_bus0\_BIT\_ORDER}},\ .bitrate\ =}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{common__data_8h_a51ce2e993d51e1dd2a1dcbeef20e8d41}{spi\_bus0\_BIT\_RATE}},}
+\DoxyCodeLine{\ \ .p\_transfer\_tx\ =\ \mbox{\hyperlink{common__data_8h_a20df29fb7dd0d0bf5718dce50542f2c5}{spi\_bus0\_P\_TRANSFER\_TX}},\ .p\_transfer\_rx\ =\ \mbox{\hyperlink{common__data_8h_ab2547365a1770d8a4fd40d8f550ce134}{spi\_bus0\_P\_TRANSFER\_RX}},\ .p\_callback\ =\ \mbox{\hyperlink{common__data_8h_a39de6944a2b472b69f1e27b9a6df0d04}{spi\_bus0\_P\_CALLBACK}},}
+\DoxyCodeLine{\ \ .p\_context\ =\ \mbox{\hyperlink{common__data_8h_adb99cea0d206c13f967978b3e7fed7db}{spi\_bus0\_P\_CONTEXT}},\ .rxi\_ipl\ =\ \mbox{\hyperlink{common__data_8h_ab91c873a2e20fd5444d015fd32b540b0}{spi\_bus0\_RXI\_IPL}},\ .txi\_ipl\ =\ \mbox{\hyperlink{common__data_8h_ab9f15a8e11e2307cb8368bc4cba62330}{spi\_bus0\_TXI\_IPL}},}
+\DoxyCodeLine{\ \ .tei\_ipl\ =\ \mbox{\hyperlink{common__data_8h_ac787e47d52549f62ffe6bf2e56b229a0}{spi\_bus0\_TEI\_IPL}},\ .eri\_ipl\ =\ \mbox{\hyperlink{common__data_8h_a2822d07eb94d315ea473fdebefde3e02}{spi\_bus0\_ERI\_IPL}},\ .p\_extend\ =\ \mbox{\hyperlink{common__data_8h_ab1b9d559bee18606fcdb80f24e5e4f3e}{spi\_bus0\_P\_EXTEND}},\ \}}
+
+\end{DoxyCode}
+Get driver cfg from bus and use all same settings except slave address and addressing mode. \Hypertarget{thread__pat_mon_8c_a30e06e45627c594d271724f091a5747d}\label{thread__pat_mon_8c_a30e06e45627c594d271724f091a5747d} 
+\index{thread\_patMon.c@{thread\_patMon.c}!thread\_patMon@{thread\_patMon}}
+\index{thread\_patMon@{thread\_patMon}!thread\_patMon.c@{thread\_patMon.c}}
+\doxysubsubsection{\texorpdfstring{thread\_patMon}{thread\_patMon}}
+{\footnotesize\ttfamily TX\+\_\+\+THREAD thread\+\_\+pat\+Mon}
+
+
+
+Thread descriptor. 
+

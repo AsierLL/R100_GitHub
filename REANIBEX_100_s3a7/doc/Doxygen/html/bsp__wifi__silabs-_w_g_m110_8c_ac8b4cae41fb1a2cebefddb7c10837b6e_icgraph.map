@@ -1,0 +1,63 @@
+<map id="Wifi_Connect_Network" name="Wifi_Connect_Network">
+<area shape="rect" id="Node000001" title="Start a connection establishment procedure with an Access Point." alt="" coords="1591,207,1743,233"/>
+<area shape="rect" id="Node000002" href="$thread__comm__hal_8c.html#af6bf58158a9a7b9220ee08afcba32292" title="Initialization of Wifi module." alt="" coords="903,15,1045,41"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1650,195,1632,165,1607,132,1577,100,1541,76,1479,48,1412,29,1344,17,1275,11,1148,10,1046,19,1045,14,1148,5,1276,5,1344,12,1413,24,1480,43,1544,71,1581,96,1611,129,1636,162,1654,192"/>
+<area shape="rect" id="Node000008" href="$bsp__wifi__silabs-_w_g_m110_8c.html#a61a184f51f8d89e0f7cecade0732dae5" title="Check if host server is alive." alt="" coords="1390,85,1518,112"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="1634,199,1591,169,1541,138,1491,115,1493,110,1544,134,1594,164,1637,195"/>
+<area shape="rect" id="Node000010" href="$bsp__wifi__silabs-_w_g_m110_8c.html#a35d5dc2d9b2d927b7f5010fd8d4f8256" title="Receive configuration update file." alt="" coords="1365,148,1543,175"/>
+<area shape="poly" id="edge11_Node000001_Node000010" title=" " alt="" coords="1600,204,1504,178,1506,173,1602,199"/>
+<area shape="rect" id="Node000013" href="$bsp__wifi__silabs-_w_g_m110_8c.html#a2dc45a78a54fd39ac066b6492047e4c2" title="Receive firmware update file." alt="" coords="1376,207,1532,233"/>
+<area shape="poly" id="edge15_Node000001_Node000013" title=" " alt="" coords="1575,223,1532,223,1532,217,1575,217"/>
+<area shape="rect" id="Node000016" href="$bsp__wifi__silabs-_w_g_m110_8c.html#ab2d30132091d65f9cc64adcf346c4607" title="Send Data Frame using Wifi connection (for Sigfox data frames)" alt="" coords="1147,308,1305,335"/>
+<area shape="poly" id="edge19_Node000001_Node000016" title=" " alt="" coords="1591,240,1288,310,1287,305,1590,235"/>
+<area shape="rect" id="Node000021" href="$bsp__wifi__silabs-_w_g_m110_8c.html#a786eafab9b14cb881758ba2729af3f08" title="Send a File from a uSD to the Server." alt="" coords="1387,355,1521,381"/>
+<area shape="poly" id="edge28_Node000001_Node000021" title=" " alt="" coords="1637,245,1544,314,1479,356,1476,352,1541,310,1634,241"/>
+<area shape="rect" id="Node000024" href="$bsp__wifi__silabs-_w_g_m110_8c.html#a69cdbda6b544229acb4b866b2e26edb4" title="Send a File from a uSD to the Server." alt="" coords="1398,468,1510,495"/>
+<area shape="poly" id="edge32_Node000001_Node000024" title=" " alt="" coords="1651,248,1605,316,1545,395,1472,469,1468,466,1541,391,1601,313,1647,245"/>
+<area shape="rect" id="Node000003" href="$thread__comm__entry_8c.html#afae3627cb4cd90dab49eba9a4bceaf26" title="Process events related to All COMM modules." alt="" coords="620,103,813,129"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="906,49,862,62,751,105,749,100,860,57,905,43"/>
+<area shape="rect" id="Node000007" href="$thread__comm__entry_8c.html#a2a7698a33ddf0a8ca71b8e0baab53eb2" title="Process events related to WIFI COMM module." alt="" coords="645,241,788,268"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="890,47,862,62,845,80,836,98,828,119,815,143,771,199,733,243,729,239,767,196,810,140,823,117,831,96,840,77,859,58,887,42"/>
+<area shape="rect" id="Node000004" href="$thread__comm__entry_8c.html#a88587ace521f9dcb7e701367eeec5824" title="Thread COMM entry function." alt="" coords="436,216,572,243"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="677,139,532,218,529,213,675,135"/>
+<area shape="rect" id="Node000005" href="$thread__comm_8c.html#a4d0497fd082ea6ad8cce7e8437cfc816" title=" " alt="" coords="257,216,388,243"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="420,232,388,232,388,227,420,227"/>
+<area shape="rect" id="Node000006" href="$thread__comm_8c.html#a01a6aa5f9adb99b48c6e175a2cab1316" title=" " alt="" coords="5,216,209,243"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="241,232,209,232,209,227,241,227"/>
+<area shape="poly" id="edge7_Node000007_Node000004" title=" " alt="" coords="629,247,573,240,573,235,630,242"/>
+<area shape="rect" id="Node000009" href="$thread__comm__hal_8c.html#a02fd8d87a2f9d69a608c8488cc5cbe3f" title="Check if host server is alive." alt="" coords="1135,65,1317,108"/>
+<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="1374,97,1318,94,1318,89,1374,92"/>
+<area shape="poly" id="edge10_Node000009_Node000007" title=" " alt="" coords="1119,74,1058,71,992,74,925,85,862,106,831,129,794,167,731,243,727,239,790,164,828,125,859,102,924,80,992,69,1058,66,1119,69"/>
+<area shape="rect" id="Node000011" href="$bsp__wifi__silabs-_w_g_m110_8c.html#ac9f124d0da81d17346031b87f575c581" title="Check if an error has occurred and if it has occurred, delete the R100.cfg so as not to record it bec..." alt="" coords="1138,132,1315,175"/>
+<area shape="poly" id="edge12_Node000010_Node000011" title=" " alt="" coords="1350,160,1315,159,1315,154,1350,155"/>
+<area shape="rect" id="Node000012" href="$thread__comm__hal_8c.html#a267f7a2dd6fc9f5ee0c34e55a97ece0b" title="Get configuration file from host server." alt="" coords="861,116,1087,143"/>
+<area shape="poly" id="edge13_Node000011_Node000012" title=" " alt="" coords="1122,146,1087,143,1088,137,1122,141"/>
+<area shape="poly" id="edge14_Node000012_Node000007" title=" " alt="" coords="880,150,862,157,824,177,789,200,735,243,732,239,786,196,821,172,860,152,878,145"/>
+<area shape="rect" id="Node000014" href="$bsp__wifi__silabs-_w_g_m110_8c.html#ac5c857d89b9b970102e0250632018ac2" title="Check if an error has occurred and if it has occurred, delete the firmware.srec so as not to record i..." alt="" coords="1149,199,1304,241"/>
+<area shape="poly" id="edge16_Node000013_Node000014" title=" " alt="" coords="1361,223,1304,223,1304,217,1361,217"/>
+<area shape="rect" id="Node000015" href="$thread__comm__hal_8c.html#a6370a754e4e5cace299125d63bd16c39" title="Get upgrade firmware from host server." alt="" coords="888,167,1060,209"/>
+<area shape="poly" id="edge17_Node000014_Node000015" title=" " alt="" coords="1133,211,1060,201,1060,196,1133,205"/>
+<area shape="poly" id="edge18_Node000015_Node000007" title=" " alt="" coords="875,216,772,243,771,238,873,211"/>
+<area shape="rect" id="Node000017" href="$thread__comm__hal_8c.html#a4d91b115ae6885412c79593ef06f2b12" title="Send Alert frame using wifi connection." alt="" coords="889,233,1059,276"/>
+<area shape="poly" id="edge20_Node000016_Node000017" title=" " alt="" coords="1157,306,1057,279,1058,274,1159,301"/>
+<area shape="rect" id="Node000018" href="$thread__comm__hal_8c.html#aaffa9d6bb0dc8d70687216d756791af3" title="Send Alert frame using wifi connection." alt="" coords="889,300,1059,343"/>
+<area shape="poly" id="edge22_Node000016_Node000018" title=" " alt="" coords="1131,324,1059,324,1059,319,1131,319"/>
+<area shape="rect" id="Node000019" href="$thread__comm__hal_8c.html#ae327aacd325df8c7019efdf3f8e758b3" title="Send Gps position frame using wifi connection." alt="" coords="874,367,1074,393"/>
+<area shape="poly" id="edge24_Node000016_Node000019" title=" " alt="" coords="1154,341,1088,357,1038,369,1037,363,1086,352,1153,336"/>
+<area shape="rect" id="Node000020" href="$thread__comm__hal_8c.html#accf1b9383c2e21578ec28430f9f14dc3" title="Send Test frame using wifi connection." alt="" coords="873,417,1075,444"/>
+<area shape="poly" id="edge26_Node000016_Node000020" title=" " alt="" coords="1183,344,1137,370,1113,390,1088,408,1057,419,1055,414,1086,403,1110,386,1133,366,1180,340"/>
+<area shape="poly" id="edge21_Node000017_Node000007" title=" " alt="" coords="874,257,789,257,789,252,874,252"/>
+<area shape="poly" id="edge23_Node000018_Node000007" title=" " alt="" coords="873,298,771,271,772,266,875,293"/>
+<area shape="poly" id="edge25_Node000019_Node000007" title=" " alt="" coords="878,364,860,357,821,337,786,313,732,271,735,266,789,309,824,332,862,352,880,359"/>
+<area shape="poly" id="edge27_Node000020_Node000007" title=" " alt="" coords="871,414,859,407,815,375,776,336,725,270,729,267,780,333,818,371,862,403,874,409"/>
+<area shape="rect" id="Node000022" href="$bsp__wifi__silabs-_w_g_m110_8c.html#a03ce170a4b98e4f7a315afad2f3ee24c" title="Check if an error has occurred and reset directory." alt="" coords="1137,380,1315,407"/>
+<area shape="poly" id="edge29_Node000021_Node000022" title=" " alt="" coords="1372,380,1316,386,1316,381,1371,374"/>
+<area shape="rect" id="Node000023" href="$thread__comm__hal_8c.html#a1a7aa6203e1bb55e1cf909a38e11c309" title="Send Last Episode File." alt="" coords="895,468,1053,511"/>
+<area shape="poly" id="edge30_Node000022_Node000023" title=" " alt="" coords="1185,416,1088,458,1053,470,1052,465,1086,453,1183,411"/>
+<area shape="poly" id="edge31_Node000023_Node000007" title=" " alt="" coords="879,470,859,458,833,436,809,412,769,358,739,307,721,269,726,267,744,304,773,355,813,408,837,433,862,454,882,465"/>
+<area shape="rect" id="Node000025" href="$bsp__wifi__silabs-_w_g_m110_8c.html#a4d809acbf2bea224f2bea6d3e9b951d5" title="Check if an error has occurred and reset directory." alt="" coords="1148,491,1304,517"/>
+<area shape="poly" id="edge33_Node000024_Node000025" title=" " alt="" coords="1383,491,1305,499,1305,493,1382,486"/>
+<area shape="rect" id="Node000026" href="$thread__comm__hal_8c.html#a0fb51a9f4231ebdfe4b657eefe8369c2" title="Send Last Test File." alt="" coords="879,535,1069,561"/>
+<area shape="poly" id="edge34_Node000025_Node000026" title=" " alt="" coords="1133,523,1055,537,1054,531,1132,517"/>
+<area shape="poly" id="edge35_Node000026_Node000007" title=" " alt="" coords="866,529,859,525,827,496,800,462,777,425,759,388,732,318,718,269,723,268,737,316,764,385,782,422,805,459,831,492,862,520,869,525"/>
+</map>

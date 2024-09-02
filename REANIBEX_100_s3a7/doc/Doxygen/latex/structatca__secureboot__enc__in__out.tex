@@ -1,0 +1,87 @@
+\doxysection{atca\+\_\+secureboot\+\_\+enc\+\_\+in\+\_\+out Struct Reference}
+\hypertarget{structatca__secureboot__enc__in__out}{}\label{structatca__secureboot__enc__in__out}\index{atca\_secureboot\_enc\_in\_out@{atca\_secureboot\_enc\_in\_out}}
+
+
+{\ttfamily \#include $<$atca\+\_\+host.\+h$>$}
+
+
+
+Collaboration diagram for atca\+\_\+secureboot\+\_\+enc\+\_\+in\+\_\+out\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=189pt]{structatca__secureboot__enc__in__out__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structatca__secureboot__enc__in__out_a3165e9431e3d5f6ba767fe5735235033}{io\+\_\+key}}
+\begin{DoxyCompactList}\small\item\em IO protection key value (32 bytes) \end{DoxyCompactList}\item 
+const struct \mbox{\hyperlink{structatca__temp__key}{atca\+\_\+temp\+\_\+key}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structatca__secureboot__enc__in__out_aa3d05327be415ac817c88dcf10307973}{temp\+\_\+key}}
+\begin{DoxyCompactList}\small\item\em Current value of Temp\+Key. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structatca__secureboot__enc__in__out_a1898333558f569309906a18e1e73f12e}{digest}}
+\begin{DoxyCompactList}\small\item\em Plaintext digest as input. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structatca__secureboot__enc__in__out_afd48d3922c2f6ba7d1db1e81dc31afb9}{hashed\+\_\+key}}
+\begin{DoxyCompactList}\small\item\em Calculated key is returned here (32 bytes) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structatca__secureboot__enc__in__out_abffa5545b0c1d704a40b16b66e615f29}{digest\+\_\+enc}}
+\begin{DoxyCompactList}\small\item\em Encrypted (ciphertext) digest is return here (32 bytes) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{structatca__secureboot__enc__in__out_a1898333558f569309906a18e1e73f12e}\label{structatca__secureboot__enc__in__out_a1898333558f569309906a18e1e73f12e} 
+\index{atca\_secureboot\_enc\_in\_out@{atca\_secureboot\_enc\_in\_out}!digest@{digest}}
+\index{digest@{digest}!atca\_secureboot\_enc\_in\_out@{atca\_secureboot\_enc\_in\_out}}
+\doxysubsubsection{\texorpdfstring{digest}{digest}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} atca\+\_\+secureboot\+\_\+enc\+\_\+in\+\_\+out\+::digest}
+
+
+
+Plaintext digest as input. 
+
+\Hypertarget{structatca__secureboot__enc__in__out_abffa5545b0c1d704a40b16b66e615f29}\label{structatca__secureboot__enc__in__out_abffa5545b0c1d704a40b16b66e615f29} 
+\index{atca\_secureboot\_enc\_in\_out@{atca\_secureboot\_enc\_in\_out}!digest\_enc@{digest\_enc}}
+\index{digest\_enc@{digest\_enc}!atca\_secureboot\_enc\_in\_out@{atca\_secureboot\_enc\_in\_out}}
+\doxysubsubsection{\texorpdfstring{digest\_enc}{digest\_enc}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} atca\+\_\+secureboot\+\_\+enc\+\_\+in\+\_\+out\+::digest\+\_\+enc}
+
+
+
+Encrypted (ciphertext) digest is return here (32 bytes) 
+
+\Hypertarget{structatca__secureboot__enc__in__out_afd48d3922c2f6ba7d1db1e81dc31afb9}\label{structatca__secureboot__enc__in__out_afd48d3922c2f6ba7d1db1e81dc31afb9} 
+\index{atca\_secureboot\_enc\_in\_out@{atca\_secureboot\_enc\_in\_out}!hashed\_key@{hashed\_key}}
+\index{hashed\_key@{hashed\_key}!atca\_secureboot\_enc\_in\_out@{atca\_secureboot\_enc\_in\_out}}
+\doxysubsubsection{\texorpdfstring{hashed\_key}{hashed\_key}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} atca\+\_\+secureboot\+\_\+enc\+\_\+in\+\_\+out\+::hashed\+\_\+key}
+
+
+
+Calculated key is returned here (32 bytes) 
+
+\Hypertarget{structatca__secureboot__enc__in__out_a3165e9431e3d5f6ba767fe5735235033}\label{structatca__secureboot__enc__in__out_a3165e9431e3d5f6ba767fe5735235033} 
+\index{atca\_secureboot\_enc\_in\_out@{atca\_secureboot\_enc\_in\_out}!io\_key@{io\_key}}
+\index{io\_key@{io\_key}!atca\_secureboot\_enc\_in\_out@{atca\_secureboot\_enc\_in\_out}}
+\doxysubsubsection{\texorpdfstring{io\_key}{io\_key}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} atca\+\_\+secureboot\+\_\+enc\+\_\+in\+\_\+out\+::io\+\_\+key}
+
+
+
+IO protection key value (32 bytes) 
+
+\Hypertarget{structatca__secureboot__enc__in__out_aa3d05327be415ac817c88dcf10307973}\label{structatca__secureboot__enc__in__out_aa3d05327be415ac817c88dcf10307973} 
+\index{atca\_secureboot\_enc\_in\_out@{atca\_secureboot\_enc\_in\_out}!temp\_key@{temp\_key}}
+\index{temp\_key@{temp\_key}!atca\_secureboot\_enc\_in\_out@{atca\_secureboot\_enc\_in\_out}}
+\doxysubsubsection{\texorpdfstring{temp\_key}{temp\_key}}
+{\footnotesize\ttfamily const struct \mbox{\hyperlink{structatca__temp__key}{atca\+\_\+temp\+\_\+key}} \texorpdfstring{$\ast$}{*} atca\+\_\+secureboot\+\_\+enc\+\_\+in\+\_\+out\+::temp\+\_\+key}
+
+
+
+Current value of Temp\+Key. 
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\+SCE/\mbox{\hyperlink{atca__host_8h}{atca\+\_\+host.\+h}}\item 
+C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\+SCE/host/\mbox{\hyperlink{host_2atca__host_8h}{atca\+\_\+host.\+h}}\end{DoxyCompactItemize}

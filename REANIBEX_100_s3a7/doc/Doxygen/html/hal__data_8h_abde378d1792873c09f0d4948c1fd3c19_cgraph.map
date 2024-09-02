@@ -1,0 +1,15 @@
+<map id="comm_uart_callback" name="comm_uart_callback">
+<area shape="rect" id="Node000001" title="Implements the callback of the UART." alt="" coords="5,76,147,103"/>
+<area shape="rect" id="Node000002" href="$thread__comm__hal_8c.html#a14b282886d75e45f70a7ffe548732dba" title="Returns the selected Comms UART." alt="" coords="195,51,371,77"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="147,78,179,74,179,79,147,83"/>
+<area shape="rect" id="Node000003" href="$_comm_8c.html#a7a312c2ae2f8f7d0a99d378977e1e0b4" title="Process GPS received package, checks if geoposition available." alt="" coords="202,101,364,128"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="147,95,187,100,186,106,147,101"/>
+<area shape="rect" id="Node000004" href="$bsp__gps__quectel-_l96_8c.html#a923dd2f2b1a38fa3f9c54b1516d246fc" title="Sets TRUE if a new GPS NMEA Protocol latitude and longitude is available." alt="" coords="421,5,579,48"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="339,98,370,87,394,73,418,58,428,52,431,57,420,62,397,77,372,92,341,103"/>
+<area shape="rect" id="Node000005" href="$bsp__gps__quectel-_l96_8c.html#a3524ad7a502760c38e70a69a2c7fdc3c" title="Sets TRUE if a new GPS power on package has arrived." alt="" coords="435,72,565,99"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="364,101,419,94,420,99,364,106"/>
+<area shape="rect" id="Node000006" href="$bsp__gps__quectel-_l96_8c.html#acc169d05cf6d4c0f76261141759941b8" title="Sets TRUE if a new GPS Protocol package has arrived." alt="" coords="419,123,581,165"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="364,123,404,128,403,134,364,128"/>
+<area shape="rect" id="Node000007" href="$_trace_8c.html#a8947b81ae09bdb57459cd1c81c78ab37" title="Print a trace string inserting the time stamp." alt="" coords="474,189,527,216"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="312,126,420,175,459,188,457,193,418,180,310,131"/>
+</map>

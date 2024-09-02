@@ -1,0 +1,172 @@
+\doxysection{DB\+\_\+\+Test.\+h}
+\hypertarget{a00011_source}{}\label{a00011_source}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/DB\_Test.h@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/DB\_Test.h}}
+\mbox{\hyperlink{a00011}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Name\ \ \ \ \ \ :\ R100\_S3A7\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ :\ Osatu\ S.\ Coop\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Compiler\ \ :\ GNU\ ARM\ Embedded\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ Target\ \ \ \ :\ Reanibex\ Serie\ 100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ ******************************************************************************/}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#ifndef\ DB\_TEST\_H\ \ \ \ \ }\textcolor{comment}{//\ Entry,\ use\ file\ only\ if\ it's\ not\ already\ included.}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#define\ DB\_TEST\_H}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00024\ \textcolor{comment}{**Includes}}
+\DoxyCodeLine{00025\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{a00017}{device\_init.h}}>}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{a00137}{types\_basic.h}}"{}}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00030\ \textcolor{comment}{**\ Defines}}
+\DoxyCodeLine{00031\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#define\ NUM\_BASIC\_TEST\ \ \ \ \ \ 30\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{//\ Number\ of\ basic\ tests\ to\ perform\ a\ full\ test}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#define\ TEST\_FULL\_ID\ \ \ \ \ \ \ \ (NUM\_BASIC\_TEST\ -\/\ 1)\ \ \ \ \ \ \ \ }\textcolor{comment}{//\ Identifier\ of\ the\ full\ test}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#define\ TEST\_MANUAL\_ID\ \ \ \ \ \ 40\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{//\ Identifier\ of\ the\ manual\ test}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#define\ TEST\_INITIAL\_ID\ \ \ \ \ 50\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{//\ Identifier\ of\ the\ initial\ test}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#define\ TEST\_FUNC\_ID\ \ \ \ \ \ \ \ 60\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{//\ Identifier\ of\ the\ functional\ test}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00042\ \textcolor{comment}{**\ Typedefs}}
+\DoxyCodeLine{00043\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00048\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00049\ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \mbox{\hyperlink{a00278_aae4479a33de5f8888bdd9f8c5caf8f13}{dc\_main}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00051\ \ \ \ \ \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ \mbox{\hyperlink{a00278_a8d4e4c13ece5d307e6335c8315030d77}{dc\_main\_error}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00052\ \ \ \ \ \mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \mbox{\hyperlink{a00278_a63a6576bc54fd4039886ece0d723504f}{dc\_18v}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00053\ \ \ \ \ \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ \mbox{\hyperlink{a00278_a0d80aca6ab13be9d06e41c45dca037f6}{dc\_18v\_error}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00054\ \}\ \mbox{\hyperlink{a00278}{TEST\_VOLTAGE\_t}};}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00058\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00059\ \{}
+\DoxyCodeLine{00060\ \ \ \ \ \mbox{\hyperlink{a00137_a40bb5262bf908c328fbcfbe5d29d0201}{char\_t}}\ \ \ \ \ \ sn\ \ [20];\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00061\ \ \ \ \ \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ name[20];\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00062\ \ \ \ \ \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ \ \ \ \mbox{\hyperlink{a00282_a2b076180b522984ea33521ea319f4692}{manufacture\_date}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00063\ \ \ \ \ \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ \ \ \ \mbox{\hyperlink{a00282_a43aaecdda8770a83716b0ce9c64861d8}{expiration\_date}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00064\ \ \ \ \ \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ \ \ \ \mbox{\hyperlink{a00282_adbae03665fff79cd04d2a7c508a7979e}{nominal\_capacity}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00065\ \ \ \ \ \mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \mbox{\hyperlink{a00282_abe694202f7b4f2136b9f2e52d7cc275a}{version\_major}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00066\ \ \ \ \ \mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \mbox{\hyperlink{a00282_ab8f8f85a73c65ab443553ee138ee5bdc}{version\_minor}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00067\ \ \ \ \ \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ \ \ \ \mbox{\hyperlink{a00282_a50c653ff5ccb02f968cd382ed304c289}{runTime\_total}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00068\ \ \ \ \ \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ \ \ \ \mbox{\hyperlink{a00282_a31ea5a2f3d6f837f671ea5d46fe8e1f8}{battery\_state}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00069\ \ \ \ \ \mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \mbox{\hyperlink{a00282_ac349ee65bc7bbd5e229560f0bae53b91}{nFull\_charges}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00070\ \ \ \ \ \mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \mbox{\hyperlink{a00282_adb23ecac64fff48b0a7f8fe395ac1ce3}{rem\_charge}};\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00071\ \ \ \ \ \mbox{\hyperlink{a00137_a269259c924dce846340ddbb810db2e3c}{int16\_t}}\ \ \ \ \ \mbox{\hyperlink{a00282_afa3ffd12ea4c3dab22e8a0aab8acf5d6}{bat\_temperature}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00072\ \ \ \ \ \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ \ \ \ \mbox{\hyperlink{a00282_aa6cac671cd556d415accd85e7195939c}{error\_code}};\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00073\ \}\ \mbox{\hyperlink{a00282}{TEST\_BATTERY\_t}};}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00076\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00077\ \{}
+\DoxyCodeLine{00078\ \ \ \ \ \mbox{\hyperlink{a00137_aaa5d1cd013383c889537491c3cfd9aad}{uint64\_t}}\ \ \ \ \mbox{\hyperlink{a00286_a544960eb74c73e74331615db1f1cb956}{sn}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00079\ \ \ \ \ \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ \ \ \ \mbox{\hyperlink{a00286_a3babdd06791800834e77b4961c2e16e1}{expiration\_date}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00080\ \ \ \ \ \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ \ \ \ \mbox{\hyperlink{a00286_a1be96ca603a8be778044fba9e7b2207b}{event\_date}};\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00081\ \ \ \ \ \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ \ \ \ \mbox{\hyperlink{a00286_af85e7ce03734de9191475be6d0d7739b}{event\_time}};\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00082\ \ \ \ \ \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ \ \ \ \mbox{\hyperlink{a00286_ac584d8c06de280da11203ec811969ea8}{event\_id}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00083\ \ \ \ \ \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ \ \ \ \mbox{\hyperlink{a00286_ad928303f9d94216764669872583eadb1}{error\_code}};\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00084\ \}\ \mbox{\hyperlink{a00286}{TEST\_ELECTRODES\_t}};}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00087\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00088\ \{}
+\DoxyCodeLine{00089\ \ \ \ \ \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ \ \ \ \mbox{\hyperlink{a00290_a21dc9da646b2ce764486ff666357114d}{ADS\_cal}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00090\ \ \ \ \ \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ \ \ \ \mbox{\hyperlink{a00290_a0fcdda88610f6653718ca367397e18a7}{ADS\_pat}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00091\ \ \ \ \ \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ \ \ \ \mbox{\hyperlink{a00290_a70f962a60c19cdfe36609b2d222881bb}{ADS\_comms}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00092\ \ \ \ \ \mbox{\hyperlink{a00137_a2ba621978a511250f7250fb10e05ffbe}{int32\_t}}\ \ \ \ \ \mbox{\hyperlink{a00290_afbeab21aaec768c0612f9defcda1b124}{ADS\_temperature}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00093\ \}\ \mbox{\hyperlink{a00290}{TEST\_PATMON\_t}};}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00096\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00097\ \{}
+\DoxyCodeLine{00098\ \ \ \ \ \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ \ \ \ \mbox{\hyperlink{a00294_a7306f52acf4543c7e190ff3202112167}{wifi}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00099\ \ \ \ \ \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ \ \ \ \mbox{\hyperlink{a00294_a1d478a5b1d226f823cdce55b6bbf6809}{sigfox}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00100\ \ \ \ \ \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ \ \ \ \mbox{\hyperlink{a00294_afce7f7ad4a0b68b4dcc641df483ded95}{gps}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00101\ \ \ \ \ \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ \ \ \ \mbox{\hyperlink{a00294_a5a9caddfbe107820b723e0bac5623331}{accelerometer}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00102\ \}\ \mbox{\hyperlink{a00294}{TEST\_COMMS\_t}};}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00105\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00106\ \{}
+\DoxyCodeLine{00107\ \ \ \ \ \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ \ \ \ \mbox{\hyperlink{a00298_a8d27e486f3e86693142344013009f44c}{nfc}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00108\ \ \ \ \ \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ \ \ \ \mbox{\hyperlink{a00298_a61716535271bed2fdc60f7b9e07c6a16}{boot}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00109\ \ \ \ \ \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ \ \ \ \mbox{\hyperlink{a00298_ad39f70ac83110be24798d3ee2ef3b378}{audio}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00110\ \ \ \ \ \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ \ \ \ \mbox{\hyperlink{a00298_acedf6f3c2800eab2053445fe67bb3c7d}{leds\_keys}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00111\ \}\ \mbox{\hyperlink{a00298}{TEST\_MISC\_t}};}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00114\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00115\ \{}
+\DoxyCodeLine{00116\ \ \ \ \ \mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \mbox{\hyperlink{a00302_ab92685fb015bf25b4fdde202efab2193}{full\_charging\_time}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00117\ \ \ \ \ \mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \mbox{\hyperlink{a00302_add41fe1a55b9b606222e63997c0be473}{full\_charging\_voltage}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00118\ \ \ \ \ \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ \ \ \ \mbox{\hyperlink{a00302_a142a3906a7fe5e4c69c4e086fdd2f017}{full\_discharg\_H\_current}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00119\ \ \ \ \ \mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \mbox{\hyperlink{a00302_a41157acaa2a6a11f6628f1b10f7f0b39}{full\_discharg\_H\_time}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00120\ \ \ \ \ \mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \mbox{\hyperlink{a00302_aa420eaa96a012e4cac8690347a5f5f8c}{full\_discharg\_H\_voltage}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00121\ \ \ \ \ \mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \mbox{\hyperlink{a00302_a553506da6801f86df572d8b047f62d5d}{full\_discharg\_R\_time}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00122\ \ \ \ \ \mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \mbox{\hyperlink{a00302_a170c7c5a23eadf968f95cb5988f74a88}{full\_discharg\_R\_voltage}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00123\ \ \ \ \ \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ \ \ \ \mbox{\hyperlink{a00302_aa211c866827f4f80791048726d983649}{error\_code}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00124\ \}\ \mbox{\hyperlink{a00302}{TEST\_DEFIB\_t}};}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00127\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00128\ \{}
+\DoxyCodeLine{00129\ \ \ \ \ \mbox{\hyperlink{a00011_a79c5749d54981e8a7af5556c10e14b7fadfa70e7c4b36a5c5c6b70987b50fc36c}{TEST\_OK}}\ =\ 0,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00130\ \ \ \ \ \mbox{\hyperlink{a00011_a79c5749d54981e8a7af5556c10e14b7fa8dc9508f81b5e1bb5d4ce0038de51f9f}{TEST\_NOT\_OK}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00131\ \ \ \ \ \mbox{\hyperlink{a00011_a79c5749d54981e8a7af5556c10e14b7fad317e56e3862db4b62383c8e814cce3f}{TEST\_ABORTED}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00132\ \}\ \mbox{\hyperlink{a00011_a79c5749d54981e8a7af5556c10e14b7f}{TEST\_STATUS\_t}};}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ \textcolor{comment}{//\ Structure\ to\ report\ the\ certificates\ load\ test\ result}}
+\DoxyCodeLine{00135\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00136\ \{}
+\DoxyCodeLine{00137\ \ \ \ \ \mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \mbox{\hyperlink{a00306_a0413ffa695cc6352c47b3ab1c68dec88}{tls\_cert\_exp}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00138\ \ \ \ \ \mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \mbox{\hyperlink{a00306_a5da3a10da6b9fa1f43dbd1610dec658a}{wpa\_eap\_cert\_exp}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00139\ \}\mbox{\hyperlink{a00306}{TEST\_CERT\_t}};}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00142\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00143\ \{}
+\DoxyCodeLine{00144\ \ \ \ \ \mbox{\hyperlink{a00137_a40bb5262bf908c328fbcfbe5d29d0201}{char\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ device\_sn[\mbox{\hyperlink{a00017_a633ded5bcc6018dd045e1ef28d7ad7c9}{RSC\_NAME\_SZ}}];\ \ \ \ \ }
+\DoxyCodeLine{00145\ \ \ \ \ \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00310_a6be5450ef4f075f3d6362b441f1e586f}{test\_id}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00146\ \ \ \ \ \mbox{\hyperlink{a00011_a79c5749d54981e8a7af5556c10e14b7f}{TEST\_STATUS\_t}}\ \ \ \ \ \ \ \mbox{\hyperlink{a00310_a86e6cee9ac4bf54b2d2ce51243c75c95}{test\_status}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00147\ \ \ \ \ \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00310_a3900cdeddc3b5924798bfb377f9baae8}{error\_code}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00149\ \ \ \ \ \mbox{\hyperlink{a00278}{TEST\_VOLTAGE\_t}}\ \ \ \ \ \ \mbox{\hyperlink{a00310_ad606a05559e0f1aa6cbf07d33ae12ea0}{voltage}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00150\ \ \ \ \ \mbox{\hyperlink{a00298}{TEST\_MISC\_t}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00310_adaa16a74ed2d3becf3a41e145e4ac4de}{misc}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00151\ \ \ \ \ \mbox{\hyperlink{a00290}{TEST\_PATMON\_t}}\ \ \ \ \ \ \ \mbox{\hyperlink{a00310_ab96c0e6d5dd60a846b3b2266e7f076e8}{patmon}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00152\ \ \ \ \ \mbox{\hyperlink{a00286}{TEST\_ELECTRODES\_t}}\ \ \ \mbox{\hyperlink{a00310_a674a146656a8095b11dcf783496f9370}{electrodes}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00153\ \ \ \ \ \mbox{\hyperlink{a00282}{TEST\_BATTERY\_t}}\ \ \ \ \ \ \mbox{\hyperlink{a00310_a55568c369816749c3875e1be9a288998}{battery}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00154\ \ \ \ \ \mbox{\hyperlink{a00294}{TEST\_COMMS\_t}}\ \ \ \ \ \ \ \ \mbox{\hyperlink{a00310_a7cdb99ccbcfebdd3967086af05b7b83f}{comms}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00156\ }
+\DoxyCodeLine{00157\ \ \ \ \ \textcolor{comment}{//\ Full\ test\ related\ variables\ ...}}
+\DoxyCodeLine{00158\ \ \ \ \ \textcolor{comment}{//char\_t\ \ \ \ \ \ \ \ \ \ \ \ \ \ gps\_position\ [64];\ \ \ \ \ \ \ \ \ \ ///<\ GPS\ position}}
+\DoxyCodeLine{00159\ \ \ \ \ \mbox{\hyperlink{a00302}{TEST\_DEFIB\_t}}\ \ \ \ \ \ \ \ \mbox{\hyperlink{a00310_a42d22d0ee11b8f9e1356f70b93b515f4}{defib}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00161\ \ \ \ \ \mbox{\hyperlink{a00306}{TEST\_CERT\_t}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00310_a033ba41ec7b58b131c0a7036f05fc6fe}{certificate}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00163\ \}\ \mbox{\hyperlink{a00310}{DB\_TEST\_RESULT\_t}};}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00165\ }
+\DoxyCodeLine{00166\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00167\ \textcolor{comment}{**\ Globals}}
+\DoxyCodeLine{00168\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00170\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{a00310}{DB\_TEST\_RESULT\_t}}\ \ \ \ \mbox{\hyperlink{a00011_a27c2ed3e3011c92dce2bde0851728c0e}{R100\_test\_result}};\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Test\ result\ !!!}}
+\DoxyCodeLine{00171\ }
+\DoxyCodeLine{00172\ }
+\DoxyCodeLine{00173\ }
+\DoxyCodeLine{00174\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00175\ \textcolor{comment}{**\ Prototypes}}
+\DoxyCodeLine{00176\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00178\ \textcolor{keyword}{extern}\ \ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{a00011_a7ec87003cf7b1f13d7f71af99cbfe1f6}{Fill\_Generic\_Date}}\ (\mbox{\hyperlink{a00137_a40bb5262bf908c328fbcfbe5d29d0201}{char\_t}}\ *pStr,\ \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ my\_date);}
+\DoxyCodeLine{00179\ \textcolor{keyword}{extern}\ \ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{a00011_ab7a2e6fc6e6d920610d4939bd63e4300}{Fill\_Generic\_Time}}\ (\mbox{\hyperlink{a00137_a40bb5262bf908c328fbcfbe5d29d0201}{char\_t}}\ *pStr,\ \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ my\_time);}
+\DoxyCodeLine{00180\ }
+\DoxyCodeLine{00181\ \textcolor{keyword}{extern}\ \ \mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\_t}}\ \ \mbox{\hyperlink{a00011_a3c8767e0ac18450db5c82a07120864ae}{DB\_Test\_Generate\_Report}}\ (\mbox{\hyperlink{a00310}{DB\_TEST\_RESULT\_t}}\ *pResult,\ \mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\_t}}\ file\_report);}
+\DoxyCodeLine{00182\ \textcolor{keyword}{extern}\ \ \mbox{\hyperlink{a00137_a40bb5262bf908c328fbcfbe5d29d0201}{char\_t}}*\ \mbox{\hyperlink{a00011_a5eb6a87ab980707d7c463c294699868c}{DB\_Test\_Get\_Filename}}\ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00183\ \textcolor{keyword}{extern}\ \ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{a00011_a29b3330272af11e7475fe7645d1256ce}{DB\_Sigfox\_Store\_Info}}\ (\mbox{\hyperlink{a00137_a40bb5262bf908c328fbcfbe5d29d0201}{char\_t}}\ *\ device\_id,\ \mbox{\hyperlink{a00137_a40bb5262bf908c328fbcfbe5d29d0201}{char\_t}}\ *\ pac\_id);}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00185\ \textcolor{keyword}{extern}\ \ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{a00011_a5fe6c18c1c2f842b420d557b7ab42887}{PowerOff\_Write\_Batt\_Elec}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00186\ }
+\DoxyCodeLine{00187\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{/*DB\_TEST\_H*/}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

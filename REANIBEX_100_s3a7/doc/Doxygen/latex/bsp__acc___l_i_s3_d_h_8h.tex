@@ -1,0 +1,643 @@
+\doxysection{C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\+BSP/bsp\+\_\+acc\+\_\+\+LIS3\+DH.h File Reference}
+\hypertarget{bsp__acc___l_i_s3_d_h_8h}{}\label{bsp__acc___l_i_s3_d_h_8h}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/BSP/bsp\_acc\_LIS3DH.h@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/BSP/bsp\_acc\_LIS3DH.h}}
+{\ttfamily \#include "{}R100\+\_\+\+Errors.\+h"{}}\newline
+{\ttfamily \#include "{}types\+\_\+basic.\+h"{}}\newline
+Include dependency graph for bsp\+\_\+acc\+\_\+\+LIS3\+DH.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=263pt]{bsp__acc___l_i_s3_d_h_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__acc___l_i_s3_d_h_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{bsp__acc___l_i_s3_d_h_8h_a400e78fba71039cc79d34f5923af858c}{LIS3\+DH\+\_\+\+STATUS\+\_\+\+REG\+\_\+\+AUX}}~0x07
+\item 
+\#define \mbox{\hyperlink{bsp__acc___l_i_s3_d_h_8h_a89faeb71c25b9fe91dd9f1db4fcc7221}{LIS3\+DH\+\_\+\+WHO\+\_\+\+AM\+\_\+I}}~0x0F
+\item 
+\#define \mbox{\hyperlink{bsp__acc___l_i_s3_d_h_8h_a122a98421680e91f83d81672c4c26a63}{LIS3\+DH\+\_\+\+WHO\+\_\+\+AM\+\_\+\+I\+\_\+\+VALUE}}~0x33
+\item 
+\#define \mbox{\hyperlink{bsp__acc___l_i_s3_d_h_8h_a4cbf2c028094e47efd9d27234ea00fe8}{LIS3\+DH\+\_\+\+CTRL\+\_\+\+REG1}}~0x20
+\item 
+\#define \mbox{\hyperlink{bsp__acc___l_i_s3_d_h_8h_a5e4e86d0afdb43172510a35d5d0af597}{LIS3\+DH\+\_\+\+CTRL\+\_\+\+REG2}}~0x21
+\item 
+\#define \mbox{\hyperlink{bsp__acc___l_i_s3_d_h_8h_a6b25edb4acb2f48090f64dcbeccc505d}{LIS3\+DH\+\_\+\+CTRL\+\_\+\+REG3}}~0x22
+\item 
+\#define \mbox{\hyperlink{bsp__acc___l_i_s3_d_h_8h_a92524df35353847fa291fbc05e912bf6}{LIS3\+DH\+\_\+\+CTRL\+\_\+\+REG4}}~0x23
+\item 
+\#define \mbox{\hyperlink{bsp__acc___l_i_s3_d_h_8h_a6179cda8a846b2e1f8823a9277397673}{LIS3\+DH\+\_\+\+CTRL\+\_\+\+REG5}}~0x24
+\item 
+\#define \mbox{\hyperlink{bsp__acc___l_i_s3_d_h_8h_aa51f6bcd1cd8ec92f1bb2d9d683edd7f}{LIS3\+DH\+\_\+\+CTRL\+\_\+\+REG6}}~0x25
+\item 
+\#define \mbox{\hyperlink{bsp__acc___l_i_s3_d_h_8h_aac65e5e45cc292330a9c323ceb4704bb}{LIS3\+DH\+\_\+\+REFERENCE}}~0x26
+\item 
+\#define \mbox{\hyperlink{bsp__acc___l_i_s3_d_h_8h_add697ba213454c18eefb5a0aa39317d2}{LIS3\+DH\+\_\+\+STATUS\+\_\+\+REG2}}~0x27
+\item 
+\#define \mbox{\hyperlink{bsp__acc___l_i_s3_d_h_8h_a6a00f45f1941f0953e6c39b7934e7539}{LIS3\+DH\+\_\+\+OUT\+\_\+\+X\+\_\+L}}~0x28
+\item 
+\#define \mbox{\hyperlink{bsp__acc___l_i_s3_d_h_8h_a44f1625a21b206cef151c54e425c109d}{LIS3\+DH\+\_\+\+OUT\+\_\+\+X\+\_\+H}}~0x29
+\item 
+\#define \mbox{\hyperlink{bsp__acc___l_i_s3_d_h_8h_a418357f88aa889c4c4b010237885d247}{LIS3\+DH\+\_\+\+OUT\+\_\+\+Y\+\_\+L}}~0x2A
+\item 
+\#define \mbox{\hyperlink{bsp__acc___l_i_s3_d_h_8h_a3c30c8914ea90e30bdb12475282bb313}{LIS3\+DH\+\_\+\+OUT\+\_\+\+Y\+\_\+H}}~0x2B
+\item 
+\#define \mbox{\hyperlink{bsp__acc___l_i_s3_d_h_8h_ad2c785e762769eebea3717cb2287b4f4}{LIS3\+DH\+\_\+\+OUT\+\_\+\+Z\+\_\+L}}~0x2C
+\item 
+\#define \mbox{\hyperlink{bsp__acc___l_i_s3_d_h_8h_a4ea06d86a9a05fa4aa9ba8afedb5a906}{LIS3\+DH\+\_\+\+OUT\+\_\+\+Z\+\_\+H}}~0x2D
+\item 
+\#define \mbox{\hyperlink{bsp__acc___l_i_s3_d_h_8h_aa99e939bd3be20fd5aba62cd8f161969}{LIS3\+DH\+\_\+\+FIFO\+\_\+\+CTRL\+\_\+\+REG}}~0x2E
+\item 
+\#define \mbox{\hyperlink{bsp__acc___l_i_s3_d_h_8h_afbc7bb33d550aff4bf81d0416a6a36da}{LIS3\+DH\+\_\+\+FIFO\+\_\+\+SRC\+\_\+\+REG}}~0x2F
+\item 
+\#define \mbox{\hyperlink{bsp__acc___l_i_s3_d_h_8h_a5b4e2b95007a91dfa6ce1589a62cf649}{LIS3\+DH\+\_\+\+INT1\+\_\+\+CFG}}~0x30
+\item 
+\#define \mbox{\hyperlink{bsp__acc___l_i_s3_d_h_8h_a19a2522d4d5c15628e414b825612cc2d}{LIS3\+DH\+\_\+\+INT1\+\_\+\+SRC}}~0x31
+\item 
+\#define \mbox{\hyperlink{bsp__acc___l_i_s3_d_h_8h_afc04a85e0347001d04e02e28e440f509}{LIS3\+DH\+\_\+\+INT1\+\_\+\+THS}}~0x32
+\item 
+\#define \mbox{\hyperlink{bsp__acc___l_i_s3_d_h_8h_aa912609e1632693f7bdc5fa359ace70b}{LIS3\+DH\+\_\+\+INT1\+\_\+\+DURATION}}~0x33
+\item 
+\#define \mbox{\hyperlink{bsp__acc___l_i_s3_d_h_8h_a3aa28d538760de8e37b3f2b5b0f40e65}{LIS3\+DH\+\_\+\+INT2\+\_\+\+CFG}}~0x34
+\item 
+\#define \mbox{\hyperlink{bsp__acc___l_i_s3_d_h_8h_a0454c68f32d760ab0d4fe84c41961c1e}{LIS3\+DH\+\_\+\+INT2\+\_\+\+SRC}}~0x35
+\item 
+\#define \mbox{\hyperlink{bsp__acc___l_i_s3_d_h_8h_a80466503cddcf36ce7fcf38e77f513b9}{LIS3\+DH\+\_\+\+INT2\+\_\+\+THS}}~0x36
+\item 
+\#define \mbox{\hyperlink{bsp__acc___l_i_s3_d_h_8h_adeed956a1ed9012a60e4b323a7d859dc}{LIS3\+DH\+\_\+\+INT2\+\_\+\+DURATION}}~0x37
+\item 
+\#define \mbox{\hyperlink{bsp__acc___l_i_s3_d_h_8h_a1c9e7505a27bcace105fc7bcd34617b7}{LIS3\+DH\+\_\+\+CLICK\+\_\+\+CFG}}~0x38
+\item 
+\#define \mbox{\hyperlink{bsp__acc___l_i_s3_d_h_8h_ab30c85cc1509d1f369ce37d4f4b3ff90}{LIS3\+DH\+\_\+\+CLICK\+\_\+\+SRC}}~0x39
+\item 
+\#define \mbox{\hyperlink{bsp__acc___l_i_s3_d_h_8h_add513f6407f69ca4e4c78bde235f4606}{LIS3\+DH\+\_\+\+CLICK\+\_\+\+THS}}~0x3A
+\item 
+\#define \mbox{\hyperlink{bsp__acc___l_i_s3_d_h_8h_ae47b2e91730a13a3f4f52e6b35231ac5}{LIS3\+DH\+\_\+\+TIME\+\_\+\+LIMIT}}~0x3B
+\item 
+\#define \mbox{\hyperlink{bsp__acc___l_i_s3_d_h_8h_a4486a4c2e7c4ac9b85a766eb3e7c801e}{LIS3\+DH\+\_\+\+TIME\+\_\+\+LATENCY}}~0x3C
+\item 
+\#define \mbox{\hyperlink{bsp__acc___l_i_s3_d_h_8h_a218f604cbad34911b4539b2ea941b109}{LIS3\+DH\+\_\+\+TIME\+\_\+\+WINDOW}}~0x3D
+\item 
+\#define \mbox{\hyperlink{bsp__acc___l_i_s3_d_h_8h_aa44a7622dd4f41913e127f053e17923d}{ACCEL\+\_\+\+XYZ\+\_\+\+DATA\+\_\+\+CFG}}~0x01
+\item 
+\#define \mbox{\hyperlink{bsp__acc___l_i_s3_d_h_8h_a2399934a64f86d0670dd761ae4d1e90d}{HP\+\_\+\+FILTER\+\_\+\+CUTOFF}}~0x23
+\item 
+\#define \mbox{\hyperlink{bsp__acc___l_i_s3_d_h_8h_a08f2041cd6311ca6a15d901fbc7ed35c}{CTRL\+\_\+\+REG3\+\_\+\+CFG}}~0x00
+\item 
+\#define \mbox{\hyperlink{bsp__acc___l_i_s3_d_h_8h_ae8581296ee9e5e39389d239b7935791b}{CTRL\+\_\+\+REG4\+\_\+\+CFG}}~0x01
+\item 
+\#define \mbox{\hyperlink{bsp__acc___l_i_s3_d_h_8h_a6565ff38a12db69d4d502ac72cfc57a5}{CTRL\+\_\+\+REG1\+\_\+\+CFG1}}~0x18
+\item 
+\#define \mbox{\hyperlink{bsp__acc___l_i_s3_d_h_8h_a0175814884c64218f680b836b0e8668f}{CTRL\+\_\+\+REG1\+\_\+\+CFG2}}~0x19
+\item 
+\#define \mbox{\hyperlink{bsp__acc___l_i_s3_d_h_8h_a78929b290ef8628c951c037c0ffb5210}{ACC\+\_\+\+MEASUREMENT\+\_\+\+RANGE}}~2
+\begin{DoxyCompactList}\small\item\em +/-\/2g -\/\texorpdfstring{$>$}{>} thresold 40-\/80, 4g -\/\texorpdfstring{$>$}{>} thresold 20-\/40, 8g -\/\texorpdfstring{$>$}{>} thresold 10-\/20 or 16g -\/\texorpdfstring{$>$}{>} thresold 5-\/10 \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{bsp__acc___l_i_s3_d_h_8h_aab8335edbedbc264665270a2b40885b3}{ACC\+\_\+\+THRESOLD}}~25
+\begin{DoxyCompactList}\small\item\em Thresold value FF (umbral) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{bsp__acc___l_i_s3_d_h_8h_af779cb1a95b42af7cdf627f7800732b2}{ACC\+\_\+\+THRESOLD\+\_\+Z}}~17
+\begin{DoxyCompactList}\small\item\em Thresold value FF (umbral) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{bsp__acc___l_i_s3_d_h_8h_abf1a61ba8da3c9a9fa2835f8c0d025fd}{ACC\+\_\+\+DURATION}}~0x0A
+\item 
+\#define \mbox{\hyperlink{bsp__acc___l_i_s3_d_h_8h_a3f0152f3c946f50ef52c5e81a4c89388}{ACC\+\_\+\+POLARITY\+\_\+\+HIGH}}~0x00
+\begin{DoxyCompactList}\small\item\em Configure polarity active high. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{bsp__acc___l_i_s3_d_h_8h_a34eccf9b15d3a83a6b15c72c3f17c70c}{ACC\+\_\+\+POLARITY\+\_\+\+LOW}}~0x02
+\begin{DoxyCompactList}\small\item\em Configure polarity active low. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{bsp__acc___l_i_s3_d_h_8h_ad49ef2f14fe365361f06bd12f2078578}{ACC\+\_\+\+ENABLE\+\_\+\+XYZ\+\_\+\+HIGH\+\_\+\+AXIS}}~0x2A
+\begin{DoxyCompactList}\small\item\em Enable XYZ axis high event. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{bsp__acc___l_i_s3_d_h_8h_acf2d3baefc0b760a41842ab5bc35ed05}{ACC\+\_\+\+ENABLE\+\_\+\+XYZ\+\_\+\+LOW\+\_\+\+AXIS}}~0x15
+\begin{DoxyCompactList}\small\item\em Enable XYZ axis low event. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{bsp__acc___l_i_s3_d_h_8h_aa07b403e051ed8debe0d93e886f03d4d}{ACC\+\_\+\+ENABLE\+\_\+\+XY\+\_\+\+HIGH\+\_\+\+AXIS}}~0x0A
+\begin{DoxyCompactList}\small\item\em Enable XY axis high event. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{bsp__acc___l_i_s3_d_h_8h_ac67eaebe28a86e5dd52918acd977cb12}{ACC\+\_\+\+ENABLE\+\_\+\+Z\+\_\+\+HIGH\+\_\+\+AXIS}}~0x20
+\begin{DoxyCompactList}\small\item\em Enable Z axis high event. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{bsp__acc___l_i_s3_d_h_8h_adf49aa4c1c6d03085a4fc2d597a6963b}{ACC\+\_\+\+ENABLE\+\_\+\+Z\+\_\+\+LOW\+\_\+\+AXIS}}~0x10
+\begin{DoxyCompactList}\small\item\em Enable Z axis low event. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{bsp__acc___l_i_s3_d_h_8h_ad486c1834dbf37210229ff6772dfbfef}{ACC\+\_\+\+DISABLE\+\_\+\+INT}}~0x00
+\begin{DoxyCompactList}\small\item\em Enable Z axis low event. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{bsp__acc___l_i_s3_d_h_8h_af31a9767f119533486673a2dbca76785}{ACCEL\+\_\+\+DEVICE\+\_\+\+ADD}}~0x19
+\begin{DoxyCompactList}\small\item\em If SA0 pad is connected to voltage supply, LSb is ‘1’ (address 0011001b) = 0x19. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{bsp__acc___l_i_s3_d_h_8h_afcbc051f96e6f31f234a07674c2027f3}{Accelerometer\+\_\+\+Presence}} (void)
+\begin{DoxyCompactList}\small\item\em Checks for presence of accelerometer by checking who\+\_\+am\+\_\+i register. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{bsp__acc___l_i_s3_d_h_8h_aea5b1f8a01e5ae4f2805aa689711694e}{Accelerometer\+\_\+\+Setup}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} enable\+\_\+xyz, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} sample\+Rate, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} accel\+Range)
+\begin{DoxyCompactList}\small\item\em Setup basic configuration of accelerometer. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{bsp__acc___l_i_s3_d_h_8h_a4ca9c1b97ec25cb31b7be2f8e54c5643}{Accel\+\_\+\+Interrupt\+\_\+\+Init}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} enable\+\_\+axis, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} threshold, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} duration, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} polarity)
+\begin{DoxyCompactList}\small\item\em Initialize the interruption reg and configure interruption threshold of accelerometer. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{bsp__acc___l_i_s3_d_h_8h_a0ddefa6466e2f93180314adc8b3fc204}{ACC\+\_\+\+Get\+\_\+\+Axis\+\_\+\+Data}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} reg\+\_\+address, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}read\+\_\+reg\+\_\+data)
+\begin{DoxyCompactList}\small\item\em Function to read register of accelerometer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{bsp__acc___l_i_s3_d_h_8h_ad486c1834dbf37210229ff6772dfbfef}\label{bsp__acc___l_i_s3_d_h_8h_ad486c1834dbf37210229ff6772dfbfef} 
+\index{bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}!ACC\_DISABLE\_INT@{ACC\_DISABLE\_INT}}
+\index{ACC\_DISABLE\_INT@{ACC\_DISABLE\_INT}!bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}}
+\doxysubsubsection{\texorpdfstring{ACC\_DISABLE\_INT}{ACC\_DISABLE\_INT}}
+{\footnotesize\ttfamily \#define ACC\+\_\+\+DISABLE\+\_\+\+INT~0x00}
+
+
+
+Enable Z axis low event. 
+
+\Hypertarget{bsp__acc___l_i_s3_d_h_8h_abf1a61ba8da3c9a9fa2835f8c0d025fd}\label{bsp__acc___l_i_s3_d_h_8h_abf1a61ba8da3c9a9fa2835f8c0d025fd} 
+\index{bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}!ACC\_DURATION@{ACC\_DURATION}}
+\index{ACC\_DURATION@{ACC\_DURATION}!bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}}
+\doxysubsubsection{\texorpdfstring{ACC\_DURATION}{ACC\_DURATION}}
+{\footnotesize\ttfamily \#define ACC\+\_\+\+DURATION~0x0A}
+
+\Hypertarget{bsp__acc___l_i_s3_d_h_8h_aa07b403e051ed8debe0d93e886f03d4d}\label{bsp__acc___l_i_s3_d_h_8h_aa07b403e051ed8debe0d93e886f03d4d} 
+\index{bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}!ACC\_ENABLE\_XY\_HIGH\_AXIS@{ACC\_ENABLE\_XY\_HIGH\_AXIS}}
+\index{ACC\_ENABLE\_XY\_HIGH\_AXIS@{ACC\_ENABLE\_XY\_HIGH\_AXIS}!bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}}
+\doxysubsubsection{\texorpdfstring{ACC\_ENABLE\_XY\_HIGH\_AXIS}{ACC\_ENABLE\_XY\_HIGH\_AXIS}}
+{\footnotesize\ttfamily \#define ACC\+\_\+\+ENABLE\+\_\+\+XY\+\_\+\+HIGH\+\_\+\+AXIS~0x0A}
+
+
+
+Enable XY axis high event. 
+
+\Hypertarget{bsp__acc___l_i_s3_d_h_8h_ad49ef2f14fe365361f06bd12f2078578}\label{bsp__acc___l_i_s3_d_h_8h_ad49ef2f14fe365361f06bd12f2078578} 
+\index{bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}!ACC\_ENABLE\_XYZ\_HIGH\_AXIS@{ACC\_ENABLE\_XYZ\_HIGH\_AXIS}}
+\index{ACC\_ENABLE\_XYZ\_HIGH\_AXIS@{ACC\_ENABLE\_XYZ\_HIGH\_AXIS}!bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}}
+\doxysubsubsection{\texorpdfstring{ACC\_ENABLE\_XYZ\_HIGH\_AXIS}{ACC\_ENABLE\_XYZ\_HIGH\_AXIS}}
+{\footnotesize\ttfamily \#define ACC\+\_\+\+ENABLE\+\_\+\+XYZ\+\_\+\+HIGH\+\_\+\+AXIS~0x2A}
+
+
+
+Enable XYZ axis high event. 
+
+\Hypertarget{bsp__acc___l_i_s3_d_h_8h_acf2d3baefc0b760a41842ab5bc35ed05}\label{bsp__acc___l_i_s3_d_h_8h_acf2d3baefc0b760a41842ab5bc35ed05} 
+\index{bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}!ACC\_ENABLE\_XYZ\_LOW\_AXIS@{ACC\_ENABLE\_XYZ\_LOW\_AXIS}}
+\index{ACC\_ENABLE\_XYZ\_LOW\_AXIS@{ACC\_ENABLE\_XYZ\_LOW\_AXIS}!bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}}
+\doxysubsubsection{\texorpdfstring{ACC\_ENABLE\_XYZ\_LOW\_AXIS}{ACC\_ENABLE\_XYZ\_LOW\_AXIS}}
+{\footnotesize\ttfamily \#define ACC\+\_\+\+ENABLE\+\_\+\+XYZ\+\_\+\+LOW\+\_\+\+AXIS~0x15}
+
+
+
+Enable XYZ axis low event. 
+
+\Hypertarget{bsp__acc___l_i_s3_d_h_8h_ac67eaebe28a86e5dd52918acd977cb12}\label{bsp__acc___l_i_s3_d_h_8h_ac67eaebe28a86e5dd52918acd977cb12} 
+\index{bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}!ACC\_ENABLE\_Z\_HIGH\_AXIS@{ACC\_ENABLE\_Z\_HIGH\_AXIS}}
+\index{ACC\_ENABLE\_Z\_HIGH\_AXIS@{ACC\_ENABLE\_Z\_HIGH\_AXIS}!bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}}
+\doxysubsubsection{\texorpdfstring{ACC\_ENABLE\_Z\_HIGH\_AXIS}{ACC\_ENABLE\_Z\_HIGH\_AXIS}}
+{\footnotesize\ttfamily \#define ACC\+\_\+\+ENABLE\+\_\+\+Z\+\_\+\+HIGH\+\_\+\+AXIS~0x20}
+
+
+
+Enable Z axis high event. 
+
+\Hypertarget{bsp__acc___l_i_s3_d_h_8h_adf49aa4c1c6d03085a4fc2d597a6963b}\label{bsp__acc___l_i_s3_d_h_8h_adf49aa4c1c6d03085a4fc2d597a6963b} 
+\index{bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}!ACC\_ENABLE\_Z\_LOW\_AXIS@{ACC\_ENABLE\_Z\_LOW\_AXIS}}
+\index{ACC\_ENABLE\_Z\_LOW\_AXIS@{ACC\_ENABLE\_Z\_LOW\_AXIS}!bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}}
+\doxysubsubsection{\texorpdfstring{ACC\_ENABLE\_Z\_LOW\_AXIS}{ACC\_ENABLE\_Z\_LOW\_AXIS}}
+{\footnotesize\ttfamily \#define ACC\+\_\+\+ENABLE\+\_\+\+Z\+\_\+\+LOW\+\_\+\+AXIS~0x10}
+
+
+
+Enable Z axis low event. 
+
+\Hypertarget{bsp__acc___l_i_s3_d_h_8h_a78929b290ef8628c951c037c0ffb5210}\label{bsp__acc___l_i_s3_d_h_8h_a78929b290ef8628c951c037c0ffb5210} 
+\index{bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}!ACC\_MEASUREMENT\_RANGE@{ACC\_MEASUREMENT\_RANGE}}
+\index{ACC\_MEASUREMENT\_RANGE@{ACC\_MEASUREMENT\_RANGE}!bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}}
+\doxysubsubsection{\texorpdfstring{ACC\_MEASUREMENT\_RANGE}{ACC\_MEASUREMENT\_RANGE}}
+{\footnotesize\ttfamily \#define ACC\+\_\+\+MEASUREMENT\+\_\+\+RANGE~2}
+
+
+
++/-\/2g -\/\texorpdfstring{$>$}{>} thresold 40-\/80, 4g -\/\texorpdfstring{$>$}{>} thresold 20-\/40, 8g -\/\texorpdfstring{$>$}{>} thresold 10-\/20 or 16g -\/\texorpdfstring{$>$}{>} thresold 5-\/10 
+
+\Hypertarget{bsp__acc___l_i_s3_d_h_8h_a3f0152f3c946f50ef52c5e81a4c89388}\label{bsp__acc___l_i_s3_d_h_8h_a3f0152f3c946f50ef52c5e81a4c89388} 
+\index{bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}!ACC\_POLARITY\_HIGH@{ACC\_POLARITY\_HIGH}}
+\index{ACC\_POLARITY\_HIGH@{ACC\_POLARITY\_HIGH}!bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}}
+\doxysubsubsection{\texorpdfstring{ACC\_POLARITY\_HIGH}{ACC\_POLARITY\_HIGH}}
+{\footnotesize\ttfamily \#define ACC\+\_\+\+POLARITY\+\_\+\+HIGH~0x00}
+
+
+
+Configure polarity active high. 
+
+\Hypertarget{bsp__acc___l_i_s3_d_h_8h_a34eccf9b15d3a83a6b15c72c3f17c70c}\label{bsp__acc___l_i_s3_d_h_8h_a34eccf9b15d3a83a6b15c72c3f17c70c} 
+\index{bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}!ACC\_POLARITY\_LOW@{ACC\_POLARITY\_LOW}}
+\index{ACC\_POLARITY\_LOW@{ACC\_POLARITY\_LOW}!bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}}
+\doxysubsubsection{\texorpdfstring{ACC\_POLARITY\_LOW}{ACC\_POLARITY\_LOW}}
+{\footnotesize\ttfamily \#define ACC\+\_\+\+POLARITY\+\_\+\+LOW~0x02}
+
+
+
+Configure polarity active low. 
+
+\Hypertarget{bsp__acc___l_i_s3_d_h_8h_aab8335edbedbc264665270a2b40885b3}\label{bsp__acc___l_i_s3_d_h_8h_aab8335edbedbc264665270a2b40885b3} 
+\index{bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}!ACC\_THRESOLD@{ACC\_THRESOLD}}
+\index{ACC\_THRESOLD@{ACC\_THRESOLD}!bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}}
+\doxysubsubsection{\texorpdfstring{ACC\_THRESOLD}{ACC\_THRESOLD}}
+{\footnotesize\ttfamily \#define ACC\+\_\+\+THRESOLD~25}
+
+
+
+Thresold value FF (umbral) 
+
+\Hypertarget{bsp__acc___l_i_s3_d_h_8h_af779cb1a95b42af7cdf627f7800732b2}\label{bsp__acc___l_i_s3_d_h_8h_af779cb1a95b42af7cdf627f7800732b2} 
+\index{bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}!ACC\_THRESOLD\_Z@{ACC\_THRESOLD\_Z}}
+\index{ACC\_THRESOLD\_Z@{ACC\_THRESOLD\_Z}!bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}}
+\doxysubsubsection{\texorpdfstring{ACC\_THRESOLD\_Z}{ACC\_THRESOLD\_Z}}
+{\footnotesize\ttfamily \#define ACC\+\_\+\+THRESOLD\+\_\+Z~17}
+
+
+
+Thresold value FF (umbral) 
+
+\Hypertarget{bsp__acc___l_i_s3_d_h_8h_af31a9767f119533486673a2dbca76785}\label{bsp__acc___l_i_s3_d_h_8h_af31a9767f119533486673a2dbca76785} 
+\index{bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}!ACCEL\_DEVICE\_ADD@{ACCEL\_DEVICE\_ADD}}
+\index{ACCEL\_DEVICE\_ADD@{ACCEL\_DEVICE\_ADD}!bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}}
+\doxysubsubsection{\texorpdfstring{ACCEL\_DEVICE\_ADD}{ACCEL\_DEVICE\_ADD}}
+{\footnotesize\ttfamily \#define ACCEL\+\_\+\+DEVICE\+\_\+\+ADD~0x19}
+
+
+
+If SA0 pad is connected to voltage supply, LSb is ‘1’ (address 0011001b) = 0x19. 
+
+\Hypertarget{bsp__acc___l_i_s3_d_h_8h_aa44a7622dd4f41913e127f053e17923d}\label{bsp__acc___l_i_s3_d_h_8h_aa44a7622dd4f41913e127f053e17923d} 
+\index{bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}!ACCEL\_XYZ\_DATA\_CFG@{ACCEL\_XYZ\_DATA\_CFG}}
+\index{ACCEL\_XYZ\_DATA\_CFG@{ACCEL\_XYZ\_DATA\_CFG}!bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}}
+\doxysubsubsection{\texorpdfstring{ACCEL\_XYZ\_DATA\_CFG}{ACCEL\_XYZ\_DATA\_CFG}}
+{\footnotesize\ttfamily \#define ACCEL\+\_\+\+XYZ\+\_\+\+DATA\+\_\+\+CFG~0x01}
+
+\Hypertarget{bsp__acc___l_i_s3_d_h_8h_a6565ff38a12db69d4d502ac72cfc57a5}\label{bsp__acc___l_i_s3_d_h_8h_a6565ff38a12db69d4d502ac72cfc57a5} 
+\index{bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}!CTRL\_REG1\_CFG1@{CTRL\_REG1\_CFG1}}
+\index{CTRL\_REG1\_CFG1@{CTRL\_REG1\_CFG1}!bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}}
+\doxysubsubsection{\texorpdfstring{CTRL\_REG1\_CFG1}{CTRL\_REG1\_CFG1}}
+{\footnotesize\ttfamily \#define CTRL\+\_\+\+REG1\+\_\+\+CFG1~0x18}
+
+\Hypertarget{bsp__acc___l_i_s3_d_h_8h_a0175814884c64218f680b836b0e8668f}\label{bsp__acc___l_i_s3_d_h_8h_a0175814884c64218f680b836b0e8668f} 
+\index{bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}!CTRL\_REG1\_CFG2@{CTRL\_REG1\_CFG2}}
+\index{CTRL\_REG1\_CFG2@{CTRL\_REG1\_CFG2}!bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}}
+\doxysubsubsection{\texorpdfstring{CTRL\_REG1\_CFG2}{CTRL\_REG1\_CFG2}}
+{\footnotesize\ttfamily \#define CTRL\+\_\+\+REG1\+\_\+\+CFG2~0x19}
+
+\Hypertarget{bsp__acc___l_i_s3_d_h_8h_a08f2041cd6311ca6a15d901fbc7ed35c}\label{bsp__acc___l_i_s3_d_h_8h_a08f2041cd6311ca6a15d901fbc7ed35c} 
+\index{bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}!CTRL\_REG3\_CFG@{CTRL\_REG3\_CFG}}
+\index{CTRL\_REG3\_CFG@{CTRL\_REG3\_CFG}!bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}}
+\doxysubsubsection{\texorpdfstring{CTRL\_REG3\_CFG}{CTRL\_REG3\_CFG}}
+{\footnotesize\ttfamily \#define CTRL\+\_\+\+REG3\+\_\+\+CFG~0x00}
+
+\Hypertarget{bsp__acc___l_i_s3_d_h_8h_ae8581296ee9e5e39389d239b7935791b}\label{bsp__acc___l_i_s3_d_h_8h_ae8581296ee9e5e39389d239b7935791b} 
+\index{bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}!CTRL\_REG4\_CFG@{CTRL\_REG4\_CFG}}
+\index{CTRL\_REG4\_CFG@{CTRL\_REG4\_CFG}!bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}}
+\doxysubsubsection{\texorpdfstring{CTRL\_REG4\_CFG}{CTRL\_REG4\_CFG}}
+{\footnotesize\ttfamily \#define CTRL\+\_\+\+REG4\+\_\+\+CFG~0x01}
+
+\Hypertarget{bsp__acc___l_i_s3_d_h_8h_a2399934a64f86d0670dd761ae4d1e90d}\label{bsp__acc___l_i_s3_d_h_8h_a2399934a64f86d0670dd761ae4d1e90d} 
+\index{bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}!HP\_FILTER\_CUTOFF@{HP\_FILTER\_CUTOFF}}
+\index{HP\_FILTER\_CUTOFF@{HP\_FILTER\_CUTOFF}!bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}}
+\doxysubsubsection{\texorpdfstring{HP\_FILTER\_CUTOFF}{HP\_FILTER\_CUTOFF}}
+{\footnotesize\ttfamily \#define HP\+\_\+\+FILTER\+\_\+\+CUTOFF~0x23}
+
+\Hypertarget{bsp__acc___l_i_s3_d_h_8h_a1c9e7505a27bcace105fc7bcd34617b7}\label{bsp__acc___l_i_s3_d_h_8h_a1c9e7505a27bcace105fc7bcd34617b7} 
+\index{bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}!LIS3DH\_CLICK\_CFG@{LIS3DH\_CLICK\_CFG}}
+\index{LIS3DH\_CLICK\_CFG@{LIS3DH\_CLICK\_CFG}!bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}}
+\doxysubsubsection{\texorpdfstring{LIS3DH\_CLICK\_CFG}{LIS3DH\_CLICK\_CFG}}
+{\footnotesize\ttfamily \#define LIS3\+DH\+\_\+\+CLICK\+\_\+\+CFG~0x38}
+
+\Hypertarget{bsp__acc___l_i_s3_d_h_8h_ab30c85cc1509d1f369ce37d4f4b3ff90}\label{bsp__acc___l_i_s3_d_h_8h_ab30c85cc1509d1f369ce37d4f4b3ff90} 
+\index{bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}!LIS3DH\_CLICK\_SRC@{LIS3DH\_CLICK\_SRC}}
+\index{LIS3DH\_CLICK\_SRC@{LIS3DH\_CLICK\_SRC}!bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}}
+\doxysubsubsection{\texorpdfstring{LIS3DH\_CLICK\_SRC}{LIS3DH\_CLICK\_SRC}}
+{\footnotesize\ttfamily \#define LIS3\+DH\+\_\+\+CLICK\+\_\+\+SRC~0x39}
+
+\Hypertarget{bsp__acc___l_i_s3_d_h_8h_add513f6407f69ca4e4c78bde235f4606}\label{bsp__acc___l_i_s3_d_h_8h_add513f6407f69ca4e4c78bde235f4606} 
+\index{bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}!LIS3DH\_CLICK\_THS@{LIS3DH\_CLICK\_THS}}
+\index{LIS3DH\_CLICK\_THS@{LIS3DH\_CLICK\_THS}!bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}}
+\doxysubsubsection{\texorpdfstring{LIS3DH\_CLICK\_THS}{LIS3DH\_CLICK\_THS}}
+{\footnotesize\ttfamily \#define LIS3\+DH\+\_\+\+CLICK\+\_\+\+THS~0x3A}
+
+\Hypertarget{bsp__acc___l_i_s3_d_h_8h_a4cbf2c028094e47efd9d27234ea00fe8}\label{bsp__acc___l_i_s3_d_h_8h_a4cbf2c028094e47efd9d27234ea00fe8} 
+\index{bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}!LIS3DH\_CTRL\_REG1@{LIS3DH\_CTRL\_REG1}}
+\index{LIS3DH\_CTRL\_REG1@{LIS3DH\_CTRL\_REG1}!bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}}
+\doxysubsubsection{\texorpdfstring{LIS3DH\_CTRL\_REG1}{LIS3DH\_CTRL\_REG1}}
+{\footnotesize\ttfamily \#define LIS3\+DH\+\_\+\+CTRL\+\_\+\+REG1~0x20}
+
+\Hypertarget{bsp__acc___l_i_s3_d_h_8h_a5e4e86d0afdb43172510a35d5d0af597}\label{bsp__acc___l_i_s3_d_h_8h_a5e4e86d0afdb43172510a35d5d0af597} 
+\index{bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}!LIS3DH\_CTRL\_REG2@{LIS3DH\_CTRL\_REG2}}
+\index{LIS3DH\_CTRL\_REG2@{LIS3DH\_CTRL\_REG2}!bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}}
+\doxysubsubsection{\texorpdfstring{LIS3DH\_CTRL\_REG2}{LIS3DH\_CTRL\_REG2}}
+{\footnotesize\ttfamily \#define LIS3\+DH\+\_\+\+CTRL\+\_\+\+REG2~0x21}
+
+\Hypertarget{bsp__acc___l_i_s3_d_h_8h_a6b25edb4acb2f48090f64dcbeccc505d}\label{bsp__acc___l_i_s3_d_h_8h_a6b25edb4acb2f48090f64dcbeccc505d} 
+\index{bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}!LIS3DH\_CTRL\_REG3@{LIS3DH\_CTRL\_REG3}}
+\index{LIS3DH\_CTRL\_REG3@{LIS3DH\_CTRL\_REG3}!bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}}
+\doxysubsubsection{\texorpdfstring{LIS3DH\_CTRL\_REG3}{LIS3DH\_CTRL\_REG3}}
+{\footnotesize\ttfamily \#define LIS3\+DH\+\_\+\+CTRL\+\_\+\+REG3~0x22}
+
+\Hypertarget{bsp__acc___l_i_s3_d_h_8h_a92524df35353847fa291fbc05e912bf6}\label{bsp__acc___l_i_s3_d_h_8h_a92524df35353847fa291fbc05e912bf6} 
+\index{bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}!LIS3DH\_CTRL\_REG4@{LIS3DH\_CTRL\_REG4}}
+\index{LIS3DH\_CTRL\_REG4@{LIS3DH\_CTRL\_REG4}!bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}}
+\doxysubsubsection{\texorpdfstring{LIS3DH\_CTRL\_REG4}{LIS3DH\_CTRL\_REG4}}
+{\footnotesize\ttfamily \#define LIS3\+DH\+\_\+\+CTRL\+\_\+\+REG4~0x23}
+
+\Hypertarget{bsp__acc___l_i_s3_d_h_8h_a6179cda8a846b2e1f8823a9277397673}\label{bsp__acc___l_i_s3_d_h_8h_a6179cda8a846b2e1f8823a9277397673} 
+\index{bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}!LIS3DH\_CTRL\_REG5@{LIS3DH\_CTRL\_REG5}}
+\index{LIS3DH\_CTRL\_REG5@{LIS3DH\_CTRL\_REG5}!bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}}
+\doxysubsubsection{\texorpdfstring{LIS3DH\_CTRL\_REG5}{LIS3DH\_CTRL\_REG5}}
+{\footnotesize\ttfamily \#define LIS3\+DH\+\_\+\+CTRL\+\_\+\+REG5~0x24}
+
+\Hypertarget{bsp__acc___l_i_s3_d_h_8h_aa51f6bcd1cd8ec92f1bb2d9d683edd7f}\label{bsp__acc___l_i_s3_d_h_8h_aa51f6bcd1cd8ec92f1bb2d9d683edd7f} 
+\index{bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}!LIS3DH\_CTRL\_REG6@{LIS3DH\_CTRL\_REG6}}
+\index{LIS3DH\_CTRL\_REG6@{LIS3DH\_CTRL\_REG6}!bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}}
+\doxysubsubsection{\texorpdfstring{LIS3DH\_CTRL\_REG6}{LIS3DH\_CTRL\_REG6}}
+{\footnotesize\ttfamily \#define LIS3\+DH\+\_\+\+CTRL\+\_\+\+REG6~0x25}
+
+\Hypertarget{bsp__acc___l_i_s3_d_h_8h_aa99e939bd3be20fd5aba62cd8f161969}\label{bsp__acc___l_i_s3_d_h_8h_aa99e939bd3be20fd5aba62cd8f161969} 
+\index{bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}!LIS3DH\_FIFO\_CTRL\_REG@{LIS3DH\_FIFO\_CTRL\_REG}}
+\index{LIS3DH\_FIFO\_CTRL\_REG@{LIS3DH\_FIFO\_CTRL\_REG}!bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}}
+\doxysubsubsection{\texorpdfstring{LIS3DH\_FIFO\_CTRL\_REG}{LIS3DH\_FIFO\_CTRL\_REG}}
+{\footnotesize\ttfamily \#define LIS3\+DH\+\_\+\+FIFO\+\_\+\+CTRL\+\_\+\+REG~0x2E}
+
+\Hypertarget{bsp__acc___l_i_s3_d_h_8h_afbc7bb33d550aff4bf81d0416a6a36da}\label{bsp__acc___l_i_s3_d_h_8h_afbc7bb33d550aff4bf81d0416a6a36da} 
+\index{bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}!LIS3DH\_FIFO\_SRC\_REG@{LIS3DH\_FIFO\_SRC\_REG}}
+\index{LIS3DH\_FIFO\_SRC\_REG@{LIS3DH\_FIFO\_SRC\_REG}!bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}}
+\doxysubsubsection{\texorpdfstring{LIS3DH\_FIFO\_SRC\_REG}{LIS3DH\_FIFO\_SRC\_REG}}
+{\footnotesize\ttfamily \#define LIS3\+DH\+\_\+\+FIFO\+\_\+\+SRC\+\_\+\+REG~0x2F}
+
+\Hypertarget{bsp__acc___l_i_s3_d_h_8h_a5b4e2b95007a91dfa6ce1589a62cf649}\label{bsp__acc___l_i_s3_d_h_8h_a5b4e2b95007a91dfa6ce1589a62cf649} 
+\index{bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}!LIS3DH\_INT1\_CFG@{LIS3DH\_INT1\_CFG}}
+\index{LIS3DH\_INT1\_CFG@{LIS3DH\_INT1\_CFG}!bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}}
+\doxysubsubsection{\texorpdfstring{LIS3DH\_INT1\_CFG}{LIS3DH\_INT1\_CFG}}
+{\footnotesize\ttfamily \#define LIS3\+DH\+\_\+\+INT1\+\_\+\+CFG~0x30}
+
+\Hypertarget{bsp__acc___l_i_s3_d_h_8h_aa912609e1632693f7bdc5fa359ace70b}\label{bsp__acc___l_i_s3_d_h_8h_aa912609e1632693f7bdc5fa359ace70b} 
+\index{bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}!LIS3DH\_INT1\_DURATION@{LIS3DH\_INT1\_DURATION}}
+\index{LIS3DH\_INT1\_DURATION@{LIS3DH\_INT1\_DURATION}!bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}}
+\doxysubsubsection{\texorpdfstring{LIS3DH\_INT1\_DURATION}{LIS3DH\_INT1\_DURATION}}
+{\footnotesize\ttfamily \#define LIS3\+DH\+\_\+\+INT1\+\_\+\+DURATION~0x33}
+
+\Hypertarget{bsp__acc___l_i_s3_d_h_8h_a19a2522d4d5c15628e414b825612cc2d}\label{bsp__acc___l_i_s3_d_h_8h_a19a2522d4d5c15628e414b825612cc2d} 
+\index{bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}!LIS3DH\_INT1\_SRC@{LIS3DH\_INT1\_SRC}}
+\index{LIS3DH\_INT1\_SRC@{LIS3DH\_INT1\_SRC}!bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}}
+\doxysubsubsection{\texorpdfstring{LIS3DH\_INT1\_SRC}{LIS3DH\_INT1\_SRC}}
+{\footnotesize\ttfamily \#define LIS3\+DH\+\_\+\+INT1\+\_\+\+SRC~0x31}
+
+\Hypertarget{bsp__acc___l_i_s3_d_h_8h_afc04a85e0347001d04e02e28e440f509}\label{bsp__acc___l_i_s3_d_h_8h_afc04a85e0347001d04e02e28e440f509} 
+\index{bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}!LIS3DH\_INT1\_THS@{LIS3DH\_INT1\_THS}}
+\index{LIS3DH\_INT1\_THS@{LIS3DH\_INT1\_THS}!bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}}
+\doxysubsubsection{\texorpdfstring{LIS3DH\_INT1\_THS}{LIS3DH\_INT1\_THS}}
+{\footnotesize\ttfamily \#define LIS3\+DH\+\_\+\+INT1\+\_\+\+THS~0x32}
+
+\Hypertarget{bsp__acc___l_i_s3_d_h_8h_a3aa28d538760de8e37b3f2b5b0f40e65}\label{bsp__acc___l_i_s3_d_h_8h_a3aa28d538760de8e37b3f2b5b0f40e65} 
+\index{bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}!LIS3DH\_INT2\_CFG@{LIS3DH\_INT2\_CFG}}
+\index{LIS3DH\_INT2\_CFG@{LIS3DH\_INT2\_CFG}!bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}}
+\doxysubsubsection{\texorpdfstring{LIS3DH\_INT2\_CFG}{LIS3DH\_INT2\_CFG}}
+{\footnotesize\ttfamily \#define LIS3\+DH\+\_\+\+INT2\+\_\+\+CFG~0x34}
+
+\Hypertarget{bsp__acc___l_i_s3_d_h_8h_adeed956a1ed9012a60e4b323a7d859dc}\label{bsp__acc___l_i_s3_d_h_8h_adeed956a1ed9012a60e4b323a7d859dc} 
+\index{bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}!LIS3DH\_INT2\_DURATION@{LIS3DH\_INT2\_DURATION}}
+\index{LIS3DH\_INT2\_DURATION@{LIS3DH\_INT2\_DURATION}!bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}}
+\doxysubsubsection{\texorpdfstring{LIS3DH\_INT2\_DURATION}{LIS3DH\_INT2\_DURATION}}
+{\footnotesize\ttfamily \#define LIS3\+DH\+\_\+\+INT2\+\_\+\+DURATION~0x37}
+
+\Hypertarget{bsp__acc___l_i_s3_d_h_8h_a0454c68f32d760ab0d4fe84c41961c1e}\label{bsp__acc___l_i_s3_d_h_8h_a0454c68f32d760ab0d4fe84c41961c1e} 
+\index{bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}!LIS3DH\_INT2\_SRC@{LIS3DH\_INT2\_SRC}}
+\index{LIS3DH\_INT2\_SRC@{LIS3DH\_INT2\_SRC}!bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}}
+\doxysubsubsection{\texorpdfstring{LIS3DH\_INT2\_SRC}{LIS3DH\_INT2\_SRC}}
+{\footnotesize\ttfamily \#define LIS3\+DH\+\_\+\+INT2\+\_\+\+SRC~0x35}
+
+\Hypertarget{bsp__acc___l_i_s3_d_h_8h_a80466503cddcf36ce7fcf38e77f513b9}\label{bsp__acc___l_i_s3_d_h_8h_a80466503cddcf36ce7fcf38e77f513b9} 
+\index{bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}!LIS3DH\_INT2\_THS@{LIS3DH\_INT2\_THS}}
+\index{LIS3DH\_INT2\_THS@{LIS3DH\_INT2\_THS}!bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}}
+\doxysubsubsection{\texorpdfstring{LIS3DH\_INT2\_THS}{LIS3DH\_INT2\_THS}}
+{\footnotesize\ttfamily \#define LIS3\+DH\+\_\+\+INT2\+\_\+\+THS~0x36}
+
+\Hypertarget{bsp__acc___l_i_s3_d_h_8h_a44f1625a21b206cef151c54e425c109d}\label{bsp__acc___l_i_s3_d_h_8h_a44f1625a21b206cef151c54e425c109d} 
+\index{bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}!LIS3DH\_OUT\_X\_H@{LIS3DH\_OUT\_X\_H}}
+\index{LIS3DH\_OUT\_X\_H@{LIS3DH\_OUT\_X\_H}!bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}}
+\doxysubsubsection{\texorpdfstring{LIS3DH\_OUT\_X\_H}{LIS3DH\_OUT\_X\_H}}
+{\footnotesize\ttfamily \#define LIS3\+DH\+\_\+\+OUT\+\_\+\+X\+\_\+H~0x29}
+
+\Hypertarget{bsp__acc___l_i_s3_d_h_8h_a6a00f45f1941f0953e6c39b7934e7539}\label{bsp__acc___l_i_s3_d_h_8h_a6a00f45f1941f0953e6c39b7934e7539} 
+\index{bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}!LIS3DH\_OUT\_X\_L@{LIS3DH\_OUT\_X\_L}}
+\index{LIS3DH\_OUT\_X\_L@{LIS3DH\_OUT\_X\_L}!bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}}
+\doxysubsubsection{\texorpdfstring{LIS3DH\_OUT\_X\_L}{LIS3DH\_OUT\_X\_L}}
+{\footnotesize\ttfamily \#define LIS3\+DH\+\_\+\+OUT\+\_\+\+X\+\_\+L~0x28}
+
+\Hypertarget{bsp__acc___l_i_s3_d_h_8h_a3c30c8914ea90e30bdb12475282bb313}\label{bsp__acc___l_i_s3_d_h_8h_a3c30c8914ea90e30bdb12475282bb313} 
+\index{bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}!LIS3DH\_OUT\_Y\_H@{LIS3DH\_OUT\_Y\_H}}
+\index{LIS3DH\_OUT\_Y\_H@{LIS3DH\_OUT\_Y\_H}!bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}}
+\doxysubsubsection{\texorpdfstring{LIS3DH\_OUT\_Y\_H}{LIS3DH\_OUT\_Y\_H}}
+{\footnotesize\ttfamily \#define LIS3\+DH\+\_\+\+OUT\+\_\+\+Y\+\_\+H~0x2B}
+
+\Hypertarget{bsp__acc___l_i_s3_d_h_8h_a418357f88aa889c4c4b010237885d247}\label{bsp__acc___l_i_s3_d_h_8h_a418357f88aa889c4c4b010237885d247} 
+\index{bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}!LIS3DH\_OUT\_Y\_L@{LIS3DH\_OUT\_Y\_L}}
+\index{LIS3DH\_OUT\_Y\_L@{LIS3DH\_OUT\_Y\_L}!bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}}
+\doxysubsubsection{\texorpdfstring{LIS3DH\_OUT\_Y\_L}{LIS3DH\_OUT\_Y\_L}}
+{\footnotesize\ttfamily \#define LIS3\+DH\+\_\+\+OUT\+\_\+\+Y\+\_\+L~0x2A}
+
+\Hypertarget{bsp__acc___l_i_s3_d_h_8h_a4ea06d86a9a05fa4aa9ba8afedb5a906}\label{bsp__acc___l_i_s3_d_h_8h_a4ea06d86a9a05fa4aa9ba8afedb5a906} 
+\index{bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}!LIS3DH\_OUT\_Z\_H@{LIS3DH\_OUT\_Z\_H}}
+\index{LIS3DH\_OUT\_Z\_H@{LIS3DH\_OUT\_Z\_H}!bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}}
+\doxysubsubsection{\texorpdfstring{LIS3DH\_OUT\_Z\_H}{LIS3DH\_OUT\_Z\_H}}
+{\footnotesize\ttfamily \#define LIS3\+DH\+\_\+\+OUT\+\_\+\+Z\+\_\+H~0x2D}
+
+\Hypertarget{bsp__acc___l_i_s3_d_h_8h_ad2c785e762769eebea3717cb2287b4f4}\label{bsp__acc___l_i_s3_d_h_8h_ad2c785e762769eebea3717cb2287b4f4} 
+\index{bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}!LIS3DH\_OUT\_Z\_L@{LIS3DH\_OUT\_Z\_L}}
+\index{LIS3DH\_OUT\_Z\_L@{LIS3DH\_OUT\_Z\_L}!bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}}
+\doxysubsubsection{\texorpdfstring{LIS3DH\_OUT\_Z\_L}{LIS3DH\_OUT\_Z\_L}}
+{\footnotesize\ttfamily \#define LIS3\+DH\+\_\+\+OUT\+\_\+\+Z\+\_\+L~0x2C}
+
+\Hypertarget{bsp__acc___l_i_s3_d_h_8h_aac65e5e45cc292330a9c323ceb4704bb}\label{bsp__acc___l_i_s3_d_h_8h_aac65e5e45cc292330a9c323ceb4704bb} 
+\index{bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}!LIS3DH\_REFERENCE@{LIS3DH\_REFERENCE}}
+\index{LIS3DH\_REFERENCE@{LIS3DH\_REFERENCE}!bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}}
+\doxysubsubsection{\texorpdfstring{LIS3DH\_REFERENCE}{LIS3DH\_REFERENCE}}
+{\footnotesize\ttfamily \#define LIS3\+DH\+\_\+\+REFERENCE~0x26}
+
+\Hypertarget{bsp__acc___l_i_s3_d_h_8h_add697ba213454c18eefb5a0aa39317d2}\label{bsp__acc___l_i_s3_d_h_8h_add697ba213454c18eefb5a0aa39317d2} 
+\index{bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}!LIS3DH\_STATUS\_REG2@{LIS3DH\_STATUS\_REG2}}
+\index{LIS3DH\_STATUS\_REG2@{LIS3DH\_STATUS\_REG2}!bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}}
+\doxysubsubsection{\texorpdfstring{LIS3DH\_STATUS\_REG2}{LIS3DH\_STATUS\_REG2}}
+{\footnotesize\ttfamily \#define LIS3\+DH\+\_\+\+STATUS\+\_\+\+REG2~0x27}
+
+\Hypertarget{bsp__acc___l_i_s3_d_h_8h_a400e78fba71039cc79d34f5923af858c}\label{bsp__acc___l_i_s3_d_h_8h_a400e78fba71039cc79d34f5923af858c} 
+\index{bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}!LIS3DH\_STATUS\_REG\_AUX@{LIS3DH\_STATUS\_REG\_AUX}}
+\index{LIS3DH\_STATUS\_REG\_AUX@{LIS3DH\_STATUS\_REG\_AUX}!bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}}
+\doxysubsubsection{\texorpdfstring{LIS3DH\_STATUS\_REG\_AUX}{LIS3DH\_STATUS\_REG\_AUX}}
+{\footnotesize\ttfamily \#define LIS3\+DH\+\_\+\+STATUS\+\_\+\+REG\+\_\+\+AUX~0x07}
+
+\Hypertarget{bsp__acc___l_i_s3_d_h_8h_a4486a4c2e7c4ac9b85a766eb3e7c801e}\label{bsp__acc___l_i_s3_d_h_8h_a4486a4c2e7c4ac9b85a766eb3e7c801e} 
+\index{bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}!LIS3DH\_TIME\_LATENCY@{LIS3DH\_TIME\_LATENCY}}
+\index{LIS3DH\_TIME\_LATENCY@{LIS3DH\_TIME\_LATENCY}!bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}}
+\doxysubsubsection{\texorpdfstring{LIS3DH\_TIME\_LATENCY}{LIS3DH\_TIME\_LATENCY}}
+{\footnotesize\ttfamily \#define LIS3\+DH\+\_\+\+TIME\+\_\+\+LATENCY~0x3C}
+
+\Hypertarget{bsp__acc___l_i_s3_d_h_8h_ae47b2e91730a13a3f4f52e6b35231ac5}\label{bsp__acc___l_i_s3_d_h_8h_ae47b2e91730a13a3f4f52e6b35231ac5} 
+\index{bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}!LIS3DH\_TIME\_LIMIT@{LIS3DH\_TIME\_LIMIT}}
+\index{LIS3DH\_TIME\_LIMIT@{LIS3DH\_TIME\_LIMIT}!bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}}
+\doxysubsubsection{\texorpdfstring{LIS3DH\_TIME\_LIMIT}{LIS3DH\_TIME\_LIMIT}}
+{\footnotesize\ttfamily \#define LIS3\+DH\+\_\+\+TIME\+\_\+\+LIMIT~0x3B}
+
+\Hypertarget{bsp__acc___l_i_s3_d_h_8h_a218f604cbad34911b4539b2ea941b109}\label{bsp__acc___l_i_s3_d_h_8h_a218f604cbad34911b4539b2ea941b109} 
+\index{bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}!LIS3DH\_TIME\_WINDOW@{LIS3DH\_TIME\_WINDOW}}
+\index{LIS3DH\_TIME\_WINDOW@{LIS3DH\_TIME\_WINDOW}!bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}}
+\doxysubsubsection{\texorpdfstring{LIS3DH\_TIME\_WINDOW}{LIS3DH\_TIME\_WINDOW}}
+{\footnotesize\ttfamily \#define LIS3\+DH\+\_\+\+TIME\+\_\+\+WINDOW~0x3D}
+
+\Hypertarget{bsp__acc___l_i_s3_d_h_8h_a89faeb71c25b9fe91dd9f1db4fcc7221}\label{bsp__acc___l_i_s3_d_h_8h_a89faeb71c25b9fe91dd9f1db4fcc7221} 
+\index{bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}!LIS3DH\_WHO\_AM\_I@{LIS3DH\_WHO\_AM\_I}}
+\index{LIS3DH\_WHO\_AM\_I@{LIS3DH\_WHO\_AM\_I}!bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}}
+\doxysubsubsection{\texorpdfstring{LIS3DH\_WHO\_AM\_I}{LIS3DH\_WHO\_AM\_I}}
+{\footnotesize\ttfamily \#define LIS3\+DH\+\_\+\+WHO\+\_\+\+AM\+\_\+I~0x0F}
+
+\Hypertarget{bsp__acc___l_i_s3_d_h_8h_a122a98421680e91f83d81672c4c26a63}\label{bsp__acc___l_i_s3_d_h_8h_a122a98421680e91f83d81672c4c26a63} 
+\index{bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}!LIS3DH\_WHO\_AM\_I\_VALUE@{LIS3DH\_WHO\_AM\_I\_VALUE}}
+\index{LIS3DH\_WHO\_AM\_I\_VALUE@{LIS3DH\_WHO\_AM\_I\_VALUE}!bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}}
+\doxysubsubsection{\texorpdfstring{LIS3DH\_WHO\_AM\_I\_VALUE}{LIS3DH\_WHO\_AM\_I\_VALUE}}
+{\footnotesize\ttfamily \#define LIS3\+DH\+\_\+\+WHO\+\_\+\+AM\+\_\+\+I\+\_\+\+VALUE~0x33}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{bsp__acc___l_i_s3_d_h_8h_a0ddefa6466e2f93180314adc8b3fc204}\label{bsp__acc___l_i_s3_d_h_8h_a0ddefa6466e2f93180314adc8b3fc204} 
+\index{bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}!ACC\_Get\_Axis\_Data@{ACC\_Get\_Axis\_Data}}
+\index{ACC\_Get\_Axis\_Data@{ACC\_Get\_Axis\_Data}!bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}}
+\doxysubsubsection{\texorpdfstring{ACC\_Get\_Axis\_Data()}{ACC\_Get\_Axis\_Data()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} ACC\+\_\+\+Get\+\_\+\+Axis\+\_\+\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{reg\+\_\+address,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{read\+\_\+reg\+\_\+data }\end{DoxyParamCaption})}
+
+
+
+Function to read register of accelerometer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reg\+\_\+address} & register to be read \\
+\hline
+{\em read\+\_\+reg\+\_\+data} & read data\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__acc___l_i_s3_d_h_8h_a0ddefa6466e2f93180314adc8b3fc204_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{bsp__acc___l_i_s3_d_h_8h_a0ddefa6466e2f93180314adc8b3fc204_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{bsp__acc___l_i_s3_d_h_8h_a4ca9c1b97ec25cb31b7be2f8e54c5643}\label{bsp__acc___l_i_s3_d_h_8h_a4ca9c1b97ec25cb31b7be2f8e54c5643} 
+\index{bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}!Accel\_Interrupt\_Init@{Accel\_Interrupt\_Init}}
+\index{Accel\_Interrupt\_Init@{Accel\_Interrupt\_Init}!bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}}
+\doxysubsubsection{\texorpdfstring{Accel\_Interrupt\_Init()}{Accel\_Interrupt\_Init()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Accel\+\_\+\+Interrupt\+\_\+\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{enable\+\_\+axis,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{threshold,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{duration,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{polarity }\end{DoxyParamCaption})}
+
+
+
+Initialize the interruption reg and configure interruption threshold of accelerometer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em enable\+\_\+axis} & Variable to enable/disable acc axis interruption \\
+\hline
+{\em threshold} & 7bit, trigger threshold for interruption. Value changes depending on selected scale 1 LSb = 16 mg @ FS = ±2 g 1 LSb = 32 mg @ FS = ±4 g 1 LSb = 62 mg @ FS = ±8 g 1 LSb = 186 mg @ FS = ±16 g\\
+\hline
+{\em duration} & 7bit, duration of the interruption after triggered, depends of ODR configuration. (t = N/\+ODR) (e.\+g\+: ODR = 25 Hz -\/\texorpdfstring{$>$}{>} t = 1/25=0,04sec=40msec) \\
+\hline
+{\em polarity} & Configure polarity of interrupt\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+acc interrupt errors 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__acc___l_i_s3_d_h_8h_a4ca9c1b97ec25cb31b7be2f8e54c5643_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=303pt]{bsp__acc___l_i_s3_d_h_8h_a4ca9c1b97ec25cb31b7be2f8e54c5643_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{bsp__acc___l_i_s3_d_h_8h_afcbc051f96e6f31f234a07674c2027f3}\label{bsp__acc___l_i_s3_d_h_8h_afcbc051f96e6f31f234a07674c2027f3} 
+\index{bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}!Accelerometer\_Presence@{Accelerometer\_Presence}}
+\index{Accelerometer\_Presence@{Accelerometer\_Presence}!bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}}
+\doxysubsubsection{\texorpdfstring{Accelerometer\_Presence()}{Accelerometer\_Presence()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Accelerometer\+\_\+\+Presence (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Checks for presence of accelerometer by checking who\+\_\+am\+\_\+i register. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool\+\_\+t return presence boolean 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__acc___l_i_s3_d_h_8h_afcbc051f96e6f31f234a07674c2027f3_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__acc___l_i_s3_d_h_8h_afcbc051f96e6f31f234a07674c2027f3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{bsp__acc___l_i_s3_d_h_8h_aea5b1f8a01e5ae4f2805aa689711694e}\label{bsp__acc___l_i_s3_d_h_8h_aea5b1f8a01e5ae4f2805aa689711694e} 
+\index{bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}!Accelerometer\_Setup@{Accelerometer\_Setup}}
+\index{Accelerometer\_Setup@{Accelerometer\_Setup}!bsp\_acc\_LIS3DH.h@{bsp\_acc\_LIS3DH.h}}
+\doxysubsubsection{\texorpdfstring{Accelerometer\_Setup()}{Accelerometer\_Setup()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Accelerometer\+\_\+\+Setup (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{enable\+\_\+xyz,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{sample\+Rate,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{accel\+Range }\end{DoxyParamCaption})}
+
+
+
+Setup basic configuration of accelerometer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em enable\+\_\+xyz} & Variable to enable/disable acc axis \\
+\hline
+{\em sample\+Rate} & HZ -\/ Samples per second -\/ 1, 10, 25, 50, 100, 200, 400, 1600, 5000 (values 0x01 to 0x09) \\
+\hline
+{\em accel\+Range} & Accelerometer range = 2, 4, 8, 16g (values 0x00 to 0x03)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+acc control register errors 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__acc___l_i_s3_d_h_8h_aea5b1f8a01e5ae4f2805aa689711694e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__acc___l_i_s3_d_h_8h_aea5b1f8a01e5ae4f2805aa689711694e_icgraph}
+\end{center}
+\end{figure}

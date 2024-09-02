@@ -1,0 +1,66 @@
+\doxysection{RTC.\+h}
+\hypertarget{_r_t_c_8h_source}{}\label{_r_t_c_8h_source}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/Drivers/RTC.h@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/Drivers/RTC.h}}
+\mbox{\hyperlink{_r_t_c_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Name\ \ \ \ \ \ :\ R100\_S3A7\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ :\ Osatu\ S.\ Coop\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Compiler\ \ :\ GNU\ ARM\ Embedded\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ Target\ \ \ \ :\ Reanibex\ Serie\ 100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ ******************************************************************************/}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#ifndef\ RTC\_H\_}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#define\ RTC\_H\_}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ **Includes}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **\ Defines}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{comment}{/*\ Set\ values\ for\ set\ calendar\ time\ function\ */}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#define\ START\_TIME\_HR\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0)\ \ \ \ \ }}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#define\ START\_TIME\_MIN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0)\ \ \ \ \ }}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#define\ START\_TIME\_SEC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0)\ \ \ \ \ }}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#define\ START\_TIME\_ISDST\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0)\ \ \ \ \ }}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#define\ START\_TIME\_MDAY\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1)\ \ \ \ \ }}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#define\ START\_TIME\_MON\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0)\ \ \ \ \ }}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#define\ START\_TIME\_WDAY\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0)\ \ \ \ \ }}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#define\ START\_TIME\_YDAY\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0)\ \ \ \ \ }}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#define\ START\_TIME\_YEAR\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (100)\ \ \ }}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#define\ RTCIO\_PIN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ IOPORT\_PORT\_04\_PIN\_02}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00045\ \textcolor{comment}{\ **\ Typedefs}}
+\DoxyCodeLine{00046\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00050\ \textcolor{comment}{\ **\ Globals}}
+\DoxyCodeLine{00051\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00054\ \textcolor{comment}{\ **\ Prototypes}}
+\DoxyCodeLine{00055\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{_r_t_c_8h_a5da1cb9df8470d4a7649f8179c7a6992}{Rtc\_Init}}\ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\_t}}\ \ \mbox{\hyperlink{_r_t_c_8h_a3dad6d4770e388d28c3048b2c563fdb6}{Rtc\_Test\_Trigger}}\ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{_r_t_c_8h_af23a4452d2aaea1454fc08b86510c575}{Rtc\_Program\_Wakeup}}\ \ (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ msec);}
+\DoxyCodeLine{00062\ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{_r_t_c_8h_a4b5714f714efa3b70be5422bdb55c4b7}{Rtc\_Program\_Kill}}\ \ \ \ (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ msec);}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ RTC\_H\_\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00068\ \textcolor{comment}{\ **\ \$Log\$}}
+\DoxyCodeLine{00069\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00070\ \textcolor{comment}{\ **\ end\ of\ RTC.h}}
+\DoxyCodeLine{00071\ \textcolor{comment}{\ ******************************************************************************/}}
+\DoxyCodeLine{00072\ }
+
+\end{DoxyCode}

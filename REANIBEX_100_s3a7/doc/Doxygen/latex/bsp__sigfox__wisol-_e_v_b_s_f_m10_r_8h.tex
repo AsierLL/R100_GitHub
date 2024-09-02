@@ -1,0 +1,789 @@
+\doxysection{C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\+BSP/bsp\+\_\+sigfox\+\_\+wisol-\/\+EVBSFM10R.h File Reference}
+\hypertarget{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h}{}\label{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/BSP/bsp\_sigfox\_wisol-\/EVBSFM10R.h@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/BSP/bsp\_sigfox\_wisol-\/EVBSFM10R.h}}
+
+
+BSP Wisol EVBSFM10R header file.  
+
+
+{\ttfamily \#include "{}R100\+\_\+\+Errors.\+h"{}}\newline
+{\ttfamily \#include "{}types\+\_\+basic.\+h"{}}\newline
+Include dependency graph for bsp\+\_\+sigfox\+\_\+wisol-\/\+EVBSFM10R.h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=263pt]{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a0db78aa85435390d32d76ecc3ee691bc}{SIGFOX\+\_\+\+CMD\+\_\+\+AT}}~"{}AT"{}
+\begin{DoxyCompactList}\small\item\em Dummy command. Just returns OK. Used to check communication. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_ad5fb59ede87c20fc15d729227cfd5a99}{SIGFOX\+\_\+\+CMD\+\_\+\+DEVID}}~"{}AT\$I=10"{}
+\begin{DoxyCompactList}\small\item\em Information. Device ID. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a53e7f6fe71d83c5eea59bb45c4c946d0}{SIGFOX\+\_\+\+CMD\+\_\+\+PAC}}~"{}AT\$I=11"{}
+\begin{DoxyCompactList}\small\item\em Information. PAC. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_abff1fdfe27c265220c5e748a502607a2}{SIGFOX\+\_\+\+CMD\+\_\+\+TX\+\_\+\+FREQ}}~"{}AT\$\+IF?"{}
+\begin{DoxyCompactList}\small\item\em Information. Get the currently chosen TX frequency. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_ae0a585b725844d3b9a69594115209316}{SIGFOX\+\_\+\+CMD\+\_\+\+RX\+\_\+\+FREQ}}~"{}AT\$\+DR?"{}
+\begin{DoxyCompactList}\small\item\em Information. Get the currently chosen RX frequency. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a1bc06e555603e8a2f7925c5f406ebd2a}{SIGFOX\+\_\+\+CMD\+\_\+\+TEMP}}~"{}AT\$T?"{}
+\begin{DoxyCompactList}\small\item\em Return internal temperature in 1/10 of a degree Celsius. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_ad6b337459605c94b81e1f02ef5d21b82}{SIGFOX\+\_\+\+CMD\+\_\+\+VOLTAGES}}~"{}AT\$V?"{}
+\begin{DoxyCompactList}\small\item\em Return current voltage and voltage measured during last transmission in mV. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a4595eb0b32550c7cbd32c6389a7c589e}{SIGFOX\+\_\+\+CMD\+\_\+\+SW\+\_\+\+RESET}}~"{}AT\$P=0"{}
+\begin{DoxyCompactList}\small\item\em Set power mode 0\+: software reset. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a5d67e69f50d33dac9db93ac66189d7d8}{SIGFOX\+\_\+\+CMD\+\_\+\+SW\+\_\+\+SLEEP}}~"{}AT\$P=1"{}
+\begin{DoxyCompactList}\small\item\em Set power mode 1\+: sleep. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a413a5c2770276cb6e4adbc72829fe23b}{SIGFOX\+\_\+\+CMD\+\_\+\+SW\+\_\+\+DEEP\+\_\+\+SLEEP}}~"{}AT\$P=2"{}
+\begin{DoxyCompactList}\small\item\em Set power mode 2\+: deep sleep. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a0c9e957fb548c77efe7553d61db32b89}{SIGFOX\+\_\+\+CMD\+\_\+\+SEND\+\_\+\+BYTE}}~"{}AT\$\+SB="{}
+\begin{DoxyCompactList}\small\item\em Send a bit status (0 or 1) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a022ad4955622164318cb9fcd5622e56e}{SIGFOX\+\_\+\+CMD\+\_\+\+SEND\+\_\+\+FRAME}}~"{}AT\$\+SF="{}
+\begin{DoxyCompactList}\small\item\em Send payload data. 1 to 12 bytes. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a6074145d0c820530b3b8a82c9663cc35}{SIGFOX\+\_\+\+CMD\+\_\+\+MAX\+\_\+\+POWER}}~"{}ATS302=15"{}
+\begin{DoxyCompactList}\small\item\em Set output power to the maximun power level (register 302) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_ab3cc1e5786def0bca2e998a0ba2ecff1}{SIGFOX\+\_\+\+CMD\+\_\+\+CW\+\_\+\+TEST\+\_\+\+ON}}~"{}AT\$\+CW=868130000,1,15"{}
+\begin{DoxyCompactList}\small\item\em Start Sending a Continuous Wave for emission test for Sigfox certification. param = Frequency, Mode, power. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a778eeeb8e6dde654ce7985729f738d58}{SIGFOX\+\_\+\+CMD\+\_\+\+CW\+\_\+\+TEST\+\_\+\+OFF}}~"{}AT\$\+CW=868130000,0,15"{}
+\begin{DoxyCompactList}\small\item\em Stop Sending a Continuous Wave for emission test for Sigfox certification. param = Frequency, Mode, power. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a867534396642f069afe9a775dcf07936}{SIGFOX\+\_\+\+CMD\+\_\+\+CB\+\_\+\+TEST\+\_\+\+RANDOM\+\_\+\+ON}}~"{}AT\$\+CB=-\/1,1"{}
+\begin{DoxyCompactList}\small\item\em Enable a specific Constant Byte pattern for emission testing. param = Pattern (-\/1 for random or 0-\/255), Mode. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a5f705b3d2a950ffa4d50ab5d3aef0d3a}{SIGFOX\+\_\+\+CMD\+\_\+\+CB\+\_\+\+TEST\+\_\+\+RANDOM\+\_\+\+OFF}}~"{}AT\$\+CB=-\/1,0"{}
+\begin{DoxyCompactList}\small\item\em Disable a specific Constant Byte pattern for emission testing. param = Pattern (-\/1 for random or 0-\/255), Mode. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a1962c3f620ac6b6081845f8326202d49}{SIGFOX\+\_\+\+CMD\+\_\+\+SE\+\_\+\+TEST\+\_\+\+ON}}~"{}AT\$\+SE"{}
+\begin{DoxyCompactList}\small\item\em Sensitivity Test. Starts AT\$\+TM-\/3,255 indefinitely, which corresponds to RX GFSK Testmode. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_ae9ac4b117252ad68b2aa7f6182ed9f59}{SIGFOX\+\_\+\+CMD\+\_\+\+TM\+\_\+\+TX\+\_\+\+BPSK\+\_\+\+TEST}}~"{}AT\$\+TM=0,"{}
+\begin{DoxyCompactList}\small\item\em Activates the Sigfox Testmode 0\+: TX BPSK. param = Config define number of repetitions. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a1065c20a81415fc9017e4735da5da16a}{SIGFOX\+\_\+\+CMD\+\_\+\+TM\+\_\+\+TX\+\_\+\+PROT\+\_\+\+TEST}}~"{}AT\$\+TM=1,"{}
+\begin{DoxyCompactList}\small\item\em Activates the Sigfox Testmode 1\+: TX Protocol. param = Config defines number of repetitions. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_ac06e01963d11c7411b2dd7c9426104bd}{SIGFOX\+\_\+\+CMD\+\_\+\+TM\+\_\+\+RX\+\_\+\+PROT\+\_\+\+TEST}}~"{}AT\$\+TM=2,"{}
+\begin{DoxyCompactList}\small\item\em Activates the Sigfox Testmode 2\+: RX Protocol. param = Config defines number of repetitions. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a2a1929a2ebbe9157f3d1b94929610385}{SIGFOX\+\_\+\+CMD\+\_\+\+TM\+\_\+\+RX\+\_\+\+GFSK\+\_\+\+TEST}}~"{}AT\$\+TM=3,"{}
+\begin{DoxyCompactList}\small\item\em Activates the Sigfox Testmode 3\+: RX GFSK. param = Config defines number of repetitions. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a49ebca792fce418a930e73388fbba81b}{SIGFOX\+\_\+\+CMD\+\_\+\+TM\+\_\+\+RX\+\_\+\+SENS\+\_\+\+TEST}}~"{}AT\$\+TM=4,"{}
+\begin{DoxyCompactList}\small\item\em Activates the Sigfox Testmode 4\+: RX Sensitivity. param= ? \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a3687b325094e1cce2b243191da642768}{SIGFOX\+\_\+\+CMD\+\_\+\+TM\+\_\+\+TX\+\_\+\+SYNTH\+\_\+\+TEST}}~"{}AT\$\+TM=5,"{}
+\begin{DoxyCompactList}\small\item\em Activates the Sigfox Testmode 5\+: TX Synthesis. param= ? \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_aa379c2e4f01324e42e5cee56bb8c91e6}{SIGFOX\+\_\+\+CMD\+\_\+\+SL\+\_\+\+TEST\+\_\+\+DEFAULT}}~"{}AT\$\+SL"{}
+\begin{DoxyCompactList}\small\item\em Sends a local loop frame. default payload. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a983927b5bd069be367450b90a54783f0}{SIGFOX\+\_\+\+CMD\+\_\+\+SL\+\_\+\+TEST\+\_\+\+FRAME}}~"{}AT\$\+SL="{}
+\begin{DoxyCompactList}\small\item\em Sends a local loop frame. param = Frame. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_ab9f40447dce94d0afdbe5bd8df94fbfd}{SIGFOX\+\_\+\+CMD\+\_\+\+RL\+\_\+\+TEST}}~"{}AT\$\+RL"{}
+\begin{DoxyCompactList}\small\item\em Receive local loop. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a4f15ee13e49109fca587a8fff72d5267}{SIGFOX\+\_\+\+RESP\+\_\+\+OK}}~"{}OK\textbackslash{}r\textbackslash{}n"{}
+\begin{DoxyCompactList}\small\item\em Response to SIGFOX\+\_\+\+CMD. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a64c0b53df7e6ca7f01a8ac3f67eeb4c0}{SIGFOX\+\_\+\+RESP\+\_\+\+SE\+\_\+\+TEST\+\_\+\+ON}}~"{}ONSEMI Sensitivitiy Test"{}
+\begin{DoxyCompactList}\small\item\em Response to SIGFOX\+\_\+\+CMD\+\_\+\+SE\+\_\+\+TEST\+\_\+\+ON. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a0f4cec6f2f54d23e3ae8a70587ba9034}{Sigfox\+\_\+\+Check\+\_\+\+Module\+\_\+\+Status}} (void)
+\begin{DoxyCompactList}\small\item\em Configure Wifi module. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_ac36f9264486c295bdff72a1ff0836e6e}{Sigfox\+\_\+\+Get\+\_\+\+Module\+\_\+\+Device\+ID}} (void)
+\begin{DoxyCompactList}\small\item\em Get Sigfox Module Device\+ID. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_acb7604b868af7f5771ea4ec59d8437e1}{Sigfox\+\_\+\+Get\+\_\+\+Module\+\_\+\+PAC}} (void)
+\begin{DoxyCompactList}\small\item\em Get Sigfox Module PAC. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a815348ca9ffd0d64c715051e9e48467c}{Sigfox\+\_\+\+Get\+\_\+\+TX\+\_\+\+Frequency}} (void)
+\begin{DoxyCompactList}\small\item\em Get Sigfox Module TX Frequency. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a1d13b7d7d1dc518419fc191ee9e69276}{Sigfox\+\_\+\+Get\+\_\+\+RX\+\_\+\+Frequency}} (void)
+\begin{DoxyCompactList}\small\item\em Get Sigfox Module RX Frequency. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_ad97b1116dadc5b856de2fba00a2503f7}{Sigfox\+\_\+\+Get\+\_\+\+Module\+\_\+\+Temp}} (void)
+\begin{DoxyCompactList}\small\item\em Get Sigfox Module Temperature. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a6b47a57421a43ea00dc7aadbdaa95d5a}{Sigfox\+\_\+\+Get\+\_\+\+Module\+\_\+\+Voltages}} (void)
+\begin{DoxyCompactList}\small\item\em Get Sigfox Module Voltages. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a38dc66d0d3fca9200e6d5992c43a20c9}{Sigfox\+\_\+\+Compare\+\_\+\+Test\+\_\+\+Frequencies}} (void)
+\begin{DoxyCompactList}\small\item\em Compare Sigfox module TX \& RX Test Frequencies. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a2c472548c48e6c4276ac3da4a59613ee}{Sigfox\+\_\+\+Start\+\_\+\+CW\+\_\+\+Test}} (void)
+\begin{DoxyCompactList}\small\item\em Start Continuous Wave Test. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a8849a2415e3742133557b698a64d986d}{Sigfox\+\_\+\+Stop\+\_\+\+CW\+\_\+\+Test}} (void)
+\begin{DoxyCompactList}\small\item\em Stop Continuous Wave Test. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a2a01b0e42f04c530d197f0a07dd649ec}{Sigfox\+\_\+\+Start\+\_\+\+RX\+\_\+\+GFSK\+\_\+\+Test}} (void)
+\begin{DoxyCompactList}\small\item\em Start RX GFSK test mode. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_afa38aea6b87f9d40759ebff441976f80}{Sigfox\+\_\+\+Send\+\_\+\+Data\+\_\+\+Frame}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}data)
+\begin{DoxyCompactList}\small\item\em Send data frame through Sigfox. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+BSP Wisol EVBSFM10R header file. 
+
+\begin{DoxyVersion}{Version}
+v1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+27/05/2019 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+jarribas 
+\end{DoxyAuthor}
+\begin{DoxyWarning}{Warning}
+author date version .-\/ Edition 
+\end{DoxyWarning}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000006}{Bug}}]\end{DoxyRefDesc}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a0db78aa85435390d32d76ecc3ee691bc}\label{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a0db78aa85435390d32d76ecc3ee691bc} 
+\index{bsp\_sigfox\_wisol-\/EVBSFM10R.h@{bsp\_sigfox\_wisol-\/EVBSFM10R.h}!SIGFOX\_CMD\_AT@{SIGFOX\_CMD\_AT}}
+\index{SIGFOX\_CMD\_AT@{SIGFOX\_CMD\_AT}!bsp\_sigfox\_wisol-\/EVBSFM10R.h@{bsp\_sigfox\_wisol-\/EVBSFM10R.h}}
+\doxysubsubsection{\texorpdfstring{SIGFOX\_CMD\_AT}{SIGFOX\_CMD\_AT}}
+{\footnotesize\ttfamily \#define SIGFOX\+\_\+\+CMD\+\_\+\+AT~"{}AT"{}}
+
+
+
+Dummy command. Just returns OK. Used to check communication. 
+
+\Hypertarget{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a5f705b3d2a950ffa4d50ab5d3aef0d3a}\label{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a5f705b3d2a950ffa4d50ab5d3aef0d3a} 
+\index{bsp\_sigfox\_wisol-\/EVBSFM10R.h@{bsp\_sigfox\_wisol-\/EVBSFM10R.h}!SIGFOX\_CMD\_CB\_TEST\_RANDOM\_OFF@{SIGFOX\_CMD\_CB\_TEST\_RANDOM\_OFF}}
+\index{SIGFOX\_CMD\_CB\_TEST\_RANDOM\_OFF@{SIGFOX\_CMD\_CB\_TEST\_RANDOM\_OFF}!bsp\_sigfox\_wisol-\/EVBSFM10R.h@{bsp\_sigfox\_wisol-\/EVBSFM10R.h}}
+\doxysubsubsection{\texorpdfstring{SIGFOX\_CMD\_CB\_TEST\_RANDOM\_OFF}{SIGFOX\_CMD\_CB\_TEST\_RANDOM\_OFF}}
+{\footnotesize\ttfamily \#define SIGFOX\+\_\+\+CMD\+\_\+\+CB\+\_\+\+TEST\+\_\+\+RANDOM\+\_\+\+OFF~"{}AT\$\+CB=-\/1,0"{}}
+
+
+
+Disable a specific Constant Byte pattern for emission testing. param = Pattern (-\/1 for random or 0-\/255), Mode. 
+
+\Hypertarget{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a867534396642f069afe9a775dcf07936}\label{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a867534396642f069afe9a775dcf07936} 
+\index{bsp\_sigfox\_wisol-\/EVBSFM10R.h@{bsp\_sigfox\_wisol-\/EVBSFM10R.h}!SIGFOX\_CMD\_CB\_TEST\_RANDOM\_ON@{SIGFOX\_CMD\_CB\_TEST\_RANDOM\_ON}}
+\index{SIGFOX\_CMD\_CB\_TEST\_RANDOM\_ON@{SIGFOX\_CMD\_CB\_TEST\_RANDOM\_ON}!bsp\_sigfox\_wisol-\/EVBSFM10R.h@{bsp\_sigfox\_wisol-\/EVBSFM10R.h}}
+\doxysubsubsection{\texorpdfstring{SIGFOX\_CMD\_CB\_TEST\_RANDOM\_ON}{SIGFOX\_CMD\_CB\_TEST\_RANDOM\_ON}}
+{\footnotesize\ttfamily \#define SIGFOX\+\_\+\+CMD\+\_\+\+CB\+\_\+\+TEST\+\_\+\+RANDOM\+\_\+\+ON~"{}AT\$\+CB=-\/1,1"{}}
+
+
+
+Enable a specific Constant Byte pattern for emission testing. param = Pattern (-\/1 for random or 0-\/255), Mode. 
+
+\Hypertarget{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a778eeeb8e6dde654ce7985729f738d58}\label{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a778eeeb8e6dde654ce7985729f738d58} 
+\index{bsp\_sigfox\_wisol-\/EVBSFM10R.h@{bsp\_sigfox\_wisol-\/EVBSFM10R.h}!SIGFOX\_CMD\_CW\_TEST\_OFF@{SIGFOX\_CMD\_CW\_TEST\_OFF}}
+\index{SIGFOX\_CMD\_CW\_TEST\_OFF@{SIGFOX\_CMD\_CW\_TEST\_OFF}!bsp\_sigfox\_wisol-\/EVBSFM10R.h@{bsp\_sigfox\_wisol-\/EVBSFM10R.h}}
+\doxysubsubsection{\texorpdfstring{SIGFOX\_CMD\_CW\_TEST\_OFF}{SIGFOX\_CMD\_CW\_TEST\_OFF}}
+{\footnotesize\ttfamily \#define SIGFOX\+\_\+\+CMD\+\_\+\+CW\+\_\+\+TEST\+\_\+\+OFF~"{}AT\$\+CW=868130000,0,15"{}}
+
+
+
+Stop Sending a Continuous Wave for emission test for Sigfox certification. param = Frequency, Mode, power. 
+
+\Hypertarget{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_ab3cc1e5786def0bca2e998a0ba2ecff1}\label{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_ab3cc1e5786def0bca2e998a0ba2ecff1} 
+\index{bsp\_sigfox\_wisol-\/EVBSFM10R.h@{bsp\_sigfox\_wisol-\/EVBSFM10R.h}!SIGFOX\_CMD\_CW\_TEST\_ON@{SIGFOX\_CMD\_CW\_TEST\_ON}}
+\index{SIGFOX\_CMD\_CW\_TEST\_ON@{SIGFOX\_CMD\_CW\_TEST\_ON}!bsp\_sigfox\_wisol-\/EVBSFM10R.h@{bsp\_sigfox\_wisol-\/EVBSFM10R.h}}
+\doxysubsubsection{\texorpdfstring{SIGFOX\_CMD\_CW\_TEST\_ON}{SIGFOX\_CMD\_CW\_TEST\_ON}}
+{\footnotesize\ttfamily \#define SIGFOX\+\_\+\+CMD\+\_\+\+CW\+\_\+\+TEST\+\_\+\+ON~"{}AT\$\+CW=868130000,1,15"{}}
+
+
+
+Start Sending a Continuous Wave for emission test for Sigfox certification. param = Frequency, Mode, power. 
+
+\Hypertarget{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_ad5fb59ede87c20fc15d729227cfd5a99}\label{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_ad5fb59ede87c20fc15d729227cfd5a99} 
+\index{bsp\_sigfox\_wisol-\/EVBSFM10R.h@{bsp\_sigfox\_wisol-\/EVBSFM10R.h}!SIGFOX\_CMD\_DEVID@{SIGFOX\_CMD\_DEVID}}
+\index{SIGFOX\_CMD\_DEVID@{SIGFOX\_CMD\_DEVID}!bsp\_sigfox\_wisol-\/EVBSFM10R.h@{bsp\_sigfox\_wisol-\/EVBSFM10R.h}}
+\doxysubsubsection{\texorpdfstring{SIGFOX\_CMD\_DEVID}{SIGFOX\_CMD\_DEVID}}
+{\footnotesize\ttfamily \#define SIGFOX\+\_\+\+CMD\+\_\+\+DEVID~"{}AT\$I=10"{}}
+
+
+
+Information. Device ID. 
+
+\Hypertarget{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a6074145d0c820530b3b8a82c9663cc35}\label{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a6074145d0c820530b3b8a82c9663cc35} 
+\index{bsp\_sigfox\_wisol-\/EVBSFM10R.h@{bsp\_sigfox\_wisol-\/EVBSFM10R.h}!SIGFOX\_CMD\_MAX\_POWER@{SIGFOX\_CMD\_MAX\_POWER}}
+\index{SIGFOX\_CMD\_MAX\_POWER@{SIGFOX\_CMD\_MAX\_POWER}!bsp\_sigfox\_wisol-\/EVBSFM10R.h@{bsp\_sigfox\_wisol-\/EVBSFM10R.h}}
+\doxysubsubsection{\texorpdfstring{SIGFOX\_CMD\_MAX\_POWER}{SIGFOX\_CMD\_MAX\_POWER}}
+{\footnotesize\ttfamily \#define SIGFOX\+\_\+\+CMD\+\_\+\+MAX\+\_\+\+POWER~"{}ATS302=15"{}}
+
+
+
+Set output power to the maximun power level (register 302) 
+
+\Hypertarget{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a53e7f6fe71d83c5eea59bb45c4c946d0}\label{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a53e7f6fe71d83c5eea59bb45c4c946d0} 
+\index{bsp\_sigfox\_wisol-\/EVBSFM10R.h@{bsp\_sigfox\_wisol-\/EVBSFM10R.h}!SIGFOX\_CMD\_PAC@{SIGFOX\_CMD\_PAC}}
+\index{SIGFOX\_CMD\_PAC@{SIGFOX\_CMD\_PAC}!bsp\_sigfox\_wisol-\/EVBSFM10R.h@{bsp\_sigfox\_wisol-\/EVBSFM10R.h}}
+\doxysubsubsection{\texorpdfstring{SIGFOX\_CMD\_PAC}{SIGFOX\_CMD\_PAC}}
+{\footnotesize\ttfamily \#define SIGFOX\+\_\+\+CMD\+\_\+\+PAC~"{}AT\$I=11"{}}
+
+
+
+Information. PAC. 
+
+\Hypertarget{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_ab9f40447dce94d0afdbe5bd8df94fbfd}\label{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_ab9f40447dce94d0afdbe5bd8df94fbfd} 
+\index{bsp\_sigfox\_wisol-\/EVBSFM10R.h@{bsp\_sigfox\_wisol-\/EVBSFM10R.h}!SIGFOX\_CMD\_RL\_TEST@{SIGFOX\_CMD\_RL\_TEST}}
+\index{SIGFOX\_CMD\_RL\_TEST@{SIGFOX\_CMD\_RL\_TEST}!bsp\_sigfox\_wisol-\/EVBSFM10R.h@{bsp\_sigfox\_wisol-\/EVBSFM10R.h}}
+\doxysubsubsection{\texorpdfstring{SIGFOX\_CMD\_RL\_TEST}{SIGFOX\_CMD\_RL\_TEST}}
+{\footnotesize\ttfamily \#define SIGFOX\+\_\+\+CMD\+\_\+\+RL\+\_\+\+TEST~"{}AT\$\+RL"{}}
+
+
+
+Receive local loop. 
+
+\Hypertarget{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_ae0a585b725844d3b9a69594115209316}\label{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_ae0a585b725844d3b9a69594115209316} 
+\index{bsp\_sigfox\_wisol-\/EVBSFM10R.h@{bsp\_sigfox\_wisol-\/EVBSFM10R.h}!SIGFOX\_CMD\_RX\_FREQ@{SIGFOX\_CMD\_RX\_FREQ}}
+\index{SIGFOX\_CMD\_RX\_FREQ@{SIGFOX\_CMD\_RX\_FREQ}!bsp\_sigfox\_wisol-\/EVBSFM10R.h@{bsp\_sigfox\_wisol-\/EVBSFM10R.h}}
+\doxysubsubsection{\texorpdfstring{SIGFOX\_CMD\_RX\_FREQ}{SIGFOX\_CMD\_RX\_FREQ}}
+{\footnotesize\ttfamily \#define SIGFOX\+\_\+\+CMD\+\_\+\+RX\+\_\+\+FREQ~"{}AT\$\+DR?"{}}
+
+
+
+Information. Get the currently chosen RX frequency. 
+
+\Hypertarget{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a1962c3f620ac6b6081845f8326202d49}\label{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a1962c3f620ac6b6081845f8326202d49} 
+\index{bsp\_sigfox\_wisol-\/EVBSFM10R.h@{bsp\_sigfox\_wisol-\/EVBSFM10R.h}!SIGFOX\_CMD\_SE\_TEST\_ON@{SIGFOX\_CMD\_SE\_TEST\_ON}}
+\index{SIGFOX\_CMD\_SE\_TEST\_ON@{SIGFOX\_CMD\_SE\_TEST\_ON}!bsp\_sigfox\_wisol-\/EVBSFM10R.h@{bsp\_sigfox\_wisol-\/EVBSFM10R.h}}
+\doxysubsubsection{\texorpdfstring{SIGFOX\_CMD\_SE\_TEST\_ON}{SIGFOX\_CMD\_SE\_TEST\_ON}}
+{\footnotesize\ttfamily \#define SIGFOX\+\_\+\+CMD\+\_\+\+SE\+\_\+\+TEST\+\_\+\+ON~"{}AT\$\+SE"{}}
+
+
+
+Sensitivity Test. Starts AT\$\+TM-\/3,255 indefinitely, which corresponds to RX GFSK Testmode. 
+
+\Hypertarget{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a0c9e957fb548c77efe7553d61db32b89}\label{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a0c9e957fb548c77efe7553d61db32b89} 
+\index{bsp\_sigfox\_wisol-\/EVBSFM10R.h@{bsp\_sigfox\_wisol-\/EVBSFM10R.h}!SIGFOX\_CMD\_SEND\_BYTE@{SIGFOX\_CMD\_SEND\_BYTE}}
+\index{SIGFOX\_CMD\_SEND\_BYTE@{SIGFOX\_CMD\_SEND\_BYTE}!bsp\_sigfox\_wisol-\/EVBSFM10R.h@{bsp\_sigfox\_wisol-\/EVBSFM10R.h}}
+\doxysubsubsection{\texorpdfstring{SIGFOX\_CMD\_SEND\_BYTE}{SIGFOX\_CMD\_SEND\_BYTE}}
+{\footnotesize\ttfamily \#define SIGFOX\+\_\+\+CMD\+\_\+\+SEND\+\_\+\+BYTE~"{}AT\$\+SB="{}}
+
+
+
+Send a bit status (0 or 1) 
+
+\Hypertarget{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a022ad4955622164318cb9fcd5622e56e}\label{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a022ad4955622164318cb9fcd5622e56e} 
+\index{bsp\_sigfox\_wisol-\/EVBSFM10R.h@{bsp\_sigfox\_wisol-\/EVBSFM10R.h}!SIGFOX\_CMD\_SEND\_FRAME@{SIGFOX\_CMD\_SEND\_FRAME}}
+\index{SIGFOX\_CMD\_SEND\_FRAME@{SIGFOX\_CMD\_SEND\_FRAME}!bsp\_sigfox\_wisol-\/EVBSFM10R.h@{bsp\_sigfox\_wisol-\/EVBSFM10R.h}}
+\doxysubsubsection{\texorpdfstring{SIGFOX\_CMD\_SEND\_FRAME}{SIGFOX\_CMD\_SEND\_FRAME}}
+{\footnotesize\ttfamily \#define SIGFOX\+\_\+\+CMD\+\_\+\+SEND\+\_\+\+FRAME~"{}AT\$\+SF="{}}
+
+
+
+Send payload data. 1 to 12 bytes. 
+
+\Hypertarget{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_aa379c2e4f01324e42e5cee56bb8c91e6}\label{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_aa379c2e4f01324e42e5cee56bb8c91e6} 
+\index{bsp\_sigfox\_wisol-\/EVBSFM10R.h@{bsp\_sigfox\_wisol-\/EVBSFM10R.h}!SIGFOX\_CMD\_SL\_TEST\_DEFAULT@{SIGFOX\_CMD\_SL\_TEST\_DEFAULT}}
+\index{SIGFOX\_CMD\_SL\_TEST\_DEFAULT@{SIGFOX\_CMD\_SL\_TEST\_DEFAULT}!bsp\_sigfox\_wisol-\/EVBSFM10R.h@{bsp\_sigfox\_wisol-\/EVBSFM10R.h}}
+\doxysubsubsection{\texorpdfstring{SIGFOX\_CMD\_SL\_TEST\_DEFAULT}{SIGFOX\_CMD\_SL\_TEST\_DEFAULT}}
+{\footnotesize\ttfamily \#define SIGFOX\+\_\+\+CMD\+\_\+\+SL\+\_\+\+TEST\+\_\+\+DEFAULT~"{}AT\$\+SL"{}}
+
+
+
+Sends a local loop frame. default payload. 
+
+\Hypertarget{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a983927b5bd069be367450b90a54783f0}\label{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a983927b5bd069be367450b90a54783f0} 
+\index{bsp\_sigfox\_wisol-\/EVBSFM10R.h@{bsp\_sigfox\_wisol-\/EVBSFM10R.h}!SIGFOX\_CMD\_SL\_TEST\_FRAME@{SIGFOX\_CMD\_SL\_TEST\_FRAME}}
+\index{SIGFOX\_CMD\_SL\_TEST\_FRAME@{SIGFOX\_CMD\_SL\_TEST\_FRAME}!bsp\_sigfox\_wisol-\/EVBSFM10R.h@{bsp\_sigfox\_wisol-\/EVBSFM10R.h}}
+\doxysubsubsection{\texorpdfstring{SIGFOX\_CMD\_SL\_TEST\_FRAME}{SIGFOX\_CMD\_SL\_TEST\_FRAME}}
+{\footnotesize\ttfamily \#define SIGFOX\+\_\+\+CMD\+\_\+\+SL\+\_\+\+TEST\+\_\+\+FRAME~"{}AT\$\+SL="{}}
+
+
+
+Sends a local loop frame. param = Frame. 
+
+\Hypertarget{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a413a5c2770276cb6e4adbc72829fe23b}\label{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a413a5c2770276cb6e4adbc72829fe23b} 
+\index{bsp\_sigfox\_wisol-\/EVBSFM10R.h@{bsp\_sigfox\_wisol-\/EVBSFM10R.h}!SIGFOX\_CMD\_SW\_DEEP\_SLEEP@{SIGFOX\_CMD\_SW\_DEEP\_SLEEP}}
+\index{SIGFOX\_CMD\_SW\_DEEP\_SLEEP@{SIGFOX\_CMD\_SW\_DEEP\_SLEEP}!bsp\_sigfox\_wisol-\/EVBSFM10R.h@{bsp\_sigfox\_wisol-\/EVBSFM10R.h}}
+\doxysubsubsection{\texorpdfstring{SIGFOX\_CMD\_SW\_DEEP\_SLEEP}{SIGFOX\_CMD\_SW\_DEEP\_SLEEP}}
+{\footnotesize\ttfamily \#define SIGFOX\+\_\+\+CMD\+\_\+\+SW\+\_\+\+DEEP\+\_\+\+SLEEP~"{}AT\$P=2"{}}
+
+
+
+Set power mode 2\+: deep sleep. 
+
+\Hypertarget{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a4595eb0b32550c7cbd32c6389a7c589e}\label{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a4595eb0b32550c7cbd32c6389a7c589e} 
+\index{bsp\_sigfox\_wisol-\/EVBSFM10R.h@{bsp\_sigfox\_wisol-\/EVBSFM10R.h}!SIGFOX\_CMD\_SW\_RESET@{SIGFOX\_CMD\_SW\_RESET}}
+\index{SIGFOX\_CMD\_SW\_RESET@{SIGFOX\_CMD\_SW\_RESET}!bsp\_sigfox\_wisol-\/EVBSFM10R.h@{bsp\_sigfox\_wisol-\/EVBSFM10R.h}}
+\doxysubsubsection{\texorpdfstring{SIGFOX\_CMD\_SW\_RESET}{SIGFOX\_CMD\_SW\_RESET}}
+{\footnotesize\ttfamily \#define SIGFOX\+\_\+\+CMD\+\_\+\+SW\+\_\+\+RESET~"{}AT\$P=0"{}}
+
+
+
+Set power mode 0\+: software reset. 
+
+\Hypertarget{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a5d67e69f50d33dac9db93ac66189d7d8}\label{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a5d67e69f50d33dac9db93ac66189d7d8} 
+\index{bsp\_sigfox\_wisol-\/EVBSFM10R.h@{bsp\_sigfox\_wisol-\/EVBSFM10R.h}!SIGFOX\_CMD\_SW\_SLEEP@{SIGFOX\_CMD\_SW\_SLEEP}}
+\index{SIGFOX\_CMD\_SW\_SLEEP@{SIGFOX\_CMD\_SW\_SLEEP}!bsp\_sigfox\_wisol-\/EVBSFM10R.h@{bsp\_sigfox\_wisol-\/EVBSFM10R.h}}
+\doxysubsubsection{\texorpdfstring{SIGFOX\_CMD\_SW\_SLEEP}{SIGFOX\_CMD\_SW\_SLEEP}}
+{\footnotesize\ttfamily \#define SIGFOX\+\_\+\+CMD\+\_\+\+SW\+\_\+\+SLEEP~"{}AT\$P=1"{}}
+
+
+
+Set power mode 1\+: sleep. 
+
+\Hypertarget{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a1bc06e555603e8a2f7925c5f406ebd2a}\label{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a1bc06e555603e8a2f7925c5f406ebd2a} 
+\index{bsp\_sigfox\_wisol-\/EVBSFM10R.h@{bsp\_sigfox\_wisol-\/EVBSFM10R.h}!SIGFOX\_CMD\_TEMP@{SIGFOX\_CMD\_TEMP}}
+\index{SIGFOX\_CMD\_TEMP@{SIGFOX\_CMD\_TEMP}!bsp\_sigfox\_wisol-\/EVBSFM10R.h@{bsp\_sigfox\_wisol-\/EVBSFM10R.h}}
+\doxysubsubsection{\texorpdfstring{SIGFOX\_CMD\_TEMP}{SIGFOX\_CMD\_TEMP}}
+{\footnotesize\ttfamily \#define SIGFOX\+\_\+\+CMD\+\_\+\+TEMP~"{}AT\$T?"{}}
+
+
+
+Return internal temperature in 1/10 of a degree Celsius. 
+
+\Hypertarget{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a2a1929a2ebbe9157f3d1b94929610385}\label{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a2a1929a2ebbe9157f3d1b94929610385} 
+\index{bsp\_sigfox\_wisol-\/EVBSFM10R.h@{bsp\_sigfox\_wisol-\/EVBSFM10R.h}!SIGFOX\_CMD\_TM\_RX\_GFSK\_TEST@{SIGFOX\_CMD\_TM\_RX\_GFSK\_TEST}}
+\index{SIGFOX\_CMD\_TM\_RX\_GFSK\_TEST@{SIGFOX\_CMD\_TM\_RX\_GFSK\_TEST}!bsp\_sigfox\_wisol-\/EVBSFM10R.h@{bsp\_sigfox\_wisol-\/EVBSFM10R.h}}
+\doxysubsubsection{\texorpdfstring{SIGFOX\_CMD\_TM\_RX\_GFSK\_TEST}{SIGFOX\_CMD\_TM\_RX\_GFSK\_TEST}}
+{\footnotesize\ttfamily \#define SIGFOX\+\_\+\+CMD\+\_\+\+TM\+\_\+\+RX\+\_\+\+GFSK\+\_\+\+TEST~"{}AT\$\+TM=3,"{}}
+
+
+
+Activates the Sigfox Testmode 3\+: RX GFSK. param = Config defines number of repetitions. 
+
+\Hypertarget{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_ac06e01963d11c7411b2dd7c9426104bd}\label{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_ac06e01963d11c7411b2dd7c9426104bd} 
+\index{bsp\_sigfox\_wisol-\/EVBSFM10R.h@{bsp\_sigfox\_wisol-\/EVBSFM10R.h}!SIGFOX\_CMD\_TM\_RX\_PROT\_TEST@{SIGFOX\_CMD\_TM\_RX\_PROT\_TEST}}
+\index{SIGFOX\_CMD\_TM\_RX\_PROT\_TEST@{SIGFOX\_CMD\_TM\_RX\_PROT\_TEST}!bsp\_sigfox\_wisol-\/EVBSFM10R.h@{bsp\_sigfox\_wisol-\/EVBSFM10R.h}}
+\doxysubsubsection{\texorpdfstring{SIGFOX\_CMD\_TM\_RX\_PROT\_TEST}{SIGFOX\_CMD\_TM\_RX\_PROT\_TEST}}
+{\footnotesize\ttfamily \#define SIGFOX\+\_\+\+CMD\+\_\+\+TM\+\_\+\+RX\+\_\+\+PROT\+\_\+\+TEST~"{}AT\$\+TM=2,"{}}
+
+
+
+Activates the Sigfox Testmode 2\+: RX Protocol. param = Config defines number of repetitions. 
+
+\Hypertarget{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a49ebca792fce418a930e73388fbba81b}\label{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a49ebca792fce418a930e73388fbba81b} 
+\index{bsp\_sigfox\_wisol-\/EVBSFM10R.h@{bsp\_sigfox\_wisol-\/EVBSFM10R.h}!SIGFOX\_CMD\_TM\_RX\_SENS\_TEST@{SIGFOX\_CMD\_TM\_RX\_SENS\_TEST}}
+\index{SIGFOX\_CMD\_TM\_RX\_SENS\_TEST@{SIGFOX\_CMD\_TM\_RX\_SENS\_TEST}!bsp\_sigfox\_wisol-\/EVBSFM10R.h@{bsp\_sigfox\_wisol-\/EVBSFM10R.h}}
+\doxysubsubsection{\texorpdfstring{SIGFOX\_CMD\_TM\_RX\_SENS\_TEST}{SIGFOX\_CMD\_TM\_RX\_SENS\_TEST}}
+{\footnotesize\ttfamily \#define SIGFOX\+\_\+\+CMD\+\_\+\+TM\+\_\+\+RX\+\_\+\+SENS\+\_\+\+TEST~"{}AT\$\+TM=4,"{}}
+
+
+
+Activates the Sigfox Testmode 4\+: RX Sensitivity. param= ? 
+
+\Hypertarget{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_ae9ac4b117252ad68b2aa7f6182ed9f59}\label{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_ae9ac4b117252ad68b2aa7f6182ed9f59} 
+\index{bsp\_sigfox\_wisol-\/EVBSFM10R.h@{bsp\_sigfox\_wisol-\/EVBSFM10R.h}!SIGFOX\_CMD\_TM\_TX\_BPSK\_TEST@{SIGFOX\_CMD\_TM\_TX\_BPSK\_TEST}}
+\index{SIGFOX\_CMD\_TM\_TX\_BPSK\_TEST@{SIGFOX\_CMD\_TM\_TX\_BPSK\_TEST}!bsp\_sigfox\_wisol-\/EVBSFM10R.h@{bsp\_sigfox\_wisol-\/EVBSFM10R.h}}
+\doxysubsubsection{\texorpdfstring{SIGFOX\_CMD\_TM\_TX\_BPSK\_TEST}{SIGFOX\_CMD\_TM\_TX\_BPSK\_TEST}}
+{\footnotesize\ttfamily \#define SIGFOX\+\_\+\+CMD\+\_\+\+TM\+\_\+\+TX\+\_\+\+BPSK\+\_\+\+TEST~"{}AT\$\+TM=0,"{}}
+
+
+
+Activates the Sigfox Testmode 0\+: TX BPSK. param = Config define number of repetitions. 
+
+\Hypertarget{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a1065c20a81415fc9017e4735da5da16a}\label{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a1065c20a81415fc9017e4735da5da16a} 
+\index{bsp\_sigfox\_wisol-\/EVBSFM10R.h@{bsp\_sigfox\_wisol-\/EVBSFM10R.h}!SIGFOX\_CMD\_TM\_TX\_PROT\_TEST@{SIGFOX\_CMD\_TM\_TX\_PROT\_TEST}}
+\index{SIGFOX\_CMD\_TM\_TX\_PROT\_TEST@{SIGFOX\_CMD\_TM\_TX\_PROT\_TEST}!bsp\_sigfox\_wisol-\/EVBSFM10R.h@{bsp\_sigfox\_wisol-\/EVBSFM10R.h}}
+\doxysubsubsection{\texorpdfstring{SIGFOX\_CMD\_TM\_TX\_PROT\_TEST}{SIGFOX\_CMD\_TM\_TX\_PROT\_TEST}}
+{\footnotesize\ttfamily \#define SIGFOX\+\_\+\+CMD\+\_\+\+TM\+\_\+\+TX\+\_\+\+PROT\+\_\+\+TEST~"{}AT\$\+TM=1,"{}}
+
+
+
+Activates the Sigfox Testmode 1\+: TX Protocol. param = Config defines number of repetitions. 
+
+\Hypertarget{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a3687b325094e1cce2b243191da642768}\label{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a3687b325094e1cce2b243191da642768} 
+\index{bsp\_sigfox\_wisol-\/EVBSFM10R.h@{bsp\_sigfox\_wisol-\/EVBSFM10R.h}!SIGFOX\_CMD\_TM\_TX\_SYNTH\_TEST@{SIGFOX\_CMD\_TM\_TX\_SYNTH\_TEST}}
+\index{SIGFOX\_CMD\_TM\_TX\_SYNTH\_TEST@{SIGFOX\_CMD\_TM\_TX\_SYNTH\_TEST}!bsp\_sigfox\_wisol-\/EVBSFM10R.h@{bsp\_sigfox\_wisol-\/EVBSFM10R.h}}
+\doxysubsubsection{\texorpdfstring{SIGFOX\_CMD\_TM\_TX\_SYNTH\_TEST}{SIGFOX\_CMD\_TM\_TX\_SYNTH\_TEST}}
+{\footnotesize\ttfamily \#define SIGFOX\+\_\+\+CMD\+\_\+\+TM\+\_\+\+TX\+\_\+\+SYNTH\+\_\+\+TEST~"{}AT\$\+TM=5,"{}}
+
+
+
+Activates the Sigfox Testmode 5\+: TX Synthesis. param= ? 
+
+\Hypertarget{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_abff1fdfe27c265220c5e748a502607a2}\label{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_abff1fdfe27c265220c5e748a502607a2} 
+\index{bsp\_sigfox\_wisol-\/EVBSFM10R.h@{bsp\_sigfox\_wisol-\/EVBSFM10R.h}!SIGFOX\_CMD\_TX\_FREQ@{SIGFOX\_CMD\_TX\_FREQ}}
+\index{SIGFOX\_CMD\_TX\_FREQ@{SIGFOX\_CMD\_TX\_FREQ}!bsp\_sigfox\_wisol-\/EVBSFM10R.h@{bsp\_sigfox\_wisol-\/EVBSFM10R.h}}
+\doxysubsubsection{\texorpdfstring{SIGFOX\_CMD\_TX\_FREQ}{SIGFOX\_CMD\_TX\_FREQ}}
+{\footnotesize\ttfamily \#define SIGFOX\+\_\+\+CMD\+\_\+\+TX\+\_\+\+FREQ~"{}AT\$\+IF?"{}}
+
+
+
+Information. Get the currently chosen TX frequency. 
+
+\Hypertarget{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_ad6b337459605c94b81e1f02ef5d21b82}\label{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_ad6b337459605c94b81e1f02ef5d21b82} 
+\index{bsp\_sigfox\_wisol-\/EVBSFM10R.h@{bsp\_sigfox\_wisol-\/EVBSFM10R.h}!SIGFOX\_CMD\_VOLTAGES@{SIGFOX\_CMD\_VOLTAGES}}
+\index{SIGFOX\_CMD\_VOLTAGES@{SIGFOX\_CMD\_VOLTAGES}!bsp\_sigfox\_wisol-\/EVBSFM10R.h@{bsp\_sigfox\_wisol-\/EVBSFM10R.h}}
+\doxysubsubsection{\texorpdfstring{SIGFOX\_CMD\_VOLTAGES}{SIGFOX\_CMD\_VOLTAGES}}
+{\footnotesize\ttfamily \#define SIGFOX\+\_\+\+CMD\+\_\+\+VOLTAGES~"{}AT\$V?"{}}
+
+
+
+Return current voltage and voltage measured during last transmission in mV. 
+
+\Hypertarget{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a4f15ee13e49109fca587a8fff72d5267}\label{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a4f15ee13e49109fca587a8fff72d5267} 
+\index{bsp\_sigfox\_wisol-\/EVBSFM10R.h@{bsp\_sigfox\_wisol-\/EVBSFM10R.h}!SIGFOX\_RESP\_OK@{SIGFOX\_RESP\_OK}}
+\index{SIGFOX\_RESP\_OK@{SIGFOX\_RESP\_OK}!bsp\_sigfox\_wisol-\/EVBSFM10R.h@{bsp\_sigfox\_wisol-\/EVBSFM10R.h}}
+\doxysubsubsection{\texorpdfstring{SIGFOX\_RESP\_OK}{SIGFOX\_RESP\_OK}}
+{\footnotesize\ttfamily \#define SIGFOX\+\_\+\+RESP\+\_\+\+OK~"{}OK\textbackslash{}r\textbackslash{}n"{}}
+
+
+
+Response to SIGFOX\+\_\+\+CMD. 
+
+\Hypertarget{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a64c0b53df7e6ca7f01a8ac3f67eeb4c0}\label{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a64c0b53df7e6ca7f01a8ac3f67eeb4c0} 
+\index{bsp\_sigfox\_wisol-\/EVBSFM10R.h@{bsp\_sigfox\_wisol-\/EVBSFM10R.h}!SIGFOX\_RESP\_SE\_TEST\_ON@{SIGFOX\_RESP\_SE\_TEST\_ON}}
+\index{SIGFOX\_RESP\_SE\_TEST\_ON@{SIGFOX\_RESP\_SE\_TEST\_ON}!bsp\_sigfox\_wisol-\/EVBSFM10R.h@{bsp\_sigfox\_wisol-\/EVBSFM10R.h}}
+\doxysubsubsection{\texorpdfstring{SIGFOX\_RESP\_SE\_TEST\_ON}{SIGFOX\_RESP\_SE\_TEST\_ON}}
+{\footnotesize\ttfamily \#define SIGFOX\+\_\+\+RESP\+\_\+\+SE\+\_\+\+TEST\+\_\+\+ON~"{}ONSEMI Sensitivitiy Test"{}}
+
+
+
+Response to SIGFOX\+\_\+\+CMD\+\_\+\+SE\+\_\+\+TEST\+\_\+\+ON. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a0f4cec6f2f54d23e3ae8a70587ba9034}\label{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a0f4cec6f2f54d23e3ae8a70587ba9034} 
+\index{bsp\_sigfox\_wisol-\/EVBSFM10R.h@{bsp\_sigfox\_wisol-\/EVBSFM10R.h}!Sigfox\_Check\_Module\_Status@{Sigfox\_Check\_Module\_Status}}
+\index{Sigfox\_Check\_Module\_Status@{Sigfox\_Check\_Module\_Status}!bsp\_sigfox\_wisol-\/EVBSFM10R.h@{bsp\_sigfox\_wisol-\/EVBSFM10R.h}}
+\doxysubsubsection{\texorpdfstring{Sigfox\_Check\_Module\_Status()}{Sigfox\_Check\_Module\_Status()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Sigfox\+\_\+\+Check\+\_\+\+Module\+\_\+\+Status (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Configure Wifi module. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR\+\_\+\+ID\+\_\+e error code 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a0f4cec6f2f54d23e3ae8a70587ba9034_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a0f4cec6f2f54d23e3ae8a70587ba9034_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a38dc66d0d3fca9200e6d5992c43a20c9}\label{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a38dc66d0d3fca9200e6d5992c43a20c9} 
+\index{bsp\_sigfox\_wisol-\/EVBSFM10R.h@{bsp\_sigfox\_wisol-\/EVBSFM10R.h}!Sigfox\_Compare\_Test\_Frequencies@{Sigfox\_Compare\_Test\_Frequencies}}
+\index{Sigfox\_Compare\_Test\_Frequencies@{Sigfox\_Compare\_Test\_Frequencies}!bsp\_sigfox\_wisol-\/EVBSFM10R.h@{bsp\_sigfox\_wisol-\/EVBSFM10R.h}}
+\doxysubsubsection{\texorpdfstring{Sigfox\_Compare\_Test\_Frequencies()}{Sigfox\_Compare\_Test\_Frequencies()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Sigfox\+\_\+\+Compare\+\_\+\+Test\+\_\+\+Frequencies (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Compare Sigfox module TX \& RX Test Frequencies. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a38dc66d0d3fca9200e6d5992c43a20c9_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_ac36f9264486c295bdff72a1ff0836e6e}\label{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_ac36f9264486c295bdff72a1ff0836e6e} 
+\index{bsp\_sigfox\_wisol-\/EVBSFM10R.h@{bsp\_sigfox\_wisol-\/EVBSFM10R.h}!Sigfox\_Get\_Module\_DeviceID@{Sigfox\_Get\_Module\_DeviceID}}
+\index{Sigfox\_Get\_Module\_DeviceID@{Sigfox\_Get\_Module\_DeviceID}!bsp\_sigfox\_wisol-\/EVBSFM10R.h@{bsp\_sigfox\_wisol-\/EVBSFM10R.h}}
+\doxysubsubsection{\texorpdfstring{Sigfox\_Get\_Module\_DeviceID()}{Sigfox\_Get\_Module\_DeviceID()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Sigfox\+\_\+\+Get\+\_\+\+Module\+\_\+\+Device\+ID (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Get Sigfox Module Device\+ID. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR\+\_\+\+ID\+\_\+e error code 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_ac36f9264486c295bdff72a1ff0836e6e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_ac36f9264486c295bdff72a1ff0836e6e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_acb7604b868af7f5771ea4ec59d8437e1}\label{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_acb7604b868af7f5771ea4ec59d8437e1} 
+\index{bsp\_sigfox\_wisol-\/EVBSFM10R.h@{bsp\_sigfox\_wisol-\/EVBSFM10R.h}!Sigfox\_Get\_Module\_PAC@{Sigfox\_Get\_Module\_PAC}}
+\index{Sigfox\_Get\_Module\_PAC@{Sigfox\_Get\_Module\_PAC}!bsp\_sigfox\_wisol-\/EVBSFM10R.h@{bsp\_sigfox\_wisol-\/EVBSFM10R.h}}
+\doxysubsubsection{\texorpdfstring{Sigfox\_Get\_Module\_PAC()}{Sigfox\_Get\_Module\_PAC()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Sigfox\+\_\+\+Get\+\_\+\+Module\+\_\+\+PAC (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Get Sigfox Module PAC. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR\+\_\+\+ID\+\_\+e error code 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_acb7604b868af7f5771ea4ec59d8437e1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_acb7604b868af7f5771ea4ec59d8437e1_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_ad97b1116dadc5b856de2fba00a2503f7}\label{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_ad97b1116dadc5b856de2fba00a2503f7} 
+\index{bsp\_sigfox\_wisol-\/EVBSFM10R.h@{bsp\_sigfox\_wisol-\/EVBSFM10R.h}!Sigfox\_Get\_Module\_Temp@{Sigfox\_Get\_Module\_Temp}}
+\index{Sigfox\_Get\_Module\_Temp@{Sigfox\_Get\_Module\_Temp}!bsp\_sigfox\_wisol-\/EVBSFM10R.h@{bsp\_sigfox\_wisol-\/EVBSFM10R.h}}
+\doxysubsubsection{\texorpdfstring{Sigfox\_Get\_Module\_Temp()}{Sigfox\_Get\_Module\_Temp()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Sigfox\+\_\+\+Get\+\_\+\+Module\+\_\+\+Temp (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Get Sigfox Module Temperature. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR\+\_\+\+ID\+\_\+e error code 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_ad97b1116dadc5b856de2fba00a2503f7_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a6b47a57421a43ea00dc7aadbdaa95d5a}\label{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a6b47a57421a43ea00dc7aadbdaa95d5a} 
+\index{bsp\_sigfox\_wisol-\/EVBSFM10R.h@{bsp\_sigfox\_wisol-\/EVBSFM10R.h}!Sigfox\_Get\_Module\_Voltages@{Sigfox\_Get\_Module\_Voltages}}
+\index{Sigfox\_Get\_Module\_Voltages@{Sigfox\_Get\_Module\_Voltages}!bsp\_sigfox\_wisol-\/EVBSFM10R.h@{bsp\_sigfox\_wisol-\/EVBSFM10R.h}}
+\doxysubsubsection{\texorpdfstring{Sigfox\_Get\_Module\_Voltages()}{Sigfox\_Get\_Module\_Voltages()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Sigfox\+\_\+\+Get\+\_\+\+Module\+\_\+\+Voltages (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Get Sigfox Module Voltages. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR\+\_\+\+ID\+\_\+e error code 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a6b47a57421a43ea00dc7aadbdaa95d5a_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a1d13b7d7d1dc518419fc191ee9e69276}\label{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a1d13b7d7d1dc518419fc191ee9e69276} 
+\index{bsp\_sigfox\_wisol-\/EVBSFM10R.h@{bsp\_sigfox\_wisol-\/EVBSFM10R.h}!Sigfox\_Get\_RX\_Frequency@{Sigfox\_Get\_RX\_Frequency}}
+\index{Sigfox\_Get\_RX\_Frequency@{Sigfox\_Get\_RX\_Frequency}!bsp\_sigfox\_wisol-\/EVBSFM10R.h@{bsp\_sigfox\_wisol-\/EVBSFM10R.h}}
+\doxysubsubsection{\texorpdfstring{Sigfox\_Get\_RX\_Frequency()}{Sigfox\_Get\_RX\_Frequency()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Sigfox\+\_\+\+Get\+\_\+\+RX\+\_\+\+Frequency (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Get Sigfox Module RX Frequency. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR\+\_\+\+ID\+\_\+e error code 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a1d13b7d7d1dc518419fc191ee9e69276_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a1d13b7d7d1dc518419fc191ee9e69276_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a815348ca9ffd0d64c715051e9e48467c}\label{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a815348ca9ffd0d64c715051e9e48467c} 
+\index{bsp\_sigfox\_wisol-\/EVBSFM10R.h@{bsp\_sigfox\_wisol-\/EVBSFM10R.h}!Sigfox\_Get\_TX\_Frequency@{Sigfox\_Get\_TX\_Frequency}}
+\index{Sigfox\_Get\_TX\_Frequency@{Sigfox\_Get\_TX\_Frequency}!bsp\_sigfox\_wisol-\/EVBSFM10R.h@{bsp\_sigfox\_wisol-\/EVBSFM10R.h}}
+\doxysubsubsection{\texorpdfstring{Sigfox\_Get\_TX\_Frequency()}{Sigfox\_Get\_TX\_Frequency()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Sigfox\+\_\+\+Get\+\_\+\+TX\+\_\+\+Frequency (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Get Sigfox Module TX Frequency. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR\+\_\+\+ID\+\_\+e error code 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a815348ca9ffd0d64c715051e9e48467c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a815348ca9ffd0d64c715051e9e48467c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_afa38aea6b87f9d40759ebff441976f80}\label{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_afa38aea6b87f9d40759ebff441976f80} 
+\index{bsp\_sigfox\_wisol-\/EVBSFM10R.h@{bsp\_sigfox\_wisol-\/EVBSFM10R.h}!Sigfox\_Send\_Data\_Frame@{Sigfox\_Send\_Data\_Frame}}
+\index{Sigfox\_Send\_Data\_Frame@{Sigfox\_Send\_Data\_Frame}!bsp\_sigfox\_wisol-\/EVBSFM10R.h@{bsp\_sigfox\_wisol-\/EVBSFM10R.h}}
+\doxysubsubsection{\texorpdfstring{Sigfox\_Send\_Data\_Frame()}{Sigfox\_Send\_Data\_Frame()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Sigfox\+\_\+\+Send\+\_\+\+Data\+\_\+\+Frame (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{data }\end{DoxyParamCaption})}
+
+
+
+Send data frame through Sigfox. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR\+\_\+\+ID\+\_\+e error code 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_afa38aea6b87f9d40759ebff441976f80_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_afa38aea6b87f9d40759ebff441976f80_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a2c472548c48e6c4276ac3da4a59613ee}\label{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a2c472548c48e6c4276ac3da4a59613ee} 
+\index{bsp\_sigfox\_wisol-\/EVBSFM10R.h@{bsp\_sigfox\_wisol-\/EVBSFM10R.h}!Sigfox\_Start\_CW\_Test@{Sigfox\_Start\_CW\_Test}}
+\index{Sigfox\_Start\_CW\_Test@{Sigfox\_Start\_CW\_Test}!bsp\_sigfox\_wisol-\/EVBSFM10R.h@{bsp\_sigfox\_wisol-\/EVBSFM10R.h}}
+\doxysubsubsection{\texorpdfstring{Sigfox\_Start\_CW\_Test()}{Sigfox\_Start\_CW\_Test()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Sigfox\+\_\+\+Start\+\_\+\+CW\+\_\+\+Test (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Start Continuous Wave Test. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR\+\_\+\+ID\+\_\+e error code 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a2c472548c48e6c4276ac3da4a59613ee_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a2c472548c48e6c4276ac3da4a59613ee_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a2a01b0e42f04c530d197f0a07dd649ec}\label{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a2a01b0e42f04c530d197f0a07dd649ec} 
+\index{bsp\_sigfox\_wisol-\/EVBSFM10R.h@{bsp\_sigfox\_wisol-\/EVBSFM10R.h}!Sigfox\_Start\_RX\_GFSK\_Test@{Sigfox\_Start\_RX\_GFSK\_Test}}
+\index{Sigfox\_Start\_RX\_GFSK\_Test@{Sigfox\_Start\_RX\_GFSK\_Test}!bsp\_sigfox\_wisol-\/EVBSFM10R.h@{bsp\_sigfox\_wisol-\/EVBSFM10R.h}}
+\doxysubsubsection{\texorpdfstring{Sigfox\_Start\_RX\_GFSK\_Test()}{Sigfox\_Start\_RX\_GFSK\_Test()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Sigfox\+\_\+\+Start\+\_\+\+RX\+\_\+\+GFSK\+\_\+\+Test (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Start RX GFSK test mode. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR\+\_\+\+ID\+\_\+e error code 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a2a01b0e42f04c530d197f0a07dd649ec_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a2a01b0e42f04c530d197f0a07dd649ec_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a8849a2415e3742133557b698a64d986d}\label{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a8849a2415e3742133557b698a64d986d} 
+\index{bsp\_sigfox\_wisol-\/EVBSFM10R.h@{bsp\_sigfox\_wisol-\/EVBSFM10R.h}!Sigfox\_Stop\_CW\_Test@{Sigfox\_Stop\_CW\_Test}}
+\index{Sigfox\_Stop\_CW\_Test@{Sigfox\_Stop\_CW\_Test}!bsp\_sigfox\_wisol-\/EVBSFM10R.h@{bsp\_sigfox\_wisol-\/EVBSFM10R.h}}
+\doxysubsubsection{\texorpdfstring{Sigfox\_Stop\_CW\_Test()}{Sigfox\_Stop\_CW\_Test()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Sigfox\+\_\+\+Stop\+\_\+\+CW\+\_\+\+Test (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Stop Continuous Wave Test. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR\+\_\+\+ID\+\_\+e error code 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a8849a2415e3742133557b698a64d986d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a8849a2415e3742133557b698a64d986d_icgraph}
+\end{center}
+\end{figure}

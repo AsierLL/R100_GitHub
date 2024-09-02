@@ -1,0 +1,40 @@
+\doxysection{sha256.\+h}
+\hypertarget{sha256_8h_source}{}\label{sha256_8h_source}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/SCE/sha256.h@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/SCE/sha256.h}}
+\mbox{\hyperlink{sha256_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*********************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{*\ Filename:\ \ \ sha256.h}}
+\DoxyCodeLine{00003\ \textcolor{comment}{*\ Author:\ \ \ \ \ Brad\ Conte\ (brad\ AT\ bradconte.com)}}
+\DoxyCodeLine{00004\ \textcolor{comment}{*\ Copyright:}}
+\DoxyCodeLine{00005\ \textcolor{comment}{*\ Disclaimer:\ This\ code\ is\ presented\ "{}as\ is"{}\ without\ any\ guarantees.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*\ Details:\ \ \ \ Defines\ the\ API\ for\ the\ corresponding\ SHA1\ implementation.}}
+\DoxyCodeLine{00007\ \textcolor{comment}{*********************************************************************/}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ SHA256\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ SHA256\_H}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{comment}{/***************************\ HEADER\ FILES\ ***************************/}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <stddef.h>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{comment}{/******************************\ MACROS\ ******************************/}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ SOFT\_SHA256\_BLOCK\_SIZE\ 32\ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{//\ SHA256\ outputs\ a\ 32\ byte\ digest}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{comment}{/****************************\ DATA\ TYPES\ ****************************/}}
+\DoxyCodeLine{00019\ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{sha256_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}};\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 8-\/bit\ byte}}
+\DoxyCodeLine{00020\ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \ \mbox{\hyperlink{sha256_8h_ad2baa11c897721ff6f14b452b547f9bc}{WORD}};\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 32-\/bit\ word,\ change\ to\ "{}long"{}\ for\ 16-\/bit\ machines}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{sha256_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}}\ data[64];}
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{sha256_8h_ad2baa11c897721ff6f14b452b547f9bc}{WORD}}\ \mbox{\hyperlink{struct_s_h_a256___c_t_x_acff27dfecde1d6e42f7c8474a3175529}{datalen}};}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ \mbox{\hyperlink{struct_s_h_a256___c_t_x_a7971befc0fa37b07350552d3a949634a}{bitlen}};}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{sha256_8h_ad2baa11c897721ff6f14b452b547f9bc}{WORD}}\ state[8];}
+\DoxyCodeLine{00027\ \}\ \mbox{\hyperlink{struct_s_h_a256___c_t_x}{SHA256\_CTX}};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{comment}{/***********************\ FUNCTION\ DECLARATIONS\ **********************/}}
+\DoxyCodeLine{00030\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{sha256_8h_ade6fde6ef9ea137449d72891931c77ef}{sha256\_init}}(\mbox{\hyperlink{struct_s_h_a256___c_t_x}{SHA256\_CTX}}\ *ctx);}
+\DoxyCodeLine{00031\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{sha256_8h_ac98a25de627f4cded12b7312dee1ffa0}{sha256\_update}}(\mbox{\hyperlink{struct_s_h_a256___c_t_x}{SHA256\_CTX}}\ *ctx,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{sha256_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}}\ data[],\ \textcolor{keywordtype}{size\_t}\ len);}
+\DoxyCodeLine{00032\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{sha256_8h_a8f4b55bd1e49af6e4620bc9ba9549397}{sha256\_final}}(\mbox{\hyperlink{struct_s_h_a256___c_t_x}{SHA256\_CTX}}\ *ctx,\ \mbox{\hyperlink{sha256_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}}\ hash[]);}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#endif\ \ \ }\textcolor{comment}{//\ SHA256\_H}}
+
+\end{DoxyCode}

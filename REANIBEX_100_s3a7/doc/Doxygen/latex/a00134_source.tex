@@ -1,0 +1,65 @@
+\doxysection{types\+\_\+app.\+h}
+\hypertarget{a00134_source}{}\label{a00134_source}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/types\_app.h@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/types\_app.h}}
+\mbox{\hyperlink{a00134}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Name\ \ \ \ \ \ :\ R100\_S3A7\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ :\ Osatu\ S.\ Coop\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Compiler\ \ :\ GNU\ ARM\ Embedded\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ Target\ \ \ \ :\ Reanibex\ Serie\ 100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ ******************************************************************************/}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#ifndef\ TYPES\_APP\_H}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#define\ TYPES\_APP\_H}}
+\DoxyCodeLine{00021\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00022\ \textcolor{comment}{**Includes}}
+\DoxyCodeLine{00023\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00026\ \textcolor{comment}{**\ Defines}}
+\DoxyCodeLine{00027\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ **\ Typedefs}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00032\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{a00134_a72bf2916658241ff5c65acd6d8a5ed4caf63ab7a51d31f5c008176c533ccdb19f}{eWMODE\_NOMODE}}\ =\ 0,\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Only\ in\ initialization}}
+\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{a00134_a72bf2916658241ff5c65acd6d8a5ed4ca5f9cb0b7556e579c8125060d67e0fb15}{eWMODE\_CFG}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Configuration\ mode}}
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{a00134_a72bf2916658241ff5c65acd6d8a5ed4ca7048907b274ef6a02f036461d88edf91}{eWMODE\_AED}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ AED\ mode}}
+\DoxyCodeLine{00036\ \ \ \ \ \mbox{\hyperlink{a00134_a72bf2916658241ff5c65acd6d8a5ed4cabc1938fe952b6529da2a9adbb06bca81}{eWMODE\_N}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Number\ of\ modes}}
+\DoxyCodeLine{00037\ \}\mbox{\hyperlink{a00134_a72bf2916658241ff5c65acd6d8a5ed4c}{WORKING\_MODE\_e}};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{a00134_ae59e9c96f294194aaafbb0323b4941e6a420a0769507f95cbcd1f7ac2c53fc96a}{ePATIENT\_TYPE\_ADULT}}\ =\ 0,\ \ \ \ \textcolor{comment}{//\ pediatric\ patient}}
+\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{a00134_ae59e9c96f294194aaafbb0323b4941e6a6ba7961a780f0236b3a7e387d826f6f8}{ePATIENT\_TYPE\_PEDIATRIC}},\ \ \ \ \textcolor{comment}{//\ adult\ patient}}
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{a00134_ae59e9c96f294194aaafbb0323b4941e6af67dbfb89c55faa5596e063151c3eeb9}{ePATIENT\_TYPE\_MAX}}}
+\DoxyCodeLine{00043\ \}\ \mbox{\hyperlink{a00134_ae59e9c96f294194aaafbb0323b4941e6}{PATIENT\_TYPE\_e}};}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{a00134_a7e34c706bde6f3522650864d7352ae86ae45509cf2bff68bad45dec5838e44238}{PON\_RTC}}\ =\ 0,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ automatic\ power-\/on\ due\ to\ RTC}}
+\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{a00134_a7e34c706bde6f3522650864d7352ae86a5e78152219ee43a29469c971ee9f3f86}{PON\_COVER}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ user\ open\ the\ enclosure\ cover}}
+\DoxyCodeLine{00048\ \ \ \ \ \mbox{\hyperlink{a00134_a7e34c706bde6f3522650864d7352ae86ae976a1f4b029a1e25192f1eeb9071dcb}{PON\_BUTTON}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ user\ press\ the\ button}}
+\DoxyCodeLine{00049\ \ \ \ \ \mbox{\hyperlink{a00134_a7e34c706bde6f3522650864d7352ae86a558529ca98b4b5e51569ef58b6d22086}{PON\_TEST}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ user\ press\ ALL\ buttons\ to\ force\ a\ Test}}
+\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{a00134_a7e34c706bde6f3522650864d7352ae86a98f0fdfc5ee18b21d805b30b8396b09d}{PON\_USB}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ user\ connects\ USB\ cable\ to\ computer}}
+\DoxyCodeLine{00051\ \ \ \ \ \mbox{\hyperlink{a00134_a7e34c706bde6f3522650864d7352ae86a55438ba8c6074d2eeab9922aa18ea2ef}{PON\_TEST\_MONTADOR}},\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ PCB\ test}}
+\DoxyCodeLine{00052\ \ \ \ \ \mbox{\hyperlink{a00134_a7e34c706bde6f3522650864d7352ae86a3587dab837c461aa754c4043a464a567}{PON\_ACC}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Acelerometer\ interrupt\ activation}}
+\DoxyCodeLine{00053\ \}\ \mbox{\hyperlink{a00134_a7e34c706bde6f3522650864d7352ae86}{POWER\_ON\_SOURCE\_e}};}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00057\ \textcolor{comment}{\ **\ Globals}}
+\DoxyCodeLine{00058\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00061\ \textcolor{comment}{**\ Prototypes}}
+\DoxyCodeLine{00062\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{/*TYPES\_APP\_H*/}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00067\ \textcolor{comment}{**\ \$Log\$}}
+\DoxyCodeLine{00068\ \textcolor{comment}{**}}
+\DoxyCodeLine{00069\ \textcolor{comment}{**\ end\ of\ types\_app.h}}
+\DoxyCodeLine{00070\ \textcolor{comment}{******************************************************************************/}}
+
+\end{DoxyCode}

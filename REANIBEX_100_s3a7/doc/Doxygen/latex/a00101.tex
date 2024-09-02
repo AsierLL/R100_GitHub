@@ -1,0 +1,226 @@
+\doxysection{C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/thread\+\_\+drd\+\_\+entry.h File Reference}
+\hypertarget{a00101}{}\label{a00101}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/thread\_drd\_entry.h@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/thread\_drd\_entry.h}}
+{\ttfamily \#include "{}drd.\+h"{}}\newline
+{\ttfamily \#include "{}thread\+\_\+drd.\+h"{}}\newline
+Include dependency graph for thread\+\_\+drd\+\_\+entry.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{a00101_a0eb7b7b44a9fdb659b024697a90e8937}{DRD\+\_\+\+DIAG\+\_\+\+FLAG}}~((ULONG)0x0001)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{a00101_aba2ac2f93bdc718f73db80fd93578b45}{DRD\+\_\+\+DIAG\+\_\+e}} \{ \newline
+\mbox{\hyperlink{a00101_aba2ac2f93bdc718f73db80fd93578b45a4ed3138fbe1c130833d9f5f321a5d8eb}{e\+DRD\+\_\+\+DIAG\+\_\+\+NOT\+\_\+\+READY}} = 0
+, \mbox{\hyperlink{a00101_aba2ac2f93bdc718f73db80fd93578b45aea5fa4f08d4a4537e048511633f32f82}{e\+DRD\+\_\+\+DIAG\+\_\+\+UNKNOWN}}
+, \mbox{\hyperlink{a00101_aba2ac2f93bdc718f73db80fd93578b45afaf8d84ea44b6cdf976edfc6e2b58d10}{e\+DRD\+\_\+\+DIAG\+\_\+\+NON\+\_\+\+SHOCK}}
+, \mbox{\hyperlink{a00101_aba2ac2f93bdc718f73db80fd93578b45ab8b68b877774d4e142357a2a89a4a817}{e\+DRD\+\_\+\+DIAG\+\_\+\+NON\+\_\+\+SHOCK\+\_\+\+ASYSTOLE}}
+, \newline
+\mbox{\hyperlink{a00101_aba2ac2f93bdc718f73db80fd93578b45a1f52e4a588cfb88124e4bb4e9cce2715}{e\+DRD\+\_\+\+DIAG\+\_\+\+SHOCK\+\_\+\+ASYNC}}
+, \mbox{\hyperlink{a00101_aba2ac2f93bdc718f73db80fd93578b45a75059e2a35b759de2028a6f86df0e04a}{e\+DRD\+\_\+\+DIAG\+\_\+\+SHOCK\+\_\+\+SYNC}}
+ \}
+\item 
+enum \mbox{\hyperlink{a00101_adfbfcd79f8c1d114daaee816fd406b9f}{RYTHM\+\_\+\+TYPE\+\_\+e}} \{ \mbox{\hyperlink{a00101_adfbfcd79f8c1d114daaee816fd406b9fa93d7a67c9bb614a58c51d93a4094f782}{e\+RYTHM\+\_\+\+UNKNOWN}} = 0
+, \mbox{\hyperlink{a00101_adfbfcd79f8c1d114daaee816fd406b9fa0f3c1f16da98a0b1e46a97b903f17886}{e\+RYTHM\+\_\+\+NON\+\_\+\+SHOCKABLE}}
+, \mbox{\hyperlink{a00101_adfbfcd79f8c1d114daaee816fd406b9fab9b83c98ce5d4a8292635b749367ed8e}{e\+RYTHM\+\_\+\+SHOCKABLE\+\_\+\+SYNC}}
+, \mbox{\hyperlink{a00101_adfbfcd79f8c1d114daaee816fd406b9fa6707d451541a0e2ca6ff1a674a81da90}{e\+RYTHM\+\_\+\+SHOCKABLE\+\_\+\+ASYNC}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{a00101_a9fd8f30288747bd3f5fb25e53036c40f}{DRD\+\_\+\+Start\+\_\+\+Analysis}} (void)
+\begin{DoxyCompactList}\small\item\em Start DRD analysis algorithm. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a00101_acd3e792d89653550da9b8a6f17795865}{DRD\+\_\+\+Stop\+\_\+\+Analysis}} (void)
+\begin{DoxyCompactList}\small\item\em Stop DRD Analysis. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a00101_afdbe26c249ffa86da21ddf3779d89d52}{DRD\+\_\+\+Diag\+\_\+\+Ready}} (void)
+\begin{DoxyCompactList}\small\item\em DRD\+\_\+\+Diag\+\_\+\+Ready. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{a00101_a14fc458fa84245d8d6a6467795aaf826}{DRD\+\_\+\+Is\+\_\+\+Running}} (void)
+\begin{DoxyCompactList}\small\item\em Check if DRD is running. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00101_aba2ac2f93bdc718f73db80fd93578b45}{DRD\+\_\+\+DIAG\+\_\+e}} \mbox{\hyperlink{a00101_a919272f048aaf3454587b9c8dc4f3f2c}{DRD\+\_\+\+Get\+\_\+\+Diagnosis}} (\mbox{\hyperlink{a00462}{DRD\+\_\+\+RESULT\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+\_\+\+DRD\+\_\+\+Result)
+\begin{DoxyCompactList}\small\item\em return the diagnosis \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \mbox{\hyperlink{a00101_a98e2673f5c36106f6c0f321470cd8399}{DRD\+\_\+\+Get\+\_\+\+Diag\+\_\+n\+Sample}} (void)
+\begin{DoxyCompactList}\small\item\em return the 1st sample of the diagnosed window \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{a00101_a0eb7b7b44a9fdb659b024697a90e8937}\label{a00101_a0eb7b7b44a9fdb659b024697a90e8937} 
+\index{thread\_drd\_entry.h@{thread\_drd\_entry.h}!DRD\_DIAG\_FLAG@{DRD\_DIAG\_FLAG}}
+\index{DRD\_DIAG\_FLAG@{DRD\_DIAG\_FLAG}!thread\_drd\_entry.h@{thread\_drd\_entry.h}}
+\doxysubsubsection{\texorpdfstring{DRD\_DIAG\_FLAG}{DRD\_DIAG\_FLAG}}
+{\footnotesize\ttfamily \#define DRD\+\_\+\+DIAG\+\_\+\+FLAG~((ULONG)0x0001)}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{a00101_aba2ac2f93bdc718f73db80fd93578b45}\label{a00101_aba2ac2f93bdc718f73db80fd93578b45} 
+\index{thread\_drd\_entry.h@{thread\_drd\_entry.h}!DRD\_DIAG\_e@{DRD\_DIAG\_e}}
+\index{DRD\_DIAG\_e@{DRD\_DIAG\_e}!thread\_drd\_entry.h@{thread\_drd\_entry.h}}
+\doxysubsubsection{\texorpdfstring{DRD\_DIAG\_e}{DRD\_DIAG\_e}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{a00101_aba2ac2f93bdc718f73db80fd93578b45}{DRD\+\_\+\+DIAG\+\_\+e}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eDRD\_DIAG\_NOT\_READY@{eDRD\_DIAG\_NOT\_READY}!thread\_drd\_entry.h@{thread\_drd\_entry.h}}\index{thread\_drd\_entry.h@{thread\_drd\_entry.h}!eDRD\_DIAG\_NOT\_READY@{eDRD\_DIAG\_NOT\_READY}}}\Hypertarget{a00101_aba2ac2f93bdc718f73db80fd93578b45a4ed3138fbe1c130833d9f5f321a5d8eb}\label{a00101_aba2ac2f93bdc718f73db80fd93578b45a4ed3138fbe1c130833d9f5f321a5d8eb} 
+e\+DRD\+\_\+\+DIAG\+\_\+\+NOT\+\_\+\+READY&not ready \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eDRD\_DIAG\_UNKNOWN@{eDRD\_DIAG\_UNKNOWN}!thread\_drd\_entry.h@{thread\_drd\_entry.h}}\index{thread\_drd\_entry.h@{thread\_drd\_entry.h}!eDRD\_DIAG\_UNKNOWN@{eDRD\_DIAG\_UNKNOWN}}}\Hypertarget{a00101_aba2ac2f93bdc718f73db80fd93578b45aea5fa4f08d4a4537e048511633f32f82}\label{a00101_aba2ac2f93bdc718f73db80fd93578b45aea5fa4f08d4a4537e048511633f32f82} 
+e\+DRD\+\_\+\+DIAG\+\_\+\+UNKNOWN&not known \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eDRD\_DIAG\_NON\_SHOCK@{eDRD\_DIAG\_NON\_SHOCK}!thread\_drd\_entry.h@{thread\_drd\_entry.h}}\index{thread\_drd\_entry.h@{thread\_drd\_entry.h}!eDRD\_DIAG\_NON\_SHOCK@{eDRD\_DIAG\_NON\_SHOCK}}}\Hypertarget{a00101_aba2ac2f93bdc718f73db80fd93578b45afaf8d84ea44b6cdf976edfc6e2b58d10}\label{a00101_aba2ac2f93bdc718f73db80fd93578b45afaf8d84ea44b6cdf976edfc6e2b58d10} 
+e\+DRD\+\_\+\+DIAG\+\_\+\+NON\+\_\+\+SHOCK&non shockable \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eDRD\_DIAG\_NON\_SHOCK\_ASYSTOLE@{eDRD\_DIAG\_NON\_SHOCK\_ASYSTOLE}!thread\_drd\_entry.h@{thread\_drd\_entry.h}}\index{thread\_drd\_entry.h@{thread\_drd\_entry.h}!eDRD\_DIAG\_NON\_SHOCK\_ASYSTOLE@{eDRD\_DIAG\_NON\_SHOCK\_ASYSTOLE}}}\Hypertarget{a00101_aba2ac2f93bdc718f73db80fd93578b45ab8b68b877774d4e142357a2a89a4a817}\label{a00101_aba2ac2f93bdc718f73db80fd93578b45ab8b68b877774d4e142357a2a89a4a817} 
+e\+DRD\+\_\+\+DIAG\+\_\+\+NON\+\_\+\+SHOCK\+\_\+\+ASYSTOLE&asystole (no shockable) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eDRD\_DIAG\_SHOCK\_ASYNC@{eDRD\_DIAG\_SHOCK\_ASYNC}!thread\_drd\_entry.h@{thread\_drd\_entry.h}}\index{thread\_drd\_entry.h@{thread\_drd\_entry.h}!eDRD\_DIAG\_SHOCK\_ASYNC@{eDRD\_DIAG\_SHOCK\_ASYNC}}}\Hypertarget{a00101_aba2ac2f93bdc718f73db80fd93578b45a1f52e4a588cfb88124e4bb4e9cce2715}\label{a00101_aba2ac2f93bdc718f73db80fd93578b45a1f52e4a588cfb88124e4bb4e9cce2715} 
+e\+DRD\+\_\+\+DIAG\+\_\+\+SHOCK\+\_\+\+ASYNC&shockable with asynchronous shock \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eDRD\_DIAG\_SHOCK\_SYNC@{eDRD\_DIAG\_SHOCK\_SYNC}!thread\_drd\_entry.h@{thread\_drd\_entry.h}}\index{thread\_drd\_entry.h@{thread\_drd\_entry.h}!eDRD\_DIAG\_SHOCK\_SYNC@{eDRD\_DIAG\_SHOCK\_SYNC}}}\Hypertarget{a00101_aba2ac2f93bdc718f73db80fd93578b45a75059e2a35b759de2028a6f86df0e04a}\label{a00101_aba2ac2f93bdc718f73db80fd93578b45a75059e2a35b759de2028a6f86df0e04a} 
+e\+DRD\+\_\+\+DIAG\+\_\+\+SHOCK\+\_\+\+SYNC&shockable with synchronous shock \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{a00101_adfbfcd79f8c1d114daaee816fd406b9f}\label{a00101_adfbfcd79f8c1d114daaee816fd406b9f} 
+\index{thread\_drd\_entry.h@{thread\_drd\_entry.h}!RYTHM\_TYPE\_e@{RYTHM\_TYPE\_e}}
+\index{RYTHM\_TYPE\_e@{RYTHM\_TYPE\_e}!thread\_drd\_entry.h@{thread\_drd\_entry.h}}
+\doxysubsubsection{\texorpdfstring{RYTHM\_TYPE\_e}{RYTHM\_TYPE\_e}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{a00101_adfbfcd79f8c1d114daaee816fd406b9f}{RYTHM\+\_\+\+TYPE\+\_\+e}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eRYTHM\_UNKNOWN@{eRYTHM\_UNKNOWN}!thread\_drd\_entry.h@{thread\_drd\_entry.h}}\index{thread\_drd\_entry.h@{thread\_drd\_entry.h}!eRYTHM\_UNKNOWN@{eRYTHM\_UNKNOWN}}}\Hypertarget{a00101_adfbfcd79f8c1d114daaee816fd406b9fa93d7a67c9bb614a58c51d93a4094f782}\label{a00101_adfbfcd79f8c1d114daaee816fd406b9fa93d7a67c9bb614a58c51d93a4094f782} 
+e\+RYTHM\+\_\+\+UNKNOWN&unknown rythm type \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eRYTHM\_NON\_SHOCKABLE@{eRYTHM\_NON\_SHOCKABLE}!thread\_drd\_entry.h@{thread\_drd\_entry.h}}\index{thread\_drd\_entry.h@{thread\_drd\_entry.h}!eRYTHM\_NON\_SHOCKABLE@{eRYTHM\_NON\_SHOCKABLE}}}\Hypertarget{a00101_adfbfcd79f8c1d114daaee816fd406b9fa0f3c1f16da98a0b1e46a97b903f17886}\label{a00101_adfbfcd79f8c1d114daaee816fd406b9fa0f3c1f16da98a0b1e46a97b903f17886} 
+e\+RYTHM\+\_\+\+NON\+\_\+\+SHOCKABLE&non shockable rythm type \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eRYTHM\_SHOCKABLE\_SYNC@{eRYTHM\_SHOCKABLE\_SYNC}!thread\_drd\_entry.h@{thread\_drd\_entry.h}}\index{thread\_drd\_entry.h@{thread\_drd\_entry.h}!eRYTHM\_SHOCKABLE\_SYNC@{eRYTHM\_SHOCKABLE\_SYNC}}}\Hypertarget{a00101_adfbfcd79f8c1d114daaee816fd406b9fab9b83c98ce5d4a8292635b749367ed8e}\label{a00101_adfbfcd79f8c1d114daaee816fd406b9fab9b83c98ce5d4a8292635b749367ed8e} 
+e\+RYTHM\+\_\+\+SHOCKABLE\+\_\+\+SYNC&shockable rythm type (synchronous) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eRYTHM\_SHOCKABLE\_ASYNC@{eRYTHM\_SHOCKABLE\_ASYNC}!thread\_drd\_entry.h@{thread\_drd\_entry.h}}\index{thread\_drd\_entry.h@{thread\_drd\_entry.h}!eRYTHM\_SHOCKABLE\_ASYNC@{eRYTHM\_SHOCKABLE\_ASYNC}}}\Hypertarget{a00101_adfbfcd79f8c1d114daaee816fd406b9fa6707d451541a0e2ca6ff1a674a81da90}\label{a00101_adfbfcd79f8c1d114daaee816fd406b9fa6707d451541a0e2ca6ff1a674a81da90} 
+e\+RYTHM\+\_\+\+SHOCKABLE\+\_\+\+ASYNC&shockable rythm type (asynchronous) \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{a00101_afdbe26c249ffa86da21ddf3779d89d52}\label{a00101_afdbe26c249ffa86da21ddf3779d89d52} 
+\index{thread\_drd\_entry.h@{thread\_drd\_entry.h}!DRD\_Diag\_Ready@{DRD\_Diag\_Ready}}
+\index{DRD\_Diag\_Ready@{DRD\_Diag\_Ready}!thread\_drd\_entry.h@{thread\_drd\_entry.h}}
+\doxysubsubsection{\texorpdfstring{DRD\_Diag\_Ready()}{DRD\_Diag\_Ready()}}
+{\footnotesize\ttfamily void DRD\+\_\+\+Diag\+\_\+\+Ready (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+DRD\+\_\+\+Diag\+\_\+\+Ready. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\Hypertarget{a00101_a98e2673f5c36106f6c0f321470cd8399}\label{a00101_a98e2673f5c36106f6c0f321470cd8399} 
+\index{thread\_drd\_entry.h@{thread\_drd\_entry.h}!DRD\_Get\_Diag\_nSample@{DRD\_Get\_Diag\_nSample}}
+\index{DRD\_Get\_Diag\_nSample@{DRD\_Get\_Diag\_nSample}!thread\_drd\_entry.h@{thread\_drd\_entry.h}}
+\doxysubsubsection{\texorpdfstring{DRD\_Get\_Diag\_nSample()}{DRD\_Get\_Diag\_nSample()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} DRD\+\_\+\+Get\+\_\+\+Diag\+\_\+n\+Sample (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+return the 1st sample of the diagnosed window 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1st sample of the diagnosed window 
+\end{DoxyReturn}
+\Hypertarget{a00101_a919272f048aaf3454587b9c8dc4f3f2c}\label{a00101_a919272f048aaf3454587b9c8dc4f3f2c} 
+\index{thread\_drd\_entry.h@{thread\_drd\_entry.h}!DRD\_Get\_Diagnosis@{DRD\_Get\_Diagnosis}}
+\index{DRD\_Get\_Diagnosis@{DRD\_Get\_Diagnosis}!thread\_drd\_entry.h@{thread\_drd\_entry.h}}
+\doxysubsubsection{\texorpdfstring{DRD\_Get\_Diagnosis()}{DRD\_Get\_Diagnosis()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00101_aba2ac2f93bdc718f73db80fd93578b45}{DRD\+\_\+\+DIAG\+\_\+e}} DRD\+\_\+\+Get\+\_\+\+Diagnosis (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00462}{DRD\+\_\+\+RESULT\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+\_\+\+DRD\+\_\+\+Result }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+return the diagnosis 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+drd\+\_\+data} & pointer to struct where to store data\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the diagnosis 
+\end{DoxyReturn}
+\Hypertarget{a00101_a14fc458fa84245d8d6a6467795aaf826}\label{a00101_a14fc458fa84245d8d6a6467795aaf826} 
+\index{thread\_drd\_entry.h@{thread\_drd\_entry.h}!DRD\_Is\_Running@{DRD\_Is\_Running}}
+\index{DRD\_Is\_Running@{DRD\_Is\_Running}!thread\_drd\_entry.h@{thread\_drd\_entry.h}}
+\doxysubsubsection{\texorpdfstring{DRD\_Is\_Running()}{DRD\_Is\_Running()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} DRD\+\_\+\+Is\+\_\+\+Running (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Check if DRD is running. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool\+\_\+t indicating if DRD is running 
+\end{DoxyReturn}
+\Hypertarget{a00101_a9fd8f30288747bd3f5fb25e53036c40f}\label{a00101_a9fd8f30288747bd3f5fb25e53036c40f} 
+\index{thread\_drd\_entry.h@{thread\_drd\_entry.h}!DRD\_Start\_Analysis@{DRD\_Start\_Analysis}}
+\index{DRD\_Start\_Analysis@{DRD\_Start\_Analysis}!thread\_drd\_entry.h@{thread\_drd\_entry.h}}
+\doxysubsubsection{\texorpdfstring{DRD\_Start\_Analysis()}{DRD\_Start\_Analysis()}}
+{\footnotesize\ttfamily void DRD\+\_\+\+Start\+\_\+\+Analysis (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Start DRD analysis algorithm. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\Hypertarget{a00101_acd3e792d89653550da9b8a6f17795865}\label{a00101_acd3e792d89653550da9b8a6f17795865} 
+\index{thread\_drd\_entry.h@{thread\_drd\_entry.h}!DRD\_Stop\_Analysis@{DRD\_Stop\_Analysis}}
+\index{DRD\_Stop\_Analysis@{DRD\_Stop\_Analysis}!thread\_drd\_entry.h@{thread\_drd\_entry.h}}
+\doxysubsubsection{\texorpdfstring{DRD\_Stop\_Analysis()}{DRD\_Stop\_Analysis()}}
+{\footnotesize\ttfamily void DRD\+\_\+\+Stop\+\_\+\+Analysis (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Stop DRD Analysis. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}

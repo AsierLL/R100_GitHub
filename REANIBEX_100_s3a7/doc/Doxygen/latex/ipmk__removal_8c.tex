@@ -1,0 +1,149 @@
+\doxysection{C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\+IPMK/ipmk\+\_\+removal.c File Reference}
+\hypertarget{ipmk__removal_8c}{}\label{ipmk__removal_8c}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/IPMK/ipmk\_removal.c@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/IPMK/ipmk\_removal.c}}
+
+
+All functions related to the i\+PMK pulses removal.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include "{}ipmk\+\_\+removal.\+h"{}}\newline
+Include dependency graph for ipmk\+\_\+removal.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=293pt]{ipmk__removal_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{ipmk__removal_8c_ae849bfcf1ed1589eafa9bc29b7e356a2}{IPMK\+\_\+\+REFRACTARY\+\_\+\+PERIOD}}~6
+\item 
+\#define \mbox{\hyperlink{ipmk__removal_8c_a8c073170d14e73b3c4d366269fb48c4c}{IPMK\+\_\+\+PACEMAKER\+\_\+\+PERIOD}}~6
+\item 
+\#define \mbox{\hyperlink{ipmk__removal_8c_a63f96f504569922d438f45a53f82ad73}{IPMK\+\_\+\+THRESHOLD\+\_\+\+ONSET}}~14
+\item 
+\#define \mbox{\hyperlink{ipmk__removal_8c_ac832ad33af38979589e3ba13387fbd64}{IPMK\+\_\+\+THRESHOLD\+\_\+\+OFFSET}}~6
+\item 
+\#define \mbox{\hyperlink{ipmk__removal_8c_aa82d681f8790c20927174067a903e882}{IPMK\+\_\+\+SHADOW\+\_\+\+BEFORE}}~8
+\item 
+\#define \mbox{\hyperlink{ipmk__removal_8c_a2e554e2a79c67ba0d3ffdde25749bfee}{IPMK\+\_\+\+SHADOW\+\_\+\+AFTER}}~20
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{ipmk__removal_8c_a8e4edae281a93e76c81a61fe87984fee}{ipmk\+\_\+removal}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a269259c924dce846340ddbb810db2e3c}{int16\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Samples, \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} front\+\_\+porch\+\_\+size, \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} win\+\_\+size)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \mbox{\hyperlink{ipmk__removal_8c_ae6360b6bc094cc8eefbbd7b402acc6dc}{counter\+PMKPeriod}} = \mbox{\hyperlink{ipmk__removal_8c_a8c073170d14e73b3c4d366269fb48c4c}{IPMK\+\_\+\+PACEMAKER\+\_\+\+PERIOD}}
+\item 
+static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \mbox{\hyperlink{ipmk__removal_8c_a14b45134950464bc61d05869ee6d4d74}{counter\+Hold}} = \mbox{\hyperlink{ipmk__removal_8c_a2e554e2a79c67ba0d3ffdde25749bfee}{IPMK\+\_\+\+SHADOW\+\_\+\+AFTER}}
+\item 
+static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \mbox{\hyperlink{ipmk__removal_8c_acd1d2e6155e98754eded8e11b13382bf}{counter\+Refractary}} = \mbox{\hyperlink{ipmk__removal_8c_ae849bfcf1ed1589eafa9bc29b7e356a2}{IPMK\+\_\+\+REFRACTARY\+\_\+\+PERIOD}}
+\item 
+static \mbox{\hyperlink{ipmk__removal_8h_a9dc3aafc83813c325c5a972d9c07c5db}{fsm\+\_\+ipmk\+\_\+st\+\_\+t}} \mbox{\hyperlink{ipmk__removal_8c_a4e0a14746e68915f51a82690a2824117}{fsm\+\_\+ipmk\+\_\+state}} = \mbox{\hyperlink{ipmk__removal_8h_a9dc3aafc83813c325c5a972d9c07c5dba350bd0942eccd987e8b8e5396a69b1d2}{st\+\_\+searching}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+All functions related to the i\+PMK pulses removal. 
+
+\begin{DoxyVersion}{Version}
+v1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+18/02/2021 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Iaurrekoetxea 
+\end{DoxyAuthor}
+\begin{DoxyWarning}{Warning}
+author date version .-\/ Edition 
+\end{DoxyWarning}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000055}{Bug}}]\end{DoxyRefDesc}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{ipmk__removal_8c_a8c073170d14e73b3c4d366269fb48c4c}\label{ipmk__removal_8c_a8c073170d14e73b3c4d366269fb48c4c} 
+\index{ipmk\_removal.c@{ipmk\_removal.c}!IPMK\_PACEMAKER\_PERIOD@{IPMK\_PACEMAKER\_PERIOD}}
+\index{IPMK\_PACEMAKER\_PERIOD@{IPMK\_PACEMAKER\_PERIOD}!ipmk\_removal.c@{ipmk\_removal.c}}
+\doxysubsubsection{\texorpdfstring{IPMK\_PACEMAKER\_PERIOD}{IPMK\_PACEMAKER\_PERIOD}}
+{\footnotesize\ttfamily \#define IPMK\+\_\+\+PACEMAKER\+\_\+\+PERIOD~6}
+
+\Hypertarget{ipmk__removal_8c_ae849bfcf1ed1589eafa9bc29b7e356a2}\label{ipmk__removal_8c_ae849bfcf1ed1589eafa9bc29b7e356a2} 
+\index{ipmk\_removal.c@{ipmk\_removal.c}!IPMK\_REFRACTARY\_PERIOD@{IPMK\_REFRACTARY\_PERIOD}}
+\index{IPMK\_REFRACTARY\_PERIOD@{IPMK\_REFRACTARY\_PERIOD}!ipmk\_removal.c@{ipmk\_removal.c}}
+\doxysubsubsection{\texorpdfstring{IPMK\_REFRACTARY\_PERIOD}{IPMK\_REFRACTARY\_PERIOD}}
+{\footnotesize\ttfamily \#define IPMK\+\_\+\+REFRACTARY\+\_\+\+PERIOD~6}
+
+\Hypertarget{ipmk__removal_8c_a2e554e2a79c67ba0d3ffdde25749bfee}\label{ipmk__removal_8c_a2e554e2a79c67ba0d3ffdde25749bfee} 
+\index{ipmk\_removal.c@{ipmk\_removal.c}!IPMK\_SHADOW\_AFTER@{IPMK\_SHADOW\_AFTER}}
+\index{IPMK\_SHADOW\_AFTER@{IPMK\_SHADOW\_AFTER}!ipmk\_removal.c@{ipmk\_removal.c}}
+\doxysubsubsection{\texorpdfstring{IPMK\_SHADOW\_AFTER}{IPMK\_SHADOW\_AFTER}}
+{\footnotesize\ttfamily \#define IPMK\+\_\+\+SHADOW\+\_\+\+AFTER~20}
+
+\Hypertarget{ipmk__removal_8c_aa82d681f8790c20927174067a903e882}\label{ipmk__removal_8c_aa82d681f8790c20927174067a903e882} 
+\index{ipmk\_removal.c@{ipmk\_removal.c}!IPMK\_SHADOW\_BEFORE@{IPMK\_SHADOW\_BEFORE}}
+\index{IPMK\_SHADOW\_BEFORE@{IPMK\_SHADOW\_BEFORE}!ipmk\_removal.c@{ipmk\_removal.c}}
+\doxysubsubsection{\texorpdfstring{IPMK\_SHADOW\_BEFORE}{IPMK\_SHADOW\_BEFORE}}
+{\footnotesize\ttfamily \#define IPMK\+\_\+\+SHADOW\+\_\+\+BEFORE~8}
+
+\Hypertarget{ipmk__removal_8c_ac832ad33af38979589e3ba13387fbd64}\label{ipmk__removal_8c_ac832ad33af38979589e3ba13387fbd64} 
+\index{ipmk\_removal.c@{ipmk\_removal.c}!IPMK\_THRESHOLD\_OFFSET@{IPMK\_THRESHOLD\_OFFSET}}
+\index{IPMK\_THRESHOLD\_OFFSET@{IPMK\_THRESHOLD\_OFFSET}!ipmk\_removal.c@{ipmk\_removal.c}}
+\doxysubsubsection{\texorpdfstring{IPMK\_THRESHOLD\_OFFSET}{IPMK\_THRESHOLD\_OFFSET}}
+{\footnotesize\ttfamily \#define IPMK\+\_\+\+THRESHOLD\+\_\+\+OFFSET~6}
+
+\Hypertarget{ipmk__removal_8c_a63f96f504569922d438f45a53f82ad73}\label{ipmk__removal_8c_a63f96f504569922d438f45a53f82ad73} 
+\index{ipmk\_removal.c@{ipmk\_removal.c}!IPMK\_THRESHOLD\_ONSET@{IPMK\_THRESHOLD\_ONSET}}
+\index{IPMK\_THRESHOLD\_ONSET@{IPMK\_THRESHOLD\_ONSET}!ipmk\_removal.c@{ipmk\_removal.c}}
+\doxysubsubsection{\texorpdfstring{IPMK\_THRESHOLD\_ONSET}{IPMK\_THRESHOLD\_ONSET}}
+{\footnotesize\ttfamily \#define IPMK\+\_\+\+THRESHOLD\+\_\+\+ONSET~14}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{ipmk__removal_8c_a8e4edae281a93e76c81a61fe87984fee}\label{ipmk__removal_8c_a8e4edae281a93e76c81a61fe87984fee} 
+\index{ipmk\_removal.c@{ipmk\_removal.c}!ipmk\_removal@{ipmk\_removal}}
+\index{ipmk\_removal@{ipmk\_removal}!ipmk\_removal.c@{ipmk\_removal.c}}
+\doxysubsubsection{\texorpdfstring{ipmk\_removal()}{ipmk\_removal()}}
+{\footnotesize\ttfamily void ipmk\+\_\+removal (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a269259c924dce846340ddbb810db2e3c}{int16\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Samples,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}}}]{front\+\_\+porch\+\_\+size,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}}}]{win\+\_\+size }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ipmk__removal_8c_a8e4edae281a93e76c81a61fe87984fee_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{ipmk__removal_8c_a14b45134950464bc61d05869ee6d4d74}\label{ipmk__removal_8c_a14b45134950464bc61d05869ee6d4d74} 
+\index{ipmk\_removal.c@{ipmk\_removal.c}!counterHold@{counterHold}}
+\index{counterHold@{counterHold}!ipmk\_removal.c@{ipmk\_removal.c}}
+\doxysubsubsection{\texorpdfstring{counterHold}{counterHold}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} counter\+Hold = \mbox{\hyperlink{ipmk__removal_8c_a2e554e2a79c67ba0d3ffdde25749bfee}{IPMK\+\_\+\+SHADOW\+\_\+\+AFTER}}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{ipmk__removal_8c_ae6360b6bc094cc8eefbbd7b402acc6dc}\label{ipmk__removal_8c_ae6360b6bc094cc8eefbbd7b402acc6dc} 
+\index{ipmk\_removal.c@{ipmk\_removal.c}!counterPMKPeriod@{counterPMKPeriod}}
+\index{counterPMKPeriod@{counterPMKPeriod}!ipmk\_removal.c@{ipmk\_removal.c}}
+\doxysubsubsection{\texorpdfstring{counterPMKPeriod}{counterPMKPeriod}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} counter\+PMKPeriod = \mbox{\hyperlink{ipmk__removal_8c_a8c073170d14e73b3c4d366269fb48c4c}{IPMK\+\_\+\+PACEMAKER\+\_\+\+PERIOD}}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{ipmk__removal_8c_acd1d2e6155e98754eded8e11b13382bf}\label{ipmk__removal_8c_acd1d2e6155e98754eded8e11b13382bf} 
+\index{ipmk\_removal.c@{ipmk\_removal.c}!counterRefractary@{counterRefractary}}
+\index{counterRefractary@{counterRefractary}!ipmk\_removal.c@{ipmk\_removal.c}}
+\doxysubsubsection{\texorpdfstring{counterRefractary}{counterRefractary}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} counter\+Refractary = \mbox{\hyperlink{ipmk__removal_8c_ae849bfcf1ed1589eafa9bc29b7e356a2}{IPMK\+\_\+\+REFRACTARY\+\_\+\+PERIOD}}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{ipmk__removal_8c_a4e0a14746e68915f51a82690a2824117}\label{ipmk__removal_8c_a4e0a14746e68915f51a82690a2824117} 
+\index{ipmk\_removal.c@{ipmk\_removal.c}!fsm\_ipmk\_state@{fsm\_ipmk\_state}}
+\index{fsm\_ipmk\_state@{fsm\_ipmk\_state}!ipmk\_removal.c@{ipmk\_removal.c}}
+\doxysubsubsection{\texorpdfstring{fsm\_ipmk\_state}{fsm\_ipmk\_state}}
+{\footnotesize\ttfamily \mbox{\hyperlink{ipmk__removal_8h_a9dc3aafc83813c325c5a972d9c07c5db}{fsm\+\_\+ipmk\+\_\+st\+\_\+t}} fsm\+\_\+ipmk\+\_\+state = \mbox{\hyperlink{ipmk__removal_8h_a9dc3aafc83813c325c5a972d9c07c5dba350bd0942eccd987e8b8e5396a69b1d2}{st\+\_\+searching}}\hspace{0.3cm}{\ttfamily [static]}}
+

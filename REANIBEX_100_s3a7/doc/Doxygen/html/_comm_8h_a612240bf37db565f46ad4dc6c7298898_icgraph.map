@@ -1,0 +1,133 @@
+<map id="Comm_Uart_Wifi_Receive" name="Comm_Uart_Wifi_Receive">
+<area shape="rect" id="Node000001" title="Get a received module response." alt="" coords="740,401,912,428"/>
+<area shape="rect" id="Node000002" href="$thread__sys_mon__entry_8c.html#acc715921ec9f0fa6ede1d5c7e6f3547a" title="Function that executes the electrode test." alt="" coords="502,77,675,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="810,388,762,296,728,241,690,188,646,142,606,107,609,103,650,138,694,185,733,238,766,294,814,386"/>
+<area shape="rect" id="Node000008" href="$bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8c.html#a6a4751afa8f2a1eadbdd2e6a45a3bd70" title="Waits for a response to a given command." alt="" coords="494,199,682,225"/>
+<area shape="poly" id="edge4_Node000001_Node000008" title=" " alt="" coords="795,393,603,228,607,223,799,389"/>
+<area shape="rect" id="Node000028" href="$bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8c.html#ab6e5061a766582d2668762b057c6907a" title="Waits for a response to a given command." alt="" coords="494,393,682,436"/>
+<area shape="poly" id="edge10_Node000001_Node000028" title=" " alt="" coords="725,417,683,417,683,412,725,412"/>
+<area shape="rect" id="Node000033" href="$bsp__wifi__silabs-_w_g_m110_8c.html#ab4402b6cb5049aeeb75bee03bdcb303b" title="Waits for a response to a given command." alt="" coords="501,1504,675,1531"/>
+<area shape="poly" id="edge15_Node000001_Node000033" title=" " alt="" coords="821,444,595,1504,590,1503,816,443"/>
+<area shape="rect" id="Node000084" href="$bsp__wifi__silabs-_w_g_m110_8c.html#ae5a5d8faa49a0c799b9bc3808e91e616" title="Waits for a response to a given command." alt="" coords="484,655,692,681"/>
+<area shape="poly" id="edge68_Node000001_Node000084" title=" " alt="" coords="804,441,604,656,600,653,800,438"/>
+<area shape="rect" id="Node000003" href="$thread__sys_mon__entry_8c.html#a45e8a3b71abc5aaf4a3de43e37b2c426" title="Function that executes the device test: .&#45; verify the resources memory (checksum) ...." alt="" coords="257,5,419,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="528,75,435,47,393,35,395,30,437,41,530,70"/>
+<area shape="rect" id="Node000004" href="$thread__sys_mon__entry_8c.html#a563202ab53d918f96e7470c54ed5d009" title="Execute some startup functions:" alt="" coords="48,5,149,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="241,21,149,21,149,16,241,16"/>
+<area shape="rect" id="Node000009" href="$bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8c.html#a0f4cec6f2f54d23e3ae8a70587ba9034" title="Configure Wifi module." alt="" coords="263,56,413,99"/>
+<area shape="poly" id="edge5_Node000008_Node000009" title=" " alt="" coords="556,191,501,152,435,113,409,102,411,97,437,108,504,148,559,187"/>
+<area shape="rect" id="Node000018" href="$bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8c.html#afa38aea6b87f9d40759ebff441976f80" title="Send data frame through Sigfox." alt="" coords="252,123,424,149"/>
+<area shape="poly" id="edge6_Node000008_Node000018" title=" " alt="" coords="533,196,435,164,394,153,396,147,437,159,535,191"/>
+<area shape="rect" id="Node000023" href="$bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8c.html#a2c472548c48e6c4276ac3da4a59613ee" title="Start Continuous Wave Test." alt="" coords="261,173,415,200"/>
+<area shape="poly" id="edge7_Node000008_Node000023" title=" " alt="" coords="479,204,415,197,415,192,479,198"/>
+<area shape="rect" id="Node000024" href="$bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8c.html#a2a01b0e42f04c530d197f0a07dd649ec" title="Start RX GFSK test mode." alt="" coords="243,224,433,251"/>
+<area shape="poly" id="edge8_Node000008_Node000024" title=" " alt="" coords="479,226,434,230,433,225,478,220"/>
+<area shape="rect" id="Node000026" href="$bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8c.html#a8849a2415e3742133557b698a64d986d" title="Stop Continuous Wave Test." alt="" coords="262,275,414,301"/>
+<area shape="poly" id="edge9_Node000008_Node000026" title=" " alt="" coords="535,233,437,265,396,277,394,271,435,260,533,228"/>
+<area shape="rect" id="Node000029" href="$bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8c.html#ac36f9264486c295bdff72a1ff0836e6e" title="Get Sigfox Module DeviceID." alt="" coords="242,376,434,403"/>
+<area shape="poly" id="edge11_Node000028_Node000029" title=" " alt="" coords="478,406,434,402,434,396,479,401"/>
+<area shape="rect" id="Node000030" href="$bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8c.html#acb7604b868af7f5771ea4ec59d8437e1" title="Get Sigfox Module PAC." alt="" coords="254,427,422,453"/>
+<area shape="poly" id="edge12_Node000028_Node000030" title=" " alt="" coords="479,428,423,434,422,429,478,423"/>
+<area shape="rect" id="Node000031" href="$bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8c.html#a1d13b7d7d1dc518419fc191ee9e69276" title="Get Sigfox Module RX Frequency." alt="" coords="250,477,426,504"/>
+<area shape="poly" id="edge13_Node000028_Node000031" title=" " alt="" coords="511,444,437,468,396,479,394,474,435,463,510,439"/>
+<area shape="rect" id="Node000032" href="$bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8c.html#a815348ca9ffd0d64c715051e9e48467c" title="Get Sigfox Module TX Frequency." alt="" coords="251,325,425,352"/>
+<area shape="poly" id="edge14_Node000028_Node000032" title=" " alt="" coords="510,390,435,367,394,355,396,350,437,361,511,385"/>
+<area shape="rect" id="Node000034" href="$bsp__wifi__silabs-_w_g_m110_8c.html#a49fb3f4209cc581931376a8782b66a49" title="Check Wifi module Status." alt="" coords="247,1707,429,1733"/>
+<area shape="poly" id="edge16_Node000033_Node000034" title=" " alt="" coords="574,1545,551,1580,520,1621,482,1662,437,1697,413,1709,411,1704,435,1692,478,1658,516,1617,547,1577,570,1542"/>
+<area shape="rect" id="Node000037" href="$bsp__wifi__silabs-_w_g_m110_8c.html#ace9d1100d1cb32d4f6ddd04d7f7e291e" title="Close the tcp endpoint client connection." alt="" coords="260,1757,416,1784"/>
+<area shape="poly" id="edge17_Node000033_Node000037" title=" " alt="" coords="579,1546,559,1590,528,1645,488,1700,464,1726,437,1748,416,1759,414,1754,435,1743,460,1722,484,1697,524,1642,554,1588,574,1544"/>
+<area shape="rect" id="Node000038" href="$bsp__wifi__silabs-_w_g_m110_8c.html#a38026853cc249ed56816db34de0500e0" title="Close the tls endpoint client connection." alt="" coords="261,1960,415,1987"/>
+<area shape="poly" id="edge18_Node000033_Node000038" title=" " alt="" coords="588,1546,580,1626,571,1678,557,1735,538,1793,512,1850,479,1904,438,1950,416,1964,413,1959,434,1946,475,1900,507,1848,533,1791,552,1733,565,1677,575,1625,583,1546"/>
+<area shape="rect" id="Node000039" href="$bsp__wifi__silabs-_w_g_m110_8c.html#a61a184f51f8d89e0f7cecade0732dae5" title="Check if host server is alive." alt="" coords="34,1051,163,1077"/>
+<area shape="poly" id="edge40_Node000033_Node000039" title=" " alt="" coords="581,1489,563,1377,533,1224,513,1148,490,1079,463,1025,449,1005,434,990,410,974,386,964,364,958,342,958,295,969,241,990,226,1001,217,1013,208,1027,193,1041,164,1054,162,1049,190,1036,204,1024,213,1010,222,997,238,986,294,964,342,953,365,953,388,958,412,969,438,986,453,1001,468,1022,494,1077,518,1146,538,1223,569,1376,586,1488"/>
+<area shape="rect" id="Node000041" href="$bsp__wifi__silabs-_w_g_m110_8c.html#a35d5dc2d9b2d927b7f5010fd8d4f8256" title="Receive configuration update file." alt="" coords="10,1000,187,1027"/>
+<area shape="poly" id="edge57_Node000033_Node000041" title=" " alt="" coords="581,1489,565,1371,536,1207,516,1125,492,1052,465,993,450,971,434,955,396,935,354,927,309,928,264,938,222,952,182,969,123,1002,120,997,180,964,220,947,263,932,309,923,354,921,398,930,438,951,454,968,469,990,497,1050,521,1124,541,1206,570,1370,586,1488"/>
+<area shape="rect" id="Node000044" href="$bsp__wifi__silabs-_w_g_m110_8c.html#a2dc45a78a54fd39ac066b6492047e4c2" title="Receive firmware update file." alt="" coords="21,1101,176,1128"/>
+<area shape="poly" id="edge58_Node000033_Node000044" title=" " alt="" coords="583,1489,573,1416,550,1320,530,1270,505,1222,474,1178,434,1142,404,1124,370,1110,334,1102,298,1097,227,1096,165,1103,165,1098,227,1091,299,1092,335,1096,371,1105,406,1119,438,1138,478,1175,510,1219,535,1268,555,1318,578,1415,588,1488"/>
+<area shape="rect" id="Node000047" href="$bsp__wifi__silabs-_w_g_m110_8c.html#ab2d30132091d65f9cc64adcf346c4607" title="Send Data Frame using Wifi connection (for Sigfox data frames)" alt="" coords="19,1859,178,1885"/>
+<area shape="poly" id="edge60_Node000033_Node000047" title=" " alt="" coords="585,1546,566,1650,534,1788,514,1857,491,1919,466,1969,438,2001,387,2029,363,2036,339,2038,315,2035,291,2028,238,2001,225,1990,217,1977,212,1951,207,1924,201,1911,190,1899,172,1888,175,1884,193,1895,205,1908,212,1922,217,1950,222,1975,229,1986,241,1996,293,2023,316,2030,339,2033,362,2031,385,2025,434,1997,461,1966,486,1917,509,1855,529,1786,561,1648,580,1546"/>
+<area shape="rect" id="Node000052" href="$bsp__wifi__silabs-_w_g_m110_8c.html#a786eafab9b14cb881758ba2729af3f08" title="Send a File from a uSD to the Server." alt="" coords="31,1960,166,1987"/>
+<area shape="poly" id="edge61_Node000033_Node000052" title=" " alt="" coords="586,1546,570,1665,541,1828,521,1911,497,1985,469,2045,454,2067,438,2083,412,2100,389,2110,365,2115,343,2114,295,2103,239,2084,198,2064,161,2038,110,1989,113,1985,165,2034,201,2060,241,2079,296,2098,343,2109,365,2109,387,2105,410,2095,434,2079,450,2064,465,2042,492,1983,516,1909,536,1827,565,1664,581,1546"/>
+<area shape="rect" id="Node000055" href="$bsp__wifi__silabs-_w_g_m110_8c.html#a69cdbda6b544229acb4b866b2e26edb4" title="Send a File from a uSD to the Server." alt="" coords="42,1909,155,1936"/>
+<area shape="poly" id="edge62_Node000033_Node000055" title=" " alt="" coords="586,1546,568,1657,538,1808,517,1884,494,1952,468,2007,453,2027,438,2042,412,2059,387,2071,363,2078,340,2079,316,2076,291,2069,238,2042,226,2032,218,2021,212,1997,206,1972,200,1961,190,1950,173,1940,154,1933,156,1928,176,1935,193,1946,205,1958,211,1970,217,1995,223,2019,230,2029,241,2038,293,2064,317,2071,340,2074,362,2072,385,2066,409,2055,434,2038,449,2024,463,2004,489,1950,512,1882,532,1807,563,1656,580,1545"/>
+<area shape="rect" id="Node000058" href="$bsp__wifi__silabs-_w_g_m110_8c.html#a0c77368245dd6a5e13e27231e0902ac0" title="Close the udp endpoint client connection." alt="" coords="259,1152,417,1179"/>
+<area shape="poly" id="edge25_Node000033_Node000058" title=" " alt="" coords="580,1490,565,1427,538,1347,519,1305,495,1264,467,1226,434,1193,415,1181,418,1177,438,1189,471,1222,500,1261,524,1302,543,1345,570,1426,585,1488"/>
+<area shape="rect" id="Node000059" href="$bsp__wifi__silabs-_w_g_m110_8c.html#a2f64e4476e6ef1d96abb4a27def96aaf" title="Close the udp server." alt="" coords="258,1203,418,1229"/>
+<area shape="poly" id="edge26_Node000033_Node000059" title=" " alt="" coords="577,1490,560,1437,531,1370,489,1301,464,1270,434,1243,415,1232,418,1228,438,1239,468,1267,494,1298,536,1368,565,1435,582,1488"/>
+<area shape="rect" id="Node000060" href="$bsp__wifi__silabs-_w_g_m110_8c.html#acc961764e51b751a91686c070452e374" title="Configure DNS settings of the device." alt="" coords="269,1253,407,1296"/>
+<area shape="poly" id="edge27_Node000033_Node000060" title=" " alt="" coords="572,1491,550,1451,520,1403,481,1353,434,1310,406,1295,409,1290,438,1306,485,1349,524,1399,555,1449,577,1489"/>
+<area shape="rect" id="Node000063" href="$bsp__wifi__silabs-_w_g_m110_8c.html#abae4cf27e47c032f0f26b2f77b773648" title="Configure Wifi module Uart." alt="" coords="246,1320,430,1347"/>
+<area shape="poly" id="edge28_Node000033_Node000063" title=" " alt="" coords="567,1493,513,1426,476,1391,435,1361,410,1350,412,1345,437,1356,479,1387,517,1422,571,1489"/>
+<area shape="rect" id="Node000064" href="$bsp__wifi__silabs-_w_g_m110_8c.html#a1b826a0d21e95c22f0a573dd7a5429ee" title="Configure IP settings of the device." alt="" coords="264,1371,412,1413"/>
+<area shape="poly" id="edge29_Node000033_Node000064" title=" " alt="" coords="553,1497,499,1462,435,1428,408,1416,410,1411,437,1423,502,1458,556,1493"/>
+<area shape="rect" id="Node000065" href="$bsp__wifi__silabs-_w_g_m110_8c.html#ac8b4cae41fb1a2cebefddb7c10837b6e" title="Start a connection establishment procedure with an Access Point." alt="" coords="262,1909,414,1936"/>
+<area shape="poly" id="edge30_Node000033_Node000065" title=" " alt="" coords="587,1547,575,1618,550,1713,531,1764,506,1813,475,1859,438,1899,416,1913,413,1909,434,1895,471,1856,501,1811,526,1762,545,1712,570,1617,581,1546"/>
+<area shape="rect" id="Node000066" href="$bsp__wifi__silabs-_w_g_m110_8c.html#a38347cc9ea2702829f7d84710086dd7a" title="Get Wifi module MAC Address." alt="" coords="260,1437,416,1480"/>
+<area shape="poly" id="edge37_Node000033_Node000066" title=" " alt="" coords="513,1503,416,1480,417,1474,514,1497"/>
+<area shape="rect" id="Node000067" href="$bsp__wifi__silabs-_w_g_m110_8c.html#a496be96f131aa1adca8dad2fd7061395" title="Get Wifi module status." alt="" coords="255,1504,421,1531"/>
+<area shape="poly" id="edge38_Node000033_Node000067" title=" " alt="" coords="486,1520,421,1520,421,1515,486,1515"/>
+<area shape="rect" id="Node000068" href="$bsp__wifi__silabs-_w_g_m110_8c.html#ab0d87361c94f4f901e9a009d62203827" title="The received signal strength indication (RSSI) in dBm units. RSSI: &lt; &#45;30 dBm = Very good; &#45;40 / &#45;60 d..." alt="" coords="284,1555,392,1581"/>
+<area shape="poly" id="edge39_Node000033_Node000068" title=" " alt="" coords="504,1537,393,1560,392,1555,503,1532"/>
+<area shape="rect" id="Node000069" href="$bsp__wifi__silabs-_w_g_m110_8c.html#a7e8230c89c388139fc583139a2beb691" title="Load EAP CA certificate to connect." alt="" coords="254,579,422,605"/>
+<area shape="poly" id="edge41_Node000033_Node000069" title=" " alt="" coords="582,1489,566,1325,536,1083,515,957,492,839,464,740,449,701,434,669,419,650,402,634,365,608,368,604,405,629,423,647,438,667,454,698,469,738,497,838,521,956,541,1082,571,1324,587,1488"/>
+<area shape="rect" id="Node000070" href="$bsp__wifi__silabs-_w_g_m110_8c.html#a8925c99a5fdb7d5a2ab4736fd46a29e5" title="Load EAP certs to connect using PEAP&#45;MSCHAPv2." alt="" coords="5,739,192,765"/>
+<area shape="poly" id="edge44_Node000033_Node000070" title=" " alt="" coords="585,1489,583,1386,576,1315,565,1236,546,1154,519,1071,482,992,460,956,434,922,412,899,390,883,346,866,297,854,239,832,123,768,125,764,241,827,299,849,348,861,393,878,415,895,438,918,464,953,487,990,524,1069,551,1152,570,1235,582,1314,588,1385,590,1489"/>
+<area shape="rect" id="Node000071" href="$bsp__wifi__silabs-_w_g_m110_8c.html#a55aad59239beee7c625ef1480115d787" title="Load EAP certs to connect using EAP&#45;TLS." alt="" coords="12,579,185,605"/>
+<area shape="poly" id="edge45_Node000033_Node000071" title=" " alt="" coords="581,1489,565,1356,535,1166,515,1069,491,981,464,908,449,879,434,858,411,838,389,826,366,820,342,818,292,813,266,804,238,787,214,759,176,708,107,607,111,604,180,704,218,756,241,783,268,799,294,808,343,813,367,815,391,821,414,833,438,854,454,876,469,905,496,979,520,1068,540,1165,570,1355,587,1488"/>
+<area shape="rect" id="Node000072" href="$bsp__wifi__silabs-_w_g_m110_8c.html#a6fcc98353f9429f5732450389558c88c" title="Load Server TLS CA cert if present in SD and if not present in module flash." alt="" coords="262,731,414,773"/>
+<area shape="poly" id="edge46_Node000033_Node000072" title=" " alt="" coords="582,1489,567,1345,538,1137,518,1030,494,931,466,850,450,818,434,794,412,776,416,772,438,790,455,815,471,848,499,930,523,1028,543,1136,572,1344,587,1488"/>
+<area shape="rect" id="Node000073" href="$bsp__wifi__silabs-_w_g_m110_8c.html#afdc36b688c99cc7e9bb2fe8513118a1a" title="Configuration EAP certs to connect using EAP&#45;TLS." alt="" coords="240,680,436,707"/>
+<area shape="poly" id="edge47_Node000033_Node000073" title=" " alt="" coords="583,1489,572,1331,546,1099,526,980,501,870,471,781,453,746,434,721,420,709,423,705,438,717,458,744,476,779,506,869,531,979,551,1098,577,1330,588,1489"/>
+<area shape="rect" id="Node000074" href="$bsp__wifi__silabs-_w_g_m110_8c.html#a76a52ecb5bd6b0f2c2b5b5f0c59feff8" title="Open the tcp endpoint client connection." alt="" coords="261,1605,415,1632"/>
+<area shape="poly" id="edge48_Node000033_Node000074" title=" " alt="" coords="552,1541,498,1569,437,1596,401,1607,399,1602,435,1591,496,1564,549,1536"/>
+<area shape="rect" id="Node000075" href="$bsp__wifi__silabs-_w_g_m110_8c.html#aee5a5834eeaf73cf2e7e8470d956d57d" title="Open the tls endpoint client connection." alt="" coords="262,1051,414,1077"/>
+<area shape="poly" id="edge49_Node000033_Node000075" title=" " alt="" coords="582,1488,572,1411,548,1306,529,1250,504,1195,473,1143,434,1098,406,1080,409,1076,438,1094,477,1140,509,1193,534,1248,554,1305,578,1410,588,1488"/>
+<area shape="rect" id="Node000076" href="$bsp__wifi__silabs-_w_g_m110_8c.html#aeacca39b2c852502e88afc9d71c38476" title="Open the udp endpoint client connection." alt="" coords="260,1656,416,1683"/>
+<area shape="poly" id="edge56_Node000033_Node000076" title=" " alt="" coords="566,1544,511,1596,475,1623,437,1646,409,1658,407,1653,435,1642,472,1619,507,1592,562,1540"/>
+<area shape="rect" id="Node000077" href="$bsp__wifi__silabs-_w_g_m110_8c.html#a74403d55a1180374e5b56690e0237a48" title="Reset Certificates Store." alt="" coords="258,1808,418,1835"/>
+<area shape="poly" id="edge59_Node000033_Node000077" title=" " alt="" coords="582,1546,565,1600,536,1668,494,1738,468,1770,438,1798,418,1810,415,1805,434,1794,464,1767,490,1735,531,1666,560,1598,577,1545"/>
+<area shape="rect" id="Node000078" href="$bsp__wifi__silabs-_w_g_m110_8c.html#a8089c2753e0d6f822691ba934ac6eaf5" title="Wifi set operating mode: 1&#45;client;2&#45;Access Point;4&#45;WIFI direct." alt="" coords="252,1859,424,1885"/>
+<area shape="poly" id="edge63_Node000033_Node000078" title=" " alt="" coords="585,1547,570,1609,543,1691,524,1734,500,1776,471,1815,438,1849,419,1860,416,1856,434,1845,467,1811,496,1773,519,1732,538,1689,565,1608,580,1545"/>
+<area shape="rect" id="Node000079" href="$bsp__wifi__silabs-_w_g_m110_8c.html#a7ecf9128dd50ba1a157224384cfa215e" title="Set password to connection." alt="" coords="271,2163,405,2189"/>
+<area shape="poly" id="edge64_Node000033_Node000079" title=" " alt="" coords="586,1546,569,1674,539,1853,518,1945,495,2029,468,2098,453,2125,438,2146,423,2158,407,2166,404,2162,420,2153,434,2142,449,2122,463,2096,490,2027,513,1944,534,1852,564,1673,581,1546"/>
+<area shape="rect" id="Node000080" href="$bsp__wifi__silabs-_w_g_m110_8c.html#a5e6789110605df58b21c15813993ecec" title="Turn Off Wifi module Radio." alt="" coords="257,2213,419,2240"/>
+<area shape="poly" id="edge65_Node000033_Node000080" title=" " alt="" coords="587,1546,573,1685,544,1882,524,1983,500,2075,471,2151,455,2181,438,2203,421,2216,418,2212,434,2199,451,2178,466,2149,495,2074,519,1982,539,1881,567,1684,582,1546"/>
+<area shape="rect" id="Node000082" href="$bsp__wifi__silabs-_w_g_m110_8c.html#a131e8f6711186a9da9bec9bff8730647" title="Turn On Wifi module Radio." alt="" coords="256,2264,420,2291"/>
+<area shape="poly" id="edge66_Node000033_Node000082" title=" " alt="" coords="588,1546,575,1693,547,1906,527,2015,503,2115,473,2198,456,2229,438,2254,422,2266,418,2262,434,2250,452,2227,468,2195,498,2114,522,2014,542,1905,569,1693,582,1546"/>
+<area shape="rect" id="Node000083" href="$bsp__wifi__silabs-_w_g_m110_8c.html#a7e40e7d60e10b885e5ee6aeb2b5a8171" title="Start the udp server." alt="" coords="260,2315,416,2341"/>
+<area shape="poly" id="edge67_Node000033_Node000083" title=" " alt="" coords="588,1546,576,1703,550,1930,531,2048,506,2155,475,2244,457,2278,438,2305,417,2319,414,2315,434,2301,453,2275,470,2242,501,2154,525,2047,545,1930,571,1702,583,1546"/>
+<area shape="poly" id="edge19_Node000038_Node000039" title=" " alt="" coords="246,1958,238,1950,218,1917,205,1875,198,1827,195,1772,200,1650,213,1519,225,1387,230,1265,228,1211,221,1163,208,1123,190,1091,177,1080,162,1073,164,1068,180,1076,194,1088,213,1121,226,1162,233,1211,235,1265,230,1388,218,1519,206,1651,201,1772,203,1826,210,1874,223,1915,242,1946,250,1954"/>
+<area shape="poly" id="edge20_Node000038_Node000041" title=" " alt="" coords="246,1958,238,1950,217,1915,203,1871,196,1820,193,1762,199,1633,213,1493,226,1354,232,1225,230,1168,222,1117,209,1074,190,1040,177,1029,181,1025,194,1037,214,1072,227,1116,235,1167,237,1225,232,1355,218,1494,204,1633,199,1762,201,1819,209,1870,222,1913,242,1946,250,1954"/>
+<area shape="poly" id="edge21_Node000038_Node000044" title=" " alt="" coords="246,1958,238,1950,226,1931,215,1900,192,1808,170,1689,150,1554,117,1292,99,1129,104,1128,122,1291,155,1553,176,1688,198,1807,220,1898,231,1928,242,1946,250,1954"/>
+<area shape="poly" id="edge22_Node000038_Node000047" title=" " alt="" coords="249,1956,238,1950,223,1937,213,1924,205,1912,190,1900,166,1888,168,1883,193,1895,209,1908,218,1921,227,1934,241,1946,252,1951"/>
+<area shape="poly" id="edge23_Node000038_Node000052" title=" " alt="" coords="246,1976,166,1976,166,1971,246,1971"/>
+<area shape="poly" id="edge24_Node000038_Node000055" title=" " alt="" coords="256,1959,155,1937,156,1932,257,1954"/>
+<area shape="poly" id="edge31_Node000065_Node000039" title=" " alt="" coords="247,1908,238,1899,219,1868,207,1829,200,1783,197,1732,202,1617,213,1493,224,1370,228,1255,226,1204,219,1159,207,1121,190,1091,177,1080,162,1073,164,1068,180,1076,194,1088,212,1119,224,1158,231,1204,234,1255,229,1370,218,1494,207,1618,203,1732,205,1783,212,1828,224,1866,242,1896,250,1904"/>
+<area shape="poly" id="edge32_Node000065_Node000041" title=" " alt="" coords="247,1908,238,1899,218,1866,205,1825,198,1776,195,1722,200,1600,213,1468,225,1337,230,1215,228,1161,221,1113,208,1072,190,1040,177,1029,181,1025,194,1037,213,1070,226,1112,233,1160,235,1215,230,1337,218,1469,206,1600,201,1722,203,1776,210,1823,223,1864,242,1896,250,1904"/>
+<area shape="poly" id="edge33_Node000065_Node000044" title=" " alt="" coords="247,1907,238,1899,218,1872,200,1835,170,1741,146,1627,128,1504,106,1272,98,1129,103,1128,111,1272,133,1504,151,1626,175,1740,205,1833,222,1869,242,1896,250,1903"/>
+<area shape="poly" id="edge34_Node000065_Node000047" title=" " alt="" coords="256,1908,164,1889,165,1883,257,1903"/>
+<area shape="poly" id="edge35_Node000065_Node000052" title=" " alt="" coords="257,1942,165,1962,164,1957,256,1937"/>
+<area shape="poly" id="edge36_Node000065_Node000055" title=" " alt="" coords="246,1925,155,1925,155,1920,246,1920"/>
+<area shape="poly" id="edge42_Node000069_Node000070" title=" " alt="" coords="268,613,241,626,201,654,165,685,113,740,109,737,161,682,198,650,238,622,266,609"/>
+<area shape="poly" id="edge43_Node000069_Node000071" title=" " alt="" coords="238,595,186,595,186,589,238,589"/>
+<area shape="poly" id="edge50_Node000075_Node000039" title=" " alt="" coords="246,1067,163,1067,163,1061,246,1061"/>
+<area shape="poly" id="edge51_Node000075_Node000041" title=" " alt="" coords="256,1049,164,1030,165,1025,257,1044"/>
+<area shape="poly" id="edge52_Node000075_Node000044" title=" " alt="" coords="257,1084,165,1103,164,1098,256,1079"/>
+<area shape="poly" id="edge53_Node000075_Node000047" title=" " alt="" coords="298,1088,268,1111,242,1141,214,1205,189,1295,166,1401,147,1515,118,1727,104,1859,98,1858,113,1726,142,1514,161,1400,184,1293,209,1203,237,1139,264,1107,295,1084"/>
+<area shape="poly" id="edge54_Node000075_Node000052" title=" " alt="" coords="296,1088,266,1111,242,1141,229,1175,221,1215,216,1314,220,1429,229,1551,237,1673,238,1785,234,1836,225,1880,212,1919,194,1950,182,1961,167,1968,165,1963,179,1956,190,1946,208,1917,220,1879,228,1835,233,1785,232,1673,224,1552,215,1429,210,1314,216,1214,224,1173,237,1139,262,1107,293,1083"/>
+<area shape="poly" id="edge55_Node000075_Node000055" title=" " alt="" coords="296,1088,266,1111,242,1141,230,1172,222,1210,217,1303,221,1411,229,1525,236,1639,236,1745,232,1792,224,1834,211,1870,194,1899,177,1913,156,1921,154,1916,174,1909,190,1896,206,1868,218,1833,226,1791,230,1745,230,1640,223,1526,215,1411,211,1303,217,1210,225,1171,237,1139,262,1107,293,1084"/>
+<area shape="poly" id="edge81_Node000084_Node000041" title=" " alt="" coords="530,653,466,639,390,632,351,634,312,640,275,652,242,670,181,813,108,1001,103,999,176,811,238,666,273,647,311,635,350,629,390,627,466,634,531,648"/>
+<area shape="poly" id="edge76_Node000084_Node000069" title=" " alt="" coords="526,652,384,609,386,603,528,647"/>
+<area shape="poly" id="edge77_Node000084_Node000071" title=" " alt="" coords="560,646,505,604,471,584,435,569,397,560,358,556,279,557,206,567,147,581,146,575,205,562,278,552,358,550,398,555,437,564,474,579,508,599,563,642"/>
+<area shape="poly" id="edge78_Node000084_Node000072" title=" " alt="" coords="532,689,405,733,403,728,531,684"/>
+<area shape="poly" id="edge79_Node000084_Node000073" title=" " alt="" coords="469,683,437,686,436,681,468,677"/>
+<area shape="poly" id="edge80_Node000084_Node000075" title=" " alt="" coords="586,697,574,767,549,860,529,909,505,957,475,1002,438,1041,416,1054,413,1050,434,1037,470,998,500,954,525,907,544,858,569,766,581,696"/>
+<area shape="rect" id="Node000085" href="$bsp__wifi__silabs-_w_g_m110_8c.html#a795b8325fcb76410bb9fdbee3254ca90" title="Disconnect from the currently connected Access Point." alt="" coords="253,1000,423,1027"/>
+<area shape="poly" id="edge69_Node000084_Node000085" title=" " alt="" coords="570,696,351,1001,347,998,566,693"/>
+<area shape="poly" id="edge70_Node000085_Node000039" title=" " alt="" coords="257,1033,164,1053,163,1048,256,1028"/>
+<area shape="poly" id="edge71_Node000085_Node000041" title=" " alt="" coords="238,1016,188,1016,188,1011,238,1011"/>
+<area shape="poly" id="edge72_Node000085_Node000044" title=" " alt="" coords="252,1035,241,1041,227,1053,218,1065,209,1079,193,1092,168,1103,166,1098,190,1087,205,1075,213,1062,223,1049,238,1036,249,1031"/>
+<area shape="poly" id="edge73_Node000085_Node000047" title=" " alt="" coords="244,1038,242,1040,231,1058,220,1089,198,1180,176,1299,155,1434,122,1695,104,1858,99,1858,117,1695,150,1433,170,1298,192,1178,215,1087,226,1056,238,1037,240,1034"/>
+<area shape="poly" id="edge74_Node000085_Node000052" title=" " alt="" coords="243,1039,242,1040,222,1074,209,1117,201,1168,199,1225,204,1354,218,1493,232,1632,237,1761,235,1819,227,1871,214,1915,194,1950,182,1961,167,1968,165,1964,179,1956,190,1946,209,1912,222,1870,230,1819,232,1761,226,1633,213,1493,199,1354,193,1225,196,1167,203,1116,217,1072,237,1037,239,1035"/>
+<area shape="poly" id="edge75_Node000085_Node000055" title=" " alt="" coords="243,1039,242,1040,223,1072,210,1113,203,1160,201,1214,206,1336,218,1467,230,1599,235,1721,233,1776,226,1824,213,1866,194,1899,177,1913,156,1921,154,1916,174,1909,190,1896,208,1864,221,1823,228,1775,230,1721,225,1599,213,1468,200,1336,195,1214,198,1160,205,1111,218,1070,237,1037,239,1035"/>
+</map>

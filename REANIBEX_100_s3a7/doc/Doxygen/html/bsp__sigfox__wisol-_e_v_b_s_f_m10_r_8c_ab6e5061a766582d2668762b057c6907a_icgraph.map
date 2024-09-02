@@ -1,0 +1,32 @@
+<map id="Sigfox_Command_Response_Get_Data" name="Sigfox_Command_Response_Get_Data">
+<area shape="rect" id="Node000001" title="Waits for a response to a given command." alt="" coords="1530,73,1718,116"/>
+<area shape="rect" id="Node000002" href="$bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8c.html#ac36f9264486c295bdff72a1ff0836e6e" title="Get Sigfox Module DeviceID." alt="" coords="1290,107,1482,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1514,109,1482,112,1482,107,1514,104"/>
+<area shape="rect" id="Node000010" href="$bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8c.html#acb7604b868af7f5771ea4ec59d8437e1" title="Get Sigfox Module PAC." alt="" coords="1302,157,1470,184"/>
+<area shape="poly" id="edge10_Node000001_Node000010" title=" " alt="" coords="1552,124,1482,148,1443,159,1442,154,1481,143,1550,119"/>
+<area shape="rect" id="Node000011" href="$bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8c.html#a1d13b7d7d1dc518419fc191ee9e69276" title="Get Sigfox Module RX Frequency." alt="" coords="1298,5,1474,32"/>
+<area shape="poly" id="edge13_Node000001_Node000011" title=" " alt="" coords="1550,70,1481,47,1442,35,1443,30,1482,41,1552,65"/>
+<area shape="rect" id="Node000012" href="$bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8c.html#a815348ca9ffd0d64c715051e9e48467c" title="Get Sigfox Module TX Frequency." alt="" coords="1299,56,1473,83"/>
+<area shape="poly" id="edge16_Node000001_Node000012" title=" " alt="" coords="1514,86,1473,81,1474,76,1514,80"/>
+<area shape="rect" id="Node000003" href="$thread__comm__hal_8c.html#a3966732dacf626b4fef99504eae11fd4" title="Device information Check." alt="" coords="1091,44,1238,87"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="1313,105,1238,86,1239,81,1315,100"/>
+<area shape="rect" id="Node000009" href="$thread__comm__hal_8c.html#a8940317343835bfd6ab8aeb253689893" title="Initialization of Sigfox module." alt="" coords="1086,111,1242,137"/>
+<area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="1275,125,1243,125,1243,120,1275,119"/>
+<area shape="rect" id="Node000004" href="$thread__comm__hal_8c.html#a41272f2468c23dfaf459579637d8c295" title="Perform sigfox module Uplink Test." alt="" coords="826,55,1038,81"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="1075,69,1039,69,1038,64,1075,64"/>
+<area shape="rect" id="Node000005" href="$thread__comm__entry_8c.html#a9dbb28ae3719b97e8cd74d43327403ce" title="Process events related to SIGFOX COMM module." alt="" coords="620,81,778,108"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="811,85,778,88,778,83,810,79"/>
+<area shape="rect" id="Node000006" href="$thread__comm__entry_8c.html#a88587ace521f9dcb7e701367eeec5824" title="Thread COMM entry function." alt="" coords="436,81,572,108"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="605,97,573,97,573,92,605,92"/>
+<area shape="rect" id="Node000007" href="$thread__comm_8c.html#a4d0497fd082ea6ad8cce7e8437cfc816" title=" " alt="" coords="257,81,388,108"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="420,97,388,97,388,92,420,92"/>
+<area shape="rect" id="Node000008" href="$thread__comm_8c.html#a01a6aa5f9adb99b48c6e175a2cab1316" title=" " alt="" coords="5,81,209,108"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="241,97,209,97,209,92,241,92"/>
+<area shape="poly" id="edge9_Node000009_Node000005" title=" " alt="" coords="1070,121,778,102,778,97,1071,115"/>
+<area shape="poly" id="edge11_Node000010_Node000003" title=" " alt="" coords="1301,154,1289,148,1274,136,1264,124,1255,113,1241,101,1221,90,1224,85,1244,96,1259,109,1268,121,1277,132,1292,143,1303,149"/>
+<area shape="poly" id="edge12_Node000010_Node000009" title=" " alt="" coords="1304,156,1231,141,1232,135,1305,151"/>
+<area shape="poly" id="edge14_Node000011_Node000003" title=" " alt="" coords="1305,38,1239,52,1238,47,1304,33"/>
+<area shape="poly" id="edge15_Node000011_Node000009" title=" " alt="" coords="1302,41,1292,46,1277,59,1268,72,1259,87,1244,101,1221,112,1219,108,1241,96,1255,83,1264,70,1273,55,1289,42,1299,36"/>
+<area shape="poly" id="edge17_Node000012_Node000003" title=" " alt="" coords="1284,70,1238,69,1239,64,1284,65"/>
+<area shape="poly" id="edge18_Node000012_Node000009" title=" " alt="" coords="1315,90,1222,113,1221,108,1313,84"/>
+</map>

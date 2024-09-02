@@ -1,0 +1,75 @@
+\doxysection{atca\+\_\+aes\+\_\+cbc\+\_\+ctx Struct Reference}
+\hypertarget{structatca__aes__cbc__ctx}{}\label{structatca__aes__cbc__ctx}\index{atca\_aes\_cbc\_ctx@{atca\_aes\_cbc\_ctx}}
+
+
+{\ttfamily \#include $<$atca\+\_\+crypto\+\_\+hw\+\_\+aes.\+h$>$}
+
+
+
+Collaboration diagram for atca\+\_\+aes\+\_\+cbc\+\_\+ctx\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=242pt]{structatca__aes__cbc__ctx__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group__device_gaa94f7bb4af0a3d6735225cc85d92cb50}{ATCADevice}} \mbox{\hyperlink{structatca__aes__cbc__ctx_a3bb9a00ddef406a68fc49eaed0af462a}{device}}
+\begin{DoxyCompactList}\small\item\em Device Context Pointer. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{structatca__aes__cbc__ctx_adf0672e464635e07c75c99eac9a5171e}{key\+\_\+id}}
+\begin{DoxyCompactList}\small\item\em Key location. Can either be a slot number or ATCA\+\_\+\+TEMPKEY\+\_\+\+KEYID for Temp\+Key. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{structatca__aes__cbc__ctx_ade3fefdae1ae69edfb7ffcd5ebf91d1b}{key\+\_\+block}}
+\begin{DoxyCompactList}\small\item\em Index of the 16-\/byte block to use within the key location for the actual key. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{structatca__aes__cbc__ctx_a8a675314201770ad3eb6b5051deab4d0}{ciphertext}} \mbox{[}\mbox{\hyperlink{cryptoauthlib_8h_a71e52612e6d56f7412a113fcc4fb57d4}{ATCA\+\_\+\+AES128\+\_\+\+BLOCK\+\_\+\+SIZE}}\mbox{]}
+\begin{DoxyCompactList}\small\item\em Ciphertext from last operation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{structatca__aes__cbc__ctx_a8a675314201770ad3eb6b5051deab4d0}\label{structatca__aes__cbc__ctx_a8a675314201770ad3eb6b5051deab4d0} 
+\index{atca\_aes\_cbc\_ctx@{atca\_aes\_cbc\_ctx}!ciphertext@{ciphertext}}
+\index{ciphertext@{ciphertext}!atca\_aes\_cbc\_ctx@{atca\_aes\_cbc\_ctx}}
+\doxysubsubsection{\texorpdfstring{ciphertext}{ciphertext}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} atca\+\_\+aes\+\_\+cbc\+\_\+ctx\+::ciphertext}
+
+
+
+Ciphertext from last operation. 
+
+\Hypertarget{structatca__aes__cbc__ctx_a3bb9a00ddef406a68fc49eaed0af462a}\label{structatca__aes__cbc__ctx_a3bb9a00ddef406a68fc49eaed0af462a} 
+\index{atca\_aes\_cbc\_ctx@{atca\_aes\_cbc\_ctx}!device@{device}}
+\index{device@{device}!atca\_aes\_cbc\_ctx@{atca\_aes\_cbc\_ctx}}
+\doxysubsubsection{\texorpdfstring{device}{device}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__device_gaa94f7bb4af0a3d6735225cc85d92cb50}{ATCADevice}} atca\+\_\+aes\+\_\+cbc\+\_\+ctx\+::device}
+
+
+
+Device Context Pointer. 
+
+\Hypertarget{structatca__aes__cbc__ctx_ade3fefdae1ae69edfb7ffcd5ebf91d1b}\label{structatca__aes__cbc__ctx_ade3fefdae1ae69edfb7ffcd5ebf91d1b} 
+\index{atca\_aes\_cbc\_ctx@{atca\_aes\_cbc\_ctx}!key\_block@{key\_block}}
+\index{key\_block@{key\_block}!atca\_aes\_cbc\_ctx@{atca\_aes\_cbc\_ctx}}
+\doxysubsubsection{\texorpdfstring{key\_block}{key\_block}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} atca\+\_\+aes\+\_\+cbc\+\_\+ctx\+::key\+\_\+block}
+
+
+
+Index of the 16-\/byte block to use within the key location for the actual key. 
+
+\Hypertarget{structatca__aes__cbc__ctx_adf0672e464635e07c75c99eac9a5171e}\label{structatca__aes__cbc__ctx_adf0672e464635e07c75c99eac9a5171e} 
+\index{atca\_aes\_cbc\_ctx@{atca\_aes\_cbc\_ctx}!key\_id@{key\_id}}
+\index{key\_id@{key\_id}!atca\_aes\_cbc\_ctx@{atca\_aes\_cbc\_ctx}}
+\doxysubsubsection{\texorpdfstring{key\_id}{key\_id}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} atca\+\_\+aes\+\_\+cbc\+\_\+ctx\+::key\+\_\+id}
+
+
+
+Key location. Can either be a slot number or ATCA\+\_\+\+TEMPKEY\+\_\+\+KEYID for Temp\+Key. 
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\+SCE/\mbox{\hyperlink{atca__crypto__hw__aes_8h}{atca\+\_\+crypto\+\_\+hw\+\_\+aes.\+h}}\item 
+C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\+SCE/crypto/\mbox{\hyperlink{crypto_2atca__crypto__hw__aes_8h}{atca\+\_\+crypto\+\_\+hw\+\_\+aes.\+h}}\end{DoxyCompactItemize}

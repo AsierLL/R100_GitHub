@@ -1,0 +1,343 @@
+\doxysection{C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\+Resources/\+Comm.c File Reference}
+\hypertarget{a00236}{}\label{a00236}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/Resources/Comm.c@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/Resources/Comm.c}}
+{\ttfamily \#include $<$tx\+\_\+api.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include "{}Comm.\+h"{}}\newline
+{\ttfamily \#include "{}Trace.\+h"{}}\newline
+{\ttfamily \#include "{}RTC.\+h"{}}\newline
+{\ttfamily \#include "{}hal\+\_\+data.\+h"{}}\newline
+{\ttfamily \#include "{}thread\+\_\+comm\+\_\+hal.\+h"{}}\newline
+{\ttfamily \#include "{}BSP/bglib\+\_\+api/wifi\+\_\+bglib.\+h"{}}\newline
+{\ttfamily \#include "{}thread\+\_\+core\+\_\+entry.\+h"{}}\newline
+{\ttfamily \#include "{}BSP/bsp\+\_\+gps\+\_\+quectel-\/\+L96.\+h"{}}\newline
+Include dependency graph for Comm.\+c\+:
+% FIG 0
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{a00236_a7a312c2ae2f8f7d0a99d378977e1e0b4}{Process\+\_\+\+GPS\+\_\+\+Package}} (void)
+\begin{DoxyCompactList}\small\item\em Process GPS received package, checks if geoposition available. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a00236_abde378d1792873c09f0d4948c1fd3c19}{comm\+\_\+uart\+\_\+callback}} (uart\+\_\+callback\+\_\+args\+\_\+t \texorpdfstring{$\ast$}{*}p\+\_\+args)
+\begin{DoxyCompactList}\small\item\em Implements the callback of the UART. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a00236_a4020bb225ab3c16e3ffc0a6a514817f7}{Comm\+\_\+\+Uart\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Open connection SCI3 (UART). Initialize semaphore. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{a00236_ae40e9c681ca7b454e790d494b96c2284}{Comm\+\_\+\+Uart\+\_\+\+Set\+\_\+\+Baud\+\_\+\+Rate}} (\mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} baud\+\_\+rate)
+\begin{DoxyCompactList}\small\item\em Change SCI3 (UART) baud rate. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a00236_aceced6fe6160f18c11e8d0ea46cfe881}{Comm\+\_\+\+Uart\+\_\+\+Send}} (const char \texorpdfstring{$\ast$}{*}p\+String)
+\begin{DoxyCompactList}\small\item\em Send a string through the UART. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a00236_a26017f7af5f911a6a0e19cfec7bd08e6}{Comm\+\_\+\+Uart\+\_\+\+Send\+\_\+\+Arg}} (\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} flags, const char \texorpdfstring{$\ast$}{*}p\+String, const \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} aux\+\_\+code)
+\begin{DoxyCompactList}\small\item\em Send a string through the UART. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a00236_a4ac0907360503f6ed474e5c18d25bf36}{Comm\+\_\+\+Uart\+\_\+\+Send\+\_\+\+Data}} (const char \texorpdfstring{$\ast$}{*}p\+String, \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} size)
+\begin{DoxyCompactList}\small\item\em Send a data string through UART. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a00236_aec5ef2359cd4e785b63d0390462a213b}{Comm\+\_\+\+Uart\+\_\+\+Get\+\_\+\+Msg\+\_\+\+Buff\+\_\+\+Ptr}} (char \texorpdfstring{$\ast$}{*}buf, int count)
+\begin{DoxyCompactList}\small\item\em Get a received module response. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a00236_aab482bf1737ccffd871eaa85a6f25021}{Comm\+\_\+\+Uart\+\_\+\+Wifi\+\_\+\+Send}} (const char \texorpdfstring{$\ast$}{*}p\+String, \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} length)
+\begin{DoxyCompactList}\small\item\em Send a string through the UART to the wifi module. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{a00236_a612240bf37db565f46ad4dc6c7298898}{Comm\+\_\+\+Uart\+\_\+\+Wifi\+\_\+\+Receive}} (char \texorpdfstring{$\ast$}{*}rx\+\_\+buf, \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} length, \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} tout, \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} ack)
+\begin{DoxyCompactList}\small\item\em Get a received module response. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{a00236_a83801be040789c4446f9b7c03c740a46}{Comm\+\_\+\+Uart\+\_\+\+Wifi\+\_\+\+Receive\+\_\+\+CFG\+\_\+\+FW}} (char \texorpdfstring{$\ast$}{*}rx\+\_\+buf, \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} length, \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} tout, \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} ack, \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \texorpdfstring{$\ast$}{*}received\+\_\+length, \mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} wait\+\_\+length)
+\begin{DoxyCompactList}\small\item\em Get a received module response. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+TX\+\_\+\+SEMAPHORE \mbox{\hyperlink{a00236_aa1baf92dbe45afd38a8df6e7cc0c8adf}{comm\+\_\+semaphore}}
+\item 
+static char \mbox{\hyperlink{a00236_ac65a4f8bbca6494e0e437f6617eb9686}{comm\+\_\+tx\+\_\+buffer}} \mbox{[}256\mbox{]}
+\item 
+static char \mbox{\hyperlink{a00236_a0ed6b98a9412770182295a2e6fdecefd}{comm\+\_\+rx\+\_\+buffer}} \mbox{[}1024\mbox{]}
+\item 
+static char \mbox{\hyperlink{a00236_a1340899c36bcd0508bf255b38043194c}{comm\+\_\+data\+\_\+buffer}} \mbox{[}256\mbox{]}
+\item 
+static char \mbox{\hyperlink{a00236_a9b9d35d0492c9bad4ab8b5b2e337e94d}{wifi\+\_\+rx\+\_\+msg}} \mbox{[}256\mbox{]}
+\item 
+static char \mbox{\hyperlink{a00236_a6200535056cf05c6fde973ef4d0f9c82}{buffer\+\_\+s\+Code}} \mbox{[}4\mbox{]}
+\item 
+static \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \mbox{\hyperlink{a00236_ad863b8606ee777d2a670ab9aea2f69b4}{received\+\_\+bytes}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{a00236_abde378d1792873c09f0d4948c1fd3c19}\label{a00236_abde378d1792873c09f0d4948c1fd3c19} 
+\index{Comm.c@{Comm.c}!comm\_uart\_callback@{comm\_uart\_callback}}
+\index{comm\_uart\_callback@{comm\_uart\_callback}!Comm.c@{Comm.c}}
+\doxysubsubsection{\texorpdfstring{comm\_uart\_callback()}{comm\_uart\_callback()}}
+{\footnotesize\ttfamily void comm\+\_\+uart\+\_\+callback (\begin{DoxyParamCaption}\item[{uart\+\_\+callback\+\_\+args\+\_\+t \texorpdfstring{$\ast$}{*}}]{p\+\_\+args }\end{DoxyParamCaption})}
+
+
+
+Implements the callback of the UART. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+args} & UART callback arguments\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{a00258__todo000010}{Todo}}]pending things to be done\end{DoxyRefDesc}
+\Hypertarget{a00236_aec5ef2359cd4e785b63d0390462a213b}\label{a00236_aec5ef2359cd4e785b63d0390462a213b} 
+\index{Comm.c@{Comm.c}!Comm\_Uart\_Get\_Msg\_Buff\_Ptr@{Comm\_Uart\_Get\_Msg\_Buff\_Ptr}}
+\index{Comm\_Uart\_Get\_Msg\_Buff\_Ptr@{Comm\_Uart\_Get\_Msg\_Buff\_Ptr}!Comm.c@{Comm.c}}
+\doxysubsubsection{\texorpdfstring{Comm\_Uart\_Get\_Msg\_Buff\_Ptr()}{Comm\_Uart\_Get\_Msg\_Buff\_Ptr()}}
+{\footnotesize\ttfamily void Comm\+\_\+\+Uart\+\_\+\+Get\+\_\+\+Msg\+\_\+\+Buff\+\_\+\+Ptr (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{buf,  }\item[{int}]{count }\end{DoxyParamCaption})}
+
+
+
+Get a received module response. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buf} & Pointer to buffer to store the message \\
+\hline
+{\em count} & size of the message to be read\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{a00258__todo000015}{Todo}}]pending things to be done\end{DoxyRefDesc}
+\Hypertarget{a00236_a4020bb225ab3c16e3ffc0a6a514817f7}\label{a00236_a4020bb225ab3c16e3ffc0a6a514817f7} 
+\index{Comm.c@{Comm.c}!Comm\_Uart\_Init@{Comm\_Uart\_Init}}
+\index{Comm\_Uart\_Init@{Comm\_Uart\_Init}!Comm.c@{Comm.c}}
+\doxysubsubsection{\texorpdfstring{Comm\_Uart\_Init()}{Comm\_Uart\_Init()}}
+{\footnotesize\ttfamily void Comm\+\_\+\+Uart\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Open connection SCI3 (UART). Initialize semaphore. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{a00258__todo000011}{Todo}}]pending things to be done\end{DoxyRefDesc}
+\Hypertarget{a00236_aceced6fe6160f18c11e8d0ea46cfe881}\label{a00236_aceced6fe6160f18c11e8d0ea46cfe881} 
+\index{Comm.c@{Comm.c}!Comm\_Uart\_Send@{Comm\_Uart\_Send}}
+\index{Comm\_Uart\_Send@{Comm\_Uart\_Send}!Comm.c@{Comm.c}}
+\doxysubsubsection{\texorpdfstring{Comm\_Uart\_Send()}{Comm\_Uart\_Send()}}
+{\footnotesize\ttfamily void Comm\+\_\+\+Uart\+\_\+\+Send (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{p\+String }\end{DoxyParamCaption})}
+
+
+
+Send a string through the UART. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+String} & Pointer to string\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{a00258__todo000012}{Todo}}]pending things to be done\end{DoxyRefDesc}
+\Hypertarget{a00236_a26017f7af5f911a6a0e19cfec7bd08e6}\label{a00236_a26017f7af5f911a6a0e19cfec7bd08e6} 
+\index{Comm.c@{Comm.c}!Comm\_Uart\_Send\_Arg@{Comm\_Uart\_Send\_Arg}}
+\index{Comm\_Uart\_Send\_Arg@{Comm\_Uart\_Send\_Arg}!Comm.c@{Comm.c}}
+\doxysubsubsection{\texorpdfstring{Comm\_Uart\_Send\_Arg()}{Comm\_Uart\_Send\_Arg()}}
+{\footnotesize\ttfamily void Comm\+\_\+\+Uart\+\_\+\+Send\+\_\+\+Arg (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{flags,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{p\+String,  }\item[{const \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}}}]{aux\+\_\+code }\end{DoxyParamCaption})}
+
+
+
+Send a string through the UART. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em flags} & Flags to print more information (Time or CRLF) \\
+\hline
+{\em p\+String} & Pointer to string \\
+\hline
+{\em aux\+\_\+code} & Additional parameter or code\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{a00258__todo000013}{Todo}}]pending things to be done\end{DoxyRefDesc}
+\Hypertarget{a00236_a4ac0907360503f6ed474e5c18d25bf36}\label{a00236_a4ac0907360503f6ed474e5c18d25bf36} 
+\index{Comm.c@{Comm.c}!Comm\_Uart\_Send\_Data@{Comm\_Uart\_Send\_Data}}
+\index{Comm\_Uart\_Send\_Data@{Comm\_Uart\_Send\_Data}!Comm.c@{Comm.c}}
+\doxysubsubsection{\texorpdfstring{Comm\_Uart\_Send\_Data()}{Comm\_Uart\_Send\_Data()}}
+{\footnotesize\ttfamily void Comm\+\_\+\+Uart\+\_\+\+Send\+\_\+\+Data (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{p\+String,  }\item[{\mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}}}]{size }\end{DoxyParamCaption})}
+
+
+
+Send a data string through UART. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+String} & Pointer to trace string \\
+\hline
+{\em size} & Data size\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{a00258__todo000014}{Todo}}]pending things to be done\end{DoxyRefDesc}
+\Hypertarget{a00236_ae40e9c681ca7b454e790d494b96c2284}\label{a00236_ae40e9c681ca7b454e790d494b96c2284} 
+\index{Comm.c@{Comm.c}!Comm\_Uart\_Set\_Baud\_Rate@{Comm\_Uart\_Set\_Baud\_Rate}}
+\index{Comm\_Uart\_Set\_Baud\_Rate@{Comm\_Uart\_Set\_Baud\_Rate}!Comm.c@{Comm.c}}
+\doxysubsubsection{\texorpdfstring{Comm\_Uart\_Set\_Baud\_Rate()}{Comm\_Uart\_Set\_Baud\_Rate()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Comm\+\_\+\+Uart\+\_\+\+Set\+\_\+\+Baud\+\_\+\+Rate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}}}]{baud\+\_\+rate }\end{DoxyParamCaption})}
+
+
+
+Change SCI3 (UART) baud rate. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em uint32\+\_\+t} & baud\+\_\+rate\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR\+\_\+\+ID\+\_\+e error changing the baud rate of the Comm UART 
+\end{DoxyReturn}
+\Hypertarget{a00236_a612240bf37db565f46ad4dc6c7298898}\label{a00236_a612240bf37db565f46ad4dc6c7298898} 
+\index{Comm.c@{Comm.c}!Comm\_Uart\_Wifi\_Receive@{Comm\_Uart\_Wifi\_Receive}}
+\index{Comm\_Uart\_Wifi\_Receive@{Comm\_Uart\_Wifi\_Receive}!Comm.c@{Comm.c}}
+\doxysubsubsection{\texorpdfstring{Comm\_Uart\_Wifi\_Receive()}{Comm\_Uart\_Wifi\_Receive()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Comm\+\_\+\+Uart\+\_\+\+Wifi\+\_\+\+Receive (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{rx\+\_\+buf,  }\item[{\mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}}}]{length,  }\item[{\mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}}}]{tout,  }\item[{\mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}}}]{ack }\end{DoxyParamCaption})}
+
+
+
+Get a received module response. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rx\+\_\+buf} & Pointer to buffer to store the message \\
+\hline
+{\em length} & Size of the message to be read \\
+\hline
+{\em tout} & Timeout for the response \\
+\hline
+{\em ack} & Expected response\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR\+\_\+\+ID\+\_\+e error if bytes not readed 
+\end{DoxyReturn}
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{a00258__todo000017}{Todo}}]pending things to be done\end{DoxyRefDesc}
+\Hypertarget{a00236_a83801be040789c4446f9b7c03c740a46}\label{a00236_a83801be040789c4446f9b7c03c740a46} 
+\index{Comm.c@{Comm.c}!Comm\_Uart\_Wifi\_Receive\_CFG\_FW@{Comm\_Uart\_Wifi\_Receive\_CFG\_FW}}
+\index{Comm\_Uart\_Wifi\_Receive\_CFG\_FW@{Comm\_Uart\_Wifi\_Receive\_CFG\_FW}!Comm.c@{Comm.c}}
+\doxysubsubsection{\texorpdfstring{Comm\_Uart\_Wifi\_Receive\_CFG\_FW()}{Comm\_Uart\_Wifi\_Receive\_CFG\_FW()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Comm\+\_\+\+Uart\+\_\+\+Wifi\+\_\+\+Receive\+\_\+\+CFG\+\_\+\+FW (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{rx\+\_\+buf,  }\item[{\mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}}}]{length,  }\item[{\mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}}}]{tout,  }\item[{\mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}}}]{ack,  }\item[{\mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{received\+\_\+length,  }\item[{\mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}}}]{wait\+\_\+length }\end{DoxyParamCaption})}
+
+
+
+Get a received module response. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rx\+\_\+buf} & Pointer to buffer to store the message \\
+\hline
+{\em length} & Size of the message to be read \\
+\hline
+{\em tout} & Timeout for the response \\
+\hline
+{\em ack} & Expected response\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR\+\_\+\+ID\+\_\+e error if bytes not readed 
+\end{DoxyReturn}
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{a00258__todo000018}{Todo}}]pending things to be done\end{DoxyRefDesc}
+\Hypertarget{a00236_aab482bf1737ccffd871eaa85a6f25021}\label{a00236_aab482bf1737ccffd871eaa85a6f25021} 
+\index{Comm.c@{Comm.c}!Comm\_Uart\_Wifi\_Send@{Comm\_Uart\_Wifi\_Send}}
+\index{Comm\_Uart\_Wifi\_Send@{Comm\_Uart\_Wifi\_Send}!Comm.c@{Comm.c}}
+\doxysubsubsection{\texorpdfstring{Comm\_Uart\_Wifi\_Send()}{Comm\_Uart\_Wifi\_Send()}}
+{\footnotesize\ttfamily void Comm\+\_\+\+Uart\+\_\+\+Wifi\+\_\+\+Send (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{p\+String,  }\item[{\mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}}}]{length }\end{DoxyParamCaption})}
+
+
+
+Send a string through the UART to the wifi module. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+String} & Pointer to string \\
+\hline
+{\em length} & Size of the message to be read\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{a00258__todo000016}{Todo}}]pending things to be done\end{DoxyRefDesc}
+\Hypertarget{a00236_a7a312c2ae2f8f7d0a99d378977e1e0b4}\label{a00236_a7a312c2ae2f8f7d0a99d378977e1e0b4} 
+\index{Comm.c@{Comm.c}!Process\_GPS\_Package@{Process\_GPS\_Package}}
+\index{Process\_GPS\_Package@{Process\_GPS\_Package}!Comm.c@{Comm.c}}
+\doxysubsubsection{\texorpdfstring{Process\_GPS\_Package()}{Process\_GPS\_Package()}}
+{\footnotesize\ttfamily static void Process\+\_\+\+GPS\+\_\+\+Package (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Process GPS received package, checks if geoposition available. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{a00236_a6200535056cf05c6fde973ef4d0f9c82}\label{a00236_a6200535056cf05c6fde973ef4d0f9c82} 
+\index{Comm.c@{Comm.c}!buffer\_sCode@{buffer\_sCode}}
+\index{buffer\_sCode@{buffer\_sCode}!Comm.c@{Comm.c}}
+\doxysubsubsection{\texorpdfstring{buffer\_sCode}{buffer\_sCode}}
+{\footnotesize\ttfamily char buffer\+\_\+s\+Code\mbox{[}4\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{a00236_a1340899c36bcd0508bf255b38043194c}\label{a00236_a1340899c36bcd0508bf255b38043194c} 
+\index{Comm.c@{Comm.c}!comm\_data\_buffer@{comm\_data\_buffer}}
+\index{comm\_data\_buffer@{comm\_data\_buffer}!Comm.c@{Comm.c}}
+\doxysubsubsection{\texorpdfstring{comm\_data\_buffer}{comm\_data\_buffer}}
+{\footnotesize\ttfamily char comm\+\_\+data\+\_\+buffer\mbox{[}256\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{a00236_a0ed6b98a9412770182295a2e6fdecefd}\label{a00236_a0ed6b98a9412770182295a2e6fdecefd} 
+\index{Comm.c@{Comm.c}!comm\_rx\_buffer@{comm\_rx\_buffer}}
+\index{comm\_rx\_buffer@{comm\_rx\_buffer}!Comm.c@{Comm.c}}
+\doxysubsubsection{\texorpdfstring{comm\_rx\_buffer}{comm\_rx\_buffer}}
+{\footnotesize\ttfamily char comm\+\_\+rx\+\_\+buffer\mbox{[}1024\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{a00236_aa1baf92dbe45afd38a8df6e7cc0c8adf}\label{a00236_aa1baf92dbe45afd38a8df6e7cc0c8adf} 
+\index{Comm.c@{Comm.c}!comm\_semaphore@{comm\_semaphore}}
+\index{comm\_semaphore@{comm\_semaphore}!Comm.c@{Comm.c}}
+\doxysubsubsection{\texorpdfstring{comm\_semaphore}{comm\_semaphore}}
+{\footnotesize\ttfamily TX\+\_\+\+SEMAPHORE comm\+\_\+semaphore\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{a00236_ac65a4f8bbca6494e0e437f6617eb9686}\label{a00236_ac65a4f8bbca6494e0e437f6617eb9686} 
+\index{Comm.c@{Comm.c}!comm\_tx\_buffer@{comm\_tx\_buffer}}
+\index{comm\_tx\_buffer@{comm\_tx\_buffer}!Comm.c@{Comm.c}}
+\doxysubsubsection{\texorpdfstring{comm\_tx\_buffer}{comm\_tx\_buffer}}
+{\footnotesize\ttfamily char comm\+\_\+tx\+\_\+buffer\mbox{[}256\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{a00236_ad863b8606ee777d2a670ab9aea2f69b4}\label{a00236_ad863b8606ee777d2a670ab9aea2f69b4} 
+\index{Comm.c@{Comm.c}!received\_bytes@{received\_bytes}}
+\index{received\_bytes@{received\_bytes}!Comm.c@{Comm.c}}
+\doxysubsubsection{\texorpdfstring{received\_bytes}{received\_bytes}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} received\+\_\+bytes = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{a00236_a9b9d35d0492c9bad4ab8b5b2e337e94d}\label{a00236_a9b9d35d0492c9bad4ab8b5b2e337e94d} 
+\index{Comm.c@{Comm.c}!wifi\_rx\_msg@{wifi\_rx\_msg}}
+\index{wifi\_rx\_msg@{wifi\_rx\_msg}!Comm.c@{Comm.c}}
+\doxysubsubsection{\texorpdfstring{wifi\_rx\_msg}{wifi\_rx\_msg}}
+{\footnotesize\ttfamily char wifi\+\_\+rx\+\_\+msg\mbox{[}256\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+

@@ -1,0 +1,549 @@
+\doxysection{C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\+HAL/thread\+\_\+defibrillator\+\_\+hal.h File Reference}
+\hypertarget{a00203}{}\label{a00203}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/HAL/thread\_defibrillator\_hal.h@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/HAL/thread\_defibrillator\_hal.h}}
+
+
+Header with functions related to the defibrillator BSP service.  
+
+
+{\ttfamily \#include "{}types\+\_\+basic.\+h"{}}\newline
+{\ttfamily \#include "{}R100\+\_\+\+Errors.\+h"{}}\newline
+Include dependency graph for thread\+\_\+defibrillator\+\_\+hal.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{a00662}{DD\+\_\+\+SHOCK\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{a00203_a4f6142ba6764abe345f2032ecb3743b2}{DC\+\_\+\+LVTTL}}~3300
+\item 
+\#define \mbox{\hyperlink{a00203_a4feaacee11e1ab47912849a6fd4fe7a1}{PRE\+\_\+\+CHARGE\+\_\+\+VOLTAGE}}~700
+\item 
+\#define \mbox{\hyperlink{a00203_af89c18bf5254598da707f95e251b199b}{MAX\+\_\+\+CHARGE\+\_\+\+VOLTAGE}}~1800
+\item 
+\#define \mbox{\hyperlink{a00203_a0aef537048210581a44d27b1de5ee6d8}{MAX\+\_\+\+CHARGE\+\_\+\+CURRENT}}~5000
+\item 
+\#define \mbox{\hyperlink{a00203_ac87c6696747c4ce03d525a2f292caf2d}{CHRG\+\_\+\+ONOFF}}~IOPORT\+\_\+\+PORT\+\_\+05\+\_\+\+PIN\+\_\+03
+\item 
+\#define \mbox{\hyperlink{a00203_ad0df34c85a9e97b1989b09a9ab96cfc5}{CHRG\+\_\+\+PSU\+\_\+\+EN}}~IOPORT\+\_\+\+PORT\+\_\+08\+\_\+\+PIN\+\_\+09
+\item 
+\#define \mbox{\hyperlink{a00203_ac0d0f416d1c86234cdc731c715d477d0}{DEF\+\_\+\+PSU\+\_\+\+EN}}~IOPORT\+\_\+\+PORT\+\_\+08\+\_\+\+PIN\+\_\+08
+\item 
+\#define \mbox{\hyperlink{a00203_a3e5d0933215ef9459fcaeb0a93acdd30}{IO\+\_\+\+PSU\+\_\+\+EN}}~IOPORT\+\_\+\+PORT\+\_\+06\+\_\+\+PIN\+\_\+10
+\item 
+\#define \mbox{\hyperlink{a00203_a5a1791a1541cfbd4278d9f20b6e5e109}{RELAY\+\_\+\+CAP\+\_\+\+EN}}~IOPORT\+\_\+\+PORT\+\_\+06\+\_\+\+PIN\+\_\+02
+\item 
+\#define \mbox{\hyperlink{a00203_a1381c3309a926d350a2154eac8b2597e}{RELAY\+\_\+\+HV\+\_\+\+SHOCK}}~IOPORT\+\_\+\+PORT\+\_\+01\+\_\+\+PIN\+\_\+15
+\item 
+\#define \mbox{\hyperlink{a00203_a3d2d37499dcf5dfec603aec0f83ee466}{HV\+\_\+\+OVC\+\_\+\+REARM}}~IOPORT\+\_\+\+PORT\+\_\+06\+\_\+\+PIN\+\_\+03
+\item 
+\#define \mbox{\hyperlink{a00203_ad5dcb56d60b450ffd8222af5a9b30ed1}{HV\+\_\+\+OVC\+\_\+\+FLAG\+\_\+N}}~IOPORT\+\_\+\+PORT\+\_\+01\+\_\+\+PIN\+\_\+14
+\item 
+\#define \mbox{\hyperlink{a00203_a8190a2a6e7f0dd1b38033af6d844a3ef}{HV\+\_\+\+OVCH\+\_\+\+FLAG\+\_\+N}}~IOPORT\+\_\+\+PORT\+\_\+01\+\_\+\+PIN\+\_\+13
+\item 
+\#define \mbox{\hyperlink{a00203_a39ccab71340b36359e548a61842f45a0}{IGBT\+\_\+1}}~IOPORT\+\_\+\+PORT\+\_\+04\+\_\+\+PIN\+\_\+06
+\item 
+\#define \mbox{\hyperlink{a00203_a7540a77db381025b146ecfede34e81eb}{IGBT\+\_\+2}}~IOPORT\+\_\+\+PORT\+\_\+04\+\_\+\+PIN\+\_\+05
+\item 
+\#define \mbox{\hyperlink{a00203_a423daf8b25e350af3e827c0b5bb95bdf}{IGBT\+\_\+3}}~IOPORT\+\_\+\+PORT\+\_\+01\+\_\+\+PIN\+\_\+07
+\item 
+\#define \mbox{\hyperlink{a00203_a56d5d63fa0fa41fb67f36ef0e5fc1271}{IGBT\+\_\+4}}~IOPORT\+\_\+\+PORT\+\_\+01\+\_\+\+PIN\+\_\+06
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{a00203_ac036bc3cb166129c3196cb82ee57d57c}{DEFIB\+\_\+\+STATE\+\_\+e}} \{ \newline
+\mbox{\hyperlink{a00203_ac036bc3cb166129c3196cb82ee57d57ca394732f46490c94b981e4b48036bf3f2}{e\+DEFIB\+\_\+\+STATE\+\_\+\+STANDBY}} = 0
+, \mbox{\hyperlink{a00203_ac036bc3cb166129c3196cb82ee57d57ca5d53f091b64078a9e7ecd34bf100c009}{e\+DEFIB\+\_\+\+STATE\+\_\+\+CHARGING}}
+, \mbox{\hyperlink{a00203_ac036bc3cb166129c3196cb82ee57d57cad6bdccb6228bf9c9e430f5393ad0171a}{e\+DEFIB\+\_\+\+STATE\+\_\+\+DISCHARGING}}
+, \mbox{\hyperlink{a00203_ac036bc3cb166129c3196cb82ee57d57ca022411497e4cdc8c8065d990f3bd2c64}{e\+DEFIB\+\_\+\+STATE\+\_\+\+CHARGED}}
+, \newline
+\mbox{\hyperlink{a00203_ac036bc3cb166129c3196cb82ee57d57ca13458a445dab7710825c9b0bb8cb1dd8}{e\+DEFIB\+\_\+\+STATE\+\_\+\+SHOCKING}}
+, \mbox{\hyperlink{a00203_ac036bc3cb166129c3196cb82ee57d57ca207e7a3906210c6f9639d2bcd88487a1}{e\+DEFIB\+\_\+\+STATE\+\_\+\+AFTER\+\_\+\+SHOCK}}
+, \mbox{\hyperlink{a00203_ac036bc3cb166129c3196cb82ee57d57cafad4e5998406822eae8f374381214418}{e\+DEFIB\+\_\+\+STATE\+\_\+\+IN\+\_\+\+ERROR}}
+, \mbox{\hyperlink{a00203_ac036bc3cb166129c3196cb82ee57d57ca02f0d4c38703c6a4c39c62d9005380a1}{e\+DEFIB\+\_\+\+STATE\+\_\+\+OUT\+\_\+\+OF\+\_\+\+SERVICE}}
+ \}
+\begin{DoxyCompactList}\small\item\em \texorpdfstring{$<$}{<} Defibrillator states \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a00662}{DD\+\_\+\+SHOCK\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a00203_a181ef932a161bd19a95605c92ed7d62c}{Defib\+\_\+\+Get\+\_\+\+Shock\+\_\+\+DD}} (void)
+\begin{DoxyCompactList}\small\item\em report the shock dynamic data \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{a00203_a1256f38c0ee4324a46ca4e9ff231588f}{Defib\+\_\+\+Get\+\_\+\+Error\+Id}} (void)
+\begin{DoxyCompactList}\small\item\em report the error ID detected in the defibrillator \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00203_ac036bc3cb166129c3196cb82ee57d57c}{DEFIB\+\_\+\+STATE\+\_\+e}} \mbox{\hyperlink{a00203_a1732c6fa09148497f9b79f530fb94a8a}{Defib\+\_\+\+Get\+\_\+\+State}} (void)
+\begin{DoxyCompactList}\small\item\em report the current state of the defibrillator \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{a00203_a51d3d1bc2120f01ddcb0ed702a23e913}{Defib\+\_\+\+Get\+\_\+\+Vc}} (void)
+\begin{DoxyCompactList}\small\item\em Read the Vc value from the main capacitor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \mbox{\hyperlink{a00203_ab3728d4c266f23659cbff349db9ba5a1}{Defib\+\_\+\+Get\+\_\+\+IH}} (void)
+\begin{DoxyCompactList}\small\item\em Read the IH value from the current sense circuit. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{a00203_a3e86b71d391996bf2ffc968da01e5326}{Defib\+\_\+\+Get\+\_\+\+Vbatt}} (void)
+\begin{DoxyCompactList}\small\item\em Read the Vbatt value from the main supply voltage. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{a00203_a601500a89b61d3f1303499f3f48c9ce9}{Defib\+\_\+\+Get\+\_\+\+Vdefib}} (void)
+\begin{DoxyCompactList}\small\item\em Read the Vdefib value from the defibrillator supply voltage. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a00203_ae527cfe38401ea917a498d32618335cf}{Defib\+\_\+\+Set\+\_\+\+Out\+\_\+of\+\_\+\+Service}} (void)
+\begin{DoxyCompactList}\small\item\em set the defibrillator out of service \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a00203_a512f2b063560e5120e68f7fc11a865a0}{Defib\+\_\+\+Disarm}} (void)
+\begin{DoxyCompactList}\small\item\em disarm the capcitor through relay \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a00203_a6e81b634f93bb25286835f828f840c94}{Defib\+\_\+\+Charge}} (\mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} voltage, \mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} current)
+\begin{DoxyCompactList}\small\item\em charge the main capacitor to a predefined value applying a hysteresis ... \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a00203_a5c83cfd8a63ac9b016942a91160874ee}{Defib\+\_\+\+Shock}} (\mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{a00023_a71ed9970da0ab0cc11bbdc71998cb37e}{zp}})
+\begin{DoxyCompactList}\small\item\em shock the patient over a known impedance \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a00203_a0784736ea79dd07b64d000da1214bd62}{Defib\+\_\+\+Shock\+\_\+\+Sync}} (\mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{a00023_a71ed9970da0ab0cc11bbdc71998cb37e}{zp}})
+\begin{DoxyCompactList}\small\item\em shock the patient over a known impedance synchronized with a QRS pulse \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a00203_a76aae876778cb493d0754a6f3374b3ab}{Defib\+\_\+\+Monitor}} (void)
+\begin{DoxyCompactList}\small\item\em executes the defibrillator monitor step to read analog inputs and check that all processes are running properly \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{a00203_a02431634058453ea052aed7a3bab6ecf}{Defib\+\_\+\+Initialize}} (void)
+\begin{DoxyCompactList}\small\item\em initializes the defibrillator controller \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \mbox{\hyperlink{a00203_a25dc68351d66da2947740595a94ab2fc}{Get\+\_\+\+Audio\+\_\+\+Energy}} (void)
+\begin{DoxyCompactList}\small\item\em return the audio energy measured in ADCs \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header with functions related to the defibrillator BSP service. 
+
+\begin{DoxyVersion}{Version}
+v1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+06/06/2018 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+ltorres 
+\end{DoxyAuthor}
+\begin{DoxyWarning}{Warning}
+author date version .-\/ Edition 
+\end{DoxyWarning}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{a00257__bug000057}{Bug}}]\end{DoxyRefDesc}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{a00203_ac87c6696747c4ce03d525a2f292caf2d}\label{a00203_ac87c6696747c4ce03d525a2f292caf2d} 
+\index{thread\_defibrillator\_hal.h@{thread\_defibrillator\_hal.h}!CHRG\_ONOFF@{CHRG\_ONOFF}}
+\index{CHRG\_ONOFF@{CHRG\_ONOFF}!thread\_defibrillator\_hal.h@{thread\_defibrillator\_hal.h}}
+\doxysubsubsection{\texorpdfstring{CHRG\_ONOFF}{CHRG\_ONOFF}}
+{\footnotesize\ttfamily \#define CHRG\+\_\+\+ONOFF~IOPORT\+\_\+\+PORT\+\_\+05\+\_\+\+PIN\+\_\+03}
+
+\Hypertarget{a00203_ad0df34c85a9e97b1989b09a9ab96cfc5}\label{a00203_ad0df34c85a9e97b1989b09a9ab96cfc5} 
+\index{thread\_defibrillator\_hal.h@{thread\_defibrillator\_hal.h}!CHRG\_PSU\_EN@{CHRG\_PSU\_EN}}
+\index{CHRG\_PSU\_EN@{CHRG\_PSU\_EN}!thread\_defibrillator\_hal.h@{thread\_defibrillator\_hal.h}}
+\doxysubsubsection{\texorpdfstring{CHRG\_PSU\_EN}{CHRG\_PSU\_EN}}
+{\footnotesize\ttfamily \#define CHRG\+\_\+\+PSU\+\_\+\+EN~IOPORT\+\_\+\+PORT\+\_\+08\+\_\+\+PIN\+\_\+09}
+
+\Hypertarget{a00203_a4f6142ba6764abe345f2032ecb3743b2}\label{a00203_a4f6142ba6764abe345f2032ecb3743b2} 
+\index{thread\_defibrillator\_hal.h@{thread\_defibrillator\_hal.h}!DC\_LVTTL@{DC\_LVTTL}}
+\index{DC\_LVTTL@{DC\_LVTTL}!thread\_defibrillator\_hal.h@{thread\_defibrillator\_hal.h}}
+\doxysubsubsection{\texorpdfstring{DC\_LVTTL}{DC\_LVTTL}}
+{\footnotesize\ttfamily \#define DC\+\_\+\+LVTTL~3300}
+
+\Hypertarget{a00203_ac0d0f416d1c86234cdc731c715d477d0}\label{a00203_ac0d0f416d1c86234cdc731c715d477d0} 
+\index{thread\_defibrillator\_hal.h@{thread\_defibrillator\_hal.h}!DEF\_PSU\_EN@{DEF\_PSU\_EN}}
+\index{DEF\_PSU\_EN@{DEF\_PSU\_EN}!thread\_defibrillator\_hal.h@{thread\_defibrillator\_hal.h}}
+\doxysubsubsection{\texorpdfstring{DEF\_PSU\_EN}{DEF\_PSU\_EN}}
+{\footnotesize\ttfamily \#define DEF\+\_\+\+PSU\+\_\+\+EN~IOPORT\+\_\+\+PORT\+\_\+08\+\_\+\+PIN\+\_\+08}
+
+\Hypertarget{a00203_ad5dcb56d60b450ffd8222af5a9b30ed1}\label{a00203_ad5dcb56d60b450ffd8222af5a9b30ed1} 
+\index{thread\_defibrillator\_hal.h@{thread\_defibrillator\_hal.h}!HV\_OVC\_FLAG\_N@{HV\_OVC\_FLAG\_N}}
+\index{HV\_OVC\_FLAG\_N@{HV\_OVC\_FLAG\_N}!thread\_defibrillator\_hal.h@{thread\_defibrillator\_hal.h}}
+\doxysubsubsection{\texorpdfstring{HV\_OVC\_FLAG\_N}{HV\_OVC\_FLAG\_N}}
+{\footnotesize\ttfamily \#define HV\+\_\+\+OVC\+\_\+\+FLAG\+\_\+N~IOPORT\+\_\+\+PORT\+\_\+01\+\_\+\+PIN\+\_\+14}
+
+\Hypertarget{a00203_a3d2d37499dcf5dfec603aec0f83ee466}\label{a00203_a3d2d37499dcf5dfec603aec0f83ee466} 
+\index{thread\_defibrillator\_hal.h@{thread\_defibrillator\_hal.h}!HV\_OVC\_REARM@{HV\_OVC\_REARM}}
+\index{HV\_OVC\_REARM@{HV\_OVC\_REARM}!thread\_defibrillator\_hal.h@{thread\_defibrillator\_hal.h}}
+\doxysubsubsection{\texorpdfstring{HV\_OVC\_REARM}{HV\_OVC\_REARM}}
+{\footnotesize\ttfamily \#define HV\+\_\+\+OVC\+\_\+\+REARM~IOPORT\+\_\+\+PORT\+\_\+06\+\_\+\+PIN\+\_\+03}
+
+\Hypertarget{a00203_a8190a2a6e7f0dd1b38033af6d844a3ef}\label{a00203_a8190a2a6e7f0dd1b38033af6d844a3ef} 
+\index{thread\_defibrillator\_hal.h@{thread\_defibrillator\_hal.h}!HV\_OVCH\_FLAG\_N@{HV\_OVCH\_FLAG\_N}}
+\index{HV\_OVCH\_FLAG\_N@{HV\_OVCH\_FLAG\_N}!thread\_defibrillator\_hal.h@{thread\_defibrillator\_hal.h}}
+\doxysubsubsection{\texorpdfstring{HV\_OVCH\_FLAG\_N}{HV\_OVCH\_FLAG\_N}}
+{\footnotesize\ttfamily \#define HV\+\_\+\+OVCH\+\_\+\+FLAG\+\_\+N~IOPORT\+\_\+\+PORT\+\_\+01\+\_\+\+PIN\+\_\+13}
+
+\Hypertarget{a00203_a39ccab71340b36359e548a61842f45a0}\label{a00203_a39ccab71340b36359e548a61842f45a0} 
+\index{thread\_defibrillator\_hal.h@{thread\_defibrillator\_hal.h}!IGBT\_1@{IGBT\_1}}
+\index{IGBT\_1@{IGBT\_1}!thread\_defibrillator\_hal.h@{thread\_defibrillator\_hal.h}}
+\doxysubsubsection{\texorpdfstring{IGBT\_1}{IGBT\_1}}
+{\footnotesize\ttfamily \#define IGBT\+\_\+1~IOPORT\+\_\+\+PORT\+\_\+04\+\_\+\+PIN\+\_\+06}
+
+\Hypertarget{a00203_a7540a77db381025b146ecfede34e81eb}\label{a00203_a7540a77db381025b146ecfede34e81eb} 
+\index{thread\_defibrillator\_hal.h@{thread\_defibrillator\_hal.h}!IGBT\_2@{IGBT\_2}}
+\index{IGBT\_2@{IGBT\_2}!thread\_defibrillator\_hal.h@{thread\_defibrillator\_hal.h}}
+\doxysubsubsection{\texorpdfstring{IGBT\_2}{IGBT\_2}}
+{\footnotesize\ttfamily \#define IGBT\+\_\+2~IOPORT\+\_\+\+PORT\+\_\+04\+\_\+\+PIN\+\_\+05}
+
+\Hypertarget{a00203_a423daf8b25e350af3e827c0b5bb95bdf}\label{a00203_a423daf8b25e350af3e827c0b5bb95bdf} 
+\index{thread\_defibrillator\_hal.h@{thread\_defibrillator\_hal.h}!IGBT\_3@{IGBT\_3}}
+\index{IGBT\_3@{IGBT\_3}!thread\_defibrillator\_hal.h@{thread\_defibrillator\_hal.h}}
+\doxysubsubsection{\texorpdfstring{IGBT\_3}{IGBT\_3}}
+{\footnotesize\ttfamily \#define IGBT\+\_\+3~IOPORT\+\_\+\+PORT\+\_\+01\+\_\+\+PIN\+\_\+07}
+
+\Hypertarget{a00203_a56d5d63fa0fa41fb67f36ef0e5fc1271}\label{a00203_a56d5d63fa0fa41fb67f36ef0e5fc1271} 
+\index{thread\_defibrillator\_hal.h@{thread\_defibrillator\_hal.h}!IGBT\_4@{IGBT\_4}}
+\index{IGBT\_4@{IGBT\_4}!thread\_defibrillator\_hal.h@{thread\_defibrillator\_hal.h}}
+\doxysubsubsection{\texorpdfstring{IGBT\_4}{IGBT\_4}}
+{\footnotesize\ttfamily \#define IGBT\+\_\+4~IOPORT\+\_\+\+PORT\+\_\+01\+\_\+\+PIN\+\_\+06}
+
+\Hypertarget{a00203_a3e5d0933215ef9459fcaeb0a93acdd30}\label{a00203_a3e5d0933215ef9459fcaeb0a93acdd30} 
+\index{thread\_defibrillator\_hal.h@{thread\_defibrillator\_hal.h}!IO\_PSU\_EN@{IO\_PSU\_EN}}
+\index{IO\_PSU\_EN@{IO\_PSU\_EN}!thread\_defibrillator\_hal.h@{thread\_defibrillator\_hal.h}}
+\doxysubsubsection{\texorpdfstring{IO\_PSU\_EN}{IO\_PSU\_EN}}
+{\footnotesize\ttfamily \#define IO\+\_\+\+PSU\+\_\+\+EN~IOPORT\+\_\+\+PORT\+\_\+06\+\_\+\+PIN\+\_\+10}
+
+\Hypertarget{a00203_a0aef537048210581a44d27b1de5ee6d8}\label{a00203_a0aef537048210581a44d27b1de5ee6d8} 
+\index{thread\_defibrillator\_hal.h@{thread\_defibrillator\_hal.h}!MAX\_CHARGE\_CURRENT@{MAX\_CHARGE\_CURRENT}}
+\index{MAX\_CHARGE\_CURRENT@{MAX\_CHARGE\_CURRENT}!thread\_defibrillator\_hal.h@{thread\_defibrillator\_hal.h}}
+\doxysubsubsection{\texorpdfstring{MAX\_CHARGE\_CURRENT}{MAX\_CHARGE\_CURRENT}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+CHARGE\+\_\+\+CURRENT~5000}
+
+\Hypertarget{a00203_af89c18bf5254598da707f95e251b199b}\label{a00203_af89c18bf5254598da707f95e251b199b} 
+\index{thread\_defibrillator\_hal.h@{thread\_defibrillator\_hal.h}!MAX\_CHARGE\_VOLTAGE@{MAX\_CHARGE\_VOLTAGE}}
+\index{MAX\_CHARGE\_VOLTAGE@{MAX\_CHARGE\_VOLTAGE}!thread\_defibrillator\_hal.h@{thread\_defibrillator\_hal.h}}
+\doxysubsubsection{\texorpdfstring{MAX\_CHARGE\_VOLTAGE}{MAX\_CHARGE\_VOLTAGE}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+CHARGE\+\_\+\+VOLTAGE~1800}
+
+\Hypertarget{a00203_a4feaacee11e1ab47912849a6fd4fe7a1}\label{a00203_a4feaacee11e1ab47912849a6fd4fe7a1} 
+\index{thread\_defibrillator\_hal.h@{thread\_defibrillator\_hal.h}!PRE\_CHARGE\_VOLTAGE@{PRE\_CHARGE\_VOLTAGE}}
+\index{PRE\_CHARGE\_VOLTAGE@{PRE\_CHARGE\_VOLTAGE}!thread\_defibrillator\_hal.h@{thread\_defibrillator\_hal.h}}
+\doxysubsubsection{\texorpdfstring{PRE\_CHARGE\_VOLTAGE}{PRE\_CHARGE\_VOLTAGE}}
+{\footnotesize\ttfamily \#define PRE\+\_\+\+CHARGE\+\_\+\+VOLTAGE~700}
+
+\Hypertarget{a00203_a5a1791a1541cfbd4278d9f20b6e5e109}\label{a00203_a5a1791a1541cfbd4278d9f20b6e5e109} 
+\index{thread\_defibrillator\_hal.h@{thread\_defibrillator\_hal.h}!RELAY\_CAP\_EN@{RELAY\_CAP\_EN}}
+\index{RELAY\_CAP\_EN@{RELAY\_CAP\_EN}!thread\_defibrillator\_hal.h@{thread\_defibrillator\_hal.h}}
+\doxysubsubsection{\texorpdfstring{RELAY\_CAP\_EN}{RELAY\_CAP\_EN}}
+{\footnotesize\ttfamily \#define RELAY\+\_\+\+CAP\+\_\+\+EN~IOPORT\+\_\+\+PORT\+\_\+06\+\_\+\+PIN\+\_\+02}
+
+\Hypertarget{a00203_a1381c3309a926d350a2154eac8b2597e}\label{a00203_a1381c3309a926d350a2154eac8b2597e} 
+\index{thread\_defibrillator\_hal.h@{thread\_defibrillator\_hal.h}!RELAY\_HV\_SHOCK@{RELAY\_HV\_SHOCK}}
+\index{RELAY\_HV\_SHOCK@{RELAY\_HV\_SHOCK}!thread\_defibrillator\_hal.h@{thread\_defibrillator\_hal.h}}
+\doxysubsubsection{\texorpdfstring{RELAY\_HV\_SHOCK}{RELAY\_HV\_SHOCK}}
+{\footnotesize\ttfamily \#define RELAY\+\_\+\+HV\+\_\+\+SHOCK~IOPORT\+\_\+\+PORT\+\_\+01\+\_\+\+PIN\+\_\+15}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{a00203_ac036bc3cb166129c3196cb82ee57d57c}\label{a00203_ac036bc3cb166129c3196cb82ee57d57c} 
+\index{thread\_defibrillator\_hal.h@{thread\_defibrillator\_hal.h}!DEFIB\_STATE\_e@{DEFIB\_STATE\_e}}
+\index{DEFIB\_STATE\_e@{DEFIB\_STATE\_e}!thread\_defibrillator\_hal.h@{thread\_defibrillator\_hal.h}}
+\doxysubsubsection{\texorpdfstring{DEFIB\_STATE\_e}{DEFIB\_STATE\_e}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{a00203_ac036bc3cb166129c3196cb82ee57d57c}{DEFIB\+\_\+\+STATE\+\_\+e}}}
+
+
+
+\texorpdfstring{$<$}{<} Defibrillator states 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eDEFIB\_STATE\_STANDBY@{eDEFIB\_STATE\_STANDBY}!thread\_defibrillator\_hal.h@{thread\_defibrillator\_hal.h}}\index{thread\_defibrillator\_hal.h@{thread\_defibrillator\_hal.h}!eDEFIB\_STATE\_STANDBY@{eDEFIB\_STATE\_STANDBY}}}\Hypertarget{a00203_ac036bc3cb166129c3196cb82ee57d57ca394732f46490c94b981e4b48036bf3f2}\label{a00203_ac036bc3cb166129c3196cb82ee57d57ca394732f46490c94b981e4b48036bf3f2} 
+e\+DEFIB\+\_\+\+STATE\+\_\+\+STANDBY&defibrillator in standby (capacitor discharged) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eDEFIB\_STATE\_CHARGING@{eDEFIB\_STATE\_CHARGING}!thread\_defibrillator\_hal.h@{thread\_defibrillator\_hal.h}}\index{thread\_defibrillator\_hal.h@{thread\_defibrillator\_hal.h}!eDEFIB\_STATE\_CHARGING@{eDEFIB\_STATE\_CHARGING}}}\Hypertarget{a00203_ac036bc3cb166129c3196cb82ee57d57ca5d53f091b64078a9e7ecd34bf100c009}\label{a00203_ac036bc3cb166129c3196cb82ee57d57ca5d53f091b64078a9e7ecd34bf100c009} 
+e\+DEFIB\+\_\+\+STATE\+\_\+\+CHARGING&defibrillator charging the main capacitor \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eDEFIB\_STATE\_DISCHARGING@{eDEFIB\_STATE\_DISCHARGING}!thread\_defibrillator\_hal.h@{thread\_defibrillator\_hal.h}}\index{thread\_defibrillator\_hal.h@{thread\_defibrillator\_hal.h}!eDEFIB\_STATE\_DISCHARGING@{eDEFIB\_STATE\_DISCHARGING}}}\Hypertarget{a00203_ac036bc3cb166129c3196cb82ee57d57cad6bdccb6228bf9c9e430f5393ad0171a}\label{a00203_ac036bc3cb166129c3196cb82ee57d57cad6bdccb6228bf9c9e430f5393ad0171a} 
+e\+DEFIB\+\_\+\+STATE\+\_\+\+DISCHARGING&defibrillator discharging the main capacitor \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eDEFIB\_STATE\_CHARGED@{eDEFIB\_STATE\_CHARGED}!thread\_defibrillator\_hal.h@{thread\_defibrillator\_hal.h}}\index{thread\_defibrillator\_hal.h@{thread\_defibrillator\_hal.h}!eDEFIB\_STATE\_CHARGED@{eDEFIB\_STATE\_CHARGED}}}\Hypertarget{a00203_ac036bc3cb166129c3196cb82ee57d57ca022411497e4cdc8c8065d990f3bd2c64}\label{a00203_ac036bc3cb166129c3196cb82ee57d57ca022411497e4cdc8c8065d990f3bd2c64} 
+e\+DEFIB\+\_\+\+STATE\+\_\+\+CHARGED&defibrillator charged to the required voltage \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eDEFIB\_STATE\_SHOCKING@{eDEFIB\_STATE\_SHOCKING}!thread\_defibrillator\_hal.h@{thread\_defibrillator\_hal.h}}\index{thread\_defibrillator\_hal.h@{thread\_defibrillator\_hal.h}!eDEFIB\_STATE\_SHOCKING@{eDEFIB\_STATE\_SHOCKING}}}\Hypertarget{a00203_ac036bc3cb166129c3196cb82ee57d57ca13458a445dab7710825c9b0bb8cb1dd8}\label{a00203_ac036bc3cb166129c3196cb82ee57d57ca13458a445dab7710825c9b0bb8cb1dd8} 
+e\+DEFIB\+\_\+\+STATE\+\_\+\+SHOCKING&defibrillator shocking the patient \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eDEFIB\_STATE\_AFTER\_SHOCK@{eDEFIB\_STATE\_AFTER\_SHOCK}!thread\_defibrillator\_hal.h@{thread\_defibrillator\_hal.h}}\index{thread\_defibrillator\_hal.h@{thread\_defibrillator\_hal.h}!eDEFIB\_STATE\_AFTER\_SHOCK@{eDEFIB\_STATE\_AFTER\_SHOCK}}}\Hypertarget{a00203_ac036bc3cb166129c3196cb82ee57d57ca207e7a3906210c6f9639d2bcd88487a1}\label{a00203_ac036bc3cb166129c3196cb82ee57d57ca207e7a3906210c6f9639d2bcd88487a1} 
+e\+DEFIB\+\_\+\+STATE\+\_\+\+AFTER\+\_\+\+SHOCK&defibrillator in after shock \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eDEFIB\_STATE\_IN\_ERROR@{eDEFIB\_STATE\_IN\_ERROR}!thread\_defibrillator\_hal.h@{thread\_defibrillator\_hal.h}}\index{thread\_defibrillator\_hal.h@{thread\_defibrillator\_hal.h}!eDEFIB\_STATE\_IN\_ERROR@{eDEFIB\_STATE\_IN\_ERROR}}}\Hypertarget{a00203_ac036bc3cb166129c3196cb82ee57d57cafad4e5998406822eae8f374381214418}\label{a00203_ac036bc3cb166129c3196cb82ee57d57cafad4e5998406822eae8f374381214418} 
+e\+DEFIB\+\_\+\+STATE\+\_\+\+IN\+\_\+\+ERROR&defibrillator with an error \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eDEFIB\_STATE\_OUT\_OF\_SERVICE@{eDEFIB\_STATE\_OUT\_OF\_SERVICE}!thread\_defibrillator\_hal.h@{thread\_defibrillator\_hal.h}}\index{thread\_defibrillator\_hal.h@{thread\_defibrillator\_hal.h}!eDEFIB\_STATE\_OUT\_OF\_SERVICE@{eDEFIB\_STATE\_OUT\_OF\_SERVICE}}}\Hypertarget{a00203_ac036bc3cb166129c3196cb82ee57d57ca02f0d4c38703c6a4c39c62d9005380a1}\label{a00203_ac036bc3cb166129c3196cb82ee57d57ca02f0d4c38703c6a4c39c62d9005380a1} 
+e\+DEFIB\+\_\+\+STATE\+\_\+\+OUT\+\_\+\+OF\+\_\+\+SERVICE&defibrillator is out of service \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{a00203_a6e81b634f93bb25286835f828f840c94}\label{a00203_a6e81b634f93bb25286835f828f840c94} 
+\index{thread\_defibrillator\_hal.h@{thread\_defibrillator\_hal.h}!Defib\_Charge@{Defib\_Charge}}
+\index{Defib\_Charge@{Defib\_Charge}!thread\_defibrillator\_hal.h@{thread\_defibrillator\_hal.h}}
+\doxysubsubsection{\texorpdfstring{Defib\_Charge()}{Defib\_Charge()}}
+{\footnotesize\ttfamily void Defib\+\_\+\+Charge (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}}}]{voltage,  }\item[{\mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}}}]{current }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+charge the main capacitor to a predefined value applying a hysteresis ... 
+
+
+\begin{DoxyParams}{Parameters}
+{\em voltage} & charge voltage or voltage to reach (in volts) \\
+\hline
+{\em current} & charge current (in milliamperes)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\Hypertarget{a00203_a512f2b063560e5120e68f7fc11a865a0}\label{a00203_a512f2b063560e5120e68f7fc11a865a0} 
+\index{thread\_defibrillator\_hal.h@{thread\_defibrillator\_hal.h}!Defib\_Disarm@{Defib\_Disarm}}
+\index{Defib\_Disarm@{Defib\_Disarm}!thread\_defibrillator\_hal.h@{thread\_defibrillator\_hal.h}}
+\doxysubsubsection{\texorpdfstring{Defib\_Disarm()}{Defib\_Disarm()}}
+{\footnotesize\ttfamily void Defib\+\_\+\+Disarm (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+disarm the capcitor through relay 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\Hypertarget{a00203_a1256f38c0ee4324a46ca4e9ff231588f}\label{a00203_a1256f38c0ee4324a46ca4e9ff231588f} 
+\index{thread\_defibrillator\_hal.h@{thread\_defibrillator\_hal.h}!Defib\_Get\_ErrorId@{Defib\_Get\_ErrorId}}
+\index{Defib\_Get\_ErrorId@{Defib\_Get\_ErrorId}!thread\_defibrillator\_hal.h@{thread\_defibrillator\_hal.h}}
+\doxysubsubsection{\texorpdfstring{Defib\_Get\_ErrorId()}{Defib\_Get\_ErrorId()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Defib\+\_\+\+Get\+\_\+\+Error\+Id (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+report the error ID detected in the defibrillator 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+defibrillator error identifier 
+\end{DoxyReturn}
+\Hypertarget{a00203_ab3728d4c266f23659cbff349db9ba5a1}\label{a00203_ab3728d4c266f23659cbff349db9ba5a1} 
+\index{thread\_defibrillator\_hal.h@{thread\_defibrillator\_hal.h}!Defib\_Get\_IH@{Defib\_Get\_IH}}
+\index{Defib\_Get\_IH@{Defib\_Get\_IH}!thread\_defibrillator\_hal.h@{thread\_defibrillator\_hal.h}}
+\doxysubsubsection{\texorpdfstring{Defib\_Get\_IH()}{Defib\_Get\_IH()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} Defib\+\_\+\+Get\+\_\+\+IH (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Read the IH value from the current sense circuit. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+IH current value in milliamperes 
+\end{DoxyReturn}
+\Hypertarget{a00203_a181ef932a161bd19a95605c92ed7d62c}\label{a00203_a181ef932a161bd19a95605c92ed7d62c} 
+\index{thread\_defibrillator\_hal.h@{thread\_defibrillator\_hal.h}!Defib\_Get\_Shock\_DD@{Defib\_Get\_Shock\_DD}}
+\index{Defib\_Get\_Shock\_DD@{Defib\_Get\_Shock\_DD}!thread\_defibrillator\_hal.h@{thread\_defibrillator\_hal.h}}
+\doxysubsubsection{\texorpdfstring{Defib\_Get\_Shock\_DD()}{Defib\_Get\_Shock\_DD()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00662}{DD\+\_\+\+SHOCK\+\_\+t}} \texorpdfstring{$\ast$}{*} Defib\+\_\+\+Get\+\_\+\+Shock\+\_\+\+DD (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+report the shock dynamic data 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to the data structure 
+\end{DoxyReturn}
+\Hypertarget{a00203_a1732c6fa09148497f9b79f530fb94a8a}\label{a00203_a1732c6fa09148497f9b79f530fb94a8a} 
+\index{thread\_defibrillator\_hal.h@{thread\_defibrillator\_hal.h}!Defib\_Get\_State@{Defib\_Get\_State}}
+\index{Defib\_Get\_State@{Defib\_Get\_State}!thread\_defibrillator\_hal.h@{thread\_defibrillator\_hal.h}}
+\doxysubsubsection{\texorpdfstring{Defib\_Get\_State()}{Defib\_Get\_State()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00203_ac036bc3cb166129c3196cb82ee57d57c}{DEFIB\+\_\+\+STATE\+\_\+e}} Defib\+\_\+\+Get\+\_\+\+State (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+report the current state of the defibrillator 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+defibrillator state 
+\end{DoxyReturn}
+\Hypertarget{a00203_a3e86b71d391996bf2ffc968da01e5326}\label{a00203_a3e86b71d391996bf2ffc968da01e5326} 
+\index{thread\_defibrillator\_hal.h@{thread\_defibrillator\_hal.h}!Defib\_Get\_Vbatt@{Defib\_Get\_Vbatt}}
+\index{Defib\_Get\_Vbatt@{Defib\_Get\_Vbatt}!thread\_defibrillator\_hal.h@{thread\_defibrillator\_hal.h}}
+\doxysubsubsection{\texorpdfstring{Defib\_Get\_Vbatt()}{Defib\_Get\_Vbatt()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} Defib\+\_\+\+Get\+\_\+\+Vbatt (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Read the Vbatt value from the main supply voltage. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vbattery voltage value in millivolts 
+\end{DoxyReturn}
+\Hypertarget{a00203_a51d3d1bc2120f01ddcb0ed702a23e913}\label{a00203_a51d3d1bc2120f01ddcb0ed702a23e913} 
+\index{thread\_defibrillator\_hal.h@{thread\_defibrillator\_hal.h}!Defib\_Get\_Vc@{Defib\_Get\_Vc}}
+\index{Defib\_Get\_Vc@{Defib\_Get\_Vc}!thread\_defibrillator\_hal.h@{thread\_defibrillator\_hal.h}}
+\doxysubsubsection{\texorpdfstring{Defib\_Get\_Vc()}{Defib\_Get\_Vc()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} Defib\+\_\+\+Get\+\_\+\+Vc (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Read the Vc value from the main capacitor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vc voltage value in volts 
+\end{DoxyReturn}
+\Hypertarget{a00203_a601500a89b61d3f1303499f3f48c9ce9}\label{a00203_a601500a89b61d3f1303499f3f48c9ce9} 
+\index{thread\_defibrillator\_hal.h@{thread\_defibrillator\_hal.h}!Defib\_Get\_Vdefib@{Defib\_Get\_Vdefib}}
+\index{Defib\_Get\_Vdefib@{Defib\_Get\_Vdefib}!thread\_defibrillator\_hal.h@{thread\_defibrillator\_hal.h}}
+\doxysubsubsection{\texorpdfstring{Defib\_Get\_Vdefib()}{Defib\_Get\_Vdefib()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} Defib\+\_\+\+Get\+\_\+\+Vdefib (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Read the Vdefib value from the defibrillator supply voltage. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vdefib voltage value in millivolts 
+\end{DoxyReturn}
+\Hypertarget{a00203_a02431634058453ea052aed7a3bab6ecf}\label{a00203_a02431634058453ea052aed7a3bab6ecf} 
+\index{thread\_defibrillator\_hal.h@{thread\_defibrillator\_hal.h}!Defib\_Initialize@{Defib\_Initialize}}
+\index{Defib\_Initialize@{Defib\_Initialize}!thread\_defibrillator\_hal.h@{thread\_defibrillator\_hal.h}}
+\doxysubsubsection{\texorpdfstring{Defib\_Initialize()}{Defib\_Initialize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Defib\+\_\+\+Initialize (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+initializes the defibrillator controller 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+initialization result 
+\end{DoxyReturn}
+\Hypertarget{a00203_a76aae876778cb493d0754a6f3374b3ab}\label{a00203_a76aae876778cb493d0754a6f3374b3ab} 
+\index{thread\_defibrillator\_hal.h@{thread\_defibrillator\_hal.h}!Defib\_Monitor@{Defib\_Monitor}}
+\index{Defib\_Monitor@{Defib\_Monitor}!thread\_defibrillator\_hal.h@{thread\_defibrillator\_hal.h}}
+\doxysubsubsection{\texorpdfstring{Defib\_Monitor()}{Defib\_Monitor()}}
+{\footnotesize\ttfamily void Defib\+\_\+\+Monitor (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+executes the defibrillator monitor step to read analog inputs and check that all processes are running properly 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\Hypertarget{a00203_ae527cfe38401ea917a498d32618335cf}\label{a00203_ae527cfe38401ea917a498d32618335cf} 
+\index{thread\_defibrillator\_hal.h@{thread\_defibrillator\_hal.h}!Defib\_Set\_Out\_of\_Service@{Defib\_Set\_Out\_of\_Service}}
+\index{Defib\_Set\_Out\_of\_Service@{Defib\_Set\_Out\_of\_Service}!thread\_defibrillator\_hal.h@{thread\_defibrillator\_hal.h}}
+\doxysubsubsection{\texorpdfstring{Defib\_Set\_Out\_of\_Service()}{Defib\_Set\_Out\_of\_Service()}}
+{\footnotesize\ttfamily void Defib\+\_\+\+Set\+\_\+\+Out\+\_\+of\+\_\+\+Service (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+set the defibrillator out of service 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\Hypertarget{a00203_a5c83cfd8a63ac9b016942a91160874ee}\label{a00203_a5c83cfd8a63ac9b016942a91160874ee} 
+\index{thread\_defibrillator\_hal.h@{thread\_defibrillator\_hal.h}!Defib\_Shock@{Defib\_Shock}}
+\index{Defib\_Shock@{Defib\_Shock}!thread\_defibrillator\_hal.h@{thread\_defibrillator\_hal.h}}
+\doxysubsubsection{\texorpdfstring{Defib\_Shock()}{Defib\_Shock()}}
+{\footnotesize\ttfamily void Defib\+\_\+\+Shock (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}}}]{zp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+shock the patient over a known impedance 
+
+
+\begin{DoxyParams}{Parameters}
+{\em zp} & patient impedance value in ohms\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\Hypertarget{a00203_a0784736ea79dd07b64d000da1214bd62}\label{a00203_a0784736ea79dd07b64d000da1214bd62} 
+\index{thread\_defibrillator\_hal.h@{thread\_defibrillator\_hal.h}!Defib\_Shock\_Sync@{Defib\_Shock\_Sync}}
+\index{Defib\_Shock\_Sync@{Defib\_Shock\_Sync}!thread\_defibrillator\_hal.h@{thread\_defibrillator\_hal.h}}
+\doxysubsubsection{\texorpdfstring{Defib\_Shock\_Sync()}{Defib\_Shock\_Sync()}}
+{\footnotesize\ttfamily void Defib\+\_\+\+Shock\+\_\+\+Sync (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}}}]{zp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+shock the patient over a known impedance synchronized with a QRS pulse 
+
+
+\begin{DoxyParams}{Parameters}
+{\em zp} & patient impedance value in ohms\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\Hypertarget{a00203_a25dc68351d66da2947740595a94ab2fc}\label{a00203_a25dc68351d66da2947740595a94ab2fc} 
+\index{thread\_defibrillator\_hal.h@{thread\_defibrillator\_hal.h}!Get\_Audio\_Energy@{Get\_Audio\_Energy}}
+\index{Get\_Audio\_Energy@{Get\_Audio\_Energy}!thread\_defibrillator\_hal.h@{thread\_defibrillator\_hal.h}}
+\doxysubsubsection{\texorpdfstring{Get\_Audio\_Energy()}{Get\_Audio\_Energy()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} Get\+\_\+\+Audio\+\_\+\+Energy (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+return the audio energy measured in ADCs 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+normalized audio energy 
+\end{DoxyReturn}

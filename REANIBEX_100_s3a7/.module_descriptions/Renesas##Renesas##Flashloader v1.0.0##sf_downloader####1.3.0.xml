@@ -1,0 +1,71 @@
+<?xml version="1.0" ?>
+<synergyModuleDescription>  
+    <config id="config.framework.sf_downloader" path="ssp_cfg/framework/sf_downolader_cfg.h" version="0">
+        <property default="config.framework.sf_downloader.param_checking_enable.bsp" display="Parameter Checking" id="config.framework.sf_downloader.param_checking_enable">
+            <option display="Default (BSP)" id="config.framework.sf_downloader.param_checking_enable.bsp" value="(BSP_CFG_PARAM_CHECKING_ENABLE)"/>
+            <option display="Enabled" id="config.framework.sf_downloader.param_checking_enable.enabled" value="(1)"/>
+            <option display="Disabled" id="config.framework.sf_downloader.param_checking_enable.disabled" value="(0)"/>
+        </property>
+        <content>
+            #define SF_DOWNLOADER_CFG_PARAM_CHECKING_ENABLE ${config.framework.sf_downloader.param_checking_enable}
+        </content>
+    </config>
+    <module config="config.framework.sf_downloader" display="Renesas|Flashloader|${module.framework.sf_downloader.name} Downloader Framework on sf_downloader" id="module.framework.sf_downloader" version="1">
+	    <constraint display="Module instances must have unique names">
+            "${interface.framework.sf_downloader.${module.framework.sf_downloader.name}}" === "1"
+        </constraint>
+        <requires interface="_rtos" />
+		<requires id="module.framework.sf_downloader.requires.sf_firmware_image" interface="interface.framework.sf_firmware_image" display="Add sf_firmware_image">
+			<override property="module.framework.sf_firmware_image.p_callback" value="NULL"/>
+	    </requires>
+        <requires id="module.framework.sf_downloader.requires.sf_comms" interface="interface.framework.sf_comms" display="Add Communication Framework" />
+		<provides interface="interface.framework.sf_downloader" />
+        <provides interface="interface.framework.sf_downloader_on_sf_downloader" />
+        <provides interface="interface.framework.sf_downloader.${module.framework.sf_downloader.name}" />
+        <property id="module.framework.sf_downloader.name" display="Name" default="g_sf_downloader${_instance}">
+            <constraint display="Name must be a valid C symbol">testSymbol("${module.framework.sf_downloader.name}")</constraint>
+        </property>
+		<property id="module.framework.sf_downloader.block_size" display="Block size (bytes)" default="1024">
+            <constraint display="Must be an integer">testInteger("${module.framework.sf_downloader.block_size}")</constraint>
+        </property>
+        <property id="module.framework.sf_downloader.timeout_rx" display="Timeout for receiving data (ticks)" default="10">
+            <constraint display="Must be an integer">testInteger("${module.framework.sf_downloader.timeout_rx}") &amp;&amp; ("${module.framework.sf_downloader.timeout_rx}" &gt;= 0)</constraint>
+        </property>        
+        <property id="module.framework.sf_downloader.p_callback" display="Callback" default="NULL">
+            <constraint display="Name must be a valid C symbol">testSymbol("${module.framework.sf_downloader.p_callback}")</constraint>
+        </property>
+		<property id="module.framework.sf_downloader.p_context" display="Context" default="NULL"/>
+        <header>
+			extern const sf_downloader_instance_t ${module.framework.sf_downloader.name};
+			#ifndef ${module.framework.sf_downloader.p_callback}
+				void ${module.framework.sf_downloader.p_callback}(sf_downloader_callback_args_t * p_args);
+			#endif
+			#define RECEIVE_BUFFER_SIZE_${module.framework.sf_downloader.name} (${module.framework.sf_downloader.block_size} + sizeof(sf_firmware_image_file_header_t) + sizeof(sf_firmware_image_bch_block_header_t))
+        </header>
+        <includes>
+			#include &quot;sf_downloader.h&quot;
+			#include &quot;sf_firmware_image.h&quot;
+        </includes>
+        <declarations>
+			static uint8_t ${module.framework.sf_downloader.name}_receive_buffer[RECEIVE_BUFFER_SIZE_${module.framework.sf_downloader.name}];
+			static sf_downloader_instance_ctrl_t ${module.framework.sf_downloader.name}_ctrl;
+			static const sf_downloader_cfg_t  ${module.framework.sf_downloader.name}_cfg = 
+			{
+				.p_lower_lvl_firmware_image = &amp;${module.framework.sf_downloader.requires.sf_firmware_image::module.framework.sf_firmware_image.name},
+				.p_lower_lvl_comms          = &amp;${module.framework.sf_downloader.requires.sf_comms::module.framework.sf_comms.name},
+				.p_receive_buffer           = ${module.framework.sf_downloader.name}_receive_buffer,
+				.receive_buffer_size        = RECEIVE_BUFFER_SIZE_${module.framework.sf_downloader.name},
+                .timeout_rx                 = ${module.framework.sf_downloader.timeout_rx},
+				.p_callback                 = ${module.framework.sf_downloader.p_callback},
+				.p_extend                   = (void *)NULL,
+                .p_context                  = (void *)${module.framework.sf_downloader.p_context}
+			};
+			const sf_downloader_instance_t ${module.framework.sf_downloader.name} = 
+			{
+				.p_api  =  &amp;g_sf_downloader_on_sf_downloader,
+				.p_ctrl =  &amp;${module.framework.sf_downloader.name}_ctrl,
+				.p_cfg  =  (sf_downloader_cfg_t const *)&amp;${module.framework.sf_downloader.name}_cfg
+			};
+        </declarations>
+    </module>
+</synergyModuleDescription>

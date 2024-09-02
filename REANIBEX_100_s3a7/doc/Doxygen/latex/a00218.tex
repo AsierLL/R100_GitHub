@@ -1,0 +1,1009 @@
+\doxysection{C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\+HAL/thread\+\_\+pat\+Mon\+\_\+hal.c File Reference}
+\hypertarget{a00218}{}\label{a00218}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/HAL/thread\_patMon\_hal.c@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/HAL/thread\_patMon\_hal.c}}
+{\ttfamily \#include $<$device\+\_\+init.\+h$>$}\newline
+{\ttfamily \#include "{}Trace.\+h"{}}\newline
+{\ttfamily \#include "{}types\+\_\+basic.\+h"{}}\newline
+{\ttfamily \#include "{}types\+\_\+app.\+h"{}}\newline
+{\ttfamily \#include "{}R100\+\_\+\+Errors.\+h"{}}\newline
+{\ttfamily \#include "{}R100\+\_\+\+Tables.\+h"{}}\newline
+{\ttfamily \#include "{}thread\+\_\+\+DRD\+\_\+entry.\+h"{}}\newline
+{\ttfamily \#include "{}thread\+\_\+core\+\_\+entry.\+h"{}}\newline
+{\ttfamily \#include "{}thread\+\_\+defibrillator\+\_\+hal.\+h"{}}\newline
+{\ttfamily \#include "{}thread\+\_\+pat\+Mon\+\_\+hal.\+h"{}}\newline
+{\ttfamily \#include "{}thread\+\_\+pat\+Mon.\+h"{}}\newline
+{\ttfamily \#include "{}sys\+Mon\+\_\+\+Battery.\+h"{}}\newline
+Include dependency graph for thread\+\_\+pat\+Mon\+\_\+hal.\+c\+:
+% FIG 0
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{a00666}{PMK\+\_\+\+PULSE\+\_\+\+DESC\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{a00218_a44ebcbaeebbaa97251cd67ede6624cec}{NUM\+\_\+\+KOEFS\+\_\+\+ECG\+\_\+\+FILTER}}~16
+\begin{DoxyCompactList}\small\item\em Zp value segmentation (in ohms) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{a00218_abe5f908e150496fcbe5a8d85f60ae27c}{ZP\+\_\+\+OPEN\+\_\+\+CIRC\+\_\+\+THR}}~2800
+\begin{DoxyCompactList}\small\item\em threshold for open circuit \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{a00218_aa597d8f80bdb6f2ce1869931d78a1b7b}{ZP\+\_\+\+BAD\+\_\+\+CONN\+\_\+\+THR}}~300
+\begin{DoxyCompactList}\small\item\em threshold for bad connection \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{a00218_a47341ce4cf1cb93076a3884a12cc8f6e}{ZP\+\_\+\+GOOD\+\_\+\+CONN\+\_\+\+THR}}~15
+\begin{DoxyCompactList}\small\item\em threshold for good connection \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{a00218_a795e4e8100f68e180ecd33d18f5be0bb}{PMK\+\_\+\+PULSE\+\_\+\+LEN}}~7
+\begin{DoxyCompactList}\small\item\em number of samples to define a PMK pulse \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{a00218_a1ab9bd5ba4a7122a22bc977ce5cade38}{ZP\+\_\+\+ADCS\+\_\+\+MINIMUM}}~(\mbox{\hyperlink{a00218_a7b54b86aee777ab26020111fc70a3fe3}{zp\+\_\+table\+\_\+adcs}}\mbox{[} 0\mbox{]})
+\item 
+\#define \mbox{\hyperlink{a00218_a3c33102d462b5eece122bf673e8534a5}{ZP\+\_\+\+ADCS\+\_\+\+FOR\+\_\+\+VALID\+\_\+\+ECG}}~(\mbox{\hyperlink{a00218_a7b54b86aee777ab26020111fc70a3fe3}{zp\+\_\+table\+\_\+adcs}}\mbox{[}15\mbox{]})
+\item 
+\#define \mbox{\hyperlink{a00218_a2f3445f1df7faf17ac45788c5223b987}{ZP\+\_\+\+ADCS\+\_\+\+MAXIMUM}}~(\mbox{\hyperlink{a00218_a7b54b86aee777ab26020111fc70a3fe3}{zp\+\_\+table\+\_\+adcs}}\mbox{[}33\mbox{]})
+\item 
+\#define \mbox{\hyperlink{a00218_a5726086c41bc333935288a3ea298487b}{DEMOD\+\_\+\+PHASE}}~0b11110010
+\item 
+\#define \mbox{\hyperlink{a00218_a56e0a72dbdf352439d927bd0fdd67a04}{ZP\+\_\+\+MEAS}}~200
+\item 
+\#define \mbox{\hyperlink{a00218_a4b9ec69a3bd6809e03a0a255e276d681}{IGNORE\+\_\+\+OFFSET}}~0
+\item 
+\#define \mbox{\hyperlink{a00218_a7b7e47518400c296ab33149ff9198379}{REPORT\+\_\+\+OHMS}}~1
+\item 
+\#define \mbox{\hyperlink{a00218_af69da92025ed2f9bdaeff522bb50aa9e}{PMK\+\_\+\+PULSE\+\_\+\+AMPLITUDE}}~6932
+\item 
+\#define \mbox{\hyperlink{a00218_afeb50781e2fcc1a6ce66789041afeafb}{NLOOPS\+\_\+\+FOR\+\_\+\+INVALID\+\_\+\+ECG}}~10
+\item 
+\#define \mbox{\hyperlink{a00218_ac688d0953747c4423e0e924f68a78475}{MAX\+\_\+\+ECG\+\_\+\+GRADIENT}}~1739
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{a00218_aa4f9819d0b820e2a2424387100b2752f}{ADS\+\_\+\+Send\+\_\+\+Command}} (\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} cmd)
+\begin{DoxyCompactList}\small\item\em send a single command to the ADS device \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{a00218_a536dccf203be6d4f38a8dfd4f7c75927}{ADS\+\_\+\+Run}} (void)
+\begin{DoxyCompactList}\small\item\em set the ADS running and converting ECG \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{a00218_ac90b7fa85dda7f1ef888e785ad21be13}{ADS\+\_\+\+Stop}} (void)
+\begin{DoxyCompactList}\small\item\em stop the ADS and set in Standby or low power mode \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{a00218_aaa98f9f50a75f3361640788e1c9aafcc}{ADS\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em initializes the ADS1292R device \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{a00218_ac688aca0f2d2b2eb2077a5509d209d27}{ADS\+\_\+\+Read\+\_\+\+Samples}} (\mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Status, \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Ch1, \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Ch2)
+\begin{DoxyCompactList}\small\item\em read converted samples from the ADS device \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{a00218_a78efbb4253e7c802428a5dc2a3c2363f}{ADS\+\_\+\+Read\+\_\+\+Single\+\_\+\+Reg}} (\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} reg\+Id, \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Data)
+\begin{DoxyCompactList}\small\item\em read from a single register \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{a00218_a2cf3f21afee4e3fba117dd47fcb3382c}{ADS\+\_\+\+Write\+\_\+\+Single\+\_\+\+Reg}} (\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} reg\+Id, \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} my\+\_\+data)
+\begin{DoxyCompactList}\small\item\em write into a single register \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{a00218_af8b7abb561c43283a4b3e47a7767972a}{ECG\+\_\+\+Filter\+\_\+\+Restart}} (void)
+\begin{DoxyCompactList}\small\item\em restart sample delays used filtering ECG \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{a00137_a269259c924dce846340ddbb810db2e3c}{int16\+\_\+t}} \mbox{\hyperlink{a00218_a26bd4ad8386da959cdb281d1d0a665e2}{ECG\+\_\+\+Offset\+\_\+\+Removal}} (\mbox{\hyperlink{a00137_a2ba621978a511250f7250fb10e05ffbe}{int32\+\_\+t}} sample)
+\begin{DoxyCompactList}\small\item\em remove the DC offset from the ECG samples \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{a00218_ae36a2432d1f2717af0701ebbb4d60f86}{ZP\+\_\+\+Update\+\_\+\+Value}} (\mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} zp\+\_\+sample)
+\begin{DoxyCompactList}\small\item\em Update the ZP value. This function is called in each sample capture at 1 Ksps. The function filters and decimates the received samples to obtain a FS\+\_\+\+ZP impedance measurements. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{a00218_afd2379d77dad77bf5b07181417da39ef}{Adjust\+\_\+\+Zp\+\_\+\+Table}} (\mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} zp\+\_\+adc\+\_\+cal, \mbox{\hyperlink{a00137_a2ba621978a511250f7250fb10e05ffbe}{int32\+\_\+t}} my\+\_\+temp)
+\begin{DoxyCompactList}\small\item\em adjust the ZP table to the current device \& temperature assume that the calibration table is ascending and the max \& min values are descending values in the matrix \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{a00218_ab35f7ec4fddc46d1bf9055f66c3f7ff3}{PMK\+\_\+\+Pulse\+\_\+\+Detect\+\_\+and\+\_\+\+Remove}} (\mbox{\hyperlink{a00137_a2ba621978a511250f7250fb10e05ffbe}{int32\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Sample)
+\begin{DoxyCompactList}\small\item\em Detect a single PMK pulse and remove it from the ECG signal to be recovered after all ECG filters have been applied. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{a00218_a7f719e56cb039144290ee6c72c5cc768}{PMK\+\_\+\+Pulse\+\_\+\+Restore}} (\mbox{\hyperlink{a00137_a269259c924dce846340ddbb810db2e3c}{int16\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Sample)
+\begin{DoxyCompactList}\small\item\em Restore the PMK pulse to the filtered signal. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a00218_abac6f6b7853d62b47ee192fba4833b4f}{ADS\+\_\+\+Read\+\_\+\+Frame}} (void)
+\begin{DoxyCompactList}\small\item\em Read a single frame from the ADS (analog front end) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a00218_ac4ee9c57661e2fe83c4532e88ba5beae}{g\+\_\+irq8\+\_\+callback}} (external\+\_\+irq\+\_\+callback\+\_\+args\+\_\+t \texorpdfstring{$\ast$}{*}p\+\_\+args)
+\begin{DoxyCompactList}\small\item\em IRQ8 interrupt callback process. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a00218_aad3a5460b730439ee2fc0ddb605f9c21}{pat\+Mon\+\_\+\+HAL\+\_\+\+Init}} (\mbox{\hyperlink{a00221_a7f3c1af5fc3759e7ef04c26ddb860a89}{NOTCH\+\_\+t}} my\+Notch)
+\begin{DoxyCompactList}\small\item\em Initialize the HAL for the patient monitor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{a00218_a76fe3793dbe441d338e5ff2cf3225896}{pat\+Mon\+\_\+\+Get\+\_\+\+ECG\+\_\+\+Window}} (\mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} n\+Ecg\+\_\+first, \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} n\+Samples, \mbox{\hyperlink{a00137_a269259c924dce846340ddbb810db2e3c}{int16\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Samples)
+\begin{DoxyCompactList}\small\item\em Read the last ECG samples from the ECG buffer. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{a00218_a1c27eef6f6abd7a968be54ab6a3de6f4}{pat\+Mon\+\_\+\+Get\+\_\+\+ZP\+\_\+\+Window}} (\mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} n\+Zp\+\_\+first, \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} n\+Samples, \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Samples)
+\begin{DoxyCompactList}\small\item\em Read the last ZP samples from the ZP buffer. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \mbox{\hyperlink{a00218_a1978c4a195c3ce1aee541a55fece2e70}{pat\+Mon\+\_\+\+Get\+\_\+\+ECG\+\_\+n\+Sample}} (void)
+\begin{DoxyCompactList}\small\item\em Report the current ECG identifier. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00221_aa23822bb020122c14a71e9f8667d26b3}{EL\+\_\+\+TYPE\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{a00218_a9c7dde826efc7b8fc999797f357af945}{pat\+Mon\+\_\+\+Get\+\_\+\+Connected\+\_\+\+El}} (void)
+\begin{DoxyCompactList}\small\item\em Check if electrodes are connected. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \mbox{\hyperlink{a00218_ae98728fc9430398da8683e46653aac5b}{pat\+Mon\+\_\+\+Get\+\_\+zp\+\_\+\+CAL\+\_\+\+ADCs}} (void)
+\begin{DoxyCompactList}\small\item\em report the calibration impedance value in ADCs \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \mbox{\hyperlink{a00218_a9ba28eb3a7a634bf9a4a495d90a705b1}{pat\+Mon\+\_\+\+Get\+\_\+\+Zp\+\_\+\+ADCs}} (void)
+\begin{DoxyCompactList}\small\item\em report the impedance value in ADCs (this value is not compensated !!!) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \mbox{\hyperlink{a00218_a6b07f419fb5494de970c245ba09885a4}{pat\+Mon\+\_\+\+Get\+\_\+\+Zp\+\_\+\+Ohms}} (void)
+\begin{DoxyCompactList}\small\item\em report the impedance value (in Ohms, ADCs or virtual) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00221_ad86d69a0b4d65ddf120f056f448beff3}{ZP\+\_\+\+SEGMENT\+\_\+e}} \mbox{\hyperlink{a00218_a2b4e8b90eba8f938b87190b1369806a8}{pat\+Mon\+\_\+\+Get\+\_\+\+Zp\+\_\+\+Segment}} (void)
+\begin{DoxyCompactList}\small\item\em Ask for the patient impedance segment. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_a2ba621978a511250f7250fb10e05ffbe}{int32\+\_\+t}} \mbox{\hyperlink{a00218_a38356e80b22420c57c34439af0dc1250}{pat\+Mon\+\_\+\+Get\+\_\+\+Temperature}} (void)
+\begin{DoxyCompactList}\small\item\em report the temperature value in degrees be careful, the PGA gain is 4 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{a00218_a6c91fedede8d24735f7592eda67d8360}{pat\+Mon\+\_\+\+Get\+\_\+\+Status}} (void)
+\begin{DoxyCompactList}\small\item\em report the ADS operating status \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const \mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}} \mbox{\hyperlink{a00218_a0a2dd1ddd3af77b8a2e17f0d13467025}{IIR\+\_\+\+LPF\+\_\+A}} \mbox{[}2\mbox{]} = \{ (\mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}}) ( 1.\+0000), (\mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}}) (-\/0.\+8273) \}
+\item 
+const \mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}} \mbox{\hyperlink{a00218_a7cf0bc44de25ce5cb1e208c2e749935e}{IIR\+\_\+\+LPF\+\_\+B}} \mbox{[}2\mbox{]} = \{ (\mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}}) ( 0.\+0864), (\mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}}) ( 0.\+0864) \}
+\item 
+const \mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}} \mbox{\hyperlink{a00218_a5eddcd24345161a6053dae1282d8dbb7}{IIR\+\_\+\+HPF\+\_\+A}} \mbox{[}2\mbox{]} = \{ (\mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}}) ( 1.\+0000), (\mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}}) (-\/0.\+9973) \}
+\item 
+const \mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}} \mbox{\hyperlink{a00218_a4fc0bea28bdc87d8f8ef8fffaf8918fa}{IIR\+\_\+\+HPF\+\_\+B}} \mbox{[}2\mbox{]} = \{ (\mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}}) ( 1.\+0000), (\mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}}) (-\/1.\+0000) \}
+\item 
+const \mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}} \mbox{\hyperlink{a00218_a7493c54848765e81bfc6085f4c25ef59}{IIR\+\_\+\+N50\+\_\+1A}} \mbox{[}3\mbox{]} = \{ (\mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}}) ( 1.\+0000), (\mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}}) (-\/1.\+899154663085938), (\mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}}) ( 0.\+997741699218750) \}
+\item 
+const \mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}} \mbox{\hyperlink{a00218_a10e3a709064be0d10bbca2adf2d8cd0e}{IIR\+\_\+\+N50\+\_\+1B}} \mbox{[}3\mbox{]} = \{ (\mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}}) ( 1.\+0000), (\mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}}) (-\/1.\+902114868164063), (\mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}}) ( 1.\+000000000000000) \}
+\item 
+const \mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}} \mbox{\hyperlink{a00218_af97c82572b8dd1ac161a879c021646c6}{IIR\+\_\+\+N50\+\_\+2A}} \mbox{[}3\mbox{]} = \{ (\mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}}) ( 1.\+0000), (\mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}}) (-\/1.\+900787353515625), (\mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}}) ( 0.\+997756958007813) \}
+\item 
+const \mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}} \mbox{\hyperlink{a00218_a4dfc5e6fd665cc32dc31f19da7479abd}{IIR\+\_\+\+N50\+\_\+2B}} \mbox{[}3\mbox{]} = \{ (\mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}}) ( 1.\+0000), (\mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}}) (-\/1.\+902114868164063), (\mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}}) ( 1.\+000000000000000) \}
+\item 
+const \mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}} \mbox{\hyperlink{a00218_af9dba9770e49f336db515ba86ea2a4ca}{IIR\+\_\+\+N60\+\_\+1A}} \mbox{[}3\mbox{]} = \{ (\mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}}) ( 1.\+0000), (\mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}}) (-\/1.\+856491088867188), (\mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}}) ( 0.\+997741699218750) \}
+\item 
+const \mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}} \mbox{\hyperlink{a00218_a4249f779701675e1bb110eea53e0a527}{IIR\+\_\+\+N60\+\_\+1B}} \mbox{[}3\mbox{]} = \{ (\mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}}) ( 1.\+0000), (\mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}}) (-\/1.\+859558105468750), (\mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}}) ( 1.\+000000000000000) \}
+\item 
+const \mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}} \mbox{\hyperlink{a00218_a1702cd9fb41040d8ad61ceb6df854fc3}{IIR\+\_\+\+N60\+\_\+2A}} \mbox{[}3\mbox{]} = \{ (\mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}}) ( 1.\+0000), (\mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}}) (-\/1.\+858428955078125), (\mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}}) ( 0.\+997756958007813) \}
+\item 
+const \mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}} \mbox{\hyperlink{a00218_a95419dc8825c87b304586c6a17a5f3d3}{IIR\+\_\+\+N60\+\_\+2B}} \mbox{[}3\mbox{]} = \{ (\mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}}) ( 1.\+0000), (\mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}}) (-\/1.\+859558105468750), (\mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}}) ( 1.\+000000000000000) \}
+\item 
+static \mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a00218_a27c9c67268f8111f8256f8ab5f8d469a}{p\+NF1A}}
+\item 
+static \mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a00218_a49dad8f440d592928f120de52f576ed4}{p\+NF1B}}
+\item 
+static \mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a00218_a87c5fc9145ca1c113481a45a593042c4}{p\+NF2A}}
+\item 
+static \mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a00218_a015baa6c371e6ca744d24ed8d9cf7a90}{p\+NF2B}}
+\item 
+static \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{a00218_a326c702d69136fc6864a0b0ac30534a6}{ads\+\_\+buffer}} \mbox{[}\mbox{\hyperlink{a00221_a24d03d55b329a17d3d340609562fe05a}{ADS\+\_\+\+BUFFER\+\_\+\+SIZE}}\mbox{]}
+\item 
+static \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \mbox{\hyperlink{a00218_a607177011d3bb8ce36a1f2ccc2521558}{ecg\+\_\+n\+Sample}}
+\item 
+static \mbox{\hyperlink{a00137_a269259c924dce846340ddbb810db2e3c}{int16\+\_\+t}} \mbox{\hyperlink{a00218_ae668e74aea822f6de07735930df45835}{ecg\+\_\+data}} \mbox{[}\mbox{\hyperlink{a00221_a63bc8d2f3809631c0444e9f8adecec65}{ECG\+\_\+\+BUFFER\+\_\+\+SIZE}}\mbox{]}
+\item 
+static \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \mbox{\hyperlink{a00218_a9d3cdf393e3142f69caa08f190e5a205}{zp\+\_\+data}} \mbox{[}\mbox{\hyperlink{a00221_aea6ee0780b984ab7670d4ee80712a79d}{ZP\+\_\+\+BUFFER\+\_\+\+SIZE}}\mbox{]}
+\item 
+static \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \mbox{\hyperlink{a00218_a5b4cbe1012c7b05f6d222d42bfe761c9}{zp\+\_\+ohms}}
+\item 
+static \mbox{\hyperlink{a00137_a2ba621978a511250f7250fb10e05ffbe}{int32\+\_\+t}} \mbox{\hyperlink{a00218_a8005f80b6c491cbf848d811da215d3cd}{zp\+\_\+adcs}}
+\item 
+static \mbox{\hyperlink{a00137_a2ba621978a511250f7250fb10e05ffbe}{int32\+\_\+t}} \mbox{\hyperlink{a00218_ae882748fda59909b8ac17d9160ebf8c2}{zp\+\_\+adcs\+\_\+raw}}
+\item 
+static \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \mbox{\hyperlink{a00218_a56ed3f6a88e6341f794425ba542602eb}{zp\+\_\+cal}}
+\item 
+static \mbox{\hyperlink{a00137_a2ba621978a511250f7250fb10e05ffbe}{int32\+\_\+t}} \mbox{\hyperlink{a00218_ac7440e301151e8d7fc70adad53bcac93}{zp\+\_\+offset\+\_\+static}} = 0
+\item 
+static \mbox{\hyperlink{a00137_a2ba621978a511250f7250fb10e05ffbe}{int32\+\_\+t}} \mbox{\hyperlink{a00218_affa6537717d9aa167830b890af515654}{zp\+\_\+offset\+\_\+dynamic}} = 0
+\item 
+static \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \mbox{\hyperlink{a00218_a7b54b86aee777ab26020111fc70a3fe3}{zp\+\_\+table\+\_\+adcs}} \mbox{[}\mbox{\hyperlink{a00179_a941efc1e5afecf27189dd5c34706d485}{MAX\+\_\+\+ZP\+\_\+\+ITEMS}}\mbox{]}
+\item 
+static \mbox{\hyperlink{a00179_a2d31b9db80cda3badfd9911a692968f3}{ZP\+\_\+\+MATRIX\+\_\+t}} \mbox{\hyperlink{a00218_a19118be699a45b31dcc5a3621dadc68a}{device\+\_\+zp\+\_\+matrix}} \mbox{[}\mbox{\hyperlink{a00179_a9193e1db9fcda28c34ce37f8c43398f1}{MAX\+\_\+\+ZP\+\_\+\+MATRIX\+\_\+\+ITEMS}}\mbox{]}
+\item 
+static \mbox{\hyperlink{a00137_a2ba621978a511250f7250fb10e05ffbe}{int32\+\_\+t}} \mbox{\hyperlink{a00218_aed3cca2c82f353de9c4f011a31d76657}{temperature\+\_\+adcs}}
+\item 
+static \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \mbox{\hyperlink{a00218_a281a8fb8e230d722b441e6812ca20e65}{idx\+\_\+ecg}}
+\item 
+static \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \mbox{\hyperlink{a00218_a3d9166084ec3884de3773403cdad9bcc}{idx\+\_\+zp}}
+\item 
+static \mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}} \mbox{\hyperlink{a00218_ad583cdc77a99796f2e5a9f3c6f8bd38e}{IIR\+\_\+ecg\+\_\+dly}} \mbox{[}\mbox{\hyperlink{a00218_a44ebcbaeebbaa97251cd67ede6624cec}{NUM\+\_\+\+KOEFS\+\_\+\+ECG\+\_\+\+FILTER}}\mbox{]}
+\item 
+static \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \mbox{\hyperlink{a00218_ad1b0f51e00d7a645a69fcf68489e7bce}{wrong\+\_\+data\+\_\+cont}} = 0
+\item 
+static bool \mbox{\hyperlink{a00218_a6a3dc90ded617609d70e9ce48e57a64c}{cal\+\_\+running}} = false
+\item 
+static \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{a00218_a0545a8d840c00afd6fd4f122c6763c09}{ads\+\_\+status}} = \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a602af6bf6848ce46e68f0a2051a66a21}{e\+ERR\+\_\+\+ADS\+\_\+\+DEVICE\+\_\+\+ID}}
+\item 
+static \mbox{\hyperlink{a00666}{PMK\+\_\+\+PULSE\+\_\+\+DESC\+\_\+t}} \mbox{\hyperlink{a00218_a7ebcdfa7582a2243112a1655fe0684bb}{pmk\+\_\+pulse\+\_\+desc}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{a00218_a5726086c41bc333935288a3ea298487b}\label{a00218_a5726086c41bc333935288a3ea298487b} 
+\index{thread\_patMon\_hal.c@{thread\_patMon\_hal.c}!DEMOD\_PHASE@{DEMOD\_PHASE}}
+\index{DEMOD\_PHASE@{DEMOD\_PHASE}!thread\_patMon\_hal.c@{thread\_patMon\_hal.c}}
+\doxysubsubsection{\texorpdfstring{DEMOD\_PHASE}{DEMOD\_PHASE}}
+{\footnotesize\ttfamily \#define DEMOD\+\_\+\+PHASE~0b11110010}
+
+\Hypertarget{a00218_a4b9ec69a3bd6809e03a0a255e276d681}\label{a00218_a4b9ec69a3bd6809e03a0a255e276d681} 
+\index{thread\_patMon\_hal.c@{thread\_patMon\_hal.c}!IGNORE\_OFFSET@{IGNORE\_OFFSET}}
+\index{IGNORE\_OFFSET@{IGNORE\_OFFSET}!thread\_patMon\_hal.c@{thread\_patMon\_hal.c}}
+\doxysubsubsection{\texorpdfstring{IGNORE\_OFFSET}{IGNORE\_OFFSET}}
+{\footnotesize\ttfamily \#define IGNORE\+\_\+\+OFFSET~0}
+
+\Hypertarget{a00218_ac688d0953747c4423e0e924f68a78475}\label{a00218_ac688d0953747c4423e0e924f68a78475} 
+\index{thread\_patMon\_hal.c@{thread\_patMon\_hal.c}!MAX\_ECG\_GRADIENT@{MAX\_ECG\_GRADIENT}}
+\index{MAX\_ECG\_GRADIENT@{MAX\_ECG\_GRADIENT}!thread\_patMon\_hal.c@{thread\_patMon\_hal.c}}
+\doxysubsubsection{\texorpdfstring{MAX\_ECG\_GRADIENT}{MAX\_ECG\_GRADIENT}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+ECG\+\_\+\+GRADIENT~1739}
+
+\Hypertarget{a00218_afeb50781e2fcc1a6ce66789041afeafb}\label{a00218_afeb50781e2fcc1a6ce66789041afeafb} 
+\index{thread\_patMon\_hal.c@{thread\_patMon\_hal.c}!NLOOPS\_FOR\_INVALID\_ECG@{NLOOPS\_FOR\_INVALID\_ECG}}
+\index{NLOOPS\_FOR\_INVALID\_ECG@{NLOOPS\_FOR\_INVALID\_ECG}!thread\_patMon\_hal.c@{thread\_patMon\_hal.c}}
+\doxysubsubsection{\texorpdfstring{NLOOPS\_FOR\_INVALID\_ECG}{NLOOPS\_FOR\_INVALID\_ECG}}
+{\footnotesize\ttfamily \#define NLOOPS\+\_\+\+FOR\+\_\+\+INVALID\+\_\+\+ECG~10}
+
+\Hypertarget{a00218_a44ebcbaeebbaa97251cd67ede6624cec}\label{a00218_a44ebcbaeebbaa97251cd67ede6624cec} 
+\index{thread\_patMon\_hal.c@{thread\_patMon\_hal.c}!NUM\_KOEFS\_ECG\_FILTER@{NUM\_KOEFS\_ECG\_FILTER}}
+\index{NUM\_KOEFS\_ECG\_FILTER@{NUM\_KOEFS\_ECG\_FILTER}!thread\_patMon\_hal.c@{thread\_patMon\_hal.c}}
+\doxysubsubsection{\texorpdfstring{NUM\_KOEFS\_ECG\_FILTER}{NUM\_KOEFS\_ECG\_FILTER}}
+{\footnotesize\ttfamily \#define NUM\+\_\+\+KOEFS\+\_\+\+ECG\+\_\+\+FILTER~16}
+
+
+
+Zp value segmentation (in ohms) 
+
+\Hypertarget{a00218_af69da92025ed2f9bdaeff522bb50aa9e}\label{a00218_af69da92025ed2f9bdaeff522bb50aa9e} 
+\index{thread\_patMon\_hal.c@{thread\_patMon\_hal.c}!PMK\_PULSE\_AMPLITUDE@{PMK\_PULSE\_AMPLITUDE}}
+\index{PMK\_PULSE\_AMPLITUDE@{PMK\_PULSE\_AMPLITUDE}!thread\_patMon\_hal.c@{thread\_patMon\_hal.c}}
+\doxysubsubsection{\texorpdfstring{PMK\_PULSE\_AMPLITUDE}{PMK\_PULSE\_AMPLITUDE}}
+{\footnotesize\ttfamily \#define PMK\+\_\+\+PULSE\+\_\+\+AMPLITUDE~6932}
+
+\Hypertarget{a00218_a795e4e8100f68e180ecd33d18f5be0bb}\label{a00218_a795e4e8100f68e180ecd33d18f5be0bb} 
+\index{thread\_patMon\_hal.c@{thread\_patMon\_hal.c}!PMK\_PULSE\_LEN@{PMK\_PULSE\_LEN}}
+\index{PMK\_PULSE\_LEN@{PMK\_PULSE\_LEN}!thread\_patMon\_hal.c@{thread\_patMon\_hal.c}}
+\doxysubsubsection{\texorpdfstring{PMK\_PULSE\_LEN}{PMK\_PULSE\_LEN}}
+{\footnotesize\ttfamily \#define PMK\+\_\+\+PULSE\+\_\+\+LEN~7}
+
+
+
+number of samples to define a PMK pulse 
+
+\Hypertarget{a00218_a7b7e47518400c296ab33149ff9198379}\label{a00218_a7b7e47518400c296ab33149ff9198379} 
+\index{thread\_patMon\_hal.c@{thread\_patMon\_hal.c}!REPORT\_OHMS@{REPORT\_OHMS}}
+\index{REPORT\_OHMS@{REPORT\_OHMS}!thread\_patMon\_hal.c@{thread\_patMon\_hal.c}}
+\doxysubsubsection{\texorpdfstring{REPORT\_OHMS}{REPORT\_OHMS}}
+{\footnotesize\ttfamily \#define REPORT\+\_\+\+OHMS~1}
+
+\Hypertarget{a00218_a3c33102d462b5eece122bf673e8534a5}\label{a00218_a3c33102d462b5eece122bf673e8534a5} 
+\index{thread\_patMon\_hal.c@{thread\_patMon\_hal.c}!ZP\_ADCS\_FOR\_VALID\_ECG@{ZP\_ADCS\_FOR\_VALID\_ECG}}
+\index{ZP\_ADCS\_FOR\_VALID\_ECG@{ZP\_ADCS\_FOR\_VALID\_ECG}!thread\_patMon\_hal.c@{thread\_patMon\_hal.c}}
+\doxysubsubsection{\texorpdfstring{ZP\_ADCS\_FOR\_VALID\_ECG}{ZP\_ADCS\_FOR\_VALID\_ECG}}
+{\footnotesize\ttfamily \#define ZP\+\_\+\+ADCS\+\_\+\+FOR\+\_\+\+VALID\+\_\+\+ECG~(\mbox{\hyperlink{a00218_a7b54b86aee777ab26020111fc70a3fe3}{zp\+\_\+table\+\_\+adcs}}\mbox{[}15\mbox{]})}
+
+\Hypertarget{a00218_a2f3445f1df7faf17ac45788c5223b987}\label{a00218_a2f3445f1df7faf17ac45788c5223b987} 
+\index{thread\_patMon\_hal.c@{thread\_patMon\_hal.c}!ZP\_ADCS\_MAXIMUM@{ZP\_ADCS\_MAXIMUM}}
+\index{ZP\_ADCS\_MAXIMUM@{ZP\_ADCS\_MAXIMUM}!thread\_patMon\_hal.c@{thread\_patMon\_hal.c}}
+\doxysubsubsection{\texorpdfstring{ZP\_ADCS\_MAXIMUM}{ZP\_ADCS\_MAXIMUM}}
+{\footnotesize\ttfamily \#define ZP\+\_\+\+ADCS\+\_\+\+MAXIMUM~(\mbox{\hyperlink{a00218_a7b54b86aee777ab26020111fc70a3fe3}{zp\+\_\+table\+\_\+adcs}}\mbox{[}33\mbox{]})}
+
+\Hypertarget{a00218_a1ab9bd5ba4a7122a22bc977ce5cade38}\label{a00218_a1ab9bd5ba4a7122a22bc977ce5cade38} 
+\index{thread\_patMon\_hal.c@{thread\_patMon\_hal.c}!ZP\_ADCS\_MINIMUM@{ZP\_ADCS\_MINIMUM}}
+\index{ZP\_ADCS\_MINIMUM@{ZP\_ADCS\_MINIMUM}!thread\_patMon\_hal.c@{thread\_patMon\_hal.c}}
+\doxysubsubsection{\texorpdfstring{ZP\_ADCS\_MINIMUM}{ZP\_ADCS\_MINIMUM}}
+{\footnotesize\ttfamily \#define ZP\+\_\+\+ADCS\+\_\+\+MINIMUM~(\mbox{\hyperlink{a00218_a7b54b86aee777ab26020111fc70a3fe3}{zp\+\_\+table\+\_\+adcs}}\mbox{[} 0\mbox{]})}
+
+\Hypertarget{a00218_aa597d8f80bdb6f2ce1869931d78a1b7b}\label{a00218_aa597d8f80bdb6f2ce1869931d78a1b7b} 
+\index{thread\_patMon\_hal.c@{thread\_patMon\_hal.c}!ZP\_BAD\_CONN\_THR@{ZP\_BAD\_CONN\_THR}}
+\index{ZP\_BAD\_CONN\_THR@{ZP\_BAD\_CONN\_THR}!thread\_patMon\_hal.c@{thread\_patMon\_hal.c}}
+\doxysubsubsection{\texorpdfstring{ZP\_BAD\_CONN\_THR}{ZP\_BAD\_CONN\_THR}}
+{\footnotesize\ttfamily \#define ZP\+\_\+\+BAD\+\_\+\+CONN\+\_\+\+THR~300}
+
+
+
+threshold for bad connection 
+
+\Hypertarget{a00218_a47341ce4cf1cb93076a3884a12cc8f6e}\label{a00218_a47341ce4cf1cb93076a3884a12cc8f6e} 
+\index{thread\_patMon\_hal.c@{thread\_patMon\_hal.c}!ZP\_GOOD\_CONN\_THR@{ZP\_GOOD\_CONN\_THR}}
+\index{ZP\_GOOD\_CONN\_THR@{ZP\_GOOD\_CONN\_THR}!thread\_patMon\_hal.c@{thread\_patMon\_hal.c}}
+\doxysubsubsection{\texorpdfstring{ZP\_GOOD\_CONN\_THR}{ZP\_GOOD\_CONN\_THR}}
+{\footnotesize\ttfamily \#define ZP\+\_\+\+GOOD\+\_\+\+CONN\+\_\+\+THR~15}
+
+
+
+threshold for good connection 
+
+\Hypertarget{a00218_a56e0a72dbdf352439d927bd0fdd67a04}\label{a00218_a56e0a72dbdf352439d927bd0fdd67a04} 
+\index{thread\_patMon\_hal.c@{thread\_patMon\_hal.c}!ZP\_MEAS@{ZP\_MEAS}}
+\index{ZP\_MEAS@{ZP\_MEAS}!thread\_patMon\_hal.c@{thread\_patMon\_hal.c}}
+\doxysubsubsection{\texorpdfstring{ZP\_MEAS}{ZP\_MEAS}}
+{\footnotesize\ttfamily \#define ZP\+\_\+\+MEAS~200}
+
+\Hypertarget{a00218_abe5f908e150496fcbe5a8d85f60ae27c}\label{a00218_abe5f908e150496fcbe5a8d85f60ae27c} 
+\index{thread\_patMon\_hal.c@{thread\_patMon\_hal.c}!ZP\_OPEN\_CIRC\_THR@{ZP\_OPEN\_CIRC\_THR}}
+\index{ZP\_OPEN\_CIRC\_THR@{ZP\_OPEN\_CIRC\_THR}!thread\_patMon\_hal.c@{thread\_patMon\_hal.c}}
+\doxysubsubsection{\texorpdfstring{ZP\_OPEN\_CIRC\_THR}{ZP\_OPEN\_CIRC\_THR}}
+{\footnotesize\ttfamily \#define ZP\+\_\+\+OPEN\+\_\+\+CIRC\+\_\+\+THR~2800}
+
+
+
+threshold for open circuit 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{a00218_afd2379d77dad77bf5b07181417da39ef}\label{a00218_afd2379d77dad77bf5b07181417da39ef} 
+\index{thread\_patMon\_hal.c@{thread\_patMon\_hal.c}!Adjust\_Zp\_Table@{Adjust\_Zp\_Table}}
+\index{Adjust\_Zp\_Table@{Adjust\_Zp\_Table}!thread\_patMon\_hal.c@{thread\_patMon\_hal.c}}
+\doxysubsubsection{\texorpdfstring{Adjust\_Zp\_Table()}{Adjust\_Zp\_Table()}}
+{\footnotesize\ttfamily static void Adjust\+\_\+\+Zp\+\_\+\+Table (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}}}]{zp\+\_\+adc\+\_\+cal,  }\item[{\mbox{\hyperlink{a00137_a2ba621978a511250f7250fb10e05ffbe}{int32\+\_\+t}}}]{my\+\_\+temp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+adjust the ZP table to the current device \& temperature assume that the calibration table is ascending and the max \& min values are descending values in the matrix 
+
+
+\begin{DoxyParams}{Parameters}
+{\em zp\+\_\+adcs\+\_\+cal} & read ADCs in the calibration resistor \\
+\hline
+{\em my\+\_\+temp} & current temperature in ºC\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\Hypertarget{a00218_aaa98f9f50a75f3361640788e1c9aafcc}\label{a00218_aaa98f9f50a75f3361640788e1c9aafcc} 
+\index{thread\_patMon\_hal.c@{thread\_patMon\_hal.c}!ADS\_Init@{ADS\_Init}}
+\index{ADS\_Init@{ADS\_Init}!thread\_patMon\_hal.c@{thread\_patMon\_hal.c}}
+\doxysubsubsection{\texorpdfstring{ADS\_Init()}{ADS\_Init()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} ADS\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+initializes the ADS1292R device 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+operation result or error code 
+\end{DoxyReturn}
+\Hypertarget{a00218_abac6f6b7853d62b47ee192fba4833b4f}\label{a00218_abac6f6b7853d62b47ee192fba4833b4f} 
+\index{thread\_patMon\_hal.c@{thread\_patMon\_hal.c}!ADS\_Read\_Frame@{ADS\_Read\_Frame}}
+\index{ADS\_Read\_Frame@{ADS\_Read\_Frame}!thread\_patMon\_hal.c@{thread\_patMon\_hal.c}}
+\doxysubsubsection{\texorpdfstring{ADS\_Read\_Frame()}{ADS\_Read\_Frame()}}
+{\footnotesize\ttfamily void ADS\+\_\+\+Read\+\_\+\+Frame (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Read a single frame from the ADS (analog front end) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\Hypertarget{a00218_ac688aca0f2d2b2eb2077a5509d209d27}\label{a00218_ac688aca0f2d2b2eb2077a5509d209d27} 
+\index{thread\_patMon\_hal.c@{thread\_patMon\_hal.c}!ADS\_Read\_Samples@{ADS\_Read\_Samples}}
+\index{ADS\_Read\_Samples@{ADS\_Read\_Samples}!thread\_patMon\_hal.c@{thread\_patMon\_hal.c}}
+\doxysubsubsection{\texorpdfstring{ADS\_Read\_Samples()}{ADS\_Read\_Samples()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} ADS\+\_\+\+Read\+\_\+\+Samples (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Status,  }\item[{\mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Ch1,  }\item[{\mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Ch2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+read converted samples from the ADS device 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Status} & pointer to status word \\
+\hline
+{\em p\+Ch1} & pointer to channel 1 data \\
+\hline
+{\em p\+Ch2} & pointer to channel 2 data\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+operation result or error code 
+\end{DoxyReturn}
+\Hypertarget{a00218_a78efbb4253e7c802428a5dc2a3c2363f}\label{a00218_a78efbb4253e7c802428a5dc2a3c2363f} 
+\index{thread\_patMon\_hal.c@{thread\_patMon\_hal.c}!ADS\_Read\_Single\_Reg@{ADS\_Read\_Single\_Reg}}
+\index{ADS\_Read\_Single\_Reg@{ADS\_Read\_Single\_Reg}!thread\_patMon\_hal.c@{thread\_patMon\_hal.c}}
+\doxysubsubsection{\texorpdfstring{ADS\_Read\_Single\_Reg()}{ADS\_Read\_Single\_Reg()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} ADS\+\_\+\+Read\+\_\+\+Single\+\_\+\+Reg (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{reg\+Id,  }\item[{\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+read from a single register 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reg\+Id} & register identifier \\
+\hline
+{\em p\+Data} & pointer to variable to store the read data\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+operation result or error code 
+\end{DoxyReturn}
+\Hypertarget{a00218_a536dccf203be6d4f38a8dfd4f7c75927}\label{a00218_a536dccf203be6d4f38a8dfd4f7c75927} 
+\index{thread\_patMon\_hal.c@{thread\_patMon\_hal.c}!ADS\_Run@{ADS\_Run}}
+\index{ADS\_Run@{ADS\_Run}!thread\_patMon\_hal.c@{thread\_patMon\_hal.c}}
+\doxysubsubsection{\texorpdfstring{ADS\_Run()}{ADS\_Run()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} ADS\+\_\+\+Run (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+set the ADS running and converting ECG 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+operation result or error code 
+\end{DoxyReturn}
+\Hypertarget{a00218_aa4f9819d0b820e2a2424387100b2752f}\label{a00218_aa4f9819d0b820e2a2424387100b2752f} 
+\index{thread\_patMon\_hal.c@{thread\_patMon\_hal.c}!ADS\_Send\_Command@{ADS\_Send\_Command}}
+\index{ADS\_Send\_Command@{ADS\_Send\_Command}!thread\_patMon\_hal.c@{thread\_patMon\_hal.c}}
+\doxysubsubsection{\texorpdfstring{ADS\_Send\_Command()}{ADS\_Send\_Command()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} ADS\+\_\+\+Send\+\_\+\+Command (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{cmd }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+send a single command to the ADS device 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cmd} & command to send\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+operation result or error code 
+\end{DoxyReturn}
+\Hypertarget{a00218_ac90b7fa85dda7f1ef888e785ad21be13}\label{a00218_ac90b7fa85dda7f1ef888e785ad21be13} 
+\index{thread\_patMon\_hal.c@{thread\_patMon\_hal.c}!ADS\_Stop@{ADS\_Stop}}
+\index{ADS\_Stop@{ADS\_Stop}!thread\_patMon\_hal.c@{thread\_patMon\_hal.c}}
+\doxysubsubsection{\texorpdfstring{ADS\_Stop()}{ADS\_Stop()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} ADS\+\_\+\+Stop (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+stop the ADS and set in Standby or low power mode 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+operation result or error code 
+\end{DoxyReturn}
+\Hypertarget{a00218_a2cf3f21afee4e3fba117dd47fcb3382c}\label{a00218_a2cf3f21afee4e3fba117dd47fcb3382c} 
+\index{thread\_patMon\_hal.c@{thread\_patMon\_hal.c}!ADS\_Write\_Single\_Reg@{ADS\_Write\_Single\_Reg}}
+\index{ADS\_Write\_Single\_Reg@{ADS\_Write\_Single\_Reg}!thread\_patMon\_hal.c@{thread\_patMon\_hal.c}}
+\doxysubsubsection{\texorpdfstring{ADS\_Write\_Single\_Reg()}{ADS\_Write\_Single\_Reg()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} ADS\+\_\+\+Write\+\_\+\+Single\+\_\+\+Reg (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{reg\+Id,  }\item[{\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{my\+\_\+data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+write into a single register 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reg\+Id} & register identifier \\
+\hline
+{\em my\+\_\+data} & data to write in the ADS register\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+operation result or error code 
+\end{DoxyReturn}
+\Hypertarget{a00218_af8b7abb561c43283a4b3e47a7767972a}\label{a00218_af8b7abb561c43283a4b3e47a7767972a} 
+\index{thread\_patMon\_hal.c@{thread\_patMon\_hal.c}!ECG\_Filter\_Restart@{ECG\_Filter\_Restart}}
+\index{ECG\_Filter\_Restart@{ECG\_Filter\_Restart}!thread\_patMon\_hal.c@{thread\_patMon\_hal.c}}
+\doxysubsubsection{\texorpdfstring{ECG\_Filter\_Restart()}{ECG\_Filter\_Restart()}}
+{\footnotesize\ttfamily static void ECG\+\_\+\+Filter\+\_\+\+Restart (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+restart sample delays used filtering ECG 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\Hypertarget{a00218_a26bd4ad8386da959cdb281d1d0a665e2}\label{a00218_a26bd4ad8386da959cdb281d1d0a665e2} 
+\index{thread\_patMon\_hal.c@{thread\_patMon\_hal.c}!ECG\_Offset\_Removal@{ECG\_Offset\_Removal}}
+\index{ECG\_Offset\_Removal@{ECG\_Offset\_Removal}!thread\_patMon\_hal.c@{thread\_patMon\_hal.c}}
+\doxysubsubsection{\texorpdfstring{ECG\_Offset\_Removal()}{ECG\_Offset\_Removal()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{a00137_a269259c924dce846340ddbb810db2e3c}{int16\+\_\+t}} ECG\+\_\+\+Offset\+\_\+\+Removal (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00137_a2ba621978a511250f7250fb10e05ffbe}{int32\+\_\+t}}}]{sample }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+remove the DC offset from the ECG samples 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sample} & ECG sample\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+modified sample 
+\end{DoxyReturn}
+\Hypertarget{a00218_ac4ee9c57661e2fe83c4532e88ba5beae}\label{a00218_ac4ee9c57661e2fe83c4532e88ba5beae} 
+\index{thread\_patMon\_hal.c@{thread\_patMon\_hal.c}!g\_irq8\_callback@{g\_irq8\_callback}}
+\index{g\_irq8\_callback@{g\_irq8\_callback}!thread\_patMon\_hal.c@{thread\_patMon\_hal.c}}
+\doxysubsubsection{\texorpdfstring{g\_irq8\_callback()}{g\_irq8\_callback()}}
+{\footnotesize\ttfamily void g\+\_\+irq8\+\_\+callback (\begin{DoxyParamCaption}\item[{external\+\_\+irq\+\_\+callback\+\_\+args\+\_\+t \texorpdfstring{$\ast$}{*}}]{p\+\_\+args }\end{DoxyParamCaption})}
+
+
+
+IRQ8 interrupt callback process. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em IRQ} & identifier\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\Hypertarget{a00218_a9c7dde826efc7b8fc999797f357af945}\label{a00218_a9c7dde826efc7b8fc999797f357af945} 
+\index{thread\_patMon\_hal.c@{thread\_patMon\_hal.c}!patMon\_Get\_Connected\_El@{patMon\_Get\_Connected\_El}}
+\index{patMon\_Get\_Connected\_El@{patMon\_Get\_Connected\_El}!thread\_patMon\_hal.c@{thread\_patMon\_hal.c}}
+\doxysubsubsection{\texorpdfstring{patMon\_Get\_Connected\_El()}{patMon\_Get\_Connected\_El()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00221_aa23822bb020122c14a71e9f8667d26b3}{EL\+\_\+\+TYPE\+\_\+\+ID\+\_\+e}} pat\+Mon\+\_\+\+Get\+\_\+\+Connected\+\_\+\+El (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Check if electrodes are connected. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The connected electrodes type 
+\end{DoxyReturn}
+\Hypertarget{a00218_a1978c4a195c3ce1aee541a55fece2e70}\label{a00218_a1978c4a195c3ce1aee541a55fece2e70} 
+\index{thread\_patMon\_hal.c@{thread\_patMon\_hal.c}!patMon\_Get\_ECG\_nSample@{patMon\_Get\_ECG\_nSample}}
+\index{patMon\_Get\_ECG\_nSample@{patMon\_Get\_ECG\_nSample}!thread\_patMon\_hal.c@{thread\_patMon\_hal.c}}
+\doxysubsubsection{\texorpdfstring{patMon\_Get\_ECG\_nSample()}{patMon\_Get\_ECG\_nSample()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} pat\+Mon\+\_\+\+Get\+\_\+\+ECG\+\_\+n\+Sample (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Report the current ECG identifier. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ECG sample identifier 
+\end{DoxyReturn}
+\Hypertarget{a00218_a76fe3793dbe441d338e5ff2cf3225896}\label{a00218_a76fe3793dbe441d338e5ff2cf3225896} 
+\index{thread\_patMon\_hal.c@{thread\_patMon\_hal.c}!patMon\_Get\_ECG\_Window@{patMon\_Get\_ECG\_Window}}
+\index{patMon\_Get\_ECG\_Window@{patMon\_Get\_ECG\_Window}!thread\_patMon\_hal.c@{thread\_patMon\_hal.c}}
+\doxysubsubsection{\texorpdfstring{patMon\_Get\_ECG\_Window()}{patMon\_Get\_ECG\_Window()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} pat\+Mon\+\_\+\+Get\+\_\+\+ECG\+\_\+\+Window (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}}}]{n\+Ecg\+\_\+first,  }\item[{\mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}}}]{n\+Samples,  }\item[{\mbox{\hyperlink{a00137_a269259c924dce846340ddbb810db2e3c}{int16\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Samples }\end{DoxyParamCaption})}
+
+
+
+Read the last ECG samples from the ECG buffer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n\+\_\+ecg\+\_\+first} & first ecg sample to retrieve \\
+\hline
+{\em n\+Samples} & number of samples to read \\
+\hline
+{\em p\+Samples} & Pointer to store buffer\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+window is correct or not 
+\end{DoxyReturn}
+\Hypertarget{a00218_a6c91fedede8d24735f7592eda67d8360}\label{a00218_a6c91fedede8d24735f7592eda67d8360} 
+\index{thread\_patMon\_hal.c@{thread\_patMon\_hal.c}!patMon\_Get\_Status@{patMon\_Get\_Status}}
+\index{patMon\_Get\_Status@{patMon\_Get\_Status}!thread\_patMon\_hal.c@{thread\_patMon\_hal.c}}
+\doxysubsubsection{\texorpdfstring{patMon\_Get\_Status()}{patMon\_Get\_Status()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} pat\+Mon\+\_\+\+Get\+\_\+\+Status (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+report the ADS operating status 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ADS status (error code) 
+\end{DoxyReturn}
+\Hypertarget{a00218_a38356e80b22420c57c34439af0dc1250}\label{a00218_a38356e80b22420c57c34439af0dc1250} 
+\index{thread\_patMon\_hal.c@{thread\_patMon\_hal.c}!patMon\_Get\_Temperature@{patMon\_Get\_Temperature}}
+\index{patMon\_Get\_Temperature@{patMon\_Get\_Temperature}!thread\_patMon\_hal.c@{thread\_patMon\_hal.c}}
+\doxysubsubsection{\texorpdfstring{patMon\_Get\_Temperature()}{patMon\_Get\_Temperature()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a2ba621978a511250f7250fb10e05ffbe}{int32\+\_\+t}} pat\+Mon\+\_\+\+Get\+\_\+\+Temperature (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+report the temperature value in degrees be careful, the PGA gain is 4 
+
+T (ºC) = \mbox{[} ADC (uV) -\/ 145300 uV / 490 u\+V/ºC \mbox{]} + 25ºC
+
+ADC (uV) = \mbox{[} (ADC \texorpdfstring{$\ast$}{*} 2420 mV \texorpdfstring{$\ast$}{*} 10exp3) / (2exp23 \texorpdfstring{$\ast$}{*} 4) \mbox{]} ADC (uV) = \mbox{[} (ADC \texorpdfstring{$\ast$}{*} 72) / 1000 \mbox{]}
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The measured temperature value 
+\end{DoxyReturn}
+\Hypertarget{a00218_a9ba28eb3a7a634bf9a4a495d90a705b1}\label{a00218_a9ba28eb3a7a634bf9a4a495d90a705b1} 
+\index{thread\_patMon\_hal.c@{thread\_patMon\_hal.c}!patMon\_Get\_Zp\_ADCs@{patMon\_Get\_Zp\_ADCs}}
+\index{patMon\_Get\_Zp\_ADCs@{patMon\_Get\_Zp\_ADCs}!thread\_patMon\_hal.c@{thread\_patMon\_hal.c}}
+\doxysubsubsection{\texorpdfstring{patMon\_Get\_Zp\_ADCs()}{patMon\_Get\_Zp\_ADCs()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} pat\+Mon\+\_\+\+Get\+\_\+\+Zp\+\_\+\+ADCs (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+report the impedance value in ADCs (this value is not compensated !!!) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The measured impedance value 
+\end{DoxyReturn}
+\Hypertarget{a00218_ae98728fc9430398da8683e46653aac5b}\label{a00218_ae98728fc9430398da8683e46653aac5b} 
+\index{thread\_patMon\_hal.c@{thread\_patMon\_hal.c}!patMon\_Get\_zp\_CAL\_ADCs@{patMon\_Get\_zp\_CAL\_ADCs}}
+\index{patMon\_Get\_zp\_CAL\_ADCs@{patMon\_Get\_zp\_CAL\_ADCs}!thread\_patMon\_hal.c@{thread\_patMon\_hal.c}}
+\doxysubsubsection{\texorpdfstring{patMon\_Get\_zp\_CAL\_ADCs()}{patMon\_Get\_zp\_CAL\_ADCs()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} pat\+Mon\+\_\+\+Get\+\_\+zp\+\_\+\+CAL\+\_\+\+ADCs (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+report the calibration impedance value in ADCs 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The measured impedance value 
+\end{DoxyReturn}
+\Hypertarget{a00218_a6b07f419fb5494de970c245ba09885a4}\label{a00218_a6b07f419fb5494de970c245ba09885a4} 
+\index{thread\_patMon\_hal.c@{thread\_patMon\_hal.c}!patMon\_Get\_Zp\_Ohms@{patMon\_Get\_Zp\_Ohms}}
+\index{patMon\_Get\_Zp\_Ohms@{patMon\_Get\_Zp\_Ohms}!thread\_patMon\_hal.c@{thread\_patMon\_hal.c}}
+\doxysubsubsection{\texorpdfstring{patMon\_Get\_Zp\_Ohms()}{patMon\_Get\_Zp\_Ohms()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} pat\+Mon\+\_\+\+Get\+\_\+\+Zp\+\_\+\+Ohms (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+report the impedance value (in Ohms, ADCs or virtual) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The measured impedance value 
+\end{DoxyReturn}
+\Hypertarget{a00218_a2b4e8b90eba8f938b87190b1369806a8}\label{a00218_a2b4e8b90eba8f938b87190b1369806a8} 
+\index{thread\_patMon\_hal.c@{thread\_patMon\_hal.c}!patMon\_Get\_Zp\_Segment@{patMon\_Get\_Zp\_Segment}}
+\index{patMon\_Get\_Zp\_Segment@{patMon\_Get\_Zp\_Segment}!thread\_patMon\_hal.c@{thread\_patMon\_hal.c}}
+\doxysubsubsection{\texorpdfstring{patMon\_Get\_Zp\_Segment()}{patMon\_Get\_Zp\_Segment()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00221_ad86d69a0b4d65ddf120f056f448beff3}{ZP\+\_\+\+SEGMENT\+\_\+e}} pat\+Mon\+\_\+\+Get\+\_\+\+Zp\+\_\+\+Segment (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Ask for the patient impedance segment. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Patient impedance segment 
+\end{DoxyReturn}
+\Hypertarget{a00218_a1c27eef6f6abd7a968be54ab6a3de6f4}\label{a00218_a1c27eef6f6abd7a968be54ab6a3de6f4} 
+\index{thread\_patMon\_hal.c@{thread\_patMon\_hal.c}!patMon\_Get\_ZP\_Window@{patMon\_Get\_ZP\_Window}}
+\index{patMon\_Get\_ZP\_Window@{patMon\_Get\_ZP\_Window}!thread\_patMon\_hal.c@{thread\_patMon\_hal.c}}
+\doxysubsubsection{\texorpdfstring{patMon\_Get\_ZP\_Window()}{patMon\_Get\_ZP\_Window()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} pat\+Mon\+\_\+\+Get\+\_\+\+ZP\+\_\+\+Window (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}}}]{n\+Zp\+\_\+first,  }\item[{\mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}}}]{n\+Samples,  }\item[{\mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Samples }\end{DoxyParamCaption})}
+
+
+
+Read the last ZP samples from the ZP buffer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n\+Zp\+\_\+first} & first zp sample to retrieve \\
+\hline
+{\em n\+Samples} & number of samples to read \\
+\hline
+{\em p\+Samples} & Pointer to store buffer\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+window is correct or not 
+\end{DoxyReturn}
+\Hypertarget{a00218_aad3a5460b730439ee2fc0ddb605f9c21}\label{a00218_aad3a5460b730439ee2fc0ddb605f9c21} 
+\index{thread\_patMon\_hal.c@{thread\_patMon\_hal.c}!patMon\_HAL\_Init@{patMon\_HAL\_Init}}
+\index{patMon\_HAL\_Init@{patMon\_HAL\_Init}!thread\_patMon\_hal.c@{thread\_patMon\_hal.c}}
+\doxysubsubsection{\texorpdfstring{patMon\_HAL\_Init()}{patMon\_HAL\_Init()}}
+{\footnotesize\ttfamily void pat\+Mon\+\_\+\+HAL\+\_\+\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00221_a7f3c1af5fc3759e7ef04c26ddb860a89}{NOTCH\+\_\+t}}}]{my\+Notch }\end{DoxyParamCaption})}
+
+
+
+Initialize the HAL for the patient monitor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em my\+Notch} & Notch filter identifier\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\Hypertarget{a00218_ab35f7ec4fddc46d1bf9055f66c3f7ff3}\label{a00218_ab35f7ec4fddc46d1bf9055f66c3f7ff3} 
+\index{thread\_patMon\_hal.c@{thread\_patMon\_hal.c}!PMK\_Pulse\_Detect\_and\_Remove@{PMK\_Pulse\_Detect\_and\_Remove}}
+\index{PMK\_Pulse\_Detect\_and\_Remove@{PMK\_Pulse\_Detect\_and\_Remove}!thread\_patMon\_hal.c@{thread\_patMon\_hal.c}}
+\doxysubsubsection{\texorpdfstring{PMK\_Pulse\_Detect\_and\_Remove()}{PMK\_Pulse\_Detect\_and\_Remove()}}
+{\footnotesize\ttfamily static void PMK\+\_\+\+Pulse\+\_\+\+Detect\+\_\+and\+\_\+\+Remove (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00137_a2ba621978a511250f7250fb10e05ffbe}{int32\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Sample }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Detect a single PMK pulse and remove it from the ECG signal to be recovered after all ECG filters have been applied. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Sample} & reference to the current sample\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\Hypertarget{a00218_a7f719e56cb039144290ee6c72c5cc768}\label{a00218_a7f719e56cb039144290ee6c72c5cc768} 
+\index{thread\_patMon\_hal.c@{thread\_patMon\_hal.c}!PMK\_Pulse\_Restore@{PMK\_Pulse\_Restore}}
+\index{PMK\_Pulse\_Restore@{PMK\_Pulse\_Restore}!thread\_patMon\_hal.c@{thread\_patMon\_hal.c}}
+\doxysubsubsection{\texorpdfstring{PMK\_Pulse\_Restore()}{PMK\_Pulse\_Restore()}}
+{\footnotesize\ttfamily static void PMK\+\_\+\+Pulse\+\_\+\+Restore (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00137_a269259c924dce846340ddbb810db2e3c}{int16\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Sample }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Restore the PMK pulse to the filtered signal. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Sample} & reference to the current sample\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\Hypertarget{a00218_ae36a2432d1f2717af0701ebbb4d60f86}\label{a00218_ae36a2432d1f2717af0701ebbb4d60f86} 
+\index{thread\_patMon\_hal.c@{thread\_patMon\_hal.c}!ZP\_Update\_Value@{ZP\_Update\_Value}}
+\index{ZP\_Update\_Value@{ZP\_Update\_Value}!thread\_patMon\_hal.c@{thread\_patMon\_hal.c}}
+\doxysubsubsection{\texorpdfstring{ZP\_Update\_Value()}{ZP\_Update\_Value()}}
+{\footnotesize\ttfamily static void ZP\+\_\+\+Update\+\_\+\+Value (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}}}]{zp\+\_\+sample }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Update the ZP value. This function is called in each sample capture at 1 Ksps. The function filters and decimates the received samples to obtain a FS\+\_\+\+ZP impedance measurements. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em zp\+\_\+sample} & sample to calculate the ZP value (24-\/bit sample)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{a00218_a326c702d69136fc6864a0b0ac30534a6}\label{a00218_a326c702d69136fc6864a0b0ac30534a6} 
+\index{thread\_patMon\_hal.c@{thread\_patMon\_hal.c}!ads\_buffer@{ads\_buffer}}
+\index{ads\_buffer@{ads\_buffer}!thread\_patMon\_hal.c@{thread\_patMon\_hal.c}}
+\doxysubsubsection{\texorpdfstring{ads\_buffer}{ads\_buffer}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} ads\+\_\+buffer\mbox{[}\mbox{\hyperlink{a00221_a24d03d55b329a17d3d340609562fe05a}{ADS\+\_\+\+BUFFER\+\_\+\+SIZE}}\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{a00218_a0545a8d840c00afd6fd4f122c6763c09}\label{a00218_a0545a8d840c00afd6fd4f122c6763c09} 
+\index{thread\_patMon\_hal.c@{thread\_patMon\_hal.c}!ads\_status@{ads\_status}}
+\index{ads\_status@{ads\_status}!thread\_patMon\_hal.c@{thread\_patMon\_hal.c}}
+\doxysubsubsection{\texorpdfstring{ads\_status}{ads\_status}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} ads\+\_\+status = \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a602af6bf6848ce46e68f0a2051a66a21}{e\+ERR\+\_\+\+ADS\+\_\+\+DEVICE\+\_\+\+ID}}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{a00218_a6a3dc90ded617609d70e9ce48e57a64c}\label{a00218_a6a3dc90ded617609d70e9ce48e57a64c} 
+\index{thread\_patMon\_hal.c@{thread\_patMon\_hal.c}!cal\_running@{cal\_running}}
+\index{cal\_running@{cal\_running}!thread\_patMon\_hal.c@{thread\_patMon\_hal.c}}
+\doxysubsubsection{\texorpdfstring{cal\_running}{cal\_running}}
+{\footnotesize\ttfamily bool cal\+\_\+running = false\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{a00218_a19118be699a45b31dcc5a3621dadc68a}\label{a00218_a19118be699a45b31dcc5a3621dadc68a} 
+\index{thread\_patMon\_hal.c@{thread\_patMon\_hal.c}!device\_zp\_matrix@{device\_zp\_matrix}}
+\index{device\_zp\_matrix@{device\_zp\_matrix}!thread\_patMon\_hal.c@{thread\_patMon\_hal.c}}
+\doxysubsubsection{\texorpdfstring{device\_zp\_matrix}{device\_zp\_matrix}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00179_a2d31b9db80cda3badfd9911a692968f3}{ZP\+\_\+\+MATRIX\+\_\+t}} device\+\_\+zp\+\_\+matrix\mbox{[}\mbox{\hyperlink{a00179_a9193e1db9fcda28c34ce37f8c43398f1}{MAX\+\_\+\+ZP\+\_\+\+MATRIX\+\_\+\+ITEMS}}\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{a00218_ae668e74aea822f6de07735930df45835}\label{a00218_ae668e74aea822f6de07735930df45835} 
+\index{thread\_patMon\_hal.c@{thread\_patMon\_hal.c}!ecg\_data@{ecg\_data}}
+\index{ecg\_data@{ecg\_data}!thread\_patMon\_hal.c@{thread\_patMon\_hal.c}}
+\doxysubsubsection{\texorpdfstring{ecg\_data}{ecg\_data}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a269259c924dce846340ddbb810db2e3c}{int16\+\_\+t}} ecg\+\_\+data\mbox{[}\mbox{\hyperlink{a00221_a63bc8d2f3809631c0444e9f8adecec65}{ECG\+\_\+\+BUFFER\+\_\+\+SIZE}}\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{a00218_a607177011d3bb8ce36a1f2ccc2521558}\label{a00218_a607177011d3bb8ce36a1f2ccc2521558} 
+\index{thread\_patMon\_hal.c@{thread\_patMon\_hal.c}!ecg\_nSample@{ecg\_nSample}}
+\index{ecg\_nSample@{ecg\_nSample}!thread\_patMon\_hal.c@{thread\_patMon\_hal.c}}
+\doxysubsubsection{\texorpdfstring{ecg\_nSample}{ecg\_nSample}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} ecg\+\_\+n\+Sample\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{a00218_a281a8fb8e230d722b441e6812ca20e65}\label{a00218_a281a8fb8e230d722b441e6812ca20e65} 
+\index{thread\_patMon\_hal.c@{thread\_patMon\_hal.c}!idx\_ecg@{idx\_ecg}}
+\index{idx\_ecg@{idx\_ecg}!thread\_patMon\_hal.c@{thread\_patMon\_hal.c}}
+\doxysubsubsection{\texorpdfstring{idx\_ecg}{idx\_ecg}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} idx\+\_\+ecg\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{a00218_a3d9166084ec3884de3773403cdad9bcc}\label{a00218_a3d9166084ec3884de3773403cdad9bcc} 
+\index{thread\_patMon\_hal.c@{thread\_patMon\_hal.c}!idx\_zp@{idx\_zp}}
+\index{idx\_zp@{idx\_zp}!thread\_patMon\_hal.c@{thread\_patMon\_hal.c}}
+\doxysubsubsection{\texorpdfstring{idx\_zp}{idx\_zp}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} idx\+\_\+zp\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{a00218_ad583cdc77a99796f2e5a9f3c6f8bd38e}\label{a00218_ad583cdc77a99796f2e5a9f3c6f8bd38e} 
+\index{thread\_patMon\_hal.c@{thread\_patMon\_hal.c}!IIR\_ecg\_dly@{IIR\_ecg\_dly}}
+\index{IIR\_ecg\_dly@{IIR\_ecg\_dly}!thread\_patMon\_hal.c@{thread\_patMon\_hal.c}}
+\doxysubsubsection{\texorpdfstring{IIR\_ecg\_dly}{IIR\_ecg\_dly}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}} IIR\+\_\+ecg\+\_\+dly\mbox{[}\mbox{\hyperlink{a00218_a44ebcbaeebbaa97251cd67ede6624cec}{NUM\+\_\+\+KOEFS\+\_\+\+ECG\+\_\+\+FILTER}}\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{a00218_a5eddcd24345161a6053dae1282d8dbb7}\label{a00218_a5eddcd24345161a6053dae1282d8dbb7} 
+\index{thread\_patMon\_hal.c@{thread\_patMon\_hal.c}!IIR\_HPF\_A@{IIR\_HPF\_A}}
+\index{IIR\_HPF\_A@{IIR\_HPF\_A}!thread\_patMon\_hal.c@{thread\_patMon\_hal.c}}
+\doxysubsubsection{\texorpdfstring{IIR\_HPF\_A}{IIR\_HPF\_A}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}} IIR\+\_\+\+HPF\+\_\+A\mbox{[}2\mbox{]} = \{ (\mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}}) ( 1.\+0000), (\mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}}) (-\/0.\+9973) \}}
+
+\Hypertarget{a00218_a4fc0bea28bdc87d8f8ef8fffaf8918fa}\label{a00218_a4fc0bea28bdc87d8f8ef8fffaf8918fa} 
+\index{thread\_patMon\_hal.c@{thread\_patMon\_hal.c}!IIR\_HPF\_B@{IIR\_HPF\_B}}
+\index{IIR\_HPF\_B@{IIR\_HPF\_B}!thread\_patMon\_hal.c@{thread\_patMon\_hal.c}}
+\doxysubsubsection{\texorpdfstring{IIR\_HPF\_B}{IIR\_HPF\_B}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}} IIR\+\_\+\+HPF\+\_\+B\mbox{[}2\mbox{]} = \{ (\mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}}) ( 1.\+0000), (\mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}}) (-\/1.\+0000) \}}
+
+\Hypertarget{a00218_a0a2dd1ddd3af77b8a2e17f0d13467025}\label{a00218_a0a2dd1ddd3af77b8a2e17f0d13467025} 
+\index{thread\_patMon\_hal.c@{thread\_patMon\_hal.c}!IIR\_LPF\_A@{IIR\_LPF\_A}}
+\index{IIR\_LPF\_A@{IIR\_LPF\_A}!thread\_patMon\_hal.c@{thread\_patMon\_hal.c}}
+\doxysubsubsection{\texorpdfstring{IIR\_LPF\_A}{IIR\_LPF\_A}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}} IIR\+\_\+\+LPF\+\_\+A\mbox{[}2\mbox{]} = \{ (\mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}}) ( 1.\+0000), (\mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}}) (-\/0.\+8273) \}}
+
+\Hypertarget{a00218_a7cf0bc44de25ce5cb1e208c2e749935e}\label{a00218_a7cf0bc44de25ce5cb1e208c2e749935e} 
+\index{thread\_patMon\_hal.c@{thread\_patMon\_hal.c}!IIR\_LPF\_B@{IIR\_LPF\_B}}
+\index{IIR\_LPF\_B@{IIR\_LPF\_B}!thread\_patMon\_hal.c@{thread\_patMon\_hal.c}}
+\doxysubsubsection{\texorpdfstring{IIR\_LPF\_B}{IIR\_LPF\_B}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}} IIR\+\_\+\+LPF\+\_\+B\mbox{[}2\mbox{]} = \{ (\mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}}) ( 0.\+0864), (\mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}}) ( 0.\+0864) \}}
+
+\Hypertarget{a00218_a7493c54848765e81bfc6085f4c25ef59}\label{a00218_a7493c54848765e81bfc6085f4c25ef59} 
+\index{thread\_patMon\_hal.c@{thread\_patMon\_hal.c}!IIR\_N50\_1A@{IIR\_N50\_1A}}
+\index{IIR\_N50\_1A@{IIR\_N50\_1A}!thread\_patMon\_hal.c@{thread\_patMon\_hal.c}}
+\doxysubsubsection{\texorpdfstring{IIR\_N50\_1A}{IIR\_N50\_1A}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}} IIR\+\_\+\+N50\+\_\+1A\mbox{[}3\mbox{]} = \{ (\mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}}) ( 1.\+0000), (\mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}}) (-\/1.\+899154663085938), (\mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}}) ( 0.\+997741699218750) \}}
+
+\Hypertarget{a00218_a10e3a709064be0d10bbca2adf2d8cd0e}\label{a00218_a10e3a709064be0d10bbca2adf2d8cd0e} 
+\index{thread\_patMon\_hal.c@{thread\_patMon\_hal.c}!IIR\_N50\_1B@{IIR\_N50\_1B}}
+\index{IIR\_N50\_1B@{IIR\_N50\_1B}!thread\_patMon\_hal.c@{thread\_patMon\_hal.c}}
+\doxysubsubsection{\texorpdfstring{IIR\_N50\_1B}{IIR\_N50\_1B}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}} IIR\+\_\+\+N50\+\_\+1B\mbox{[}3\mbox{]} = \{ (\mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}}) ( 1.\+0000), (\mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}}) (-\/1.\+902114868164063), (\mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}}) ( 1.\+000000000000000) \}}
+
+\Hypertarget{a00218_af97c82572b8dd1ac161a879c021646c6}\label{a00218_af97c82572b8dd1ac161a879c021646c6} 
+\index{thread\_patMon\_hal.c@{thread\_patMon\_hal.c}!IIR\_N50\_2A@{IIR\_N50\_2A}}
+\index{IIR\_N50\_2A@{IIR\_N50\_2A}!thread\_patMon\_hal.c@{thread\_patMon\_hal.c}}
+\doxysubsubsection{\texorpdfstring{IIR\_N50\_2A}{IIR\_N50\_2A}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}} IIR\+\_\+\+N50\+\_\+2A\mbox{[}3\mbox{]} = \{ (\mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}}) ( 1.\+0000), (\mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}}) (-\/1.\+900787353515625), (\mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}}) ( 0.\+997756958007813) \}}
+
+\Hypertarget{a00218_a4dfc5e6fd665cc32dc31f19da7479abd}\label{a00218_a4dfc5e6fd665cc32dc31f19da7479abd} 
+\index{thread\_patMon\_hal.c@{thread\_patMon\_hal.c}!IIR\_N50\_2B@{IIR\_N50\_2B}}
+\index{IIR\_N50\_2B@{IIR\_N50\_2B}!thread\_patMon\_hal.c@{thread\_patMon\_hal.c}}
+\doxysubsubsection{\texorpdfstring{IIR\_N50\_2B}{IIR\_N50\_2B}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}} IIR\+\_\+\+N50\+\_\+2B\mbox{[}3\mbox{]} = \{ (\mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}}) ( 1.\+0000), (\mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}}) (-\/1.\+902114868164063), (\mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}}) ( 1.\+000000000000000) \}}
+
+\Hypertarget{a00218_af9dba9770e49f336db515ba86ea2a4ca}\label{a00218_af9dba9770e49f336db515ba86ea2a4ca} 
+\index{thread\_patMon\_hal.c@{thread\_patMon\_hal.c}!IIR\_N60\_1A@{IIR\_N60\_1A}}
+\index{IIR\_N60\_1A@{IIR\_N60\_1A}!thread\_patMon\_hal.c@{thread\_patMon\_hal.c}}
+\doxysubsubsection{\texorpdfstring{IIR\_N60\_1A}{IIR\_N60\_1A}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}} IIR\+\_\+\+N60\+\_\+1A\mbox{[}3\mbox{]} = \{ (\mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}}) ( 1.\+0000), (\mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}}) (-\/1.\+856491088867188), (\mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}}) ( 0.\+997741699218750) \}}
+
+\Hypertarget{a00218_a4249f779701675e1bb110eea53e0a527}\label{a00218_a4249f779701675e1bb110eea53e0a527} 
+\index{thread\_patMon\_hal.c@{thread\_patMon\_hal.c}!IIR\_N60\_1B@{IIR\_N60\_1B}}
+\index{IIR\_N60\_1B@{IIR\_N60\_1B}!thread\_patMon\_hal.c@{thread\_patMon\_hal.c}}
+\doxysubsubsection{\texorpdfstring{IIR\_N60\_1B}{IIR\_N60\_1B}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}} IIR\+\_\+\+N60\+\_\+1B\mbox{[}3\mbox{]} = \{ (\mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}}) ( 1.\+0000), (\mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}}) (-\/1.\+859558105468750), (\mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}}) ( 1.\+000000000000000) \}}
+
+\Hypertarget{a00218_a1702cd9fb41040d8ad61ceb6df854fc3}\label{a00218_a1702cd9fb41040d8ad61ceb6df854fc3} 
+\index{thread\_patMon\_hal.c@{thread\_patMon\_hal.c}!IIR\_N60\_2A@{IIR\_N60\_2A}}
+\index{IIR\_N60\_2A@{IIR\_N60\_2A}!thread\_patMon\_hal.c@{thread\_patMon\_hal.c}}
+\doxysubsubsection{\texorpdfstring{IIR\_N60\_2A}{IIR\_N60\_2A}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}} IIR\+\_\+\+N60\+\_\+2A\mbox{[}3\mbox{]} = \{ (\mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}}) ( 1.\+0000), (\mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}}) (-\/1.\+858428955078125), (\mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}}) ( 0.\+997756958007813) \}}
+
+\Hypertarget{a00218_a95419dc8825c87b304586c6a17a5f3d3}\label{a00218_a95419dc8825c87b304586c6a17a5f3d3} 
+\index{thread\_patMon\_hal.c@{thread\_patMon\_hal.c}!IIR\_N60\_2B@{IIR\_N60\_2B}}
+\index{IIR\_N60\_2B@{IIR\_N60\_2B}!thread\_patMon\_hal.c@{thread\_patMon\_hal.c}}
+\doxysubsubsection{\texorpdfstring{IIR\_N60\_2B}{IIR\_N60\_2B}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}} IIR\+\_\+\+N60\+\_\+2B\mbox{[}3\mbox{]} = \{ (\mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}}) ( 1.\+0000), (\mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}}) (-\/1.\+859558105468750), (\mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}}) ( 1.\+000000000000000) \}}
+
+\Hypertarget{a00218_a7ebcdfa7582a2243112a1655fe0684bb}\label{a00218_a7ebcdfa7582a2243112a1655fe0684bb} 
+\index{thread\_patMon\_hal.c@{thread\_patMon\_hal.c}!pmk\_pulse\_desc@{pmk\_pulse\_desc}}
+\index{pmk\_pulse\_desc@{pmk\_pulse\_desc}!thread\_patMon\_hal.c@{thread\_patMon\_hal.c}}
+\doxysubsubsection{\texorpdfstring{pmk\_pulse\_desc}{pmk\_pulse\_desc}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00666}{PMK\+\_\+\+PULSE\+\_\+\+DESC\+\_\+t}} pmk\+\_\+pulse\+\_\+desc\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{a00218_a27c9c67268f8111f8256f8ab5f8d469a}\label{a00218_a27c9c67268f8111f8256f8ab5f8d469a} 
+\index{thread\_patMon\_hal.c@{thread\_patMon\_hal.c}!pNF1A@{pNF1A}}
+\index{pNF1A@{pNF1A}!thread\_patMon\_hal.c@{thread\_patMon\_hal.c}}
+\doxysubsubsection{\texorpdfstring{pNF1A}{pNF1A}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}}\texorpdfstring{$\ast$}{*} p\+NF1A\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{a00218_a49dad8f440d592928f120de52f576ed4}\label{a00218_a49dad8f440d592928f120de52f576ed4} 
+\index{thread\_patMon\_hal.c@{thread\_patMon\_hal.c}!pNF1B@{pNF1B}}
+\index{pNF1B@{pNF1B}!thread\_patMon\_hal.c@{thread\_patMon\_hal.c}}
+\doxysubsubsection{\texorpdfstring{pNF1B}{pNF1B}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}}\texorpdfstring{$\ast$}{*} p\+NF1B\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{a00218_a87c5fc9145ca1c113481a45a593042c4}\label{a00218_a87c5fc9145ca1c113481a45a593042c4} 
+\index{thread\_patMon\_hal.c@{thread\_patMon\_hal.c}!pNF2A@{pNF2A}}
+\index{pNF2A@{pNF2A}!thread\_patMon\_hal.c@{thread\_patMon\_hal.c}}
+\doxysubsubsection{\texorpdfstring{pNF2A}{pNF2A}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}}\texorpdfstring{$\ast$}{*} p\+NF2A\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{a00218_a015baa6c371e6ca744d24ed8d9cf7a90}\label{a00218_a015baa6c371e6ca744d24ed8d9cf7a90} 
+\index{thread\_patMon\_hal.c@{thread\_patMon\_hal.c}!pNF2B@{pNF2B}}
+\index{pNF2B@{pNF2B}!thread\_patMon\_hal.c@{thread\_patMon\_hal.c}}
+\doxysubsubsection{\texorpdfstring{pNF2B}{pNF2B}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}}\texorpdfstring{$\ast$}{*} p\+NF2B\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{a00218_aed3cca2c82f353de9c4f011a31d76657}\label{a00218_aed3cca2c82f353de9c4f011a31d76657} 
+\index{thread\_patMon\_hal.c@{thread\_patMon\_hal.c}!temperature\_adcs@{temperature\_adcs}}
+\index{temperature\_adcs@{temperature\_adcs}!thread\_patMon\_hal.c@{thread\_patMon\_hal.c}}
+\doxysubsubsection{\texorpdfstring{temperature\_adcs}{temperature\_adcs}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a2ba621978a511250f7250fb10e05ffbe}{int32\+\_\+t}} temperature\+\_\+adcs\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{a00218_ad1b0f51e00d7a645a69fcf68489e7bce}\label{a00218_ad1b0f51e00d7a645a69fcf68489e7bce} 
+\index{thread\_patMon\_hal.c@{thread\_patMon\_hal.c}!wrong\_data\_cont@{wrong\_data\_cont}}
+\index{wrong\_data\_cont@{wrong\_data\_cont}!thread\_patMon\_hal.c@{thread\_patMon\_hal.c}}
+\doxysubsubsection{\texorpdfstring{wrong\_data\_cont}{wrong\_data\_cont}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} wrong\+\_\+data\+\_\+cont = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{a00218_a8005f80b6c491cbf848d811da215d3cd}\label{a00218_a8005f80b6c491cbf848d811da215d3cd} 
+\index{thread\_patMon\_hal.c@{thread\_patMon\_hal.c}!zp\_adcs@{zp\_adcs}}
+\index{zp\_adcs@{zp\_adcs}!thread\_patMon\_hal.c@{thread\_patMon\_hal.c}}
+\doxysubsubsection{\texorpdfstring{zp\_adcs}{zp\_adcs}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a2ba621978a511250f7250fb10e05ffbe}{int32\+\_\+t}} zp\+\_\+adcs\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{a00218_ae882748fda59909b8ac17d9160ebf8c2}\label{a00218_ae882748fda59909b8ac17d9160ebf8c2} 
+\index{thread\_patMon\_hal.c@{thread\_patMon\_hal.c}!zp\_adcs\_raw@{zp\_adcs\_raw}}
+\index{zp\_adcs\_raw@{zp\_adcs\_raw}!thread\_patMon\_hal.c@{thread\_patMon\_hal.c}}
+\doxysubsubsection{\texorpdfstring{zp\_adcs\_raw}{zp\_adcs\_raw}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a2ba621978a511250f7250fb10e05ffbe}{int32\+\_\+t}} zp\+\_\+adcs\+\_\+raw\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{a00218_a56ed3f6a88e6341f794425ba542602eb}\label{a00218_a56ed3f6a88e6341f794425ba542602eb} 
+\index{thread\_patMon\_hal.c@{thread\_patMon\_hal.c}!zp\_cal@{zp\_cal}}
+\index{zp\_cal@{zp\_cal}!thread\_patMon\_hal.c@{thread\_patMon\_hal.c}}
+\doxysubsubsection{\texorpdfstring{zp\_cal}{zp\_cal}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} zp\+\_\+cal\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{a00218_a9d3cdf393e3142f69caa08f190e5a205}\label{a00218_a9d3cdf393e3142f69caa08f190e5a205} 
+\index{thread\_patMon\_hal.c@{thread\_patMon\_hal.c}!zp\_data@{zp\_data}}
+\index{zp\_data@{zp\_data}!thread\_patMon\_hal.c@{thread\_patMon\_hal.c}}
+\doxysubsubsection{\texorpdfstring{zp\_data}{zp\_data}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} zp\+\_\+data\mbox{[}\mbox{\hyperlink{a00221_aea6ee0780b984ab7670d4ee80712a79d}{ZP\+\_\+\+BUFFER\+\_\+\+SIZE}}\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{a00218_affa6537717d9aa167830b890af515654}\label{a00218_affa6537717d9aa167830b890af515654} 
+\index{thread\_patMon\_hal.c@{thread\_patMon\_hal.c}!zp\_offset\_dynamic@{zp\_offset\_dynamic}}
+\index{zp\_offset\_dynamic@{zp\_offset\_dynamic}!thread\_patMon\_hal.c@{thread\_patMon\_hal.c}}
+\doxysubsubsection{\texorpdfstring{zp\_offset\_dynamic}{zp\_offset\_dynamic}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a2ba621978a511250f7250fb10e05ffbe}{int32\+\_\+t}} zp\+\_\+offset\+\_\+dynamic = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{a00218_ac7440e301151e8d7fc70adad53bcac93}\label{a00218_ac7440e301151e8d7fc70adad53bcac93} 
+\index{thread\_patMon\_hal.c@{thread\_patMon\_hal.c}!zp\_offset\_static@{zp\_offset\_static}}
+\index{zp\_offset\_static@{zp\_offset\_static}!thread\_patMon\_hal.c@{thread\_patMon\_hal.c}}
+\doxysubsubsection{\texorpdfstring{zp\_offset\_static}{zp\_offset\_static}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a2ba621978a511250f7250fb10e05ffbe}{int32\+\_\+t}} zp\+\_\+offset\+\_\+static = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{a00218_a5b4cbe1012c7b05f6d222d42bfe761c9}\label{a00218_a5b4cbe1012c7b05f6d222d42bfe761c9} 
+\index{thread\_patMon\_hal.c@{thread\_patMon\_hal.c}!zp\_ohms@{zp\_ohms}}
+\index{zp\_ohms@{zp\_ohms}!thread\_patMon\_hal.c@{thread\_patMon\_hal.c}}
+\doxysubsubsection{\texorpdfstring{zp\_ohms}{zp\_ohms}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} zp\+\_\+ohms\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{a00218_a7b54b86aee777ab26020111fc70a3fe3}\label{a00218_a7b54b86aee777ab26020111fc70a3fe3} 
+\index{thread\_patMon\_hal.c@{thread\_patMon\_hal.c}!zp\_table\_adcs@{zp\_table\_adcs}}
+\index{zp\_table\_adcs@{zp\_table\_adcs}!thread\_patMon\_hal.c@{thread\_patMon\_hal.c}}
+\doxysubsubsection{\texorpdfstring{zp\_table\_adcs}{zp\_table\_adcs}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} zp\+\_\+table\+\_\+adcs\mbox{[}\mbox{\hyperlink{a00179_a941efc1e5afecf27189dd5c34706d485}{MAX\+\_\+\+ZP\+\_\+\+ITEMS}}\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+

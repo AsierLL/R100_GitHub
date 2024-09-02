@@ -1,0 +1,133 @@
+\doxysection{WIFI\+\_\+\+GPS\+\_\+\+POSITION\+\_\+t Struct Reference}
+\hypertarget{a00634}{}\label{a00634}\index{WIFI\_GPS\_POSITION\_t@{WIFI\_GPS\_POSITION\_t}}
+
+
+Wifi structure to report the gps position (same as \doxylink{a00658}{SIGFOX\+\_\+\+GPS\+\_\+\+POSITION\+\_\+t})  
+
+
+
+
+{\ttfamily \#include $<$thread\+\_\+comm\+\_\+hal.\+h$>$}
+
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a00191_a30bcce91a84082e55fabfd5098f0d7d7}{WIFI\+\_\+\+MSG\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{a00634_aae98d535a22379785c334eabed29be7c}{info\+\_\+type}}
+\begin{DoxyCompactList}\small\item\em identifies the information to report \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{a00634_a1b7a45c97b22d9e448b4e064c41009e4}{lat\+\_\+grados}}
+\begin{DoxyCompactList}\small\item\em device latitude MM \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{a00634_a74394fb4bf99124eea20ff4c6019636a}{lat\+\_\+minutos\+\_\+1}}
+\begin{DoxyCompactList}\small\item\em device latitude mm \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{a00634_a652f5c676de8649fcc7503772ad4d4b5}{lat\+\_\+minutos\+\_\+2}}
+\begin{DoxyCompactList}\small\item\em device latitude mmmm \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{a00634_ac1e5505d6657365d26a4ed54a45c0587}{long\+\_\+grados}}
+\begin{DoxyCompactList}\small\item\em device longitude MMM \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{a00634_abb58126ceb90f4cb0dcb9be9b6373386}{long\+\_\+minutos\+\_\+1}}
+\begin{DoxyCompactList}\small\item\em device longitude mm \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{a00634_a8bb7abd0a5a45e927a3d437c80d6987f}{long\+\_\+minutos\+\_\+2}}
+\begin{DoxyCompactList}\small\item\em device longitude mmmm \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{a00634_ae9caa5eda936821ed734cbe0b7c4d534}{lat\+\_\+long\+\_\+dir}}
+\begin{DoxyCompactList}\small\item\em bit1\+: N or S; bit 0\+: E or W \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{a00634_a5ca01fd59b649b2e9a6e2409c52577ac}{must\+\_\+be\+\_\+0x55}}
+\begin{DoxyCompactList}\small\item\em Fixed value = 0x55. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Wifi structure to report the gps position (same as \doxylink{a00658}{SIGFOX\+\_\+\+GPS\+\_\+\+POSITION\+\_\+t}) 
+
+\doxysubsection{Field Documentation}
+\Hypertarget{a00634_aae98d535a22379785c334eabed29be7c}\label{a00634_aae98d535a22379785c334eabed29be7c} 
+\index{WIFI\_GPS\_POSITION\_t@{WIFI\_GPS\_POSITION\_t}!info\_type@{info\_type}}
+\index{info\_type@{info\_type}!WIFI\_GPS\_POSITION\_t@{WIFI\_GPS\_POSITION\_t}}
+\doxysubsubsection{\texorpdfstring{info\_type}{info\_type}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00191_a30bcce91a84082e55fabfd5098f0d7d7}{WIFI\+\_\+\+MSG\+\_\+\+ID\+\_\+e}} WIFI\+\_\+\+GPS\+\_\+\+POSITION\+\_\+t\+::info\+\_\+type}
+
+
+
+identifies the information to report 
+
+\Hypertarget{a00634_a1b7a45c97b22d9e448b4e064c41009e4}\label{a00634_a1b7a45c97b22d9e448b4e064c41009e4} 
+\index{WIFI\_GPS\_POSITION\_t@{WIFI\_GPS\_POSITION\_t}!lat\_grados@{lat\_grados}}
+\index{lat\_grados@{lat\_grados}!WIFI\_GPS\_POSITION\_t@{WIFI\_GPS\_POSITION\_t}}
+\doxysubsubsection{\texorpdfstring{lat\_grados}{lat\_grados}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} WIFI\+\_\+\+GPS\+\_\+\+POSITION\+\_\+t\+::lat\+\_\+grados}
+
+
+
+device latitude MM 
+
+\Hypertarget{a00634_ae9caa5eda936821ed734cbe0b7c4d534}\label{a00634_ae9caa5eda936821ed734cbe0b7c4d534} 
+\index{WIFI\_GPS\_POSITION\_t@{WIFI\_GPS\_POSITION\_t}!lat\_long\_dir@{lat\_long\_dir}}
+\index{lat\_long\_dir@{lat\_long\_dir}!WIFI\_GPS\_POSITION\_t@{WIFI\_GPS\_POSITION\_t}}
+\doxysubsubsection{\texorpdfstring{lat\_long\_dir}{lat\_long\_dir}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} WIFI\+\_\+\+GPS\+\_\+\+POSITION\+\_\+t\+::lat\+\_\+long\+\_\+dir}
+
+
+
+bit1\+: N or S; bit 0\+: E or W 
+
+\Hypertarget{a00634_a74394fb4bf99124eea20ff4c6019636a}\label{a00634_a74394fb4bf99124eea20ff4c6019636a} 
+\index{WIFI\_GPS\_POSITION\_t@{WIFI\_GPS\_POSITION\_t}!lat\_minutos\_1@{lat\_minutos\_1}}
+\index{lat\_minutos\_1@{lat\_minutos\_1}!WIFI\_GPS\_POSITION\_t@{WIFI\_GPS\_POSITION\_t}}
+\doxysubsubsection{\texorpdfstring{lat\_minutos\_1}{lat\_minutos\_1}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} WIFI\+\_\+\+GPS\+\_\+\+POSITION\+\_\+t\+::lat\+\_\+minutos\+\_\+1}
+
+
+
+device latitude mm 
+
+\Hypertarget{a00634_a652f5c676de8649fcc7503772ad4d4b5}\label{a00634_a652f5c676de8649fcc7503772ad4d4b5} 
+\index{WIFI\_GPS\_POSITION\_t@{WIFI\_GPS\_POSITION\_t}!lat\_minutos\_2@{lat\_minutos\_2}}
+\index{lat\_minutos\_2@{lat\_minutos\_2}!WIFI\_GPS\_POSITION\_t@{WIFI\_GPS\_POSITION\_t}}
+\doxysubsubsection{\texorpdfstring{lat\_minutos\_2}{lat\_minutos\_2}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} WIFI\+\_\+\+GPS\+\_\+\+POSITION\+\_\+t\+::lat\+\_\+minutos\+\_\+2}
+
+
+
+device latitude mmmm 
+
+\Hypertarget{a00634_ac1e5505d6657365d26a4ed54a45c0587}\label{a00634_ac1e5505d6657365d26a4ed54a45c0587} 
+\index{WIFI\_GPS\_POSITION\_t@{WIFI\_GPS\_POSITION\_t}!long\_grados@{long\_grados}}
+\index{long\_grados@{long\_grados}!WIFI\_GPS\_POSITION\_t@{WIFI\_GPS\_POSITION\_t}}
+\doxysubsubsection{\texorpdfstring{long\_grados}{long\_grados}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} WIFI\+\_\+\+GPS\+\_\+\+POSITION\+\_\+t\+::long\+\_\+grados}
+
+
+
+device longitude MMM 
+
+\Hypertarget{a00634_abb58126ceb90f4cb0dcb9be9b6373386}\label{a00634_abb58126ceb90f4cb0dcb9be9b6373386} 
+\index{WIFI\_GPS\_POSITION\_t@{WIFI\_GPS\_POSITION\_t}!long\_minutos\_1@{long\_minutos\_1}}
+\index{long\_minutos\_1@{long\_minutos\_1}!WIFI\_GPS\_POSITION\_t@{WIFI\_GPS\_POSITION\_t}}
+\doxysubsubsection{\texorpdfstring{long\_minutos\_1}{long\_minutos\_1}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} WIFI\+\_\+\+GPS\+\_\+\+POSITION\+\_\+t\+::long\+\_\+minutos\+\_\+1}
+
+
+
+device longitude mm 
+
+\Hypertarget{a00634_a8bb7abd0a5a45e927a3d437c80d6987f}\label{a00634_a8bb7abd0a5a45e927a3d437c80d6987f} 
+\index{WIFI\_GPS\_POSITION\_t@{WIFI\_GPS\_POSITION\_t}!long\_minutos\_2@{long\_minutos\_2}}
+\index{long\_minutos\_2@{long\_minutos\_2}!WIFI\_GPS\_POSITION\_t@{WIFI\_GPS\_POSITION\_t}}
+\doxysubsubsection{\texorpdfstring{long\_minutos\_2}{long\_minutos\_2}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} WIFI\+\_\+\+GPS\+\_\+\+POSITION\+\_\+t\+::long\+\_\+minutos\+\_\+2}
+
+
+
+device longitude mmmm 
+
+\Hypertarget{a00634_a5ca01fd59b649b2e9a6e2409c52577ac}\label{a00634_a5ca01fd59b649b2e9a6e2409c52577ac} 
+\index{WIFI\_GPS\_POSITION\_t@{WIFI\_GPS\_POSITION\_t}!must\_be\_0x55@{must\_be\_0x55}}
+\index{must\_be\_0x55@{must\_be\_0x55}!WIFI\_GPS\_POSITION\_t@{WIFI\_GPS\_POSITION\_t}}
+\doxysubsubsection{\texorpdfstring{must\_be\_0x55}{must\_be\_0x55}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} WIFI\+\_\+\+GPS\+\_\+\+POSITION\+\_\+t\+::must\+\_\+be\+\_\+0x55}
+
+
+
+Fixed value = 0x55. 
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\+HAL/\mbox{\hyperlink{a00191}{thread\+\_\+comm\+\_\+hal.\+h}}\end{DoxyCompactItemize}

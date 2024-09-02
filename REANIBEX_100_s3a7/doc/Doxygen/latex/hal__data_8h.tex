@@ -1,0 +1,262 @@
+\doxysection{C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/synergy\+\_\+gen/hal\+\_\+data.h File Reference}
+\hypertarget{hal__data_8h}{}\label{hal__data_8h}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/synergy\_gen/hal\_data.h@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/synergy\_gen/hal\_data.h}}
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include "{}bsp\+\_\+api.\+h"{}}\newline
+{\ttfamily \#include "{}common\+\_\+data.\+h"{}}\newline
+{\ttfamily \#include "{}r\+\_\+flash\+\_\+lp.\+h"{}}\newline
+{\ttfamily \#include "{}r\+\_\+flash\+\_\+api.\+h"{}}\newline
+{\ttfamily \#include "{}r\+\_\+iwdt.\+h"{}}\newline
+{\ttfamily \#include "{}r\+\_\+wdt\+\_\+api.\+h"{}}\newline
+{\ttfamily \#include "{}r\+\_\+dtc.\+h"{}}\newline
+{\ttfamily \#include "{}r\+\_\+transfer\+\_\+api.\+h"{}}\newline
+{\ttfamily \#include "{}r\+\_\+sci\+\_\+uart.\+h"{}}\newline
+{\ttfamily \#include "{}r\+\_\+uart\+\_\+api.\+h"{}}\newline
+{\ttfamily \#include "{}r\+\_\+icu.\+h"{}}\newline
+{\ttfamily \#include "{}r\+\_\+external\+\_\+irq\+\_\+api.\+h"{}}\newline
+{\ttfamily \#include "{}r\+\_\+rtc.\+h"{}}\newline
+{\ttfamily \#include "{}r\+\_\+rtc\+\_\+api.\+h"{}}\newline
+Include dependency graph for hal\+\_\+data.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{hal__data_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{hal__data_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{hal__data_8h_a02f5203e78429e33467db48e17bcbaa7}{NULL}} (flash\+\_\+callback\+\_\+args\+\_\+t \texorpdfstring{$\ast$}{*}p\+\_\+args)
+\item 
+void \mbox{\hyperlink{hal__data_8h_af40729ed9194ab6d0dd901266b6d46e2}{NULL}} (wdt\+\_\+callback\+\_\+args\+\_\+t \texorpdfstring{$\ast$}{*}p\+\_\+args)
+\item 
+void \mbox{\hyperlink{hal__data_8h_aa7dd9e0673e80166ac059a854d941c56}{NULL}} (transfer\+\_\+callback\+\_\+args\+\_\+t \texorpdfstring{$\ast$}{*}p\+\_\+args)
+\item 
+void \mbox{\hyperlink{hal__data_8h_ae7aee8915b70062535ce4633e69331f5}{NULL}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} channel, \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} level)
+\item 
+void \mbox{\hyperlink{hal__data_8h_abde378d1792873c09f0d4948c1fd3c19}{comm\+\_\+uart\+\_\+callback}} (uart\+\_\+callback\+\_\+args\+\_\+t \texorpdfstring{$\ast$}{*}p\+\_\+args)
+\begin{DoxyCompactList}\small\item\em Implements the callback of the UART. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{hal__data_8h_afd85454a6a83951bf747aeb36945277a}{irq\+\_\+callback}} (external\+\_\+irq\+\_\+callback\+\_\+args\+\_\+t \texorpdfstring{$\ast$}{*}p\+\_\+args)
+\item 
+void \mbox{\hyperlink{hal__data_8h_ad4aec60e381bc359ac476e30c0f03301}{NULL}} (rtc\+\_\+callback\+\_\+args\+\_\+t \texorpdfstring{$\ast$}{*}p\+\_\+args)
+\item 
+void \mbox{\hyperlink{hal__data_8h_a5adc996c1a730574fa6dd131142ab2ad}{trace\+\_\+uart\+\_\+callback}} (uart\+\_\+callback\+\_\+args\+\_\+t \texorpdfstring{$\ast$}{*}p\+\_\+args)
+\begin{DoxyCompactList}\small\item\em Implements the callback of the UART. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{hal__data_8h_a95cc00314e8ac515b001cabd41c7f8c3}{hal\+\_\+entry}} (void)
+\begin{DoxyCompactList}\small\item\em A description of the function. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{hal__data_8h_aef7df059039eab3db1578b79eb2f6d86}{g\+\_\+hal\+\_\+init}} (void)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const flash\+\_\+instance\+\_\+t \mbox{\hyperlink{hal__data_8h_a42b74b53fe4fdc9ad53fd02d41948773}{g\+\_\+flash0}}
+\item 
+const wdt\+\_\+instance\+\_\+t \mbox{\hyperlink{hal__data_8h_ae4e5904dd1372ff7b4cca5ec5f6389da}{i\+WDT}}
+\item 
+const transfer\+\_\+instance\+\_\+t \mbox{\hyperlink{hal__data_8h_a660a37aaf733243c5eb543c3adc165d6}{g\+\_\+transfer3}}
+\item 
+const transfer\+\_\+instance\+\_\+t \mbox{\hyperlink{hal__data_8h_adc094da97389cd561c76e311f652e7e1}{g\+\_\+transfer2}}
+\item 
+const uart\+\_\+instance\+\_\+t \mbox{\hyperlink{hal__data_8h_a52be76f229d078c70b7833b57952afae}{comm\+UART}}
+\item 
+const external\+\_\+irq\+\_\+instance\+\_\+t \mbox{\hyperlink{hal__data_8h_a618724019cfe7d46450d1e82cca62d3d}{on\+\_\+off\+\_\+irq}}
+\item 
+const external\+\_\+irq\+\_\+instance\+\_\+t \mbox{\hyperlink{hal__data_8h_afb1cd18caabf206353226b9d5026b32a}{cover\+\_\+open\+\_\+irq}}
+\item 
+const rtc\+\_\+instance\+\_\+t \mbox{\hyperlink{hal__data_8h_a744ab8007f5bcdc4376d84ec917931c3}{i\+RTC}}
+\item 
+const transfer\+\_\+instance\+\_\+t \mbox{\hyperlink{hal__data_8h_abe6d5b28a84f9e1ab48617ceff2e4819}{g\+\_\+transfer1}}
+\item 
+const transfer\+\_\+instance\+\_\+t \mbox{\hyperlink{hal__data_8h_af20efd435b0685054a670fb544a857f5}{g\+\_\+transfer0}}
+\item 
+const uart\+\_\+instance\+\_\+t \mbox{\hyperlink{hal__data_8h_a5c8fc33bb927a15fc78e0d2306d2d1e5}{trace\+UART}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{hal__data_8h_abde378d1792873c09f0d4948c1fd3c19}\label{hal__data_8h_abde378d1792873c09f0d4948c1fd3c19} 
+\index{hal\_data.h@{hal\_data.h}!comm\_uart\_callback@{comm\_uart\_callback}}
+\index{comm\_uart\_callback@{comm\_uart\_callback}!hal\_data.h@{hal\_data.h}}
+\doxysubsubsection{\texorpdfstring{comm\_uart\_callback()}{comm\_uart\_callback()}}
+{\footnotesize\ttfamily void comm\+\_\+uart\+\_\+callback (\begin{DoxyParamCaption}\item[{uart\+\_\+callback\+\_\+args\+\_\+t \texorpdfstring{$\ast$}{*}}]{p\+\_\+args }\end{DoxyParamCaption})}
+
+
+
+Implements the callback of the UART. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+args} & UART callback arguments\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000003}{Todo}}]pending things to be done\end{DoxyRefDesc}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{hal__data_8h_abde378d1792873c09f0d4948c1fd3c19_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{hal__data_8h_aef7df059039eab3db1578b79eb2f6d86}\label{hal__data_8h_aef7df059039eab3db1578b79eb2f6d86} 
+\index{hal\_data.h@{hal\_data.h}!g\_hal\_init@{g\_hal\_init}}
+\index{g\_hal\_init@{g\_hal\_init}!hal\_data.h@{hal\_data.h}}
+\doxysubsubsection{\texorpdfstring{g\_hal\_init()}{g\_hal\_init()}}
+{\footnotesize\ttfamily void g\+\_\+hal\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{hal__data_8h_a95cc00314e8ac515b001cabd41c7f8c3}\label{hal__data_8h_a95cc00314e8ac515b001cabd41c7f8c3} 
+\index{hal\_data.h@{hal\_data.h}!hal\_entry@{hal\_entry}}
+\index{hal\_entry@{hal\_entry}!hal\_data.h@{hal\_data.h}}
+\doxysubsubsection{\texorpdfstring{hal\_entry()}{hal\_entry()}}
+{\footnotesize\ttfamily void hal\+\_\+entry (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+A description of the function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000002}{Todo}}]pending things to be done\end{DoxyRefDesc}
+\Hypertarget{hal__data_8h_afd85454a6a83951bf747aeb36945277a}\label{hal__data_8h_afd85454a6a83951bf747aeb36945277a} 
+\index{hal\_data.h@{hal\_data.h}!irq\_callback@{irq\_callback}}
+\index{irq\_callback@{irq\_callback}!hal\_data.h@{hal\_data.h}}
+\doxysubsubsection{\texorpdfstring{irq\_callback()}{irq\_callback()}}
+{\footnotesize\ttfamily void irq\+\_\+callback (\begin{DoxyParamCaption}\item[{external\+\_\+irq\+\_\+callback\+\_\+args\+\_\+t \texorpdfstring{$\ast$}{*}}]{p\+\_\+args }\end{DoxyParamCaption})}
+
+\Hypertarget{hal__data_8h_a02f5203e78429e33467db48e17bcbaa7}\label{hal__data_8h_a02f5203e78429e33467db48e17bcbaa7} 
+\index{hal\_data.h@{hal\_data.h}!NULL@{NULL}}
+\index{NULL@{NULL}!hal\_data.h@{hal\_data.h}}
+\doxysubsubsection{\texorpdfstring{NULL()}{NULL()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily void NULL (\begin{DoxyParamCaption}\item[{flash\+\_\+callback\+\_\+args\+\_\+t \texorpdfstring{$\ast$}{*}}]{p\+\_\+args }\end{DoxyParamCaption})}
+
+\Hypertarget{hal__data_8h_ad4aec60e381bc359ac476e30c0f03301}\label{hal__data_8h_ad4aec60e381bc359ac476e30c0f03301} 
+\index{hal\_data.h@{hal\_data.h}!NULL@{NULL}}
+\index{NULL@{NULL}!hal\_data.h@{hal\_data.h}}
+\doxysubsubsection{\texorpdfstring{NULL()}{NULL()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily void NULL (\begin{DoxyParamCaption}\item[{rtc\+\_\+callback\+\_\+args\+\_\+t \texorpdfstring{$\ast$}{*}}]{p\+\_\+args }\end{DoxyParamCaption})}
+
+\Hypertarget{hal__data_8h_aa7dd9e0673e80166ac059a854d941c56}\label{hal__data_8h_aa7dd9e0673e80166ac059a854d941c56} 
+\index{hal\_data.h@{hal\_data.h}!NULL@{NULL}}
+\index{NULL@{NULL}!hal\_data.h@{hal\_data.h}}
+\doxysubsubsection{\texorpdfstring{NULL()}{NULL()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily void NULL (\begin{DoxyParamCaption}\item[{transfer\+\_\+callback\+\_\+args\+\_\+t \texorpdfstring{$\ast$}{*}}]{p\+\_\+args }\end{DoxyParamCaption})}
+
+\Hypertarget{hal__data_8h_ae7aee8915b70062535ce4633e69331f5}\label{hal__data_8h_ae7aee8915b70062535ce4633e69331f5} 
+\index{hal\_data.h@{hal\_data.h}!NULL@{NULL}}
+\index{NULL@{NULL}!hal\_data.h@{hal\_data.h}}
+\doxysubsubsection{\texorpdfstring{NULL()}{NULL()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily void NULL (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}}}]{channel,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}}}]{level }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{hal__data_8h_af40729ed9194ab6d0dd901266b6d46e2}\label{hal__data_8h_af40729ed9194ab6d0dd901266b6d46e2} 
+\index{hal\_data.h@{hal\_data.h}!NULL@{NULL}}
+\index{NULL@{NULL}!hal\_data.h@{hal\_data.h}}
+\doxysubsubsection{\texorpdfstring{NULL()}{NULL()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily void NULL (\begin{DoxyParamCaption}\item[{wdt\+\_\+callback\+\_\+args\+\_\+t \texorpdfstring{$\ast$}{*}}]{p\+\_\+args }\end{DoxyParamCaption})}
+
+\Hypertarget{hal__data_8h_a5adc996c1a730574fa6dd131142ab2ad}\label{hal__data_8h_a5adc996c1a730574fa6dd131142ab2ad} 
+\index{hal\_data.h@{hal\_data.h}!trace\_uart\_callback@{trace\_uart\_callback}}
+\index{trace\_uart\_callback@{trace\_uart\_callback}!hal\_data.h@{hal\_data.h}}
+\doxysubsubsection{\texorpdfstring{trace\_uart\_callback()}{trace\_uart\_callback()}}
+{\footnotesize\ttfamily void trace\+\_\+uart\+\_\+callback (\begin{DoxyParamCaption}\item[{uart\+\_\+callback\+\_\+args\+\_\+t \texorpdfstring{$\ast$}{*}}]{p\+\_\+args }\end{DoxyParamCaption})}
+
+
+
+Implements the callback of the UART. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+args} & UART callback arguments\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000012}{Todo}}]pending things to be done\end{DoxyRefDesc}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{hal__data_8h_a52be76f229d078c70b7833b57952afae}\label{hal__data_8h_a52be76f229d078c70b7833b57952afae} 
+\index{hal\_data.h@{hal\_data.h}!commUART@{commUART}}
+\index{commUART@{commUART}!hal\_data.h@{hal\_data.h}}
+\doxysubsubsection{\texorpdfstring{commUART}{commUART}}
+{\footnotesize\ttfamily const uart\+\_\+instance\+\_\+t comm\+UART\hspace{0.3cm}{\ttfamily [extern]}}
+
+UART on SCI Instance. \Hypertarget{hal__data_8h_afb1cd18caabf206353226b9d5026b32a}\label{hal__data_8h_afb1cd18caabf206353226b9d5026b32a} 
+\index{hal\_data.h@{hal\_data.h}!cover\_open\_irq@{cover\_open\_irq}}
+\index{cover\_open\_irq@{cover\_open\_irq}!hal\_data.h@{hal\_data.h}}
+\doxysubsubsection{\texorpdfstring{cover\_open\_irq}{cover\_open\_irq}}
+{\footnotesize\ttfamily const external\+\_\+irq\+\_\+instance\+\_\+t cover\+\_\+open\+\_\+irq\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{hal__data_8h_a42b74b53fe4fdc9ad53fd02d41948773}\label{hal__data_8h_a42b74b53fe4fdc9ad53fd02d41948773} 
+\index{hal\_data.h@{hal\_data.h}!g\_flash0@{g\_flash0}}
+\index{g\_flash0@{g\_flash0}!hal\_data.h@{hal\_data.h}}
+\doxysubsubsection{\texorpdfstring{g\_flash0}{g\_flash0}}
+{\footnotesize\ttfamily const flash\+\_\+instance\+\_\+t g\+\_\+flash0\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{hal__data_8h_af20efd435b0685054a670fb544a857f5}\label{hal__data_8h_af20efd435b0685054a670fb544a857f5} 
+\index{hal\_data.h@{hal\_data.h}!g\_transfer0@{g\_transfer0}}
+\index{g\_transfer0@{g\_transfer0}!hal\_data.h@{hal\_data.h}}
+\doxysubsubsection{\texorpdfstring{g\_transfer0}{g\_transfer0}}
+{\footnotesize\ttfamily const transfer\+\_\+instance\+\_\+t g\+\_\+transfer0\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{hal__data_8h_abe6d5b28a84f9e1ab48617ceff2e4819}\label{hal__data_8h_abe6d5b28a84f9e1ab48617ceff2e4819} 
+\index{hal\_data.h@{hal\_data.h}!g\_transfer1@{g\_transfer1}}
+\index{g\_transfer1@{g\_transfer1}!hal\_data.h@{hal\_data.h}}
+\doxysubsubsection{\texorpdfstring{g\_transfer1}{g\_transfer1}}
+{\footnotesize\ttfamily const transfer\+\_\+instance\+\_\+t g\+\_\+transfer1\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{hal__data_8h_adc094da97389cd561c76e311f652e7e1}\label{hal__data_8h_adc094da97389cd561c76e311f652e7e1} 
+\index{hal\_data.h@{hal\_data.h}!g\_transfer2@{g\_transfer2}}
+\index{g\_transfer2@{g\_transfer2}!hal\_data.h@{hal\_data.h}}
+\doxysubsubsection{\texorpdfstring{g\_transfer2}{g\_transfer2}}
+{\footnotesize\ttfamily const transfer\+\_\+instance\+\_\+t g\+\_\+transfer2\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{hal__data_8h_a660a37aaf733243c5eb543c3adc165d6}\label{hal__data_8h_a660a37aaf733243c5eb543c3adc165d6} 
+\index{hal\_data.h@{hal\_data.h}!g\_transfer3@{g\_transfer3}}
+\index{g\_transfer3@{g\_transfer3}!hal\_data.h@{hal\_data.h}}
+\doxysubsubsection{\texorpdfstring{g\_transfer3}{g\_transfer3}}
+{\footnotesize\ttfamily const transfer\+\_\+instance\+\_\+t g\+\_\+transfer3\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{hal__data_8h_a744ab8007f5bcdc4376d84ec917931c3}\label{hal__data_8h_a744ab8007f5bcdc4376d84ec917931c3} 
+\index{hal\_data.h@{hal\_data.h}!iRTC@{iRTC}}
+\index{iRTC@{iRTC}!hal\_data.h@{hal\_data.h}}
+\doxysubsubsection{\texorpdfstring{iRTC}{iRTC}}
+{\footnotesize\ttfamily const rtc\+\_\+instance\+\_\+t i\+RTC\hspace{0.3cm}{\ttfamily [extern]}}
+
+RTC on RTC Instance. \Hypertarget{hal__data_8h_ae4e5904dd1372ff7b4cca5ec5f6389da}\label{hal__data_8h_ae4e5904dd1372ff7b4cca5ec5f6389da} 
+\index{hal\_data.h@{hal\_data.h}!iWDT@{iWDT}}
+\index{iWDT@{iWDT}!hal\_data.h@{hal\_data.h}}
+\doxysubsubsection{\texorpdfstring{iWDT}{iWDT}}
+{\footnotesize\ttfamily const wdt\+\_\+instance\+\_\+t i\+WDT\hspace{0.3cm}{\ttfamily [extern]}}
+
+WDT on IWDT Instance. \Hypertarget{hal__data_8h_a618724019cfe7d46450d1e82cca62d3d}\label{hal__data_8h_a618724019cfe7d46450d1e82cca62d3d} 
+\index{hal\_data.h@{hal\_data.h}!on\_off\_irq@{on\_off\_irq}}
+\index{on\_off\_irq@{on\_off\_irq}!hal\_data.h@{hal\_data.h}}
+\doxysubsubsection{\texorpdfstring{on\_off\_irq}{on\_off\_irq}}
+{\footnotesize\ttfamily const external\+\_\+irq\+\_\+instance\+\_\+t on\+\_\+off\+\_\+irq\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{hal__data_8h_a5c8fc33bb927a15fc78e0d2306d2d1e5}\label{hal__data_8h_a5c8fc33bb927a15fc78e0d2306d2d1e5} 
+\index{hal\_data.h@{hal\_data.h}!traceUART@{traceUART}}
+\index{traceUART@{traceUART}!hal\_data.h@{hal\_data.h}}
+\doxysubsubsection{\texorpdfstring{traceUART}{traceUART}}
+{\footnotesize\ttfamily const uart\+\_\+instance\+\_\+t trace\+UART\hspace{0.3cm}{\ttfamily [extern]}}
+
+UART on SCI Instance. 

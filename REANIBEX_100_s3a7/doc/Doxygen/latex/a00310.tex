@@ -1,0 +1,173 @@
+\doxysection{DB\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t Struct Reference}
+\hypertarget{a00310}{}\label{a00310}\index{DB\_TEST\_RESULT\_t@{DB\_TEST\_RESULT\_t}}
+
+
+Structure to hold data before writing to file in multiples of cluster size.  
+
+
+
+
+{\ttfamily \#include $<$DB\+\_\+\+Test.\+h$>$}
+
+
+
+Collaboration diagram for DB\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t\+:
+% FIG 0
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a00137_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \mbox{\hyperlink{a00310_a44e77bcdd9cf0eccc6ba33e25917ef59}{device\+\_\+sn}} \mbox{[}\mbox{\hyperlink{a00017_a633ded5bcc6018dd045e1ef28d7ad7c9}{RSC\+\_\+\+NAME\+\_\+\+SZ}}\mbox{]}
+\begin{DoxyCompactList}\small\item\em Device serial number. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{a00310_a6be5450ef4f075f3d6362b441f1e586f}{test\+\_\+id}}
+\begin{DoxyCompactList}\small\item\em Test identifier (used internally to identify the test number) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00011_a79c5749d54981e8a7af5556c10e14b7f}{TEST\+\_\+\+STATUS\+\_\+t}} \mbox{\hyperlink{a00310_a86e6cee9ac4bf54b2d2ce51243c75c95}{test\+\_\+status}}
+\begin{DoxyCompactList}\small\item\em Test OK, NOT OK or ABORT. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \mbox{\hyperlink{a00310_a3900cdeddc3b5924798bfb377f9baae8}{error\+\_\+code}}
+\begin{DoxyCompactList}\small\item\em Error code. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00278}{TEST\+\_\+\+VOLTAGE\+\_\+t}} \mbox{\hyperlink{a00310_ad606a05559e0f1aa6cbf07d33ae12ea0}{voltage}}
+\begin{DoxyCompactList}\small\item\em Voltages test results. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00298}{TEST\+\_\+\+MISC\+\_\+t}} \mbox{\hyperlink{a00310_adaa16a74ed2d3becf3a41e145e4ac4de}{misc}}
+\begin{DoxyCompactList}\small\item\em Miscellaneous test results. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00290}{TEST\+\_\+\+PATMON\+\_\+t}} \mbox{\hyperlink{a00310_ab96c0e6d5dd60a846b3b2266e7f076e8}{patmon}}
+\begin{DoxyCompactList}\small\item\em Patient monitor test results. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00286}{TEST\+\_\+\+ELECTRODES\+\_\+t}} \mbox{\hyperlink{a00310_a674a146656a8095b11dcf783496f9370}{electrodes}}
+\begin{DoxyCompactList}\small\item\em Electrodes test results. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00282}{TEST\+\_\+\+BATTERY\+\_\+t}} \mbox{\hyperlink{a00310_a55568c369816749c3875e1be9a288998}{battery}}
+\begin{DoxyCompactList}\small\item\em Battery test results. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00294}{TEST\+\_\+\+COMMS\+\_\+t}} \mbox{\hyperlink{a00310_a7cdb99ccbcfebdd3967086af05b7b83f}{comms}}
+\begin{DoxyCompactList}\small\item\em Comms test results. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00302}{TEST\+\_\+\+DEFIB\+\_\+t}} \mbox{\hyperlink{a00310_a42d22d0ee11b8f9e1356f70b93b515f4}{defib}}
+\begin{DoxyCompactList}\small\item\em Defibrillator test results. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00306}{TEST\+\_\+\+CERT\+\_\+t}} \mbox{\hyperlink{a00310_a033ba41ec7b58b131c0a7036f05fc6fe}{certificate}}
+\begin{DoxyCompactList}\small\item\em Certificate test results. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Structure to hold data before writing to file in multiples of cluster size. 
+
+\doxysubsection{Field Documentation}
+\Hypertarget{a00310_a55568c369816749c3875e1be9a288998}\label{a00310_a55568c369816749c3875e1be9a288998} 
+\index{DB\_TEST\_RESULT\_t@{DB\_TEST\_RESULT\_t}!battery@{battery}}
+\index{battery@{battery}!DB\_TEST\_RESULT\_t@{DB\_TEST\_RESULT\_t}}
+\doxysubsubsection{\texorpdfstring{battery}{battery}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00282}{TEST\+\_\+\+BATTERY\+\_\+t}} DB\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t\+::battery}
+
+
+
+Battery test results. 
+
+\Hypertarget{a00310_a033ba41ec7b58b131c0a7036f05fc6fe}\label{a00310_a033ba41ec7b58b131c0a7036f05fc6fe} 
+\index{DB\_TEST\_RESULT\_t@{DB\_TEST\_RESULT\_t}!certificate@{certificate}}
+\index{certificate@{certificate}!DB\_TEST\_RESULT\_t@{DB\_TEST\_RESULT\_t}}
+\doxysubsubsection{\texorpdfstring{certificate}{certificate}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00306}{TEST\+\_\+\+CERT\+\_\+t}} DB\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t\+::certificate}
+
+
+
+Certificate test results. 
+
+\Hypertarget{a00310_a7cdb99ccbcfebdd3967086af05b7b83f}\label{a00310_a7cdb99ccbcfebdd3967086af05b7b83f} 
+\index{DB\_TEST\_RESULT\_t@{DB\_TEST\_RESULT\_t}!comms@{comms}}
+\index{comms@{comms}!DB\_TEST\_RESULT\_t@{DB\_TEST\_RESULT\_t}}
+\doxysubsubsection{\texorpdfstring{comms}{comms}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00294}{TEST\+\_\+\+COMMS\+\_\+t}} DB\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t\+::comms}
+
+
+
+Comms test results. 
+
+\Hypertarget{a00310_a42d22d0ee11b8f9e1356f70b93b515f4}\label{a00310_a42d22d0ee11b8f9e1356f70b93b515f4} 
+\index{DB\_TEST\_RESULT\_t@{DB\_TEST\_RESULT\_t}!defib@{defib}}
+\index{defib@{defib}!DB\_TEST\_RESULT\_t@{DB\_TEST\_RESULT\_t}}
+\doxysubsubsection{\texorpdfstring{defib}{defib}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00302}{TEST\+\_\+\+DEFIB\+\_\+t}} DB\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t\+::defib}
+
+
+
+Defibrillator test results. 
+
+\Hypertarget{a00310_a44e77bcdd9cf0eccc6ba33e25917ef59}\label{a00310_a44e77bcdd9cf0eccc6ba33e25917ef59} 
+\index{DB\_TEST\_RESULT\_t@{DB\_TEST\_RESULT\_t}!device\_sn@{device\_sn}}
+\index{device\_sn@{device\_sn}!DB\_TEST\_RESULT\_t@{DB\_TEST\_RESULT\_t}}
+\doxysubsubsection{\texorpdfstring{device\_sn}{device\_sn}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} DB\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t\+::device\+\_\+sn\mbox{[}\mbox{\hyperlink{a00017_a633ded5bcc6018dd045e1ef28d7ad7c9}{RSC\+\_\+\+NAME\+\_\+\+SZ}}\mbox{]}}
+
+
+
+Device serial number. 
+
+\Hypertarget{a00310_a674a146656a8095b11dcf783496f9370}\label{a00310_a674a146656a8095b11dcf783496f9370} 
+\index{DB\_TEST\_RESULT\_t@{DB\_TEST\_RESULT\_t}!electrodes@{electrodes}}
+\index{electrodes@{electrodes}!DB\_TEST\_RESULT\_t@{DB\_TEST\_RESULT\_t}}
+\doxysubsubsection{\texorpdfstring{electrodes}{electrodes}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00286}{TEST\+\_\+\+ELECTRODES\+\_\+t}} DB\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t\+::electrodes}
+
+
+
+Electrodes test results. 
+
+\Hypertarget{a00310_a3900cdeddc3b5924798bfb377f9baae8}\label{a00310_a3900cdeddc3b5924798bfb377f9baae8} 
+\index{DB\_TEST\_RESULT\_t@{DB\_TEST\_RESULT\_t}!error\_code@{error\_code}}
+\index{error\_code@{error\_code}!DB\_TEST\_RESULT\_t@{DB\_TEST\_RESULT\_t}}
+\doxysubsubsection{\texorpdfstring{error\_code}{error\_code}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} DB\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t\+::error\+\_\+code}
+
+
+
+Error code. 
+
+\Hypertarget{a00310_adaa16a74ed2d3becf3a41e145e4ac4de}\label{a00310_adaa16a74ed2d3becf3a41e145e4ac4de} 
+\index{DB\_TEST\_RESULT\_t@{DB\_TEST\_RESULT\_t}!misc@{misc}}
+\index{misc@{misc}!DB\_TEST\_RESULT\_t@{DB\_TEST\_RESULT\_t}}
+\doxysubsubsection{\texorpdfstring{misc}{misc}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00298}{TEST\+\_\+\+MISC\+\_\+t}} DB\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t\+::misc}
+
+
+
+Miscellaneous test results. 
+
+\Hypertarget{a00310_ab96c0e6d5dd60a846b3b2266e7f076e8}\label{a00310_ab96c0e6d5dd60a846b3b2266e7f076e8} 
+\index{DB\_TEST\_RESULT\_t@{DB\_TEST\_RESULT\_t}!patmon@{patmon}}
+\index{patmon@{patmon}!DB\_TEST\_RESULT\_t@{DB\_TEST\_RESULT\_t}}
+\doxysubsubsection{\texorpdfstring{patmon}{patmon}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00290}{TEST\+\_\+\+PATMON\+\_\+t}} DB\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t\+::patmon}
+
+
+
+Patient monitor test results. 
+
+\Hypertarget{a00310_a6be5450ef4f075f3d6362b441f1e586f}\label{a00310_a6be5450ef4f075f3d6362b441f1e586f} 
+\index{DB\_TEST\_RESULT\_t@{DB\_TEST\_RESULT\_t}!test\_id@{test\_id}}
+\index{test\_id@{test\_id}!DB\_TEST\_RESULT\_t@{DB\_TEST\_RESULT\_t}}
+\doxysubsubsection{\texorpdfstring{test\_id}{test\_id}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} DB\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t\+::test\+\_\+id}
+
+
+
+Test identifier (used internally to identify the test number) 
+
+\Hypertarget{a00310_a86e6cee9ac4bf54b2d2ce51243c75c95}\label{a00310_a86e6cee9ac4bf54b2d2ce51243c75c95} 
+\index{DB\_TEST\_RESULT\_t@{DB\_TEST\_RESULT\_t}!test\_status@{test\_status}}
+\index{test\_status@{test\_status}!DB\_TEST\_RESULT\_t@{DB\_TEST\_RESULT\_t}}
+\doxysubsubsection{\texorpdfstring{test\_status}{test\_status}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00011_a79c5749d54981e8a7af5556c10e14b7f}{TEST\+\_\+\+STATUS\+\_\+t}} DB\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t\+::test\+\_\+status}
+
+
+
+Test OK, NOT OK or ABORT. 
+
+\Hypertarget{a00310_ad606a05559e0f1aa6cbf07d33ae12ea0}\label{a00310_ad606a05559e0f1aa6cbf07d33ae12ea0} 
+\index{DB\_TEST\_RESULT\_t@{DB\_TEST\_RESULT\_t}!voltage@{voltage}}
+\index{voltage@{voltage}!DB\_TEST\_RESULT\_t@{DB\_TEST\_RESULT\_t}}
+\doxysubsubsection{\texorpdfstring{voltage}{voltage}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00278}{TEST\+\_\+\+VOLTAGE\+\_\+t}} DB\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t\+::voltage}
+
+
+
+Voltages test results. 
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\mbox{\hyperlink{a00011}{DB\+\_\+\+Test.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,80 @@
+\doxysection{Keypad.\+h}
+\hypertarget{a00245_source}{}\label{a00245_source}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/Resources/Keypad.h@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/Resources/Keypad.h}}
+\mbox{\hyperlink{a00245}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Name\ \ \ \ \ \ :\ R100\_S3A7\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ :\ Osatu\ S.\ Coop\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Compiler\ \ :\ GNU\ ARM\ Embedded\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ Target\ \ \ \ :\ Reanibex\ Serie\ 100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ ******************************************************************************/}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#ifndef\ KEYPAD\_H\_}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#define\ KEYPAD\_H\_}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ **Includes}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{a00137}{types\_basic.h}}"{}}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{a00134}{types\_app.h}}"{}}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ **\ Defines}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#define\ \ \ \ \ LED\_VALUE\_OFF\ \ \ \ \ \ \ IOPORT\_LEVEL\_LOW}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#define\ \ \ \ \ LED\_VALUE\_ON\ \ \ \ \ \ \ \ IOPORT\_LEVEL\_HIGH}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#define\ \ \ \ \ KEY\_SHOCK\ \ \ \ \ \ \ \ \ \ \ IOPORT\_PORT\_02\_PIN\_00}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#define\ \ \ \ \ KEY\_PATYPE\ \ \ \ \ \ \ \ \ \ IOPORT\_PORT\_03\_PIN\_07}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#define\ \ \ \ \ KEY\_ONOFF\ \ \ \ \ \ \ \ \ \ \ IOPORT\_PORT\_04\_PIN\_15}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#define\ \ \ \ \ KEY\_COVER\ \ \ \ \ \ \ \ \ \ \ IOPORT\_PORT\_04\_PIN\_04}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#define\ \ \ \ \ VBUS\_DET\ \ \ \ \ \ \ \ \ \ \ \ IOPORT\_PORT\_04\_PIN\_07}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00045\ \textcolor{comment}{\ **\ Typedefs}}
+\DoxyCodeLine{00046\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00049\ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{a00245_aad7f10e79c2b7cac7fe25834e5fc1fa2a6bc98461e9067d2702d77e4de77e2776}{KEY\_STATUS\_OFF}}\ =\ 0,}
+\DoxyCodeLine{00051\ \ \ \ \ \mbox{\hyperlink{a00245_aad7f10e79c2b7cac7fe25834e5fc1fa2a229469dc9e30330f62c5ede7d48a8df6}{KEY\_STATUS\_ON}}}
+\DoxyCodeLine{00052\ \}\ \mbox{\hyperlink{a00245_aad7f10e79c2b7cac7fe25834e5fc1fa2}{KEY\_STATUS\_e}};}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00055\ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \mbox{\hyperlink{a00245_acd3ee7b802ee0e1c62c12b822423625ca883ee3ba05b98304cab6fce9faff16f0}{LED\_ONOFF}}\ =\ 0,}
+\DoxyCodeLine{00057\ \ \ \ \ \mbox{\hyperlink{a00245_acd3ee7b802ee0e1c62c12b822423625ca8efa3f72788658b2140755c051de0b37}{LED\_SHOCK}},}
+\DoxyCodeLine{00058\ \ \ \ \ \mbox{\hyperlink{a00245_acd3ee7b802ee0e1c62c12b822423625ca2c94ef29902c022f89366d3791c5ac47}{LED\_PATYPE}},}
+\DoxyCodeLine{00059\ \textcolor{comment}{//\ \ LED\_LIFE\_BEAT,\ \ \ \ \ \ \ \ \ \ //\ use\ the\ same\ led\ as\ ON-\/OFF\ and\ as\ Life\ beat}}
+\DoxyCodeLine{00060\ \ \ \ \ \mbox{\hyperlink{a00245_acd3ee7b802ee0e1c62c12b822423625ca65302b648f723384a609693d44ab941d}{LED\_MAX}}}
+\DoxyCodeLine{00061\ \}\ \mbox{\hyperlink{a00245_acd3ee7b802ee0e1c62c12b822423625c}{LED\_IDENT\_e}};}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00064\ \textcolor{comment}{\ **\ Globals}}
+\DoxyCodeLine{00065\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00068\ \textcolor{comment}{\ **\ Prototypes}}
+\DoxyCodeLine{00069\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00245_a85f68c324bcd7f33e11be74a6758ce9c}{Led\_On}}\ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{a00245_acd3ee7b802ee0e1c62c12b822423625c}{LED\_IDENT\_e}}\ led\_idx);}
+\DoxyCodeLine{00072\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00245_a0c22a53e2eb89f7fbdd6df32dcf94023}{Led\_Off}}\ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{a00245_acd3ee7b802ee0e1c62c12b822423625c}{LED\_IDENT\_e}}\ led\_idx);}
+\DoxyCodeLine{00073\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00245_acaa4b7886f52b86feeae6440612657ee}{Led\_Blink}}\ \ \ \ \ \ \ (\mbox{\hyperlink{a00245_acd3ee7b802ee0e1c62c12b822423625c}{LED\_IDENT\_e}}\ led\_idx);}
+\DoxyCodeLine{00074\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00245_ac2fd516e7322a1e1b213a5c0a2ac476d}{Led\_Toggle}}\ \ \ \ \ \ (\mbox{\hyperlink{a00245_acd3ee7b802ee0e1c62c12b822423625c}{LED\_IDENT\_e}}\ led\_idx);}
+\DoxyCodeLine{00075\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00245_a645b08dd1d804a4be4086c371f5f96bc}{Led\_Ongoing\_Transmission}}\ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00076\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00245_a839fe2480871da309772427ea7a49cf5}{Blink\_Refresh}}\ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \mbox{\hyperlink{a00245_aad7f10e79c2b7cac7fe25834e5fc1fa2}{KEY\_STATUS\_e}}\ \ \ \ \mbox{\hyperlink{a00245_a65899dc7cce4138cd4488d27daff459d}{Key\_Read}}\ \ \ \ \ \ \ \ (\mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ key\_idx);}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ KEYPAD\_H\_\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00083\ \textcolor{comment}{\ **\ \$Log\$}}
+\DoxyCodeLine{00084\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00085\ \textcolor{comment}{\ **\ end\ of\ Keypad.h}}
+\DoxyCodeLine{00086\ \textcolor{comment}{\ ******************************************************************************/}}
+
+\end{DoxyCode}

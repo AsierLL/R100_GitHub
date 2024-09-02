@@ -1,0 +1,127 @@
+\doxysection{C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\+FRCP/frcp.h File Reference}
+\hypertarget{frcp_8h}{}\label{frcp_8h}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/FRCP/frcp.h@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/FRCP/frcp.h}}
+
+
+Header with functions related to the FRCP services.  
+
+
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{frcp_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{frcp_8h_ac2193c0d4852d7bd7a378d872f7ede43}{FRCP\+\_\+\+Init}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} first\+\_\+sample)
+\begin{DoxyCompactList}\small\item\em Initialize the FRCP controller. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{frcp_8h_a4285fdd1c26e6f4da74d142ba4d3ed84}{FRCP\+\_\+\+Process\+\_\+\+Zpwin}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \texorpdfstring{$\ast$}{*}signal)
+\begin{DoxyCompactList}\small\item\em Calcule the FRCP of the current window. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{frcp_8h_afecee78e99f3723f000b27b25017305c}{FRCP\+\_\+\+Get\+\_\+\+Frequency}} (void)
+\begin{DoxyCompactList}\small\item\em Funcion que retorna el valor de frecuencia de las compresiones. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header with functions related to the FRCP services. 
+
+\begin{DoxyVersion}{Version}
+v1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+11/01/2020 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+lsanz 
+\end{DoxyAuthor}
+\begin{DoxyWarning}{Warning}
+author date version .-\/ Edition 
+\end{DoxyWarning}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000029}{Bug}}]\end{DoxyRefDesc}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{frcp_8h_afecee78e99f3723f000b27b25017305c}\label{frcp_8h_afecee78e99f3723f000b27b25017305c} 
+\index{frcp.h@{frcp.h}!FRCP\_Get\_Frequency@{FRCP\_Get\_Frequency}}
+\index{FRCP\_Get\_Frequency@{FRCP\_Get\_Frequency}!frcp.h@{frcp.h}}
+\doxysubsubsection{\texorpdfstring{FRCP\_Get\_Frequency()}{FRCP\_Get\_Frequency()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} FRCP\+\_\+\+Get\+\_\+\+Frequency (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Funcion que retorna el valor de frecuencia de las compresiones. 
+
+\begin{DoxyReturn}{Returns}
+frecuencia de las compresiones 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{frcp_8h_afecee78e99f3723f000b27b25017305c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{frcp_8h_ac2193c0d4852d7bd7a378d872f7ede43}\label{frcp_8h_ac2193c0d4852d7bd7a378d872f7ede43} 
+\index{frcp.h@{frcp.h}!FRCP\_Init@{FRCP\_Init}}
+\index{FRCP\_Init@{FRCP\_Init}!frcp.h@{frcp.h}}
+\doxysubsubsection{\texorpdfstring{FRCP\_Init()}{FRCP\_Init()}}
+{\footnotesize\ttfamily void FRCP\+\_\+\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}}}]{first\+\_\+sample }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Initialize the FRCP controller. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em first} & sample of the window\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{frcp_8h_ac2193c0d4852d7bd7a378d872f7ede43_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{frcp_8h_ac2193c0d4852d7bd7a378d872f7ede43_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{frcp_8h_a4285fdd1c26e6f4da74d142ba4d3ed84}\label{frcp_8h_a4285fdd1c26e6f4da74d142ba4d3ed84} 
+\index{frcp.h@{frcp.h}!FRCP\_Process\_Zpwin@{FRCP\_Process\_Zpwin}}
+\index{FRCP\_Process\_Zpwin@{FRCP\_Process\_Zpwin}!frcp.h@{frcp.h}}
+\doxysubsubsection{\texorpdfstring{FRCP\_Process\_Zpwin()}{FRCP\_Process\_Zpwin()}}
+{\footnotesize\ttfamily void FRCP\+\_\+\+Process\+\_\+\+Zpwin (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{signal }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Calcule the FRCP of the current window. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em signal} & se{\ucr}al de impedancia (Ohm) \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{frcp_8h_a4285fdd1c26e6f4da74d142ba4d3ed84_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{frcp_8h_a4285fdd1c26e6f4da74d142ba4d3ed84_icgraph}
+\end{center}
+\end{figure}

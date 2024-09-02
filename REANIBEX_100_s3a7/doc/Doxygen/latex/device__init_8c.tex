@@ -1,0 +1,1284 @@
+\doxysection{C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/device\+\_\+init.c File Reference}
+\hypertarget{device__init_8c}{}\label{device__init_8c}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/device\_init.c@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/device\_init.c}}
+
+
+Manages the settings of the system.  
+
+
+{\ttfamily \#include $<$device\+\_\+init.\+h$>$}\newline
+{\ttfamily \#include "{}thread\+\_\+pat\+Mon\+\_\+hal.\+h"{}}\newline
+{\ttfamily \#include "{}thread\+\_\+sys\+Mon\+\_\+entry.\+h"{}}\newline
+{\ttfamily \#include "{}thread\+\_\+audio\+\_\+entry.\+h"{}}\newline
+{\ttfamily \#include "{}thread\+\_\+recorder.\+h"{}}\newline
+{\ttfamily \#include "{}sys\+Mon\+\_\+\+Battery.\+h"{}}\newline
+{\ttfamily \#include "{}R100\+\_\+\+Errors.\+h"{}}\newline
+{\ttfamily \#include "{}R100\+\_\+\+Tables.\+h"{}}\newline
+{\ttfamily \#include "{}Trace.\+h"{}}\newline
+{\ttfamily \#include "{}I2\+C\+\_\+2.\+h"{}}\newline
+Include dependency graph for device\+\_\+init.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{device__init_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{device__init_8c_aec3a5b069e7a31c88b512fe3f9d93463}{SETTINGS\+\_\+\+UNSET}}~0x\+FF
+\item 
+\#define \mbox{\hyperlink{device__init_8c_a649ad5274d988d17a275a3cead056746}{MAX\+\_\+\+FILE\+\_\+\+SIZE}}~2046
+\item 
+\#define \mbox{\hyperlink{device__init_8c_a1153cfe425caaaf8bb0dcdde1cf1647d}{SWAP\+\_\+\+INT16}}(x)~(x = (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a269259c924dce846340ddbb810db2e3c}{int16\+\_\+t}})  ((x$<$$<$8) \texorpdfstring{$\vert$}{|} ((x$>$$>$8) \& 0x\+FF)))
+\item 
+\#define \mbox{\hyperlink{device__init_8c_aee54c29c65a194c2bb937aa42e3972a1}{SWAP\+\_\+\+UINT16}}(x)~(x = (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}}) ((x$>$$>$8) \texorpdfstring{$\vert$}{|} (x$<$$<$8)))
+\item 
+\#define \mbox{\hyperlink{device__init_8c_ab6f9cd1bb370fb8c4771a883cf643d10}{SWAP\+\_\+\+UINT32}}(x)~(x = ((x$>$$>$24)\&0xff) \texorpdfstring{$\vert$}{|} ((x$<$$<$8)\&0xff0000) \texorpdfstring{$\vert$}{|} ((x$>$$>$8)\&0xff00) \texorpdfstring{$\vert$}{|} ((x$<$$<$24)\&0xff000000))
+\item 
+\#define \mbox{\hyperlink{device__init_8c_aeecaeccb174e5067137f2cd59d9e7365}{SWAP\+\_\+\+UINT64}}(x)~(x = ((x$>$$>$56)\&0xff) \texorpdfstring{$\vert$}{|} ((x$>$$>$48)\&0xff00) \texorpdfstring{$\vert$}{|} ((x$>$$>$40)\&0xff0000) \texorpdfstring{$\vert$}{|} ((x$>$$>$32)\&0xff000000) \texorpdfstring{$\vert$}{|} ((x$<$$<$56)\&0xff00000000000000) \texorpdfstring{$\vert$}{|} ((x$<$$<$48)\&0xff000000000000) \texorpdfstring{$\vert$}{|} ((x$<$$<$40)\&0xff00000000))
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{device__init_8c_a49226dbe65b391c9844fd67bc70be961}{Get\+\_\+\+Compile\+\_\+\+Date\+\_\+\+Time}} (void)
+\begin{DoxyCompactList}\small\item\em Get compiler date and time. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{device__init_8c_a182c93e57b9fff393b61642f2dd2d8a5}{NFC\+\_\+\+Read}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Buffer, \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} n\+Bytes, \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} offset)
+\begin{DoxyCompactList}\small\item\em Read data from NFC memory. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{device__init_8c_a20e74a2a8c6410c9013be9edd8a85408}{NFC\+\_\+\+Write}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Buffer, \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} n\+Bytes, \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} offset)
+\begin{DoxyCompactList}\small\item\em Write device info in the NFC memory. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{device__init_8c_a25a3c802ebae4efe4c7ae416a597bb9e}{NFC\+\_\+\+Write\+\_\+\+Device\+\_\+\+ID}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} flag\+\_\+write, \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} flag\+\_\+cal\+\_\+write)
+\begin{DoxyCompactList}\small\item\em Write device identifier into the NFC memory. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{device__init_8c_a435ba18195f588c000fd0a5b0ecabb46}{NFC\+\_\+\+Write\+\_\+\+Device\+\_\+\+Info}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} flag\+\_\+write)
+\begin{DoxyCompactList}\small\item\em Write device and accessories (electrodes \& battery) info the NFC memory. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{device__init_8c_aaabe404ead3c917fa8a168e445f58e21}{Settings\+\_\+\+Swap}} (\mbox{\hyperlink{struct_n_f_c___s_e_t_t_i_n_g_s__t}{NFC\+\_\+\+SETTINGS\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+NFC\+\_\+\+Settings)
+\begin{DoxyCompactList}\small\item\em Swap settings variable. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{device__init_8c_ad59af5cb88583ffa1dd4320db9aec759}{NFC\+\_\+\+Write\+\_\+\+Settings}} (void)
+\begin{DoxyCompactList}\small\item\em Write device settings info the NFC memory. The NFC data structure is swapped. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{device__init_8c_a52d0b44655d86d60ecfb68817351601a}{NFC\+\_\+\+Write\+\_\+\+Settings\+\_\+\+Montador}} (void)
+\begin{DoxyCompactList}\small\item\em Write device settings info the NFC memory. The NFC data structure is swapped. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{device__init_8c_a0f120a6b3992c4a2664e4c545886c1b9}{Device\+\_\+\+Init}} (char \texorpdfstring{$\ast$}{*}serial\+\_\+num)
+\begin{DoxyCompactList}\small\item\em Load device information and options from resources Assume that all NFC data has been read previously and is present in the NFC structures !!! \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{device__init_8c_ae1e4a2b488a7638681f285fcfc957e2d}{Set\+\_\+\+Device\+\_\+\+Date\+\_\+time}} (void)
+\begin{DoxyCompactList}\small\item\em Set device date and time. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_d_e_v_i_c_e___d_a_t_e__t}{DEVICE\+\_\+\+DATE\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{device__init_8c_ac4a64cfba553307cc5131725f13de451}{Get\+\_\+\+Device\+\_\+\+Date}} (void)
+\begin{DoxyCompactList}\small\item\em Function for accessing device date variable. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_d_e_v_i_c_e___t_i_m_e__t}{DEVICE\+\_\+\+TIME\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{device__init_8c_a464553d5f2366a3e2e49ee42256cbefc}{Get\+\_\+\+Device\+\_\+\+Time}} (void)
+\begin{DoxyCompactList}\small\item\em Function for accessing device time variable. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_d_e_v_i_c_e___i_n_f_o__t}{DEVICE\+\_\+\+INFO\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{device__init_8c_a2f7047dc1ce0a3687c48872ed81aff5f}{Get\+\_\+\+Device\+\_\+\+Info}} (void)
+\begin{DoxyCompactList}\small\item\em Function for accessing device info variable. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_n_f_c___d_e_v_i_c_e___i_n_f_o__t}{NFC\+\_\+\+DEVICE\+\_\+\+INFO\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{device__init_8c_ac9272954c69640cbc76d2ea99e68bc43}{Get\+\_\+\+NFC\+\_\+\+Device\+\_\+\+Info}} (void)
+\begin{DoxyCompactList}\small\item\em Function for accessing NFC device info struct. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_n_f_c___d_e_v_i_c_e___i_d__t}{NFC\+\_\+\+DEVICE\+\_\+\+ID\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{device__init_8c_af3eb670abc546c577ec8d71cf1998c01}{Get\+\_\+\+NFC\+\_\+\+Device\+\_\+\+ID}} (void)
+\begin{DoxyCompactList}\small\item\em Function for accessing NFC device identifier struct. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{device__init_8c_a104e88d78d7097d306fcabcd675b263e}{Set\+\_\+\+Default\+\_\+\+Settings}} (void)
+\begin{DoxyCompactList}\small\item\em This function sets the default configuration. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{device__init_8c_aea70ef90e5b5eb9f793a39d77a7688f9}{Save\+\_\+\+Default\+\_\+\+Settings}} (void)
+\begin{DoxyCompactList}\small\item\em This function sets the default configuration. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{device__init_8c_a7d385f6a619aaa520f2772c2ff889b39}{Settings\+\_\+\+NFC\+\_\+\+Check}} (\mbox{\hyperlink{struct_n_f_c___s_e_t_t_i_n_g_s__t}{NFC\+\_\+\+SETTINGS\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+NFC\+\_\+\+Settings)
+\begin{DoxyCompactList}\small\item\em Checks the coherence of the device settings through NFC. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{device__init_8c_a192100b6aea6682945bfbf931f6fefbe}{Settings\+\_\+\+NFC\+\_\+\+Check\+\_\+\+Montador}} (\mbox{\hyperlink{struct_n_f_c___s_e_t_t_i_n_g_s__t}{NFC\+\_\+\+SETTINGS\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+NFC\+\_\+\+Settings)
+\begin{DoxyCompactList}\small\item\em Checks the coherence of the device settings through NFC and FIXED values for the PCB Manufacture. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{device__init_8c_aa1c4626750fbd27cc9f9798a262e81b3}{Settings\+\_\+\+Rationale}} (void)
+\begin{DoxyCompactList}\small\item\em Rationalize the device settings. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{device__init_8c_ad542ba54e2d205a8f072330a48289ddd}{Settings\+\_\+\+Safe\+\_\+\+Load}} (void)
+\begin{DoxyCompactList}\small\item\em Safe assignment of device settings from the NFC structure. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{device__init_8c_a90cfa3905b832cb07e7afe0311ce750a}{Com\+\_\+\+NFC\+\_\+\+Check}} (\mbox{\hyperlink{struct_n_f_c___d_e_v_i_c_e___c_o_m__t}{NFC\+\_\+\+DEVICE\+\_\+\+COM\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+NFC\+\_\+\+Device\+\_\+\+Com)
+\begin{DoxyCompactList}\small\item\em Validates the wifi data validation key. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{device__init_8c_a38d58c1cef021fbc2be1db597a5e1fd8}{Wifi\+\_\+\+Load\+\_\+\+Config}} (void)
+\begin{DoxyCompactList}\small\item\em Safe assignment of device wifi settings from the NFC structure. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{device__init_8c_aaad6694e92e7d7d9eefb2aa080887f97}{Wifi\+\_\+\+Save\+\_\+\+To\+\_\+u\+SD}} (void)
+\begin{DoxyCompactList}\small\item\em Saves wifi to u\+SD. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{device__init_8c_a2ca372a823df8236adbb87a8143be4fe}{Settings\+\_\+\+Open\+\_\+\+From\+\_\+u\+SD}} (void)
+\begin{DoxyCompactList}\small\item\em Gets settings from u\+SD. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{device__init_8c_a3b40e935bf43479866fb9469d739a24b}{Settings\+\_\+\+Save\+\_\+\+To\+\_\+u\+SD}} (void)
+\begin{DoxyCompactList}\small\item\em Saves settings and device info to u\+SD. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{device__init_8c_a996f6e90cfa31a701808ea89e319a375}{Settings\+\_\+\+Open\+\_\+\+From\+\_\+\+NFC}} (void)
+\begin{DoxyCompactList}\small\item\em Gets settings from NFC. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_a_e_d___s_e_t_t_i_n_g_s__t}{AED\+\_\+\+SETTINGS\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{device__init_8c_abef0104e237796d45d49992f69d3b160}{Get\+\_\+\+AED\+\_\+\+Settings}} (void)
+\begin{DoxyCompactList}\small\item\em Return AED Settings. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_m_i_s_c___s_e_t_t_i_n_g_s__t}{MISC\+\_\+\+SETTINGS\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{device__init_8c_ab2b90e918e591ab7b2dfbfc2d6e3bb6a}{Get\+\_\+\+Misc\+\_\+\+Settings}} (void)
+\begin{DoxyCompactList}\small\item\em Return Miscellaneous Settings. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_d_e_v_i_c_e___s_e_t_t_i_n_g_s__t}{DEVICE\+\_\+\+SETTINGS\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{device__init_8c_a8f21d9db8b7a1530e06a4ade480d91bc}{Get\+\_\+\+Device\+\_\+\+Settings}} (void)
+\begin{DoxyCompactList}\small\item\em Return Device Settings. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{device__init_8c_af8ee5f8563062293ed67377b60f47a84}{Get\+\_\+\+APP\+\_\+\+SW\+\_\+\+Version}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \texorpdfstring{$\ast$}{*}sw\+\_\+version)
+\begin{DoxyCompactList}\small\item\em Return APP SW version in string format. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const \mbox{\hyperlink{_s_c_e_2types__basic_8h_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \mbox{\hyperlink{device__init_8c_a61e4cec8f727161b50877df3febb5b50}{my\+\_\+compile\+\_\+date}} \mbox{[}$\,$\mbox{]} = \+\_\+\+\_\+\+DATE\+\_\+\+\_\+
+\item 
+const \mbox{\hyperlink{_s_c_e_2types__basic_8h_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \mbox{\hyperlink{device__init_8c_a578ea283bbae902cdbf8ed62fc015a54}{my\+\_\+compile\+\_\+time}} \mbox{[}$\,$\mbox{]} =\+\_\+\+\_\+\+TIME\+\_\+\+\_\+
+\item 
+\mbox{\hyperlink{struct_n_f_c___d_e_v_i_c_e___i_d__t}{NFC\+\_\+\+DEVICE\+\_\+\+ID\+\_\+t}} \mbox{\hyperlink{device__init_8c_a4584daa837f73e9d4988a7238f9321a1}{write\+\_\+nfc\+\_\+device\+\_\+id}}
+\begin{DoxyCompactList}\small\item\em Global struct for comparing NFC reading and writing. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_n_f_c___d_e_v_i_c_e___i_d__t}{NFC\+\_\+\+DEVICE\+\_\+\+ID\+\_\+t}} \mbox{\hyperlink{device__init_8c_aeba627762207489ddb31b9e4bead28c5}{read\+\_\+nfc\+\_\+device\+\_\+id}}
+\begin{DoxyCompactList}\small\item\em Global struct for comparing NFC reading and writing. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{device__init_8c_a486054448411d560755b3efc767d3ab2}{access\+\_\+key}} \mbox{[}12\mbox{]}
+\begin{DoxyCompactList}\small\item\em USB asscess key. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{struct_d_e_v_i_c_e___d_a_t_e__t}{DEVICE\+\_\+\+DATE\+\_\+t}} \mbox{\hyperlink{device__init_8c_af7e9dfe2188e176069f95bdedc18af30}{device\+\_\+date}}
+\item 
+static \mbox{\hyperlink{struct_d_e_v_i_c_e___t_i_m_e__t}{DEVICE\+\_\+\+TIME\+\_\+t}} \mbox{\hyperlink{device__init_8c_ab922a33a081a26b40d10fb0a7f8047a4}{device\+\_\+time}}
+\item 
+static \mbox{\hyperlink{struct_d_e_v_i_c_e___i_n_f_o__t}{DEVICE\+\_\+\+INFO\+\_\+t}} \mbox{\hyperlink{device__init_8c_a640101193f9d50489770ed50a84e3302}{device\+\_\+info}}
+\item 
+static \mbox{\hyperlink{struct_d_e_v_i_c_e___s_e_t_t_i_n_g_s__t}{DEVICE\+\_\+\+SETTINGS\+\_\+t}} \mbox{\hyperlink{device__init_8c_a4387b788b1fec8b2213593888d878efe}{device\+\_\+settings}}
+\item 
+static \mbox{\hyperlink{struct_c_o_m_m___s_e_t_t_i_n_g_s__t}{COMM\+\_\+\+SETTINGS\+\_\+t}} \mbox{\hyperlink{device__init_8c_a127150b775a7a7635b2ea899944af270}{device\+\_\+comms}}
+\item 
+static \mbox{\hyperlink{struct_n_f_c___d_e_v_i_c_e___i_d__t}{NFC\+\_\+\+DEVICE\+\_\+\+ID\+\_\+t}} \mbox{\hyperlink{device__init_8c_aea29c407e9d73ad21e3c0038c02454a5}{nfc\+\_\+device\+\_\+id}}
+\item 
+static \mbox{\hyperlink{struct_n_f_c___d_e_v_i_c_e___i_n_f_o__t}{NFC\+\_\+\+DEVICE\+\_\+\+INFO\+\_\+t}} \mbox{\hyperlink{device__init_8c_a75c69389d0e62be27accdd8adb1b4111}{nfc\+\_\+device\+\_\+info}}
+\item 
+static \mbox{\hyperlink{struct_n_f_c___s_e_t_t_i_n_g_s__t}{NFC\+\_\+\+SETTINGS\+\_\+t}} \mbox{\hyperlink{device__init_8c_aa9b78280dd8494faec403567e2a85ba0}{nfc\+\_\+settings}}
+\item 
+static \mbox{\hyperlink{struct_n_f_c___d_e_v_i_c_e___c_o_m__t}{NFC\+\_\+\+DEVICE\+\_\+\+COM\+\_\+t}} \mbox{\hyperlink{device__init_8c_afbefd336db66ebf04e7c65d13ca365e1}{nfc\+\_\+device\+\_\+com}}
+\item 
+static \mbox{\hyperlink{struct_a_e_d___s_e_t_t_i_n_g_s__t}{AED\+\_\+\+SETTINGS\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{device__init_8c_a32cf1d7f80dd1e61456266fb60c3fc44}{p\+\_\+aed\+\_\+settings}}
+\item 
+static \mbox{\hyperlink{struct_m_i_s_c___s_e_t_t_i_n_g_s__t}{MISC\+\_\+\+SETTINGS\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{device__init_8c_a4ec65e38104af946fbf7e684a29eee01}{p\+\_\+misc\+\_\+settings}}
+\item 
+static FX\+\_\+\+FILE \mbox{\hyperlink{device__init_8c_adb9d3dfe1b8ccffbf15d76a4bd486429}{cfg\+\_\+file}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages the settings of the system. 
+
+\begin{DoxyVersion}{Version}
+v1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+04/09/2018 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+ltorres 
+\end{DoxyAuthor}
+\begin{DoxyWarning}{Warning}
+author date version .-\/ Edition 
+\end{DoxyWarning}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000013}{Bug}}]\end{DoxyRefDesc}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{device__init_8c_a649ad5274d988d17a275a3cead056746}\label{device__init_8c_a649ad5274d988d17a275a3cead056746} 
+\index{device\_init.c@{device\_init.c}!MAX\_FILE\_SIZE@{MAX\_FILE\_SIZE}}
+\index{MAX\_FILE\_SIZE@{MAX\_FILE\_SIZE}!device\_init.c@{device\_init.c}}
+\doxysubsubsection{\texorpdfstring{MAX\_FILE\_SIZE}{MAX\_FILE\_SIZE}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+FILE\+\_\+\+SIZE~2046}
+
+\Hypertarget{device__init_8c_aec3a5b069e7a31c88b512fe3f9d93463}\label{device__init_8c_aec3a5b069e7a31c88b512fe3f9d93463} 
+\index{device\_init.c@{device\_init.c}!SETTINGS\_UNSET@{SETTINGS\_UNSET}}
+\index{SETTINGS\_UNSET@{SETTINGS\_UNSET}!device\_init.c@{device\_init.c}}
+\doxysubsubsection{\texorpdfstring{SETTINGS\_UNSET}{SETTINGS\_UNSET}}
+{\footnotesize\ttfamily \#define SETTINGS\+\_\+\+UNSET~0x\+FF}
+
+\Hypertarget{device__init_8c_a1153cfe425caaaf8bb0dcdde1cf1647d}\label{device__init_8c_a1153cfe425caaaf8bb0dcdde1cf1647d} 
+\index{device\_init.c@{device\_init.c}!SWAP\_INT16@{SWAP\_INT16}}
+\index{SWAP\_INT16@{SWAP\_INT16}!device\_init.c@{device\_init.c}}
+\doxysubsubsection{\texorpdfstring{SWAP\_INT16}{SWAP\_INT16}}
+{\footnotesize\ttfamily \#define SWAP\+\_\+\+INT16(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~(x = (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a269259c924dce846340ddbb810db2e3c}{int16\+\_\+t}})  ((x$<$$<$8) \texorpdfstring{$\vert$}{|} ((x$>$$>$8) \& 0x\+FF)))}
+
+\Hypertarget{device__init_8c_aee54c29c65a194c2bb937aa42e3972a1}\label{device__init_8c_aee54c29c65a194c2bb937aa42e3972a1} 
+\index{device\_init.c@{device\_init.c}!SWAP\_UINT16@{SWAP\_UINT16}}
+\index{SWAP\_UINT16@{SWAP\_UINT16}!device\_init.c@{device\_init.c}}
+\doxysubsubsection{\texorpdfstring{SWAP\_UINT16}{SWAP\_UINT16}}
+{\footnotesize\ttfamily \#define SWAP\+\_\+\+UINT16(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~(x = (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}}) ((x$>$$>$8) \texorpdfstring{$\vert$}{|} (x$<$$<$8)))}
+
+\Hypertarget{device__init_8c_ab6f9cd1bb370fb8c4771a883cf643d10}\label{device__init_8c_ab6f9cd1bb370fb8c4771a883cf643d10} 
+\index{device\_init.c@{device\_init.c}!SWAP\_UINT32@{SWAP\_UINT32}}
+\index{SWAP\_UINT32@{SWAP\_UINT32}!device\_init.c@{device\_init.c}}
+\doxysubsubsection{\texorpdfstring{SWAP\_UINT32}{SWAP\_UINT32}}
+{\footnotesize\ttfamily \#define SWAP\+\_\+\+UINT32(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~(x = ((x$>$$>$24)\&0xff) \texorpdfstring{$\vert$}{|} ((x$<$$<$8)\&0xff0000) \texorpdfstring{$\vert$}{|} ((x$>$$>$8)\&0xff00) \texorpdfstring{$\vert$}{|} ((x$<$$<$24)\&0xff000000))}
+
+\Hypertarget{device__init_8c_aeecaeccb174e5067137f2cd59d9e7365}\label{device__init_8c_aeecaeccb174e5067137f2cd59d9e7365} 
+\index{device\_init.c@{device\_init.c}!SWAP\_UINT64@{SWAP\_UINT64}}
+\index{SWAP\_UINT64@{SWAP\_UINT64}!device\_init.c@{device\_init.c}}
+\doxysubsubsection{\texorpdfstring{SWAP\_UINT64}{SWAP\_UINT64}}
+{\footnotesize\ttfamily \#define SWAP\+\_\+\+UINT64(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~(x = ((x$>$$>$56)\&0xff) \texorpdfstring{$\vert$}{|} ((x$>$$>$48)\&0xff00) \texorpdfstring{$\vert$}{|} ((x$>$$>$40)\&0xff0000) \texorpdfstring{$\vert$}{|} ((x$>$$>$32)\&0xff000000) \texorpdfstring{$\vert$}{|} ((x$<$$<$56)\&0xff00000000000000) \texorpdfstring{$\vert$}{|} ((x$<$$<$48)\&0xff000000000000) \texorpdfstring{$\vert$}{|} ((x$<$$<$40)\&0xff00000000))}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{device__init_8c_a90cfa3905b832cb07e7afe0311ce750a}\label{device__init_8c_a90cfa3905b832cb07e7afe0311ce750a} 
+\index{device\_init.c@{device\_init.c}!Com\_NFC\_Check@{Com\_NFC\_Check}}
+\index{Com\_NFC\_Check@{Com\_NFC\_Check}!device\_init.c@{device\_init.c}}
+\doxysubsubsection{\texorpdfstring{Com\_NFC\_Check()}{Com\_NFC\_Check()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} Com\+\_\+\+NFC\+\_\+\+Check (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_n_f_c___d_e_v_i_c_e___c_o_m__t}{NFC\+\_\+\+DEVICE\+\_\+\+COM\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+NFC\+\_\+\+Device\+\_\+\+Com }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Validates the wifi data validation key. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+NFC\+\_\+\+Settings} & pointer to the NFC settings to check\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool\+\_\+t indicating settings error 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{device__init_8c_a90cfa3905b832cb07e7afe0311ce750a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{device__init_8c_a90cfa3905b832cb07e7afe0311ce750a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{device__init_8c_a0f120a6b3992c4a2664e4c545886c1b9}\label{device__init_8c_a0f120a6b3992c4a2664e4c545886c1b9} 
+\index{device\_init.c@{device\_init.c}!Device\_Init@{Device\_Init}}
+\index{Device\_Init@{Device\_Init}!device\_init.c@{device\_init.c}}
+\doxysubsubsection{\texorpdfstring{Device\_Init()}{Device\_Init()}}
+{\footnotesize\ttfamily void Device\+\_\+\+Init (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{serial\+\_\+num }\end{DoxyParamCaption})}
+
+
+
+Load device information and options from resources Assume that all NFC data has been read previously and is present in the NFC structures !!! 
+
+Device initialization.
+
+
+\begin{DoxyParams}{Parameters}
+{\em serial\+\_\+num} & pointer to buffer to store the serial number\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=303pt]{device__init_8c_a0f120a6b3992c4a2664e4c545886c1b9_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{device__init_8c_a0f120a6b3992c4a2664e4c545886c1b9_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{device__init_8c_abef0104e237796d45d49992f69d3b160}\label{device__init_8c_abef0104e237796d45d49992f69d3b160} 
+\index{device\_init.c@{device\_init.c}!Get\_AED\_Settings@{Get\_AED\_Settings}}
+\index{Get\_AED\_Settings@{Get\_AED\_Settings}!device\_init.c@{device\_init.c}}
+\doxysubsubsection{\texorpdfstring{Get\_AED\_Settings()}{Get\_AED\_Settings()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_a_e_d___s_e_t_t_i_n_g_s__t}{AED\+\_\+\+SETTINGS\+\_\+t}} \texorpdfstring{$\ast$}{*} Get\+\_\+\+AED\+\_\+\+Settings (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Return AED Settings. 
+
+Get AED Settings handler.
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{struct_a_e_d___s_e_t_t_i_n_g_s__t}{AED\+\_\+\+SETTINGS\+\_\+t} structure containing the AED settings 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{device__init_8c_abef0104e237796d45d49992f69d3b160_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{device__init_8c_af8ee5f8563062293ed67377b60f47a84}\label{device__init_8c_af8ee5f8563062293ed67377b60f47a84} 
+\index{device\_init.c@{device\_init.c}!Get\_APP\_SW\_Version@{Get\_APP\_SW\_Version}}
+\index{Get\_APP\_SW\_Version@{Get\_APP\_SW\_Version}!device\_init.c@{device\_init.c}}
+\doxysubsubsection{\texorpdfstring{Get\_APP\_SW\_Version()}{Get\_APP\_SW\_Version()}}
+{\footnotesize\ttfamily void Get\+\_\+\+APP\+\_\+\+SW\+\_\+\+Version (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{sw\+\_\+version }\end{DoxyParamCaption})}
+
+
+
+Return APP SW version in string format. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{device__init_8c_af8ee5f8563062293ed67377b60f47a84_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{device__init_8c_a49226dbe65b391c9844fd67bc70be961}\label{device__init_8c_a49226dbe65b391c9844fd67bc70be961} 
+\index{device\_init.c@{device\_init.c}!Get\_Compile\_Date\_Time@{Get\_Compile\_Date\_Time}}
+\index{Get\_Compile\_Date\_Time@{Get\_Compile\_Date\_Time}!device\_init.c@{device\_init.c}}
+\doxysubsubsection{\texorpdfstring{Get\_Compile\_Date\_Time()}{Get\_Compile\_Date\_Time()}}
+{\footnotesize\ttfamily void Get\+\_\+\+Compile\+\_\+\+Date\+\_\+\+Time (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Get compiler date and time. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+struc to fill the date and time 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{device__init_8c_a49226dbe65b391c9844fd67bc70be961_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{device__init_8c_ac4a64cfba553307cc5131725f13de451}\label{device__init_8c_ac4a64cfba553307cc5131725f13de451} 
+\index{device\_init.c@{device\_init.c}!Get\_Device\_Date@{Get\_Device\_Date}}
+\index{Get\_Device\_Date@{Get\_Device\_Date}!device\_init.c@{device\_init.c}}
+\doxysubsubsection{\texorpdfstring{Get\_Device\_Date()}{Get\_Device\_Date()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_d_e_v_i_c_e___d_a_t_e__t}{DEVICE\+\_\+\+DATE\+\_\+t}} \texorpdfstring{$\ast$}{*} Get\+\_\+\+Device\+\_\+\+Date (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Function for accessing device date variable. 
+
+\begin{DoxyReturn}{Returns}
+device date variable 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{device__init_8c_ac4a64cfba553307cc5131725f13de451_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{device__init_8c_a2f7047dc1ce0a3687c48872ed81aff5f}\label{device__init_8c_a2f7047dc1ce0a3687c48872ed81aff5f} 
+\index{device\_init.c@{device\_init.c}!Get\_Device\_Info@{Get\_Device\_Info}}
+\index{Get\_Device\_Info@{Get\_Device\_Info}!device\_init.c@{device\_init.c}}
+\doxysubsubsection{\texorpdfstring{Get\_Device\_Info()}{Get\_Device\_Info()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_d_e_v_i_c_e___i_n_f_o__t}{DEVICE\+\_\+\+INFO\+\_\+t}} \texorpdfstring{$\ast$}{*} Get\+\_\+\+Device\+\_\+\+Info (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Function for accessing device info variable. 
+
+\begin{DoxyReturn}{Returns}
+device info variable 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{device__init_8c_a2f7047dc1ce0a3687c48872ed81aff5f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{device__init_8c_a8f21d9db8b7a1530e06a4ade480d91bc}\label{device__init_8c_a8f21d9db8b7a1530e06a4ade480d91bc} 
+\index{device\_init.c@{device\_init.c}!Get\_Device\_Settings@{Get\_Device\_Settings}}
+\index{Get\_Device\_Settings@{Get\_Device\_Settings}!device\_init.c@{device\_init.c}}
+\doxysubsubsection{\texorpdfstring{Get\_Device\_Settings()}{Get\_Device\_Settings()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_d_e_v_i_c_e___s_e_t_t_i_n_g_s__t}{DEVICE\+\_\+\+SETTINGS\+\_\+t}} \texorpdfstring{$\ast$}{*} Get\+\_\+\+Device\+\_\+\+Settings (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Return Device Settings. 
+
+Get Device Settings handler.
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{struct_d_e_v_i_c_e___s_e_t_t_i_n_g_s__t}{DEVICE\+\_\+\+SETTINGS\+\_\+t} structure containing the device settings 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{device__init_8c_a8f21d9db8b7a1530e06a4ade480d91bc_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{device__init_8c_a464553d5f2366a3e2e49ee42256cbefc}\label{device__init_8c_a464553d5f2366a3e2e49ee42256cbefc} 
+\index{device\_init.c@{device\_init.c}!Get\_Device\_Time@{Get\_Device\_Time}}
+\index{Get\_Device\_Time@{Get\_Device\_Time}!device\_init.c@{device\_init.c}}
+\doxysubsubsection{\texorpdfstring{Get\_Device\_Time()}{Get\_Device\_Time()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_d_e_v_i_c_e___t_i_m_e__t}{DEVICE\+\_\+\+TIME\+\_\+t}} \texorpdfstring{$\ast$}{*} Get\+\_\+\+Device\+\_\+\+Time (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Function for accessing device time variable. 
+
+\begin{DoxyReturn}{Returns}
+device time variable 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{device__init_8c_a464553d5f2366a3e2e49ee42256cbefc_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{device__init_8c_ab2b90e918e591ab7b2dfbfc2d6e3bb6a}\label{device__init_8c_ab2b90e918e591ab7b2dfbfc2d6e3bb6a} 
+\index{device\_init.c@{device\_init.c}!Get\_Misc\_Settings@{Get\_Misc\_Settings}}
+\index{Get\_Misc\_Settings@{Get\_Misc\_Settings}!device\_init.c@{device\_init.c}}
+\doxysubsubsection{\texorpdfstring{Get\_Misc\_Settings()}{Get\_Misc\_Settings()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_m_i_s_c___s_e_t_t_i_n_g_s__t}{MISC\+\_\+\+SETTINGS\+\_\+t}} \texorpdfstring{$\ast$}{*} Get\+\_\+\+Misc\+\_\+\+Settings (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Return Miscellaneous Settings. 
+
+Get Miscellaneous Settings handler.
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{struct_m_i_s_c___s_e_t_t_i_n_g_s__t}{MISC\+\_\+\+SETTINGS\+\_\+t} structure containing the miscellaneous settings 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{device__init_8c_ab2b90e918e591ab7b2dfbfc2d6e3bb6a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{device__init_8c_af3eb670abc546c577ec8d71cf1998c01}\label{device__init_8c_af3eb670abc546c577ec8d71cf1998c01} 
+\index{device\_init.c@{device\_init.c}!Get\_NFC\_Device\_ID@{Get\_NFC\_Device\_ID}}
+\index{Get\_NFC\_Device\_ID@{Get\_NFC\_Device\_ID}!device\_init.c@{device\_init.c}}
+\doxysubsubsection{\texorpdfstring{Get\_NFC\_Device\_ID()}{Get\_NFC\_Device\_ID()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_n_f_c___d_e_v_i_c_e___i_d__t}{NFC\+\_\+\+DEVICE\+\_\+\+ID\+\_\+t}} \texorpdfstring{$\ast$}{*} Get\+\_\+\+NFC\+\_\+\+Device\+\_\+\+ID (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Function for accessing NFC device identifier struct. 
+
+\begin{DoxyReturn}{Returns}
+NFC device id variable 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{device__init_8c_af3eb670abc546c577ec8d71cf1998c01_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{device__init_8c_ac9272954c69640cbc76d2ea99e68bc43}\label{device__init_8c_ac9272954c69640cbc76d2ea99e68bc43} 
+\index{device\_init.c@{device\_init.c}!Get\_NFC\_Device\_Info@{Get\_NFC\_Device\_Info}}
+\index{Get\_NFC\_Device\_Info@{Get\_NFC\_Device\_Info}!device\_init.c@{device\_init.c}}
+\doxysubsubsection{\texorpdfstring{Get\_NFC\_Device\_Info()}{Get\_NFC\_Device\_Info()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_n_f_c___d_e_v_i_c_e___i_n_f_o__t}{NFC\+\_\+\+DEVICE\+\_\+\+INFO\+\_\+t}} \texorpdfstring{$\ast$}{*} Get\+\_\+\+NFC\+\_\+\+Device\+\_\+\+Info (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Function for accessing NFC device info struct. 
+
+\begin{DoxyReturn}{Returns}
+NFC device info variable 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{device__init_8c_ac9272954c69640cbc76d2ea99e68bc43_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{device__init_8c_a182c93e57b9fff393b61642f2dd2d8a5}\label{device__init_8c_a182c93e57b9fff393b61642f2dd2d8a5} 
+\index{device\_init.c@{device\_init.c}!NFC\_Read@{NFC\_Read}}
+\index{NFC\_Read@{NFC\_Read}!device\_init.c@{device\_init.c}}
+\doxysubsubsection{\texorpdfstring{NFC\_Read()}{NFC\_Read()}}
+{\footnotesize\ttfamily static void NFC\+\_\+\+Read (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Buffer,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}}}]{n\+Bytes,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}}}]{offset }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Read data from NFC memory. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Buffer} & pointer to buffer to fill \\
+\hline
+{\em n\+Bytes} & number of bytes to read from NFC \\
+\hline
+{\em offset} & address offset (block)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{device__init_8c_a182c93e57b9fff393b61642f2dd2d8a5_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{device__init_8c_a182c93e57b9fff393b61642f2dd2d8a5_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{device__init_8c_a20e74a2a8c6410c9013be9edd8a85408}\label{device__init_8c_a20e74a2a8c6410c9013be9edd8a85408} 
+\index{device\_init.c@{device\_init.c}!NFC\_Write@{NFC\_Write}}
+\index{NFC\_Write@{NFC\_Write}!device\_init.c@{device\_init.c}}
+\doxysubsubsection{\texorpdfstring{NFC\_Write()}{NFC\_Write()}}
+{\footnotesize\ttfamily static void NFC\+\_\+\+Write (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Buffer,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}}}]{n\+Bytes,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}}}]{offset }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Write device info in the NFC memory. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Buffer} & pointer to buffer that contains the information to store \\
+\hline
+{\em n\+Bytes} & number of bytes to write into the NFC memory \\
+\hline
+{\em offset} & address offset (block)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{device__init_8c_a20e74a2a8c6410c9013be9edd8a85408_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{device__init_8c_a20e74a2a8c6410c9013be9edd8a85408_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{device__init_8c_a25a3c802ebae4efe4c7ae416a597bb9e}\label{device__init_8c_a25a3c802ebae4efe4c7ae416a597bb9e} 
+\index{device\_init.c@{device\_init.c}!NFC\_Write\_Device\_ID@{NFC\_Write\_Device\_ID}}
+\index{NFC\_Write\_Device\_ID@{NFC\_Write\_Device\_ID}!device\_init.c@{device\_init.c}}
+\doxysubsubsection{\texorpdfstring{NFC\_Write\_Device\_ID()}{NFC\_Write\_Device\_ID()}}
+{\footnotesize\ttfamily void NFC\+\_\+\+Write\+\_\+\+Device\+\_\+\+ID (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}}}]{flag\+\_\+write,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}}}]{flag\+\_\+cal\+\_\+write }\end{DoxyParamCaption})}
+
+
+
+Write device identifier into the NFC memory. 
+
+Write the device identifier.
+
+
+\begin{DoxyParams}{Parameters}
+{\em flag} & to write into NFC\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{device__init_8c_a25a3c802ebae4efe4c7ae416a597bb9e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{device__init_8c_a25a3c802ebae4efe4c7ae416a597bb9e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{device__init_8c_a435ba18195f588c000fd0a5b0ecabb46}\label{device__init_8c_a435ba18195f588c000fd0a5b0ecabb46} 
+\index{device\_init.c@{device\_init.c}!NFC\_Write\_Device\_Info@{NFC\_Write\_Device\_Info}}
+\index{NFC\_Write\_Device\_Info@{NFC\_Write\_Device\_Info}!device\_init.c@{device\_init.c}}
+\doxysubsubsection{\texorpdfstring{NFC\_Write\_Device\_Info()}{NFC\_Write\_Device\_Info()}}
+{\footnotesize\ttfamily void NFC\+\_\+\+Write\+\_\+\+Device\+\_\+\+Info (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}}}]{flag\+\_\+write }\end{DoxyParamCaption})}
+
+
+
+Write device and accessories (electrodes \& battery) info the NFC memory. 
+
+Write the device \& accessories info.
+
+
+\begin{DoxyParams}{Parameters}
+{\em flag} & to write into NFC \\
+\hline
+{\em flag} & to write calibration values\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{device__init_8c_a435ba18195f588c000fd0a5b0ecabb46_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{device__init_8c_a435ba18195f588c000fd0a5b0ecabb46_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{device__init_8c_ad59af5cb88583ffa1dd4320db9aec759}\label{device__init_8c_ad59af5cb88583ffa1dd4320db9aec759} 
+\index{device\_init.c@{device\_init.c}!NFC\_Write\_Settings@{NFC\_Write\_Settings}}
+\index{NFC\_Write\_Settings@{NFC\_Write\_Settings}!device\_init.c@{device\_init.c}}
+\doxysubsubsection{\texorpdfstring{NFC\_Write\_Settings()}{NFC\_Write\_Settings()}}
+{\footnotesize\ttfamily void NFC\+\_\+\+Write\+\_\+\+Settings (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Write device settings info the NFC memory. The NFC data structure is swapped. 
+
+Write the device settings.
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{device__init_8c_ad59af5cb88583ffa1dd4320db9aec759_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{device__init_8c_ad59af5cb88583ffa1dd4320db9aec759_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{device__init_8c_a52d0b44655d86d60ecfb68817351601a}\label{device__init_8c_a52d0b44655d86d60ecfb68817351601a} 
+\index{device\_init.c@{device\_init.c}!NFC\_Write\_Settings\_Montador@{NFC\_Write\_Settings\_Montador}}
+\index{NFC\_Write\_Settings\_Montador@{NFC\_Write\_Settings\_Montador}!device\_init.c@{device\_init.c}}
+\doxysubsubsection{\texorpdfstring{NFC\_Write\_Settings\_Montador()}{NFC\_Write\_Settings\_Montador()}}
+{\footnotesize\ttfamily void NFC\+\_\+\+Write\+\_\+\+Settings\+\_\+\+Montador (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Write device settings info the NFC memory. The NFC data structure is swapped. 
+
+Write the device settings.
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{device__init_8c_a52d0b44655d86d60ecfb68817351601a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{device__init_8c_a52d0b44655d86d60ecfb68817351601a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{device__init_8c_aea70ef90e5b5eb9f793a39d77a7688f9}\label{device__init_8c_aea70ef90e5b5eb9f793a39d77a7688f9} 
+\index{device\_init.c@{device\_init.c}!Save\_Default\_Settings@{Save\_Default\_Settings}}
+\index{Save\_Default\_Settings@{Save\_Default\_Settings}!device\_init.c@{device\_init.c}}
+\doxysubsubsection{\texorpdfstring{Save\_Default\_Settings()}{Save\_Default\_Settings()}}
+{\footnotesize\ttfamily static void Save\+\_\+\+Default\+\_\+\+Settings (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+This function sets the default configuration. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{device__init_8c_aea70ef90e5b5eb9f793a39d77a7688f9_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{device__init_8c_aea70ef90e5b5eb9f793a39d77a7688f9_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{device__init_8c_a104e88d78d7097d306fcabcd675b263e}\label{device__init_8c_a104e88d78d7097d306fcabcd675b263e} 
+\index{device\_init.c@{device\_init.c}!Set\_Default\_Settings@{Set\_Default\_Settings}}
+\index{Set\_Default\_Settings@{Set\_Default\_Settings}!device\_init.c@{device\_init.c}}
+\doxysubsubsection{\texorpdfstring{Set\_Default\_Settings()}{Set\_Default\_Settings()}}
+{\footnotesize\ttfamily static void Set\+\_\+\+Default\+\_\+\+Settings (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+This function sets the default configuration. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{device__init_8c_a104e88d78d7097d306fcabcd675b263e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{device__init_8c_a104e88d78d7097d306fcabcd675b263e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{device__init_8c_ae1e4a2b488a7638681f285fcfc957e2d}\label{device__init_8c_ae1e4a2b488a7638681f285fcfc957e2d} 
+\index{device\_init.c@{device\_init.c}!Set\_Device\_Date\_time@{Set\_Device\_Date\_time}}
+\index{Set\_Device\_Date\_time@{Set\_Device\_Date\_time}!device\_init.c@{device\_init.c}}
+\doxysubsubsection{\texorpdfstring{Set\_Device\_Date\_time()}{Set\_Device\_Date\_time()}}
+{\footnotesize\ttfamily void Set\+\_\+\+Device\+\_\+\+Date\+\_\+time (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Set device date and time. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=288pt]{device__init_8c_ae1e4a2b488a7638681f285fcfc957e2d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{device__init_8c_ae1e4a2b488a7638681f285fcfc957e2d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{device__init_8c_a7d385f6a619aaa520f2772c2ff889b39}\label{device__init_8c_a7d385f6a619aaa520f2772c2ff889b39} 
+\index{device\_init.c@{device\_init.c}!Settings\_NFC\_Check@{Settings\_NFC\_Check}}
+\index{Settings\_NFC\_Check@{Settings\_NFC\_Check}!device\_init.c@{device\_init.c}}
+\doxysubsubsection{\texorpdfstring{Settings\_NFC\_Check()}{Settings\_NFC\_Check()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} Settings\+\_\+\+NFC\+\_\+\+Check (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_n_f_c___s_e_t_t_i_n_g_s__t}{NFC\+\_\+\+SETTINGS\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+NFC\+\_\+\+Settings }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Checks the coherence of the device settings through NFC. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+NFC\+\_\+\+Settings} & pointer to the NFC settings to check\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool\+\_\+t indicating settings error 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=307pt]{device__init_8c_a7d385f6a619aaa520f2772c2ff889b39_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{device__init_8c_a7d385f6a619aaa520f2772c2ff889b39_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{device__init_8c_a192100b6aea6682945bfbf931f6fefbe}\label{device__init_8c_a192100b6aea6682945bfbf931f6fefbe} 
+\index{device\_init.c@{device\_init.c}!Settings\_NFC\_Check\_Montador@{Settings\_NFC\_Check\_Montador}}
+\index{Settings\_NFC\_Check\_Montador@{Settings\_NFC\_Check\_Montador}!device\_init.c@{device\_init.c}}
+\doxysubsubsection{\texorpdfstring{Settings\_NFC\_Check\_Montador()}{Settings\_NFC\_Check\_Montador()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} Settings\+\_\+\+NFC\+\_\+\+Check\+\_\+\+Montador (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_n_f_c___s_e_t_t_i_n_g_s__t}{NFC\+\_\+\+SETTINGS\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+NFC\+\_\+\+Settings }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Checks the coherence of the device settings through NFC and FIXED values for the PCB Manufacture. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+NFC\+\_\+\+Settings} & pointer to the NFC settings to check\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool\+\_\+t indicating settings error 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{device__init_8c_a192100b6aea6682945bfbf931f6fefbe_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{device__init_8c_a192100b6aea6682945bfbf931f6fefbe_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{device__init_8c_a996f6e90cfa31a701808ea89e319a375}\label{device__init_8c_a996f6e90cfa31a701808ea89e319a375} 
+\index{device\_init.c@{device\_init.c}!Settings\_Open\_From\_NFC@{Settings\_Open\_From\_NFC}}
+\index{Settings\_Open\_From\_NFC@{Settings\_Open\_From\_NFC}!device\_init.c@{device\_init.c}}
+\doxysubsubsection{\texorpdfstring{Settings\_Open\_From\_NFC()}{Settings\_Open\_From\_NFC()}}
+{\footnotesize\ttfamily void Settings\+\_\+\+Open\+\_\+\+From\+\_\+\+NFC (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Gets settings from NFC. 
+
+Open the default settings from the NFC.
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{device__init_8c_a996f6e90cfa31a701808ea89e319a375_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{device__init_8c_a996f6e90cfa31a701808ea89e319a375_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{device__init_8c_a2ca372a823df8236adbb87a8143be4fe}\label{device__init_8c_a2ca372a823df8236adbb87a8143be4fe} 
+\index{device\_init.c@{device\_init.c}!Settings\_Open\_From\_uSD@{Settings\_Open\_From\_uSD}}
+\index{Settings\_Open\_From\_uSD@{Settings\_Open\_From\_uSD}!device\_init.c@{device\_init.c}}
+\doxysubsubsection{\texorpdfstring{Settings\_Open\_From\_uSD()}{Settings\_Open\_From\_uSD()}}
+{\footnotesize\ttfamily void Settings\+\_\+\+Open\+\_\+\+From\+\_\+u\+SD (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Gets settings from u\+SD. 
+
+Open the default settings from the u\+SD.
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{device__init_8c_a2ca372a823df8236adbb87a8143be4fe_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{device__init_8c_a2ca372a823df8236adbb87a8143be4fe_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{device__init_8c_aa1c4626750fbd27cc9f9798a262e81b3}\label{device__init_8c_aa1c4626750fbd27cc9f9798a262e81b3} 
+\index{device\_init.c@{device\_init.c}!Settings\_Rationale@{Settings\_Rationale}}
+\index{Settings\_Rationale@{Settings\_Rationale}!device\_init.c@{device\_init.c}}
+\doxysubsubsection{\texorpdfstring{Settings\_Rationale()}{Settings\_Rationale()}}
+{\footnotesize\ttfamily static void Settings\+\_\+\+Rationale (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Rationalize the device settings. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{device__init_8c_aa1c4626750fbd27cc9f9798a262e81b3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{device__init_8c_ad542ba54e2d205a8f072330a48289ddd}\label{device__init_8c_ad542ba54e2d205a8f072330a48289ddd} 
+\index{device\_init.c@{device\_init.c}!Settings\_Safe\_Load@{Settings\_Safe\_Load}}
+\index{Settings\_Safe\_Load@{Settings\_Safe\_Load}!device\_init.c@{device\_init.c}}
+\doxysubsubsection{\texorpdfstring{Settings\_Safe\_Load()}{Settings\_Safe\_Load()}}
+{\footnotesize\ttfamily static void Settings\+\_\+\+Safe\+\_\+\+Load (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Safe assignment of device settings from the NFC structure. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{device__init_8c_ad542ba54e2d205a8f072330a48289ddd_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{device__init_8c_ad542ba54e2d205a8f072330a48289ddd_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{device__init_8c_a3b40e935bf43479866fb9469d739a24b}\label{device__init_8c_a3b40e935bf43479866fb9469d739a24b} 
+\index{device\_init.c@{device\_init.c}!Settings\_Save\_To\_uSD@{Settings\_Save\_To\_uSD}}
+\index{Settings\_Save\_To\_uSD@{Settings\_Save\_To\_uSD}!device\_init.c@{device\_init.c}}
+\doxysubsubsection{\texorpdfstring{Settings\_Save\_To\_uSD()}{Settings\_Save\_To\_uSD()}}
+{\footnotesize\ttfamily void Settings\+\_\+\+Save\+\_\+\+To\+\_\+u\+SD (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Saves settings and device info to u\+SD. 
+
+Open the default settings from the u\+SD.
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{device__init_8c_a3b40e935bf43479866fb9469d739a24b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{device__init_8c_a3b40e935bf43479866fb9469d739a24b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{device__init_8c_aaabe404ead3c917fa8a168e445f58e21}\label{device__init_8c_aaabe404ead3c917fa8a168e445f58e21} 
+\index{device\_init.c@{device\_init.c}!Settings\_Swap@{Settings\_Swap}}
+\index{Settings\_Swap@{Settings\_Swap}!device\_init.c@{device\_init.c}}
+\doxysubsubsection{\texorpdfstring{Settings\_Swap()}{Settings\_Swap()}}
+{\footnotesize\ttfamily static void Settings\+\_\+\+Swap (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_n_f_c___s_e_t_t_i_n_g_s__t}{NFC\+\_\+\+SETTINGS\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+NFC\+\_\+\+Settings }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Swap settings variable. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+NFC\+\_\+\+Settings} & pointer to the NFC settings to check\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\texorpdfstring{$<$}{<} adult -\/-\/\texorpdfstring{$>$}{>} Initial CPR time in seconds (can be 0)
+
+\texorpdfstring{$<$}{<} adult -\/-\/\texorpdfstring{$>$}{>} After Shock Series CPR time in seconds (can be OFF)
+
+\texorpdfstring{$<$}{<} adult -\/-\/\texorpdfstring{$>$}{>} No Shock Advised CPR time in seconds (can be OFF)
+
+\texorpdfstring{$<$}{<} pediatric -\/-\/\texorpdfstring{$>$}{>} Initial CPR time in seconds (can be 0)
+
+\texorpdfstring{$<$}{<} pediatric -\/-\/\texorpdfstring{$>$}{>} After Shock Series CPR time in seconds (can be OFF)
+
+\texorpdfstring{$<$}{<} pediatric -\/-\/\texorpdfstring{$>$}{>} No Shock Advised CPR time in seconds (can be OFF)
+
+\texorpdfstring{$<$}{<} Long/\+Short audio messages for CPR
+
+\texorpdfstring{$<$}{<} Enables start an analysis cycle in CPR
+
+\texorpdfstring{$<$}{<} Enables Asystole warning message
+
+\texorpdfstring{$<$}{<} Time on asystole before emitting asystole warning message
+
+\texorpdfstring{$<$}{<} Enables metronome for marking compression pace
+
+\texorpdfstring{$<$}{<} Metronome pace for adult
+
+\texorpdfstring{$<$}{<} Metronome pace for pediatric
+
+\texorpdfstring{$<$}{<} Metronome pace for pediatric
+
+\texorpdfstring{$<$}{<} Enables cpr feedback for marking compression pace
+
+\texorpdfstring{$<$}{<} Max Shocks in a Shock Series
+
+\texorpdfstring{$<$}{<} Energy for 1st shock in shock series for adult
+
+\texorpdfstring{$<$}{<} Energy for 2nd shock in shock series for adult
+
+\texorpdfstring{$<$}{<} Energy for 3rd shock in shock series for adult
+
+\texorpdfstring{$<$}{<} Energy for 1st shock in shock series for pediatric
+
+\texorpdfstring{$<$}{<} Energy for 2nd shock in shock series for pediatric
+
+\texorpdfstring{$<$}{<} Energy for 3rd shock in shock series for pediatric
+
+\texorpdfstring{$<$}{<} Patient type (0-\/pediatric 1-\/adult)
+
+\texorpdfstring{$<$}{<} mains filter (0-\/none 1-\/50 Hz 2-\/60 Hz)
+
+\texorpdfstring{$<$}{<} device audio interface language
+
+\texorpdfstring{$<$}{<} UTC time
+
+\texorpdfstring{$<$}{<} device audio volumeHere is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{device__init_8c_aaabe404ead3c917fa8a168e445f58e21_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{device__init_8c_a38d58c1cef021fbc2be1db597a5e1fd8}\label{device__init_8c_a38d58c1cef021fbc2be1db597a5e1fd8} 
+\index{device\_init.c@{device\_init.c}!Wifi\_Load\_Config@{Wifi\_Load\_Config}}
+\index{Wifi\_Load\_Config@{Wifi\_Load\_Config}!device\_init.c@{device\_init.c}}
+\doxysubsubsection{\texorpdfstring{Wifi\_Load\_Config()}{Wifi\_Load\_Config()}}
+{\footnotesize\ttfamily static void Wifi\+\_\+\+Load\+\_\+\+Config (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Safe assignment of device wifi settings from the NFC structure. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{device__init_8c_a38d58c1cef021fbc2be1db597a5e1fd8_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{device__init_8c_a38d58c1cef021fbc2be1db597a5e1fd8_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{device__init_8c_aaad6694e92e7d7d9eefb2aa080887f97}\label{device__init_8c_aaad6694e92e7d7d9eefb2aa080887f97} 
+\index{device\_init.c@{device\_init.c}!Wifi\_Save\_To\_uSD@{Wifi\_Save\_To\_uSD}}
+\index{Wifi\_Save\_To\_uSD@{Wifi\_Save\_To\_uSD}!device\_init.c@{device\_init.c}}
+\doxysubsubsection{\texorpdfstring{Wifi\_Save\_To\_uSD()}{Wifi\_Save\_To\_uSD()}}
+{\footnotesize\ttfamily void Wifi\+\_\+\+Save\+\_\+\+To\+\_\+u\+SD (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Saves wifi to u\+SD. 
+
+Save wifi settings to u\+SD.
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{device__init_8c_aaad6694e92e7d7d9eefb2aa080887f97_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{device__init_8c_aaad6694e92e7d7d9eefb2aa080887f97_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{device__init_8c_a486054448411d560755b3efc767d3ab2}\label{device__init_8c_a486054448411d560755b3efc767d3ab2} 
+\index{device\_init.c@{device\_init.c}!access\_key@{access\_key}}
+\index{access\_key@{access\_key}!device\_init.c@{device\_init.c}}
+\doxysubsubsection{\texorpdfstring{access\_key}{access\_key}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} access\+\_\+key\mbox{[}12\mbox{]}}
+
+
+
+USB asscess key. 
+
+\Hypertarget{device__init_8c_adb9d3dfe1b8ccffbf15d76a4bd486429}\label{device__init_8c_adb9d3dfe1b8ccffbf15d76a4bd486429} 
+\index{device\_init.c@{device\_init.c}!cfg\_file@{cfg\_file}}
+\index{cfg\_file@{cfg\_file}!device\_init.c@{device\_init.c}}
+\doxysubsubsection{\texorpdfstring{cfg\_file}{cfg\_file}}
+{\footnotesize\ttfamily FX\+\_\+\+FILE cfg\+\_\+file\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{device__init_8c_a127150b775a7a7635b2ea899944af270}\label{device__init_8c_a127150b775a7a7635b2ea899944af270} 
+\index{device\_init.c@{device\_init.c}!device\_comms@{device\_comms}}
+\index{device\_comms@{device\_comms}!device\_init.c@{device\_init.c}}
+\doxysubsubsection{\texorpdfstring{device\_comms}{device\_comms}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_c_o_m_m___s_e_t_t_i_n_g_s__t}{COMM\+\_\+\+SETTINGS\+\_\+t}} device\+\_\+comms\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{device__init_8c_af7e9dfe2188e176069f95bdedc18af30}\label{device__init_8c_af7e9dfe2188e176069f95bdedc18af30} 
+\index{device\_init.c@{device\_init.c}!device\_date@{device\_date}}
+\index{device\_date@{device\_date}!device\_init.c@{device\_init.c}}
+\doxysubsubsection{\texorpdfstring{device\_date}{device\_date}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_d_e_v_i_c_e___d_a_t_e__t}{DEVICE\+\_\+\+DATE\+\_\+t}} device\+\_\+date\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{device__init_8c_a640101193f9d50489770ed50a84e3302}\label{device__init_8c_a640101193f9d50489770ed50a84e3302} 
+\index{device\_init.c@{device\_init.c}!device\_info@{device\_info}}
+\index{device\_info@{device\_info}!device\_init.c@{device\_init.c}}
+\doxysubsubsection{\texorpdfstring{device\_info}{device\_info}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_d_e_v_i_c_e___i_n_f_o__t}{DEVICE\+\_\+\+INFO\+\_\+t}} device\+\_\+info\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{device__init_8c_a4387b788b1fec8b2213593888d878efe}\label{device__init_8c_a4387b788b1fec8b2213593888d878efe} 
+\index{device\_init.c@{device\_init.c}!device\_settings@{device\_settings}}
+\index{device\_settings@{device\_settings}!device\_init.c@{device\_init.c}}
+\doxysubsubsection{\texorpdfstring{device\_settings}{device\_settings}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_d_e_v_i_c_e___s_e_t_t_i_n_g_s__t}{DEVICE\+\_\+\+SETTINGS\+\_\+t}} device\+\_\+settings\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{device__init_8c_ab922a33a081a26b40d10fb0a7f8047a4}\label{device__init_8c_ab922a33a081a26b40d10fb0a7f8047a4} 
+\index{device\_init.c@{device\_init.c}!device\_time@{device\_time}}
+\index{device\_time@{device\_time}!device\_init.c@{device\_init.c}}
+\doxysubsubsection{\texorpdfstring{device\_time}{device\_time}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_d_e_v_i_c_e___t_i_m_e__t}{DEVICE\+\_\+\+TIME\+\_\+t}} device\+\_\+time\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{device__init_8c_a61e4cec8f727161b50877df3febb5b50}\label{device__init_8c_a61e4cec8f727161b50877df3febb5b50} 
+\index{device\_init.c@{device\_init.c}!my\_compile\_date@{my\_compile\_date}}
+\index{my\_compile\_date@{my\_compile\_date}!device\_init.c@{device\_init.c}}
+\doxysubsubsection{\texorpdfstring{my\_compile\_date}{my\_compile\_date}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{_s_c_e_2types__basic_8h_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} my\+\_\+compile\+\_\+date\mbox{[}$\,$\mbox{]} = \+\_\+\+\_\+\+DATE\+\_\+\+\_\+}
+
+\Hypertarget{device__init_8c_a578ea283bbae902cdbf8ed62fc015a54}\label{device__init_8c_a578ea283bbae902cdbf8ed62fc015a54} 
+\index{device\_init.c@{device\_init.c}!my\_compile\_time@{my\_compile\_time}}
+\index{my\_compile\_time@{my\_compile\_time}!device\_init.c@{device\_init.c}}
+\doxysubsubsection{\texorpdfstring{my\_compile\_time}{my\_compile\_time}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{_s_c_e_2types__basic_8h_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} my\+\_\+compile\+\_\+time\mbox{[}$\,$\mbox{]} =\+\_\+\+\_\+\+TIME\+\_\+\+\_\+}
+
+\Hypertarget{device__init_8c_afbefd336db66ebf04e7c65d13ca365e1}\label{device__init_8c_afbefd336db66ebf04e7c65d13ca365e1} 
+\index{device\_init.c@{device\_init.c}!nfc\_device\_com@{nfc\_device\_com}}
+\index{nfc\_device\_com@{nfc\_device\_com}!device\_init.c@{device\_init.c}}
+\doxysubsubsection{\texorpdfstring{nfc\_device\_com}{nfc\_device\_com}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_n_f_c___d_e_v_i_c_e___c_o_m__t}{NFC\+\_\+\+DEVICE\+\_\+\+COM\+\_\+t}} nfc\+\_\+device\+\_\+com\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{device__init_8c_aea29c407e9d73ad21e3c0038c02454a5}\label{device__init_8c_aea29c407e9d73ad21e3c0038c02454a5} 
+\index{device\_init.c@{device\_init.c}!nfc\_device\_id@{nfc\_device\_id}}
+\index{nfc\_device\_id@{nfc\_device\_id}!device\_init.c@{device\_init.c}}
+\doxysubsubsection{\texorpdfstring{nfc\_device\_id}{nfc\_device\_id}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_n_f_c___d_e_v_i_c_e___i_d__t}{NFC\+\_\+\+DEVICE\+\_\+\+ID\+\_\+t}} nfc\+\_\+device\+\_\+id\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{device__init_8c_a75c69389d0e62be27accdd8adb1b4111}\label{device__init_8c_a75c69389d0e62be27accdd8adb1b4111} 
+\index{device\_init.c@{device\_init.c}!nfc\_device\_info@{nfc\_device\_info}}
+\index{nfc\_device\_info@{nfc\_device\_info}!device\_init.c@{device\_init.c}}
+\doxysubsubsection{\texorpdfstring{nfc\_device\_info}{nfc\_device\_info}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_n_f_c___d_e_v_i_c_e___i_n_f_o__t}{NFC\+\_\+\+DEVICE\+\_\+\+INFO\+\_\+t}} nfc\+\_\+device\+\_\+info\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{device__init_8c_aa9b78280dd8494faec403567e2a85ba0}\label{device__init_8c_aa9b78280dd8494faec403567e2a85ba0} 
+\index{device\_init.c@{device\_init.c}!nfc\_settings@{nfc\_settings}}
+\index{nfc\_settings@{nfc\_settings}!device\_init.c@{device\_init.c}}
+\doxysubsubsection{\texorpdfstring{nfc\_settings}{nfc\_settings}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_n_f_c___s_e_t_t_i_n_g_s__t}{NFC\+\_\+\+SETTINGS\+\_\+t}} nfc\+\_\+settings\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{device__init_8c_a32cf1d7f80dd1e61456266fb60c3fc44}\label{device__init_8c_a32cf1d7f80dd1e61456266fb60c3fc44} 
+\index{device\_init.c@{device\_init.c}!p\_aed\_settings@{p\_aed\_settings}}
+\index{p\_aed\_settings@{p\_aed\_settings}!device\_init.c@{device\_init.c}}
+\doxysubsubsection{\texorpdfstring{p\_aed\_settings}{p\_aed\_settings}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_a_e_d___s_e_t_t_i_n_g_s__t}{AED\+\_\+\+SETTINGS\+\_\+t}}\texorpdfstring{$\ast$}{*} p\+\_\+aed\+\_\+settings\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{device__init_8c_a4ec65e38104af946fbf7e684a29eee01}\label{device__init_8c_a4ec65e38104af946fbf7e684a29eee01} 
+\index{device\_init.c@{device\_init.c}!p\_misc\_settings@{p\_misc\_settings}}
+\index{p\_misc\_settings@{p\_misc\_settings}!device\_init.c@{device\_init.c}}
+\doxysubsubsection{\texorpdfstring{p\_misc\_settings}{p\_misc\_settings}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_m_i_s_c___s_e_t_t_i_n_g_s__t}{MISC\+\_\+\+SETTINGS\+\_\+t}}\texorpdfstring{$\ast$}{*} p\+\_\+misc\+\_\+settings\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{device__init_8c_aeba627762207489ddb31b9e4bead28c5}\label{device__init_8c_aeba627762207489ddb31b9e4bead28c5} 
+\index{device\_init.c@{device\_init.c}!read\_nfc\_device\_id@{read\_nfc\_device\_id}}
+\index{read\_nfc\_device\_id@{read\_nfc\_device\_id}!device\_init.c@{device\_init.c}}
+\doxysubsubsection{\texorpdfstring{read\_nfc\_device\_id}{read\_nfc\_device\_id}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_n_f_c___d_e_v_i_c_e___i_d__t}{NFC\+\_\+\+DEVICE\+\_\+\+ID\+\_\+t}} read\+\_\+nfc\+\_\+device\+\_\+id}
+
+
+
+Global struct for comparing NFC reading and writing. 
+
+\Hypertarget{device__init_8c_a4584daa837f73e9d4988a7238f9321a1}\label{device__init_8c_a4584daa837f73e9d4988a7238f9321a1} 
+\index{device\_init.c@{device\_init.c}!write\_nfc\_device\_id@{write\_nfc\_device\_id}}
+\index{write\_nfc\_device\_id@{write\_nfc\_device\_id}!device\_init.c@{device\_init.c}}
+\doxysubsubsection{\texorpdfstring{write\_nfc\_device\_id}{write\_nfc\_device\_id}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_n_f_c___d_e_v_i_c_e___i_d__t}{NFC\+\_\+\+DEVICE\+\_\+\+ID\+\_\+t}} write\+\_\+nfc\+\_\+device\+\_\+id}
+
+
+
+Global struct for comparing NFC reading and writing. 
+

@@ -1,0 +1,109 @@
+\doxysection{BATTERY\+\_\+\+STATISTICS\+\_\+t Struct Reference}
+\hypertarget{struct_b_a_t_t_e_r_y___s_t_a_t_i_s_t_i_c_s__t}{}\label{struct_b_a_t_t_e_r_y___s_t_a_t_i_s_t_i_c_s__t}\index{BATTERY\_STATISTICS\_t@{BATTERY\_STATISTICS\_t}}
+
+
+Battery statistics (stored in the battery pack)  
+
+
+
+
+{\ttfamily \#include $<$sys\+Mon\+\_\+\+Battery.\+h$>$}
+
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \mbox{\hyperlink{struct_b_a_t_t_e_r_y___s_t_a_t_i_s_t_i_c_s__t_a33223a31011469562b23f5a314e8556c}{run\+Time\+\_\+total}}
+\begin{DoxyCompactList}\small\item\em Accumulated run time (in minutes) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \mbox{\hyperlink{struct_b_a_t_t_e_r_y___s_t_a_t_i_s_t_i_c_s__t_af27ee76583a6c71ea85742e5d93650dd}{battery\+\_\+state}}
+\begin{DoxyCompactList}\small\item\em Battery state depend on the safe voltage. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{struct_b_a_t_t_e_r_y___s_t_a_t_i_s_t_i_c_s__t_a02152a908fc4d16354fedf06b360bd8e}{n\+Full\+\_\+charges}}
+\begin{DoxyCompactList}\small\item\em Number of full charges with patient. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{struct_b_a_t_t_e_r_y___s_t_a_t_i_s_t_i_c_s__t_a414db84137e761e3df84c707cf934e90}{n\+Ticks\+\_\+open\+\_\+cover}}
+\begin{DoxyCompactList}\small\item\em Number of ticks with open cover. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{struct_b_a_t_t_e_r_y___s_t_a_t_i_s_t_i_c_s__t_a5af17d8a0006386d4b1660021aefdf73}{n\+Test\+Manual}}
+\begin{DoxyCompactList}\small\item\em Number of manual/monthly test. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{struct_b_a_t_t_e_r_y___s_t_a_t_i_s_t_i_c_s__t_a4324ea1b7474e45c43fddde687b341ce}{must\+\_\+be\+\_\+0x55}}
+\begin{DoxyCompactList}\small\item\em Reserved (fixed to 0x55) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{struct_b_a_t_t_e_r_y___s_t_a_t_i_s_t_i_c_s__t_ac2b6549f9930394e78fce2832d22c400}{checksum\+\_\+xor}}
+\begin{DoxyCompactList}\small\item\em Data checksum. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Battery statistics (stored in the battery pack) 
+
+\doxysubsection{Field Documentation}
+\Hypertarget{struct_b_a_t_t_e_r_y___s_t_a_t_i_s_t_i_c_s__t_af27ee76583a6c71ea85742e5d93650dd}\label{struct_b_a_t_t_e_r_y___s_t_a_t_i_s_t_i_c_s__t_af27ee76583a6c71ea85742e5d93650dd} 
+\index{BATTERY\_STATISTICS\_t@{BATTERY\_STATISTICS\_t}!battery\_state@{battery\_state}}
+\index{battery\_state@{battery\_state}!BATTERY\_STATISTICS\_t@{BATTERY\_STATISTICS\_t}}
+\doxysubsubsection{\texorpdfstring{battery\_state}{battery\_state}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} BATTERY\+\_\+\+STATISTICS\+\_\+t\+::battery\+\_\+state}
+
+
+
+Battery state depend on the safe voltage. 
+
+\Hypertarget{struct_b_a_t_t_e_r_y___s_t_a_t_i_s_t_i_c_s__t_ac2b6549f9930394e78fce2832d22c400}\label{struct_b_a_t_t_e_r_y___s_t_a_t_i_s_t_i_c_s__t_ac2b6549f9930394e78fce2832d22c400} 
+\index{BATTERY\_STATISTICS\_t@{BATTERY\_STATISTICS\_t}!checksum\_xor@{checksum\_xor}}
+\index{checksum\_xor@{checksum\_xor}!BATTERY\_STATISTICS\_t@{BATTERY\_STATISTICS\_t}}
+\doxysubsubsection{\texorpdfstring{checksum\_xor}{checksum\_xor}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} BATTERY\+\_\+\+STATISTICS\+\_\+t\+::checksum\+\_\+xor}
+
+
+
+Data checksum. 
+
+\Hypertarget{struct_b_a_t_t_e_r_y___s_t_a_t_i_s_t_i_c_s__t_a4324ea1b7474e45c43fddde687b341ce}\label{struct_b_a_t_t_e_r_y___s_t_a_t_i_s_t_i_c_s__t_a4324ea1b7474e45c43fddde687b341ce} 
+\index{BATTERY\_STATISTICS\_t@{BATTERY\_STATISTICS\_t}!must\_be\_0x55@{must\_be\_0x55}}
+\index{must\_be\_0x55@{must\_be\_0x55}!BATTERY\_STATISTICS\_t@{BATTERY\_STATISTICS\_t}}
+\doxysubsubsection{\texorpdfstring{must\_be\_0x55}{must\_be\_0x55}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} BATTERY\+\_\+\+STATISTICS\+\_\+t\+::must\+\_\+be\+\_\+0x55}
+
+
+
+Reserved (fixed to 0x55) 
+
+\Hypertarget{struct_b_a_t_t_e_r_y___s_t_a_t_i_s_t_i_c_s__t_a02152a908fc4d16354fedf06b360bd8e}\label{struct_b_a_t_t_e_r_y___s_t_a_t_i_s_t_i_c_s__t_a02152a908fc4d16354fedf06b360bd8e} 
+\index{BATTERY\_STATISTICS\_t@{BATTERY\_STATISTICS\_t}!nFull\_charges@{nFull\_charges}}
+\index{nFull\_charges@{nFull\_charges}!BATTERY\_STATISTICS\_t@{BATTERY\_STATISTICS\_t}}
+\doxysubsubsection{\texorpdfstring{nFull\_charges}{nFull\_charges}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} BATTERY\+\_\+\+STATISTICS\+\_\+t\+::n\+Full\+\_\+charges}
+
+
+
+Number of full charges with patient. 
+
+\Hypertarget{struct_b_a_t_t_e_r_y___s_t_a_t_i_s_t_i_c_s__t_a5af17d8a0006386d4b1660021aefdf73}\label{struct_b_a_t_t_e_r_y___s_t_a_t_i_s_t_i_c_s__t_a5af17d8a0006386d4b1660021aefdf73} 
+\index{BATTERY\_STATISTICS\_t@{BATTERY\_STATISTICS\_t}!nTestManual@{nTestManual}}
+\index{nTestManual@{nTestManual}!BATTERY\_STATISTICS\_t@{BATTERY\_STATISTICS\_t}}
+\doxysubsubsection{\texorpdfstring{nTestManual}{nTestManual}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} BATTERY\+\_\+\+STATISTICS\+\_\+t\+::n\+Test\+Manual}
+
+
+
+Number of manual/monthly test. 
+
+\Hypertarget{struct_b_a_t_t_e_r_y___s_t_a_t_i_s_t_i_c_s__t_a414db84137e761e3df84c707cf934e90}\label{struct_b_a_t_t_e_r_y___s_t_a_t_i_s_t_i_c_s__t_a414db84137e761e3df84c707cf934e90} 
+\index{BATTERY\_STATISTICS\_t@{BATTERY\_STATISTICS\_t}!nTicks\_open\_cover@{nTicks\_open\_cover}}
+\index{nTicks\_open\_cover@{nTicks\_open\_cover}!BATTERY\_STATISTICS\_t@{BATTERY\_STATISTICS\_t}}
+\doxysubsubsection{\texorpdfstring{nTicks\_open\_cover}{nTicks\_open\_cover}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} BATTERY\+\_\+\+STATISTICS\+\_\+t\+::n\+Ticks\+\_\+open\+\_\+cover}
+
+
+
+Number of ticks with open cover. 
+
+\Hypertarget{struct_b_a_t_t_e_r_y___s_t_a_t_i_s_t_i_c_s__t_a33223a31011469562b23f5a314e8556c}\label{struct_b_a_t_t_e_r_y___s_t_a_t_i_s_t_i_c_s__t_a33223a31011469562b23f5a314e8556c} 
+\index{BATTERY\_STATISTICS\_t@{BATTERY\_STATISTICS\_t}!runTime\_total@{runTime\_total}}
+\index{runTime\_total@{runTime\_total}!BATTERY\_STATISTICS\_t@{BATTERY\_STATISTICS\_t}}
+\doxysubsubsection{\texorpdfstring{runTime\_total}{runTime\_total}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} BATTERY\+\_\+\+STATISTICS\+\_\+t\+::run\+Time\+\_\+total}
+
+
+
+Accumulated run time (in minutes) 
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\mbox{\hyperlink{sys_mon___battery_8h}{sys\+Mon\+\_\+\+Battery.\+h}}\end{DoxyCompactItemize}

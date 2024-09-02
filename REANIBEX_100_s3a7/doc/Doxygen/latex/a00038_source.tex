@@ -1,0 +1,140 @@
+\doxysection{R100\+\_\+\+Errors.\+h}
+\hypertarget{a00038_source}{}\label{a00038_source}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/R100\_Errors.h@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/R100\_Errors.h}}
+\mbox{\hyperlink{a00038}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00002\ \textcolor{comment}{/*\ Errors\ identifiers\ header\ file\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00003\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00004\ \textcolor{comment}{/*\ This\ file\ is\ automatically\ generated\ form\ excel\ sheet\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00005\ \textcolor{comment}{/*\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00006\ \textcolor{comment}{/*\ Author:\ egarcia\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{00007\ \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ R100\_ERRORS}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ R100\_ERRORS}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00012\ \textcolor{comment}{**\ Includes}}
+\DoxyCodeLine{00013\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{a00044}{R100\_Errors\_cfg.h}}"{}}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00018\ \textcolor{comment}{**\ Defines}}
+\DoxyCodeLine{00019\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#define\ OK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ eERR\_NONE}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#define\ DATA\_NOT\_AVAILABLE\ \ \ \ \ \ -\/1\ \ \ }}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ APP\_ERR\_TRAP(a)\ \ \ \ \ if\ (a)\ \{}\textcolor{comment}{/*\_\_BKPT(0);\ */}\textcolor{preprocessor}{Lock\_on\_Panic();\}}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#define\ MAX\_ERRORS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 256\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00028\ \textcolor{comment}{**\ Typedefs}}
+\DoxyCodeLine{00029\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00032\ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a4f48e4214dad2e7b13ff7edc4feffe94}{eERR\_NONE}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0,\ \ \ }
+\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a34f42b64aea207f88cc1ae6b463b9219}{eERR\_OPTION\_DISABLED}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 1,\ \ \ }
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a59b4b2f8e8448fc101cdfaa3b46e20b0}{eERR\_NV\_SZ}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 2,\ \ \ }
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9aa7c5a5cf38aa255fee51b6d65876f4a6}{eERR\_NFC\_INFO}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 4,\ \ \ }
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a390d2cd94365f6a71d32b637d2ce51ed}{eERR\_ZP\_DATA}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 5,\ \ \ }
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9aac9201135ebc628e0cad80a132157a35}{eERR\_AUDIO\_MAX}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 6,\ \ \ }
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a3f195b3ded315c2c5cff0ffe8976dd6a}{eERR\_DEF\_CHARGING\_FAST}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 10,\ \ \ }
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a9898edb874b6b6b25c84313530932892}{eERR\_DEF\_CHARGING\_SLOW}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 11,\ \ \ }
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a91f66705eeb810f8612b9bbbf03c92bc}{eERR\_DEF\_DISCHARGING\_H}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 12,\ \ \ }
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a4ad6f4379e739357ca5c8b4eb17476eb}{eERR\_DEF\_DISCHARGING\_R}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 13,\ \ \ }
+\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a20fbe5f540f31c976c591ad75b4a3b3e}{eERR\_DEF\_SHOCK}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 14,\ \ \ }
+\DoxyCodeLine{00048\ \ \ \ \ \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9acdc2efbc9e6306e89f11c6fb6d1516a6}{eERR\_DEF\_CURRENT\_SENSE}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 15,\ \ \ }
+\DoxyCodeLine{00053\ \ \ \ \ \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a1f3a3aee4ff4cd6fceaeb7834a0771ec}{eERR\_ELECTRODE\_EXPIRED}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 20,\ \ \ }
+\DoxyCodeLine{00054\ \ \ \ \ \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a4970354e4121e20f767337c7ee53cbbf}{eERR\_ELECTRODE\_USED}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 21,\ \ \ }
+\DoxyCodeLine{00055\ \ \ \ \ \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9ab8de1d45d69f86d99656c4c185d33b30}{eERR\_ELECTRODE\_NOT\_CONNECTED}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 22,\ \ \ }
+\DoxyCodeLine{00056\ \ \ \ \ \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a1de79b246c27d25bcce94f2c91cfe2ab}{eERR\_ELECTRODE\_WRONG}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 23,\ \ \ }
+\DoxyCodeLine{00063\ \ \ \ \ \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a9fe0637edbe793dac317a929019f217f}{eERR\_BATTERY\_EXPIRED}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 30,\ \ \ }
+\DoxyCodeLine{00064\ \ \ \ \ \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9acf5d4b6ccf45326b19b1b57e6d233f55}{eERR\_BATTERY\_UNKNOWN}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 31,\ \ \ }
+\DoxyCodeLine{00065\ \ \ \ \ \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a9ad9d49b8a1ac5559315c253c87914bb}{eERR\_BATTERY\_LOW}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 32,\ \ \ }
+\DoxyCodeLine{00066\ \ \ \ \ \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9af0279293762fa15beb176b89d3e38a68}{eERR\_BATTERY\_REPLACE}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 33,\ \ \ }
+\DoxyCodeLine{00067\ \ \ \ \ \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a392eab9802a13b9e08d26fc591668c8b}{eERR\_BATTERY\_TEMP\_OUT\_RANGE}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 34,\ \ \ }
+\DoxyCodeLine{00068\ \ \ \ \ \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a0ebefd4a0d6967ec011be0b50654d787}{eERR\_BATTERY\_TEMP\_OUT\_RANGE\_OFF}}\ \ \ \ \ \ \ \ \ \ \ =\ 35,\ \ \ }
+\DoxyCodeLine{00069\ \ \ \ \ \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a077781a0f5535a73409e451779883e65}{eRR\_RTC}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 36,\ \ \ }
+\DoxyCodeLine{00073\ \ \ \ \ \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a78aed6d0ad45f8bae2b98b2d0f70e0ed}{eERR\_SMON\_DCMAIN\_TOO\_HIGH}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 40,\ \ \ }
+\DoxyCodeLine{00074\ \ \ \ \ \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a117ec9bb17dc4b7a4f1d98c3f4a2bed3}{eERR\_SMON\_DCMAIN\_TOO\_LOW}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 41,\ \ \ }
+\DoxyCodeLine{00075\ \ \ \ \ \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a01198730067a5bf4035a41015ac8c25f}{eERR\_SMON\_18V\_TOO\_HIGH}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 42,\ \ \ }
+\DoxyCodeLine{00076\ \ \ \ \ \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a81cd8f8ca98c6697cb9da2bb5c09040a}{eERR\_SMON\_18V\_TOO\_LOW}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 43,\ \ \ }
+\DoxyCodeLine{00083\ \ \ \ \ \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a602af6bf6848ce46e68f0a2051a66a21}{eERR\_ADS\_DEVICE\_ID}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 50,\ \ \ }
+\DoxyCodeLine{00084\ \ \ \ \ \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a72a52d464d923f56d616bdbbf751b328}{eERR\_ADS\_DEVICE\_ACCESS}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 51,\ \ \ }
+\DoxyCodeLine{00085\ \ \ \ \ \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a91c1f80dbeaa65eac5d09a5ebce80983}{eERR\_ADS\_CALIBRATION}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 52,\ \ \ }
+\DoxyCodeLine{00086\ \ \ \ \ \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a7368545a78f76c5ed719388342832d35}{eERR\_ADS\_PAT\_CONNECTED}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 53,\ \ \ }
+\DoxyCodeLine{00093\ \ \ \ \ \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a94ea057263ee1e9c89b72d0598c8f934}{eERR\_BOOT\_PROCESSOR}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 60,\ \ \ }
+\DoxyCodeLine{00094\ \ \ \ \ \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a43fc9663e70109a2f3e956f03ba2a4be}{eERR\_BOOT\_PROCESSOR\_UPDATE}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 61,\ \ \ }
+\DoxyCodeLine{00095\ \ \ \ \ \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a4648ecdf935d4d978ed9ee1c669cb525}{eERR\_BOOT\_SPI\_MEMORY}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 62,\ \ \ }
+\DoxyCodeLine{00103\ \ \ \ \ \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a9545930be92e9653a007e67eaea8c3ad}{eERR\_AUDIO\_PLAYER}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 70,\ \ \ }
+\DoxyCodeLine{00104\ \ \ \ \ \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a8c2d2a7d622a4f772397d251ca744e5e}{eERR\_AUDIO\_QUEUE\_FULL}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 71,\ \ \ }
+\DoxyCodeLine{00113\ \ \ \ \ \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a9a0e446e3f03cd59d7337506ab3e7348}{eERR\_COMM\_UART\_SELECT}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 80,\ \ \ }
+\DoxyCodeLine{00114\ \ \ \ \ \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9aaae164fa0e8340837ea80480c86d3b6e}{eERR\_COMM\_UART\_BAUD\_RATE}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 81,\ \ \ }
+\DoxyCodeLine{00115\ \ \ \ \ \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a7c156b58f06ba925a4e551a54f4fa6c5}{eERR\_COMM\_UART\_RX\_ERROR}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 82,\ \ \ }
+\DoxyCodeLine{00133\ \ \ \ \ \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9af28710772129336f441525c30b5075a9}{eERR\_COMM\_WIFI\_INIT}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 100,\ \ \ }
+\DoxyCodeLine{00134\ \ \ \ \ \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9af8f7399823e54a7d216db02711d7a9f5}{eERR\_COMM\_WIFI\_CHECK\_STATUS}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 101,\ \ \ }
+\DoxyCodeLine{00135\ \ \ \ \ \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a394d5e5c97033458c8c0b24f96933403}{eERR\_COMM\_WIFI\_INIT\_SYNC}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 102,\ \ \ }
+\DoxyCodeLine{00136\ \ \ \ \ \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9ab11e91e1749e58f6f0f96ff843bd3975}{eERR\_COMM\_WIFI\_INIT\_CONFIG\_UART\_DATA}}\ \ \ \ \ \ =\ 103,\ \ \ }
+\DoxyCodeLine{00137\ \ \ \ \ \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a9969a2870683d568742b48cf3ffbb95d}{eERR\_COMM\_WIFI\_INIT\_CONFIG\_UART\_BAUD}}\ \ \ \ \ \ =\ 104,\ \ \ }
+\DoxyCodeLine{00138\ \ \ \ \ \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a8b2102059f6e745ee6b2b35ab0dd02ef}{eERR\_COMM\_WIFI\_INIT\_CONFIG\_UART\_FLOW}}\ \ \ \ \ \ =\ 105,\ \ \ }
+\DoxyCodeLine{00139\ \ \ \ \ \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a4025a01744fdfaec3b125c154d7f2b02}{eERR\_COMM\_WIFI\_INIT\_CONFIG\_UART\_PARITY}}\ \ \ \ =\ 106,\ \ \ }
+\DoxyCodeLine{00140\ \ \ \ \ \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9aa5d06333daf8be31ab68ed9ee86e11ce}{eERR\_COMM\_WIFI\_INIT\_CONFIG\_UART\_STOP}}\ \ \ \ \ \ =\ 107,\ \ \ }
+\DoxyCodeLine{00141\ \ \ \ \ \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a782684b7c1fdc3f10ef67897af2a5253}{eERR\_COMM\_WIFI\_INIT\_GET\_MAC\_ADDRESS}}\ \ \ \ \ \ \ =\ 108,\ \ \ }
+\DoxyCodeLine{00142\ \ \ \ \ \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9ae434f796e437ad5ba47623033b642c0b}{eERR\_COMM\_WIFI\_INIT\_GET\_IP\_ADDRESS}}\ \ \ \ \ \ \ \ =\ 109,\ \ \ }
+\DoxyCodeLine{00143\ \ \ \ \ \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a96fe52dd2173d8e354dd147ee42813b6}{eERR\_COMM\_WIFI\_INIT\_OPEN}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 110,\ \ \ }
+\DoxyCodeLine{00144\ \ \ \ \ \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9abe745cae6eaf15f79e6e1b0288474fbf}{eERR\_COMM\_WIFI\_CERT\_CLIENT\_ROUTER}}\ \ \ \ \ \ \ \ \ =\ 111,\ \ \ }
+\DoxyCodeLine{00145\ \ \ \ \ \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9ae0447f3c91c3c51272b0b5d6590c7f6a}{eERR\_COMM\_WIFI\_CERT\_CLIENT\_ROUTER\_CA}}\ \ \ \ \ \ =\ 112,\ \ \ }
+\DoxyCodeLine{00146\ \ \ \ \ \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9adb85bdda555a136ee143cd4560bc29cd}{eERR\_COMM\_WIFI\_CERT\_CLIENT\_ROUTER\_KEY}}\ \ \ \ \ =\ 113,\ \ \ }
+\DoxyCodeLine{00147\ \ \ \ \ \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a26e281ffab22335b8fc791b9e0ff962a}{eERR\_COMM\_WIFI\_CERT\_EAP\_CONFIG}}\ \ \ \ \ \ \ \ \ \ \ \ =\ 114,\ \ \ }
+\DoxyCodeLine{00148\ \ \ \ \ \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a1bda7d14737935f001a7b98d4802f4d9}{eERR\_COMM\_WIFI\_CERT\_SERVER\_TLS\_CA}}\ \ \ \ \ \ \ \ \ =\ 115,\ \ \ }
+\DoxyCodeLine{00149\ \ \ \ \ \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a51b3038886d6bac45dca42ab11715139}{eERR\_COMM\_WIFI\_CERT\_SERVER\_TLS\_CONFIG}}\ \ \ \ \ =\ 116,\ \ \ }
+\DoxyCodeLine{00150\ \ \ \ \ \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a5dd19dea72117d4cf137afd29c09450e}{eERR\_COMM\_WIFI\_CERT\_LIST}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 117,\ \ \ }
+\DoxyCodeLine{00151\ \ \ \ \ \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a35d6a5eaa54e58a3aafd081704cf537f}{eERR\_COMM\_WIFI\_CERT\_RESET\_STORE}}\ \ \ \ \ \ \ \ \ \ \ =\ 118,\ \ \ }
+\DoxyCodeLine{00153\ \ \ \ \ \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a0e7df6084335fb79e74a4b25f3c0e366}{eERR\_COMM\_WIFI\_OPEN\_TCP}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 120,\ \ \ }
+\DoxyCodeLine{00154\ \ \ \ \ \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a1534c0fe8a9bc9b8e7d79fdc999effe4}{eERR\_COMM\_WIFI\_CLOSE\_TCP}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 121,\ \ \ }
+\DoxyCodeLine{00155\ \ \ \ \ \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a5801095e8247ea4f96fe778ba2dd6329}{eERR\_COMM\_WIFI\_OPEN\_UDP}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 122,\ \ \ }
+\DoxyCodeLine{00156\ \ \ \ \ \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a07d61e922a84276936dd9413cd056f0a}{eERR\_COMM\_WIFI\_CLOSE\_UDP}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 123,\ \ \ }
+\DoxyCodeLine{00157\ \ \ \ \ \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a319b2bd02bce37c75da77fce9a964ac4}{eERR\_COMM\_WIFI\_OPEN\_UDP\_SERVER}}\ \ \ \ \ \ \ \ \ \ \ \ =\ 124,\ \ \ }
+\DoxyCodeLine{00158\ \ \ \ \ \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9af7083496f4a071bf142f39969456472c}{eERR\_COMM\_WIFI\_CLOSE\_UDP\_SERVER}}\ \ \ \ \ \ \ \ \ \ \ =\ 125,\ \ \ }
+\DoxyCodeLine{00159\ \ \ \ \ \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a8c662104af63fcbe97241d312788451b}{eERR\_COMM\_WIFI\_OPEN\_TLS}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 126,\ \ \ }
+\DoxyCodeLine{00160\ \ \ \ \ \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9aad7299cfb8a37995dbd8347f3502e18a}{eERR\_COMM\_WIFI\_CLOSE\_TLS}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 127,\ \ \ }
+\DoxyCodeLine{00162\ \ \ \ \ \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a62bcbe6194fa1ef7570a5e706cf9de62}{eERR\_COMM\_WIFI\_SERVER\_ALIVE}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 129,\ \ \ }
+\DoxyCodeLine{00163\ \ \ \ \ \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9ae9de01556d5f3e2549bb28a4fe892597}{eERR\_COMM\_WIFI\_SEND\_FRAME\_TEST}}\ \ \ \ \ \ \ \ \ \ \ \ =\ 130,\ \ \ }
+\DoxyCodeLine{00164\ \ \ \ \ \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a00f0148bd392a3d72021a30ea9c7fb49}{eERR\_COMM\_WIFI\_SEND\_FRAME\_ALERT}}\ \ \ \ \ \ \ \ \ \ \ =\ 131,\ \ \ }
+\DoxyCodeLine{00165\ \ \ \ \ \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a7b2ebb4c0ca85eb0e2e2bb3622c65b21}{eERR\_COMM\_WIFI\_SEND\_FRAME\_GPS}}\ \ \ \ \ \ \ \ \ \ \ \ \ =\ 132,\ \ \ }
+\DoxyCodeLine{00166\ \ \ \ \ \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a30a354f309afdc9ff6eaf6e95b5d329d}{eERR\_COMM\_WIFI\_SEND\_EPISODE}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 133,\ \ \ }
+\DoxyCodeLine{00167\ \ \ \ \ \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a1adf9c407872a594ded9fd5b028aa258}{eERR\_COMM\_WIFI\_SEND\_TEST}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 134,\ \ \ }
+\DoxyCodeLine{00168\ \ \ \ \ \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a835bdbe16fb2c21b22551d699fee038a}{eERR\_COMM\_WIFI\_SEND\_DATA}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 135,\ \ \ }
+\DoxyCodeLine{00169\ \ \ \ \ \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a369740b85f664812c14baf766335e837}{eERR\_COMM\_WIFI\_RECEIVE\_UPGRADE\_FILE}}\ \ \ \ \ \ \ =\ 136,\ \ \ }
+\DoxyCodeLine{00170\ \ \ \ \ \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9afd2c25a07dd3ec60f9e18c8ce2b8fe88}{eERR\_COMM\_WIFI\_RECEIVE\_CONFIG\_FILE}}\ \ \ \ \ \ \ \ =\ 137,\ \ \ }
+\DoxyCodeLine{00172\ \ \ \ \ \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9ad8d92f4b184ed1778beca0723c746dc4}{eRR\_COMM\_WIFI\_SERVER\_RPS\_ER}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 139,\ \ \ }
+\DoxyCodeLine{00173\ \ \ \ \ \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a7912afb6e34de929e3469ad376f7729a}{eERR\_COMM\_SIGFOX}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 140,\ \ \ }
+\DoxyCodeLine{00174\ \ \ \ \ \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9ab5020abe288f28adb710d796e1c21fe3}{eERR\_COMM\_SIGFOX\_STATUS}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 141,\ \ \ }
+\DoxyCodeLine{00175\ \ \ \ \ \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a82112dc45a8a58367a0e331dbe081819}{eERR\_COMM\_SIGFOX\_MAX\_POWER}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 142,\ \ \ }
+\DoxyCodeLine{00176\ \ \ \ \ \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a30b8b0f8b90d71e9d2c9baca87b0c82e}{eERR\_COMM\_SIGFOX\_RX}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 143,\ \ \ }
+\DoxyCodeLine{00177\ \ \ \ \ \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a7a7a2a40fcf762eb57d93f58da28b742}{eERR\_COMM\_SIGFOX\_TEST\_TX\_FREQ}}\ \ \ \ \ \ \ \ \ \ \ \ \ =\ 144,\ \ \ }
+\DoxyCodeLine{00178\ \ \ \ \ \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9af647bffc07c95ae3e9e6545e8ffb858b}{eERR\_COMM\_SIGFOX\_TEST\_RX\_FREQ}}\ \ \ \ \ \ \ \ \ \ \ \ \ =\ 145,\ \ \ }
+\DoxyCodeLine{00179\ \ \ \ \ \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a297ef01c0a8c2df1269f122bdda222d2}{eERR\_COMM\_SIGFOX\_CW\_TEST\_START}}\ \ \ \ \ \ \ \ \ \ \ \ =\ 146,\ \ \ }
+\DoxyCodeLine{00180\ \ \ \ \ \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9ab84497cc7fbd467d11b9f48c23ee53b2}{eERR\_COMM\_SIGFOX\_CW\_TEST\_STOP}}\ \ \ \ \ \ \ \ \ \ \ \ \ =\ 147,\ \ \ }
+\DoxyCodeLine{00181\ \ \ \ \ \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a81cbed10f9ea508f9729cae0eae14747}{eERR\_COMM\_SIGFOX\_RX\_GFSK\_TEST}}\ \ \ \ \ \ \ \ \ \ \ \ \ =\ 148,\ \ \ }
+\DoxyCodeLine{00183\ \ \ \ \ \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9aad441fa60c028a12d56dbeff429d6a46}{eERR\_COMM\_GPS}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 150,\ \ \ }
+\DoxyCodeLine{00193\ \ \ \ \ \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9aaf2af7016d77a5b1516c1f41f685557f}{eERR\_COMM\_ACC}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 160,\ \ \ }
+\DoxyCodeLine{00194\ \ \ \ \ \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a7927d5bd44eef8945739fb275e6ba7c6}{eERR\_COMM\_ACC\_PRESENCE}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 161,\ \ \ }
+\DoxyCodeLine{00195\ \ \ \ \ \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a802d3aa38a1ee1e6c4a71c3d8ecfd2e4}{eERR\_COMM\_ACC\_CONFIGURATION}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 162,\ \ \ }
+\DoxyCodeLine{00196\ \ \ \ \ \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9ab525ba1b98a7a6e1a9c751fe5988b366}{eERR\_COMM\_ACC\_INTERRUPT}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 163,\ \ \ }
+\DoxyCodeLine{00213\ \ \ \ \ \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a64199dc4a6bb5aa036f56535c67306be}{eERR\_KEYS}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 180,\ \ \ }
+\DoxyCodeLine{00214\ \ \ \ \ \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9acf2a2dd01893d32ac086d383fea152a6}{eERR\_LEDS}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 181,\ \ \ }
+\DoxyCodeLine{00222\ \ \ \ \ \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a1fc94fb9ad0928613de2d406beea29d5}{eRR\_CRYPTO\_AUTH}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 189,\ \ \ }
+\DoxyCodeLine{00223\ \ \ \ \ \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a4f170d0a64533010c69b7c473ec6e134}{eRR\_EXPIRED\_CERT\_TLS}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 190,\ \ \ }
+\DoxyCodeLine{00224\ \ \ \ \ \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a3726c64dd5b0234233936e57ba6ccd98}{eRR\_EXPIRED\_SOON\_CERT\_TLS}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 191,\ \ \ }
+\DoxyCodeLine{00225\ \ \ \ \ \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a3e873cebcc3edb9b09b9c401c95d68f9}{eRR\_EXPIRED\_WPA\_EAP}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 192,\ \ \ }
+\DoxyCodeLine{00226\ \ \ \ \ \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a22fe407847dd67980023cb8b13944185}{eRR\_EXPIRED\_SOON\_WPA\_EAP}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 193,\ \ \ }
+\DoxyCodeLine{00288\ \ \ \ \ \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9af031c3e455eaaef06f17c6eb9b95b11c}{eERR\_END}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ \mbox{\hyperlink{a00038_aee6f4b0b74820d727dd8fba4f5efa061}{MAX\_ERRORS}}-\/1}
+\DoxyCodeLine{00289\ \}\ \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\_ID\_e}};}
+\DoxyCodeLine{00290\ }
+\DoxyCodeLine{00291\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ R100\_ERRORS\_H*/}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00292\ \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+
+\end{DoxyCode}

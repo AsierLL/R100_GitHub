@@ -1,0 +1,43 @@
+<map id="Electrodes_Read_Data" name="Electrodes_Read_Data">
+<area shape="rect" id="Node000001" title="Read the electrodes all data." alt="" coords="5,193,160,219"/>
+<area shape="rect" id="Node000002" href="$thread__sys_mon__entry_8c.html#a2746a250fe0f33c32b88fd7c86139d53" title="Try to detect the presence of electrodes." alt="" coords="422,41,567,67"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="91,191,136,137,169,107,206,84,256,66,308,54,359,49,406,47,407,52,360,54,309,60,257,71,209,89,172,112,140,141,95,194"/>
+<area shape="rect" id="Node000008" href="$_i2_c__2_8c.html#abb5323ebe9e05f1fe983ee0c53fa732e" title="Function to write a data byte at specific address." alt="" coords="634,142,747,169"/>
+<area shape="poly" id="edge11_Node000001_Node000008" title=" " alt="" coords="109,190,154,170,207,153,319,137,432,133,535,136,619,144,619,149,535,142,432,138,319,142,208,158,156,175,111,195"/>
+<area shape="rect" id="Node000009" href="$thread__sys_mon__entry_8c.html#a2aec3599f75cd59a888333fe2a470ded" title="Write a single byte in the OneWire device (locking function)" alt="" coords="208,167,355,194"/>
+<area shape="poly" id="edge12_Node000001_Node000009" title=" " alt="" coords="160,194,192,189,193,195,161,199"/>
+<area shape="rect" id="Node000011" href="$thread__sys_mon__entry_8c.html#af4573aa4c984963e9ec343ee18f704fd" title="Wait until OneWire is free." alt="" coords="403,243,586,270"/>
+<area shape="poly" id="edge24_Node000001_Node000011" title=" " alt="" coords="160,213,388,241,387,246,160,218"/>
+<area shape="rect" id="Node000012" href="$thread__sys_mon__entry_8c.html#aab815986ee52dfb7489873f856e3ecb9" title="Refresh the watchdog timer." alt="" coords="641,294,740,321"/>
+<area shape="poly" id="edge28_Node000001_Node000012" title=" " alt="" coords="97,218,142,264,173,287,209,305,263,321,320,331,377,336,434,337,540,330,625,318,626,323,540,335,434,342,377,341,319,336,262,326,207,310,171,292,139,268,93,222"/>
+<area shape="rect" id="Node000013" href="$thread__sys_mon__entry_8c.html#a1ff511824d4951cf7a02c97726ecaac5" title="Write a single byte in the OneWire device (locking function)" alt="" coords="209,269,354,295"/>
+<area shape="poly" id="edge25_Node000001_Node000013" title=" " alt="" coords="121,218,231,260,229,265,119,223"/>
+<area shape="rect" id="Node000003" href="$_i2_c__2_8c.html#aba3d08d9b33082a1c0aa61ae3e6b5e23" title="Function to read a byte data from a specific address." alt="" coords="635,91,746,118"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="550,66,622,84,621,90,549,71"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="547,66,588,84,603,95,613,106,636,128,643,132,640,137,633,132,609,110,599,99,585,88,545,70"/>
+<area shape="rect" id="Node000004" href="$_i2_c__2_8c.html#aa504ef0b681fc32e47f923cc52b93067" title="Function to get a data byte from the i2C device." alt="" coords="811,41,915,67"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="738,88,800,70,801,75,739,93"/>
+<area shape="rect" id="Node000005" href="$_i2_c__2_8c.html#afb25d38eef88c072ab6ce216e1965501" title="Generate the START condition in the i2C line." alt="" coords="795,91,931,118"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="746,102,779,102,779,107,746,107"/>
+<area shape="rect" id="Node000006" href="$_i2_c__2_8c.html#a24d35a4dc09bc8d6c5be604be9a2102b" title="Generate the STOP condition in the i2C line." alt="" coords="795,142,931,169"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="739,116,801,135,800,140,738,121"/>
+<area shape="rect" id="Node000007" href="$_i2_c__2_8c.html#a5a45bd2c0aa3fd6619ad4e682466200c" title="Function to send a data byte to the i2C device." alt="" coords="812,193,914,219"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="729,116,748,128,763,141,773,154,782,166,796,179,804,183,801,188,793,183,778,170,768,157,759,145,745,132,726,121"/>
+<area shape="poly" id="edge8_Node000008_Node000005" title=" " alt="" coords="738,139,800,121,801,126,739,144"/>
+<area shape="poly" id="edge9_Node000008_Node000006" title=" " alt="" coords="747,153,780,153,780,158,747,158"/>
+<area shape="poly" id="edge10_Node000008_Node000007" title=" " alt="" coords="739,167,801,185,800,190,738,172"/>
+<area shape="poly" id="edge13_Node000009_Node000003" title=" " alt="" coords="286,166,301,135,326,95,360,56,380,40,402,26,451,8,493,3,536,10,587,26,632,50,668,79,664,83,629,54,585,31,535,16,493,9,452,13,404,31,383,44,363,60,330,99,306,137,291,168"/>
+<area shape="poly" id="edge18_Node000009_Node000008" title=" " alt="" coords="355,174,619,157,619,163,356,179"/>
+<area shape="rect" id="Node000010" href="$_i2_c__2_8c.html#a54092e1b35159f28a6fae808c1c909e0" title="Function to write data at specific address." alt="" coords="648,193,733,219"/>
+<area shape="poly" id="edge14_Node000009_Node000010" title=" " alt="" coords="356,183,633,200,632,205,355,188"/>
+<area shape="poly" id="edge19_Node000009_Node000011" title=" " alt="" coords="321,192,404,222,440,235,439,240,402,227,320,197"/>
+<area shape="poly" id="edge15_Node000010_Node000005" title=" " alt="" coords="726,190,745,179,759,166,768,154,778,141,793,128,801,123,804,128,796,132,782,145,773,157,763,169,748,183,729,195"/>
+<area shape="poly" id="edge16_Node000010_Node000006" title=" " alt="" coords="733,191,800,171,801,176,735,196"/>
+<area shape="poly" id="edge17_Node000010_Node000007" title=" " alt="" coords="734,203,797,203,797,209,734,209"/>
+<area shape="poly" id="edge20_Node000011_Node000003" title=" " alt="" coords="506,241,559,188,594,157,633,128,640,123,643,128,636,132,598,161,562,192,510,245"/>
+<area shape="poly" id="edge22_Node000011_Node000008" title=" " alt="" coords="519,241,633,178,644,173,646,178,636,183,521,245"/>
+<area shape="poly" id="edge21_Node000011_Node000010" title=" " alt="" coords="549,240,632,218,634,223,550,245"/>
+<area shape="poly" id="edge23_Node000011_Node000012" title=" " alt="" coords="550,268,627,288,625,294,549,273"/>
+<area shape="poly" id="edge26_Node000013_Node000010" title=" " alt="" coords="354,292,406,297,465,298,526,293,585,280,629,257,664,228,668,232,632,261,587,285,527,298,465,303,406,302,354,297"/>
+<area shape="poly" id="edge27_Node000013_Node000011" title=" " alt="" coords="354,271,387,267,388,272,354,276"/>
+</map>

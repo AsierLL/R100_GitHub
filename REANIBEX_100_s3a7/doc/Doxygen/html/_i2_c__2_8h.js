@@ -1,0 +1,28 @@
+var _i2_c__2_8h =
+[
+    [ "i2C_ADD_AUDIO", "_i2_c__2_8h.html#affcd40d37faf18329f6c5416caaa25a4", null ],
+    [ "i2C_ADD_GPIO", "_i2_c__2_8h.html#af209f3a25b0fd4630aed202063f5c6a6", null ],
+    [ "i2C_ADD_NTAG", "_i2_c__2_8h.html#a6b98e69d8073ca6ab6aa1178426fa23b", null ],
+    [ "i2C_ADD_OW_MASTER", "_i2_c__2_8h.html#af2e258363cc5e0787f3f7f1e9b7e514e", null ],
+    [ "OW_COPY_SCRATCHPAD", "_i2_c__2_8h.html#ac825be078b6d883d319256cf4c362185", null ],
+    [ "OW_READ_MEMORY", "_i2_c__2_8h.html#a1c4805588ca41ea5acde4b01620abee4", null ],
+    [ "OW_READ_SCRATCHPAD", "_i2_c__2_8h.html#a3fab10c3fcf965ad6746a7006d66f86a", null ],
+    [ "OW_WRITE_SCRATCHPAD", "_i2_c__2_8h.html#ad05970146c079512eb128eec80fc4b36", null ],
+    [ "OWC_1WIRE_RESET", "_i2_c__2_8h.html#a7d7d0bd616854ee29ae179ad24469e35", null ],
+    [ "OWC_DEVICE_RESET", "_i2_c__2_8h.html#ab491ed5a443c2d9766e5a7e4b82e5fc3", null ],
+    [ "OWC_READ_BYTE", "_i2_c__2_8h.html#a9059f7b48d100840298602ae974f7a2d", null ],
+    [ "OWC_READ_ROM", "_i2_c__2_8h.html#ab8fc3363627ca7aeb2172fd5a331b3e8", null ],
+    [ "OWC_REG_CONFIGURATION", "_i2_c__2_8h.html#a70e3a7efe691510b722c3782a15b935c", null ],
+    [ "OWC_REG_READ_DATA", "_i2_c__2_8h.html#a455a6b4e86b876fc027fbfa57d6eab7f", null ],
+    [ "OWC_REG_STATUS", "_i2_c__2_8h.html#a67d1d4edb65a21d38f6c3e80cddc80d4", null ],
+    [ "OWC_SET_REG_POINTER", "_i2_c__2_8h.html#aeeb4cbf0fd27776435d2f9c9e99e061a", null ],
+    [ "OWC_SKIP_ROM", "_i2_c__2_8h.html#ab76ceb7218d2b7d5d842e86fc9f63aad", null ],
+    [ "OWC_WRITE_BYTE", "_i2_c__2_8h.html#a4b2e0347ee39e4198f9fb3c982c07f66", null ],
+    [ "I2C2_Read", "_i2_c__2_8h.html#ab2d6470085f0f13033eca2373bcf4b41", null ],
+    [ "I2C2_ReadByte", "_i2_c__2_8h.html#ad58a8d00d5d29090187568bd3f80da2f", null ],
+    [ "I2C2_ReadByte_OW", "_i2_c__2_8h.html#a7ba82d621147cdcae270e9926abb3736", null ],
+    [ "I2C2_Write", "_i2_c__2_8h.html#a54092e1b35159f28a6fae808c1c909e0", null ],
+    [ "I2C2_Write_NFC", "_i2_c__2_8h.html#a75998894ee4aceb2f03ebc36a0000d3f", null ],
+    [ "I2C2_Write_OW", "_i2_c__2_8h.html#a48856cefb69c8a4371722c1ef5455ba0", null ],
+    [ "I2C2_WriteByte", "_i2_c__2_8h.html#abb5323ebe9e05f1fe983ee0c53fa732e", null ]
+];

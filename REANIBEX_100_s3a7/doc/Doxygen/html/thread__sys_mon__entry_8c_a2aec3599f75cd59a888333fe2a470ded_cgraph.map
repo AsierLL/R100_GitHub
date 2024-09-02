@@ -1,0 +1,30 @@
+<map id="OneWire_Read_Array" name="OneWire_Read_Array">
+<area shape="rect" id="Node000001" title="Write a single byte in the OneWire device (locking function)" alt="" coords="5,107,153,133"/>
+<area shape="rect" id="Node000002" href="$_i2_c__2_8c.html#aba3d08d9b33082a1c0aa61ae3e6b5e23" title="Function to read a byte data from a specific address." alt="" coords="433,31,544,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="127,103,200,85,314,65,417,50,418,55,315,70,201,91,129,109"/>
+<area shape="rect" id="Node000007" href="$_i2_c__2_8c.html#a54092e1b35159f28a6fae808c1c909e0" title="Function to write data at specific address." alt="" coords="446,81,531,108"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="153,113,430,96,430,101,153,118"/>
+<area shape="rect" id="Node000008" href="$_i2_c__2_8c.html#abb5323ebe9e05f1fe983ee0c53fa732e" title="Function to write a data byte at specific address." alt="" coords="432,183,544,209"/>
+<area shape="poly" id="edge10_Node000001_Node000008" title=" " alt="" coords="108,132,151,151,201,168,257,179,314,187,417,193,416,198,314,192,256,185,200,173,149,156,106,136"/>
+<area shape="rect" id="Node000009" href="$thread__sys_mon__entry_8c.html#af4573aa4c984963e9ec343ee18f704fd" title="Wait until OneWire is free." alt="" coords="201,132,384,159"/>
+<area shape="poly" id="edge14_Node000001_Node000009" title=" " alt="" coords="153,126,186,130,185,135,153,131"/>
+<area shape="rect" id="Node000003" href="$_i2_c__2_8c.html#aa504ef0b681fc32e47f923cc52b93067" title="Function to get a data byte from the i2C device." alt="" coords="608,5,713,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="544,33,593,26,593,31,545,38"/>
+<area shape="rect" id="Node000004" href="$_i2_c__2_8c.html#afb25d38eef88c072ab6ce216e1965501" title="Generate the START condition in the i2C line." alt="" coords="592,56,729,83"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="545,50,577,54,577,60,544,55"/>
+<area shape="rect" id="Node000005" href="$_i2_c__2_8c.html#a24d35a4dc09bc8d6c5be604be9a2102b" title="Generate the STOP condition in the i2C line." alt="" coords="593,107,728,133"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="522,56,546,67,593,92,607,98,605,103,591,97,543,72,519,60"/>
+<area shape="rect" id="Node000006" href="$_i2_c__2_8c.html#a5a45bd2c0aa3fd6619ad4e682466200c" title="Function to send a data byte to the i2C device." alt="" coords="609,157,712,184"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="529,56,546,67,562,87,570,107,578,125,594,143,599,147,596,152,591,147,574,128,566,109,558,90,543,71,526,60"/>
+<area shape="poly" id="edge7_Node000007_Node000004" title=" " alt="" coords="531,86,577,79,577,84,532,91"/>
+<area shape="poly" id="edge8_Node000007_Node000005" title=" " alt="" coords="532,98,578,105,577,110,531,104"/>
+<area shape="poly" id="edge9_Node000007_Node000006" title=" " alt="" coords="522,106,546,118,593,143,607,149,605,154,591,148,543,122,519,111"/>
+<area shape="poly" id="edge11_Node000008_Node000004" title=" " alt="" coords="526,180,543,169,558,150,566,131,574,112,591,93,596,88,599,93,594,97,578,115,570,133,562,153,546,173,529,184"/>
+<area shape="poly" id="edge12_Node000008_Node000005" title=" " alt="" coords="519,180,543,168,591,143,605,137,607,142,593,148,546,173,522,184"/>
+<area shape="poly" id="edge13_Node000008_Node000006" title=" " alt="" coords="544,185,593,178,594,183,545,190"/>
+<area shape="poly" id="edge15_Node000009_Node000002" title=" " alt="" coords="317,129,431,67,441,62,444,67,433,72,319,134"/>
+<area shape="poly" id="edge16_Node000009_Node000007" title=" " alt="" coords="346,129,430,107,432,112,348,134"/>
+<area shape="poly" id="edge17_Node000009_Node000008" title=" " alt="" coords="348,157,420,176,418,181,346,162"/>
+<area shape="rect" id="Node000010" href="$thread__sys_mon__entry_8c.html#aab815986ee52dfb7489873f856e3ecb9" title="Refresh the watchdog timer." alt="" coords="439,132,538,159"/>
+<area shape="poly" id="edge18_Node000009_Node000010" title=" " alt="" coords="385,143,423,143,423,148,385,148"/>
+</map>

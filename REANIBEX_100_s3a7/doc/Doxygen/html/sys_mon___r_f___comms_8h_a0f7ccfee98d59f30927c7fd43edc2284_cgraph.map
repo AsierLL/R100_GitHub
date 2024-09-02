@@ -1,0 +1,32 @@
+<map id="Execute_Send_Wifi_Test_File" name="Execute_Send_Wifi_Test_File">
+<area shape="rect" id="Node000001" title="Function that executes the sending of the last performed test File." alt="" coords="5,208,201,235"/>
+<area shape="rect" id="Node000002" href="$thread__audio__entry_8c.html#a7bc63559c8d1198f7036bf7d08def712" title="Function that performs an operation with the message player." alt="" coords="286,56,400,83"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="114,206,168,151,206,119,247,92,270,82,272,87,250,97,209,124,171,155,118,209"/>
+<area shape="rect" id="Node000007" href="$thread__sys_mon__entry_8c.html#a86d6de0ddbdd8704798336aa29003fb5" title="Check if user abort running test." alt="" coords="262,107,424,133"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="126,205,180,174,248,143,267,136,269,141,250,148,183,179,128,210"/>
+<area shape="rect" id="Node000009" href="$thread__comm__entry_8c.html#ac5fc2d42c00fdc0c7ae195f918679fc5" title="Checks if wifi test sended process completed." alt="" coords="249,157,437,184"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="169,205,261,185,262,190,170,210"/>
+<area shape="rect" id="Node000010" href="$thread__comm__entry_8c.html#aa967011953ab9c24c55af6c959f9866f" title="Function to send the test file using wifi." alt="" coords="264,208,422,235"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="201,219,249,219,249,224,201,224"/>
+<area shape="rect" id="Node000012" href="$thread__sys_mon__entry_8c.html#ae266dd5355d4644da21295b8a95ca1af" title="Pass time doing nothing while is listening an audio message and refreshing the watchdog !..." alt="" coords="265,259,421,285"/>
+<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="170,233,262,252,261,258,169,238"/>
+<area shape="rect" id="Node000014" href="$thread__sys_mon__entry_8c.html#aab815986ee52dfb7489873f856e3ecb9" title="Refresh the watchdog timer." alt="" coords="509,309,608,336"/>
+<area shape="poly" id="edge14_Node000001_Node000014" title=" " alt="" coords="126,233,180,265,214,282,249,295,313,309,378,318,493,322,493,327,378,323,312,314,248,300,212,287,177,270,123,237"/>
+<area shape="rect" id="Node000015" href="$thread__sys_mon__entry_8c.html#a99fe1a42e34a2be16886a951d9712fd7" title="Save Communication error." alt="" coords="275,360,411,387"/>
+<area shape="poly" id="edge15_Node000001_Node000015" title=" " alt="" coords="119,233,174,284,210,313,250,339,277,352,275,357,247,344,207,318,170,288,116,237"/>
+<area shape="rect" id="Node000003" href="$thread__audio__entry_8c.html#a05b96411bbd2b24e86ae0cc21146b4cb" title="Function that loads and plays a message." alt="" coords="485,5,632,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="400,53,483,34,484,39,401,59"/>
+<area shape="rect" id="Node000005" href="$thread__audio__entry_8c.html#a2c1714b5b8e79621e3a35b0624309f63" title="Stops the audio engine in a predefined sequence." alt="" coords="491,56,626,83"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="400,67,475,67,475,72,400,72"/>
+<area shape="rect" id="Node000004" href="$thread__audio__entry_8c.html#a29f40d7e3dc151283bfb0e69dbd8b132" title="Get an audio frame from the audio file." alt="" coords="680,5,855,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="633,16,665,16,665,21,633,21"/>
+<area shape="rect" id="Node000006" href="$thread__audio__hal_8c.html#a5afdd4d24f2faf92baea80c7b0cedfdc" title="stops the audio reproduction" alt="" coords="723,56,812,83"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="627,67,708,67,708,72,627,72"/>
+<area shape="rect" id="Node000008" href="$_keypad_8c.html#a65899dc7cce4138cd4488d27daff459d" title="Read from Key&#45;board." alt="" coords="518,107,599,133"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="424,117,502,117,502,123,424,123"/>
+<area shape="rect" id="Node000011" href="$thread__comm__entry_8c.html#af7921d111a91795221d7b493716d54c3" title="Process events related to All COMM modules." alt="" coords="488,208,629,235"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="422,219,472,219,472,224,422,224"/>
+<area shape="rect" id="Node000013" href="$thread__audio__entry_8c.html#aacd507f5759e6725a70d4b30dc65bbf6" title="ask if the audio player is running" alt="" coords="498,259,619,285"/>
+<area shape="poly" id="edge12_Node000012_Node000013" title=" " alt="" coords="421,269,483,269,483,275,421,275"/>
+<area shape="poly" id="edge13_Node000012_Node000014" title=" " alt="" coords="404,283,495,305,493,310,402,289"/>
+</map>

@@ -1,0 +1,27 @@
+<map id="PowerOff_Write_Batt_Elec" name="PowerOff_Write_Batt_Elec">
+<area shape="rect" id="Node000001" title="Before power off the device, write the last time the decive has been used in the test." alt="" coords="5,208,181,235"/>
+<area shape="rect" id="Node000002" href="$sys_mon___battery_8c.html#a6a908c00382961d78f2da4ee84cb4263" title="Computes the remaining capacity in the battery." alt="" coords="232,56,371,83"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="104,206,154,152,189,120,227,92,237,87,239,92,230,97,192,124,157,155,107,209"/>
+<area shape="rect" id="Node000006" href="$thread__sys_mon__entry_8c.html#adce4182129c1b341756893a8c387e2b7" title="Get the electrodes data (sn, info and event register)" alt="" coords="229,107,374,133"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="115,205,165,175,228,143,242,137,244,142,230,148,168,180,117,210"/>
+<area shape="rect" id="Node000007" href="$_d_b___test_8c.html#a7ec87003cf7b1f13d7f71af99cbfe1f6" title="Fill a string with a generic date." alt="" coords="239,157,364,184"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="150,205,228,186,229,191,152,210"/>
+<area shape="rect" id="Node000008" href="$_d_b___test_8c.html#ab7a2e6fc6e6d920610d4939bd63e4300" title="Fill a string with a generic Time." alt="" coords="239,208,364,235"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="181,219,223,219,223,224,181,224"/>
+<area shape="rect" id="Node000009" href="$_d_b___test_8c.html#ad64eda05c1c2ef1238c8d43a8995835d" title="Fill the string number to create a Json entry (using 3 tabs)" alt="" coords="238,259,365,285"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="152,233,229,252,228,257,150,238"/>
+<area shape="rect" id="Node000011" href="$_d_b___test_8c.html#a121e39406fe7a111a315ee29c5aa822a" title="Fill the string number to create a Json entry (using 3 tabs)" alt="" coords="236,309,367,336"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="117,233,168,263,230,295,244,301,242,306,228,300,165,268,115,237"/>
+<area shape="rect" id="Node000012" href="$_d_b___test_8c.html#a3771da54aaa27e44ade7955f1042a35e" title="Fill the string to create a Json entry (using 3 tabs)" alt="" coords="241,360,362,387"/>
+<area shape="poly" id="edge12_Node000001_Node000012" title=" " alt="" coords="107,233,157,287,192,318,230,346,239,351,237,356,227,350,189,322,154,291,104,237"/>
+<area shape="rect" id="Node000003" href="$sys_mon___battery_8c.html#af6e0839479117b02185cb5786de7d15b" title="Computes the difference time between two dates (in days) (date_1 &#45; date_2)" alt="" coords="450,5,554,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="357,53,434,33,435,38,358,58"/>
+<area shape="rect" id="Node000004" href="$device__init_8c.html#ac9272954c69640cbc76d2ea99e68bc43" title="Function for accessing NFC device info struct." alt="" coords="429,56,576,83"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="371,67,413,67,413,72,371,72"/>
+<area shape="rect" id="Node000005" href="$sys_mon___battery_8c.html#ae8f3f32f49df7702f6405467130ce8fd" title="Function that report if the battery is DEMO or not." alt="" coords="422,107,582,133"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="358,81,432,100,431,105,357,86"/>
+<area shape="rect" id="Node000010" href="$_trace_8c.html#a8947b81ae09bdb57459cd1c81c78ab37" title="Print a trace string inserting the time stamp." alt="" coords="476,309,529,336"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="358,283,461,310,460,315,357,289"/>
+<area shape="poly" id="edge11_Node000011_Node000010" title=" " alt="" coords="368,320,460,320,460,325,368,325"/>
+<area shape="poly" id="edge13_Node000012_Node000010" title=" " alt="" coords="357,357,460,330,461,336,358,362"/>
+</map>

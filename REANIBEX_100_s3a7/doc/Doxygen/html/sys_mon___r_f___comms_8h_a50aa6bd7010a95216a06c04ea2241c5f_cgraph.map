@@ -1,0 +1,48 @@
+<map id="Execute_Periodic_Gps_Position" name="Execute_Periodic_Gps_Position">
+<area shape="rect" id="Node000001" title="Function that executes the gps position periodically." alt="" coords="5,328,160,371"/>
+<area shape="rect" id="Node000002" href="$sys_mon___battery_8c.html#ae8f3f32f49df7702f6405467130ce8fd" title="Function that report if the battery is DEMO or not." alt="" coords="415,224,575,251"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="129,325,207,295,305,269,399,250,400,255,307,274,208,300,131,330"/>
+<area shape="rect" id="Node000003" href="$sys_mon___r_f___comms_8c.html#a0aade06764d80aaf4558c6ee1b5a0190" title="Check if the Sigfox transmission is enabled." alt="" coords="208,544,357,571"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="95,370,112,405,137,448,170,492,209,530,216,534,212,539,206,534,166,495,133,451,108,408,91,372"/>
+<area shape="rect" id="Node000006" href="$sys_mon___r_f___comms_8c.html#ad41447b535ece715d734f79bc8c54801" title="Check if the Wifi transmission enabled." alt="" coords="215,493,350,520"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="113,369,254,481,250,486,110,373"/>
+<area shape="rect" id="Node000007" href="$thread__sys_mon__entry_8c.html#ae158ddc17edc766e6adc7f0c1988f2b9" title="Function that updates the test id and saves it to data flash memory." alt="" coords="227,388,338,415"/>
+<area shape="poly" id="edge8_Node000001_Node000007" title=" " alt="" coords="161,367,214,381,213,386,159,372"/>
+<area shape="rect" id="Node000010" href="$sys_mon___r_f___comms_8c.html#aa366cf70667fc1f47aa36c96e4302d53" title="Function to send position by Sigfox." alt="" coords="208,309,357,336"/>
+<area shape="poly" id="edge12_Node000001_Node000010" title=" " alt="" coords="160,336,192,332,193,337,160,342"/>
+<area shape="rect" id="Node000016" href="$sys_mon___r_f___comms_8c.html#a16faf3c767c0ebb480dac2fab85f0b14" title="Function to send position by Wifi." alt="" coords="215,172,350,199"/>
+<area shape="poly" id="edge20_Node000001_Node000016" title=" " alt="" coords="99,326,144,274,206,219,232,204,234,208,209,223,148,278,103,329"/>
+<area shape="rect" id="Node000004" href="$device__init_8c.html#a2f7047dc1ce0a3687c48872ed81aff5f" title="Function for accessing device info variable." alt="" coords="438,544,552,571"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="357,555,423,555,423,560,357,560"/>
+<area shape="rect" id="Node000005" href="$device__init_8c.html#a8f21d9db8b7a1530e06a4ade480d91bc" title="Return Device Settings." alt="" coords="823,493,965,520"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="339,569,405,580,495,587,585,580,653,569,720,554,835,523,836,528,722,559,654,574,586,585,495,592,405,585,338,574"/>
+<area shape="poly" id="edge6_Node000006_Node000004" title=" " alt="" coords="342,518,423,538,422,543,341,523"/>
+<area shape="poly" id="edge7_Node000006_Node000005" title=" " alt="" coords="351,504,807,504,807,509,351,509"/>
+<area shape="rect" id="Node000008" href="$thread__sys_mon__entry_8c.html#a7514b80ba83366eb1792a5de56de25d1" title="Function that gets the non volatile data from the internal Data Flash." alt="" coords="440,443,550,469"/>
+<area shape="poly" id="edge9_Node000007_Node000008" title=" " alt="" coords="338,413,426,436,425,441,337,418"/>
+<area shape="rect" id="Node000009" href="$thread__sys_mon__entry_8c.html#a5cccaa163f937bcc50a69f4b0887f450" title="Compensate UTC time zone with TEST TIME." alt="" coords="647,443,761,469"/>
+<area shape="poly" id="edge10_Node000008_Node000009" title=" " alt="" coords="551,453,632,453,632,459,551,459"/>
+<area shape="poly" id="edge11_Node000009_Node000005" title=" " alt="" coords="758,467,827,486,826,491,756,473"/>
+<area shape="poly" id="edge19_Node000010_Node000002" title=" " alt="" coords="307,307,351,283,404,260,424,253,426,258,406,265,354,288,309,311"/>
+<area shape="rect" id="Node000011" href="$thread__comm__hal_8c.html#a14b282886d75e45f70a7ffe548732dba" title="Returns the selected Comms UART." alt="" coords="407,173,583,200"/>
+<area shape="poly" id="edge13_Node000010_Node000011" title=" " alt="" coords="293,307,338,260,369,233,404,210,416,204,418,209,406,214,372,237,342,263,297,311"/>
+<area shape="rect" id="Node000012" href="$thread__comm__entry_8c.html#a6f2ca4d1ab63af942461484f1451146c" title="Checks if sigfox initialization process completed." alt="" coords="405,392,585,419"/>
+<area shape="poly" id="edge14_Node000010_Node000012" title=" " alt="" coords="311,334,406,378,426,385,425,390,404,382,309,339"/>
+<area shape="rect" id="Node000013" href="$thread__comm__entry_8c.html#aa5bebfa6dad376f9d2c79e2256f29d40" title="Generate R100 Sigfox GPS position." alt="" coords="414,275,576,317"/>
+<area shape="poly" id="edge15_Node000010_Node000013" title=" " alt="" coords="356,311,398,305,399,311,357,316"/>
+<area shape="rect" id="Node000015" href="$thread__comm__entry_8c.html#aae63ed01fe3ee64c1d194e97ca3877b3" title="Open Sigfox Communication." alt="" coords="425,341,565,368"/>
+<area shape="poly" id="edge17_Node000010_Node000015" title=" " alt="" coords="357,331,410,339,409,344,356,336"/>
+<area shape="rect" id="Node000014" href="$thread__comm__entry_8c.html#af7921d111a91795221d7b493716d54c3" title="Process events related to All COMM modules." alt="" coords="633,203,775,229"/>
+<area shape="poly" id="edge16_Node000013_Node000014" title=" " alt="" coords="554,272,584,260,653,233,655,238,586,265,556,277"/>
+<area shape="poly" id="edge18_Node000015_Node000014" title=" " alt="" coords="559,338,584,327,613,307,639,285,681,240,685,243,643,288,616,312,587,332,561,343"/>
+<area shape="poly" id="edge27_Node000016_Node000002" title=" " alt="" coords="341,197,423,217,422,222,339,202"/>
+<area shape="poly" id="edge21_Node000016_Node000011" title=" " alt="" coords="350,183,391,183,391,189,350,188"/>
+<area shape="rect" id="Node000017" href="$thread__comm__entry_8c.html#a4d6d68ab709b7b37c105e939f67da143" title="Checks if wifi initialization process completed." alt="" coords="412,5,578,32"/>
+<area shape="poly" id="edge22_Node000016_Node000017" title=" " alt="" coords="289,170,332,109,365,73,404,42,413,36,416,41,406,46,369,76,337,112,294,173"/>
+<area shape="rect" id="Node000018" href="$thread__comm__entry_8c.html#a6da93bfa9b0d3577caed0e934e057b68" title="Generate R100 Wifi GPS position Frame." alt="" coords="417,56,573,99"/>
+<area shape="poly" id="edge23_Node000016_Node000018" title=" " alt="" coords="302,169,348,140,404,108,416,103,418,108,406,113,350,144,305,174"/>
+<area shape="rect" id="Node000019" href="$thread__comm__entry_8c.html#afb12aa7cd963bcac96e29ea89c9e51a1" title="Open Wifi Communication." alt="" coords="432,123,558,149"/>
+<area shape="poly" id="edge25_Node000016_Node000019" title=" " alt="" coords="342,169,419,151,420,156,343,174"/>
+<area shape="poly" id="edge24_Node000018_Node000014" title=" " alt="" coords="565,97,587,108,640,149,682,189,678,193,637,153,584,113,562,102"/>
+<area shape="poly" id="edge26_Node000019_Node000014" title=" " alt="" coords="551,147,586,159,664,193,661,198,584,164,550,152"/>
+</map>

@@ -1,0 +1,74 @@
+<?xml version="1.0" ?>
+<synergyModuleDescription>
+    <config id="config.framework.sf_bootloader_mcu" path="ssp_cfg/framework/sf_bootloader_cfg.h" version="0">
+        <property default="config.framework.sf_bootloader_mcu.param_checking_enable.bsp" display="Parameter Checking" id="config.framework.sf_bootloader_mcu.param_checking_enable">
+            <option display="Default (BSP)" id="config.framework.sf_bootloader_mcu.param_checking_enable.bsp" value="(BSP_CFG_PARAM_CHECKING_ENABLE)"/>
+            <option display="Enabled" id="config.framework.sf_bootloader_mcu.param_checking_enable.enabled" value="(1)"/>
+            <option display="Disabled" id="config.framework.sf_bootloader_mcu.param_checking_enable.disabled" value="(0)"/>
+        </property>
+        <content>
+            #define SF_BOOTLOADER_CFG_PARAM_CHECKING_ENABLE ${config.framework.sf_bootloader_mcu.param_checking_enable}
+        </content>
+    </config>
+    <module config="config.framework.sf_bootloader_mcu" display="Renesas|Flashloader|${module.framework.sf_bootloader.name} Bootloader Framework on sf_bootloader_mcu" id="module.framework.sf_bootloader_on_mcu" version="1">
+        <constraint display="Module instances must have unique names">
+            "${interface.framework.sf_bootloader.${module.framework.sf_bootloader.name}}" === "1"
+        </constraint>
+		<requires id="module.framework.sf_bootloader.requires.sf_firmware_image_internal_bootloader" interface="interface.framework.sf_firmware_image_internal_bootloader" display="Add SF_Firmware_Image Internal">
+            <override property="module.framework.sf_firmware_image.bootloader_used" value="module.framework.sf_firmware_image.bootloader_used.YES"/>
+        </requires>
+		<requires id="module.framework.sf_bootloader.requires.sf_firmware_image_external_bootloader" interface="interface.framework.sf_firmware_image_external_bootloader" display="Add SF_Firmware_Image External" find="false">
+            <override property="module.framework.sf_firmware_image.bootloader_used" value="module.framework.sf_firmware_image.bootloader_used.YES"/>
+            <override property="module.framework.sf_firmware_image.maximum_block_size" value="${module.framework.sf_bootloader.maximum_block_size}"/>
+        </requires>
+		<provides interface="interface.framework.sf_bootloader"/>
+		<provides interface="interface.framework.sf_bootloader.${module.framework.sf_bootloader.name}" />
+        <property default="g_sf_bootloader_mcu${_instance}" display="Name" id="module.framework.sf_bootloader.name">
+            <constraint display="Name must be a valid C symbol">testSymbol("${module.framework.sf_bootloader.name}")</constraint>
+        </property>
+		<property id="module.framework.sf_bootloader.callback" display="Callback" default="NULL">
+            <constraint display="Name must be a valid C symbol">testSymbol("${module.framework.sf_bootloader.callback}")</constraint>
+        </property>
+         <property id="module.framework.sf_bootloader.maximum_block_size" display="Maximum size of a BCH block in bytes" default="1024">
+            <constraint display="Value must be an integer greater than 0">testInteger("${module.framework.sf_bootloader.maximum_block_size}")  &amp;&amp; ("${module.framework.sf_bootloader.maximum_block_size}" &gt; 0)</constraint>
+        </property>
+        <header>
+            /** SF Bootloader Instance. */
+            extern const sf_bootloader_instance_t ${module.framework.sf_bootloader.name};
+        </header>
+        <includes>
+            #include &quot;sf_bootloader.h&quot;
+        </includes>
+        <declarations>
+            #define SYNERGY_NOT_DEFINED (1)
+            #if (SYNERGY_NOT_DEFINED != ${module.framework.sf_bootloader.requires.sf_firmware_image_external_bootloader::module.framework.sf_firmware_image.name})
+                static uint8_t ${module.framework.sf_bootloader.name}_buffer[sizeof(sf_firmware_image_bch_block_header_t) + ${module.framework.sf_bootloader.maximum_block_size}];
+            #endif
+            sf_bootloader_instance_ctrl_t ${module.framework.sf_bootloader.name}_ctrl;
+            const sf_bootloader_cfg_t  ${module.framework.sf_bootloader.name}_cfg =
+            {
+                .p_lower_lvl_firmware_mcu       = (sf_firmware_image_instance_t * const)&amp;${module.framework.sf_bootloader.requires.sf_firmware_image_internal_bootloader::module.framework.sf_firmware_image.name},
+                #if (SYNERGY_NOT_DEFINED == ${module.framework.sf_bootloader.requires.sf_firmware_image_external_bootloader::module.framework.sf_firmware_image.name})
+                    .p_lower_lvl_firmware_storage   = NULL,
+                #else
+                    .p_lower_lvl_firmware_storage   = (sf_firmware_image_instance_t * const)&amp;${module.framework.sf_bootloader.requires.sf_firmware_image_external_bootloader::module.framework.sf_firmware_image.name},
+                #endif
+                #if (SYNERGY_NOT_DEFINED == ${module.framework.sf_bootloader.requires.sf_firmware_image_external_bootloader::module.framework.sf_firmware_image.name})
+                    .p_buffer                       = NULL,
+                    .buffer_size                    = 0U,
+                #else
+                    .p_buffer                       = ${module.framework.sf_bootloader.name}_buffer,
+                    .buffer_size                    = sizeof(${module.framework.sf_bootloader.name}_buffer),
+                #endif
+                .p_callback                     = ${module.framework.sf_bootloader.callback},
+                .p_extend                       = NULL,
+            };
+            const sf_bootloader_instance_t ${module.framework.sf_bootloader.name} = {
+                .p_api  =  &amp;g_sf_bootloader_on_sf_bootloader,
+                .p_ctrl =  &amp;${module.framework.sf_bootloader.name}_ctrl,
+                .p_cfg  =  (sf_bootloader_cfg_t const *)&amp;${module.framework.sf_bootloader.name}_cfg
+            };
+            #undef SYNERGY_NOT_DEFINED
+        </declarations>
+    </module>
+</synergyModuleDescription>

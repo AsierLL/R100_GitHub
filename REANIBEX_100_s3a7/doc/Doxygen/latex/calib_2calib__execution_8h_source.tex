@@ -1,0 +1,47 @@
+\doxysection{calib\+\_\+execution.\+h}
+\hypertarget{calib_2calib__execution_8h_source}{}\label{calib_2calib__execution_8h_source}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/SCE/calib/calib\_execution.h@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/SCE/calib/calib\_execution.h}}
+\mbox{\hyperlink{calib_2calib__execution_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#ifndef\ CALIB\_EXECUTION\_H}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#define\ CALIB\_EXECUTION\_H}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{atca__status_8h}{atca\_status.h}}"{}}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{calib_2calib__command_8h}{calib\_command.h}}"{}}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{atca__device_8h}{atca\_device.h}}"{}}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{atca__config_8h}{atca\_config.h}}"{}}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00045\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#define\ ATCA\_UNSUPPORTED\_CMD\ ((uint16\_t)0xFFFF)}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#define\ CALIB\_SWI\_FLAG\_WAKE\ \ \ \ \ 0x00\ \ \ \ }}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#define\ CALIB\_SWI\_FLAG\_CMD\ \ \ \ \ \ 0x77\ \ \ \ }}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#define\ CALIB\_SWI\_FLAG\_TX\ \ \ \ \ \ \ 0x88\ \ \ \ }}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ CALIB\_SWI\_FLAG\_IDLE\ \ \ \ \ 0xBB\ \ \ \ }}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#define\ CALIB\_SWI\_FLAG\_SLEEP\ \ \ \ 0xCC\ \ \ \ }}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#ifdef\ ATCA\_NO\_POLL}}
+\DoxyCodeLine{00060\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00061\ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ opcode;}
+\DoxyCodeLine{00063\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ execution\_time\_msec;}
+\DoxyCodeLine{00064\ \}device\_execution\_time\_t;}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ calib\_get\_execution\_time(\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ opcode,\ \mbox{\hyperlink{structatca__device}{ATCADevice}}\ device);}
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#ifndef\ ATCA\_HAL\_LEGACY\_API}}
+\DoxyCodeLine{00070\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ \mbox{\hyperlink{calib_2calib__execution_8h_a345bde60ef4556a595cdad71141c4afe}{calib\_execute\_receive}}(\mbox{\hyperlink{structatca__device}{ATCADevice}}\ device,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ device\_address,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}*\ rxdata,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}*\ rxlength);}
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ \mbox{\hyperlink{calib_2calib__execution_8h_a19fc558e09f03a2f8f5ee89b1e396b2e}{calib\_execute\_command}}(\mbox{\hyperlink{struct_a_t_c_a_packet}{ATCAPacket}}*\ packet,\ \mbox{\hyperlink{structatca__device}{ATCADevice}}\ device);}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00076\ \}}
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

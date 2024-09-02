@@ -1,0 +1,121 @@
+\doxysection{BATTERY\+\_\+\+RTC\+\_\+t Struct Reference}
+\hypertarget{a00406}{}\label{a00406}\index{BATTERY\_RTC\_t@{BATTERY\_RTC\_t}}
+
+
+Battery date/time (read from the battery pack)  
+
+
+
+
+{\ttfamily \#include $<$sys\+Mon\+\_\+\+Battery.\+h$>$}
+
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{a00406_a5bf1b4acd8db9fb7631e2f2ebd1ed723}{sec}}
+\begin{DoxyCompactList}\small\item\em seconds (0\+:59) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{a00406_a43b9f751b960823d85d3315fbf895be7}{min}}
+\begin{DoxyCompactList}\small\item\em minutes (0\+:59) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{a00406_ada6efefedc7530ea5e43c13879092c07}{hour}}
+\begin{DoxyCompactList}\small\item\em hour (0\+:23) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{a00406_a288a65ec45862fc2296849eabd24afc6}{weekday}}
+\begin{DoxyCompactList}\small\item\em weekday (1\+:7) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{a00406_a8e6744cfb240c640845e39b600e914f4}{date}}
+\begin{DoxyCompactList}\small\item\em date (1\+:31) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{a00406_a580e07bc7fb9e678d3b9a1b87c7ded7a}{month}}
+\begin{DoxyCompactList}\small\item\em month (1\+:12) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{a00406_a0bcdda073e91431aa973cae9f146fbb4}{year}}
+\begin{DoxyCompactList}\small\item\em year (0\+:99) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_aef44329758059c91c76d334e8fc09700}{int8\+\_\+t}} \mbox{\hyperlink{a00406_abdf474425515c7342527a13b06691d39}{utc\+\_\+time}}
+\begin{DoxyCompactList}\small\item\em UTC time (-\/11\+:12) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Battery date/time (read from the battery pack) 
+
+\doxysubsection{Field Documentation}
+\Hypertarget{a00406_a8e6744cfb240c640845e39b600e914f4}\label{a00406_a8e6744cfb240c640845e39b600e914f4} 
+\index{BATTERY\_RTC\_t@{BATTERY\_RTC\_t}!date@{date}}
+\index{date@{date}!BATTERY\_RTC\_t@{BATTERY\_RTC\_t}}
+\doxysubsubsection{\texorpdfstring{date}{date}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} BATTERY\+\_\+\+RTC\+\_\+t\+::date}
+
+
+
+date (1\+:31) 
+
+\Hypertarget{a00406_ada6efefedc7530ea5e43c13879092c07}\label{a00406_ada6efefedc7530ea5e43c13879092c07} 
+\index{BATTERY\_RTC\_t@{BATTERY\_RTC\_t}!hour@{hour}}
+\index{hour@{hour}!BATTERY\_RTC\_t@{BATTERY\_RTC\_t}}
+\doxysubsubsection{\texorpdfstring{hour}{hour}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} BATTERY\+\_\+\+RTC\+\_\+t\+::hour}
+
+
+
+hour (0\+:23) 
+
+\Hypertarget{a00406_a43b9f751b960823d85d3315fbf895be7}\label{a00406_a43b9f751b960823d85d3315fbf895be7} 
+\index{BATTERY\_RTC\_t@{BATTERY\_RTC\_t}!min@{min}}
+\index{min@{min}!BATTERY\_RTC\_t@{BATTERY\_RTC\_t}}
+\doxysubsubsection{\texorpdfstring{min}{min}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} BATTERY\+\_\+\+RTC\+\_\+t\+::min}
+
+
+
+minutes (0\+:59) 
+
+\Hypertarget{a00406_a580e07bc7fb9e678d3b9a1b87c7ded7a}\label{a00406_a580e07bc7fb9e678d3b9a1b87c7ded7a} 
+\index{BATTERY\_RTC\_t@{BATTERY\_RTC\_t}!month@{month}}
+\index{month@{month}!BATTERY\_RTC\_t@{BATTERY\_RTC\_t}}
+\doxysubsubsection{\texorpdfstring{month}{month}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} BATTERY\+\_\+\+RTC\+\_\+t\+::month}
+
+
+
+month (1\+:12) 
+
+\Hypertarget{a00406_a5bf1b4acd8db9fb7631e2f2ebd1ed723}\label{a00406_a5bf1b4acd8db9fb7631e2f2ebd1ed723} 
+\index{BATTERY\_RTC\_t@{BATTERY\_RTC\_t}!sec@{sec}}
+\index{sec@{sec}!BATTERY\_RTC\_t@{BATTERY\_RTC\_t}}
+\doxysubsubsection{\texorpdfstring{sec}{sec}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} BATTERY\+\_\+\+RTC\+\_\+t\+::sec}
+
+
+
+seconds (0\+:59) 
+
+\Hypertarget{a00406_abdf474425515c7342527a13b06691d39}\label{a00406_abdf474425515c7342527a13b06691d39} 
+\index{BATTERY\_RTC\_t@{BATTERY\_RTC\_t}!utc\_time@{utc\_time}}
+\index{utc\_time@{utc\_time}!BATTERY\_RTC\_t@{BATTERY\_RTC\_t}}
+\doxysubsubsection{\texorpdfstring{utc\_time}{utc\_time}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_aef44329758059c91c76d334e8fc09700}{int8\+\_\+t}} BATTERY\+\_\+\+RTC\+\_\+t\+::utc\+\_\+time}
+
+
+
+UTC time (-\/11\+:12) 
+
+\Hypertarget{a00406_a288a65ec45862fc2296849eabd24afc6}\label{a00406_a288a65ec45862fc2296849eabd24afc6} 
+\index{BATTERY\_RTC\_t@{BATTERY\_RTC\_t}!weekday@{weekday}}
+\index{weekday@{weekday}!BATTERY\_RTC\_t@{BATTERY\_RTC\_t}}
+\doxysubsubsection{\texorpdfstring{weekday}{weekday}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} BATTERY\+\_\+\+RTC\+\_\+t\+::weekday}
+
+
+
+weekday (1\+:7) 
+
+\Hypertarget{a00406_a0bcdda073e91431aa973cae9f146fbb4}\label{a00406_a0bcdda073e91431aa973cae9f146fbb4} 
+\index{BATTERY\_RTC\_t@{BATTERY\_RTC\_t}!year@{year}}
+\index{year@{year}!BATTERY\_RTC\_t@{BATTERY\_RTC\_t}}
+\doxysubsubsection{\texorpdfstring{year}{year}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} BATTERY\+\_\+\+RTC\+\_\+t\+::year}
+
+
+
+year (0\+:99) 
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\mbox{\hyperlink{a00056}{sys\+Mon\+\_\+\+Battery.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,56 @@
+<map id="thread_patMon_entry" name="thread_patMon_entry">
+<area shape="rect" id="Node000001" title="A description of the function." alt="" coords="5,399,149,425"/>
+<area shape="rect" id="Node000002" href="$thread__pat_mon__hal_8c.html#abac6f6b7853d62b47ee192fba4833b4f" title="Read a single frame from the ADS (analog front end)" alt="" coords="197,461,326,488"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="120,423,206,453,204,458,118,428"/>
+<area shape="rect" id="Node000019" href="$thread__pat_mon__hal_8c.html#aad3a5460b730439ee2fc0ddb605f9c21" title="Initialize the HAL for the patient monitor." alt="" coords="201,335,322,361"/>
+<area shape="poly" id="edge18_Node000001_Node000019" title=" " alt="" coords="117,396,206,364,207,369,119,401"/>
+<area shape="rect" id="Node000003" href="$thread__pat_mon__hal_8c.html#ac688aca0f2d2b2eb2077a5509d209d27" title="read converted samples from the ADS device" alt="" coords="600,5,743,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="271,460,298,422,324,372,334,339,338,310,338,256,339,230,343,204,353,177,372,148,393,124,417,104,472,70,530,47,584,31,585,36,531,52,474,75,421,108,397,128,376,151,358,179,348,206,344,231,344,256,344,310,339,341,328,374,302,424,276,463"/>
+<area shape="rect" id="Node000004" href="$thread__pat_mon__hal_8c.html#af8b7abb561c43283a4b3e47a7767972a" title="restart sample delays used filtering ECG" alt="" coords="604,56,739,83"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="271,459,297,421,324,372,337,329,341,293,349,258,358,239,372,220,396,194,424,172,483,134,544,105,600,85,602,90,546,110,486,139,427,176,400,198,376,223,362,242,354,260,347,294,342,331,328,374,301,424,275,462"/>
+<area shape="rect" id="Node000005" href="$thread__pat_mon__hal_8c.html#a26bd4ad8386da959cdb281d1d0a665e2" title="remove the DC offset from the ECG samples" alt="" coords="383,487,529,513"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="327,480,367,486,366,491,326,486"/>
+<area shape="rect" id="Node000006" href="$thread__sys_mon__entry_8c.html#a33ca5a33ab10af89dcb290e9d052b724" title="Function that report if the devioce is in test mode montador or not." alt="" coords="374,537,537,564"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="292,486,375,523,393,529,391,534,373,528,290,491"/>
+<area shape="rect" id="Node000007" href="$thread__pat_mon__hal_8c.html#ab35f7ec4fddc46d1bf9055f66c3f7ff3" title="Detect a single PMK pulse and remove it from the ECG signal to be recovered after all ECG filters hav..." alt="" coords="374,588,537,631"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="277,487,318,529,376,574,383,578,380,583,372,578,315,533,273,490"/>
+<area shape="rect" id="Node000008" href="$thread__pat_mon__hal_8c.html#a7f719e56cb039144290ee6c72c5cc768" title="Restore the PMK pulse to the filtered signal." alt="" coords="385,655,527,681"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="270,487,284,519,307,560,337,603,376,641,382,645,379,649,372,645,333,607,302,563,280,521,265,489"/>
+<area shape="rect" id="Node000009" href="$thread__pat_mon__hal_8c.html#ae36a2432d1f2717af0701ebbb4d60f86" title="Update the ZP value. This function is called in each sample capture at 1 Ksps. The function filters a..." alt="" coords="393,436,518,463"/>
+<area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="326,464,378,457,378,462,327,469"/>
+<area shape="rect" id="Node000010" href="$thread__pat_mon__hal_8c.html#afd2379d77dad77bf5b07181417da39ef" title="adjust the ZP table to the current device &amp; temperature assume that the calibration table is ascendin..." alt="" coords="613,360,730,387"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="489,433,584,396,606,389,607,394,586,401,491,438"/>
+<area shape="rect" id="Node000011" href="$thread__pat_mon__hal_8c.html#aa4f9819d0b820e2a2424387100b2752f" title="send a single command to the ADS device" alt="" coords="817,183,968,209"/>
+<area shape="poly" id="edge10_Node000009_Node000011" title=" " alt="" coords="504,461,559,472,625,477,659,476,693,471,726,462,756,447,785,426,809,399,829,370,846,338,870,275,883,224,888,225,875,277,851,340,834,372,813,403,788,430,759,452,728,467,694,476,660,481,625,483,558,477,503,466"/>
+<area shape="rect" id="Node000012" href="$thread__pat_mon__hal_8c.html#a2cf3f21afee4e3fba117dd47fcb3382c" title="write into a single register" alt="" coords="592,411,751,437"/>
+<area shape="poly" id="edge11_Node000009_Node000012" title=" " alt="" coords="518,439,576,432,577,438,519,445"/>
+<area shape="rect" id="Node000013" href="$thread__defibrillator__hal_8c.html#a1732c6fa09148497f9b79f530fb94a8a" title="report the current state of the defibrillator" alt="" coords="613,512,730,539"/>
+<area shape="poly" id="edge12_Node000009_Node000013" title=" " alt="" coords="504,461,538,472,586,491,620,504,618,509,584,496,536,477,502,466"/>
+<area shape="rect" id="Node000014" href="$thread__drd__entry_8c.html#a1c1760dc4053276d1992666efc9dd6cf" title="Check if DRD is running." alt="" coords="612,563,731,589"/>
+<area shape="poly" id="edge13_Node000009_Node000014" title=" " alt="" coords="519,461,539,473,556,492,564,512,571,531,587,549,599,556,596,561,584,553,567,533,559,514,551,495,536,477,516,466"/>
+<area shape="rect" id="Node000015" href="$thread__pat_mon__hal_8c.html#a38356e80b22420c57c34439af0dc1250" title="report the temperature value in degrees be careful, the PGA gain is 4" alt="" coords="586,613,757,640"/>
+<area shape="poly" id="edge14_Node000009_Node000015" title=" " alt="" coords="520,460,539,473,552,489,560,505,564,538,568,569,575,584,587,599,591,603,587,607,583,603,570,587,563,571,559,538,555,507,548,492,536,477,517,464"/>
+<area shape="rect" id="Node000016" href="$thread__pat_mon__hal_8c.html#a2b4e8b90eba8f938b87190b1369806a8" title="Ask for the patient impedance segment." alt="" coords="585,664,758,691"/>
+<area shape="poly" id="edge15_Node000009_Node000016" title=" " alt="" coords="520,459,539,473,556,496,563,519,564,563,564,607,572,629,587,650,590,653,587,657,583,654,567,631,559,608,558,564,558,519,551,498,535,477,517,464"/>
+<area shape="rect" id="Node000017" href="$thread__sys_mon__entry_8c.html#aeeb458bcec8909373038cfd816e475db" title="Get electrodes signature." alt="" coords="806,664,979,691"/>
+<area shape="poly" id="edge16_Node000016_Node000017" title=" " alt="" coords="758,675,790,675,790,680,758,680"/>
+<area shape="rect" id="Node000018" href="$sys_mon___battery_8c.html#ae8f3f32f49df7702f6405467130ce8fd" title="Function that report if the battery is DEMO or not." alt="" coords="1027,664,1187,691"/>
+<area shape="poly" id="edge17_Node000017_Node000018" title=" " alt="" coords="979,675,1011,675,1011,680,979,680"/>
+<area shape="rect" id="Node000020" href="$thread__pat_mon__hal_8c.html#aaa98f9f50a75f3361640788e1c9aafcc" title="initializes the ADS1292R device" alt="" coords="420,233,492,260"/>
+<area shape="poly" id="edge19_Node000019_Node000020" title=" " alt="" coords="288,332,414,265,416,270,290,336"/>
+<area shape="poly" id="edge21_Node000020_Node000003" title=" " alt="" coords="459,232,475,194,500,143,537,89,559,64,584,42,590,37,593,42,587,46,563,67,541,92,505,146,479,196,464,234"/>
+<area shape="poly" id="edge29_Node000020_Node000004" title=" " alt="" coords="467,231,530,156,584,99,606,87,608,91,587,103,534,160,471,235"/>
+<area shape="poly" id="edge20_Node000020_Node000010" title=" " alt="" coords="473,258,521,301,552,325,587,346,600,352,598,357,584,350,550,329,517,305,469,262"/>
+<area shape="poly" id="edge25_Node000020_Node000011" title=" " alt="" coords="467,231,514,185,547,161,584,143,632,130,670,128,710,133,758,143,807,156,850,173,849,178,805,161,757,148,709,139,670,133,633,135,586,148,550,165,518,189,471,235"/>
+<area shape="poly" id="edge28_Node000020_Node000012" title=" " alt="" coords="467,259,512,325,547,363,587,396,596,402,593,406,584,401,543,367,508,328,463,262"/>
+<area shape="rect" id="Node000021" href="$thread__pat_mon__hal_8c.html#a78efbb4253e7c802428a5dc2a3c2363f" title="read from a single register" alt="" coords="592,259,751,285"/>
+<area shape="poly" id="edge22_Node000020_Node000021" title=" " alt="" coords="493,248,577,258,577,264,492,253"/>
+<area shape="rect" id="Node000022" href="$thread__pat_mon__hal_8c.html#a536dccf203be6d4f38a8dfd4f7c75927" title="set the ADS running and converting ECG" alt="" coords="632,157,711,184"/>
+<area shape="poly" id="edge23_Node000020_Node000022" title=" " alt="" coords="489,230,584,193,616,183,618,188,586,199,491,235"/>
+<area shape="rect" id="Node000023" href="$thread__pat_mon__hal_8c.html#ac90b7fa85dda7f1ef888e785ad21be13" title="stop the ADS and set in Standby or low power mode" alt="" coords="630,208,713,235"/>
+<area shape="poly" id="edge26_Node000020_Node000023" title=" " alt="" coords="492,240,615,225,615,231,493,245"/>
+<area shape="rect" id="Node000024" href="$device__init_8c.html#a2f7047dc1ce0a3687c48872ed81aff5f" title="Function for accessing device info variable." alt="" coords="614,309,729,336"/>
+<area shape="poly" id="edge30_Node000020_Node000024" title=" " alt="" coords="491,258,586,295,607,302,606,307,584,300,489,263"/>
+<area shape="poly" id="edge24_Node000022_Node000011" title=" " alt="" coords="711,172,802,183,801,188,711,178"/>
+<area shape="poly" id="edge27_Node000023_Node000011" title=" " alt="" coords="713,214,801,204,802,209,713,219"/>
+</map>

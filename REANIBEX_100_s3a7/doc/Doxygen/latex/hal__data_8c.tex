@@ -1,0 +1,641 @@
+\doxysection{C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/synergy\+\_\+gen/hal\+\_\+data.c File Reference}
+\hypertarget{hal__data_8c}{}\label{hal__data_8c}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/synergy\_gen/hal\_data.c@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/synergy\_gen/hal\_data.c}}
+{\ttfamily \#include "{}hal\+\_\+data.\+h"{}}\newline
+Include dependency graph for hal\+\_\+data.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{hal__data_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{hal__data_8c_a4f3ef4aee8e7b89b14b1c517d52a411c}{SYNERGY\+\_\+\+NOT\+\_\+\+DEFINED}}~(1)
+\item 
+\#define \mbox{\hyperlink{hal__data_8c_a4f3ef4aee8e7b89b14b1c517d52a411c}{SYNERGY\+\_\+\+NOT\+\_\+\+DEFINED}}~(1)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{hal__data_8c_ad418b01f7f4a4364a0f3bf0f5fc00e41}{SSP\+\_\+\+VECTOR\+\_\+\+DEFINE}} (fcu\+\_\+frdyi\+\_\+isr, FCU, FRDYI)
+\item 
+\mbox{\hyperlink{hal__data_8c_a9502695b810e3bc79a8ab5bcd4b7b778}{SSP\+\_\+\+VECTOR\+\_\+\+DEFINE}} (icu\+\_\+irq\+\_\+isr, ICU, IRQ1)
+\item 
+\mbox{\hyperlink{hal__data_8c_afc9a18ef35dd3cb446694619313906d7}{SSP\+\_\+\+VECTOR\+\_\+\+DEFINE}} (icu\+\_\+irq\+\_\+isr, ICU, IRQ0)
+\item 
+\mbox{\hyperlink{hal__data_8c_a18f3fa298cf061bec295541bafc18b21}{SSP\+\_\+\+VECTOR\+\_\+\+DEFINE}} (rtc\+\_\+carry\+\_\+isr, RTC, CARRY)
+\item 
+void \mbox{\hyperlink{hal__data_8c_aef7df059039eab3db1578b79eb2f6d86}{g\+\_\+hal\+\_\+init}} (void)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+flash\+\_\+lp\+\_\+instance\+\_\+ctrl\+\_\+t \mbox{\hyperlink{hal__data_8c_a9bb860cbf9c3f97d4fc407d614d42731}{g\+\_\+flash0\+\_\+ctrl}}
+\item 
+const flash\+\_\+cfg\+\_\+t \mbox{\hyperlink{hal__data_8c_a8756ff3e562df4ccd6e6842c4b7f1f8b}{g\+\_\+flash0\+\_\+cfg}}
+\item 
+const flash\+\_\+instance\+\_\+t \mbox{\hyperlink{hal__data_8c_a42b74b53fe4fdc9ad53fd02d41948773}{g\+\_\+flash0}}
+\item 
+static iwdt\+\_\+instance\+\_\+ctrl\+\_\+t \mbox{\hyperlink{hal__data_8c_a165ae1a2932f1a94de140ca12a8e465b}{i\+WDT\+\_\+ctrl}}
+\item 
+static const wdt\+\_\+cfg\+\_\+t \mbox{\hyperlink{hal__data_8c_a27499560302ffe7e81316056058a0f7a}{i\+WDT\+\_\+cfg}}
+\item 
+const wdt\+\_\+instance\+\_\+t \mbox{\hyperlink{hal__data_8c_ae4e5904dd1372ff7b4cca5ec5f6389da}{i\+WDT}}
+\item 
+dtc\+\_\+instance\+\_\+ctrl\+\_\+t \mbox{\hyperlink{hal__data_8c_a3a0350c7199de79084bada991fac3a53}{g\+\_\+transfer3\+\_\+ctrl}}
+\item 
+transfer\+\_\+info\+\_\+t \mbox{\hyperlink{hal__data_8c_a326dbe283a99fec402fcbe05711d4a40}{g\+\_\+transfer3\+\_\+info}}
+\item 
+const transfer\+\_\+cfg\+\_\+t \mbox{\hyperlink{hal__data_8c_ae0ecdb57a384fce38251483c8f2d0f8a}{g\+\_\+transfer3\+\_\+cfg}}
+\item 
+const transfer\+\_\+instance\+\_\+t \mbox{\hyperlink{hal__data_8c_a660a37aaf733243c5eb543c3adc165d6}{g\+\_\+transfer3}}
+\item 
+dtc\+\_\+instance\+\_\+ctrl\+\_\+t \mbox{\hyperlink{hal__data_8c_a0f44ff1b1757624de57a9af0fdea0365}{g\+\_\+transfer2\+\_\+ctrl}}
+\item 
+transfer\+\_\+info\+\_\+t \mbox{\hyperlink{hal__data_8c_afb70e9ad591ebd6763198c864909c39d}{g\+\_\+transfer2\+\_\+info}}
+\item 
+const transfer\+\_\+cfg\+\_\+t \mbox{\hyperlink{hal__data_8c_a40ccdf268ad08c7391f9da401384fd20}{g\+\_\+transfer2\+\_\+cfg}}
+\item 
+const transfer\+\_\+instance\+\_\+t \mbox{\hyperlink{hal__data_8c_adc094da97389cd561c76e311f652e7e1}{g\+\_\+transfer2}}
+\item 
+sci\+\_\+uart\+\_\+instance\+\_\+ctrl\+\_\+t \mbox{\hyperlink{hal__data_8c_a387c841175bcee03b2254f2afdab6d23}{comm\+UART\+\_\+ctrl}}
+\item 
+const uart\+\_\+on\+\_\+sci\+\_\+cfg\+\_\+t \mbox{\hyperlink{hal__data_8c_a80ad05b09dcf1f4a60ce349baf7ea457}{comm\+UART\+\_\+cfg\+\_\+extend}}
+\item 
+const uart\+\_\+cfg\+\_\+t \mbox{\hyperlink{hal__data_8c_adb72ba0b3f34f04a6ee1e399e8dcba12}{comm\+UART\+\_\+cfg}}
+\item 
+const uart\+\_\+instance\+\_\+t \mbox{\hyperlink{hal__data_8c_a52be76f229d078c70b7833b57952afae}{comm\+UART}}
+\item 
+static icu\+\_\+instance\+\_\+ctrl\+\_\+t \mbox{\hyperlink{hal__data_8c_ad468677c847423a4a29c7e155e648749}{on\+\_\+off\+\_\+irq\+\_\+ctrl}}
+\item 
+static const external\+\_\+irq\+\_\+cfg\+\_\+t \mbox{\hyperlink{hal__data_8c_a7ff9cb6a9ee2746a38c8ae0816a46b57}{on\+\_\+off\+\_\+irq\+\_\+cfg}}
+\item 
+const external\+\_\+irq\+\_\+instance\+\_\+t \mbox{\hyperlink{hal__data_8c_a618724019cfe7d46450d1e82cca62d3d}{on\+\_\+off\+\_\+irq}}
+\item 
+static icu\+\_\+instance\+\_\+ctrl\+\_\+t \mbox{\hyperlink{hal__data_8c_adc396d21cb471ca036f98ec8e0657cac}{cover\+\_\+open\+\_\+irq\+\_\+ctrl}}
+\item 
+static const external\+\_\+irq\+\_\+cfg\+\_\+t \mbox{\hyperlink{hal__data_8c_a56ed5975a6173ba9fe98596dccc80650}{cover\+\_\+open\+\_\+irq\+\_\+cfg}}
+\item 
+const external\+\_\+irq\+\_\+instance\+\_\+t \mbox{\hyperlink{hal__data_8c_afb1cd18caabf206353226b9d5026b32a}{cover\+\_\+open\+\_\+irq}}
+\item 
+rtc\+\_\+instance\+\_\+ctrl\+\_\+t \mbox{\hyperlink{hal__data_8c_aa39e3d7a665ecef68f6e18d417063766}{i\+RTC\+\_\+ctrl}}
+\item 
+const rtc\+\_\+cfg\+\_\+t \mbox{\hyperlink{hal__data_8c_a8b11f43e346c46dca238f9e7c16d7d6f}{i\+RTC\+\_\+cfg}}
+\item 
+const rtc\+\_\+instance\+\_\+t \mbox{\hyperlink{hal__data_8c_a744ab8007f5bcdc4376d84ec917931c3}{i\+RTC}}
+\item 
+dtc\+\_\+instance\+\_\+ctrl\+\_\+t \mbox{\hyperlink{hal__data_8c_af9de4b0d777c0fe1a390ceef266d68bf}{g\+\_\+transfer1\+\_\+ctrl}}
+\item 
+transfer\+\_\+info\+\_\+t \mbox{\hyperlink{hal__data_8c_a76dd24b21a971378c2c7c9e3d8c48232}{g\+\_\+transfer1\+\_\+info}}
+\item 
+const transfer\+\_\+cfg\+\_\+t \mbox{\hyperlink{hal__data_8c_a00a8b855dafd0f1e474e10877fc267df}{g\+\_\+transfer1\+\_\+cfg}}
+\item 
+const transfer\+\_\+instance\+\_\+t \mbox{\hyperlink{hal__data_8c_abe6d5b28a84f9e1ab48617ceff2e4819}{g\+\_\+transfer1}}
+\item 
+dtc\+\_\+instance\+\_\+ctrl\+\_\+t \mbox{\hyperlink{hal__data_8c_af45ca22ccda800a8f2f25ea756588302}{g\+\_\+transfer0\+\_\+ctrl}}
+\item 
+transfer\+\_\+info\+\_\+t \mbox{\hyperlink{hal__data_8c_a8211a8aa95218cf6d757fb50e075f1bf}{g\+\_\+transfer0\+\_\+info}}
+\item 
+const transfer\+\_\+cfg\+\_\+t \mbox{\hyperlink{hal__data_8c_a1bd49d989f8cce9bcb28eb7f08a8d5e5}{g\+\_\+transfer0\+\_\+cfg}}
+\item 
+const transfer\+\_\+instance\+\_\+t \mbox{\hyperlink{hal__data_8c_af20efd435b0685054a670fb544a857f5}{g\+\_\+transfer0}}
+\item 
+sci\+\_\+uart\+\_\+instance\+\_\+ctrl\+\_\+t \mbox{\hyperlink{hal__data_8c_a2c33dc6cf9580da5ec24bc11c358774f}{trace\+UART\+\_\+ctrl}}
+\item 
+const uart\+\_\+on\+\_\+sci\+\_\+cfg\+\_\+t \mbox{\hyperlink{hal__data_8c_af06203755931708eb1c001858a6b082e}{trace\+UART\+\_\+cfg\+\_\+extend}}
+\item 
+const uart\+\_\+cfg\+\_\+t \mbox{\hyperlink{hal__data_8c_aee1e21e8b4074e2afc729e1c855c61d9}{trace\+UART\+\_\+cfg}}
+\item 
+const uart\+\_\+instance\+\_\+t \mbox{\hyperlink{hal__data_8c_a5c8fc33bb927a15fc78e0d2306d2d1e5}{trace\+UART}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{hal__data_8c_a4f3ef4aee8e7b89b14b1c517d52a411c}\label{hal__data_8c_a4f3ef4aee8e7b89b14b1c517d52a411c} 
+\index{hal\_data.c@{hal\_data.c}!SYNERGY\_NOT\_DEFINED@{SYNERGY\_NOT\_DEFINED}}
+\index{SYNERGY\_NOT\_DEFINED@{SYNERGY\_NOT\_DEFINED}!hal\_data.c@{hal\_data.c}}
+\doxysubsubsection{\texorpdfstring{SYNERGY\_NOT\_DEFINED}{SYNERGY\_NOT\_DEFINED}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \#define SYNERGY\+\_\+\+NOT\+\_\+\+DEFINED~(1)}
+
+\Hypertarget{hal__data_8c_a4f3ef4aee8e7b89b14b1c517d52a411c}\label{hal__data_8c_a4f3ef4aee8e7b89b14b1c517d52a411c} 
+\index{hal\_data.c@{hal\_data.c}!SYNERGY\_NOT\_DEFINED@{SYNERGY\_NOT\_DEFINED}}
+\index{SYNERGY\_NOT\_DEFINED@{SYNERGY\_NOT\_DEFINED}!hal\_data.c@{hal\_data.c}}
+\doxysubsubsection{\texorpdfstring{SYNERGY\_NOT\_DEFINED}{SYNERGY\_NOT\_DEFINED}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \#define SYNERGY\+\_\+\+NOT\+\_\+\+DEFINED~(1)}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{hal__data_8c_aef7df059039eab3db1578b79eb2f6d86}\label{hal__data_8c_aef7df059039eab3db1578b79eb2f6d86} 
+\index{hal\_data.c@{hal\_data.c}!g\_hal\_init@{g\_hal\_init}}
+\index{g\_hal\_init@{g\_hal\_init}!hal\_data.c@{hal\_data.c}}
+\doxysubsubsection{\texorpdfstring{g\_hal\_init()}{g\_hal\_init()}}
+{\footnotesize\ttfamily void g\+\_\+hal\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{hal__data_8c_aef7df059039eab3db1578b79eb2f6d86_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{hal__data_8c_aef7df059039eab3db1578b79eb2f6d86_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{hal__data_8c_ad418b01f7f4a4364a0f3bf0f5fc00e41}\label{hal__data_8c_ad418b01f7f4a4364a0f3bf0f5fc00e41} 
+\index{hal\_data.c@{hal\_data.c}!SSP\_VECTOR\_DEFINE@{SSP\_VECTOR\_DEFINE}}
+\index{SSP\_VECTOR\_DEFINE@{SSP\_VECTOR\_DEFINE}!hal\_data.c@{hal\_data.c}}
+\doxysubsubsection{\texorpdfstring{SSP\_VECTOR\_DEFINE()}{SSP\_VECTOR\_DEFINE()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily SSP\+\_\+\+VECTOR\+\_\+\+DEFINE (\begin{DoxyParamCaption}\item[{fcu\+\_\+frdyi\+\_\+isr}]{,  }\item[{FCU}]{,  }\item[{FRDYI}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{hal__data_8c_afc9a18ef35dd3cb446694619313906d7}\label{hal__data_8c_afc9a18ef35dd3cb446694619313906d7} 
+\index{hal\_data.c@{hal\_data.c}!SSP\_VECTOR\_DEFINE@{SSP\_VECTOR\_DEFINE}}
+\index{SSP\_VECTOR\_DEFINE@{SSP\_VECTOR\_DEFINE}!hal\_data.c@{hal\_data.c}}
+\doxysubsubsection{\texorpdfstring{SSP\_VECTOR\_DEFINE()}{SSP\_VECTOR\_DEFINE()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily SSP\+\_\+\+VECTOR\+\_\+\+DEFINE (\begin{DoxyParamCaption}\item[{icu\+\_\+irq\+\_\+isr}]{,  }\item[{ICU}]{,  }\item[{IRQ0}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{hal__data_8c_a9502695b810e3bc79a8ab5bcd4b7b778}\label{hal__data_8c_a9502695b810e3bc79a8ab5bcd4b7b778} 
+\index{hal\_data.c@{hal\_data.c}!SSP\_VECTOR\_DEFINE@{SSP\_VECTOR\_DEFINE}}
+\index{SSP\_VECTOR\_DEFINE@{SSP\_VECTOR\_DEFINE}!hal\_data.c@{hal\_data.c}}
+\doxysubsubsection{\texorpdfstring{SSP\_VECTOR\_DEFINE()}{SSP\_VECTOR\_DEFINE()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily SSP\+\_\+\+VECTOR\+\_\+\+DEFINE (\begin{DoxyParamCaption}\item[{icu\+\_\+irq\+\_\+isr}]{,  }\item[{ICU}]{,  }\item[{IRQ1}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{hal__data_8c_a18f3fa298cf061bec295541bafc18b21}\label{hal__data_8c_a18f3fa298cf061bec295541bafc18b21} 
+\index{hal\_data.c@{hal\_data.c}!SSP\_VECTOR\_DEFINE@{SSP\_VECTOR\_DEFINE}}
+\index{SSP\_VECTOR\_DEFINE@{SSP\_VECTOR\_DEFINE}!hal\_data.c@{hal\_data.c}}
+\doxysubsubsection{\texorpdfstring{SSP\_VECTOR\_DEFINE()}{SSP\_VECTOR\_DEFINE()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily SSP\+\_\+\+VECTOR\+\_\+\+DEFINE (\begin{DoxyParamCaption}\item[{rtc\+\_\+carry\+\_\+isr}]{,  }\item[{RTC}]{,  }\item[{CARRY}]{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{hal__data_8c_a52be76f229d078c70b7833b57952afae}\label{hal__data_8c_a52be76f229d078c70b7833b57952afae} 
+\index{hal\_data.c@{hal\_data.c}!commUART@{commUART}}
+\index{commUART@{commUART}!hal\_data.c@{hal\_data.c}}
+\doxysubsubsection{\texorpdfstring{commUART}{commUART}}
+{\footnotesize\ttfamily const uart\+\_\+instance\+\_\+t comm\+UART}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{\ .p\_ctrl\ =\ \&\mbox{\hyperlink{hal__data_8c_a387c841175bcee03b2254f2afdab6d23}{commUART\_ctrl}},\ .p\_cfg\ =\ \&\mbox{\hyperlink{hal__data_8c_adb72ba0b3f34f04a6ee1e399e8dcba12}{commUART\_cfg}},\ .p\_api\ =\ \&g\_uart\_on\_sci\ \}}
+
+\end{DoxyCode}
+UART on SCI Instance. \Hypertarget{hal__data_8c_adb72ba0b3f34f04a6ee1e399e8dcba12}\label{hal__data_8c_adb72ba0b3f34f04a6ee1e399e8dcba12} 
+\index{hal\_data.c@{hal\_data.c}!commUART\_cfg@{commUART\_cfg}}
+\index{commUART\_cfg@{commUART\_cfg}!hal\_data.c@{hal\_data.c}}
+\doxysubsubsection{\texorpdfstring{commUART\_cfg}{commUART\_cfg}}
+{\footnotesize\ttfamily const uart\+\_\+cfg\+\_\+t comm\+UART\+\_\+cfg}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{\ .channel\ =\ 2,\ .baud\_rate\ =\ 9600,\ .data\_bits\ =\ UART\_DATA\_BITS\_8,\ .parity\ =\ UART\_PARITY\_OFF,\ .stop\_bits\ =}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ UART\_STOP\_BITS\_1,}
+\DoxyCodeLine{\ \ .ctsrts\_en\ =\ \textcolor{keyword}{false},\ .p\_callback\ =\ \mbox{\hyperlink{_comm_8c_abde378d1792873c09f0d4948c1fd3c19}{comm\_uart\_callback}},\ .p\_context\ =\ \&\mbox{\hyperlink{hal__data_8c_a52be76f229d078c70b7833b57952afae}{commUART}},\ .p\_extend\ =\ \&\mbox{\hyperlink{hal__data_8c_a80ad05b09dcf1f4a60ce349baf7ea457}{commUART\_cfg\_extend}},}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ SYNERGY\_NOT\_DEFINED\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ .p\_transfer\_tx\ =\ \&\mbox{\hyperlink{hal__data_8c_adc094da97389cd561c76e311f652e7e1}{g\_transfer2}},}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ .p\_transfer\_rx\ =\ \&\mbox{\hyperlink{hal__data_8c_a660a37aaf733243c5eb543c3adc165d6}{g\_transfer3}},}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\ \ .rxi\_ipl\ =\ (13),}
+\DoxyCodeLine{\ \ .txi\_ipl\ =\ (13),\ .tei\_ipl\ =\ (13),\ .eri\_ipl\ =\ (BSP\_IRQ\_DISABLED),\ \}}
+
+\end{DoxyCode}
+UART interface configuration \Hypertarget{hal__data_8c_a80ad05b09dcf1f4a60ce349baf7ea457}\label{hal__data_8c_a80ad05b09dcf1f4a60ce349baf7ea457} 
+\index{hal\_data.c@{hal\_data.c}!commUART\_cfg\_extend@{commUART\_cfg\_extend}}
+\index{commUART\_cfg\_extend@{commUART\_cfg\_extend}!hal\_data.c@{hal\_data.c}}
+\doxysubsubsection{\texorpdfstring{commUART\_cfg\_extend}{commUART\_cfg\_extend}}
+{\footnotesize\ttfamily const uart\+\_\+on\+\_\+sci\+\_\+cfg\+\_\+t comm\+UART\+\_\+cfg\+\_\+extend}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{\ .clk\_src\ =\ SCI\_CLK\_SRC\_INT,\ .baudclk\_out\ =\ \textcolor{keyword}{false},\ .rx\_edge\_start\ =\ \textcolor{keyword}{true},\ .noisecancel\_en\ =\ \textcolor{keyword}{false},\ .p\_extpin\_ctrl\ =}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}},}
+\DoxyCodeLine{\ \ .bitrate\_modulation\ =\ \textcolor{keyword}{true},\ .rx\_fifo\_trigger\ =\ SCI\_UART\_RX\_FIFO\_TRIGGER\_MAX,\ .baud\_rate\_error\_x\_1000\ =\ (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\_t}})\ (}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ 2.0\ *\ 1000),}
+\DoxyCodeLine{\ \ .uart\_comm\_mode\ =\ UART\_MODE\_RS232,\ .uart\_rs485\_mode\ =\ UART\_RS485\_HD,\ .rs485\_de\_pin\ =\ IOPORT\_PORT\_09\_PIN\_14,\ \}}
+
+\end{DoxyCode}
+UART extended configuration for UARTon\+SCI HAL driver \Hypertarget{hal__data_8c_a387c841175bcee03b2254f2afdab6d23}\label{hal__data_8c_a387c841175bcee03b2254f2afdab6d23} 
+\index{hal\_data.c@{hal\_data.c}!commUART\_ctrl@{commUART\_ctrl}}
+\index{commUART\_ctrl@{commUART\_ctrl}!hal\_data.c@{hal\_data.c}}
+\doxysubsubsection{\texorpdfstring{commUART\_ctrl}{commUART\_ctrl}}
+{\footnotesize\ttfamily sci\+\_\+uart\+\_\+instance\+\_\+ctrl\+\_\+t comm\+UART\+\_\+ctrl}
+
+\Hypertarget{hal__data_8c_afb1cd18caabf206353226b9d5026b32a}\label{hal__data_8c_afb1cd18caabf206353226b9d5026b32a} 
+\index{hal\_data.c@{hal\_data.c}!cover\_open\_irq@{cover\_open\_irq}}
+\index{cover\_open\_irq@{cover\_open\_irq}!hal\_data.c@{hal\_data.c}}
+\doxysubsubsection{\texorpdfstring{cover\_open\_irq}{cover\_open\_irq}}
+{\footnotesize\ttfamily const external\+\_\+irq\+\_\+instance\+\_\+t cover\+\_\+open\+\_\+irq}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{\ .p\_ctrl\ =\ \&\mbox{\hyperlink{hal__data_8c_adc396d21cb471ca036f98ec8e0657cac}{cover\_open\_irq\_ctrl}},\ .p\_cfg\ =\ \&\mbox{\hyperlink{hal__data_8c_a56ed5975a6173ba9fe98596dccc80650}{cover\_open\_irq\_cfg}},\ .p\_api\ =\ \&g\_external\_irq\_on\_icu\ \}}
+
+\end{DoxyCode}
+\Hypertarget{hal__data_8c_a56ed5975a6173ba9fe98596dccc80650}\label{hal__data_8c_a56ed5975a6173ba9fe98596dccc80650} 
+\index{hal\_data.c@{hal\_data.c}!cover\_open\_irq\_cfg@{cover\_open\_irq\_cfg}}
+\index{cover\_open\_irq\_cfg@{cover\_open\_irq\_cfg}!hal\_data.c@{hal\_data.c}}
+\doxysubsubsection{\texorpdfstring{cover\_open\_irq\_cfg}{cover\_open\_irq\_cfg}}
+{\footnotesize\ttfamily const external\+\_\+irq\+\_\+cfg\+\_\+t cover\+\_\+open\+\_\+irq\+\_\+cfg\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{\ .channel\ =\ 0,\ .trigger\ =\ EXTERNAL\_IRQ\_TRIG\_FALLING,\ .filter\_enable\ =\ \textcolor{keyword}{false},\ .pclk\_div\ =\ EXTERNAL\_IRQ\_PCLK\_DIV\_BY\_64,}
+\DoxyCodeLine{\ \ .autostart\ =\ \textcolor{keyword}{true},\ .p\_callback\ =\ \mbox{\hyperlink{hal__data_8h_afd85454a6a83951bf747aeb36945277a}{irq\_callback}},\ .p\_context\ =\ \&\mbox{\hyperlink{hal__data_8c_afb1cd18caabf206353226b9d5026b32a}{cover\_open\_irq}},\ .p\_extend\ =\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}},\ .irq\_ipl\ =\ (14),\ \}}
+
+\end{DoxyCode}
+\Hypertarget{hal__data_8c_adc396d21cb471ca036f98ec8e0657cac}\label{hal__data_8c_adc396d21cb471ca036f98ec8e0657cac} 
+\index{hal\_data.c@{hal\_data.c}!cover\_open\_irq\_ctrl@{cover\_open\_irq\_ctrl}}
+\index{cover\_open\_irq\_ctrl@{cover\_open\_irq\_ctrl}!hal\_data.c@{hal\_data.c}}
+\doxysubsubsection{\texorpdfstring{cover\_open\_irq\_ctrl}{cover\_open\_irq\_ctrl}}
+{\footnotesize\ttfamily icu\+\_\+instance\+\_\+ctrl\+\_\+t cover\+\_\+open\+\_\+irq\+\_\+ctrl\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{hal__data_8c_a42b74b53fe4fdc9ad53fd02d41948773}\label{hal__data_8c_a42b74b53fe4fdc9ad53fd02d41948773} 
+\index{hal\_data.c@{hal\_data.c}!g\_flash0@{g\_flash0}}
+\index{g\_flash0@{g\_flash0}!hal\_data.c@{hal\_data.c}}
+\doxysubsubsection{\texorpdfstring{g\_flash0}{g\_flash0}}
+{\footnotesize\ttfamily const flash\+\_\+instance\+\_\+t g\+\_\+flash0}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{\ .p\_ctrl\ =\ \&\mbox{\hyperlink{hal__data_8c_a9bb860cbf9c3f97d4fc407d614d42731}{g\_flash0\_ctrl}},\ .p\_cfg\ =\ \&\mbox{\hyperlink{hal__data_8c_a8756ff3e562df4ccd6e6842c4b7f1f8b}{g\_flash0\_cfg}},\ .p\_api\ =\ \&g\_flash\_on\_flash\_lp\ \}}
+
+\end{DoxyCode}
+\Hypertarget{hal__data_8c_a8756ff3e562df4ccd6e6842c4b7f1f8b}\label{hal__data_8c_a8756ff3e562df4ccd6e6842c4b7f1f8b} 
+\index{hal\_data.c@{hal\_data.c}!g\_flash0\_cfg@{g\_flash0\_cfg}}
+\index{g\_flash0\_cfg@{g\_flash0\_cfg}!hal\_data.c@{hal\_data.c}}
+\doxysubsubsection{\texorpdfstring{g\_flash0\_cfg}{g\_flash0\_cfg}}
+{\footnotesize\ttfamily const flash\+\_\+cfg\+\_\+t g\+\_\+flash0\+\_\+cfg}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{\ .data\_flash\_bgo\ =\ \textcolor{keyword}{false},\ .p\_callback\ =\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}},\ .p\_context\ =\ \&\mbox{\hyperlink{hal__data_8c_a42b74b53fe4fdc9ad53fd02d41948773}{g\_flash0}},\ .irq\_ipl\ =\ (4),}
+\DoxyCodeLine{}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\Hypertarget{hal__data_8c_a9bb860cbf9c3f97d4fc407d614d42731}\label{hal__data_8c_a9bb860cbf9c3f97d4fc407d614d42731} 
+\index{hal\_data.c@{hal\_data.c}!g\_flash0\_ctrl@{g\_flash0\_ctrl}}
+\index{g\_flash0\_ctrl@{g\_flash0\_ctrl}!hal\_data.c@{hal\_data.c}}
+\doxysubsubsection{\texorpdfstring{g\_flash0\_ctrl}{g\_flash0\_ctrl}}
+{\footnotesize\ttfamily flash\+\_\+lp\+\_\+instance\+\_\+ctrl\+\_\+t g\+\_\+flash0\+\_\+ctrl}
+
+\Hypertarget{hal__data_8c_af20efd435b0685054a670fb544a857f5}\label{hal__data_8c_af20efd435b0685054a670fb544a857f5} 
+\index{hal\_data.c@{hal\_data.c}!g\_transfer0@{g\_transfer0}}
+\index{g\_transfer0@{g\_transfer0}!hal\_data.c@{hal\_data.c}}
+\doxysubsubsection{\texorpdfstring{g\_transfer0}{g\_transfer0}}
+{\footnotesize\ttfamily const transfer\+\_\+instance\+\_\+t g\+\_\+transfer0}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{\ .p\_ctrl\ =\ \&\mbox{\hyperlink{hal__data_8c_af45ca22ccda800a8f2f25ea756588302}{g\_transfer0\_ctrl}},\ .p\_cfg\ =\ \&\mbox{\hyperlink{hal__data_8c_a1bd49d989f8cce9bcb28eb7f08a8d5e5}{g\_transfer0\_cfg}},\ .p\_api\ =\ \&g\_transfer\_on\_dtc\ \}}
+
+\end{DoxyCode}
+\Hypertarget{hal__data_8c_a1bd49d989f8cce9bcb28eb7f08a8d5e5}\label{hal__data_8c_a1bd49d989f8cce9bcb28eb7f08a8d5e5} 
+\index{hal\_data.c@{hal\_data.c}!g\_transfer0\_cfg@{g\_transfer0\_cfg}}
+\index{g\_transfer0\_cfg@{g\_transfer0\_cfg}!hal\_data.c@{hal\_data.c}}
+\doxysubsubsection{\texorpdfstring{g\_transfer0\_cfg}{g\_transfer0\_cfg}}
+{\footnotesize\ttfamily const transfer\+\_\+cfg\+\_\+t g\+\_\+transfer0\+\_\+cfg}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{\ .p\_info\ =\ \&\mbox{\hyperlink{hal__data_8c_a8211a8aa95218cf6d757fb50e075f1bf}{g\_transfer0\_info}},\ .activation\_source\ =\ ELC\_EVENT\_SCI3\_TXI,\ .auto\_enable\ =\ \textcolor{keyword}{false},\ .p\_callback\ =\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}},}
+\DoxyCodeLine{\ \ .p\_context\ =\ \&\mbox{\hyperlink{hal__data_8c_af20efd435b0685054a670fb544a857f5}{g\_transfer0}},\ .irq\_ipl\ =\ (BSP\_IRQ\_DISABLED)\ \}}
+
+\end{DoxyCode}
+\Hypertarget{hal__data_8c_af45ca22ccda800a8f2f25ea756588302}\label{hal__data_8c_af45ca22ccda800a8f2f25ea756588302} 
+\index{hal\_data.c@{hal\_data.c}!g\_transfer0\_ctrl@{g\_transfer0\_ctrl}}
+\index{g\_transfer0\_ctrl@{g\_transfer0\_ctrl}!hal\_data.c@{hal\_data.c}}
+\doxysubsubsection{\texorpdfstring{g\_transfer0\_ctrl}{g\_transfer0\_ctrl}}
+{\footnotesize\ttfamily dtc\+\_\+instance\+\_\+ctrl\+\_\+t g\+\_\+transfer0\+\_\+ctrl}
+
+\Hypertarget{hal__data_8c_a8211a8aa95218cf6d757fb50e075f1bf}\label{hal__data_8c_a8211a8aa95218cf6d757fb50e075f1bf} 
+\index{hal\_data.c@{hal\_data.c}!g\_transfer0\_info@{g\_transfer0\_info}}
+\index{g\_transfer0\_info@{g\_transfer0\_info}!hal\_data.c@{hal\_data.c}}
+\doxysubsubsection{\texorpdfstring{g\_transfer0\_info}{g\_transfer0\_info}}
+{\footnotesize\ttfamily transfer\+\_\+info\+\_\+t g\+\_\+transfer0\+\_\+info}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{\ .dest\_addr\_mode\ =\ TRANSFER\_ADDR\_MODE\_FIXED,\ .repeat\_area\ =\ TRANSFER\_REPEAT\_AREA\_SOURCE,\ .irq\ =\ TRANSFER\_IRQ\_END,}
+\DoxyCodeLine{\ \ .chain\_mode\ =\ TRANSFER\_CHAIN\_MODE\_DISABLED,\ .src\_addr\_mode\ =\ TRANSFER\_ADDR\_MODE\_INCREMENTED,\ .size\ =}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ TRANSFER\_SIZE\_1\_BYTE,}
+\DoxyCodeLine{\ \ .mode\ =\ TRANSFER\_MODE\_NORMAL,\ .p\_dest\ =\ (\textcolor{keywordtype}{void}\ *)\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}},\ .p\_src\ =\ (\textcolor{keywordtype}{void}\ \textcolor{keyword}{const}\ *)\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}},\ .num\_blocks\ =\ 0,\ .length\ =\ 0,\ \}}
+
+\end{DoxyCode}
+\Hypertarget{hal__data_8c_abe6d5b28a84f9e1ab48617ceff2e4819}\label{hal__data_8c_abe6d5b28a84f9e1ab48617ceff2e4819} 
+\index{hal\_data.c@{hal\_data.c}!g\_transfer1@{g\_transfer1}}
+\index{g\_transfer1@{g\_transfer1}!hal\_data.c@{hal\_data.c}}
+\doxysubsubsection{\texorpdfstring{g\_transfer1}{g\_transfer1}}
+{\footnotesize\ttfamily const transfer\+\_\+instance\+\_\+t g\+\_\+transfer1}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{\ .p\_ctrl\ =\ \&\mbox{\hyperlink{hal__data_8c_af9de4b0d777c0fe1a390ceef266d68bf}{g\_transfer1\_ctrl}},\ .p\_cfg\ =\ \&\mbox{\hyperlink{hal__data_8c_a00a8b855dafd0f1e474e10877fc267df}{g\_transfer1\_cfg}},\ .p\_api\ =\ \&g\_transfer\_on\_dtc\ \}}
+
+\end{DoxyCode}
+\Hypertarget{hal__data_8c_a00a8b855dafd0f1e474e10877fc267df}\label{hal__data_8c_a00a8b855dafd0f1e474e10877fc267df} 
+\index{hal\_data.c@{hal\_data.c}!g\_transfer1\_cfg@{g\_transfer1\_cfg}}
+\index{g\_transfer1\_cfg@{g\_transfer1\_cfg}!hal\_data.c@{hal\_data.c}}
+\doxysubsubsection{\texorpdfstring{g\_transfer1\_cfg}{g\_transfer1\_cfg}}
+{\footnotesize\ttfamily const transfer\+\_\+cfg\+\_\+t g\+\_\+transfer1\+\_\+cfg}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{\ .p\_info\ =\ \&\mbox{\hyperlink{hal__data_8c_a76dd24b21a971378c2c7c9e3d8c48232}{g\_transfer1\_info}},\ .activation\_source\ =\ ELC\_EVENT\_SCI3\_RXI,\ .auto\_enable\ =\ \textcolor{keyword}{false},\ .p\_callback\ =\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}},}
+\DoxyCodeLine{\ \ .p\_context\ =\ \&\mbox{\hyperlink{hal__data_8c_abe6d5b28a84f9e1ab48617ceff2e4819}{g\_transfer1}},\ .irq\_ipl\ =\ (BSP\_IRQ\_DISABLED)\ \}}
+
+\end{DoxyCode}
+\Hypertarget{hal__data_8c_af9de4b0d777c0fe1a390ceef266d68bf}\label{hal__data_8c_af9de4b0d777c0fe1a390ceef266d68bf} 
+\index{hal\_data.c@{hal\_data.c}!g\_transfer1\_ctrl@{g\_transfer1\_ctrl}}
+\index{g\_transfer1\_ctrl@{g\_transfer1\_ctrl}!hal\_data.c@{hal\_data.c}}
+\doxysubsubsection{\texorpdfstring{g\_transfer1\_ctrl}{g\_transfer1\_ctrl}}
+{\footnotesize\ttfamily dtc\+\_\+instance\+\_\+ctrl\+\_\+t g\+\_\+transfer1\+\_\+ctrl}
+
+\Hypertarget{hal__data_8c_a76dd24b21a971378c2c7c9e3d8c48232}\label{hal__data_8c_a76dd24b21a971378c2c7c9e3d8c48232} 
+\index{hal\_data.c@{hal\_data.c}!g\_transfer1\_info@{g\_transfer1\_info}}
+\index{g\_transfer1\_info@{g\_transfer1\_info}!hal\_data.c@{hal\_data.c}}
+\doxysubsubsection{\texorpdfstring{g\_transfer1\_info}{g\_transfer1\_info}}
+{\footnotesize\ttfamily transfer\+\_\+info\+\_\+t g\+\_\+transfer1\+\_\+info}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{\ .dest\_addr\_mode\ =\ TRANSFER\_ADDR\_MODE\_INCREMENTED,\ .repeat\_area\ =\ TRANSFER\_REPEAT\_AREA\_DESTINATION,\ .irq\ =}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ TRANSFER\_IRQ\_END,}
+\DoxyCodeLine{\ \ .chain\_mode\ =\ TRANSFER\_CHAIN\_MODE\_DISABLED,\ .src\_addr\_mode\ =\ TRANSFER\_ADDR\_MODE\_FIXED,\ .size\ =\ TRANSFER\_SIZE\_1\_BYTE,}
+\DoxyCodeLine{\ \ .mode\ =\ TRANSFER\_MODE\_NORMAL,\ .p\_dest\ =\ (\textcolor{keywordtype}{void}\ *)\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}},\ .p\_src\ =\ (\textcolor{keywordtype}{void}\ \textcolor{keyword}{const}\ *)\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}},\ .num\_blocks\ =\ 0,\ .length\ =\ 0,\ \}}
+
+\end{DoxyCode}
+\Hypertarget{hal__data_8c_adc094da97389cd561c76e311f652e7e1}\label{hal__data_8c_adc094da97389cd561c76e311f652e7e1} 
+\index{hal\_data.c@{hal\_data.c}!g\_transfer2@{g\_transfer2}}
+\index{g\_transfer2@{g\_transfer2}!hal\_data.c@{hal\_data.c}}
+\doxysubsubsection{\texorpdfstring{g\_transfer2}{g\_transfer2}}
+{\footnotesize\ttfamily const transfer\+\_\+instance\+\_\+t g\+\_\+transfer2}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{\ .p\_ctrl\ =\ \&\mbox{\hyperlink{hal__data_8c_a0f44ff1b1757624de57a9af0fdea0365}{g\_transfer2\_ctrl}},\ .p\_cfg\ =\ \&\mbox{\hyperlink{hal__data_8c_a40ccdf268ad08c7391f9da401384fd20}{g\_transfer2\_cfg}},\ .p\_api\ =\ \&g\_transfer\_on\_dtc\ \}}
+
+\end{DoxyCode}
+\Hypertarget{hal__data_8c_a40ccdf268ad08c7391f9da401384fd20}\label{hal__data_8c_a40ccdf268ad08c7391f9da401384fd20} 
+\index{hal\_data.c@{hal\_data.c}!g\_transfer2\_cfg@{g\_transfer2\_cfg}}
+\index{g\_transfer2\_cfg@{g\_transfer2\_cfg}!hal\_data.c@{hal\_data.c}}
+\doxysubsubsection{\texorpdfstring{g\_transfer2\_cfg}{g\_transfer2\_cfg}}
+{\footnotesize\ttfamily const transfer\+\_\+cfg\+\_\+t g\+\_\+transfer2\+\_\+cfg}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{\ .p\_info\ =\ \&\mbox{\hyperlink{hal__data_8c_afb70e9ad591ebd6763198c864909c39d}{g\_transfer2\_info}},\ .activation\_source\ =\ ELC\_EVENT\_SCI2\_TXI,\ .auto\_enable\ =\ \textcolor{keyword}{false},\ .p\_callback\ =\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}},}
+\DoxyCodeLine{\ \ .p\_context\ =\ \&\mbox{\hyperlink{hal__data_8c_adc094da97389cd561c76e311f652e7e1}{g\_transfer2}},\ .irq\_ipl\ =\ (BSP\_IRQ\_DISABLED)\ \}}
+
+\end{DoxyCode}
+\Hypertarget{hal__data_8c_a0f44ff1b1757624de57a9af0fdea0365}\label{hal__data_8c_a0f44ff1b1757624de57a9af0fdea0365} 
+\index{hal\_data.c@{hal\_data.c}!g\_transfer2\_ctrl@{g\_transfer2\_ctrl}}
+\index{g\_transfer2\_ctrl@{g\_transfer2\_ctrl}!hal\_data.c@{hal\_data.c}}
+\doxysubsubsection{\texorpdfstring{g\_transfer2\_ctrl}{g\_transfer2\_ctrl}}
+{\footnotesize\ttfamily dtc\+\_\+instance\+\_\+ctrl\+\_\+t g\+\_\+transfer2\+\_\+ctrl}
+
+\Hypertarget{hal__data_8c_afb70e9ad591ebd6763198c864909c39d}\label{hal__data_8c_afb70e9ad591ebd6763198c864909c39d} 
+\index{hal\_data.c@{hal\_data.c}!g\_transfer2\_info@{g\_transfer2\_info}}
+\index{g\_transfer2\_info@{g\_transfer2\_info}!hal\_data.c@{hal\_data.c}}
+\doxysubsubsection{\texorpdfstring{g\_transfer2\_info}{g\_transfer2\_info}}
+{\footnotesize\ttfamily transfer\+\_\+info\+\_\+t g\+\_\+transfer2\+\_\+info}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{\ .dest\_addr\_mode\ =\ TRANSFER\_ADDR\_MODE\_FIXED,\ .repeat\_area\ =\ TRANSFER\_REPEAT\_AREA\_SOURCE,\ .irq\ =\ TRANSFER\_IRQ\_END,}
+\DoxyCodeLine{\ \ .chain\_mode\ =\ TRANSFER\_CHAIN\_MODE\_DISABLED,\ .src\_addr\_mode\ =\ TRANSFER\_ADDR\_MODE\_INCREMENTED,\ .size\ =}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ TRANSFER\_SIZE\_1\_BYTE,}
+\DoxyCodeLine{\ \ .mode\ =\ TRANSFER\_MODE\_NORMAL,\ .p\_dest\ =\ (\textcolor{keywordtype}{void}\ *)\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}},\ .p\_src\ =\ (\textcolor{keywordtype}{void}\ \textcolor{keyword}{const}\ *)\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}},\ .num\_blocks\ =\ 0,\ .length\ =\ 0,\ \}}
+
+\end{DoxyCode}
+\Hypertarget{hal__data_8c_a660a37aaf733243c5eb543c3adc165d6}\label{hal__data_8c_a660a37aaf733243c5eb543c3adc165d6} 
+\index{hal\_data.c@{hal\_data.c}!g\_transfer3@{g\_transfer3}}
+\index{g\_transfer3@{g\_transfer3}!hal\_data.c@{hal\_data.c}}
+\doxysubsubsection{\texorpdfstring{g\_transfer3}{g\_transfer3}}
+{\footnotesize\ttfamily const transfer\+\_\+instance\+\_\+t g\+\_\+transfer3}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{\ .p\_ctrl\ =\ \&\mbox{\hyperlink{hal__data_8c_a3a0350c7199de79084bada991fac3a53}{g\_transfer3\_ctrl}},\ .p\_cfg\ =\ \&\mbox{\hyperlink{hal__data_8c_ae0ecdb57a384fce38251483c8f2d0f8a}{g\_transfer3\_cfg}},\ .p\_api\ =\ \&g\_transfer\_on\_dtc\ \}}
+
+\end{DoxyCode}
+\Hypertarget{hal__data_8c_ae0ecdb57a384fce38251483c8f2d0f8a}\label{hal__data_8c_ae0ecdb57a384fce38251483c8f2d0f8a} 
+\index{hal\_data.c@{hal\_data.c}!g\_transfer3\_cfg@{g\_transfer3\_cfg}}
+\index{g\_transfer3\_cfg@{g\_transfer3\_cfg}!hal\_data.c@{hal\_data.c}}
+\doxysubsubsection{\texorpdfstring{g\_transfer3\_cfg}{g\_transfer3\_cfg}}
+{\footnotesize\ttfamily const transfer\+\_\+cfg\+\_\+t g\+\_\+transfer3\+\_\+cfg}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{\ .p\_info\ =\ \&\mbox{\hyperlink{hal__data_8c_a326dbe283a99fec402fcbe05711d4a40}{g\_transfer3\_info}},\ .activation\_source\ =\ ELC\_EVENT\_SCI2\_RXI,\ .auto\_enable\ =\ \textcolor{keyword}{false},\ .p\_callback\ =\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}},}
+\DoxyCodeLine{\ \ .p\_context\ =\ \&\mbox{\hyperlink{hal__data_8c_a660a37aaf733243c5eb543c3adc165d6}{g\_transfer3}},\ .irq\_ipl\ =\ (BSP\_IRQ\_DISABLED)\ \}}
+
+\end{DoxyCode}
+\Hypertarget{hal__data_8c_a3a0350c7199de79084bada991fac3a53}\label{hal__data_8c_a3a0350c7199de79084bada991fac3a53} 
+\index{hal\_data.c@{hal\_data.c}!g\_transfer3\_ctrl@{g\_transfer3\_ctrl}}
+\index{g\_transfer3\_ctrl@{g\_transfer3\_ctrl}!hal\_data.c@{hal\_data.c}}
+\doxysubsubsection{\texorpdfstring{g\_transfer3\_ctrl}{g\_transfer3\_ctrl}}
+{\footnotesize\ttfamily dtc\+\_\+instance\+\_\+ctrl\+\_\+t g\+\_\+transfer3\+\_\+ctrl}
+
+\Hypertarget{hal__data_8c_a326dbe283a99fec402fcbe05711d4a40}\label{hal__data_8c_a326dbe283a99fec402fcbe05711d4a40} 
+\index{hal\_data.c@{hal\_data.c}!g\_transfer3\_info@{g\_transfer3\_info}}
+\index{g\_transfer3\_info@{g\_transfer3\_info}!hal\_data.c@{hal\_data.c}}
+\doxysubsubsection{\texorpdfstring{g\_transfer3\_info}{g\_transfer3\_info}}
+{\footnotesize\ttfamily transfer\+\_\+info\+\_\+t g\+\_\+transfer3\+\_\+info}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{\ .dest\_addr\_mode\ =\ TRANSFER\_ADDR\_MODE\_INCREMENTED,\ .repeat\_area\ =\ TRANSFER\_REPEAT\_AREA\_DESTINATION,\ .irq\ =}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ TRANSFER\_IRQ\_END,}
+\DoxyCodeLine{\ \ .chain\_mode\ =\ TRANSFER\_CHAIN\_MODE\_DISABLED,\ .src\_addr\_mode\ =\ TRANSFER\_ADDR\_MODE\_FIXED,\ .size\ =\ TRANSFER\_SIZE\_1\_BYTE,}
+\DoxyCodeLine{\ \ .mode\ =\ TRANSFER\_MODE\_NORMAL,\ .p\_dest\ =\ (\textcolor{keywordtype}{void}\ *)\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}},\ .p\_src\ =\ (\textcolor{keywordtype}{void}\ \textcolor{keyword}{const}\ *)\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}},\ .num\_blocks\ =\ 0,\ .length\ =\ 0,\ \}}
+
+\end{DoxyCode}
+\Hypertarget{hal__data_8c_a744ab8007f5bcdc4376d84ec917931c3}\label{hal__data_8c_a744ab8007f5bcdc4376d84ec917931c3} 
+\index{hal\_data.c@{hal\_data.c}!iRTC@{iRTC}}
+\index{iRTC@{iRTC}!hal\_data.c@{hal\_data.c}}
+\doxysubsubsection{\texorpdfstring{iRTC}{iRTC}}
+{\footnotesize\ttfamily const rtc\+\_\+instance\+\_\+t i\+RTC}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{\ .p\_ctrl\ =\ \&\mbox{\hyperlink{hal__data_8c_aa39e3d7a665ecef68f6e18d417063766}{iRTC\_ctrl}},\ .p\_cfg\ =\ \&\mbox{\hyperlink{hal__data_8c_a8b11f43e346c46dca238f9e7c16d7d6f}{iRTC\_cfg}},\ .p\_api\ =\ \&g\_rtc\_on\_rtc\ \}}
+
+\end{DoxyCode}
+RTC on RTC Instance. \Hypertarget{hal__data_8c_a8b11f43e346c46dca238f9e7c16d7d6f}\label{hal__data_8c_a8b11f43e346c46dca238f9e7c16d7d6f} 
+\index{hal\_data.c@{hal\_data.c}!iRTC\_cfg@{iRTC\_cfg}}
+\index{iRTC\_cfg@{iRTC\_cfg}!hal\_data.c@{hal\_data.c}}
+\doxysubsubsection{\texorpdfstring{iRTC\_cfg}{iRTC\_cfg}}
+{\footnotesize\ttfamily const rtc\+\_\+cfg\+\_\+t i\+RTC\+\_\+cfg}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{\ .clock\_source\ =\ RTC\_CLOCK\_SOURCE\_LOCO,\ .hw\_cfg\ =\ \textcolor{keyword}{true},\ .error\_adjustment\_value\ =\ 0,\ .error\_adjustment\_type\ =}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ RTC\_ERROR\_ADJUSTMENT\_NONE,}
+\DoxyCodeLine{\ \ .p\_callback\ =\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}},\ .p\_context\ =\ \&\mbox{\hyperlink{hal__data_8c_a744ab8007f5bcdc4376d84ec917931c3}{iRTC}},\ .alarm\_ipl\ =\ (BSP\_IRQ\_DISABLED),\ .periodic\_ipl\ =\ (BSP\_IRQ\_DISABLED),}
+\DoxyCodeLine{\ \ .carry\_ipl\ =\ (15),\ \}}
+
+\end{DoxyCode}
+\Hypertarget{hal__data_8c_aa39e3d7a665ecef68f6e18d417063766}\label{hal__data_8c_aa39e3d7a665ecef68f6e18d417063766} 
+\index{hal\_data.c@{hal\_data.c}!iRTC\_ctrl@{iRTC\_ctrl}}
+\index{iRTC\_ctrl@{iRTC\_ctrl}!hal\_data.c@{hal\_data.c}}
+\doxysubsubsection{\texorpdfstring{iRTC\_ctrl}{iRTC\_ctrl}}
+{\footnotesize\ttfamily rtc\+\_\+instance\+\_\+ctrl\+\_\+t i\+RTC\+\_\+ctrl}
+
+\Hypertarget{hal__data_8c_ae4e5904dd1372ff7b4cca5ec5f6389da}\label{hal__data_8c_ae4e5904dd1372ff7b4cca5ec5f6389da} 
+\index{hal\_data.c@{hal\_data.c}!iWDT@{iWDT}}
+\index{iWDT@{iWDT}!hal\_data.c@{hal\_data.c}}
+\doxysubsubsection{\texorpdfstring{iWDT}{iWDT}}
+{\footnotesize\ttfamily const wdt\+\_\+instance\+\_\+t i\+WDT}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{\ .p\_ctrl\ =\ \&\mbox{\hyperlink{hal__data_8c_a165ae1a2932f1a94de140ca12a8e465b}{iWDT\_ctrl}},\ .p\_cfg\ =\ \&\mbox{\hyperlink{hal__data_8c_a27499560302ffe7e81316056058a0f7a}{iWDT\_cfg}},\ .p\_api\ =\ \&g\_wdt\_on\_iwdt\ \}}
+
+\end{DoxyCode}
+WDT on IWDT Instance. \Hypertarget{hal__data_8c_a27499560302ffe7e81316056058a0f7a}\label{hal__data_8c_a27499560302ffe7e81316056058a0f7a} 
+\index{hal\_data.c@{hal\_data.c}!iWDT\_cfg@{iWDT\_cfg}}
+\index{iWDT\_cfg@{iWDT\_cfg}!hal\_data.c@{hal\_data.c}}
+\doxysubsubsection{\texorpdfstring{iWDT\_cfg}{iWDT\_cfg}}
+{\footnotesize\ttfamily const wdt\+\_\+cfg\+\_\+t i\+WDT\+\_\+cfg\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{\ .p\_callback\ =\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}},\ \}}
+
+\end{DoxyCode}
+\Hypertarget{hal__data_8c_a165ae1a2932f1a94de140ca12a8e465b}\label{hal__data_8c_a165ae1a2932f1a94de140ca12a8e465b} 
+\index{hal\_data.c@{hal\_data.c}!iWDT\_ctrl@{iWDT\_ctrl}}
+\index{iWDT\_ctrl@{iWDT\_ctrl}!hal\_data.c@{hal\_data.c}}
+\doxysubsubsection{\texorpdfstring{iWDT\_ctrl}{iWDT\_ctrl}}
+{\footnotesize\ttfamily iwdt\+\_\+instance\+\_\+ctrl\+\_\+t i\+WDT\+\_\+ctrl\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{hal__data_8c_a618724019cfe7d46450d1e82cca62d3d}\label{hal__data_8c_a618724019cfe7d46450d1e82cca62d3d} 
+\index{hal\_data.c@{hal\_data.c}!on\_off\_irq@{on\_off\_irq}}
+\index{on\_off\_irq@{on\_off\_irq}!hal\_data.c@{hal\_data.c}}
+\doxysubsubsection{\texorpdfstring{on\_off\_irq}{on\_off\_irq}}
+{\footnotesize\ttfamily const external\+\_\+irq\+\_\+instance\+\_\+t on\+\_\+off\+\_\+irq}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{\ .p\_ctrl\ =\ \&\mbox{\hyperlink{hal__data_8c_ad468677c847423a4a29c7e155e648749}{on\_off\_irq\_ctrl}},\ .p\_cfg\ =\ \&\mbox{\hyperlink{hal__data_8c_a7ff9cb6a9ee2746a38c8ae0816a46b57}{on\_off\_irq\_cfg}},\ .p\_api\ =\ \&g\_external\_irq\_on\_icu\ \}}
+
+\end{DoxyCode}
+\Hypertarget{hal__data_8c_a7ff9cb6a9ee2746a38c8ae0816a46b57}\label{hal__data_8c_a7ff9cb6a9ee2746a38c8ae0816a46b57} 
+\index{hal\_data.c@{hal\_data.c}!on\_off\_irq\_cfg@{on\_off\_irq\_cfg}}
+\index{on\_off\_irq\_cfg@{on\_off\_irq\_cfg}!hal\_data.c@{hal\_data.c}}
+\doxysubsubsection{\texorpdfstring{on\_off\_irq\_cfg}{on\_off\_irq\_cfg}}
+{\footnotesize\ttfamily const external\+\_\+irq\+\_\+cfg\+\_\+t on\+\_\+off\+\_\+irq\+\_\+cfg\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{\ .channel\ =\ 1,\ .trigger\ =\ EXTERNAL\_IRQ\_TRIG\_FALLING,\ .filter\_enable\ =\ \textcolor{keyword}{false},\ .pclk\_div\ =\ EXTERNAL\_IRQ\_PCLK\_DIV\_BY\_64,}
+\DoxyCodeLine{\ \ .autostart\ =\ \textcolor{keyword}{true},\ .p\_callback\ =\ \mbox{\hyperlink{hal__data_8h_afd85454a6a83951bf747aeb36945277a}{irq\_callback}},\ .p\_context\ =\ \&\mbox{\hyperlink{hal__data_8c_a618724019cfe7d46450d1e82cca62d3d}{on\_off\_irq}},\ .p\_extend\ =\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}},\ .irq\_ipl\ =\ (14),\ \}}
+
+\end{DoxyCode}
+\Hypertarget{hal__data_8c_ad468677c847423a4a29c7e155e648749}\label{hal__data_8c_ad468677c847423a4a29c7e155e648749} 
+\index{hal\_data.c@{hal\_data.c}!on\_off\_irq\_ctrl@{on\_off\_irq\_ctrl}}
+\index{on\_off\_irq\_ctrl@{on\_off\_irq\_ctrl}!hal\_data.c@{hal\_data.c}}
+\doxysubsubsection{\texorpdfstring{on\_off\_irq\_ctrl}{on\_off\_irq\_ctrl}}
+{\footnotesize\ttfamily icu\+\_\+instance\+\_\+ctrl\+\_\+t on\+\_\+off\+\_\+irq\+\_\+ctrl\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{hal__data_8c_a5c8fc33bb927a15fc78e0d2306d2d1e5}\label{hal__data_8c_a5c8fc33bb927a15fc78e0d2306d2d1e5} 
+\index{hal\_data.c@{hal\_data.c}!traceUART@{traceUART}}
+\index{traceUART@{traceUART}!hal\_data.c@{hal\_data.c}}
+\doxysubsubsection{\texorpdfstring{traceUART}{traceUART}}
+{\footnotesize\ttfamily const uart\+\_\+instance\+\_\+t trace\+UART}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{\ .p\_ctrl\ =\ \&\mbox{\hyperlink{hal__data_8c_a2c33dc6cf9580da5ec24bc11c358774f}{traceUART\_ctrl}},\ .p\_cfg\ =\ \&\mbox{\hyperlink{hal__data_8c_aee1e21e8b4074e2afc729e1c855c61d9}{traceUART\_cfg}},\ .p\_api\ =\ \&g\_uart\_on\_sci\ \}}
+
+\end{DoxyCode}
+UART on SCI Instance. \Hypertarget{hal__data_8c_aee1e21e8b4074e2afc729e1c855c61d9}\label{hal__data_8c_aee1e21e8b4074e2afc729e1c855c61d9} 
+\index{hal\_data.c@{hal\_data.c}!traceUART\_cfg@{traceUART\_cfg}}
+\index{traceUART\_cfg@{traceUART\_cfg}!hal\_data.c@{hal\_data.c}}
+\doxysubsubsection{\texorpdfstring{traceUART\_cfg}{traceUART\_cfg}}
+{\footnotesize\ttfamily const uart\+\_\+cfg\+\_\+t trace\+UART\+\_\+cfg}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{\ .channel\ =\ 3,\ .baud\_rate\ =\ 250000,\ .data\_bits\ =\ UART\_DATA\_BITS\_8,\ .parity\ =\ UART\_PARITY\_OFF,\ .stop\_bits\ =}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ UART\_STOP\_BITS\_1,}
+\DoxyCodeLine{\ \ .ctsrts\_en\ =\ \textcolor{keyword}{false},\ .p\_callback\ =\ \mbox{\hyperlink{_trace_8c_a5adc996c1a730574fa6dd131142ab2ad}{trace\_uart\_callback}},\ .p\_context\ =\ \&\mbox{\hyperlink{hal__data_8c_a5c8fc33bb927a15fc78e0d2306d2d1e5}{traceUART}},\ .p\_extend\ =\ \&\mbox{\hyperlink{hal__data_8c_af06203755931708eb1c001858a6b082e}{traceUART\_cfg\_extend}},}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ SYNERGY\_NOT\_DEFINED\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ .p\_transfer\_tx\ =\ \&\mbox{\hyperlink{hal__data_8c_af20efd435b0685054a670fb544a857f5}{g\_transfer0}},}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ .p\_transfer\_rx\ =\ \&\mbox{\hyperlink{hal__data_8c_abe6d5b28a84f9e1ab48617ceff2e4819}{g\_transfer1}},}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\ \ .rxi\_ipl\ =\ (12),}
+\DoxyCodeLine{\ \ .txi\_ipl\ =\ (12),\ .tei\_ipl\ =\ (12),\ .eri\_ipl\ =\ (BSP\_IRQ\_DISABLED),\ \}}
+
+\end{DoxyCode}
+UART interface configuration \Hypertarget{hal__data_8c_af06203755931708eb1c001858a6b082e}\label{hal__data_8c_af06203755931708eb1c001858a6b082e} 
+\index{hal\_data.c@{hal\_data.c}!traceUART\_cfg\_extend@{traceUART\_cfg\_extend}}
+\index{traceUART\_cfg\_extend@{traceUART\_cfg\_extend}!hal\_data.c@{hal\_data.c}}
+\doxysubsubsection{\texorpdfstring{traceUART\_cfg\_extend}{traceUART\_cfg\_extend}}
+{\footnotesize\ttfamily const uart\+\_\+on\+\_\+sci\+\_\+cfg\+\_\+t trace\+UART\+\_\+cfg\+\_\+extend}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{\ .clk\_src\ =\ SCI\_CLK\_SRC\_INT,\ .baudclk\_out\ =\ \textcolor{keyword}{false},\ .rx\_edge\_start\ =\ \textcolor{keyword}{true},\ .noisecancel\_en\ =\ \textcolor{keyword}{false},\ .p\_extpin\_ctrl\ =}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}},}
+\DoxyCodeLine{\ \ .bitrate\_modulation\ =\ \textcolor{keyword}{true},\ .rx\_fifo\_trigger\ =\ SCI\_UART\_RX\_FIFO\_TRIGGER\_1,\ .baud\_rate\_error\_x\_1000\ =\ (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\_t}})\ (}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ 2.0\ *\ 1000),}
+\DoxyCodeLine{\ \ .uart\_comm\_mode\ =\ UART\_MODE\_RS232,\ .uart\_rs485\_mode\ =\ UART\_RS485\_HD,\ .rs485\_de\_pin\ =\ IOPORT\_PORT\_09\_PIN\_14,\ \}}
+
+\end{DoxyCode}
+UART extended configuration for UARTon\+SCI HAL driver \Hypertarget{hal__data_8c_a2c33dc6cf9580da5ec24bc11c358774f}\label{hal__data_8c_a2c33dc6cf9580da5ec24bc11c358774f} 
+\index{hal\_data.c@{hal\_data.c}!traceUART\_ctrl@{traceUART\_ctrl}}
+\index{traceUART\_ctrl@{traceUART\_ctrl}!hal\_data.c@{hal\_data.c}}
+\doxysubsubsection{\texorpdfstring{traceUART\_ctrl}{traceUART\_ctrl}}
+{\footnotesize\ttfamily sci\+\_\+uart\+\_\+instance\+\_\+ctrl\+\_\+t trace\+UART\+\_\+ctrl}
+

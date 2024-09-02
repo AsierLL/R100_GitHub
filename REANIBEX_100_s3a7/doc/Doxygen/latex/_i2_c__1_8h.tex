@@ -1,0 +1,430 @@
+\doxysection{C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\+Drivers/\+I2\+C\+\_\+1.h File Reference}
+\hypertarget{_i2_c__1_8h}{}\label{_i2_c__1_8h}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/Drivers/I2C\_1.h@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/Drivers/I2C\_1.h}}
+
+
+Header with functions related to the I2\+C-\/1.  
+
+
+{\ttfamily \#include "{}types\+\_\+basic.\+h"{}}\newline
+Include dependency graph for I2\+C\+\_\+1.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=239pt]{_i2_c__1_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_i2_c__1_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_i2_c__1_8h_a094a920c60637c2a43fd05a982c7952d}{i2\+C\+\_\+\+ADD\+\_\+\+RTC}}~0x\+D0
+\begin{DoxyCompactList}\small\item\em I2C address for DS1342 RTC (Write) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_i2_c__1_8h_a2de6c8ec0698547251737f6c951e4314}{i2\+C\+\_\+\+ADD\+\_\+\+EEPROM}}~0x\+A0
+\begin{DoxyCompactList}\small\item\em I2C address for M24\+C08 EEPROM memory (8 Kbit) (Write) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_i2_c__1_8h_a95025c80cfea0e28e46a781084702caf}{i2\+C\+\_\+\+ADD\+\_\+\+TEMPERATURE}}~0x9E
+\begin{DoxyCompactList}\small\item\em I2C address for TMP1075 Temperature Sensor (Write) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_i2_c__1_8h_aa42fb909ffa0d85f113dc1d374ac67f0}{i2\+C\+\_\+\+ADD\+\_\+\+ACCEL}}~0x32
+\begin{DoxyCompactList}\small\item\em I2C address for LIS3\+DH accelerometer (Write) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_i2_c__1_8h_ae0aaef6d39ab21fdc673b3bd618e3a5f}{I2\+C1\+\_\+\+Read\+Byte}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} addr, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}data)
+\begin{DoxyCompactList}\small\item\em Function to read a byte data from a specific address. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_i2_c__1_8h_a6c2446d2a639a1a0881988a628dc2131}{I2\+C1\+\_\+\+Write\+Byte}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} addr, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} data)
+\begin{DoxyCompactList}\small\item\em Function to write a data byte at specific address. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_i2_c__1_8h_a38c496f5583fa722a64178a1d7a84dbb}{I2\+C1\+\_\+\+Read}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} addr, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}data, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} n\+Bytes)
+\begin{DoxyCompactList}\small\item\em Function to read data from a specific address. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_i2_c__1_8h_a3080b1378acb455e5962e81def2b88ba}{I2\+C1\+\_\+\+Write}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} addr, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}data, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} n\+Bytes)
+\begin{DoxyCompactList}\small\item\em Function to write data at specific address. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_i2_c__1_8h_a4421fd2991ef4524b2cc4374c1987443}{I2\+C1\+\_\+\+Read\+\_\+\+RTC}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}data, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} n\+Bytes)
+\begin{DoxyCompactList}\small\item\em Function to read the RTC date and time data. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{_i2_c__1_8h_a2e6bf5a5dca9d0a7f02f9295037d25e3}{I2\+C1\+\_\+\+Read\+\_\+\+Temperature}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_aef44329758059c91c76d334e8fc09700}{int8\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Temp)
+\begin{DoxyCompactList}\small\item\em Function to read the temperature from the temperature sensor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{_i2_c__1_8h_ab0bb2694520e74ef39e04bd55a0c5a50}{I2\+C1\+\_\+\+Read\+\_\+\+Eeprom}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} addr, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}data, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} n\+Bytes)
+\begin{DoxyCompactList}\small\item\em Function to read EEPROM data from a specific address. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_i2_c__1_8h_a38249243dbed83e74c1b53d9acb4c56e}{I2\+C1\+\_\+\+Write\+\_\+\+Eeprom}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} addr, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}data, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} n\+Bytes)
+\begin{DoxyCompactList}\small\item\em Function to write EEPROM data at specific address. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_i2_c__1_8h_abccb91036dc573b48c9b3733eac02efa}{I2\+C1\+\_\+\+Write\+Register\+\_\+\+ACC}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} reg\+Address, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} data)
+\begin{DoxyCompactList}\small\item\em Function to write data byte at specific register address. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_i2_c__1_8h_ace04072c3cee76dcb968024ef77224f6}{I2\+C1\+\_\+\+Read\+Register\+\_\+\+ACC}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} reg\+Address, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Data)
+\begin{DoxyCompactList}\small\item\em Function to read data byte at specific register address. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header with functions related to the I2\+C-\/1. 
+
+\begin{DoxyVersion}{Version}
+v1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+16/01/2018 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+ltorres 
+\end{DoxyAuthor}
+\begin{DoxyWarning}{Warning}
+author date version .-\/ Edition 
+\end{DoxyWarning}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000022}{Bug}}]\end{DoxyRefDesc}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{_i2_c__1_8h_aa42fb909ffa0d85f113dc1d374ac67f0}\label{_i2_c__1_8h_aa42fb909ffa0d85f113dc1d374ac67f0} 
+\index{I2C\_1.h@{I2C\_1.h}!i2C\_ADD\_ACCEL@{i2C\_ADD\_ACCEL}}
+\index{i2C\_ADD\_ACCEL@{i2C\_ADD\_ACCEL}!I2C\_1.h@{I2C\_1.h}}
+\doxysubsubsection{\texorpdfstring{i2C\_ADD\_ACCEL}{i2C\_ADD\_ACCEL}}
+{\footnotesize\ttfamily \#define i2\+C\+\_\+\+ADD\+\_\+\+ACCEL~0x32}
+
+
+
+I2C address for LIS3\+DH accelerometer (Write) 
+
+\Hypertarget{_i2_c__1_8h_a2de6c8ec0698547251737f6c951e4314}\label{_i2_c__1_8h_a2de6c8ec0698547251737f6c951e4314} 
+\index{I2C\_1.h@{I2C\_1.h}!i2C\_ADD\_EEPROM@{i2C\_ADD\_EEPROM}}
+\index{i2C\_ADD\_EEPROM@{i2C\_ADD\_EEPROM}!I2C\_1.h@{I2C\_1.h}}
+\doxysubsubsection{\texorpdfstring{i2C\_ADD\_EEPROM}{i2C\_ADD\_EEPROM}}
+{\footnotesize\ttfamily \#define i2\+C\+\_\+\+ADD\+\_\+\+EEPROM~0x\+A0}
+
+
+
+I2C address for M24\+C08 EEPROM memory (8 Kbit) (Write) 
+
+\Hypertarget{_i2_c__1_8h_a094a920c60637c2a43fd05a982c7952d}\label{_i2_c__1_8h_a094a920c60637c2a43fd05a982c7952d} 
+\index{I2C\_1.h@{I2C\_1.h}!i2C\_ADD\_RTC@{i2C\_ADD\_RTC}}
+\index{i2C\_ADD\_RTC@{i2C\_ADD\_RTC}!I2C\_1.h@{I2C\_1.h}}
+\doxysubsubsection{\texorpdfstring{i2C\_ADD\_RTC}{i2C\_ADD\_RTC}}
+{\footnotesize\ttfamily \#define i2\+C\+\_\+\+ADD\+\_\+\+RTC~0x\+D0}
+
+
+
+I2C address for DS1342 RTC (Write) 
+
+\Hypertarget{_i2_c__1_8h_a95025c80cfea0e28e46a781084702caf}\label{_i2_c__1_8h_a95025c80cfea0e28e46a781084702caf} 
+\index{I2C\_1.h@{I2C\_1.h}!i2C\_ADD\_TEMPERATURE@{i2C\_ADD\_TEMPERATURE}}
+\index{i2C\_ADD\_TEMPERATURE@{i2C\_ADD\_TEMPERATURE}!I2C\_1.h@{I2C\_1.h}}
+\doxysubsubsection{\texorpdfstring{i2C\_ADD\_TEMPERATURE}{i2C\_ADD\_TEMPERATURE}}
+{\footnotesize\ttfamily \#define i2\+C\+\_\+\+ADD\+\_\+\+TEMPERATURE~0x9E}
+
+
+
+I2C address for TMP1075 Temperature Sensor (Write) 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_i2_c__1_8h_a38c496f5583fa722a64178a1d7a84dbb}\label{_i2_c__1_8h_a38c496f5583fa722a64178a1d7a84dbb} 
+\index{I2C\_1.h@{I2C\_1.h}!I2C1\_Read@{I2C1\_Read}}
+\index{I2C1\_Read@{I2C1\_Read}!I2C\_1.h@{I2C\_1.h}}
+\doxysubsubsection{\texorpdfstring{I2C1\_Read()}{I2C1\_Read()}}
+{\footnotesize\ttfamily void I2\+C1\+\_\+\+Read (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{addr,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{data,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{n\+Bytes }\end{DoxyParamCaption})}
+
+
+
+Function to read data from a specific address. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em addr} & --- slave device address \\
+\hline
+{\em data} & --- Pointer to memory to store the read data \\
+\hline
+{\em n\+Bytes} & --- data size in bytes \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=282pt]{_i2_c__1_8h_a38c496f5583fa722a64178a1d7a84dbb_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_i2_c__1_8h_a38c496f5583fa722a64178a1d7a84dbb_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_i2_c__1_8h_ab0bb2694520e74ef39e04bd55a0c5a50}\label{_i2_c__1_8h_ab0bb2694520e74ef39e04bd55a0c5a50} 
+\index{I2C\_1.h@{I2C\_1.h}!I2C1\_Read\_Eeprom@{I2C1\_Read\_Eeprom}}
+\index{I2C1\_Read\_Eeprom@{I2C1\_Read\_Eeprom}!I2C\_1.h@{I2C\_1.h}}
+\doxysubsubsection{\texorpdfstring{I2C1\_Read\_Eeprom()}{I2C1\_Read\_Eeprom()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} I2\+C1\+\_\+\+Read\+\_\+\+Eeprom (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}}}]{addr,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{data,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{n\+Bytes }\end{DoxyParamCaption})}
+
+
+
+Function to read EEPROM data from a specific address. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em addr} & --- EEPROM memory address to read from \\
+\hline
+{\em data} & --- Pointer to memory to store the read data \\
+\hline
+{\em n\+Bytes} & --- data size in bytes\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+error code 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_i2_c__1_8h_ab0bb2694520e74ef39e04bd55a0c5a50_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_i2_c__1_8h_ab0bb2694520e74ef39e04bd55a0c5a50_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_i2_c__1_8h_a4421fd2991ef4524b2cc4374c1987443}\label{_i2_c__1_8h_a4421fd2991ef4524b2cc4374c1987443} 
+\index{I2C\_1.h@{I2C\_1.h}!I2C1\_Read\_RTC@{I2C1\_Read\_RTC}}
+\index{I2C1\_Read\_RTC@{I2C1\_Read\_RTC}!I2C\_1.h@{I2C\_1.h}}
+\doxysubsubsection{\texorpdfstring{I2C1\_Read\_RTC()}{I2C1\_Read\_RTC()}}
+{\footnotesize\ttfamily void I2\+C1\+\_\+\+Read\+\_\+\+RTC (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{data,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{n\+Bytes }\end{DoxyParamCaption})}
+
+
+
+Function to read the RTC date and time data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & --- Pointer to memory to store the read data \\
+\hline
+{\em n\+Bytes} & --- data size in bytes \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_i2_c__1_8h_a4421fd2991ef4524b2cc4374c1987443_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_i2_c__1_8h_a4421fd2991ef4524b2cc4374c1987443_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_i2_c__1_8h_a2e6bf5a5dca9d0a7f02f9295037d25e3}\label{_i2_c__1_8h_a2e6bf5a5dca9d0a7f02f9295037d25e3} 
+\index{I2C\_1.h@{I2C\_1.h}!I2C1\_Read\_Temperature@{I2C1\_Read\_Temperature}}
+\index{I2C1\_Read\_Temperature@{I2C1\_Read\_Temperature}!I2C\_1.h@{I2C\_1.h}}
+\doxysubsubsection{\texorpdfstring{I2C1\_Read\_Temperature()}{I2C1\_Read\_Temperature()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} I2\+C1\+\_\+\+Read\+\_\+\+Temperature (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aef44329758059c91c76d334e8fc09700}{int8\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Temp }\end{DoxyParamCaption})}
+
+
+
+Function to read the temperature from the temperature sensor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Temp} & --- a temperature data pointer\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+error code 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_i2_c__1_8h_a2e6bf5a5dca9d0a7f02f9295037d25e3_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_i2_c__1_8h_a2e6bf5a5dca9d0a7f02f9295037d25e3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_i2_c__1_8h_ae0aaef6d39ab21fdc673b3bd618e3a5f}\label{_i2_c__1_8h_ae0aaef6d39ab21fdc673b3bd618e3a5f} 
+\index{I2C\_1.h@{I2C\_1.h}!I2C1\_ReadByte@{I2C1\_ReadByte}}
+\index{I2C1\_ReadByte@{I2C1\_ReadByte}!I2C\_1.h@{I2C\_1.h}}
+\doxysubsubsection{\texorpdfstring{I2C1\_ReadByte()}{I2C1\_ReadByte()}}
+{\footnotesize\ttfamily void I2\+C1\+\_\+\+Read\+Byte (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{addr,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Data }\end{DoxyParamCaption})}
+
+
+
+Function to read a byte data from a specific address. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em addr} & --- slave device address \\
+\hline
+{\em p\+Data} & --- Pointer to memory to store the read data \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=302pt]{_i2_c__1_8h_ae0aaef6d39ab21fdc673b3bd618e3a5f_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_i2_c__1_8h_ace04072c3cee76dcb968024ef77224f6}\label{_i2_c__1_8h_ace04072c3cee76dcb968024ef77224f6} 
+\index{I2C\_1.h@{I2C\_1.h}!I2C1\_ReadRegister\_ACC@{I2C1\_ReadRegister\_ACC}}
+\index{I2C1\_ReadRegister\_ACC@{I2C1\_ReadRegister\_ACC}!I2C\_1.h@{I2C\_1.h}}
+\doxysubsubsection{\texorpdfstring{I2C1\_ReadRegister\_ACC()}{I2C1\_ReadRegister\_ACC()}}
+{\footnotesize\ttfamily void I2\+C1\+\_\+\+Read\+Register\+\_\+\+ACC (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{reg\+Address,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Data }\end{DoxyParamCaption})}
+
+
+
+Function to read data byte at specific register address. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reg\+Addr} & --- address of the device register \\
+\hline
+{\em p\+Data} & --- a byte data to read \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=343pt]{_i2_c__1_8h_ace04072c3cee76dcb968024ef77224f6_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_i2_c__1_8h_ace04072c3cee76dcb968024ef77224f6_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_i2_c__1_8h_a3080b1378acb455e5962e81def2b88ba}\label{_i2_c__1_8h_a3080b1378acb455e5962e81def2b88ba} 
+\index{I2C\_1.h@{I2C\_1.h}!I2C1\_Write@{I2C1\_Write}}
+\index{I2C1\_Write@{I2C1\_Write}!I2C\_1.h@{I2C\_1.h}}
+\doxysubsubsection{\texorpdfstring{I2C1\_Write()}{I2C1\_Write()}}
+{\footnotesize\ttfamily void I2\+C1\+\_\+\+Write (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{addr,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{data,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{n\+Bytes }\end{DoxyParamCaption})}
+
+
+
+Function to write data at specific address. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em addr} & --- slave device address \\
+\hline
+{\em data} & --- data buffer to write \\
+\hline
+{\em n\+Bytes} & --- number of data in bytes \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=282pt]{_i2_c__1_8h_a3080b1378acb455e5962e81def2b88ba_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_i2_c__1_8h_a3080b1378acb455e5962e81def2b88ba_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_i2_c__1_8h_a38249243dbed83e74c1b53d9acb4c56e}\label{_i2_c__1_8h_a38249243dbed83e74c1b53d9acb4c56e} 
+\index{I2C\_1.h@{I2C\_1.h}!I2C1\_Write\_Eeprom@{I2C1\_Write\_Eeprom}}
+\index{I2C1\_Write\_Eeprom@{I2C1\_Write\_Eeprom}!I2C\_1.h@{I2C\_1.h}}
+\doxysubsubsection{\texorpdfstring{I2C1\_Write\_Eeprom()}{I2C1\_Write\_Eeprom()}}
+{\footnotesize\ttfamily void I2\+C1\+\_\+\+Write\+\_\+\+Eeprom (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}}}]{addr,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{data,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{n\+Bytes }\end{DoxyParamCaption})}
+
+
+
+Function to write EEPROM data at specific address. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em addr} & --- EEPROM memory address to write in \\
+\hline
+{\em data} & --- data buffer to write \\
+\hline
+{\em n\+Bytes} & --- number of data in bytes \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_i2_c__1_8h_a38249243dbed83e74c1b53d9acb4c56e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_i2_c__1_8h_a38249243dbed83e74c1b53d9acb4c56e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_i2_c__1_8h_a6c2446d2a639a1a0881988a628dc2131}\label{_i2_c__1_8h_a6c2446d2a639a1a0881988a628dc2131} 
+\index{I2C\_1.h@{I2C\_1.h}!I2C1\_WriteByte@{I2C1\_WriteByte}}
+\index{I2C1\_WriteByte@{I2C1\_WriteByte}!I2C\_1.h@{I2C\_1.h}}
+\doxysubsubsection{\texorpdfstring{I2C1\_WriteByte()}{I2C1\_WriteByte()}}
+{\footnotesize\ttfamily void I2\+C1\+\_\+\+Write\+Byte (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{addr,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{data }\end{DoxyParamCaption})}
+
+
+
+Function to write a data byte at specific address. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em addr} & --- slave device address \\
+\hline
+{\em data} & --- a byte data to write \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=303pt]{_i2_c__1_8h_a6c2446d2a639a1a0881988a628dc2131_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_i2_c__1_8h_abccb91036dc573b48c9b3733eac02efa}\label{_i2_c__1_8h_abccb91036dc573b48c9b3733eac02efa} 
+\index{I2C\_1.h@{I2C\_1.h}!I2C1\_WriteRegister\_ACC@{I2C1\_WriteRegister\_ACC}}
+\index{I2C1\_WriteRegister\_ACC@{I2C1\_WriteRegister\_ACC}!I2C\_1.h@{I2C\_1.h}}
+\doxysubsubsection{\texorpdfstring{I2C1\_WriteRegister\_ACC()}{I2C1\_WriteRegister\_ACC()}}
+{\footnotesize\ttfamily void I2\+C1\+\_\+\+Write\+Register\+\_\+\+ACC (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{reg\+Address,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{data }\end{DoxyParamCaption})}
+
+
+
+Function to write data byte at specific register address. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reg\+Addr} & --- address of the device register \\
+\hline
+{\em p\+Data} & --- a byte data to write \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{_i2_c__1_8h_abccb91036dc573b48c9b3733eac02efa_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_i2_c__1_8h_abccb91036dc573b48c9b3733eac02efa_icgraph}
+\end{center}
+\end{figure}

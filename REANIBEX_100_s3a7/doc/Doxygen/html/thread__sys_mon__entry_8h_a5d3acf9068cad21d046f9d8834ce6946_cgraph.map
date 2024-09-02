@@ -1,0 +1,17 @@
+<map id="R100_PowerOff_RTC" name="R100_PowerOff_RTC">
+<area shape="rect" id="Node000001" title="Power off the device programming an automatic power&#45;on." alt="" coords="5,56,148,83"/>
+<area shape="rect" id="Node000002" href="$sys_mon___battery_8c.html#ae8f3f32f49df7702f6405467130ce8fd" title="Function that report if the battery is DEMO or not." alt="" coords="196,5,356,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="131,53,205,34,206,39,133,58"/>
+<area shape="rect" id="Node000003" href="$thread__sys_mon__entry_8c.html#ae158ddc17edc766e6adc7f0c1988f2b9" title="Function that updates the test id and saves it to data flash memory." alt="" coords="220,56,332,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="148,67,205,67,205,72,148,72"/>
+<area shape="rect" id="Node000007" href="$_r_t_c_8c.html#a4b5714f714efa3b70be5422bdb55c4b7" title="program the wakeup time in the internal RTC and kill the processor" alt="" coords="215,107,337,133"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="133,81,206,100,205,105,131,86"/>
+<area shape="rect" id="Node000004" href="$thread__sys_mon__entry_8c.html#a7514b80ba83366eb1792a5de56de25d1" title="Function that gets the non volatile data from the internal Data Flash." alt="" coords="425,56,535,83"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="332,67,409,67,409,72,332,72"/>
+<area shape="rect" id="Node000005" href="$thread__sys_mon__entry_8c.html#a5cccaa163f937bcc50a69f4b0887f450" title="Compensate UTC time zone with TEST TIME." alt="" coords="604,56,718,83"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="536,67,589,67,589,72,536,72"/>
+<area shape="rect" id="Node000006" href="$device__init_8c.html#a8f21d9db8b7a1530e06a4ade480d91bc" title="Return Device Settings." alt="" coords="766,56,908,83"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="718,67,750,67,750,72,718,72"/>
+<area shape="rect" id="Node000008" href="$_r_t_c_8c.html#af23a4452d2aaea1454fc08b86510c575" title="program the wakeup time in the internal RTC (use the alarm to activate the RTCIC0)" alt="" coords="404,107,556,133"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="337,117,388,117,388,123,337,123"/>
+</map>

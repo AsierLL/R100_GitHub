@@ -1,0 +1,67 @@
+\doxysection{thread\+\_\+drd\+\_\+entry.\+h}
+\hypertarget{thread__drd__entry_8h_source}{}\label{thread__drd__entry_8h_source}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/thread\_drd\_entry.h@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/thread\_drd\_entry.h}}
+\mbox{\hyperlink{thread__drd__entry_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Name\ \ \ \ \ \ :\ R100\_S3A7\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ :\ Osatu\ S.\ Coop\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Compiler\ \ :\ GNU\ ARM\ Embedded\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ Target\ \ \ \ :\ Reanibex\ Serie\ 100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ ******************************************************************************/}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#ifndef\ THREAD\_DRD\_ENTRY\_H\_}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#define\ THREAD\_DRD\_ENTRY\_H\_}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ **Includes}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{drd_8h}{drd.h}}"{}}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{thread__drd_8h}{thread\_drd.h}}"{}}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ **\ Defines}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#define\ DRD\_DIAG\_FLAG\ ((ULONG)0x0001)}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ **\ Typedefs}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00037\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \mbox{\hyperlink{thread__drd__entry_8h_aba2ac2f93bdc718f73db80fd93578b45a4ed3138fbe1c130833d9f5f321a5d8eb}{eDRD\_DIAG\_NOT\_READY}}\ =\ 0,\ \ \ \ \ \ \ }
+\DoxyCodeLine{00039\ \ \ \ \ \ \mbox{\hyperlink{thread__drd__entry_8h_aba2ac2f93bdc718f73db80fd93578b45aea5fa4f08d4a4537e048511633f32f82}{eDRD\_DIAG\_UNKNOWN}},\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00040\ \ \ \ \ \ \mbox{\hyperlink{thread__drd__entry_8h_aba2ac2f93bdc718f73db80fd93578b45afaf8d84ea44b6cdf976edfc6e2b58d10}{eDRD\_DIAG\_NON\_SHOCK}},\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00041\ \ \ \ \ \ \mbox{\hyperlink{thread__drd__entry_8h_aba2ac2f93bdc718f73db80fd93578b45ab8b68b877774d4e142357a2a89a4a817}{eDRD\_DIAG\_NON\_SHOCK\_ASYSTOLE}},\ \ }
+\DoxyCodeLine{00042\ \ \ \ \ \ \mbox{\hyperlink{thread__drd__entry_8h_aba2ac2f93bdc718f73db80fd93578b45a1f52e4a588cfb88124e4bb4e9cce2715}{eDRD\_DIAG\_SHOCK\_ASYNC}},\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00043\ \ \ \ \ \ \mbox{\hyperlink{thread__drd__entry_8h_aba2ac2f93bdc718f73db80fd93578b45a75059e2a35b759de2028a6f86df0e04a}{eDRD\_DIAG\_SHOCK\_SYNC}}\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00044\ \}\mbox{\hyperlink{thread__drd__entry_8h_aba2ac2f93bdc718f73db80fd93578b45}{DRD\_DIAG\_e}};}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{thread__drd__entry_8h_adfbfcd79f8c1d114daaee816fd406b9fa93d7a67c9bb614a58c51d93a4094f782}{eRYTHM\_UNKNOWN}}\ =\ 0,\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00048\ \ \ \ \ \mbox{\hyperlink{thread__drd__entry_8h_adfbfcd79f8c1d114daaee816fd406b9fa0f3c1f16da98a0b1e46a97b903f17886}{eRYTHM\_NON\_SHOCKABLE}},\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00049\ \ \ \ \ \mbox{\hyperlink{thread__drd__entry_8h_adfbfcd79f8c1d114daaee816fd406b9fab9b83c98ce5d4a8292635b749367ed8e}{eRYTHM\_SHOCKABLE\_SYNC}},\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{thread__drd__entry_8h_adfbfcd79f8c1d114daaee816fd406b9fa6707d451541a0e2ca6ff1a674a81da90}{eRYTHM\_SHOCKABLE\_ASYNC}},\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00051\ \}\ \mbox{\hyperlink{thread__drd__entry_8h_adfbfcd79f8c1d114daaee816fd406b9f}{RYTHM\_TYPE\_e}};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00054\ \textcolor{comment}{\ **\ Globals}}
+\DoxyCodeLine{00055\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00058\ \textcolor{comment}{\ **\ Prototypes}}
+\DoxyCodeLine{00059\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00060\ \textcolor{keyword}{extern}\ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \mbox{\hyperlink{thread__drd__entry_8h_a9fd8f30288747bd3f5fb25e53036c40f}{DRD\_Start\_Analysis}}\ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00061\ \textcolor{keyword}{extern}\ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \mbox{\hyperlink{thread__drd__entry_8h_acd3e792d89653550da9b8a6f17795865}{DRD\_Stop\_Analysis}}\ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00062\ \textcolor{keyword}{extern}\ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \mbox{\hyperlink{thread__drd__entry_8h_afdbe26c249ffa86da21ddf3779d89d52}{DRD\_Diag\_Ready}}\ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00063\ \textcolor{keyword}{extern}\ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\_t}}\ \ \ \ \ \ \mbox{\hyperlink{thread__drd__entry_8h_a14fc458fa84245d8d6a6467795aaf826}{DRD\_Is\_Running}}\ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00064\ \textcolor{keyword}{extern}\ \ \mbox{\hyperlink{thread__drd__entry_8h_aba2ac2f93bdc718f73db80fd93578b45}{DRD\_DIAG\_e}}\ \ \mbox{\hyperlink{thread__drd__entry_8h_a919272f048aaf3454587b9c8dc4f3f2c}{DRD\_Get\_Diagnosis}}\ \ \ (\mbox{\hyperlink{struct_d_r_d___r_e_s_u_l_t__t}{DRD\_RESULT\_t}}\ *p\_DRD\_Result);}
+\DoxyCodeLine{00065\ \textcolor{keyword}{extern}\ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ \ \ \ \mbox{\hyperlink{thread__drd__entry_8h_a98e2673f5c36106f6c0f321470cd8399}{DRD\_Get\_Diag\_nSample}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ THREAD\_DRD\_ENTRY\_H\_\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00070\ \textcolor{comment}{\ **\ \$Log\$}}
+\DoxyCodeLine{00071\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00072\ \textcolor{comment}{\ **\ end\ of\ thread\_drd\_entry.h}}
+\DoxyCodeLine{00073\ \textcolor{comment}{\ ******************************************************************************/}}
+
+\end{DoxyCode}

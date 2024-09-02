@@ -1,0 +1,462 @@
+\doxysection{C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\+Resources/\+Comm.h File Reference}
+\hypertarget{_comm_8h}{}\label{_comm_8h}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/Resources/Comm.h@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/Resources/Comm.h}}
+
+
+Header with functions related to the comm modules through serial port.  
+
+
+{\ttfamily \#include "{}types\+\_\+basic.\+h"{}}\newline
+{\ttfamily \#include "{}R100\+\_\+\+Errors.\+h"{}}\newline
+Include dependency graph for Comm.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=266pt]{_comm_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_comm_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_comm_8h_a143751853345193e3029f795af5e8e05}{TRACE\+\_\+\+NO\+\_\+\+FLAGS}}~0x00
+\item 
+\#define \mbox{\hyperlink{_comm_8h_ac40439f75ccde809716737fc2a51c60c}{TRACE\+\_\+\+TIME\+\_\+\+STAMP}}~0x01
+\item 
+\#define \mbox{\hyperlink{_comm_8h_a1a87383c89f58beedcf5ce80e2074eb0}{TRACE\+\_\+\+NEWLINE}}~0x02
+\item 
+\#define \mbox{\hyperlink{_comm_8h_a9c231218b9120af529e550ffab873a6e}{MAX\+\_\+\+WIFI\+\_\+\+CMD\+\_\+\+RESPONSE\+\_\+\+SIZE}}~220
+\item 
+\#define \mbox{\hyperlink{_comm_8h_a93b458df6dae5c638e3a6772f2645cc5}{BR\+\_\+9600}}~9600
+\begin{DoxyCompactList}\small\item\em Baud rates for the Comm UART controller. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_comm_8h_a855c21bb626ee4f5c8b0ae903e77342c}{BR\+\_\+115200}}~115200
+\begin{DoxyCompactList}\small\item\em 115200 bauds \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_comm_8h_a48ea5fbcc6da21db7f01b1b322624b22}{BR\+\_\+115384}}~115384
+\begin{DoxyCompactList}\small\item\em 115384 bauds \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_comm_8h_aeab62dea72ea7d592d7a78688a1e2fd5}{DATA\+\_\+\+BITS\+\_\+8}}~8
+\begin{DoxyCompactList}\small\item\em 8 data bits \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_comm_8h_a33fc07920aa0109f30e77b49faeaf1bd}{STOP\+\_\+\+BITS\+\_\+1}}~1
+\begin{DoxyCompactList}\small\item\em 1 stop bits \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_comm_8h_a6e39c5c443322398878f10e0f1e6f023}{NO\+\_\+\+PARITY}}~0
+\begin{DoxyCompactList}\small\item\em No Parity. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_comm_8h_aabbd664d6d4403f89cc5aed6802f012a}{NO\+\_\+\+FLOW\+\_\+\+CTRL}}~0
+\begin{DoxyCompactList}\small\item\em No Flow Control. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_comm_8h_a4020bb225ab3c16e3ffc0a6a514817f7}{Comm\+\_\+\+Uart\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Open connection SCI3 (UART). Initialize semaphore. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{_comm_8h_ae40e9c681ca7b454e790d494b96c2284}{Comm\+\_\+\+Uart\+\_\+\+Set\+\_\+\+Baud\+\_\+\+Rate}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} baud\+\_\+rate)
+\begin{DoxyCompactList}\small\item\em Change SCI3 (UART) baud rate. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_comm_8h_aceced6fe6160f18c11e8d0ea46cfe881}{Comm\+\_\+\+Uart\+\_\+\+Send}} (const char \texorpdfstring{$\ast$}{*}p\+String)
+\begin{DoxyCompactList}\small\item\em Send a string through the UART. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_comm_8h_a26017f7af5f911a6a0e19cfec7bd08e6}{Comm\+\_\+\+Uart\+\_\+\+Send\+\_\+\+Arg}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} flags, const char \texorpdfstring{$\ast$}{*}p\+String, const \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} aux\+\_\+code)
+\begin{DoxyCompactList}\small\item\em Send a string through the UART. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_comm_8h_a4ac0907360503f6ed474e5c18d25bf36}{Comm\+\_\+\+Uart\+\_\+\+Send\+\_\+\+Data}} (const char \texorpdfstring{$\ast$}{*}p\+String, \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} size)
+\begin{DoxyCompactList}\small\item\em Send a data string through UART. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_comm_8h_aec5ef2359cd4e785b63d0390462a213b}{Comm\+\_\+\+Uart\+\_\+\+Get\+\_\+\+Msg\+\_\+\+Buff\+\_\+\+Ptr}} (char \texorpdfstring{$\ast$}{*}buf, int count)
+\begin{DoxyCompactList}\small\item\em Get a received module response. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_comm_8h_aab482bf1737ccffd871eaa85a6f25021}{Comm\+\_\+\+Uart\+\_\+\+Wifi\+\_\+\+Send}} (const char \texorpdfstring{$\ast$}{*}p\+String, \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} length)
+\begin{DoxyCompactList}\small\item\em Send a string through the UART to the wifi module. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{_comm_8h_a612240bf37db565f46ad4dc6c7298898}{Comm\+\_\+\+Uart\+\_\+\+Wifi\+\_\+\+Receive}} (char \texorpdfstring{$\ast$}{*}rx\+\_\+buf, \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} length, \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} tout, \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} ack)
+\begin{DoxyCompactList}\small\item\em Get a received module response. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{_comm_8h_a83801be040789c4446f9b7c03c740a46}{Comm\+\_\+\+Uart\+\_\+\+Wifi\+\_\+\+Receive\+\_\+\+CFG\+\_\+\+FW}} (char \texorpdfstring{$\ast$}{*}rx\+\_\+buf, \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} length, \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} tout, \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} ack, \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \texorpdfstring{$\ast$}{*}received\+\_\+length, \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} wait\+\_\+length)
+\begin{DoxyCompactList}\small\item\em Get a received module response. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_comm_8h_ab32f8b12b65a08d2f5ff2b8fed598e4b}{Comm\+\_\+\+Uart\+\_\+\+Wifi\+\_\+\+Enable\+\_\+\+Data\+\_\+\+Reception}} (void)
+\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{_comm_8h_ac41bb597cbbcd067fc78b6a2ededb17f}{Comm\+\_\+\+Uart\+\_\+\+Wifi\+\_\+\+Get\+\_\+\+Data}} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header with functions related to the comm modules through serial port. 
+
+\begin{DoxyVersion}{Version}
+v1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+17/04/2019 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+jarribas 
+\end{DoxyAuthor}
+\begin{DoxyWarning}{Warning}
+author date version .-\/ Edition 
+\end{DoxyWarning}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000058}{Bug}}]\end{DoxyRefDesc}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{_comm_8h_a855c21bb626ee4f5c8b0ae903e77342c}\label{_comm_8h_a855c21bb626ee4f5c8b0ae903e77342c} 
+\index{Comm.h@{Comm.h}!BR\_115200@{BR\_115200}}
+\index{BR\_115200@{BR\_115200}!Comm.h@{Comm.h}}
+\doxysubsubsection{\texorpdfstring{BR\_115200}{BR\_115200}}
+{\footnotesize\ttfamily \#define BR\+\_\+115200~115200}
+
+
+
+115200 bauds 
+
+\Hypertarget{_comm_8h_a48ea5fbcc6da21db7f01b1b322624b22}\label{_comm_8h_a48ea5fbcc6da21db7f01b1b322624b22} 
+\index{Comm.h@{Comm.h}!BR\_115384@{BR\_115384}}
+\index{BR\_115384@{BR\_115384}!Comm.h@{Comm.h}}
+\doxysubsubsection{\texorpdfstring{BR\_115384}{BR\_115384}}
+{\footnotesize\ttfamily \#define BR\+\_\+115384~115384}
+
+
+
+115384 bauds 
+
+\Hypertarget{_comm_8h_a93b458df6dae5c638e3a6772f2645cc5}\label{_comm_8h_a93b458df6dae5c638e3a6772f2645cc5} 
+\index{Comm.h@{Comm.h}!BR\_9600@{BR\_9600}}
+\index{BR\_9600@{BR\_9600}!Comm.h@{Comm.h}}
+\doxysubsubsection{\texorpdfstring{BR\_9600}{BR\_9600}}
+{\footnotesize\ttfamily \#define BR\+\_\+9600~9600}
+
+
+
+Baud rates for the Comm UART controller. 
+
+9600 bauds \Hypertarget{_comm_8h_aeab62dea72ea7d592d7a78688a1e2fd5}\label{_comm_8h_aeab62dea72ea7d592d7a78688a1e2fd5} 
+\index{Comm.h@{Comm.h}!DATA\_BITS\_8@{DATA\_BITS\_8}}
+\index{DATA\_BITS\_8@{DATA\_BITS\_8}!Comm.h@{Comm.h}}
+\doxysubsubsection{\texorpdfstring{DATA\_BITS\_8}{DATA\_BITS\_8}}
+{\footnotesize\ttfamily \#define DATA\+\_\+\+BITS\+\_\+8~8}
+
+
+
+8 data bits 
+
+\Hypertarget{_comm_8h_a9c231218b9120af529e550ffab873a6e}\label{_comm_8h_a9c231218b9120af529e550ffab873a6e} 
+\index{Comm.h@{Comm.h}!MAX\_WIFI\_CMD\_RESPONSE\_SIZE@{MAX\_WIFI\_CMD\_RESPONSE\_SIZE}}
+\index{MAX\_WIFI\_CMD\_RESPONSE\_SIZE@{MAX\_WIFI\_CMD\_RESPONSE\_SIZE}!Comm.h@{Comm.h}}
+\doxysubsubsection{\texorpdfstring{MAX\_WIFI\_CMD\_RESPONSE\_SIZE}{MAX\_WIFI\_CMD\_RESPONSE\_SIZE}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+WIFI\+\_\+\+CMD\+\_\+\+RESPONSE\+\_\+\+SIZE~220}
+
+\Hypertarget{_comm_8h_aabbd664d6d4403f89cc5aed6802f012a}\label{_comm_8h_aabbd664d6d4403f89cc5aed6802f012a} 
+\index{Comm.h@{Comm.h}!NO\_FLOW\_CTRL@{NO\_FLOW\_CTRL}}
+\index{NO\_FLOW\_CTRL@{NO\_FLOW\_CTRL}!Comm.h@{Comm.h}}
+\doxysubsubsection{\texorpdfstring{NO\_FLOW\_CTRL}{NO\_FLOW\_CTRL}}
+{\footnotesize\ttfamily \#define NO\+\_\+\+FLOW\+\_\+\+CTRL~0}
+
+
+
+No Flow Control. 
+
+\Hypertarget{_comm_8h_a6e39c5c443322398878f10e0f1e6f023}\label{_comm_8h_a6e39c5c443322398878f10e0f1e6f023} 
+\index{Comm.h@{Comm.h}!NO\_PARITY@{NO\_PARITY}}
+\index{NO\_PARITY@{NO\_PARITY}!Comm.h@{Comm.h}}
+\doxysubsubsection{\texorpdfstring{NO\_PARITY}{NO\_PARITY}}
+{\footnotesize\ttfamily \#define NO\+\_\+\+PARITY~0}
+
+
+
+No Parity. 
+
+\Hypertarget{_comm_8h_a33fc07920aa0109f30e77b49faeaf1bd}\label{_comm_8h_a33fc07920aa0109f30e77b49faeaf1bd} 
+\index{Comm.h@{Comm.h}!STOP\_BITS\_1@{STOP\_BITS\_1}}
+\index{STOP\_BITS\_1@{STOP\_BITS\_1}!Comm.h@{Comm.h}}
+\doxysubsubsection{\texorpdfstring{STOP\_BITS\_1}{STOP\_BITS\_1}}
+{\footnotesize\ttfamily \#define STOP\+\_\+\+BITS\+\_\+1~1}
+
+
+
+1 stop bits 
+
+\Hypertarget{_comm_8h_a1a87383c89f58beedcf5ce80e2074eb0}\label{_comm_8h_a1a87383c89f58beedcf5ce80e2074eb0} 
+\index{Comm.h@{Comm.h}!TRACE\_NEWLINE@{TRACE\_NEWLINE}}
+\index{TRACE\_NEWLINE@{TRACE\_NEWLINE}!Comm.h@{Comm.h}}
+\doxysubsubsection{\texorpdfstring{TRACE\_NEWLINE}{TRACE\_NEWLINE}}
+{\footnotesize\ttfamily \#define TRACE\+\_\+\+NEWLINE~0x02}
+
+\Hypertarget{_comm_8h_a143751853345193e3029f795af5e8e05}\label{_comm_8h_a143751853345193e3029f795af5e8e05} 
+\index{Comm.h@{Comm.h}!TRACE\_NO\_FLAGS@{TRACE\_NO\_FLAGS}}
+\index{TRACE\_NO\_FLAGS@{TRACE\_NO\_FLAGS}!Comm.h@{Comm.h}}
+\doxysubsubsection{\texorpdfstring{TRACE\_NO\_FLAGS}{TRACE\_NO\_FLAGS}}
+{\footnotesize\ttfamily \#define TRACE\+\_\+\+NO\+\_\+\+FLAGS~0x00}
+
+\Hypertarget{_comm_8h_ac40439f75ccde809716737fc2a51c60c}\label{_comm_8h_ac40439f75ccde809716737fc2a51c60c} 
+\index{Comm.h@{Comm.h}!TRACE\_TIME\_STAMP@{TRACE\_TIME\_STAMP}}
+\index{TRACE\_TIME\_STAMP@{TRACE\_TIME\_STAMP}!Comm.h@{Comm.h}}
+\doxysubsubsection{\texorpdfstring{TRACE\_TIME\_STAMP}{TRACE\_TIME\_STAMP}}
+{\footnotesize\ttfamily \#define TRACE\+\_\+\+TIME\+\_\+\+STAMP~0x01}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_comm_8h_aec5ef2359cd4e785b63d0390462a213b}\label{_comm_8h_aec5ef2359cd4e785b63d0390462a213b} 
+\index{Comm.h@{Comm.h}!Comm\_Uart\_Get\_Msg\_Buff\_Ptr@{Comm\_Uart\_Get\_Msg\_Buff\_Ptr}}
+\index{Comm\_Uart\_Get\_Msg\_Buff\_Ptr@{Comm\_Uart\_Get\_Msg\_Buff\_Ptr}!Comm.h@{Comm.h}}
+\doxysubsubsection{\texorpdfstring{Comm\_Uart\_Get\_Msg\_Buff\_Ptr()}{Comm\_Uart\_Get\_Msg\_Buff\_Ptr()}}
+{\footnotesize\ttfamily void Comm\+\_\+\+Uart\+\_\+\+Get\+\_\+\+Msg\+\_\+\+Buff\+\_\+\+Ptr (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{buf,  }\item[{int}]{count }\end{DoxyParamCaption})}
+
+
+
+Get a received module response. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buf} & Pointer to buffer to store the message \\
+\hline
+{\em count} & size of the message to be read\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000008}{Todo}}]pending things to be done\end{DoxyRefDesc}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_comm_8h_aec5ef2359cd4e785b63d0390462a213b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_comm_8h_a4020bb225ab3c16e3ffc0a6a514817f7}\label{_comm_8h_a4020bb225ab3c16e3ffc0a6a514817f7} 
+\index{Comm.h@{Comm.h}!Comm\_Uart\_Init@{Comm\_Uart\_Init}}
+\index{Comm\_Uart\_Init@{Comm\_Uart\_Init}!Comm.h@{Comm.h}}
+\doxysubsubsection{\texorpdfstring{Comm\_Uart\_Init()}{Comm\_Uart\_Init()}}
+{\footnotesize\ttfamily void Comm\+\_\+\+Uart\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Open connection SCI3 (UART). Initialize semaphore. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000004}{Todo}}]pending things to be done\end{DoxyRefDesc}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_comm_8h_a4020bb225ab3c16e3ffc0a6a514817f7_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_comm_8h_aceced6fe6160f18c11e8d0ea46cfe881}\label{_comm_8h_aceced6fe6160f18c11e8d0ea46cfe881} 
+\index{Comm.h@{Comm.h}!Comm\_Uart\_Send@{Comm\_Uart\_Send}}
+\index{Comm\_Uart\_Send@{Comm\_Uart\_Send}!Comm.h@{Comm.h}}
+\doxysubsubsection{\texorpdfstring{Comm\_Uart\_Send()}{Comm\_Uart\_Send()}}
+{\footnotesize\ttfamily void Comm\+\_\+\+Uart\+\_\+\+Send (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{p\+String }\end{DoxyParamCaption})}
+
+
+
+Send a string through the UART. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+String} & Pointer to string\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000005}{Todo}}]pending things to be done\end{DoxyRefDesc}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{_comm_8h_aceced6fe6160f18c11e8d0ea46cfe881_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_comm_8h_aceced6fe6160f18c11e8d0ea46cfe881_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_comm_8h_a26017f7af5f911a6a0e19cfec7bd08e6}\label{_comm_8h_a26017f7af5f911a6a0e19cfec7bd08e6} 
+\index{Comm.h@{Comm.h}!Comm\_Uart\_Send\_Arg@{Comm\_Uart\_Send\_Arg}}
+\index{Comm\_Uart\_Send\_Arg@{Comm\_Uart\_Send\_Arg}!Comm.h@{Comm.h}}
+\doxysubsubsection{\texorpdfstring{Comm\_Uart\_Send\_Arg()}{Comm\_Uart\_Send\_Arg()}}
+{\footnotesize\ttfamily void Comm\+\_\+\+Uart\+\_\+\+Send\+\_\+\+Arg (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{flags,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{p\+String,  }\item[{const \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}}}]{aux\+\_\+code }\end{DoxyParamCaption})}
+
+
+
+Send a string through the UART. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em flags} & Flags to print more information (Time or CRLF) \\
+\hline
+{\em p\+String} & Pointer to string \\
+\hline
+{\em aux\+\_\+code} & Additional parameter or code\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000006}{Todo}}]pending things to be done\end{DoxyRefDesc}
+\Hypertarget{_comm_8h_a4ac0907360503f6ed474e5c18d25bf36}\label{_comm_8h_a4ac0907360503f6ed474e5c18d25bf36} 
+\index{Comm.h@{Comm.h}!Comm\_Uart\_Send\_Data@{Comm\_Uart\_Send\_Data}}
+\index{Comm\_Uart\_Send\_Data@{Comm\_Uart\_Send\_Data}!Comm.h@{Comm.h}}
+\doxysubsubsection{\texorpdfstring{Comm\_Uart\_Send\_Data()}{Comm\_Uart\_Send\_Data()}}
+{\footnotesize\ttfamily void Comm\+\_\+\+Uart\+\_\+\+Send\+\_\+\+Data (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{p\+String,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}}}]{size }\end{DoxyParamCaption})}
+
+
+
+Send a data string through UART. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+String} & Pointer to trace string \\
+\hline
+{\em size} & Data size\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000007}{Todo}}]pending things to be done\end{DoxyRefDesc}
+\Hypertarget{_comm_8h_ae40e9c681ca7b454e790d494b96c2284}\label{_comm_8h_ae40e9c681ca7b454e790d494b96c2284} 
+\index{Comm.h@{Comm.h}!Comm\_Uart\_Set\_Baud\_Rate@{Comm\_Uart\_Set\_Baud\_Rate}}
+\index{Comm\_Uart\_Set\_Baud\_Rate@{Comm\_Uart\_Set\_Baud\_Rate}!Comm.h@{Comm.h}}
+\doxysubsubsection{\texorpdfstring{Comm\_Uart\_Set\_Baud\_Rate()}{Comm\_Uart\_Set\_Baud\_Rate()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Comm\+\_\+\+Uart\+\_\+\+Set\+\_\+\+Baud\+\_\+\+Rate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}}}]{baud\+\_\+rate }\end{DoxyParamCaption})}
+
+
+
+Change SCI3 (UART) baud rate. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em uint32\+\_\+t} & baud\+\_\+rate\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR\+\_\+\+ID\+\_\+e error changing the baud rate of the Comm UART 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_comm_8h_ae40e9c681ca7b454e790d494b96c2284_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_comm_8h_ab32f8b12b65a08d2f5ff2b8fed598e4b}\label{_comm_8h_ab32f8b12b65a08d2f5ff2b8fed598e4b} 
+\index{Comm.h@{Comm.h}!Comm\_Uart\_Wifi\_Enable\_Data\_Reception@{Comm\_Uart\_Wifi\_Enable\_Data\_Reception}}
+\index{Comm\_Uart\_Wifi\_Enable\_Data\_Reception@{Comm\_Uart\_Wifi\_Enable\_Data\_Reception}!Comm.h@{Comm.h}}
+\doxysubsubsection{\texorpdfstring{Comm\_Uart\_Wifi\_Enable\_Data\_Reception()}{Comm\_Uart\_Wifi\_Enable\_Data\_Reception()}}
+{\footnotesize\ttfamily void Comm\+\_\+\+Uart\+\_\+\+Wifi\+\_\+\+Enable\+\_\+\+Data\+\_\+\+Reception (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{_comm_8h_ac41bb597cbbcd067fc78b6a2ededb17f}\label{_comm_8h_ac41bb597cbbcd067fc78b6a2ededb17f} 
+\index{Comm.h@{Comm.h}!Comm\_Uart\_Wifi\_Get\_Data@{Comm\_Uart\_Wifi\_Get\_Data}}
+\index{Comm\_Uart\_Wifi\_Get\_Data@{Comm\_Uart\_Wifi\_Get\_Data}!Comm.h@{Comm.h}}
+\doxysubsubsection{\texorpdfstring{Comm\_Uart\_Wifi\_Get\_Data()}{Comm\_Uart\_Wifi\_Get\_Data()}}
+{\footnotesize\ttfamily char \texorpdfstring{$\ast$}{*} Comm\+\_\+\+Uart\+\_\+\+Wifi\+\_\+\+Get\+\_\+\+Data (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{_comm_8h_a612240bf37db565f46ad4dc6c7298898}\label{_comm_8h_a612240bf37db565f46ad4dc6c7298898} 
+\index{Comm.h@{Comm.h}!Comm\_Uart\_Wifi\_Receive@{Comm\_Uart\_Wifi\_Receive}}
+\index{Comm\_Uart\_Wifi\_Receive@{Comm\_Uart\_Wifi\_Receive}!Comm.h@{Comm.h}}
+\doxysubsubsection{\texorpdfstring{Comm\_Uart\_Wifi\_Receive()}{Comm\_Uart\_Wifi\_Receive()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Comm\+\_\+\+Uart\+\_\+\+Wifi\+\_\+\+Receive (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{rx\+\_\+buf,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}}}]{length,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}}}]{tout,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}}}]{ack }\end{DoxyParamCaption})}
+
+
+
+Get a received module response. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rx\+\_\+buf} & Pointer to buffer to store the message \\
+\hline
+{\em length} & Size of the message to be read \\
+\hline
+{\em tout} & Timeout for the response \\
+\hline
+{\em ack} & Expected response\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR\+\_\+\+ID\+\_\+e error if bytes not readed 
+\end{DoxyReturn}
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000010}{Todo}}]pending things to be done\end{DoxyRefDesc}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{_comm_8h_a612240bf37db565f46ad4dc6c7298898_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_comm_8h_a83801be040789c4446f9b7c03c740a46}\label{_comm_8h_a83801be040789c4446f9b7c03c740a46} 
+\index{Comm.h@{Comm.h}!Comm\_Uart\_Wifi\_Receive\_CFG\_FW@{Comm\_Uart\_Wifi\_Receive\_CFG\_FW}}
+\index{Comm\_Uart\_Wifi\_Receive\_CFG\_FW@{Comm\_Uart\_Wifi\_Receive\_CFG\_FW}!Comm.h@{Comm.h}}
+\doxysubsubsection{\texorpdfstring{Comm\_Uart\_Wifi\_Receive\_CFG\_FW()}{Comm\_Uart\_Wifi\_Receive\_CFG\_FW()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Comm\+\_\+\+Uart\+\_\+\+Wifi\+\_\+\+Receive\+\_\+\+CFG\+\_\+\+FW (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{rx\+\_\+buf,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}}}]{length,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}}}]{tout,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}}}]{ack,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{received\+\_\+length,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}}}]{wait\+\_\+length }\end{DoxyParamCaption})}
+
+
+
+Get a received module response. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rx\+\_\+buf} & Pointer to buffer to store the message \\
+\hline
+{\em length} & Size of the message to be read \\
+\hline
+{\em tout} & Timeout for the response \\
+\hline
+{\em ack} & Expected response\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR\+\_\+\+ID\+\_\+e error if bytes not readed 
+\end{DoxyReturn}
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000011}{Todo}}]pending things to be done\end{DoxyRefDesc}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_comm_8h_a83801be040789c4446f9b7c03c740a46_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_comm_8h_aab482bf1737ccffd871eaa85a6f25021}\label{_comm_8h_aab482bf1737ccffd871eaa85a6f25021} 
+\index{Comm.h@{Comm.h}!Comm\_Uart\_Wifi\_Send@{Comm\_Uart\_Wifi\_Send}}
+\index{Comm\_Uart\_Wifi\_Send@{Comm\_Uart\_Wifi\_Send}!Comm.h@{Comm.h}}
+\doxysubsubsection{\texorpdfstring{Comm\_Uart\_Wifi\_Send()}{Comm\_Uart\_Wifi\_Send()}}
+{\footnotesize\ttfamily void Comm\+\_\+\+Uart\+\_\+\+Wifi\+\_\+\+Send (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{p\+String,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}}}]{length }\end{DoxyParamCaption})}
+
+
+
+Send a string through the UART to the wifi module. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+String} & Pointer to string \\
+\hline
+{\em length} & Size of the message to be read\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000009}{Todo}}]pending things to be done\end{DoxyRefDesc}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_comm_8h_aab482bf1737ccffd871eaa85a6f25021_icgraph}
+\end{center}
+\end{figure}

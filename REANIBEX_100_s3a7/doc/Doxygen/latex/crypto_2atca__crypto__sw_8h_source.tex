@@ -1,0 +1,168 @@
+\doxysection{atca\+\_\+crypto\+\_\+sw.\+h}
+\hypertarget{crypto_2atca__crypto__sw_8h_source}{}\label{crypto_2atca__crypto__sw_8h_source}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/SCE/crypto/atca\_crypto\_sw.h@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/SCE/crypto/atca\_crypto\_sw.h}}
+\mbox{\hyperlink{crypto_2atca__crypto__sw_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#ifndef\ ATCA\_CRYPTO\_SW\_H}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#define\ ATCA\_CRYPTO\_SW\_H}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{atca__config_8h}{atca\_config.h}}"{}}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{atca__status_8h}{atca\_status.h}}"{}}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00038\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#define\ ATCA\_SHA1\_DIGEST\_SIZE\ \ \ \ \ \ \ (20)}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#define\ ATCA\_SHA2\_256\_DIGEST\_SIZE\ \ \ (32)}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#define\ ATCA\_SHA2\_256\_BLOCK\_SIZE\ \ \ \ (64)}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#if\ defined(ATCA\_MBEDTLS)}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#if\ !defined(MBEDTLS\_CONFIG\_FILE)}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#include\ "{}mbedtls/config.h"{}}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#include\ MBEDTLS\_CONFIG\_FILE}}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#ifndef\ MBEDTLS\_CMAC\_C}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ MBEDTLS\_CMAC\_C}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#include\ <mbedtls/cipher.h>}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#include\ <mbedtls/md.h>}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#include\ <mbedtls/pk.h>}}
+\DoxyCodeLine{00059\ \textcolor{keyword}{typedef}\ mbedtls\_cipher\_context\_t\ atcac\_aes\_cmac\_ctx;}
+\DoxyCodeLine{00060\ \textcolor{keyword}{typedef}\ mbedtls\_md\_context\_t\ \mbox{\hyperlink{structatcac__hmac__sha256__ctx}{atcac\_hmac\_sha256\_ctx}};}
+\DoxyCodeLine{00061\ \textcolor{keyword}{typedef}\ mbedtls\_cipher\_context\_t\ atcac\_aes\_gcm\_ctx;}
+\DoxyCodeLine{00062\ \textcolor{keyword}{typedef}\ mbedtls\_md\_context\_t\ \mbox{\hyperlink{structatcac__sha1__ctx}{atcac\_sha1\_ctx}};}
+\DoxyCodeLine{00063\ \textcolor{keyword}{typedef}\ mbedtls\_md\_context\_t\ \mbox{\hyperlink{structatcac__sha2__256__ctx}{atcac\_sha2\_256\_ctx}};}
+\DoxyCodeLine{00064\ \textcolor{keyword}{typedef}\ mbedtls\_pk\_context\ atcac\_pk\_ctx;}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#elif\ defined(ATCA\_OPENSSL)}}
+\DoxyCodeLine{00067\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00068\ \{}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{void}*\ ptr;}
+\DoxyCodeLine{00070\ \}\ atca\_evp\_ctx;}
+\DoxyCodeLine{00071\ \textcolor{keyword}{typedef}\ atca\_evp\_ctx\ atcac\_aes\_gcm\_ctx;}
+\DoxyCodeLine{00072\ \textcolor{keyword}{typedef}\ atca\_evp\_ctx\ \mbox{\hyperlink{structatcac__sha1__ctx}{atcac\_sha1\_ctx}};}
+\DoxyCodeLine{00073\ \textcolor{keyword}{typedef}\ atca\_evp\_ctx\ \mbox{\hyperlink{structatcac__sha2__256__ctx}{atcac\_sha2\_256\_ctx}};}
+\DoxyCodeLine{00074\ \textcolor{keyword}{typedef}\ atca\_evp\_ctx\ atcac\_aes\_cmac\_ctx;}
+\DoxyCodeLine{00075\ \textcolor{keyword}{typedef}\ atca\_evp\_ctx\ \mbox{\hyperlink{structatcac__hmac__sha256__ctx}{atcac\_hmac\_sha256\_ctx}};}
+\DoxyCodeLine{00076\ \textcolor{keyword}{typedef}\ atca\_evp\_ctx\ atcac\_pk\_ctx;}
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#elif\ defined(ATCA\_WOLFSSL)}}
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\#include\ "{}wolfssl/wolfcrypt/types.h"{}}}
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#ifndef\ WOLFSSL\_CMAC}}
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#define\ WOLFSSL\_CMAC}}
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#ifndef\ HAVE\_AESGCM}}
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\#define\ HAVE\_AESGCM}}
+\DoxyCodeLine{00084\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00085\ \textcolor{preprocessor}{\#include\ "{}wolfssl/wolfcrypt/aes.h"{}}}
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{\#include\ "{}wolfssl/wolfcrypt/cmac.h"{}}}
+\DoxyCodeLine{00087\ \textcolor{preprocessor}{\#include\ "{}wolfssl/wolfcrypt/hmac.h"{}}}
+\DoxyCodeLine{00088\ \textcolor{preprocessor}{\#include\ "{}wolfssl/wolfcrypt/sha.h"{}}}
+\DoxyCodeLine{00089\ \textcolor{preprocessor}{\#include\ "{}wolfssl/wolfcrypt/sha256.h"{}}}
+\DoxyCodeLine{00090\ \textcolor{preprocessor}{\#include\ "{}wolfssl/wolfcrypt/error-\/crypt.h"{}}}
+\DoxyCodeLine{00091\ \textcolor{preprocessor}{\#include\ "{}wolfssl/wolfcrypt/asn\_public.h"{}}}
+\DoxyCodeLine{00092\ \textcolor{preprocessor}{\#include\ "{}wolfssl/wolfcrypt/asn.h"{}}}
+\DoxyCodeLine{00093\ \textcolor{preprocessor}{\#include\ "{}wolfssl/wolfcrypt/random.h"{}}}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00096\ \{}
+\DoxyCodeLine{00097\ \ \ \ \ Aes\ \ \ \ \ \ aes;}
+\DoxyCodeLine{00098\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ iv[AES\_BLOCK\_SIZE];}
+\DoxyCodeLine{00099\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ iv\_len;}
+\DoxyCodeLine{00100\ \}\ atcac\_aes\_gcm\_ctx;}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00103\ \{}
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keywordtype}{void}*\ ptr;}
+\DoxyCodeLine{00105\ \}\ atca\_wc\_ctx;}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \textcolor{keyword}{typedef}\ wc\_Sha\ \mbox{\hyperlink{structatcac__sha1__ctx}{atcac\_sha1\_ctx}};}
+\DoxyCodeLine{00108\ \textcolor{keyword}{typedef}\ wc\_Sha256\ \mbox{\hyperlink{structatcac__sha2__256__ctx}{atcac\_sha2\_256\_ctx}};}
+\DoxyCodeLine{00109\ \textcolor{keyword}{typedef}\ Cmac\ atcac\_aes\_cmac\_ctx;}
+\DoxyCodeLine{00110\ \textcolor{keyword}{typedef}\ Hmac\ \mbox{\hyperlink{structatcac__hmac__sha256__ctx}{atcac\_hmac\_sha256\_ctx}};}
+\DoxyCodeLine{00111\ \textcolor{keyword}{typedef}\ atca\_wc\_ctx\ atcac\_pk\_ctx;}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \textcolor{comment}{/*\ Some\ configurations\ end\ up\ with\ a\ circular\ definition\ the\ above\ have\ to\ be\ defined\ before\ include\ ecc.h\ (since\ ecc.h\ can\ call\ cryptoauthlib\ functions)\ */}}
+\DoxyCodeLine{00114\ \textcolor{preprocessor}{\#include\ "{}wolfssl/wolfcrypt/ecc.h"{}}}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00117\ \textcolor{preprocessor}{\#ifndef\ ATCA\_ENABLE\_SHA1\_IMPL}}
+\DoxyCodeLine{00118\ \textcolor{preprocessor}{\#define\ ATCA\_ENABLE\_SHA1\_IMPL\ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{00119\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \textcolor{preprocessor}{\#ifndef\ ATCA\_ENABLE\_SHA256\_IMPL}}
+\DoxyCodeLine{00122\ \textcolor{preprocessor}{\#define\ ATCA\_ENABLE\_SHA256\_IMPL\ \ \ \ \ 1}}
+\DoxyCodeLine{00123\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \textcolor{preprocessor}{\#ifndef\ ATCA\_ENABLE\_RAND\_IMPL}}
+\DoxyCodeLine{00126\ \textcolor{preprocessor}{\#define\ ATCA\_ENABLE\_RAND\_IMPL\ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{00127\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00129\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00130\ \{}
+\DoxyCodeLine{00131\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ pad[32];\ }
+\DoxyCodeLine{00132\ \}\ \mbox{\hyperlink{structatcac__sha1__ctx}{atcac\_sha1\_ctx}};}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00135\ \{}
+\DoxyCodeLine{00136\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ pad[48];\ }
+\DoxyCodeLine{00137\ \}\ \mbox{\hyperlink{structatcac__sha2__256__ctx}{atcac\_sha2\_256\_ctx}};}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00139\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00140\ \{}
+\DoxyCodeLine{00141\ \ \ \ \ \mbox{\hyperlink{structatcac__sha2__256__ctx}{atcac\_sha2\_256\_ctx}}\ sha256\_ctx;}
+\DoxyCodeLine{00142\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ \ \ \ \ \ \ \ ipad[\mbox{\hyperlink{atca__crypto__sw_8h_a4c4ce6cbfabda05b03f992165ea96431}{ATCA\_SHA2\_256\_BLOCK\_SIZE}}];}
+\DoxyCodeLine{00143\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ \ \ \ \ \ \ \ opad[\mbox{\hyperlink{atca__crypto__sw_8h_a4c4ce6cbfabda05b03f992165ea96431}{ATCA\_SHA2\_256\_BLOCK\_SIZE}}];}
+\DoxyCodeLine{00144\ \}\ \mbox{\hyperlink{structatcac__hmac__sha256__ctx}{atcac\_hmac\_sha256\_ctx}};}
+\DoxyCodeLine{00145\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00147\ \textcolor{preprocessor}{\#if\ defined(ATCA\_MBEDTLS)\ ||\ defined(ATCA\_OPENSSL)\ ||\ defined(ATCA\_WOLFSSL)}}
+\DoxyCodeLine{00148\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ atcac\_aes\_gcm\_encrypt\_start(atcac\_aes\_gcm\_ctx*\ ctx,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}*\ key,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ key\_len,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}*\ iv,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ iv\_len);}
+\DoxyCodeLine{00149\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ atcac\_aes\_gcm\_decrypt\_start(atcac\_aes\_gcm\_ctx*\ ctx,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}*\ key,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ key\_len,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}*\ iv,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ iv\_len);}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ atcac\_aes\_cmac\_init(atcac\_aes\_cmac\_ctx*\ ctx,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}*\ key,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ key\_len);}
+\DoxyCodeLine{00152\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ atcac\_aes\_cmac\_update(atcac\_aes\_cmac\_ctx*\ ctx,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}*\ data,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ data\_size);}
+\DoxyCodeLine{00153\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ atcac\_aes\_cmac\_finish(atcac\_aes\_cmac\_ctx*\ ctx,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}*\ cmac,\ \textcolor{keywordtype}{size\_t}*\ cmac\_size);}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00155\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ atcac\_pk\_init(atcac\_pk\_ctx*\ ctx,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}*\ buf,\ \textcolor{keywordtype}{size\_t}\ buflen,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ key\_type,\ \textcolor{keywordtype}{bool}\ pubkey);}
+\DoxyCodeLine{00156\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ atcac\_pk\_init\_pem(atcac\_pk\_ctx*\ ctx,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}*\ buf,\ \textcolor{keywordtype}{size\_t}\ buflen,\ \textcolor{keywordtype}{bool}\ pubkey);}
+\DoxyCodeLine{00157\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ atcac\_pk\_free(atcac\_pk\_ctx*\ ctx);}
+\DoxyCodeLine{00158\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ atcac\_pk\_public(atcac\_pk\_ctx*\ ctx,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}*\ buf,\ \textcolor{keywordtype}{size\_t}*\ buflen);}
+\DoxyCodeLine{00159\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ atcac\_pk\_sign(atcac\_pk\_ctx*\ ctx,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}*\ digest,\ \textcolor{keywordtype}{size\_t}\ dig\_len,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}*\ signature,\ \textcolor{keywordtype}{size\_t}*\ sig\_len);}
+\DoxyCodeLine{00160\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ atcac\_pk\_verify(atcac\_pk\_ctx*\ ctx,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}*\ digest,\ \textcolor{keywordtype}{size\_t}\ dig\_len,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}*\ signature,\ \textcolor{keywordtype}{size\_t}\ sig\_len);}
+\DoxyCodeLine{00161\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ atcac\_pk\_derive(atcac\_pk\_ctx*\ private\_ctx,\ atcac\_pk\_ctx*\ public\_ctx,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}*\ buf,\ \textcolor{keywordtype}{size\_t}*\ buflen);}
+\DoxyCodeLine{00162\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00164\ \textcolor{preprocessor}{\#if\ defined(ATCA\_MBEDTLS)\ ||\ defined(ATCA\_OPENSSL)}}
+\DoxyCodeLine{00165\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ atcac\_aes\_gcm\_aad\_update(atcac\_aes\_gcm\_ctx*\ ctx,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}*\ aad,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ aad\_len);}
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00167\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ atcac\_aes\_gcm\_encrypt\_update(atcac\_aes\_gcm\_ctx*\ ctx,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}*\ plaintext,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ pt\_len,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}*\ ciphertext,\ \textcolor{keywordtype}{size\_t}*\ ct\_len);}
+\DoxyCodeLine{00168\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ atcac\_aes\_gcm\_encrypt\_finish(atcac\_aes\_gcm\_ctx*\ ctx,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}*\ tag,\ \textcolor{keywordtype}{size\_t}\ tag\_len);}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00170\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ atcac\_aes\_gcm\_decrypt\_update(atcac\_aes\_gcm\_ctx*\ ctx,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}*\ ciphertext,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ ct\_len,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}*\ plaintext,\ \textcolor{keywordtype}{size\_t}*\ pt\_len);}
+\DoxyCodeLine{00171\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ atcac\_aes\_gcm\_decrypt\_finish(atcac\_aes\_gcm\_ctx*\ ctx,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}*\ tag,\ \textcolor{keywordtype}{size\_t}\ tag\_len,\ \textcolor{keywordtype}{bool}*\ is\_verified);}
+\DoxyCodeLine{00172\ }
+\DoxyCodeLine{00173\ \textcolor{preprocessor}{\#elif\ defined(ATCA\_WOLFSSL)}}
+\DoxyCodeLine{00174\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ atcac\_aes\_gcm\_encrypt(atcac\_aes\_gcm\_ctx*\ ctx,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}*\ plaintext,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ pt\_len,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}*\ ciphertext,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}*\ tag,}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ tag\_len,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}*\ aad,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ aad\_len);}
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00178\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ atcac\_aes\_gcm\_decrypt(atcac\_aes\_gcm\_ctx*\ ctx,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}*\ ciphertext,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ ct\_len,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}*\ plaintext,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}*\ tag,}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ tag\_len,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}*\ aad,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ aad\_len,\ \textcolor{keywordtype}{bool}*\ is\_verified);}
+\DoxyCodeLine{00180\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00181\ }
+\DoxyCodeLine{00182\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ \mbox{\hyperlink{atca__crypto__sw_8h_aa2acec2154a2d60e4cd4c437c94ef495}{atcac\_pbkdf2\_sha256}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ iter,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}*\ password,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ password\_len,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}*\ salt,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ salt\_len,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}*\ result,\ \textcolor{keywordtype}{size\_t}\ result\_len);}
+\DoxyCodeLine{00183\ }
+\DoxyCodeLine{00184\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00185\ \}}
+\DoxyCodeLine{00186\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00187\ }
+\DoxyCodeLine{00188\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ ATCA\_CRYPTO\_SW\_H\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

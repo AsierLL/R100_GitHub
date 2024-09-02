@@ -1,0 +1,107 @@
+\doxysection{bsp\+\_\+acc\+\_\+\+LIS3\+DH.\+h}
+\hypertarget{bsp__acc___l_i_s3_d_h_8h_source}{}\label{bsp__acc___l_i_s3_d_h_8h_source}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/BSP/bsp\_acc\_LIS3DH.h@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/BSP/bsp\_acc\_LIS3DH.h}}
+\mbox{\hyperlink{bsp__acc___l_i_s3_d_h_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Name\ \ \ \ \ \ :\ R100\_S3A7\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ :\ Osatu\ S.\ Coop\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Compiler\ \ :\ GNU\ ARM\ Embedded\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ Target\ \ \ \ :\ Reanibex\ Serie\ 100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ ******************************************************************************/}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#ifndef\ BSP\_ACC\_LIS3DH\_H\_}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#define\ BSP\_ACC\_LIS3DH\_H\_}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ **Includes}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_r100___errors_8h}{R100\_Errors.h}}"{}}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ "{}types\_basic.h"{}}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ **\ Defines}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00034\ \textcolor{comment}{//\ ST\ LIS3DH\ Register\ Address\ Map}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#define\ LIS3DH\_STATUS\_REG\_AUX\ \ \ \ \ \ \ \ \ 0x07}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#define\ LIS3DH\_WHO\_AM\_I\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0F}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#define\ LIS3DH\_WHO\_AM\_I\_VALUE\ \ \ \ \ \ \ \ \ 0x33}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#define\ LIS3DH\_CTRL\_REG1\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x20}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#define\ LIS3DH\_CTRL\_REG2\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x21}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#define\ LIS3DH\_CTRL\_REG3\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x22}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#define\ LIS3DH\_CTRL\_REG4\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x23}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#define\ LIS3DH\_CTRL\_REG5\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x24}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#define\ LIS3DH\_CTRL\_REG6\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x25}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#define\ LIS3DH\_REFERENCE\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x26}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#define\ LIS3DH\_STATUS\_REG2\ \ \ \ \ \ \ \ \ \ \ \ 0x27}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#define\ LIS3DH\_OUT\_X\_L\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x28}}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#define\ LIS3DH\_OUT\_X\_H\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x29}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#define\ LIS3DH\_OUT\_Y\_L\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x2A}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#define\ LIS3DH\_OUT\_Y\_H\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x2B}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ LIS3DH\_OUT\_Z\_L\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x2C}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#define\ LIS3DH\_OUT\_Z\_H\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x2D}}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#define\ LIS3DH\_FIFO\_CTRL\_REG\ \ \ \ \ \ \ \ \ \ 0x2E}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#define\ LIS3DH\_FIFO\_SRC\_REG\ \ \ \ \ \ \ \ \ \ \ 0x2F}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#define\ LIS3DH\_INT1\_CFG\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x30}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#define\ LIS3DH\_INT1\_SRC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x31}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#define\ LIS3DH\_INT1\_THS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x32}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#define\ LIS3DH\_INT1\_DURATION\ \ \ \ \ \ \ \ \ \ 0x33}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#define\ LIS3DH\_INT2\_CFG\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x34}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#define\ LIS3DH\_INT2\_SRC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x35}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#define\ LIS3DH\_INT2\_THS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x36}}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#define\ LIS3DH\_INT2\_DURATION\ \ \ \ \ \ \ \ \ \ 0x37}}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#define\ LIS3DH\_CLICK\_CFG\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x38}}
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#define\ LIS3DH\_CLICK\_SRC\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x39}}
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#define\ LIS3DH\_CLICK\_THS\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x3A}}
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#define\ LIS3DH\_TIME\_LIMIT\ \ \ \ \ \ \ \ \ \ \ \ \ 0x3B}}
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#define\ LIS3DH\_TIME\_LATENCY\ \ \ \ \ \ \ \ \ \ \ 0x3C}}
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#define\ LIS3DH\_TIME\_WINDOW\ \ \ \ \ \ \ \ \ \ \ \ 0x3D}}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00074\ \textcolor{comment}{//\ ST\ LIS3DH\ Configuration\ Parameters}}
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#define\ ACCEL\_XYZ\_DATA\_CFG\ \ \ \ \ \ \ \ \ \ \ \ 0x01}}
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#define\ HP\_FILTER\_CUTOFF\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x23}}
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\#define\ CTRL\_REG3\_CFG\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00}}
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#define\ CTRL\_REG4\_CFG\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x01}}
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#define\ CTRL\_REG1\_CFG1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x18}}
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\#define\ CTRL\_REG1\_CFG2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x19}}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\#define\ ACC\_MEASUREMENT\_RANGE\ \ \ \ \ \ \ \ \ 2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00084\ \textcolor{preprocessor}{\#define\ ACC\_THRESOLD\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 25\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00085\ \textcolor{preprocessor}{\#define\ ACC\_THRESOLD\_Z\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 17\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{\#define\ ACC\_DURATION\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0A\ }\textcolor{comment}{//100\ \ \ \ \ \ \ \ ///<\ Duration\ (t\ =\ N/ODR)\ (e.g:\ ODR\ =\ 25\ Hz\ -\/>\ t\ =\ 1/25=0,04sec=40msec)}}
+\DoxyCodeLine{00087\ \textcolor{preprocessor}{\#define\ ACC\_POLARITY\_HIGH\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00\ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00088\ \textcolor{preprocessor}{\#define\ ACC\_POLARITY\_LOW\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x02\ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \textcolor{preprocessor}{\#define\ ACC\_ENABLE\_XYZ\_HIGH\_AXIS\ \ \ \ \ \ 0x2A\ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00091\ \textcolor{preprocessor}{\#define\ ACC\_ENABLE\_XYZ\_LOW\_AXIS\ \ \ \ \ \ \ 0x15\ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00092\ \textcolor{preprocessor}{\#define\ ACC\_ENABLE\_XY\_HIGH\_AXIS\ \ \ \ \ \ \ 0x0A\ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00093\ \textcolor{preprocessor}{\#define\ ACC\_ENABLE\_Z\_HIGH\_AXIS\ \ \ \ \ \ \ \ 0x20\ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00094\ \textcolor{preprocessor}{\#define\ ACC\_ENABLE\_Z\_LOW\_AXIS\ \ \ \ \ \ \ \ \ 0x10\ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00095\ \textcolor{preprocessor}{\#define\ ACC\_DISABLE\_INT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00\ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00098\ \textcolor{comment}{//\ ST\ LIS3DH\ Device\ Address}}
+\DoxyCodeLine{00100\ \textcolor{preprocessor}{\#define\ ACCEL\_DEVICE\_ADD\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x19\ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00103\ \textcolor{comment}{\ **\ Typedefs}}
+\DoxyCodeLine{00104\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00107\ \textcolor{comment}{\ **\ Globals}}
+\DoxyCodeLine{00108\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00111\ \textcolor{comment}{\ **\ Prototypes}}
+\DoxyCodeLine{00112\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\_ID\_e}}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{bsp__acc___l_i_s3_d_h_8h_afcbc051f96e6f31f234a07674c2027f3}{Accelerometer\_Presence}}\ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00115\ \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\_ID\_e}}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{bsp__acc___l_i_s3_d_h_8h_aea5b1f8a01e5ae4f2805aa689711694e}{Accelerometer\_Setup}}\ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ enable\_xyz,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ sampleRate,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ accelRange);}
+\DoxyCodeLine{00116\ \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\_ID\_e}}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{bsp__acc___l_i_s3_d_h_8h_a4ca9c1b97ec25cb31b7be2f8e54c5643}{Accel\_Interrupt\_Init}}\ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ enable\_axis,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ threshold,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ duration,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ polarity);}
+\DoxyCodeLine{00117\ \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\_ID\_e}}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{bsp__acc___l_i_s3_d_h_8h_a0ddefa6466e2f93180314adc8b3fc204}{ACC\_Get\_Axis\_Data}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ reg\_address,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ *read\_reg\_data);}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ BSP\_ACC\_LIS3DH\_H\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

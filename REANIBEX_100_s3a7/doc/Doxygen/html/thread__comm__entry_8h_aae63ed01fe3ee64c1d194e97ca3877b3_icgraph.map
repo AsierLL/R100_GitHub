@@ -1,0 +1,95 @@
+<map id="Comm_Sigfox_Open" name="Comm_Sigfox_Open">
+<area shape="rect" id="Node000001" title="Open Sigfox Communication." alt="" coords="2331,253,2471,280"/>
+<area shape="rect" id="Node000002" href="$sys_mon___r_f___comms_8c.html#a22a104a138d277055bb3bb4e216bf4fe" title="Function that executes the storing of the GPS position." alt="" coords="1861,5,2050,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="2385,241,2345,172,2316,135,2281,105,2226,74,2166,52,2106,37,2050,28,2051,23,2107,32,2168,47,2228,69,2284,100,2320,132,2350,169,2390,238"/>
+<area shape="rect" id="Node000007" href="$sys_mon___r_f___comms_8c.html#a7d936e077834e45d4736ce0a1d37245f" title="Function that sends battery and electrodes expiration dates." alt="" coords="2101,115,2280,141"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="2375,244,2334,203,2281,164,2239,144,2241,139,2284,159,2337,199,2379,240"/>
+<area shape="rect" id="Node000012" href="$sys_mon___r_f___comms_8c.html#ac85554de712c33f4bd960b06fa7ac0b5" title="Function that sends GPS positiion." alt="" coords="2098,253,2283,280"/>
+<area shape="poly" id="edge14_Node000001_Node000012" title=" " alt="" coords="2315,269,2283,269,2283,264,2315,264"/>
+<area shape="rect" id="Node000014" href="$sys_mon___r_f___comms_8c.html#a52792279d23bf557b0a177590981b506" title="Function that executes the sending of the Sigfox Test." alt="" coords="2100,173,2281,200"/>
+<area shape="poly" id="edge18_Node000001_Node000014" title=" " alt="" coords="2348,250,2227,203,2229,198,2350,245"/>
+<area shape="rect" id="Node000015" href="$sys_mon___r_f___comms_8c.html#a746a3aa875b7eb411ea9a0b46efade94" title="Function to send alerts by Sigfox." alt="" coords="1670,296,1798,323"/>
+<area shape="poly" id="edge21_Node000001_Node000015" title=" " alt="" coords="2324,286,2283,295,2166,317,2073,332,1980,337,1861,332,1798,324,1799,319,1861,327,1980,332,2073,327,2165,312,2282,289,2323,281"/>
+<area shape="rect" id="Node000034" href="$sys_mon___r_f___comms_8c.html#aa366cf70667fc1f47aa36c96e4302d53" title="Function to send position by Sigfox." alt="" coords="1660,417,1808,444"/>
+<area shape="poly" id="edge45_Node000001_Node000034" title=" " alt="" coords="2367,291,2328,313,2284,333,2155,371,2025,398,1905,417,1809,427,1808,422,1904,411,2024,393,2154,366,2282,328,2326,309,2365,286"/>
+<area shape="rect" id="Node000036" href="$sys_mon___r_f___comms_8c.html#a1b432e87a6e7499fdf47de62fcc25671" title="Function to send test results by Sigfox." alt="" coords="1671,512,1797,539"/>
+<area shape="poly" id="edge50_Node000001_Node000036" title=" " alt="" coords="2383,294,2342,343,2314,368,2284,389,2222,421,2156,447,2088,469,2021,487,1896,511,1798,523,1797,518,1895,506,2020,482,2086,464,2154,442,2219,416,2281,384,2311,364,2338,339,2379,291"/>
+<area shape="rect" id="Node000003" href="$thread__sys_mon__entry_8c.html#a563202ab53d918f96e7470c54ed5d009" title="Execute some startup functions:" alt="" coords="1036,81,1136,108"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="1846,21,1716,23,1557,30,1383,44,1209,68,1137,84,1136,79,1209,63,1382,39,1556,25,1716,18,1846,15"/>
+<area shape="rect" id="Node000004" href="$thread__sys_mon__entry_8c.html#a743a7940e667165b42c74a8c9ff51a1a" title="Startup to run the application and system monitoring." alt="" coords="788,507,934,533"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="1061,121,1035,151,1013,186,999,226,994,261,996,325,997,356,995,388,985,422,965,459,935,489,900,508,898,504,932,484,961,456,980,420,989,387,992,356,991,325,989,260,994,224,1008,184,1031,148,1057,117"/>
+<area shape="rect" id="Node000005" href="$thread__sys_mon_8c.html#ab6d8d40a8001798107e88dc8f7e24cee" title=" " alt="" coords="539,507,680,533"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="772,523,681,523,681,517,772,517"/>
+<area shape="rect" id="Node000006" href="$thread__sys_mon_8c.html#a53239dfb58d918aa0b54988408427f6d" title=" " alt="" coords="257,507,460,533"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="523,523,461,523,461,517,523,517"/>
+<area shape="rect" id="Node000008" href="$sys_mon___r_f___comms_8c.html#abb685215a8f11633d11ffc4655d48de8" title="Function that executes the sending of the last performed test frame." alt="" coords="1872,107,2039,149"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="2086,131,2040,131,2040,125,2086,125"/>
+<area shape="rect" id="Node000009" href="$sys_mon___r_f___comms_8c.html#a85880166a06c35e527a7d972684c1338" title="Function to check the wireless comms. devices." alt="" coords="1655,144,1813,171"/>
+<area shape="poly" id="edge13_Node000007_Node000009" title=" " alt="" coords="2129,113,2072,100,2005,91,1933,88,1862,97,1803,119,1757,146,1754,141,1801,114,1860,92,1932,83,2005,85,2073,95,2130,108"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="1857,144,1814,150,1813,144,1856,138"/>
+<area shape="rect" id="Node000010" href="$thread__sys_mon__entry_8c.html#ad7a8a06d67cdd43cdd5bc7f5d4db0cd7" title="Function that executes the device test: .&#45; verify the resources memory (checksum) ...." alt="" coords="1458,56,1560,83"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="1694,139,1606,97,1559,83,1561,78,1608,92,1696,134"/>
+<area shape="poly" id="edge10_Node000010_Node000003" title=" " alt="" coords="1443,76,1136,94,1136,89,1443,71"/>
+<area shape="rect" id="Node000011" href="$thread__sys_mon__entry_8c.html#ab93dae7b1a69e3ba8c62412e0fce2a06" title="Process events related to acelerometer." alt="" coords="1235,107,1338,133"/>
+<area shape="poly" id="edge11_Node000010_Node000011" title=" " alt="" coords="1444,87,1339,111,1338,106,1442,82"/>
+<area shape="poly" id="edge12_Node000011_Node000003" title=" " alt="" coords="1219,114,1136,104,1137,98,1219,109"/>
+<area shape="poly" id="edge17_Node000012_Node000009" title=" " alt="" coords="2116,252,1793,174,1794,169,2117,247"/>
+<area shape="rect" id="Node000013" href="$sys_mon___r_f___comms_8c.html#a94dfb316ec84e9d9e9a4974a04c3ed49" title="Function that executes the sending of the gps position." alt="" coords="1861,275,2050,317"/>
+<area shape="poly" id="edge15_Node000012_Node000013" title=" " alt="" coords="2083,283,2051,287,2051,281,2083,277"/>
+<area shape="poly" id="edge16_Node000013_Node000009" title=" " alt="" coords="1882,270,1860,258,1796,214,1748,173,1752,169,1799,210,1862,254,1884,265"/>
+<area shape="poly" id="edge19_Node000014_Node000008" title=" " alt="" coords="2119,172,2039,152,2040,146,2120,166"/>
+<area shape="poly" id="edge20_Node000014_Node000009" title=" " alt="" coords="2084,183,1813,165,1813,160,2085,177"/>
+<area shape="rect" id="Node000016" href="$thread__acc__entry_8c.html#ab6b357f9bb0bcdbf7a472663b7387252" title="This function will be used to send message through comms." alt="" coords="1440,376,1578,403"/>
+<area shape="poly" id="edge22_Node000015_Node000016" title=" " alt="" coords="1691,332,1608,367,1570,378,1569,373,1606,361,1689,327"/>
+<area shape="rect" id="Node000021" href="$thread__sys_mon__entry_8c.html#a90fd604d6e8ca2b285c486b7f837956f" title="Command to register shock sending alert." alt="" coords="1440,259,1578,301"/>
+<area shape="poly" id="edge28_Node000015_Node000021" title=" " alt="" coords="1654,302,1578,292,1579,286,1655,296"/>
+<area shape="rect" id="Node000022" href="$_f_s_m___r100___a_e_d_8c.html#a66edf5039fb2a025f7fbcaa4ae27c0ee" title=" " alt="" coords="1232,237,1340,264"/>
+<area shape="poly" id="edge38_Node000015_Node000022" title=" " alt="" coords="1698,290,1655,267,1606,249,1535,238,1464,236,1397,239,1341,245,1341,240,1396,234,1463,231,1536,233,1607,244,1658,262,1701,285"/>
+<area shape="rect" id="Node000023" href="$_f_s_m___r100___a_e_d_8c.html#a45cfcc998186af39961ade62a140bc31" title=" " alt="" coords="1026,197,1146,224"/>
+<area shape="poly" id="edge37_Node000015_Node000023" title=" " alt="" coords="1706,287,1662,252,1635,236,1606,224,1544,208,1481,197,1417,191,1353,189,1237,194,1147,204,1146,198,1237,188,1353,184,1417,186,1482,192,1546,202,1608,219,1637,231,1665,248,1710,283"/>
+<area shape="rect" id="Node000028" href="$_f_s_m___r100___a_e_d_8c.html#aad14488fca944663cc4bf5107958c6e5" title=" " alt="" coords="1411,325,1607,352"/>
+<area shape="poly" id="edge35_Node000015_Node000028" title=" " alt="" coords="1655,322,1608,329,1607,323,1654,317"/>
+<area shape="rect" id="Node000029" href="$thread__comm__entry_8c.html#a2a7698a33ddf0a8ca71b8e0baab53eb2" title="Process events related to WIFI COMM module." alt="" coords="1437,427,1581,453"/>
+<area shape="poly" id="edge39_Node000015_Node000029" title=" " alt="" coords="1712,336,1666,377,1638,399,1608,417,1580,429,1578,424,1605,412,1635,394,1663,373,1708,332"/>
+<area shape="rect" id="Node000033" href="$thread__sys_mon__entry_8c.html#ac0c7edb2de59294bfcfbc443b6981cec" title="Check if cover has been opened during an extended period of time." alt="" coords="1442,107,1576,133"/>
+<area shape="poly" id="edge43_Node000015_Node000033" title=" " alt="" coords="1716,284,1671,219,1640,184,1605,154,1569,136,1571,131,1608,150,1644,180,1675,216,1720,281"/>
+<area shape="rect" id="Node000017" href="$thread__acc__entry_8c.html#ac4851b82463d39763ebfcd65a3e0c5a6" title="This function capture axis data and determines if the device is moving to send by communications,..." alt="" coords="1234,368,1338,395"/>
+<area shape="poly" id="edge23_Node000016_Node000017" title=" " alt="" coords="1424,398,1339,394,1339,388,1425,392"/>
+<area shape="poly" id="edge24_Node000017_Node000016" title=" " alt="" coords="1354,373,1440,376,1440,381,1354,378"/>
+<area shape="rect" id="Node000018" href="$thread__acc__entry_8c.html#a0cae9308c49e596d1ca77cf8bd7f7b7e" title="This function will be executed when the cover has not been opened and if accelerometer interrupt is e..." alt="" coords="1025,368,1147,395"/>
+<area shape="poly" id="edge25_Node000017_Node000018" title=" " alt="" coords="1219,384,1147,384,1147,379,1219,379"/>
+<area shape="rect" id="Node000019" href="$thread__acc_8c.html#a84d1672758552cc9ac2365922413773e" title=" " alt="" coords="803,368,919,395"/>
+<area shape="poly" id="edge26_Node000018_Node000019" title=" " alt="" coords="1010,384,920,384,920,379,1010,379"/>
+<area shape="rect" id="Node000020" href="$thread__acc_8c.html#af17659896d6de5f78f7033d43c8a03db" title=" " alt="" coords="508,368,711,395"/>
+<area shape="poly" id="edge27_Node000019_Node000020" title=" " alt="" coords="788,384,712,384,712,379,788,379"/>
+<area shape="poly" id="edge29_Node000021_Node000022" title=" " alt="" coords="1424,271,1341,260,1341,255,1424,266"/>
+<area shape="poly" id="edge30_Node000022_Node000023" title=" " alt="" coords="1216,240,1146,225,1147,220,1217,234"/>
+<area shape="rect" id="Node000024" href="$thread__core__entry_8c.html#a6459d7b439752990fec0e0dce5e26fc1" title="Manages AED operation mode. Sends all received events to the AED statechart." alt="" coords="817,197,905,224"/>
+<area shape="poly" id="edge31_Node000023_Node000024" title=" " alt="" coords="1010,213,905,213,905,208,1010,208"/>
+<area shape="rect" id="Node000025" href="$thread__core__entry_8c.html#ad3dfeb7aa19371bdae2b4d20eee5a063" title="Main task. Executes both, AED and CFG, operation modes." alt="" coords="547,197,672,224"/>
+<area shape="poly" id="edge32_Node000024_Node000025" title=" " alt="" coords="802,213,673,213,673,208,802,208"/>
+<area shape="rect" id="Node000026" href="$thread__core_8c.html#ab7ee7e4e1cbcc23a41de31999afb5e0a" title=" " alt="" coords="298,197,419,224"/>
+<area shape="poly" id="edge33_Node000025_Node000026" title=" " alt="" coords="532,213,419,213,419,208,532,208"/>
+<area shape="rect" id="Node000027" href="$thread__core_8c.html#a3c740768c0ce9b83a965d53a605e4fe9" title=" " alt="" coords="5,197,209,224"/>
+<area shape="poly" id="edge34_Node000026_Node000027" title=" " alt="" coords="283,213,209,213,209,208,283,208"/>
+<area shape="poly" id="edge36_Node000028_Node000022" title=" " alt="" coords="1431,323,1410,316,1356,291,1310,267,1312,262,1358,287,1412,311,1433,318"/>
+<area shape="rect" id="Node000030" href="$thread__comm__entry_8c.html#a88587ace521f9dcb7e701367eeec5824" title="Thread COMM entry function." alt="" coords="1218,419,1354,445"/>
+<area shape="poly" id="edge40_Node000029_Node000030" title=" " alt="" coords="1422,440,1355,437,1355,432,1422,434"/>
+<area shape="rect" id="Node000031" href="$thread__comm_8c.html#a4d0497fd082ea6ad8cce7e8437cfc816" title=" " alt="" coords="1020,419,1152,445"/>
+<area shape="poly" id="edge41_Node000030_Node000031" title=" " alt="" coords="1202,435,1152,435,1152,429,1202,429"/>
+<area shape="rect" id="Node000032" href="$thread__comm_8c.html#a01a6aa5f9adb99b48c6e175a2cab1316" title=" " alt="" coords="759,419,963,445"/>
+<area shape="poly" id="edge42_Node000031_Node000032" title=" " alt="" coords="1004,435,963,435,963,429,1004,429"/>
+<area shape="poly" id="edge44_Node000033_Node000011" title=" " alt="" coords="1427,123,1338,123,1338,117,1427,117"/>
+<area shape="poly" id="edge46_Node000034_Node000016" title=" " alt="" coords="1644,417,1577,405,1578,399,1645,412"/>
+<area shape="poly" id="edge49_Node000034_Node000029" title=" " alt="" coords="1644,437,1581,440,1581,434,1644,432"/>
+<area shape="rect" id="Node000035" href="$sys_mon___r_f___comms_8c.html#a50aa6bd7010a95216a06c04ea2241c5f" title="Function that executes the gps position periodically." alt="" coords="1209,469,1363,512"/>
+<area shape="poly" id="edge47_Node000034_Node000035" title=" " alt="" coords="1676,451,1607,468,1479,484,1364,491,1363,486,1478,479,1606,463,1675,446"/>
+<area shape="poly" id="edge48_Node000035_Node000004" title=" " alt="" coords="1194,500,935,518,934,512,1194,494"/>
+<area shape="poly" id="edge55_Node000036_Node000029" title=" " alt="" coords="1681,509,1546,456,1547,451,1683,504"/>
+<area shape="rect" id="Node000037" href="$thread__sys_mon__entry_8c.html#a72f7661ea341de8646b4b0241d87ed71" title="Call SAT service because a critical error is detected register and report the event." alt="" coords="1249,536,1324,563"/>
+<area shape="poly" id="edge51_Node000036_Node000037" title=" " alt="" coords="1655,532,1324,550,1324,545,1655,527"/>
+<area shape="rect" id="Node000038" href="$thread__sys_mon__entry_8c.html#a569e2a19584fea41c2c54780106f24d7" title="Function that executes the device startup test: .&#45; verify the resources memory (checksum) ...." alt="" coords="1011,585,1161,612"/>
+<area shape="poly" id="edge53_Node000036_Node000038" title=" " alt="" coords="1656,542,1607,549,1363,578,1162,596,1161,591,1362,573,1606,544,1655,536"/>
+<area shape="poly" id="edge52_Node000037_Node000004" title=" " alt="" coords="1233,548,934,528,935,522,1233,543"/>
+<area shape="poly" id="edge54_Node000038_Node000004" title=" " alt="" coords="1030,582,901,536,902,531,1032,577"/>
+</map>

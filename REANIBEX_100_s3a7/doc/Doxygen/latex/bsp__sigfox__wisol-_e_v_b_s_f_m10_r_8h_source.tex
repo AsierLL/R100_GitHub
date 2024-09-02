@@ -1,0 +1,85 @@
+\doxysection{bsp\+\_\+sigfox\+\_\+wisol-\/\+EVBSFM10R.h}
+\hypertarget{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_source}{}\label{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_source}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/BSP/bsp\_sigfox\_wisol-\/EVBSFM10R.h@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/BSP/bsp\_sigfox\_wisol-\/EVBSFM10R.h}}
+\mbox{\hyperlink{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Name\ \ \ \ \ \ :\ R100\_S3A7\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ :\ Osatu\ S.\ Coop\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Compiler\ \ :\ GNU\ ARM\ Embedded\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ Target\ \ \ \ :\ Reanibex\ Serie\ 100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ ******************************************************************************/}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#ifndef\ BSP\_BSP\_SIGFOX\_WISOL\_EVBSFM10R\_H\_}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#define\ BSP\_BSP\_SIGFOX\_WISOL\_EVBSFM10R\_H\_}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ **Includes}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_r100___errors_8h}{R100\_Errors.h}}"{}}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ "{}types\_basic.h"{}}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ **\ Defines}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00033\ \textcolor{comment}{//\ Wisol\ Sigfox\ AT\ Commands\ for\ EVBSFM10R}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#define\ SIGFOX\_CMD\_AT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}AT"{}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#define\ SIGFOX\_CMD\_DEVID\ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}AT\$I=10"{}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#define\ SIGFOX\_CMD\_PAC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}AT\$I=11"{}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#define\ SIGFOX\_CMD\_TX\_FREQ\ \ \ \ \ \ \ \ \ \ \ \ "{}AT\$IF?"{}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#define\ SIGFOX\_CMD\_RX\_FREQ\ \ \ \ \ \ \ \ \ \ \ \ "{}AT\$DR?"{}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#define\ SIGFOX\_CMD\_TEMP\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}AT\$T?"{}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#define\ SIGFOX\_CMD\_VOLTAGES\ \ \ \ \ \ \ \ \ \ \ "{}AT\$V?"{}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#define\ SIGFOX\_CMD\_SW\_RESET\ \ \ \ \ \ \ \ \ \ \ "{}AT\$P=0"{}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#define\ SIGFOX\_CMD\_SW\_SLEEP\ \ \ \ \ \ \ \ \ \ \ "{}AT\$P=1"{}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#define\ SIGFOX\_CMD\_SW\_DEEP\_SLEEP\ \ \ \ \ \ "{}AT\$P=2"{}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#define\ SIGFOX\_CMD\_SEND\_BYTE\ \ \ \ \ \ \ \ \ \ "{}AT\$SB="{}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#define\ SIGFOX\_CMD\_SEND\_FRAME\ \ \ \ \ \ \ \ \ "{}AT\$SF="{}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#define\ SIGFOX\_CMD\_MAX\_POWER\ \ \ \ \ \ \ \ \ \ "{}ATS302=15"{}\ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#define\ SIGFOX\_CMD\_CW\_TEST\_ON\ \ \ \ \ \ \ \ \ "{}AT\$CW=868130000,1,15"{}\ \ \ }}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#define\ SIGFOX\_CMD\_CW\_TEST\_OFF\ \ \ \ \ \ \ \ "{}AT\$CW=868130000,0,15"{}\ \ \ }}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#define\ SIGFOX\_CMD\_CB\_TEST\_RANDOM\_ON\ \ "{}AT\$CB=-\/1,1"{}\ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#define\ SIGFOX\_CMD\_CB\_TEST\_RANDOM\_OFF\ "{}AT\$CB=-\/1,0"{}\ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#define\ SIGFOX\_CMD\_SE\_TEST\_ON\ \ \ \ \ \ \ \ \ "{}AT\$SE"{}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ SIGFOX\_CMD\_TM\_TX\_BPSK\_TEST\ \ \ \ "{}AT\$TM=0,"{}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#define\ SIGFOX\_CMD\_TM\_TX\_PROT\_TEST\ \ \ \ "{}AT\$TM=1,"{}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#define\ SIGFOX\_CMD\_TM\_RX\_PROT\_TEST\ \ \ \ "{}AT\$TM=2,"{}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#define\ SIGFOX\_CMD\_TM\_RX\_GFSK\_TEST\ \ \ \ "{}AT\$TM=3,"{}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#define\ SIGFOX\_CMD\_TM\_RX\_SENS\_TEST\ \ \ \ "{}AT\$TM=4,"{}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#define\ SIGFOX\_CMD\_TM\_TX\_SYNTH\_TEST\ \ \ "{}AT\$TM=5,"{}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#define\ SIGFOX\_CMD\_SL\_TEST\_DEFAULT\ \ \ \ "{}AT\$SL"{}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#define\ SIGFOX\_CMD\_SL\_TEST\_FRAME\ \ \ \ \ \ "{}AT\$SL="{}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#define\ SIGFOX\_CMD\_RL\_TEST\ \ \ \ \ \ \ \ \ \ \ \ "{}AT\$RL"{}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00064\ \textcolor{comment}{//\ Wisol\ Sigfox\ AT\ Command\ Responses\ from\ EVBSFM10R}}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#define\ SIGFOX\_RESP\_OK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}OK\(\backslash\)r\(\backslash\)n"{}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#define\ SIGFOX\_RESP\_SE\_TEST\_ON\ \ \ \ \ \ \ \ "{}ONSEMI\ Sensitivitiy\ Test"{}\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00070\ \textcolor{comment}{\ **\ Typedefs}}
+\DoxyCodeLine{00071\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00075\ \textcolor{comment}{\ **\ Globals}}
+\DoxyCodeLine{00076\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00080\ \textcolor{comment}{\ **\ Prototypes}}
+\DoxyCodeLine{00081\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00082\ \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\_ID\_e}}\ \ \ \ \mbox{\hyperlink{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a0f4cec6f2f54d23e3ae8a70587ba9034}{Sigfox\_Check\_Module\_Status}}\ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00083\ \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\_ID\_e}}\ \ \ \ \mbox{\hyperlink{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_ac36f9264486c295bdff72a1ff0836e6e}{Sigfox\_Get\_Module\_DeviceID}}\ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00084\ \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\_ID\_e}}\ \ \ \ \mbox{\hyperlink{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_acb7604b868af7f5771ea4ec59d8437e1}{Sigfox\_Get\_Module\_PAC}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00085\ \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\_ID\_e}}\ \ \ \ \mbox{\hyperlink{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a815348ca9ffd0d64c715051e9e48467c}{Sigfox\_Get\_TX\_Frequency}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00086\ \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\_ID\_e}}\ \ \ \ \mbox{\hyperlink{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a1d13b7d7d1dc518419fc191ee9e69276}{Sigfox\_Get\_RX\_Frequency}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00087\ \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\_ID\_e}}\ \ \ \ \mbox{\hyperlink{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_ad97b1116dadc5b856de2fba00a2503f7}{Sigfox\_Get\_Module\_Temp}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00088\ \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\_ID\_e}}\ \ \ \ \mbox{\hyperlink{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a6b47a57421a43ea00dc7aadbdaa95d5a}{Sigfox\_Get\_Module\_Voltages}}\ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00089\ \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\_ID\_e}}\ \ \ \ \mbox{\hyperlink{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a38dc66d0d3fca9200e6d5992c43a20c9}{Sigfox\_Compare\_Test\_Frequencies}}\ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00090\ \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\_ID\_e}}\ \ \ \ \mbox{\hyperlink{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a2c472548c48e6c4276ac3da4a59613ee}{Sigfox\_Start\_CW\_Test}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00091\ \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\_ID\_e}}\ \ \ \ \mbox{\hyperlink{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a8849a2415e3742133557b698a64d986d}{Sigfox\_Stop\_CW\_Test}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00092\ \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\_ID\_e}}\ \ \ \ \mbox{\hyperlink{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_a2a01b0e42f04c530d197f0a07dd649ec}{Sigfox\_Start\_RX\_GFSK\_Test}}\ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00093\ \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\_ID\_e}}\ \ \ \ \mbox{\hyperlink{bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8h_afa38aea6b87f9d40759ebff441976f80}{Sigfox\_Send\_Data\_Frame}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}*\ data);}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ BSP\_BSP\_SIGFOX\_WISOL\_EVBSFM10R\_H\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

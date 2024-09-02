@@ -1,0 +1,74 @@
+<map id="Process_Comm_GPS" name="Process_Comm_GPS">
+<area shape="rect" id="Node000001" title="Process events related to GPS COMM module." alt="" coords="5,267,155,293"/>
+<area shape="rect" id="Node000002" href="$thread__comm__hal_8c.html#a48a2db3942cf973c7ffa74f6b4053b6b" title="Test of GPS module." alt="" coords="217,140,399,167"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="92,264,137,221,168,197,201,176,216,170,218,175,204,181,171,201,141,225,96,268"/>
+<area shape="rect" id="Node000015" href="$thread__comm__hal_8c.html#a77dba14b8a661e55a2caa7919a4c961b" title="Get GPS Data." alt="" coords="203,469,413,496"/>
+<area shape="poly" id="edge21_Node000001_Node000015" title=" " alt="" coords="99,292,282,457,278,461,95,296"/>
+<area shape="rect" id="Node000022" href="$thread__comm__hal_8c.html#a1d081723eb366e271a59daa0289b3c8e" title="Initialization of GPS module." alt="" coords="234,191,382,217"/>
+<area shape="poly" id="edge30_Node000001_Node000022" title=" " alt="" coords="122,264,250,220,251,225,123,269"/>
+<area shape="rect" id="Node000023" href="$thread__comm__hal_8c.html#abf1450e8718658ca896cad96d4f6e361" title="Send GPS commands." alt="" coords="209,267,407,293"/>
+<area shape="poly" id="edge33_Node000001_Node000023" title=" " alt="" coords="155,277,194,277,194,283,155,283"/>
+<area shape="rect" id="Node000029" href="$thread__sys_mon__entry_8c.html#ab5d13add30041382fa545103a702582f" title="Function that sets the non volatile data error." alt="" coords="231,633,385,676"/>
+<area shape="poly" id="edge41_Node000001_Node000029" title=" " alt="" coords="90,293,136,384,205,507,283,619,279,622,200,509,131,386,85,295"/>
+<area shape="rect" id="Node000003" href="$thread__comm__hal_8c.html#acd0f72ce82a8c749fe1171bd48269e66" title="Reset Wifi, Sigfox or GPS module." alt="" coords="475,23,636,49"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="326,137,384,99,460,59,478,52,480,57,462,64,387,104,329,142"/>
+<area shape="rect" id="Node000012" href="$thread__comm__hal_8c.html#a63b3e38ecaf443421eb673e2342e2f08" title="Select Uart to send and receive data. This function sets the SN74CBT Multiplexer/Demultiplexer via th..." alt="" coords="488,140,622,167"/>
+<area shape="poly" id="edge16_Node000002_Node000012" title=" " alt="" coords="399,151,472,151,472,156,399,156"/>
+<area shape="rect" id="Node000013" href="$_comm_8c.html#ae40e9c681ca7b454e790d494b96c2284" title="Change SCI3 (UART) baud rate." alt="" coords="461,191,649,217"/>
+<area shape="poly" id="edge19_Node000002_Node000013" title=" " alt="" coords="377,165,472,184,471,190,376,170"/>
+<area shape="rect" id="Node000014" href="$bsp__gps__quectel-_l96_8c.html#a86c9ad2a2dc4c38dfa6f8a7cba00e1f4" title="Check if a GPS Protocol package has arrived." alt="" coords="477,73,633,116"/>
+<area shape="poly" id="edge20_Node000002_Node000014" title=" " alt="" coords="367,137,461,114,462,119,368,142"/>
+<area shape="rect" id="Node000004" href="$thread__comm__hal_8c.html#aba10912e5156af563d72a637fe9b7a78" title="Reset Wifi, Sigfox or GPS module." alt="" coords="727,5,871,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="636,28,712,22,712,27,637,33"/>
+<area shape="rect" id="Node000011" href="$thread__comm__hal_8c.html#a4e3f9bfdd5df0ab92a1713930d545237" title="Reset Wifi, Sigfox or GPS module." alt="" coords="727,107,871,133"/>
+<area shape="poly" id="edge13_Node000003_Node000011" title=" " alt="" coords="612,47,650,59,753,98,751,103,648,64,611,52"/>
+<area shape="rect" id="Node000005" href="$_i2_c__2_8c.html#aba3d08d9b33082a1c0aa61ae3e6b5e23" title="Function to read a byte data from a specific address." alt="" coords="949,56,1061,83"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="857,30,934,49,933,55,856,35"/>
+<area shape="rect" id="Node000010" href="$_i2_c__2_8c.html#abb5323ebe9e05f1fe983ee0c53fa732e" title="Function to write a data byte at specific address." alt="" coords="949,107,1061,133"/>
+<area shape="poly" id="edge9_Node000004_Node000010" title=" " alt="" coords="828,30,950,92,960,97,958,102,947,97,825,35"/>
+<area shape="rect" id="Node000006" href="$_i2_c__2_8c.html#aa504ef0b681fc32e47f923cc52b93067" title="Function to get a data byte from the i2C device." alt="" coords="1125,5,1229,32"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="1052,53,1114,34,1116,39,1054,58"/>
+<area shape="rect" id="Node000007" href="$_i2_c__2_8c.html#afb25d38eef88c072ab6ce216e1965501" title="Generate the START condition in the i2C line." alt="" coords="1109,56,1245,83"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="1061,67,1094,67,1094,72,1061,72"/>
+<area shape="rect" id="Node000008" href="$_i2_c__2_8c.html#a24d35a4dc09bc8d6c5be604be9a2102b" title="Generate the STOP condition in the i2C line." alt="" coords="1110,107,1245,133"/>
+<area shape="poly" id="edge7_Node000005_Node000008" title=" " alt="" coords="1054,81,1116,99,1114,104,1052,86"/>
+<area shape="rect" id="Node000009" href="$_i2_c__2_8c.html#a5a45bd2c0aa3fd6619ad4e682466200c" title="Function to send a data byte to the i2C device." alt="" coords="1126,157,1228,184"/>
+<area shape="poly" id="edge8_Node000005_Node000009" title=" " alt="" coords="1043,81,1063,93,1077,106,1087,119,1096,131,1111,143,1118,148,1116,152,1107,147,1092,135,1083,122,1074,110,1059,97,1040,86"/>
+<area shape="poly" id="edge10_Node000010_Node000007" title=" " alt="" coords="1052,103,1114,85,1116,90,1054,109"/>
+<area shape="poly" id="edge11_Node000010_Node000008" title=" " alt="" coords="1061,117,1094,117,1094,123,1061,123"/>
+<area shape="poly" id="edge12_Node000010_Node000009" title=" " alt="" coords="1054,131,1116,150,1114,155,1052,137"/>
+<area shape="poly" id="edge14_Node000011_Node000005" title=" " alt="" coords="856,103,933,84,934,89,857,109"/>
+<area shape="poly" id="edge15_Node000011_Node000010" title=" " alt="" coords="871,117,933,117,933,123,871,123"/>
+<area shape="poly" id="edge17_Node000012_Node000005" title=" " alt="" coords="618,137,648,126,671,108,681,100,696,92,757,75,820,66,881,62,934,62,934,68,881,68,821,71,759,81,698,97,684,104,675,113,651,130,620,142"/>
+<area shape="poly" id="edge18_Node000012_Node000010" title=" " alt="" coords="623,153,752,154,826,150,900,143,941,135,942,140,901,148,827,155,752,159,623,159"/>
+<area shape="poly" id="edge22_Node000015_Node000012" title=" " alt="" coords="316,467,359,399,411,304,423,268,427,236,436,207,459,177,472,167,475,172,463,181,441,209,433,237,428,269,415,306,364,401,321,470"/>
+<area shape="poly" id="edge23_Node000015_Node000013" title=" " alt="" coords="315,468,459,227,467,222,470,227,463,231,319,470"/>
+<area shape="rect" id="Node000016" href="$bsp__gps__quectel-_l96_8c.html#ae7b3317093f35f213fbf5d9464ecbd5c" title="Get GPS NMEA Protocol latitude and longitude." alt="" coords="472,545,639,572"/>
+<area shape="poly" id="edge24_Node000015_Node000016" title=" " alt="" coords="350,494,462,531,487,538,486,543,460,536,348,499"/>
+<area shape="rect" id="Node000018" href="$bsp__gps__quectel-_l96_8c.html#a97d6f440f6712eda46180dd0dbba395c" title="Check if a new GPS NMEA Protocol latitude and longitude available." alt="" coords="481,596,629,639"/>
+<area shape="poly" id="edge26_Node000015_Node000018" title=" " alt="" coords="328,494,386,536,462,582,474,587,472,592,460,586,383,540,325,498"/>
+<area shape="rect" id="Node000019" href="$bsp__gps__quectel-_l96_8c.html#a923dd2f2b1a38fa3f9c54b1516d246fc" title="Sets TRUE if a new GPS NMEA Protocol latitude and longitude is available." alt="" coords="476,663,634,705"/>
+<area shape="poly" id="edge27_Node000015_Node000019" title=" " alt="" coords="320,495,375,567,416,611,463,648,470,653,467,658,459,653,412,614,371,571,316,498"/>
+<area shape="rect" id="Node000020" href="$_trace_8c.html#a8947b81ae09bdb57459cd1c81c78ab37" title="Print a trace string inserting the time stamp." alt="" coords="529,444,582,471"/>
+<area shape="poly" id="edge28_Node000015_Node000020" title=" " alt="" coords="413,469,513,459,513,464,414,475"/>
+<area shape="rect" id="Node000021" href="$_trace_8c.html#abbe04e9d8a6f964c5a4f18901a95b0de" title="Print a trace string inserting the time stamp." alt="" coords="515,495,595,521"/>
+<area shape="poly" id="edge29_Node000015_Node000021" title=" " alt="" coords="414,491,500,500,500,505,413,496"/>
+<area shape="rect" id="Node000017" href="$_comm_8c.html#aec5ef2359cd4e785b63d0390462a213b" title="Get a received module response." alt="" coords="697,545,901,572"/>
+<area shape="poly" id="edge25_Node000016_Node000017" title=" " alt="" coords="639,556,682,556,682,561,639,561"/>
+<area shape="poly" id="edge31_Node000022_Node000012" title=" " alt="" coords="376,187,472,168,473,173,377,193"/>
+<area shape="poly" id="edge32_Node000022_Node000013" title=" " alt="" coords="383,201,445,201,445,207,383,207"/>
+<area shape="poly" id="edge37_Node000023_Node000012" title=" " alt="" coords="344,264,378,248,411,227,425,214,434,202,444,189,460,176,472,170,475,175,462,181,448,193,439,205,429,218,415,231,381,252,347,268"/>
+<area shape="poly" id="edge40_Node000023_Node000013" title=" " alt="" coords="348,264,460,227,486,219,487,224,462,232,350,269"/>
+<area shape="rect" id="Node000024" href="$thread__comm__hal_8c.html#a14b282886d75e45f70a7ffe548732dba" title="Returns the selected Comms UART." alt="" coords="467,343,643,369"/>
+<area shape="poly" id="edge34_Node000023_Node000024" title=" " alt="" coords="350,291,462,328,487,336,486,341,460,333,348,296"/>
+<area shape="rect" id="Node000025" href="$thread__comm__hal_8c.html#a7bec2de2a4a0bd5ee235fc2c4579cee6" title="Returns if Comms UART is free." alt="" coords="479,393,631,420"/>
+<area shape="poly" id="edge35_Node000023_Node000025" title=" " alt="" coords="327,292,385,334,423,358,462,379,479,386,477,391,460,384,420,363,382,339,324,296"/>
+<area shape="rect" id="Node000026" href="$thread__comm__entry_8c.html#a1ed8688e4f2bb331195db3b77d38b9eb" title="Returns if Comms UART is free." alt="" coords="486,241,624,268"/>
+<area shape="poly" id="edge36_Node000023_Node000026" title=" " alt="" coords="407,267,470,261,471,266,407,273"/>
+<area shape="rect" id="Node000027" href="$_comm_8c.html#aceced6fe6160f18c11e8d0ea46cfe881" title="Send a string through the UART." alt="" coords="492,292,619,319"/>
+<area shape="poly" id="edge38_Node000023_Node000027" title=" " alt="" coords="407,287,476,295,476,300,407,293"/>
+<area shape="rect" id="Node000028" href="$thread__sys_mon__entry_8c.html#a33ca5a33ab10af89dcb290e9d052b724" title="Function that report if the devioce is in test mode montador or not." alt="" coords="717,292,881,319"/>
+<area shape="poly" id="edge39_Node000027_Node000028" title=" " alt="" coords="619,303,702,303,702,308,619,308"/>
+<area shape="rect" id="Node000030" href="$thread__sys_mon__entry_8c.html#a9c961ad97558f92f8f4d44373bca3702" title="Determine if an error requires a SAT service or not." alt="" coords="506,729,604,756"/>
+<area shape="poly" id="edge42_Node000029_Node000030" title=" " alt="" coords="359,674,462,715,492,724,490,729,460,720,357,679"/>
+</map>

@@ -1,0 +1,133 @@
+\doxysection{SIGFOX\+\_\+\+GPS\+\_\+\+POSITION\+\_\+t Struct Reference}
+\hypertarget{struct_s_i_g_f_o_x___g_p_s___p_o_s_i_t_i_o_n__t}{}\label{struct_s_i_g_f_o_x___g_p_s___p_o_s_i_t_i_o_n__t}\index{SIGFOX\_GPS\_POSITION\_t@{SIGFOX\_GPS\_POSITION\_t}}
+
+
+Sigfox structure to report the gps position.  
+
+
+
+
+{\ttfamily \#include $<$thread\+\_\+comm\+\_\+hal.\+h$>$}
+
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{thread__comm__hal_8h_a5aa347e2a685a85a377a26337e9c5cc3}{SIGFOX\+\_\+\+MSG\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{struct_s_i_g_f_o_x___g_p_s___p_o_s_i_t_i_o_n__t_a889f8f1e4d314197a214625dc0bc8547}{info\+\_\+type}}
+\begin{DoxyCompactList}\small\item\em identifies the information to report \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{struct_s_i_g_f_o_x___g_p_s___p_o_s_i_t_i_o_n__t_aa7513696c6cc3bc7deedfefbf8531ab4}{lat\+\_\+grados}}
+\begin{DoxyCompactList}\small\item\em device latitude MM \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{struct_s_i_g_f_o_x___g_p_s___p_o_s_i_t_i_o_n__t_a7b3663f68266d17ee578c61952ebb6ca}{lat\+\_\+minutos\+\_\+1}}
+\begin{DoxyCompactList}\small\item\em device latitude mm \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{struct_s_i_g_f_o_x___g_p_s___p_o_s_i_t_i_o_n__t_a4cb5e4ed4ee50681125d079771e10a9a}{lat\+\_\+minutos\+\_\+2}}
+\begin{DoxyCompactList}\small\item\em device latitude mmmm \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{struct_s_i_g_f_o_x___g_p_s___p_o_s_i_t_i_o_n__t_aee5e88b077850d1cea3c50afcca76a70}{long\+\_\+grados}}
+\begin{DoxyCompactList}\small\item\em device longitude MMM \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{struct_s_i_g_f_o_x___g_p_s___p_o_s_i_t_i_o_n__t_ad7ecbde6d0ffd68f6a802c01259f2edc}{long\+\_\+minutos\+\_\+1}}
+\begin{DoxyCompactList}\small\item\em device longitude mm \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{struct_s_i_g_f_o_x___g_p_s___p_o_s_i_t_i_o_n__t_a7323247b23054686e8c91ca18c97c47f}{long\+\_\+minutos\+\_\+2}}
+\begin{DoxyCompactList}\small\item\em device longitude mmmm \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{struct_s_i_g_f_o_x___g_p_s___p_o_s_i_t_i_o_n__t_a2cfc1efd70f3ed5b0516d2f477eac73a}{lat\+\_\+long\+\_\+dir}}
+\begin{DoxyCompactList}\small\item\em bit1\+: N or S; bit 0\+: E or W \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{struct_s_i_g_f_o_x___g_p_s___p_o_s_i_t_i_o_n__t_a6cf895b05ab107cb73eebe7f36d2c843}{must\+\_\+be\+\_\+0x55}}
+\begin{DoxyCompactList}\small\item\em Fixed value = 0x55. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Sigfox structure to report the gps position. 
+
+\doxysubsection{Field Documentation}
+\Hypertarget{struct_s_i_g_f_o_x___g_p_s___p_o_s_i_t_i_o_n__t_a889f8f1e4d314197a214625dc0bc8547}\label{struct_s_i_g_f_o_x___g_p_s___p_o_s_i_t_i_o_n__t_a889f8f1e4d314197a214625dc0bc8547} 
+\index{SIGFOX\_GPS\_POSITION\_t@{SIGFOX\_GPS\_POSITION\_t}!info\_type@{info\_type}}
+\index{info\_type@{info\_type}!SIGFOX\_GPS\_POSITION\_t@{SIGFOX\_GPS\_POSITION\_t}}
+\doxysubsubsection{\texorpdfstring{info\_type}{info\_type}}
+{\footnotesize\ttfamily \mbox{\hyperlink{thread__comm__hal_8h_a5aa347e2a685a85a377a26337e9c5cc3}{SIGFOX\+\_\+\+MSG\+\_\+\+ID\+\_\+e}} SIGFOX\+\_\+\+GPS\+\_\+\+POSITION\+\_\+t\+::info\+\_\+type}
+
+
+
+identifies the information to report 
+
+\Hypertarget{struct_s_i_g_f_o_x___g_p_s___p_o_s_i_t_i_o_n__t_aa7513696c6cc3bc7deedfefbf8531ab4}\label{struct_s_i_g_f_o_x___g_p_s___p_o_s_i_t_i_o_n__t_aa7513696c6cc3bc7deedfefbf8531ab4} 
+\index{SIGFOX\_GPS\_POSITION\_t@{SIGFOX\_GPS\_POSITION\_t}!lat\_grados@{lat\_grados}}
+\index{lat\_grados@{lat\_grados}!SIGFOX\_GPS\_POSITION\_t@{SIGFOX\_GPS\_POSITION\_t}}
+\doxysubsubsection{\texorpdfstring{lat\_grados}{lat\_grados}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} SIGFOX\+\_\+\+GPS\+\_\+\+POSITION\+\_\+t\+::lat\+\_\+grados}
+
+
+
+device latitude MM 
+
+\Hypertarget{struct_s_i_g_f_o_x___g_p_s___p_o_s_i_t_i_o_n__t_a2cfc1efd70f3ed5b0516d2f477eac73a}\label{struct_s_i_g_f_o_x___g_p_s___p_o_s_i_t_i_o_n__t_a2cfc1efd70f3ed5b0516d2f477eac73a} 
+\index{SIGFOX\_GPS\_POSITION\_t@{SIGFOX\_GPS\_POSITION\_t}!lat\_long\_dir@{lat\_long\_dir}}
+\index{lat\_long\_dir@{lat\_long\_dir}!SIGFOX\_GPS\_POSITION\_t@{SIGFOX\_GPS\_POSITION\_t}}
+\doxysubsubsection{\texorpdfstring{lat\_long\_dir}{lat\_long\_dir}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} SIGFOX\+\_\+\+GPS\+\_\+\+POSITION\+\_\+t\+::lat\+\_\+long\+\_\+dir}
+
+
+
+bit1\+: N or S; bit 0\+: E or W 
+
+\Hypertarget{struct_s_i_g_f_o_x___g_p_s___p_o_s_i_t_i_o_n__t_a7b3663f68266d17ee578c61952ebb6ca}\label{struct_s_i_g_f_o_x___g_p_s___p_o_s_i_t_i_o_n__t_a7b3663f68266d17ee578c61952ebb6ca} 
+\index{SIGFOX\_GPS\_POSITION\_t@{SIGFOX\_GPS\_POSITION\_t}!lat\_minutos\_1@{lat\_minutos\_1}}
+\index{lat\_minutos\_1@{lat\_minutos\_1}!SIGFOX\_GPS\_POSITION\_t@{SIGFOX\_GPS\_POSITION\_t}}
+\doxysubsubsection{\texorpdfstring{lat\_minutos\_1}{lat\_minutos\_1}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} SIGFOX\+\_\+\+GPS\+\_\+\+POSITION\+\_\+t\+::lat\+\_\+minutos\+\_\+1}
+
+
+
+device latitude mm 
+
+\Hypertarget{struct_s_i_g_f_o_x___g_p_s___p_o_s_i_t_i_o_n__t_a4cb5e4ed4ee50681125d079771e10a9a}\label{struct_s_i_g_f_o_x___g_p_s___p_o_s_i_t_i_o_n__t_a4cb5e4ed4ee50681125d079771e10a9a} 
+\index{SIGFOX\_GPS\_POSITION\_t@{SIGFOX\_GPS\_POSITION\_t}!lat\_minutos\_2@{lat\_minutos\_2}}
+\index{lat\_minutos\_2@{lat\_minutos\_2}!SIGFOX\_GPS\_POSITION\_t@{SIGFOX\_GPS\_POSITION\_t}}
+\doxysubsubsection{\texorpdfstring{lat\_minutos\_2}{lat\_minutos\_2}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} SIGFOX\+\_\+\+GPS\+\_\+\+POSITION\+\_\+t\+::lat\+\_\+minutos\+\_\+2}
+
+
+
+device latitude mmmm 
+
+\Hypertarget{struct_s_i_g_f_o_x___g_p_s___p_o_s_i_t_i_o_n__t_aee5e88b077850d1cea3c50afcca76a70}\label{struct_s_i_g_f_o_x___g_p_s___p_o_s_i_t_i_o_n__t_aee5e88b077850d1cea3c50afcca76a70} 
+\index{SIGFOX\_GPS\_POSITION\_t@{SIGFOX\_GPS\_POSITION\_t}!long\_grados@{long\_grados}}
+\index{long\_grados@{long\_grados}!SIGFOX\_GPS\_POSITION\_t@{SIGFOX\_GPS\_POSITION\_t}}
+\doxysubsubsection{\texorpdfstring{long\_grados}{long\_grados}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} SIGFOX\+\_\+\+GPS\+\_\+\+POSITION\+\_\+t\+::long\+\_\+grados}
+
+
+
+device longitude MMM 
+
+\Hypertarget{struct_s_i_g_f_o_x___g_p_s___p_o_s_i_t_i_o_n__t_ad7ecbde6d0ffd68f6a802c01259f2edc}\label{struct_s_i_g_f_o_x___g_p_s___p_o_s_i_t_i_o_n__t_ad7ecbde6d0ffd68f6a802c01259f2edc} 
+\index{SIGFOX\_GPS\_POSITION\_t@{SIGFOX\_GPS\_POSITION\_t}!long\_minutos\_1@{long\_minutos\_1}}
+\index{long\_minutos\_1@{long\_minutos\_1}!SIGFOX\_GPS\_POSITION\_t@{SIGFOX\_GPS\_POSITION\_t}}
+\doxysubsubsection{\texorpdfstring{long\_minutos\_1}{long\_minutos\_1}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} SIGFOX\+\_\+\+GPS\+\_\+\+POSITION\+\_\+t\+::long\+\_\+minutos\+\_\+1}
+
+
+
+device longitude mm 
+
+\Hypertarget{struct_s_i_g_f_o_x___g_p_s___p_o_s_i_t_i_o_n__t_a7323247b23054686e8c91ca18c97c47f}\label{struct_s_i_g_f_o_x___g_p_s___p_o_s_i_t_i_o_n__t_a7323247b23054686e8c91ca18c97c47f} 
+\index{SIGFOX\_GPS\_POSITION\_t@{SIGFOX\_GPS\_POSITION\_t}!long\_minutos\_2@{long\_minutos\_2}}
+\index{long\_minutos\_2@{long\_minutos\_2}!SIGFOX\_GPS\_POSITION\_t@{SIGFOX\_GPS\_POSITION\_t}}
+\doxysubsubsection{\texorpdfstring{long\_minutos\_2}{long\_minutos\_2}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} SIGFOX\+\_\+\+GPS\+\_\+\+POSITION\+\_\+t\+::long\+\_\+minutos\+\_\+2}
+
+
+
+device longitude mmmm 
+
+\Hypertarget{struct_s_i_g_f_o_x___g_p_s___p_o_s_i_t_i_o_n__t_a6cf895b05ab107cb73eebe7f36d2c843}\label{struct_s_i_g_f_o_x___g_p_s___p_o_s_i_t_i_o_n__t_a6cf895b05ab107cb73eebe7f36d2c843} 
+\index{SIGFOX\_GPS\_POSITION\_t@{SIGFOX\_GPS\_POSITION\_t}!must\_be\_0x55@{must\_be\_0x55}}
+\index{must\_be\_0x55@{must\_be\_0x55}!SIGFOX\_GPS\_POSITION\_t@{SIGFOX\_GPS\_POSITION\_t}}
+\doxysubsubsection{\texorpdfstring{must\_be\_0x55}{must\_be\_0x55}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} SIGFOX\+\_\+\+GPS\+\_\+\+POSITION\+\_\+t\+::must\+\_\+be\+\_\+0x55}
+
+
+
+Fixed value = 0x55. 
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\+HAL/\mbox{\hyperlink{thread__comm__hal_8h}{thread\+\_\+comm\+\_\+hal.\+h}}\end{DoxyCompactItemize}

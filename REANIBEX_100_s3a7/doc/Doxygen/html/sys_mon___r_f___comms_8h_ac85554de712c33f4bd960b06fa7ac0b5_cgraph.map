@@ -1,0 +1,34 @@
+<map id="Execute_Send_Sigfox_GPS" name="Execute_Send_Sigfox_GPS">
+<area shape="rect" id="Node000001" title="Function that sends GPS positiion." alt="" coords="5,267,190,293"/>
+<area shape="rect" id="Node000002" href="$thread__audio__entry_8c.html#a7bc63559c8d1198f7036bf7d08def712" title="Function that performs an operation with the message player." alt="" coords="271,56,385,83"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="103,265,121,230,150,184,189,135,236,92,255,82,257,87,239,97,193,138,154,187,126,233,107,268"/>
+<area shape="rect" id="Node000007" href="$thread__sys_mon__entry_8c.html#a86d6de0ddbdd8704798336aa29003fb5" title="Check if user abort running test." alt="" coords="247,107,409,133"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="107,265,158,206,195,172,236,143,247,137,250,142,239,148,198,176,162,210,111,268"/>
+<area shape="rect" id="Node000009" href="$thread__comm__hal_8c.html#a14b282886d75e45f70a7ffe548732dba" title="Returns the selected Comms UART." alt="" coords="240,157,416,184"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="117,264,169,229,237,194,254,187,256,192,239,198,172,234,120,268"/>
+<area shape="rect" id="Node000010" href="$thread__comm__entry_8c.html#aef540835b519754957f251e42bdfc435" title="Get sigfox status." alt="" coords="245,208,411,235"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="152,264,257,236,259,242,153,269"/>
+<area shape="rect" id="Node000011" href="$thread__comm__entry_8c.html#a8198be61adcf8789af5d987d57b6a23b" title="Checks if sigfox exp sended process completed." alt="" coords="253,259,403,301"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="190,277,237,277,237,283,190,283"/>
+<area shape="rect" id="Node000012" href="$thread__comm__entry_8c.html#a6f2ca4d1ab63af942461484f1451146c" title="Checks if sigfox initialization process completed." alt="" coords="238,325,418,352"/>
+<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="153,291,259,318,257,324,152,296"/>
+<area shape="rect" id="Node000013" href="$thread__comm__entry_8c.html#aa5bebfa6dad376f9d2c79e2256f29d40" title="Generate R100 Sigfox GPS position." alt="" coords="247,376,409,419"/>
+<area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="120,292,173,325,239,362,251,367,249,372,236,366,170,330,117,296"/>
+<area shape="rect" id="Node000015" href="$thread__comm__entry_8c.html#aae63ed01fe3ee64c1d194e97ca3877b3" title="Open Sigfox Communication." alt="" coords="258,443,398,469"/>
+<area shape="poly" id="edge14_Node000001_Node000015" title=" " alt="" coords="110,292,159,358,196,396,239,428,249,434,246,439,236,433,193,400,155,361,105,295"/>
+<area shape="rect" id="Node000016" href="$thread__sys_mon__entry_8c.html#aab815986ee52dfb7489873f856e3ecb9" title="Refresh the watchdog timer." alt="" coords="278,493,378,520"/>
+<area shape="poly" id="edge16_Node000001_Node000016" title=" " alt="" coords="107,293,124,330,152,381,191,434,214,458,239,479,265,492,262,497,236,484,210,462,187,437,148,383,119,332,102,295"/>
+<area shape="rect" id="Node000003" href="$thread__audio__entry_8c.html#a05b96411bbd2b24e86ae0cc21146b4cb" title="Function that loads and plays a message." alt="" coords="466,5,613,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="385,53,465,34,467,39,386,58"/>
+<area shape="rect" id="Node000005" href="$thread__audio__entry_8c.html#a2c1714b5b8e79621e3a35b0624309f63" title="Stops the audio engine in a predefined sequence." alt="" coords="472,56,607,83"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="385,67,457,67,457,72,385,72"/>
+<area shape="rect" id="Node000004" href="$thread__audio__entry_8c.html#a29f40d7e3dc151283bfb0e69dbd8b132" title="Get an audio frame from the audio file." alt="" coords="661,5,836,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="614,16,646,16,646,21,614,21"/>
+<area shape="rect" id="Node000006" href="$thread__audio__hal_8c.html#a5afdd4d24f2faf92baea80c7b0cedfdc" title="stops the audio reproduction" alt="" coords="704,56,793,83"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="608,67,689,67,689,72,608,72"/>
+<area shape="rect" id="Node000008" href="$_keypad_8c.html#a65899dc7cce4138cd4488d27daff459d" title="Read from Key&#45;board." alt="" coords="499,107,580,133"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="409,117,484,117,484,123,409,123"/>
+<area shape="rect" id="Node000014" href="$thread__comm__entry_8c.html#af7921d111a91795221d7b493716d54c3" title="Process events related to All COMM modules." alt="" coords="469,413,610,440"/>
+<area shape="poly" id="edge13_Node000013_Node000014" title=" " alt="" coords="410,406,454,412,453,417,409,411"/>
+<area shape="poly" id="edge15_Node000015_Node000014" title=" " alt="" coords="398,444,453,436,454,441,399,449"/>
+</map>

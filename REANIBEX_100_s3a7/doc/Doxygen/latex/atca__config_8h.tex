@@ -1,0 +1,65 @@
+\doxysection{C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\+SCE/atca\+\_\+config.h File Reference}
+\hypertarget{atca__config_8h}{}\label{atca__config_8h}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/SCE/atca\_config.h@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/SCE/atca\_config.h}}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{atca__config_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{atca__config_8h_a6c2590089788c276d974c4631ea2c537}{ATCA\+\_\+\+HAL\+\_\+\+I2C}}
+\item 
+\#define \mbox{\hyperlink{atca__config_8h_a744eebbe3aacc3b0f2e6e7d5fb2f81c0}{ATCA\+\_\+\+ATECC608\+\_\+\+SUPPORT}}
+\item 
+\#define \mbox{\hyperlink{atca__config_8h_ae78f944999508c7be04d8ed0df99da93}{ATCA\+\_\+\+ECC204\+\_\+\+SUPPORT}}
+\item 
+\#define \mbox{\hyperlink{atca__config_8h_ad476da768505d62bcd85e8fb55cdb1eb}{ATCA\+\_\+\+POST\+\_\+\+DELAY\+\_\+\+MSEC}}~25
+\item 
+\#define \mbox{\hyperlink{atca__config_8h_adbc2385fb7498f0b78384b2244a64328}{ATCA\+\_\+\+PLATFORM\+\_\+\+MALLOC}}~malloc
+\item 
+\#define \mbox{\hyperlink{atca__config_8h_a659e8df188244eae9becc59a74c81ece}{ATCA\+\_\+\+PLATFORM\+\_\+\+FREE}}~free
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{atca__config_8h_a744eebbe3aacc3b0f2e6e7d5fb2f81c0}\label{atca__config_8h_a744eebbe3aacc3b0f2e6e7d5fb2f81c0} 
+\index{atca\_config.h@{atca\_config.h}!ATCA\_ATECC608\_SUPPORT@{ATCA\_ATECC608\_SUPPORT}}
+\index{ATCA\_ATECC608\_SUPPORT@{ATCA\_ATECC608\_SUPPORT}!atca\_config.h@{atca\_config.h}}
+\doxysubsubsection{\texorpdfstring{ATCA\_ATECC608\_SUPPORT}{ATCA\_ATECC608\_SUPPORT}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+ATECC608\+\_\+\+SUPPORT}
+
+Define to enable compatibility with legacy HALs (HALs with embedded device logic) \Hypertarget{atca__config_8h_ae78f944999508c7be04d8ed0df99da93}\label{atca__config_8h_ae78f944999508c7be04d8ed0df99da93} 
+\index{atca\_config.h@{atca\_config.h}!ATCA\_ECC204\_SUPPORT@{ATCA\_ECC204\_SUPPORT}}
+\index{ATCA\_ECC204\_SUPPORT@{ATCA\_ECC204\_SUPPORT}!atca\_config.h@{atca\_config.h}}
+\doxysubsubsection{\texorpdfstring{ATCA\_ECC204\_SUPPORT}{ATCA\_ECC204\_SUPPORT}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+ECC204\+\_\+\+SUPPORT}
+
+\Hypertarget{atca__config_8h_a6c2590089788c276d974c4631ea2c537}\label{atca__config_8h_a6c2590089788c276d974c4631ea2c537} 
+\index{atca\_config.h@{atca\_config.h}!ATCA\_HAL\_I2C@{ATCA\_HAL\_I2C}}
+\index{ATCA\_HAL\_I2C@{ATCA\_HAL\_I2C}!atca\_config.h@{atca\_config.h}}
+\doxysubsubsection{\texorpdfstring{ATCA\_HAL\_I2C}{ATCA\_HAL\_I2C}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+HAL\+\_\+\+I2C}
+
+\Hypertarget{atca__config_8h_a659e8df188244eae9becc59a74c81ece}\label{atca__config_8h_a659e8df188244eae9becc59a74c81ece} 
+\index{atca\_config.h@{atca\_config.h}!ATCA\_PLATFORM\_FREE@{ATCA\_PLATFORM\_FREE}}
+\index{ATCA\_PLATFORM\_FREE@{ATCA\_PLATFORM\_FREE}!atca\_config.h@{atca\_config.h}}
+\doxysubsubsection{\texorpdfstring{ATCA\_PLATFORM\_FREE}{ATCA\_PLATFORM\_FREE}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+PLATFORM\+\_\+\+FREE~free}
+
+\Hypertarget{atca__config_8h_adbc2385fb7498f0b78384b2244a64328}\label{atca__config_8h_adbc2385fb7498f0b78384b2244a64328} 
+\index{atca\_config.h@{atca\_config.h}!ATCA\_PLATFORM\_MALLOC@{ATCA\_PLATFORM\_MALLOC}}
+\index{ATCA\_PLATFORM\_MALLOC@{ATCA\_PLATFORM\_MALLOC}!atca\_config.h@{atca\_config.h}}
+\doxysubsubsection{\texorpdfstring{ATCA\_PLATFORM\_MALLOC}{ATCA\_PLATFORM\_MALLOC}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+PLATFORM\+\_\+\+MALLOC~malloc}
+
+Enable debug messages Enable to build in test hooks Define certificate templates to be supported. Define Software Crypto Library to Use -\/ if none are defined use the cryptoauthlib version where applicable Additional Runtime Configuration Define to build atcab\+\_\+ functions rather that defining them as macros Define to enable older API forms that have been replaced TA100 Specific -\/ Enable auth sessions that require AES (CMAC/\+GCM) from an external library TA100 Specific -\/ Enable support for the FCE APIs for the TA100 Define if the library is not to use malloc/free Define platform malloc/free \Hypertarget{atca__config_8h_ad476da768505d62bcd85e8fb55cdb1eb}\label{atca__config_8h_ad476da768505d62bcd85e8fb55cdb1eb} 
+\index{atca\_config.h@{atca\_config.h}!ATCA\_POST\_DELAY\_MSEC@{ATCA\_POST\_DELAY\_MSEC}}
+\index{ATCA\_POST\_DELAY\_MSEC@{ATCA\_POST\_DELAY\_MSEC}!atca\_config.h@{atca\_config.h}}
+\doxysubsubsection{\texorpdfstring{ATCA\_POST\_DELAY\_MSEC}{ATCA\_POST\_DELAY\_MSEC}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+POST\+\_\+\+DELAY\+\_\+\+MSEC~25}
+
+Device Override -\/ Library Assumes ATECC608B support in checks Define if cryptoauthlib is to use the maximum execution time method 

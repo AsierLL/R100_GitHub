@@ -1,0 +1,1021 @@
+\doxysection{C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\+FRCP/frcp.c File Reference}
+\hypertarget{frcp_8c}{}\label{frcp_8c}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/FRCP/frcp.c@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/FRCP/frcp.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include "{}types\+\_\+basic.\+h"{}}\newline
+{\ttfamily \#include "{}frcp.\+h"{}}\newline
+Include dependency graph for frcp.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=345pt]{frcp_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_f_r_c_p___p_o_i_n_t__t}{FRCP\+\_\+\+POINT\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Defines the minimum and maximum position and amplitudes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{frcp_8c_a8c8f27b35dfa40ccf31c1ee31479a31c}{GAIN}}~(0.\+0007633691581868662f)
+\begin{DoxyCompactList}\small\item\em Gain for IIR filter. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{frcp_8c_a30588c5eca7c9cb6ebba02a0236f0119}{FS}}~100
+\begin{DoxyCompactList}\small\item\em Sampling frequency. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{frcp_8c_a9d76cc31537af0aac0544f448ffaa430}{NMW}}~(2\texorpdfstring{$\ast$}{*}\mbox{\hyperlink{_general_8h_a30588c5eca7c9cb6ebba02a0236f0119}{FS}})
+\begin{DoxyCompactList}\small\item\em Samples per window (assume that a single window correspond to 2 seconds) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{frcp_8c_a7e41263c109c3cc5a9f462e1912a9fab}{NMF}}~2
+\begin{DoxyCompactList}\small\item\em Samples pending filter. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{frcp_8c_a5de5d183f9a6a8d53316f743e1ca6dc2}{NMAX}}~((\mbox{\hyperlink{_general_8h_a9d76cc31537af0aac0544f448ffaa430}{NMW}}+\mbox{\hyperlink{_general_8h_a7e41263c109c3cc5a9f462e1912a9fab}{NMF}})/2)
+\begin{DoxyCompactList}\small\item\em Number of max or min in a window (used for max and min arrays) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{frcp_8c_a7dc17e87e9c59ae5bc7481bbecd11787}{CC\+\_\+\+IN\+\_\+\+BLOCK}}~16
+\begin{DoxyCompactList}\small\item\em Number of compressions in a single block (used to store the last compressions info) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{frcp_8c_afd674f28a3ad25118c973adca8809a6e}{CC\+\_\+\+NCP}}~10
+\begin{DoxyCompactList}\small\item\em Number of cc to update adaptive threshold (must be lower than stored CC\+\_\+\+IN\+\_\+\+BLOCK) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{frcp_8c_a4326ef1487c54ebedb49e0ec42cc44ed}{PD\+\_\+\+WINSIZE}}~9
+\begin{DoxyCompactList}\small\item\em Window size to use in the peak detector (PD) -\/\texorpdfstring{$>$}{>} MUST use an odd number. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{frcp_8c_a5b2dcc49e117cdf71ad867d1edfb5c36}{N\+\_\+\+PEAKS}}~8
+\begin{DoxyCompactList}\small\item\em Number of max or min in a window (used for max and min arrays) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{frcp_8c_ad9cac27261b3f28e4e66b08bdb225ff6}{N\+\_\+\+FREQUENCIES}}~10
+\begin{DoxyCompactList}\small\item\em Number of partial frequency values used to calculate the compression frequency. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{frcp_8c_a51964e5e7730d9a9b5a1efd8f56b4bc3}{DMIN}}~19
+\begin{DoxyCompactList}\small\item\em Minimum distance to detect a cc (0.\+19\texorpdfstring{$\ast$}{*}\+FS) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{frcp_8c_af1afee9556b3ca858092d58c729a0649}{DMAX}}~95
+\begin{DoxyCompactList}\small\item\em Maximum distance to detect a cc (0.\+95\texorpdfstring{$\ast$}{*}\+FS) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{frcp_8c_a878c3765ca25c91c974305c22090da50}{INTERV\+\_\+\+CC\+\_\+\+MIN}}~22
+\begin{DoxyCompactList}\small\item\em (0.\+22\texorpdfstring{$\ast$}{*}\+FS) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{frcp_8c_a346dcc6f74468efda728d68298fdb857}{TIME\+\_\+\+BREATHE}}~(1\texorpdfstring{$\ast$}{*}\mbox{\hyperlink{_general_8h_a30588c5eca7c9cb6ebba02a0236f0119}{FS}})
+\begin{DoxyCompactList}\small\item\em Number of samples without compressions to detect a Breath condition. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{frcp_8c_a63c7acef5369ac4e5fd5f852ee1720e0}{FACTOR}}~4
+\begin{DoxyCompactList}\small\item\em Threshold update factor = (1/0.\+25) -- 25\%. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{frcp_8c_af8dc01f8da359fe9fa04666bdc800505}{AMP\+\_\+\+TH\+\_\+\+MAX}}~103
+\begin{DoxyCompactList}\small\item\em Max amplitude threshold for cc detection. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{frcp_8c_abed072519407269845b45fa83539c678}{AMP\+\_\+\+TH\+\_\+\+MIN}}~58
+\begin{DoxyCompactList}\small\item\em Min amplitude threshold for cc detection. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{frcp_8c_a316a48f45ab24ba9f004fd6eb3ce79c6}{AMP\+\_\+1\+\_\+\+OHM}}~412
+\begin{DoxyCompactList}\small\item\em Amplitude for 1 ohm. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{frcp_8c_a930281de62ddd5d5477ff59d30bd5fd2}{FRCP\+\_\+\+IIR\+\_\+0\+\_\+2}} (const \mbox{\hyperlink{_s_c_e_2types__basic_8h_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Signal, \mbox{\hyperlink{_s_c_e_2types__basic_8h_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Filter)
+\begin{DoxyCompactList}\small\item\em IIR second order filtering function. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{frcp_8c_aa0d38369b0c55dcf304794e0b077ffe5}{FRCP\+\_\+\+IIR\+\_\+1\+\_\+2}} (const \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Signal, \mbox{\hyperlink{_s_c_e_2types__basic_8h_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Filter)
+\begin{DoxyCompactList}\small\item\em IIR second order filtering function. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{frcp_8c_a863e0f1052437340e1c7573fd61eaba9}{FRCP\+\_\+\+IIR\+\_\+2\+\_\+2}} (const \mbox{\hyperlink{_s_c_e_2types__basic_8h_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Signal, \mbox{\hyperlink{_s_c_e_2types__basic_8h_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Filter)
+\begin{DoxyCompactList}\small\item\em Second order IIR filtering function. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{frcp_8c_a9cda9a5d032db229a00b88e37a9cbb3a}{FRCP\+\_\+\+IIR}} (const \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Signal, \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Filter)
+\begin{DoxyCompactList}\small\item\em IIR passband filtering function (2.\+5 -\/ 30 Hz). Implementation based on 10th order butterworth filter composed of a 5 filters cascade (2nd order each one) \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{frcp_8c_a0d6f42a9b53fa653155a900a94056e55}{FRCP\+\_\+\+Ini\+\_\+\+Filters}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} first\+Sample)
+\begin{DoxyCompactList}\small\item\em Filter initialization function. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{frcp_8c_a2d2f5147df66b194b2492fb0ec84d0d4}{FRCP\+\_\+median}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \texorpdfstring{$\ast$}{*}x, \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} n)
+\begin{DoxyCompactList}\small\item\em Function that calculates the median of an array of integers. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{frcp_8c_a913c8d48e4055555665fc82027e69772}{find\+\_\+peak\+\_\+max}} (const \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Buffer)
+\begin{DoxyCompactList}\small\item\em Funcion que identifica un posible maximo en un tramo de impedancia. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{frcp_8c_acff226b96220fbd9cfea0b8064e3f3dc}{find\+\_\+peak\+\_\+min}} (const \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Buffer)
+\begin{DoxyCompactList}\small\item\em Funcion que identifica un posible minimo en un tramo de impedancia. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{frcp_8c_ae0ae74d64db8a194d20446eec2670afb}{find\+\_\+peaks}} (const \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \texorpdfstring{$\ast$}{*}my\+\_\+impe\+\_\+filt, \mbox{\hyperlink{struct_f_r_c_p___p_o_i_n_t__t}{FRCP\+\_\+\+POINT\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Min, \mbox{\hyperlink{struct_f_r_c_p___p_o_i_n_t__t}{FRCP\+\_\+\+POINT\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Max, \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \texorpdfstring{$\ast$}{*}cont\+\_\+min, \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \texorpdfstring{$\ast$}{*}cont\+\_\+max)
+\begin{DoxyCompactList}\small\item\em Funcion que recibe un tramo de impedancia y devuelve sus maximos y minimos relativos. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{frcp_8c_ad6eb78aad65f607d7da803f41e8ffa7f}{cc\+\_\+calculate\+\_\+features}} (\mbox{\hyperlink{struct_f_r_c_p___p_o_i_n_t__t}{FRCP\+\_\+\+POINT\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Min, \mbox{\hyperlink{struct_f_r_c_p___p_o_i_n_t__t}{FRCP\+\_\+\+POINT\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Max, \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} n\+Points, \mbox{\hyperlink{struct_f_r_c_p___p_o_i_n_t__t}{FRCP\+\_\+\+POINT\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+CC\+\_\+raw)
+\begin{DoxyCompactList}\small\item\em Funcion que calcula para cada fluctuacion dos parametros\+: amplitud (media de las diferencias de amplitudes entre un maximo y el minimo anterior y entre un maximo y el minimo siguiente) duracion (distancia entre los dos minimos) \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{frcp_8c_a92d5c99a99bed1fd14ef11dca74fd6ca}{cc\+\_\+detection\+\_\+algorithm}} (\mbox{\hyperlink{struct_f_r_c_p___p_o_i_n_t__t}{FRCP\+\_\+\+POINT\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Max, \mbox{\hyperlink{struct_f_r_c_p___p_o_i_n_t__t}{FRCP\+\_\+\+POINT\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+CC\+\_\+raw, \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} n\+Points, \mbox{\hyperlink{struct_f_r_c_p___p_o_i_n_t__t}{FRCP\+\_\+\+POINT\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+CC, \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \texorpdfstring{$\ast$}{*}cont\+\_\+cc)
+\begin{DoxyCompactList}\small\item\em Funcion que a partir de los arrays de features (par{\ucr}metros) de cada fluctuaci{\ucr}n decide {\ucr}sta ha sido provocada por una fluctuaci{\ucr}n o no. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{frcp_8c_a98a29d36e405c6b9781d0b245c7364fa}{reset\+\_\+block}} (\mbox{\hyperlink{struct_f_r_c_p___p_o_i_n_t__t}{FRCP\+\_\+\+POINT\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Block)
+\begin{DoxyCompactList}\small\item\em Function to initialize the block buffer. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{frcp_8c_a9969fd4574fa73360d66b3a384fc7e00}{cc\+\_\+update\+\_\+block}} (\mbox{\hyperlink{struct_f_r_c_p___p_o_i_n_t__t}{FRCP\+\_\+\+POINT\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+CC, \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} cont\+\_\+cc, \mbox{\hyperlink{struct_f_r_c_p___p_o_i_n_t__t}{FRCP\+\_\+\+POINT\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Block)
+\begin{DoxyCompactList}\small\item\em Funcion que comprueba si las ultimas compresiones detectadas pertenecen a un bloque de compresiones. Devuelve un array de compresiones de bloque y otro array que indica el indice la ultima compresion del bloque que se habia usado para calcular la frecuencia y actualizar el umbral. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{frcp_8c_a1ab0f7c3216c6c0c7e5064a545138ebc}{cc\+\_\+calculate\+\_\+frequency}} (const \mbox{\hyperlink{struct_f_r_c_p___p_o_i_n_t__t}{FRCP\+\_\+\+POINT\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Block)
+\begin{DoxyCompactList}\small\item\em Funcion que a partir de un array de posiciones de las compresiones del {\ucr}ltimo bloque calcula la frecuencia. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \mbox{\hyperlink{frcp_8c_a6121587ec280009201098222cb0e9120}{cc\+\_\+update\+\_\+threshold}} (const \mbox{\hyperlink{struct_f_r_c_p___p_o_i_n_t__t}{FRCP\+\_\+\+POINT\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Block)
+\begin{DoxyCompactList}\small\item\em Funcion que actualiza el umbral de amplitud en Funcion de las amplitudes de las ultimas compresiones que se han insertado en el bloque. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{frcp_8c_a1565afa647ed6ab27c18ff4257cf3760}{cc\+\_\+update\+\_\+frequency}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} new\+\_\+frequency)
+\begin{DoxyCompactList}\small\item\em Funcion que actualiza el valor de frecuencia de las compresiones. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{frcp_8c_ac2193c0d4852d7bd7a378d872f7ede43}{FRCP\+\_\+\+Init}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} first\+\_\+sample)
+\begin{DoxyCompactList}\small\item\em Initialize the FRCP controller. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{frcp_8c_afecee78e99f3723f000b27b25017305c}{FRCP\+\_\+\+Get\+\_\+\+Frequency}} (void)
+\begin{DoxyCompactList}\small\item\em Funcion que retorna el valor de frecuencia de las compresiones. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{frcp_8c_a4285fdd1c26e6f4da74d142ba4d3ed84}{FRCP\+\_\+\+Process\+\_\+\+Zpwin}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \texorpdfstring{$\ast$}{*}signal)
+\begin{DoxyCompactList}\small\item\em Calcule the FRCP of the current window. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const \mbox{\hyperlink{_s_c_e_2types__basic_8h_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}} \mbox{\hyperlink{frcp_8c_a27577b5555a3760f3db622309595435f}{b1}} \mbox{[}3\mbox{]} = \{(\mbox{\hyperlink{_s_c_e_2types__basic_8h_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}}) 1, (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}}) 1, (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}}) 0\}
+\item 
+const \mbox{\hyperlink{_s_c_e_2types__basic_8h_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}} \mbox{\hyperlink{frcp_8c_a32ec7a8ba28edba96328bba60b2de12e}{a1}} \mbox{[}3\mbox{]} = \{(\mbox{\hyperlink{_s_c_e_2types__basic_8h_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}}) 1, (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}}) -\/0.\+852951624532311, (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}}) 0\}
+\item 
+const \mbox{\hyperlink{_s_c_e_2types__basic_8h_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}} \mbox{\hyperlink{frcp_8c_a28e0dca3a0d411bd4d3834eb5d86e080}{b2}} \mbox{[}3\mbox{]} = \{(\mbox{\hyperlink{_s_c_e_2types__basic_8h_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}}) 1, (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}}) 2, (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}}) 1\}
+\item 
+const \mbox{\hyperlink{_s_c_e_2types__basic_8h_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}} \mbox{\hyperlink{frcp_8c_a067e89b80861d564c23d44efffd7fe72}{a2}} \mbox{[}3\mbox{]} = \{(\mbox{\hyperlink{_s_c_e_2types__basic_8h_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}}) 1, (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}}) -\/1.\+812948130052366, (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}}) 0.\+854478362848698\}
+\item 
+static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}} \mbox{\hyperlink{frcp_8c_aaa0b7b1dde7bdc175eb5fc9bc1f8d908}{sf1}} \mbox{[}\mbox{\hyperlink{_general_8h_a7e41263c109c3cc5a9f462e1912a9fab}{NMF}}+\mbox{\hyperlink{_general_8h_a9d76cc31537af0aac0544f448ffaa430}{NMW}}\mbox{]}
+\item 
+static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}} \mbox{\hyperlink{frcp_8c_a0ed08d37656f346db123b39271beac4e}{sf2}} \mbox{[}\mbox{\hyperlink{_general_8h_a7e41263c109c3cc5a9f462e1912a9fab}{NMF}}+\mbox{\hyperlink{_general_8h_a9d76cc31537af0aac0544f448ffaa430}{NMW}}\mbox{]}
+\item 
+static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}} \mbox{\hyperlink{frcp_8c_a2e2b4c7b4c1536b6441eafca3103d8af}{zi0}} \mbox{[}4\mbox{]}
+\item 
+static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}} \mbox{\hyperlink{frcp_8c_aac3d931a0cf0cd123fc0e5d5aa05aac2}{sf\+\_\+prev\+Sam}} \mbox{[}2\mbox{]}
+\item 
+static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \mbox{\hyperlink{frcp_8c_a04e76ca82b9a014f5ecb6810924e0ea9}{impe\+\_\+filt}} \mbox{[}\mbox{\hyperlink{_general_8h_a9d76cc31537af0aac0544f448ffaa430}{NMW}}\mbox{]}
+\item 
+static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \mbox{\hyperlink{frcp_8c_a91353374148bd78debc839163f94226f}{prev\+Sam}} \mbox{[}\mbox{\hyperlink{frcp_8c_a4326ef1487c54ebedb49e0ec42cc44ed}{PD\+\_\+\+WINSIZE}}\mbox{]}
+\item 
+static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{frcp_8c_ab77b9b9b40d4aa8103823f4db8c0a45c}{old\+\_\+good\+\_\+value}}
+\item 
+static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{frcp_8c_a6157cc49d6dde47328af9404bddbc67b}{buff\+\_\+freq\+\_\+value}} \mbox{[}\mbox{\hyperlink{frcp_8c_ad9cac27261b3f28e4e66b08bdb225ff6}{N\+\_\+\+FREQUENCIES}}\mbox{]}
+\item 
+static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{frcp_8c_a67abfa64db3f8f44d90ee2b2e7f07dc3}{flag\+\_\+ult\+\_\+min}}
+\item 
+static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{frcp_8c_afbfcef13dbd20da965ff041121c55ade}{flag\+\_\+first\+\_\+window}}
+\item 
+static \mbox{\hyperlink{struct_f_r_c_p___p_o_i_n_t__t}{FRCP\+\_\+\+POINT\+\_\+t}} \mbox{\hyperlink{frcp_8c_a3b7f5ec0eb81ad5fdc31438ab4876509}{gbl\+\_\+min}}
+\item 
+static \mbox{\hyperlink{struct_f_r_c_p___p_o_i_n_t__t}{FRCP\+\_\+\+POINT\+\_\+t}} \mbox{\hyperlink{frcp_8c_ad68520ce48e2637d04eb7dd3d282ed4f}{gbl\+\_\+max}}
+\item 
+static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \mbox{\hyperlink{frcp_8c_aa276949afaac43209f81bafd8cf76ba6}{gbl\+\_\+win\+\_\+idx}}
+\item 
+static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \mbox{\hyperlink{frcp_8c_a985df5c26239cf630c5ce993e6154b19}{gbl\+\_\+ult\+\_\+cc}}
+\item 
+static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \mbox{\hyperlink{frcp_8c_a07ac06439a53ca083f2982e1bbbba5c0}{gbl\+\_\+amp\+\_\+min}}
+\item 
+static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{frcp_8c_a6de9dbf983bce6b918ce55e89966bc31}{frcp\+\_\+frequency}}
+\item 
+static \mbox{\hyperlink{struct_f_r_c_p___p_o_i_n_t__t}{FRCP\+\_\+\+POINT\+\_\+t}} \mbox{\hyperlink{frcp_8c_acc0ee3405c81fcfc13a4a900e1d4cffb}{block}} \mbox{[}\mbox{\hyperlink{frcp_8c_a7dc17e87e9c59ae5bc7481bbecd11787}{CC\+\_\+\+IN\+\_\+\+BLOCK}}\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVersion}{Version}
+v1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+17/02/2021 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Ilazkanoiturburu 
+\end{DoxyAuthor}
+\begin{DoxyWarning}{Warning}
+author date version .-\/ Edition 
+\end{DoxyWarning}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000028}{Bug}}]\end{DoxyRefDesc}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{frcp_8c_a316a48f45ab24ba9f004fd6eb3ce79c6}\label{frcp_8c_a316a48f45ab24ba9f004fd6eb3ce79c6} 
+\index{frcp.c@{frcp.c}!AMP\_1\_OHM@{AMP\_1\_OHM}}
+\index{AMP\_1\_OHM@{AMP\_1\_OHM}!frcp.c@{frcp.c}}
+\doxysubsubsection{\texorpdfstring{AMP\_1\_OHM}{AMP\_1\_OHM}}
+{\footnotesize\ttfamily \#define AMP\+\_\+1\+\_\+\+OHM~412}
+
+
+
+Amplitude for 1 ohm. 
+
+\Hypertarget{frcp_8c_af8dc01f8da359fe9fa04666bdc800505}\label{frcp_8c_af8dc01f8da359fe9fa04666bdc800505} 
+\index{frcp.c@{frcp.c}!AMP\_TH\_MAX@{AMP\_TH\_MAX}}
+\index{AMP\_TH\_MAX@{AMP\_TH\_MAX}!frcp.c@{frcp.c}}
+\doxysubsubsection{\texorpdfstring{AMP\_TH\_MAX}{AMP\_TH\_MAX}}
+{\footnotesize\ttfamily \#define AMP\+\_\+\+TH\+\_\+\+MAX~103}
+
+
+
+Max amplitude threshold for cc detection. 
+
+\Hypertarget{frcp_8c_abed072519407269845b45fa83539c678}\label{frcp_8c_abed072519407269845b45fa83539c678} 
+\index{frcp.c@{frcp.c}!AMP\_TH\_MIN@{AMP\_TH\_MIN}}
+\index{AMP\_TH\_MIN@{AMP\_TH\_MIN}!frcp.c@{frcp.c}}
+\doxysubsubsection{\texorpdfstring{AMP\_TH\_MIN}{AMP\_TH\_MIN}}
+{\footnotesize\ttfamily \#define AMP\+\_\+\+TH\+\_\+\+MIN~58}
+
+
+
+Min amplitude threshold for cc detection. 
+
+\Hypertarget{frcp_8c_a7dc17e87e9c59ae5bc7481bbecd11787}\label{frcp_8c_a7dc17e87e9c59ae5bc7481bbecd11787} 
+\index{frcp.c@{frcp.c}!CC\_IN\_BLOCK@{CC\_IN\_BLOCK}}
+\index{CC\_IN\_BLOCK@{CC\_IN\_BLOCK}!frcp.c@{frcp.c}}
+\doxysubsubsection{\texorpdfstring{CC\_IN\_BLOCK}{CC\_IN\_BLOCK}}
+{\footnotesize\ttfamily \#define CC\+\_\+\+IN\+\_\+\+BLOCK~16}
+
+
+
+Number of compressions in a single block (used to store the last compressions info) 
+
+\Hypertarget{frcp_8c_afd674f28a3ad25118c973adca8809a6e}\label{frcp_8c_afd674f28a3ad25118c973adca8809a6e} 
+\index{frcp.c@{frcp.c}!CC\_NCP@{CC\_NCP}}
+\index{CC\_NCP@{CC\_NCP}!frcp.c@{frcp.c}}
+\doxysubsubsection{\texorpdfstring{CC\_NCP}{CC\_NCP}}
+{\footnotesize\ttfamily \#define CC\+\_\+\+NCP~10}
+
+
+
+Number of cc to update adaptive threshold (must be lower than stored CC\+\_\+\+IN\+\_\+\+BLOCK) 
+
+\Hypertarget{frcp_8c_af1afee9556b3ca858092d58c729a0649}\label{frcp_8c_af1afee9556b3ca858092d58c729a0649} 
+\index{frcp.c@{frcp.c}!DMAX@{DMAX}}
+\index{DMAX@{DMAX}!frcp.c@{frcp.c}}
+\doxysubsubsection{\texorpdfstring{DMAX}{DMAX}}
+{\footnotesize\ttfamily \#define DMAX~95}
+
+
+
+Maximum distance to detect a cc (0.\+95\texorpdfstring{$\ast$}{*}\+FS) 
+
+\Hypertarget{frcp_8c_a51964e5e7730d9a9b5a1efd8f56b4bc3}\label{frcp_8c_a51964e5e7730d9a9b5a1efd8f56b4bc3} 
+\index{frcp.c@{frcp.c}!DMIN@{DMIN}}
+\index{DMIN@{DMIN}!frcp.c@{frcp.c}}
+\doxysubsubsection{\texorpdfstring{DMIN}{DMIN}}
+{\footnotesize\ttfamily \#define DMIN~19}
+
+
+
+Minimum distance to detect a cc (0.\+19\texorpdfstring{$\ast$}{*}\+FS) 
+
+\Hypertarget{frcp_8c_a63c7acef5369ac4e5fd5f852ee1720e0}\label{frcp_8c_a63c7acef5369ac4e5fd5f852ee1720e0} 
+\index{frcp.c@{frcp.c}!FACTOR@{FACTOR}}
+\index{FACTOR@{FACTOR}!frcp.c@{frcp.c}}
+\doxysubsubsection{\texorpdfstring{FACTOR}{FACTOR}}
+{\footnotesize\ttfamily \#define FACTOR~4}
+
+
+
+Threshold update factor = (1/0.\+25) -- 25\%. 
+
+\Hypertarget{frcp_8c_a30588c5eca7c9cb6ebba02a0236f0119}\label{frcp_8c_a30588c5eca7c9cb6ebba02a0236f0119} 
+\index{frcp.c@{frcp.c}!FS@{FS}}
+\index{FS@{FS}!frcp.c@{frcp.c}}
+\doxysubsubsection{\texorpdfstring{FS}{FS}}
+{\footnotesize\ttfamily \#define FS~100}
+
+
+
+Sampling frequency. 
+
+\Hypertarget{frcp_8c_a8c8f27b35dfa40ccf31c1ee31479a31c}\label{frcp_8c_a8c8f27b35dfa40ccf31c1ee31479a31c} 
+\index{frcp.c@{frcp.c}!GAIN@{GAIN}}
+\index{GAIN@{GAIN}!frcp.c@{frcp.c}}
+\doxysubsubsection{\texorpdfstring{GAIN}{GAIN}}
+{\footnotesize\ttfamily \#define GAIN~(0.\+0007633691581868662f)}
+
+
+
+Gain for IIR filter. 
+
+\Hypertarget{frcp_8c_a878c3765ca25c91c974305c22090da50}\label{frcp_8c_a878c3765ca25c91c974305c22090da50} 
+\index{frcp.c@{frcp.c}!INTERV\_CC\_MIN@{INTERV\_CC\_MIN}}
+\index{INTERV\_CC\_MIN@{INTERV\_CC\_MIN}!frcp.c@{frcp.c}}
+\doxysubsubsection{\texorpdfstring{INTERV\_CC\_MIN}{INTERV\_CC\_MIN}}
+{\footnotesize\ttfamily \#define INTERV\+\_\+\+CC\+\_\+\+MIN~22}
+
+
+
+(0.\+22\texorpdfstring{$\ast$}{*}\+FS) 
+
+\Hypertarget{frcp_8c_ad9cac27261b3f28e4e66b08bdb225ff6}\label{frcp_8c_ad9cac27261b3f28e4e66b08bdb225ff6} 
+\index{frcp.c@{frcp.c}!N\_FREQUENCIES@{N\_FREQUENCIES}}
+\index{N\_FREQUENCIES@{N\_FREQUENCIES}!frcp.c@{frcp.c}}
+\doxysubsubsection{\texorpdfstring{N\_FREQUENCIES}{N\_FREQUENCIES}}
+{\footnotesize\ttfamily \#define N\+\_\+\+FREQUENCIES~10}
+
+
+
+Number of partial frequency values used to calculate the compression frequency. 
+
+\Hypertarget{frcp_8c_a5b2dcc49e117cdf71ad867d1edfb5c36}\label{frcp_8c_a5b2dcc49e117cdf71ad867d1edfb5c36} 
+\index{frcp.c@{frcp.c}!N\_PEAKS@{N\_PEAKS}}
+\index{N\_PEAKS@{N\_PEAKS}!frcp.c@{frcp.c}}
+\doxysubsubsection{\texorpdfstring{N\_PEAKS}{N\_PEAKS}}
+{\footnotesize\ttfamily \#define N\+\_\+\+PEAKS~8}
+
+
+
+Number of max or min in a window (used for max and min arrays) 
+
+\Hypertarget{frcp_8c_a5de5d183f9a6a8d53316f743e1ca6dc2}\label{frcp_8c_a5de5d183f9a6a8d53316f743e1ca6dc2} 
+\index{frcp.c@{frcp.c}!NMAX@{NMAX}}
+\index{NMAX@{NMAX}!frcp.c@{frcp.c}}
+\doxysubsubsection{\texorpdfstring{NMAX}{NMAX}}
+{\footnotesize\ttfamily \#define NMAX~((\mbox{\hyperlink{_general_8h_a9d76cc31537af0aac0544f448ffaa430}{NMW}}+\mbox{\hyperlink{_general_8h_a7e41263c109c3cc5a9f462e1912a9fab}{NMF}})/2)}
+
+
+
+Number of max or min in a window (used for max and min arrays) 
+
+\Hypertarget{frcp_8c_a7e41263c109c3cc5a9f462e1912a9fab}\label{frcp_8c_a7e41263c109c3cc5a9f462e1912a9fab} 
+\index{frcp.c@{frcp.c}!NMF@{NMF}}
+\index{NMF@{NMF}!frcp.c@{frcp.c}}
+\doxysubsubsection{\texorpdfstring{NMF}{NMF}}
+{\footnotesize\ttfamily \#define NMF~2}
+
+
+
+Samples pending filter. 
+
+\Hypertarget{frcp_8c_a9d76cc31537af0aac0544f448ffaa430}\label{frcp_8c_a9d76cc31537af0aac0544f448ffaa430} 
+\index{frcp.c@{frcp.c}!NMW@{NMW}}
+\index{NMW@{NMW}!frcp.c@{frcp.c}}
+\doxysubsubsection{\texorpdfstring{NMW}{NMW}}
+{\footnotesize\ttfamily \#define NMW~(2\texorpdfstring{$\ast$}{*}\mbox{\hyperlink{_general_8h_a30588c5eca7c9cb6ebba02a0236f0119}{FS}})}
+
+
+
+Samples per window (assume that a single window correspond to 2 seconds) 
+
+\Hypertarget{frcp_8c_a4326ef1487c54ebedb49e0ec42cc44ed}\label{frcp_8c_a4326ef1487c54ebedb49e0ec42cc44ed} 
+\index{frcp.c@{frcp.c}!PD\_WINSIZE@{PD\_WINSIZE}}
+\index{PD\_WINSIZE@{PD\_WINSIZE}!frcp.c@{frcp.c}}
+\doxysubsubsection{\texorpdfstring{PD\_WINSIZE}{PD\_WINSIZE}}
+{\footnotesize\ttfamily \#define PD\+\_\+\+WINSIZE~9}
+
+
+
+Window size to use in the peak detector (PD) -\/\texorpdfstring{$>$}{>} MUST use an odd number. 
+
+\Hypertarget{frcp_8c_a346dcc6f74468efda728d68298fdb857}\label{frcp_8c_a346dcc6f74468efda728d68298fdb857} 
+\index{frcp.c@{frcp.c}!TIME\_BREATHE@{TIME\_BREATHE}}
+\index{TIME\_BREATHE@{TIME\_BREATHE}!frcp.c@{frcp.c}}
+\doxysubsubsection{\texorpdfstring{TIME\_BREATHE}{TIME\_BREATHE}}
+{\footnotesize\ttfamily \#define TIME\+\_\+\+BREATHE~(1\texorpdfstring{$\ast$}{*}\mbox{\hyperlink{_general_8h_a30588c5eca7c9cb6ebba02a0236f0119}{FS}})}
+
+
+
+Number of samples without compressions to detect a Breath condition. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{frcp_8c_ad6eb78aad65f607d7da803f41e8ffa7f}\label{frcp_8c_ad6eb78aad65f607d7da803f41e8ffa7f} 
+\index{frcp.c@{frcp.c}!cc\_calculate\_features@{cc\_calculate\_features}}
+\index{cc\_calculate\_features@{cc\_calculate\_features}!frcp.c@{frcp.c}}
+\doxysubsubsection{\texorpdfstring{cc\_calculate\_features()}{cc\_calculate\_features()}}
+{\footnotesize\ttfamily static void cc\+\_\+calculate\+\_\+features (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_f_r_c_p___p_o_i_n_t__t}{FRCP\+\_\+\+POINT\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Min,  }\item[{\mbox{\hyperlink{struct_f_r_c_p___p_o_i_n_t__t}{FRCP\+\_\+\+POINT\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Max,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}}}]{n\+Points,  }\item[{\mbox{\hyperlink{struct_f_r_c_p___p_o_i_n_t__t}{FRCP\+\_\+\+POINT\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+CC\+\_\+raw }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Funcion que calcula para cada fluctuacion dos parametros\+: amplitud (media de las diferencias de amplitudes entre un maximo y el minimo anterior y entre un maximo y el minimo siguiente) duracion (distancia entre los dos minimos) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Min} & posiciones/amplitudes de los minimos localizados (en muestras relativas al tramo) \\
+\hline
+{\em p\+Max} & posiciones/amplitudes de los maximos localizados (en muestras relativas al tramo) \\
+\hline
+{\em n\+Points} & numero de puntos a calcular \\
+\hline
+{\em p\+CC\+\_\+raw} & media de las diferencias de amplitudes entre un maximo y el minimo anterior y entre el maximo y el minimo siguiente distancia entre los minimos adyacentes al maximo (en muestras) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{frcp_8c_ad6eb78aad65f607d7da803f41e8ffa7f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{frcp_8c_a1ab0f7c3216c6c0c7e5064a545138ebc}\label{frcp_8c_a1ab0f7c3216c6c0c7e5064a545138ebc} 
+\index{frcp.c@{frcp.c}!cc\_calculate\_frequency@{cc\_calculate\_frequency}}
+\index{cc\_calculate\_frequency@{cc\_calculate\_frequency}!frcp.c@{frcp.c}}
+\doxysubsubsection{\texorpdfstring{cc\_calculate\_frequency()}{cc\_calculate\_frequency()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} cc\+\_\+calculate\+\_\+frequency (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_f_r_c_p___p_o_i_n_t__t}{FRCP\+\_\+\+POINT\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Block }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Funcion que a partir de un array de posiciones de las compresiones del {\ucr}ltimo bloque calcula la frecuencia. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Block} & pointer to array containing position and amplitude of the last block\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+compression frequency in bpm (beats per minute) 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=313pt]{frcp_8c_a1ab0f7c3216c6c0c7e5064a545138ebc_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{frcp_8c_a1ab0f7c3216c6c0c7e5064a545138ebc_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{frcp_8c_a92d5c99a99bed1fd14ef11dca74fd6ca}\label{frcp_8c_a92d5c99a99bed1fd14ef11dca74fd6ca} 
+\index{frcp.c@{frcp.c}!cc\_detection\_algorithm@{cc\_detection\_algorithm}}
+\index{cc\_detection\_algorithm@{cc\_detection\_algorithm}!frcp.c@{frcp.c}}
+\doxysubsubsection{\texorpdfstring{cc\_detection\_algorithm()}{cc\_detection\_algorithm()}}
+{\footnotesize\ttfamily static void cc\+\_\+detection\+\_\+algorithm (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_f_r_c_p___p_o_i_n_t__t}{FRCP\+\_\+\+POINT\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Max,  }\item[{\mbox{\hyperlink{struct_f_r_c_p___p_o_i_n_t__t}{FRCP\+\_\+\+POINT\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+CC\+\_\+raw,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}}}]{n\+Points,  }\item[{\mbox{\hyperlink{struct_f_r_c_p___p_o_i_n_t__t}{FRCP\+\_\+\+POINT\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+CC,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{cont\+\_\+cc }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Funcion que a partir de los arrays de features (par{\ucr}metros) de cada fluctuaci{\ucr}n decide {\ucr}sta ha sido provocada por una fluctuaci{\ucr}n o no. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+CC\+\_\+raw} & distancia entre los minimos adyacentes al maximo (en muestras) media de las diferencias de amplitudes entre un maximo y el minimo anterior y entre el maximo y el minimo siguiente \\
+\hline
+{\em p\+Max} & posiciones/amplitudes de los maximos localizados (en muestras relativas al tramo) \\
+\hline
+{\em cont\+\_\+max} & n{\ucr}mero de maximos \\
+\hline
+{\em p\+CC} & posici{\ucr}n de las compresiones detectadas en muestras absolutas array de amplitudes de las compresiones detectadas \\
+\hline
+{\em cont\+\_\+cc} & n{\ucr}mero de compresiones detectadas\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{frcp_8c_a92d5c99a99bed1fd14ef11dca74fd6ca_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{frcp_8c_a9969fd4574fa73360d66b3a384fc7e00}\label{frcp_8c_a9969fd4574fa73360d66b3a384fc7e00} 
+\index{frcp.c@{frcp.c}!cc\_update\_block@{cc\_update\_block}}
+\index{cc\_update\_block@{cc\_update\_block}!frcp.c@{frcp.c}}
+\doxysubsubsection{\texorpdfstring{cc\_update\_block()}{cc\_update\_block()}}
+{\footnotesize\ttfamily static void cc\+\_\+update\+\_\+block (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_f_r_c_p___p_o_i_n_t__t}{FRCP\+\_\+\+POINT\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+CC,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}}}]{cont\+\_\+cc,  }\item[{\mbox{\hyperlink{struct_f_r_c_p___p_o_i_n_t__t}{FRCP\+\_\+\+POINT\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Block }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Funcion que comprueba si las ultimas compresiones detectadas pertenecen a un bloque de compresiones. Devuelve un array de compresiones de bloque y otro array que indica el indice la ultima compresion del bloque que se habia usado para calcular la frecuencia y actualizar el umbral. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+CC} & pointer to array containing CC\textquotesingle{}s position and amplitude of the last window \\
+\hline
+{\em cont\+\_\+cc} & number of detected compressions in the window \\
+\hline
+{\em p\+Block} & pointer to array containing CC\textquotesingle{}s position and amplitude of the last block\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=272pt]{frcp_8c_a9969fd4574fa73360d66b3a384fc7e00_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{frcp_8c_a9969fd4574fa73360d66b3a384fc7e00_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{frcp_8c_a1565afa647ed6ab27c18ff4257cf3760}\label{frcp_8c_a1565afa647ed6ab27c18ff4257cf3760} 
+\index{frcp.c@{frcp.c}!cc\_update\_frequency@{cc\_update\_frequency}}
+\index{cc\_update\_frequency@{cc\_update\_frequency}!frcp.c@{frcp.c}}
+\doxysubsubsection{\texorpdfstring{cc\_update\_frequency()}{cc\_update\_frequency()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} cc\+\_\+update\+\_\+frequency (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}}}]{new\+\_\+frequency }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Funcion que actualiza el valor de frecuencia de las compresiones. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+frequency} & ultimo valor de FRCP\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+filtered FRCP frequency 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{frcp_8c_a1565afa647ed6ab27c18ff4257cf3760_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{frcp_8c_a6121587ec280009201098222cb0e9120}\label{frcp_8c_a6121587ec280009201098222cb0e9120} 
+\index{frcp.c@{frcp.c}!cc\_update\_threshold@{cc\_update\_threshold}}
+\index{cc\_update\_threshold@{cc\_update\_threshold}!frcp.c@{frcp.c}}
+\doxysubsubsection{\texorpdfstring{cc\_update\_threshold()}{cc\_update\_threshold()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} cc\+\_\+update\+\_\+threshold (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_f_r_c_p___p_o_i_n_t__t}{FRCP\+\_\+\+POINT\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Block }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Funcion que actualiza el umbral de amplitud en Funcion de las amplitudes de las ultimas compresiones que se han insertado en el bloque. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Block} & pointer to array containing position and amplitude of the last block \\
+\hline
+{\em var\+\_\+umb} & array de ultimos valores a tener en cuenta para el umbral\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+updated threshold 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{frcp_8c_a6121587ec280009201098222cb0e9120_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{frcp_8c_a913c8d48e4055555665fc82027e69772}\label{frcp_8c_a913c8d48e4055555665fc82027e69772} 
+\index{frcp.c@{frcp.c}!find\_peak\_max@{find\_peak\_max}}
+\index{find\_peak\_max@{find\_peak\_max}!frcp.c@{frcp.c}}
+\doxysubsubsection{\texorpdfstring{find\_peak\_max()}{find\_peak\_max()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} find\+\_\+peak\+\_\+max (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Buffer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Funcion que identifica un posible maximo en un tramo de impedancia. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em impe\+\_\+filt} & tramo de impedancia a analizar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+if there is a valid maximum 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{frcp_8c_a913c8d48e4055555665fc82027e69772_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{frcp_8c_acff226b96220fbd9cfea0b8064e3f3dc}\label{frcp_8c_acff226b96220fbd9cfea0b8064e3f3dc} 
+\index{frcp.c@{frcp.c}!find\_peak\_min@{find\_peak\_min}}
+\index{find\_peak\_min@{find\_peak\_min}!frcp.c@{frcp.c}}
+\doxysubsubsection{\texorpdfstring{find\_peak\_min()}{find\_peak\_min()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} find\+\_\+peak\+\_\+min (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Buffer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Funcion que identifica un posible minimo en un tramo de impedancia. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em impe\+\_\+filt} & tramo de impedancia a analizar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+if there is a valid minimum 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{frcp_8c_acff226b96220fbd9cfea0b8064e3f3dc_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{frcp_8c_ae0ae74d64db8a194d20446eec2670afb}\label{frcp_8c_ae0ae74d64db8a194d20446eec2670afb} 
+\index{frcp.c@{frcp.c}!find\_peaks@{find\_peaks}}
+\index{find\_peaks@{find\_peaks}!frcp.c@{frcp.c}}
+\doxysubsubsection{\texorpdfstring{find\_peaks()}{find\_peaks()}}
+{\footnotesize\ttfamily static void find\+\_\+peaks (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{my\+\_\+impe\+\_\+filt,  }\item[{\mbox{\hyperlink{struct_f_r_c_p___p_o_i_n_t__t}{FRCP\+\_\+\+POINT\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Min,  }\item[{\mbox{\hyperlink{struct_f_r_c_p___p_o_i_n_t__t}{FRCP\+\_\+\+POINT\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Max,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{cont\+\_\+min,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{cont\+\_\+max }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Funcion que recibe un tramo de impedancia y devuelve sus maximos y minimos relativos. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em impe\+\_\+filt} & tramo de impedancia a analizar \\
+\hline
+{\em p\+Min} & posiciones/amplitudes de los minimos localizados (en muestras relativas al tramo) \\
+\hline
+{\em p\+Max} & posiciones/amplitudes de los maximos localizados (en muestras relativas al tramo) \\
+\hline
+{\em cont\+\_\+min} & numero de minimos localizados \\
+\hline
+{\em cont\+\_\+max} & numero de maximos localizados \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=260pt]{frcp_8c_ae0ae74d64db8a194d20446eec2670afb_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{frcp_8c_ae0ae74d64db8a194d20446eec2670afb_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{frcp_8c_afecee78e99f3723f000b27b25017305c}\label{frcp_8c_afecee78e99f3723f000b27b25017305c} 
+\index{frcp.c@{frcp.c}!FRCP\_Get\_Frequency@{FRCP\_Get\_Frequency}}
+\index{FRCP\_Get\_Frequency@{FRCP\_Get\_Frequency}!frcp.c@{frcp.c}}
+\doxysubsubsection{\texorpdfstring{FRCP\_Get\_Frequency()}{FRCP\_Get\_Frequency()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} FRCP\+\_\+\+Get\+\_\+\+Frequency (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Funcion que retorna el valor de frecuencia de las compresiones. 
+
+\begin{DoxyReturn}{Returns}
+frecuencia de las compresiones 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{frcp_8c_afecee78e99f3723f000b27b25017305c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{frcp_8c_a9cda9a5d032db229a00b88e37a9cbb3a}\label{frcp_8c_a9cda9a5d032db229a00b88e37a9cbb3a} 
+\index{frcp.c@{frcp.c}!FRCP\_IIR@{FRCP\_IIR}}
+\index{FRCP\_IIR@{FRCP\_IIR}!frcp.c@{frcp.c}}
+\doxysubsubsection{\texorpdfstring{FRCP\_IIR()}{FRCP\_IIR()}}
+{\footnotesize\ttfamily static void FRCP\+\_\+\+IIR (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Signal,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Filter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+IIR passband filtering function (2.\+5 -\/ 30 Hz). Implementation based on 10th order butterworth filter composed of a 5 filters cascade (2nd order each one) 
+
+\texorpdfstring{$\ast$}{*}
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Signal} & pointer to input signal(\+ADC units). p\+Filter\+: pointer to output signal. \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=255pt]{frcp_8c_a9cda9a5d032db229a00b88e37a9cbb3a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{frcp_8c_a9cda9a5d032db229a00b88e37a9cbb3a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{frcp_8c_a930281de62ddd5d5477ff59d30bd5fd2}\label{frcp_8c_a930281de62ddd5d5477ff59d30bd5fd2} 
+\index{frcp.c@{frcp.c}!FRCP\_IIR\_0\_2@{FRCP\_IIR\_0\_2}}
+\index{FRCP\_IIR\_0\_2@{FRCP\_IIR\_0\_2}!frcp.c@{frcp.c}}
+\doxysubsubsection{\texorpdfstring{FRCP\_IIR\_0\_2()}{FRCP\_IIR\_0\_2()}}
+{\footnotesize\ttfamily static void FRCP\+\_\+\+IIR\+\_\+0\+\_\+2 (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{_s_c_e_2types__basic_8h_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Signal,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Filter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+IIR second order filtering function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em first\+Sample} & first sample value used to initialize the filter p\+Filter \+: pointer to output signal\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{frcp_8c_a930281de62ddd5d5477ff59d30bd5fd2_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{frcp_8c_aa0d38369b0c55dcf304794e0b077ffe5}\label{frcp_8c_aa0d38369b0c55dcf304794e0b077ffe5} 
+\index{frcp.c@{frcp.c}!FRCP\_IIR\_1\_2@{FRCP\_IIR\_1\_2}}
+\index{FRCP\_IIR\_1\_2@{FRCP\_IIR\_1\_2}!frcp.c@{frcp.c}}
+\doxysubsubsection{\texorpdfstring{FRCP\_IIR\_1\_2()}{FRCP\_IIR\_1\_2()}}
+{\footnotesize\ttfamily static void FRCP\+\_\+\+IIR\+\_\+1\+\_\+2 (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Signal,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Filter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+IIR second order filtering function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Signal} & pointer to input signal (NMW buffersize). p\+Filter\+: pointer to output signal\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{frcp_8c_aa0d38369b0c55dcf304794e0b077ffe5_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{frcp_8c_a863e0f1052437340e1c7573fd61eaba9}\label{frcp_8c_a863e0f1052437340e1c7573fd61eaba9} 
+\index{frcp.c@{frcp.c}!FRCP\_IIR\_2\_2@{FRCP\_IIR\_2\_2}}
+\index{FRCP\_IIR\_2\_2@{FRCP\_IIR\_2\_2}!frcp.c@{frcp.c}}
+\doxysubsubsection{\texorpdfstring{FRCP\_IIR\_2\_2()}{FRCP\_IIR\_2\_2()}}
+{\footnotesize\ttfamily static void FRCP\+\_\+\+IIR\+\_\+2\+\_\+2 (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{_s_c_e_2types__basic_8h_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Signal,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Filter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Second order IIR filtering function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Signal} & pointer to input signal. p\+Filter\+: pointer to output signal. k0\+: filter constant. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None. 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{frcp_8c_a863e0f1052437340e1c7573fd61eaba9_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{frcp_8c_a0d6f42a9b53fa653155a900a94056e55}\label{frcp_8c_a0d6f42a9b53fa653155a900a94056e55} 
+\index{frcp.c@{frcp.c}!FRCP\_Ini\_Filters@{FRCP\_Ini\_Filters}}
+\index{FRCP\_Ini\_Filters@{FRCP\_Ini\_Filters}!frcp.c@{frcp.c}}
+\doxysubsubsection{\texorpdfstring{FRCP\_Ini\_Filters()}{FRCP\_Ini\_Filters()}}
+{\footnotesize\ttfamily static void FRCP\+\_\+\+Ini\+\_\+\+Filters (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}}}]{first\+Sample }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Filter initialization function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em first\+Sample} & first sample value.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None. 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=285pt]{frcp_8c_a0d6f42a9b53fa653155a900a94056e55_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{frcp_8c_a0d6f42a9b53fa653155a900a94056e55_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{frcp_8c_ac2193c0d4852d7bd7a378d872f7ede43}\label{frcp_8c_ac2193c0d4852d7bd7a378d872f7ede43} 
+\index{frcp.c@{frcp.c}!FRCP\_Init@{FRCP\_Init}}
+\index{FRCP\_Init@{FRCP\_Init}!frcp.c@{frcp.c}}
+\doxysubsubsection{\texorpdfstring{FRCP\_Init()}{FRCP\_Init()}}
+{\footnotesize\ttfamily void FRCP\+\_\+\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}}}]{first\+\_\+sample }\end{DoxyParamCaption})}
+
+
+
+Initialize the FRCP controller. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em first} & sample of the window\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{frcp_8c_ac2193c0d4852d7bd7a378d872f7ede43_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{frcp_8c_ac2193c0d4852d7bd7a378d872f7ede43_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{frcp_8c_a2d2f5147df66b194b2492fb0ec84d0d4}\label{frcp_8c_a2d2f5147df66b194b2492fb0ec84d0d4} 
+\index{frcp.c@{frcp.c}!FRCP\_median@{FRCP\_median}}
+\index{FRCP\_median@{FRCP\_median}!frcp.c@{frcp.c}}
+\doxysubsubsection{\texorpdfstring{FRCP\_median()}{FRCP\_median()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} FRCP\+\_\+median (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{x,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}}}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Function that calculates the median of an array of integers. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & array of values \\
+\hline
+{\em n} & size of the array\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+median value of the array 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{frcp_8c_a2d2f5147df66b194b2492fb0ec84d0d4_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{frcp_8c_a4285fdd1c26e6f4da74d142ba4d3ed84}\label{frcp_8c_a4285fdd1c26e6f4da74d142ba4d3ed84} 
+\index{frcp.c@{frcp.c}!FRCP\_Process\_Zpwin@{FRCP\_Process\_Zpwin}}
+\index{FRCP\_Process\_Zpwin@{FRCP\_Process\_Zpwin}!frcp.c@{frcp.c}}
+\doxysubsubsection{\texorpdfstring{FRCP\_Process\_Zpwin()}{FRCP\_Process\_Zpwin()}}
+{\footnotesize\ttfamily void FRCP\+\_\+\+Process\+\_\+\+Zpwin (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{signal }\end{DoxyParamCaption})}
+
+
+
+Calcule the FRCP of the current window. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em signal} & se{\ucr}al de impedancia (Ohm) \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{frcp_8c_a4285fdd1c26e6f4da74d142ba4d3ed84_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{frcp_8c_a4285fdd1c26e6f4da74d142ba4d3ed84_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{frcp_8c_a98a29d36e405c6b9781d0b245c7364fa}\label{frcp_8c_a98a29d36e405c6b9781d0b245c7364fa} 
+\index{frcp.c@{frcp.c}!reset\_block@{reset\_block}}
+\index{reset\_block@{reset\_block}!frcp.c@{frcp.c}}
+\doxysubsubsection{\texorpdfstring{reset\_block()}{reset\_block()}}
+{\footnotesize\ttfamily static void reset\+\_\+block (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_f_r_c_p___p_o_i_n_t__t}{FRCP\+\_\+\+POINT\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Block }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Function to initialize the block buffer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Block} & pointer to CC\textquotesingle{}s array\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{frcp_8c_a98a29d36e405c6b9781d0b245c7364fa_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{frcp_8c_a32ec7a8ba28edba96328bba60b2de12e}\label{frcp_8c_a32ec7a8ba28edba96328bba60b2de12e} 
+\index{frcp.c@{frcp.c}!a1@{a1}}
+\index{a1@{a1}!frcp.c@{frcp.c}}
+\doxysubsubsection{\texorpdfstring{a1}{a1}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{_s_c_e_2types__basic_8h_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}} a1\mbox{[}3\mbox{]} = \{(\mbox{\hyperlink{_s_c_e_2types__basic_8h_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}}) 1, (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}}) -\/0.\+852951624532311, (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}}) 0\}}
+
+\Hypertarget{frcp_8c_a067e89b80861d564c23d44efffd7fe72}\label{frcp_8c_a067e89b80861d564c23d44efffd7fe72} 
+\index{frcp.c@{frcp.c}!a2@{a2}}
+\index{a2@{a2}!frcp.c@{frcp.c}}
+\doxysubsubsection{\texorpdfstring{a2}{a2}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{_s_c_e_2types__basic_8h_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}} a2\mbox{[}3\mbox{]} = \{(\mbox{\hyperlink{_s_c_e_2types__basic_8h_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}}) 1, (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}}) -\/1.\+812948130052366, (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}}) 0.\+854478362848698\}}
+
+\Hypertarget{frcp_8c_a27577b5555a3760f3db622309595435f}\label{frcp_8c_a27577b5555a3760f3db622309595435f} 
+\index{frcp.c@{frcp.c}!b1@{b1}}
+\index{b1@{b1}!frcp.c@{frcp.c}}
+\doxysubsubsection{\texorpdfstring{b1}{b1}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{_s_c_e_2types__basic_8h_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}} b1\mbox{[}3\mbox{]} = \{(\mbox{\hyperlink{_s_c_e_2types__basic_8h_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}}) 1, (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}}) 1, (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}}) 0\}}
+
+\Hypertarget{frcp_8c_a28e0dca3a0d411bd4d3834eb5d86e080}\label{frcp_8c_a28e0dca3a0d411bd4d3834eb5d86e080} 
+\index{frcp.c@{frcp.c}!b2@{b2}}
+\index{b2@{b2}!frcp.c@{frcp.c}}
+\doxysubsubsection{\texorpdfstring{b2}{b2}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{_s_c_e_2types__basic_8h_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}} b2\mbox{[}3\mbox{]} = \{(\mbox{\hyperlink{_s_c_e_2types__basic_8h_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}}) 1, (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}}) 2, (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}}) 1\}}
+
+\Hypertarget{frcp_8c_acc0ee3405c81fcfc13a4a900e1d4cffb}\label{frcp_8c_acc0ee3405c81fcfc13a4a900e1d4cffb} 
+\index{frcp.c@{frcp.c}!block@{block}}
+\index{block@{block}!frcp.c@{frcp.c}}
+\doxysubsubsection{\texorpdfstring{block}{block}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_f_r_c_p___p_o_i_n_t__t}{FRCP\+\_\+\+POINT\+\_\+t}} block\mbox{[}\mbox{\hyperlink{frcp_8c_a7dc17e87e9c59ae5bc7481bbecd11787}{CC\+\_\+\+IN\+\_\+\+BLOCK}}\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{frcp_8c_a6157cc49d6dde47328af9404bddbc67b}\label{frcp_8c_a6157cc49d6dde47328af9404bddbc67b} 
+\index{frcp.c@{frcp.c}!buff\_freq\_value@{buff\_freq\_value}}
+\index{buff\_freq\_value@{buff\_freq\_value}!frcp.c@{frcp.c}}
+\doxysubsubsection{\texorpdfstring{buff\_freq\_value}{buff\_freq\_value}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} buff\+\_\+freq\+\_\+value\mbox{[}\mbox{\hyperlink{frcp_8c_ad9cac27261b3f28e4e66b08bdb225ff6}{N\+\_\+\+FREQUENCIES}}\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{frcp_8c_afbfcef13dbd20da965ff041121c55ade}\label{frcp_8c_afbfcef13dbd20da965ff041121c55ade} 
+\index{frcp.c@{frcp.c}!flag\_first\_window@{flag\_first\_window}}
+\index{flag\_first\_window@{flag\_first\_window}!frcp.c@{frcp.c}}
+\doxysubsubsection{\texorpdfstring{flag\_first\_window}{flag\_first\_window}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} flag\+\_\+first\+\_\+window\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{frcp_8c_a67abfa64db3f8f44d90ee2b2e7f07dc3}\label{frcp_8c_a67abfa64db3f8f44d90ee2b2e7f07dc3} 
+\index{frcp.c@{frcp.c}!flag\_ult\_min@{flag\_ult\_min}}
+\index{flag\_ult\_min@{flag\_ult\_min}!frcp.c@{frcp.c}}
+\doxysubsubsection{\texorpdfstring{flag\_ult\_min}{flag\_ult\_min}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} flag\+\_\+ult\+\_\+min\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{frcp_8c_a6de9dbf983bce6b918ce55e89966bc31}\label{frcp_8c_a6de9dbf983bce6b918ce55e89966bc31} 
+\index{frcp.c@{frcp.c}!frcp\_frequency@{frcp\_frequency}}
+\index{frcp\_frequency@{frcp\_frequency}!frcp.c@{frcp.c}}
+\doxysubsubsection{\texorpdfstring{frcp\_frequency}{frcp\_frequency}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} frcp\+\_\+frequency\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{frcp_8c_a07ac06439a53ca083f2982e1bbbba5c0}\label{frcp_8c_a07ac06439a53ca083f2982e1bbbba5c0} 
+\index{frcp.c@{frcp.c}!gbl\_amp\_min@{gbl\_amp\_min}}
+\index{gbl\_amp\_min@{gbl\_amp\_min}!frcp.c@{frcp.c}}
+\doxysubsubsection{\texorpdfstring{gbl\_amp\_min}{gbl\_amp\_min}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} gbl\+\_\+amp\+\_\+min\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{frcp_8c_ad68520ce48e2637d04eb7dd3d282ed4f}\label{frcp_8c_ad68520ce48e2637d04eb7dd3d282ed4f} 
+\index{frcp.c@{frcp.c}!gbl\_max@{gbl\_max}}
+\index{gbl\_max@{gbl\_max}!frcp.c@{frcp.c}}
+\doxysubsubsection{\texorpdfstring{gbl\_max}{gbl\_max}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_f_r_c_p___p_o_i_n_t__t}{FRCP\+\_\+\+POINT\+\_\+t}} gbl\+\_\+max\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{frcp_8c_a3b7f5ec0eb81ad5fdc31438ab4876509}\label{frcp_8c_a3b7f5ec0eb81ad5fdc31438ab4876509} 
+\index{frcp.c@{frcp.c}!gbl\_min@{gbl\_min}}
+\index{gbl\_min@{gbl\_min}!frcp.c@{frcp.c}}
+\doxysubsubsection{\texorpdfstring{gbl\_min}{gbl\_min}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_f_r_c_p___p_o_i_n_t__t}{FRCP\+\_\+\+POINT\+\_\+t}} gbl\+\_\+min\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{frcp_8c_a985df5c26239cf630c5ce993e6154b19}\label{frcp_8c_a985df5c26239cf630c5ce993e6154b19} 
+\index{frcp.c@{frcp.c}!gbl\_ult\_cc@{gbl\_ult\_cc}}
+\index{gbl\_ult\_cc@{gbl\_ult\_cc}!frcp.c@{frcp.c}}
+\doxysubsubsection{\texorpdfstring{gbl\_ult\_cc}{gbl\_ult\_cc}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} gbl\+\_\+ult\+\_\+cc\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{frcp_8c_aa276949afaac43209f81bafd8cf76ba6}\label{frcp_8c_aa276949afaac43209f81bafd8cf76ba6} 
+\index{frcp.c@{frcp.c}!gbl\_win\_idx@{gbl\_win\_idx}}
+\index{gbl\_win\_idx@{gbl\_win\_idx}!frcp.c@{frcp.c}}
+\doxysubsubsection{\texorpdfstring{gbl\_win\_idx}{gbl\_win\_idx}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} gbl\+\_\+win\+\_\+idx\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{frcp_8c_a04e76ca82b9a014f5ecb6810924e0ea9}\label{frcp_8c_a04e76ca82b9a014f5ecb6810924e0ea9} 
+\index{frcp.c@{frcp.c}!impe\_filt@{impe\_filt}}
+\index{impe\_filt@{impe\_filt}!frcp.c@{frcp.c}}
+\doxysubsubsection{\texorpdfstring{impe\_filt}{impe\_filt}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} impe\+\_\+filt\mbox{[}\mbox{\hyperlink{_general_8h_a9d76cc31537af0aac0544f448ffaa430}{NMW}}\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{frcp_8c_ab77b9b9b40d4aa8103823f4db8c0a45c}\label{frcp_8c_ab77b9b9b40d4aa8103823f4db8c0a45c} 
+\index{frcp.c@{frcp.c}!old\_good\_value@{old\_good\_value}}
+\index{old\_good\_value@{old\_good\_value}!frcp.c@{frcp.c}}
+\doxysubsubsection{\texorpdfstring{old\_good\_value}{old\_good\_value}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} old\+\_\+good\+\_\+value\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{frcp_8c_a91353374148bd78debc839163f94226f}\label{frcp_8c_a91353374148bd78debc839163f94226f} 
+\index{frcp.c@{frcp.c}!prevSam@{prevSam}}
+\index{prevSam@{prevSam}!frcp.c@{frcp.c}}
+\doxysubsubsection{\texorpdfstring{prevSam}{prevSam}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} prev\+Sam\mbox{[}\mbox{\hyperlink{frcp_8c_a4326ef1487c54ebedb49e0ec42cc44ed}{PD\+\_\+\+WINSIZE}}\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{frcp_8c_aaa0b7b1dde7bdc175eb5fc9bc1f8d908}\label{frcp_8c_aaa0b7b1dde7bdc175eb5fc9bc1f8d908} 
+\index{frcp.c@{frcp.c}!sf1@{sf1}}
+\index{sf1@{sf1}!frcp.c@{frcp.c}}
+\doxysubsubsection{\texorpdfstring{sf1}{sf1}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}} sf1\mbox{[}\mbox{\hyperlink{_general_8h_a7e41263c109c3cc5a9f462e1912a9fab}{NMF}}+\mbox{\hyperlink{_general_8h_a9d76cc31537af0aac0544f448ffaa430}{NMW}}\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{frcp_8c_a0ed08d37656f346db123b39271beac4e}\label{frcp_8c_a0ed08d37656f346db123b39271beac4e} 
+\index{frcp.c@{frcp.c}!sf2@{sf2}}
+\index{sf2@{sf2}!frcp.c@{frcp.c}}
+\doxysubsubsection{\texorpdfstring{sf2}{sf2}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}} sf2\mbox{[}\mbox{\hyperlink{_general_8h_a7e41263c109c3cc5a9f462e1912a9fab}{NMF}}+\mbox{\hyperlink{_general_8h_a9d76cc31537af0aac0544f448ffaa430}{NMW}}\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{frcp_8c_aac3d931a0cf0cd123fc0e5d5aa05aac2}\label{frcp_8c_aac3d931a0cf0cd123fc0e5d5aa05aac2} 
+\index{frcp.c@{frcp.c}!sf\_prevSam@{sf\_prevSam}}
+\index{sf\_prevSam@{sf\_prevSam}!frcp.c@{frcp.c}}
+\doxysubsubsection{\texorpdfstring{sf\_prevSam}{sf\_prevSam}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}} sf\+\_\+prev\+Sam\mbox{[}2\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{frcp_8c_a2e2b4c7b4c1536b6441eafca3103d8af}\label{frcp_8c_a2e2b4c7b4c1536b6441eafca3103d8af} 
+\index{frcp.c@{frcp.c}!zi0@{zi0}}
+\index{zi0@{zi0}!frcp.c@{frcp.c}}
+\doxysubsubsection{\texorpdfstring{zi0}{zi0}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a3ded656bbe9849ad9fa2b28530390f0a}{float\+\_\+t}} zi0\mbox{[}4\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+

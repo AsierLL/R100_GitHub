@@ -1,0 +1,92 @@
+\doxysection{drd.\+h}
+\hypertarget{a00140_source}{}\label{a00140_source}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/DRD/drd.h@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/DRD/drd.h}}
+\mbox{\hyperlink{a00140}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{*\ Name\ \ \ \ \ \ :\ Defibrillable\ Rhythm\ Detector\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{*\ Copyright\ :\ Osatu\ S.Coop\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{*\ Compiler\ \ :\ Renesas\ C/C++\ compiler\ for\ SH2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{*\ Target\ \ \ \ :\ Reanibex\ Series\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{******************************************************************************/}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#ifndef\ DRD\_H}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#define\ DRD\_H}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00023\ \textcolor{comment}{**\ Includes}}
+\DoxyCodeLine{00024\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{a00137}{types\_basic.h}}"{}}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00028\ \textcolor{comment}{**\ Defines}}
+\DoxyCodeLine{00029\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ \ ECG\_WIN\_SIZE\_DRD\ \ \ \ \ \ \ 480\ \ \ \ \ }\textcolor{comment}{//\ 3,2\ seconds\ at\ 150\ Hz}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00034\ \textcolor{comment}{**\ Typedefs}}
+\DoxyCodeLine{00035\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00036\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00037\ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{a00140_a5a8d344de938df8566332f2e9978d079a7dff49f9ab962e06b767b26f4e88b494}{eTYPO\_RHYTM\_ASISTOLIA\_1}}\ \ \ \ \ =\ 0,\ \ \ \textcolor{comment}{//\ Asistolia,\ No-\/Shock}}
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{a00140_a5a8d344de938df8566332f2e9978d079ad2a87925e03cf57f747be10946fd3aae}{eTYPO\_RHYTM\_NSR}}\ \ \ \ \ \ \ \ \ \ \ \ \ =\ 1,\ \ \ \textcolor{comment}{//\ Ritmo\ con\ QRS,\ No-\/Shock}}
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{a00140_a5a8d344de938df8566332f2e9978d079ae50076357521b512ebec09c27ebd311a}{eTYPO\_RHYTM\_ASISTOLIA\_2}}\ \ \ \ \ =\ 2,\ \ \ \textcolor{comment}{//\ Ritmo\ Lento,\ No-\/Shock}}
+\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{a00140_a5a8d344de938df8566332f2e9978d079a6c76e5ca49253d06a15a99db3a4d7ac9}{eTYPO\_RHYTM\_TV}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 3,\ \ \ \textcolor{comment}{//\ TV,\ Shock}}
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{a00140_a5a8d344de938df8566332f2e9978d079a595c65028c2d6e5b190626b42c07520c}{eTYPO\_RHYTM\_TSV}}\ \ \ \ \ \ \ \ \ \ \ \ \ =\ 4,\ \ \ \textcolor{comment}{//\ TSV,\ No-\/Shock}}
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{a00140_a5a8d344de938df8566332f2e9978d079a402371e175a31095ff97312c2af56ff3}{eTYPO\_RHYTM\_TV\_LENTA}}\ \ \ \ \ \ \ \ =\ 5,\ \ \ \textcolor{comment}{//\ TV\ lenta,\ No-\/Shock}}
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{a00140_a5a8d344de938df8566332f2e9978d079a2162266541c663312c96689d224c8bb0}{eTYPO\_RHYTM\_FV\_1}}\ \ \ \ \ \ \ \ \ \ \ \ =\ 6,\ \ \ \textcolor{comment}{//\ FV,\ Shock}}
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{a00140_a5a8d344de938df8566332f2e9978d079af7c7677b3875c5cbcd8aea85726d6787}{eTYPO\_RHYTM\_FV\_2}}\ \ \ \ \ \ \ \ \ \ \ \ =\ 7,\ \ \ \textcolor{comment}{//\ FV,\ Shock}}
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{a00140_a5a8d344de938df8566332f2e9978d079aa12d6f29ee11a3e863a7840de8242b8a}{eTYPO\_RHYTM\_FV\_3}}\ \ \ \ \ \ \ \ \ \ \ \ =\ 8,\ \ \ \textcolor{comment}{//\ FV,\ Shock}}
+\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{a00140_a5a8d344de938df8566332f2e9978d079a54d1253860a85d9c1d2b4da5d2674ba5}{eTYPO\_RHYTM\_LENTO\_1}}\ \ \ \ \ \ \ \ \ =\ 9,\ \ \ \textcolor{comment}{//\ Ritmo\ lento,\ No-\/Shock}}
+\DoxyCodeLine{00048\ \ \ \ \ \mbox{\hyperlink{a00140_a5a8d344de938df8566332f2e9978d079aff9372d15aa4029eecde3abb70e2e51f}{eTYPO\_RHYTM\_LENTO\_2}}\ \ \ \ \ \ \ \ \ =\ 10,\ \ \textcolor{comment}{//\ Ritmo\ lento,\ No-\/Shock}}
+\DoxyCodeLine{00049\ \ \ \ \ \mbox{\hyperlink{a00140_a5a8d344de938df8566332f2e9978d079a1bf6361e951dd0fae32c779030cba22c}{eTYPO\_RHYTM\_LENTO\_3}}\ \ \ \ \ \ \ \ \ =\ 11,\ \ \textcolor{comment}{//\ Ritmo\ lento,\ No-\/Shock}}
+\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{a00140_a5a8d344de938df8566332f2e9978d079af6b0759f76b2121d9ebfffb36729414e}{eTYPO\_RHYTM\_LENTO\_4}}\ \ \ \ \ \ \ \ \ =\ 12\ \ \ \textcolor{comment}{//\ Ritmo\ lento,\ No-\/Shock}}
+\DoxyCodeLine{00051\ \}\ \mbox{\hyperlink{a00140_a5a8d344de938df8566332f2e9978d079}{TYPO\_RHYTM\_e}};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00054\ \{}
+\DoxyCodeLine{00055\ \ \ \ \ \mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\_t}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00454_a1c4c92732d309118a9213877253deb55}{bCP}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00056\ \ \ \ \ \mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\_t}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00454_a38a8b6777e35a01cbd699caadfb408dd}{bWT}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00057\ \ \ \ \ \mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\_t}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00454_aa8e1926ae0035d9d52d6346510ae1f38}{bW}};\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00058\ \ \ \ \ \mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\_t}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00454_a4e8d19284ce793096fb71dec5096bc89}{CVT}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00059\ \ \ \ \ \mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\_t}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00454_a1219eb0a92655e3ea6dee408d0834591}{RO}};\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00060\ \ \ \ \ \mbox{\hyperlink{a00140_a5a8d344de938df8566332f2e9978d079}{TYPO\_RHYTM\_e}}\ \ \ \ \mbox{\hyperlink{a00454_a97316574fa98abdf2fb7ef7d29bc4e4c}{wind\_rhytm}};\ \ \ \ \ }
+\DoxyCodeLine{00061\ \}\ \mbox{\hyperlink{a00454}{WS\_PAR\_t}};}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00064\ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \mbox{\hyperlink{a00454}{WS\_PAR\_t}}\ \ \ \ \ \ \ \ \mbox{\hyperlink{a00458_a3e5f5d80a9d5cfb0ca39cb933d40ddaf}{w1}};\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00066\ \ \ \ \ \mbox{\hyperlink{a00454}{WS\_PAR\_t}}\ \ \ \ \ \ \ \ \mbox{\hyperlink{a00458_af6c13d4b42dfff029e0afa1f374b183b}{w2}};\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00067\ \}\ \mbox{\hyperlink{a00458}{DRD\_DATA\_t}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ size\ of\ this\ structure\ must\ be\ less\ or\ equal\ to\ 48\ bytes}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00070\ \{}
+\DoxyCodeLine{00071\ \ \ \ \ \mbox{\hyperlink{a00140_a09b2fccc54d1debfbc2e2d97318859b8ad349a7d26c52823e09dfc0161d181167}{eRHYTHM\_UNKNOWN}}\ \ \ \ \ \ =\ 0x00,\ \ }
+\DoxyCodeLine{00072\ \ \ \ \ \mbox{\hyperlink{a00140_a09b2fccc54d1debfbc2e2d97318859b8a4f652b6b0507e4deb7149be0f7926ed6}{eRHYTHM\_ASYSTOLE}}\ \ \ \ \ =\ 0x01,\ \ }
+\DoxyCodeLine{00073\ \ \ \ \ \mbox{\hyperlink{a00140_a09b2fccc54d1debfbc2e2d97318859b8a65cf0740ba7ff4a14258d9efe0ea0e26}{eRHYTHM\_NORMAL}}\ \ \ \ \ \ \ =\ 0x02,\ \ }
+\DoxyCodeLine{00074\ \ \ \ \ \mbox{\hyperlink{a00140_a09b2fccc54d1debfbc2e2d97318859b8a5009427f2b9a15961a17714c6f387230}{eRHYTHM\_VT\_NON\_SHOCK}}\ =\ 0x04,\ \ }
+\DoxyCodeLine{00075\ \ \ \ \ \mbox{\hyperlink{a00140_a09b2fccc54d1debfbc2e2d97318859b8a597ae667f5f20dde7a4740cf21eeeca8}{eRHYTHM\_VT\_SHOCK}}\ \ \ \ \ =\ 0x08,\ \ }
+\DoxyCodeLine{00076\ \ \ \ \ \mbox{\hyperlink{a00140_a09b2fccc54d1debfbc2e2d97318859b8a9b064006378e817cd66c75e39ebaa9df}{eRHYTHM\_VF\_SHOCK}}\ \ \ \ \ =\ 0x10\ \ \ }
+\DoxyCodeLine{00077\ \}\ \mbox{\hyperlink{a00140_a09b2fccc54d1debfbc2e2d97318859b8}{RHYTHM\_e}};}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00080\ \{}
+\DoxyCodeLine{00081\ \ \ \ \ \mbox{\hyperlink{a00140_a09b2fccc54d1debfbc2e2d97318859b8}{RHYTHM\_e}}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00462_af1acb5cb1b066bc1ff1e9c5a086fa631}{rhythm}};\ \ \ \ }
+\DoxyCodeLine{00082\ \ \ \ \ \mbox{\hyperlink{a00458}{DRD\_DATA\_t}}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00462_a135da70c183d8188f09b068f91983bdf}{drd\_data}};\ \ }
+\DoxyCodeLine{00083\ \}\ \mbox{\hyperlink{a00462}{DRD\_RESULT\_t}};}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00086\ \textcolor{comment}{**\ Prototypes}}
+\DoxyCodeLine{00087\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00140_a604473ae3a07455d5bd16bb301a29fbe}{DRD\_Get\_Result}}\ \ \ (\mbox{\hyperlink{a00462}{DRD\_RESULT\_t}}\ *drd\_param);}
+\DoxyCodeLine{00090\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{a00137_a40bb5262bf908c328fbcfbe5d29d0201}{char\_t}}*\ \ \ \ \ \ \mbox{\hyperlink{a00140_aa0ec36a90113488df81f09b4a315927a}{DRD\_Get\_Rev\_Code}}\ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00091\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\_t}}\ \ \ \ \ \ \ \mbox{\hyperlink{a00140_a373b55e912f66d3a802dabd1a604265f}{DRD\_Process\_Ecg}}\ \ (\textcolor{keyword}{const}\ \mbox{\hyperlink{a00137_a269259c924dce846340ddbb810db2e3c}{int16\_t}}\ *pEcg,\ \mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\_t}}\ flag,\ \mbox{\hyperlink{a00140_a09b2fccc54d1debfbc2e2d97318859b8}{RHYTHM\_e}}\ *p\_rhythm,\ \mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\_t}}\ flag\_pediatric);}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00094\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{/*DRD\_H*/}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

@@ -1,0 +1,240 @@
+\doxysection{C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\+Resources/\+Trace.c File Reference}
+\hypertarget{a00248}{}\label{a00248}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/Resources/Trace.c@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/Resources/Trace.c}}
+{\ttfamily \#include $<$tx\+\_\+api.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include "{}Trace.\+h"{}}\newline
+{\ttfamily \#include "{}RTC.\+h"{}}\newline
+{\ttfamily \#include "{}types\+\_\+basic.\+h"{}}\newline
+{\ttfamily \#include "{}hal\+\_\+data.\+h"{}}\newline
+Include dependency graph for Trace.\+c\+:
+% FIG 0
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{a00248_a047013f5273eccbbfc0a08db5975f544}{TRACE\+\_\+\+ON}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{a00248_a5adc996c1a730574fa6dd131142ab2ad}{trace\+\_\+uart\+\_\+callback}} (uart\+\_\+callback\+\_\+args\+\_\+t \texorpdfstring{$\ast$}{*}p\+\_\+args)
+\begin{DoxyCompactList}\small\item\em Implements the callback of the UART. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a00248_a7b739c75f87182605802c312d4e85cf6}{Trace\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Open connection SCI1 (UART). Initialize semaphore. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a00248_a8947b81ae09bdb57459cd1c81c78ab37}{Trace}} (\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} flags, const char \texorpdfstring{$\ast$}{*}p\+String)
+\begin{DoxyCompactList}\small\item\em Print a trace string inserting the time stamp. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a00248_abbe04e9d8a6f964c5a4f18901a95b0de}{Trace\+\_\+\+Arg}} (\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} flags, const char \texorpdfstring{$\ast$}{*}p\+String, const \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} aux\+\_\+code)
+\begin{DoxyCompactList}\small\item\em Print a trace string inserting the time stamp. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a00248_a833c0f353040c1cefc0bac94dc918f76}{Trace\+\_\+\+Char}} (const \mbox{\hyperlink{a00137_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} data\+\_\+to\+\_\+send)
+\begin{DoxyCompactList}\small\item\em Print a char without inserting the time stamp. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{a00248_a3deb76927453c6425cac2c0c5f872a24}{Boot\+\_\+\+Send\+\_\+\+Message}} (const \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Msg, \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} size)
+\begin{DoxyCompactList}\small\item\em Send a message to the Boot processor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{a00248_a2bfb02f5ceda55d9f597551c4817fbff}{Boot\+\_\+\+Receive\+\_\+\+Message}} (void)
+\begin{DoxyCompactList}\small\item\em Receive a message to the Boot processor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a00248_a2ec7f637e0bb5ec915d7ac8d057891aa}{Boot\+\_\+\+Sync}} (\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} n\+Beacons)
+\begin{DoxyCompactList}\small\item\em synchronize the Boot processor\textquotesingle{}s FRC frequency sending a beacon signal (MUST guarantee a 250Kbps baud rate with a minimum error) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+TX\+\_\+\+SEMAPHORE \mbox{\hyperlink{a00248_a802f6fe8b525e6819990aa54eca39fe6}{trace\+\_\+semaphore}}
+\item 
+static char \mbox{\hyperlink{a00248_a3f2afd68215cb7f34f18236ea5de5008}{trace\+\_\+buffer}} \mbox{[}256\mbox{]}
+\item 
+static bool \mbox{\hyperlink{a00248_a26beb56022f5fe492a3f84209e7f61fa}{rx\+\_\+data\+\_\+ready}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{a00248_a047013f5273eccbbfc0a08db5975f544}\label{a00248_a047013f5273eccbbfc0a08db5975f544} 
+\index{Trace.c@{Trace.c}!TRACE\_ON@{TRACE\_ON}}
+\index{TRACE\_ON@{TRACE\_ON}!Trace.c@{Trace.c}}
+\doxysubsubsection{\texorpdfstring{TRACE\_ON}{TRACE\_ON}}
+{\footnotesize\ttfamily \#define TRACE\+\_\+\+ON}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{a00248_a2bfb02f5ceda55d9f597551c4817fbff}\label{a00248_a2bfb02f5ceda55d9f597551c4817fbff} 
+\index{Trace.c@{Trace.c}!Boot\_Receive\_Message@{Boot\_Receive\_Message}}
+\index{Boot\_Receive\_Message@{Boot\_Receive\_Message}!Trace.c@{Trace.c}}
+\doxysubsubsection{\texorpdfstring{Boot\_Receive\_Message()}{Boot\_Receive\_Message()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} Boot\+\_\+\+Receive\+\_\+\+Message (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Receive a message to the Boot processor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+received ACK character (NULL if does not receive nothing 
+\end{DoxyReturn}
+\Hypertarget{a00248_a3deb76927453c6425cac2c0c5f872a24}\label{a00248_a3deb76927453c6425cac2c0c5f872a24} 
+\index{Trace.c@{Trace.c}!Boot\_Send\_Message@{Boot\_Send\_Message}}
+\index{Boot\_Send\_Message@{Boot\_Send\_Message}!Trace.c@{Trace.c}}
+\doxysubsubsection{\texorpdfstring{Boot\_Send\_Message()}{Boot\_Send\_Message()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} Boot\+\_\+\+Send\+\_\+\+Message (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Msg,  }\item[{\mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}}}]{size }\end{DoxyParamCaption})}
+
+
+
+Send a message to the Boot processor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Msg} & Pointer to message \\
+\hline
+{\em size} & message size or number of bytes to transfer\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+received ACK character (NULL if does not receive nothing 
+\end{DoxyReturn}
+\Hypertarget{a00248_a2ec7f637e0bb5ec915d7ac8d057891aa}\label{a00248_a2ec7f637e0bb5ec915d7ac8d057891aa} 
+\index{Trace.c@{Trace.c}!Boot\_Sync@{Boot\_Sync}}
+\index{Boot\_Sync@{Boot\_Sync}!Trace.c@{Trace.c}}
+\doxysubsubsection{\texorpdfstring{Boot\_Sync()}{Boot\_Sync()}}
+{\footnotesize\ttfamily void Boot\+\_\+\+Sync (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{n\+Beacons }\end{DoxyParamCaption})}
+
+
+
+synchronize the Boot processor\textquotesingle{}s FRC frequency sending a beacon signal (MUST guarantee a 250Kbps baud rate with a minimum error) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n\+Beacons} & number of beacons used to synchronize\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\Hypertarget{a00248_a8947b81ae09bdb57459cd1c81c78ab37}\label{a00248_a8947b81ae09bdb57459cd1c81c78ab37} 
+\index{Trace.c@{Trace.c}!Trace@{Trace}}
+\index{Trace@{Trace}!Trace.c@{Trace.c}}
+\doxysubsubsection{\texorpdfstring{Trace()}{Trace()}}
+{\footnotesize\ttfamily void Trace (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{flags,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{p\+String }\end{DoxyParamCaption})}
+
+
+
+Print a trace string inserting the time stamp. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em flags} & Flags to print more information (Time or CRLF) \\
+\hline
+{\em p\+String} & Pointer to trace string\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{a00258__todo000021}{Todo}}]pending things to be done\end{DoxyRefDesc}
+\Hypertarget{a00248_abbe04e9d8a6f964c5a4f18901a95b0de}\label{a00248_abbe04e9d8a6f964c5a4f18901a95b0de} 
+\index{Trace.c@{Trace.c}!Trace\_Arg@{Trace\_Arg}}
+\index{Trace\_Arg@{Trace\_Arg}!Trace.c@{Trace.c}}
+\doxysubsubsection{\texorpdfstring{Trace\_Arg()}{Trace\_Arg()}}
+{\footnotesize\ttfamily void Trace\+\_\+\+Arg (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{flags,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{p\+String,  }\item[{const \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}}}]{aux\+\_\+code }\end{DoxyParamCaption})}
+
+
+
+Print a trace string inserting the time stamp. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em flags} & Flags to print more information (Time or CRLF) \\
+\hline
+{\em p\+String} & Pointer to trace string \\
+\hline
+{\em aux\+\_\+code} & Additional parameter or code\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{a00258__todo000022}{Todo}}]pending things to be done\end{DoxyRefDesc}
+\Hypertarget{a00248_a833c0f353040c1cefc0bac94dc918f76}\label{a00248_a833c0f353040c1cefc0bac94dc918f76} 
+\index{Trace.c@{Trace.c}!Trace\_Char@{Trace\_Char}}
+\index{Trace\_Char@{Trace\_Char}!Trace.c@{Trace.c}}
+\doxysubsubsection{\texorpdfstring{Trace\_Char()}{Trace\_Char()}}
+{\footnotesize\ttfamily void Trace\+\_\+\+Char (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00137_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}}}]{data\+\_\+to\+\_\+send }\end{DoxyParamCaption})}
+
+
+
+Print a char without inserting the time stamp. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data\+\_\+to\+\_\+send} & byte to be printed\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{a00258__todo000023}{Todo}}]pending things to be done\end{DoxyRefDesc}
+\Hypertarget{a00248_a7b739c75f87182605802c312d4e85cf6}\label{a00248_a7b739c75f87182605802c312d4e85cf6} 
+\index{Trace.c@{Trace.c}!Trace\_Init@{Trace\_Init}}
+\index{Trace\_Init@{Trace\_Init}!Trace.c@{Trace.c}}
+\doxysubsubsection{\texorpdfstring{Trace\_Init()}{Trace\_Init()}}
+{\footnotesize\ttfamily void Trace\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Open connection SCI1 (UART). Initialize semaphore. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{a00258__todo000020}{Todo}}]pending things to be done\end{DoxyRefDesc}
+\Hypertarget{a00248_a5adc996c1a730574fa6dd131142ab2ad}\label{a00248_a5adc996c1a730574fa6dd131142ab2ad} 
+\index{Trace.c@{Trace.c}!trace\_uart\_callback@{trace\_uart\_callback}}
+\index{trace\_uart\_callback@{trace\_uart\_callback}!Trace.c@{Trace.c}}
+\doxysubsubsection{\texorpdfstring{trace\_uart\_callback()}{trace\_uart\_callback()}}
+{\footnotesize\ttfamily void trace\+\_\+uart\+\_\+callback (\begin{DoxyParamCaption}\item[{uart\+\_\+callback\+\_\+args\+\_\+t \texorpdfstring{$\ast$}{*}}]{p\+\_\+args }\end{DoxyParamCaption})}
+
+
+
+Implements the callback of the UART. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+args} & UART callback arguments\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{a00258__todo000019}{Todo}}]pending things to be done\end{DoxyRefDesc}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{a00248_a26beb56022f5fe492a3f84209e7f61fa}\label{a00248_a26beb56022f5fe492a3f84209e7f61fa} 
+\index{Trace.c@{Trace.c}!rx\_data\_ready@{rx\_data\_ready}}
+\index{rx\_data\_ready@{rx\_data\_ready}!Trace.c@{Trace.c}}
+\doxysubsubsection{\texorpdfstring{rx\_data\_ready}{rx\_data\_ready}}
+{\footnotesize\ttfamily bool rx\+\_\+data\+\_\+ready\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{a00248_a3f2afd68215cb7f34f18236ea5de5008}\label{a00248_a3f2afd68215cb7f34f18236ea5de5008} 
+\index{Trace.c@{Trace.c}!trace\_buffer@{trace\_buffer}}
+\index{trace\_buffer@{trace\_buffer}!Trace.c@{Trace.c}}
+\doxysubsubsection{\texorpdfstring{trace\_buffer}{trace\_buffer}}
+{\footnotesize\ttfamily char trace\+\_\+buffer\mbox{[}256\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{a00248_a802f6fe8b525e6819990aa54eca39fe6}\label{a00248_a802f6fe8b525e6819990aa54eca39fe6} 
+\index{Trace.c@{Trace.c}!trace\_semaphore@{trace\_semaphore}}
+\index{trace\_semaphore@{trace\_semaphore}!Trace.c@{Trace.c}}
+\doxysubsubsection{\texorpdfstring{trace\_semaphore}{trace\_semaphore}}
+{\footnotesize\ttfamily TX\+\_\+\+SEMAPHORE trace\+\_\+semaphore\hspace{0.3cm}{\ttfamily [extern]}}
+

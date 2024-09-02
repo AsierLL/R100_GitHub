@@ -1,0 +1,166 @@
+\doxysection{thread\+\_\+pat\+Mon\+\_\+hal.\+h}
+\hypertarget{a00221_source}{}\label{a00221_source}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/HAL/thread\_patMon\_hal.h@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/HAL/thread\_patMon\_hal.h}}
+\mbox{\hyperlink{a00221}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{\ /******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Name\ \ \ \ \ \ :\ R100\_S3A7\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ :\ Osatu\ S.\ Coop\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Compiler\ \ :\ GNU\ ARM\ Embedded\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ Target\ \ \ \ :\ Reanibex\ Serie\ 100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ ******************************************************************************/}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#ifndef\ THREAD\_PATMON\_HAL\_H\_}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#define\ THREAD\_PATMON\_HAL\_H\_}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ **Includes}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{a00137}{types\_basic.h}}"{}}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{a00038}{R100\_Errors.h}}"{}}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ **\ Defines}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#define\ PAT\_nDRDY\ \ \ \ \ \ \ \ \ \ \ IOPORT\_PORT\_03\_PIN\_05}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#define\ PAT\_nRST\ \ \ \ \ \ \ \ \ \ \ \ IOPORT\_PORT\_04\_PIN\_03}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#define\ PAT\_START\ \ \ \ \ \ \ \ \ \ \ IOPORT\_PORT\_06\_PIN\_00}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#define\ PAT\_CAL\ \ \ \ \ \ \ \ \ \ \ \ \ IOPORT\_PORT\_05\_PIN\_05}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{comment}{//\ ADS1292\ command\ definitions}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#define\ ADS\_CMD\_WAKEUP\ \ \ \ \ \ 0x02}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#define\ ADS\_CMD\_STANDBY\ \ \ \ \ 0x04}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#define\ ADS\_CMD\_RESET\ \ \ \ \ \ \ 0x06}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#define\ ADS\_CMD\_START\ \ \ \ \ \ \ 0x08}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#define\ ADS\_CMD\_STOP\ \ \ \ \ \ \ \ 0x0A}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#define\ ADS\_CMD\_OFFSETCAL\ \ \ 0x1A}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#define\ ADS\_CMD\_RDATAC\ \ \ \ \ \ 0x10}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#define\ ADS\_CMD\_SDATAC\ \ \ \ \ \ 0x11}}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#define\ ADS\_CMD\_RDATA\ \ \ \ \ \ \ 0x12}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#define\ ADS\_CMD\_RREG\ \ \ \ \ \ \ \ 0x20}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#define\ ADS\_CMD\_WREG\ \ \ \ \ \ \ \ 0x40}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{comment}{//\ ADS1292\ register\ address}}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#define\ ADS\_REG\_ID\ \ \ \ \ \ \ \ \ \ 0x00}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#define\ ADS\_REG\_CONFIG1\ \ \ \ \ 0x01}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#define\ ADS\_REG\_CONFIG2\ \ \ \ \ 0x02}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#define\ ADS\_REG\_LOFF\ \ \ \ \ \ \ \ 0x03}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#define\ ADS\_REG\_CH1SET\ \ \ \ \ \ 0x04}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#define\ ADS\_REG\_CH2SET\ \ \ \ \ \ 0x05}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#define\ ADS\_REG\_RLD\_SENS\ \ \ \ 0x06}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#define\ ADS\_REG\_LOFF\_SENS\ \ \ 0x07}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#define\ ADS\_REG\_LOFF\_STAT\ \ \ 0x08}}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#define\ ADS\_REG\_RESP1\ \ \ \ \ \ \ 0x09}}
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#define\ ADS\_REG\_RESP2\ \ \ \ \ \ \ 0x0A}}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#define\ ADS\_REG\_GPIO\ \ \ \ \ \ \ \ 0x0B}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#define\ ADS\_BUFFER\_SIZE\ \ \ \ \ 32\ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{//\ buffer\ size\ to\ use\ in\ the\ ADS\ transactions}}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#define\ FS\_ECG\ \ \ \ \ \ \ \ \ \ \ \ \ \ 1000\ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{//\ sampling\ \ \ frequency\ for\ ECG}}
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#define\ FS\_ZP\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 100\ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{//\ sampling\ \ \ frequency\ for\ ZP}}
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#define\ RESAMPLE\_ZP\ \ \ \ \ \ \ \ \ (FS\_ECG/FS\_ZP)\ \ }\textcolor{comment}{//\ resampling\ frequency\ for\ ZP}}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#define\ ECG\_BUFFER\_SIZE\ \ \ \ \ (4096*2)\ \ \ \ \ \ \ \ }\textcolor{comment}{//\ buffer\ size\ to\ store\ ECG\ samples}}
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#define\ ZP\_BUFFER\_SIZE\ \ \ \ \ \ (512)\ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{//\ buffer\ size\ to\ store\ ZP\ \ samples}}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#define\ ECG\_BASELINE\ \ \ \ \ \ \ \ 0x00\ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{//\ baseline\ value\ for\ ECG}}
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#define\ ZP\_BASELINE\ \ \ \ \ \ \ \ \ 0x00\ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{//\ baseline\ value\ for\ ZP}}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#define\ STATUS\_IS\_OK(x)\ \ \ \ \ ((x\ \&\ 0xF01FFF)\ ==\ 0xC00000)\ \ \ \ }\textcolor{comment}{//\ macro\ to\ check\ the\ status\ bits}}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \textcolor{comment}{//\ Events\ managed\ by\ the\ IRQ\ controller\ ...}}
+\DoxyCodeLine{00085\ \textcolor{preprocessor}{\#define\ IRQ\_ADS\_DRDY\ \ \ \ \ \ \ \ 8\ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{//\ Data\ Ready\ from\ the\ ADS}}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \textcolor{comment}{//\ device\ identifier\ for\ the\ ADS1292R\ device}}
+\DoxyCodeLine{00088\ \textcolor{preprocessor}{\#define\ ADS1292R\_IDENT\ \ \ \ \ \ 0b01110011}}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \textcolor{comment}{//\ to\ use\ the\ audio\ output\ as\ an\ oscilloscope\ to\ show\ biometrics}}
+\DoxyCodeLine{00091\ \textcolor{preprocessor}{\#define\ AUDIO\_OUT\_SHOW\_BIOMETRICS\ \ \ 0}}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00096\ \textcolor{comment}{\ **\ Typedefs}}
+\DoxyCodeLine{00097\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00100\ \ \ \ \ \mbox{\hyperlink{a00221_a71de8cbe1b830973cbf1b3b2dd5b57baa4fffa62082d6392ff7fad812a1966ea2}{RCP\_BREAK\_NONE}}\ =\ 0,\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ no\ break\ has\ append}}
+\DoxyCodeLine{00101\ \ \ \ \ \mbox{\hyperlink{a00221_a71de8cbe1b830973cbf1b3b2dd5b57baa2492649de9d1b908c75652667433b268}{RCP\_BREAK\_ZP}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ break\ due\ to\ ZP\ change}}
+\DoxyCodeLine{00102\ \ \ \ \ \mbox{\hyperlink{a00221_a71de8cbe1b830973cbf1b3b2dd5b57baa5fe9096e3f595d01d72d2245da496913}{RCP\_BREAK\_PATIENT\_TYPE}}\ \ \ \ \ \ \textcolor{comment}{//\ break\ due\ to\ patient\ type\ change}}
+\DoxyCodeLine{00103\ \}\ \mbox{\hyperlink{a00221_a71de8cbe1b830973cbf1b3b2dd5b57ba}{RCP\_BREAK\_t}};}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00106\ \ \ \ \ \mbox{\hyperlink{a00221_a7f3c1af5fc3759e7ef04c26ddb860a89a0c96f6ab79ac76b35a2039a647b8fe59}{NOTCH\_NO}}\ =\ 0,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ do\ not\ apply\ any\ notch\ filter}}
+\DoxyCodeLine{00107\ \ \ \ \ \mbox{\hyperlink{a00221_a7f3c1af5fc3759e7ef04c26ddb860a89ab278e9ad1ed1fda6e5102d7a5321d3e3}{NOTCH\_50}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Apply\ a\ 50\ Hz\ Notch\ filter}}
+\DoxyCodeLine{00108\ \ \ \ \ \mbox{\hyperlink{a00221_a7f3c1af5fc3759e7ef04c26ddb860a89a45a05aae928419d13cd2119813ef01b2}{NOTCH\_60}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Apply\ a\ 60\ Hz\ Notch\ filter}}
+\DoxyCodeLine{00109\ \}\ \mbox{\hyperlink{a00221_a7f3c1af5fc3759e7ef04c26ddb860a89}{NOTCH\_t}};}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00112\ \ \ \ \ \mbox{\hyperlink{a00221_a4edd7e4aff0fec29837dace28e114ceaa473b7eb59e307214a30b726b483c0273}{REPORT\_ZP\_ACDS}}\ =\ 0,\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ report\ the\ ZP\ value\ in\ ADCs\ (for\ development)}}
+\DoxyCodeLine{00113\ \ \ \ \ \mbox{\hyperlink{a00221_a4edd7e4aff0fec29837dace28e114ceaaa473b4ead9220b1237863e3fb75a49b0}{REPORT\_ZP\_OHMS}},\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ report\ the\ ZP\ value\ in\ ohms}}
+\DoxyCodeLine{00114\ \ \ \ \ \mbox{\hyperlink{a00221_a4edd7e4aff0fec29837dace28e114ceaa1fee6e146eca61b58b3d1d0947e464f6}{REPORT\_ZP\_VIRTUAL}}\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ report\ the\ ZP\ virtual\ (for\ development)}}
+\DoxyCodeLine{00115\ \}\ \mbox{\hyperlink{a00221_a4edd7e4aff0fec29837dace28e114cea}{ZP\_REPORT\_t}};}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00118\ \{}
+\DoxyCodeLine{00119\ \ \ \ \ \mbox{\hyperlink{a00221_ad86d69a0b4d65ddf120f056f448beff3a9b18f3726168965d442fe794cddd42e2}{eZP\_SEGMENT\_UNKNOWN}},}
+\DoxyCodeLine{00120\ \ \ \ \ \mbox{\hyperlink{a00221_ad86d69a0b4d65ddf120f056f448beff3ad70d6788083624d2088f238cc3e7c34f}{eZP\_SEGMENT\_SHORT\_CIRC}},}
+\DoxyCodeLine{00121\ \ \ \ \ \mbox{\hyperlink{a00221_ad86d69a0b4d65ddf120f056f448beff3a0755180c208ccaf461284c4d7e8fc7fa}{eZP\_SEGMENT\_GOOD\_CONN}},}
+\DoxyCodeLine{00122\ \ \ \ \ \mbox{\hyperlink{a00221_ad86d69a0b4d65ddf120f056f448beff3ae7ae18c598781a738e598a55c8e8426a}{eZP\_SEGMENT\_BAD\_CONN}},}
+\DoxyCodeLine{00123\ \ \ \ \ \mbox{\hyperlink{a00221_ad86d69a0b4d65ddf120f056f448beff3a8d8b7ffc57ba508ecd38235ecb8dba57}{eZP\_SEGMENT\_OPEN\_CIRC}},}
+\DoxyCodeLine{00124\ \ \ \ \ \mbox{\hyperlink{a00221_ad86d69a0b4d65ddf120f056f448beff3af2f314a75f7bcdda74855172e256243c}{eZP\_SEGMENT\_MAX}}}
+\DoxyCodeLine{00125\ \}\mbox{\hyperlink{a00221_ad86d69a0b4d65ddf120f056f448beff3}{ZP\_SEGMENT\_e}};}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00128\ \{}
+\DoxyCodeLine{00129\ \ \ \ \ \mbox{\hyperlink{a00221_aa23822bb020122c14a71e9f8667d26b3ab0198bc49499a7cb60826ca1e37e905a}{eEL\_NONE}},}
+\DoxyCodeLine{00130\ \ \ \ \ \mbox{\hyperlink{a00221_aa23822bb020122c14a71e9f8667d26b3a4d37a39cf992c210e6df4169924fd8d0}{eEL\_DISPOSABLE\_ADULT}},}
+\DoxyCodeLine{00131\ \ \ \ \ \mbox{\hyperlink{a00221_aa23822bb020122c14a71e9f8667d26b3a4ca979378b23038fc64d1ffcbc6b4330}{eEL\_DISPOSABLE\_PEDIATRIC}}}
+\DoxyCodeLine{00132\ \}\mbox{\hyperlink{a00221_aa23822bb020122c14a71e9f8667d26b3}{EL\_TYPE\_ID\_e}};}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00135\ \{}
+\DoxyCodeLine{00136\ \ \ \ \ \mbox{\hyperlink{a00221_ab5a454b85186a6663fc81c4685af3281a479ed5c38a85a082193df94de32d2333}{eEL\_SIGN\_NONE}}\ \ \ \ \ \ \ \ \ \ \ =\ 0,\ \ \textcolor{comment}{//\ no\ electrodes\ are\ detected}}
+\DoxyCodeLine{00137\ \ \ \ \ \mbox{\hyperlink{a00221_ab5a454b85186a6663fc81c4685af3281acfe7644ed0008647aa1402768d3edbaa}{eEL\_SIGN\_BEXEN}}\ \ \ \ \ \ \ \ \ \ =\ 1,\ \ \textcolor{comment}{//\ BEXEN\ electrodes}}
+\DoxyCodeLine{00138\ \ \ \ \ \mbox{\hyperlink{a00221_ab5a454b85186a6663fc81c4685af3281ae25fc7692da1441071a315e44f7b19ae}{eEL\_SIGN\_BEXEN\_EXPIRED}}\ \ =\ 2,\ \ \textcolor{comment}{//\ expired\ BEXEN\ electrodes}}
+\DoxyCodeLine{00139\ \ \ \ \ \mbox{\hyperlink{a00221_ab5a454b85186a6663fc81c4685af3281ab84a815cb6c68d0795d6c3b3952a0aa7}{eEL\_SIGN\_DEMO}}\ \ \ \ \ \ \ \ \ \ \ =\ 3,\ \ \textcolor{comment}{//\ DEMO\ electrodes}}
+\DoxyCodeLine{00140\ \ \ \ \ \mbox{\hyperlink{a00221_ab5a454b85186a6663fc81c4685af3281a69714ebb93b2b94a911502e711e5a1c2}{eEL\_SIGN\_MUST\_DEMO}}\ \ \ \ \ \ =\ 4,\ \ \textcolor{comment}{//\ Must\ be\ DEMO\ electrodes}}
+\DoxyCodeLine{00141\ \ \ \ \ \mbox{\hyperlink{a00221_ab5a454b85186a6663fc81c4685af3281a515ca9fe483d624c229e1a056c5d99ca}{eEL\_SIGN\_UNKNOWN}}\ \ \ \ \ \ \ \ =\ 5\ \ \ \textcolor{comment}{//\ unknown\ electrodes}}
+\DoxyCodeLine{00142\ \}\ \mbox{\hyperlink{a00221_ab5a454b85186a6663fc81c4685af3281}{EL\_SIGN\_e}};}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00144\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00145\ \textcolor{comment}{\ **\ Globals}}
+\DoxyCodeLine{00146\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00149\ \textcolor{comment}{\ **\ Prototypes}}
+\DoxyCodeLine{00150\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00152\ \textcolor{keyword}{extern}\ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00221_abac6f6b7853d62b47ee192fba4833b4f}{ADS\_Read\_Frame}}\ \ \ (\textcolor{keywordtype}{void});\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ called\ from\ patient\ monitor\ task}}
+\DoxyCodeLine{00153\ \textcolor{keyword}{extern}\ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00221_aad3a5460b730439ee2fc0ddb605f9c21}{patMon\_HAL\_Init}}\ \ (\mbox{\hyperlink{a00221_a7f3c1af5fc3759e7ef04c26ddb860a89}{NOTCH\_t}}\ myNotch);\ \ \ \ \ \textcolor{comment}{//\ initialize\ the\ patient\ monitor\ HAL}}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00155\ \textcolor{keyword}{extern}\ \ \mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\_t}}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00221_a76fe3793dbe441d338e5ff2cf3225896}{patMon\_Get\_ECG\_Window}}\ \ \ (\mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ nEcg\_first,\ \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ nSamples,\ \mbox{\hyperlink{a00137_a269259c924dce846340ddbb810db2e3c}{int16\_t}}\ \ *pSamples);}
+\DoxyCodeLine{00156\ \textcolor{keyword}{extern}\ \ \mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\_t}}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00221_a1c27eef6f6abd7a968be54ab6a3de6f4}{patMon\_Get\_ZP\_Window}}\ \ \ \ (\mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ nZp\_first,\ \ \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ nSamples,\ \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ *pSamples);}
+\DoxyCodeLine{00157\ \textcolor{keyword}{extern}\ \ \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ \ \ \ \ \ \ \ \mbox{\hyperlink{a00221_a1978c4a195c3ce1aee541a55fece2e70}{patMon\_Get\_ECG\_nSample}}\ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00158\ \textcolor{keyword}{extern}\ \ \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ \ \ \ \ \ \ \ \mbox{\hyperlink{a00221_ae98728fc9430398da8683e46653aac5b}{patMon\_Get\_zp\_CAL\_ADCs}}\ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00159\ \textcolor{keyword}{extern}\ \ \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ \ \ \ \ \ \ \ \mbox{\hyperlink{a00221_a9ba28eb3a7a634bf9a4a495d90a705b1}{patMon\_Get\_Zp\_ADCs}}\ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00160\ \textcolor{keyword}{extern}\ \ \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ \ \ \ \ \ \ \ \mbox{\hyperlink{a00221_a6b07f419fb5494de970c245ba09885a4}{patMon\_Get\_Zp\_Ohms}}\ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00161\ \textcolor{keyword}{extern}\ \ \mbox{\hyperlink{a00221_ad86d69a0b4d65ddf120f056f448beff3}{ZP\_SEGMENT\_e}}\ \ \ \ \mbox{\hyperlink{a00221_a2b4e8b90eba8f938b87190b1369806a8}{patMon\_Get\_Zp\_Segment}}\ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00162\ \textcolor{keyword}{extern}\ \ \mbox{\hyperlink{a00221_aa23822bb020122c14a71e9f8667d26b3}{EL\_TYPE\_ID\_e}}\ \ \ \ \mbox{\hyperlink{a00221_a9c7dde826efc7b8fc999797f357af945}{patMon\_Get\_Connected\_El}}\ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00163\ \textcolor{keyword}{extern}\ \ \mbox{\hyperlink{a00137_a2ba621978a511250f7250fb10e05ffbe}{int32\_t}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00221_a38356e80b22420c57c34439af0dc1250}{patMon\_Get\_Temperature}}\ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00164\ \textcolor{keyword}{extern}\ \ \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\_ID\_e}}\ \ \ \ \ \ \mbox{\hyperlink{a00221_a6c91fedede8d24735f7592eda67d8360}{patMon\_Get\_Status}}\ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00165\ }
+\DoxyCodeLine{00166\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ THREAD\_PATMON\_HAL\_H\_\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00168\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00169\ \textcolor{comment}{\ **\ \$Log\$}}
+\DoxyCodeLine{00170\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00171\ \textcolor{comment}{\ **\ end\ of\ thread\_patMon\_hal.h}}
+\DoxyCodeLine{00172\ \textcolor{comment}{\ ******************************************************************************/}}
+
+\end{DoxyCode}

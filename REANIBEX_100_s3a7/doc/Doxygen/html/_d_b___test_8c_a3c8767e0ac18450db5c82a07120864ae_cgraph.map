@@ -1,0 +1,45 @@
+<map id="DB_Test_Generate_Report" name="DB_Test_Generate_Report">
+<area shape="rect" id="Node000001" title="Collects the test results and generates the report in a JSON file." alt="" coords="5,233,182,260"/>
+<area shape="rect" id="Node000002" href="$_d_b___test_8c.html#a16606de5fb417cc3de70a2e95f5780ec" title="Creates a new test file." alt="" coords="230,81,346,108"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="111,231,256,116,259,120,114,235"/>
+<area shape="rect" id="Node000007" href="$_d_b___test_8c.html#a28c194074e0e25670733cbb5a16e3a28" title="Writes the test result in the test file This way, the write sizes are multiple of cluster sizes,..." alt="" coords="232,360,344,387"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="117,258,255,349,252,354,114,263"/>
+<area shape="rect" id="Node000003" href="$_d_b___test_8c.html#abdda5e881df17cf99513c39a4903273c" title="Fill the filename with the test file number. The test result identifier determines if a new file must..." alt="" coords="394,31,560,57"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="340,78,409,59,411,64,341,83"/>
+<area shape="rect" id="Node000006" href="$_trace_8c.html#abbe04e9d8a6f964c5a4f18901a95b0de" title="Print a trace string inserting the time stamp." alt="" coords="437,81,517,108"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="346,92,422,92,422,97,346,97"/>
+<area shape="rect" id="Node000004" href="$sys_mon___battery_8c.html#adffa4deeb197c85e4f9ed9eaa2fdbce8" title="Get RTC month." alt="" coords="611,5,728,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="560,30,595,26,596,31,561,36"/>
+<area shape="rect" id="Node000005" href="$sys_mon___battery_8c.html#ad6b958727dcb96293dd2d1fc666c62b4" title="Get RTC year." alt="" coords="615,56,724,83"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="561,52,600,58,599,63,560,58"/>
+<area shape="rect" id="Node000008" href="$_d_b___test_8c.html#a9f481a0e2ddba34b1746ba8181a84c98" title="fill a binary bitset in a string" alt="" coords="431,132,524,159"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="290,359,301,321,321,270,351,216,370,191,392,169,414,155,417,160,396,173,374,194,355,219,325,272,306,323,295,360"/>
+<area shape="rect" id="Node000009" href="$_d_b___test_8c.html#a7ec87003cf7b1f13d7f71af99cbfe1f6" title="Fill a string with a generic date." alt="" coords="415,183,539,209"/>
+<area shape="poly" id="edge8_Node000007_Node000009" title=" " alt="" coords="292,358,328,292,357,253,392,219,400,214,403,219,396,223,361,256,332,295,297,361"/>
+<area shape="rect" id="Node000010" href="$_d_b___test_8c.html#ab7a2e6fc6e6d920610d4939bd63e4300" title="Fill a string with a generic Time." alt="" coords="415,233,540,260"/>
+<area shape="poly" id="edge9_Node000007_Node000010" title=" " alt="" coords="298,358,337,315,363,291,393,270,403,264,406,269,395,274,366,295,340,318,302,361"/>
+<area shape="rect" id="Node000011" href="$_d_b___test_8c.html#a40efbf4874eeca09f3db8fccd43f4b97" title="fill an hexadecimal number of 64 bits in a string" alt="" coords="432,284,523,311"/>
+<area shape="poly" id="edge10_Node000007_Node000011" title=" " alt="" coords="314,357,393,320,416,312,418,317,395,325,316,362"/>
+<area shape="rect" id="Node000012" href="$_d_b___test_8c.html#ad64eda05c1c2ef1238c8d43a8995835d" title="Fill the string number to create a Json entry (using 3 tabs)" alt="" coords="414,335,541,361"/>
+<area shape="poly" id="edge11_Node000007_Node000012" title=" " alt="" coords="344,363,398,356,399,361,345,369"/>
+<area shape="rect" id="Node000014" href="$_d_b___test_8c.html#a121e39406fe7a111a315ee29c5aa822a" title="Fill the string number to create a Json entry (using 3 tabs)" alt="" coords="412,385,543,412"/>
+<area shape="poly" id="edge13_Node000007_Node000014" title=" " alt="" coords="345,378,396,385,396,390,344,383"/>
+<area shape="rect" id="Node000015" href="$_d_b___test_8c.html#a3771da54aaa27e44ade7955f1042a35e" title="Fill the string to create a Json entry (using 3 tabs)" alt="" coords="417,436,537,463"/>
+<area shape="poly" id="edge15_Node000007_Node000015" title=" " alt="" coords="316,385,395,422,413,428,411,433,393,426,314,390"/>
+<area shape="rect" id="Node000016" href="$_d_b___test_8c.html#a6a1cb614eed193d35a2daa16da68b71e" title="Initializes the test date string." alt="" coords="425,487,529,513"/>
+<area shape="poly" id="edge17_Node000007_Node000016" title=" " alt="" coords="302,385,340,428,366,452,395,472,411,480,409,485,393,477,363,456,337,432,298,389"/>
+<area shape="rect" id="Node000018" href="$_d_b___test_8c.html#abee6bba585a0da2f3a255a0bc32d29ea" title="Initializes the test time string." alt="" coords="425,537,530,564"/>
+<area shape="poly" id="edge19_Node000007_Node000018" title=" " alt="" coords="297,386,332,452,361,490,396,523,411,532,408,537,392,527,357,494,328,455,292,388"/>
+<area shape="rect" id="Node000020" href="$device__init_8c.html#af8ee5f8563062293ed67377b60f47a84" title="Return APP SW version in string format." alt="" coords="399,588,555,615"/>
+<area shape="poly" id="edge21_Node000007_Node000020" title=" " alt="" coords="295,386,306,424,325,474,355,528,374,552,396,574,401,578,398,582,392,578,370,556,351,531,321,477,301,425,290,388"/>
+<area shape="rect" id="Node000021" href="$device__init_8c.html#a2f7047dc1ce0a3687c48872ed81aff5f" title="Function for accessing device info variable." alt="" coords="420,639,534,665"/>
+<area shape="poly" id="edge22_Node000007_Node000021" title=" " alt="" coords="293,387,301,432,319,496,350,565,370,597,396,625,408,633,404,638,392,629,366,600,345,568,314,498,296,434,288,388"/>
+<area shape="rect" id="Node000013" href="$_trace_8c.html#a8947b81ae09bdb57459cd1c81c78ab37" title="Print a trace string inserting the time stamp." alt="" coords="643,385,696,412"/>
+<area shape="poly" id="edge12_Node000012_Node000013" title=" " alt="" coords="532,359,629,385,627,391,530,365"/>
+<area shape="poly" id="edge14_Node000014_Node000013" title=" " alt="" coords="543,396,627,396,627,401,543,401"/>
+<area shape="poly" id="edge16_Node000015_Node000013" title=" " alt="" coords="530,433,627,407,629,412,532,438"/>
+<area shape="rect" id="Node000017" href="$device__init_8c.html#ac4a64cfba553307cc5131725f13de451" title="Function for accessing device date variable." alt="" coords="609,487,730,513"/>
+<area shape="poly" id="edge18_Node000016_Node000017" title=" " alt="" coords="530,497,593,497,593,503,530,503"/>
+<area shape="rect" id="Node000019" href="$device__init_8c.html#a464553d5f2366a3e2e49ee42256cbefc" title="Function for accessing device time variable." alt="" coords="608,537,731,564"/>
+<area shape="poly" id="edge20_Node000018_Node000019" title=" " alt="" coords="530,548,593,548,593,553,530,553"/>
+</map>

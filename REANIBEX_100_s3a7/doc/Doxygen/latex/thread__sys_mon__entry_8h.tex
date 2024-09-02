@@ -1,0 +1,1137 @@
+\doxysection{C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/thread\+\_\+sys\+Mon\+\_\+entry.h File Reference}
+\hypertarget{thread__sys_mon__entry_8h}{}\label{thread__sys_mon__entry_8h}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/thread\_sysMon\_entry.h@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/thread\_sysMon\_entry.h}}
+
+
+Header with functions related to the system monitor task.  
+
+
+{\ttfamily \#include "{}R100\+\_\+\+Errors.\+h"{}}\newline
+{\ttfamily \#include "{}HAL/thread\+\_\+pat\+Mon\+\_\+hal.\+h"{}}\newline
+{\ttfamily \#include "{}HAL/thread\+\_\+comm\+\_\+hal.\+h"{}}\newline
+{\ttfamily \#include "{}DB\+\_\+\+Test.\+h"{}}\newline
+{\ttfamily \#include "{}secure\+\_\+crypto.\+h"{}}\newline
+{\ttfamily \#include "{}BSP/bsp\+\_\+wifi\+\_\+silabs-\/\+WGM110.\+h"{}}\newline
+{\ttfamily \#include "{}BSP/bsp\+\_\+gps\+\_\+quectel-\/\+L96.\+h"{}}\newline
+Include dependency graph for thread\+\_\+sys\+Mon\+\_\+entry.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__sys_mon__entry_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__sys_mon__entry_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_t_e_s_t___r_e_s_u_l_t___e_c_g_m_o_n__t}{TEST\+\_\+\+RESULT\+\_\+\+ECGMON\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Patmon test result structure. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_d_e_f_i_b___p_u_l_s_e___d_a_t_a__t}{DEFIB\+\_\+\+PULSE\+\_\+\+DATA\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Data collected during the defibrillation shock. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_d_e_f_i_b___p_u_l_s_e___b_l_a_c_k___b_o_x__t}{DEFIB\+\_\+\+PULSE\+\_\+\+BLACK\+\_\+\+BOX\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Summary of defibrillation pulse data for the phase-\/1. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_t_e_s_t___r_e_s_u_l_t___d_e_f_i_b__t}{TEST\+\_\+\+RESULT\+\_\+\+DEFIB\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Summary of defibrillation pulse data for the phase-\/1. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_e_l_e_c_t_r_o_d_e_s___i_n_f_o__t}{ELECTRODES\+\_\+\+INFO\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Electrodes info header (stored in the electrodes internal memory) \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_e_l_e_c_t_r_o_d_e_s___e_v_e_n_t__t}{ELECTRODES\+\_\+\+EVENT\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Electrodes event (stored in the electrodes internal memory) \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_e_l_e_c_t_r_o_d_e_s___d_a_t_a__t}{ELECTRODES\+\_\+\+DATA\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Electrodes info structure. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_n_v___d_a_t_a__t}{NV\+\_\+\+DATA\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Non volatile data (implemented in the internal data flash) \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_n_v___d_a_t_a___b_l_o_c_k__t}{NV\+\_\+\+DATA\+\_\+\+BLOCK\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{thread__sys_mon__entry_8h_a82297c0942a102d58184495af7ad5536}{THREAD\+\_\+\+ID\+\_\+s\+MON}}~0x00000001
+\item 
+\#define \mbox{\hyperlink{thread__sys_mon__entry_8h_a514305b2188f0da5b2c2ae10f716b8c9}{THREAD\+\_\+\+ID\+\_\+\+CORE}}~0x00000002
+\item 
+\#define \mbox{\hyperlink{thread__sys_mon__entry_8h_a87f9c3494b99c085e557483bb23d4ea6}{THREAD\+\_\+\+ID\+\_\+\+COMM}}~0x00000004
+\item 
+\#define \mbox{\hyperlink{thread__sys_mon__entry_8h_aede3ab818f794f96d0bea4439c321e96}{THREAD\+\_\+\+ID\+\_\+\+DRD}}~0x00000008
+\item 
+\#define \mbox{\hyperlink{thread__sys_mon__entry_8h_a473ebc074de914b82ee781227c986e3d}{THREAD\+\_\+\+ID\+\_\+\+HMI}}~0x00000010
+\item 
+\#define \mbox{\hyperlink{thread__sys_mon__entry_8h_a7682bd277b4acc684f7596b2d1bd5e9e}{THREAD\+\_\+\+ID\+\_\+\+DEFIB}}~0x00000020
+\item 
+\#define \mbox{\hyperlink{thread__sys_mon__entry_8h_a887edfee6c60e0565cd0d3fa5274de4a}{THREAD\+\_\+\+ID\+\_\+\+AUDIO}}~0x00000040
+\item 
+\#define \mbox{\hyperlink{thread__sys_mon__entry_8h_ac23ca2ec8e0a451c3ac54169c660044d}{THREAD\+\_\+\+ID\+\_\+\+PATMON}}~0x00000080
+\item 
+\#define \mbox{\hyperlink{thread__sys_mon__entry_8h_aea5497ec35d8ed914f402a9df7380c9d}{THREAD\+\_\+\+ID\+\_\+\+RECORDER}}~0x00000100
+\item 
+\#define \mbox{\hyperlink{thread__sys_mon__entry_8h_a2f7d833cc447f14e8b7fc840ab301b80}{LIFE\+\_\+\+BEAT\+\_\+\+PERIOD}}~10000
+\begin{DoxyCompactList}\small\item\em Life beat period in msecs. (10 seconds) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{thread__sys_mon__entry_8h_a0b6956b51fa887369037ef48804c1a3e}{LIFE\+\_\+\+BEAT\+\_\+\+PERIOD\+\_\+\+DEMO\+\_\+\+MODE}}~1200000
+\begin{DoxyCompactList}\small\item\em Life beat period in msecs. (20 minutes) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{thread__sys_mon__entry_8h_a6957755bf76bc83aba81209a569e68e3}{WAKEUP\+\_\+\+POWERON}}~10
+\begin{DoxyCompactList}\small\item\em Force the GPIO to ON to maintain the power. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{thread__sys_mon__entry_8h_ac17b23acc5ad2bbb15e363fd5a5937f2}{UTC\+\_\+\+MIN}}~-\/12
+\item 
+\#define \mbox{\hyperlink{thread__sys_mon__entry_8h_a9f11c581b8473ed601e6775d73677963}{UTC\+\_\+\+MAX}}~14
+\item 
+\#define \mbox{\hyperlink{thread__sys_mon__entry_8h_a593ad14c651ea368246c8f94544e7731}{ADS\+\_\+\+CAL\+\_\+\+MIN}}~5501000
+\begin{DoxyCompactList}\small\item\em Max ADS calibration value for an internal resistor 6K04 ohms. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{thread__sys_mon__entry_8h_a17c70b6e0bab6c747d7fa5bf4621b38b}{ADS\+\_\+\+CAL\+\_\+\+MAX}}~5605000
+\begin{DoxyCompactList}\small\item\em Min ADS calibration value for an internal resistor 6K04 ohms. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{thread__sys_mon__entry_8h_af222bf400dd655f88ec84078a18d6607}{ADS\+\_\+\+ZP\+\_\+0\+\_\+\+MIN}}~4020000
+\begin{DoxyCompactList}\small\item\em Max ADS 0 Ohms value for an external resistor. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{thread__sys_mon__entry_8h_ab82b1208bdf841b947e0bde5ae274736}{ADS\+\_\+\+ZP\+\_\+0\+\_\+\+MAX}}~4056000
+\begin{DoxyCompactList}\small\item\em Min ADS 0 Ohms value for an external resistor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{thread__sys_mon__entry_8h_a6f3942cc79b24bc2c4b1aaa93e44351e}{R100\+\_\+\+Program\+\_\+\+Autotest}} (void)
+\begin{DoxyCompactList}\small\item\em Program the auto test to be executed at least 1 hour after the last manual power off. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{thread__sys_mon__entry_8h_a4f1d875d2e1ad5991d6ce2ba7c56af91}{R100\+\_\+\+Power\+Off}} (void)
+\begin{DoxyCompactList}\small\item\em Power off the device programming an automatic power-\/on. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{thread__sys_mon__entry_8h_a5d3acf9068cad21d046f9d8834ce6946}{R100\+\_\+\+Power\+Off\+\_\+\+RTC}} (void)
+\begin{DoxyCompactList}\small\item\em Power off the device programming an automatic power-\/on. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{thread__pat_mon__hal_8h_ab5a454b85186a6663fc81c4685af3281}{EL\+\_\+\+SIGN\+\_\+e}} \mbox{\hyperlink{thread__sys_mon__entry_8h_aeeb458bcec8909373038cfd816e475db}{Electrodes\+\_\+\+Get\+\_\+\+Signature}} (void)
+\begin{DoxyCompactList}\small\item\em Get electrodes signature. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{thread__sys_mon__entry_8h_adce4182129c1b341756893a8c387e2b7}{Electrodes\+\_\+\+Get\+\_\+\+Data}} (\mbox{\hyperlink{struct_e_l_e_c_t_r_o_d_e_s___d_a_t_a__t}{ELECTRODES\+\_\+\+DATA\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Data)
+\begin{DoxyCompactList}\small\item\em Get the electrodes data (sn, info and event register) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{thread__sys_mon__entry_8h_adf630b74d86769125fbc7c5355695cdc}{Electrodes\+\_\+\+Register\+\_\+\+Event}} (void)
+\begin{DoxyCompactList}\small\item\em Command to register electrodes event. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{thread__sys_mon__entry_8h_a90fd604d6e8ca2b285c486b7f837956f}{Electrodes\+\_\+\+Register\+\_\+\+Shock}} (void)
+\begin{DoxyCompactList}\small\item\em Command to register shock sending alert. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_n_v___d_a_t_a__t}{NV\+\_\+\+DATA\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{thread__sys_mon__entry_8h_a5d710674bd8ab574159b5f0d01d1d67f}{Get\+\_\+\+NV\+\_\+\+Data}} (void)
+\begin{DoxyCompactList}\small\item\em Function that gets the non volatile data. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_n_v___d_a_t_a___b_l_o_c_k__t}{NV\+\_\+\+DATA\+\_\+\+BLOCK\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{thread__sys_mon__entry_8h_aebbdcccc2dcf3573e1ec3761e55c998c}{Get\+\_\+\+NV\+\_\+\+Data\+\_\+\+Block}} (void)
+\begin{DoxyCompactList}\small\item\em Function that gets the second block of the non volatile data. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{thread__sys_mon__entry_8h_a4f834bab7058bdaecdf1eb4f9b4f8d00}{Set\+\_\+\+NV\+\_\+\+Data\+\_\+\+Error\+\_\+\+IF\+\_\+\+NOT\+\_\+\+SAT}} (\mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} error)
+\begin{DoxyCompactList}\small\item\em Function that sets the non volatile data error. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{thread__sys_mon__entry_8h_ab5d13add30041382fa545103a702582f}{Set\+\_\+\+NV\+\_\+\+Data\+\_\+\+Error\+\_\+\+IF\+\_\+\+NOT\+\_\+\+SAT\+\_\+\+Comms}} (\mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} error)
+\begin{DoxyCompactList}\small\item\em Function that sets the non volatile data error. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{thread__sys_mon__entry_8h_a99fe1a42e34a2be16886a951d9712fd7}{Save\+\_\+\+Comms\+\_\+\+Error}} (void)
+\begin{DoxyCompactList}\small\item\em Save Communication error. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{thread__sys_mon__entry_8h_a04996a39aeb722a8df6c6643864cc670}{Is\+\_\+\+Test\+\_\+\+Mode}} (void)
+\begin{DoxyCompactList}\small\item\em Function that report if the devioce is in test mode or not. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{thread__sys_mon__entry_8h_a33ca5a33ab10af89dcb290e9d052b724}{Is\+\_\+\+Test\+\_\+\+Mode\+\_\+\+Montador}} (void)
+\begin{DoxyCompactList}\small\item\em Function that report if the devioce is in test mode montador or not. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{thread__sys_mon__entry_8h_afa9118ccd2053946dd4527c604ba3c98}{Set\+\_\+\+Mode\+\_\+\+Demo}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} aux)
+\item 
+void \mbox{\hyperlink{thread__sys_mon__entry_8h_ac9febdbd1dca2289134e4a83fd008574}{Device\+\_\+pw}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Password, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Device\+\_\+sn, \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} size)
+\begin{DoxyCompactList}\small\item\em Function that report if the device is in mode DEMO or not. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{thread__sys_mon__entry_8h_aa1af180c605ec797a038deb05c38898a}{Is\+\_\+\+Sysmon\+\_\+\+Task\+\_\+\+Initialized}} (void)
+\begin{DoxyCompactList}\small\item\em Is task initialized? \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{thread__sys_mon__entry_8h_ae158ddc17edc766e6adc7f0c1988f2b9}{NV\+\_\+\+Data\+\_\+\+Write}} (\mbox{\hyperlink{struct_n_v___d_a_t_a__t}{NV\+\_\+\+DATA\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+NV\+\_\+data, \mbox{\hyperlink{struct_n_v___d_a_t_a___b_l_o_c_k__t}{NV\+\_\+\+DATA\+\_\+\+BLOCK\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+NV\+\_\+data\+\_\+block)
+\begin{DoxyCompactList}\small\item\em Function that updates the test id and saves it to data flash memory. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{thread__sys_mon__entry_8h_a7514b80ba83366eb1792a5de56de25d1}{NV\+\_\+\+Data\+\_\+\+Read}} (\mbox{\hyperlink{struct_n_v___d_a_t_a__t}{NV\+\_\+\+DATA\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+NV\+\_\+data, \mbox{\hyperlink{struct_n_v___d_a_t_a___b_l_o_c_k__t}{NV\+\_\+\+DATA\+\_\+\+BLOCK\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+NV\+\_\+data\+\_\+block)
+\begin{DoxyCompactList}\small\item\em Function that gets the non volatile data from the internal Data Flash. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{thread__sys_mon__entry_8h_a2c5836202a13b4d23eb7b1b9211db6ac}{Lock\+\_\+on\+\_\+\+Panic}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} error, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} num)
+\begin{DoxyCompactList}\small\item\em Lock the device because the program can not be executed normally. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{thread__sys_mon__entry_8h_a0d2a806043e6e3322c75bb359f06500f}{Check\+\_\+\+Device\+\_\+\+Led\+\_\+\+Status}} (void)
+\begin{DoxyCompactList}\small\item\em Determine if status led must be on. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{thread__sys_mon__entry_8h_a86d6de0ddbdd8704798336aa29003fb5}{Check\+\_\+\+Test\+\_\+\+Abort\+\_\+\+User}} (\mbox{\hyperlink{struct_d_b___t_e_s_t___r_e_s_u_l_t__t}{DB\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Result)
+\begin{DoxyCompactList}\small\item\em Check if user abort running test. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{thread__sys_mon__entry_8h_aab815986ee52dfb7489873f856e3ecb9}{Refresh\+\_\+\+Wdg}} (void)
+\begin{DoxyCompactList}\small\item\em Refresh the watchdog timer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{thread__sys_mon__entry_8h_aea83c8517300aa0759f0088c0f2dfa2f}{Pasatiempos}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} n\+Ticks)
+\begin{DoxyCompactList}\small\item\em Pass time doing nothing, but refreshing the watchdog !!! \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{thread__sys_mon__entry_8h_ae266dd5355d4644da21295b8a95ca1af}{Pasatiempos\+\_\+\+Listening}} (void)
+\begin{DoxyCompactList}\small\item\em Pass time doing nothing while is listening an audio message and refreshing the watchdog !!! \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{thread__sys_mon__entry_8h_ab14f7437b50af474b3ed633fcf53e423}{bsp\+\_\+clock\+\_\+init\+\_\+\+Reconfigure}} (void)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{types__app_8h_a7e34c706bde6f3522650864d7352ae86}{POWER\+\_\+\+ON\+\_\+\+SOURCE\+\_\+e}} \mbox{\hyperlink{thread__sys_mon__entry_8h_a387cde176445aa5bad41053b2b4a872c}{poweron\+\_\+event}}
+\begin{DoxyCompactList}\small\item\em Power event. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \mbox{\hyperlink{thread__sys_mon__entry_8h_a478b868b24be4f0bd5df6de2543b1fbb}{thread\+\_\+supervisor}}
+\begin{DoxyCompactList}\small\item\em Thread supervisor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{thread__sys_mon__entry_8h_a15166a4c16208d4ed8a396f4a75f4466}{write\+\_\+elec\+\_\+last\+\_\+event}}
+\begin{DoxyCompactList}\small\item\em Write las electrodes registered event in test. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{thread__sys_mon__entry_8h_a40996dbb57618650ec40ff1275299ec4}{global\+\_\+poweron\+\_\+event}}
+\begin{DoxyCompactList}\small\item\em Save Power On event. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header with functions related to the system monitor task. 
+
+\begin{DoxyVersion}{Version}
+v1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+06/06/2018 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+ltorres 
+\end{DoxyAuthor}
+\begin{DoxyWarning}{Warning}
+author date version .-\/ Edition 
+\end{DoxyWarning}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000092}{Bug}}]\end{DoxyRefDesc}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{thread__sys_mon__entry_8h_a17c70b6e0bab6c747d7fa5bf4621b38b}\label{thread__sys_mon__entry_8h_a17c70b6e0bab6c747d7fa5bf4621b38b} 
+\index{thread\_sysMon\_entry.h@{thread\_sysMon\_entry.h}!ADS\_CAL\_MAX@{ADS\_CAL\_MAX}}
+\index{ADS\_CAL\_MAX@{ADS\_CAL\_MAX}!thread\_sysMon\_entry.h@{thread\_sysMon\_entry.h}}
+\doxysubsubsection{\texorpdfstring{ADS\_CAL\_MAX}{ADS\_CAL\_MAX}}
+{\footnotesize\ttfamily \#define ADS\+\_\+\+CAL\+\_\+\+MAX~5605000}
+
+
+
+Min ADS calibration value for an internal resistor 6K04 ohms. 
+
+\Hypertarget{thread__sys_mon__entry_8h_a593ad14c651ea368246c8f94544e7731}\label{thread__sys_mon__entry_8h_a593ad14c651ea368246c8f94544e7731} 
+\index{thread\_sysMon\_entry.h@{thread\_sysMon\_entry.h}!ADS\_CAL\_MIN@{ADS\_CAL\_MIN}}
+\index{ADS\_CAL\_MIN@{ADS\_CAL\_MIN}!thread\_sysMon\_entry.h@{thread\_sysMon\_entry.h}}
+\doxysubsubsection{\texorpdfstring{ADS\_CAL\_MIN}{ADS\_CAL\_MIN}}
+{\footnotesize\ttfamily \#define ADS\+\_\+\+CAL\+\_\+\+MIN~5501000}
+
+
+
+Max ADS calibration value for an internal resistor 6K04 ohms. 
+
+\Hypertarget{thread__sys_mon__entry_8h_ab82b1208bdf841b947e0bde5ae274736}\label{thread__sys_mon__entry_8h_ab82b1208bdf841b947e0bde5ae274736} 
+\index{thread\_sysMon\_entry.h@{thread\_sysMon\_entry.h}!ADS\_ZP\_0\_MAX@{ADS\_ZP\_0\_MAX}}
+\index{ADS\_ZP\_0\_MAX@{ADS\_ZP\_0\_MAX}!thread\_sysMon\_entry.h@{thread\_sysMon\_entry.h}}
+\doxysubsubsection{\texorpdfstring{ADS\_ZP\_0\_MAX}{ADS\_ZP\_0\_MAX}}
+{\footnotesize\ttfamily \#define ADS\+\_\+\+ZP\+\_\+0\+\_\+\+MAX~4056000}
+
+
+
+Min ADS 0 Ohms value for an external resistor. 
+
+\Hypertarget{thread__sys_mon__entry_8h_af222bf400dd655f88ec84078a18d6607}\label{thread__sys_mon__entry_8h_af222bf400dd655f88ec84078a18d6607} 
+\index{thread\_sysMon\_entry.h@{thread\_sysMon\_entry.h}!ADS\_ZP\_0\_MIN@{ADS\_ZP\_0\_MIN}}
+\index{ADS\_ZP\_0\_MIN@{ADS\_ZP\_0\_MIN}!thread\_sysMon\_entry.h@{thread\_sysMon\_entry.h}}
+\doxysubsubsection{\texorpdfstring{ADS\_ZP\_0\_MIN}{ADS\_ZP\_0\_MIN}}
+{\footnotesize\ttfamily \#define ADS\+\_\+\+ZP\+\_\+0\+\_\+\+MIN~4020000}
+
+
+
+Max ADS 0 Ohms value for an external resistor. 
+
+\Hypertarget{thread__sys_mon__entry_8h_a2f7d833cc447f14e8b7fc840ab301b80}\label{thread__sys_mon__entry_8h_a2f7d833cc447f14e8b7fc840ab301b80} 
+\index{thread\_sysMon\_entry.h@{thread\_sysMon\_entry.h}!LIFE\_BEAT\_PERIOD@{LIFE\_BEAT\_PERIOD}}
+\index{LIFE\_BEAT\_PERIOD@{LIFE\_BEAT\_PERIOD}!thread\_sysMon\_entry.h@{thread\_sysMon\_entry.h}}
+\doxysubsubsection{\texorpdfstring{LIFE\_BEAT\_PERIOD}{LIFE\_BEAT\_PERIOD}}
+{\footnotesize\ttfamily \#define LIFE\+\_\+\+BEAT\+\_\+\+PERIOD~10000}
+
+
+
+Life beat period in msecs. (10 seconds) 
+
+\Hypertarget{thread__sys_mon__entry_8h_a0b6956b51fa887369037ef48804c1a3e}\label{thread__sys_mon__entry_8h_a0b6956b51fa887369037ef48804c1a3e} 
+\index{thread\_sysMon\_entry.h@{thread\_sysMon\_entry.h}!LIFE\_BEAT\_PERIOD\_DEMO\_MODE@{LIFE\_BEAT\_PERIOD\_DEMO\_MODE}}
+\index{LIFE\_BEAT\_PERIOD\_DEMO\_MODE@{LIFE\_BEAT\_PERIOD\_DEMO\_MODE}!thread\_sysMon\_entry.h@{thread\_sysMon\_entry.h}}
+\doxysubsubsection{\texorpdfstring{LIFE\_BEAT\_PERIOD\_DEMO\_MODE}{LIFE\_BEAT\_PERIOD\_DEMO\_MODE}}
+{\footnotesize\ttfamily \#define LIFE\+\_\+\+BEAT\+\_\+\+PERIOD\+\_\+\+DEMO\+\_\+\+MODE~1200000}
+
+
+
+Life beat period in msecs. (20 minutes) 
+
+\Hypertarget{thread__sys_mon__entry_8h_a887edfee6c60e0565cd0d3fa5274de4a}\label{thread__sys_mon__entry_8h_a887edfee6c60e0565cd0d3fa5274de4a} 
+\index{thread\_sysMon\_entry.h@{thread\_sysMon\_entry.h}!THREAD\_ID\_AUDIO@{THREAD\_ID\_AUDIO}}
+\index{THREAD\_ID\_AUDIO@{THREAD\_ID\_AUDIO}!thread\_sysMon\_entry.h@{thread\_sysMon\_entry.h}}
+\doxysubsubsection{\texorpdfstring{THREAD\_ID\_AUDIO}{THREAD\_ID\_AUDIO}}
+{\footnotesize\ttfamily \#define THREAD\+\_\+\+ID\+\_\+\+AUDIO~0x00000040}
+
+\Hypertarget{thread__sys_mon__entry_8h_a87f9c3494b99c085e557483bb23d4ea6}\label{thread__sys_mon__entry_8h_a87f9c3494b99c085e557483bb23d4ea6} 
+\index{thread\_sysMon\_entry.h@{thread\_sysMon\_entry.h}!THREAD\_ID\_COMM@{THREAD\_ID\_COMM}}
+\index{THREAD\_ID\_COMM@{THREAD\_ID\_COMM}!thread\_sysMon\_entry.h@{thread\_sysMon\_entry.h}}
+\doxysubsubsection{\texorpdfstring{THREAD\_ID\_COMM}{THREAD\_ID\_COMM}}
+{\footnotesize\ttfamily \#define THREAD\+\_\+\+ID\+\_\+\+COMM~0x00000004}
+
+\Hypertarget{thread__sys_mon__entry_8h_a514305b2188f0da5b2c2ae10f716b8c9}\label{thread__sys_mon__entry_8h_a514305b2188f0da5b2c2ae10f716b8c9} 
+\index{thread\_sysMon\_entry.h@{thread\_sysMon\_entry.h}!THREAD\_ID\_CORE@{THREAD\_ID\_CORE}}
+\index{THREAD\_ID\_CORE@{THREAD\_ID\_CORE}!thread\_sysMon\_entry.h@{thread\_sysMon\_entry.h}}
+\doxysubsubsection{\texorpdfstring{THREAD\_ID\_CORE}{THREAD\_ID\_CORE}}
+{\footnotesize\ttfamily \#define THREAD\+\_\+\+ID\+\_\+\+CORE~0x00000002}
+
+\Hypertarget{thread__sys_mon__entry_8h_a7682bd277b4acc684f7596b2d1bd5e9e}\label{thread__sys_mon__entry_8h_a7682bd277b4acc684f7596b2d1bd5e9e} 
+\index{thread\_sysMon\_entry.h@{thread\_sysMon\_entry.h}!THREAD\_ID\_DEFIB@{THREAD\_ID\_DEFIB}}
+\index{THREAD\_ID\_DEFIB@{THREAD\_ID\_DEFIB}!thread\_sysMon\_entry.h@{thread\_sysMon\_entry.h}}
+\doxysubsubsection{\texorpdfstring{THREAD\_ID\_DEFIB}{THREAD\_ID\_DEFIB}}
+{\footnotesize\ttfamily \#define THREAD\+\_\+\+ID\+\_\+\+DEFIB~0x00000020}
+
+\Hypertarget{thread__sys_mon__entry_8h_aede3ab818f794f96d0bea4439c321e96}\label{thread__sys_mon__entry_8h_aede3ab818f794f96d0bea4439c321e96} 
+\index{thread\_sysMon\_entry.h@{thread\_sysMon\_entry.h}!THREAD\_ID\_DRD@{THREAD\_ID\_DRD}}
+\index{THREAD\_ID\_DRD@{THREAD\_ID\_DRD}!thread\_sysMon\_entry.h@{thread\_sysMon\_entry.h}}
+\doxysubsubsection{\texorpdfstring{THREAD\_ID\_DRD}{THREAD\_ID\_DRD}}
+{\footnotesize\ttfamily \#define THREAD\+\_\+\+ID\+\_\+\+DRD~0x00000008}
+
+\Hypertarget{thread__sys_mon__entry_8h_a473ebc074de914b82ee781227c986e3d}\label{thread__sys_mon__entry_8h_a473ebc074de914b82ee781227c986e3d} 
+\index{thread\_sysMon\_entry.h@{thread\_sysMon\_entry.h}!THREAD\_ID\_HMI@{THREAD\_ID\_HMI}}
+\index{THREAD\_ID\_HMI@{THREAD\_ID\_HMI}!thread\_sysMon\_entry.h@{thread\_sysMon\_entry.h}}
+\doxysubsubsection{\texorpdfstring{THREAD\_ID\_HMI}{THREAD\_ID\_HMI}}
+{\footnotesize\ttfamily \#define THREAD\+\_\+\+ID\+\_\+\+HMI~0x00000010}
+
+\Hypertarget{thread__sys_mon__entry_8h_ac23ca2ec8e0a451c3ac54169c660044d}\label{thread__sys_mon__entry_8h_ac23ca2ec8e0a451c3ac54169c660044d} 
+\index{thread\_sysMon\_entry.h@{thread\_sysMon\_entry.h}!THREAD\_ID\_PATMON@{THREAD\_ID\_PATMON}}
+\index{THREAD\_ID\_PATMON@{THREAD\_ID\_PATMON}!thread\_sysMon\_entry.h@{thread\_sysMon\_entry.h}}
+\doxysubsubsection{\texorpdfstring{THREAD\_ID\_PATMON}{THREAD\_ID\_PATMON}}
+{\footnotesize\ttfamily \#define THREAD\+\_\+\+ID\+\_\+\+PATMON~0x00000080}
+
+\Hypertarget{thread__sys_mon__entry_8h_aea5497ec35d8ed914f402a9df7380c9d}\label{thread__sys_mon__entry_8h_aea5497ec35d8ed914f402a9df7380c9d} 
+\index{thread\_sysMon\_entry.h@{thread\_sysMon\_entry.h}!THREAD\_ID\_RECORDER@{THREAD\_ID\_RECORDER}}
+\index{THREAD\_ID\_RECORDER@{THREAD\_ID\_RECORDER}!thread\_sysMon\_entry.h@{thread\_sysMon\_entry.h}}
+\doxysubsubsection{\texorpdfstring{THREAD\_ID\_RECORDER}{THREAD\_ID\_RECORDER}}
+{\footnotesize\ttfamily \#define THREAD\+\_\+\+ID\+\_\+\+RECORDER~0x00000100}
+
+\Hypertarget{thread__sys_mon__entry_8h_a82297c0942a102d58184495af7ad5536}\label{thread__sys_mon__entry_8h_a82297c0942a102d58184495af7ad5536} 
+\index{thread\_sysMon\_entry.h@{thread\_sysMon\_entry.h}!THREAD\_ID\_sMON@{THREAD\_ID\_sMON}}
+\index{THREAD\_ID\_sMON@{THREAD\_ID\_sMON}!thread\_sysMon\_entry.h@{thread\_sysMon\_entry.h}}
+\doxysubsubsection{\texorpdfstring{THREAD\_ID\_sMON}{THREAD\_ID\_sMON}}
+{\footnotesize\ttfamily \#define THREAD\+\_\+\+ID\+\_\+s\+MON~0x00000001}
+
+\Hypertarget{thread__sys_mon__entry_8h_a9f11c581b8473ed601e6775d73677963}\label{thread__sys_mon__entry_8h_a9f11c581b8473ed601e6775d73677963} 
+\index{thread\_sysMon\_entry.h@{thread\_sysMon\_entry.h}!UTC\_MAX@{UTC\_MAX}}
+\index{UTC\_MAX@{UTC\_MAX}!thread\_sysMon\_entry.h@{thread\_sysMon\_entry.h}}
+\doxysubsubsection{\texorpdfstring{UTC\_MAX}{UTC\_MAX}}
+{\footnotesize\ttfamily \#define UTC\+\_\+\+MAX~14}
+
+\Hypertarget{thread__sys_mon__entry_8h_ac17b23acc5ad2bbb15e363fd5a5937f2}\label{thread__sys_mon__entry_8h_ac17b23acc5ad2bbb15e363fd5a5937f2} 
+\index{thread\_sysMon\_entry.h@{thread\_sysMon\_entry.h}!UTC\_MIN@{UTC\_MIN}}
+\index{UTC\_MIN@{UTC\_MIN}!thread\_sysMon\_entry.h@{thread\_sysMon\_entry.h}}
+\doxysubsubsection{\texorpdfstring{UTC\_MIN}{UTC\_MIN}}
+{\footnotesize\ttfamily \#define UTC\+\_\+\+MIN~-\/12}
+
+\Hypertarget{thread__sys_mon__entry_8h_a6957755bf76bc83aba81209a569e68e3}\label{thread__sys_mon__entry_8h_a6957755bf76bc83aba81209a569e68e3} 
+\index{thread\_sysMon\_entry.h@{thread\_sysMon\_entry.h}!WAKEUP\_POWERON@{WAKEUP\_POWERON}}
+\index{WAKEUP\_POWERON@{WAKEUP\_POWERON}!thread\_sysMon\_entry.h@{thread\_sysMon\_entry.h}}
+\doxysubsubsection{\texorpdfstring{WAKEUP\_POWERON}{WAKEUP\_POWERON}}
+{\footnotesize\ttfamily \#define WAKEUP\+\_\+\+POWERON~10}
+
+
+
+Force the GPIO to ON to maintain the power. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{thread__sys_mon__entry_8h_ab14f7437b50af474b3ed633fcf53e423}\label{thread__sys_mon__entry_8h_ab14f7437b50af474b3ed633fcf53e423} 
+\index{thread\_sysMon\_entry.h@{thread\_sysMon\_entry.h}!bsp\_clock\_init\_Reconfigure@{bsp\_clock\_init\_Reconfigure}}
+\index{bsp\_clock\_init\_Reconfigure@{bsp\_clock\_init\_Reconfigure}!thread\_sysMon\_entry.h@{thread\_sysMon\_entry.h}}
+\doxysubsubsection{\texorpdfstring{bsp\_clock\_init\_Reconfigure()}{bsp\_clock\_init\_Reconfigure()}}
+{\footnotesize\ttfamily void bsp\+\_\+clock\+\_\+init\+\_\+\+Reconfigure (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+PLL Source clock is always the main oscillator.
+
+Need to start PLL source clock and let it stabilize before starting PLL
+
+Set PLL Divider.
+
+Set PLL Multiplier.
+
+PLL Source clock is always the main oscillator.
+
+Wait for PLL clock source to stabilize
+
+If the system clock has failed to start call the unrecoverable error handler.
+
+MOCO, LOCO, and subclock do not have stabilization flags that can be checked.
+
+Wait for clock source to stabilize
+
+Set which clock to use for system clock and divisors for all system clocks.
+
+If the system clock has failed to be configured properly call the unrecoverable error handler.Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__sys_mon__entry_8h_ab14f7437b50af474b3ed633fcf53e423_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__sys_mon__entry_8h_a0d2a806043e6e3322c75bb359f06500f}\label{thread__sys_mon__entry_8h_a0d2a806043e6e3322c75bb359f06500f} 
+\index{thread\_sysMon\_entry.h@{thread\_sysMon\_entry.h}!Check\_Device\_Led\_Status@{Check\_Device\_Led\_Status}}
+\index{Check\_Device\_Led\_Status@{Check\_Device\_Led\_Status}!thread\_sysMon\_entry.h@{thread\_sysMon\_entry.h}}
+\doxysubsubsection{\texorpdfstring{Check\_Device\_Led\_Status()}{Check\_Device\_Led\_Status()}}
+{\footnotesize\ttfamily void Check\+\_\+\+Device\+\_\+\+Led\+\_\+\+Status (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Determine if status led must be on. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__sys_mon__entry_8h_a0d2a806043e6e3322c75bb359f06500f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__sys_mon__entry_8h_a0d2a806043e6e3322c75bb359f06500f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__sys_mon__entry_8h_a86d6de0ddbdd8704798336aa29003fb5}\label{thread__sys_mon__entry_8h_a86d6de0ddbdd8704798336aa29003fb5} 
+\index{thread\_sysMon\_entry.h@{thread\_sysMon\_entry.h}!Check\_Test\_Abort\_User@{Check\_Test\_Abort\_User}}
+\index{Check\_Test\_Abort\_User@{Check\_Test\_Abort\_User}!thread\_sysMon\_entry.h@{thread\_sysMon\_entry.h}}
+\doxysubsubsection{\texorpdfstring{Check\_Test\_Abort\_User()}{Check\_Test\_Abort\_User()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} Check\+\_\+\+Test\+\_\+\+Abort\+\_\+\+User (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_d_b___t_e_s_t___r_e_s_u_l_t__t}{DB\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Result }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Check if user abort running test. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Result} & Pointer to test result\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True or False 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=299pt]{thread__sys_mon__entry_8h_a86d6de0ddbdd8704798336aa29003fb5_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__sys_mon__entry_8h_a86d6de0ddbdd8704798336aa29003fb5_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__sys_mon__entry_8h_ac9febdbd1dca2289134e4a83fd008574}\label{thread__sys_mon__entry_8h_ac9febdbd1dca2289134e4a83fd008574} 
+\index{thread\_sysMon\_entry.h@{thread\_sysMon\_entry.h}!Device\_pw@{Device\_pw}}
+\index{Device\_pw@{Device\_pw}!thread\_sysMon\_entry.h@{thread\_sysMon\_entry.h}}
+\doxysubsubsection{\texorpdfstring{Device\_pw()}{Device\_pw()}}
+{\footnotesize\ttfamily void Device\+\_\+pw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Password,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Device\+\_\+sn,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}}}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Function that report if the device is in mode DEMO or not. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+DEMO mode
+\end{DoxyReturn}
+Function that report if the device is in mode DEMO or not
+
+
+\begin{DoxyParams}{Parameters}
+{\em aux} & aux variable to set DEMO mode\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none
+\end{DoxyReturn}
+Generates the device password for USB operation based on device serial number
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Password} & generated device USB password \\
+\hline
+{\em p\+Device\+\_\+sn} & device serial number \\
+\hline
+{\em size} & number of bytes to process\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__sys_mon__entry_8h_ac9febdbd1dca2289134e4a83fd008574_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__sys_mon__entry_8h_ac9febdbd1dca2289134e4a83fd008574_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__sys_mon__entry_8h_adce4182129c1b341756893a8c387e2b7}\label{thread__sys_mon__entry_8h_adce4182129c1b341756893a8c387e2b7} 
+\index{thread\_sysMon\_entry.h@{thread\_sysMon\_entry.h}!Electrodes\_Get\_Data@{Electrodes\_Get\_Data}}
+\index{Electrodes\_Get\_Data@{Electrodes\_Get\_Data}!thread\_sysMon\_entry.h@{thread\_sysMon\_entry.h}}
+\doxysubsubsection{\texorpdfstring{Electrodes\_Get\_Data()}{Electrodes\_Get\_Data()}}
+{\footnotesize\ttfamily void Electrodes\+\_\+\+Get\+\_\+\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_e_l_e_c_t_r_o_d_e_s___d_a_t_a__t}{ELECTRODES\+\_\+\+DATA\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Get the electrodes data (sn, info and event register) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Data} & pointer to electrodes structure\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__sys_mon__entry_8h_adce4182129c1b341756893a8c387e2b7_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__sys_mon__entry_8h_aeeb458bcec8909373038cfd816e475db}\label{thread__sys_mon__entry_8h_aeeb458bcec8909373038cfd816e475db} 
+\index{thread\_sysMon\_entry.h@{thread\_sysMon\_entry.h}!Electrodes\_Get\_Signature@{Electrodes\_Get\_Signature}}
+\index{Electrodes\_Get\_Signature@{Electrodes\_Get\_Signature}!thread\_sysMon\_entry.h@{thread\_sysMon\_entry.h}}
+\doxysubsubsection{\texorpdfstring{Electrodes\_Get\_Signature()}{Electrodes\_Get\_Signature()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{thread__pat_mon__hal_8h_ab5a454b85186a6663fc81c4685af3281}{EL\+\_\+\+SIGN\+\_\+e}} Electrodes\+\_\+\+Get\+\_\+\+Signature (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Get electrodes signature. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+electrodes signature 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__sys_mon__entry_8h_aeeb458bcec8909373038cfd816e475db_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__sys_mon__entry_8h_aeeb458bcec8909373038cfd816e475db_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__sys_mon__entry_8h_adf630b74d86769125fbc7c5355695cdc}\label{thread__sys_mon__entry_8h_adf630b74d86769125fbc7c5355695cdc} 
+\index{thread\_sysMon\_entry.h@{thread\_sysMon\_entry.h}!Electrodes\_Register\_Event@{Electrodes\_Register\_Event}}
+\index{Electrodes\_Register\_Event@{Electrodes\_Register\_Event}!thread\_sysMon\_entry.h@{thread\_sysMon\_entry.h}}
+\doxysubsubsection{\texorpdfstring{Electrodes\_Register\_Event()}{Electrodes\_Register\_Event()}}
+{\footnotesize\ttfamily void Electrodes\+\_\+\+Register\+\_\+\+Event (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Command to register electrodes event. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__sys_mon__entry_8h_adf630b74d86769125fbc7c5355695cdc_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__sys_mon__entry_8h_adf630b74d86769125fbc7c5355695cdc_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__sys_mon__entry_8h_a90fd604d6e8ca2b285c486b7f837956f}\label{thread__sys_mon__entry_8h_a90fd604d6e8ca2b285c486b7f837956f} 
+\index{thread\_sysMon\_entry.h@{thread\_sysMon\_entry.h}!Electrodes\_Register\_Shock@{Electrodes\_Register\_Shock}}
+\index{Electrodes\_Register\_Shock@{Electrodes\_Register\_Shock}!thread\_sysMon\_entry.h@{thread\_sysMon\_entry.h}}
+\doxysubsubsection{\texorpdfstring{Electrodes\_Register\_Shock()}{Electrodes\_Register\_Shock()}}
+{\footnotesize\ttfamily void Electrodes\+\_\+\+Register\+\_\+\+Shock (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Command to register shock sending alert. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__sys_mon__entry_8h_a90fd604d6e8ca2b285c486b7f837956f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__sys_mon__entry_8h_a90fd604d6e8ca2b285c486b7f837956f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__sys_mon__entry_8h_a5d710674bd8ab574159b5f0d01d1d67f}\label{thread__sys_mon__entry_8h_a5d710674bd8ab574159b5f0d01d1d67f} 
+\index{thread\_sysMon\_entry.h@{thread\_sysMon\_entry.h}!Get\_NV\_Data@{Get\_NV\_Data}}
+\index{Get\_NV\_Data@{Get\_NV\_Data}!thread\_sysMon\_entry.h@{thread\_sysMon\_entry.h}}
+\doxysubsubsection{\texorpdfstring{Get\_NV\_Data()}{Get\_NV\_Data()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_n_v___d_a_t_a__t}{NV\+\_\+\+DATA\+\_\+t}} \texorpdfstring{$\ast$}{*} Get\+\_\+\+NV\+\_\+\+Data (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Function that gets the non volatile data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to nv\+\_\+data 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__sys_mon__entry_8h_a5d710674bd8ab574159b5f0d01d1d67f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__sys_mon__entry_8h_aebbdcccc2dcf3573e1ec3761e55c998c}\label{thread__sys_mon__entry_8h_aebbdcccc2dcf3573e1ec3761e55c998c} 
+\index{thread\_sysMon\_entry.h@{thread\_sysMon\_entry.h}!Get\_NV\_Data\_Block@{Get\_NV\_Data\_Block}}
+\index{Get\_NV\_Data\_Block@{Get\_NV\_Data\_Block}!thread\_sysMon\_entry.h@{thread\_sysMon\_entry.h}}
+\doxysubsubsection{\texorpdfstring{Get\_NV\_Data\_Block()}{Get\_NV\_Data\_Block()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_n_v___d_a_t_a___b_l_o_c_k__t}{NV\+\_\+\+DATA\+\_\+\+BLOCK\+\_\+t}} \texorpdfstring{$\ast$}{*} Get\+\_\+\+NV\+\_\+\+Data\+\_\+\+Block (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Function that gets the second block of the non volatile data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to nv\+\_\+data 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__sys_mon__entry_8h_aebbdcccc2dcf3573e1ec3761e55c998c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__sys_mon__entry_8h_aa1af180c605ec797a038deb05c38898a}\label{thread__sys_mon__entry_8h_aa1af180c605ec797a038deb05c38898a} 
+\index{thread\_sysMon\_entry.h@{thread\_sysMon\_entry.h}!Is\_Sysmon\_Task\_Initialized@{Is\_Sysmon\_Task\_Initialized}}
+\index{Is\_Sysmon\_Task\_Initialized@{Is\_Sysmon\_Task\_Initialized}!thread\_sysMon\_entry.h@{thread\_sysMon\_entry.h}}
+\doxysubsubsection{\texorpdfstring{Is\_Sysmon\_Task\_Initialized()}{Is\_Sysmon\_Task\_Initialized()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} Is\+\_\+\+Sysmon\+\_\+\+Task\+\_\+\+Initialized (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Is task initialized? 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+flag system monitor task 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__sys_mon__entry_8h_aa1af180c605ec797a038deb05c38898a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__sys_mon__entry_8h_a04996a39aeb722a8df6c6643864cc670}\label{thread__sys_mon__entry_8h_a04996a39aeb722a8df6c6643864cc670} 
+\index{thread\_sysMon\_entry.h@{thread\_sysMon\_entry.h}!Is\_Test\_Mode@{Is\_Test\_Mode}}
+\index{Is\_Test\_Mode@{Is\_Test\_Mode}!thread\_sysMon\_entry.h@{thread\_sysMon\_entry.h}}
+\doxysubsubsection{\texorpdfstring{Is\_Test\_Mode()}{Is\_Test\_Mode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} Is\+\_\+\+Test\+\_\+\+Mode (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Function that report if the devioce is in test mode or not. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+test mode 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__sys_mon__entry_8h_a04996a39aeb722a8df6c6643864cc670_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__sys_mon__entry_8h_a33ca5a33ab10af89dcb290e9d052b724}\label{thread__sys_mon__entry_8h_a33ca5a33ab10af89dcb290e9d052b724} 
+\index{thread\_sysMon\_entry.h@{thread\_sysMon\_entry.h}!Is\_Test\_Mode\_Montador@{Is\_Test\_Mode\_Montador}}
+\index{Is\_Test\_Mode\_Montador@{Is\_Test\_Mode\_Montador}!thread\_sysMon\_entry.h@{thread\_sysMon\_entry.h}}
+\doxysubsubsection{\texorpdfstring{Is\_Test\_Mode\_Montador()}{Is\_Test\_Mode\_Montador()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} Is\+\_\+\+Test\+\_\+\+Mode\+\_\+\+Montador (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Function that report if the devioce is in test mode montador or not. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+montador mode 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__sys_mon__entry_8h_a33ca5a33ab10af89dcb290e9d052b724_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__sys_mon__entry_8h_a2c5836202a13b4d23eb7b1b9211db6ac}\label{thread__sys_mon__entry_8h_a2c5836202a13b4d23eb7b1b9211db6ac} 
+\index{thread\_sysMon\_entry.h@{thread\_sysMon\_entry.h}!Lock\_on\_Panic@{Lock\_on\_Panic}}
+\index{Lock\_on\_Panic@{Lock\_on\_Panic}!thread\_sysMon\_entry.h@{thread\_sysMon\_entry.h}}
+\doxysubsubsection{\texorpdfstring{Lock\_on\_Panic()}{Lock\_on\_Panic()}}
+{\footnotesize\ttfamily void Lock\+\_\+on\+\_\+\+Panic (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{error,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{num }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Lock the device because the program can not be executed normally. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__sys_mon__entry_8h_a2c5836202a13b4d23eb7b1b9211db6ac_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__sys_mon__entry_8h_a2c5836202a13b4d23eb7b1b9211db6ac_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__sys_mon__entry_8h_a7514b80ba83366eb1792a5de56de25d1}\label{thread__sys_mon__entry_8h_a7514b80ba83366eb1792a5de56de25d1} 
+\index{thread\_sysMon\_entry.h@{thread\_sysMon\_entry.h}!NV\_Data\_Read@{NV\_Data\_Read}}
+\index{NV\_Data\_Read@{NV\_Data\_Read}!thread\_sysMon\_entry.h@{thread\_sysMon\_entry.h}}
+\doxysubsubsection{\texorpdfstring{NV\_Data\_Read()}{NV\_Data\_Read()}}
+{\footnotesize\ttfamily void NV\+\_\+\+Data\+\_\+\+Read (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_n_v___d_a_t_a__t}{NV\+\_\+\+DATA\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+NV\+\_\+data,  }\item[{\mbox{\hyperlink{struct_n_v___d_a_t_a___b_l_o_c_k__t}{NV\+\_\+\+DATA\+\_\+\+BLOCK\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+NV\+\_\+data\+\_\+block }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Function that gets the non volatile data from the internal Data Flash. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+NV\+\_\+data} & to the structure to fill \\
+\hline
+{\em p\+NV\+\_\+data\+\_\+block} & to the structure to fill\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__sys_mon__entry_8h_a7514b80ba83366eb1792a5de56de25d1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__sys_mon__entry_8h_a7514b80ba83366eb1792a5de56de25d1_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__sys_mon__entry_8h_ae158ddc17edc766e6adc7f0c1988f2b9}\label{thread__sys_mon__entry_8h_ae158ddc17edc766e6adc7f0c1988f2b9} 
+\index{thread\_sysMon\_entry.h@{thread\_sysMon\_entry.h}!NV\_Data\_Write@{NV\_Data\_Write}}
+\index{NV\_Data\_Write@{NV\_Data\_Write}!thread\_sysMon\_entry.h@{thread\_sysMon\_entry.h}}
+\doxysubsubsection{\texorpdfstring{NV\_Data\_Write()}{NV\_Data\_Write()}}
+{\footnotesize\ttfamily void NV\+\_\+\+Data\+\_\+\+Write (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_n_v___d_a_t_a__t}{NV\+\_\+\+DATA\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+NV\+\_\+data,  }\item[{\mbox{\hyperlink{struct_n_v___d_a_t_a___b_l_o_c_k__t}{NV\+\_\+\+DATA\+\_\+\+BLOCK\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+NV\+\_\+data\+\_\+block }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Function that updates the test id and saves it to data flash memory. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+NV\+\_\+data} & to the structure to write in the Data Flash\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__sys_mon__entry_8h_ae158ddc17edc766e6adc7f0c1988f2b9_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__sys_mon__entry_8h_ae158ddc17edc766e6adc7f0c1988f2b9_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__sys_mon__entry_8h_aea83c8517300aa0759f0088c0f2dfa2f}\label{thread__sys_mon__entry_8h_aea83c8517300aa0759f0088c0f2dfa2f} 
+\index{thread\_sysMon\_entry.h@{thread\_sysMon\_entry.h}!Pasatiempos@{Pasatiempos}}
+\index{Pasatiempos@{Pasatiempos}!thread\_sysMon\_entry.h@{thread\_sysMon\_entry.h}}
+\doxysubsubsection{\texorpdfstring{Pasatiempos()}{Pasatiempos()}}
+{\footnotesize\ttfamily void Pasatiempos (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}}}]{n\+Ticks }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Pass time doing nothing, but refreshing the watchdog !!! 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n\+Ticks} & number of ticks to stay in the hamaca\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=264pt]{thread__sys_mon__entry_8h_aea83c8517300aa0759f0088c0f2dfa2f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__sys_mon__entry_8h_aea83c8517300aa0759f0088c0f2dfa2f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__sys_mon__entry_8h_ae266dd5355d4644da21295b8a95ca1af}\label{thread__sys_mon__entry_8h_ae266dd5355d4644da21295b8a95ca1af} 
+\index{thread\_sysMon\_entry.h@{thread\_sysMon\_entry.h}!Pasatiempos\_Listening@{Pasatiempos\_Listening}}
+\index{Pasatiempos\_Listening@{Pasatiempos\_Listening}!thread\_sysMon\_entry.h@{thread\_sysMon\_entry.h}}
+\doxysubsubsection{\texorpdfstring{Pasatiempos\_Listening()}{Pasatiempos\_Listening()}}
+{\footnotesize\ttfamily void Pasatiempos\+\_\+\+Listening (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Pass time doing nothing while is listening an audio message and refreshing the watchdog !!! 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{thread__sys_mon__entry_8h_ae266dd5355d4644da21295b8a95ca1af_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__sys_mon__entry_8h_ae266dd5355d4644da21295b8a95ca1af_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__sys_mon__entry_8h_a4f1d875d2e1ad5991d6ce2ba7c56af91}\label{thread__sys_mon__entry_8h_a4f1d875d2e1ad5991d6ce2ba7c56af91} 
+\index{thread\_sysMon\_entry.h@{thread\_sysMon\_entry.h}!R100\_PowerOff@{R100\_PowerOff}}
+\index{R100\_PowerOff@{R100\_PowerOff}!thread\_sysMon\_entry.h@{thread\_sysMon\_entry.h}}
+\doxysubsubsection{\texorpdfstring{R100\_PowerOff()}{R100\_PowerOff()}}
+{\footnotesize\ttfamily void R100\+\_\+\+Power\+Off (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Power off the device programming an automatic power-\/on. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__sys_mon__entry_8h_a4f1d875d2e1ad5991d6ce2ba7c56af91_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__sys_mon__entry_8h_a4f1d875d2e1ad5991d6ce2ba7c56af91_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__sys_mon__entry_8h_a5d3acf9068cad21d046f9d8834ce6946}\label{thread__sys_mon__entry_8h_a5d3acf9068cad21d046f9d8834ce6946} 
+\index{thread\_sysMon\_entry.h@{thread\_sysMon\_entry.h}!R100\_PowerOff\_RTC@{R100\_PowerOff\_RTC}}
+\index{R100\_PowerOff\_RTC@{R100\_PowerOff\_RTC}!thread\_sysMon\_entry.h@{thread\_sysMon\_entry.h}}
+\doxysubsubsection{\texorpdfstring{R100\_PowerOff\_RTC()}{R100\_PowerOff\_RTC()}}
+{\footnotesize\ttfamily void R100\+\_\+\+Power\+Off\+\_\+\+RTC (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Power off the device programming an automatic power-\/on. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__sys_mon__entry_8h_a5d3acf9068cad21d046f9d8834ce6946_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__sys_mon__entry_8h_a5d3acf9068cad21d046f9d8834ce6946_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__sys_mon__entry_8h_a6f3942cc79b24bc2c4b1aaa93e44351e}\label{thread__sys_mon__entry_8h_a6f3942cc79b24bc2c4b1aaa93e44351e} 
+\index{thread\_sysMon\_entry.h@{thread\_sysMon\_entry.h}!R100\_Program\_Autotest@{R100\_Program\_Autotest}}
+\index{R100\_Program\_Autotest@{R100\_Program\_Autotest}!thread\_sysMon\_entry.h@{thread\_sysMon\_entry.h}}
+\doxysubsubsection{\texorpdfstring{R100\_Program\_Autotest()}{R100\_Program\_Autotest()}}
+{\footnotesize\ttfamily void R100\+\_\+\+Program\+\_\+\+Autotest (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Program the auto test to be executed at least 1 hour after the last manual power off. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__sys_mon__entry_8h_a6f3942cc79b24bc2c4b1aaa93e44351e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__sys_mon__entry_8h_a6f3942cc79b24bc2c4b1aaa93e44351e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__sys_mon__entry_8h_aab815986ee52dfb7489873f856e3ecb9}\label{thread__sys_mon__entry_8h_aab815986ee52dfb7489873f856e3ecb9} 
+\index{thread\_sysMon\_entry.h@{thread\_sysMon\_entry.h}!Refresh\_Wdg@{Refresh\_Wdg}}
+\index{Refresh\_Wdg@{Refresh\_Wdg}!thread\_sysMon\_entry.h@{thread\_sysMon\_entry.h}}
+\doxysubsubsection{\texorpdfstring{Refresh\_Wdg()}{Refresh\_Wdg()}}
+{\footnotesize\ttfamily void Refresh\+\_\+\+Wdg (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}, {\ttfamily [inline]}}
+
+
+
+Refresh the watchdog timer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__sys_mon__entry_8h_aab815986ee52dfb7489873f856e3ecb9_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__sys_mon__entry_8h_a99fe1a42e34a2be16886a951d9712fd7}\label{thread__sys_mon__entry_8h_a99fe1a42e34a2be16886a951d9712fd7} 
+\index{thread\_sysMon\_entry.h@{thread\_sysMon\_entry.h}!Save\_Comms\_Error@{Save\_Comms\_Error}}
+\index{Save\_Comms\_Error@{Save\_Comms\_Error}!thread\_sysMon\_entry.h@{thread\_sysMon\_entry.h}}
+\doxysubsubsection{\texorpdfstring{Save\_Comms\_Error()}{Save\_Comms\_Error()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Save\+\_\+\+Comms\+\_\+\+Error (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Save Communication error. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em error} & error identifier\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__sys_mon__entry_8h_a99fe1a42e34a2be16886a951d9712fd7_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__sys_mon__entry_8h_afa9118ccd2053946dd4527c604ba3c98}\label{thread__sys_mon__entry_8h_afa9118ccd2053946dd4527c604ba3c98} 
+\index{thread\_sysMon\_entry.h@{thread\_sysMon\_entry.h}!Set\_Mode\_Demo@{Set\_Mode\_Demo}}
+\index{Set\_Mode\_Demo@{Set\_Mode\_Demo}!thread\_sysMon\_entry.h@{thread\_sysMon\_entry.h}}
+\doxysubsubsection{\texorpdfstring{Set\_Mode\_Demo()}{Set\_Mode\_Demo()}}
+{\footnotesize\ttfamily void Set\+\_\+\+Mode\+\_\+\+Demo (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}}}]{aux }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{thread__sys_mon__entry_8h_a4f834bab7058bdaecdf1eb4f9b4f8d00}\label{thread__sys_mon__entry_8h_a4f834bab7058bdaecdf1eb4f9b4f8d00} 
+\index{thread\_sysMon\_entry.h@{thread\_sysMon\_entry.h}!Set\_NV\_Data\_Error\_IF\_NOT\_SAT@{Set\_NV\_Data\_Error\_IF\_NOT\_SAT}}
+\index{Set\_NV\_Data\_Error\_IF\_NOT\_SAT@{Set\_NV\_Data\_Error\_IF\_NOT\_SAT}!thread\_sysMon\_entry.h@{thread\_sysMon\_entry.h}}
+\doxysubsubsection{\texorpdfstring{Set\_NV\_Data\_Error\_IF\_NOT\_SAT()}{Set\_NV\_Data\_Error\_IF\_NOT\_SAT()}}
+{\footnotesize\ttfamily void Set\+\_\+\+NV\+\_\+\+Data\+\_\+\+Error\+\_\+\+IF\+\_\+\+NOT\+\_\+\+SAT (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}}}]{error }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Function that sets the non volatile data error. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em error} & error identifier\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=305pt]{thread__sys_mon__entry_8h_a4f834bab7058bdaecdf1eb4f9b4f8d00_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__sys_mon__entry_8h_a4f834bab7058bdaecdf1eb4f9b4f8d00_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__sys_mon__entry_8h_ab5d13add30041382fa545103a702582f}\label{thread__sys_mon__entry_8h_ab5d13add30041382fa545103a702582f} 
+\index{thread\_sysMon\_entry.h@{thread\_sysMon\_entry.h}!Set\_NV\_Data\_Error\_IF\_NOT\_SAT\_Comms@{Set\_NV\_Data\_Error\_IF\_NOT\_SAT\_Comms}}
+\index{Set\_NV\_Data\_Error\_IF\_NOT\_SAT\_Comms@{Set\_NV\_Data\_Error\_IF\_NOT\_SAT\_Comms}!thread\_sysMon\_entry.h@{thread\_sysMon\_entry.h}}
+\doxysubsubsection{\texorpdfstring{Set\_NV\_Data\_Error\_IF\_NOT\_SAT\_Comms()}{Set\_NV\_Data\_Error\_IF\_NOT\_SAT\_Comms()}}
+{\footnotesize\ttfamily void Set\+\_\+\+NV\+\_\+\+Data\+\_\+\+Error\+\_\+\+IF\+\_\+\+NOT\+\_\+\+SAT\+\_\+\+Comms (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}}}]{error }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Function that sets the non volatile data error. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em error} & error identifier\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=305pt]{thread__sys_mon__entry_8h_ab5d13add30041382fa545103a702582f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__sys_mon__entry_8h_ab5d13add30041382fa545103a702582f_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{thread__sys_mon__entry_8h_a40996dbb57618650ec40ff1275299ec4}\label{thread__sys_mon__entry_8h_a40996dbb57618650ec40ff1275299ec4} 
+\index{thread\_sysMon\_entry.h@{thread\_sysMon\_entry.h}!global\_poweron\_event@{global\_poweron\_event}}
+\index{global\_poweron\_event@{global\_poweron\_event}!thread\_sysMon\_entry.h@{thread\_sysMon\_entry.h}}
+\doxysubsubsection{\texorpdfstring{global\_poweron\_event}{global\_poweron\_event}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} global\+\_\+poweron\+\_\+event\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Save Power On event. 
+
+\Hypertarget{thread__sys_mon__entry_8h_a387cde176445aa5bad41053b2b4a872c}\label{thread__sys_mon__entry_8h_a387cde176445aa5bad41053b2b4a872c} 
+\index{thread\_sysMon\_entry.h@{thread\_sysMon\_entry.h}!poweron\_event@{poweron\_event}}
+\index{poweron\_event@{poweron\_event}!thread\_sysMon\_entry.h@{thread\_sysMon\_entry.h}}
+\doxysubsubsection{\texorpdfstring{poweron\_event}{poweron\_event}}
+{\footnotesize\ttfamily \mbox{\hyperlink{types__app_8h_a7e34c706bde6f3522650864d7352ae86}{POWER\+\_\+\+ON\+\_\+\+SOURCE\+\_\+e}} poweron\+\_\+event\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Power event. 
+
+Power event. \Hypertarget{thread__sys_mon__entry_8h_a478b868b24be4f0bd5df6de2543b1fbb}\label{thread__sys_mon__entry_8h_a478b868b24be4f0bd5df6de2543b1fbb} 
+\index{thread\_sysMon\_entry.h@{thread\_sysMon\_entry.h}!thread\_supervisor@{thread\_supervisor}}
+\index{thread\_supervisor@{thread\_supervisor}!thread\_sysMon\_entry.h@{thread\_sysMon\_entry.h}}
+\doxysubsubsection{\texorpdfstring{thread\_supervisor}{thread\_supervisor}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} thread\+\_\+supervisor\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Thread supervisor. 
+
+\Hypertarget{thread__sys_mon__entry_8h_a15166a4c16208d4ed8a396f4a75f4466}\label{thread__sys_mon__entry_8h_a15166a4c16208d4ed8a396f4a75f4466} 
+\index{thread\_sysMon\_entry.h@{thread\_sysMon\_entry.h}!write\_elec\_last\_event@{write\_elec\_last\_event}}
+\index{write\_elec\_last\_event@{write\_elec\_last\_event}!thread\_sysMon\_entry.h@{thread\_sysMon\_entry.h}}
+\doxysubsubsection{\texorpdfstring{write\_elec\_last\_event}{write\_elec\_last\_event}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} write\+\_\+elec\+\_\+last\+\_\+event\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Write las electrodes registered event in test. 
+

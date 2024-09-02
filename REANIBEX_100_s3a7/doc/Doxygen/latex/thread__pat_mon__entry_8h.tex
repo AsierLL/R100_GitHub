@@ -1,0 +1,112 @@
+\doxysection{C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/thread\+\_\+pat\+Mon\+\_\+entry.h File Reference}
+\hypertarget{thread__pat_mon__entry_8h}{}\label{thread__pat_mon__entry_8h}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/thread\_patMon\_entry.h@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/thread\_patMon\_entry.h}}
+
+
+Header with functions related to the patient monitor task.  
+
+
+{\ttfamily \#include "{}event\+\_\+ids.\+h"{}}\newline
+Include dependency graph for thread\+\_\+pat\+Mon\+\_\+entry.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=237pt]{thread__pat_mon__entry_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__pat_mon__entry_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{event__ids_8h_a610cd7de90c58acf8dfb3345f1e53697}{EVENT\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{thread__pat_mon__entry_8h_ae01957c82315b5c82c3465cff9f341ec}{Check\+\_\+\+Impedance}} (void)
+\begin{DoxyCompactList}\small\item\em check the impedance segment to convert to an Event (this event is used in the AED state machine) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{thread__pat_mon__entry_8h_a3a5aefe249d158bad59ef4e7f4ea7dbd}{Wait\+\_\+\+For\+\_\+\+Sync}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} timeout)
+\begin{DoxyCompactList}\small\item\em waits for a QRS-\/\+SYNC pulse. The ECG signal is downsampled to 500 Hz the maximum considered heart-\/rate is 300 ppm = 1 QRS in 200 msecs the analyzed windows are 50 samples wide (corresponding to 100 ms) every 20 ms (10 samples). The detection must be made in Real Time According to regulations, the delay from the QRS pulse to the shock MUST be less than 60 msecs. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header with functions related to the patient monitor task. 
+
+\begin{DoxyVersion}{Version}
+v1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+16/01/2018 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+ltorres 
+\end{DoxyAuthor}
+\begin{DoxyWarning}{Warning}
+author date version .-\/ Edition 
+\end{DoxyWarning}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000088}{Bug}}]\end{DoxyRefDesc}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{thread__pat_mon__entry_8h_ae01957c82315b5c82c3465cff9f341ec}\label{thread__pat_mon__entry_8h_ae01957c82315b5c82c3465cff9f341ec} 
+\index{thread\_patMon\_entry.h@{thread\_patMon\_entry.h}!Check\_Impedance@{Check\_Impedance}}
+\index{Check\_Impedance@{Check\_Impedance}!thread\_patMon\_entry.h@{thread\_patMon\_entry.h}}
+\doxysubsubsection{\texorpdfstring{Check\_Impedance()}{Check\_Impedance()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{event__ids_8h_a610cd7de90c58acf8dfb3345f1e53697}{EVENT\+\_\+\+ID\+\_\+e}} Check\+\_\+\+Impedance (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+check the impedance segment to convert to an Event (this event is used in the AED state machine) 
+
+\begin{DoxyReturn}{Returns}
+The impedance event ... 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__pat_mon__entry_8h_ae01957c82315b5c82c3465cff9f341ec_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__pat_mon__entry_8h_ae01957c82315b5c82c3465cff9f341ec_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__pat_mon__entry_8h_a3a5aefe249d158bad59ef4e7f4ea7dbd}\label{thread__pat_mon__entry_8h_a3a5aefe249d158bad59ef4e7f4ea7dbd} 
+\index{thread\_patMon\_entry.h@{thread\_patMon\_entry.h}!Wait\_For\_Sync@{Wait\_For\_Sync}}
+\index{Wait\_For\_Sync@{Wait\_For\_Sync}!thread\_patMon\_entry.h@{thread\_patMon\_entry.h}}
+\doxysubsubsection{\texorpdfstring{Wait\_For\_Sync()}{Wait\_For\_Sync()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} Wait\+\_\+\+For\+\_\+\+Sync (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}}}]{timeout }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+waits for a QRS-\/\+SYNC pulse. The ECG signal is downsampled to 500 Hz the maximum considered heart-\/rate is 300 ppm = 1 QRS in 200 msecs the analyzed windows are 50 samples wide (corresponding to 100 ms) every 20 ms (10 samples). The detection must be made in Real Time According to regulations, the delay from the QRS pulse to the shock MUST be less than 60 msecs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em timeout} & timeout for the wait process in system ticks\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if QRS pulse is detected ... 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{thread__pat_mon__entry_8h_a3a5aefe249d158bad59ef4e7f4ea7dbd_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__pat_mon__entry_8h_a3a5aefe249d158bad59ef4e7f4ea7dbd_icgraph}
+\end{center}
+\end{figure}

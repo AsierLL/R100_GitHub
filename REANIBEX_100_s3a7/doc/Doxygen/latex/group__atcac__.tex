@@ -1,0 +1,190 @@
+\doxysection{Software crypto methods (atcac\+\_\+)}
+\hypertarget{group__atcac__}{}\label{group__atcac__}\index{Software crypto methods (atcac\_)@{Software crypto methods (atcac\_)}}
+
+
+These methods provide a software implementation of various crypto algorithms.  
+
+
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__atcac___gab6935877a2675bfc95af283fb43affb5}{ATCA\+\_\+\+ECC\+\_\+\+P256\+\_\+\+FIELD\+\_\+\+SIZE}}~(256 / 8)
+\item 
+\#define \mbox{\hyperlink{group__atcac___gadb06f3adddd74993ab0da4be3ea71441}{ATCA\+\_\+\+ECC\+\_\+\+P256\+\_\+\+PRIVATE\+\_\+\+KEY\+\_\+\+SIZE}}~(\mbox{\hyperlink{group__atcac___gab6935877a2675bfc95af283fb43affb5}{ATCA\+\_\+\+ECC\+\_\+\+P256\+\_\+\+FIELD\+\_\+\+SIZE}})
+\item 
+\#define \mbox{\hyperlink{group__atcac___ga6bcf19f52fbceb7801fc3216d528fb3c}{ATCA\+\_\+\+ECC\+\_\+\+P256\+\_\+\+PUBLIC\+\_\+\+KEY\+\_\+\+SIZE}}~(\mbox{\hyperlink{group__atcac___gab6935877a2675bfc95af283fb43affb5}{ATCA\+\_\+\+ECC\+\_\+\+P256\+\_\+\+FIELD\+\_\+\+SIZE}} \texorpdfstring{$\ast$}{*} 2)
+\item 
+\#define \mbox{\hyperlink{group__atcac___ga6eba254effebfbbb95381511fc7d80d5}{ATCA\+\_\+\+ECC\+\_\+\+P256\+\_\+\+SIGNATURE\+\_\+\+SIZE}}~(\mbox{\hyperlink{group__atcac___gab6935877a2675bfc95af283fb43affb5}{ATCA\+\_\+\+ECC\+\_\+\+P256\+\_\+\+FIELD\+\_\+\+SIZE}} \texorpdfstring{$\ast$}{*} 2)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{group__atcac___ga58283666b662f084155ba693870c1077}{atcac\+\_\+sw\+\_\+sha2\+\_\+256\+\_\+init}} (\mbox{\hyperlink{structatcac__sha2__256__ctx}{atcac\+\_\+sha2\+\_\+256\+\_\+ctx}} \texorpdfstring{$\ast$}{*}ctx)
+\item 
+int \mbox{\hyperlink{group__atcac___gab1a09fa1d854722cc667cea319ca9984}{atcac\+\_\+sw\+\_\+sha2\+\_\+256\+\_\+update}} (\mbox{\hyperlink{structatcac__sha2__256__ctx}{atcac\+\_\+sha2\+\_\+256\+\_\+ctx}} \texorpdfstring{$\ast$}{*}ctx, const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}data, size\+\_\+t data\+\_\+size)
+\item 
+int \mbox{\hyperlink{group__atcac___gae3a29931f2104cce481aa9ef1ab16fea}{atcac\+\_\+sw\+\_\+sha2\+\_\+256\+\_\+finish}} (\mbox{\hyperlink{structatcac__sha2__256__ctx}{atcac\+\_\+sha2\+\_\+256\+\_\+ctx}} \texorpdfstring{$\ast$}{*}ctx, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} digest\mbox{[}\mbox{\hyperlink{atca__crypto__sw_8h_a86364f6d07b86740f3170d9d1ca60641}{ATCA\+\_\+\+SHA2\+\_\+256\+\_\+\+DIGEST\+\_\+\+SIZE}}\mbox{]})
+\item 
+int \mbox{\hyperlink{group__atcac___ga63412270c4629874f2764171200c1b5c}{atcac\+\_\+sw\+\_\+sha2\+\_\+256}} (const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}data, size\+\_\+t data\+\_\+size, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} digest\mbox{[}\mbox{\hyperlink{atca__crypto__sw_8h_a86364f6d07b86740f3170d9d1ca60641}{ATCA\+\_\+\+SHA2\+\_\+256\+\_\+\+DIGEST\+\_\+\+SIZE}}\mbox{]})
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{group__atcac___ga4e23a2ff2f57f730a1490afaac2ea3dc}{atcac\+\_\+sha256\+\_\+hmac\+\_\+init}} (\mbox{\hyperlink{structatcac__hmac__sha256__ctx}{atcac\+\_\+hmac\+\_\+sha256\+\_\+ctx}} \texorpdfstring{$\ast$}{*}ctx, const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}key, const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} key\+\_\+len)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{group__atcac___gaa4493b637590b0d3f5da0bd66b386d8a}{atcac\+\_\+sha256\+\_\+hmac\+\_\+update}} (\mbox{\hyperlink{structatcac__hmac__sha256__ctx}{atcac\+\_\+hmac\+\_\+sha256\+\_\+ctx}} \texorpdfstring{$\ast$}{*}ctx, const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}data, size\+\_\+t data\+\_\+size)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{group__atcac___ga4aabb5258b261af2802b45a817fb7113}{atcac\+\_\+sha256\+\_\+hmac\+\_\+finish}} (\mbox{\hyperlink{structatcac__hmac__sha256__ctx}{atcac\+\_\+hmac\+\_\+sha256\+\_\+ctx}} \texorpdfstring{$\ast$}{*}ctx, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}digest, size\+\_\+t \texorpdfstring{$\ast$}{*}digest\+\_\+len)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{group__atcac___ga1598511b7077693ee99d160dbebfc16d}{atcac\+\_\+sha256\+\_\+hmac\+\_\+counter}} (\mbox{\hyperlink{structatcac__hmac__sha256__ctx}{atcac\+\_\+hmac\+\_\+sha256\+\_\+ctx}} \texorpdfstring{$\ast$}{*}ctx, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}label, size\+\_\+t label\+\_\+len, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}data, size\+\_\+t data\+\_\+len, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}digest, size\+\_\+t diglen)
+\item 
+int \mbox{\hyperlink{group__atcac___gaa61eee6f208a1633d35cdf8d628a6835}{atcac\+\_\+sw\+\_\+ecdsa\+\_\+verify\+\_\+p256}} (const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} msg\mbox{[}\mbox{\hyperlink{group__atcac___gab6935877a2675bfc95af283fb43affb5}{ATCA\+\_\+\+ECC\+\_\+\+P256\+\_\+\+FIELD\+\_\+\+SIZE}}\mbox{]}, const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} signature\mbox{[}\mbox{\hyperlink{group__atcac___ga6eba254effebfbbb95381511fc7d80d5}{ATCA\+\_\+\+ECC\+\_\+\+P256\+\_\+\+SIGNATURE\+\_\+\+SIZE}}\mbox{]}, const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} public\+\_\+key\mbox{[}\mbox{\hyperlink{group__atcac___ga6bcf19f52fbceb7801fc3216d528fb3c}{ATCA\+\_\+\+ECC\+\_\+\+P256\+\_\+\+PUBLIC\+\_\+\+KEY\+\_\+\+SIZE}}\mbox{]})
+\item 
+int \mbox{\hyperlink{group__atcac___ga0710d8bf5e92403c4026c32af39ad79e}{atcac\+\_\+sw\+\_\+random}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}data, size\+\_\+t data\+\_\+size)
+\item 
+int \mbox{\hyperlink{group__atcac___gabed03bcc1228768534ef4ee49df0ad09}{atcac\+\_\+sw\+\_\+sha1\+\_\+init}} (\mbox{\hyperlink{structatcac__sha1__ctx}{atcac\+\_\+sha1\+\_\+ctx}} \texorpdfstring{$\ast$}{*}ctx)
+\item 
+int \mbox{\hyperlink{group__atcac___ga65ff558306a88e0fbe2fc82bbe6a9c03}{atcac\+\_\+sw\+\_\+sha1\+\_\+update}} (\mbox{\hyperlink{structatcac__sha1__ctx}{atcac\+\_\+sha1\+\_\+ctx}} \texorpdfstring{$\ast$}{*}ctx, const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}data, size\+\_\+t data\+\_\+size)
+\item 
+int \mbox{\hyperlink{group__atcac___ga5589df2a639f61a4dc4ccedc9b5a5453}{atcac\+\_\+sw\+\_\+sha1\+\_\+finish}} (\mbox{\hyperlink{structatcac__sha1__ctx}{atcac\+\_\+sha1\+\_\+ctx}} \texorpdfstring{$\ast$}{*}ctx, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} digest\mbox{[}\mbox{\hyperlink{atca__crypto__sw_8h_adb94a0991eb670ff1bf90253dfea0bfa}{ATCA\+\_\+\+SHA1\+\_\+\+DIGEST\+\_\+\+SIZE}}\mbox{]})
+\item 
+int \mbox{\hyperlink{group__atcac___ga84b866657bf319dab2924c2db3a1e990}{atcac\+\_\+sw\+\_\+sha1}} (const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}data, size\+\_\+t data\+\_\+size, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} digest\mbox{[}\mbox{\hyperlink{atca__crypto__sw_8h_adb94a0991eb670ff1bf90253dfea0bfa}{ATCA\+\_\+\+SHA1\+\_\+\+DIGEST\+\_\+\+SIZE}}\mbox{]})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+These methods provide a software implementation of various crypto algorithms. 
+
+\hypertarget{md__c_1_2_users_2ivicente_2_desktop_2_b_r_a_n_c_h___a_c_c___w_i_f_i_2src_2_s_c_e_2crypto_2_r_e_a_d_m_e}{}\doxysubsubsection{crypto directory -\/ Purpose}\label{md__c_1_2_users_2ivicente_2_desktop_2_b_r_a_n_c_h___a_c_c___w_i_f_i_2src_2_s_c_e_2crypto_2_r_e_a_d_m_e}
+This directory contains software implementations of cryptographic functions. The functions at the base level are wrappers that will point to the final implementations of the software crypto functions. 
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{group__atcac___gab6935877a2675bfc95af283fb43affb5}\label{group__atcac___gab6935877a2675bfc95af283fb43affb5} 
+\index{Software crypto methods (atcac\_)@{Software crypto methods (atcac\_)}!ATCA\_ECC\_P256\_FIELD\_SIZE@{ATCA\_ECC\_P256\_FIELD\_SIZE}}
+\index{ATCA\_ECC\_P256\_FIELD\_SIZE@{ATCA\_ECC\_P256\_FIELD\_SIZE}!Software crypto methods (atcac\_)@{Software crypto methods (atcac\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_ECC\_P256\_FIELD\_SIZE}{ATCA\_ECC\_P256\_FIELD\_SIZE}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+ECC\+\_\+\+P256\+\_\+\+FIELD\+\_\+\+SIZE~(256 / 8)}
+
+\Hypertarget{group__atcac___gadb06f3adddd74993ab0da4be3ea71441}\label{group__atcac___gadb06f3adddd74993ab0da4be3ea71441} 
+\index{Software crypto methods (atcac\_)@{Software crypto methods (atcac\_)}!ATCA\_ECC\_P256\_PRIVATE\_KEY\_SIZE@{ATCA\_ECC\_P256\_PRIVATE\_KEY\_SIZE}}
+\index{ATCA\_ECC\_P256\_PRIVATE\_KEY\_SIZE@{ATCA\_ECC\_P256\_PRIVATE\_KEY\_SIZE}!Software crypto methods (atcac\_)@{Software crypto methods (atcac\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_ECC\_P256\_PRIVATE\_KEY\_SIZE}{ATCA\_ECC\_P256\_PRIVATE\_KEY\_SIZE}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+ECC\+\_\+\+P256\+\_\+\+PRIVATE\+\_\+\+KEY\+\_\+\+SIZE~(\mbox{\hyperlink{group__atcac___gab6935877a2675bfc95af283fb43affb5}{ATCA\+\_\+\+ECC\+\_\+\+P256\+\_\+\+FIELD\+\_\+\+SIZE}})}
+
+\Hypertarget{group__atcac___ga6bcf19f52fbceb7801fc3216d528fb3c}\label{group__atcac___ga6bcf19f52fbceb7801fc3216d528fb3c} 
+\index{Software crypto methods (atcac\_)@{Software crypto methods (atcac\_)}!ATCA\_ECC\_P256\_PUBLIC\_KEY\_SIZE@{ATCA\_ECC\_P256\_PUBLIC\_KEY\_SIZE}}
+\index{ATCA\_ECC\_P256\_PUBLIC\_KEY\_SIZE@{ATCA\_ECC\_P256\_PUBLIC\_KEY\_SIZE}!Software crypto methods (atcac\_)@{Software crypto methods (atcac\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_ECC\_P256\_PUBLIC\_KEY\_SIZE}{ATCA\_ECC\_P256\_PUBLIC\_KEY\_SIZE}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+ECC\+\_\+\+P256\+\_\+\+PUBLIC\+\_\+\+KEY\+\_\+\+SIZE~(\mbox{\hyperlink{group__atcac___gab6935877a2675bfc95af283fb43affb5}{ATCA\+\_\+\+ECC\+\_\+\+P256\+\_\+\+FIELD\+\_\+\+SIZE}} \texorpdfstring{$\ast$}{*} 2)}
+
+\Hypertarget{group__atcac___ga6eba254effebfbbb95381511fc7d80d5}\label{group__atcac___ga6eba254effebfbbb95381511fc7d80d5} 
+\index{Software crypto methods (atcac\_)@{Software crypto methods (atcac\_)}!ATCA\_ECC\_P256\_SIGNATURE\_SIZE@{ATCA\_ECC\_P256\_SIGNATURE\_SIZE}}
+\index{ATCA\_ECC\_P256\_SIGNATURE\_SIZE@{ATCA\_ECC\_P256\_SIGNATURE\_SIZE}!Software crypto methods (atcac\_)@{Software crypto methods (atcac\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_ECC\_P256\_SIGNATURE\_SIZE}{ATCA\_ECC\_P256\_SIGNATURE\_SIZE}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+ECC\+\_\+\+P256\+\_\+\+SIGNATURE\+\_\+\+SIZE~(\mbox{\hyperlink{group__atcac___gab6935877a2675bfc95af283fb43affb5}{ATCA\+\_\+\+ECC\+\_\+\+P256\+\_\+\+FIELD\+\_\+\+SIZE}} \texorpdfstring{$\ast$}{*} 2)}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{group__atcac___ga1598511b7077693ee99d160dbebfc16d}\label{group__atcac___ga1598511b7077693ee99d160dbebfc16d} 
+\index{Software crypto methods (atcac\_)@{Software crypto methods (atcac\_)}!atcac\_sha256\_hmac\_counter@{atcac\_sha256\_hmac\_counter}}
+\index{atcac\_sha256\_hmac\_counter@{atcac\_sha256\_hmac\_counter}!Software crypto methods (atcac\_)@{Software crypto methods (atcac\_)}}
+\doxysubsubsection{\texorpdfstring{atcac\_sha256\_hmac\_counter()}{atcac\_sha256\_hmac\_counter()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} atcac\+\_\+sha256\+\_\+hmac\+\_\+counter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structatcac__hmac__sha256__ctx}{atcac\+\_\+hmac\+\_\+sha256\+\_\+ctx}} \texorpdfstring{$\ast$}{*}}]{ctx,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{label,  }\item[{size\+\_\+t}]{label\+\_\+len,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{data,  }\item[{size\+\_\+t}]{data\+\_\+len,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{digest,  }\item[{size\+\_\+t}]{diglen }\end{DoxyParamCaption})}
+
+\Hypertarget{group__atcac___ga4aabb5258b261af2802b45a817fb7113}\label{group__atcac___ga4aabb5258b261af2802b45a817fb7113} 
+\index{Software crypto methods (atcac\_)@{Software crypto methods (atcac\_)}!atcac\_sha256\_hmac\_finish@{atcac\_sha256\_hmac\_finish}}
+\index{atcac\_sha256\_hmac\_finish@{atcac\_sha256\_hmac\_finish}!Software crypto methods (atcac\_)@{Software crypto methods (atcac\_)}}
+\doxysubsubsection{\texorpdfstring{atcac\_sha256\_hmac\_finish()}{atcac\_sha256\_hmac\_finish()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} atcac\+\_\+sha256\+\_\+hmac\+\_\+finish (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structatcac__hmac__sha256__ctx}{atcac\+\_\+hmac\+\_\+sha256\+\_\+ctx}} \texorpdfstring{$\ast$}{*}}]{ctx,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{digest,  }\item[{size\+\_\+t \texorpdfstring{$\ast$}{*}}]{digest\+\_\+len }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__atcac___ga4aabb5258b261af2802b45a817fb7113_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{group__atcac___ga4e23a2ff2f57f730a1490afaac2ea3dc}\label{group__atcac___ga4e23a2ff2f57f730a1490afaac2ea3dc} 
+\index{Software crypto methods (atcac\_)@{Software crypto methods (atcac\_)}!atcac\_sha256\_hmac\_init@{atcac\_sha256\_hmac\_init}}
+\index{atcac\_sha256\_hmac\_init@{atcac\_sha256\_hmac\_init}!Software crypto methods (atcac\_)@{Software crypto methods (atcac\_)}}
+\doxysubsubsection{\texorpdfstring{atcac\_sha256\_hmac\_init()}{atcac\_sha256\_hmac\_init()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} atcac\+\_\+sha256\+\_\+hmac\+\_\+init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structatcac__hmac__sha256__ctx}{atcac\+\_\+hmac\+\_\+sha256\+\_\+ctx}} \texorpdfstring{$\ast$}{*}}]{ctx,  }\item[{const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{key,  }\item[{const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{key\+\_\+len }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__atcac___ga4e23a2ff2f57f730a1490afaac2ea3dc_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{group__atcac___gaa4493b637590b0d3f5da0bd66b386d8a}\label{group__atcac___gaa4493b637590b0d3f5da0bd66b386d8a} 
+\index{Software crypto methods (atcac\_)@{Software crypto methods (atcac\_)}!atcac\_sha256\_hmac\_update@{atcac\_sha256\_hmac\_update}}
+\index{atcac\_sha256\_hmac\_update@{atcac\_sha256\_hmac\_update}!Software crypto methods (atcac\_)@{Software crypto methods (atcac\_)}}
+\doxysubsubsection{\texorpdfstring{atcac\_sha256\_hmac\_update()}{atcac\_sha256\_hmac\_update()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} atcac\+\_\+sha256\+\_\+hmac\+\_\+update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structatcac__hmac__sha256__ctx}{atcac\+\_\+hmac\+\_\+sha256\+\_\+ctx}} \texorpdfstring{$\ast$}{*}}]{ctx,  }\item[{const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{data,  }\item[{size\+\_\+t}]{data\+\_\+size }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__atcac___gaa4493b637590b0d3f5da0bd66b386d8a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{group__atcac___gaa61eee6f208a1633d35cdf8d628a6835}\label{group__atcac___gaa61eee6f208a1633d35cdf8d628a6835} 
+\index{Software crypto methods (atcac\_)@{Software crypto methods (atcac\_)}!atcac\_sw\_ecdsa\_verify\_p256@{atcac\_sw\_ecdsa\_verify\_p256}}
+\index{atcac\_sw\_ecdsa\_verify\_p256@{atcac\_sw\_ecdsa\_verify\_p256}!Software crypto methods (atcac\_)@{Software crypto methods (atcac\_)}}
+\doxysubsubsection{\texorpdfstring{atcac\_sw\_ecdsa\_verify\_p256()}{atcac\_sw\_ecdsa\_verify\_p256()}}
+{\footnotesize\ttfamily int atcac\+\_\+sw\+\_\+ecdsa\+\_\+verify\+\_\+p256 (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{msg\mbox{[}\+ATCA\+\_\+\+ECC\+\_\+\+P256\+\_\+\+FIELD\+\_\+\+SIZE\mbox{]},  }\item[{const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{signature\mbox{[}\+ATCA\+\_\+\+ECC\+\_\+\+P256\+\_\+\+SIGNATURE\+\_\+\+SIZE\mbox{]},  }\item[{const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{public\+\_\+key\mbox{[}\+ATCA\+\_\+\+ECC\+\_\+\+P256\+\_\+\+PUBLIC\+\_\+\+KEY\+\_\+\+SIZE\mbox{]} }\end{DoxyParamCaption})}
+
+\Hypertarget{group__atcac___ga0710d8bf5e92403c4026c32af39ad79e}\label{group__atcac___ga0710d8bf5e92403c4026c32af39ad79e} 
+\index{Software crypto methods (atcac\_)@{Software crypto methods (atcac\_)}!atcac\_sw\_random@{atcac\_sw\_random}}
+\index{atcac\_sw\_random@{atcac\_sw\_random}!Software crypto methods (atcac\_)@{Software crypto methods (atcac\_)}}
+\doxysubsubsection{\texorpdfstring{atcac\_sw\_random()}{atcac\_sw\_random()}}
+{\footnotesize\ttfamily int atcac\+\_\+sw\+\_\+random (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{data,  }\item[{size\+\_\+t}]{data\+\_\+size }\end{DoxyParamCaption})}
+
+\Hypertarget{group__atcac___ga84b866657bf319dab2924c2db3a1e990}\label{group__atcac___ga84b866657bf319dab2924c2db3a1e990} 
+\index{Software crypto methods (atcac\_)@{Software crypto methods (atcac\_)}!atcac\_sw\_sha1@{atcac\_sw\_sha1}}
+\index{atcac\_sw\_sha1@{atcac\_sw\_sha1}!Software crypto methods (atcac\_)@{Software crypto methods (atcac\_)}}
+\doxysubsubsection{\texorpdfstring{atcac\_sw\_sha1()}{atcac\_sw\_sha1()}}
+{\footnotesize\ttfamily int atcac\+\_\+sw\+\_\+sha1 (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{data,  }\item[{size\+\_\+t}]{data\+\_\+size,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{digest\mbox{[}\+ATCA\+\_\+\+SHA1\+\_\+\+DIGEST\+\_\+\+SIZE\mbox{]} }\end{DoxyParamCaption})}
+
+\Hypertarget{group__atcac___ga5589df2a639f61a4dc4ccedc9b5a5453}\label{group__atcac___ga5589df2a639f61a4dc4ccedc9b5a5453} 
+\index{Software crypto methods (atcac\_)@{Software crypto methods (atcac\_)}!atcac\_sw\_sha1\_finish@{atcac\_sw\_sha1\_finish}}
+\index{atcac\_sw\_sha1\_finish@{atcac\_sw\_sha1\_finish}!Software crypto methods (atcac\_)@{Software crypto methods (atcac\_)}}
+\doxysubsubsection{\texorpdfstring{atcac\_sw\_sha1\_finish()}{atcac\_sw\_sha1\_finish()}}
+{\footnotesize\ttfamily int atcac\+\_\+sw\+\_\+sha1\+\_\+finish (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structatcac__sha1__ctx}{atcac\+\_\+sha1\+\_\+ctx}} \texorpdfstring{$\ast$}{*}}]{ctx,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{digest\mbox{[}\+ATCA\+\_\+\+SHA1\+\_\+\+DIGEST\+\_\+\+SIZE\mbox{]} }\end{DoxyParamCaption})}
+
+\Hypertarget{group__atcac___gabed03bcc1228768534ef4ee49df0ad09}\label{group__atcac___gabed03bcc1228768534ef4ee49df0ad09} 
+\index{Software crypto methods (atcac\_)@{Software crypto methods (atcac\_)}!atcac\_sw\_sha1\_init@{atcac\_sw\_sha1\_init}}
+\index{atcac\_sw\_sha1\_init@{atcac\_sw\_sha1\_init}!Software crypto methods (atcac\_)@{Software crypto methods (atcac\_)}}
+\doxysubsubsection{\texorpdfstring{atcac\_sw\_sha1\_init()}{atcac\_sw\_sha1\_init()}}
+{\footnotesize\ttfamily int atcac\+\_\+sw\+\_\+sha1\+\_\+init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structatcac__sha1__ctx}{atcac\+\_\+sha1\+\_\+ctx}} \texorpdfstring{$\ast$}{*}}]{ctx }\end{DoxyParamCaption})}
+
+\Hypertarget{group__atcac___ga65ff558306a88e0fbe2fc82bbe6a9c03}\label{group__atcac___ga65ff558306a88e0fbe2fc82bbe6a9c03} 
+\index{Software crypto methods (atcac\_)@{Software crypto methods (atcac\_)}!atcac\_sw\_sha1\_update@{atcac\_sw\_sha1\_update}}
+\index{atcac\_sw\_sha1\_update@{atcac\_sw\_sha1\_update}!Software crypto methods (atcac\_)@{Software crypto methods (atcac\_)}}
+\doxysubsubsection{\texorpdfstring{atcac\_sw\_sha1\_update()}{atcac\_sw\_sha1\_update()}}
+{\footnotesize\ttfamily int atcac\+\_\+sw\+\_\+sha1\+\_\+update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structatcac__sha1__ctx}{atcac\+\_\+sha1\+\_\+ctx}} \texorpdfstring{$\ast$}{*}}]{ctx,  }\item[{const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{data,  }\item[{size\+\_\+t}]{data\+\_\+size }\end{DoxyParamCaption})}
+
+\Hypertarget{group__atcac___ga63412270c4629874f2764171200c1b5c}\label{group__atcac___ga63412270c4629874f2764171200c1b5c} 
+\index{Software crypto methods (atcac\_)@{Software crypto methods (atcac\_)}!atcac\_sw\_sha2\_256@{atcac\_sw\_sha2\_256}}
+\index{atcac\_sw\_sha2\_256@{atcac\_sw\_sha2\_256}!Software crypto methods (atcac\_)@{Software crypto methods (atcac\_)}}
+\doxysubsubsection{\texorpdfstring{atcac\_sw\_sha2\_256()}{atcac\_sw\_sha2\_256()}}
+{\footnotesize\ttfamily int atcac\+\_\+sw\+\_\+sha2\+\_\+256 (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{data,  }\item[{size\+\_\+t}]{data\+\_\+size,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{digest\mbox{[}\+ATCA\+\_\+\+SHA2\+\_\+256\+\_\+\+DIGEST\+\_\+\+SIZE\mbox{]} }\end{DoxyParamCaption})}
+
+\Hypertarget{group__atcac___gae3a29931f2104cce481aa9ef1ab16fea}\label{group__atcac___gae3a29931f2104cce481aa9ef1ab16fea} 
+\index{Software crypto methods (atcac\_)@{Software crypto methods (atcac\_)}!atcac\_sw\_sha2\_256\_finish@{atcac\_sw\_sha2\_256\_finish}}
+\index{atcac\_sw\_sha2\_256\_finish@{atcac\_sw\_sha2\_256\_finish}!Software crypto methods (atcac\_)@{Software crypto methods (atcac\_)}}
+\doxysubsubsection{\texorpdfstring{atcac\_sw\_sha2\_256\_finish()}{atcac\_sw\_sha2\_256\_finish()}}
+{\footnotesize\ttfamily int atcac\+\_\+sw\+\_\+sha2\+\_\+256\+\_\+finish (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structatcac__sha2__256__ctx}{atcac\+\_\+sha2\+\_\+256\+\_\+ctx}} \texorpdfstring{$\ast$}{*}}]{ctx,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{digest\mbox{[}\+ATCA\+\_\+\+SHA2\+\_\+256\+\_\+\+DIGEST\+\_\+\+SIZE\mbox{]} }\end{DoxyParamCaption})}
+
+\Hypertarget{group__atcac___ga58283666b662f084155ba693870c1077}\label{group__atcac___ga58283666b662f084155ba693870c1077} 
+\index{Software crypto methods (atcac\_)@{Software crypto methods (atcac\_)}!atcac\_sw\_sha2\_256\_init@{atcac\_sw\_sha2\_256\_init}}
+\index{atcac\_sw\_sha2\_256\_init@{atcac\_sw\_sha2\_256\_init}!Software crypto methods (atcac\_)@{Software crypto methods (atcac\_)}}
+\doxysubsubsection{\texorpdfstring{atcac\_sw\_sha2\_256\_init()}{atcac\_sw\_sha2\_256\_init()}}
+{\footnotesize\ttfamily int atcac\+\_\+sw\+\_\+sha2\+\_\+256\+\_\+init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structatcac__sha2__256__ctx}{atcac\+\_\+sha2\+\_\+256\+\_\+ctx}} \texorpdfstring{$\ast$}{*}}]{ctx }\end{DoxyParamCaption})}
+
+\Hypertarget{group__atcac___gab1a09fa1d854722cc667cea319ca9984}\label{group__atcac___gab1a09fa1d854722cc667cea319ca9984} 
+\index{Software crypto methods (atcac\_)@{Software crypto methods (atcac\_)}!atcac\_sw\_sha2\_256\_update@{atcac\_sw\_sha2\_256\_update}}
+\index{atcac\_sw\_sha2\_256\_update@{atcac\_sw\_sha2\_256\_update}!Software crypto methods (atcac\_)@{Software crypto methods (atcac\_)}}
+\doxysubsubsection{\texorpdfstring{atcac\_sw\_sha2\_256\_update()}{atcac\_sw\_sha2\_256\_update()}}
+{\footnotesize\ttfamily int atcac\+\_\+sw\+\_\+sha2\+\_\+256\+\_\+update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structatcac__sha2__256__ctx}{atcac\+\_\+sha2\+\_\+256\+\_\+ctx}} \texorpdfstring{$\ast$}{*}}]{ctx,  }\item[{const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{data,  }\item[{size\+\_\+t}]{data\+\_\+size }\end{DoxyParamCaption})}
+

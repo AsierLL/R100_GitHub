@@ -1,0 +1,300 @@
+\doxysection{ATCAIface (atca\+\_\+)}
+\hypertarget{group__interface}{}\label{group__interface}\index{ATCAIface (atca\_)@{ATCAIface (atca\_)}}
+
+
+Abstract interface to all Crypto\+Auth device types. This interface connects to the HAL implementation and abstracts the physical details of the device communication from all the upper layers of Crypto\+Auth\+Lib.  
+
+
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_a_t_c_a_iface_cfg}{ATCAIface\+Cfg}}
+\item 
+struct \mbox{\hyperlink{struct_a_t_c_a_h_a_l__t}{ATCAHAL\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em HAL Driver Structure. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structatca__iface}{atca\+\_\+iface}}
+\begin{DoxyCompactList}\small\item\em \doxylink{structatca__iface}{atca\+\_\+iface} is the context structure for a configured interface \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{structatca__iface}{atca\+\_\+iface}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group__interface_ga75c11126f3fe81df3d6c27f5bb393303}{ATCAIface}}
+\item 
+typedef struct \mbox{\hyperlink{structatca__iface}{atca\+\_\+iface}} \mbox{\hyperlink{group__interface_gaa9323be08c4d757019e9863d9a7fb6b1}{atca\+\_\+iface\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em \doxylink{structatca__iface}{atca\+\_\+iface} is the context structure for a configured interface \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group__interface_gac7f674d4a0afb12d2f3c9c5e98cb1089}{ATCAIface\+Type}} \{ \newline
+\mbox{\hyperlink{group__interface_ggac7f674d4a0afb12d2f3c9c5e98cb1089a872efba3aa5b7890acfe0f1e0e453bcb}{ATCA\+\_\+\+I2\+C\+\_\+\+IFACE}} = 0
+, \mbox{\hyperlink{group__interface_ggac7f674d4a0afb12d2f3c9c5e98cb1089a2ce2e46b7f4245ab3d750ea2805fdc26}{ATCA\+\_\+\+SWI\+\_\+\+IFACE}} = 1
+, \mbox{\hyperlink{group__interface_ggac7f674d4a0afb12d2f3c9c5e98cb1089a80ec8c070f1c711f2b16ad39d2a0486d}{ATCA\+\_\+\+UART\+\_\+\+IFACE}} = 2
+, \mbox{\hyperlink{group__interface_ggac7f674d4a0afb12d2f3c9c5e98cb1089a8d50943acfc67f797b9c8fbf565deeb7}{ATCA\+\_\+\+SPI\+\_\+\+IFACE}} = 3
+, \newline
+\mbox{\hyperlink{group__interface_ggac7f674d4a0afb12d2f3c9c5e98cb1089a7da282c54282a02f5650c38a85d0dfb1}{ATCA\+\_\+\+HID\+\_\+\+IFACE}} = 4
+, \mbox{\hyperlink{group__interface_ggac7f674d4a0afb12d2f3c9c5e98cb1089a0c22b107512100a364378a0bbf6bdfb9}{ATCA\+\_\+\+KIT\+\_\+\+IFACE}} = 5
+, \mbox{\hyperlink{group__interface_ggac7f674d4a0afb12d2f3c9c5e98cb1089a1da1522f46e7dbd1a928ff130594561d}{ATCA\+\_\+\+CUSTOM\+\_\+\+IFACE}} = 6
+, \mbox{\hyperlink{group__interface_ggac7f674d4a0afb12d2f3c9c5e98cb1089a1b4b0b9522bab920782f2d781c9e489e}{ATCA\+\_\+\+I2\+C\+\_\+\+GPIO\+\_\+\+IFACE}} = 7
+, \newline
+\mbox{\hyperlink{group__interface_ggac7f674d4a0afb12d2f3c9c5e98cb1089ab38797147196617d79ba041c899fdee2}{ATCA\+\_\+\+SWI\+\_\+\+GPIO\+\_\+\+IFACE}} = 8
+, \mbox{\hyperlink{group__interface_ggac7f674d4a0afb12d2f3c9c5e98cb1089a28c752d380cea80d9d35735979e623eb}{ATCA\+\_\+\+SPI\+\_\+\+GPIO\+\_\+\+IFACE}} = 9
+, \mbox{\hyperlink{group__interface_ggac7f674d4a0afb12d2f3c9c5e98cb1089ac300244b5b323ee44001db318f365cec}{ATCA\+\_\+\+UNKNOWN\+\_\+\+IFACE}} = 0x\+FE
+ \}
+\item 
+enum \mbox{\hyperlink{group__interface_ga4a5c4554e7355754d28123f08f05a060}{ATCAKit\+Type}} \{ \newline
+\mbox{\hyperlink{group__interface_gga4a5c4554e7355754d28123f08f05a060a664bb9916e1b47bcf6ae414ffcec2b53}{ATCA\+\_\+\+KIT\+\_\+\+AUTO\+\_\+\+IFACE}}
+, \mbox{\hyperlink{group__interface_gga4a5c4554e7355754d28123f08f05a060aaf3c1491bb0cb283b0ac35de770e2f45}{ATCA\+\_\+\+KIT\+\_\+\+I2\+C\+\_\+\+IFACE}}
+, \mbox{\hyperlink{group__interface_gga4a5c4554e7355754d28123f08f05a060a159c23e460fd4d21d0e9ec5fdeb648f3}{ATCA\+\_\+\+KIT\+\_\+\+SWI\+\_\+\+IFACE}}
+, \mbox{\hyperlink{group__interface_gga4a5c4554e7355754d28123f08f05a060a1ab1554696e001f082479a02f855210d}{ATCA\+\_\+\+KIT\+\_\+\+SPI\+\_\+\+IFACE}}
+, \newline
+\mbox{\hyperlink{group__interface_gga4a5c4554e7355754d28123f08f05a060ac9a530c71bc570d6d58c2c8d521253a3}{ATCA\+\_\+\+KIT\+\_\+\+UNKNOWN\+\_\+\+IFACE}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{group__interface_ga3a31087729a7a2e9a624572f234809fc}{init\+ATCAIface}} (\mbox{\hyperlink{struct_a_t_c_a_iface_cfg}{ATCAIface\+Cfg}} \texorpdfstring{$\ast$}{*}cfg, \mbox{\hyperlink{group__interface_ga75c11126f3fe81df3d6c27f5bb393303}{ATCAIface}} ca\+\_\+iface)
+\item 
+\mbox{\hyperlink{group__interface_ga75c11126f3fe81df3d6c27f5bb393303}{ATCAIface}} \mbox{\hyperlink{group__interface_ga6f28f18f0d00c5301939724325f6b6fc}{new\+ATCAIface}} (\mbox{\hyperlink{struct_a_t_c_a_iface_cfg}{ATCAIface\+Cfg}} \texorpdfstring{$\ast$}{*}cfg)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{group__interface_gab9ee16357a8e397a72eda7e9c8553fb3}{release\+ATCAIface}} (\mbox{\hyperlink{group__interface_ga75c11126f3fe81df3d6c27f5bb393303}{ATCAIface}} ca\+\_\+iface)
+\item 
+void \mbox{\hyperlink{group__interface_gaf8074d759241d3edd6d8ead1d7322a98}{delete\+ATCAIface}} (\mbox{\hyperlink{group__interface_ga75c11126f3fe81df3d6c27f5bb393303}{ATCAIface}} \texorpdfstring{$\ast$}{*}ca\+\_\+iface)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{group__interface_ga386353e8700eec35e4548dfa29f13b8d}{atinit}} (\mbox{\hyperlink{group__interface_ga75c11126f3fe81df3d6c27f5bb393303}{ATCAIface}} ca\+\_\+iface)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{group__interface_gabd4f20b06efedede6bc4a836cfad8f38}{atsend}} (\mbox{\hyperlink{group__interface_ga75c11126f3fe81df3d6c27f5bb393303}{ATCAIface}} ca\+\_\+iface, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} word\+\_\+address, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}txdata, int txlength)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{group__interface_ga01badea388343bdf5929c5c2be9f426b}{atreceive}} (\mbox{\hyperlink{group__interface_ga75c11126f3fe81df3d6c27f5bb393303}{ATCAIface}} ca\+\_\+iface, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} word\+\_\+address, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}rxdata, \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \texorpdfstring{$\ast$}{*}rxlength)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{group__interface_ga324cef45a35e02b387001afdc9092778}{atcontrol}} (\mbox{\hyperlink{group__interface_ga75c11126f3fe81df3d6c27f5bb393303}{ATCAIface}} ca\+\_\+iface, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} option, void \texorpdfstring{$\ast$}{*}param, size\+\_\+t paramlen)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{group__interface_ga32693c852341e1b946bab3cca5f71761}{atwake}} (\mbox{\hyperlink{group__interface_ga75c11126f3fe81df3d6c27f5bb393303}{ATCAIface}} ca\+\_\+iface)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{group__interface_gac794fffe040e6d47a34c756720f3cbea}{atidle}} (\mbox{\hyperlink{group__interface_ga75c11126f3fe81df3d6c27f5bb393303}{ATCAIface}} ca\+\_\+iface)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{group__interface_gac06336335e5f3191e3b1fc06d2830d96}{atsleep}} (\mbox{\hyperlink{group__interface_ga75c11126f3fe81df3d6c27f5bb393303}{ATCAIface}} ca\+\_\+iface)
+\item 
+\mbox{\hyperlink{struct_a_t_c_a_iface_cfg}{ATCAIface\+Cfg}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group__interface_gac88ba81abfd42df65c6c0c64414dfc6e}{atgetifacecfg}} (\mbox{\hyperlink{group__interface_ga75c11126f3fe81df3d6c27f5bb393303}{ATCAIface}} ca\+\_\+iface)
+\item 
+void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group__interface_ga5e4163b8882d4eb42d4d5191c8731da0}{atgetifacehaldat}} (\mbox{\hyperlink{group__interface_ga75c11126f3fe81df3d6c27f5bb393303}{ATCAIface}} ca\+\_\+iface)
+\item 
+bool \mbox{\hyperlink{group__interface_gacb09a6fa845efade7d47796bead14d2c}{atca\+\_\+iface\+\_\+is\+\_\+kit}} (\mbox{\hyperlink{group__interface_ga75c11126f3fe81df3d6c27f5bb393303}{ATCAIface}} ca\+\_\+iface)
+\item 
+bool \mbox{\hyperlink{group__interface_gad2276d5ebd02613fbeda8ae15b679d1e}{atca\+\_\+iface\+\_\+is\+\_\+swi}} (\mbox{\hyperlink{group__interface_ga75c11126f3fe81df3d6c27f5bb393303}{ATCAIface}} ca\+\_\+iface)
+\item 
+int \mbox{\hyperlink{group__interface_ga349718dea5d5b558766a31b7dcd7e811}{atca\+\_\+iface\+\_\+get\+\_\+retries}} (\mbox{\hyperlink{group__interface_ga75c11126f3fe81df3d6c27f5bb393303}{ATCAIface}} ca\+\_\+iface)
+\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{group__interface_ga128f54833b5ed2105dae417333e1d651}{atca\+\_\+iface\+\_\+get\+\_\+wake\+\_\+delay}} (\mbox{\hyperlink{group__interface_ga75c11126f3fe81df3d6c27f5bb393303}{ATCAIface}} ca\+\_\+iface)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract interface to all Crypto\+Auth device types. This interface connects to the HAL implementation and abstracts the physical details of the device communication from all the upper layers of Crypto\+Auth\+Lib. 
+
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{group__interface_gaa9323be08c4d757019e9863d9a7fb6b1}\label{group__interface_gaa9323be08c4d757019e9863d9a7fb6b1} 
+\index{ATCAIface (atca\_)@{ATCAIface (atca\_)}!atca\_iface\_t@{atca\_iface\_t}}
+\index{atca\_iface\_t@{atca\_iface\_t}!ATCAIface (atca\_)@{ATCAIface (atca\_)}}
+\doxysubsubsection{\texorpdfstring{atca\_iface\_t}{atca\_iface\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structatca__iface}{atca\+\_\+iface}} \mbox{\hyperlink{group__interface_gaa9323be08c4d757019e9863d9a7fb6b1}{atca\+\_\+iface\+\_\+t}}}
+
+
+
+\doxylink{structatca__iface}{atca\+\_\+iface} is the context structure for a configured interface 
+
+\Hypertarget{group__interface_ga75c11126f3fe81df3d6c27f5bb393303}\label{group__interface_ga75c11126f3fe81df3d6c27f5bb393303} 
+\index{ATCAIface (atca\_)@{ATCAIface (atca\_)}!ATCAIface@{ATCAIface}}
+\index{ATCAIface@{ATCAIface}!ATCAIface (atca\_)@{ATCAIface (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCAIface}{ATCAIface}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structatca__iface}{atca\+\_\+iface}}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group__interface_ga75c11126f3fe81df3d6c27f5bb393303}{ATCAIface}}}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{group__interface_gac7f674d4a0afb12d2f3c9c5e98cb1089}\label{group__interface_gac7f674d4a0afb12d2f3c9c5e98cb1089} 
+\index{ATCAIface (atca\_)@{ATCAIface (atca\_)}!ATCAIfaceType@{ATCAIfaceType}}
+\index{ATCAIfaceType@{ATCAIfaceType}!ATCAIface (atca\_)@{ATCAIface (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCAIfaceType}{ATCAIfaceType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__interface_gac7f674d4a0afb12d2f3c9c5e98cb1089}{ATCAIface\+Type}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ATCA\_I2C\_IFACE@{ATCA\_I2C\_IFACE}!ATCAIface (atca\_)@{ATCAIface (atca\_)}}\index{ATCAIface (atca\_)@{ATCAIface (atca\_)}!ATCA\_I2C\_IFACE@{ATCA\_I2C\_IFACE}}}\Hypertarget{group__interface_ggac7f674d4a0afb12d2f3c9c5e98cb1089a872efba3aa5b7890acfe0f1e0e453bcb}\label{group__interface_ggac7f674d4a0afb12d2f3c9c5e98cb1089a872efba3aa5b7890acfe0f1e0e453bcb} 
+ATCA\+\_\+\+I2\+C\+\_\+\+IFACE&Native I2C Driver \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ATCA\_SWI\_IFACE@{ATCA\_SWI\_IFACE}!ATCAIface (atca\_)@{ATCAIface (atca\_)}}\index{ATCAIface (atca\_)@{ATCAIface (atca\_)}!ATCA\_SWI\_IFACE@{ATCA\_SWI\_IFACE}}}\Hypertarget{group__interface_ggac7f674d4a0afb12d2f3c9c5e98cb1089a2ce2e46b7f4245ab3d750ea2805fdc26}\label{group__interface_ggac7f674d4a0afb12d2f3c9c5e98cb1089a2ce2e46b7f4245ab3d750ea2805fdc26} 
+ATCA\+\_\+\+SWI\+\_\+\+IFACE&SWI or 1-\/Wire over UART/\+USART \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ATCA\_UART\_IFACE@{ATCA\_UART\_IFACE}!ATCAIface (atca\_)@{ATCAIface (atca\_)}}\index{ATCAIface (atca\_)@{ATCAIface (atca\_)}!ATCA\_UART\_IFACE@{ATCA\_UART\_IFACE}}}\Hypertarget{group__interface_ggac7f674d4a0afb12d2f3c9c5e98cb1089a80ec8c070f1c711f2b16ad39d2a0486d}\label{group__interface_ggac7f674d4a0afb12d2f3c9c5e98cb1089a80ec8c070f1c711f2b16ad39d2a0486d} 
+ATCA\+\_\+\+UART\+\_\+\+IFACE&Kit v1 over UART/\+USART \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ATCA\_SPI\_IFACE@{ATCA\_SPI\_IFACE}!ATCAIface (atca\_)@{ATCAIface (atca\_)}}\index{ATCAIface (atca\_)@{ATCAIface (atca\_)}!ATCA\_SPI\_IFACE@{ATCA\_SPI\_IFACE}}}\Hypertarget{group__interface_ggac7f674d4a0afb12d2f3c9c5e98cb1089a8d50943acfc67f797b9c8fbf565deeb7}\label{group__interface_ggac7f674d4a0afb12d2f3c9c5e98cb1089a8d50943acfc67f797b9c8fbf565deeb7} 
+ATCA\+\_\+\+SPI\+\_\+\+IFACE&Native SPI Driver \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ATCA\_HID\_IFACE@{ATCA\_HID\_IFACE}!ATCAIface (atca\_)@{ATCAIface (atca\_)}}\index{ATCAIface (atca\_)@{ATCAIface (atca\_)}!ATCA\_HID\_IFACE@{ATCA\_HID\_IFACE}}}\Hypertarget{group__interface_ggac7f674d4a0afb12d2f3c9c5e98cb1089a7da282c54282a02f5650c38a85d0dfb1}\label{group__interface_ggac7f674d4a0afb12d2f3c9c5e98cb1089a7da282c54282a02f5650c38a85d0dfb1} 
+ATCA\+\_\+\+HID\+\_\+\+IFACE&Kit v1 over HID \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ATCA\_KIT\_IFACE@{ATCA\_KIT\_IFACE}!ATCAIface (atca\_)@{ATCAIface (atca\_)}}\index{ATCAIface (atca\_)@{ATCAIface (atca\_)}!ATCA\_KIT\_IFACE@{ATCA\_KIT\_IFACE}}}\Hypertarget{group__interface_ggac7f674d4a0afb12d2f3c9c5e98cb1089a0c22b107512100a364378a0bbf6bdfb9}\label{group__interface_ggac7f674d4a0afb12d2f3c9c5e98cb1089a0c22b107512100a364378a0bbf6bdfb9} 
+ATCA\+\_\+\+KIT\+\_\+\+IFACE&Kit v2 (Binary/\+Bridging) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ATCA\_CUSTOM\_IFACE@{ATCA\_CUSTOM\_IFACE}!ATCAIface (atca\_)@{ATCAIface (atca\_)}}\index{ATCAIface (atca\_)@{ATCAIface (atca\_)}!ATCA\_CUSTOM\_IFACE@{ATCA\_CUSTOM\_IFACE}}}\Hypertarget{group__interface_ggac7f674d4a0afb12d2f3c9c5e98cb1089a1da1522f46e7dbd1a928ff130594561d}\label{group__interface_ggac7f674d4a0afb12d2f3c9c5e98cb1089a1da1522f46e7dbd1a928ff130594561d} 
+ATCA\+\_\+\+CUSTOM\+\_\+\+IFACE&Custom HAL functions provided during interface init \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ATCA\_I2C\_GPIO\_IFACE@{ATCA\_I2C\_GPIO\_IFACE}!ATCAIface (atca\_)@{ATCAIface (atca\_)}}\index{ATCAIface (atca\_)@{ATCAIface (atca\_)}!ATCA\_I2C\_GPIO\_IFACE@{ATCA\_I2C\_GPIO\_IFACE}}}\Hypertarget{group__interface_ggac7f674d4a0afb12d2f3c9c5e98cb1089a1b4b0b9522bab920782f2d781c9e489e}\label{group__interface_ggac7f674d4a0afb12d2f3c9c5e98cb1089a1b4b0b9522bab920782f2d781c9e489e} 
+ATCA\+\_\+\+I2\+C\+\_\+\+GPIO\+\_\+\+IFACE&I2C "{}\+Bitbang"{} Driver \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ATCA\_SWI\_GPIO\_IFACE@{ATCA\_SWI\_GPIO\_IFACE}!ATCAIface (atca\_)@{ATCAIface (atca\_)}}\index{ATCAIface (atca\_)@{ATCAIface (atca\_)}!ATCA\_SWI\_GPIO\_IFACE@{ATCA\_SWI\_GPIO\_IFACE}}}\Hypertarget{group__interface_ggac7f674d4a0afb12d2f3c9c5e98cb1089ab38797147196617d79ba041c899fdee2}\label{group__interface_ggac7f674d4a0afb12d2f3c9c5e98cb1089ab38797147196617d79ba041c899fdee2} 
+ATCA\+\_\+\+SWI\+\_\+\+GPIO\+\_\+\+IFACE&SWI or 1-\/Wire using a GPIO \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ATCA\_SPI\_GPIO\_IFACE@{ATCA\_SPI\_GPIO\_IFACE}!ATCAIface (atca\_)@{ATCAIface (atca\_)}}\index{ATCAIface (atca\_)@{ATCAIface (atca\_)}!ATCA\_SPI\_GPIO\_IFACE@{ATCA\_SPI\_GPIO\_IFACE}}}\Hypertarget{group__interface_ggac7f674d4a0afb12d2f3c9c5e98cb1089a28c752d380cea80d9d35735979e623eb}\label{group__interface_ggac7f674d4a0afb12d2f3c9c5e98cb1089a28c752d380cea80d9d35735979e623eb} 
+ATCA\+\_\+\+SPI\+\_\+\+GPIO\+\_\+\+IFACE&SWI or 1-\/Wire using a GPIO \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ATCA\_UNKNOWN\_IFACE@{ATCA\_UNKNOWN\_IFACE}!ATCAIface (atca\_)@{ATCAIface (atca\_)}}\index{ATCAIface (atca\_)@{ATCAIface (atca\_)}!ATCA\_UNKNOWN\_IFACE@{ATCA\_UNKNOWN\_IFACE}}}\Hypertarget{group__interface_ggac7f674d4a0afb12d2f3c9c5e98cb1089ac300244b5b323ee44001db318f365cec}\label{group__interface_ggac7f674d4a0afb12d2f3c9c5e98cb1089ac300244b5b323ee44001db318f365cec} 
+ATCA\+\_\+\+UNKNOWN\+\_\+\+IFACE&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{group__interface_ga4a5c4554e7355754d28123f08f05a060}\label{group__interface_ga4a5c4554e7355754d28123f08f05a060} 
+\index{ATCAIface (atca\_)@{ATCAIface (atca\_)}!ATCAKitType@{ATCAKitType}}
+\index{ATCAKitType@{ATCAKitType}!ATCAIface (atca\_)@{ATCAIface (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCAKitType}{ATCAKitType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__interface_ga4a5c4554e7355754d28123f08f05a060}{ATCAKit\+Type}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ATCA\_KIT\_AUTO\_IFACE@{ATCA\_KIT\_AUTO\_IFACE}!ATCAIface (atca\_)@{ATCAIface (atca\_)}}\index{ATCAIface (atca\_)@{ATCAIface (atca\_)}!ATCA\_KIT\_AUTO\_IFACE@{ATCA\_KIT\_AUTO\_IFACE}}}\Hypertarget{group__interface_gga4a5c4554e7355754d28123f08f05a060a664bb9916e1b47bcf6ae414ffcec2b53}\label{group__interface_gga4a5c4554e7355754d28123f08f05a060a664bb9916e1b47bcf6ae414ffcec2b53} 
+ATCA\+\_\+\+KIT\+\_\+\+AUTO\+\_\+\+IFACE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ATCA\_KIT\_I2C\_IFACE@{ATCA\_KIT\_I2C\_IFACE}!ATCAIface (atca\_)@{ATCAIface (atca\_)}}\index{ATCAIface (atca\_)@{ATCAIface (atca\_)}!ATCA\_KIT\_I2C\_IFACE@{ATCA\_KIT\_I2C\_IFACE}}}\Hypertarget{group__interface_gga4a5c4554e7355754d28123f08f05a060aaf3c1491bb0cb283b0ac35de770e2f45}\label{group__interface_gga4a5c4554e7355754d28123f08f05a060aaf3c1491bb0cb283b0ac35de770e2f45} 
+ATCA\+\_\+\+KIT\+\_\+\+I2\+C\+\_\+\+IFACE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ATCA\_KIT\_SWI\_IFACE@{ATCA\_KIT\_SWI\_IFACE}!ATCAIface (atca\_)@{ATCAIface (atca\_)}}\index{ATCAIface (atca\_)@{ATCAIface (atca\_)}!ATCA\_KIT\_SWI\_IFACE@{ATCA\_KIT\_SWI\_IFACE}}}\Hypertarget{group__interface_gga4a5c4554e7355754d28123f08f05a060a159c23e460fd4d21d0e9ec5fdeb648f3}\label{group__interface_gga4a5c4554e7355754d28123f08f05a060a159c23e460fd4d21d0e9ec5fdeb648f3} 
+ATCA\+\_\+\+KIT\+\_\+\+SWI\+\_\+\+IFACE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ATCA\_KIT\_SPI\_IFACE@{ATCA\_KIT\_SPI\_IFACE}!ATCAIface (atca\_)@{ATCAIface (atca\_)}}\index{ATCAIface (atca\_)@{ATCAIface (atca\_)}!ATCA\_KIT\_SPI\_IFACE@{ATCA\_KIT\_SPI\_IFACE}}}\Hypertarget{group__interface_gga4a5c4554e7355754d28123f08f05a060a1ab1554696e001f082479a02f855210d}\label{group__interface_gga4a5c4554e7355754d28123f08f05a060a1ab1554696e001f082479a02f855210d} 
+ATCA\+\_\+\+KIT\+\_\+\+SPI\+\_\+\+IFACE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ATCA\_KIT\_UNKNOWN\_IFACE@{ATCA\_KIT\_UNKNOWN\_IFACE}!ATCAIface (atca\_)@{ATCAIface (atca\_)}}\index{ATCAIface (atca\_)@{ATCAIface (atca\_)}!ATCA\_KIT\_UNKNOWN\_IFACE@{ATCA\_KIT\_UNKNOWN\_IFACE}}}\Hypertarget{group__interface_gga4a5c4554e7355754d28123f08f05a060ac9a530c71bc570d6d58c2c8d521253a3}\label{group__interface_gga4a5c4554e7355754d28123f08f05a060ac9a530c71bc570d6d58c2c8d521253a3} 
+ATCA\+\_\+\+KIT\+\_\+\+UNKNOWN\+\_\+\+IFACE&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{group__interface_ga349718dea5d5b558766a31b7dcd7e811}\label{group__interface_ga349718dea5d5b558766a31b7dcd7e811} 
+\index{ATCAIface (atca\_)@{ATCAIface (atca\_)}!atca\_iface\_get\_retries@{atca\_iface\_get\_retries}}
+\index{atca\_iface\_get\_retries@{atca\_iface\_get\_retries}!ATCAIface (atca\_)@{ATCAIface (atca\_)}}
+\doxysubsubsection{\texorpdfstring{atca\_iface\_get\_retries()}{atca\_iface\_get\_retries()}}
+{\footnotesize\ttfamily int atca\+\_\+iface\+\_\+get\+\_\+retries (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__interface_ga75c11126f3fe81df3d6c27f5bb393303}{ATCAIface}}}]{ca\+\_\+iface }\end{DoxyParamCaption})}
+
+\Hypertarget{group__interface_ga128f54833b5ed2105dae417333e1d651}\label{group__interface_ga128f54833b5ed2105dae417333e1d651} 
+\index{ATCAIface (atca\_)@{ATCAIface (atca\_)}!atca\_iface\_get\_wake\_delay@{atca\_iface\_get\_wake\_delay}}
+\index{atca\_iface\_get\_wake\_delay@{atca\_iface\_get\_wake\_delay}!ATCAIface (atca\_)@{ATCAIface (atca\_)}}
+\doxysubsubsection{\texorpdfstring{atca\_iface\_get\_wake\_delay()}{atca\_iface\_get\_wake\_delay()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} atca\+\_\+iface\+\_\+get\+\_\+wake\+\_\+delay (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__interface_ga75c11126f3fe81df3d6c27f5bb393303}{ATCAIface}}}]{ca\+\_\+iface }\end{DoxyParamCaption})}
+
+\Hypertarget{group__interface_gacb09a6fa845efade7d47796bead14d2c}\label{group__interface_gacb09a6fa845efade7d47796bead14d2c} 
+\index{ATCAIface (atca\_)@{ATCAIface (atca\_)}!atca\_iface\_is\_kit@{atca\_iface\_is\_kit}}
+\index{atca\_iface\_is\_kit@{atca\_iface\_is\_kit}!ATCAIface (atca\_)@{ATCAIface (atca\_)}}
+\doxysubsubsection{\texorpdfstring{atca\_iface\_is\_kit()}{atca\_iface\_is\_kit()}}
+{\footnotesize\ttfamily bool atca\+\_\+iface\+\_\+is\+\_\+kit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__interface_ga75c11126f3fe81df3d6c27f5bb393303}{ATCAIface}}}]{ca\+\_\+iface }\end{DoxyParamCaption})}
+
+\Hypertarget{group__interface_gad2276d5ebd02613fbeda8ae15b679d1e}\label{group__interface_gad2276d5ebd02613fbeda8ae15b679d1e} 
+\index{ATCAIface (atca\_)@{ATCAIface (atca\_)}!atca\_iface\_is\_swi@{atca\_iface\_is\_swi}}
+\index{atca\_iface\_is\_swi@{atca\_iface\_is\_swi}!ATCAIface (atca\_)@{ATCAIface (atca\_)}}
+\doxysubsubsection{\texorpdfstring{atca\_iface\_is\_swi()}{atca\_iface\_is\_swi()}}
+{\footnotesize\ttfamily bool atca\+\_\+iface\+\_\+is\+\_\+swi (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__interface_ga75c11126f3fe81df3d6c27f5bb393303}{ATCAIface}}}]{ca\+\_\+iface }\end{DoxyParamCaption})}
+
+\Hypertarget{group__interface_ga324cef45a35e02b387001afdc9092778}\label{group__interface_ga324cef45a35e02b387001afdc9092778} 
+\index{ATCAIface (atca\_)@{ATCAIface (atca\_)}!atcontrol@{atcontrol}}
+\index{atcontrol@{atcontrol}!ATCAIface (atca\_)@{ATCAIface (atca\_)}}
+\doxysubsubsection{\texorpdfstring{atcontrol()}{atcontrol()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} atcontrol (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__interface_ga75c11126f3fe81df3d6c27f5bb393303}{ATCAIface}}}]{ca\+\_\+iface,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{option,  }\item[{void \texorpdfstring{$\ast$}{*}}]{param,  }\item[{size\+\_\+t}]{paramlen }\end{DoxyParamCaption})}
+
+\Hypertarget{group__interface_gac88ba81abfd42df65c6c0c64414dfc6e}\label{group__interface_gac88ba81abfd42df65c6c0c64414dfc6e} 
+\index{ATCAIface (atca\_)@{ATCAIface (atca\_)}!atgetifacecfg@{atgetifacecfg}}
+\index{atgetifacecfg@{atgetifacecfg}!ATCAIface (atca\_)@{ATCAIface (atca\_)}}
+\doxysubsubsection{\texorpdfstring{atgetifacecfg()}{atgetifacecfg()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_a_t_c_a_iface_cfg}{ATCAIface\+Cfg}} \texorpdfstring{$\ast$}{*} atgetifacecfg (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__interface_ga75c11126f3fe81df3d6c27f5bb393303}{ATCAIface}}}]{ca\+\_\+iface }\end{DoxyParamCaption})}
+
+\Hypertarget{group__interface_ga5e4163b8882d4eb42d4d5191c8731da0}\label{group__interface_ga5e4163b8882d4eb42d4d5191c8731da0} 
+\index{ATCAIface (atca\_)@{ATCAIface (atca\_)}!atgetifacehaldat@{atgetifacehaldat}}
+\index{atgetifacehaldat@{atgetifacehaldat}!ATCAIface (atca\_)@{ATCAIface (atca\_)}}
+\doxysubsubsection{\texorpdfstring{atgetifacehaldat()}{atgetifacehaldat()}}
+{\footnotesize\ttfamily void \texorpdfstring{$\ast$}{*} atgetifacehaldat (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__interface_ga75c11126f3fe81df3d6c27f5bb393303}{ATCAIface}}}]{ca\+\_\+iface }\end{DoxyParamCaption})}
+
+\Hypertarget{group__interface_gac794fffe040e6d47a34c756720f3cbea}\label{group__interface_gac794fffe040e6d47a34c756720f3cbea} 
+\index{ATCAIface (atca\_)@{ATCAIface (atca\_)}!atidle@{atidle}}
+\index{atidle@{atidle}!ATCAIface (atca\_)@{ATCAIface (atca\_)}}
+\doxysubsubsection{\texorpdfstring{atidle()}{atidle()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} atidle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__interface_ga75c11126f3fe81df3d6c27f5bb393303}{ATCAIface}}}]{ca\+\_\+iface }\end{DoxyParamCaption})}
+
+\Hypertarget{group__interface_ga386353e8700eec35e4548dfa29f13b8d}\label{group__interface_ga386353e8700eec35e4548dfa29f13b8d} 
+\index{ATCAIface (atca\_)@{ATCAIface (atca\_)}!atinit@{atinit}}
+\index{atinit@{atinit}!ATCAIface (atca\_)@{ATCAIface (atca\_)}}
+\doxysubsubsection{\texorpdfstring{atinit()}{atinit()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} atinit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__interface_ga75c11126f3fe81df3d6c27f5bb393303}{ATCAIface}}}]{ca\+\_\+iface }\end{DoxyParamCaption})}
+
+\Hypertarget{group__interface_ga01badea388343bdf5929c5c2be9f426b}\label{group__interface_ga01badea388343bdf5929c5c2be9f426b} 
+\index{ATCAIface (atca\_)@{ATCAIface (atca\_)}!atreceive@{atreceive}}
+\index{atreceive@{atreceive}!ATCAIface (atca\_)@{ATCAIface (atca\_)}}
+\doxysubsubsection{\texorpdfstring{atreceive()}{atreceive()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} atreceive (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__interface_ga75c11126f3fe81df3d6c27f5bb393303}{ATCAIface}}}]{ca\+\_\+iface,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{word\+\_\+address,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{rxdata,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{rxlength }\end{DoxyParamCaption})}
+
+\Hypertarget{group__interface_gabd4f20b06efedede6bc4a836cfad8f38}\label{group__interface_gabd4f20b06efedede6bc4a836cfad8f38} 
+\index{ATCAIface (atca\_)@{ATCAIface (atca\_)}!atsend@{atsend}}
+\index{atsend@{atsend}!ATCAIface (atca\_)@{ATCAIface (atca\_)}}
+\doxysubsubsection{\texorpdfstring{atsend()}{atsend()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} atsend (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__interface_ga75c11126f3fe81df3d6c27f5bb393303}{ATCAIface}}}]{ca\+\_\+iface,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{word\+\_\+address,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{txdata,  }\item[{int}]{txlength }\end{DoxyParamCaption})}
+
+\Hypertarget{group__interface_gac06336335e5f3191e3b1fc06d2830d96}\label{group__interface_gac06336335e5f3191e3b1fc06d2830d96} 
+\index{ATCAIface (atca\_)@{ATCAIface (atca\_)}!atsleep@{atsleep}}
+\index{atsleep@{atsleep}!ATCAIface (atca\_)@{ATCAIface (atca\_)}}
+\doxysubsubsection{\texorpdfstring{atsleep()}{atsleep()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} atsleep (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__interface_ga75c11126f3fe81df3d6c27f5bb393303}{ATCAIface}}}]{ca\+\_\+iface }\end{DoxyParamCaption})}
+
+\Hypertarget{group__interface_ga32693c852341e1b946bab3cca5f71761}\label{group__interface_ga32693c852341e1b946bab3cca5f71761} 
+\index{ATCAIface (atca\_)@{ATCAIface (atca\_)}!atwake@{atwake}}
+\index{atwake@{atwake}!ATCAIface (atca\_)@{ATCAIface (atca\_)}}
+\doxysubsubsection{\texorpdfstring{atwake()}{atwake()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} atwake (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__interface_ga75c11126f3fe81df3d6c27f5bb393303}{ATCAIface}}}]{ca\+\_\+iface }\end{DoxyParamCaption})}
+
+\Hypertarget{group__interface_gaf8074d759241d3edd6d8ead1d7322a98}\label{group__interface_gaf8074d759241d3edd6d8ead1d7322a98} 
+\index{ATCAIface (atca\_)@{ATCAIface (atca\_)}!deleteATCAIface@{deleteATCAIface}}
+\index{deleteATCAIface@{deleteATCAIface}!ATCAIface (atca\_)@{ATCAIface (atca\_)}}
+\doxysubsubsection{\texorpdfstring{deleteATCAIface()}{deleteATCAIface()}}
+{\footnotesize\ttfamily void delete\+ATCAIface (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__interface_ga75c11126f3fe81df3d6c27f5bb393303}{ATCAIface}} \texorpdfstring{$\ast$}{*}}]{ca\+\_\+iface }\end{DoxyParamCaption})}
+
+\Hypertarget{group__interface_ga3a31087729a7a2e9a624572f234809fc}\label{group__interface_ga3a31087729a7a2e9a624572f234809fc} 
+\index{ATCAIface (atca\_)@{ATCAIface (atca\_)}!initATCAIface@{initATCAIface}}
+\index{initATCAIface@{initATCAIface}!ATCAIface (atca\_)@{ATCAIface (atca\_)}}
+\doxysubsubsection{\texorpdfstring{initATCAIface()}{initATCAIface()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} init\+ATCAIface (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_a_t_c_a_iface_cfg}{ATCAIface\+Cfg}} \texorpdfstring{$\ast$}{*}}]{cfg,  }\item[{\mbox{\hyperlink{group__interface_ga75c11126f3fe81df3d6c27f5bb393303}{ATCAIface}}}]{ca\+\_\+iface }\end{DoxyParamCaption})}
+
+\Hypertarget{group__interface_ga6f28f18f0d00c5301939724325f6b6fc}\label{group__interface_ga6f28f18f0d00c5301939724325f6b6fc} 
+\index{ATCAIface (atca\_)@{ATCAIface (atca\_)}!newATCAIface@{newATCAIface}}
+\index{newATCAIface@{newATCAIface}!ATCAIface (atca\_)@{ATCAIface (atca\_)}}
+\doxysubsubsection{\texorpdfstring{newATCAIface()}{newATCAIface()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__interface_ga75c11126f3fe81df3d6c27f5bb393303}{ATCAIface}} new\+ATCAIface (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_a_t_c_a_iface_cfg}{ATCAIface\+Cfg}} \texorpdfstring{$\ast$}{*}}]{cfg }\end{DoxyParamCaption})}
+
+\Hypertarget{group__interface_gab9ee16357a8e397a72eda7e9c8553fb3}\label{group__interface_gab9ee16357a8e397a72eda7e9c8553fb3} 
+\index{ATCAIface (atca\_)@{ATCAIface (atca\_)}!releaseATCAIface@{releaseATCAIface}}
+\index{releaseATCAIface@{releaseATCAIface}!ATCAIface (atca\_)@{ATCAIface (atca\_)}}
+\doxysubsubsection{\texorpdfstring{releaseATCAIface()}{releaseATCAIface()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} release\+ATCAIface (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__interface_ga75c11126f3fe81df3d6c27f5bb393303}{ATCAIface}}}]{ca\+\_\+iface }\end{DoxyParamCaption})}
+

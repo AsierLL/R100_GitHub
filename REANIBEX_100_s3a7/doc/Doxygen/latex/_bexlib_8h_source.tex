@@ -1,0 +1,104 @@
+\doxysection{Bexlib.\+h}
+\hypertarget{_bexlib_8h_source}{}\label{_bexlib_8h_source}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/SCE/Bexlib.h@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/SCE/Bexlib.h}}
+\mbox{\hyperlink{_bexlib_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ mylib.h}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ Created\ on:\ Jan\ 9,\ 2018}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ \ \ \ Author:\ gjacobso01}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{cryptoauthlib_8h}{cryptoauthlib.h}}"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{atca__status_8h}{atca\_status.h}}"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{atca__debug_8h}{atca\_debug.h}}"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{atca__iface_8h}{atca\_iface.h}}"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{atca__devtypes_8h}{atca\_devtypes.h}}"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{atca__helpers_8h}{atca\_helpers.h}}"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{atca__cfgs_8h}{atca\_cfgs.h}}"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{atca__device_8h}{atca\_device.h}}"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{atca__basic_8h}{atca\_basic.h}}"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{atca__hal_8h}{atca\_hal.h}}"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{calib__basic_8h}{calib\_basic.h}}"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{calib__command_8h}{calib\_command.h}}"{}}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{calib__execution_8h}{calib\_execution.h}}"{}}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{calib__aes__gcm_8h}{calib\_aes\_gcm.h}}"{}}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{atca__crypto__sw_8h}{atca\_crypto\_sw.h}}"{}}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{atca__crypto__sw__sha2_8h}{atca\_crypto\_sw\_sha2.h}}"{}}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{atca__crypto__hw__aes_8h}{atca\_crypto\_hw\_aes.h}}"{}}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_s_c_e_2types__basic_8h}{types\_basic.h}}"{}}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#ifndef\ MYLIB\_H\_}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#define\ MYLIB\_H\_}}
+\DoxyCodeLine{00029\ \textcolor{comment}{//}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ test\_assert\_config\_is\_locked()\ \ \ \ \ \ \ \ \ \ atca\_test\_assert\_config\_is\_locked(\_\_LINE\_\_)}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ test\_assert\_data\_is\_locked()\ \ \ \ \ \ \ \ \ \ \ \ atca\_test\_assert\_data\_is\_locked(\_\_LINE\_\_)}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#define\ check\_config\_aes\_enable()\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ atca\_test\_assert\_aes\_enabled(\_\_LINE\_\_)}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#define\ test\_assert\_data\_is\_unlocked()\ \ \ \ \ atca\_test\_assert\_data\_is\_unlocked(\_\_LINE\_\_)}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#define\ TEST\_TYPE\_ECC\_SIGN\ \ \ \ \ \ \ \ \ \ (1)}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#define\ TEST\_TYPE\_ECC\_VERIFY\ \ \ \ \ \ \ \ (2)}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#define\ TEST\_TYPE\_ECC\_GENKEY\ \ \ \ \ \ \ \ (3)}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#define\ TEST\_TYPE\_AES\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (4)}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#define\ TEST\_TYPE\_DATA\ \ \ \ \ \ \ \ \ \ \ \ \ \ (5)}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#define\ TEST\_TYPE\_HMAC\ \ \ \ \ \ \ \ \ \ \ \ \ \ (6)}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#define\ TEST\_TYPE\_ECDH\ \ \ \ \ \ \ \ \ \ \ \ \ \ (7)}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#define\ TEST\_TYPE\_AUTH\_HMAC\ \ \ \ \ \ \ \ \ (8)}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#define\ TEST\_TYPE\_AUTH\_CMAC\ \ \ \ \ \ \ \ \ (9)}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#define\ TEST\_TYPE\_AUTH\_GCM\ \ \ \ \ \ \ \ \ \ (10)}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#define\ TEST\_TYPE\_ECC\_ROOT\_KEY\ \ \ \ \ \ (11)}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#define\ TEST\_TYPE\_TEMPLATE\_DATA\ \ \ \ \ (12)}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#define\ AES\_CONFIG\_ENABLE\_BIT\_MASK\ \ \ (uint8\_t)0x01}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \ \ \ \mbox{\hyperlink{_bexlib_8h_a711b62bcec9cafcd46479a4832adfa55}{UNITY\_UINT32}};}
+\DoxyCodeLine{00052\ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{_bexlib_8h_a711b62bcec9cafcd46479a4832adfa55}{UNITY\_UINT32}}\ \mbox{\hyperlink{_bexlib_8h_abb5d2d06855829696244db2ff89290bd}{UNITY\_UINT}};}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ UNITY\_LINE\_TYPE\ UNITY\_UINT}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00056\ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \mbox{\hyperlink{structdevice__object__meta__t_a444d31fb3514b29dabfb662e238a7ede}{test\_type}};}
+\DoxyCodeLine{00058\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \mbox{\hyperlink{structdevice__object__meta__t_a21eb9e428915f1c51085affa7e88143b}{handle}};}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{void}*\ \ \ \ \mbox{\hyperlink{structdevice__object__meta__t_a02c96dece053c118caca12aebc50bfc4}{attributes}};}
+\DoxyCodeLine{00060\ \}\ \mbox{\hyperlink{structdevice__object__meta__t}{device\_object\_meta\_t}};}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \mbox{\hyperlink{_bexlib_8h_a9f22564947cecda2675b540fd06ae358}{g\_slot4\_key}}[];}
+\DoxyCodeLine{00064\ \textcolor{comment}{//extern\ ATCAIfaceCfg\ *gCfg;}}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_bexlib_8h_ac120fd4689996553dd52f8d684223bed}{factorial}}(\textcolor{keywordtype}{int}\ input);}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ \mbox{\hyperlink{_bexlib_8h_ad16d15bef3008d9e9fdba6c129c6b02a}{test\_ecdh\_protection\_key}}(\mbox{\hyperlink{struct_a_t_c_a_iface_cfg}{ATCAIfaceCfg}}*\ cfg);}
+\DoxyCodeLine{00069\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ \mbox{\hyperlink{_bexlib_8h_a433bcde2b0560ab9329168a19bb97f5a}{test\_ecdh}}(\mbox{\hyperlink{struct_a_t_c_a_iface_cfg}{ATCAIfaceCfg}}*\ cfg);}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ \mbox{\hyperlink{_bexlib_8h_a18bd64bd1773335d0a991846178e9531}{inject\_cert}}(\textcolor{keywordtype}{int}\ CERTIFICATE\_KEYID\textcolor{comment}{/*\ 1\ or\ 2*/},\ \textcolor{keyword}{const}\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ *cert,\ \textcolor{keywordtype}{int}\ cert\_size);}
+\DoxyCodeLine{00072\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ \mbox{\hyperlink{_bexlib_8h_a13bca9979a4d72c1347716ab97640768}{read\_cert}}(\textcolor{keywordtype}{int}\ CERTIFICATE\_KEYID\textcolor{comment}{/*\ 1\ or\ 2*/},\ \textcolor{keyword}{const}\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ *cert,\ \textcolor{keywordtype}{int}\ *cert\_size);}
+\DoxyCodeLine{00073\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ \mbox{\hyperlink{_bexlib_8h_aa2e18d5e36e2a3d1fdde9e9d8f956b63}{get\_random}}(\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ *rndData);}
+\DoxyCodeLine{00074\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ \mbox{\hyperlink{_bexlib_8h_a714e82a6406162ea52c4bd4f57e3e716}{gen\_key}}(\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ *pubKey,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ *keyID);}
+\DoxyCodeLine{00075\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ \mbox{\hyperlink{_bexlib_8h_ab7ea9edc70de0cc478c641bd7015af01}{get\_key}}(\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ *pubKey,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ *keyID);}
+\DoxyCodeLine{00076\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ \mbox{\hyperlink{_bexlib_8h_ac08fcf05b9b1c0d7405ba1bc3e5deb07}{asymmetric\_sign}}(\mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ *private\_key\_id,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ *msg,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ *signature);}
+\DoxyCodeLine{00077\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ \mbox{\hyperlink{_bexlib_8h_a5e91ba4a563a33d012ca575fc0424025}{asymmetric\_verify}}(\mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ *key\_id,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ *msg,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ *signature,\ \textcolor{keywordtype}{bool}*\ is\_verified);}
+\DoxyCodeLine{00078\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ \mbox{\hyperlink{_bexlib_8h_ae93687b8fa5f12b399d5120213b87c22}{sha\_digest}}(\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ *msg,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ *digest,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ *msg\_size);}
+\DoxyCodeLine{00079\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_bexlib_8h_a46639b457784501fa39bebd30da980e2}{sha\_s\_digest}}(\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ *msg,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ *digest,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ *msg\_size);}
+\DoxyCodeLine{00080\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ \mbox{\hyperlink{_bexlib_8h_a810fa7098125552c4f323d81ff9effee}{gen\_aes\_key}}(\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ *keyID);}
+\DoxyCodeLine{00081\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ \mbox{\hyperlink{_bexlib_8h_a10aba16e02150145d2410accc6bdf10f}{get\_aes\_key}}(\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ *aesKey,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ *keyID,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ *key\_block);}
+\DoxyCodeLine{00082\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ \mbox{\hyperlink{_bexlib_8h_aa262635e35b6b414ae9bc62730b7dec0}{aes\_encrypt\_slot}}(\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ *key\_slot,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ *key\_block,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ *msg,\ \textcolor{keywordtype}{size\_t}\ *msg\_size,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ *encrypted\_data\_out);}
+\DoxyCodeLine{00083\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ \mbox{\hyperlink{_bexlib_8h_ac884a84e207cf1d1b5f3d66d5a8ad8fb}{aes\_decrypt\_slot}}(\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ *key\_slot,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ *key\_block,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ *ciphertext,\ \textcolor{keywordtype}{size\_t}\ *ciphertext\_size,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ *decrypted\_data\_out);}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ \mbox{\hyperlink{_bexlib_8h_aa29bf6afa7068025ca8d93fc512f41f1}{check\_config\_is\_locked}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00086\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ \mbox{\hyperlink{_bexlib_8h_ad30c98d7226f1b473c74757a7bf7828c}{check\_data\_is\_locked}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00087\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ \mbox{\hyperlink{_bexlib_8h_afd3a1b37083b1c1901f6ec6324c1b2d6}{check\_aes\_enabled}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_bexlib_8h_a303154c70ed1538bd946df8696a78bce}{init\_Device}}(\mbox{\hyperlink{structatca__iface}{ATCAIface}}\ atecc,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ address,\ \textcolor{keywordtype}{int}\ retries);}
+\DoxyCodeLine{00094\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ \mbox{\hyperlink{_bexlib_8h_ad4df1b6755e2d5b5d9e810371e45ca8c}{hal\_i2c\_wake}}(\mbox{\hyperlink{structatca__iface}{ATCAIface}}\ iface);}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ \mbox{\hyperlink{_bexlib_8h_a2a28504f206155a1785520963434e317}{calib\_config\_get\_slot\_by\_test}}(\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ test\_type,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}*\ handle);}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ MYLIB\_H\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

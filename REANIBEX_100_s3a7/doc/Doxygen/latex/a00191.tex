@@ -1,0 +1,1743 @@
+\doxysection{C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\+HAL/thread\+\_\+comm\+\_\+hal.h File Reference}
+\hypertarget{a00191}{}\label{a00191}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/HAL/thread\_comm\_hal.h@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/HAL/thread\_comm\_hal.h}}
+
+
+Header with functions related to the HAL Comm.  
+
+
+{\ttfamily \#include "{}R100\+\_\+\+Errors.\+h"{}}\newline
+{\ttfamily \#include "{}types\+\_\+basic.\+h"{}}\newline
+{\ttfamily \#include "{}thread\+\_\+pat\+Mon\+\_\+hal.\+h"{}}\newline
+{\ttfamily \#include "{}DB\+\_\+\+Test.\+h"{}}\newline
+{\ttfamily \#include "{}I2\+C\+\_\+1.\+h"{}}\newline
+{\ttfamily \#include "{}bsp\+\_\+acc\+\_\+\+LIS3\+DH.\+h"{}}\newline
+Include dependency graph for thread\+\_\+comm\+\_\+hal.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{a00610}{wifi\+\_\+config\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{a00614}{sigfox\+\_\+config\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{a00618}{gps\+\_\+config\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{a00622}{acc\+\_\+config\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{a00626}{WIFI\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Wifi structure to report the test result (same as \doxylink{a00646}{SIGFOX\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t}) \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{a00630}{WIFI\+\_\+\+FUNC\+\_\+\+ALERT\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Wifi structure to report the functional alert (same as \doxylink{a00654}{SIGFOX\+\_\+\+FUNC\+\_\+\+ALERT\+\_\+t}) \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{a00634}{WIFI\+\_\+\+GPS\+\_\+\+POSITION\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Wifi structure to report the gps position (same as \doxylink{a00658}{SIGFOX\+\_\+\+GPS\+\_\+\+POSITION\+\_\+t}) \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{a00638}{WIFI\+\_\+\+HOST\+\_\+\+RESPONSE\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Wifi structure to get the host server. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{a00642}{WIFI\+\_\+\+SERVER\+\_\+\+RESPONSE\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Wifi structure to get the host server. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{a00646}{SIGFOX\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Sigfox structure to report the test result. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{a00650}{SIGFOX\+\_\+\+ELEC\+\_\+\+BATT\+\_\+\+EXPIRATION\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Sigfox structure to report the test result. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{a00654}{SIGFOX\+\_\+\+FUNC\+\_\+\+ALERT\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Sigfox structure to report the functional alert. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{a00658}{SIGFOX\+\_\+\+GPS\+\_\+\+POSITION\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Sigfox structure to report the gps position. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{a00191_a1b87d13abc62415163d34beaae8ee905}{MIKROBUS\+\_\+\+RST}}~IOPORT\+\_\+\+PORT\+\_\+06\+\_\+\+PIN\+\_\+09
+\item 
+\#define \mbox{\hyperlink{a00191_a5234d2454a5ac9523e1f5ffddcf40498}{MIKROBUS\+\_\+\+AN}}~IOPORT\+\_\+\+PORT\+\_\+00\+\_\+\+PIN\+\_\+06
+\item 
+\#define \mbox{\hyperlink{a00191_a82edc58b1d4ed1e98097b27e605fc290}{MIKROBUS\+\_\+\+PWM}}~IOPORT\+\_\+\+PORT\+\_\+01\+\_\+\+PIN\+\_\+12
+\item 
+\#define \mbox{\hyperlink{a00191_a8fc3326520fc4e8ba3d73d7b09c730a0}{I2\+C\+\_\+\+PCF8574\+\_\+\+DATA}}(x,  y)~(x \& y)
+\item 
+\#define \mbox{\hyperlink{a00191_a7bdc1bfc32e593aa73cedc596acfb588}{I2\+C\+\_\+\+DEFAULT\+\_\+\+DATA}}~0b11111111
+\item 
+\#define \mbox{\hyperlink{a00191_a811b1aa72d190a5471ccecf43f51f87c}{I2\+C\+\_\+\+RESET\+\_\+\+GPS}}~0b11111110
+\item 
+\#define \mbox{\hyperlink{a00191_a2341345b82aa18de5ed008b33a7a76ae}{I2\+C\+\_\+\+RESET\+\_\+\+WIFI}}~0b11111101
+\item 
+\#define \mbox{\hyperlink{a00191_a0f814bf0d52e30cb9821bf230be68f93}{I2\+C\+\_\+\+RESET\+\_\+\+SIGFOX}}~0b11111011
+\item 
+\#define \mbox{\hyperlink{a00191_a6ee9fc6824f36e39a6395bd4aa1854e6}{I2\+C\+\_\+\+UART\+\_\+\+GPS}}~0b01111111
+\item 
+\#define \mbox{\hyperlink{a00191_ae24d31274f098d299b981c513a520061}{I2\+C\+\_\+\+UART\+\_\+\+WIFI}}~0b10111111
+\item 
+\#define \mbox{\hyperlink{a00191_a48cc7cdd7b2d58b4fccd6936ddaff742}{I2\+C\+\_\+\+UART\+\_\+\+SIGFOX}}~0b11111111
+\item 
+\#define \mbox{\hyperlink{a00191_a3e8b85e109ea21b7bbcd5818553e1d31}{I2\+C\+\_\+\+UART\+\_\+\+FREE}}~0b00111111
+\item 
+\#define \mbox{\hyperlink{a00191_aea7aedee1c670cd484399aab9c195698}{MAX\+\_\+\+WLAN\+\_\+\+SSID\+\_\+\+LENGTH}}~32
+\item 
+\#define \mbox{\hyperlink{a00191_aee6b176f83b4577275778dcaa0e3d9b1}{MAX\+\_\+\+WLAN\+\_\+\+PASS\+\_\+\+LENGTH}}~32
+\item 
+\#define \mbox{\hyperlink{a00191_ac0bdfe428322cee28401640b47089087}{MAX\+\_\+\+IPV4\+\_\+\+ADDR\+\_\+\+LENGTH}}~16
+\item 
+\#define \mbox{\hyperlink{a00191_aafbbbc7737c2047111661bb967dd1127}{MAX\+\_\+\+MAC\+\_\+\+ADDR\+\_\+\+LENGTH}}~18
+\item 
+\#define \mbox{\hyperlink{a00191_a42ff5c072b187f15487e532273c1381e}{MAX\+\_\+\+HOST\+\_\+\+NAME\+\_\+\+LENGTH}}~64
+\item 
+\#define \mbox{\hyperlink{a00191_a2343be917a149877bac86f5a7bfc3a57}{MAX\+\_\+\+WIFI\+\_\+\+DATA\+\_\+\+SZ}}~12
+\item 
+\#define \mbox{\hyperlink{a00191_a9eaf86b5a374d691bb2f204ec796a840}{MAX\+\_\+\+WIFI\+\_\+\+DATA\+\_\+\+TEST\+\_\+\+SZ}}~24
+\item 
+\#define \mbox{\hyperlink{a00191_a1bd9dd646813738f92ac512104e4732d}{WIFI\+\_\+\+FILE\+\_\+\+FRAME}}~0x30
+\item 
+\#define \mbox{\hyperlink{a00191_a08f5839402e87b4e9b0ecf8888e68d26}{WIFI\+\_\+\+TEST\+\_\+\+FRAME}}~0x31
+\item 
+\#define \mbox{\hyperlink{a00191_ac2252aa4305680b026ba322a96c14c94}{WIFI\+\_\+\+ALERT\+\_\+\+FRAME}}~0x32
+\item 
+\#define \mbox{\hyperlink{a00191_ab45bfeca114ab44c4316f8097eabca66}{WIFI\+\_\+\+GPS\+\_\+\+FRAME}}~0x33
+\item 
+\#define \mbox{\hyperlink{a00191_adc3a67632e1dab407e78e082d1361a92}{WIFI\+\_\+\+CERT\+\_\+\+READ}}~0
+\item 
+\#define \mbox{\hyperlink{a00191_a7b3153ba255e625089fcc080b84332e1}{WIFI\+\_\+\+CERT\+\_\+\+WRITE}}~1
+\item 
+\#define \mbox{\hyperlink{a00191_a5214ee48119bb1751dd6e943a781a0fe}{WIFI\+\_\+\+EAP\+\_\+\+LOADED}}~1
+\item 
+\#define \mbox{\hyperlink{a00191_aa958eba0c366b00b85bdd8c84bfb729d}{WIFI\+\_\+\+FP\+\_\+\+LOADED}}~2
+\item 
+\#define \mbox{\hyperlink{a00191_a8816a1867805cc293ed08a408f56b5fc}{WIFI\+\_\+\+TLS\+\_\+\+LOADED}}~1
+\item 
+\#define \mbox{\hyperlink{a00191_ac00e289c207b2affc18ad52fbdd577a3}{MAX\+\_\+\+SIGFOX\+\_\+\+DATA\+\_\+\+SZ}}~12
+\item 
+\#define \mbox{\hyperlink{a00191_a06ce33b38273dec6aeb04e57619226f3}{MAX\+\_\+\+SIGFOX\+\_\+\+DEV\+\_\+\+ID\+\_\+\+LENGTH}}~10
+\item 
+\#define \mbox{\hyperlink{a00191_ad4a12d0e44013a16c7afef847f180542}{MAX\+\_\+\+SIGFOX\+\_\+\+DEV\+\_\+\+PAC\+\_\+\+LENGTH}}~18
+\item 
+\#define \mbox{\hyperlink{a00191_a82eab94e2a7149690957cf86ee54ee08}{MAX\+\_\+\+SIGFOX\+\_\+\+FREQ\+\_\+\+LENGTH}}~11
+\item 
+\#define \mbox{\hyperlink{a00191_a10ebb3fad9817f136570863d3195f3a9}{SIGFOX\+\_\+\+TEST\+\_\+\+TX\+\_\+\+FREQ}}~"{}868130000"{}
+\item 
+\#define \mbox{\hyperlink{a00191_a351cb9c47d36b714ea660f12b00c1a94}{SIGFOX\+\_\+\+TEST\+\_\+\+RX\+\_\+\+FREQ}}~"{}869525000"{}
+\item 
+\#define \mbox{\hyperlink{a00191_afbcdc76f360d3da130f2d5625466b2a4}{SIGFOX\+\_\+\+DOWNLINK\+\_\+\+OFF}}~0
+\item 
+\#define \mbox{\hyperlink{a00191_ae6cddb825d903da1ab1c66e23329dc57}{SIGFOX\+\_\+\+DOWNLINK\+\_\+\+ON}}~1
+\item 
+\#define \mbox{\hyperlink{a00191_a126c05d35465b5ea67bf26ff613a733c}{MAX\+\_\+\+GPS\+\_\+\+DEV\+\_\+\+ID\+\_\+\+LENGTH}}~8
+\item 
+\#define \mbox{\hyperlink{a00191_a96932e657cf05fc9302d60257a23316f}{MAX\+\_\+\+ACC\+\_\+\+DEV\+\_\+\+ID\+\_\+\+LENGTH}}~4
+\item 
+\#define \mbox{\hyperlink{a00191_a89fa0418e9cdc0adea24046deffff53b}{MAX\+\_\+\+ACC\+\_\+\+XYZ\+\_\+\+CONF\+\_\+\+LENGTH}}~9
+\item 
+\#define \mbox{\hyperlink{a00191_a1fd36314dbb5372abcb987e1f5c185e4}{ACC\+\_\+\+ENABLE\+\_\+\+XYZ}}~0x07
+\item 
+\#define \mbox{\hyperlink{a00191_a964d947aa1e461dcd8045fb3202e0607}{ACC\+\_\+\+SAMPLE\+\_\+\+RATE\+\_\+\+PD}}~0x00
+\item 
+\#define \mbox{\hyperlink{a00191_aa90fdfba484018fe4a67bd276ef8a755}{ACC\+\_\+\+SAMPLE\+\_\+\+RATE\+\_\+25}}~0x03
+\item 
+\#define \mbox{\hyperlink{a00191_a8cdad742799d53af9574acf1526a35b7}{ACC\+\_\+\+SAMPLE\+\_\+\+RATE\+\_\+50}}~0x04
+\item 
+\#define \mbox{\hyperlink{a00191_ad92d92fed430bbf7d3f0bfdc98722aee}{ACC\+\_\+2\+G\+\_\+\+ACCEL\+\_\+\+RANGE}}~0x00
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{a00191_a02ace324eb27603254e760e194b38fd9}{COMM\+\_\+\+MOD\+\_\+e}} \{ \mbox{\hyperlink{a00191_a02ace324eb27603254e760e194b38fd9ac81fa9134a3a32e311bcd887e3b18535}{e\+MOD\+\_\+\+NONE}} = 0
+, \mbox{\hyperlink{a00191_a02ace324eb27603254e760e194b38fd9a532f84e9a11fdfb7f0085b5383b79638}{e\+MOD\+\_\+\+WIFI}}
+, \mbox{\hyperlink{a00191_a02ace324eb27603254e760e194b38fd9af2476868b112e63423601ae7fe6d9f07}{e\+MOD\+\_\+\+SIGFOX}}
+, \mbox{\hyperlink{a00191_a02ace324eb27603254e760e194b38fd9a3b533fa0035dea76cc24136fa7cb32b4}{e\+MOD\+\_\+\+GPS}}
+ \}
+\begin{DoxyCompactList}\small\item\em COMM Modules. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{a00191_ad9f8a63230f5b4592c5dd0fc5c5e7810}{WIFI\+\_\+\+SEC\+\_\+e}} \{ \mbox{\hyperlink{a00191_ad9f8a63230f5b4592c5dd0fc5c5e7810aa3e71f20cd87de2b10729e0a258acd4e}{e\+WIFI\+\_\+\+OPEN\+\_\+\+SEC}} = 0
+, \mbox{\hyperlink{a00191_ad9f8a63230f5b4592c5dd0fc5c5e7810a2b36a37b58b9a9f6d65df9e8f48f7c9f}{e\+WIFI\+\_\+\+WPA}}
+, \mbox{\hyperlink{a00191_ad9f8a63230f5b4592c5dd0fc5c5e7810a9a24e22e938c7fd47ac960f1adea5bdf}{e\+WIFI\+\_\+\+EAP\+\_\+\+TLS\+\_\+\+SEC}}
+, \mbox{\hyperlink{a00191_ad9f8a63230f5b4592c5dd0fc5c5e7810add229ead9b610b7e4993159edc5f8655}{e\+WIFI\+\_\+\+EAP\+\_\+\+PEAP\+\_\+\+SEC}}
+ \}
+\begin{DoxyCompactList}\small\item\em Wifi Security. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{a00191_a1407e07609785109ddf8addc24e8a621}{WIFI\+\_\+\+ADVS\+\_\+e}} \{ \mbox{\hyperlink{a00191_a1407e07609785109ddf8addc24e8a621ac8246b83a02f7908ea0970cfebc12d24}{e\+WIFI\+\_\+\+NO}} = 0
+, \mbox{\hyperlink{a00191_a1407e07609785109ddf8addc24e8a621ad5bc67f732a4b14efdb242eb91eb8c5d}{e\+WIFI\+\_\+\+ONLY\+\_\+\+IP}}
+, \mbox{\hyperlink{a00191_a1407e07609785109ddf8addc24e8a621abcf0a68c48b71d8c6b69564d0d2ab3e2}{e\+WIFI\+\_\+\+ONLY\+\_\+\+DNS}}
+, \mbox{\hyperlink{a00191_a1407e07609785109ddf8addc24e8a621a326fa82482b651594922e8ec18e1932b}{e\+WIFI\+\_\+\+IP\+\_\+\+DNS}}
+ \}
+\begin{DoxyCompactList}\small\item\em Wifi Advance Settings. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{a00191_a30bcce91a84082e55fabfd5098f0d7d7}{WIFI\+\_\+\+MSG\+\_\+\+ID\+\_\+e}} \{ \newline
+\mbox{\hyperlink{a00191_a30bcce91a84082e55fabfd5098f0d7d7adbac27c01f8cd78a3c3217441493630d}{WIFI\+\_\+\+MSG\+\_\+\+ID\+\_\+\+POWER\+\_\+\+ON\+\_\+\+TEST}} = 0
+, \mbox{\hyperlink{a00191_a30bcce91a84082e55fabfd5098f0d7d7a448be03a70bee50b5940322f96cf4251}{WIFI\+\_\+\+MSG\+\_\+\+ID\+\_\+\+DIARY\+\_\+\+TEST}}
+, \mbox{\hyperlink{a00191_a30bcce91a84082e55fabfd5098f0d7d7a5c10ffd36a75fc55efac6d9790010836}{WIFI\+\_\+\+MSG\+\_\+\+ID\+\_\+\+MONTHLY\+\_\+\+TEST}}
+, \mbox{\hyperlink{a00191_a30bcce91a84082e55fabfd5098f0d7d7ad07f91bf4395ae9ff72c22278dcbf46e}{WIFI\+\_\+\+MSG\+\_\+\+ID\+\_\+\+MANUAL\+\_\+\+TEST}}
+, \newline
+\mbox{\hyperlink{a00191_a30bcce91a84082e55fabfd5098f0d7d7a520f6f883e25b4728261060c92ef3662}{WIFI\+\_\+\+MSG\+\_\+\+ID\+\_\+\+FUNC\+\_\+\+TEST}}
+, \mbox{\hyperlink{a00191_a30bcce91a84082e55fabfd5098f0d7d7a322e0f5e3b029f0bca81583501d88709}{WIFI\+\_\+\+MSG\+\_\+\+ID\+\_\+\+COVER\+\_\+\+OPEN\+\_\+\+ALERT}}
+, \mbox{\hyperlink{a00191_a30bcce91a84082e55fabfd5098f0d7d7ab04f0dd931e7174b8313fe1ac9891a10}{WIFI\+\_\+\+MSG\+\_\+\+ID\+\_\+\+COVER\+\_\+\+CLOSE\+\_\+\+ALERT}}
+, \mbox{\hyperlink{a00191_a30bcce91a84082e55fabfd5098f0d7d7ab455ec3e39cb424394bf304d1d6af72a}{WIFI\+\_\+\+MSG\+\_\+\+ID\+\_\+\+NO\+\_\+\+SHOCK\+\_\+\+ALERT}}
+, \newline
+\mbox{\hyperlink{a00191_a30bcce91a84082e55fabfd5098f0d7d7a823922a475d07d34aed2dfb0d9041a84}{WIFI\+\_\+\+MSG\+\_\+\+ID\+\_\+\+SHOCK\+\_\+\+DISC\+\_\+\+ALERT}}
+, \mbox{\hyperlink{a00191_a30bcce91a84082e55fabfd5098f0d7d7a25a0c258f2e30e89c82f88f2d46a028c}{WIFI\+\_\+\+MSG\+\_\+\+ID\+\_\+\+SHOCK\+\_\+\+TIMEOUT\+\_\+\+ALERT}}
+, \mbox{\hyperlink{a00191_a30bcce91a84082e55fabfd5098f0d7d7a67a6a130a06e7be26df76989ee1f4a36}{WIFI\+\_\+\+MSG\+\_\+\+ID\+\_\+\+SHOCK\+\_\+\+DONE\+\_\+\+ALERT}}
+, \mbox{\hyperlink{a00191_a30bcce91a84082e55fabfd5098f0d7d7af45ee89a25ada1786c760b5b24773d7c}{WIFI\+\_\+\+MSG\+\_\+\+ID\+\_\+\+SAVED\+\_\+\+POS\+\_\+\+GPS}}
+, \newline
+\mbox{\hyperlink{a00191_a30bcce91a84082e55fabfd5098f0d7d7a70fc8ad255b2a43ee0b5cc30a171759a}{WIFI\+\_\+\+MSG\+\_\+\+ID\+\_\+\+MON\+\_\+\+TEST\+\_\+\+GPS}}
+, \mbox{\hyperlink{a00191_a30bcce91a84082e55fabfd5098f0d7d7a9e00ac7bc633b236baa5f722ac522232}{WIFI\+\_\+\+MSG\+\_\+\+ID\+\_\+\+MAN\+\_\+\+TEST\+\_\+\+GPS}}
+, \mbox{\hyperlink{a00191_a30bcce91a84082e55fabfd5098f0d7d7ad9cff54ca1e25fa7b90ce7a8e7133f83}{WIFI\+\_\+\+MSG\+\_\+\+ID\+\_\+\+CHANGED\+\_\+\+POS\+\_\+\+GPS}}
+, \mbox{\hyperlink{a00191_a30bcce91a84082e55fabfd5098f0d7d7a7b3a5cfaabcac16e1d15ff7a3dd313d2}{WIFI\+\_\+\+MSG\+\_\+\+ID\+\_\+\+ACCEL\+\_\+\+POS\+\_\+\+GPS}}
+, \newline
+\mbox{\hyperlink{a00191_a30bcce91a84082e55fabfd5098f0d7d7a557de5ef33e8f833c69aca94cf85ab95}{WIFI\+\_\+\+MSG\+\_\+\+ID\+\_\+\+BATT\+\_\+\+ELECT\+\_\+\+EXP}}
+, \mbox{\hyperlink{a00191_a30bcce91a84082e55fabfd5098f0d7d7a3d5ebbcc7c3d1c536d955e79a244ce5b}{WIFI\+\_\+\+MSG\+\_\+\+ID\+\_\+\+ACCEL\+\_\+\+ATIVATE\+\_\+\+MOVE\+\_\+\+ALERT}}
+, \mbox{\hyperlink{a00191_a30bcce91a84082e55fabfd5098f0d7d7a8c3f06d0a3d8a5911588dbdebd91e28d}{WIFI\+\_\+\+MSG\+\_\+\+ID\+\_\+\+MAX}}
+ \}
+\begin{DoxyCompactList}\small\item\em Wifi Message IDs (same as SIGFOX\+\_\+\+MSG\+\_\+\+ID\+\_\+e) \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{a00191_a5aa347e2a685a85a377a26337e9c5cc3}{SIGFOX\+\_\+\+MSG\+\_\+\+ID\+\_\+e}} \{ \newline
+\mbox{\hyperlink{a00191_a5aa347e2a685a85a377a26337e9c5cc3afbee030b911ec91b49e64e015f4f33e4}{MSG\+\_\+\+ID\+\_\+\+POWER\+\_\+\+ON\+\_\+\+TEST}} = 0
+, \mbox{\hyperlink{a00191_a5aa347e2a685a85a377a26337e9c5cc3a035b29956fd28a80f9eb69f11af63d70}{MSG\+\_\+\+ID\+\_\+\+DIARY\+\_\+\+TEST}}
+, \mbox{\hyperlink{a00191_a5aa347e2a685a85a377a26337e9c5cc3a8ffbb9b526abda27312793d85fb140db}{MSG\+\_\+\+ID\+\_\+\+MONTHLY\+\_\+\+TEST}}
+, \mbox{\hyperlink{a00191_a5aa347e2a685a85a377a26337e9c5cc3ae4553de299a3a22128520b39469e65ef}{MSG\+\_\+\+ID\+\_\+\+MANUAL\+\_\+\+TEST}}
+, \newline
+\mbox{\hyperlink{a00191_a5aa347e2a685a85a377a26337e9c5cc3ad062ddd40e870fb5ea69e2b425fa83db}{MSG\+\_\+\+ID\+\_\+\+FUNC\+\_\+\+TEST}}
+, \mbox{\hyperlink{a00191_a5aa347e2a685a85a377a26337e9c5cc3a9ef9d1b5c1d7351bc5df9375e3069444}{MSG\+\_\+\+ID\+\_\+\+COVER\+\_\+\+OPEN\+\_\+\+ALERT}}
+, \mbox{\hyperlink{a00191_a5aa347e2a685a85a377a26337e9c5cc3a44584f152944fb1a509daed428c5e342}{MSG\+\_\+\+ID\+\_\+\+COVER\+\_\+\+CLOSE\+\_\+\+ALERT}}
+, \mbox{\hyperlink{a00191_a5aa347e2a685a85a377a26337e9c5cc3a5b76e58e7bc4898eb63e01d19a258172}{MSG\+\_\+\+ID\+\_\+\+NO\+\_\+\+SHOCK\+\_\+\+ALERT}}
+, \newline
+\mbox{\hyperlink{a00191_a5aa347e2a685a85a377a26337e9c5cc3a67747c995f5fc58c569cee4702f71891}{MSG\+\_\+\+ID\+\_\+\+SHOCK\+\_\+\+DISC\+\_\+\+ALERT}}
+, \mbox{\hyperlink{a00191_a5aa347e2a685a85a377a26337e9c5cc3a486faf5fd3755ef29221c14a1352967b}{MSG\+\_\+\+ID\+\_\+\+SHOCK\+\_\+\+TIMEOUT\+\_\+\+ALERT}}
+, \mbox{\hyperlink{a00191_a5aa347e2a685a85a377a26337e9c5cc3a3c874c27badc679a64b77823b1f3fa4a}{MSG\+\_\+\+ID\+\_\+\+SHOCK\+\_\+\+DONE\+\_\+\+ALERT}}
+, \mbox{\hyperlink{a00191_a5aa347e2a685a85a377a26337e9c5cc3a28728f7d01fdf7886a00d51fc3989462}{MSG\+\_\+\+ID\+\_\+\+SAVED\+\_\+\+POS\+\_\+\+GPS}}
+, \newline
+\mbox{\hyperlink{a00191_a5aa347e2a685a85a377a26337e9c5cc3a10eb9bd3c15a5bc0c5ffe98382b7c246}{MSG\+\_\+\+ID\+\_\+\+MON\+\_\+\+TEST\+\_\+\+GPS}}
+, \mbox{\hyperlink{a00191_a5aa347e2a685a85a377a26337e9c5cc3a4c2b67446c9df7341d9da4693b433957}{MSG\+\_\+\+ID\+\_\+\+MAN\+\_\+\+TEST\+\_\+\+GPS}}
+, \mbox{\hyperlink{a00191_a5aa347e2a685a85a377a26337e9c5cc3a8800a41a7eebcdb456f4443ffccfab0f}{MSG\+\_\+\+ID\+\_\+\+CHANGED\+\_\+\+POS\+\_\+\+GPS}}
+, \mbox{\hyperlink{a00191_a5aa347e2a685a85a377a26337e9c5cc3a8dca4a563c73ed128af2d31f1b31efdb}{MSG\+\_\+\+ID\+\_\+\+ACCEL\+\_\+\+POS\+\_\+\+GPS}}
+, \newline
+\mbox{\hyperlink{a00191_a5aa347e2a685a85a377a26337e9c5cc3ad1111b3271c6533400d42c84e1771721}{MSG\+\_\+\+ID\+\_\+\+BATT\+\_\+\+ELECT\+\_\+\+EXP}}
+, \mbox{\hyperlink{a00191_a5aa347e2a685a85a377a26337e9c5cc3a81ce63d5067fdd2085100ee2715e8b6f}{MSG\+\_\+\+ID\+\_\+\+ACCEL\+\_\+\+ATIVATE\+\_\+\+MOVE\+\_\+\+ALERT}}
+, \mbox{\hyperlink{a00191_a5aa347e2a685a85a377a26337e9c5cc3ae283e401b55d5b613eaaed5845f2c8b6}{MSG\+\_\+\+ID\+\_\+\+MAX}}
+ \}
+\begin{DoxyCompactList}\small\item\em Sigfox Message IDs. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a00191_a2fd9d4d3e52547dfd2a869cf41e722ae}{COMPILE\+\_\+\+ASSERT}} ((sizeof(\mbox{\hyperlink{a00626}{WIFI\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t}})==\mbox{\hyperlink{a00191_a9eaf86b5a374d691bb2f204ec796a840}{MAX\+\_\+\+WIFI\+\_\+\+DATA\+\_\+\+TEST\+\_\+\+SZ}}))
+\item 
+\mbox{\hyperlink{a00191_a9ede97dbcfa49449e7e63b854924c839}{COMPILE\+\_\+\+ASSERT}} ((sizeof(\mbox{\hyperlink{a00630}{WIFI\+\_\+\+FUNC\+\_\+\+ALERT\+\_\+t}})==\mbox{\hyperlink{a00191_a2343be917a149877bac86f5a7bfc3a57}{MAX\+\_\+\+WIFI\+\_\+\+DATA\+\_\+\+SZ}}))
+\item 
+\mbox{\hyperlink{a00191_a7664b6db0a1f7860cfbbb96b00a2cdf0}{COMPILE\+\_\+\+ASSERT}} ((sizeof(\mbox{\hyperlink{a00634}{WIFI\+\_\+\+GPS\+\_\+\+POSITION\+\_\+t}})==\mbox{\hyperlink{a00191_a2343be917a149877bac86f5a7bfc3a57}{MAX\+\_\+\+WIFI\+\_\+\+DATA\+\_\+\+SZ}}))
+\item 
+\mbox{\hyperlink{a00191_a0fdf28caba389916391e4683acf8d7a2}{COMPILE\+\_\+\+ASSERT}} ((sizeof(\mbox{\hyperlink{a00646}{SIGFOX\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t}})==\mbox{\hyperlink{a00191_ac00e289c207b2affc18ad52fbdd577a3}{MAX\+\_\+\+SIGFOX\+\_\+\+DATA\+\_\+\+SZ}}))
+\item 
+\mbox{\hyperlink{a00191_acee3187ae6ce54fdcd5297e111f7b4f4}{COMPILE\+\_\+\+ASSERT}} ((sizeof(\mbox{\hyperlink{a00650}{SIGFOX\+\_\+\+ELEC\+\_\+\+BATT\+\_\+\+EXPIRATION\+\_\+t}})==\mbox{\hyperlink{a00191_ac00e289c207b2affc18ad52fbdd577a3}{MAX\+\_\+\+SIGFOX\+\_\+\+DATA\+\_\+\+SZ}}))
+\item 
+\mbox{\hyperlink{a00191_aab7ea4b95e586244aef18af7cab43aa4}{COMPILE\+\_\+\+ASSERT}} ((sizeof(\mbox{\hyperlink{a00654}{SIGFOX\+\_\+\+FUNC\+\_\+\+ALERT\+\_\+t}})==\mbox{\hyperlink{a00191_ac00e289c207b2affc18ad52fbdd577a3}{MAX\+\_\+\+SIGFOX\+\_\+\+DATA\+\_\+\+SZ}}))
+\item 
+\mbox{\hyperlink{a00191_a4643c53ca79a40021c929829264d6a83}{COMPILE\+\_\+\+ASSERT}} ((sizeof(\mbox{\hyperlink{a00658}{SIGFOX\+\_\+\+GPS\+\_\+\+POSITION\+\_\+t}})==\mbox{\hyperlink{a00191_ac00e289c207b2affc18ad52fbdd577a3}{MAX\+\_\+\+SIGFOX\+\_\+\+DATA\+\_\+\+SZ}}))
+\item 
+void \mbox{\hyperlink{a00191_abadbab0ad04afa75f452b3347b895cdd}{Comm\+\_\+\+Modules\+\_\+\+Initialize}} (void)
+\begin{DoxyCompactList}\small\item\em Initialization of Comm UART. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a00191_acd0f72ce82a8c749fe1171bd48269e66}{Comm\+\_\+\+Hardware\+\_\+\+Reset}} (\mbox{\hyperlink{a00191_a02ace324eb27603254e760e194b38fd9}{COMM\+\_\+\+MOD\+\_\+e}} comm\+\_\+mod)
+\begin{DoxyCompactList}\small\item\em Reset Wifi, Sigfox or GPS module. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a00191_aba10912e5156af563d72a637fe9b7a78}{Comm\+\_\+\+Hardware\+\_\+\+Off}} (\mbox{\hyperlink{a00191_a02ace324eb27603254e760e194b38fd9}{COMM\+\_\+\+MOD\+\_\+e}} comm\+\_\+mod)
+\begin{DoxyCompactList}\small\item\em Reset Wifi, Sigfox or GPS module. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a00191_a4e3f9bfdd5df0ab92a1713930d545237}{Comm\+\_\+\+Hardware\+\_\+\+On}} (\mbox{\hyperlink{a00191_a02ace324eb27603254e760e194b38fd9}{COMM\+\_\+\+MOD\+\_\+e}} comm\+\_\+mod)
+\begin{DoxyCompactList}\small\item\em Reset Wifi, Sigfox or GPS module. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{a00191_a63b3e38ecaf443421eb673e2342e2f08}{Comm\+\_\+\+Select\+\_\+\+Uart}} (\mbox{\hyperlink{a00191_a02ace324eb27603254e760e194b38fd9}{COMM\+\_\+\+MOD\+\_\+e}} comm\+\_\+uart)
+\begin{DoxyCompactList}\small\item\em Select Uart to send and receive data. This function sets the SN74\+CBT Multiplexer/\+Demultiplexer via the PCF8574 I/O Expander for I2C. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00191_a02ace324eb27603254e760e194b38fd9}{COMM\+\_\+\+MOD\+\_\+e}} \mbox{\hyperlink{a00191_a14b282886d75e45f70a7ffe548732dba}{Comm\+\_\+\+Get\+\_\+\+Selected\+\_\+\+Uart}} (void)
+\begin{DoxyCompactList}\small\item\em Returns the selected Comms UART. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{a00191_a7bec2de2a4a0bd5ee235fc2c4579cee6}{Comm\+\_\+\+Is\+\_\+\+Sigfox\+\_\+\+Free}} (void)
+\begin{DoxyCompactList}\small\item\em Returns if Comms UART is free. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a00191_afc169aa2e842d15739e9b0752d29e835}{Comm\+\_\+\+Modules\+\_\+\+Print\+\_\+\+Configuration}} (\mbox{\hyperlink{a00191_a02ace324eb27603254e760e194b38fd9}{COMM\+\_\+\+MOD\+\_\+e}} comm\+\_\+mod)
+\begin{DoxyCompactList}\small\item\em Prints Module Information. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{a00191_a8940317343835bfd6ab8aeb253689893}{Comm\+\_\+\+Sigfox\+\_\+\+Initialize}} (void)
+\begin{DoxyCompactList}\small\item\em Initialization of Sigfox module. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{a00191_aad8ef9e81af60f170ee4d4e5bfb580d0}{Comm\+\_\+\+Sigfox\+\_\+\+Execute\+\_\+\+Test}} (void)
+\begin{DoxyCompactList}\small\item\em Test of Sigfox module. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{a00191_adf42691907cbb4718b35c6b1646abfd7}{Comm\+\_\+\+Sigfox\+\_\+\+Send\+\_\+\+Test}} (void)
+\begin{DoxyCompactList}\small\item\em Send R100 Test. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{a00191_ac81db4e65de502201f2c1fe434d67100}{Comm\+\_\+\+Sigfox\+\_\+\+Send\+\_\+\+Alert}} (void)
+\begin{DoxyCompactList}\small\item\em Send R100 Functional Alert. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{a00191_adb15e35af3b08b9c4273b9bdb8909f1c}{Comm\+\_\+\+Sigfox\+\_\+\+Send\+\_\+\+Position}} (void)
+\begin{DoxyCompactList}\small\item\em Send R100 GPS Position. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{a00191_abf01cd774e17dbff3e24ff692eabbf86}{Comm\+\_\+\+Sigfox\+\_\+\+Send\+\_\+\+Exp}} (void)
+\begin{DoxyCompactList}\small\item\em Send battery and electrodes expiration date. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{a00191_a41272f2468c23dfaf459579637d8c295}{Comm\+\_\+\+Sigfox\+\_\+\+Start\+\_\+\+Uplink\+\_\+\+Test}} (void)
+\begin{DoxyCompactList}\small\item\em Perform sigfox module Uplink Test. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{a00191_aec4d46d0b02d71bce4b5f7a033c3635e}{Comm\+\_\+\+Sigfox\+\_\+\+Stop\+\_\+\+Uplink\+\_\+\+Test}} (void)
+\begin{DoxyCompactList}\small\item\em Stop sigfox module Uplink Test. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{a00191_a6170b241b51001fcd5c60c83b80704f2}{Comm\+\_\+\+Sigfox\+\_\+\+Start\+\_\+\+Downlink\+\_\+\+Test}} (void)
+\begin{DoxyCompactList}\small\item\em Start sigfox module Downlink Test (with RX GFSK test mode) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{a00191_a3966732dacf626b4fef99504eae11fd4}{Comm\+\_\+\+Sigfox\+\_\+\+Device\+\_\+\+Info\+\_\+\+Check}} (void)
+\begin{DoxyCompactList}\small\item\em Device information Check. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{a00191_af6bf58158a9a7b9220ee08afcba32292}{Comm\+\_\+\+Wifi\+\_\+\+Initialize}} (void)
+\begin{DoxyCompactList}\small\item\em Initialization of Wifi module. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{a00191_a2fdd51c5b7216b4532cf95b942c069b6}{Comm\+\_\+\+Wifi\+\_\+\+Initialize\+\_\+\+Fast}} (void)
+\begin{DoxyCompactList}\small\item\em Fast initialization of Wifi module. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{a00191_a22925590c70e764b3b53f54b39b166b7}{Comm\+\_\+\+Wifi\+\_\+\+Radio\+\_\+\+Off}} (void)
+\begin{DoxyCompactList}\small\item\em Set Radio Wifi Off. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{a00191_ade77c80f9e7439b0e75d7d302af476ce}{Comm\+\_\+\+Wifi\+\_\+\+Reset}} (void)
+\begin{DoxyCompactList}\small\item\em Reset Wifi. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{a00191_ae40d6f27c400549f84857052bffcce61}{Comm\+\_\+\+Wifi\+\_\+\+Execute\+\_\+\+Test}} (void)
+\begin{DoxyCompactList}\small\item\em Test of Wifi module. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{a00191_a02fd8d87a2f9d69a608c8488cc5cbe3f}{Comm\+\_\+\+Wifi\+\_\+\+Is\+\_\+\+Host\+\_\+\+Server\+\_\+\+Alive}} (void)
+\begin{DoxyCompactList}\small\item\em Check if host server is alive. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{a00191_accf1b9383c2e21578ec28430f9f14dc3}{Comm\+\_\+\+Wifi\+\_\+\+Send\+\_\+\+Frame\+\_\+\+Test}} (void)
+\begin{DoxyCompactList}\small\item\em Send Test frame using wifi connection. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{a00191_a4d91b115ae6885412c79593ef06f2b12}{Comm\+\_\+\+Wifi\+\_\+\+Send\+\_\+\+Frame\+\_\+\+Alert}} (void)
+\begin{DoxyCompactList}\small\item\em Send Alert frame using wifi connection. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{a00191_aaffa9d6bb0dc8d70687216d756791af3}{Comm\+\_\+\+Wifi\+\_\+\+Send\+\_\+\+Frame\+\_\+\+Alert\+\_\+\+Aux}} (void)
+\begin{DoxyCompactList}\small\item\em Send Alert frame using wifi connection. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{a00191_ae327aacd325df8c7019efdf3f8e758b3}{Comm\+\_\+\+Wifi\+\_\+\+Send\+\_\+\+Frame\+\_\+\+Gps}} (void)
+\begin{DoxyCompactList}\small\item\em Send Gps position frame using wifi connection. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{a00191_a0fb51a9f4231ebdfe4b657eefe8369c2}{Comm\+\_\+\+Wifi\+\_\+\+Send\+\_\+\+Last\+\_\+\+Test}} (void)
+\begin{DoxyCompactList}\small\item\em Send Last Test File. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{a00191_a1a7aa6203e1bb55e1cf909a38e11c309}{Comm\+\_\+\+Wifi\+\_\+\+Send\+\_\+\+Last\+\_\+\+Episode}} (void)
+\begin{DoxyCompactList}\small\item\em Send Last Episode File. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{a00191_a6370a754e4e5cace299125d63bd16c39}{Comm\+\_\+\+Wifi\+\_\+\+Get\+\_\+\+Upgrade\+\_\+\+Firmware}} (void)
+\begin{DoxyCompactList}\small\item\em Get upgrade firmware from host server. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{a00191_a267f7a2dd6fc9f5ee0c34e55a97ece0b}{Comm\+\_\+\+Wifi\+\_\+\+Get\+\_\+\+Configuration\+\_\+\+File}} (void)
+\begin{DoxyCompactList}\small\item\em Get configuration file from host server. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{a00191_a0807299d3c37549d8961350a173765b6}{Comm\+\_\+\+Wifi\+\_\+\+Send\+\_\+\+R100\+\_\+\+Info\+\_\+\+Data}} (void)
+\item 
+\mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{a00191_ada87facf1cbdd9979db44671241a72e0}{Comm\+\_\+\+Wifi\+\_\+\+Send\+\_\+\+R100\+\_\+\+TCP\+\_\+\+Data}} (void)
+\item 
+\mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{a00191_a4949dd86b079862160c894001b445235}{Comm\+\_\+\+Wifi\+\_\+\+Send\+\_\+\+R100\+\_\+\+UDP\+\_\+\+Data}} (void)
+\item 
+\mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{a00191_a859dc31be3e07f50b5c5c8ddad90d517}{Comm\+\_\+\+Wifi\+\_\+\+Send\+\_\+\+R100\+\_\+\+TLS\+\_\+\+Data}} (void)
+\item 
+\mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{a00191_a1d081723eb366e271a59daa0289b3c8e}{Comm\+\_\+\+GPS\+\_\+\+Initialize}} (void)
+\begin{DoxyCompactList}\small\item\em Initialization of GPS module. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{a00191_a48a2db3942cf973c7ffa74f6b4053b6b}{Comm\+\_\+\+GPS\+\_\+\+Execute\+\_\+\+Test}} (void)
+\begin{DoxyCompactList}\small\item\em Test of GPS module. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{a00191_a77dba14b8a661e55a2caa7919a4c961b}{Comm\+\_\+\+GPS\+\_\+\+Get\+\_\+\+Position\+\_\+\+Data}} (void)
+\begin{DoxyCompactList}\small\item\em Get GPS Data. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{a00191_abf1450e8718658ca896cad96d4f6e361}{Comm\+\_\+\+GPS\+\_\+\+Send\+\_\+\+Command}} (void)
+\begin{DoxyCompactList}\small\item\em Send GPS commands. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{a00191_ace5f77a9b4079a5b7a0d44391357862a}{Comm\+\_\+\+ACC\+\_\+\+Initialize}} (void)
+\begin{DoxyCompactList}\small\item\em If accelerometer presence is OK, then initialize Accelerometer setup. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{a00191_ab3133b7277b4b2aea07d93088feddf95}{Comm\+\_\+\+ACC\+\_\+\+Execute\+\_\+\+Test}} (void)
+\begin{DoxyCompactList}\small\item\em Test of ACC module. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{a00191_aef2d7460a2cd17cf6830333cbd5c7f3a}{Comm\+\_\+\+ACC\+\_\+\+Get\+\_\+\+Acceleration\+\_\+\+Data}} (void)
+\begin{DoxyCompactList}\small\item\em Read XYZ axis acceleration values. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{a00191_a4d67800f1a52967d5b4674c80505fed9}{Comm\+\_\+\+ACC\+\_\+\+Get\+\_\+\+INT2}} (void)
+\begin{DoxyCompactList}\small\item\em Read INT2 register to check if interrupt is activated or not. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{a00191_a3697cab536e0621953d66a141e99310d}{Comm\+\_\+\+Wifi\+\_\+\+Is\+\_\+\+MAC\+\_\+\+Valid}} (\mbox{\hyperlink{a00137_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \texorpdfstring{$\ast$}{*}s)
+\begin{DoxyCompactList}\small\item\em Checks if a MAC address has a valid format. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{a00191_a719e8f2234d99f42709c03413815c2fe}{Comm\+\_\+\+Wifi\+\_\+\+Is\+\_\+\+IPv4\+\_\+\+Valid}} (\mbox{\hyperlink{a00137_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \texorpdfstring{$\ast$}{*}s)
+\begin{DoxyCompactList}\small\item\em Checks if a IPv4 address has a valid format. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a00191_ad7f474971f5b056a400c9306b64d2e3c}{Comm\+\_\+\+Wifi\+\_\+\+Save\+\_\+\+Host\+\_\+\+Response}} (\mbox{\hyperlink{a00137_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \texorpdfstring{$\ast$}{*}resp)
+\item 
+\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{a00191_ac22dba0799d6e0fb21eee7fc789b8488}{Comm\+\_\+\+Wifi\+\_\+\+Is\+\_\+\+Cfg\+\_\+\+Available}} (void)
+\item 
+\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{a00191_a8431584ae8be287c0fcafe0880de4c47}{Comm\+\_\+\+Wifi\+\_\+\+Is\+\_\+\+Frmw\+\_\+\+Available}} (void)
+\item 
+void \mbox{\hyperlink{a00191_a903d37fd9bd762a0a292b512b1fe7550}{Comm\+\_\+\+Wifi\+\_\+\+Save\+\_\+\+Server\+\_\+\+Response}} (\mbox{\hyperlink{a00137_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \texorpdfstring{$\ast$}{*}resp)
+\item 
+\mbox{\hyperlink{a00137_aaa5d1cd013383c889537491c3cfd9aad}{uint64\+\_\+t}} \mbox{\hyperlink{a00191_a0d27977bf796250c8569bf9921c7b82d}{Comm\+\_\+\+Wifi\+\_\+\+SZ}} (void)
+\item 
+\mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{a00191_aa4045b4e83503568aaf2721ed8c186a3}{Comm\+\_\+\+Wifi\+\_\+\+CRC}} (void)
+\item 
+void \mbox{\hyperlink{a00191_a59a90b113c8634ceb53cb02eee915f7b}{Comm\+\_\+\+Wifi\+\_\+\+PASS}} (\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}password)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header with functions related to the HAL Comm. 
+
+\begin{DoxyVersion}{Version}
+v1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+03/05/2019 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+jarribas 
+\end{DoxyAuthor}
+\begin{DoxyWarning}{Warning}
+author date version .-\/ Edition 
+\end{DoxyWarning}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{a00257__bug000053}{Bug}}]\end{DoxyRefDesc}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{a00191_ad92d92fed430bbf7d3f0bfdc98722aee}\label{a00191_ad92d92fed430bbf7d3f0bfdc98722aee} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!ACC\_2G\_ACCEL\_RANGE@{ACC\_2G\_ACCEL\_RANGE}}
+\index{ACC\_2G\_ACCEL\_RANGE@{ACC\_2G\_ACCEL\_RANGE}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{ACC\_2G\_ACCEL\_RANGE}{ACC\_2G\_ACCEL\_RANGE}}
+{\footnotesize\ttfamily \#define ACC\+\_\+2\+G\+\_\+\+ACCEL\+\_\+\+RANGE~0x00}
+
+\Hypertarget{a00191_a1fd36314dbb5372abcb987e1f5c185e4}\label{a00191_a1fd36314dbb5372abcb987e1f5c185e4} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!ACC\_ENABLE\_XYZ@{ACC\_ENABLE\_XYZ}}
+\index{ACC\_ENABLE\_XYZ@{ACC\_ENABLE\_XYZ}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{ACC\_ENABLE\_XYZ}{ACC\_ENABLE\_XYZ}}
+{\footnotesize\ttfamily \#define ACC\+\_\+\+ENABLE\+\_\+\+XYZ~0x07}
+
+\Hypertarget{a00191_aa90fdfba484018fe4a67bd276ef8a755}\label{a00191_aa90fdfba484018fe4a67bd276ef8a755} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!ACC\_SAMPLE\_RATE\_25@{ACC\_SAMPLE\_RATE\_25}}
+\index{ACC\_SAMPLE\_RATE\_25@{ACC\_SAMPLE\_RATE\_25}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{ACC\_SAMPLE\_RATE\_25}{ACC\_SAMPLE\_RATE\_25}}
+{\footnotesize\ttfamily \#define ACC\+\_\+\+SAMPLE\+\_\+\+RATE\+\_\+25~0x03}
+
+\Hypertarget{a00191_a8cdad742799d53af9574acf1526a35b7}\label{a00191_a8cdad742799d53af9574acf1526a35b7} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!ACC\_SAMPLE\_RATE\_50@{ACC\_SAMPLE\_RATE\_50}}
+\index{ACC\_SAMPLE\_RATE\_50@{ACC\_SAMPLE\_RATE\_50}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{ACC\_SAMPLE\_RATE\_50}{ACC\_SAMPLE\_RATE\_50}}
+{\footnotesize\ttfamily \#define ACC\+\_\+\+SAMPLE\+\_\+\+RATE\+\_\+50~0x04}
+
+\Hypertarget{a00191_a964d947aa1e461dcd8045fb3202e0607}\label{a00191_a964d947aa1e461dcd8045fb3202e0607} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!ACC\_SAMPLE\_RATE\_PD@{ACC\_SAMPLE\_RATE\_PD}}
+\index{ACC\_SAMPLE\_RATE\_PD@{ACC\_SAMPLE\_RATE\_PD}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{ACC\_SAMPLE\_RATE\_PD}{ACC\_SAMPLE\_RATE\_PD}}
+{\footnotesize\ttfamily \#define ACC\+\_\+\+SAMPLE\+\_\+\+RATE\+\_\+\+PD~0x00}
+
+\Hypertarget{a00191_a7bdc1bfc32e593aa73cedc596acfb588}\label{a00191_a7bdc1bfc32e593aa73cedc596acfb588} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!I2C\_DEFAULT\_DATA@{I2C\_DEFAULT\_DATA}}
+\index{I2C\_DEFAULT\_DATA@{I2C\_DEFAULT\_DATA}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{I2C\_DEFAULT\_DATA}{I2C\_DEFAULT\_DATA}}
+{\footnotesize\ttfamily \#define I2\+C\+\_\+\+DEFAULT\+\_\+\+DATA~0b11111111}
+
+\Hypertarget{a00191_a8fc3326520fc4e8ba3d73d7b09c730a0}\label{a00191_a8fc3326520fc4e8ba3d73d7b09c730a0} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!I2C\_PCF8574\_DATA@{I2C\_PCF8574\_DATA}}
+\index{I2C\_PCF8574\_DATA@{I2C\_PCF8574\_DATA}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{I2C\_PCF8574\_DATA}{I2C\_PCF8574\_DATA}}
+{\footnotesize\ttfamily \#define I2\+C\+\_\+\+PCF8574\+\_\+\+DATA(\begin{DoxyParamCaption}\item[{}]{x,  }\item[{}]{y }\end{DoxyParamCaption})~(x \& y)}
+
+\Hypertarget{a00191_a811b1aa72d190a5471ccecf43f51f87c}\label{a00191_a811b1aa72d190a5471ccecf43f51f87c} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!I2C\_RESET\_GPS@{I2C\_RESET\_GPS}}
+\index{I2C\_RESET\_GPS@{I2C\_RESET\_GPS}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{I2C\_RESET\_GPS}{I2C\_RESET\_GPS}}
+{\footnotesize\ttfamily \#define I2\+C\+\_\+\+RESET\+\_\+\+GPS~0b11111110}
+
+\Hypertarget{a00191_a0f814bf0d52e30cb9821bf230be68f93}\label{a00191_a0f814bf0d52e30cb9821bf230be68f93} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!I2C\_RESET\_SIGFOX@{I2C\_RESET\_SIGFOX}}
+\index{I2C\_RESET\_SIGFOX@{I2C\_RESET\_SIGFOX}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{I2C\_RESET\_SIGFOX}{I2C\_RESET\_SIGFOX}}
+{\footnotesize\ttfamily \#define I2\+C\+\_\+\+RESET\+\_\+\+SIGFOX~0b11111011}
+
+\Hypertarget{a00191_a2341345b82aa18de5ed008b33a7a76ae}\label{a00191_a2341345b82aa18de5ed008b33a7a76ae} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!I2C\_RESET\_WIFI@{I2C\_RESET\_WIFI}}
+\index{I2C\_RESET\_WIFI@{I2C\_RESET\_WIFI}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{I2C\_RESET\_WIFI}{I2C\_RESET\_WIFI}}
+{\footnotesize\ttfamily \#define I2\+C\+\_\+\+RESET\+\_\+\+WIFI~0b11111101}
+
+\Hypertarget{a00191_a3e8b85e109ea21b7bbcd5818553e1d31}\label{a00191_a3e8b85e109ea21b7bbcd5818553e1d31} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!I2C\_UART\_FREE@{I2C\_UART\_FREE}}
+\index{I2C\_UART\_FREE@{I2C\_UART\_FREE}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{I2C\_UART\_FREE}{I2C\_UART\_FREE}}
+{\footnotesize\ttfamily \#define I2\+C\+\_\+\+UART\+\_\+\+FREE~0b00111111}
+
+\Hypertarget{a00191_a6ee9fc6824f36e39a6395bd4aa1854e6}\label{a00191_a6ee9fc6824f36e39a6395bd4aa1854e6} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!I2C\_UART\_GPS@{I2C\_UART\_GPS}}
+\index{I2C\_UART\_GPS@{I2C\_UART\_GPS}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{I2C\_UART\_GPS}{I2C\_UART\_GPS}}
+{\footnotesize\ttfamily \#define I2\+C\+\_\+\+UART\+\_\+\+GPS~0b01111111}
+
+\Hypertarget{a00191_a48cc7cdd7b2d58b4fccd6936ddaff742}\label{a00191_a48cc7cdd7b2d58b4fccd6936ddaff742} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!I2C\_UART\_SIGFOX@{I2C\_UART\_SIGFOX}}
+\index{I2C\_UART\_SIGFOX@{I2C\_UART\_SIGFOX}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{I2C\_UART\_SIGFOX}{I2C\_UART\_SIGFOX}}
+{\footnotesize\ttfamily \#define I2\+C\+\_\+\+UART\+\_\+\+SIGFOX~0b11111111}
+
+\Hypertarget{a00191_ae24d31274f098d299b981c513a520061}\label{a00191_ae24d31274f098d299b981c513a520061} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!I2C\_UART\_WIFI@{I2C\_UART\_WIFI}}
+\index{I2C\_UART\_WIFI@{I2C\_UART\_WIFI}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{I2C\_UART\_WIFI}{I2C\_UART\_WIFI}}
+{\footnotesize\ttfamily \#define I2\+C\+\_\+\+UART\+\_\+\+WIFI~0b10111111}
+
+\Hypertarget{a00191_a96932e657cf05fc9302d60257a23316f}\label{a00191_a96932e657cf05fc9302d60257a23316f} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!MAX\_ACC\_DEV\_ID\_LENGTH@{MAX\_ACC\_DEV\_ID\_LENGTH}}
+\index{MAX\_ACC\_DEV\_ID\_LENGTH@{MAX\_ACC\_DEV\_ID\_LENGTH}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{MAX\_ACC\_DEV\_ID\_LENGTH}{MAX\_ACC\_DEV\_ID\_LENGTH}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+ACC\+\_\+\+DEV\+\_\+\+ID\+\_\+\+LENGTH~4}
+
+\Hypertarget{a00191_a89fa0418e9cdc0adea24046deffff53b}\label{a00191_a89fa0418e9cdc0adea24046deffff53b} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!MAX\_ACC\_XYZ\_CONF\_LENGTH@{MAX\_ACC\_XYZ\_CONF\_LENGTH}}
+\index{MAX\_ACC\_XYZ\_CONF\_LENGTH@{MAX\_ACC\_XYZ\_CONF\_LENGTH}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{MAX\_ACC\_XYZ\_CONF\_LENGTH}{MAX\_ACC\_XYZ\_CONF\_LENGTH}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+ACC\+\_\+\+XYZ\+\_\+\+CONF\+\_\+\+LENGTH~9}
+
+\Hypertarget{a00191_a126c05d35465b5ea67bf26ff613a733c}\label{a00191_a126c05d35465b5ea67bf26ff613a733c} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!MAX\_GPS\_DEV\_ID\_LENGTH@{MAX\_GPS\_DEV\_ID\_LENGTH}}
+\index{MAX\_GPS\_DEV\_ID\_LENGTH@{MAX\_GPS\_DEV\_ID\_LENGTH}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{MAX\_GPS\_DEV\_ID\_LENGTH}{MAX\_GPS\_DEV\_ID\_LENGTH}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+GPS\+\_\+\+DEV\+\_\+\+ID\+\_\+\+LENGTH~8}
+
+\Hypertarget{a00191_a42ff5c072b187f15487e532273c1381e}\label{a00191_a42ff5c072b187f15487e532273c1381e} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!MAX\_HOST\_NAME\_LENGTH@{MAX\_HOST\_NAME\_LENGTH}}
+\index{MAX\_HOST\_NAME\_LENGTH@{MAX\_HOST\_NAME\_LENGTH}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{MAX\_HOST\_NAME\_LENGTH}{MAX\_HOST\_NAME\_LENGTH}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+HOST\+\_\+\+NAME\+\_\+\+LENGTH~64}
+
+\Hypertarget{a00191_ac0bdfe428322cee28401640b47089087}\label{a00191_ac0bdfe428322cee28401640b47089087} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!MAX\_IPV4\_ADDR\_LENGTH@{MAX\_IPV4\_ADDR\_LENGTH}}
+\index{MAX\_IPV4\_ADDR\_LENGTH@{MAX\_IPV4\_ADDR\_LENGTH}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{MAX\_IPV4\_ADDR\_LENGTH}{MAX\_IPV4\_ADDR\_LENGTH}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+IPV4\+\_\+\+ADDR\+\_\+\+LENGTH~16}
+
+\Hypertarget{a00191_aafbbbc7737c2047111661bb967dd1127}\label{a00191_aafbbbc7737c2047111661bb967dd1127} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!MAX\_MAC\_ADDR\_LENGTH@{MAX\_MAC\_ADDR\_LENGTH}}
+\index{MAX\_MAC\_ADDR\_LENGTH@{MAX\_MAC\_ADDR\_LENGTH}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{MAX\_MAC\_ADDR\_LENGTH}{MAX\_MAC\_ADDR\_LENGTH}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+MAC\+\_\+\+ADDR\+\_\+\+LENGTH~18}
+
+\Hypertarget{a00191_ac00e289c207b2affc18ad52fbdd577a3}\label{a00191_ac00e289c207b2affc18ad52fbdd577a3} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!MAX\_SIGFOX\_DATA\_SZ@{MAX\_SIGFOX\_DATA\_SZ}}
+\index{MAX\_SIGFOX\_DATA\_SZ@{MAX\_SIGFOX\_DATA\_SZ}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{MAX\_SIGFOX\_DATA\_SZ}{MAX\_SIGFOX\_DATA\_SZ}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+SIGFOX\+\_\+\+DATA\+\_\+\+SZ~12}
+
+\Hypertarget{a00191_a06ce33b38273dec6aeb04e57619226f3}\label{a00191_a06ce33b38273dec6aeb04e57619226f3} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!MAX\_SIGFOX\_DEV\_ID\_LENGTH@{MAX\_SIGFOX\_DEV\_ID\_LENGTH}}
+\index{MAX\_SIGFOX\_DEV\_ID\_LENGTH@{MAX\_SIGFOX\_DEV\_ID\_LENGTH}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{MAX\_SIGFOX\_DEV\_ID\_LENGTH}{MAX\_SIGFOX\_DEV\_ID\_LENGTH}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+SIGFOX\+\_\+\+DEV\+\_\+\+ID\+\_\+\+LENGTH~10}
+
+\Hypertarget{a00191_ad4a12d0e44013a16c7afef847f180542}\label{a00191_ad4a12d0e44013a16c7afef847f180542} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!MAX\_SIGFOX\_DEV\_PAC\_LENGTH@{MAX\_SIGFOX\_DEV\_PAC\_LENGTH}}
+\index{MAX\_SIGFOX\_DEV\_PAC\_LENGTH@{MAX\_SIGFOX\_DEV\_PAC\_LENGTH}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{MAX\_SIGFOX\_DEV\_PAC\_LENGTH}{MAX\_SIGFOX\_DEV\_PAC\_LENGTH}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+SIGFOX\+\_\+\+DEV\+\_\+\+PAC\+\_\+\+LENGTH~18}
+
+\Hypertarget{a00191_a82eab94e2a7149690957cf86ee54ee08}\label{a00191_a82eab94e2a7149690957cf86ee54ee08} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!MAX\_SIGFOX\_FREQ\_LENGTH@{MAX\_SIGFOX\_FREQ\_LENGTH}}
+\index{MAX\_SIGFOX\_FREQ\_LENGTH@{MAX\_SIGFOX\_FREQ\_LENGTH}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{MAX\_SIGFOX\_FREQ\_LENGTH}{MAX\_SIGFOX\_FREQ\_LENGTH}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+SIGFOX\+\_\+\+FREQ\+\_\+\+LENGTH~11}
+
+\Hypertarget{a00191_a2343be917a149877bac86f5a7bfc3a57}\label{a00191_a2343be917a149877bac86f5a7bfc3a57} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!MAX\_WIFI\_DATA\_SZ@{MAX\_WIFI\_DATA\_SZ}}
+\index{MAX\_WIFI\_DATA\_SZ@{MAX\_WIFI\_DATA\_SZ}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{MAX\_WIFI\_DATA\_SZ}{MAX\_WIFI\_DATA\_SZ}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+WIFI\+\_\+\+DATA\+\_\+\+SZ~12}
+
+\Hypertarget{a00191_a9eaf86b5a374d691bb2f204ec796a840}\label{a00191_a9eaf86b5a374d691bb2f204ec796a840} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!MAX\_WIFI\_DATA\_TEST\_SZ@{MAX\_WIFI\_DATA\_TEST\_SZ}}
+\index{MAX\_WIFI\_DATA\_TEST\_SZ@{MAX\_WIFI\_DATA\_TEST\_SZ}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{MAX\_WIFI\_DATA\_TEST\_SZ}{MAX\_WIFI\_DATA\_TEST\_SZ}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+WIFI\+\_\+\+DATA\+\_\+\+TEST\+\_\+\+SZ~24}
+
+\Hypertarget{a00191_aee6b176f83b4577275778dcaa0e3d9b1}\label{a00191_aee6b176f83b4577275778dcaa0e3d9b1} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!MAX\_WLAN\_PASS\_LENGTH@{MAX\_WLAN\_PASS\_LENGTH}}
+\index{MAX\_WLAN\_PASS\_LENGTH@{MAX\_WLAN\_PASS\_LENGTH}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{MAX\_WLAN\_PASS\_LENGTH}{MAX\_WLAN\_PASS\_LENGTH}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+WLAN\+\_\+\+PASS\+\_\+\+LENGTH~32}
+
+\Hypertarget{a00191_aea7aedee1c670cd484399aab9c195698}\label{a00191_aea7aedee1c670cd484399aab9c195698} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!MAX\_WLAN\_SSID\_LENGTH@{MAX\_WLAN\_SSID\_LENGTH}}
+\index{MAX\_WLAN\_SSID\_LENGTH@{MAX\_WLAN\_SSID\_LENGTH}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{MAX\_WLAN\_SSID\_LENGTH}{MAX\_WLAN\_SSID\_LENGTH}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+WLAN\+\_\+\+SSID\+\_\+\+LENGTH~32}
+
+\Hypertarget{a00191_a5234d2454a5ac9523e1f5ffddcf40498}\label{a00191_a5234d2454a5ac9523e1f5ffddcf40498} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!MIKROBUS\_AN@{MIKROBUS\_AN}}
+\index{MIKROBUS\_AN@{MIKROBUS\_AN}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{MIKROBUS\_AN}{MIKROBUS\_AN}}
+{\footnotesize\ttfamily \#define MIKROBUS\+\_\+\+AN~IOPORT\+\_\+\+PORT\+\_\+00\+\_\+\+PIN\+\_\+06}
+
+\Hypertarget{a00191_a82edc58b1d4ed1e98097b27e605fc290}\label{a00191_a82edc58b1d4ed1e98097b27e605fc290} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!MIKROBUS\_PWM@{MIKROBUS\_PWM}}
+\index{MIKROBUS\_PWM@{MIKROBUS\_PWM}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{MIKROBUS\_PWM}{MIKROBUS\_PWM}}
+{\footnotesize\ttfamily \#define MIKROBUS\+\_\+\+PWM~IOPORT\+\_\+\+PORT\+\_\+01\+\_\+\+PIN\+\_\+12}
+
+\Hypertarget{a00191_a1b87d13abc62415163d34beaae8ee905}\label{a00191_a1b87d13abc62415163d34beaae8ee905} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!MIKROBUS\_RST@{MIKROBUS\_RST}}
+\index{MIKROBUS\_RST@{MIKROBUS\_RST}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{MIKROBUS\_RST}{MIKROBUS\_RST}}
+{\footnotesize\ttfamily \#define MIKROBUS\+\_\+\+RST~IOPORT\+\_\+\+PORT\+\_\+06\+\_\+\+PIN\+\_\+09}
+
+\Hypertarget{a00191_afbcdc76f360d3da130f2d5625466b2a4}\label{a00191_afbcdc76f360d3da130f2d5625466b2a4} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!SIGFOX\_DOWNLINK\_OFF@{SIGFOX\_DOWNLINK\_OFF}}
+\index{SIGFOX\_DOWNLINK\_OFF@{SIGFOX\_DOWNLINK\_OFF}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{SIGFOX\_DOWNLINK\_OFF}{SIGFOX\_DOWNLINK\_OFF}}
+{\footnotesize\ttfamily \#define SIGFOX\+\_\+\+DOWNLINK\+\_\+\+OFF~0}
+
+\Hypertarget{a00191_ae6cddb825d903da1ab1c66e23329dc57}\label{a00191_ae6cddb825d903da1ab1c66e23329dc57} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!SIGFOX\_DOWNLINK\_ON@{SIGFOX\_DOWNLINK\_ON}}
+\index{SIGFOX\_DOWNLINK\_ON@{SIGFOX\_DOWNLINK\_ON}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{SIGFOX\_DOWNLINK\_ON}{SIGFOX\_DOWNLINK\_ON}}
+{\footnotesize\ttfamily \#define SIGFOX\+\_\+\+DOWNLINK\+\_\+\+ON~1}
+
+\Hypertarget{a00191_a351cb9c47d36b714ea660f12b00c1a94}\label{a00191_a351cb9c47d36b714ea660f12b00c1a94} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!SIGFOX\_TEST\_RX\_FREQ@{SIGFOX\_TEST\_RX\_FREQ}}
+\index{SIGFOX\_TEST\_RX\_FREQ@{SIGFOX\_TEST\_RX\_FREQ}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{SIGFOX\_TEST\_RX\_FREQ}{SIGFOX\_TEST\_RX\_FREQ}}
+{\footnotesize\ttfamily \#define SIGFOX\+\_\+\+TEST\+\_\+\+RX\+\_\+\+FREQ~"{}869525000"{}}
+
+\Hypertarget{a00191_a10ebb3fad9817f136570863d3195f3a9}\label{a00191_a10ebb3fad9817f136570863d3195f3a9} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!SIGFOX\_TEST\_TX\_FREQ@{SIGFOX\_TEST\_TX\_FREQ}}
+\index{SIGFOX\_TEST\_TX\_FREQ@{SIGFOX\_TEST\_TX\_FREQ}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{SIGFOX\_TEST\_TX\_FREQ}{SIGFOX\_TEST\_TX\_FREQ}}
+{\footnotesize\ttfamily \#define SIGFOX\+\_\+\+TEST\+\_\+\+TX\+\_\+\+FREQ~"{}868130000"{}}
+
+\Hypertarget{a00191_ac2252aa4305680b026ba322a96c14c94}\label{a00191_ac2252aa4305680b026ba322a96c14c94} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!WIFI\_ALERT\_FRAME@{WIFI\_ALERT\_FRAME}}
+\index{WIFI\_ALERT\_FRAME@{WIFI\_ALERT\_FRAME}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{WIFI\_ALERT\_FRAME}{WIFI\_ALERT\_FRAME}}
+{\footnotesize\ttfamily \#define WIFI\+\_\+\+ALERT\+\_\+\+FRAME~0x32}
+
+\Hypertarget{a00191_adc3a67632e1dab407e78e082d1361a92}\label{a00191_adc3a67632e1dab407e78e082d1361a92} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!WIFI\_CERT\_READ@{WIFI\_CERT\_READ}}
+\index{WIFI\_CERT\_READ@{WIFI\_CERT\_READ}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{WIFI\_CERT\_READ}{WIFI\_CERT\_READ}}
+{\footnotesize\ttfamily \#define WIFI\+\_\+\+CERT\+\_\+\+READ~0}
+
+\Hypertarget{a00191_a7b3153ba255e625089fcc080b84332e1}\label{a00191_a7b3153ba255e625089fcc080b84332e1} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!WIFI\_CERT\_WRITE@{WIFI\_CERT\_WRITE}}
+\index{WIFI\_CERT\_WRITE@{WIFI\_CERT\_WRITE}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{WIFI\_CERT\_WRITE}{WIFI\_CERT\_WRITE}}
+{\footnotesize\ttfamily \#define WIFI\+\_\+\+CERT\+\_\+\+WRITE~1}
+
+\Hypertarget{a00191_a5214ee48119bb1751dd6e943a781a0fe}\label{a00191_a5214ee48119bb1751dd6e943a781a0fe} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!WIFI\_EAP\_LOADED@{WIFI\_EAP\_LOADED}}
+\index{WIFI\_EAP\_LOADED@{WIFI\_EAP\_LOADED}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{WIFI\_EAP\_LOADED}{WIFI\_EAP\_LOADED}}
+{\footnotesize\ttfamily \#define WIFI\+\_\+\+EAP\+\_\+\+LOADED~1}
+
+\Hypertarget{a00191_a1bd9dd646813738f92ac512104e4732d}\label{a00191_a1bd9dd646813738f92ac512104e4732d} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!WIFI\_FILE\_FRAME@{WIFI\_FILE\_FRAME}}
+\index{WIFI\_FILE\_FRAME@{WIFI\_FILE\_FRAME}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{WIFI\_FILE\_FRAME}{WIFI\_FILE\_FRAME}}
+{\footnotesize\ttfamily \#define WIFI\+\_\+\+FILE\+\_\+\+FRAME~0x30}
+
+\Hypertarget{a00191_aa958eba0c366b00b85bdd8c84bfb729d}\label{a00191_aa958eba0c366b00b85bdd8c84bfb729d} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!WIFI\_FP\_LOADED@{WIFI\_FP\_LOADED}}
+\index{WIFI\_FP\_LOADED@{WIFI\_FP\_LOADED}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{WIFI\_FP\_LOADED}{WIFI\_FP\_LOADED}}
+{\footnotesize\ttfamily \#define WIFI\+\_\+\+FP\+\_\+\+LOADED~2}
+
+\Hypertarget{a00191_ab45bfeca114ab44c4316f8097eabca66}\label{a00191_ab45bfeca114ab44c4316f8097eabca66} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!WIFI\_GPS\_FRAME@{WIFI\_GPS\_FRAME}}
+\index{WIFI\_GPS\_FRAME@{WIFI\_GPS\_FRAME}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{WIFI\_GPS\_FRAME}{WIFI\_GPS\_FRAME}}
+{\footnotesize\ttfamily \#define WIFI\+\_\+\+GPS\+\_\+\+FRAME~0x33}
+
+\Hypertarget{a00191_a08f5839402e87b4e9b0ecf8888e68d26}\label{a00191_a08f5839402e87b4e9b0ecf8888e68d26} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!WIFI\_TEST\_FRAME@{WIFI\_TEST\_FRAME}}
+\index{WIFI\_TEST\_FRAME@{WIFI\_TEST\_FRAME}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{WIFI\_TEST\_FRAME}{WIFI\_TEST\_FRAME}}
+{\footnotesize\ttfamily \#define WIFI\+\_\+\+TEST\+\_\+\+FRAME~0x31}
+
+\Hypertarget{a00191_a8816a1867805cc293ed08a408f56b5fc}\label{a00191_a8816a1867805cc293ed08a408f56b5fc} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!WIFI\_TLS\_LOADED@{WIFI\_TLS\_LOADED}}
+\index{WIFI\_TLS\_LOADED@{WIFI\_TLS\_LOADED}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{WIFI\_TLS\_LOADED}{WIFI\_TLS\_LOADED}}
+{\footnotesize\ttfamily \#define WIFI\+\_\+\+TLS\+\_\+\+LOADED~1}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{a00191_a02ace324eb27603254e760e194b38fd9}\label{a00191_a02ace324eb27603254e760e194b38fd9} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!COMM\_MOD\_e@{COMM\_MOD\_e}}
+\index{COMM\_MOD\_e@{COMM\_MOD\_e}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{COMM\_MOD\_e}{COMM\_MOD\_e}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{a00191_a02ace324eb27603254e760e194b38fd9}{COMM\+\_\+\+MOD\+\_\+e}}}
+
+
+
+COMM Modules. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eMOD\_NONE@{eMOD\_NONE}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!eMOD\_NONE@{eMOD\_NONE}}}\Hypertarget{a00191_a02ace324eb27603254e760e194b38fd9ac81fa9134a3a32e311bcd887e3b18535}\label{a00191_a02ace324eb27603254e760e194b38fd9ac81fa9134a3a32e311bcd887e3b18535} 
+e\+MOD\+\_\+\+NONE&No select Module. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eMOD\_WIFI@{eMOD\_WIFI}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!eMOD\_WIFI@{eMOD\_WIFI}}}\Hypertarget{a00191_a02ace324eb27603254e760e194b38fd9a532f84e9a11fdfb7f0085b5383b79638}\label{a00191_a02ace324eb27603254e760e194b38fd9a532f84e9a11fdfb7f0085b5383b79638} 
+e\+MOD\+\_\+\+WIFI&Wifi Module. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eMOD\_SIGFOX@{eMOD\_SIGFOX}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!eMOD\_SIGFOX@{eMOD\_SIGFOX}}}\Hypertarget{a00191_a02ace324eb27603254e760e194b38fd9af2476868b112e63423601ae7fe6d9f07}\label{a00191_a02ace324eb27603254e760e194b38fd9af2476868b112e63423601ae7fe6d9f07} 
+e\+MOD\+\_\+\+SIGFOX&Sigfox Module. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eMOD\_GPS@{eMOD\_GPS}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!eMOD\_GPS@{eMOD\_GPS}}}\Hypertarget{a00191_a02ace324eb27603254e760e194b38fd9a3b533fa0035dea76cc24136fa7cb32b4}\label{a00191_a02ace324eb27603254e760e194b38fd9a3b533fa0035dea76cc24136fa7cb32b4} 
+e\+MOD\+\_\+\+GPS&GPS Module. \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{a00191_a5aa347e2a685a85a377a26337e9c5cc3}\label{a00191_a5aa347e2a685a85a377a26337e9c5cc3} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!SIGFOX\_MSG\_ID\_e@{SIGFOX\_MSG\_ID\_e}}
+\index{SIGFOX\_MSG\_ID\_e@{SIGFOX\_MSG\_ID\_e}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{SIGFOX\_MSG\_ID\_e}{SIGFOX\_MSG\_ID\_e}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{a00191_a5aa347e2a685a85a377a26337e9c5cc3}{SIGFOX\+\_\+\+MSG\+\_\+\+ID\+\_\+e}}}
+
+
+
+Sigfox Message IDs. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MSG\_ID\_POWER\_ON\_TEST@{MSG\_ID\_POWER\_ON\_TEST}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!MSG\_ID\_POWER\_ON\_TEST@{MSG\_ID\_POWER\_ON\_TEST}}}\Hypertarget{a00191_a5aa347e2a685a85a377a26337e9c5cc3afbee030b911ec91b49e64e015f4f33e4}\label{a00191_a5aa347e2a685a85a377a26337e9c5cc3afbee030b911ec91b49e64e015f4f33e4} 
+MSG\+\_\+\+ID\+\_\+\+POWER\+\_\+\+ON\+\_\+\+TEST&message identifier to report the power on test result \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MSG\_ID\_DIARY\_TEST@{MSG\_ID\_DIARY\_TEST}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!MSG\_ID\_DIARY\_TEST@{MSG\_ID\_DIARY\_TEST}}}\Hypertarget{a00191_a5aa347e2a685a85a377a26337e9c5cc3a035b29956fd28a80f9eb69f11af63d70}\label{a00191_a5aa347e2a685a85a377a26337e9c5cc3a035b29956fd28a80f9eb69f11af63d70} 
+MSG\+\_\+\+ID\+\_\+\+DIARY\+\_\+\+TEST&message identifier to report the diary autotest result \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MSG\_ID\_MONTHLY\_TEST@{MSG\_ID\_MONTHLY\_TEST}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!MSG\_ID\_MONTHLY\_TEST@{MSG\_ID\_MONTHLY\_TEST}}}\Hypertarget{a00191_a5aa347e2a685a85a377a26337e9c5cc3a8ffbb9b526abda27312793d85fb140db}\label{a00191_a5aa347e2a685a85a377a26337e9c5cc3a8ffbb9b526abda27312793d85fb140db} 
+MSG\+\_\+\+ID\+\_\+\+MONTHLY\+\_\+\+TEST&message identifier to report the monthly autotest result \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MSG\_ID\_MANUAL\_TEST@{MSG\_ID\_MANUAL\_TEST}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!MSG\_ID\_MANUAL\_TEST@{MSG\_ID\_MANUAL\_TEST}}}\Hypertarget{a00191_a5aa347e2a685a85a377a26337e9c5cc3ae4553de299a3a22128520b39469e65ef}\label{a00191_a5aa347e2a685a85a377a26337e9c5cc3ae4553de299a3a22128520b39469e65ef} 
+MSG\+\_\+\+ID\+\_\+\+MANUAL\+\_\+\+TEST&message identifier to report the manual test result \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MSG\_ID\_FUNC\_TEST@{MSG\_ID\_FUNC\_TEST}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!MSG\_ID\_FUNC\_TEST@{MSG\_ID\_FUNC\_TEST}}}\Hypertarget{a00191_a5aa347e2a685a85a377a26337e9c5cc3ad062ddd40e870fb5ea69e2b425fa83db}\label{a00191_a5aa347e2a685a85a377a26337e9c5cc3ad062ddd40e870fb5ea69e2b425fa83db} 
+MSG\+\_\+\+ID\+\_\+\+FUNC\+\_\+\+TEST&message identifier to report the functional test error \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MSG\_ID\_COVER\_OPEN\_ALERT@{MSG\_ID\_COVER\_OPEN\_ALERT}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!MSG\_ID\_COVER\_OPEN\_ALERT@{MSG\_ID\_COVER\_OPEN\_ALERT}}}\Hypertarget{a00191_a5aa347e2a685a85a377a26337e9c5cc3a9ef9d1b5c1d7351bc5df9375e3069444}\label{a00191_a5aa347e2a685a85a377a26337e9c5cc3a9ef9d1b5c1d7351bc5df9375e3069444} 
+MSG\+\_\+\+ID\+\_\+\+COVER\+\_\+\+OPEN\+\_\+\+ALERT&message identifier to report the cover broken alert \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MSG\_ID\_COVER\_CLOSE\_ALERT@{MSG\_ID\_COVER\_CLOSE\_ALERT}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!MSG\_ID\_COVER\_CLOSE\_ALERT@{MSG\_ID\_COVER\_CLOSE\_ALERT}}}\Hypertarget{a00191_a5aa347e2a685a85a377a26337e9c5cc3a44584f152944fb1a509daed428c5e342}\label{a00191_a5aa347e2a685a85a377a26337e9c5cc3a44584f152944fb1a509daed428c5e342} 
+MSG\+\_\+\+ID\+\_\+\+COVER\+\_\+\+CLOSE\+\_\+\+ALERT&message identifier to report the cover broken alert \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MSG\_ID\_NO\_SHOCK\_ALERT@{MSG\_ID\_NO\_SHOCK\_ALERT}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!MSG\_ID\_NO\_SHOCK\_ALERT@{MSG\_ID\_NO\_SHOCK\_ALERT}}}\Hypertarget{a00191_a5aa347e2a685a85a377a26337e9c5cc3a5b76e58e7bc4898eb63e01d19a258172}\label{a00191_a5aa347e2a685a85a377a26337e9c5cc3a5b76e58e7bc4898eb63e01d19a258172} 
+MSG\+\_\+\+ID\+\_\+\+NO\+\_\+\+SHOCK\+\_\+\+ALERT&message identifier to report the no shock alert \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MSG\_ID\_SHOCK\_DISC\_ALERT@{MSG\_ID\_SHOCK\_DISC\_ALERT}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!MSG\_ID\_SHOCK\_DISC\_ALERT@{MSG\_ID\_SHOCK\_DISC\_ALERT}}}\Hypertarget{a00191_a5aa347e2a685a85a377a26337e9c5cc3a67747c995f5fc58c569cee4702f71891}\label{a00191_a5aa347e2a685a85a377a26337e9c5cc3a67747c995f5fc58c569cee4702f71891} 
+MSG\+\_\+\+ID\+\_\+\+SHOCK\+\_\+\+DISC\+\_\+\+ALERT&message identifier to report the shock and elec. disconnected alert \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MSG\_ID\_SHOCK\_TIMEOUT\_ALERT@{MSG\_ID\_SHOCK\_TIMEOUT\_ALERT}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!MSG\_ID\_SHOCK\_TIMEOUT\_ALERT@{MSG\_ID\_SHOCK\_TIMEOUT\_ALERT}}}\Hypertarget{a00191_a5aa347e2a685a85a377a26337e9c5cc3a486faf5fd3755ef29221c14a1352967b}\label{a00191_a5aa347e2a685a85a377a26337e9c5cc3a486faf5fd3755ef29221c14a1352967b} 
+MSG\+\_\+\+ID\+\_\+\+SHOCK\+\_\+\+TIMEOUT\+\_\+\+ALERT&message identifier to report the shock timeout alert \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MSG\_ID\_SHOCK\_DONE\_ALERT@{MSG\_ID\_SHOCK\_DONE\_ALERT}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!MSG\_ID\_SHOCK\_DONE\_ALERT@{MSG\_ID\_SHOCK\_DONE\_ALERT}}}\Hypertarget{a00191_a5aa347e2a685a85a377a26337e9c5cc3a3c874c27badc679a64b77823b1f3fa4a}\label{a00191_a5aa347e2a685a85a377a26337e9c5cc3a3c874c27badc679a64b77823b1f3fa4a} 
+MSG\+\_\+\+ID\+\_\+\+SHOCK\+\_\+\+DONE\+\_\+\+ALERT&message identifier to report the shock performed alert \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MSG\_ID\_SAVED\_POS\_GPS@{MSG\_ID\_SAVED\_POS\_GPS}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!MSG\_ID\_SAVED\_POS\_GPS@{MSG\_ID\_SAVED\_POS\_GPS}}}\Hypertarget{a00191_a5aa347e2a685a85a377a26337e9c5cc3a28728f7d01fdf7886a00d51fc3989462}\label{a00191_a5aa347e2a685a85a377a26337e9c5cc3a28728f7d01fdf7886a00d51fc3989462} 
+MSG\+\_\+\+ID\+\_\+\+SAVED\+\_\+\+POS\+\_\+\+GPS&message identifier to report the gps position saved in the device \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MSG\_ID\_MON\_TEST\_GPS@{MSG\_ID\_MON\_TEST\_GPS}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!MSG\_ID\_MON\_TEST\_GPS@{MSG\_ID\_MON\_TEST\_GPS}}}\Hypertarget{a00191_a5aa347e2a685a85a377a26337e9c5cc3a10eb9bd3c15a5bc0c5ffe98382b7c246}\label{a00191_a5aa347e2a685a85a377a26337e9c5cc3a10eb9bd3c15a5bc0c5ffe98382b7c246} 
+MSG\+\_\+\+ID\+\_\+\+MON\+\_\+\+TEST\+\_\+\+GPS&message identifier to report the gps position when monthly test performed \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MSG\_ID\_MAN\_TEST\_GPS@{MSG\_ID\_MAN\_TEST\_GPS}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!MSG\_ID\_MAN\_TEST\_GPS@{MSG\_ID\_MAN\_TEST\_GPS}}}\Hypertarget{a00191_a5aa347e2a685a85a377a26337e9c5cc3a4c2b67446c9df7341d9da4693b433957}\label{a00191_a5aa347e2a685a85a377a26337e9c5cc3a4c2b67446c9df7341d9da4693b433957} 
+MSG\+\_\+\+ID\+\_\+\+MAN\+\_\+\+TEST\+\_\+\+GPS&message identifier to report the gps position when manual test performed \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MSG\_ID\_CHANGED\_POS\_GPS@{MSG\_ID\_CHANGED\_POS\_GPS}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!MSG\_ID\_CHANGED\_POS\_GPS@{MSG\_ID\_CHANGED\_POS\_GPS}}}\Hypertarget{a00191_a5aa347e2a685a85a377a26337e9c5cc3a8800a41a7eebcdb456f4443ffccfab0f}\label{a00191_a5aa347e2a685a85a377a26337e9c5cc3a8800a41a7eebcdb456f4443ffccfab0f} 
+MSG\+\_\+\+ID\+\_\+\+CHANGED\+\_\+\+POS\+\_\+\+GPS&message identifier to report the gps position if changed during func \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MSG\_ID\_ACCEL\_POS\_GPS@{MSG\_ID\_ACCEL\_POS\_GPS}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!MSG\_ID\_ACCEL\_POS\_GPS@{MSG\_ID\_ACCEL\_POS\_GPS}}}\Hypertarget{a00191_a5aa347e2a685a85a377a26337e9c5cc3a8dca4a563c73ed128af2d31f1b31efdb}\label{a00191_a5aa347e2a685a85a377a26337e9c5cc3a8dca4a563c73ed128af2d31f1b31efdb} 
+MSG\+\_\+\+ID\+\_\+\+ACCEL\+\_\+\+POS\+\_\+\+GPS&message identifier to report the gps position if accelerometer activated \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MSG\_ID\_BATT\_ELECT\_EXP@{MSG\_ID\_BATT\_ELECT\_EXP}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!MSG\_ID\_BATT\_ELECT\_EXP@{MSG\_ID\_BATT\_ELECT\_EXP}}}\Hypertarget{a00191_a5aa347e2a685a85a377a26337e9c5cc3ad1111b3271c6533400d42c84e1771721}\label{a00191_a5aa347e2a685a85a377a26337e9c5cc3ad1111b3271c6533400d42c84e1771721} 
+MSG\+\_\+\+ID\+\_\+\+BATT\+\_\+\+ELECT\+\_\+\+EXP&message identifier to report the battery and electrodes expiration date \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MSG\_ID\_ACCEL\_ATIVATE\_MOVE\_ALERT@{MSG\_ID\_ACCEL\_ATIVATE\_MOVE\_ALERT}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!MSG\_ID\_ACCEL\_ATIVATE\_MOVE\_ALERT@{MSG\_ID\_ACCEL\_ATIVATE\_MOVE\_ALERT}}}\Hypertarget{a00191_a5aa347e2a685a85a377a26337e9c5cc3a81ce63d5067fdd2085100ee2715e8b6f}\label{a00191_a5aa347e2a685a85a377a26337e9c5cc3a81ce63d5067fdd2085100ee2715e8b6f} 
+MSG\+\_\+\+ID\+\_\+\+ACCEL\+\_\+\+ATIVATE\+\_\+\+MOVE\+\_\+\+ALERT&message identifier to report the accelerometer movement alert when the device is moving \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MSG\_ID\_MAX@{MSG\_ID\_MAX}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!MSG\_ID\_MAX@{MSG\_ID\_MAX}}}\Hypertarget{a00191_a5aa347e2a685a85a377a26337e9c5cc3ae283e401b55d5b613eaaed5845f2c8b6}\label{a00191_a5aa347e2a685a85a377a26337e9c5cc3ae283e401b55d5b613eaaed5845f2c8b6} 
+MSG\+\_\+\+ID\+\_\+\+MAX&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{a00191_a1407e07609785109ddf8addc24e8a621}\label{a00191_a1407e07609785109ddf8addc24e8a621} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!WIFI\_ADVS\_e@{WIFI\_ADVS\_e}}
+\index{WIFI\_ADVS\_e@{WIFI\_ADVS\_e}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{WIFI\_ADVS\_e}{WIFI\_ADVS\_e}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{a00191_a1407e07609785109ddf8addc24e8a621}{WIFI\+\_\+\+ADVS\+\_\+e}}}
+
+
+
+Wifi Advance Settings. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eWIFI\_NO@{eWIFI\_NO}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!eWIFI\_NO@{eWIFI\_NO}}}\Hypertarget{a00191_a1407e07609785109ddf8addc24e8a621ac8246b83a02f7908ea0970cfebc12d24}\label{a00191_a1407e07609785109ddf8addc24e8a621ac8246b83a02f7908ea0970cfebc12d24} 
+e\+WIFI\+\_\+\+NO&No configure. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eWIFI\_ONLY\_IP@{eWIFI\_ONLY\_IP}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!eWIFI\_ONLY\_IP@{eWIFI\_ONLY\_IP}}}\Hypertarget{a00191_a1407e07609785109ddf8addc24e8a621ad5bc67f732a4b14efdb242eb91eb8c5d}\label{a00191_a1407e07609785109ddf8addc24e8a621ad5bc67f732a4b14efdb242eb91eb8c5d} 
+e\+WIFI\+\_\+\+ONLY\+\_\+\+IP&Only configure IP. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eWIFI\_ONLY\_DNS@{eWIFI\_ONLY\_DNS}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!eWIFI\_ONLY\_DNS@{eWIFI\_ONLY\_DNS}}}\Hypertarget{a00191_a1407e07609785109ddf8addc24e8a621abcf0a68c48b71d8c6b69564d0d2ab3e2}\label{a00191_a1407e07609785109ddf8addc24e8a621abcf0a68c48b71d8c6b69564d0d2ab3e2} 
+e\+WIFI\+\_\+\+ONLY\+\_\+\+DNS&Only configure DNS. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eWIFI\_IP\_DNS@{eWIFI\_IP\_DNS}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!eWIFI\_IP\_DNS@{eWIFI\_IP\_DNS}}}\Hypertarget{a00191_a1407e07609785109ddf8addc24e8a621a326fa82482b651594922e8ec18e1932b}\label{a00191_a1407e07609785109ddf8addc24e8a621a326fa82482b651594922e8ec18e1932b} 
+e\+WIFI\+\_\+\+IP\+\_\+\+DNS&Configure IP \& DNS. \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{a00191_a30bcce91a84082e55fabfd5098f0d7d7}\label{a00191_a30bcce91a84082e55fabfd5098f0d7d7} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!WIFI\_MSG\_ID\_e@{WIFI\_MSG\_ID\_e}}
+\index{WIFI\_MSG\_ID\_e@{WIFI\_MSG\_ID\_e}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{WIFI\_MSG\_ID\_e}{WIFI\_MSG\_ID\_e}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{a00191_a30bcce91a84082e55fabfd5098f0d7d7}{WIFI\+\_\+\+MSG\+\_\+\+ID\+\_\+e}}}
+
+
+
+Wifi Message IDs (same as SIGFOX\+\_\+\+MSG\+\_\+\+ID\+\_\+e) 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WIFI\_MSG\_ID\_POWER\_ON\_TEST@{WIFI\_MSG\_ID\_POWER\_ON\_TEST}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!WIFI\_MSG\_ID\_POWER\_ON\_TEST@{WIFI\_MSG\_ID\_POWER\_ON\_TEST}}}\Hypertarget{a00191_a30bcce91a84082e55fabfd5098f0d7d7adbac27c01f8cd78a3c3217441493630d}\label{a00191_a30bcce91a84082e55fabfd5098f0d7d7adbac27c01f8cd78a3c3217441493630d} 
+WIFI\+\_\+\+MSG\+\_\+\+ID\+\_\+\+POWER\+\_\+\+ON\+\_\+\+TEST&message identifier to report the power on test result \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WIFI\_MSG\_ID\_DIARY\_TEST@{WIFI\_MSG\_ID\_DIARY\_TEST}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!WIFI\_MSG\_ID\_DIARY\_TEST@{WIFI\_MSG\_ID\_DIARY\_TEST}}}\Hypertarget{a00191_a30bcce91a84082e55fabfd5098f0d7d7a448be03a70bee50b5940322f96cf4251}\label{a00191_a30bcce91a84082e55fabfd5098f0d7d7a448be03a70bee50b5940322f96cf4251} 
+WIFI\+\_\+\+MSG\+\_\+\+ID\+\_\+\+DIARY\+\_\+\+TEST&message identifier to report the diary autotest result \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WIFI\_MSG\_ID\_MONTHLY\_TEST@{WIFI\_MSG\_ID\_MONTHLY\_TEST}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!WIFI\_MSG\_ID\_MONTHLY\_TEST@{WIFI\_MSG\_ID\_MONTHLY\_TEST}}}\Hypertarget{a00191_a30bcce91a84082e55fabfd5098f0d7d7a5c10ffd36a75fc55efac6d9790010836}\label{a00191_a30bcce91a84082e55fabfd5098f0d7d7a5c10ffd36a75fc55efac6d9790010836} 
+WIFI\+\_\+\+MSG\+\_\+\+ID\+\_\+\+MONTHLY\+\_\+\+TEST&message identifier to report the monthly autotest result \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WIFI\_MSG\_ID\_MANUAL\_TEST@{WIFI\_MSG\_ID\_MANUAL\_TEST}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!WIFI\_MSG\_ID\_MANUAL\_TEST@{WIFI\_MSG\_ID\_MANUAL\_TEST}}}\Hypertarget{a00191_a30bcce91a84082e55fabfd5098f0d7d7ad07f91bf4395ae9ff72c22278dcbf46e}\label{a00191_a30bcce91a84082e55fabfd5098f0d7d7ad07f91bf4395ae9ff72c22278dcbf46e} 
+WIFI\+\_\+\+MSG\+\_\+\+ID\+\_\+\+MANUAL\+\_\+\+TEST&message identifier to report the manual test result \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WIFI\_MSG\_ID\_FUNC\_TEST@{WIFI\_MSG\_ID\_FUNC\_TEST}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!WIFI\_MSG\_ID\_FUNC\_TEST@{WIFI\_MSG\_ID\_FUNC\_TEST}}}\Hypertarget{a00191_a30bcce91a84082e55fabfd5098f0d7d7a520f6f883e25b4728261060c92ef3662}\label{a00191_a30bcce91a84082e55fabfd5098f0d7d7a520f6f883e25b4728261060c92ef3662} 
+WIFI\+\_\+\+MSG\+\_\+\+ID\+\_\+\+FUNC\+\_\+\+TEST&message identifier to report the functional test error \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WIFI\_MSG\_ID\_COVER\_OPEN\_ALERT@{WIFI\_MSG\_ID\_COVER\_OPEN\_ALERT}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!WIFI\_MSG\_ID\_COVER\_OPEN\_ALERT@{WIFI\_MSG\_ID\_COVER\_OPEN\_ALERT}}}\Hypertarget{a00191_a30bcce91a84082e55fabfd5098f0d7d7a322e0f5e3b029f0bca81583501d88709}\label{a00191_a30bcce91a84082e55fabfd5098f0d7d7a322e0f5e3b029f0bca81583501d88709} 
+WIFI\+\_\+\+MSG\+\_\+\+ID\+\_\+\+COVER\+\_\+\+OPEN\+\_\+\+ALERT&message identifier to report the cover broken alert \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WIFI\_MSG\_ID\_COVER\_CLOSE\_ALERT@{WIFI\_MSG\_ID\_COVER\_CLOSE\_ALERT}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!WIFI\_MSG\_ID\_COVER\_CLOSE\_ALERT@{WIFI\_MSG\_ID\_COVER\_CLOSE\_ALERT}}}\Hypertarget{a00191_a30bcce91a84082e55fabfd5098f0d7d7ab04f0dd931e7174b8313fe1ac9891a10}\label{a00191_a30bcce91a84082e55fabfd5098f0d7d7ab04f0dd931e7174b8313fe1ac9891a10} 
+WIFI\+\_\+\+MSG\+\_\+\+ID\+\_\+\+COVER\+\_\+\+CLOSE\+\_\+\+ALERT&message identifier to report the cover broken alert \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WIFI\_MSG\_ID\_NO\_SHOCK\_ALERT@{WIFI\_MSG\_ID\_NO\_SHOCK\_ALERT}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!WIFI\_MSG\_ID\_NO\_SHOCK\_ALERT@{WIFI\_MSG\_ID\_NO\_SHOCK\_ALERT}}}\Hypertarget{a00191_a30bcce91a84082e55fabfd5098f0d7d7ab455ec3e39cb424394bf304d1d6af72a}\label{a00191_a30bcce91a84082e55fabfd5098f0d7d7ab455ec3e39cb424394bf304d1d6af72a} 
+WIFI\+\_\+\+MSG\+\_\+\+ID\+\_\+\+NO\+\_\+\+SHOCK\+\_\+\+ALERT&message identifier to report the no shock alert \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WIFI\_MSG\_ID\_SHOCK\_DISC\_ALERT@{WIFI\_MSG\_ID\_SHOCK\_DISC\_ALERT}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!WIFI\_MSG\_ID\_SHOCK\_DISC\_ALERT@{WIFI\_MSG\_ID\_SHOCK\_DISC\_ALERT}}}\Hypertarget{a00191_a30bcce91a84082e55fabfd5098f0d7d7a823922a475d07d34aed2dfb0d9041a84}\label{a00191_a30bcce91a84082e55fabfd5098f0d7d7a823922a475d07d34aed2dfb0d9041a84} 
+WIFI\+\_\+\+MSG\+\_\+\+ID\+\_\+\+SHOCK\+\_\+\+DISC\+\_\+\+ALERT&message identifier to report the shock and elec. disconnected alert \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WIFI\_MSG\_ID\_SHOCK\_TIMEOUT\_ALERT@{WIFI\_MSG\_ID\_SHOCK\_TIMEOUT\_ALERT}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!WIFI\_MSG\_ID\_SHOCK\_TIMEOUT\_ALERT@{WIFI\_MSG\_ID\_SHOCK\_TIMEOUT\_ALERT}}}\Hypertarget{a00191_a30bcce91a84082e55fabfd5098f0d7d7a25a0c258f2e30e89c82f88f2d46a028c}\label{a00191_a30bcce91a84082e55fabfd5098f0d7d7a25a0c258f2e30e89c82f88f2d46a028c} 
+WIFI\+\_\+\+MSG\+\_\+\+ID\+\_\+\+SHOCK\+\_\+\+TIMEOUT\+\_\+\+ALERT&message identifier to report the shock timeout alert \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WIFI\_MSG\_ID\_SHOCK\_DONE\_ALERT@{WIFI\_MSG\_ID\_SHOCK\_DONE\_ALERT}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!WIFI\_MSG\_ID\_SHOCK\_DONE\_ALERT@{WIFI\_MSG\_ID\_SHOCK\_DONE\_ALERT}}}\Hypertarget{a00191_a30bcce91a84082e55fabfd5098f0d7d7a67a6a130a06e7be26df76989ee1f4a36}\label{a00191_a30bcce91a84082e55fabfd5098f0d7d7a67a6a130a06e7be26df76989ee1f4a36} 
+WIFI\+\_\+\+MSG\+\_\+\+ID\+\_\+\+SHOCK\+\_\+\+DONE\+\_\+\+ALERT&message identifier to report the shock performed alert \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WIFI\_MSG\_ID\_SAVED\_POS\_GPS@{WIFI\_MSG\_ID\_SAVED\_POS\_GPS}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!WIFI\_MSG\_ID\_SAVED\_POS\_GPS@{WIFI\_MSG\_ID\_SAVED\_POS\_GPS}}}\Hypertarget{a00191_a30bcce91a84082e55fabfd5098f0d7d7af45ee89a25ada1786c760b5b24773d7c}\label{a00191_a30bcce91a84082e55fabfd5098f0d7d7af45ee89a25ada1786c760b5b24773d7c} 
+WIFI\+\_\+\+MSG\+\_\+\+ID\+\_\+\+SAVED\+\_\+\+POS\+\_\+\+GPS&message identifier to report the gps position saved in the device \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WIFI\_MSG\_ID\_MON\_TEST\_GPS@{WIFI\_MSG\_ID\_MON\_TEST\_GPS}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!WIFI\_MSG\_ID\_MON\_TEST\_GPS@{WIFI\_MSG\_ID\_MON\_TEST\_GPS}}}\Hypertarget{a00191_a30bcce91a84082e55fabfd5098f0d7d7a70fc8ad255b2a43ee0b5cc30a171759a}\label{a00191_a30bcce91a84082e55fabfd5098f0d7d7a70fc8ad255b2a43ee0b5cc30a171759a} 
+WIFI\+\_\+\+MSG\+\_\+\+ID\+\_\+\+MON\+\_\+\+TEST\+\_\+\+GPS&message identifier to report the gps position when monthly test performed \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WIFI\_MSG\_ID\_MAN\_TEST\_GPS@{WIFI\_MSG\_ID\_MAN\_TEST\_GPS}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!WIFI\_MSG\_ID\_MAN\_TEST\_GPS@{WIFI\_MSG\_ID\_MAN\_TEST\_GPS}}}\Hypertarget{a00191_a30bcce91a84082e55fabfd5098f0d7d7a9e00ac7bc633b236baa5f722ac522232}\label{a00191_a30bcce91a84082e55fabfd5098f0d7d7a9e00ac7bc633b236baa5f722ac522232} 
+WIFI\+\_\+\+MSG\+\_\+\+ID\+\_\+\+MAN\+\_\+\+TEST\+\_\+\+GPS&message identifier to report the gps position when manual test performed \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WIFI\_MSG\_ID\_CHANGED\_POS\_GPS@{WIFI\_MSG\_ID\_CHANGED\_POS\_GPS}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!WIFI\_MSG\_ID\_CHANGED\_POS\_GPS@{WIFI\_MSG\_ID\_CHANGED\_POS\_GPS}}}\Hypertarget{a00191_a30bcce91a84082e55fabfd5098f0d7d7ad9cff54ca1e25fa7b90ce7a8e7133f83}\label{a00191_a30bcce91a84082e55fabfd5098f0d7d7ad9cff54ca1e25fa7b90ce7a8e7133f83} 
+WIFI\+\_\+\+MSG\+\_\+\+ID\+\_\+\+CHANGED\+\_\+\+POS\+\_\+\+GPS&message identifier to report the gps position if changed during func \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WIFI\_MSG\_ID\_ACCEL\_POS\_GPS@{WIFI\_MSG\_ID\_ACCEL\_POS\_GPS}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!WIFI\_MSG\_ID\_ACCEL\_POS\_GPS@{WIFI\_MSG\_ID\_ACCEL\_POS\_GPS}}}\Hypertarget{a00191_a30bcce91a84082e55fabfd5098f0d7d7a7b3a5cfaabcac16e1d15ff7a3dd313d2}\label{a00191_a30bcce91a84082e55fabfd5098f0d7d7a7b3a5cfaabcac16e1d15ff7a3dd313d2} 
+WIFI\+\_\+\+MSG\+\_\+\+ID\+\_\+\+ACCEL\+\_\+\+POS\+\_\+\+GPS&message identifier to report the gps position if accelerometer activated \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WIFI\_MSG\_ID\_BATT\_ELECT\_EXP@{WIFI\_MSG\_ID\_BATT\_ELECT\_EXP}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!WIFI\_MSG\_ID\_BATT\_ELECT\_EXP@{WIFI\_MSG\_ID\_BATT\_ELECT\_EXP}}}\Hypertarget{a00191_a30bcce91a84082e55fabfd5098f0d7d7a557de5ef33e8f833c69aca94cf85ab95}\label{a00191_a30bcce91a84082e55fabfd5098f0d7d7a557de5ef33e8f833c69aca94cf85ab95} 
+WIFI\+\_\+\+MSG\+\_\+\+ID\+\_\+\+BATT\+\_\+\+ELECT\+\_\+\+EXP&message identifier to report the battery and electrodes expiration date \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WIFI\_MSG\_ID\_ACCEL\_ATIVATE\_MOVE\_ALERT@{WIFI\_MSG\_ID\_ACCEL\_ATIVATE\_MOVE\_ALERT}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!WIFI\_MSG\_ID\_ACCEL\_ATIVATE\_MOVE\_ALERT@{WIFI\_MSG\_ID\_ACCEL\_ATIVATE\_MOVE\_ALERT}}}\Hypertarget{a00191_a30bcce91a84082e55fabfd5098f0d7d7a3d5ebbcc7c3d1c536d955e79a244ce5b}\label{a00191_a30bcce91a84082e55fabfd5098f0d7d7a3d5ebbcc7c3d1c536d955e79a244ce5b} 
+WIFI\+\_\+\+MSG\+\_\+\+ID\+\_\+\+ACCEL\+\_\+\+ATIVATE\+\_\+\+MOVE\+\_\+\+ALERT&message identifier to report the accelerometer movement alert when the device is moving \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WIFI\_MSG\_ID\_MAX@{WIFI\_MSG\_ID\_MAX}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!WIFI\_MSG\_ID\_MAX@{WIFI\_MSG\_ID\_MAX}}}\Hypertarget{a00191_a30bcce91a84082e55fabfd5098f0d7d7a8c3f06d0a3d8a5911588dbdebd91e28d}\label{a00191_a30bcce91a84082e55fabfd5098f0d7d7a8c3f06d0a3d8a5911588dbdebd91e28d} 
+WIFI\+\_\+\+MSG\+\_\+\+ID\+\_\+\+MAX&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{a00191_ad9f8a63230f5b4592c5dd0fc5c5e7810}\label{a00191_ad9f8a63230f5b4592c5dd0fc5c5e7810} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!WIFI\_SEC\_e@{WIFI\_SEC\_e}}
+\index{WIFI\_SEC\_e@{WIFI\_SEC\_e}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{WIFI\_SEC\_e}{WIFI\_SEC\_e}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{a00191_ad9f8a63230f5b4592c5dd0fc5c5e7810}{WIFI\+\_\+\+SEC\+\_\+e}}}
+
+
+
+Wifi Security. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eWIFI\_OPEN\_SEC@{eWIFI\_OPEN\_SEC}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!eWIFI\_OPEN\_SEC@{eWIFI\_OPEN\_SEC}}}\Hypertarget{a00191_ad9f8a63230f5b4592c5dd0fc5c5e7810aa3e71f20cd87de2b10729e0a258acd4e}\label{a00191_ad9f8a63230f5b4592c5dd0fc5c5e7810aa3e71f20cd87de2b10729e0a258acd4e} 
+e\+WIFI\+\_\+\+OPEN\+\_\+\+SEC&Open Network without password. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eWIFI\_WPA@{eWIFI\_WPA}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!eWIFI\_WPA@{eWIFI\_WPA}}}\Hypertarget{a00191_ad9f8a63230f5b4592c5dd0fc5c5e7810a2b36a37b58b9a9f6d65df9e8f48f7c9f}\label{a00191_ad9f8a63230f5b4592c5dd0fc5c5e7810a2b36a37b58b9a9f6d65df9e8f48f7c9f} 
+e\+WIFI\+\_\+\+WPA&WPA-\/\+Personal Security. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eWIFI\_EAP\_TLS\_SEC@{eWIFI\_EAP\_TLS\_SEC}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!eWIFI\_EAP\_TLS\_SEC@{eWIFI\_EAP\_TLS\_SEC}}}\Hypertarget{a00191_ad9f8a63230f5b4592c5dd0fc5c5e7810a9a24e22e938c7fd47ac960f1adea5bdf}\label{a00191_ad9f8a63230f5b4592c5dd0fc5c5e7810a9a24e22e938c7fd47ac960f1adea5bdf} 
+e\+WIFI\+\_\+\+EAP\+\_\+\+TLS\+\_\+\+SEC&WPA-\/\+Enterprise Security With EAP TLS. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eWIFI\_EAP\_PEAP\_SEC@{eWIFI\_EAP\_PEAP\_SEC}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!eWIFI\_EAP\_PEAP\_SEC@{eWIFI\_EAP\_PEAP\_SEC}}}\Hypertarget{a00191_ad9f8a63230f5b4592c5dd0fc5c5e7810add229ead9b610b7e4993159edc5f8655}\label{a00191_ad9f8a63230f5b4592c5dd0fc5c5e7810add229ead9b610b7e4993159edc5f8655} 
+e\+WIFI\+\_\+\+EAP\+\_\+\+PEAP\+\_\+\+SEC&WPA-\/\+Enterprise Security With EAP PEAP. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{a00191_ab3133b7277b4b2aea07d93088feddf95}\label{a00191_ab3133b7277b4b2aea07d93088feddf95} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!Comm\_ACC\_Execute\_Test@{Comm\_ACC\_Execute\_Test}}
+\index{Comm\_ACC\_Execute\_Test@{Comm\_ACC\_Execute\_Test}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{Comm\_ACC\_Execute\_Test()}{Comm\_ACC\_Execute\_Test()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Comm\+\_\+\+ACC\+\_\+\+Execute\+\_\+\+Test (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Test of ACC module. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR\+\_\+\+ID\+\_\+e error code 
+\end{DoxyReturn}
+\Hypertarget{a00191_aef2d7460a2cd17cf6830333cbd5c7f3a}\label{a00191_aef2d7460a2cd17cf6830333cbd5c7f3a} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!Comm\_ACC\_Get\_Acceleration\_Data@{Comm\_ACC\_Get\_Acceleration\_Data}}
+\index{Comm\_ACC\_Get\_Acceleration\_Data@{Comm\_ACC\_Get\_Acceleration\_Data}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{Comm\_ACC\_Get\_Acceleration\_Data()}{Comm\_ACC\_Get\_Acceleration\_Data()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Comm\+\_\+\+ACC\+\_\+\+Get\+\_\+\+Acceleration\+\_\+\+Data (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Read XYZ axis acceleration values. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+e\+ERR\+\_\+\+NONE 
+\end{DoxyReturn}
+\Hypertarget{a00191_a4d67800f1a52967d5b4674c80505fed9}\label{a00191_a4d67800f1a52967d5b4674c80505fed9} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!Comm\_ACC\_Get\_INT2@{Comm\_ACC\_Get\_INT2}}
+\index{Comm\_ACC\_Get\_INT2@{Comm\_ACC\_Get\_INT2}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{Comm\_ACC\_Get\_INT2()}{Comm\_ACC\_Get\_INT2()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} Comm\+\_\+\+ACC\+\_\+\+Get\+\_\+\+INT2 (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Read INT2 register to check if interrupt is activated or not. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If interrupt is enabled or not(0=disable 1=enable) 
+
+e\+ERR\+\_\+\+COMM\+\_\+\+ACC\+\_\+\+INT2 
+\end{DoxyReturn}
+\Hypertarget{a00191_ace5f77a9b4079a5b7a0d44391357862a}\label{a00191_ace5f77a9b4079a5b7a0d44391357862a} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!Comm\_ACC\_Initialize@{Comm\_ACC\_Initialize}}
+\index{Comm\_ACC\_Initialize@{Comm\_ACC\_Initialize}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{Comm\_ACC\_Initialize()}{Comm\_ACC\_Initialize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Comm\+\_\+\+ACC\+\_\+\+Initialize (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+If accelerometer presence is OK, then initialize Accelerometer setup. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+e\+ERR\+\_\+\+NONE 
+
+e\+ERR\+\_\+\+COMM\+\_\+\+ACC\+\_\+\+READ\+\_\+\+PRESENCE 
+
+ret\+Error 
+\end{DoxyReturn}
+\Hypertarget{a00191_a14b282886d75e45f70a7ffe548732dba}\label{a00191_a14b282886d75e45f70a7ffe548732dba} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!Comm\_Get\_Selected\_Uart@{Comm\_Get\_Selected\_Uart}}
+\index{Comm\_Get\_Selected\_Uart@{Comm\_Get\_Selected\_Uart}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{Comm\_Get\_Selected\_Uart()}{Comm\_Get\_Selected\_Uart()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00191_a02ace324eb27603254e760e194b38fd9}{COMM\+\_\+\+MOD\+\_\+e}} Comm\+\_\+\+Get\+\_\+\+Selected\+\_\+\+Uart (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Returns the selected Comms UART. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Selected Comms Uart 
+\end{DoxyReturn}
+\Hypertarget{a00191_a48a2db3942cf973c7ffa74f6b4053b6b}\label{a00191_a48a2db3942cf973c7ffa74f6b4053b6b} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!Comm\_GPS\_Execute\_Test@{Comm\_GPS\_Execute\_Test}}
+\index{Comm\_GPS\_Execute\_Test@{Comm\_GPS\_Execute\_Test}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{Comm\_GPS\_Execute\_Test()}{Comm\_GPS\_Execute\_Test()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Comm\+\_\+\+GPS\+\_\+\+Execute\+\_\+\+Test (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Test of GPS module. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR\+\_\+\+ID\+\_\+e error code 
+\end{DoxyReturn}
+\Hypertarget{a00191_a77dba14b8a661e55a2caa7919a4c961b}\label{a00191_a77dba14b8a661e55a2caa7919a4c961b} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!Comm\_GPS\_Get\_Position\_Data@{Comm\_GPS\_Get\_Position\_Data}}
+\index{Comm\_GPS\_Get\_Position\_Data@{Comm\_GPS\_Get\_Position\_Data}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{Comm\_GPS\_Get\_Position\_Data()}{Comm\_GPS\_Get\_Position\_Data()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Comm\+\_\+\+GPS\+\_\+\+Get\+\_\+\+Position\+\_\+\+Data (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Get GPS Data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR\+\_\+\+ID\+\_\+e error code 
+\end{DoxyReturn}
+\Hypertarget{a00191_a1d081723eb366e271a59daa0289b3c8e}\label{a00191_a1d081723eb366e271a59daa0289b3c8e} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!Comm\_GPS\_Initialize@{Comm\_GPS\_Initialize}}
+\index{Comm\_GPS\_Initialize@{Comm\_GPS\_Initialize}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{Comm\_GPS\_Initialize()}{Comm\_GPS\_Initialize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Comm\+\_\+\+GPS\+\_\+\+Initialize (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Initialization of GPS module. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR\+\_\+\+ID\+\_\+e error code 
+\end{DoxyReturn}
+\Hypertarget{a00191_abf1450e8718658ca896cad96d4f6e361}\label{a00191_abf1450e8718658ca896cad96d4f6e361} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!Comm\_GPS\_Send\_Command@{Comm\_GPS\_Send\_Command}}
+\index{Comm\_GPS\_Send\_Command@{Comm\_GPS\_Send\_Command}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{Comm\_GPS\_Send\_Command()}{Comm\_GPS\_Send\_Command()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Comm\+\_\+\+GPS\+\_\+\+Send\+\_\+\+Command (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Send GPS commands. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR\+\_\+\+ID\+\_\+e error code 
+\end{DoxyReturn}
+\Hypertarget{a00191_aba10912e5156af563d72a637fe9b7a78}\label{a00191_aba10912e5156af563d72a637fe9b7a78} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!Comm\_Hardware\_Off@{Comm\_Hardware\_Off}}
+\index{Comm\_Hardware\_Off@{Comm\_Hardware\_Off}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{Comm\_Hardware\_Off()}{Comm\_Hardware\_Off()}}
+{\footnotesize\ttfamily void Comm\+\_\+\+Hardware\+\_\+\+Off (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00191_a02ace324eb27603254e760e194b38fd9}{COMM\+\_\+\+MOD\+\_\+e}}}]{comm\+\_\+mod }\end{DoxyParamCaption})}
+
+
+
+Reset Wifi, Sigfox or GPS module. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{a00191_a4e3f9bfdd5df0ab92a1713930d545237}\label{a00191_a4e3f9bfdd5df0ab92a1713930d545237} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!Comm\_Hardware\_On@{Comm\_Hardware\_On}}
+\index{Comm\_Hardware\_On@{Comm\_Hardware\_On}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{Comm\_Hardware\_On()}{Comm\_Hardware\_On()}}
+{\footnotesize\ttfamily void Comm\+\_\+\+Hardware\+\_\+\+On (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00191_a02ace324eb27603254e760e194b38fd9}{COMM\+\_\+\+MOD\+\_\+e}}}]{comm\+\_\+mod }\end{DoxyParamCaption})}
+
+
+
+Reset Wifi, Sigfox or GPS module. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{a00191_acd0f72ce82a8c749fe1171bd48269e66}\label{a00191_acd0f72ce82a8c749fe1171bd48269e66} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!Comm\_Hardware\_Reset@{Comm\_Hardware\_Reset}}
+\index{Comm\_Hardware\_Reset@{Comm\_Hardware\_Reset}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{Comm\_Hardware\_Reset()}{Comm\_Hardware\_Reset()}}
+{\footnotesize\ttfamily void Comm\+\_\+\+Hardware\+\_\+\+Reset (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00191_a02ace324eb27603254e760e194b38fd9}{COMM\+\_\+\+MOD\+\_\+e}}}]{comm\+\_\+mod }\end{DoxyParamCaption})}
+
+
+
+Reset Wifi, Sigfox or GPS module. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{a00191_a7bec2de2a4a0bd5ee235fc2c4579cee6}\label{a00191_a7bec2de2a4a0bd5ee235fc2c4579cee6} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!Comm\_Is\_Sigfox\_Free@{Comm\_Is\_Sigfox\_Free}}
+\index{Comm\_Is\_Sigfox\_Free@{Comm\_Is\_Sigfox\_Free}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{Comm\_Is\_Sigfox\_Free()}{Comm\_Is\_Sigfox\_Free()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} Comm\+\_\+\+Is\+\_\+\+Sigfox\+\_\+\+Free (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Returns if Comms UART is free. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true or false 
+\end{DoxyReturn}
+\Hypertarget{a00191_abadbab0ad04afa75f452b3347b895cdd}\label{a00191_abadbab0ad04afa75f452b3347b895cdd} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!Comm\_Modules\_Initialize@{Comm\_Modules\_Initialize}}
+\index{Comm\_Modules\_Initialize@{Comm\_Modules\_Initialize}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{Comm\_Modules\_Initialize()}{Comm\_Modules\_Initialize()}}
+{\footnotesize\ttfamily void Comm\+\_\+\+Modules\+\_\+\+Initialize (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Initialization of Comm UART. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{a00191_afc169aa2e842d15739e9b0752d29e835}\label{a00191_afc169aa2e842d15739e9b0752d29e835} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!Comm\_Modules\_Print\_Configuration@{Comm\_Modules\_Print\_Configuration}}
+\index{Comm\_Modules\_Print\_Configuration@{Comm\_Modules\_Print\_Configuration}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{Comm\_Modules\_Print\_Configuration()}{Comm\_Modules\_Print\_Configuration()}}
+{\footnotesize\ttfamily void Comm\+\_\+\+Modules\+\_\+\+Print\+\_\+\+Configuration (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00191_a02ace324eb27603254e760e194b38fd9}{COMM\+\_\+\+MOD\+\_\+e}}}]{comm\+\_\+mod }\end{DoxyParamCaption})}
+
+
+
+Prints Module Information. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em COMM\+\_\+\+MOD\+\_\+e} & module to print info\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\Hypertarget{a00191_a63b3e38ecaf443421eb673e2342e2f08}\label{a00191_a63b3e38ecaf443421eb673e2342e2f08} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!Comm\_Select\_Uart@{Comm\_Select\_Uart}}
+\index{Comm\_Select\_Uart@{Comm\_Select\_Uart}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{Comm\_Select\_Uart()}{Comm\_Select\_Uart()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Comm\+\_\+\+Select\+\_\+\+Uart (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00191_a02ace324eb27603254e760e194b38fd9}{COMM\+\_\+\+MOD\+\_\+e}}}]{comm\+\_\+uart }\end{DoxyParamCaption})}
+
+
+
+Select Uart to send and receive data. This function sets the SN74\+CBT Multiplexer/\+Demultiplexer via the PCF8574 I/O Expander for I2C. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em COMM\+\_\+\+MOD\+\_\+e} & Uart to select\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR\+\_\+\+ID\+\_\+e error code 
+\end{DoxyReturn}
+\Hypertarget{a00191_a3966732dacf626b4fef99504eae11fd4}\label{a00191_a3966732dacf626b4fef99504eae11fd4} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!Comm\_Sigfox\_Device\_Info\_Check@{Comm\_Sigfox\_Device\_Info\_Check}}
+\index{Comm\_Sigfox\_Device\_Info\_Check@{Comm\_Sigfox\_Device\_Info\_Check}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{Comm\_Sigfox\_Device\_Info\_Check()}{Comm\_Sigfox\_Device\_Info\_Check()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Comm\+\_\+\+Sigfox\+\_\+\+Device\+\_\+\+Info\+\_\+\+Check (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Device information Check. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR\+\_\+\+ID\+\_\+e error code 
+\end{DoxyReturn}
+\Hypertarget{a00191_aad8ef9e81af60f170ee4d4e5bfb580d0}\label{a00191_aad8ef9e81af60f170ee4d4e5bfb580d0} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!Comm\_Sigfox\_Execute\_Test@{Comm\_Sigfox\_Execute\_Test}}
+\index{Comm\_Sigfox\_Execute\_Test@{Comm\_Sigfox\_Execute\_Test}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{Comm\_Sigfox\_Execute\_Test()}{Comm\_Sigfox\_Execute\_Test()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Comm\+\_\+\+Sigfox\+\_\+\+Execute\+\_\+\+Test (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Test of Sigfox module. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR\+\_\+\+ID\+\_\+e error code 
+\end{DoxyReturn}
+\Hypertarget{a00191_a8940317343835bfd6ab8aeb253689893}\label{a00191_a8940317343835bfd6ab8aeb253689893} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!Comm\_Sigfox\_Initialize@{Comm\_Sigfox\_Initialize}}
+\index{Comm\_Sigfox\_Initialize@{Comm\_Sigfox\_Initialize}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{Comm\_Sigfox\_Initialize()}{Comm\_Sigfox\_Initialize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Comm\+\_\+\+Sigfox\+\_\+\+Initialize (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Initialization of Sigfox module. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR\+\_\+\+ID\+\_\+e error code 
+\end{DoxyReturn}
+\Hypertarget{a00191_ac81db4e65de502201f2c1fe434d67100}\label{a00191_ac81db4e65de502201f2c1fe434d67100} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!Comm\_Sigfox\_Send\_Alert@{Comm\_Sigfox\_Send\_Alert}}
+\index{Comm\_Sigfox\_Send\_Alert@{Comm\_Sigfox\_Send\_Alert}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{Comm\_Sigfox\_Send\_Alert()}{Comm\_Sigfox\_Send\_Alert()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Comm\+\_\+\+Sigfox\+\_\+\+Send\+\_\+\+Alert (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Send R100 Functional Alert. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR\+\_\+\+ID\+\_\+e error code 
+\end{DoxyReturn}
+\Hypertarget{a00191_abf01cd774e17dbff3e24ff692eabbf86}\label{a00191_abf01cd774e17dbff3e24ff692eabbf86} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!Comm\_Sigfox\_Send\_Exp@{Comm\_Sigfox\_Send\_Exp}}
+\index{Comm\_Sigfox\_Send\_Exp@{Comm\_Sigfox\_Send\_Exp}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{Comm\_Sigfox\_Send\_Exp()}{Comm\_Sigfox\_Send\_Exp()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Comm\+\_\+\+Sigfox\+\_\+\+Send\+\_\+\+Exp (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Send battery and electrodes expiration date. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR\+\_\+\+ID\+\_\+e error code 
+\end{DoxyReturn}
+\Hypertarget{a00191_adb15e35af3b08b9c4273b9bdb8909f1c}\label{a00191_adb15e35af3b08b9c4273b9bdb8909f1c} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!Comm\_Sigfox\_Send\_Position@{Comm\_Sigfox\_Send\_Position}}
+\index{Comm\_Sigfox\_Send\_Position@{Comm\_Sigfox\_Send\_Position}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{Comm\_Sigfox\_Send\_Position()}{Comm\_Sigfox\_Send\_Position()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Comm\+\_\+\+Sigfox\+\_\+\+Send\+\_\+\+Position (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Send R100 GPS Position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR\+\_\+\+ID\+\_\+e error code 
+\end{DoxyReturn}
+\Hypertarget{a00191_adf42691907cbb4718b35c6b1646abfd7}\label{a00191_adf42691907cbb4718b35c6b1646abfd7} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!Comm\_Sigfox\_Send\_Test@{Comm\_Sigfox\_Send\_Test}}
+\index{Comm\_Sigfox\_Send\_Test@{Comm\_Sigfox\_Send\_Test}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{Comm\_Sigfox\_Send\_Test()}{Comm\_Sigfox\_Send\_Test()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Comm\+\_\+\+Sigfox\+\_\+\+Send\+\_\+\+Test (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Send R100 Test. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR\+\_\+\+ID\+\_\+e error code 
+\end{DoxyReturn}
+\Hypertarget{a00191_a6170b241b51001fcd5c60c83b80704f2}\label{a00191_a6170b241b51001fcd5c60c83b80704f2} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!Comm\_Sigfox\_Start\_Downlink\_Test@{Comm\_Sigfox\_Start\_Downlink\_Test}}
+\index{Comm\_Sigfox\_Start\_Downlink\_Test@{Comm\_Sigfox\_Start\_Downlink\_Test}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{Comm\_Sigfox\_Start\_Downlink\_Test()}{Comm\_Sigfox\_Start\_Downlink\_Test()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Comm\+\_\+\+Sigfox\+\_\+\+Start\+\_\+\+Downlink\+\_\+\+Test (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Start sigfox module Downlink Test (with RX GFSK test mode) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR\+\_\+\+ID\+\_\+e error code 
+\end{DoxyReturn}
+\Hypertarget{a00191_a41272f2468c23dfaf459579637d8c295}\label{a00191_a41272f2468c23dfaf459579637d8c295} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!Comm\_Sigfox\_Start\_Uplink\_Test@{Comm\_Sigfox\_Start\_Uplink\_Test}}
+\index{Comm\_Sigfox\_Start\_Uplink\_Test@{Comm\_Sigfox\_Start\_Uplink\_Test}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{Comm\_Sigfox\_Start\_Uplink\_Test()}{Comm\_Sigfox\_Start\_Uplink\_Test()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Comm\+\_\+\+Sigfox\+\_\+\+Start\+\_\+\+Uplink\+\_\+\+Test (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Perform sigfox module Uplink Test. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR\+\_\+\+ID\+\_\+e error code 
+\end{DoxyReturn}
+\Hypertarget{a00191_aec4d46d0b02d71bce4b5f7a033c3635e}\label{a00191_aec4d46d0b02d71bce4b5f7a033c3635e} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!Comm\_Sigfox\_Stop\_Uplink\_Test@{Comm\_Sigfox\_Stop\_Uplink\_Test}}
+\index{Comm\_Sigfox\_Stop\_Uplink\_Test@{Comm\_Sigfox\_Stop\_Uplink\_Test}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{Comm\_Sigfox\_Stop\_Uplink\_Test()}{Comm\_Sigfox\_Stop\_Uplink\_Test()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Comm\+\_\+\+Sigfox\+\_\+\+Stop\+\_\+\+Uplink\+\_\+\+Test (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Stop sigfox module Uplink Test. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR\+\_\+\+ID\+\_\+e error code 
+\end{DoxyReturn}
+\Hypertarget{a00191_aa4045b4e83503568aaf2721ed8c186a3}\label{a00191_aa4045b4e83503568aaf2721ed8c186a3} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!Comm\_Wifi\_CRC@{Comm\_Wifi\_CRC}}
+\index{Comm\_Wifi\_CRC@{Comm\_Wifi\_CRC}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{Comm\_Wifi\_CRC()}{Comm\_Wifi\_CRC()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} Comm\+\_\+\+Wifi\+\_\+\+CRC (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{a00191_ae40d6f27c400549f84857052bffcce61}\label{a00191_ae40d6f27c400549f84857052bffcce61} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!Comm\_Wifi\_Execute\_Test@{Comm\_Wifi\_Execute\_Test}}
+\index{Comm\_Wifi\_Execute\_Test@{Comm\_Wifi\_Execute\_Test}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{Comm\_Wifi\_Execute\_Test()}{Comm\_Wifi\_Execute\_Test()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Comm\+\_\+\+Wifi\+\_\+\+Execute\+\_\+\+Test (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Test of Wifi module. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR\+\_\+\+ID\+\_\+e error code 
+\end{DoxyReturn}
+\Hypertarget{a00191_a267f7a2dd6fc9f5ee0c34e55a97ece0b}\label{a00191_a267f7a2dd6fc9f5ee0c34e55a97ece0b} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!Comm\_Wifi\_Get\_Configuration\_File@{Comm\_Wifi\_Get\_Configuration\_File}}
+\index{Comm\_Wifi\_Get\_Configuration\_File@{Comm\_Wifi\_Get\_Configuration\_File}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{Comm\_Wifi\_Get\_Configuration\_File()}{Comm\_Wifi\_Get\_Configuration\_File()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Comm\+\_\+\+Wifi\+\_\+\+Get\+\_\+\+Configuration\+\_\+\+File (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Get configuration file from host server. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR\+\_\+\+ID\+\_\+e error code 
+\end{DoxyReturn}
+\Hypertarget{a00191_a6370a754e4e5cace299125d63bd16c39}\label{a00191_a6370a754e4e5cace299125d63bd16c39} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!Comm\_Wifi\_Get\_Upgrade\_Firmware@{Comm\_Wifi\_Get\_Upgrade\_Firmware}}
+\index{Comm\_Wifi\_Get\_Upgrade\_Firmware@{Comm\_Wifi\_Get\_Upgrade\_Firmware}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{Comm\_Wifi\_Get\_Upgrade\_Firmware()}{Comm\_Wifi\_Get\_Upgrade\_Firmware()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Comm\+\_\+\+Wifi\+\_\+\+Get\+\_\+\+Upgrade\+\_\+\+Firmware (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Get upgrade firmware from host server. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR\+\_\+\+ID\+\_\+e error code 
+\end{DoxyReturn}
+\Hypertarget{a00191_af6bf58158a9a7b9220ee08afcba32292}\label{a00191_af6bf58158a9a7b9220ee08afcba32292} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!Comm\_Wifi\_Initialize@{Comm\_Wifi\_Initialize}}
+\index{Comm\_Wifi\_Initialize@{Comm\_Wifi\_Initialize}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{Comm\_Wifi\_Initialize()}{Comm\_Wifi\_Initialize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Comm\+\_\+\+Wifi\+\_\+\+Initialize (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Initialization of Wifi module. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR\+\_\+\+ID\+\_\+e error code 
+\end{DoxyReturn}
+\Hypertarget{a00191_a2fdd51c5b7216b4532cf95b942c069b6}\label{a00191_a2fdd51c5b7216b4532cf95b942c069b6} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!Comm\_Wifi\_Initialize\_Fast@{Comm\_Wifi\_Initialize\_Fast}}
+\index{Comm\_Wifi\_Initialize\_Fast@{Comm\_Wifi\_Initialize\_Fast}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{Comm\_Wifi\_Initialize\_Fast()}{Comm\_Wifi\_Initialize\_Fast()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Comm\+\_\+\+Wifi\+\_\+\+Initialize\+\_\+\+Fast (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Fast initialization of Wifi module. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\Hypertarget{a00191_ac22dba0799d6e0fb21eee7fc789b8488}\label{a00191_ac22dba0799d6e0fb21eee7fc789b8488} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!Comm\_Wifi\_Is\_Cfg\_Available@{Comm\_Wifi\_Is\_Cfg\_Available}}
+\index{Comm\_Wifi\_Is\_Cfg\_Available@{Comm\_Wifi\_Is\_Cfg\_Available}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{Comm\_Wifi\_Is\_Cfg\_Available()}{Comm\_Wifi\_Is\_Cfg\_Available()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} Comm\+\_\+\+Wifi\+\_\+\+Is\+\_\+\+Cfg\+\_\+\+Available (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{a00191_a8431584ae8be287c0fcafe0880de4c47}\label{a00191_a8431584ae8be287c0fcafe0880de4c47} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!Comm\_Wifi\_Is\_Frmw\_Available@{Comm\_Wifi\_Is\_Frmw\_Available}}
+\index{Comm\_Wifi\_Is\_Frmw\_Available@{Comm\_Wifi\_Is\_Frmw\_Available}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{Comm\_Wifi\_Is\_Frmw\_Available()}{Comm\_Wifi\_Is\_Frmw\_Available()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} Comm\+\_\+\+Wifi\+\_\+\+Is\+\_\+\+Frmw\+\_\+\+Available (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{a00191_a02fd8d87a2f9d69a608c8488cc5cbe3f}\label{a00191_a02fd8d87a2f9d69a608c8488cc5cbe3f} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!Comm\_Wifi\_Is\_Host\_Server\_Alive@{Comm\_Wifi\_Is\_Host\_Server\_Alive}}
+\index{Comm\_Wifi\_Is\_Host\_Server\_Alive@{Comm\_Wifi\_Is\_Host\_Server\_Alive}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{Comm\_Wifi\_Is\_Host\_Server\_Alive()}{Comm\_Wifi\_Is\_Host\_Server\_Alive()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Comm\+\_\+\+Wifi\+\_\+\+Is\+\_\+\+Host\+\_\+\+Server\+\_\+\+Alive (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Check if host server is alive. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR\+\_\+\+ID\+\_\+e error code 
+\end{DoxyReturn}
+\Hypertarget{a00191_a719e8f2234d99f42709c03413815c2fe}\label{a00191_a719e8f2234d99f42709c03413815c2fe} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!Comm\_Wifi\_Is\_IPv4\_Valid@{Comm\_Wifi\_Is\_IPv4\_Valid}}
+\index{Comm\_Wifi\_Is\_IPv4\_Valid@{Comm\_Wifi\_Is\_IPv4\_Valid}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{Comm\_Wifi\_Is\_IPv4\_Valid()}{Comm\_Wifi\_Is\_IPv4\_Valid()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} Comm\+\_\+\+Wifi\+\_\+\+Is\+\_\+\+IPv4\+\_\+\+Valid (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00137_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{s }\end{DoxyParamCaption})}
+
+
+
+Checks if a IPv4 address has a valid format. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & pointer of the IPv4 address string\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool\+\_\+t true if IPv4 format OK, false if not 
+\end{DoxyReturn}
+\Hypertarget{a00191_a3697cab536e0621953d66a141e99310d}\label{a00191_a3697cab536e0621953d66a141e99310d} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!Comm\_Wifi\_Is\_MAC\_Valid@{Comm\_Wifi\_Is\_MAC\_Valid}}
+\index{Comm\_Wifi\_Is\_MAC\_Valid@{Comm\_Wifi\_Is\_MAC\_Valid}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{Comm\_Wifi\_Is\_MAC\_Valid()}{Comm\_Wifi\_Is\_MAC\_Valid()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} Comm\+\_\+\+Wifi\+\_\+\+Is\+\_\+\+MAC\+\_\+\+Valid (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00137_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{s }\end{DoxyParamCaption})}
+
+
+
+Checks if a MAC address has a valid format. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & pointer of the MAC address string\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool\+\_\+t true if MAC format OK, false if not 
+\end{DoxyReturn}
+\Hypertarget{a00191_a59a90b113c8634ceb53cb02eee915f7b}\label{a00191_a59a90b113c8634ceb53cb02eee915f7b} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!Comm\_Wifi\_PASS@{Comm\_Wifi\_PASS}}
+\index{Comm\_Wifi\_PASS@{Comm\_Wifi\_PASS}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{Comm\_Wifi\_PASS()}{Comm\_Wifi\_PASS()}}
+{\footnotesize\ttfamily void Comm\+\_\+\+Wifi\+\_\+\+PASS (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{password }\end{DoxyParamCaption})}
+
+\Hypertarget{a00191_a22925590c70e764b3b53f54b39b166b7}\label{a00191_a22925590c70e764b3b53f54b39b166b7} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!Comm\_Wifi\_Radio\_Off@{Comm\_Wifi\_Radio\_Off}}
+\index{Comm\_Wifi\_Radio\_Off@{Comm\_Wifi\_Radio\_Off}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{Comm\_Wifi\_Radio\_Off()}{Comm\_Wifi\_Radio\_Off()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Comm\+\_\+\+Wifi\+\_\+\+Radio\+\_\+\+Off (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Set Radio Wifi Off. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR\+\_\+\+ID\+\_\+e error code 
+\end{DoxyReturn}
+\Hypertarget{a00191_ade77c80f9e7439b0e75d7d302af476ce}\label{a00191_ade77c80f9e7439b0e75d7d302af476ce} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!Comm\_Wifi\_Reset@{Comm\_Wifi\_Reset}}
+\index{Comm\_Wifi\_Reset@{Comm\_Wifi\_Reset}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{Comm\_Wifi\_Reset()}{Comm\_Wifi\_Reset()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Comm\+\_\+\+Wifi\+\_\+\+Reset (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Reset Wifi. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR\+\_\+\+ID\+\_\+e error code 
+\end{DoxyReturn}
+\Hypertarget{a00191_ad7f474971f5b056a400c9306b64d2e3c}\label{a00191_ad7f474971f5b056a400c9306b64d2e3c} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!Comm\_Wifi\_Save\_Host\_Response@{Comm\_Wifi\_Save\_Host\_Response}}
+\index{Comm\_Wifi\_Save\_Host\_Response@{Comm\_Wifi\_Save\_Host\_Response}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{Comm\_Wifi\_Save\_Host\_Response()}{Comm\_Wifi\_Save\_Host\_Response()}}
+{\footnotesize\ttfamily void Comm\+\_\+\+Wifi\+\_\+\+Save\+\_\+\+Host\+\_\+\+Response (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00137_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{resp }\end{DoxyParamCaption})}
+
+\Hypertarget{a00191_a903d37fd9bd762a0a292b512b1fe7550}\label{a00191_a903d37fd9bd762a0a292b512b1fe7550} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!Comm\_Wifi\_Save\_Server\_Response@{Comm\_Wifi\_Save\_Server\_Response}}
+\index{Comm\_Wifi\_Save\_Server\_Response@{Comm\_Wifi\_Save\_Server\_Response}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{Comm\_Wifi\_Save\_Server\_Response()}{Comm\_Wifi\_Save\_Server\_Response()}}
+{\footnotesize\ttfamily void Comm\+\_\+\+Wifi\+\_\+\+Save\+\_\+\+Server\+\_\+\+Response (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00137_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{resp }\end{DoxyParamCaption})}
+
+\Hypertarget{a00191_a4d91b115ae6885412c79593ef06f2b12}\label{a00191_a4d91b115ae6885412c79593ef06f2b12} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!Comm\_Wifi\_Send\_Frame\_Alert@{Comm\_Wifi\_Send\_Frame\_Alert}}
+\index{Comm\_Wifi\_Send\_Frame\_Alert@{Comm\_Wifi\_Send\_Frame\_Alert}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{Comm\_Wifi\_Send\_Frame\_Alert()}{Comm\_Wifi\_Send\_Frame\_Alert()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Comm\+\_\+\+Wifi\+\_\+\+Send\+\_\+\+Frame\+\_\+\+Alert (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Send Alert frame using wifi connection. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR\+\_\+\+ID\+\_\+e error code 
+\end{DoxyReturn}
+\Hypertarget{a00191_aaffa9d6bb0dc8d70687216d756791af3}\label{a00191_aaffa9d6bb0dc8d70687216d756791af3} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!Comm\_Wifi\_Send\_Frame\_Alert\_Aux@{Comm\_Wifi\_Send\_Frame\_Alert\_Aux}}
+\index{Comm\_Wifi\_Send\_Frame\_Alert\_Aux@{Comm\_Wifi\_Send\_Frame\_Alert\_Aux}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{Comm\_Wifi\_Send\_Frame\_Alert\_Aux()}{Comm\_Wifi\_Send\_Frame\_Alert\_Aux()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Comm\+\_\+\+Wifi\+\_\+\+Send\+\_\+\+Frame\+\_\+\+Alert\+\_\+\+Aux (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Send Alert frame using wifi connection. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR\+\_\+\+ID\+\_\+e error code 
+\end{DoxyReturn}
+\Hypertarget{a00191_ae327aacd325df8c7019efdf3f8e758b3}\label{a00191_ae327aacd325df8c7019efdf3f8e758b3} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!Comm\_Wifi\_Send\_Frame\_Gps@{Comm\_Wifi\_Send\_Frame\_Gps}}
+\index{Comm\_Wifi\_Send\_Frame\_Gps@{Comm\_Wifi\_Send\_Frame\_Gps}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{Comm\_Wifi\_Send\_Frame\_Gps()}{Comm\_Wifi\_Send\_Frame\_Gps()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Comm\+\_\+\+Wifi\+\_\+\+Send\+\_\+\+Frame\+\_\+\+Gps (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Send Gps position frame using wifi connection. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR\+\_\+\+ID\+\_\+e error code 
+\end{DoxyReturn}
+\Hypertarget{a00191_accf1b9383c2e21578ec28430f9f14dc3}\label{a00191_accf1b9383c2e21578ec28430f9f14dc3} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!Comm\_Wifi\_Send\_Frame\_Test@{Comm\_Wifi\_Send\_Frame\_Test}}
+\index{Comm\_Wifi\_Send\_Frame\_Test@{Comm\_Wifi\_Send\_Frame\_Test}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{Comm\_Wifi\_Send\_Frame\_Test()}{Comm\_Wifi\_Send\_Frame\_Test()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Comm\+\_\+\+Wifi\+\_\+\+Send\+\_\+\+Frame\+\_\+\+Test (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Send Test frame using wifi connection. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR\+\_\+\+ID\+\_\+e error code 
+\end{DoxyReturn}
+\Hypertarget{a00191_a1a7aa6203e1bb55e1cf909a38e11c309}\label{a00191_a1a7aa6203e1bb55e1cf909a38e11c309} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!Comm\_Wifi\_Send\_Last\_Episode@{Comm\_Wifi\_Send\_Last\_Episode}}
+\index{Comm\_Wifi\_Send\_Last\_Episode@{Comm\_Wifi\_Send\_Last\_Episode}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{Comm\_Wifi\_Send\_Last\_Episode()}{Comm\_Wifi\_Send\_Last\_Episode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Comm\+\_\+\+Wifi\+\_\+\+Send\+\_\+\+Last\+\_\+\+Episode (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Send Last Episode File. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR\+\_\+\+ID\+\_\+e error code 
+\end{DoxyReturn}
+\Hypertarget{a00191_a0fb51a9f4231ebdfe4b657eefe8369c2}\label{a00191_a0fb51a9f4231ebdfe4b657eefe8369c2} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!Comm\_Wifi\_Send\_Last\_Test@{Comm\_Wifi\_Send\_Last\_Test}}
+\index{Comm\_Wifi\_Send\_Last\_Test@{Comm\_Wifi\_Send\_Last\_Test}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{Comm\_Wifi\_Send\_Last\_Test()}{Comm\_Wifi\_Send\_Last\_Test()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Comm\+\_\+\+Wifi\+\_\+\+Send\+\_\+\+Last\+\_\+\+Test (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Send Last Test File. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR\+\_\+\+ID\+\_\+e error code 
+\end{DoxyReturn}
+\Hypertarget{a00191_a0807299d3c37549d8961350a173765b6}\label{a00191_a0807299d3c37549d8961350a173765b6} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!Comm\_Wifi\_Send\_R100\_Info\_Data@{Comm\_Wifi\_Send\_R100\_Info\_Data}}
+\index{Comm\_Wifi\_Send\_R100\_Info\_Data@{Comm\_Wifi\_Send\_R100\_Info\_Data}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{Comm\_Wifi\_Send\_R100\_Info\_Data()}{Comm\_Wifi\_Send\_R100\_Info\_Data()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Comm\+\_\+\+Wifi\+\_\+\+Send\+\_\+\+R100\+\_\+\+Info\+\_\+\+Data (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{a00191_ada87facf1cbdd9979db44671241a72e0}\label{a00191_ada87facf1cbdd9979db44671241a72e0} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!Comm\_Wifi\_Send\_R100\_TCP\_Data@{Comm\_Wifi\_Send\_R100\_TCP\_Data}}
+\index{Comm\_Wifi\_Send\_R100\_TCP\_Data@{Comm\_Wifi\_Send\_R100\_TCP\_Data}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{Comm\_Wifi\_Send\_R100\_TCP\_Data()}{Comm\_Wifi\_Send\_R100\_TCP\_Data()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Comm\+\_\+\+Wifi\+\_\+\+Send\+\_\+\+R100\+\_\+\+TCP\+\_\+\+Data (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{a00191_a859dc31be3e07f50b5c5c8ddad90d517}\label{a00191_a859dc31be3e07f50b5c5c8ddad90d517} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!Comm\_Wifi\_Send\_R100\_TLS\_Data@{Comm\_Wifi\_Send\_R100\_TLS\_Data}}
+\index{Comm\_Wifi\_Send\_R100\_TLS\_Data@{Comm\_Wifi\_Send\_R100\_TLS\_Data}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{Comm\_Wifi\_Send\_R100\_TLS\_Data()}{Comm\_Wifi\_Send\_R100\_TLS\_Data()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Comm\+\_\+\+Wifi\+\_\+\+Send\+\_\+\+R100\+\_\+\+TLS\+\_\+\+Data (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{a00191_a4949dd86b079862160c894001b445235}\label{a00191_a4949dd86b079862160c894001b445235} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!Comm\_Wifi\_Send\_R100\_UDP\_Data@{Comm\_Wifi\_Send\_R100\_UDP\_Data}}
+\index{Comm\_Wifi\_Send\_R100\_UDP\_Data@{Comm\_Wifi\_Send\_R100\_UDP\_Data}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{Comm\_Wifi\_Send\_R100\_UDP\_Data()}{Comm\_Wifi\_Send\_R100\_UDP\_Data()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Comm\+\_\+\+Wifi\+\_\+\+Send\+\_\+\+R100\+\_\+\+UDP\+\_\+\+Data (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{a00191_a0d27977bf796250c8569bf9921c7b82d}\label{a00191_a0d27977bf796250c8569bf9921c7b82d} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!Comm\_Wifi\_SZ@{Comm\_Wifi\_SZ}}
+\index{Comm\_Wifi\_SZ@{Comm\_Wifi\_SZ}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{Comm\_Wifi\_SZ()}{Comm\_Wifi\_SZ()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_aaa5d1cd013383c889537491c3cfd9aad}{uint64\+\_\+t}} Comm\+\_\+\+Wifi\+\_\+\+SZ (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{a00191_acee3187ae6ce54fdcd5297e111f7b4f4}\label{a00191_acee3187ae6ce54fdcd5297e111f7b4f4} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!COMPILE\_ASSERT@{COMPILE\_ASSERT}}
+\index{COMPILE\_ASSERT@{COMPILE\_ASSERT}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{COMPILE\_ASSERT()}{COMPILE\_ASSERT()}\hspace{0.1cm}{\footnotesize\ttfamily [1/7]}}
+{\footnotesize\ttfamily COMPILE\+\_\+\+ASSERT (\begin{DoxyParamCaption}\item[{(sizeof(\mbox{\hyperlink{a00650}{SIGFOX\+\_\+\+ELEC\+\_\+\+BATT\+\_\+\+EXPIRATION\+\_\+t}})==\mbox{\hyperlink{a00191_ac00e289c207b2affc18ad52fbdd577a3}{MAX\+\_\+\+SIGFOX\+\_\+\+DATA\+\_\+\+SZ}})}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{a00191_aab7ea4b95e586244aef18af7cab43aa4}\label{a00191_aab7ea4b95e586244aef18af7cab43aa4} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!COMPILE\_ASSERT@{COMPILE\_ASSERT}}
+\index{COMPILE\_ASSERT@{COMPILE\_ASSERT}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{COMPILE\_ASSERT()}{COMPILE\_ASSERT()}\hspace{0.1cm}{\footnotesize\ttfamily [2/7]}}
+{\footnotesize\ttfamily COMPILE\+\_\+\+ASSERT (\begin{DoxyParamCaption}\item[{(sizeof(\mbox{\hyperlink{a00654}{SIGFOX\+\_\+\+FUNC\+\_\+\+ALERT\+\_\+t}})==\mbox{\hyperlink{a00191_ac00e289c207b2affc18ad52fbdd577a3}{MAX\+\_\+\+SIGFOX\+\_\+\+DATA\+\_\+\+SZ}})}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{a00191_a4643c53ca79a40021c929829264d6a83}\label{a00191_a4643c53ca79a40021c929829264d6a83} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!COMPILE\_ASSERT@{COMPILE\_ASSERT}}
+\index{COMPILE\_ASSERT@{COMPILE\_ASSERT}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{COMPILE\_ASSERT()}{COMPILE\_ASSERT()}\hspace{0.1cm}{\footnotesize\ttfamily [3/7]}}
+{\footnotesize\ttfamily COMPILE\+\_\+\+ASSERT (\begin{DoxyParamCaption}\item[{(sizeof(\mbox{\hyperlink{a00658}{SIGFOX\+\_\+\+GPS\+\_\+\+POSITION\+\_\+t}})==\mbox{\hyperlink{a00191_ac00e289c207b2affc18ad52fbdd577a3}{MAX\+\_\+\+SIGFOX\+\_\+\+DATA\+\_\+\+SZ}})}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{a00191_a0fdf28caba389916391e4683acf8d7a2}\label{a00191_a0fdf28caba389916391e4683acf8d7a2} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!COMPILE\_ASSERT@{COMPILE\_ASSERT}}
+\index{COMPILE\_ASSERT@{COMPILE\_ASSERT}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{COMPILE\_ASSERT()}{COMPILE\_ASSERT()}\hspace{0.1cm}{\footnotesize\ttfamily [4/7]}}
+{\footnotesize\ttfamily COMPILE\+\_\+\+ASSERT (\begin{DoxyParamCaption}\item[{(sizeof(\mbox{\hyperlink{a00646}{SIGFOX\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t}})==\mbox{\hyperlink{a00191_ac00e289c207b2affc18ad52fbdd577a3}{MAX\+\_\+\+SIGFOX\+\_\+\+DATA\+\_\+\+SZ}})}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{a00191_a9ede97dbcfa49449e7e63b854924c839}\label{a00191_a9ede97dbcfa49449e7e63b854924c839} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!COMPILE\_ASSERT@{COMPILE\_ASSERT}}
+\index{COMPILE\_ASSERT@{COMPILE\_ASSERT}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{COMPILE\_ASSERT()}{COMPILE\_ASSERT()}\hspace{0.1cm}{\footnotesize\ttfamily [5/7]}}
+{\footnotesize\ttfamily COMPILE\+\_\+\+ASSERT (\begin{DoxyParamCaption}\item[{(sizeof(\mbox{\hyperlink{a00630}{WIFI\+\_\+\+FUNC\+\_\+\+ALERT\+\_\+t}})==\mbox{\hyperlink{a00191_a2343be917a149877bac86f5a7bfc3a57}{MAX\+\_\+\+WIFI\+\_\+\+DATA\+\_\+\+SZ}})}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{a00191_a7664b6db0a1f7860cfbbb96b00a2cdf0}\label{a00191_a7664b6db0a1f7860cfbbb96b00a2cdf0} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!COMPILE\_ASSERT@{COMPILE\_ASSERT}}
+\index{COMPILE\_ASSERT@{COMPILE\_ASSERT}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{COMPILE\_ASSERT()}{COMPILE\_ASSERT()}\hspace{0.1cm}{\footnotesize\ttfamily [6/7]}}
+{\footnotesize\ttfamily COMPILE\+\_\+\+ASSERT (\begin{DoxyParamCaption}\item[{(sizeof(\mbox{\hyperlink{a00634}{WIFI\+\_\+\+GPS\+\_\+\+POSITION\+\_\+t}})==\mbox{\hyperlink{a00191_a2343be917a149877bac86f5a7bfc3a57}{MAX\+\_\+\+WIFI\+\_\+\+DATA\+\_\+\+SZ}})}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{a00191_a2fd9d4d3e52547dfd2a869cf41e722ae}\label{a00191_a2fd9d4d3e52547dfd2a869cf41e722ae} 
+\index{thread\_comm\_hal.h@{thread\_comm\_hal.h}!COMPILE\_ASSERT@{COMPILE\_ASSERT}}
+\index{COMPILE\_ASSERT@{COMPILE\_ASSERT}!thread\_comm\_hal.h@{thread\_comm\_hal.h}}
+\doxysubsubsection{\texorpdfstring{COMPILE\_ASSERT()}{COMPILE\_ASSERT()}\hspace{0.1cm}{\footnotesize\ttfamily [7/7]}}
+{\footnotesize\ttfamily COMPILE\+\_\+\+ASSERT (\begin{DoxyParamCaption}\item[{(sizeof(\mbox{\hyperlink{a00626}{WIFI\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t}})==\mbox{\hyperlink{a00191_a9eaf86b5a374d691bb2f204ec796a840}{MAX\+\_\+\+WIFI\+\_\+\+DATA\+\_\+\+TEST\+\_\+\+SZ}})}]{ }\end{DoxyParamCaption})}
+

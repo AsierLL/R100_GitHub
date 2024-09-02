@@ -1,0 +1,108 @@
+\doxysection{secure\+\_\+crypto.\+h}
+\hypertarget{a00050_source}{}\label{a00050_source}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/secure\_crypto.h@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/secure\_crypto.h}}
+\mbox{\hyperlink{a00050}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Name\ \ \ \ \ \ :\ S3A7\_REANIBEX\_100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ :\ Osatu\ S.\ Coop\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Compiler\ \ :\ MinGW32\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ Target\ \ \ \ :\ Reanibex\ Series\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ ******************************************************************************/}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00020\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ **\ Includes}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ "{}nx\_secure\_x509.h"{}}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{a00191}{HAL/thread\_comm\_hal.h}}"{}}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{a00017}{device\_init.h}}"{}}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{a00251}{resources/Trace.h}}"{}}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{a00038}{R100\_Errors.h}}"{}}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{a00137}{types\_basic.h}}"{}}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{a00134}{types\_app.h}}"{}}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{a00251}{Trace.h}}"{}}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{a00203}{HAL/thread\_defibrillator\_hal.h}}"{}}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{a00221}{HAL/thread\_patMon\_hal.h}}"{}}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{a00185}{HAL/thread\_audio\_hal.h}}"{}}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{a00083}{thread\_comm\_entry.h}}"{}}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{a00119}{thread\_patMon\_entry.h}}"{}}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{a00131}{thread\_sysMon\_entry.h}}"{}}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#include\ "{}thread\_sysMon.h"{}}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{a00077}{thread\_audio\_entry.h}}"{}}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#include\ "{}thread\_audio.h"{}}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{a00089}{thread\_core\_entry.h}}"{}}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#include\ "{}thread\_core.h"{}}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#include\ "{}thread\_comm.h"{}}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{a00071}{thread\_api.h}}"{}}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#include\ "{}sha256.h"{}}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#include\ <Bexlib.h>}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00054\ \textcolor{comment}{\ **\ Defines}}
+\DoxyCodeLine{00055\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#define\ \ \ \ \ DER\_Size\_Limit\ \ \ \ \ \ 2048}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#define\ \ \ \ \ CERT\_VALID\ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ }\textcolor{comment}{//\ The\ ertificate\ is\ valid}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#define\ \ \ \ \ CERT\_EXP\_SOON\ \ \ \ \ \ \ 1\ \ \ \ \ \ \ }\textcolor{comment}{//\ The\ certificate\ will\ expire\ soon}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#define\ \ \ \ \ CERT\_NOT\_VALID\ \ \ \ \ \ 2\ \ \ \ \ \ \ }\textcolor{comment}{//\ The\ ertificate\ is\ not\ valid}}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#define\ \ \ \ \ CERT\_FOLDER\_NAME\ \ \ \ \ \ \ \ \ \ \ \ "{}CERT"{}}}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#define\ \ \ \ \ WPA\_EAP\_CA\_CERT\_FILENAME\ \ \ \ "{}client\_router\_ca.der"{}\ \ }\textcolor{comment}{//\ Es\ el\ ca.der\ copiado\ de\ Docker}}
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#define\ \ \ \ \ WPA\_EAP\_CERT\_FILENAME\ \ \ \ \ \ \ "{}client\_router.crt"{}\ \ \ \ \ }\textcolor{comment}{//\ Es\ el\ client.der\ copiado\ de\ Docker}}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#define\ \ \ \ \ WPA\_EAP\_CERT\_KEY\_FILENAME\ \ \ "{}client\_router\_key.key"{}\ }\textcolor{comment}{//\ Es\ la\ llave\ del\ cliente\ copiado\ de\ Docker}}
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#define\ \ \ \ \ TLS\_CA\_CERT\_FILENAME\ \ \ \ \ \ \ \ "{}server\_tls\_ca.der"{}\ \ \ \ \ }\textcolor{comment}{//\ ca.der\ creado\ por\ mi\ del\ servidor}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#define\ \ \ \ \ DIGEST\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}digest.txt"{}}}
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#define\ \ \ \ \ SIGNATURE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}signature.txt"{}}}
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#define\ \ \ \ \ PUBLIC\_KEY\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}public\_key.txt"{}}}
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#define\ \ \ \ \ USB\_KEY\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}things01.dat"{}}}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\#define\ \ \ \ \ CRYPTO\_SIZE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 256}}
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#define\ \ \ \ \ WIFI\_SIZE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 330}}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00078\ \textcolor{comment}{\ **\ Prototypes}}
+\DoxyCodeLine{00079\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00050_a194be93715f62cac9647944022809aef}{NX\_Init}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00082\ \mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \ \ \ \ \mbox{\hyperlink{a00050_aa28dd36bf21dbc5a6de72f702a9e0260}{Check\_TLS\_Cacert}}\ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00083\ \mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \ \ \ \ \mbox{\hyperlink{a00050_a2d4a144c2fca7de6f8c228eff5bb255e}{Check\_WPA\_EAP\_Cert}}\ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\_t}}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00050_a5f6c33db5481046f663c49275fd6681f}{Crypto\_ATECC\_IsPresent}}\ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00086\ \mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\_t}}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00050_a5958138a098c78007a0101dd4ce35857}{Is\_ATECC\_Initialized}}\ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ ATCA\_STATUS\ \ \ \ \ \mbox{\hyperlink{a00050_af7c91f21e106a9c4f7190aa91088341b}{Crypto\_ATECC\_Init}}\ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00089\ ATCA\_STATUS\ \ \ \ \ \mbox{\hyperlink{a00050_a9495bf897dd771714c7d8969772dc3c2}{Crypto\_ATECC\_Config}}\ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00090\ ATCA\_STATUS\ \ \ \ \ \mbox{\hyperlink{a00050_af7102d0a16428208caf8679720ce0738}{Crypto\_ATECC\_Encrypt\_File}}\ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00091\ ATCA\_STATUS\ \ \ \ \ \mbox{\hyperlink{a00050_a67f41d2b9732ec05f80c48ee883019d2}{Crypto\_ATECC\_Encrypt\_NFC}}\ \ \ \ (\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ *r\_w\_data);}
+\DoxyCodeLine{00092\ ATCA\_STATUS\ \ \ \ \ \mbox{\hyperlink{a00050_ad76358be60b9987ce85bc2dee9fb8457}{Crypto\_ATECC\_Decrypt}}\ \ \ \ \ \ \ \ (\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ *r\_w\_data);}
+\DoxyCodeLine{00093\ ATCA\_STATUS\ \ \ \ \ \mbox{\hyperlink{a00050_a3adbe2a78ac92b9c62a56e1ad4651493}{Crypto\_ATECC\_Decrypt\_File}}\ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00094\ ATCA\_STATUS\ \ \ \ \ \mbox{\hyperlink{a00050_a331dc32b20633662da2a010ea44c5c9b}{Crypto\_ATECC\_Inject}}\ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00095\ ATCA\_STATUS\ \ \ \ \ \mbox{\hyperlink{a00050_a8436921bbeae99e5d1dff39b4b46f2ed}{Crypto\_ATECC\_Inject\_Zero}}\ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00096\ ATCA\_STATUS\ \ \ \ \ \mbox{\hyperlink{a00050_ae5519bd75c4f1192ca68d8376a574234}{Crypto\_ATECC\_Verify}}\ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{bool}\ *is\_verified);}
+\DoxyCodeLine{00097\ ATCA\_STATUS\ \ \ \ \ \mbox{\hyperlink{a00050_a6cd4bbf18723fdb1b403c13c2b73bb4b}{Crypto\_ATECC\_SHA256}}\ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ *digest);}
+\DoxyCodeLine{00098\ ATCA\_STATUS\ \ \ \ \ \mbox{\hyperlink{a00050_aadac43bf0ff020fc6fc31c4cfb573f41}{Crypto\_ATECC\_SHA256\_HMAC}}\ \ \ \ (\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ *digest);}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ ATCA\_STATUS\ \ \ \ \ \mbox{\hyperlink{a00050_ac85f934b12796ea8d753520b18c4058e}{Crypto\_ATECC\_Verify\_Test}}\ \ \ \ (\textcolor{keywordtype}{bool}\ *is\_verified);}
+\DoxyCodeLine{00101\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00102\ \textcolor{comment}{void\ \ \ \ \ \ \ \ \ \ \ \ Encrypt\_Wifi\_File\ \ \ \ \ \ \ (void);}}
+\DoxyCodeLine{00103\ \textcolor{comment}{void\ \ \ \ \ \ \ \ \ \ \ \ Decrypt\_Wifi\_File\ \ \ \ \ \ \ (void);}}
+\DoxyCodeLine{00104\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00050_a94db3f6c96aa7258b8ab5ffbb6a0d220}{SHA2\_SHA256}}\ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{a00137_a40bb5262bf908c328fbcfbe5d29d0201}{char\_t}}*\ data\_hex);}
+\DoxyCodeLine{00107\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00050_a548aaf5d6c50ba0e0cdd5a84fe75d6b7}{SHA2\_SHA256\_HMAC}}\ \ \ \ \ \ \ \ (\mbox{\hyperlink{a00137_a40bb5262bf908c328fbcfbe5d29d0201}{char\_t}}*\ data\_hex);}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00050_a4e5f6ad214bdd7e5e1b84dfb3cf242a1}{AES\_Algo\_Encrypt\_File}}\ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00110\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00050_a086bbb20e434346c5b9d6031a1ec794f}{AES\_Algo\_Decrypt\_File}}\ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00050_a27b01edf6d8726aa43351b7638f9c603}{AES\_Algo\_Decrypt}}\ \ \ \ \ \ \ \ (\mbox{\hyperlink{a00137_a40bb5262bf908c328fbcfbe5d29d0201}{char\_t}}*\ r\_w\_data);}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\_t}}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{a00050_a658755a698e5b683e00b9d9a274bbb7c}{AES\_Algo\_Verify}}\ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+
+\end{DoxyCode}

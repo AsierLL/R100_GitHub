@@ -1,0 +1,169 @@
+\doxysection{COMM\+\_\+\+SETTINGS\+\_\+t Struct Reference}
+\hypertarget{a00350}{}\label{a00350}\index{COMM\_SETTINGS\_t@{COMM\_SETTINGS\_t}}
+
+
+Communication settings.  
+
+
+
+
+{\ttfamily \#include $<$device\+\_\+init.\+h$>$}
+
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{a00350_a4f0d65dd80797b6f07de89a7609b1e70}{wpa\+\_\+eap\+\_\+enabled}}
+\begin{DoxyCompactList}\small\item\em Use to define connection mode (0-\/Open; 1-\/Password;2-\/TLS;3-\/PEAP) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{a00350_aaa0f1b428c84126d999e95eff8bc42ed}{advs}}
+\begin{DoxyCompactList}\small\item\em Advanced settings (0-\/No;1-\/Only IP;2-\/Only DNS;3-\/IP + DNS) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{a00350_ab9c7ed2355af4522d8d00aa7f7cc8c89}{wlan\+\_\+ssid}} \mbox{[}32\mbox{]}
+\begin{DoxyCompactList}\small\item\em Wifi WLAN SSID (Net name) MAX\+: 32 characters. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{a00350_afe6782bf4d3a021c2e35787dd717fcfd}{wlan\+\_\+pass}} \mbox{[}32\mbox{]}
+\begin{DoxyCompactList}\small\item\em Wifi WLAN Passkey MAX\+: 32 characters. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{a00350_ad017b89e32184e0978c96d78580b15bd}{router\+\_\+pass\+\_\+key}} \mbox{[}32\mbox{]}
+\begin{DoxyCompactList}\small\item\em Wifi WLAN Router Passkey MAX\+: 32 characters. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{a00350_a182f0daf45097b2110fcb3d4dfda92b6}{eap\+\_\+cnf}} \mbox{[}32\mbox{]}
+\begin{DoxyCompactList}\small\item\em Wifi WLAN EAP Identity Configuration MAX\+: 32 characters. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{a00350_a683920290f4f637d4a56bb508d837106}{eap\+\_\+pass}} \mbox{[}32\mbox{]}
+\begin{DoxyCompactList}\small\item\em Wifi WLAN EAP Password Configuration MAX\+: 32 characters. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{a00350_af79fe4ceef8eae2ed006409cdc811b66}{ip}} \mbox{[}16\mbox{]}
+\begin{DoxyCompactList}\small\item\em Estatic IP address. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{a00350_aaaddfb1c56a40ded5aeb38f9b98cfad6}{mask}} \mbox{[}16\mbox{]}
+\begin{DoxyCompactList}\small\item\em Subnet mask. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{a00350_acabe445f3d645f990704ffe15a5ae0a8}{gateway}} \mbox{[}16\mbox{]}
+\begin{DoxyCompactList}\small\item\em Gateway. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{a00350_a4022ab941c4c113ff713266845411cb2}{pdns}} \mbox{[}16\mbox{]}
+\begin{DoxyCompactList}\small\item\em Primary DNS. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{a00350_a1df6541760c68a214e27541a6d47931b}{sdns}} \mbox{[}16\mbox{]}
+\begin{DoxyCompactList}\small\item\em Secondary DNS. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Communication settings. 
+
+\doxysubsection{Field Documentation}
+\Hypertarget{a00350_aaa0f1b428c84126d999e95eff8bc42ed}\label{a00350_aaa0f1b428c84126d999e95eff8bc42ed} 
+\index{COMM\_SETTINGS\_t@{COMM\_SETTINGS\_t}!advs@{advs}}
+\index{advs@{advs}!COMM\_SETTINGS\_t@{COMM\_SETTINGS\_t}}
+\doxysubsubsection{\texorpdfstring{advs}{advs}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} COMM\+\_\+\+SETTINGS\+\_\+t\+::advs}
+
+
+
+Advanced settings (0-\/No;1-\/Only IP;2-\/Only DNS;3-\/IP + DNS) 
+
+\Hypertarget{a00350_a182f0daf45097b2110fcb3d4dfda92b6}\label{a00350_a182f0daf45097b2110fcb3d4dfda92b6} 
+\index{COMM\_SETTINGS\_t@{COMM\_SETTINGS\_t}!eap\_cnf@{eap\_cnf}}
+\index{eap\_cnf@{eap\_cnf}!COMM\_SETTINGS\_t@{COMM\_SETTINGS\_t}}
+\doxysubsubsection{\texorpdfstring{eap\_cnf}{eap\_cnf}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} COMM\+\_\+\+SETTINGS\+\_\+t\+::eap\+\_\+cnf\mbox{[}32\mbox{]}}
+
+
+
+Wifi WLAN EAP Identity Configuration MAX\+: 32 characters. 
+
+\Hypertarget{a00350_a683920290f4f637d4a56bb508d837106}\label{a00350_a683920290f4f637d4a56bb508d837106} 
+\index{COMM\_SETTINGS\_t@{COMM\_SETTINGS\_t}!eap\_pass@{eap\_pass}}
+\index{eap\_pass@{eap\_pass}!COMM\_SETTINGS\_t@{COMM\_SETTINGS\_t}}
+\doxysubsubsection{\texorpdfstring{eap\_pass}{eap\_pass}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} COMM\+\_\+\+SETTINGS\+\_\+t\+::eap\+\_\+pass\mbox{[}32\mbox{]}}
+
+
+
+Wifi WLAN EAP Password Configuration MAX\+: 32 characters. 
+
+\Hypertarget{a00350_acabe445f3d645f990704ffe15a5ae0a8}\label{a00350_acabe445f3d645f990704ffe15a5ae0a8} 
+\index{COMM\_SETTINGS\_t@{COMM\_SETTINGS\_t}!gateway@{gateway}}
+\index{gateway@{gateway}!COMM\_SETTINGS\_t@{COMM\_SETTINGS\_t}}
+\doxysubsubsection{\texorpdfstring{gateway}{gateway}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} COMM\+\_\+\+SETTINGS\+\_\+t\+::gateway\mbox{[}16\mbox{]}}
+
+
+
+Gateway. 
+
+\Hypertarget{a00350_af79fe4ceef8eae2ed006409cdc811b66}\label{a00350_af79fe4ceef8eae2ed006409cdc811b66} 
+\index{COMM\_SETTINGS\_t@{COMM\_SETTINGS\_t}!ip@{ip}}
+\index{ip@{ip}!COMM\_SETTINGS\_t@{COMM\_SETTINGS\_t}}
+\doxysubsubsection{\texorpdfstring{ip}{ip}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} COMM\+\_\+\+SETTINGS\+\_\+t\+::ip\mbox{[}16\mbox{]}}
+
+
+
+Estatic IP address. 
+
+\Hypertarget{a00350_aaaddfb1c56a40ded5aeb38f9b98cfad6}\label{a00350_aaaddfb1c56a40ded5aeb38f9b98cfad6} 
+\index{COMM\_SETTINGS\_t@{COMM\_SETTINGS\_t}!mask@{mask}}
+\index{mask@{mask}!COMM\_SETTINGS\_t@{COMM\_SETTINGS\_t}}
+\doxysubsubsection{\texorpdfstring{mask}{mask}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} COMM\+\_\+\+SETTINGS\+\_\+t\+::mask\mbox{[}16\mbox{]}}
+
+
+
+Subnet mask. 
+
+\Hypertarget{a00350_a4022ab941c4c113ff713266845411cb2}\label{a00350_a4022ab941c4c113ff713266845411cb2} 
+\index{COMM\_SETTINGS\_t@{COMM\_SETTINGS\_t}!pdns@{pdns}}
+\index{pdns@{pdns}!COMM\_SETTINGS\_t@{COMM\_SETTINGS\_t}}
+\doxysubsubsection{\texorpdfstring{pdns}{pdns}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} COMM\+\_\+\+SETTINGS\+\_\+t\+::pdns\mbox{[}16\mbox{]}}
+
+
+
+Primary DNS. 
+
+\Hypertarget{a00350_ad017b89e32184e0978c96d78580b15bd}\label{a00350_ad017b89e32184e0978c96d78580b15bd} 
+\index{COMM\_SETTINGS\_t@{COMM\_SETTINGS\_t}!router\_pass\_key@{router\_pass\_key}}
+\index{router\_pass\_key@{router\_pass\_key}!COMM\_SETTINGS\_t@{COMM\_SETTINGS\_t}}
+\doxysubsubsection{\texorpdfstring{router\_pass\_key}{router\_pass\_key}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} COMM\+\_\+\+SETTINGS\+\_\+t\+::router\+\_\+pass\+\_\+key\mbox{[}32\mbox{]}}
+
+
+
+Wifi WLAN Router Passkey MAX\+: 32 characters. 
+
+\Hypertarget{a00350_a1df6541760c68a214e27541a6d47931b}\label{a00350_a1df6541760c68a214e27541a6d47931b} 
+\index{COMM\_SETTINGS\_t@{COMM\_SETTINGS\_t}!sdns@{sdns}}
+\index{sdns@{sdns}!COMM\_SETTINGS\_t@{COMM\_SETTINGS\_t}}
+\doxysubsubsection{\texorpdfstring{sdns}{sdns}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} COMM\+\_\+\+SETTINGS\+\_\+t\+::sdns\mbox{[}16\mbox{]}}
+
+
+
+Secondary DNS. 
+
+\Hypertarget{a00350_afe6782bf4d3a021c2e35787dd717fcfd}\label{a00350_afe6782bf4d3a021c2e35787dd717fcfd} 
+\index{COMM\_SETTINGS\_t@{COMM\_SETTINGS\_t}!wlan\_pass@{wlan\_pass}}
+\index{wlan\_pass@{wlan\_pass}!COMM\_SETTINGS\_t@{COMM\_SETTINGS\_t}}
+\doxysubsubsection{\texorpdfstring{wlan\_pass}{wlan\_pass}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} COMM\+\_\+\+SETTINGS\+\_\+t\+::wlan\+\_\+pass\mbox{[}32\mbox{]}}
+
+
+
+Wifi WLAN Passkey MAX\+: 32 characters. 
+
+\Hypertarget{a00350_ab9c7ed2355af4522d8d00aa7f7cc8c89}\label{a00350_ab9c7ed2355af4522d8d00aa7f7cc8c89} 
+\index{COMM\_SETTINGS\_t@{COMM\_SETTINGS\_t}!wlan\_ssid@{wlan\_ssid}}
+\index{wlan\_ssid@{wlan\_ssid}!COMM\_SETTINGS\_t@{COMM\_SETTINGS\_t}}
+\doxysubsubsection{\texorpdfstring{wlan\_ssid}{wlan\_ssid}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} COMM\+\_\+\+SETTINGS\+\_\+t\+::wlan\+\_\+ssid\mbox{[}32\mbox{]}}
+
+
+
+Wifi WLAN SSID (Net name) MAX\+: 32 characters. 
+
+\Hypertarget{a00350_a4f0d65dd80797b6f07de89a7609b1e70}\label{a00350_a4f0d65dd80797b6f07de89a7609b1e70} 
+\index{COMM\_SETTINGS\_t@{COMM\_SETTINGS\_t}!wpa\_eap\_enabled@{wpa\_eap\_enabled}}
+\index{wpa\_eap\_enabled@{wpa\_eap\_enabled}!COMM\_SETTINGS\_t@{COMM\_SETTINGS\_t}}
+\doxysubsubsection{\texorpdfstring{wpa\_eap\_enabled}{wpa\_eap\_enabled}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} COMM\+\_\+\+SETTINGS\+\_\+t\+::wpa\+\_\+eap\+\_\+enabled}
+
+
+
+Use to define connection mode (0-\/Open; 1-\/Password;2-\/TLS;3-\/PEAP) 
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\mbox{\hyperlink{a00017}{device\+\_\+init.\+h}}\end{DoxyCompactItemize}

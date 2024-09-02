@@ -1,0 +1,98 @@
+\doxysection{C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/synergy\+\_\+gen/thread\+\_\+core.h File Reference}
+\hypertarget{thread__core_8h}{}\label{thread__core_8h}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/synergy\_gen/thread\_core.h@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/synergy\_gen/thread\_core.h}}
+{\ttfamily \#include "{}bsp\+\_\+api.\+h"{}}\newline
+{\ttfamily \#include "{}tx\+\_\+api.\+h"{}}\newline
+{\ttfamily \#include "{}hal\+\_\+data.\+h"{}}\newline
+Include dependency graph for thread\+\_\+core.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__core_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__core_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{thread__core_8h_ad3dfeb7aa19371bdae2b4d20eee5a063}{thread\+\_\+core\+\_\+entry}} (void)
+\begin{DoxyCompactList}\small\item\em Main task. Executes both, AED and CFG, operation modes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+TX\+\_\+\+SEMAPHORE \mbox{\hyperlink{thread__core_8h_a802f6fe8b525e6819990aa54eca39fe6}{trace\+\_\+semaphore}}
+\item 
+TX\+\_\+\+QUEUE \mbox{\hyperlink{thread__core_8h_ac9e6f43027ae121708270cbd3ac5b63a}{queue\+\_\+core}}
+\item 
+TX\+\_\+\+EVENT\+\_\+\+FLAGS\+\_\+\+GROUP \mbox{\hyperlink{thread__core_8h_a0c95874aeb3bd0ef3f6bc757417c51f5}{g\+\_\+cdcacm\+\_\+activate\+\_\+event\+\_\+flags0}}
+\item 
+TX\+\_\+\+SEMAPHORE \mbox{\hyperlink{thread__core_8h_aa1baf92dbe45afd38a8df6e7cc0c8adf}{comm\+\_\+semaphore}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{thread__core_8h_ad3dfeb7aa19371bdae2b4d20eee5a063}\label{thread__core_8h_ad3dfeb7aa19371bdae2b4d20eee5a063} 
+\index{thread\_core.h@{thread\_core.h}!thread\_core\_entry@{thread\_core\_entry}}
+\index{thread\_core\_entry@{thread\_core\_entry}!thread\_core.h@{thread\_core.h}}
+\doxysubsubsection{\texorpdfstring{thread\_core\_entry()}{thread\_core\_entry()}}
+{\footnotesize\ttfamily void thread\+\_\+core\+\_\+entry (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Main task. Executes both, AED and CFG, operation modes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__core_8h_ad3dfeb7aa19371bdae2b4d20eee5a063_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__core_8h_ad3dfeb7aa19371bdae2b4d20eee5a063_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{thread__core_8h_aa1baf92dbe45afd38a8df6e7cc0c8adf}\label{thread__core_8h_aa1baf92dbe45afd38a8df6e7cc0c8adf} 
+\index{thread\_core.h@{thread\_core.h}!comm\_semaphore@{comm\_semaphore}}
+\index{comm\_semaphore@{comm\_semaphore}!thread\_core.h@{thread\_core.h}}
+\doxysubsubsection{\texorpdfstring{comm\_semaphore}{comm\_semaphore}}
+{\footnotesize\ttfamily TX\+\_\+\+SEMAPHORE comm\+\_\+semaphore\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{thread__core_8h_a0c95874aeb3bd0ef3f6bc757417c51f5}\label{thread__core_8h_a0c95874aeb3bd0ef3f6bc757417c51f5} 
+\index{thread\_core.h@{thread\_core.h}!g\_cdcacm\_activate\_event\_flags0@{g\_cdcacm\_activate\_event\_flags0}}
+\index{g\_cdcacm\_activate\_event\_flags0@{g\_cdcacm\_activate\_event\_flags0}!thread\_core.h@{thread\_core.h}}
+\doxysubsubsection{\texorpdfstring{g\_cdcacm\_activate\_event\_flags0}{g\_cdcacm\_activate\_event\_flags0}}
+{\footnotesize\ttfamily TX\+\_\+\+EVENT\+\_\+\+FLAGS\+\_\+\+GROUP g\+\_\+cdcacm\+\_\+activate\+\_\+event\+\_\+flags0\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{thread__core_8h_ac9e6f43027ae121708270cbd3ac5b63a}\label{thread__core_8h_ac9e6f43027ae121708270cbd3ac5b63a} 
+\index{thread\_core.h@{thread\_core.h}!queue\_core@{queue\_core}}
+\index{queue\_core@{queue\_core}!thread\_core.h@{thread\_core.h}}
+\doxysubsubsection{\texorpdfstring{queue\_core}{queue\_core}}
+{\footnotesize\ttfamily TX\+\_\+\+QUEUE queue\+\_\+core\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{thread__core_8h_a802f6fe8b525e6819990aa54eca39fe6}\label{thread__core_8h_a802f6fe8b525e6819990aa54eca39fe6} 
+\index{thread\_core.h@{thread\_core.h}!trace\_semaphore@{trace\_semaphore}}
+\index{trace\_semaphore@{trace\_semaphore}!thread\_core.h@{thread\_core.h}}
+\doxysubsubsection{\texorpdfstring{trace\_semaphore}{trace\_semaphore}}
+{\footnotesize\ttfamily TX\+\_\+\+SEMAPHORE trace\+\_\+semaphore\hspace{0.3cm}{\ttfamily [extern]}}
+

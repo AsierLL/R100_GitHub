@@ -1,0 +1,97 @@
+\doxysection{Param.\+h}
+\hypertarget{a00155_source}{}\label{a00155_source}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/DRD/Param.h@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/DRD/Param.h}}
+\mbox{\hyperlink{a00155}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{*\ Name\ \ \ \ \ \ :\ Defibrillable\ Rhythm\ Detector\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{*\ Copyright\ :\ Osatu\ S.Coop\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{*\ Compiler\ \ :\ Renesas\ C/C++\ compiler\ for\ SH2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{*\ Target\ \ \ \ :\ Reanibex\ Series\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{******************************************************************************/}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#ifndef\ PARAM\_H}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#define\ PARAM\_H}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00024\ \textcolor{comment}{**\ Includes}}
+\DoxyCodeLine{00025\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00028\ \textcolor{comment}{**\ Defines}}
+\DoxyCodeLine{00029\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{comment}{//\ LIMIT\ OF\ PS}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#define\ limAsi\_PS\ \ \ \ \ \ \ \ \ \ \ 6037L}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{comment}{//\ LIMITS\ AND\ DEFINITONS\ OF\ bWT}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#define\ valbWT\ \ \ \ \ \ \ \ \ \ \ \ \ \ 47}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#define\ posHigh\_BWT\ \ \ \ \ \ \ \ \ 175\ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{//\ posHigh=int32\_t((100+valbWT)/2*SNMW/100).\ L{\ucr}mite\ superior\ }}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#define\ posLow\_BWT\ \ \ \ \ \ \ \ \ \ 63\ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{//\ posLow=int32\_t((100-\/valbWT)/2*SNMW/100).\ L{\ucr}mite\ inferior}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{comment}{//\ LIMIT\ OF\ bCP}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#define\ valbCP\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0.0055}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{comment}{//\ LIMIT\ OF\ BW}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#define\ limInf\_bW\ \ \ \ \ \ \ \ \ \ \ 0.2}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#define\ limSup\_bW\ \ \ \ \ \ \ \ \ \ \ 0.8}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{comment}{//\ LIMITS\ AND\ DEFINITIONS\ OF\ ASISPEND}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#define\ nW\_ASISPEND\ \ \ \ \ \ \ \ \ 6L}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#define\ limPP\_ASISPEND\ \ \ \ \ \ 136L}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{comment}{//\ LIMITS\ AND\ DEFINITIOS\ OF\ ALGORITMO\_TSVTV}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#define\ limF\_TSVTV\ \ \ \ \ \ \ \ \ \ 10}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#define\ pbW\_TSVTV\ \ \ \ \ \ \ \ \ \ \ 3}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ pPF\_REG\ \ \ \ \ \ \ \ \ \ \ \ \ -\/0.2211}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#define\ pPotHigh\_REG\ \ \ \ \ \ \ \ 0.0503}}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#define\ c\_REG\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 13.4292}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#define\ limF\_POTHIGH\ \ \ \ \ \ \ \ 30L}}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \textcolor{comment}{//\ LIMITS\ AND\ DEFINITIONS\ OF\ FIND\_PICOS\ AT\ REGULARIDAD}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#define\ NmPEND\ \ \ \ \ \ \ \ \ \ \ \ \ \ 100}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#define\ maxp\_PICOS\ \ \ \ \ \ \ \ \ \ 100}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#define\ limVP\_REGPIC\ \ \ \ \ \ \ \ 0.25}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#define\ SepMin\_REGPIC\ \ \ \ \ \ \ 30L}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#define\ limCVT\_REGPIC\ \ \ \ \ \ \ 0.2}}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#define\ limbCP\_REGPIC\ \ \ \ \ \ \ 0.220}}
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#define\ limfcH\_REGPIC\ \ \ \ \ \ \ 2.5}}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \textcolor{comment}{//\ LIMITS\ AND\ DEFINITIONS\ OF\ ALGORITMO\_CORR}}
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#define\ nMinP\_ACF\ \ \ \ \ \ \ \ \ \ \ 4L}}
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#define\ limCVT1\_ACF\ \ \ \ \ \ \ \ \ 0.05}}
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#define\ limRO\_ACF\ \ \ \ \ \ \ \ \ \ \ 0.98}}
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#define\ limfC\_ACF\ \ \ \ \ \ \ \ \ \ \ 2.5}}
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#define\ limfcaHz\_ACF\ \ \ \ \ \ \ \ 2.5}}
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#define\ limCVT2\_ACF\ \ \ \ \ \ \ \ \ 0.1}}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00076\ \textcolor{comment}{**\ Typedefs}}
+\DoxyCodeLine{00077\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00080\ \textcolor{comment}{**\ Prototypes}}
+\DoxyCodeLine{00081\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\_t}}\ \ \mbox{\hyperlink{a00155_a05938db21b8dedc8f9f13d1bea2cd6aa}{calcular\_PS}}\ (\textcolor{keyword}{const}\ \mbox{\hyperlink{a00137_a2ba621978a511250f7250fb10e05ffbe}{int32\_t}}\ *pSig);}
+\DoxyCodeLine{00084\ \mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\_t}}\ \mbox{\hyperlink{a00155_a766bdc5602d6bf506658355a08a10902}{calcular\_bWT}}\ (\textcolor{keyword}{const}\ \mbox{\hyperlink{a00137_a2ba621978a511250f7250fb10e05ffbe}{int32\_t}}\ *pSig);}
+\DoxyCodeLine{00085\ \mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\_t}}\ \mbox{\hyperlink{a00155_a3c2b901422fd8854217a9927a01d1caf}{calcular\_bCP}}\ (\textcolor{keyword}{const}\ \mbox{\hyperlink{a00137_a2ba621978a511250f7250fb10e05ffbe}{int32\_t}}\ *pSig);}
+\DoxyCodeLine{00086\ \mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\_t}}\ \mbox{\hyperlink{a00155_aa334ff9d9caf3a18212c35496925c7be}{calcular\_bW}}\ (\mbox{\hyperlink{a00137_a2ba621978a511250f7250fb10e05ffbe}{int32\_t}}\ *pSig);}
+\DoxyCodeLine{00087\ \mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\_t}}\ \mbox{\hyperlink{a00155_a079176e43b68b2553c532784e7efcfb4}{calcular\_FD}}\ (\mbox{\hyperlink{a00137_a2ba621978a511250f7250fb10e05ffbe}{int32\_t}}\ *pSig);}
+\DoxyCodeLine{00088\ \mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\_t}}\ \ \mbox{\hyperlink{a00155_a4b074f6d2ee864313c52edd6866656d1}{calcular\_AsisPend}}\ (\mbox{\hyperlink{a00137_a2ba621978a511250f7250fb10e05ffbe}{int32\_t}}\ *pSig);}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \mbox{\hyperlink{a00137_a2ba621978a511250f7250fb10e05ffbe}{int32\_t}}\ \mbox{\hyperlink{a00155_a6bd060b48cebda8338e4eef7a434a295}{Find\_Picos}}\ (\mbox{\hyperlink{a00137_a2ba621978a511250f7250fb10e05ffbe}{int32\_t}}\ *pCorr,\ \mbox{\hyperlink{a00137_a2ba621978a511250f7250fb10e05ffbe}{int32\_t}}\ *pPico,\ \mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\_t}}\ lim,\ \mbox{\hyperlink{a00137_a2ba621978a511250f7250fb10e05ffbe}{int32\_t}}\ SepMin);}
+\DoxyCodeLine{00091\ \mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\_t}}\ \mbox{\hyperlink{a00155_ae31fc8ade0a1638f0c16f1f35f27a1ae}{calcular\_CVT}}\ (\mbox{\hyperlink{a00137_a2ba621978a511250f7250fb10e05ffbe}{int32\_t}}\ *pPico,\ \mbox{\hyperlink{a00137_a2ba621978a511250f7250fb10e05ffbe}{int32\_t}}\ nMinP,\ \mbox{\hyperlink{a00137_a2ba621978a511250f7250fb10e05ffbe}{int32\_t}}\ nP);}
+\DoxyCodeLine{00092\ \mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\_t}}\ \mbox{\hyperlink{a00155_a0013fd0c9816533d24f1b56f17f85ee0}{calcular\_RO}}\ (\mbox{\hyperlink{a00137_a2ba621978a511250f7250fb10e05ffbe}{int32\_t}}\ *pPico,\ \mbox{\hyperlink{a00137_a2ba621978a511250f7250fb10e05ffbe}{int32\_t}}\ *pCorr,\ \mbox{\hyperlink{a00137_a2ba621978a511250f7250fb10e05ffbe}{int32\_t}}\ nP);}
+\DoxyCodeLine{00093\ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{a00155_aed3147c40ee76fecdf92c2b035f4be29}{algoritmo\_Corr}}\ (\mbox{\hyperlink{a00137_a2ba621978a511250f7250fb10e05ffbe}{int32\_t}}\ *pPico,\ \mbox{\hyperlink{a00137_a2ba621978a511250f7250fb10e05ffbe}{int32\_t}}\ *pFFT,\ \mbox{\hyperlink{a00137_a2ba621978a511250f7250fb10e05ffbe}{int32\_t}}\ numP,\ \mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\_t}}\ pCVT,\ \mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\_t}}\ pRO,\ \mbox{\hyperlink{a00137_a2ba621978a511250f7250fb10e05ffbe}{int32\_t}}\ *pCaso,\ \mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\_t}}\ *pfcaHz);}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\_t}}\ \mbox{\hyperlink{a00155_af26b1a1e28ef7b11d2735159531474a8}{calcular\_PF}}\ (\mbox{\hyperlink{a00137_a2ba621978a511250f7250fb10e05ffbe}{int32\_t}}\ *signal,\ \mbox{\hyperlink{a00137_a2ba621978a511250f7250fb10e05ffbe}{int32\_t}}\ pos0,\ \mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\_t}}\ bW);}
+\DoxyCodeLine{00096\ \mbox{\hyperlink{a00137_a2ba621978a511250f7250fb10e05ffbe}{int32\_t}}\ \mbox{\hyperlink{a00155_a4ecbb58b848f1d5ae1ed0d70276bb90d}{calcularTSVTV}}\ (\mbox{\hyperlink{a00137_a2ba621978a511250f7250fb10e05ffbe}{int32\_t}}\ *pSig,\ \mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\_t}}\ pfcaHz);}
+\DoxyCodeLine{00097\ \mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\_t}}\ \mbox{\hyperlink{a00155_aa97dceb7713955e43d7ebf499820dd9c}{calcular\_potHigh}}\ (\mbox{\hyperlink{a00137_a2ba621978a511250f7250fb10e05ffbe}{int32\_t}}\ *signal,\ \mbox{\hyperlink{a00137_a2ba621978a511250f7250fb10e05ffbe}{int32\_t}}\ pos0);}
+\DoxyCodeLine{00098\ \mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\_t}}\ \ \mbox{\hyperlink{a00155_afee816740dcc360f6813b8e612a1dafc}{regularidadPicos}}\ (\mbox{\hyperlink{a00137_a2ba621978a511250f7250fb10e05ffbe}{int32\_t}}\ *sw2,\ \mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\_t}}\ bCP);}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00102\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00103\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{/*PARAM\_H*/}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

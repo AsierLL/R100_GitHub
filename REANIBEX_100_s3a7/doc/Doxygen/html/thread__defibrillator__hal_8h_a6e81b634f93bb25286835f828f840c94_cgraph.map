@@ -1,0 +1,30 @@
+<map id="Defib_Charge" name="Defib_Charge">
+<area shape="rect" id="Node000001" title="charge the main capacitor to a predefined value applying a hysteresis ..." alt="" coords="5,233,104,260"/>
+<area shape="rect" id="Node000002" href="$thread__defibrillator__hal_8c.html#ae0bcdc5c577816bcf7a730c82fa13d6a" title="start the charge process of the main cap" alt="" coords="179,157,313,184"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="78,230,151,194,170,187,172,192,153,198,80,235"/>
+<area shape="rect" id="Node000009" href="$device__init_8c.html#a2f7047dc1ce0a3687c48872ed81aff5f" title="Function for accessing device info variable." alt="" coords="629,233,744,260"/>
+<area shape="poly" id="edge15_Node000001_Node000009" title=" " alt="" coords="77,258,111,279,152,295,265,318,354,324,444,315,558,295,603,282,644,265,646,270,605,287,559,300,445,320,354,329,264,323,151,300,109,283,74,263"/>
+<area shape="rect" id="Node000011" href="$thread__defibrillator__hal_8c.html#ab375925948ca3cd49a4f463e009ed9da" title="start the complete discharge of the main cap" alt="" coords="171,208,321,235"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="104,238,155,231,156,236,104,243"/>
+<area shape="rect" id="Node000013" href="$thread__defibrillator__hal_8c.html#ae8b16e9b9a65c0819957023d975c77a9" title="start the complete discharge of the main cap to 0V" alt="" coords="152,259,340,285"/>
+<area shape="poly" id="edge13_Node000001_Node000013" title=" " alt="" coords="104,250,137,255,136,260,104,256"/>
+<area shape="rect" id="Node000003" href="$sys_mon___battery_8c.html#a6a908c00382961d78f2da4ee84cb4263" title="Computes the remaining capacity in the battery." alt="" coords="404,56,543,83"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="268,155,321,124,387,92,405,85,407,90,389,97,324,129,271,159"/>
+<area shape="rect" id="Node000007" href="$sys_mon___battery_8c.html#aa6c128d869ee1d53d1902c4248f0c006" title="Get temperature value in battery." alt="" coords="388,107,558,133"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="309,154,395,135,396,140,310,159"/>
+<area shape="rect" id="Node000008" href="$thread__defibrillator__hal_8c.html#ae57fee576eb2206f531dd7ee69bc2218" title="scan all analog inputs" alt="" coords="424,157,522,184"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="313,168,409,168,409,173,313,173"/>
+<area shape="rect" id="Node000010" href="$thread__defibrillator__hal_8c.html#a3b5f744526d52e5790b359f0bfad7055" title="set the overcharge alarm to a charge voltage" alt="" coords="414,208,532,235"/>
+<area shape="poly" id="edge9_Node000002_Node000010" title=" " alt="" coords="310,182,399,202,398,207,309,187"/>
+<area shape="rect" id="Node000004" href="$sys_mon___battery_8c.html#af6e0839479117b02185cb5786de7d15b" title="Computes the difference time between two dates (in days) (date_1 &#45; date_2)" alt="" coords="634,56,739,83"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="543,67,619,67,619,72,543,72"/>
+<area shape="rect" id="Node000005" href="$device__init_8c.html#ac9272954c69640cbc76d2ea99e68bc43" title="Function for accessing NFC device info struct." alt="" coords="613,107,760,133"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="533,81,613,100,612,105,532,86"/>
+<area shape="rect" id="Node000006" href="$sys_mon___battery_8c.html#ae8f3f32f49df7702f6405467130ce8fd" title="Function that report if the battery is DEMO or not." alt="" coords="606,5,767,32"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="532,53,612,34,613,39,533,58"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="523,182,559,193,640,224,638,229,557,199,522,187"/>
+<area shape="poly" id="edge12_Node000011_Node000010" title=" " alt="" coords="321,219,398,219,398,224,321,224"/>
+<area shape="rect" id="Node000012" href="$thread__defibrillator__hal_8c.html#a7e29bee81774c04a8f8ee6b99f50e1e9" title="stop the charge process and maintain the energy in the main cap" alt="" coords="407,259,539,285"/>
+<area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="310,233,396,252,395,257,309,238"/>
+<area shape="poly" id="edge14_Node000013_Node000012" title=" " alt="" coords="340,269,392,269,392,275,340,275"/>
+</map>

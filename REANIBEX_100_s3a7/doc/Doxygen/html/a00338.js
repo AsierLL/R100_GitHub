@@ -1,0 +1,26 @@
+var a00338 =
+[
+    [ "alert_options", "a00338.html#a02c0ed5a347fa2fc7ffe82887ad14afb", null ],
+    [ "glo_auto_test_hour", "a00338.html#a92a7ff21d0dcd426915d4293cff6958f", null ],
+    [ "glo_auto_test_min", "a00338.html#a5d35af866a4c576385c8838bd461685c", null ],
+    [ "glo_demo_mode", "a00338.html#ac4c89f53a44809bb7272c6db65d85369", null ],
+    [ "glo_ecg_format", "a00338.html#ac1c2448c374f874f4196e2ed8beab2e1", null ],
+    [ "glo_filter", "a00338.html#af1899aeaa36435f873e112d72400beab", null ],
+    [ "glo_language", "a00338.html#a0018e27815bffb2867f47b506241f58c", null ],
+    [ "glo_movement_alert", "a00338.html#a509caa9d192149ec87ba64d604aa0516", null ],
+    [ "glo_patient_adult", "a00338.html#a5a10c61c067f368804639c6ce5438a32", null ],
+    [ "glo_patient_alert", "a00338.html#af9dd18660039f5b20f9de5a41936be3d", null ],
+    [ "glo_transmis_mode", "a00338.html#a0d94511bd28cc5fa8675aef09da23221", null ],
+    [ "glo_utc_time", "a00338.html#a1ec21b1e0c067e39b768df1af6ce4b58", null ],
+    [ "glo_volume", "a00338.html#a814de73fc0d66c26aeb2651322661a9e", null ],
+    [ "glo_warning_alert", "a00338.html#a07485cb72a57058b3aeddc40474bf1e6", null ],
+    [ "gps", "a00338.html#a1c729f00ccf15eae868c0488aa4a00c4", null ],
+    [ "reserve", "a00338.html#a35eaa09309f083f0d41e26241847eece", null ],
+    [ "sigfox_only", "a00338.html#a52c5b13007bd95e7442394b6baa6d848", null ],
+    [ "sigfox_pri", "a00338.html#aa6d629ff5b5bb45cebf10736fdd56477", null ],
+    [ "wifi_1_day", "a00338.html#a5ff5a51078f92784802562a1dc1398cc", null ],
+    [ "wifi_30_day", "a00338.html#ab1b1829c41f2cf9252ca10cd93763b91", null ],
+    [ "wifi_7_day", "a00338.html#a6d8359fc48c4830aa284e4a5287f6fb8", null ],
+    [ "wifi_only", "a00338.html#a76b269c5a5607f584890cdc2d608eaf0", null ],
+    [ "wifi_pri", "a00338.html#a12fac67a33fcb1243334b7d962e87808", null ]
+];

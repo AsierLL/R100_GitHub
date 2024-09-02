@@ -1,0 +1,418 @@
+\doxysection{thread\+\_\+comm\+\_\+hal.\+h}
+\hypertarget{thread__comm__hal_8h_source}{}\label{thread__comm__hal_8h_source}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/HAL/thread\_comm\_hal.h@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/HAL/thread\_comm\_hal.h}}
+\mbox{\hyperlink{thread__comm__hal_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Name\ \ \ \ \ \ :\ S3A7\_REANIBEX\_100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ :\ Osatu\ S.\ Coop\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Compiler\ \ :\ MinGW32\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ Target\ \ \ \ :\ Reanibex\ Series\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ ******************************************************************************/}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#ifndef\ THREAD\_COMM\_HAL\_H\_}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#define\ THREAD\_COMM\_HAL\_H\_}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ **\ Includes}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00025\ \textcolor{comment}{/*lint\ -\/save\ -\/e537\ Spurious\ warning\ ignored\ due\ to\ include\ guards*/}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_r100___errors_8h}{R100\_Errors.h}}"{}}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ "{}types\_basic.h"{}}}
+\DoxyCodeLine{00028\ \textcolor{comment}{/*lint\ -\/restore*/}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{thread__pat_mon__hal_8h}{thread\_patMon\_hal.h}}"{}}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_d_b___test_8h}{DB\_Test.h}}"{}}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_i2_c__1_8h}{I2C\_1.h}}"{}}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{bsp__acc___l_i_s3_d_h_8h}{bsp\_acc\_LIS3DH.h}}"{}}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ **\ Defines}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00037\ \textcolor{comment}{//\ I/O\ ports}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#define\ \ \ \ \ MIKROBUS\_RST\ \ \ IOPORT\_PORT\_06\_PIN\_09}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#define\ \ \ \ \ MIKROBUS\_AN\ \ \ \ IOPORT\_PORT\_00\_PIN\_06}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#define\ \ \ \ \ MIKROBUS\_PWM\ \ \ IOPORT\_PORT\_01\_PIN\_12}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{comment}{//\#define\ \ \ \ \ I2C\_UART\_CMD(x\ ,\ y)\ \ \ \ \ \ \ ((x\ <<\ 2)\ |\ y)}}
+\DoxyCodeLine{00043\ \textcolor{comment}{//\#define\ \ \ \ \ I2C\_RESET\_CMD(x\ ,\ y)\ \ \ \ \ \ ((y\ <<\ 5)\ \&\ x)}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#define\ \ \ \ \ I2C\_PCF8574\_DATA(x\ ,\ y)\ \ \ \ \ \ \ (x\ \&\ y)}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{comment}{/*lint\ -\/save\ -\/e146\ compiler\ supports\ binary\ constants*/}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#define\ \ \ \ \ I2C\_DEFAULT\_DATA\ \ 0b11111111\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#define\ \ \ \ \ I2C\_RESET\_GPS\ \ \ \ \ 0b11111110\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#define\ \ \ \ \ I2C\_RESET\_WIFI\ \ \ \ 0b11111101\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#define\ \ \ \ \ I2C\_RESET\_SIGFOX\ \ 0b11111011\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#define\ \ \ \ \ I2C\_UART\_GPS\ \ \ \ \ \ 0b01111111\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#define\ \ \ \ \ I2C\_UART\_WIFI\ \ \ \ \ 0b10111111\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#define\ \ \ \ \ I2C\_UART\_SIGFOX\ \ \ 0b11111111\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#define\ \ \ \ \ I2C\_UART\_FREE\ \ \ \ \ 0b00111111\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00058\ \textcolor{comment}{/*lint\ -\/restore*/}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#define\ MAX\_WLAN\_SSID\_LENGTH\ \ \ \ \ \ \ \ 32}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#define\ MAX\_WLAN\_PASS\_LENGTH\ \ \ \ \ \ \ \ 32}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#define\ MAX\_IPV4\_ADDR\_LENGTH\ \ \ \ \ \ \ \ 16}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#define\ MAX\_MAC\_ADDR\_LENGTH\ \ \ \ \ \ \ \ \ 18}}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#define\ MAX\_HOST\_NAME\_LENGTH\ \ \ \ \ \ \ \ 64}}
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#define\ MAX\_WIFI\_DATA\_SZ\ \ \ \ \ \ \ \ \ \ \ \ 12}}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#define\ MAX\_WIFI\_DATA\_TEST\_SZ\ \ \ \ \ \ \ 24}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#define\ WIFI\_FILE\_FRAME\ \ \ \ \ \ \ \ \ \ \ \ \ 0x30}}
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#define\ WIFI\_TEST\_FRAME\ \ \ \ \ \ \ \ \ \ \ \ \ 0x31}}
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#define\ WIFI\_ALERT\_FRAME\ \ \ \ \ \ \ \ \ \ \ \ 0x32}}
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#define\ WIFI\_GPS\_FRAME\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x33}}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#define\ WIFI\_CERT\_READ\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\#define\ WIFI\_CERT\_WRITE\ \ \ \ \ \ \ \ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#define\ WIFI\_EAP\_LOADED\ \ \ \ \ \ \ \ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#define\ WIFI\_FP\_LOADED\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 2}}
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#define\ WIFI\_TLS\_LOADED\ \ \ \ \ \ \ \ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#define\ MAX\_SIGFOX\_DATA\_SZ\ \ \ \ \ \ \ \ \ \ 12}}
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#define\ MAX\_SIGFOX\_DEV\_ID\_LENGTH\ \ \ \ 10}}
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\#define\ MAX\_SIGFOX\_DEV\_PAC\_LENGTH\ \ \ 18}}
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#define\ MAX\_SIGFOX\_FREQ\_LENGTH\ \ \ \ \ \ 11}}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \textcolor{preprocessor}{\#define\ SIGFOX\_TEST\_TX\_FREQ\ "{}868130000"{}}}
+\DoxyCodeLine{00085\ \textcolor{preprocessor}{\#define\ SIGFOX\_TEST\_RX\_FREQ\ "{}869525000"{}}}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \textcolor{preprocessor}{\#define\ SIGFOX\_DOWNLINK\_OFF\ \ \ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{00088\ \textcolor{preprocessor}{\#define\ SIGFOX\_DOWNLINK\_ON\ \ \ \ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \textcolor{preprocessor}{\#define\ MAX\_GPS\_DEV\_ID\_LENGTH\ \ \ \ \ \ \ 8}}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \textcolor{preprocessor}{\#define\ MAX\_ACC\_DEV\_ID\_LENGTH\ \ \ \ \ \ \ 4}}
+\DoxyCodeLine{00093\ \textcolor{preprocessor}{\#define\ MAX\_ACC\_XYZ\_CONF\_LENGTH\ \ \ \ \ 9}}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \textcolor{preprocessor}{\#define\ ACC\_ENABLE\_XYZ\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x07\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00097\ \textcolor{preprocessor}{\#define\ ACC\_SAMPLE\_RATE\_PD\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00098\ \textcolor{preprocessor}{\#define\ ACC\_SAMPLE\_RATE\_25\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x03\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00099\ \textcolor{preprocessor}{\#define\ ACC\_SAMPLE\_RATE\_50\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x04\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \textcolor{preprocessor}{\#define\ ACC\_2G\_ACCEL\_RANGE\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00104\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00105\ \{}
+\DoxyCodeLine{00106\ \ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_a02ace324eb27603254e760e194b38fd9ac81fa9134a3a32e311bcd887e3b18535}{eMOD\_NONE}}\ =\ 0,\ \ \ \ \ \ }
+\DoxyCodeLine{00107\ \ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_a02ace324eb27603254e760e194b38fd9a532f84e9a11fdfb7f0085b5383b79638}{eMOD\_WIFI}},\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00108\ \ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_a02ace324eb27603254e760e194b38fd9af2476868b112e63423601ae7fe6d9f07}{eMOD\_SIGFOX}},\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00109\ \ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_a02ace324eb27603254e760e194b38fd9a3b533fa0035dea76cc24136fa7cb32b4}{eMOD\_GPS}}\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00110\ \}\ \mbox{\hyperlink{thread__comm__hal_8h_a02ace324eb27603254e760e194b38fd9}{COMM\_MOD\_e}};}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00113\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00114\ \{}
+\DoxyCodeLine{00115\ \ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_ad9f8a63230f5b4592c5dd0fc5c5e7810aa3e71f20cd87de2b10729e0a258acd4e}{eWIFI\_OPEN\_SEC}}\ =\ 0,\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00116\ \ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_ad9f8a63230f5b4592c5dd0fc5c5e7810a2b36a37b58b9a9f6d65df9e8f48f7c9f}{eWIFI\_WPA}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00117\ \ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_ad9f8a63230f5b4592c5dd0fc5c5e7810a9a24e22e938c7fd47ac960f1adea5bdf}{eWIFI\_EAP\_TLS\_SEC}},\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00118\ \ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_ad9f8a63230f5b4592c5dd0fc5c5e7810add229ead9b610b7e4993159edc5f8655}{eWIFI\_EAP\_PEAP\_SEC}}\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00119\ \}\ \mbox{\hyperlink{thread__comm__hal_8h_ad9f8a63230f5b4592c5dd0fc5c5e7810}{WIFI\_SEC\_e}};}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00122\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00123\ \{}
+\DoxyCodeLine{00124\ \ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_a1407e07609785109ddf8addc24e8a621ac8246b83a02f7908ea0970cfebc12d24}{eWIFI\_NO}}\ =\ 0,\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00125\ \ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_a1407e07609785109ddf8addc24e8a621ad5bc67f732a4b14efdb242eb91eb8c5d}{eWIFI\_ONLY\_IP}},\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00126\ \ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_a1407e07609785109ddf8addc24e8a621abcf0a68c48b71d8c6b69564d0d2ab3e2}{eWIFI\_ONLY\_DNS}},\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00127\ \ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_a1407e07609785109ddf8addc24e8a621a326fa82482b651594922e8ec18e1932b}{eWIFI\_IP\_DNS}}\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00128\ \}\ \mbox{\hyperlink{thread__comm__hal_8h_a1407e07609785109ddf8addc24e8a621}{WIFI\_ADVS\_e}};}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00131\ \textcolor{comment}{\ **\ Typedefs}}
+\DoxyCodeLine{00132\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00133\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00134\ \ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_ad9f8a63230f5b4592c5dd0fc5c5e7810}{WIFI\_SEC\_e}}\ \mbox{\hyperlink{structwifi__config__t_a5ca4389e9c43d3a4fa8b93e9f7c4dd08}{wlan\_eap\_security}};}
+\DoxyCodeLine{00135\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a40bb5262bf908c328fbcfbe5d29d0201}{char\_t}}\ wlan\_ssid[\mbox{\hyperlink{thread__comm__hal_8h_aea7aedee1c670cd484399aab9c195698}{MAX\_WLAN\_SSID\_LENGTH}}];}
+\DoxyCodeLine{00136\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a40bb5262bf908c328fbcfbe5d29d0201}{char\_t}}\ wlan\_pass[\mbox{\hyperlink{thread__comm__hal_8h_aee6b176f83b4577275778dcaa0e3d9b1}{MAX\_WLAN\_PASS\_LENGTH}}];}
+\DoxyCodeLine{00137\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a40bb5262bf908c328fbcfbe5d29d0201}{char\_t}}\ router\_pass\_key[\mbox{\hyperlink{thread__comm__hal_8h_aea7aedee1c670cd484399aab9c195698}{MAX\_WLAN\_SSID\_LENGTH}}];}
+\DoxyCodeLine{00138\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a40bb5262bf908c328fbcfbe5d29d0201}{char\_t}}\ eap\_cnf[\mbox{\hyperlink{thread__comm__hal_8h_aee6b176f83b4577275778dcaa0e3d9b1}{MAX\_WLAN\_PASS\_LENGTH}}];}
+\DoxyCodeLine{00139\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a40bb5262bf908c328fbcfbe5d29d0201}{char\_t}}\ eap\_pass[\mbox{\hyperlink{thread__comm__hal_8h_aee6b176f83b4577275778dcaa0e3d9b1}{MAX\_WLAN\_PASS\_LENGTH}}];}
+\DoxyCodeLine{00140\ \ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_a1407e07609785109ddf8addc24e8a621}{WIFI\_ADVS\_e}}\ \mbox{\hyperlink{structwifi__config__t_a2d5f3bd65704d65c55b2d027ee5bb370}{wlan\_advs}};}
+\DoxyCodeLine{00141\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a40bb5262bf908c328fbcfbe5d29d0201}{char\_t}}\ ip[\mbox{\hyperlink{thread__comm__hal_8h_ac0bdfe428322cee28401640b47089087}{MAX\_IPV4\_ADDR\_LENGTH}}];}
+\DoxyCodeLine{00142\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a40bb5262bf908c328fbcfbe5d29d0201}{char\_t}}\ mask[\mbox{\hyperlink{thread__comm__hal_8h_ac0bdfe428322cee28401640b47089087}{MAX\_IPV4\_ADDR\_LENGTH}}];}
+\DoxyCodeLine{00143\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a40bb5262bf908c328fbcfbe5d29d0201}{char\_t}}\ gateway[\mbox{\hyperlink{thread__comm__hal_8h_ac0bdfe428322cee28401640b47089087}{MAX\_IPV4\_ADDR\_LENGTH}}];}
+\DoxyCodeLine{00144\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a40bb5262bf908c328fbcfbe5d29d0201}{char\_t}}\ pdns[\mbox{\hyperlink{thread__comm__hal_8h_ac0bdfe428322cee28401640b47089087}{MAX\_IPV4\_ADDR\_LENGTH}}];}
+\DoxyCodeLine{00145\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a40bb5262bf908c328fbcfbe5d29d0201}{char\_t}}\ sdns[\mbox{\hyperlink{thread__comm__hal_8h_ac0bdfe428322cee28401640b47089087}{MAX\_IPV4\_ADDR\_LENGTH}}];}
+\DoxyCodeLine{00146\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a40bb5262bf908c328fbcfbe5d29d0201}{char\_t}}\ ip\_address[\mbox{\hyperlink{thread__comm__hal_8h_ac0bdfe428322cee28401640b47089087}{MAX\_IPV4\_ADDR\_LENGTH}}];}
+\DoxyCodeLine{00147\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a40bb5262bf908c328fbcfbe5d29d0201}{char\_t}}\ mac\_address[\mbox{\hyperlink{thread__comm__hal_8h_aafbbbc7737c2047111661bb967dd1127}{MAX\_MAC\_ADDR\_LENGTH}}];}
+\DoxyCodeLine{00148\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a40bb5262bf908c328fbcfbe5d29d0201}{char\_t}}\ host\_name[\mbox{\hyperlink{thread__comm__hal_8h_a42ff5c072b187f15487e532273c1381e}{MAX\_HOST\_NAME\_LENGTH}}];}
+\DoxyCodeLine{00149\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aef44329758059c91c76d334e8fc09700}{int8\_t}}\ \mbox{\hyperlink{structwifi__config__t_ab8acd5b895b9f0bddc0ec4abc232750b}{signal\_rssi}};}
+\DoxyCodeLine{00150\ \}\ \mbox{\hyperlink{structwifi__config__t}{wifi\_config\_t}};}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00152\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00153\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a40bb5262bf908c328fbcfbe5d29d0201}{char\_t}}\ device\_id[\mbox{\hyperlink{thread__comm__hal_8h_a06ce33b38273dec6aeb04e57619226f3}{MAX\_SIGFOX\_DEV\_ID\_LENGTH}}\ +\ 1];}
+\DoxyCodeLine{00154\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a40bb5262bf908c328fbcfbe5d29d0201}{char\_t}}\ device\_pac[\mbox{\hyperlink{thread__comm__hal_8h_ad4a12d0e44013a16c7afef847f180542}{MAX\_SIGFOX\_DEV\_PAC\_LENGTH}}\ +\ 1];}
+\DoxyCodeLine{00155\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a40bb5262bf908c328fbcfbe5d29d0201}{char\_t}}\ device\_tx\_freq[\mbox{\hyperlink{thread__comm__hal_8h_a82eab94e2a7149690957cf86ee54ee08}{MAX\_SIGFOX\_FREQ\_LENGTH}}\ +\ 1];}
+\DoxyCodeLine{00156\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a40bb5262bf908c328fbcfbe5d29d0201}{char\_t}}\ device\_rx\_freq[\mbox{\hyperlink{thread__comm__hal_8h_a82eab94e2a7149690957cf86ee54ee08}{MAX\_SIGFOX\_FREQ\_LENGTH}}\ +\ 1];}
+\DoxyCodeLine{00157\ \}\ \mbox{\hyperlink{structsigfox__config__t}{sigfox\_config\_t}};}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00159\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00160\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a40bb5262bf908c328fbcfbe5d29d0201}{char\_t}}\ device\_id[\mbox{\hyperlink{thread__comm__hal_8h_a126c05d35465b5ea67bf26ff613a733c}{MAX\_GPS\_DEV\_ID\_LENGTH}}];}
+\DoxyCodeLine{00161\ \ \ \ \ \textcolor{keywordtype}{char}\ lat\_data[12];}
+\DoxyCodeLine{00162\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{structgps__config__t_a9478cba37626bd6a47707aa8fa47bd98}{N\_S}};}
+\DoxyCodeLine{00163\ \ \ \ \ \textcolor{keywordtype}{char}\ long\_data[12];}
+\DoxyCodeLine{00164\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{structgps__config__t_a63dcc53213b857d4aa8bc56d913f8070}{E\_W}};}
+\DoxyCodeLine{00165\ \}\ \mbox{\hyperlink{structgps__config__t}{gps\_config\_t}};}
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00167\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00168\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a40bb5262bf908c328fbcfbe5d29d0201}{char\_t}}\ \ device\_id[\mbox{\hyperlink{thread__comm__hal_8h_a96932e657cf05fc9302d60257a23316f}{MAX\_ACC\_DEV\_ID\_LENGTH}}];}
+\DoxyCodeLine{00169\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \mbox{\hyperlink{structacc__config__t_afe4cb14e6256727c3204fb0e84c4096c}{xyz\_config}};}
+\DoxyCodeLine{00170\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \mbox{\hyperlink{structacc__config__t_ac0d6991fcf1804ba1478cde31631e5e8}{hp\_filter}};}
+\DoxyCodeLine{00171\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \mbox{\hyperlink{structacc__config__t_a7828e5ecdd00792530f65e29f5842df6}{interrupt}};}
+\DoxyCodeLine{00172\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a269259c924dce846340ddbb810db2e3c}{int16\_t}}\ \mbox{\hyperlink{structacc__config__t_af8eede4514a75016e378e2640eacf33c}{x\_data}};}
+\DoxyCodeLine{00173\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a269259c924dce846340ddbb810db2e3c}{int16\_t}}\ \mbox{\hyperlink{structacc__config__t_ac86746955b762f1b40765bd953e63ef0}{y\_data}};}
+\DoxyCodeLine{00174\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a269259c924dce846340ddbb810db2e3c}{int16\_t}}\ \mbox{\hyperlink{structacc__config__t_a071e1930df68b283930290d3e858c7f9}{z\_data}};}
+\DoxyCodeLine{00175\ \}\ \mbox{\hyperlink{structacc__config__t}{acc\_config\_t}};}
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00178\ }
+\DoxyCodeLine{00180\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00181\ \{}
+\DoxyCodeLine{00182\ \ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_a30bcce91a84082e55fabfd5098f0d7d7adbac27c01f8cd78a3c3217441493630d}{WIFI\_MSG\_ID\_POWER\_ON\_TEST}}\ \ =\ 0,\ \ }
+\DoxyCodeLine{00183\ \ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_a30bcce91a84082e55fabfd5098f0d7d7a448be03a70bee50b5940322f96cf4251}{WIFI\_MSG\_ID\_DIARY\_TEST}},\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00184\ \ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_a30bcce91a84082e55fabfd5098f0d7d7a5c10ffd36a75fc55efac6d9790010836}{WIFI\_MSG\_ID\_MONTHLY\_TEST}},\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00185\ \ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_a30bcce91a84082e55fabfd5098f0d7d7ad07f91bf4395ae9ff72c22278dcbf46e}{WIFI\_MSG\_ID\_MANUAL\_TEST}},\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00186\ \ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_a30bcce91a84082e55fabfd5098f0d7d7a520f6f883e25b4728261060c92ef3662}{WIFI\_MSG\_ID\_FUNC\_TEST}},\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00187\ \ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_a30bcce91a84082e55fabfd5098f0d7d7a322e0f5e3b029f0bca81583501d88709}{WIFI\_MSG\_ID\_COVER\_OPEN\_ALERT}},\ \ \ \ }
+\DoxyCodeLine{00188\ \ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_a30bcce91a84082e55fabfd5098f0d7d7ab04f0dd931e7174b8313fe1ac9891a10}{WIFI\_MSG\_ID\_COVER\_CLOSE\_ALERT}},\ \ \ }
+\DoxyCodeLine{00189\ \ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_a30bcce91a84082e55fabfd5098f0d7d7ab455ec3e39cb424394bf304d1d6af72a}{WIFI\_MSG\_ID\_NO\_SHOCK\_ALERT}},\ \ \ \ \ \ }
+\DoxyCodeLine{00190\ \ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_a30bcce91a84082e55fabfd5098f0d7d7a823922a475d07d34aed2dfb0d9041a84}{WIFI\_MSG\_ID\_SHOCK\_DISC\_ALERT}},\ \ \ \ }
+\DoxyCodeLine{00191\ \ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_a30bcce91a84082e55fabfd5098f0d7d7a25a0c258f2e30e89c82f88f2d46a028c}{WIFI\_MSG\_ID\_SHOCK\_TIMEOUT\_ALERT}},\ }
+\DoxyCodeLine{00192\ \ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_a30bcce91a84082e55fabfd5098f0d7d7a67a6a130a06e7be26df76989ee1f4a36}{WIFI\_MSG\_ID\_SHOCK\_DONE\_ALERT}},\ \ \ \ }
+\DoxyCodeLine{00193\ \ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_a30bcce91a84082e55fabfd5098f0d7d7af45ee89a25ada1786c760b5b24773d7c}{WIFI\_MSG\_ID\_SAVED\_POS\_GPS}},\ \ \ \ \ \ \ }
+\DoxyCodeLine{00194\ \ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_a30bcce91a84082e55fabfd5098f0d7d7a70fc8ad255b2a43ee0b5cc30a171759a}{WIFI\_MSG\_ID\_MON\_TEST\_GPS}},\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00195\ \ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_a30bcce91a84082e55fabfd5098f0d7d7a9e00ac7bc633b236baa5f722ac522232}{WIFI\_MSG\_ID\_MAN\_TEST\_GPS}},\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00196\ \ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_a30bcce91a84082e55fabfd5098f0d7d7ad9cff54ca1e25fa7b90ce7a8e7133f83}{WIFI\_MSG\_ID\_CHANGED\_POS\_GPS}},\ \ \ \ \ }
+\DoxyCodeLine{00197\ \ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_a30bcce91a84082e55fabfd5098f0d7d7a7b3a5cfaabcac16e1d15ff7a3dd313d2}{WIFI\_MSG\_ID\_ACCEL\_POS\_GPS}},\ \ \ \ \ \ \ }
+\DoxyCodeLine{00198\ \ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_a30bcce91a84082e55fabfd5098f0d7d7a557de5ef33e8f833c69aca94cf85ab95}{WIFI\_MSG\_ID\_BATT\_ELECT\_EXP}},\ \ \ \ \ \ }
+\DoxyCodeLine{00199\ \ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_a30bcce91a84082e55fabfd5098f0d7d7a3d5ebbcc7c3d1c536d955e79a244ce5b}{WIFI\_MSG\_ID\_ACCEL\_ATIVATE\_MOVE\_ALERT}},\ \ \ \ }
+\DoxyCodeLine{00200\ \ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_a30bcce91a84082e55fabfd5098f0d7d7a8c3f06d0a3d8a5911588dbdebd91e28d}{WIFI\_MSG\_ID\_MAX}}}
+\DoxyCodeLine{00201\ \}\ \mbox{\hyperlink{thread__comm__hal_8h_a30bcce91a84082e55fabfd5098f0d7d7}{WIFI\_MSG\_ID\_e}};}
+\DoxyCodeLine{00202\ }
+\DoxyCodeLine{00203\ \textcolor{comment}{//\ Wifi\ data\ frame\ alignment\ in\ 1\ byte.\ You\ can\ use\ pack\ or\ the\ attribute\ "{}\_\_attribute\_\_((\_\_packed\_\_))"{}\ in\ the\ structure\ instance}}
+\DoxyCodeLine{00204\ \textcolor{preprocessor}{\#pragma\ pack(1)}}
+\DoxyCodeLine{00205\ }
+\DoxyCodeLine{00207\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00208\ \ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_a30bcce91a84082e55fabfd5098f0d7d7}{WIFI\_MSG\_ID\_e}}\ \ \ \ \ \ \ \mbox{\hyperlink{struct_w_i_f_i___t_e_s_t___r_e_s_u_l_t__t_af7a8597652342e8c420e623705269434}{info\_type}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00209\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_w_i_f_i___t_e_s_t___r_e_s_u_l_t__t_af767136b715a18ac571ebd44bea4f60c}{error\_code\_defib}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00210\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_w_i_f_i___t_e_s_t___r_e_s_u_l_t__t_a3638a9575c48f694b92818380e55bb2d}{error\_code\_ADS}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00211\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_w_i_f_i___t_e_s_t___r_e_s_u_l_t__t_a31512bd1ff851ec0d7d339998987ec80}{error\_code\_dc\_18v}};\ \ \ \ \ \ }
+\DoxyCodeLine{00212\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_w_i_f_i___t_e_s_t___r_e_s_u_l_t__t_afbe91967682eef7959a6f37443987fee}{error\_code\_dc\_main}};\ \ \ \ \ }
+\DoxyCodeLine{00213\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_w_i_f_i___t_e_s_t___r_e_s_u_l_t__t_aaddc88c4f02f578c87e72b27cc865a10}{error\_code\_audio}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00214\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_w_i_f_i___t_e_s_t___r_e_s_u_l_t__t_ab456373554d4c9e330a96a9088f437ab}{error\_electrodes}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00215\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_w_i_f_i___t_e_s_t___r_e_s_u_l_t__t_abe39938aaea48b926441ef3627883d55}{battery\_soc}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00216\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_w_i_f_i___t_e_s_t___r_e_s_u_l_t__t_a0a079dec440df884d192d77f6e74cae7}{battery\_volt}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00217\ \ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aef44329758059c91c76d334e8fc09700}{int8\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_w_i_f_i___t_e_s_t___r_e_s_u_l_t__t_a51bf3f3b8fe38a12066b0a4209b2e802}{battery\_temp}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00218\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_w_i_f_i___t_e_s_t___r_e_s_u_l_t__t_ac5d7e45b57907c3d7345181a2b9e52bc}{error\_code}};\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00219\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_w_i_f_i___t_e_s_t___r_e_s_u_l_t__t_a4f41387100c951e248ec0bb2c3505d80}{must\_be\_0x55}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00220\ \ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_a30bcce91a84082e55fabfd5098f0d7d7}{WIFI\_MSG\_ID\_e}}\ \ \ \ \ \ \ \mbox{\hyperlink{struct_w_i_f_i___t_e_s_t___r_e_s_u_l_t__t_a475836bbf2a2a677d780a471d01655e3}{info\_type\_exp}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00221\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_w_i_f_i___t_e_s_t___r_e_s_u_l_t__t_a07e9d222015f8470cc4401bed68995b1}{batt\_expiration}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00222\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_w_i_f_i___t_e_s_t___r_e_s_u_l_t__t_ac4ffffe67602df446a9e9dd64e6d09ee}{elec\_expiration}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00223\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_w_i_f_i___t_e_s_t___r_e_s_u_l_t__t_a497f280c2594eaa30ea46a82e9182723}{demo\_mode}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00224\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_w_i_f_i___t_e_s_t___r_e_s_u_l_t__t_a01961d40de01402780c76551d2ddd3e9}{open\_cover}};\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00225\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_w_i_f_i___t_e_s_t___r_e_s_u_l_t__t_a506cd07ee2ed519ec0b40f0df33cfa72}{must\_be\_0x55\_exp}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00226\ \}\ \mbox{\hyperlink{struct_w_i_f_i___t_e_s_t___r_e_s_u_l_t__t}{WIFI\_TEST\_RESULT\_t}};}
+\DoxyCodeLine{00227\ }
+\DoxyCodeLine{00228\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a7d682f56a8c1ced1f87258fbb4579cd2}{COMPILE\_ASSERT}}((\textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_w_i_f_i___t_e_s_t___r_e_s_u_l_t__t}{WIFI\_TEST\_RESULT\_t}})\ ==\ \mbox{\hyperlink{thread__comm__hal_8h_a9eaf86b5a374d691bb2f204ec796a840}{MAX\_WIFI\_DATA\_TEST\_SZ}}));}
+\DoxyCodeLine{00229\ }
+\DoxyCodeLine{00231\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00232\ \ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_a30bcce91a84082e55fabfd5098f0d7d7}{WIFI\_MSG\_ID\_e}}\ \ \ \ \ \ \ \mbox{\hyperlink{struct_w_i_f_i___f_u_n_c___a_l_e_r_t__t_af7f7a87e040b81705fd5b1f8ec4166bf}{info\_type}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00233\ \ \ \ \ \mbox{\hyperlink{thread__pat_mon__hal_8h_ab5a454b85186a6663fc81c4685af3281}{EL\_SIGN\_e}}\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_w_i_f_i___f_u_n_c___a_l_e_r_t__t_a45b5764e0848ada6e9f6d62b32db5de6}{electrodes\_sign}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00234\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_w_i_f_i___f_u_n_c___a_l_e_r_t__t_a5ea84cf7d94eb4ff8e9bf60d45de04f4}{battery\_soc}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00235\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_w_i_f_i___f_u_n_c___a_l_e_r_t__t_aef71a325d2a473233b9635f08af17667}{patient\_type}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00236\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_w_i_f_i___f_u_n_c___a_l_e_r_t__t_a557c067840233638e69a3e4ec428bb4d}{zp}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00237\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_w_i_f_i___f_u_n_c___a_l_e_r_t__t_a1fbaf1286c174a0c23d1663555119ad2}{shock\_energy}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00238\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_w_i_f_i___f_u_n_c___a_l_e_r_t__t_aaad7fb91eb3d628abc046b14aefb1e8b}{drd\_diag}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00239\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_w_i_f_i___f_u_n_c___a_l_e_r_t__t_a5a94b07c85a8493927732ac7f288fd1a}{must\_be\_0x55}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00240\ \}\ \mbox{\hyperlink{struct_w_i_f_i___f_u_n_c___a_l_e_r_t__t}{WIFI\_FUNC\_ALERT\_t}};}
+\DoxyCodeLine{00241\ }
+\DoxyCodeLine{00242\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a7d682f56a8c1ced1f87258fbb4579cd2}{COMPILE\_ASSERT}}((\textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_w_i_f_i___f_u_n_c___a_l_e_r_t__t}{WIFI\_FUNC\_ALERT\_t}})\ ==\ \mbox{\hyperlink{thread__comm__hal_8h_a2343be917a149877bac86f5a7bfc3a57}{MAX\_WIFI\_DATA\_SZ}}));}
+\DoxyCodeLine{00243\ }
+\DoxyCodeLine{00245\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00246\ \ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_a30bcce91a84082e55fabfd5098f0d7d7}{WIFI\_MSG\_ID\_e}}\ \ \ \mbox{\hyperlink{struct_w_i_f_i___g_p_s___p_o_s_i_t_i_o_n__t_aae98d535a22379785c334eabed29be7c}{info\_type}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00247\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_w_i_f_i___g_p_s___p_o_s_i_t_i_o_n__t_a1b7a45c97b22d9e448b4e064c41009e4}{lat\_grados}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00248\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_w_i_f_i___g_p_s___p_o_s_i_t_i_o_n__t_a74394fb4bf99124eea20ff4c6019636a}{lat\_minutos\_1}};\ \ \ \ \ \ }
+\DoxyCodeLine{00249\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_w_i_f_i___g_p_s___p_o_s_i_t_i_o_n__t_a652f5c676de8649fcc7503772ad4d4b5}{lat\_minutos\_2}};\ \ \ \ \ \ }
+\DoxyCodeLine{00250\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_w_i_f_i___g_p_s___p_o_s_i_t_i_o_n__t_ac1e5505d6657365d26a4ed54a45c0587}{long\_grados}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00251\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_w_i_f_i___g_p_s___p_o_s_i_t_i_o_n__t_abb58126ceb90f4cb0dcb9be9b6373386}{long\_minutos\_1}};\ \ \ \ \ }
+\DoxyCodeLine{00252\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_w_i_f_i___g_p_s___p_o_s_i_t_i_o_n__t_a8bb7abd0a5a45e927a3d437c80d6987f}{long\_minutos\_2}};\ \ \ \ \ }
+\DoxyCodeLine{00253\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_w_i_f_i___g_p_s___p_o_s_i_t_i_o_n__t_ae9caa5eda936821ed734cbe0b7c4d534}{lat\_long\_dir}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00254\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_w_i_f_i___g_p_s___p_o_s_i_t_i_o_n__t_a5ca01fd59b649b2e9a6e2409c52577ac}{must\_be\_0x55}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00255\ \}\ \mbox{\hyperlink{struct_w_i_f_i___g_p_s___p_o_s_i_t_i_o_n__t}{WIFI\_GPS\_POSITION\_t}};}
+\DoxyCodeLine{00256\ }
+\DoxyCodeLine{00257\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a7d682f56a8c1ced1f87258fbb4579cd2}{COMPILE\_ASSERT}}((\textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_w_i_f_i___g_p_s___p_o_s_i_t_i_o_n__t}{WIFI\_GPS\_POSITION\_t}})\ ==\ \mbox{\hyperlink{thread__comm__hal_8h_a2343be917a149877bac86f5a7bfc3a57}{MAX\_WIFI\_DATA\_SZ}}));}
+\DoxyCodeLine{00258\ }
+\DoxyCodeLine{00259\ \textcolor{comment}{//\ Wifi\ data\ frame\ alignment}}
+\DoxyCodeLine{00260\ \textcolor{preprocessor}{\#pragma\ pack()}}
+\DoxyCodeLine{00261\ }
+\DoxyCodeLine{00263\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00264\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_w_i_f_i___h_o_s_t___r_e_s_p_o_n_s_e__t_a472335eef6fd503e778c40301ed5bc93}{must\_be\_0xAA}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00265\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_w_i_f_i___h_o_s_t___r_e_s_p_o_n_s_e__t_a8ae7105baf762f731ef463511c8f9f4a}{timestamp}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00266\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_w_i_f_i___h_o_s_t___r_e_s_p_o_n_s_e__t_aac14ac33b98a978ab2586bdc1c28ae1f}{cfg\_available}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00267\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_w_i_f_i___h_o_s_t___r_e_s_p_o_n_s_e__t_a7bf147a1600035e101717b6aa7a7a7c1}{frmw\_available}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00268\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_w_i_f_i___h_o_s_t___r_e_s_p_o_n_s_e__t_a45a6a5de3930a42d29e53378f50b30fa}{must\_be\_0xBB}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00269\ \}\ \mbox{\hyperlink{struct_w_i_f_i___h_o_s_t___r_e_s_p_o_n_s_e__t}{WIFI\_HOST\_RESPONSE\_t}};}
+\DoxyCodeLine{00270\ }
+\DoxyCodeLine{00272\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00273\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_w_i_f_i___s_e_r_v_e_r___r_e_s_p_o_n_s_e__t_a48dc084a09902392b7a300c501a60c6d}{version}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00274\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a40bb5262bf908c328fbcfbe5d29d0201}{char\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ s\_n[16];\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00275\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a40bb5262bf908c328fbcfbe5d29d0201}{char\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ pass[64];\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00276\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_w_i_f_i___s_e_r_v_e_r___r_e_s_p_o_n_s_e__t_a5b939d3ec92cb1b6eb88ae01f79917a8}{file\_size}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00277\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_w_i_f_i___s_e_r_v_e_r___r_e_s_p_o_n_s_e__t_ae05b7dff1f66968f51b358a0a0223ac8}{crc\_file}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00278\ \}\ \mbox{\hyperlink{struct_w_i_f_i___s_e_r_v_e_r___r_e_s_p_o_n_s_e__t}{WIFI\_SERVER\_RESPONSE\_t}};}
+\DoxyCodeLine{00279\ }
+\DoxyCodeLine{00280\ }
+\DoxyCodeLine{00282\ }
+\DoxyCodeLine{00284\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00285\ \{}
+\DoxyCodeLine{00286\ \ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_a5aa347e2a685a85a377a26337e9c5cc3afbee030b911ec91b49e64e015f4f33e4}{MSG\_ID\_POWER\_ON\_TEST}}\ \ =\ 0,\ \ }
+\DoxyCodeLine{00287\ \ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_a5aa347e2a685a85a377a26337e9c5cc3a035b29956fd28a80f9eb69f11af63d70}{MSG\_ID\_DIARY\_TEST}},\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00288\ \ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_a5aa347e2a685a85a377a26337e9c5cc3a8ffbb9b526abda27312793d85fb140db}{MSG\_ID\_MONTHLY\_TEST}},\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00289\ \ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_a5aa347e2a685a85a377a26337e9c5cc3ae4553de299a3a22128520b39469e65ef}{MSG\_ID\_MANUAL\_TEST}},\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00290\ \ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_a5aa347e2a685a85a377a26337e9c5cc3ad062ddd40e870fb5ea69e2b425fa83db}{MSG\_ID\_FUNC\_TEST}},\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00291\ \ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_a5aa347e2a685a85a377a26337e9c5cc3a9ef9d1b5c1d7351bc5df9375e3069444}{MSG\_ID\_COVER\_OPEN\_ALERT}},\ \ \ \ }
+\DoxyCodeLine{00292\ \ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_a5aa347e2a685a85a377a26337e9c5cc3a44584f152944fb1a509daed428c5e342}{MSG\_ID\_COVER\_CLOSE\_ALERT}},\ \ \ }
+\DoxyCodeLine{00293\ \ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_a5aa347e2a685a85a377a26337e9c5cc3a5b76e58e7bc4898eb63e01d19a258172}{MSG\_ID\_NO\_SHOCK\_ALERT}},\ \ \ \ \ \ }
+\DoxyCodeLine{00294\ \ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_a5aa347e2a685a85a377a26337e9c5cc3a67747c995f5fc58c569cee4702f71891}{MSG\_ID\_SHOCK\_DISC\_ALERT}},\ \ \ \ }
+\DoxyCodeLine{00295\ \ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_a5aa347e2a685a85a377a26337e9c5cc3a486faf5fd3755ef29221c14a1352967b}{MSG\_ID\_SHOCK\_TIMEOUT\_ALERT}},\ }
+\DoxyCodeLine{00296\ \ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_a5aa347e2a685a85a377a26337e9c5cc3a3c874c27badc679a64b77823b1f3fa4a}{MSG\_ID\_SHOCK\_DONE\_ALERT}},\ \ \ \ }
+\DoxyCodeLine{00297\ \ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_a5aa347e2a685a85a377a26337e9c5cc3a28728f7d01fdf7886a00d51fc3989462}{MSG\_ID\_SAVED\_POS\_GPS}},\ \ \ \ \ \ \ }
+\DoxyCodeLine{00298\ \ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_a5aa347e2a685a85a377a26337e9c5cc3a10eb9bd3c15a5bc0c5ffe98382b7c246}{MSG\_ID\_MON\_TEST\_GPS}},\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00299\ \ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_a5aa347e2a685a85a377a26337e9c5cc3a4c2b67446c9df7341d9da4693b433957}{MSG\_ID\_MAN\_TEST\_GPS}},\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00300\ \ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_a5aa347e2a685a85a377a26337e9c5cc3a8800a41a7eebcdb456f4443ffccfab0f}{MSG\_ID\_CHANGED\_POS\_GPS}},\ \ \ \ \ }
+\DoxyCodeLine{00301\ \ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_a5aa347e2a685a85a377a26337e9c5cc3a8dca4a563c73ed128af2d31f1b31efdb}{MSG\_ID\_ACCEL\_POS\_GPS}},\ \ \ \ \ \ \ }
+\DoxyCodeLine{00302\ \ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_a5aa347e2a685a85a377a26337e9c5cc3ad1111b3271c6533400d42c84e1771721}{MSG\_ID\_BATT\_ELECT\_EXP}},\ \ \ \ \ \ }
+\DoxyCodeLine{00303\ \ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_a5aa347e2a685a85a377a26337e9c5cc3a81ce63d5067fdd2085100ee2715e8b6f}{MSG\_ID\_ACCEL\_ATIVATE\_MOVE\_ALERT}},\ \ \ \ }
+\DoxyCodeLine{00304\ \ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_a5aa347e2a685a85a377a26337e9c5cc3ae283e401b55d5b613eaaed5845f2c8b6}{MSG\_ID\_MAX}}}
+\DoxyCodeLine{00305\ \}\ \mbox{\hyperlink{thread__comm__hal_8h_a5aa347e2a685a85a377a26337e9c5cc3}{SIGFOX\_MSG\_ID\_e}};}
+\DoxyCodeLine{00306\ }
+\DoxyCodeLine{00307\ \textcolor{comment}{//\ sigfox\ data\ frame\ alignment}}
+\DoxyCodeLine{00308\ \textcolor{preprocessor}{\#pragma\ pack(1)}}
+\DoxyCodeLine{00309\ }
+\DoxyCodeLine{00311\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00312\ \ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_a5aa347e2a685a85a377a26337e9c5cc3}{SIGFOX\_MSG\_ID\_e}}\ \ \ \ \ \mbox{\hyperlink{struct_s_i_g_f_o_x___t_e_s_t___r_e_s_u_l_t__t_a4938f9ce12497e3bac23045b4e05d251}{info\_type}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00313\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_s_i_g_f_o_x___t_e_s_t___r_e_s_u_l_t__t_adec6788590d3419d6d0d23fb2b8d9bac}{error\_code\_defib}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00314\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_s_i_g_f_o_x___t_e_s_t___r_e_s_u_l_t__t_a470c151e7838efc096273ed558b41c40}{error\_code\_ADS}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00315\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_s_i_g_f_o_x___t_e_s_t___r_e_s_u_l_t__t_a832667ebedd8f73acf63ae4209062c96}{error\_code\_dc\_18v}};\ \ \ \ \ \ }
+\DoxyCodeLine{00316\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_s_i_g_f_o_x___t_e_s_t___r_e_s_u_l_t__t_a2b2ea45992628947b4cbb07080a516b1}{error\_code\_dc\_main}};\ \ \ \ \ }
+\DoxyCodeLine{00317\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_s_i_g_f_o_x___t_e_s_t___r_e_s_u_l_t__t_a80264e9983373549e642f5962b5eabc5}{error\_code\_audio}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00318\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_s_i_g_f_o_x___t_e_s_t___r_e_s_u_l_t__t_a539d0fc3d628118eed7bf429dc0fd8b0}{error\_electrodes}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00319\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_s_i_g_f_o_x___t_e_s_t___r_e_s_u_l_t__t_a4b112cb8821cefbf3bf63ec86a3214a0}{battery\_soc}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00320\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_s_i_g_f_o_x___t_e_s_t___r_e_s_u_l_t__t_ac3fba896a8da58062eca67f4c336f6c7}{battery\_volt}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00321\ \ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aef44329758059c91c76d334e8fc09700}{int8\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_s_i_g_f_o_x___t_e_s_t___r_e_s_u_l_t__t_add89bf78332f13402adbf9bf4d760758}{battery\_temp}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00322\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_s_i_g_f_o_x___t_e_s_t___r_e_s_u_l_t__t_a5cc95a57a99cdf004875127edf782821}{error\_code}};\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00323\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_s_i_g_f_o_x___t_e_s_t___r_e_s_u_l_t__t_a8b8470fb2d5ece51379319a4bc8564b3}{must\_be\_0x55}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00324\ \}\ \mbox{\hyperlink{struct_s_i_g_f_o_x___t_e_s_t___r_e_s_u_l_t__t}{SIGFOX\_TEST\_RESULT\_t}};}
+\DoxyCodeLine{00325\ }
+\DoxyCodeLine{00326\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a7d682f56a8c1ced1f87258fbb4579cd2}{COMPILE\_ASSERT}}((\textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_s_i_g_f_o_x___t_e_s_t___r_e_s_u_l_t__t}{SIGFOX\_TEST\_RESULT\_t}})\ ==\ \mbox{\hyperlink{thread__comm__hal_8h_ac00e289c207b2affc18ad52fbdd577a3}{MAX\_SIGFOX\_DATA\_SZ}}));}
+\DoxyCodeLine{00327\ }
+\DoxyCodeLine{00329\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00330\ \ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_a5aa347e2a685a85a377a26337e9c5cc3}{SIGFOX\_MSG\_ID\_e}}\ \ \ \ \ \mbox{\hyperlink{struct_s_i_g_f_o_x___e_l_e_c___b_a_t_t___e_x_p_i_r_a_t_i_o_n__t_a2d6233bfdd0273bc29787c0a1834fad6}{info\_type}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00331\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_s_i_g_f_o_x___e_l_e_c___b_a_t_t___e_x_p_i_r_a_t_i_o_n__t_a12e27300f7fcd80488865b4d20bce86b}{batt\_expiration}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00332\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_s_i_g_f_o_x___e_l_e_c___b_a_t_t___e_x_p_i_r_a_t_i_o_n__t_a23be1a9c45cff5aa006543be8d718944}{elec\_expiration}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00333\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_s_i_g_f_o_x___e_l_e_c___b_a_t_t___e_x_p_i_r_a_t_i_o_n__t_ab39e01816b531b673e404302164066e2}{demo\_mode}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00334\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_s_i_g_f_o_x___e_l_e_c___b_a_t_t___e_x_p_i_r_a_t_i_o_n__t_a07b43ca31545089dfaf9e6e2460d933d}{open\_cover}};\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00335\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_s_i_g_f_o_x___e_l_e_c___b_a_t_t___e_x_p_i_r_a_t_i_o_n__t_a761a6ff5d83aa4091b02ff13f38404d9}{must\_be\_0x55}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00336\ \}\ \mbox{\hyperlink{struct_s_i_g_f_o_x___e_l_e_c___b_a_t_t___e_x_p_i_r_a_t_i_o_n__t}{SIGFOX\_ELEC\_BATT\_EXPIRATION\_t}};}
+\DoxyCodeLine{00337\ }
+\DoxyCodeLine{00338\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a7d682f56a8c1ced1f87258fbb4579cd2}{COMPILE\_ASSERT}}((\textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_s_i_g_f_o_x___e_l_e_c___b_a_t_t___e_x_p_i_r_a_t_i_o_n__t}{SIGFOX\_ELEC\_BATT\_EXPIRATION\_t}})\ ==\ \mbox{\hyperlink{thread__comm__hal_8h_ac00e289c207b2affc18ad52fbdd577a3}{MAX\_SIGFOX\_DATA\_SZ}}));}
+\DoxyCodeLine{00339\ }
+\DoxyCodeLine{00340\ }
+\DoxyCodeLine{00342\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00343\ \ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_a5aa347e2a685a85a377a26337e9c5cc3}{SIGFOX\_MSG\_ID\_e}}\ \ \ \ \ \mbox{\hyperlink{struct_s_i_g_f_o_x___f_u_n_c___a_l_e_r_t__t_afb02445b6fbc46b6ac276ba34a768b90}{info\_type}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00344\ \ \ \ \ \mbox{\hyperlink{thread__pat_mon__hal_8h_ab5a454b85186a6663fc81c4685af3281}{EL\_SIGN\_e}}\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_s_i_g_f_o_x___f_u_n_c___a_l_e_r_t__t_adf2fd4a815764d1744bccae328ae9e9c}{electrodes\_sign}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00345\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_s_i_g_f_o_x___f_u_n_c___a_l_e_r_t__t_a16d720581cbe295e513a5a14bf5e4777}{battery\_soc}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00346\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_s_i_g_f_o_x___f_u_n_c___a_l_e_r_t__t_a94692b3a5d105f5ed7d7b7dc6985ecf2}{patient\_type}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00347\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_s_i_g_f_o_x___f_u_n_c___a_l_e_r_t__t_a106d2295e6774227af116e73790af04a}{zp}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00348\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_s_i_g_f_o_x___f_u_n_c___a_l_e_r_t__t_a9109943bb6f01e8354e08d768f439c91}{shock\_energy}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00349\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_s_i_g_f_o_x___f_u_n_c___a_l_e_r_t__t_a47f470f86bb4eae278328aae37af621c}{drd\_diag}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00350\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_s_i_g_f_o_x___f_u_n_c___a_l_e_r_t__t_ac06d66803f6b324eeffbce59efead2a1}{must\_be\_0x55}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00351\ \}\ \mbox{\hyperlink{struct_s_i_g_f_o_x___f_u_n_c___a_l_e_r_t__t}{SIGFOX\_FUNC\_ALERT\_t}};}
+\DoxyCodeLine{00352\ }
+\DoxyCodeLine{00353\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a7d682f56a8c1ced1f87258fbb4579cd2}{COMPILE\_ASSERT}}((\textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_s_i_g_f_o_x___f_u_n_c___a_l_e_r_t__t}{SIGFOX\_FUNC\_ALERT\_t}})\ ==\ \mbox{\hyperlink{thread__comm__hal_8h_ac00e289c207b2affc18ad52fbdd577a3}{MAX\_SIGFOX\_DATA\_SZ}}));}
+\DoxyCodeLine{00354\ }
+\DoxyCodeLine{00356\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00357\ \ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_a5aa347e2a685a85a377a26337e9c5cc3}{SIGFOX\_MSG\_ID\_e}}\ \ \ \ \ \mbox{\hyperlink{struct_s_i_g_f_o_x___g_p_s___p_o_s_i_t_i_o_n__t_a889f8f1e4d314197a214625dc0bc8547}{info\_type}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00358\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_s_i_g_f_o_x___g_p_s___p_o_s_i_t_i_o_n__t_aa7513696c6cc3bc7deedfefbf8531ab4}{lat\_grados}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00359\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_s_i_g_f_o_x___g_p_s___p_o_s_i_t_i_o_n__t_a7b3663f68266d17ee578c61952ebb6ca}{lat\_minutos\_1}};\ \ \ \ \ \ }
+\DoxyCodeLine{00360\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_s_i_g_f_o_x___g_p_s___p_o_s_i_t_i_o_n__t_a4cb5e4ed4ee50681125d079771e10a9a}{lat\_minutos\_2}};\ \ \ \ \ \ }
+\DoxyCodeLine{00361\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_s_i_g_f_o_x___g_p_s___p_o_s_i_t_i_o_n__t_aee5e88b077850d1cea3c50afcca76a70}{long\_grados}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00362\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_s_i_g_f_o_x___g_p_s___p_o_s_i_t_i_o_n__t_ad7ecbde6d0ffd68f6a802c01259f2edc}{long\_minutos\_1}};\ \ \ \ \ }
+\DoxyCodeLine{00363\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_s_i_g_f_o_x___g_p_s___p_o_s_i_t_i_o_n__t_a7323247b23054686e8c91ca18c97c47f}{long\_minutos\_2}};\ \ \ \ \ }
+\DoxyCodeLine{00364\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_s_i_g_f_o_x___g_p_s___p_o_s_i_t_i_o_n__t_a2cfc1efd70f3ed5b0516d2f477eac73a}{lat\_long\_dir}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00365\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_s_i_g_f_o_x___g_p_s___p_o_s_i_t_i_o_n__t_a6cf895b05ab107cb73eebe7f36d2c843}{must\_be\_0x55}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00366\ \}\ \mbox{\hyperlink{struct_s_i_g_f_o_x___g_p_s___p_o_s_i_t_i_o_n__t}{SIGFOX\_GPS\_POSITION\_t}};}
+\DoxyCodeLine{00367\ }
+\DoxyCodeLine{00368\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a7d682f56a8c1ced1f87258fbb4579cd2}{COMPILE\_ASSERT}}((\textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_s_i_g_f_o_x___g_p_s___p_o_s_i_t_i_o_n__t}{SIGFOX\_GPS\_POSITION\_t}})\ ==\ \mbox{\hyperlink{thread__comm__hal_8h_ac00e289c207b2affc18ad52fbdd577a3}{MAX\_SIGFOX\_DATA\_SZ}}));}
+\DoxyCodeLine{00369\ }
+\DoxyCodeLine{00370\ \textcolor{preprocessor}{\#pragma\ pack()}}
+\DoxyCodeLine{00371\ }
+\DoxyCodeLine{00372\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00373\ \textcolor{comment}{\ **\ Globals}}
+\DoxyCodeLine{00374\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00375\ }
+\DoxyCodeLine{00376\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00377\ \textcolor{comment}{\ **\ Prototypes}}
+\DoxyCodeLine{00378\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00379\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_abadbab0ad04afa75f452b3347b895cdd}{Comm\_Modules\_Initialize}}\ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00380\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_acd0f72ce82a8c749fe1171bd48269e66}{Comm\_Hardware\_Reset}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{thread__comm__hal_8h_a02ace324eb27603254e760e194b38fd9}{COMM\_MOD\_e}}\ comm\_mod);}
+\DoxyCodeLine{00381\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_aba10912e5156af563d72a637fe9b7a78}{Comm\_Hardware\_Off}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{thread__comm__hal_8h_a02ace324eb27603254e760e194b38fd9}{COMM\_MOD\_e}}\ comm\_mod);}
+\DoxyCodeLine{00382\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_a4e3f9bfdd5df0ab92a1713930d545237}{Comm\_Hardware\_On}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{thread__comm__hal_8h_a02ace324eb27603254e760e194b38fd9}{COMM\_MOD\_e}}\ comm\_mod);}
+\DoxyCodeLine{00383\ \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\_ID\_e}}\ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_a63b3e38ecaf443421eb673e2342e2f08}{Comm\_Select\_Uart}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{thread__comm__hal_8h_a02ace324eb27603254e760e194b38fd9}{COMM\_MOD\_e}}\ comm\_uart);}
+\DoxyCodeLine{00384\ \mbox{\hyperlink{thread__comm__hal_8h_a02ace324eb27603254e760e194b38fd9}{COMM\_MOD\_e}}\ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_a14b282886d75e45f70a7ffe548732dba}{Comm\_Get\_Selected\_Uart}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00385\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\_t}}\ \ \ \ \ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_a7bec2de2a4a0bd5ee235fc2c4579cee6}{Comm\_Is\_Sigfox\_Free}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00386\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_afc169aa2e842d15739e9b0752d29e835}{Comm\_Modules\_Print\_Configuration}}\ \ \ \ (\mbox{\hyperlink{thread__comm__hal_8h_a02ace324eb27603254e760e194b38fd9}{COMM\_MOD\_e}}\ comm\_mod);}
+\DoxyCodeLine{00387\ }
+\DoxyCodeLine{00388\ \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\_ID\_e}}\ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_a8940317343835bfd6ab8aeb253689893}{Comm\_Sigfox\_Initialize}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00389\ \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\_ID\_e}}\ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_aad8ef9e81af60f170ee4d4e5bfb580d0}{Comm\_Sigfox\_Execute\_Test}}\ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00390\ \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\_ID\_e}}\ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_adf42691907cbb4718b35c6b1646abfd7}{Comm\_Sigfox\_Send\_Test}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00391\ \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\_ID\_e}}\ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_ac81db4e65de502201f2c1fe434d67100}{Comm\_Sigfox\_Send\_Alert}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00392\ \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\_ID\_e}}\ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_adb15e35af3b08b9c4273b9bdb8909f1c}{Comm\_Sigfox\_Send\_Position}}\ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00393\ \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\_ID\_e}}\ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_abf01cd774e17dbff3e24ff692eabbf86}{Comm\_Sigfox\_Send\_Exp}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00394\ \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\_ID\_e}}\ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_a41272f2468c23dfaf459579637d8c295}{Comm\_Sigfox\_Start\_Uplink\_Test}}\ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00395\ \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\_ID\_e}}\ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_aec4d46d0b02d71bce4b5f7a033c3635e}{Comm\_Sigfox\_Stop\_Uplink\_Test}}\ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00396\ \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\_ID\_e}}\ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_a6170b241b51001fcd5c60c83b80704f2}{Comm\_Sigfox\_Start\_Downlink\_Test}}\ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00397\ \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\_ID\_e}}\ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_a3966732dacf626b4fef99504eae11fd4}{Comm\_Sigfox\_Device\_Info\_Check}}\ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00398\ }
+\DoxyCodeLine{00399\ \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\_ID\_e}}\ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_af6bf58158a9a7b9220ee08afcba32292}{Comm\_Wifi\_Initialize}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00400\ \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\_ID\_e}}\ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_a2fdd51c5b7216b4532cf95b942c069b6}{Comm\_Wifi\_Initialize\_Fast}}\ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00401\ \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\_ID\_e}}\ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_a22925590c70e764b3b53f54b39b166b7}{Comm\_Wifi\_Radio\_Off}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00402\ \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\_ID\_e}}\ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_ade77c80f9e7439b0e75d7d302af476ce}{Comm\_Wifi\_Reset}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00403\ \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\_ID\_e}}\ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_ae40d6f27c400549f84857052bffcce61}{Comm\_Wifi\_Execute\_Test}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00404\ \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\_ID\_e}}\ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_a02fd8d87a2f9d69a608c8488cc5cbe3f}{Comm\_Wifi\_Is\_Host\_Server\_Alive}}\ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00405\ \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\_ID\_e}}\ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_accf1b9383c2e21578ec28430f9f14dc3}{Comm\_Wifi\_Send\_Frame\_Test}}\ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00406\ \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\_ID\_e}}\ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_a4d91b115ae6885412c79593ef06f2b12}{Comm\_Wifi\_Send\_Frame\_Alert}}\ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00407\ \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\_ID\_e}}\ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_aaffa9d6bb0dc8d70687216d756791af3}{Comm\_Wifi\_Send\_Frame\_Alert\_Aux}}\ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00408\ \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\_ID\_e}}\ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_ae327aacd325df8c7019efdf3f8e758b3}{Comm\_Wifi\_Send\_Frame\_Gps}}\ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00409\ \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\_ID\_e}}\ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_a0fb51a9f4231ebdfe4b657eefe8369c2}{Comm\_Wifi\_Send\_Last\_Test}}\ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00410\ \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\_ID\_e}}\ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_a1a7aa6203e1bb55e1cf909a38e11c309}{Comm\_Wifi\_Send\_Last\_Episode}}\ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00411\ \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\_ID\_e}}\ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_a6370a754e4e5cace299125d63bd16c39}{Comm\_Wifi\_Get\_Upgrade\_Firmware}}\ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00412\ \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\_ID\_e}}\ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_a267f7a2dd6fc9f5ee0c34e55a97ece0b}{Comm\_Wifi\_Get\_Configuration\_File}}\ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00413\ }
+\DoxyCodeLine{00414\ \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\_ID\_e}}\ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_a0807299d3c37549d8961350a173765b6}{Comm\_Wifi\_Send\_R100\_Info\_Data}}\ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00415\ \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\_ID\_e}}\ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_ada87facf1cbdd9979db44671241a72e0}{Comm\_Wifi\_Send\_R100\_TCP\_Data}}\ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00416\ \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\_ID\_e}}\ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_a4949dd86b079862160c894001b445235}{Comm\_Wifi\_Send\_R100\_UDP\_Data}}\ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00417\ \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\_ID\_e}}\ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_a859dc31be3e07f50b5c5c8ddad90d517}{Comm\_Wifi\_Send\_R100\_TLS\_Data}}\ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00418\ }
+\DoxyCodeLine{00419\ \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\_ID\_e}}\ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_a1d081723eb366e271a59daa0289b3c8e}{Comm\_GPS\_Initialize}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00420\ \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\_ID\_e}}\ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_a48a2db3942cf973c7ffa74f6b4053b6b}{Comm\_GPS\_Execute\_Test}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00421\ \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\_ID\_e}}\ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_a77dba14b8a661e55a2caa7919a4c961b}{Comm\_GPS\_Get\_Position\_Data}}\ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00422\ \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\_ID\_e}}\ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_abf1450e8718658ca896cad96d4f6e361}{Comm\_GPS\_Send\_Command}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00423\ }
+\DoxyCodeLine{00424\ \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\_ID\_e}}\ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_ace5f77a9b4079a5b7a0d44391357862a}{Comm\_ACC\_Initialize}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00425\ \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\_ID\_e}}\ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_ab3133b7277b4b2aea07d93088feddf95}{Comm\_ACC\_Execute\_Test}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00426\ \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\_ID\_e}}\ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_aef2d7460a2cd17cf6830333cbd5c7f3a}{Comm\_ACC\_Get\_Acceleration\_Data}}\ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00427\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_a4d67800f1a52967d5b4674c80505fed9}{Comm\_ACC\_Get\_INT2}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00428\ }
+\DoxyCodeLine{00429\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\_t}}\ \ \ \ \ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_a3697cab536e0621953d66a141e99310d}{Comm\_Wifi\_Is\_MAC\_Valid}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a40bb5262bf908c328fbcfbe5d29d0201}{char\_t}}\ *s);}
+\DoxyCodeLine{00430\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\_t}}\ \ \ \ \ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_a719e8f2234d99f42709c03413815c2fe}{Comm\_Wifi\_Is\_IPv4\_Valid}}\ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a40bb5262bf908c328fbcfbe5d29d0201}{char\_t}}\ *s);}
+\DoxyCodeLine{00431\ }
+\DoxyCodeLine{00432\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_ad7f474971f5b056a400c9306b64d2e3c}{Comm\_Wifi\_Save\_Host\_Response}}\ \ \ \ \ \ \ \ (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a40bb5262bf908c328fbcfbe5d29d0201}{char\_t}}\ *resp);}
+\DoxyCodeLine{00433\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_ac22dba0799d6e0fb21eee7fc789b8488}{Comm\_Wifi\_Is\_Cfg\_Available}}\ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00434\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_a8431584ae8be287c0fcafe0880de4c47}{Comm\_Wifi\_Is\_Frmw\_Available}}\ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00435\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_a903d37fd9bd762a0a292b512b1fe7550}{Comm\_Wifi\_Save\_Server\_Response}}\ \ \ \ \ \ (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a40bb5262bf908c328fbcfbe5d29d0201}{char\_t}}\ *resp);}
+\DoxyCodeLine{00436\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\_t}}\ \ \ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_a0d27977bf796250c8569bf9921c7b82d}{Comm\_Wifi\_SZ}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00437\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_aa4045b4e83503568aaf2721ed8c186a3}{Comm\_Wifi\_CRC}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00438\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{thread__comm__hal_8h_a59a90b113c8634ceb53cb02eee915f7b}{Comm\_Wifi\_PASS}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ *password);}
+\DoxyCodeLine{00439\ }
+\DoxyCodeLine{00440\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ HAL\_THREAD\_COMM\_HAL\_H\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

@@ -1,0 +1,44 @@
+\doxysection{C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\+SCE/crypto/atca\+\_\+crypto\+\_\+sw\+\_\+sha2.h File Reference}
+\hypertarget{crypto_2atca__crypto__sw__sha2_8h}{}\label{crypto_2atca__crypto__sw__sha2_8h}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/SCE/crypto/atca\_crypto\_sw\_sha2.h@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/SCE/crypto/atca\_crypto\_sw\_sha2.h}}
+
+
+Wrapper API for software SHA 256 routines.  
+
+
+{\ttfamily \#include "{}atca\+\_\+crypto\+\_\+sw.\+h"{}}\newline
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+Include dependency graph for atca\+\_\+crypto\+\_\+sw\+\_\+sha2.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{crypto_2atca__crypto__sw__sha2_8h__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{group__atcac___ga58283666b662f084155ba693870c1077}{atcac\+\_\+sw\+\_\+sha2\+\_\+256\+\_\+init}} (\mbox{\hyperlink{structatcac__sha2__256__ctx}{atcac\+\_\+sha2\+\_\+256\+\_\+ctx}} \texorpdfstring{$\ast$}{*}ctx)
+\item 
+int \mbox{\hyperlink{group__atcac___gab1a09fa1d854722cc667cea319ca9984}{atcac\+\_\+sw\+\_\+sha2\+\_\+256\+\_\+update}} (\mbox{\hyperlink{structatcac__sha2__256__ctx}{atcac\+\_\+sha2\+\_\+256\+\_\+ctx}} \texorpdfstring{$\ast$}{*}ctx, const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}data, size\+\_\+t data\+\_\+size)
+\item 
+int \mbox{\hyperlink{group__atcac___gae3a29931f2104cce481aa9ef1ab16fea}{atcac\+\_\+sw\+\_\+sha2\+\_\+256\+\_\+finish}} (\mbox{\hyperlink{structatcac__sha2__256__ctx}{atcac\+\_\+sha2\+\_\+256\+\_\+ctx}} \texorpdfstring{$\ast$}{*}ctx, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} digest\mbox{[}\mbox{\hyperlink{atca__crypto__sw_8h_a86364f6d07b86740f3170d9d1ca60641}{ATCA\+\_\+\+SHA2\+\_\+256\+\_\+\+DIGEST\+\_\+\+SIZE}}\mbox{]})
+\item 
+int \mbox{\hyperlink{group__atcac___ga63412270c4629874f2764171200c1b5c}{atcac\+\_\+sw\+\_\+sha2\+\_\+256}} (const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}data, size\+\_\+t data\+\_\+size, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} digest\mbox{[}\mbox{\hyperlink{atca__crypto__sw_8h_a86364f6d07b86740f3170d9d1ca60641}{ATCA\+\_\+\+SHA2\+\_\+256\+\_\+\+DIGEST\+\_\+\+SIZE}}\mbox{]})
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{group__atcac___ga4e23a2ff2f57f730a1490afaac2ea3dc}{atcac\+\_\+sha256\+\_\+hmac\+\_\+init}} (\mbox{\hyperlink{structatcac__hmac__sha256__ctx}{atcac\+\_\+hmac\+\_\+sha256\+\_\+ctx}} \texorpdfstring{$\ast$}{*}ctx, const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}key, const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} key\+\_\+len)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{group__atcac___gaa4493b637590b0d3f5da0bd66b386d8a}{atcac\+\_\+sha256\+\_\+hmac\+\_\+update}} (\mbox{\hyperlink{structatcac__hmac__sha256__ctx}{atcac\+\_\+hmac\+\_\+sha256\+\_\+ctx}} \texorpdfstring{$\ast$}{*}ctx, const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}data, size\+\_\+t data\+\_\+size)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{group__atcac___ga4aabb5258b261af2802b45a817fb7113}{atcac\+\_\+sha256\+\_\+hmac\+\_\+finish}} (\mbox{\hyperlink{structatcac__hmac__sha256__ctx}{atcac\+\_\+hmac\+\_\+sha256\+\_\+ctx}} \texorpdfstring{$\ast$}{*}ctx, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}digest, size\+\_\+t \texorpdfstring{$\ast$}{*}digest\+\_\+len)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{group__atcac___ga1598511b7077693ee99d160dbebfc16d}{atcac\+\_\+sha256\+\_\+hmac\+\_\+counter}} (\mbox{\hyperlink{structatcac__hmac__sha256__ctx}{atcac\+\_\+hmac\+\_\+sha256\+\_\+ctx}} \texorpdfstring{$\ast$}{*}ctx, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}label, size\+\_\+t label\+\_\+len, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}data, size\+\_\+t data\+\_\+len, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}digest, size\+\_\+t diglen)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Wrapper API for software SHA 256 routines. 
+
+\begin{DoxyCopyright}{Copyright}
+(c) 2015-\/2020 Microchip Technology Inc. and its subsidiaries. 
+\end{DoxyCopyright}

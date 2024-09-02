@@ -1,0 +1,122 @@
+\doxysection{atca\+\_\+temp\+\_\+key Struct Reference}
+\hypertarget{structatca__temp__key}{}\label{structatca__temp__key}\index{atca\_temp\_key@{atca\_temp\_key}}
+
+
+Structure to hold Temp\+Key fields.  
+
+
+
+
+{\ttfamily \#include $<$atca\+\_\+host.\+h$>$}
+
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{structatca__temp__key_ac05919aee2210ec3dbed475ea28848da}{value}} \mbox{[}\mbox{\hyperlink{calib_2calib__command_8h_a66a410dde8f388c582495ba315284276}{ATCA\+\_\+\+KEY\+\_\+\+SIZE}} \texorpdfstring{$\ast$}{*}2\mbox{]}
+\begin{DoxyCompactList}\small\item\em Value of Temp\+Key (64 bytes for ATECC608 only) \end{DoxyCompactList}\item 
+unsigned \mbox{\hyperlink{structatca__temp__key_a70b94559475530db2be60e9d30758098}{key\+\_\+id}}\+: 4
+\begin{DoxyCompactList}\small\item\em If Temp\+Key was derived from a slot or transport key (Gen\+Dig or Gen\+Key), that key ID is saved here. \end{DoxyCompactList}\item 
+unsigned \mbox{\hyperlink{structatca__temp__key_abd69b6707bf73ae91675a6a0a250ca40}{source\+\_\+flag}}\+: 1
+\begin{DoxyCompactList}\small\item\em Indicates id Temp\+Key started from a random nonce (0) or not (1). \end{DoxyCompactList}\item 
+unsigned \mbox{\hyperlink{structatca__temp__key_afde9c1e6769f60992c7fb10280cdd199}{gen\+\_\+dig\+\_\+data}}\+: 1
+\begin{DoxyCompactList}\small\item\em Temp\+Key was derived from the Gen\+Dig command. \end{DoxyCompactList}\item 
+unsigned \mbox{\hyperlink{structatca__temp__key_a82e1988542001c7499700f3e1b191339}{gen\+\_\+key\+\_\+data}}\+: 1
+\begin{DoxyCompactList}\small\item\em Temp\+Key was derived from the Gen\+Key command (ATECC devices only). \end{DoxyCompactList}\item 
+unsigned \mbox{\hyperlink{structatca__temp__key_ae381dabe56bdd77f48a8241050d16d82}{no\+\_\+mac\+\_\+flag}}\+: 1
+\begin{DoxyCompactList}\small\item\em Temp\+Key was derived from a key that has the No\+Mac bit set preventing the use of the MAC command. Known as Check\+Flag in ATSHA devices). \end{DoxyCompactList}\item 
+unsigned \mbox{\hyperlink{structatca__temp__key_aadedd52833b6ce041dfb9e923b448481}{valid}}\+: 1
+\begin{DoxyCompactList}\small\item\em Temp\+Key is valid. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{structatca__temp__key_a0f766111832176ea2c8eda8fbf13743d}{is\+\_\+64}}
+\begin{DoxyCompactList}\small\item\em Temp\+Key has 64 bytes of valid data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Structure to hold Temp\+Key fields. 
+
+\doxysubsection{Field Documentation}
+\Hypertarget{structatca__temp__key_afde9c1e6769f60992c7fb10280cdd199}\label{structatca__temp__key_afde9c1e6769f60992c7fb10280cdd199} 
+\index{atca\_temp\_key@{atca\_temp\_key}!gen\_dig\_data@{gen\_dig\_data}}
+\index{gen\_dig\_data@{gen\_dig\_data}!atca\_temp\_key@{atca\_temp\_key}}
+\doxysubsubsection{\texorpdfstring{gen\_dig\_data}{gen\_dig\_data}}
+{\footnotesize\ttfamily unsigned atca\+\_\+temp\+\_\+key\+::gen\+\_\+dig\+\_\+data}
+
+
+
+Temp\+Key was derived from the Gen\+Dig command. 
+
+\Hypertarget{structatca__temp__key_a82e1988542001c7499700f3e1b191339}\label{structatca__temp__key_a82e1988542001c7499700f3e1b191339} 
+\index{atca\_temp\_key@{atca\_temp\_key}!gen\_key\_data@{gen\_key\_data}}
+\index{gen\_key\_data@{gen\_key\_data}!atca\_temp\_key@{atca\_temp\_key}}
+\doxysubsubsection{\texorpdfstring{gen\_key\_data}{gen\_key\_data}}
+{\footnotesize\ttfamily unsigned atca\+\_\+temp\+\_\+key\+::gen\+\_\+key\+\_\+data}
+
+
+
+Temp\+Key was derived from the Gen\+Key command (ATECC devices only). 
+
+\Hypertarget{structatca__temp__key_a0f766111832176ea2c8eda8fbf13743d}\label{structatca__temp__key_a0f766111832176ea2c8eda8fbf13743d} 
+\index{atca\_temp\_key@{atca\_temp\_key}!is\_64@{is\_64}}
+\index{is\_64@{is\_64}!atca\_temp\_key@{atca\_temp\_key}}
+\doxysubsubsection{\texorpdfstring{is\_64}{is\_64}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} atca\+\_\+temp\+\_\+key\+::is\+\_\+64}
+
+
+
+Temp\+Key has 64 bytes of valid data. 
+
+\Hypertarget{structatca__temp__key_a70b94559475530db2be60e9d30758098}\label{structatca__temp__key_a70b94559475530db2be60e9d30758098} 
+\index{atca\_temp\_key@{atca\_temp\_key}!key\_id@{key\_id}}
+\index{key\_id@{key\_id}!atca\_temp\_key@{atca\_temp\_key}}
+\doxysubsubsection{\texorpdfstring{key\_id}{key\_id}}
+{\footnotesize\ttfamily unsigned atca\+\_\+temp\+\_\+key\+::key\+\_\+id}
+
+
+
+If Temp\+Key was derived from a slot or transport key (Gen\+Dig or Gen\+Key), that key ID is saved here. 
+
+\Hypertarget{structatca__temp__key_ae381dabe56bdd77f48a8241050d16d82}\label{structatca__temp__key_ae381dabe56bdd77f48a8241050d16d82} 
+\index{atca\_temp\_key@{atca\_temp\_key}!no\_mac\_flag@{no\_mac\_flag}}
+\index{no\_mac\_flag@{no\_mac\_flag}!atca\_temp\_key@{atca\_temp\_key}}
+\doxysubsubsection{\texorpdfstring{no\_mac\_flag}{no\_mac\_flag}}
+{\footnotesize\ttfamily unsigned atca\+\_\+temp\+\_\+key\+::no\+\_\+mac\+\_\+flag}
+
+
+
+Temp\+Key was derived from a key that has the No\+Mac bit set preventing the use of the MAC command. Known as Check\+Flag in ATSHA devices). 
+
+\Hypertarget{structatca__temp__key_abd69b6707bf73ae91675a6a0a250ca40}\label{structatca__temp__key_abd69b6707bf73ae91675a6a0a250ca40} 
+\index{atca\_temp\_key@{atca\_temp\_key}!source\_flag@{source\_flag}}
+\index{source\_flag@{source\_flag}!atca\_temp\_key@{atca\_temp\_key}}
+\doxysubsubsection{\texorpdfstring{source\_flag}{source\_flag}}
+{\footnotesize\ttfamily unsigned atca\+\_\+temp\+\_\+key\+::source\+\_\+flag}
+
+
+
+Indicates id Temp\+Key started from a random nonce (0) or not (1). 
+
+\Hypertarget{structatca__temp__key_aadedd52833b6ce041dfb9e923b448481}\label{structatca__temp__key_aadedd52833b6ce041dfb9e923b448481} 
+\index{atca\_temp\_key@{atca\_temp\_key}!valid@{valid}}
+\index{valid@{valid}!atca\_temp\_key@{atca\_temp\_key}}
+\doxysubsubsection{\texorpdfstring{valid}{valid}}
+{\footnotesize\ttfamily unsigned atca\+\_\+temp\+\_\+key\+::valid}
+
+
+
+Temp\+Key is valid. 
+
+\Hypertarget{structatca__temp__key_ac05919aee2210ec3dbed475ea28848da}\label{structatca__temp__key_ac05919aee2210ec3dbed475ea28848da} 
+\index{atca\_temp\_key@{atca\_temp\_key}!value@{value}}
+\index{value@{value}!atca\_temp\_key@{atca\_temp\_key}}
+\doxysubsubsection{\texorpdfstring{value}{value}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} atca\+\_\+temp\+\_\+key\+::value}
+
+
+
+Value of Temp\+Key (64 bytes for ATECC608 only) 
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\+SCE/\mbox{\hyperlink{atca__host_8h}{atca\+\_\+host.\+h}}\item 
+C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\+SCE/host/\mbox{\hyperlink{host_2atca__host_8h}{atca\+\_\+host.\+h}}\end{DoxyCompactItemize}

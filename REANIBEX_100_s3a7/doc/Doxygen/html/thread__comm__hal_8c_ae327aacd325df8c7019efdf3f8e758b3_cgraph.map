@@ -1,0 +1,32 @@
+<map id="Comm_Wifi_Send_Frame_Gps" name="Comm_Wifi_Send_Frame_Gps">
+<area shape="rect" id="Node000001" title="Send Gps position frame using wifi connection." alt="" coords="5,132,206,159"/>
+<area shape="rect" id="Node000002" href="$thread__comm__entry_8c.html#a4d6d68ab709b7b37c105e939f67da143" title="Checks if wifi initialization process completed." alt="" coords="254,107,420,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="206,132,238,128,238,133,206,137"/>
+<area shape="rect" id="Node000003" href="$bsp__wifi__silabs-_w_g_m110_8c.html#ab2d30132091d65f9cc64adcf346c4607" title="Send Data Frame using Wifi connection (for Sigfox data frames)" alt="" coords="258,157,416,184"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="206,154,242,158,242,163,206,159"/>
+<area shape="rect" id="Node000004" href="$bsp__wifi__silabs-_w_g_m110_8c.html#a12235d24fbf306846797900bf1a12579" title="Calculates the data array checksum (addition)" alt="" coords="472,5,634,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="401,154,418,143,429,131,436,119,441,94,447,68,454,55,466,42,472,38,475,42,470,46,459,58,452,70,447,95,441,121,434,134,422,147,404,159"/>
+<area shape="rect" id="Node000005" href="$bsp__wifi__silabs-_w_g_m110_8c.html#a38026853cc249ed56816db34de0500e0" title="Close the tls endpoint client connection." alt="" coords="476,56,629,83"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="394,154,419,143,433,133,442,122,452,111,467,99,491,87,493,91,469,104,455,115,446,125,436,136,421,148,396,159"/>
+<area shape="rect" id="Node000006" href="$bsp__wifi__silabs-_w_g_m110_8c.html#ab4402b6cb5049aeeb75bee03bdcb303b" title="Waits for a response to a given command." alt="" coords="702,157,877,184"/>
+<area shape="poly" id="edge7_Node000003_Node000006" title=" " alt="" coords="396,154,468,143,553,138,638,143,705,151,705,157,637,148,553,143,468,148,397,159"/>
+<area shape="rect" id="Node000008" href="$bsp__wifi__silabs-_w_g_m110_8c.html#ac8b4cae41fb1a2cebefddb7c10837b6e" title="Start a connection establishment procedure with an Access Point." alt="" coords="477,157,629,184"/>
+<area shape="poly" id="edge8_Node000003_Node000008" title=" " alt="" coords="416,168,461,168,461,173,416,173"/>
+<area shape="rect" id="Node000009" href="$bsp__wifi__silabs-_w_g_m110_8c.html#a795b8325fcb76410bb9fdbee3254ca90" title="Disconnect from the currently connected Access Point." alt="" coords="468,259,637,285"/>
+<area shape="poly" id="edge10_Node000003_Node000009" title=" " alt="" coords="360,182,409,213,469,244,486,251,484,256,467,249,406,218,357,187"/>
+<area shape="rect" id="Node000011" href="$bsp__wifi__silabs-_w_g_m110_8c.html#a120f00ebbc7317d460df9cccb2f7be5a" title="Parse WGM110 IPv4 Address format (HEX) to ASCII and save it." alt="" coords="495,309,610,336"/>
+<area shape="poly" id="edge13_Node000003_Node000011" title=" " alt="" coords="350,183,398,237,432,268,469,295,482,301,479,306,467,300,428,272,394,241,346,186"/>
+<area shape="rect" id="Node000013" href="$bsp__wifi__silabs-_w_g_m110_8c.html#aee5a5834eeaf73cf2e7e8470d956d57d" title="Open the tls endpoint client connection." alt="" coords="477,208,628,235"/>
+<area shape="poly" id="edge15_Node000003_Node000013" title=" " alt="" coords="398,182,479,201,477,206,396,187"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="593,81,638,99,747,148,745,153,636,104,591,86"/>
+<area shape="rect" id="Node000007" href="$_comm_8c.html#a612240bf37db565f46ad4dc6c7298898" title="Get a received module response." alt="" coords="942,183,1113,209"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="877,177,927,183,926,188,877,183"/>
+<area shape="poly" id="edge9_Node000008_Node000006" title=" " alt="" coords="629,168,687,168,687,173,629,173"/>
+<area shape="rect" id="Node000010" href="$bsp__wifi__silabs-_w_g_m110_8c.html#ae5a5d8faa49a0c799b9bc3808e91e616" title="Waits for a response to a given command." alt="" coords="685,208,894,235"/>
+<area shape="poly" id="edge11_Node000009_Node000010" title=" " alt="" coords="618,255,708,236,709,241,619,261"/>
+<area shape="poly" id="edge12_Node000010_Node000007" title=" " alt="" coords="894,208,926,204,926,209,895,213"/>
+<area shape="rect" id="Node000012" href="$device__init_8c.html#a2f7047dc1ce0a3687c48872ed81aff5f" title="Function for accessing device info variable." alt="" coords="732,309,847,336"/>
+<area shape="poly" id="edge14_Node000011_Node000012" title=" " alt="" coords="611,320,717,320,717,325,611,325"/>
+<area shape="poly" id="edge16_Node000013_Node000006" title=" " alt="" coords="618,205,708,185,709,190,619,210"/>
+<area shape="poly" id="edge17_Node000013_Node000010" title=" " alt="" coords="629,219,670,219,670,224,629,224"/>
+</map>

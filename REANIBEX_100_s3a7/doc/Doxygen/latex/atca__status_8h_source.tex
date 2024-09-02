@@ -1,0 +1,70 @@
+\doxysection{atca\+\_\+status.\+h}
+\hypertarget{atca__status_8h_source}{}\label{atca__status_8h_source}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/SCE/atca\_status.h@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/SCE/atca\_status.h}}
+\mbox{\hyperlink{atca__status_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#ifndef\ \_ATCA\_STATUS\_H}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ \_ATCA\_STATUS\_H}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{atca__bool_8h}{atca\_bool.h}}"{}}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00037\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{comment}{/*\ all\ status\ codes\ for\ the\ ATCA\ lib\ are\ defined\ here\ */}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00043\ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda90f078b947261727ad1757447898afe7}{ATCA\_SUCCESS}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0x00,\ }
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cdaf54a8014ca61abe303627b25c4e7a4a0}{ATCA\_CONFIG\_ZONE\_LOCKED}}\ \ \ \ \ =\ 0x01,}
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cdaebbcd7a74d20b8314f670cfff4f1ea7f}{ATCA\_DATA\_ZONE\_LOCKED}}\ \ \ \ \ \ \ =\ 0x02,}
+\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda3549d736fbaa29b8ed8a8067477f62af}{ATCA\_INVALID\_POINTER}},}
+\DoxyCodeLine{00048\ \ \ \ \ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cdaeddf67f91345e5adc318edec02915c3e}{ATCA\_INVALID\_LENGTH}},}
+\DoxyCodeLine{00049\ \ \ \ \ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda5d16ae933fc359fd2fd58ea743d95b42}{ATCA\_WAKE\_FAILED}}\ \ \ \ \ \ \ \ \ \ \ \ =\ 0xD0,\ }
+\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda4516d5c9a8fafb8611a0e1f65da690d2}{ATCA\_CHECKMAC\_VERIFY\_FAILED}}\ =\ 0xD1,\ }
+\DoxyCodeLine{00051\ \ \ \ \ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda2d4ca6eadbad97c04c4dee878a579f95}{ATCA\_PARSE\_ERROR}}\ \ \ \ \ \ \ \ \ \ \ \ =\ 0xD2,\ }
+\DoxyCodeLine{00052\ \ \ \ \ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda4ccbb9f75fbf5cad8f0de6e07efe4228}{ATCA\_STATUS\_CRC}}\ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0xD4,\ }
+\DoxyCodeLine{00053\ \ \ \ \ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda86e098be693e09a11652418c77f5d55f}{ATCA\_STATUS\_UNKNOWN}}\ \ \ \ \ \ \ \ \ =\ 0xD5,\ }
+\DoxyCodeLine{00054\ \ \ \ \ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda460a9516a4da1c7fc747208b2b9b2c77}{ATCA\_STATUS\_ECC}}\ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0xD6,\ }
+\DoxyCodeLine{00055\ \ \ \ \ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cdaace56e3f04ee46a82fbceef8655dec2f}{ATCA\_STATUS\_SELFTEST\_ERROR}}\ \ =\ 0xD7,\ }
+\DoxyCodeLine{00056\ \ \ \ \ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda255cf588a99696239289c2af088d91db}{ATCA\_FUNC\_FAIL}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0xE0,\ }
+\DoxyCodeLine{00057\ \ \ \ \ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cdaf910a3a4d6553e2630db57c678ee3ed4}{ATCA\_GEN\_FAIL}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0xE1,\ }
+\DoxyCodeLine{00058\ \ \ \ \ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda62c3bf678bec6c76a516c24803786200}{ATCA\_BAD\_PARAM}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0xE2,\ }
+\DoxyCodeLine{00059\ \ \ \ \ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda463fbd86bef717279ef8190432488816}{ATCA\_INVALID\_ID}}\ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0xE3,\ }
+\DoxyCodeLine{00060\ \ \ \ \ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda87c2eb3e423be47222aab4fe42e615d5}{ATCA\_INVALID\_SIZE}}\ \ \ \ \ \ \ \ \ \ \ =\ 0xE4,\ }
+\DoxyCodeLine{00061\ \ \ \ \ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda0f0a7283079048d1c924aafffb4485b9}{ATCA\_RX\_CRC\_ERROR}}\ \ \ \ \ \ \ \ \ \ \ =\ 0xE5,\ }
+\DoxyCodeLine{00062\ \ \ \ \ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda84104123e4dee21b14f08b301aaa69e4}{ATCA\_RX\_FAIL}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0xE6,\ }
+\DoxyCodeLine{00063\ \ \ \ \ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cdae72eb9733119411a45f2b16d9afdf276}{ATCA\_RX\_NO\_RESPONSE}}\ \ \ \ \ \ \ \ \ =\ 0xE7,\ }
+\DoxyCodeLine{00064\ \ \ \ \ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda65ec21c2404b0325721c3d468a1162be}{ATCA\_RESYNC\_WITH\_WAKEUP}}\ \ \ \ \ =\ 0xE8,\ }
+\DoxyCodeLine{00065\ \ \ \ \ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda4e5e63313a42c77753edf15c2f4432c3}{ATCA\_PARITY\_ERROR}}\ \ \ \ \ \ \ \ \ \ \ =\ 0xE9,\ }
+\DoxyCodeLine{00066\ \ \ \ \ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda3454fb56851ff7bf93c7ceb8ba8058ae}{ATCA\_TX\_TIMEOUT}}\ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0xEA,\ }
+\DoxyCodeLine{00067\ \ \ \ \ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda66744f63f44d844af8575d81a4a9198d}{ATCA\_RX\_TIMEOUT}}\ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0xEB,\ }
+\DoxyCodeLine{00068\ \ \ \ \ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda3f3a46632bae84ce7cd167cc3112f8e7}{ATCA\_TOO\_MANY\_COMM\_RETRIES}}\ \ =\ 0xEC,\ }
+\DoxyCodeLine{00069\ \ \ \ \ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cdafb5e6ce1eef61f07757349f1c59fb743}{ATCA\_SMALL\_BUFFER}}\ \ \ \ \ \ \ \ \ \ \ =\ 0xED,\ }
+\DoxyCodeLine{00070\ \ \ \ \ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cdaac27ddd7be6ceb9266f9b4bb68ee9240}{ATCA\_COMM\_FAIL}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0xF0,\ }
+\DoxyCodeLine{00071\ \ \ \ \ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda21aad8f6ba69867aca39a5ef12336d31}{ATCA\_TIMEOUT}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0xF1,\ }
+\DoxyCodeLine{00072\ \ \ \ \ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cdac631bde2407acd3f08f133e24fdd3c15}{ATCA\_BAD\_OPCODE}}\ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0xF2,\ }
+\DoxyCodeLine{00073\ \ \ \ \ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda6475b27da302e0fc614a6d28b9ecf83a}{ATCA\_WAKE\_SUCCESS}}\ \ \ \ \ \ \ \ \ \ \ =\ 0xF3,\ }
+\DoxyCodeLine{00074\ \ \ \ \ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda6f9dffadd0c7650308ae015aaafb031b}{ATCA\_EXECUTION\_ERROR}}\ \ \ \ \ \ \ \ =\ 0xF4,\ }
+\DoxyCodeLine{00075\ \ \ \ \ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda7c8dbba1062b6b1ddbf5a0d811b90450}{ATCA\_UNIMPLEMENTED}}\ \ \ \ \ \ \ \ \ \ =\ 0xF5,\ }
+\DoxyCodeLine{00076\ \ \ \ \ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda2947392fc8a0455a9509335d3f64cb09}{ATCA\_ASSERT\_FAILURE}}\ \ \ \ \ \ \ \ \ =\ 0xF6,\ }
+\DoxyCodeLine{00077\ \ \ \ \ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cdaf09e5ac50687bb7ebd4ae8c2ea6e00bb}{ATCA\_TX\_FAIL}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0xF7,\ }
+\DoxyCodeLine{00078\ \ \ \ \ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cdaaecfbe2627d615c7daaece08ccce2ce8}{ATCA\_NOT\_LOCKED}}\ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0xF8,\ }
+\DoxyCodeLine{00079\ \ \ \ \ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda19e30a952ff321d7d08ba3f2350ca822}{ATCA\_NO\_DEVICES}}\ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0xF9,\ }
+\DoxyCodeLine{00080\ \ \ \ \ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda269497d1618eb45c717e62d7bf583b2d}{ATCA\_HEALTH\_TEST\_ERROR}}\ \ \ \ \ \ =\ 0xFA,\ }
+\DoxyCodeLine{00081\ \ \ \ \ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cdaad5884e38c8b63abe918948d3c26daa1}{ATCA\_ALLOC\_FAILURE}}\ \ \ \ \ \ \ \ \ \ =\ 0xFB,\ }
+\DoxyCodeLine{00082\ \ \ \ \ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda39c6ce98eae32106b53de8b2c35b45b9}{ATCA\_USE\_FLAGS\_CONSUMED}}\ \ \ \ \ =\ 0xFC,\ }
+\DoxyCodeLine{00083\ \ \ \ \ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cdaaa73d735ea11478a62ea04bbd492251f}{ATCA\_NOT\_INITIALIZED}}\ \ \ \ \ \ \ \ =\ 0xFD,\ }
+\DoxyCodeLine{00084\ \}\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}};}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{\#define\ ATCA\_STATUS\_AUTH\_BIT\ \ \ \ 0x40}}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00089\ \}}
+\DoxyCodeLine{00090\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00091\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

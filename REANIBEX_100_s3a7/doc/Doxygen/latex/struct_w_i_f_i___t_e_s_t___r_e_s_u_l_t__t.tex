@@ -1,0 +1,241 @@
+\doxysection{WIFI\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t Struct Reference}
+\hypertarget{struct_w_i_f_i___t_e_s_t___r_e_s_u_l_t__t}{}\label{struct_w_i_f_i___t_e_s_t___r_e_s_u_l_t__t}\index{WIFI\_TEST\_RESULT\_t@{WIFI\_TEST\_RESULT\_t}}
+
+
+Wifi structure to report the test result (same as \doxylink{struct_s_i_g_f_o_x___t_e_s_t___r_e_s_u_l_t__t}{SIGFOX\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t})  
+
+
+
+
+{\ttfamily \#include $<$thread\+\_\+comm\+\_\+hal.\+h$>$}
+
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{thread__comm__hal_8h_a30bcce91a84082e55fabfd5098f0d7d7}{WIFI\+\_\+\+MSG\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{struct_w_i_f_i___t_e_s_t___r_e_s_u_l_t__t_af7a8597652342e8c420e623705269434}{info\+\_\+type}}
+\begin{DoxyCompactList}\small\item\em identifies the information to report \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{struct_w_i_f_i___t_e_s_t___r_e_s_u_l_t__t_af767136b715a18ac571ebd44bea4f60c}{error\+\_\+code\+\_\+defib}}
+\begin{DoxyCompactList}\small\item\em error code in defibrillator circuits \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{struct_w_i_f_i___t_e_s_t___r_e_s_u_l_t__t_a3638a9575c48f694b92818380e55bb2d}{error\+\_\+code\+\_\+\+ADS}}
+\begin{DoxyCompactList}\small\item\em error code in ADS circuits \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{struct_w_i_f_i___t_e_s_t___r_e_s_u_l_t__t_a31512bd1ff851ec0d7d339998987ec80}{error\+\_\+code\+\_\+dc\+\_\+18v}}
+\begin{DoxyCompactList}\small\item\em error code in the 18V power supply \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{struct_w_i_f_i___t_e_s_t___r_e_s_u_l_t__t_afbe91967682eef7959a6f37443987fee}{error\+\_\+code\+\_\+dc\+\_\+main}}
+\begin{DoxyCompactList}\small\item\em error code in the main power supply \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{struct_w_i_f_i___t_e_s_t___r_e_s_u_l_t__t_aaddc88c4f02f578c87e72b27cc865a10}{error\+\_\+code\+\_\+audio}}
+\begin{DoxyCompactList}\small\item\em error code in the audio circuits \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{struct_w_i_f_i___t_e_s_t___r_e_s_u_l_t__t_ab456373554d4c9e330a96a9088f437ab}{error\+\_\+electrodes}}
+\begin{DoxyCompactList}\small\item\em error code in the pre-\/connected electrodes \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{struct_w_i_f_i___t_e_s_t___r_e_s_u_l_t__t_abe39938aaea48b926441ef3627883d55}{battery\+\_\+soc}}
+\begin{DoxyCompactList}\small\item\em State of charge (\%) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{struct_w_i_f_i___t_e_s_t___r_e_s_u_l_t__t_a0a079dec440df884d192d77f6e74cae7}{battery\+\_\+volt}}
+\begin{DoxyCompactList}\small\item\em battery voltage (volts \texorpdfstring{$\ast$}{*} 10) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_aef44329758059c91c76d334e8fc09700}{int8\+\_\+t}} \mbox{\hyperlink{struct_w_i_f_i___t_e_s_t___r_e_s_u_l_t__t_a51bf3f3b8fe38a12066b0a4209b2e802}{battery\+\_\+temp}}
+\begin{DoxyCompactList}\small\item\em battery temperature (degrees) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{struct_w_i_f_i___t_e_s_t___r_e_s_u_l_t__t_ac5d7e45b57907c3d7345181a2b9e52bc}{error\+\_\+code}}
+\begin{DoxyCompactList}\small\item\em error code summary \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{struct_w_i_f_i___t_e_s_t___r_e_s_u_l_t__t_a4f41387100c951e248ec0bb2c3505d80}{must\+\_\+be\+\_\+0x55}}
+\begin{DoxyCompactList}\small\item\em Fixed value = 0x55. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{thread__comm__hal_8h_a30bcce91a84082e55fabfd5098f0d7d7}{WIFI\+\_\+\+MSG\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{struct_w_i_f_i___t_e_s_t___r_e_s_u_l_t__t_a475836bbf2a2a677d780a471d01655e3}{info\+\_\+type\+\_\+exp}}
+\begin{DoxyCompactList}\small\item\em identifies the information to report \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \mbox{\hyperlink{struct_w_i_f_i___t_e_s_t___r_e_s_u_l_t__t_a07e9d222015f8470cc4401bed68995b1}{batt\+\_\+expiration}}
+\begin{DoxyCompactList}\small\item\em battery expiration date \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \mbox{\hyperlink{struct_w_i_f_i___t_e_s_t___r_e_s_u_l_t__t_ac4ffffe67602df446a9e9dd64e6d09ee}{elec\+\_\+expiration}}
+\begin{DoxyCompactList}\small\item\em electrodes expiration date \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{struct_w_i_f_i___t_e_s_t___r_e_s_u_l_t__t_a497f280c2594eaa30ea46a82e9182723}{demo\+\_\+mode}}
+\begin{DoxyCompactList}\small\item\em if device is configured in DEMO mode or not \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{struct_w_i_f_i___t_e_s_t___r_e_s_u_l_t__t_a01961d40de01402780c76551d2ddd3e9}{open\+\_\+cover}}
+\begin{DoxyCompactList}\small\item\em open cover flag (0 -\/ closed; 1 -\/ opened) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{struct_w_i_f_i___t_e_s_t___r_e_s_u_l_t__t_a506cd07ee2ed519ec0b40f0df33cfa72}{must\+\_\+be\+\_\+0x55\+\_\+exp}}
+\begin{DoxyCompactList}\small\item\em Fixed value = 0x55. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Wifi structure to report the test result (same as \doxylink{struct_s_i_g_f_o_x___t_e_s_t___r_e_s_u_l_t__t}{SIGFOX\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t}) 
+
+\doxysubsection{Field Documentation}
+\Hypertarget{struct_w_i_f_i___t_e_s_t___r_e_s_u_l_t__t_a07e9d222015f8470cc4401bed68995b1}\label{struct_w_i_f_i___t_e_s_t___r_e_s_u_l_t__t_a07e9d222015f8470cc4401bed68995b1} 
+\index{WIFI\_TEST\_RESULT\_t@{WIFI\_TEST\_RESULT\_t}!batt\_expiration@{batt\_expiration}}
+\index{batt\_expiration@{batt\_expiration}!WIFI\_TEST\_RESULT\_t@{WIFI\_TEST\_RESULT\_t}}
+\doxysubsubsection{\texorpdfstring{batt\_expiration}{batt\_expiration}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} WIFI\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t\+::batt\+\_\+expiration}
+
+
+
+battery expiration date 
+
+\Hypertarget{struct_w_i_f_i___t_e_s_t___r_e_s_u_l_t__t_abe39938aaea48b926441ef3627883d55}\label{struct_w_i_f_i___t_e_s_t___r_e_s_u_l_t__t_abe39938aaea48b926441ef3627883d55} 
+\index{WIFI\_TEST\_RESULT\_t@{WIFI\_TEST\_RESULT\_t}!battery\_soc@{battery\_soc}}
+\index{battery\_soc@{battery\_soc}!WIFI\_TEST\_RESULT\_t@{WIFI\_TEST\_RESULT\_t}}
+\doxysubsubsection{\texorpdfstring{battery\_soc}{battery\_soc}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} WIFI\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t\+::battery\+\_\+soc}
+
+
+
+State of charge (\%) 
+
+\Hypertarget{struct_w_i_f_i___t_e_s_t___r_e_s_u_l_t__t_a51bf3f3b8fe38a12066b0a4209b2e802}\label{struct_w_i_f_i___t_e_s_t___r_e_s_u_l_t__t_a51bf3f3b8fe38a12066b0a4209b2e802} 
+\index{WIFI\_TEST\_RESULT\_t@{WIFI\_TEST\_RESULT\_t}!battery\_temp@{battery\_temp}}
+\index{battery\_temp@{battery\_temp}!WIFI\_TEST\_RESULT\_t@{WIFI\_TEST\_RESULT\_t}}
+\doxysubsubsection{\texorpdfstring{battery\_temp}{battery\_temp}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aef44329758059c91c76d334e8fc09700}{int8\+\_\+t}} WIFI\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t\+::battery\+\_\+temp}
+
+
+
+battery temperature (degrees) 
+
+\Hypertarget{struct_w_i_f_i___t_e_s_t___r_e_s_u_l_t__t_a0a079dec440df884d192d77f6e74cae7}\label{struct_w_i_f_i___t_e_s_t___r_e_s_u_l_t__t_a0a079dec440df884d192d77f6e74cae7} 
+\index{WIFI\_TEST\_RESULT\_t@{WIFI\_TEST\_RESULT\_t}!battery\_volt@{battery\_volt}}
+\index{battery\_volt@{battery\_volt}!WIFI\_TEST\_RESULT\_t@{WIFI\_TEST\_RESULT\_t}}
+\doxysubsubsection{\texorpdfstring{battery\_volt}{battery\_volt}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} WIFI\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t\+::battery\+\_\+volt}
+
+
+
+battery voltage (volts \texorpdfstring{$\ast$}{*} 10) 
+
+\Hypertarget{struct_w_i_f_i___t_e_s_t___r_e_s_u_l_t__t_a497f280c2594eaa30ea46a82e9182723}\label{struct_w_i_f_i___t_e_s_t___r_e_s_u_l_t__t_a497f280c2594eaa30ea46a82e9182723} 
+\index{WIFI\_TEST\_RESULT\_t@{WIFI\_TEST\_RESULT\_t}!demo\_mode@{demo\_mode}}
+\index{demo\_mode@{demo\_mode}!WIFI\_TEST\_RESULT\_t@{WIFI\_TEST\_RESULT\_t}}
+\doxysubsubsection{\texorpdfstring{demo\_mode}{demo\_mode}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} WIFI\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t\+::demo\+\_\+mode}
+
+
+
+if device is configured in DEMO mode or not 
+
+\Hypertarget{struct_w_i_f_i___t_e_s_t___r_e_s_u_l_t__t_ac4ffffe67602df446a9e9dd64e6d09ee}\label{struct_w_i_f_i___t_e_s_t___r_e_s_u_l_t__t_ac4ffffe67602df446a9e9dd64e6d09ee} 
+\index{WIFI\_TEST\_RESULT\_t@{WIFI\_TEST\_RESULT\_t}!elec\_expiration@{elec\_expiration}}
+\index{elec\_expiration@{elec\_expiration}!WIFI\_TEST\_RESULT\_t@{WIFI\_TEST\_RESULT\_t}}
+\doxysubsubsection{\texorpdfstring{elec\_expiration}{elec\_expiration}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} WIFI\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t\+::elec\+\_\+expiration}
+
+
+
+electrodes expiration date 
+
+\Hypertarget{struct_w_i_f_i___t_e_s_t___r_e_s_u_l_t__t_ac5d7e45b57907c3d7345181a2b9e52bc}\label{struct_w_i_f_i___t_e_s_t___r_e_s_u_l_t__t_ac5d7e45b57907c3d7345181a2b9e52bc} 
+\index{WIFI\_TEST\_RESULT\_t@{WIFI\_TEST\_RESULT\_t}!error\_code@{error\_code}}
+\index{error\_code@{error\_code}!WIFI\_TEST\_RESULT\_t@{WIFI\_TEST\_RESULT\_t}}
+\doxysubsubsection{\texorpdfstring{error\_code}{error\_code}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} WIFI\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t\+::error\+\_\+code}
+
+
+
+error code summary 
+
+\Hypertarget{struct_w_i_f_i___t_e_s_t___r_e_s_u_l_t__t_a3638a9575c48f694b92818380e55bb2d}\label{struct_w_i_f_i___t_e_s_t___r_e_s_u_l_t__t_a3638a9575c48f694b92818380e55bb2d} 
+\index{WIFI\_TEST\_RESULT\_t@{WIFI\_TEST\_RESULT\_t}!error\_code\_ADS@{error\_code\_ADS}}
+\index{error\_code\_ADS@{error\_code\_ADS}!WIFI\_TEST\_RESULT\_t@{WIFI\_TEST\_RESULT\_t}}
+\doxysubsubsection{\texorpdfstring{error\_code\_ADS}{error\_code\_ADS}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} WIFI\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t\+::error\+\_\+code\+\_\+\+ADS}
+
+
+
+error code in ADS circuits 
+
+\Hypertarget{struct_w_i_f_i___t_e_s_t___r_e_s_u_l_t__t_aaddc88c4f02f578c87e72b27cc865a10}\label{struct_w_i_f_i___t_e_s_t___r_e_s_u_l_t__t_aaddc88c4f02f578c87e72b27cc865a10} 
+\index{WIFI\_TEST\_RESULT\_t@{WIFI\_TEST\_RESULT\_t}!error\_code\_audio@{error\_code\_audio}}
+\index{error\_code\_audio@{error\_code\_audio}!WIFI\_TEST\_RESULT\_t@{WIFI\_TEST\_RESULT\_t}}
+\doxysubsubsection{\texorpdfstring{error\_code\_audio}{error\_code\_audio}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} WIFI\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t\+::error\+\_\+code\+\_\+audio}
+
+
+
+error code in the audio circuits 
+
+\Hypertarget{struct_w_i_f_i___t_e_s_t___r_e_s_u_l_t__t_a31512bd1ff851ec0d7d339998987ec80}\label{struct_w_i_f_i___t_e_s_t___r_e_s_u_l_t__t_a31512bd1ff851ec0d7d339998987ec80} 
+\index{WIFI\_TEST\_RESULT\_t@{WIFI\_TEST\_RESULT\_t}!error\_code\_dc\_18v@{error\_code\_dc\_18v}}
+\index{error\_code\_dc\_18v@{error\_code\_dc\_18v}!WIFI\_TEST\_RESULT\_t@{WIFI\_TEST\_RESULT\_t}}
+\doxysubsubsection{\texorpdfstring{error\_code\_dc\_18v}{error\_code\_dc\_18v}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} WIFI\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t\+::error\+\_\+code\+\_\+dc\+\_\+18v}
+
+
+
+error code in the 18V power supply 
+
+\Hypertarget{struct_w_i_f_i___t_e_s_t___r_e_s_u_l_t__t_afbe91967682eef7959a6f37443987fee}\label{struct_w_i_f_i___t_e_s_t___r_e_s_u_l_t__t_afbe91967682eef7959a6f37443987fee} 
+\index{WIFI\_TEST\_RESULT\_t@{WIFI\_TEST\_RESULT\_t}!error\_code\_dc\_main@{error\_code\_dc\_main}}
+\index{error\_code\_dc\_main@{error\_code\_dc\_main}!WIFI\_TEST\_RESULT\_t@{WIFI\_TEST\_RESULT\_t}}
+\doxysubsubsection{\texorpdfstring{error\_code\_dc\_main}{error\_code\_dc\_main}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} WIFI\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t\+::error\+\_\+code\+\_\+dc\+\_\+main}
+
+
+
+error code in the main power supply 
+
+\Hypertarget{struct_w_i_f_i___t_e_s_t___r_e_s_u_l_t__t_af767136b715a18ac571ebd44bea4f60c}\label{struct_w_i_f_i___t_e_s_t___r_e_s_u_l_t__t_af767136b715a18ac571ebd44bea4f60c} 
+\index{WIFI\_TEST\_RESULT\_t@{WIFI\_TEST\_RESULT\_t}!error\_code\_defib@{error\_code\_defib}}
+\index{error\_code\_defib@{error\_code\_defib}!WIFI\_TEST\_RESULT\_t@{WIFI\_TEST\_RESULT\_t}}
+\doxysubsubsection{\texorpdfstring{error\_code\_defib}{error\_code\_defib}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} WIFI\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t\+::error\+\_\+code\+\_\+defib}
+
+
+
+error code in defibrillator circuits 
+
+\Hypertarget{struct_w_i_f_i___t_e_s_t___r_e_s_u_l_t__t_ab456373554d4c9e330a96a9088f437ab}\label{struct_w_i_f_i___t_e_s_t___r_e_s_u_l_t__t_ab456373554d4c9e330a96a9088f437ab} 
+\index{WIFI\_TEST\_RESULT\_t@{WIFI\_TEST\_RESULT\_t}!error\_electrodes@{error\_electrodes}}
+\index{error\_electrodes@{error\_electrodes}!WIFI\_TEST\_RESULT\_t@{WIFI\_TEST\_RESULT\_t}}
+\doxysubsubsection{\texorpdfstring{error\_electrodes}{error\_electrodes}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} WIFI\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t\+::error\+\_\+electrodes}
+
+
+
+error code in the pre-\/connected electrodes 
+
+\Hypertarget{struct_w_i_f_i___t_e_s_t___r_e_s_u_l_t__t_af7a8597652342e8c420e623705269434}\label{struct_w_i_f_i___t_e_s_t___r_e_s_u_l_t__t_af7a8597652342e8c420e623705269434} 
+\index{WIFI\_TEST\_RESULT\_t@{WIFI\_TEST\_RESULT\_t}!info\_type@{info\_type}}
+\index{info\_type@{info\_type}!WIFI\_TEST\_RESULT\_t@{WIFI\_TEST\_RESULT\_t}}
+\doxysubsubsection{\texorpdfstring{info\_type}{info\_type}}
+{\footnotesize\ttfamily \mbox{\hyperlink{thread__comm__hal_8h_a30bcce91a84082e55fabfd5098f0d7d7}{WIFI\+\_\+\+MSG\+\_\+\+ID\+\_\+e}} WIFI\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t\+::info\+\_\+type}
+
+
+
+identifies the information to report 
+
+\Hypertarget{struct_w_i_f_i___t_e_s_t___r_e_s_u_l_t__t_a475836bbf2a2a677d780a471d01655e3}\label{struct_w_i_f_i___t_e_s_t___r_e_s_u_l_t__t_a475836bbf2a2a677d780a471d01655e3} 
+\index{WIFI\_TEST\_RESULT\_t@{WIFI\_TEST\_RESULT\_t}!info\_type\_exp@{info\_type\_exp}}
+\index{info\_type\_exp@{info\_type\_exp}!WIFI\_TEST\_RESULT\_t@{WIFI\_TEST\_RESULT\_t}}
+\doxysubsubsection{\texorpdfstring{info\_type\_exp}{info\_type\_exp}}
+{\footnotesize\ttfamily \mbox{\hyperlink{thread__comm__hal_8h_a30bcce91a84082e55fabfd5098f0d7d7}{WIFI\+\_\+\+MSG\+\_\+\+ID\+\_\+e}} WIFI\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t\+::info\+\_\+type\+\_\+exp}
+
+
+
+identifies the information to report 
+
+\Hypertarget{struct_w_i_f_i___t_e_s_t___r_e_s_u_l_t__t_a4f41387100c951e248ec0bb2c3505d80}\label{struct_w_i_f_i___t_e_s_t___r_e_s_u_l_t__t_a4f41387100c951e248ec0bb2c3505d80} 
+\index{WIFI\_TEST\_RESULT\_t@{WIFI\_TEST\_RESULT\_t}!must\_be\_0x55@{must\_be\_0x55}}
+\index{must\_be\_0x55@{must\_be\_0x55}!WIFI\_TEST\_RESULT\_t@{WIFI\_TEST\_RESULT\_t}}
+\doxysubsubsection{\texorpdfstring{must\_be\_0x55}{must\_be\_0x55}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} WIFI\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t\+::must\+\_\+be\+\_\+0x55}
+
+
+
+Fixed value = 0x55. 
+
+\Hypertarget{struct_w_i_f_i___t_e_s_t___r_e_s_u_l_t__t_a506cd07ee2ed519ec0b40f0df33cfa72}\label{struct_w_i_f_i___t_e_s_t___r_e_s_u_l_t__t_a506cd07ee2ed519ec0b40f0df33cfa72} 
+\index{WIFI\_TEST\_RESULT\_t@{WIFI\_TEST\_RESULT\_t}!must\_be\_0x55\_exp@{must\_be\_0x55\_exp}}
+\index{must\_be\_0x55\_exp@{must\_be\_0x55\_exp}!WIFI\_TEST\_RESULT\_t@{WIFI\_TEST\_RESULT\_t}}
+\doxysubsubsection{\texorpdfstring{must\_be\_0x55\_exp}{must\_be\_0x55\_exp}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} WIFI\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t\+::must\+\_\+be\+\_\+0x55\+\_\+exp}
+
+
+
+Fixed value = 0x55. 
+
+\Hypertarget{struct_w_i_f_i___t_e_s_t___r_e_s_u_l_t__t_a01961d40de01402780c76551d2ddd3e9}\label{struct_w_i_f_i___t_e_s_t___r_e_s_u_l_t__t_a01961d40de01402780c76551d2ddd3e9} 
+\index{WIFI\_TEST\_RESULT\_t@{WIFI\_TEST\_RESULT\_t}!open\_cover@{open\_cover}}
+\index{open\_cover@{open\_cover}!WIFI\_TEST\_RESULT\_t@{WIFI\_TEST\_RESULT\_t}}
+\doxysubsubsection{\texorpdfstring{open\_cover}{open\_cover}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} WIFI\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t\+::open\+\_\+cover}
+
+
+
+open cover flag (0 -\/ closed; 1 -\/ opened) 
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\+HAL/\mbox{\hyperlink{thread__comm__hal_8h}{thread\+\_\+comm\+\_\+hal.\+h}}\end{DoxyCompactItemize}

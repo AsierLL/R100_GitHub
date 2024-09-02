@@ -1,0 +1,183 @@
+\doxysection{C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\+BSP/bsp\+\_\+acc\+\_\+\+LIS3\+DH.c File Reference}
+\hypertarget{bsp__acc___l_i_s3_d_h_8c}{}\label{bsp__acc___l_i_s3_d_h_8c}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/BSP/bsp\_acc\_LIS3DH.c@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/BSP/bsp\_acc\_LIS3DH.c}}
+{\ttfamily \#include "{}I2\+C\+\_\+1.\+h"{}}\newline
+{\ttfamily \#include "{}bsp\+\_\+acc\+\_\+\+LIS3\+DH.\+h"{}}\newline
+{\ttfamily \#include "{}thread\+\_\+sys\+Mon.\+h"{}}\newline
+{\ttfamily \#include "{}common\+\_\+data.\+h"{}}\newline
+{\ttfamily \#include "{}Trace.\+h"{}}\newline
+Include dependency graph for bsp\+\_\+acc\+\_\+\+LIS3\+DH.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__acc___l_i_s3_d_h_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{bsp__acc___l_i_s3_d_h_8c_a35a08f33b3ae8fa5b76a37802c29bd05}{LOW\+\_\+\+POWER}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{bsp__acc___l_i_s3_d_h_8c_afcbc051f96e6f31f234a07674c2027f3}{Accelerometer\+\_\+\+Presence}} (void)
+\begin{DoxyCompactList}\small\item\em Checks for presence of accelerometer by checking who\+\_\+am\+\_\+i register. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{bsp__acc___l_i_s3_d_h_8c_aea5b1f8a01e5ae4f2805aa689711694e}{Accelerometer\+\_\+\+Setup}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} enable\+\_\+xyz, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} sample\+Rate, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} accel\+Range)
+\begin{DoxyCompactList}\small\item\em Setup basic configuration of accelerometer. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{bsp__acc___l_i_s3_d_h_8c_a4ca9c1b97ec25cb31b7be2f8e54c5643}{Accel\+\_\+\+Interrupt\+\_\+\+Init}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} enable\+\_\+axis, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} threshold, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} duration, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} polarity)
+\begin{DoxyCompactList}\small\item\em Initialize the interruption reg and configure interruption threshold of accelerometer. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{bsp__acc___l_i_s3_d_h_8c_a0ddefa6466e2f93180314adc8b3fc204}{ACC\+\_\+\+Get\+\_\+\+Axis\+\_\+\+Data}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} reg\+\_\+address, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}read\+\_\+reg\+\_\+data)
+\begin{DoxyCompactList}\small\item\em Function to read register of accelerometer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{bsp__acc___l_i_s3_d_h_8c_a35a08f33b3ae8fa5b76a37802c29bd05}\label{bsp__acc___l_i_s3_d_h_8c_a35a08f33b3ae8fa5b76a37802c29bd05} 
+\index{bsp\_acc\_LIS3DH.c@{bsp\_acc\_LIS3DH.c}!LOW\_POWER@{LOW\_POWER}}
+\index{LOW\_POWER@{LOW\_POWER}!bsp\_acc\_LIS3DH.c@{bsp\_acc\_LIS3DH.c}}
+\doxysubsubsection{\texorpdfstring{LOW\_POWER}{LOW\_POWER}}
+{\footnotesize\ttfamily \#define LOW\+\_\+\+POWER}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{bsp__acc___l_i_s3_d_h_8c_a0ddefa6466e2f93180314adc8b3fc204}\label{bsp__acc___l_i_s3_d_h_8c_a0ddefa6466e2f93180314adc8b3fc204} 
+\index{bsp\_acc\_LIS3DH.c@{bsp\_acc\_LIS3DH.c}!ACC\_Get\_Axis\_Data@{ACC\_Get\_Axis\_Data}}
+\index{ACC\_Get\_Axis\_Data@{ACC\_Get\_Axis\_Data}!bsp\_acc\_LIS3DH.c@{bsp\_acc\_LIS3DH.c}}
+\doxysubsubsection{\texorpdfstring{ACC\_Get\_Axis\_Data()}{ACC\_Get\_Axis\_Data()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} ACC\+\_\+\+Get\+\_\+\+Axis\+\_\+\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{reg\+\_\+address,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{read\+\_\+reg\+\_\+data }\end{DoxyParamCaption})}
+
+
+
+Function to read register of accelerometer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reg\+\_\+address} & register to be read \\
+\hline
+{\em read\+\_\+reg\+\_\+data} & read data\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__acc___l_i_s3_d_h_8c_a0ddefa6466e2f93180314adc8b3fc204_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{bsp__acc___l_i_s3_d_h_8c_a0ddefa6466e2f93180314adc8b3fc204_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{bsp__acc___l_i_s3_d_h_8c_a4ca9c1b97ec25cb31b7be2f8e54c5643}\label{bsp__acc___l_i_s3_d_h_8c_a4ca9c1b97ec25cb31b7be2f8e54c5643} 
+\index{bsp\_acc\_LIS3DH.c@{bsp\_acc\_LIS3DH.c}!Accel\_Interrupt\_Init@{Accel\_Interrupt\_Init}}
+\index{Accel\_Interrupt\_Init@{Accel\_Interrupt\_Init}!bsp\_acc\_LIS3DH.c@{bsp\_acc\_LIS3DH.c}}
+\doxysubsubsection{\texorpdfstring{Accel\_Interrupt\_Init()}{Accel\_Interrupt\_Init()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Accel\+\_\+\+Interrupt\+\_\+\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{enable\+\_\+axis,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{threshold,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{duration,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{polarity }\end{DoxyParamCaption})}
+
+
+
+Initialize the interruption reg and configure interruption threshold of accelerometer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em enable\+\_\+axis} & Variable to enable/disable acc axis interruption \\
+\hline
+{\em threshold} & 7bit, trigger threshold for interruption. Value changes depending on selected scale 1 LSb = 16 mg @ FS = ±2 g 1 LSb = 32 mg @ FS = ±4 g 1 LSb = 62 mg @ FS = ±8 g 1 LSb = 186 mg @ FS = ±16 g\\
+\hline
+{\em duration} & 7bit, duration of the interruption after triggered, depends of ODR configuration. (t = N/\+ODR) (e.\+g\+: ODR = 25 Hz -\/\texorpdfstring{$>$}{>} t = 1/25=0,04sec=40msec) \\
+\hline
+{\em polarity} & Configure polarity of interrupt\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+acc interrupt errors 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__acc___l_i_s3_d_h_8c_a4ca9c1b97ec25cb31b7be2f8e54c5643_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=303pt]{bsp__acc___l_i_s3_d_h_8c_a4ca9c1b97ec25cb31b7be2f8e54c5643_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{bsp__acc___l_i_s3_d_h_8c_afcbc051f96e6f31f234a07674c2027f3}\label{bsp__acc___l_i_s3_d_h_8c_afcbc051f96e6f31f234a07674c2027f3} 
+\index{bsp\_acc\_LIS3DH.c@{bsp\_acc\_LIS3DH.c}!Accelerometer\_Presence@{Accelerometer\_Presence}}
+\index{Accelerometer\_Presence@{Accelerometer\_Presence}!bsp\_acc\_LIS3DH.c@{bsp\_acc\_LIS3DH.c}}
+\doxysubsubsection{\texorpdfstring{Accelerometer\_Presence()}{Accelerometer\_Presence()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Accelerometer\+\_\+\+Presence (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Checks for presence of accelerometer by checking who\+\_\+am\+\_\+i register. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool\+\_\+t return presence boolean 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__acc___l_i_s3_d_h_8c_afcbc051f96e6f31f234a07674c2027f3_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__acc___l_i_s3_d_h_8c_afcbc051f96e6f31f234a07674c2027f3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{bsp__acc___l_i_s3_d_h_8c_aea5b1f8a01e5ae4f2805aa689711694e}\label{bsp__acc___l_i_s3_d_h_8c_aea5b1f8a01e5ae4f2805aa689711694e} 
+\index{bsp\_acc\_LIS3DH.c@{bsp\_acc\_LIS3DH.c}!Accelerometer\_Setup@{Accelerometer\_Setup}}
+\index{Accelerometer\_Setup@{Accelerometer\_Setup}!bsp\_acc\_LIS3DH.c@{bsp\_acc\_LIS3DH.c}}
+\doxysubsubsection{\texorpdfstring{Accelerometer\_Setup()}{Accelerometer\_Setup()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Accelerometer\+\_\+\+Setup (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{enable\+\_\+xyz,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{sample\+Rate,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{accel\+Range }\end{DoxyParamCaption})}
+
+
+
+Setup basic configuration of accelerometer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em enable\+\_\+xyz} & Variable to enable/disable acc axis \\
+\hline
+{\em sample\+Rate} & HZ -\/ Samples per second -\/ 1, 10, 25, 50, 100, 200, 400, 1600, 5000 (values 0x01 to 0x09) \\
+\hline
+{\em accel\+Range} & Accelerometer range = 2, 4, 8, 16g (values 0x00 to 0x03)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+acc control register errors 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__acc___l_i_s3_d_h_8c_aea5b1f8a01e5ae4f2805aa689711694e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__acc___l_i_s3_d_h_8c_aea5b1f8a01e5ae4f2805aa689711694e_icgraph}
+\end{center}
+\end{figure}

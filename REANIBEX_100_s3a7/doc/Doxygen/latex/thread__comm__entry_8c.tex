@@ -1,0 +1,2159 @@
+\doxysection{C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/thread\+\_\+comm\+\_\+entry.c File Reference}
+\hypertarget{thread__comm__entry_8c}{}\label{thread__comm__entry_8c}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/thread\_comm\_entry.c@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/thread\_comm\_entry.c}}
+{\ttfamily \#include "{}thread\+\_\+comm.\+h"{}}\newline
+{\ttfamily \#include "{}HAL/thread\+\_\+defibrillator\+\_\+hal.\+h"{}}\newline
+{\ttfamily \#include "{}thread\+\_\+core\+\_\+entry.\+h"{}}\newline
+{\ttfamily \#include "{}thread\+\_\+comm\+\_\+entry.\+h"{}}\newline
+{\ttfamily \#include "{}thread\+\_\+drd\+\_\+entry.\+h"{}}\newline
+{\ttfamily \#include "{}thread\+\_\+acc\+\_\+entry.\+h"{}}\newline
+{\ttfamily \#include "{}sys\+Mon\+\_\+\+Battery.\+h"{}}\newline
+{\ttfamily \#include "{}Comm.\+h"{}}\newline
+{\ttfamily \#include "{}Keypad.\+h"{}}\newline
+{\ttfamily \#include "{}event\+\_\+ids.\+h"{}}\newline
+{\ttfamily \#include "{}Trace.\+h"{}}\newline
+{\ttfamily \#include "{}sys\+Mon\+\_\+\+RF\+\_\+\+Comms.\+h"{}}\newline
+Include dependency graph for thread\+\_\+comm\+\_\+entry.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__comm__entry_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{thread__comm__entry_8c_a30465b046e8e2e42e33fa2499aadcf40}{THREAD\+\_\+\+COMM\+\_\+\+EVENT\+\_\+\+TRACE}}~\mbox{\hyperlink{_comm_8h_a1a87383c89f58beedcf5ce80e2074eb0}{TRACE\+\_\+\+NEWLINE}}
+\begin{DoxyCompactList}\small\item\em Enable/disable traces for Thread comm events. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{thread__comm__entry_8c_ac1777e1f844347ed30ceafeca4949458}{ASCII\+\_\+\+TO\+\_\+\+DEC}}(x)~(\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}) ((x $>$= \textquotesingle{}0\textquotesingle{})? (x-\/\textquotesingle{}0\textquotesingle{})\+:0)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{thread__comm__entry_8c_afae3627cb4cd90dab49eba9a4bceaf26}{Process\+\_\+\+Comm\+\_\+\+All\+\_\+\+Modules}} (\mbox{\hyperlink{thread__comm__entry_8h_a5939d05ffaed39155fac81e1cac9aaab}{EV\+\_\+\+COMM\+\_\+e}} ev)
+\begin{DoxyCompactList}\small\item\em Process events related to All COMM modules. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{thread__comm__entry_8c_a9dbb28ae3719b97e8cd74d43327403ce}{Process\+\_\+\+Comm\+\_\+\+Sigfox}} (\mbox{\hyperlink{thread__comm__entry_8h_a5939d05ffaed39155fac81e1cac9aaab}{EV\+\_\+\+COMM\+\_\+e}} ev)
+\begin{DoxyCompactList}\small\item\em Process events related to SIGFOX COMM module. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{thread__comm__entry_8c_a2a7698a33ddf0a8ca71b8e0baab53eb2}{Process\+\_\+\+Comm\+\_\+\+Wifi}} (\mbox{\hyperlink{thread__comm__entry_8h_a5939d05ffaed39155fac81e1cac9aaab}{EV\+\_\+\+COMM\+\_\+e}} ev)
+\begin{DoxyCompactList}\small\item\em Process events related to WIFI COMM module. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{thread__comm__entry_8c_a582b1b8f51e958bf170593a729f21bb7}{Process\+\_\+\+Comm\+\_\+\+GPS}} (\mbox{\hyperlink{thread__comm__entry_8h_a5939d05ffaed39155fac81e1cac9aaab}{EV\+\_\+\+COMM\+\_\+e}} ev)
+\begin{DoxyCompactList}\small\item\em Process events related to GPS COMM module. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{thread__comm__entry_8c_a2e433ae745fd6e3730f6a1c97d25102c}{Process\+\_\+\+Comm\+\_\+\+ACC}} (\mbox{\hyperlink{thread__comm__entry_8h_a5939d05ffaed39155fac81e1cac9aaab}{EV\+\_\+\+COMM\+\_\+e}} ev)
+\begin{DoxyCompactList}\small\item\em Process events related to ACC COMM module. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{thread__comm__entry_8c_a88587ace521f9dcb7e701367eeec5824}{thread\+\_\+comm\+\_\+entry}} (void)
+\begin{DoxyCompactList}\small\item\em Thread COMM entry function. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{thread__comm__entry_8c_af7921d111a91795221d7b493716d54c3}{Send\+\_\+\+Comm\+\_\+\+Queue}} (\mbox{\hyperlink{thread__comm__entry_8h_a5939d05ffaed39155fac81e1cac9aaab}{EV\+\_\+\+COMM\+\_\+e}} ev)
+\begin{DoxyCompactList}\small\item\em Process events related to All COMM modules. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{thread__comm__entry_8c_aae63ed01fe3ee64c1d194e97ca3877b3}{Comm\+\_\+\+Sigfox\+\_\+\+Open}} (void)
+\begin{DoxyCompactList}\small\item\em Open Sigfox Communication. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{thread__comm__entry_8c_a2b830ebc982c1f3df32402823b6bb3c0}{Comm\+\_\+\+Sigfox\+\_\+\+Generate\+\_\+\+Send\+\_\+\+Test}} (\mbox{\hyperlink{struct_d_b___t_e_s_t___r_e_s_u_l_t__t}{DB\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Result)
+\begin{DoxyCompactList}\small\item\em Function to send the test result to Sigfox cloud. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{thread__comm__entry_8c_a605152440b38d4693184802ca9b64c8b}{Comm\+\_\+\+Is\+\_\+\+Sigfox\+\_\+\+Test\+\_\+\+Sended}} (void)
+\begin{DoxyCompactList}\small\item\em Checks if sigfox test sended process completed. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{thread__comm__entry_8c_aec3cb8d1147721b26dbcca359d4c2a1c}{Comm\+\_\+\+Sigfox\+\_\+\+Generate\+\_\+\+Send\+\_\+\+Alert}} (\mbox{\hyperlink{thread__comm__hal_8h_a5aa347e2a685a85a377a26337e9c5cc3}{SIGFOX\+\_\+\+MSG\+\_\+\+ID\+\_\+e}} alert\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Generate and send R100 Sigfox Alert. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{thread__comm__entry_8c_ae6f7aeb0f8fc8e16c1e8d2f7c1cb7984}{Comm\+\_\+\+Is\+\_\+\+Sigfox\+\_\+\+Alert\+\_\+\+Sended}} (void)
+\begin{DoxyCompactList}\small\item\em Checks if Sigfox alert sended process completed. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{thread__comm__entry_8c_a9794cf5219f147950deb93abcab25b78}{Comm\+\_\+\+Sigfox\+\_\+\+Generate\+\_\+\+Send\+\_\+\+Expiration}} (\mbox{\hyperlink{struct_d_b___t_e_s_t___r_e_s_u_l_t__t}{DB\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Result)
+\begin{DoxyCompactList}\small\item\em Generate and send electrodes and battery expiration dates. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{thread__comm__entry_8c_a8198be61adcf8789af5d987d57b6a23b}{Comm\+\_\+\+Is\+\_\+\+Sigfox\+\_\+\+Exp\+\_\+\+Sended}} (void)
+\begin{DoxyCompactList}\small\item\em Checks if sigfox exp sended process completed. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{thread__comm__entry_8c_aa5bebfa6dad376f9d2c79e2256f29d40}{Comm\+\_\+\+Sigfox\+\_\+\+Generate\+\_\+\+Send\+\_\+\+Position}} (\mbox{\hyperlink{thread__comm__hal_8h_a5aa347e2a685a85a377a26337e9c5cc3}{SIGFOX\+\_\+\+MSG\+\_\+\+ID\+\_\+e}} gps\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Generate R100 Sigfox GPS position. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{thread__comm__entry_8c_ab1d5ed1c3c6c15f0cbc2531f4d629ff4}{Comm\+\_\+\+Is\+\_\+\+Sigfox\+\_\+\+GPS\+\_\+\+Sended}} (void)
+\begin{DoxyCompactList}\small\item\em Checks if sigfox exp sended process completed. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{thread__comm__entry_8c_abdb3233aafd52ba84f5b2aa516b1aec2}{Comm\+\_\+\+Sigfox\+\_\+\+Execute\+\_\+\+HW\+\_\+\+Test}} (void)
+\begin{DoxyCompactList}\small\item\em Execute Sigfox HW Test. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{thread__comm__entry_8c_a6f2ca4d1ab63af942461484f1451146c}{Comm\+\_\+\+Is\+\_\+\+Sigfox\+\_\+\+Initialized}} (void)
+\begin{DoxyCompactList}\small\item\em Checks if sigfox initialization process completed. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{thread__comm__entry_8c_acf3f136d4f57642f564b5b26412091a9}{Comm\+\_\+\+Is\+\_\+\+Sigfox\+\_\+\+HW\+\_\+\+Test\+\_\+\+Finished}} (void)
+\begin{DoxyCompactList}\small\item\em Checks if sigfox hw test process is finished. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{thread__comm__entry_8c_a8d69c5959dadc04b007418f22d94fcd6}{Comm\+\_\+\+Get\+\_\+\+Sigfox\+\_\+\+HW\+\_\+\+Test\+\_\+\+Result}} (void)
+\begin{DoxyCompactList}\small\item\em Get sigfox hw test result. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{thread__comm__entry_8c_aef540835b519754957f251e42bdfc435}{Comm\+\_\+\+Get\+\_\+\+Sigfox\+\_\+\+Error}} (void)
+\begin{DoxyCompactList}\small\item\em Get sigfox status. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{thread__comm__entry_8c_afb12aa7cd963bcac96e29ea89c9e51a1}{Comm\+\_\+\+Wifi\+\_\+\+Open}} (void)
+\begin{DoxyCompactList}\small\item\em Open Wifi Communication. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{thread__comm__entry_8c_a4d6d68ab709b7b37c105e939f67da143}{Comm\+\_\+\+Is\+\_\+\+Wifi\+\_\+\+Initialized}} (void)
+\begin{DoxyCompactList}\small\item\em Checks if wifi initialization process completed. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{thread__comm__entry_8c_ac245c1a9c58d72709c404deef8e2487d}{Comm\+\_\+\+Is\+\_\+\+Wifi\+\_\+\+Init\+\_\+\+Finished}} (void)
+\begin{DoxyCompactList}\small\item\em Checks if wifi initialization process finished. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{thread__comm__entry_8c_a1ed8688e4f2bb331195db3b77d38b9eb}{Comm\+\_\+\+Is\+\_\+\+Wifi\+\_\+\+Free}} (void)
+\begin{DoxyCompactList}\small\item\em Returns if Comms UART is free. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{thread__comm__entry_8c_a4f4fd65bc99c23e30c7fea8454299ae0}{Comm\+\_\+\+Wifi\+\_\+\+Is\+\_\+\+Host\+\_\+\+Alive}} (void)
+\begin{DoxyCompactList}\small\item\em Function to check if server host is up and running. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{thread__comm__entry_8c_a9aff5c2ff735536e998fe52402745d28}{Comm\+\_\+\+Is\+\_\+\+Wifi\+\_\+\+Host\+\_\+\+Alive\+\_\+\+Finished}} (void)
+\begin{DoxyCompactList}\small\item\em Checks if server host is up and running process finished. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{thread__comm__entry_8c_ac00c8f1a401cbbc02b2e3ce72b020878}{Comm\+\_\+\+Wifi\+\_\+\+Generate\+\_\+\+Send\+\_\+\+Test\+\_\+\+Frame}} (\mbox{\hyperlink{struct_d_b___t_e_s_t___r_e_s_u_l_t__t}{DB\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Result)
+\begin{DoxyCompactList}\small\item\em Function to send the test result using wifi connection. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{thread__comm__entry_8c_a2dadd372b36fe4568ab80abac99c16f7}{Comm\+\_\+\+Is\+\_\+\+Wifi\+\_\+\+Test\+\_\+\+Frame\+\_\+\+Sended}} (void)
+\begin{DoxyCompactList}\small\item\em Checks if wifi test frame sended process completed. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{thread__comm__entry_8c_a87e4a8efc817a1a684329a09dfb6e32c}{Comm\+\_\+\+Wifi\+\_\+\+Generate\+\_\+\+Send\+\_\+\+Alert\+\_\+\+Frame}} (\mbox{\hyperlink{thread__comm__hal_8h_a30bcce91a84082e55fabfd5098f0d7d7}{WIFI\+\_\+\+MSG\+\_\+\+ID\+\_\+e}} alert\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Generate and send R100 Wifi Alert. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{thread__comm__entry_8c_af8503a5741f300bddb0ce6c1bccb3292}{Comm\+\_\+\+Is\+\_\+\+Wifi\+\_\+\+Alert\+\_\+\+Frame\+\_\+\+Sended}} (void)
+\begin{DoxyCompactList}\small\item\em Checks if wifi test frame sended process completed. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{thread__comm__entry_8c_a6da93bfa9b0d3577caed0e934e057b68}{Comm\+\_\+\+Wifi\+\_\+\+Generate\+\_\+\+Send\+\_\+\+Position\+\_\+\+Frame}} (\mbox{\hyperlink{thread__comm__hal_8h_a30bcce91a84082e55fabfd5098f0d7d7}{WIFI\+\_\+\+MSG\+\_\+\+ID\+\_\+e}} gps\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Generate R100 Wifi GPS position Frame. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{thread__comm__entry_8c_a882b195fcf26112f1cf63035666e4f42}{Comm\+\_\+\+Is\+\_\+\+Wifi\+\_\+\+Position\+\_\+\+Frame\+\_\+\+Sended}} (void)
+\begin{DoxyCompactList}\small\item\em Checks if wifi position frame sended process completed. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{thread__comm__entry_8c_aa967011953ab9c24c55af6c959f9866f}{Comm\+\_\+\+Wifi\+\_\+\+Send\+\_\+\+Test}} (void)
+\begin{DoxyCompactList}\small\item\em Function to send the test file using wifi. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{thread__comm__entry_8c_ac5fc2d42c00fdc0c7ae195f918679fc5}{Comm\+\_\+\+Is\+\_\+\+Wifi\+\_\+\+Test\+\_\+\+Sended}} (void)
+\begin{DoxyCompactList}\small\item\em Checks if wifi test sended process completed. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{thread__comm__entry_8c_a79c7b5cd30c2273151321a1becea2971}{Comm\+\_\+\+Wifi\+\_\+\+Send\+\_\+\+Episode}} (void)
+\begin{DoxyCompactList}\small\item\em Function to send the episode file using wifi. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{thread__comm__entry_8c_af795af03696f8d5370e24b0afc5f789d}{Comm\+\_\+\+Is\+\_\+\+Wifi\+\_\+\+Episode\+\_\+\+Sended}} (void)
+\begin{DoxyCompactList}\small\item\em Checks if wifi episode sended process completed. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{thread__comm__entry_8c_a5528263c91130789893c287f1008648a}{Comm\+\_\+\+Wifi\+\_\+\+Get\+\_\+\+Firmware}} (void)
+\begin{DoxyCompactList}\small\item\em Function to get the firmware file using wifi. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{thread__comm__entry_8c_aa5b7c87510b58a3534c0601f9e6fe331}{Comm\+\_\+\+Is\+\_\+\+Wifi\+\_\+\+Upgrade\+\_\+\+Received}} (void)
+\begin{DoxyCompactList}\small\item\em Checks if wifi upgrade received process completed. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{thread__comm__entry_8c_aad487ab6f3aac284e128bd96e256191d}{Comm\+\_\+\+Wifi\+\_\+\+Get\+\_\+\+Configuration}} (void)
+\begin{DoxyCompactList}\small\item\em Function to get the config file using wifi. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{thread__comm__entry_8c_a3b3c9aea00a5521c8225ecb251eb4d58}{Comm\+\_\+\+Is\+\_\+\+Wifi\+\_\+\+Config\+\_\+\+Received}} (void)
+\begin{DoxyCompactList}\small\item\em Checks if wifi config received process completed. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{thread__comm__entry_8c_a610032f1b24eac31f7fd291c334b59eb}{Comm\+\_\+\+Wifi\+\_\+\+Execute\+\_\+\+HW\+\_\+\+Test}} (void)
+\begin{DoxyCompactList}\small\item\em Execute Wifi HW Test. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{thread__comm__entry_8c_a23ef1102af62cc18d59879de30740889}{Comm\+\_\+\+Is\+\_\+\+Wifi\+\_\+\+HW\+\_\+\+Test\+\_\+\+Finished}} (void)
+\begin{DoxyCompactList}\small\item\em Checks if wifi hw test process is finished. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{thread__comm__entry_8c_a36209b93e4c52a7f7c1294cff117b780}{Comm\+\_\+\+Get\+\_\+\+Wifi\+\_\+\+HW\+\_\+\+Test\+\_\+\+Result}} (void)
+\begin{DoxyCompactList}\small\item\em Get wifi hw test result. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{thread__comm__entry_8c_a5d0a34784b4178d002ef948edcc699b6}{Comm\+\_\+\+Get\+\_\+\+Wifi\+\_\+\+Host\+\_\+\+Alive\+\_\+\+Flag}} (void)
+\begin{DoxyCompactList}\small\item\em Gets wifi host is alive and running flag. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{thread__comm__entry_8c_a8aad2fb078dfeb930ac0e1afe880e7a5}{Comm\+\_\+\+GPS\+\_\+\+Open}} (void)
+\begin{DoxyCompactList}\small\item\em Open GPS Communication. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{thread__comm__entry_8c_a22138b207b88df73185c9ff1948040d8}{Comm\+\_\+\+GPS\+\_\+\+Send\+\_\+\+Cmd}} (void)
+\begin{DoxyCompactList}\small\item\em Send GPS Commands. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{thread__comm__entry_8c_a4423c957a2af025ce72fc5bb391da5ef}{Comm\+\_\+\+GPS\+\_\+\+Get\+\_\+\+Position}} (void)
+\begin{DoxyCompactList}\small\item\em Ask GPS Position. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{thread__comm__entry_8c_a840410d896d8adf13d04d17a2b724c5b}{Comm\+\_\+\+GPS\+\_\+\+Execute\+\_\+\+HW\+\_\+\+Test}} (void)
+\begin{DoxyCompactList}\small\item\em Execute gps HW Test. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{thread__comm__entry_8c_ad22f45e51411cf5a0ff7a91a9fa30e29}{Comm\+\_\+\+Is\+\_\+\+GPS\+\_\+\+HW\+\_\+\+Test\+\_\+\+Finished}} (void)
+\begin{DoxyCompactList}\small\item\em Checks if gps hw test process is finished. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{thread__comm__entry_8c_a5820b9c59bd8dd257b80388aa4643720}{Comm\+\_\+\+Get\+\_\+\+GPS\+\_\+\+HW\+\_\+\+Test\+\_\+\+Result}} (void)
+\begin{DoxyCompactList}\small\item\em Get gps hw test result. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{thread__comm__entry_8c_a5e4d761bff1fae21581149068851954f}{Comm\+\_\+\+Is\+\_\+\+GPS\+\_\+\+Cmd\+\_\+\+Send}} (void)
+\begin{DoxyCompactList}\small\item\em Check if GPS command is send. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{thread__comm__entry_8c_aae4f209014ddd932a3bd4d4f3547d35c}{Comm\+\_\+\+ACC\+\_\+\+Execute\+\_\+\+HW\+\_\+\+Test}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} force)
+\begin{DoxyCompactList}\small\item\em Execute ACC HW Test. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{thread__comm__entry_8c_a950694ff68bbfa4ab1ec0c42bf708780}{Comm\+\_\+\+Is\+\_\+\+ACC\+\_\+\+HW\+\_\+\+Test\+\_\+\+Finished}} (void)
+\begin{DoxyCompactList}\small\item\em Checks if accelerometer hw test process is finished. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{thread__comm__entry_8c_a6f2d8ea5cc6928130c1eba9c4a15d7e1}{Comm\+\_\+\+Get\+\_\+\+ACC\+\_\+\+HW\+\_\+\+Test\+\_\+\+Result}} (void)
+\begin{DoxyCompactList}\small\item\em Get acc hw test result. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_s_i_g_f_o_x___t_e_s_t___r_e_s_u_l_t__t}{SIGFOX\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t}} \mbox{\hyperlink{thread__comm__entry_8c_a0c7c18af07aad52244bcb80d7f240c70}{sigfox\+\_\+test\+\_\+result}}
+\begin{DoxyCompactList}\small\item\em Test result structure. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_s_i_g_f_o_x___f_u_n_c___a_l_e_r_t__t}{SIGFOX\+\_\+\+FUNC\+\_\+\+ALERT\+\_\+t}} \mbox{\hyperlink{thread__comm__entry_8c_a94baba11162fdd81dd59172348a1058d}{sigfox\+\_\+func\+\_\+alert}}
+\begin{DoxyCompactList}\small\item\em Functional alert structure. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_s_i_g_f_o_x___g_p_s___p_o_s_i_t_i_o_n__t}{SIGFOX\+\_\+\+GPS\+\_\+\+POSITION\+\_\+t}} \mbox{\hyperlink{thread__comm__entry_8c_a21e04c84329c1afbf6a9270e33cb5d61}{sigfox\+\_\+gps\+\_\+position}}
+\begin{DoxyCompactList}\small\item\em GPS position structure. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_s_i_g_f_o_x___e_l_e_c___b_a_t_t___e_x_p_i_r_a_t_i_o_n__t}{SIGFOX\+\_\+\+ELEC\+\_\+\+BATT\+\_\+\+EXPIRATION\+\_\+t}} \mbox{\hyperlink{thread__comm__entry_8c_ae3c3980a5dfdc2dead58fa9d1edbc832}{sigfox\+\_\+expiration}}
+\begin{DoxyCompactList}\small\item\em Battery and electrodes expiration dates. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_w_i_f_i___t_e_s_t___r_e_s_u_l_t__t}{WIFI\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t}} \mbox{\hyperlink{thread__comm__entry_8c_a5f15fd39f5309ee0bbf0d74fb66f9d60}{wifi\+\_\+test\+\_\+result}}
+\begin{DoxyCompactList}\small\item\em Test result structure. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_w_i_f_i___f_u_n_c___a_l_e_r_t__t}{WIFI\+\_\+\+FUNC\+\_\+\+ALERT\+\_\+t}} \mbox{\hyperlink{thread__comm__entry_8c_ad775a29fff4bb2f3e55e3f326281022d}{wifi\+\_\+func\+\_\+alert}}
+\begin{DoxyCompactList}\small\item\em Functional alert structure. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_w_i_f_i___f_u_n_c___a_l_e_r_t__t}{WIFI\+\_\+\+FUNC\+\_\+\+ALERT\+\_\+t}} \mbox{\hyperlink{thread__comm__entry_8c_a4b18873acf7a6ccc6be5f1eb3d489517}{wifi\+\_\+func\+\_\+alert\+\_\+aux}}
+\begin{DoxyCompactList}\small\item\em Auxiliar functional alert structure. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_w_i_f_i___g_p_s___p_o_s_i_t_i_o_n__t}{WIFI\+\_\+\+GPS\+\_\+\+POSITION\+\_\+t}} \mbox{\hyperlink{thread__comm__entry_8c_a3dd48e61ec282f5d24c04fa945377df6}{wifi\+\_\+gps\+\_\+position}}
+\begin{DoxyCompactList}\small\item\em Functional alert structure. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structgps__config__t}{gps\+\_\+config\+\_\+t}} \mbox{\hyperlink{thread__comm__entry_8c_a30b1d67adb2fa0b8f99bfca1cc363d33}{R100\+\_\+gps}}
+\begin{DoxyCompactList}\small\item\em GPS data. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{thread__comm__entry_8c_a0b65f4036cdb5814f254d1584d21353b}{FSM\+\_\+shock\+\_\+energy}}
+\begin{DoxyCompactList}\small\item\em Energy to apply in the shock. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{thread__comm__entry_8h_a5939d05ffaed39155fac81e1cac9aaab}{EV\+\_\+\+COMM\+\_\+e}} \mbox{\hyperlink{thread__comm__entry_8c_a4059a30782f5ba133d389ad62c62f200}{tx\+\_\+event}}
+\item 
+\mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{thread__comm__entry_8c_acf7e7c265a60a8080427a53ec7657fde}{err}}
+\item 
+\mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{thread__comm__entry_8c_ad7843529a8569e2d47285df6f651a83b}{sigfox\+\_\+error}}
+\item 
+static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{thread__comm__entry_8c_ad84c45a3341fe11efb27d089f98dfd86}{uplink\+\_\+test}} = \mbox{\hyperlink{_general_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}
+\begin{DoxyCompactList}\small\item\em Performing uplink test. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{struct_d_e_v_i_c_e___i_n_f_o__t}{DEVICE\+\_\+\+INFO\+\_\+t}} \mbox{\hyperlink{thread__comm__entry_8c_ad1765465385921406c4e233c8580f04d}{my\+\_\+\+Device\+\_\+\+Info}}
+\begin{DoxyCompactList}\small\item\em Pointer to the device info. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{thread__comm__entry_8c_a125fc64563aa80dc3ffa72046d6caae0}{wifi\+\_\+initialized}} = \mbox{\hyperlink{_general_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}
+\item 
+static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{thread__comm__entry_8c_a20281f7f9577c36cfe26781ec9bf904a}{wifi\+\_\+init\+\_\+finished}} = \mbox{\hyperlink{_general_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}
+\item 
+static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{thread__comm__entry_8c_a2e06c5ba2d2bce3b6fedc2b317f6a4de}{wifi\+\_\+host\+\_\+alive\+\_\+flag}} = \mbox{\hyperlink{_general_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}
+\item 
+static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{thread__comm__entry_8c_af7d554f80644e0cd07b2fadbb08f7a8a}{wifi\+\_\+host\+\_\+alive\+\_\+finished}} = \mbox{\hyperlink{_general_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}
+\item 
+static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{thread__comm__entry_8c_ad027ba6321330ea2aefce358db43061f}{wifi\+\_\+test\+\_\+frame\+\_\+sended}} = \mbox{\hyperlink{_general_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}
+\item 
+static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{thread__comm__entry_8c_a0d373c5f917fcdf274f8f18a42e1fdad}{wifi\+\_\+alert\+\_\+frame\+\_\+sended}} = \mbox{\hyperlink{_general_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}
+\item 
+static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{thread__comm__entry_8c_aaa689e3c825b408bef3db675ddd7ad76}{wifi\+\_\+position\+\_\+frame\+\_\+sended}} = \mbox{\hyperlink{_general_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}
+\item 
+static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{thread__comm__entry_8c_ad330ac2bfe4d2cca1266f8e682c5af66}{wifi\+\_\+test\+\_\+sended}} = \mbox{\hyperlink{_general_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}
+\item 
+static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{thread__comm__entry_8c_ac415129b96efeddba8dee1a7a4ce5610}{wifi\+\_\+episode\+\_\+sended}} = \mbox{\hyperlink{_general_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}
+\item 
+static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{thread__comm__entry_8c_af5ece16b7f4a56cee392bde6380cdabc}{wifi\+\_\+firmware\+\_\+received}} = \mbox{\hyperlink{_general_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}
+\item 
+static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{thread__comm__entry_8c_a39b680c53627f37edb0dc975d043b4ef}{wifi\+\_\+config\+\_\+received}} = \mbox{\hyperlink{_general_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}
+\item 
+static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{thread__comm__entry_8c_a5e833197eeb2d5b33bf1e7a318191cf2}{wifi\+\_\+hw\+\_\+test\+\_\+finished}} = \mbox{\hyperlink{_general_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}
+\item 
+static \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{thread__comm__entry_8c_a6393b3b04c5ff456b07ad5f591c4b22d}{wifi\+\_\+hw\+\_\+test\+\_\+error}} = \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9a4f48e4214dad2e7b13ff7edc4feffe94}{e\+ERR\+\_\+\+NONE}}
+\item 
+static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{thread__comm__entry_8c_a14ee1a3dfdc21901b1372f455e805e2b}{is\+\_\+wifi\+\_\+free}} = \mbox{\hyperlink{_general_8h_aa8cecfc5c5c054d2875c03e77b7be15d}{TRUE}}
+\item 
+static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{thread__comm__entry_8c_a663c47a3343291b65b25f01ed95eabc4}{sigfox\+\_\+initialized}} = \mbox{\hyperlink{_general_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}
+\item 
+static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{thread__comm__entry_8c_a9ca7301d75736138afe10075616d176e}{sigfox\+\_\+first\+\_\+time}} = \mbox{\hyperlink{_general_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}
+\item 
+static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{thread__comm__entry_8c_a18f8441e1342e44134c7c32ad4aecb4b}{sigfox\+\_\+alert\+\_\+frame\+\_\+sended}} = \mbox{\hyperlink{_general_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}
+\item 
+static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{thread__comm__entry_8c_a4c6b7cbcfcf48dfaef3fb128cba35178}{sigfox\+\_\+test\+\_\+sended}} = \mbox{\hyperlink{_general_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}
+\item 
+static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{thread__comm__entry_8c_afe76726f36ec856a2fcd2f0b576c7451}{sigfox\+\_\+exp\+\_\+sended}} = \mbox{\hyperlink{_general_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}
+\item 
+static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{thread__comm__entry_8c_aaa5ddef05802021d7acec760157df96b}{sigfox\+\_\+gps\+\_\+sended}} = \mbox{\hyperlink{_general_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}
+\item 
+static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{thread__comm__entry_8c_a4daf68343df43853ba54479e77e29c05}{sigfox\+\_\+hw\+\_\+test\+\_\+finished}} = \mbox{\hyperlink{_general_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}
+\item 
+static \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{thread__comm__entry_8c_a7c72902c99c535139fc652c97bc4aeba}{sigfox\+\_\+hw\+\_\+test\+\_\+error}} = \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9a4f48e4214dad2e7b13ff7edc4feffe94}{e\+ERR\+\_\+\+NONE}}
+\item 
+static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{thread__comm__entry_8c_ab769683518aa4546981a483ad4b69976}{gps\+\_\+hw\+\_\+test\+\_\+finished}} = \mbox{\hyperlink{_general_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}
+\item 
+static \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{thread__comm__entry_8c_a68c50cf11407497b78b3703b70858330}{gps\+\_\+hw\+\_\+test\+\_\+error}} = \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9a4f48e4214dad2e7b13ff7edc4feffe94}{e\+ERR\+\_\+\+NONE}}
+\item 
+static \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{thread__comm__entry_8c_ad61bcc94ce0b9f8f91f7ed90d12c67cb}{gps\+\_\+cmd\+\_\+send}} = \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9aad441fa60c028a12d56dbeff429d6a46}{e\+ERR\+\_\+\+COMM\+\_\+\+GPS}}
+\item 
+static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{thread__comm__entry_8c_a72c2caf6ad95c20626a56f9da313af62}{acc\+\_\+hw\+\_\+test\+\_\+finished}} = \mbox{\hyperlink{_general_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}
+\item 
+static \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{thread__comm__entry_8c_a190bb599023eb249a14680fba0f60072}{acc\+\_\+hw\+\_\+test\+\_\+error}} = \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9a4f48e4214dad2e7b13ff7edc4feffe94}{e\+ERR\+\_\+\+NONE}}
+\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{thread__comm__entry_8c_a5f9bfc3a1f5194b1e78d45b0b3298c84}{switch\+\_\+alert}} = \mbox{\hyperlink{_general_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}
+\begin{DoxyCompactList}\small\item\em Variable to toggle alerts to avoid losing data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVersion}{Version}
+v1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+03/05/2019 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+jarribas 
+\end{DoxyAuthor}
+\begin{DoxyWarning}{Warning}
+author date version .-\/ Edition 
+\end{DoxyWarning}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000075}{Bug}}]\end{DoxyRefDesc}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{thread__comm__entry_8c_ac1777e1f844347ed30ceafeca4949458}\label{thread__comm__entry_8c_ac1777e1f844347ed30ceafeca4949458} 
+\index{thread\_comm\_entry.c@{thread\_comm\_entry.c}!ASCII\_TO\_DEC@{ASCII\_TO\_DEC}}
+\index{ASCII\_TO\_DEC@{ASCII\_TO\_DEC}!thread\_comm\_entry.c@{thread\_comm\_entry.c}}
+\doxysubsubsection{\texorpdfstring{ASCII\_TO\_DEC}{ASCII\_TO\_DEC}}
+{\footnotesize\ttfamily \#define ASCII\+\_\+\+TO\+\_\+\+DEC(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~(\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}) ((x $>$= \textquotesingle{}0\textquotesingle{})? (x-\/\textquotesingle{}0\textquotesingle{})\+:0)}
+
+\Hypertarget{thread__comm__entry_8c_a30465b046e8e2e42e33fa2499aadcf40}\label{thread__comm__entry_8c_a30465b046e8e2e42e33fa2499aadcf40} 
+\index{thread\_comm\_entry.c@{thread\_comm\_entry.c}!THREAD\_COMM\_EVENT\_TRACE@{THREAD\_COMM\_EVENT\_TRACE}}
+\index{THREAD\_COMM\_EVENT\_TRACE@{THREAD\_COMM\_EVENT\_TRACE}!thread\_comm\_entry.c@{thread\_comm\_entry.c}}
+\doxysubsubsection{\texorpdfstring{THREAD\_COMM\_EVENT\_TRACE}{THREAD\_COMM\_EVENT\_TRACE}}
+{\footnotesize\ttfamily \#define THREAD\+\_\+\+COMM\+\_\+\+EVENT\+\_\+\+TRACE~\mbox{\hyperlink{_comm_8h_a1a87383c89f58beedcf5ce80e2074eb0}{TRACE\+\_\+\+NEWLINE}}}
+
+
+
+Enable/disable traces for Thread comm events. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{thread__comm__entry_8c_aae4f209014ddd932a3bd4d4f3547d35c}\label{thread__comm__entry_8c_aae4f209014ddd932a3bd4d4f3547d35c} 
+\index{thread\_comm\_entry.c@{thread\_comm\_entry.c}!Comm\_ACC\_Execute\_HW\_Test@{Comm\_ACC\_Execute\_HW\_Test}}
+\index{Comm\_ACC\_Execute\_HW\_Test@{Comm\_ACC\_Execute\_HW\_Test}!thread\_comm\_entry.c@{thread\_comm\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Comm\_ACC\_Execute\_HW\_Test()}{Comm\_ACC\_Execute\_HW\_Test()}}
+{\footnotesize\ttfamily void Comm\+\_\+\+ACC\+\_\+\+Execute\+\_\+\+HW\+\_\+\+Test (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}}}]{force }\end{DoxyParamCaption})}
+
+
+
+Execute ACC HW Test. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em force} & force test\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__comm__entry_8c_aae4f209014ddd932a3bd4d4f3547d35c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__comm__entry_8c_aae4f209014ddd932a3bd4d4f3547d35c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__comm__entry_8c_a6f2d8ea5cc6928130c1eba9c4a15d7e1}\label{thread__comm__entry_8c_a6f2d8ea5cc6928130c1eba9c4a15d7e1} 
+\index{thread\_comm\_entry.c@{thread\_comm\_entry.c}!Comm\_Get\_ACC\_HW\_Test\_Result@{Comm\_Get\_ACC\_HW\_Test\_Result}}
+\index{Comm\_Get\_ACC\_HW\_Test\_Result@{Comm\_Get\_ACC\_HW\_Test\_Result}!thread\_comm\_entry.c@{thread\_comm\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Comm\_Get\_ACC\_HW\_Test\_Result()}{Comm\_Get\_ACC\_HW\_Test\_Result()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Comm\+\_\+\+Get\+\_\+\+ACC\+\_\+\+HW\+\_\+\+Test\+\_\+\+Result (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Get acc hw test result. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR\+\_\+\+ID\+\_\+e acc hw test result 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__comm__entry_8c_a6f2d8ea5cc6928130c1eba9c4a15d7e1_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__comm__entry_8c_a5820b9c59bd8dd257b80388aa4643720}\label{thread__comm__entry_8c_a5820b9c59bd8dd257b80388aa4643720} 
+\index{thread\_comm\_entry.c@{thread\_comm\_entry.c}!Comm\_Get\_GPS\_HW\_Test\_Result@{Comm\_Get\_GPS\_HW\_Test\_Result}}
+\index{Comm\_Get\_GPS\_HW\_Test\_Result@{Comm\_Get\_GPS\_HW\_Test\_Result}!thread\_comm\_entry.c@{thread\_comm\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Comm\_Get\_GPS\_HW\_Test\_Result()}{Comm\_Get\_GPS\_HW\_Test\_Result()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Comm\+\_\+\+Get\+\_\+\+GPS\+\_\+\+HW\+\_\+\+Test\+\_\+\+Result (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Get gps hw test result. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR\+\_\+\+ID\+\_\+e gps hw test result 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__comm__entry_8c_a5820b9c59bd8dd257b80388aa4643720_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__comm__entry_8c_aef540835b519754957f251e42bdfc435}\label{thread__comm__entry_8c_aef540835b519754957f251e42bdfc435} 
+\index{thread\_comm\_entry.c@{thread\_comm\_entry.c}!Comm\_Get\_Sigfox\_Error@{Comm\_Get\_Sigfox\_Error}}
+\index{Comm\_Get\_Sigfox\_Error@{Comm\_Get\_Sigfox\_Error}!thread\_comm\_entry.c@{thread\_comm\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Comm\_Get\_Sigfox\_Error()}{Comm\_Get\_Sigfox\_Error()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Comm\+\_\+\+Get\+\_\+\+Sigfox\+\_\+\+Error (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Get sigfox status. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+sigfox status 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__comm__entry_8c_aef540835b519754957f251e42bdfc435_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__comm__entry_8c_a8d69c5959dadc04b007418f22d94fcd6}\label{thread__comm__entry_8c_a8d69c5959dadc04b007418f22d94fcd6} 
+\index{thread\_comm\_entry.c@{thread\_comm\_entry.c}!Comm\_Get\_Sigfox\_HW\_Test\_Result@{Comm\_Get\_Sigfox\_HW\_Test\_Result}}
+\index{Comm\_Get\_Sigfox\_HW\_Test\_Result@{Comm\_Get\_Sigfox\_HW\_Test\_Result}!thread\_comm\_entry.c@{thread\_comm\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Comm\_Get\_Sigfox\_HW\_Test\_Result()}{Comm\_Get\_Sigfox\_HW\_Test\_Result()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Comm\+\_\+\+Get\+\_\+\+Sigfox\+\_\+\+HW\+\_\+\+Test\+\_\+\+Result (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Get sigfox hw test result. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR\+\_\+\+ID\+\_\+e sigfox hw test result 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__comm__entry_8c_a8d69c5959dadc04b007418f22d94fcd6_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__comm__entry_8c_a5d0a34784b4178d002ef948edcc699b6}\label{thread__comm__entry_8c_a5d0a34784b4178d002ef948edcc699b6} 
+\index{thread\_comm\_entry.c@{thread\_comm\_entry.c}!Comm\_Get\_Wifi\_Host\_Alive\_Flag@{Comm\_Get\_Wifi\_Host\_Alive\_Flag}}
+\index{Comm\_Get\_Wifi\_Host\_Alive\_Flag@{Comm\_Get\_Wifi\_Host\_Alive\_Flag}!thread\_comm\_entry.c@{thread\_comm\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Comm\_Get\_Wifi\_Host\_Alive\_Flag()}{Comm\_Get\_Wifi\_Host\_Alive\_Flag()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} Comm\+\_\+\+Get\+\_\+\+Wifi\+\_\+\+Host\+\_\+\+Alive\+\_\+\+Flag (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Gets wifi host is alive and running flag. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+TRUE if wifi host running and FALSE if not 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__comm__entry_8c_a5d0a34784b4178d002ef948edcc699b6_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__comm__entry_8c_a36209b93e4c52a7f7c1294cff117b780}\label{thread__comm__entry_8c_a36209b93e4c52a7f7c1294cff117b780} 
+\index{thread\_comm\_entry.c@{thread\_comm\_entry.c}!Comm\_Get\_Wifi\_HW\_Test\_Result@{Comm\_Get\_Wifi\_HW\_Test\_Result}}
+\index{Comm\_Get\_Wifi\_HW\_Test\_Result@{Comm\_Get\_Wifi\_HW\_Test\_Result}!thread\_comm\_entry.c@{thread\_comm\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Comm\_Get\_Wifi\_HW\_Test\_Result()}{Comm\_Get\_Wifi\_HW\_Test\_Result()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Comm\+\_\+\+Get\+\_\+\+Wifi\+\_\+\+HW\+\_\+\+Test\+\_\+\+Result (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Get wifi hw test result. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR\+\_\+\+ID\+\_\+e wifi hw test result 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__comm__entry_8c_a36209b93e4c52a7f7c1294cff117b780_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__comm__entry_8c_a840410d896d8adf13d04d17a2b724c5b}\label{thread__comm__entry_8c_a840410d896d8adf13d04d17a2b724c5b} 
+\index{thread\_comm\_entry.c@{thread\_comm\_entry.c}!Comm\_GPS\_Execute\_HW\_Test@{Comm\_GPS\_Execute\_HW\_Test}}
+\index{Comm\_GPS\_Execute\_HW\_Test@{Comm\_GPS\_Execute\_HW\_Test}!thread\_comm\_entry.c@{thread\_comm\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Comm\_GPS\_Execute\_HW\_Test()}{Comm\_GPS\_Execute\_HW\_Test()}}
+{\footnotesize\ttfamily void Comm\+\_\+\+GPS\+\_\+\+Execute\+\_\+\+HW\+\_\+\+Test (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Execute gps HW Test. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__comm__entry_8c_a840410d896d8adf13d04d17a2b724c5b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__comm__entry_8c_a840410d896d8adf13d04d17a2b724c5b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__comm__entry_8c_a4423c957a2af025ce72fc5bb391da5ef}\label{thread__comm__entry_8c_a4423c957a2af025ce72fc5bb391da5ef} 
+\index{thread\_comm\_entry.c@{thread\_comm\_entry.c}!Comm\_GPS\_Get\_Position@{Comm\_GPS\_Get\_Position}}
+\index{Comm\_GPS\_Get\_Position@{Comm\_GPS\_Get\_Position}!thread\_comm\_entry.c@{thread\_comm\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Comm\_GPS\_Get\_Position()}{Comm\_GPS\_Get\_Position()}}
+{\footnotesize\ttfamily void Comm\+\_\+\+GPS\+\_\+\+Get\+\_\+\+Position (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Ask GPS Position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__comm__entry_8c_a4423c957a2af025ce72fc5bb391da5ef_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__comm__entry_8c_a4423c957a2af025ce72fc5bb391da5ef_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__comm__entry_8c_a8aad2fb078dfeb930ac0e1afe880e7a5}\label{thread__comm__entry_8c_a8aad2fb078dfeb930ac0e1afe880e7a5} 
+\index{thread\_comm\_entry.c@{thread\_comm\_entry.c}!Comm\_GPS\_Open@{Comm\_GPS\_Open}}
+\index{Comm\_GPS\_Open@{Comm\_GPS\_Open}!thread\_comm\_entry.c@{thread\_comm\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Comm\_GPS\_Open()}{Comm\_GPS\_Open()}}
+{\footnotesize\ttfamily void Comm\+\_\+\+GPS\+\_\+\+Open (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Open GPS Communication. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=321pt]{thread__comm__entry_8c_a8aad2fb078dfeb930ac0e1afe880e7a5_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__comm__entry_8c_a8aad2fb078dfeb930ac0e1afe880e7a5_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__comm__entry_8c_a22138b207b88df73185c9ff1948040d8}\label{thread__comm__entry_8c_a22138b207b88df73185c9ff1948040d8} 
+\index{thread\_comm\_entry.c@{thread\_comm\_entry.c}!Comm\_GPS\_Send\_Cmd@{Comm\_GPS\_Send\_Cmd}}
+\index{Comm\_GPS\_Send\_Cmd@{Comm\_GPS\_Send\_Cmd}!thread\_comm\_entry.c@{thread\_comm\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Comm\_GPS\_Send\_Cmd()}{Comm\_GPS\_Send\_Cmd()}}
+{\footnotesize\ttfamily void Comm\+\_\+\+GPS\+\_\+\+Send\+\_\+\+Cmd (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Send GPS Commands. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{thread__comm__entry_8c_a22138b207b88df73185c9ff1948040d8_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__comm__entry_8c_a22138b207b88df73185c9ff1948040d8_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__comm__entry_8c_a950694ff68bbfa4ab1ec0c42bf708780}\label{thread__comm__entry_8c_a950694ff68bbfa4ab1ec0c42bf708780} 
+\index{thread\_comm\_entry.c@{thread\_comm\_entry.c}!Comm\_Is\_ACC\_HW\_Test\_Finished@{Comm\_Is\_ACC\_HW\_Test\_Finished}}
+\index{Comm\_Is\_ACC\_HW\_Test\_Finished@{Comm\_Is\_ACC\_HW\_Test\_Finished}!thread\_comm\_entry.c@{thread\_comm\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Comm\_Is\_ACC\_HW\_Test\_Finished()}{Comm\_Is\_ACC\_HW\_Test\_Finished()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} Comm\+\_\+\+Is\+\_\+\+ACC\+\_\+\+HW\+\_\+\+Test\+\_\+\+Finished (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Checks if accelerometer hw test process is finished. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+TRUE if acc hw test finished and FALSE if not 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__comm__entry_8c_a950694ff68bbfa4ab1ec0c42bf708780_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__comm__entry_8c_a5e4d761bff1fae21581149068851954f}\label{thread__comm__entry_8c_a5e4d761bff1fae21581149068851954f} 
+\index{thread\_comm\_entry.c@{thread\_comm\_entry.c}!Comm\_Is\_GPS\_Cmd\_Send@{Comm\_Is\_GPS\_Cmd\_Send}}
+\index{Comm\_Is\_GPS\_Cmd\_Send@{Comm\_Is\_GPS\_Cmd\_Send}!thread\_comm\_entry.c@{thread\_comm\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Comm\_Is\_GPS\_Cmd\_Send()}{Comm\_Is\_GPS\_Cmd\_Send()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Comm\+\_\+\+Is\+\_\+\+GPS\+\_\+\+Cmd\+\_\+\+Send (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Check if GPS command is send. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR\+\_\+\+ID\+\_\+e gps hw test result 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__comm__entry_8c_a5e4d761bff1fae21581149068851954f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__comm__entry_8c_ad22f45e51411cf5a0ff7a91a9fa30e29}\label{thread__comm__entry_8c_ad22f45e51411cf5a0ff7a91a9fa30e29} 
+\index{thread\_comm\_entry.c@{thread\_comm\_entry.c}!Comm\_Is\_GPS\_HW\_Test\_Finished@{Comm\_Is\_GPS\_HW\_Test\_Finished}}
+\index{Comm\_Is\_GPS\_HW\_Test\_Finished@{Comm\_Is\_GPS\_HW\_Test\_Finished}!thread\_comm\_entry.c@{thread\_comm\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Comm\_Is\_GPS\_HW\_Test\_Finished()}{Comm\_Is\_GPS\_HW\_Test\_Finished()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} Comm\+\_\+\+Is\+\_\+\+GPS\+\_\+\+HW\+\_\+\+Test\+\_\+\+Finished (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Checks if gps hw test process is finished. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+TRUE if gps hw test finished and FALSE if not 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__comm__entry_8c_ad22f45e51411cf5a0ff7a91a9fa30e29_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__comm__entry_8c_ae6f7aeb0f8fc8e16c1e8d2f7c1cb7984}\label{thread__comm__entry_8c_ae6f7aeb0f8fc8e16c1e8d2f7c1cb7984} 
+\index{thread\_comm\_entry.c@{thread\_comm\_entry.c}!Comm\_Is\_Sigfox\_Alert\_Sended@{Comm\_Is\_Sigfox\_Alert\_Sended}}
+\index{Comm\_Is\_Sigfox\_Alert\_Sended@{Comm\_Is\_Sigfox\_Alert\_Sended}!thread\_comm\_entry.c@{thread\_comm\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Comm\_Is\_Sigfox\_Alert\_Sended()}{Comm\_Is\_Sigfox\_Alert\_Sended()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} Comm\+\_\+\+Is\+\_\+\+Sigfox\+\_\+\+Alert\+\_\+\+Sended (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Checks if Sigfox alert sended process completed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+TRUE if sigfox alert sended and FALSE if not 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__comm__entry_8c_ae6f7aeb0f8fc8e16c1e8d2f7c1cb7984_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__comm__entry_8c_a8198be61adcf8789af5d987d57b6a23b}\label{thread__comm__entry_8c_a8198be61adcf8789af5d987d57b6a23b} 
+\index{thread\_comm\_entry.c@{thread\_comm\_entry.c}!Comm\_Is\_Sigfox\_Exp\_Sended@{Comm\_Is\_Sigfox\_Exp\_Sended}}
+\index{Comm\_Is\_Sigfox\_Exp\_Sended@{Comm\_Is\_Sigfox\_Exp\_Sended}!thread\_comm\_entry.c@{thread\_comm\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Comm\_Is\_Sigfox\_Exp\_Sended()}{Comm\_Is\_Sigfox\_Exp\_Sended()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} Comm\+\_\+\+Is\+\_\+\+Sigfox\+\_\+\+Exp\+\_\+\+Sended (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Checks if sigfox exp sended process completed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+TRUE if sigfox test sended and FALSE if not 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__comm__entry_8c_a8198be61adcf8789af5d987d57b6a23b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__comm__entry_8c_ab1d5ed1c3c6c15f0cbc2531f4d629ff4}\label{thread__comm__entry_8c_ab1d5ed1c3c6c15f0cbc2531f4d629ff4} 
+\index{thread\_comm\_entry.c@{thread\_comm\_entry.c}!Comm\_Is\_Sigfox\_GPS\_Sended@{Comm\_Is\_Sigfox\_GPS\_Sended}}
+\index{Comm\_Is\_Sigfox\_GPS\_Sended@{Comm\_Is\_Sigfox\_GPS\_Sended}!thread\_comm\_entry.c@{thread\_comm\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Comm\_Is\_Sigfox\_GPS\_Sended()}{Comm\_Is\_Sigfox\_GPS\_Sended()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} Comm\+\_\+\+Is\+\_\+\+Sigfox\+\_\+\+GPS\+\_\+\+Sended (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Checks if sigfox exp sended process completed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+TRUE if sigfox test sended and FALSE if not 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__comm__entry_8c_ab1d5ed1c3c6c15f0cbc2531f4d629ff4_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__comm__entry_8c_acf3f136d4f57642f564b5b26412091a9}\label{thread__comm__entry_8c_acf3f136d4f57642f564b5b26412091a9} 
+\index{thread\_comm\_entry.c@{thread\_comm\_entry.c}!Comm\_Is\_Sigfox\_HW\_Test\_Finished@{Comm\_Is\_Sigfox\_HW\_Test\_Finished}}
+\index{Comm\_Is\_Sigfox\_HW\_Test\_Finished@{Comm\_Is\_Sigfox\_HW\_Test\_Finished}!thread\_comm\_entry.c@{thread\_comm\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Comm\_Is\_Sigfox\_HW\_Test\_Finished()}{Comm\_Is\_Sigfox\_HW\_Test\_Finished()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} Comm\+\_\+\+Is\+\_\+\+Sigfox\+\_\+\+HW\+\_\+\+Test\+\_\+\+Finished (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Checks if sigfox hw test process is finished. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+TRUE if sigfox hw test finished and FALSE if not 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__comm__entry_8c_acf3f136d4f57642f564b5b26412091a9_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__comm__entry_8c_a6f2ca4d1ab63af942461484f1451146c}\label{thread__comm__entry_8c_a6f2ca4d1ab63af942461484f1451146c} 
+\index{thread\_comm\_entry.c@{thread\_comm\_entry.c}!Comm\_Is\_Sigfox\_Initialized@{Comm\_Is\_Sigfox\_Initialized}}
+\index{Comm\_Is\_Sigfox\_Initialized@{Comm\_Is\_Sigfox\_Initialized}!thread\_comm\_entry.c@{thread\_comm\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Comm\_Is\_Sigfox\_Initialized()}{Comm\_Is\_Sigfox\_Initialized()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} Comm\+\_\+\+Is\+\_\+\+Sigfox\+\_\+\+Initialized (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Checks if sigfox initialization process completed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+TRUE if sigfox initialized and FALSE if not 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__comm__entry_8c_a6f2ca4d1ab63af942461484f1451146c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__comm__entry_8c_a605152440b38d4693184802ca9b64c8b}\label{thread__comm__entry_8c_a605152440b38d4693184802ca9b64c8b} 
+\index{thread\_comm\_entry.c@{thread\_comm\_entry.c}!Comm\_Is\_Sigfox\_Test\_Sended@{Comm\_Is\_Sigfox\_Test\_Sended}}
+\index{Comm\_Is\_Sigfox\_Test\_Sended@{Comm\_Is\_Sigfox\_Test\_Sended}!thread\_comm\_entry.c@{thread\_comm\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Comm\_Is\_Sigfox\_Test\_Sended()}{Comm\_Is\_Sigfox\_Test\_Sended()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} Comm\+\_\+\+Is\+\_\+\+Sigfox\+\_\+\+Test\+\_\+\+Sended (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Checks if sigfox test sended process completed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+TRUE if sigfox test sended and FALSE if not 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__comm__entry_8c_a605152440b38d4693184802ca9b64c8b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__comm__entry_8c_af8503a5741f300bddb0ce6c1bccb3292}\label{thread__comm__entry_8c_af8503a5741f300bddb0ce6c1bccb3292} 
+\index{thread\_comm\_entry.c@{thread\_comm\_entry.c}!Comm\_Is\_Wifi\_Alert\_Frame\_Sended@{Comm\_Is\_Wifi\_Alert\_Frame\_Sended}}
+\index{Comm\_Is\_Wifi\_Alert\_Frame\_Sended@{Comm\_Is\_Wifi\_Alert\_Frame\_Sended}!thread\_comm\_entry.c@{thread\_comm\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Comm\_Is\_Wifi\_Alert\_Frame\_Sended()}{Comm\_Is\_Wifi\_Alert\_Frame\_Sended()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} Comm\+\_\+\+Is\+\_\+\+Wifi\+\_\+\+Alert\+\_\+\+Frame\+\_\+\+Sended (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Checks if wifi test frame sended process completed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+TRUE if wifi test frame sended and FALSE if not 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__comm__entry_8c_af8503a5741f300bddb0ce6c1bccb3292_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__comm__entry_8c_a3b3c9aea00a5521c8225ecb251eb4d58}\label{thread__comm__entry_8c_a3b3c9aea00a5521c8225ecb251eb4d58} 
+\index{thread\_comm\_entry.c@{thread\_comm\_entry.c}!Comm\_Is\_Wifi\_Config\_Received@{Comm\_Is\_Wifi\_Config\_Received}}
+\index{Comm\_Is\_Wifi\_Config\_Received@{Comm\_Is\_Wifi\_Config\_Received}!thread\_comm\_entry.c@{thread\_comm\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Comm\_Is\_Wifi\_Config\_Received()}{Comm\_Is\_Wifi\_Config\_Received()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} Comm\+\_\+\+Is\+\_\+\+Wifi\+\_\+\+Config\+\_\+\+Received (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Checks if wifi config received process completed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+TRUE if wifi upgrade received and FALSE if not 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{thread__comm__entry_8c_a3b3c9aea00a5521c8225ecb251eb4d58_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__comm__entry_8c_af795af03696f8d5370e24b0afc5f789d}\label{thread__comm__entry_8c_af795af03696f8d5370e24b0afc5f789d} 
+\index{thread\_comm\_entry.c@{thread\_comm\_entry.c}!Comm\_Is\_Wifi\_Episode\_Sended@{Comm\_Is\_Wifi\_Episode\_Sended}}
+\index{Comm\_Is\_Wifi\_Episode\_Sended@{Comm\_Is\_Wifi\_Episode\_Sended}!thread\_comm\_entry.c@{thread\_comm\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Comm\_Is\_Wifi\_Episode\_Sended()}{Comm\_Is\_Wifi\_Episode\_Sended()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} Comm\+\_\+\+Is\+\_\+\+Wifi\+\_\+\+Episode\+\_\+\+Sended (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Checks if wifi episode sended process completed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+TRUE if wifi test sended and FALSE if not 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__comm__entry_8c_af795af03696f8d5370e24b0afc5f789d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__comm__entry_8c_af795af03696f8d5370e24b0afc5f789d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__comm__entry_8c_a1ed8688e4f2bb331195db3b77d38b9eb}\label{thread__comm__entry_8c_a1ed8688e4f2bb331195db3b77d38b9eb} 
+\index{thread\_comm\_entry.c@{thread\_comm\_entry.c}!Comm\_Is\_Wifi\_Free@{Comm\_Is\_Wifi\_Free}}
+\index{Comm\_Is\_Wifi\_Free@{Comm\_Is\_Wifi\_Free}!thread\_comm\_entry.c@{thread\_comm\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Comm\_Is\_Wifi\_Free()}{Comm\_Is\_Wifi\_Free()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} Comm\+\_\+\+Is\+\_\+\+Wifi\+\_\+\+Free (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Returns if Comms UART is free. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true or false 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__comm__entry_8c_a1ed8688e4f2bb331195db3b77d38b9eb_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__comm__entry_8c_a9aff5c2ff735536e998fe52402745d28}\label{thread__comm__entry_8c_a9aff5c2ff735536e998fe52402745d28} 
+\index{thread\_comm\_entry.c@{thread\_comm\_entry.c}!Comm\_Is\_Wifi\_Host\_Alive\_Finished@{Comm\_Is\_Wifi\_Host\_Alive\_Finished}}
+\index{Comm\_Is\_Wifi\_Host\_Alive\_Finished@{Comm\_Is\_Wifi\_Host\_Alive\_Finished}!thread\_comm\_entry.c@{thread\_comm\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Comm\_Is\_Wifi\_Host\_Alive\_Finished()}{Comm\_Is\_Wifi\_Host\_Alive\_Finished()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} Comm\+\_\+\+Is\+\_\+\+Wifi\+\_\+\+Host\+\_\+\+Alive\+\_\+\+Finished (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Checks if server host is up and running process finished. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+TRUE if finished, FALSE if not 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__comm__entry_8c_a9aff5c2ff735536e998fe52402745d28_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__comm__entry_8c_a23ef1102af62cc18d59879de30740889}\label{thread__comm__entry_8c_a23ef1102af62cc18d59879de30740889} 
+\index{thread\_comm\_entry.c@{thread\_comm\_entry.c}!Comm\_Is\_Wifi\_HW\_Test\_Finished@{Comm\_Is\_Wifi\_HW\_Test\_Finished}}
+\index{Comm\_Is\_Wifi\_HW\_Test\_Finished@{Comm\_Is\_Wifi\_HW\_Test\_Finished}!thread\_comm\_entry.c@{thread\_comm\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Comm\_Is\_Wifi\_HW\_Test\_Finished()}{Comm\_Is\_Wifi\_HW\_Test\_Finished()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} Comm\+\_\+\+Is\+\_\+\+Wifi\+\_\+\+HW\+\_\+\+Test\+\_\+\+Finished (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Checks if wifi hw test process is finished. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+TRUE if wifi hw test finished and FALSE if not 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__comm__entry_8c_a23ef1102af62cc18d59879de30740889_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__comm__entry_8c_ac245c1a9c58d72709c404deef8e2487d}\label{thread__comm__entry_8c_ac245c1a9c58d72709c404deef8e2487d} 
+\index{thread\_comm\_entry.c@{thread\_comm\_entry.c}!Comm\_Is\_Wifi\_Init\_Finished@{Comm\_Is\_Wifi\_Init\_Finished}}
+\index{Comm\_Is\_Wifi\_Init\_Finished@{Comm\_Is\_Wifi\_Init\_Finished}!thread\_comm\_entry.c@{thread\_comm\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Comm\_Is\_Wifi\_Init\_Finished()}{Comm\_Is\_Wifi\_Init\_Finished()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} Comm\+\_\+\+Is\+\_\+\+Wifi\+\_\+\+Init\+\_\+\+Finished (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Checks if wifi initialization process finished. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+TRUE if wifi finished and connected FALSE if not 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__comm__entry_8c_ac245c1a9c58d72709c404deef8e2487d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__comm__entry_8c_a4d6d68ab709b7b37c105e939f67da143}\label{thread__comm__entry_8c_a4d6d68ab709b7b37c105e939f67da143} 
+\index{thread\_comm\_entry.c@{thread\_comm\_entry.c}!Comm\_Is\_Wifi\_Initialized@{Comm\_Is\_Wifi\_Initialized}}
+\index{Comm\_Is\_Wifi\_Initialized@{Comm\_Is\_Wifi\_Initialized}!thread\_comm\_entry.c@{thread\_comm\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Comm\_Is\_Wifi\_Initialized()}{Comm\_Is\_Wifi\_Initialized()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} Comm\+\_\+\+Is\+\_\+\+Wifi\+\_\+\+Initialized (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Checks if wifi initialization process completed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+TRUE if wifi initialized and connected FALSE if not 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__comm__entry_8c_a4d6d68ab709b7b37c105e939f67da143_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__comm__entry_8c_a882b195fcf26112f1cf63035666e4f42}\label{thread__comm__entry_8c_a882b195fcf26112f1cf63035666e4f42} 
+\index{thread\_comm\_entry.c@{thread\_comm\_entry.c}!Comm\_Is\_Wifi\_Position\_Frame\_Sended@{Comm\_Is\_Wifi\_Position\_Frame\_Sended}}
+\index{Comm\_Is\_Wifi\_Position\_Frame\_Sended@{Comm\_Is\_Wifi\_Position\_Frame\_Sended}!thread\_comm\_entry.c@{thread\_comm\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Comm\_Is\_Wifi\_Position\_Frame\_Sended()}{Comm\_Is\_Wifi\_Position\_Frame\_Sended()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} Comm\+\_\+\+Is\+\_\+\+Wifi\+\_\+\+Position\+\_\+\+Frame\+\_\+\+Sended (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Checks if wifi position frame sended process completed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+TRUE if wifi position frame sended and FALSE if not 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__comm__entry_8c_a882b195fcf26112f1cf63035666e4f42_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__comm__entry_8c_a882b195fcf26112f1cf63035666e4f42_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__comm__entry_8c_a2dadd372b36fe4568ab80abac99c16f7}\label{thread__comm__entry_8c_a2dadd372b36fe4568ab80abac99c16f7} 
+\index{thread\_comm\_entry.c@{thread\_comm\_entry.c}!Comm\_Is\_Wifi\_Test\_Frame\_Sended@{Comm\_Is\_Wifi\_Test\_Frame\_Sended}}
+\index{Comm\_Is\_Wifi\_Test\_Frame\_Sended@{Comm\_Is\_Wifi\_Test\_Frame\_Sended}!thread\_comm\_entry.c@{thread\_comm\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Comm\_Is\_Wifi\_Test\_Frame\_Sended()}{Comm\_Is\_Wifi\_Test\_Frame\_Sended()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} Comm\+\_\+\+Is\+\_\+\+Wifi\+\_\+\+Test\+\_\+\+Frame\+\_\+\+Sended (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Checks if wifi test frame sended process completed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+TRUE if wifi test frame sended and FALSE if not 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__comm__entry_8c_a2dadd372b36fe4568ab80abac99c16f7_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__comm__entry_8c_ac5fc2d42c00fdc0c7ae195f918679fc5}\label{thread__comm__entry_8c_ac5fc2d42c00fdc0c7ae195f918679fc5} 
+\index{thread\_comm\_entry.c@{thread\_comm\_entry.c}!Comm\_Is\_Wifi\_Test\_Sended@{Comm\_Is\_Wifi\_Test\_Sended}}
+\index{Comm\_Is\_Wifi\_Test\_Sended@{Comm\_Is\_Wifi\_Test\_Sended}!thread\_comm\_entry.c@{thread\_comm\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Comm\_Is\_Wifi\_Test\_Sended()}{Comm\_Is\_Wifi\_Test\_Sended()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} Comm\+\_\+\+Is\+\_\+\+Wifi\+\_\+\+Test\+\_\+\+Sended (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Checks if wifi test sended process completed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+TRUE if wifi test sended and FALSE if not 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__comm__entry_8c_ac5fc2d42c00fdc0c7ae195f918679fc5_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__comm__entry_8c_aa5b7c87510b58a3534c0601f9e6fe331}\label{thread__comm__entry_8c_aa5b7c87510b58a3534c0601f9e6fe331} 
+\index{thread\_comm\_entry.c@{thread\_comm\_entry.c}!Comm\_Is\_Wifi\_Upgrade\_Received@{Comm\_Is\_Wifi\_Upgrade\_Received}}
+\index{Comm\_Is\_Wifi\_Upgrade\_Received@{Comm\_Is\_Wifi\_Upgrade\_Received}!thread\_comm\_entry.c@{thread\_comm\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Comm\_Is\_Wifi\_Upgrade\_Received()}{Comm\_Is\_Wifi\_Upgrade\_Received()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} Comm\+\_\+\+Is\+\_\+\+Wifi\+\_\+\+Upgrade\+\_\+\+Received (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Checks if wifi upgrade received process completed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+TRUE if wifi upgrade received and FALSE if not 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=349pt]{thread__comm__entry_8c_aa5b7c87510b58a3534c0601f9e6fe331_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__comm__entry_8c_abdb3233aafd52ba84f5b2aa516b1aec2}\label{thread__comm__entry_8c_abdb3233aafd52ba84f5b2aa516b1aec2} 
+\index{thread\_comm\_entry.c@{thread\_comm\_entry.c}!Comm\_Sigfox\_Execute\_HW\_Test@{Comm\_Sigfox\_Execute\_HW\_Test}}
+\index{Comm\_Sigfox\_Execute\_HW\_Test@{Comm\_Sigfox\_Execute\_HW\_Test}!thread\_comm\_entry.c@{thread\_comm\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Comm\_Sigfox\_Execute\_HW\_Test()}{Comm\_Sigfox\_Execute\_HW\_Test()}}
+{\footnotesize\ttfamily void Comm\+\_\+\+Sigfox\+\_\+\+Execute\+\_\+\+HW\+\_\+\+Test (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Execute Sigfox HW Test. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR\+\_\+\+ID\+\_\+e error code 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{thread__comm__entry_8c_abdb3233aafd52ba84f5b2aa516b1aec2_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__comm__entry_8c_abdb3233aafd52ba84f5b2aa516b1aec2_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__comm__entry_8c_aec3cb8d1147721b26dbcca359d4c2a1c}\label{thread__comm__entry_8c_aec3cb8d1147721b26dbcca359d4c2a1c} 
+\index{thread\_comm\_entry.c@{thread\_comm\_entry.c}!Comm\_Sigfox\_Generate\_Send\_Alert@{Comm\_Sigfox\_Generate\_Send\_Alert}}
+\index{Comm\_Sigfox\_Generate\_Send\_Alert@{Comm\_Sigfox\_Generate\_Send\_Alert}!thread\_comm\_entry.c@{thread\_comm\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Comm\_Sigfox\_Generate\_Send\_Alert()}{Comm\_Sigfox\_Generate\_Send\_Alert()}}
+{\footnotesize\ttfamily void Comm\+\_\+\+Sigfox\+\_\+\+Generate\+\_\+\+Send\+\_\+\+Alert (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{thread__comm__hal_8h_a5aa347e2a685a85a377a26337e9c5cc3}{SIGFOX\+\_\+\+MSG\+\_\+\+ID\+\_\+e}}}]{alert\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Generate and send R100 Sigfox Alert. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR\+\_\+\+ID\+\_\+e error code 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__comm__entry_8c_aec3cb8d1147721b26dbcca359d4c2a1c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__comm__entry_8c_aec3cb8d1147721b26dbcca359d4c2a1c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__comm__entry_8c_a9794cf5219f147950deb93abcab25b78}\label{thread__comm__entry_8c_a9794cf5219f147950deb93abcab25b78} 
+\index{thread\_comm\_entry.c@{thread\_comm\_entry.c}!Comm\_Sigfox\_Generate\_Send\_Expiration@{Comm\_Sigfox\_Generate\_Send\_Expiration}}
+\index{Comm\_Sigfox\_Generate\_Send\_Expiration@{Comm\_Sigfox\_Generate\_Send\_Expiration}!thread\_comm\_entry.c@{thread\_comm\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Comm\_Sigfox\_Generate\_Send\_Expiration()}{Comm\_Sigfox\_Generate\_Send\_Expiration()}}
+{\footnotesize\ttfamily void Comm\+\_\+\+Sigfox\+\_\+\+Generate\+\_\+\+Send\+\_\+\+Expiration (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_d_b___t_e_s_t___r_e_s_u_l_t__t}{DB\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Result }\end{DoxyParamCaption})}
+
+
+
+Generate and send electrodes and battery expiration dates. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR\+\_\+\+ID\+\_\+e error code 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__comm__entry_8c_a9794cf5219f147950deb93abcab25b78_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__comm__entry_8c_a9794cf5219f147950deb93abcab25b78_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__comm__entry_8c_aa5bebfa6dad376f9d2c79e2256f29d40}\label{thread__comm__entry_8c_aa5bebfa6dad376f9d2c79e2256f29d40} 
+\index{thread\_comm\_entry.c@{thread\_comm\_entry.c}!Comm\_Sigfox\_Generate\_Send\_Position@{Comm\_Sigfox\_Generate\_Send\_Position}}
+\index{Comm\_Sigfox\_Generate\_Send\_Position@{Comm\_Sigfox\_Generate\_Send\_Position}!thread\_comm\_entry.c@{thread\_comm\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Comm\_Sigfox\_Generate\_Send\_Position()}{Comm\_Sigfox\_Generate\_Send\_Position()}}
+{\footnotesize\ttfamily void Comm\+\_\+\+Sigfox\+\_\+\+Generate\+\_\+\+Send\+\_\+\+Position (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{thread__comm__hal_8h_a5aa347e2a685a85a377a26337e9c5cc3}{SIGFOX\+\_\+\+MSG\+\_\+\+ID\+\_\+e}}}]{gps\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Generate R100 Sigfox GPS position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR\+\_\+\+ID\+\_\+e error code 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{thread__comm__entry_8c_aa5bebfa6dad376f9d2c79e2256f29d40_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__comm__entry_8c_aa5bebfa6dad376f9d2c79e2256f29d40_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__comm__entry_8c_a2b830ebc982c1f3df32402823b6bb3c0}\label{thread__comm__entry_8c_a2b830ebc982c1f3df32402823b6bb3c0} 
+\index{thread\_comm\_entry.c@{thread\_comm\_entry.c}!Comm\_Sigfox\_Generate\_Send\_Test@{Comm\_Sigfox\_Generate\_Send\_Test}}
+\index{Comm\_Sigfox\_Generate\_Send\_Test@{Comm\_Sigfox\_Generate\_Send\_Test}!thread\_comm\_entry.c@{thread\_comm\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Comm\_Sigfox\_Generate\_Send\_Test()}{Comm\_Sigfox\_Generate\_Send\_Test()}}
+{\footnotesize\ttfamily void Comm\+\_\+\+Sigfox\+\_\+\+Generate\+\_\+\+Send\+\_\+\+Test (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_d_b___t_e_s_t___r_e_s_u_l_t__t}{DB\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Result }\end{DoxyParamCaption})}
+
+
+
+Function to send the test result to Sigfox cloud. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Result} & pointer to result parameters \\
+\hline
+{\em auto\+\_\+test} & if the test is automatic or forced by an user\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__comm__entry_8c_a2b830ebc982c1f3df32402823b6bb3c0_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__comm__entry_8c_a2b830ebc982c1f3df32402823b6bb3c0_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__comm__entry_8c_aae63ed01fe3ee64c1d194e97ca3877b3}\label{thread__comm__entry_8c_aae63ed01fe3ee64c1d194e97ca3877b3} 
+\index{thread\_comm\_entry.c@{thread\_comm\_entry.c}!Comm\_Sigfox\_Open@{Comm\_Sigfox\_Open}}
+\index{Comm\_Sigfox\_Open@{Comm\_Sigfox\_Open}!thread\_comm\_entry.c@{thread\_comm\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Comm\_Sigfox\_Open()}{Comm\_Sigfox\_Open()}}
+{\footnotesize\ttfamily void Comm\+\_\+\+Sigfox\+\_\+\+Open (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Open Sigfox Communication. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=327pt]{thread__comm__entry_8c_aae63ed01fe3ee64c1d194e97ca3877b3_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__comm__entry_8c_aae63ed01fe3ee64c1d194e97ca3877b3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__comm__entry_8c_a610032f1b24eac31f7fd291c334b59eb}\label{thread__comm__entry_8c_a610032f1b24eac31f7fd291c334b59eb} 
+\index{thread\_comm\_entry.c@{thread\_comm\_entry.c}!Comm\_Wifi\_Execute\_HW\_Test@{Comm\_Wifi\_Execute\_HW\_Test}}
+\index{Comm\_Wifi\_Execute\_HW\_Test@{Comm\_Wifi\_Execute\_HW\_Test}!thread\_comm\_entry.c@{thread\_comm\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Comm\_Wifi\_Execute\_HW\_Test()}{Comm\_Wifi\_Execute\_HW\_Test()}}
+{\footnotesize\ttfamily void Comm\+\_\+\+Wifi\+\_\+\+Execute\+\_\+\+HW\+\_\+\+Test (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Execute Wifi HW Test. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__comm__entry_8c_a610032f1b24eac31f7fd291c334b59eb_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__comm__entry_8c_a610032f1b24eac31f7fd291c334b59eb_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__comm__entry_8c_a87e4a8efc817a1a684329a09dfb6e32c}\label{thread__comm__entry_8c_a87e4a8efc817a1a684329a09dfb6e32c} 
+\index{thread\_comm\_entry.c@{thread\_comm\_entry.c}!Comm\_Wifi\_Generate\_Send\_Alert\_Frame@{Comm\_Wifi\_Generate\_Send\_Alert\_Frame}}
+\index{Comm\_Wifi\_Generate\_Send\_Alert\_Frame@{Comm\_Wifi\_Generate\_Send\_Alert\_Frame}!thread\_comm\_entry.c@{thread\_comm\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Comm\_Wifi\_Generate\_Send\_Alert\_Frame()}{Comm\_Wifi\_Generate\_Send\_Alert\_Frame()}}
+{\footnotesize\ttfamily void Comm\+\_\+\+Wifi\+\_\+\+Generate\+\_\+\+Send\+\_\+\+Alert\+\_\+\+Frame (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{thread__comm__hal_8h_a30bcce91a84082e55fabfd5098f0d7d7}{WIFI\+\_\+\+MSG\+\_\+\+ID\+\_\+e}}}]{alert\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Generate and send R100 Wifi Alert. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR\+\_\+\+ID\+\_\+e error code 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__comm__entry_8c_a87e4a8efc817a1a684329a09dfb6e32c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__comm__entry_8c_a87e4a8efc817a1a684329a09dfb6e32c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__comm__entry_8c_a6da93bfa9b0d3577caed0e934e057b68}\label{thread__comm__entry_8c_a6da93bfa9b0d3577caed0e934e057b68} 
+\index{thread\_comm\_entry.c@{thread\_comm\_entry.c}!Comm\_Wifi\_Generate\_Send\_Position\_Frame@{Comm\_Wifi\_Generate\_Send\_Position\_Frame}}
+\index{Comm\_Wifi\_Generate\_Send\_Position\_Frame@{Comm\_Wifi\_Generate\_Send\_Position\_Frame}!thread\_comm\_entry.c@{thread\_comm\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Comm\_Wifi\_Generate\_Send\_Position\_Frame()}{Comm\_Wifi\_Generate\_Send\_Position\_Frame()}}
+{\footnotesize\ttfamily void Comm\+\_\+\+Wifi\+\_\+\+Generate\+\_\+\+Send\+\_\+\+Position\+\_\+\+Frame (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{thread__comm__hal_8h_a30bcce91a84082e55fabfd5098f0d7d7}{WIFI\+\_\+\+MSG\+\_\+\+ID\+\_\+e}}}]{gps\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Generate R100 Wifi GPS position Frame. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR\+\_\+\+ID\+\_\+e error code 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{thread__comm__entry_8c_a6da93bfa9b0d3577caed0e934e057b68_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__comm__entry_8c_a6da93bfa9b0d3577caed0e934e057b68_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__comm__entry_8c_ac00c8f1a401cbbc02b2e3ce72b020878}\label{thread__comm__entry_8c_ac00c8f1a401cbbc02b2e3ce72b020878} 
+\index{thread\_comm\_entry.c@{thread\_comm\_entry.c}!Comm\_Wifi\_Generate\_Send\_Test\_Frame@{Comm\_Wifi\_Generate\_Send\_Test\_Frame}}
+\index{Comm\_Wifi\_Generate\_Send\_Test\_Frame@{Comm\_Wifi\_Generate\_Send\_Test\_Frame}!thread\_comm\_entry.c@{thread\_comm\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Comm\_Wifi\_Generate\_Send\_Test\_Frame()}{Comm\_Wifi\_Generate\_Send\_Test\_Frame()}}
+{\footnotesize\ttfamily void Comm\+\_\+\+Wifi\+\_\+\+Generate\+\_\+\+Send\+\_\+\+Test\+\_\+\+Frame (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_d_b___t_e_s_t___r_e_s_u_l_t__t}{DB\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Result }\end{DoxyParamCaption})}
+
+
+
+Function to send the test result using wifi connection. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Result} & pointer to result parameters \\
+\hline
+{\em auto\+\_\+test} & if the test is automatic or forced by an user\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__comm__entry_8c_ac00c8f1a401cbbc02b2e3ce72b020878_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__comm__entry_8c_ac00c8f1a401cbbc02b2e3ce72b020878_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__comm__entry_8c_aad487ab6f3aac284e128bd96e256191d}\label{thread__comm__entry_8c_aad487ab6f3aac284e128bd96e256191d} 
+\index{thread\_comm\_entry.c@{thread\_comm\_entry.c}!Comm\_Wifi\_Get\_Configuration@{Comm\_Wifi\_Get\_Configuration}}
+\index{Comm\_Wifi\_Get\_Configuration@{Comm\_Wifi\_Get\_Configuration}!thread\_comm\_entry.c@{thread\_comm\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Comm\_Wifi\_Get\_Configuration()}{Comm\_Wifi\_Get\_Configuration()}}
+{\footnotesize\ttfamily void Comm\+\_\+\+Wifi\+\_\+\+Get\+\_\+\+Configuration (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Function to get the config file using wifi. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__comm__entry_8c_aad487ab6f3aac284e128bd96e256191d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__comm__entry_8c_aad487ab6f3aac284e128bd96e256191d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__comm__entry_8c_a5528263c91130789893c287f1008648a}\label{thread__comm__entry_8c_a5528263c91130789893c287f1008648a} 
+\index{thread\_comm\_entry.c@{thread\_comm\_entry.c}!Comm\_Wifi\_Get\_Firmware@{Comm\_Wifi\_Get\_Firmware}}
+\index{Comm\_Wifi\_Get\_Firmware@{Comm\_Wifi\_Get\_Firmware}!thread\_comm\_entry.c@{thread\_comm\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Comm\_Wifi\_Get\_Firmware()}{Comm\_Wifi\_Get\_Firmware()}}
+{\footnotesize\ttfamily void Comm\+\_\+\+Wifi\+\_\+\+Get\+\_\+\+Firmware (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Function to get the firmware file using wifi. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__comm__entry_8c_a5528263c91130789893c287f1008648a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__comm__entry_8c_a5528263c91130789893c287f1008648a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__comm__entry_8c_a4f4fd65bc99c23e30c7fea8454299ae0}\label{thread__comm__entry_8c_a4f4fd65bc99c23e30c7fea8454299ae0} 
+\index{thread\_comm\_entry.c@{thread\_comm\_entry.c}!Comm\_Wifi\_Is\_Host\_Alive@{Comm\_Wifi\_Is\_Host\_Alive}}
+\index{Comm\_Wifi\_Is\_Host\_Alive@{Comm\_Wifi\_Is\_Host\_Alive}!thread\_comm\_entry.c@{thread\_comm\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Comm\_Wifi\_Is\_Host\_Alive()}{Comm\_Wifi\_Is\_Host\_Alive()}}
+{\footnotesize\ttfamily void Comm\+\_\+\+Wifi\+\_\+\+Is\+\_\+\+Host\+\_\+\+Alive (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Function to check if server host is up and running. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__comm__entry_8c_a4f4fd65bc99c23e30c7fea8454299ae0_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__comm__entry_8c_a4f4fd65bc99c23e30c7fea8454299ae0_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__comm__entry_8c_afb12aa7cd963bcac96e29ea89c9e51a1}\label{thread__comm__entry_8c_afb12aa7cd963bcac96e29ea89c9e51a1} 
+\index{thread\_comm\_entry.c@{thread\_comm\_entry.c}!Comm\_Wifi\_Open@{Comm\_Wifi\_Open}}
+\index{Comm\_Wifi\_Open@{Comm\_Wifi\_Open}!thread\_comm\_entry.c@{thread\_comm\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Comm\_Wifi\_Open()}{Comm\_Wifi\_Open()}}
+{\footnotesize\ttfamily void Comm\+\_\+\+Wifi\+\_\+\+Open (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Open Wifi Communication. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=317pt]{thread__comm__entry_8c_afb12aa7cd963bcac96e29ea89c9e51a1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__comm__entry_8c_afb12aa7cd963bcac96e29ea89c9e51a1_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__comm__entry_8c_a79c7b5cd30c2273151321a1becea2971}\label{thread__comm__entry_8c_a79c7b5cd30c2273151321a1becea2971} 
+\index{thread\_comm\_entry.c@{thread\_comm\_entry.c}!Comm\_Wifi\_Send\_Episode@{Comm\_Wifi\_Send\_Episode}}
+\index{Comm\_Wifi\_Send\_Episode@{Comm\_Wifi\_Send\_Episode}!thread\_comm\_entry.c@{thread\_comm\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Comm\_Wifi\_Send\_Episode()}{Comm\_Wifi\_Send\_Episode()}}
+{\footnotesize\ttfamily void Comm\+\_\+\+Wifi\+\_\+\+Send\+\_\+\+Episode (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Function to send the episode file using wifi. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__comm__entry_8c_a79c7b5cd30c2273151321a1becea2971_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__comm__entry_8c_a79c7b5cd30c2273151321a1becea2971_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__comm__entry_8c_aa967011953ab9c24c55af6c959f9866f}\label{thread__comm__entry_8c_aa967011953ab9c24c55af6c959f9866f} 
+\index{thread\_comm\_entry.c@{thread\_comm\_entry.c}!Comm\_Wifi\_Send\_Test@{Comm\_Wifi\_Send\_Test}}
+\index{Comm\_Wifi\_Send\_Test@{Comm\_Wifi\_Send\_Test}!thread\_comm\_entry.c@{thread\_comm\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Comm\_Wifi\_Send\_Test()}{Comm\_Wifi\_Send\_Test()}}
+{\footnotesize\ttfamily void Comm\+\_\+\+Wifi\+\_\+\+Send\+\_\+\+Test (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Function to send the test file using wifi. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{thread__comm__entry_8c_aa967011953ab9c24c55af6c959f9866f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__comm__entry_8c_aa967011953ab9c24c55af6c959f9866f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__comm__entry_8c_a2e433ae745fd6e3730f6a1c97d25102c}\label{thread__comm__entry_8c_a2e433ae745fd6e3730f6a1c97d25102c} 
+\index{thread\_comm\_entry.c@{thread\_comm\_entry.c}!Process\_Comm\_ACC@{Process\_Comm\_ACC}}
+\index{Process\_Comm\_ACC@{Process\_Comm\_ACC}!thread\_comm\_entry.c@{thread\_comm\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Process\_Comm\_ACC()}{Process\_Comm\_ACC()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} Process\+\_\+\+Comm\+\_\+\+ACC (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{thread__comm__entry_8h_a5939d05ffaed39155fac81e1cac9aaab}{EV\+\_\+\+COMM\+\_\+e}}}]{ev }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Process events related to ACC COMM module. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ev} & event identifier\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+if the event has been processed or not 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__comm__entry_8c_a2e433ae745fd6e3730f6a1c97d25102c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__comm__entry_8c_a2e433ae745fd6e3730f6a1c97d25102c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__comm__entry_8c_afae3627cb4cd90dab49eba9a4bceaf26}\label{thread__comm__entry_8c_afae3627cb4cd90dab49eba9a4bceaf26} 
+\index{thread\_comm\_entry.c@{thread\_comm\_entry.c}!Process\_Comm\_All\_Modules@{Process\_Comm\_All\_Modules}}
+\index{Process\_Comm\_All\_Modules@{Process\_Comm\_All\_Modules}!thread\_comm\_entry.c@{thread\_comm\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Process\_Comm\_All\_Modules()}{Process\_Comm\_All\_Modules()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} Process\+\_\+\+Comm\+\_\+\+All\+\_\+\+Modules (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{thread__comm__entry_8h_a5939d05ffaed39155fac81e1cac9aaab}{EV\+\_\+\+COMM\+\_\+e}}}]{ev }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Process events related to All COMM modules. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ev} & event identifier\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+if the event has been processed or not 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__comm__entry_8c_afae3627cb4cd90dab49eba9a4bceaf26_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__comm__entry_8c_afae3627cb4cd90dab49eba9a4bceaf26_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__comm__entry_8c_a582b1b8f51e958bf170593a729f21bb7}\label{thread__comm__entry_8c_a582b1b8f51e958bf170593a729f21bb7} 
+\index{thread\_comm\_entry.c@{thread\_comm\_entry.c}!Process\_Comm\_GPS@{Process\_Comm\_GPS}}
+\index{Process\_Comm\_GPS@{Process\_Comm\_GPS}!thread\_comm\_entry.c@{thread\_comm\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Process\_Comm\_GPS()}{Process\_Comm\_GPS()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} Process\+\_\+\+Comm\+\_\+\+GPS (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{thread__comm__entry_8h_a5939d05ffaed39155fac81e1cac9aaab}{EV\+\_\+\+COMM\+\_\+e}}}]{ev }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Process events related to GPS COMM module. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ev} & event identifier\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+if the event has been processed or not 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__comm__entry_8c_a582b1b8f51e958bf170593a729f21bb7_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__comm__entry_8c_a582b1b8f51e958bf170593a729f21bb7_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__comm__entry_8c_a9dbb28ae3719b97e8cd74d43327403ce}\label{thread__comm__entry_8c_a9dbb28ae3719b97e8cd74d43327403ce} 
+\index{thread\_comm\_entry.c@{thread\_comm\_entry.c}!Process\_Comm\_Sigfox@{Process\_Comm\_Sigfox}}
+\index{Process\_Comm\_Sigfox@{Process\_Comm\_Sigfox}!thread\_comm\_entry.c@{thread\_comm\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Process\_Comm\_Sigfox()}{Process\_Comm\_Sigfox()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} Process\+\_\+\+Comm\+\_\+\+Sigfox (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{thread__comm__entry_8h_a5939d05ffaed39155fac81e1cac9aaab}{EV\+\_\+\+COMM\+\_\+e}}}]{ev }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Process events related to SIGFOX COMM module. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ev} & event identifier\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+if the event has been processed or not 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__comm__entry_8c_a9dbb28ae3719b97e8cd74d43327403ce_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__comm__entry_8c_a9dbb28ae3719b97e8cd74d43327403ce_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__comm__entry_8c_a2a7698a33ddf0a8ca71b8e0baab53eb2}\label{thread__comm__entry_8c_a2a7698a33ddf0a8ca71b8e0baab53eb2} 
+\index{thread\_comm\_entry.c@{thread\_comm\_entry.c}!Process\_Comm\_Wifi@{Process\_Comm\_Wifi}}
+\index{Process\_Comm\_Wifi@{Process\_Comm\_Wifi}!thread\_comm\_entry.c@{thread\_comm\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Process\_Comm\_Wifi()}{Process\_Comm\_Wifi()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} Process\+\_\+\+Comm\+\_\+\+Wifi (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{thread__comm__entry_8h_a5939d05ffaed39155fac81e1cac9aaab}{EV\+\_\+\+COMM\+\_\+e}}}]{ev }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Process events related to WIFI COMM module. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ev} & event identifier\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+if the event has been processed or not 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{thread__comm__entry_8c_a2a7698a33ddf0a8ca71b8e0baab53eb2_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__comm__entry_8c_a2a7698a33ddf0a8ca71b8e0baab53eb2_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__comm__entry_8c_af7921d111a91795221d7b493716d54c3}\label{thread__comm__entry_8c_af7921d111a91795221d7b493716d54c3} 
+\index{thread\_comm\_entry.c@{thread\_comm\_entry.c}!Send\_Comm\_Queue@{Send\_Comm\_Queue}}
+\index{Send\_Comm\_Queue@{Send\_Comm\_Queue}!thread\_comm\_entry.c@{thread\_comm\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Send\_Comm\_Queue()}{Send\_Comm\_Queue()}}
+{\footnotesize\ttfamily static void Send\+\_\+\+Comm\+\_\+\+Queue (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{thread__comm__entry_8h_a5939d05ffaed39155fac81e1cac9aaab}{EV\+\_\+\+COMM\+\_\+e}}}]{ev }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Process events related to All COMM modules. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ev} & event identifier \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__comm__entry_8c_af7921d111a91795221d7b493716d54c3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__comm__entry_8c_a88587ace521f9dcb7e701367eeec5824}\label{thread__comm__entry_8c_a88587ace521f9dcb7e701367eeec5824} 
+\index{thread\_comm\_entry.c@{thread\_comm\_entry.c}!thread\_comm\_entry@{thread\_comm\_entry}}
+\index{thread\_comm\_entry@{thread\_comm\_entry}!thread\_comm\_entry.c@{thread\_comm\_entry.c}}
+\doxysubsubsection{\texorpdfstring{thread\_comm\_entry()}{thread\_comm\_entry()}}
+{\footnotesize\ttfamily void thread\+\_\+comm\+\_\+entry (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Thread COMM entry function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{thread__comm__entry_8c_a88587ace521f9dcb7e701367eeec5824_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__comm__entry_8c_a88587ace521f9dcb7e701367eeec5824_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{thread__comm__entry_8c_a190bb599023eb249a14680fba0f60072}\label{thread__comm__entry_8c_a190bb599023eb249a14680fba0f60072} 
+\index{thread\_comm\_entry.c@{thread\_comm\_entry.c}!acc\_hw\_test\_error@{acc\_hw\_test\_error}}
+\index{acc\_hw\_test\_error@{acc\_hw\_test\_error}!thread\_comm\_entry.c@{thread\_comm\_entry.c}}
+\doxysubsubsection{\texorpdfstring{acc\_hw\_test\_error}{acc\_hw\_test\_error}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} acc\+\_\+hw\+\_\+test\+\_\+error = \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9a4f48e4214dad2e7b13ff7edc4feffe94}{e\+ERR\+\_\+\+NONE}}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{thread__comm__entry_8c_a72c2caf6ad95c20626a56f9da313af62}\label{thread__comm__entry_8c_a72c2caf6ad95c20626a56f9da313af62} 
+\index{thread\_comm\_entry.c@{thread\_comm\_entry.c}!acc\_hw\_test\_finished@{acc\_hw\_test\_finished}}
+\index{acc\_hw\_test\_finished@{acc\_hw\_test\_finished}!thread\_comm\_entry.c@{thread\_comm\_entry.c}}
+\doxysubsubsection{\texorpdfstring{acc\_hw\_test\_finished}{acc\_hw\_test\_finished}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} acc\+\_\+hw\+\_\+test\+\_\+finished = \mbox{\hyperlink{_general_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{thread__comm__entry_8c_acf7e7c265a60a8080427a53ec7657fde}\label{thread__comm__entry_8c_acf7e7c265a60a8080427a53ec7657fde} 
+\index{thread\_comm\_entry.c@{thread\_comm\_entry.c}!err@{err}}
+\index{err@{err}!thread\_comm\_entry.c@{thread\_comm\_entry.c}}
+\doxysubsubsection{\texorpdfstring{err}{err}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} err}
+
+\Hypertarget{thread__comm__entry_8c_a0b65f4036cdb5814f254d1584d21353b}\label{thread__comm__entry_8c_a0b65f4036cdb5814f254d1584d21353b} 
+\index{thread\_comm\_entry.c@{thread\_comm\_entry.c}!FSM\_shock\_energy@{FSM\_shock\_energy}}
+\index{FSM\_shock\_energy@{FSM\_shock\_energy}!thread\_comm\_entry.c@{thread\_comm\_entry.c}}
+\doxysubsubsection{\texorpdfstring{FSM\_shock\_energy}{FSM\_shock\_energy}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} FSM\+\_\+shock\+\_\+energy\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Energy to apply in the shock. 
+
+\Hypertarget{thread__comm__entry_8c_ad61bcc94ce0b9f8f91f7ed90d12c67cb}\label{thread__comm__entry_8c_ad61bcc94ce0b9f8f91f7ed90d12c67cb} 
+\index{thread\_comm\_entry.c@{thread\_comm\_entry.c}!gps\_cmd\_send@{gps\_cmd\_send}}
+\index{gps\_cmd\_send@{gps\_cmd\_send}!thread\_comm\_entry.c@{thread\_comm\_entry.c}}
+\doxysubsubsection{\texorpdfstring{gps\_cmd\_send}{gps\_cmd\_send}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} gps\+\_\+cmd\+\_\+send = \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9aad441fa60c028a12d56dbeff429d6a46}{e\+ERR\+\_\+\+COMM\+\_\+\+GPS}}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{thread__comm__entry_8c_a68c50cf11407497b78b3703b70858330}\label{thread__comm__entry_8c_a68c50cf11407497b78b3703b70858330} 
+\index{thread\_comm\_entry.c@{thread\_comm\_entry.c}!gps\_hw\_test\_error@{gps\_hw\_test\_error}}
+\index{gps\_hw\_test\_error@{gps\_hw\_test\_error}!thread\_comm\_entry.c@{thread\_comm\_entry.c}}
+\doxysubsubsection{\texorpdfstring{gps\_hw\_test\_error}{gps\_hw\_test\_error}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} gps\+\_\+hw\+\_\+test\+\_\+error = \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9a4f48e4214dad2e7b13ff7edc4feffe94}{e\+ERR\+\_\+\+NONE}}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{thread__comm__entry_8c_ab769683518aa4546981a483ad4b69976}\label{thread__comm__entry_8c_ab769683518aa4546981a483ad4b69976} 
+\index{thread\_comm\_entry.c@{thread\_comm\_entry.c}!gps\_hw\_test\_finished@{gps\_hw\_test\_finished}}
+\index{gps\_hw\_test\_finished@{gps\_hw\_test\_finished}!thread\_comm\_entry.c@{thread\_comm\_entry.c}}
+\doxysubsubsection{\texorpdfstring{gps\_hw\_test\_finished}{gps\_hw\_test\_finished}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} gps\+\_\+hw\+\_\+test\+\_\+finished = \mbox{\hyperlink{_general_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{thread__comm__entry_8c_a14ee1a3dfdc21901b1372f455e805e2b}\label{thread__comm__entry_8c_a14ee1a3dfdc21901b1372f455e805e2b} 
+\index{thread\_comm\_entry.c@{thread\_comm\_entry.c}!is\_wifi\_free@{is\_wifi\_free}}
+\index{is\_wifi\_free@{is\_wifi\_free}!thread\_comm\_entry.c@{thread\_comm\_entry.c}}
+\doxysubsubsection{\texorpdfstring{is\_wifi\_free}{is\_wifi\_free}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} is\+\_\+wifi\+\_\+free = \mbox{\hyperlink{_general_8h_aa8cecfc5c5c054d2875c03e77b7be15d}{TRUE}}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{thread__comm__entry_8c_ad1765465385921406c4e233c8580f04d}\label{thread__comm__entry_8c_ad1765465385921406c4e233c8580f04d} 
+\index{thread\_comm\_entry.c@{thread\_comm\_entry.c}!my\_Device\_Info@{my\_Device\_Info}}
+\index{my\_Device\_Info@{my\_Device\_Info}!thread\_comm\_entry.c@{thread\_comm\_entry.c}}
+\doxysubsubsection{\texorpdfstring{my\_Device\_Info}{my\_Device\_Info}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_d_e_v_i_c_e___i_n_f_o__t}{DEVICE\+\_\+\+INFO\+\_\+t}} my\+\_\+\+Device\+\_\+\+Info\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Pointer to the device info. 
+
+\Hypertarget{thread__comm__entry_8c_a30b1d67adb2fa0b8f99bfca1cc363d33}\label{thread__comm__entry_8c_a30b1d67adb2fa0b8f99bfca1cc363d33} 
+\index{thread\_comm\_entry.c@{thread\_comm\_entry.c}!R100\_gps@{R100\_gps}}
+\index{R100\_gps@{R100\_gps}!thread\_comm\_entry.c@{thread\_comm\_entry.c}}
+\doxysubsubsection{\texorpdfstring{R100\_gps}{R100\_gps}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structgps__config__t}{gps\+\_\+config\+\_\+t}} R100\+\_\+gps\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+GPS data. 
+
+EXTERNS \Hypertarget{thread__comm__entry_8c_a18f8441e1342e44134c7c32ad4aecb4b}\label{thread__comm__entry_8c_a18f8441e1342e44134c7c32ad4aecb4b} 
+\index{thread\_comm\_entry.c@{thread\_comm\_entry.c}!sigfox\_alert\_frame\_sended@{sigfox\_alert\_frame\_sended}}
+\index{sigfox\_alert\_frame\_sended@{sigfox\_alert\_frame\_sended}!thread\_comm\_entry.c@{thread\_comm\_entry.c}}
+\doxysubsubsection{\texorpdfstring{sigfox\_alert\_frame\_sended}{sigfox\_alert\_frame\_sended}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} sigfox\+\_\+alert\+\_\+frame\+\_\+sended = \mbox{\hyperlink{_general_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{thread__comm__entry_8c_ad7843529a8569e2d47285df6f651a83b}\label{thread__comm__entry_8c_ad7843529a8569e2d47285df6f651a83b} 
+\index{thread\_comm\_entry.c@{thread\_comm\_entry.c}!sigfox\_error@{sigfox\_error}}
+\index{sigfox\_error@{sigfox\_error}!thread\_comm\_entry.c@{thread\_comm\_entry.c}}
+\doxysubsubsection{\texorpdfstring{sigfox\_error}{sigfox\_error}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} sigfox\+\_\+error}
+
+\Hypertarget{thread__comm__entry_8c_afe76726f36ec856a2fcd2f0b576c7451}\label{thread__comm__entry_8c_afe76726f36ec856a2fcd2f0b576c7451} 
+\index{thread\_comm\_entry.c@{thread\_comm\_entry.c}!sigfox\_exp\_sended@{sigfox\_exp\_sended}}
+\index{sigfox\_exp\_sended@{sigfox\_exp\_sended}!thread\_comm\_entry.c@{thread\_comm\_entry.c}}
+\doxysubsubsection{\texorpdfstring{sigfox\_exp\_sended}{sigfox\_exp\_sended}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} sigfox\+\_\+exp\+\_\+sended = \mbox{\hyperlink{_general_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{thread__comm__entry_8c_ae3c3980a5dfdc2dead58fa9d1edbc832}\label{thread__comm__entry_8c_ae3c3980a5dfdc2dead58fa9d1edbc832} 
+\index{thread\_comm\_entry.c@{thread\_comm\_entry.c}!sigfox\_expiration@{sigfox\_expiration}}
+\index{sigfox\_expiration@{sigfox\_expiration}!thread\_comm\_entry.c@{thread\_comm\_entry.c}}
+\doxysubsubsection{\texorpdfstring{sigfox\_expiration}{sigfox\_expiration}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_s_i_g_f_o_x___e_l_e_c___b_a_t_t___e_x_p_i_r_a_t_i_o_n__t}{SIGFOX\+\_\+\+ELEC\+\_\+\+BATT\+\_\+\+EXPIRATION\+\_\+t}} sigfox\+\_\+expiration\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Battery and electrodes expiration dates. 
+
+Battery and electrodes expiration dates. \Hypertarget{thread__comm__entry_8c_a9ca7301d75736138afe10075616d176e}\label{thread__comm__entry_8c_a9ca7301d75736138afe10075616d176e} 
+\index{thread\_comm\_entry.c@{thread\_comm\_entry.c}!sigfox\_first\_time@{sigfox\_first\_time}}
+\index{sigfox\_first\_time@{sigfox\_first\_time}!thread\_comm\_entry.c@{thread\_comm\_entry.c}}
+\doxysubsubsection{\texorpdfstring{sigfox\_first\_time}{sigfox\_first\_time}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} sigfox\+\_\+first\+\_\+time = \mbox{\hyperlink{_general_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{thread__comm__entry_8c_a94baba11162fdd81dd59172348a1058d}\label{thread__comm__entry_8c_a94baba11162fdd81dd59172348a1058d} 
+\index{thread\_comm\_entry.c@{thread\_comm\_entry.c}!sigfox\_func\_alert@{sigfox\_func\_alert}}
+\index{sigfox\_func\_alert@{sigfox\_func\_alert}!thread\_comm\_entry.c@{thread\_comm\_entry.c}}
+\doxysubsubsection{\texorpdfstring{sigfox\_func\_alert}{sigfox\_func\_alert}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_s_i_g_f_o_x___f_u_n_c___a_l_e_r_t__t}{SIGFOX\+\_\+\+FUNC\+\_\+\+ALERT\+\_\+t}} sigfox\+\_\+func\+\_\+alert\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Functional alert structure. 
+
+\Hypertarget{thread__comm__entry_8c_a21e04c84329c1afbf6a9270e33cb5d61}\label{thread__comm__entry_8c_a21e04c84329c1afbf6a9270e33cb5d61} 
+\index{thread\_comm\_entry.c@{thread\_comm\_entry.c}!sigfox\_gps\_position@{sigfox\_gps\_position}}
+\index{sigfox\_gps\_position@{sigfox\_gps\_position}!thread\_comm\_entry.c@{thread\_comm\_entry.c}}
+\doxysubsubsection{\texorpdfstring{sigfox\_gps\_position}{sigfox\_gps\_position}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_s_i_g_f_o_x___g_p_s___p_o_s_i_t_i_o_n__t}{SIGFOX\+\_\+\+GPS\+\_\+\+POSITION\+\_\+t}} sigfox\+\_\+gps\+\_\+position\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+GPS position structure. 
+
+GPS position structure. \Hypertarget{thread__comm__entry_8c_aaa5ddef05802021d7acec760157df96b}\label{thread__comm__entry_8c_aaa5ddef05802021d7acec760157df96b} 
+\index{thread\_comm\_entry.c@{thread\_comm\_entry.c}!sigfox\_gps\_sended@{sigfox\_gps\_sended}}
+\index{sigfox\_gps\_sended@{sigfox\_gps\_sended}!thread\_comm\_entry.c@{thread\_comm\_entry.c}}
+\doxysubsubsection{\texorpdfstring{sigfox\_gps\_sended}{sigfox\_gps\_sended}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} sigfox\+\_\+gps\+\_\+sended = \mbox{\hyperlink{_general_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{thread__comm__entry_8c_a7c72902c99c535139fc652c97bc4aeba}\label{thread__comm__entry_8c_a7c72902c99c535139fc652c97bc4aeba} 
+\index{thread\_comm\_entry.c@{thread\_comm\_entry.c}!sigfox\_hw\_test\_error@{sigfox\_hw\_test\_error}}
+\index{sigfox\_hw\_test\_error@{sigfox\_hw\_test\_error}!thread\_comm\_entry.c@{thread\_comm\_entry.c}}
+\doxysubsubsection{\texorpdfstring{sigfox\_hw\_test\_error}{sigfox\_hw\_test\_error}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} sigfox\+\_\+hw\+\_\+test\+\_\+error = \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9a4f48e4214dad2e7b13ff7edc4feffe94}{e\+ERR\+\_\+\+NONE}}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{thread__comm__entry_8c_a4daf68343df43853ba54479e77e29c05}\label{thread__comm__entry_8c_a4daf68343df43853ba54479e77e29c05} 
+\index{thread\_comm\_entry.c@{thread\_comm\_entry.c}!sigfox\_hw\_test\_finished@{sigfox\_hw\_test\_finished}}
+\index{sigfox\_hw\_test\_finished@{sigfox\_hw\_test\_finished}!thread\_comm\_entry.c@{thread\_comm\_entry.c}}
+\doxysubsubsection{\texorpdfstring{sigfox\_hw\_test\_finished}{sigfox\_hw\_test\_finished}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} sigfox\+\_\+hw\+\_\+test\+\_\+finished = \mbox{\hyperlink{_general_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{thread__comm__entry_8c_a663c47a3343291b65b25f01ed95eabc4}\label{thread__comm__entry_8c_a663c47a3343291b65b25f01ed95eabc4} 
+\index{thread\_comm\_entry.c@{thread\_comm\_entry.c}!sigfox\_initialized@{sigfox\_initialized}}
+\index{sigfox\_initialized@{sigfox\_initialized}!thread\_comm\_entry.c@{thread\_comm\_entry.c}}
+\doxysubsubsection{\texorpdfstring{sigfox\_initialized}{sigfox\_initialized}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} sigfox\+\_\+initialized = \mbox{\hyperlink{_general_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{thread__comm__entry_8c_a0c7c18af07aad52244bcb80d7f240c70}\label{thread__comm__entry_8c_a0c7c18af07aad52244bcb80d7f240c70} 
+\index{thread\_comm\_entry.c@{thread\_comm\_entry.c}!sigfox\_test\_result@{sigfox\_test\_result}}
+\index{sigfox\_test\_result@{sigfox\_test\_result}!thread\_comm\_entry.c@{thread\_comm\_entry.c}}
+\doxysubsubsection{\texorpdfstring{sigfox\_test\_result}{sigfox\_test\_result}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_s_i_g_f_o_x___t_e_s_t___r_e_s_u_l_t__t}{SIGFOX\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t}} sigfox\+\_\+test\+\_\+result\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Test result structure. 
+
+\Hypertarget{thread__comm__entry_8c_a4c6b7cbcfcf48dfaef3fb128cba35178}\label{thread__comm__entry_8c_a4c6b7cbcfcf48dfaef3fb128cba35178} 
+\index{thread\_comm\_entry.c@{thread\_comm\_entry.c}!sigfox\_test\_sended@{sigfox\_test\_sended}}
+\index{sigfox\_test\_sended@{sigfox\_test\_sended}!thread\_comm\_entry.c@{thread\_comm\_entry.c}}
+\doxysubsubsection{\texorpdfstring{sigfox\_test\_sended}{sigfox\_test\_sended}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} sigfox\+\_\+test\+\_\+sended = \mbox{\hyperlink{_general_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{thread__comm__entry_8c_a5f9bfc3a1f5194b1e78d45b0b3298c84}\label{thread__comm__entry_8c_a5f9bfc3a1f5194b1e78d45b0b3298c84} 
+\index{thread\_comm\_entry.c@{thread\_comm\_entry.c}!switch\_alert@{switch\_alert}}
+\index{switch\_alert@{switch\_alert}!thread\_comm\_entry.c@{thread\_comm\_entry.c}}
+\doxysubsubsection{\texorpdfstring{switch\_alert}{switch\_alert}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} switch\+\_\+alert = \mbox{\hyperlink{_general_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}}
+
+
+
+Variable to toggle alerts to avoid losing data. 
+
+\Hypertarget{thread__comm__entry_8c_a4059a30782f5ba133d389ad62c62f200}\label{thread__comm__entry_8c_a4059a30782f5ba133d389ad62c62f200} 
+\index{thread\_comm\_entry.c@{thread\_comm\_entry.c}!tx\_event@{tx\_event}}
+\index{tx\_event@{tx\_event}!thread\_comm\_entry.c@{thread\_comm\_entry.c}}
+\doxysubsubsection{\texorpdfstring{tx\_event}{tx\_event}}
+{\footnotesize\ttfamily \mbox{\hyperlink{thread__comm__entry_8h_a5939d05ffaed39155fac81e1cac9aaab}{EV\+\_\+\+COMM\+\_\+e}} tx\+\_\+event}
+
+\Hypertarget{thread__comm__entry_8c_ad84c45a3341fe11efb27d089f98dfd86}\label{thread__comm__entry_8c_ad84c45a3341fe11efb27d089f98dfd86} 
+\index{thread\_comm\_entry.c@{thread\_comm\_entry.c}!uplink\_test@{uplink\_test}}
+\index{uplink\_test@{uplink\_test}!thread\_comm\_entry.c@{thread\_comm\_entry.c}}
+\doxysubsubsection{\texorpdfstring{uplink\_test}{uplink\_test}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} uplink\+\_\+test = \mbox{\hyperlink{_general_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Performing uplink test. 
+
+\Hypertarget{thread__comm__entry_8c_a0d373c5f917fcdf274f8f18a42e1fdad}\label{thread__comm__entry_8c_a0d373c5f917fcdf274f8f18a42e1fdad} 
+\index{thread\_comm\_entry.c@{thread\_comm\_entry.c}!wifi\_alert\_frame\_sended@{wifi\_alert\_frame\_sended}}
+\index{wifi\_alert\_frame\_sended@{wifi\_alert\_frame\_sended}!thread\_comm\_entry.c@{thread\_comm\_entry.c}}
+\doxysubsubsection{\texorpdfstring{wifi\_alert\_frame\_sended}{wifi\_alert\_frame\_sended}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} wifi\+\_\+alert\+\_\+frame\+\_\+sended = \mbox{\hyperlink{_general_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{thread__comm__entry_8c_a39b680c53627f37edb0dc975d043b4ef}\label{thread__comm__entry_8c_a39b680c53627f37edb0dc975d043b4ef} 
+\index{thread\_comm\_entry.c@{thread\_comm\_entry.c}!wifi\_config\_received@{wifi\_config\_received}}
+\index{wifi\_config\_received@{wifi\_config\_received}!thread\_comm\_entry.c@{thread\_comm\_entry.c}}
+\doxysubsubsection{\texorpdfstring{wifi\_config\_received}{wifi\_config\_received}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} wifi\+\_\+config\+\_\+received = \mbox{\hyperlink{_general_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{thread__comm__entry_8c_ac415129b96efeddba8dee1a7a4ce5610}\label{thread__comm__entry_8c_ac415129b96efeddba8dee1a7a4ce5610} 
+\index{thread\_comm\_entry.c@{thread\_comm\_entry.c}!wifi\_episode\_sended@{wifi\_episode\_sended}}
+\index{wifi\_episode\_sended@{wifi\_episode\_sended}!thread\_comm\_entry.c@{thread\_comm\_entry.c}}
+\doxysubsubsection{\texorpdfstring{wifi\_episode\_sended}{wifi\_episode\_sended}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} wifi\+\_\+episode\+\_\+sended = \mbox{\hyperlink{_general_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{thread__comm__entry_8c_af5ece16b7f4a56cee392bde6380cdabc}\label{thread__comm__entry_8c_af5ece16b7f4a56cee392bde6380cdabc} 
+\index{thread\_comm\_entry.c@{thread\_comm\_entry.c}!wifi\_firmware\_received@{wifi\_firmware\_received}}
+\index{wifi\_firmware\_received@{wifi\_firmware\_received}!thread\_comm\_entry.c@{thread\_comm\_entry.c}}
+\doxysubsubsection{\texorpdfstring{wifi\_firmware\_received}{wifi\_firmware\_received}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} wifi\+\_\+firmware\+\_\+received = \mbox{\hyperlink{_general_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{thread__comm__entry_8c_ad775a29fff4bb2f3e55e3f326281022d}\label{thread__comm__entry_8c_ad775a29fff4bb2f3e55e3f326281022d} 
+\index{thread\_comm\_entry.c@{thread\_comm\_entry.c}!wifi\_func\_alert@{wifi\_func\_alert}}
+\index{wifi\_func\_alert@{wifi\_func\_alert}!thread\_comm\_entry.c@{thread\_comm\_entry.c}}
+\doxysubsubsection{\texorpdfstring{wifi\_func\_alert}{wifi\_func\_alert}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_w_i_f_i___f_u_n_c___a_l_e_r_t__t}{WIFI\+\_\+\+FUNC\+\_\+\+ALERT\+\_\+t}} wifi\+\_\+func\+\_\+alert\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Functional alert structure. 
+
+\Hypertarget{thread__comm__entry_8c_a4b18873acf7a6ccc6be5f1eb3d489517}\label{thread__comm__entry_8c_a4b18873acf7a6ccc6be5f1eb3d489517} 
+\index{thread\_comm\_entry.c@{thread\_comm\_entry.c}!wifi\_func\_alert\_aux@{wifi\_func\_alert\_aux}}
+\index{wifi\_func\_alert\_aux@{wifi\_func\_alert\_aux}!thread\_comm\_entry.c@{thread\_comm\_entry.c}}
+\doxysubsubsection{\texorpdfstring{wifi\_func\_alert\_aux}{wifi\_func\_alert\_aux}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_w_i_f_i___f_u_n_c___a_l_e_r_t__t}{WIFI\+\_\+\+FUNC\+\_\+\+ALERT\+\_\+t}} wifi\+\_\+func\+\_\+alert\+\_\+aux\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Auxiliar functional alert structure. 
+
+\Hypertarget{thread__comm__entry_8c_a3dd48e61ec282f5d24c04fa945377df6}\label{thread__comm__entry_8c_a3dd48e61ec282f5d24c04fa945377df6} 
+\index{thread\_comm\_entry.c@{thread\_comm\_entry.c}!wifi\_gps\_position@{wifi\_gps\_position}}
+\index{wifi\_gps\_position@{wifi\_gps\_position}!thread\_comm\_entry.c@{thread\_comm\_entry.c}}
+\doxysubsubsection{\texorpdfstring{wifi\_gps\_position}{wifi\_gps\_position}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_w_i_f_i___g_p_s___p_o_s_i_t_i_o_n__t}{WIFI\+\_\+\+GPS\+\_\+\+POSITION\+\_\+t}} wifi\+\_\+gps\+\_\+position\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Functional alert structure. 
+
+Functional alert structure. \Hypertarget{thread__comm__entry_8c_af7d554f80644e0cd07b2fadbb08f7a8a}\label{thread__comm__entry_8c_af7d554f80644e0cd07b2fadbb08f7a8a} 
+\index{thread\_comm\_entry.c@{thread\_comm\_entry.c}!wifi\_host\_alive\_finished@{wifi\_host\_alive\_finished}}
+\index{wifi\_host\_alive\_finished@{wifi\_host\_alive\_finished}!thread\_comm\_entry.c@{thread\_comm\_entry.c}}
+\doxysubsubsection{\texorpdfstring{wifi\_host\_alive\_finished}{wifi\_host\_alive\_finished}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} wifi\+\_\+host\+\_\+alive\+\_\+finished = \mbox{\hyperlink{_general_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{thread__comm__entry_8c_a2e06c5ba2d2bce3b6fedc2b317f6a4de}\label{thread__comm__entry_8c_a2e06c5ba2d2bce3b6fedc2b317f6a4de} 
+\index{thread\_comm\_entry.c@{thread\_comm\_entry.c}!wifi\_host\_alive\_flag@{wifi\_host\_alive\_flag}}
+\index{wifi\_host\_alive\_flag@{wifi\_host\_alive\_flag}!thread\_comm\_entry.c@{thread\_comm\_entry.c}}
+\doxysubsubsection{\texorpdfstring{wifi\_host\_alive\_flag}{wifi\_host\_alive\_flag}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} wifi\+\_\+host\+\_\+alive\+\_\+flag = \mbox{\hyperlink{_general_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{thread__comm__entry_8c_a6393b3b04c5ff456b07ad5f591c4b22d}\label{thread__comm__entry_8c_a6393b3b04c5ff456b07ad5f591c4b22d} 
+\index{thread\_comm\_entry.c@{thread\_comm\_entry.c}!wifi\_hw\_test\_error@{wifi\_hw\_test\_error}}
+\index{wifi\_hw\_test\_error@{wifi\_hw\_test\_error}!thread\_comm\_entry.c@{thread\_comm\_entry.c}}
+\doxysubsubsection{\texorpdfstring{wifi\_hw\_test\_error}{wifi\_hw\_test\_error}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} wifi\+\_\+hw\+\_\+test\+\_\+error = \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9a4f48e4214dad2e7b13ff7edc4feffe94}{e\+ERR\+\_\+\+NONE}}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{thread__comm__entry_8c_a5e833197eeb2d5b33bf1e7a318191cf2}\label{thread__comm__entry_8c_a5e833197eeb2d5b33bf1e7a318191cf2} 
+\index{thread\_comm\_entry.c@{thread\_comm\_entry.c}!wifi\_hw\_test\_finished@{wifi\_hw\_test\_finished}}
+\index{wifi\_hw\_test\_finished@{wifi\_hw\_test\_finished}!thread\_comm\_entry.c@{thread\_comm\_entry.c}}
+\doxysubsubsection{\texorpdfstring{wifi\_hw\_test\_finished}{wifi\_hw\_test\_finished}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} wifi\+\_\+hw\+\_\+test\+\_\+finished = \mbox{\hyperlink{_general_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{thread__comm__entry_8c_a20281f7f9577c36cfe26781ec9bf904a}\label{thread__comm__entry_8c_a20281f7f9577c36cfe26781ec9bf904a} 
+\index{thread\_comm\_entry.c@{thread\_comm\_entry.c}!wifi\_init\_finished@{wifi\_init\_finished}}
+\index{wifi\_init\_finished@{wifi\_init\_finished}!thread\_comm\_entry.c@{thread\_comm\_entry.c}}
+\doxysubsubsection{\texorpdfstring{wifi\_init\_finished}{wifi\_init\_finished}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} wifi\+\_\+init\+\_\+finished = \mbox{\hyperlink{_general_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{thread__comm__entry_8c_a125fc64563aa80dc3ffa72046d6caae0}\label{thread__comm__entry_8c_a125fc64563aa80dc3ffa72046d6caae0} 
+\index{thread\_comm\_entry.c@{thread\_comm\_entry.c}!wifi\_initialized@{wifi\_initialized}}
+\index{wifi\_initialized@{wifi\_initialized}!thread\_comm\_entry.c@{thread\_comm\_entry.c}}
+\doxysubsubsection{\texorpdfstring{wifi\_initialized}{wifi\_initialized}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} wifi\+\_\+initialized = \mbox{\hyperlink{_general_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{thread__comm__entry_8c_aaa689e3c825b408bef3db675ddd7ad76}\label{thread__comm__entry_8c_aaa689e3c825b408bef3db675ddd7ad76} 
+\index{thread\_comm\_entry.c@{thread\_comm\_entry.c}!wifi\_position\_frame\_sended@{wifi\_position\_frame\_sended}}
+\index{wifi\_position\_frame\_sended@{wifi\_position\_frame\_sended}!thread\_comm\_entry.c@{thread\_comm\_entry.c}}
+\doxysubsubsection{\texorpdfstring{wifi\_position\_frame\_sended}{wifi\_position\_frame\_sended}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} wifi\+\_\+position\+\_\+frame\+\_\+sended = \mbox{\hyperlink{_general_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{thread__comm__entry_8c_ad027ba6321330ea2aefce358db43061f}\label{thread__comm__entry_8c_ad027ba6321330ea2aefce358db43061f} 
+\index{thread\_comm\_entry.c@{thread\_comm\_entry.c}!wifi\_test\_frame\_sended@{wifi\_test\_frame\_sended}}
+\index{wifi\_test\_frame\_sended@{wifi\_test\_frame\_sended}!thread\_comm\_entry.c@{thread\_comm\_entry.c}}
+\doxysubsubsection{\texorpdfstring{wifi\_test\_frame\_sended}{wifi\_test\_frame\_sended}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} wifi\+\_\+test\+\_\+frame\+\_\+sended = \mbox{\hyperlink{_general_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{thread__comm__entry_8c_a5f15fd39f5309ee0bbf0d74fb66f9d60}\label{thread__comm__entry_8c_a5f15fd39f5309ee0bbf0d74fb66f9d60} 
+\index{thread\_comm\_entry.c@{thread\_comm\_entry.c}!wifi\_test\_result@{wifi\_test\_result}}
+\index{wifi\_test\_result@{wifi\_test\_result}!thread\_comm\_entry.c@{thread\_comm\_entry.c}}
+\doxysubsubsection{\texorpdfstring{wifi\_test\_result}{wifi\_test\_result}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_w_i_f_i___t_e_s_t___r_e_s_u_l_t__t}{WIFI\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t}} wifi\+\_\+test\+\_\+result\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Test result structure. 
+
+\Hypertarget{thread__comm__entry_8c_ad330ac2bfe4d2cca1266f8e682c5af66}\label{thread__comm__entry_8c_ad330ac2bfe4d2cca1266f8e682c5af66} 
+\index{thread\_comm\_entry.c@{thread\_comm\_entry.c}!wifi\_test\_sended@{wifi\_test\_sended}}
+\index{wifi\_test\_sended@{wifi\_test\_sended}!thread\_comm\_entry.c@{thread\_comm\_entry.c}}
+\doxysubsubsection{\texorpdfstring{wifi\_test\_sended}{wifi\_test\_sended}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} wifi\+\_\+test\+\_\+sended = \mbox{\hyperlink{_general_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}\hspace{0.3cm}{\ttfamily [static]}}
+

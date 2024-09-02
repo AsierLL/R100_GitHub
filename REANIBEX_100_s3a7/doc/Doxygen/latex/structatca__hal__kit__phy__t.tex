@@ -1,0 +1,57 @@
+\doxysection{atca\+\_\+hal\+\_\+kit\+\_\+phy\+\_\+t Struct Reference}
+\hypertarget{structatca__hal__kit__phy__t}{}\label{structatca__hal__kit__phy__t}\index{atca\_hal\_kit\_phy\_t@{atca\_hal\_kit\_phy\_t}}
+
+
+{\ttfamily \#include $<$atca\+\_\+hal.\+h$>$}
+
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}}(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structatca__hal__kit__phy__t_a36eca94789cf465a9cb13e9a1ad92121}{send}} )(void \texorpdfstring{$\ast$}{*}ctx, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}txdata, \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} txlen)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}}(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structatca__hal__kit__phy__t_abb9616bec2cdd4f546884a45953cb054}{recv}} )(void \texorpdfstring{$\ast$}{*}ctx, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}rxdata, \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \texorpdfstring{$\ast$}{*}rxlen)
+\item 
+void \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structatca__hal__kit__phy__t_a72b6c6e17726b3e9db70d78e0c52f02c}{packet\+\_\+alloc}} )(size\+\_\+t bytes)
+\item 
+void(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structatca__hal__kit__phy__t_a09209305fd48261b835daf6026b7b659}{packet\+\_\+free}} )(void \texorpdfstring{$\ast$}{*}packet)
+\item 
+void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structatca__hal__kit__phy__t_afd90dea53ccfe0a8c15b12e5e1afaa35}{hal\+\_\+data}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{structatca__hal__kit__phy__t_afd90dea53ccfe0a8c15b12e5e1afaa35}\label{structatca__hal__kit__phy__t_afd90dea53ccfe0a8c15b12e5e1afaa35} 
+\index{atca\_hal\_kit\_phy\_t@{atca\_hal\_kit\_phy\_t}!hal\_data@{hal\_data}}
+\index{hal\_data@{hal\_data}!atca\_hal\_kit\_phy\_t@{atca\_hal\_kit\_phy\_t}}
+\doxysubsubsection{\texorpdfstring{hal\_data}{hal\_data}}
+{\footnotesize\ttfamily void\texorpdfstring{$\ast$}{*} atca\+\_\+hal\+\_\+kit\+\_\+phy\+\_\+t\+::hal\+\_\+data}
+
+Physical layer context \Hypertarget{structatca__hal__kit__phy__t_a72b6c6e17726b3e9db70d78e0c52f02c}\label{structatca__hal__kit__phy__t_a72b6c6e17726b3e9db70d78e0c52f02c} 
+\index{atca\_hal\_kit\_phy\_t@{atca\_hal\_kit\_phy\_t}!packet\_alloc@{packet\_alloc}}
+\index{packet\_alloc@{packet\_alloc}!atca\_hal\_kit\_phy\_t@{atca\_hal\_kit\_phy\_t}}
+\doxysubsubsection{\texorpdfstring{packet\_alloc}{packet\_alloc}}
+{\footnotesize\ttfamily void \texorpdfstring{$\ast$}{*}(\texorpdfstring{$\ast$}{*} atca\+\_\+hal\+\_\+kit\+\_\+phy\+\_\+t\+::packet\+\_\+alloc) (size\+\_\+t bytes)}
+
+Allocate a phy packet \Hypertarget{structatca__hal__kit__phy__t_a09209305fd48261b835daf6026b7b659}\label{structatca__hal__kit__phy__t_a09209305fd48261b835daf6026b7b659} 
+\index{atca\_hal\_kit\_phy\_t@{atca\_hal\_kit\_phy\_t}!packet\_free@{packet\_free}}
+\index{packet\_free@{packet\_free}!atca\_hal\_kit\_phy\_t@{atca\_hal\_kit\_phy\_t}}
+\doxysubsubsection{\texorpdfstring{packet\_free}{packet\_free}}
+{\footnotesize\ttfamily void(\texorpdfstring{$\ast$}{*} atca\+\_\+hal\+\_\+kit\+\_\+phy\+\_\+t\+::packet\+\_\+free) (void \texorpdfstring{$\ast$}{*}packet)}
+
+Free a phy packet \Hypertarget{structatca__hal__kit__phy__t_abb9616bec2cdd4f546884a45953cb054}\label{structatca__hal__kit__phy__t_abb9616bec2cdd4f546884a45953cb054} 
+\index{atca\_hal\_kit\_phy\_t@{atca\_hal\_kit\_phy\_t}!recv@{recv}}
+\index{recv@{recv}!atca\_hal\_kit\_phy\_t@{atca\_hal\_kit\_phy\_t}}
+\doxysubsubsection{\texorpdfstring{recv}{recv}}
+{\footnotesize\ttfamily \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}}(\texorpdfstring{$\ast$}{*} atca\+\_\+hal\+\_\+kit\+\_\+phy\+\_\+t\+::recv) (void \texorpdfstring{$\ast$}{*}ctx, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}rxdata, \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \texorpdfstring{$\ast$}{*}rxlen)}
+
+Must be a blocking receive \Hypertarget{structatca__hal__kit__phy__t_a36eca94789cf465a9cb13e9a1ad92121}\label{structatca__hal__kit__phy__t_a36eca94789cf465a9cb13e9a1ad92121} 
+\index{atca\_hal\_kit\_phy\_t@{atca\_hal\_kit\_phy\_t}!send@{send}}
+\index{send@{send}!atca\_hal\_kit\_phy\_t@{atca\_hal\_kit\_phy\_t}}
+\doxysubsubsection{\texorpdfstring{send}{send}}
+{\footnotesize\ttfamily \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}}(\texorpdfstring{$\ast$}{*} atca\+\_\+hal\+\_\+kit\+\_\+phy\+\_\+t\+::send) (void \texorpdfstring{$\ast$}{*}ctx, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}txdata, \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} txlen)}
+
+Must be a blocking send 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\+SCE/\mbox{\hyperlink{atca__hal_8h}{atca\+\_\+hal.\+h}}\end{DoxyCompactItemize}

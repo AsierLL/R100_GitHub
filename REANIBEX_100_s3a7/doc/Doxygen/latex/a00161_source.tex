@@ -1,0 +1,66 @@
+\doxysection{I2\+C\+\_\+1.\+h}
+\hypertarget{a00161_source}{}\label{a00161_source}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/Drivers/I2C\_1.h@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/Drivers/I2C\_1.h}}
+\mbox{\hyperlink{a00161}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Name\ \ \ \ \ \ :\ R100\_S3A7\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ :\ Osatu\ S.\ Coop\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Compiler\ \ :\ GNU\ ARM\ Embedded\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ Target\ \ \ \ :\ Reanibex\ Serie\ 100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ ******************************************************************************/}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#ifndef\ I2C\_1\_H\_}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#define\ I2C\_1\_H\_}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ **Includes}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{a00137}{types\_basic.h}}"{}}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ **\ Defines}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{comment}{//\ The\ i2C\ addresses\ includes\ the\ R/W\ bit}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#define\ i2C\_ADD\_RTC\ \ \ \ \ \ \ \ \ \ \ \ \ 0xD0\ \ \ \ \ \ \ \ }\textcolor{comment}{//\ i2C\ address\ for\ DS1342\ RTC\ (Write)}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#define\ i2C\_ADD\_EEPROM\ \ \ \ \ \ \ \ \ \ 0xA0\ \ \ \ \ \ \ \ }\textcolor{comment}{//\ i2C\ address\ for\ M24C08\ EEPROM\ memory\ (8\ Kbit)\ (Write)}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#define\ i2C\_ADD\_TEMPERATURE\ \ \ \ \ 0x9E\ \ \ \ \ \ \ \ }\textcolor{comment}{//\ i2C\ address\ for\ TMP1075\ Temperature\ Sensor\ (Write)}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#define\ i2C\_ADD\_ACCEL\ \ \ \ \ \ \ \ \ \ \ 0x32\ \ \ \ \ \ \ \ }\textcolor{comment}{//\ i2C\ address\ for\ LIS3DH\ accelerometer\ (Write)}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00040\ \textcolor{comment}{\ **\ Typedefs}}
+\DoxyCodeLine{00041\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00044\ \textcolor{comment}{\ **\ Globals}}
+\DoxyCodeLine{00045\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00048\ \textcolor{comment}{\ **\ Prototypes}}
+\DoxyCodeLine{00049\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{a00161_ae0aaef6d39ab21fdc673b3bd618e3a5f}{I2C1\_ReadByte}}\ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ addr,\ \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ *data);}
+\DoxyCodeLine{00052\ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{a00161_a6c2446d2a639a1a0881988a628dc2131}{I2C1\_WriteByte}}\ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ addr,\ \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ data);}
+\DoxyCodeLine{00053\ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{a00161_a38c496f5583fa722a64178a1d7a84dbb}{I2C1\_Read}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ addr,\ \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ *data,\ \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ nBytes);}
+\DoxyCodeLine{00054\ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{a00161_a3080b1378acb455e5962e81def2b88ba}{I2C1\_Write}}\ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ addr,\ \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ *data,\ \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ nBytes);}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{a00161_a4421fd2991ef4524b2cc4374c1987443}{I2C1\_Read\_RTC}}\ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ *data,\ \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ nBytes);}
+\DoxyCodeLine{00057\ \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \mbox{\hyperlink{a00161_a2e6bf5a5dca9d0a7f02f9295037d25e3}{I2C1\_Read\_Temperature}}\ \ (\ \mbox{\hyperlink{a00137_aef44329758059c91c76d334e8fc09700}{int8\_t}}\ *pTemp);}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \mbox{\hyperlink{a00161_ab0bb2694520e74ef39e04bd55a0c5a50}{I2C1\_Read\_Eeprom}}\ \ \ \ \ \ \ (\mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ addr,\ \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ *data,\ \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ nBytes);}
+\DoxyCodeLine{00060\ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{a00161_a38249243dbed83e74c1b53d9acb4c56e}{I2C1\_Write\_Eeprom}}\ \ \ \ \ \ (\mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ addr,\ \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ *data,\ \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ nBytes);}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{a00161_abccb91036dc573b48c9b3733eac02efa}{I2C1\_WriteRegister\_ACC}}\ (\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ regAddress,\ \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ data);}
+\DoxyCodeLine{00063\ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{a00161_ace04072c3cee76dcb968024ef77224f6}{I2C1\_ReadRegister\_ACC}}\ \ (\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ regAddress,\ \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ *pData);}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ I2C\_1\_H\_\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00068\ \textcolor{comment}{\ **\ \$Log\$}}
+\DoxyCodeLine{00069\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00070\ \textcolor{comment}{\ **\ end\ of\ I2C\_1.h}}
+\DoxyCodeLine{00071\ \textcolor{comment}{\ ******************************************************************************/}}
+\DoxyCodeLine{00072\ }
+
+\end{DoxyCode}

@@ -1,0 +1,48 @@
+\doxysection{Functions.\+h}
+\hypertarget{a00149_source}{}\label{a00149_source}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/DRD/Functions.h@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/DRD/Functions.h}}
+\mbox{\hyperlink{a00149}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{*\ Name\ \ \ \ \ \ :\ Defibrillable\ Rhythm\ Detector\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{*\ Copyright\ :\ Osatu\ S.Coop\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{*\ Compiler\ \ :\ Renesas\ C/C++\ compiler\ for\ SH2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{*\ Target\ \ \ \ :\ Reanibex\ Series\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{******************************************************************************/}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#ifndef\ FUNCTIONS\_H}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#define\ FUNCTIONS\_H}}
+\DoxyCodeLine{00021\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00022\ \textcolor{comment}{**\ Includes}}
+\DoxyCodeLine{00023\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00024\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00025\ \textcolor{comment}{**\ Defines}}
+\DoxyCodeLine{00026\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#define\ limf1\_FREC\ \ \ \ \ \ \ \ 0.75}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#define\ limf2\_FREC\ \ \ \ \ \ \ \ 40}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00033\ \textcolor{comment}{**\ Typedefs}}
+\DoxyCodeLine{00034\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00037\ \textcolor{comment}{**\ Prototypes}}
+\DoxyCodeLine{00038\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00039\ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{a00149_ab0a01d806e13bb42b3eb90526bc522d6}{function\_ordenar\_min}}\ (\mbox{\hyperlink{a00137_a2ba621978a511250f7250fb10e05ffbe}{int32\_t}}\ *pSig);}
+\DoxyCodeLine{00040\ \mbox{\hyperlink{a00137_a2ba621978a511250f7250fb10e05ffbe}{int32\_t}}\ \mbox{\hyperlink{a00149_af112045d0337769f4c8cc4dbf4e06e0e}{function\_calcular\_Pot}}\ (\mbox{\hyperlink{a00137_a2ba621978a511250f7250fb10e05ffbe}{int32\_t}}\ *pSig,\ \mbox{\hyperlink{a00137_a2ba621978a511250f7250fb10e05ffbe}{int32\_t}}\ L);}
+\DoxyCodeLine{00041\ \mbox{\hyperlink{a00137_a2ba621978a511250f7250fb10e05ffbe}{int32\_t}}\ \mbox{\hyperlink{a00149_acb707743641eb71a75eddabbff7df8df}{function\_calcular\_suma}}\ (\mbox{\hyperlink{a00137_a2ba621978a511250f7250fb10e05ffbe}{int32\_t}}\ *pSig,\ \mbox{\hyperlink{a00137_a2ba621978a511250f7250fb10e05ffbe}{int32\_t}}\ L);}
+\DoxyCodeLine{00042\ \mbox{\hyperlink{a00137_a2ba621978a511250f7250fb10e05ffbe}{int32\_t}}\ \mbox{\hyperlink{a00149_a3e5c857000e282c3070338522170f259}{function\_calcular\_max}}\ (\mbox{\hyperlink{a00137_a2ba621978a511250f7250fb10e05ffbe}{int32\_t}}\ *pSig);}
+\DoxyCodeLine{00043\ \mbox{\hyperlink{a00137_a2ba621978a511250f7250fb10e05ffbe}{int32\_t}}\ \mbox{\hyperlink{a00149_a8a5ba5a6520a09932ef274b9cf54d328}{function\_position\_max}}\ (\mbox{\hyperlink{a00137_a2ba621978a511250f7250fb10e05ffbe}{int32\_t}}\ *pSig);}
+\DoxyCodeLine{00044\ \mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\_t}}\ \mbox{\hyperlink{a00149_a791f01b0faf58eb48db8505ee46d2f6d}{function\_calcular\_freccorte}}\ (\mbox{\hyperlink{a00137_a2ba621978a511250f7250fb10e05ffbe}{int32\_t}}\ *pSign,\ \mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\_t}}\ val);}
+\DoxyCodeLine{00045\ \mbox{\hyperlink{a00137_a2ba621978a511250f7250fb10e05ffbe}{int32\_t}}\ \mbox{\hyperlink{a00149_af1c12c0b68dd9b29465fee0621e59ad8}{function\_find\_pos}}\ (\mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\_t}}\ limite);}
+\DoxyCodeLine{00046\ \mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\_t}}\ \mbox{\hyperlink{a00149_a6a88d6162d6e4739450492e1dc02cafc}{function\_calcular\_max1}}\ (\mbox{\hyperlink{a00137_a3ded656bbe9849ad9fa2b28530390f0a}{float\_t}}\ *pSig);}
+\DoxyCodeLine{00047\ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{a00149_ab6e4c3819c6b9468f955d200895d76d1}{function\_calcular\_FFT}}\ (\mbox{\hyperlink{a00137_a2ba621978a511250f7250fb10e05ffbe}{int32\_t}}\ *sfil,\ \mbox{\hyperlink{a00137_a2ba621978a511250f7250fb10e05ffbe}{int32\_t}}\ *Amp);}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{a00149_a1f41b79d7b79fff89c97a624f6524b62}{AutoCorrelation}}\ (\mbox{\hyperlink{a00137_a2ba621978a511250f7250fb10e05ffbe}{int32\_t}}\ *pcorr,\ \mbox{\hyperlink{a00137_a2ba621978a511250f7250fb10e05ffbe}{int32\_t}}\ *x);}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00052\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{/*FUNCTIONS\_H*/}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

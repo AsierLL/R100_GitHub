@@ -1,0 +1,316 @@
+\doxysection{C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\+BSP/bsp\+\_\+gps\+\_\+quectel-\/\+L96.c File Reference}
+\hypertarget{bsp__gps__quectel-_l96_8c}{}\label{bsp__gps__quectel-_l96_8c}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/BSP/bsp\_gps\_quectel-\/L96.c@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/BSP/bsp\_gps\_quectel-\/L96.c}}
+
+
+BSP for Quectel L96 GPS module.  
+
+
+{\ttfamily \#include "{}BSP/bsp\+\_\+gps\+\_\+quectel-\/\+L96.\+h"{}}\newline
+{\ttfamily \#include "{}HAL/thread\+\_\+comm\+\_\+hal.\+h"{}}\newline
+{\ttfamily \#include "{}Comm.\+h"{}}\newline
+{\ttfamily \#include "{}hal\+\_\+data.\+h"{}}\newline
+Include dependency graph for bsp\+\_\+gps\+\_\+quectel-\/\+L96.c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__gps__quectel-_l96_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{bsp__gps__quectel-_l96_8c_a7350efe662226a6befccc58e7823b375}{MAX\+\_\+\+GPS\+\_\+\+CMD\+\_\+\+LENGTH}}~100
+\item 
+\#define \mbox{\hyperlink{bsp__gps__quectel-_l96_8c_a1686cb891866ba0f04a2658c491743b0}{MAX\+\_\+\+GPS\+\_\+\+DATA\+\_\+\+LENGTH}}~13
+\begin{DoxyCompactList}\small\item\em 12 bytes payload + NULL char \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{bsp__gps__quectel-_l96_8c_a5bb3bd3f0ed1979ed924446a86c6b922}{MAX\+\_\+\+GPS\+\_\+\+NMEA\+\_\+\+LENGTH}}~82
+\begin{DoxyCompactList}\small\item\em Maximum sentence length, including the \$ and $<$\+CR$>$$<$\+LF$>$ is 82 bytes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{bsp__gps__quectel-_l96_8c_ae7b3317093f35f213fbf5d9464ecbd5c}{Gps\+\_\+\+Get\+\_\+\+Lat\+\_\+\+Long\+\_\+\+Data}} (void)
+\begin{DoxyCompactList}\small\item\em Get GPS NMEA Protocol latitude and longitude. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{bsp__gps__quectel-_l96_8c_a97d6f440f6712eda46180dd0dbba395c}{Gps\+\_\+\+Is\+\_\+\+New\+\_\+\+Position\+\_\+\+Available}} (void)
+\begin{DoxyCompactList}\small\item\em Check if a new GPS NMEA Protocol latitude and longitude available. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{bsp__gps__quectel-_l96_8c_a923dd2f2b1a38fa3f9c54b1516d246fc}{Gps\+\_\+\+Set\+\_\+\+New\+\_\+\+Position\+\_\+\+Available}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} available)
+\begin{DoxyCompactList}\small\item\em Sets TRUE if a new GPS NMEA Protocol latitude and longitude is available. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{bsp__gps__quectel-_l96_8c_a86c9ad2a2dc4c38dfa6f8a7cba00e1f4}{GPS\+\_\+\+Is\+\_\+\+Test\+\_\+\+Package\+\_\+\+Received}} (void)
+\begin{DoxyCompactList}\small\item\em Check if a GPS Protocol package has arrived. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{bsp__gps__quectel-_l96_8c_acc169d05cf6d4c0f76261141759941b8}{Gps\+\_\+\+Set\+\_\+\+Test\+\_\+\+Package\+\_\+\+Received}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} received)
+\begin{DoxyCompactList}\small\item\em Sets TRUE if a new GPS Protocol package has arrived. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{bsp__gps__quectel-_l96_8c_ad01799dd05c08ec2c15610613daacb4f}{GPS\+\_\+\+Is\+\_\+\+Running}} (void)
+\begin{DoxyCompactList}\small\item\em Check if a GPS power on package has arrived. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{bsp__gps__quectel-_l96_8c_a3524ad7a502760c38e70a69a2c7fdc3c}{GPS\+\_\+\+Set\+\_\+\+Running}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} received)
+\begin{DoxyCompactList}\small\item\em Sets TRUE if a new GPS power on package has arrived. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structgps__config__t}{gps\+\_\+config\+\_\+t}} \mbox{\hyperlink{bsp__gps__quectel-_l96_8c_a30b1d67adb2fa0b8f99bfca1cc363d33}{R100\+\_\+gps}}
+\item 
+static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{bsp__gps__quectel-_l96_8c_a145855f4069bbb1e752e52b10d6b84e6}{gps\+\_\+new\+\_\+pos}} = \mbox{\hyperlink{_general_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}
+\item 
+static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{bsp__gps__quectel-_l96_8c_a51afa11587de810f64d469b88eeb39ac}{gps\+\_\+test\+\_\+pkg\+\_\+received}} = \mbox{\hyperlink{_general_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}
+\item 
+static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{bsp__gps__quectel-_l96_8c_a99712541430907bdf9990b32f9ab3689}{gps\+\_\+running}} = \mbox{\hyperlink{_general_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+BSP for Quectel L96 GPS module. 
+
+\begin{DoxyVersion}{Version}
+v1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+27/05/2019 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+jarribas 
+\end{DoxyAuthor}
+\begin{DoxyWarning}{Warning}
+author date version .-\/ Edition 
+\end{DoxyWarning}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000003}{Bug}}]\end{DoxyRefDesc}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{bsp__gps__quectel-_l96_8c_a7350efe662226a6befccc58e7823b375}\label{bsp__gps__quectel-_l96_8c_a7350efe662226a6befccc58e7823b375} 
+\index{bsp\_gps\_quectel-\/L96.c@{bsp\_gps\_quectel-\/L96.c}!MAX\_GPS\_CMD\_LENGTH@{MAX\_GPS\_CMD\_LENGTH}}
+\index{MAX\_GPS\_CMD\_LENGTH@{MAX\_GPS\_CMD\_LENGTH}!bsp\_gps\_quectel-\/L96.c@{bsp\_gps\_quectel-\/L96.c}}
+\doxysubsubsection{\texorpdfstring{MAX\_GPS\_CMD\_LENGTH}{MAX\_GPS\_CMD\_LENGTH}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+GPS\+\_\+\+CMD\+\_\+\+LENGTH~100}
+
+\Hypertarget{bsp__gps__quectel-_l96_8c_a1686cb891866ba0f04a2658c491743b0}\label{bsp__gps__quectel-_l96_8c_a1686cb891866ba0f04a2658c491743b0} 
+\index{bsp\_gps\_quectel-\/L96.c@{bsp\_gps\_quectel-\/L96.c}!MAX\_GPS\_DATA\_LENGTH@{MAX\_GPS\_DATA\_LENGTH}}
+\index{MAX\_GPS\_DATA\_LENGTH@{MAX\_GPS\_DATA\_LENGTH}!bsp\_gps\_quectel-\/L96.c@{bsp\_gps\_quectel-\/L96.c}}
+\doxysubsubsection{\texorpdfstring{MAX\_GPS\_DATA\_LENGTH}{MAX\_GPS\_DATA\_LENGTH}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+GPS\+\_\+\+DATA\+\_\+\+LENGTH~13}
+
+
+
+12 bytes payload + NULL char 
+
+\Hypertarget{bsp__gps__quectel-_l96_8c_a5bb3bd3f0ed1979ed924446a86c6b922}\label{bsp__gps__quectel-_l96_8c_a5bb3bd3f0ed1979ed924446a86c6b922} 
+\index{bsp\_gps\_quectel-\/L96.c@{bsp\_gps\_quectel-\/L96.c}!MAX\_GPS\_NMEA\_LENGTH@{MAX\_GPS\_NMEA\_LENGTH}}
+\index{MAX\_GPS\_NMEA\_LENGTH@{MAX\_GPS\_NMEA\_LENGTH}!bsp\_gps\_quectel-\/L96.c@{bsp\_gps\_quectel-\/L96.c}}
+\doxysubsubsection{\texorpdfstring{MAX\_GPS\_NMEA\_LENGTH}{MAX\_GPS\_NMEA\_LENGTH}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+GPS\+\_\+\+NMEA\+\_\+\+LENGTH~82}
+
+
+
+Maximum sentence length, including the \$ and $<$\+CR$>$$<$\+LF$>$ is 82 bytes. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{bsp__gps__quectel-_l96_8c_ae7b3317093f35f213fbf5d9464ecbd5c}\label{bsp__gps__quectel-_l96_8c_ae7b3317093f35f213fbf5d9464ecbd5c} 
+\index{bsp\_gps\_quectel-\/L96.c@{bsp\_gps\_quectel-\/L96.c}!Gps\_Get\_Lat\_Long\_Data@{Gps\_Get\_Lat\_Long\_Data}}
+\index{Gps\_Get\_Lat\_Long\_Data@{Gps\_Get\_Lat\_Long\_Data}!bsp\_gps\_quectel-\/L96.c@{bsp\_gps\_quectel-\/L96.c}}
+\doxysubsubsection{\texorpdfstring{Gps\_Get\_Lat\_Long\_Data()}{Gps\_Get\_Lat\_Long\_Data()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Gps\+\_\+\+Get\+\_\+\+Lat\+\_\+\+Long\+\_\+\+Data (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Get GPS NMEA Protocol latitude and longitude. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR\+\_\+\+ID\+\_\+e error code 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__gps__quectel-_l96_8c_ae7b3317093f35f213fbf5d9464ecbd5c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__gps__quectel-_l96_8c_ae7b3317093f35f213fbf5d9464ecbd5c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{bsp__gps__quectel-_l96_8c_a97d6f440f6712eda46180dd0dbba395c}\label{bsp__gps__quectel-_l96_8c_a97d6f440f6712eda46180dd0dbba395c} 
+\index{bsp\_gps\_quectel-\/L96.c@{bsp\_gps\_quectel-\/L96.c}!Gps\_Is\_New\_Position\_Available@{Gps\_Is\_New\_Position\_Available}}
+\index{Gps\_Is\_New\_Position\_Available@{Gps\_Is\_New\_Position\_Available}!bsp\_gps\_quectel-\/L96.c@{bsp\_gps\_quectel-\/L96.c}}
+\doxysubsubsection{\texorpdfstring{Gps\_Is\_New\_Position\_Available()}{Gps\_Is\_New\_Position\_Available()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} Gps\+\_\+\+Is\+\_\+\+New\+\_\+\+Position\+\_\+\+Available (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Check if a new GPS NMEA Protocol latitude and longitude available. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool\+\_\+t new position available 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__gps__quectel-_l96_8c_a97d6f440f6712eda46180dd0dbba395c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{bsp__gps__quectel-_l96_8c_ad01799dd05c08ec2c15610613daacb4f}\label{bsp__gps__quectel-_l96_8c_ad01799dd05c08ec2c15610613daacb4f} 
+\index{bsp\_gps\_quectel-\/L96.c@{bsp\_gps\_quectel-\/L96.c}!GPS\_Is\_Running@{GPS\_Is\_Running}}
+\index{GPS\_Is\_Running@{GPS\_Is\_Running}!bsp\_gps\_quectel-\/L96.c@{bsp\_gps\_quectel-\/L96.c}}
+\doxysubsubsection{\texorpdfstring{GPS\_Is\_Running()}{GPS\_Is\_Running()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} GPS\+\_\+\+Is\+\_\+\+Running (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Check if a GPS power on package has arrived. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool\+\_\+t TRUE if package has arrived 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__gps__quectel-_l96_8c_ad01799dd05c08ec2c15610613daacb4f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{bsp__gps__quectel-_l96_8c_a86c9ad2a2dc4c38dfa6f8a7cba00e1f4}\label{bsp__gps__quectel-_l96_8c_a86c9ad2a2dc4c38dfa6f8a7cba00e1f4} 
+\index{bsp\_gps\_quectel-\/L96.c@{bsp\_gps\_quectel-\/L96.c}!GPS\_Is\_Test\_Package\_Received@{GPS\_Is\_Test\_Package\_Received}}
+\index{GPS\_Is\_Test\_Package\_Received@{GPS\_Is\_Test\_Package\_Received}!bsp\_gps\_quectel-\/L96.c@{bsp\_gps\_quectel-\/L96.c}}
+\doxysubsubsection{\texorpdfstring{GPS\_Is\_Test\_Package\_Received()}{GPS\_Is\_Test\_Package\_Received()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} GPS\+\_\+\+Is\+\_\+\+Test\+\_\+\+Package\+\_\+\+Received (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Check if a GPS Protocol package has arrived. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool\+\_\+t TRUE if package has arrived 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__gps__quectel-_l96_8c_a86c9ad2a2dc4c38dfa6f8a7cba00e1f4_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{bsp__gps__quectel-_l96_8c_a923dd2f2b1a38fa3f9c54b1516d246fc}\label{bsp__gps__quectel-_l96_8c_a923dd2f2b1a38fa3f9c54b1516d246fc} 
+\index{bsp\_gps\_quectel-\/L96.c@{bsp\_gps\_quectel-\/L96.c}!Gps\_Set\_New\_Position\_Available@{Gps\_Set\_New\_Position\_Available}}
+\index{Gps\_Set\_New\_Position\_Available@{Gps\_Set\_New\_Position\_Available}!bsp\_gps\_quectel-\/L96.c@{bsp\_gps\_quectel-\/L96.c}}
+\doxysubsubsection{\texorpdfstring{Gps\_Set\_New\_Position\_Available()}{Gps\_Set\_New\_Position\_Available()}}
+{\footnotesize\ttfamily void Gps\+\_\+\+Set\+\_\+\+New\+\_\+\+Position\+\_\+\+Available (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}}}]{available }\end{DoxyParamCaption})}
+
+
+
+Sets TRUE if a new GPS NMEA Protocol latitude and longitude is available. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em available} & TRUE if a new GPS NMEA Protocol latitude and longitude is available, FALSE otherwise\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__gps__quectel-_l96_8c_a923dd2f2b1a38fa3f9c54b1516d246fc_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{bsp__gps__quectel-_l96_8c_a3524ad7a502760c38e70a69a2c7fdc3c}\label{bsp__gps__quectel-_l96_8c_a3524ad7a502760c38e70a69a2c7fdc3c} 
+\index{bsp\_gps\_quectel-\/L96.c@{bsp\_gps\_quectel-\/L96.c}!GPS\_Set\_Running@{GPS\_Set\_Running}}
+\index{GPS\_Set\_Running@{GPS\_Set\_Running}!bsp\_gps\_quectel-\/L96.c@{bsp\_gps\_quectel-\/L96.c}}
+\doxysubsubsection{\texorpdfstring{GPS\_Set\_Running()}{GPS\_Set\_Running()}}
+{\footnotesize\ttfamily void GPS\+\_\+\+Set\+\_\+\+Running (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}}}]{received }\end{DoxyParamCaption})}
+
+
+
+Sets TRUE if a new GPS power on package has arrived. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em received} & if true, a GPS power on package has been received if false, a GPS power on package has not been received\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__gps__quectel-_l96_8c_a3524ad7a502760c38e70a69a2c7fdc3c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{bsp__gps__quectel-_l96_8c_acc169d05cf6d4c0f76261141759941b8}\label{bsp__gps__quectel-_l96_8c_acc169d05cf6d4c0f76261141759941b8} 
+\index{bsp\_gps\_quectel-\/L96.c@{bsp\_gps\_quectel-\/L96.c}!Gps\_Set\_Test\_Package\_Received@{Gps\_Set\_Test\_Package\_Received}}
+\index{Gps\_Set\_Test\_Package\_Received@{Gps\_Set\_Test\_Package\_Received}!bsp\_gps\_quectel-\/L96.c@{bsp\_gps\_quectel-\/L96.c}}
+\doxysubsubsection{\texorpdfstring{Gps\_Set\_Test\_Package\_Received()}{Gps\_Set\_Test\_Package\_Received()}}
+{\footnotesize\ttfamily void Gps\+\_\+\+Set\+\_\+\+Test\+\_\+\+Package\+\_\+\+Received (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}}}]{received }\end{DoxyParamCaption})}
+
+
+
+Sets TRUE if a new GPS Protocol package has arrived. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em received} & if true, a GPS test package has been received if false, a GPS test package has not been received\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__gps__quectel-_l96_8c_acc169d05cf6d4c0f76261141759941b8_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{bsp__gps__quectel-_l96_8c_a145855f4069bbb1e752e52b10d6b84e6}\label{bsp__gps__quectel-_l96_8c_a145855f4069bbb1e752e52b10d6b84e6} 
+\index{bsp\_gps\_quectel-\/L96.c@{bsp\_gps\_quectel-\/L96.c}!gps\_new\_pos@{gps\_new\_pos}}
+\index{gps\_new\_pos@{gps\_new\_pos}!bsp\_gps\_quectel-\/L96.c@{bsp\_gps\_quectel-\/L96.c}}
+\doxysubsubsection{\texorpdfstring{gps\_new\_pos}{gps\_new\_pos}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} gps\+\_\+new\+\_\+pos = \mbox{\hyperlink{_general_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{bsp__gps__quectel-_l96_8c_a99712541430907bdf9990b32f9ab3689}\label{bsp__gps__quectel-_l96_8c_a99712541430907bdf9990b32f9ab3689} 
+\index{bsp\_gps\_quectel-\/L96.c@{bsp\_gps\_quectel-\/L96.c}!gps\_running@{gps\_running}}
+\index{gps\_running@{gps\_running}!bsp\_gps\_quectel-\/L96.c@{bsp\_gps\_quectel-\/L96.c}}
+\doxysubsubsection{\texorpdfstring{gps\_running}{gps\_running}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} gps\+\_\+running = \mbox{\hyperlink{_general_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{bsp__gps__quectel-_l96_8c_a51afa11587de810f64d469b88eeb39ac}\label{bsp__gps__quectel-_l96_8c_a51afa11587de810f64d469b88eeb39ac} 
+\index{bsp\_gps\_quectel-\/L96.c@{bsp\_gps\_quectel-\/L96.c}!gps\_test\_pkg\_received@{gps\_test\_pkg\_received}}
+\index{gps\_test\_pkg\_received@{gps\_test\_pkg\_received}!bsp\_gps\_quectel-\/L96.c@{bsp\_gps\_quectel-\/L96.c}}
+\doxysubsubsection{\texorpdfstring{gps\_test\_pkg\_received}{gps\_test\_pkg\_received}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} gps\+\_\+test\+\_\+pkg\+\_\+received = \mbox{\hyperlink{_general_8h_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{bsp__gps__quectel-_l96_8c_a30b1d67adb2fa0b8f99bfca1cc363d33}\label{bsp__gps__quectel-_l96_8c_a30b1d67adb2fa0b8f99bfca1cc363d33} 
+\index{bsp\_gps\_quectel-\/L96.c@{bsp\_gps\_quectel-\/L96.c}!R100\_gps@{R100\_gps}}
+\index{R100\_gps@{R100\_gps}!bsp\_gps\_quectel-\/L96.c@{bsp\_gps\_quectel-\/L96.c}}
+\doxysubsubsection{\texorpdfstring{R100\_gps}{R100\_gps}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structgps__config__t}{gps\+\_\+config\+\_\+t}} R100\+\_\+gps\hspace{0.3cm}{\ttfamily [extern]}}
+

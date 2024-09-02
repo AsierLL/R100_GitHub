@@ -1,0 +1,262 @@
+\doxysection{C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\+HAL/thread\+\_\+audio\+\_\+hal.h File Reference}
+\hypertarget{thread__audio__hal_8h}{}\label{thread__audio__hal_8h}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/HAL/thread\_audio\_hal.h@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/HAL/thread\_audio\_hal.h}}
+
+
+Header with functions related to the audio BSP service.  
+
+
+{\ttfamily \#include "{}types\+\_\+basic.\+h"{}}\newline
+Include dependency graph for thread\+\_\+audio\+\_\+hal.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{thread__audio__hal_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__audio__hal_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{thread__audio__hal_8h_ae516bd421cd7b0fad21e9837a1e0c82d}{MAX\+\_\+\+AUDIO\+\_\+\+VOLUME}}~63
+\begin{DoxyCompactList}\small\item\em Maximum Audio volume value. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{thread__audio__hal_8h_af1e286c57b8ceea5b0a642a96a019e6e}{MIN\+\_\+\+AUDIO\+\_\+\+VOLUME}}~25
+\begin{DoxyCompactList}\small\item\em Minimum Audio volume value. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{thread__audio__hal_8h_a8481a69032e7fa6f265eeb1b23a0962d}{AUDIO\+\_\+\+PLAYER\+\_\+\+SHDN}}~IOPORT\+\_\+\+PORT\+\_\+05\+\_\+\+PIN\+\_\+01
+\item 
+\#define \mbox{\hyperlink{thread__audio__hal_8h_add17fe839f9cf8d787268eed7c66820b}{AUDIO\+\_\+\+PLAYER\+\_\+\+MUTE}}~IOPORT\+\_\+\+PORT\+\_\+05\+\_\+\+PIN\+\_\+00
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{thread__audio__hal_8h_a6679ee7be991ded9e6e1edd02fdbf9d8}{Audio\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em initializes the audio engine. Assume that all messages are sampled at 11,025 Ksps with 12 bits resolution \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{thread__audio__hal_8h_a5860ff86766cdf6918ea51ba11a70ba6}{Audio\+\_\+\+Play\+\_\+\+Start}} (const \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Samples, \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} n\+Samples)
+\begin{DoxyCompactList}\small\item\em plays a single audio message \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{thread__audio__hal_8h_a5afdd4d24f2faf92baea80c7b0cedfdc}{Audio\+\_\+\+Stop}} (void)
+\begin{DoxyCompactList}\small\item\em stops the audio reproduction \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{thread__audio__hal_8h_ac55973b058909dfa33d3d55b4fcdbb8e}{Audio\+\_\+\+Mute}} (void)
+\begin{DoxyCompactList}\small\item\em mute the audio engine \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{thread__audio__hal_8h_a285beaccee275c7e54b53d5c0cb17fdd}{Audio\+\_\+\+Mute\+\_\+\+Off}} (void)
+\begin{DoxyCompactList}\small\item\em un-\/mute the audio engine \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{thread__audio__hal_8h_ac3f240b782d8c9c8c5a9b13dc31d0fb0}{Audio\+\_\+\+Volume\+\_\+\+Set}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} volume)
+\begin{DoxyCompactList}\small\item\em set playing audio volume \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{thread__audio__hal_8h_a63caa5fecc35faf2d06dbc44b431f7dd}{DMA\+\_\+\+Shot}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Samples, \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} n\+Samples)
+\begin{DoxyCompactList}\small\item\em program the DMA to transfer audio data samples \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header with functions related to the audio BSP service. 
+
+\begin{DoxyVersion}{Version}
+v1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+16/01/2018 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+ltorres 
+\end{DoxyAuthor}
+\begin{DoxyWarning}{Warning}
+author date version .-\/ Edition 
+\end{DoxyWarning}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000035}{Bug}}]\end{DoxyRefDesc}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{thread__audio__hal_8h_add17fe839f9cf8d787268eed7c66820b}\label{thread__audio__hal_8h_add17fe839f9cf8d787268eed7c66820b} 
+\index{thread\_audio\_hal.h@{thread\_audio\_hal.h}!AUDIO\_PLAYER\_MUTE@{AUDIO\_PLAYER\_MUTE}}
+\index{AUDIO\_PLAYER\_MUTE@{AUDIO\_PLAYER\_MUTE}!thread\_audio\_hal.h@{thread\_audio\_hal.h}}
+\doxysubsubsection{\texorpdfstring{AUDIO\_PLAYER\_MUTE}{AUDIO\_PLAYER\_MUTE}}
+{\footnotesize\ttfamily \#define AUDIO\+\_\+\+PLAYER\+\_\+\+MUTE~IOPORT\+\_\+\+PORT\+\_\+05\+\_\+\+PIN\+\_\+00}
+
+\Hypertarget{thread__audio__hal_8h_a8481a69032e7fa6f265eeb1b23a0962d}\label{thread__audio__hal_8h_a8481a69032e7fa6f265eeb1b23a0962d} 
+\index{thread\_audio\_hal.h@{thread\_audio\_hal.h}!AUDIO\_PLAYER\_SHDN@{AUDIO\_PLAYER\_SHDN}}
+\index{AUDIO\_PLAYER\_SHDN@{AUDIO\_PLAYER\_SHDN}!thread\_audio\_hal.h@{thread\_audio\_hal.h}}
+\doxysubsubsection{\texorpdfstring{AUDIO\_PLAYER\_SHDN}{AUDIO\_PLAYER\_SHDN}}
+{\footnotesize\ttfamily \#define AUDIO\+\_\+\+PLAYER\+\_\+\+SHDN~IOPORT\+\_\+\+PORT\+\_\+05\+\_\+\+PIN\+\_\+01}
+
+\Hypertarget{thread__audio__hal_8h_ae516bd421cd7b0fad21e9837a1e0c82d}\label{thread__audio__hal_8h_ae516bd421cd7b0fad21e9837a1e0c82d} 
+\index{thread\_audio\_hal.h@{thread\_audio\_hal.h}!MAX\_AUDIO\_VOLUME@{MAX\_AUDIO\_VOLUME}}
+\index{MAX\_AUDIO\_VOLUME@{MAX\_AUDIO\_VOLUME}!thread\_audio\_hal.h@{thread\_audio\_hal.h}}
+\doxysubsubsection{\texorpdfstring{MAX\_AUDIO\_VOLUME}{MAX\_AUDIO\_VOLUME}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+AUDIO\+\_\+\+VOLUME~63}
+
+
+
+Maximum Audio volume value. 
+
+\Hypertarget{thread__audio__hal_8h_af1e286c57b8ceea5b0a642a96a019e6e}\label{thread__audio__hal_8h_af1e286c57b8ceea5b0a642a96a019e6e} 
+\index{thread\_audio\_hal.h@{thread\_audio\_hal.h}!MIN\_AUDIO\_VOLUME@{MIN\_AUDIO\_VOLUME}}
+\index{MIN\_AUDIO\_VOLUME@{MIN\_AUDIO\_VOLUME}!thread\_audio\_hal.h@{thread\_audio\_hal.h}}
+\doxysubsubsection{\texorpdfstring{MIN\_AUDIO\_VOLUME}{MIN\_AUDIO\_VOLUME}}
+{\footnotesize\ttfamily \#define MIN\+\_\+\+AUDIO\+\_\+\+VOLUME~25}
+
+
+
+Minimum Audio volume value. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{thread__audio__hal_8h_a6679ee7be991ded9e6e1edd02fdbf9d8}\label{thread__audio__hal_8h_a6679ee7be991ded9e6e1edd02fdbf9d8} 
+\index{thread\_audio\_hal.h@{thread\_audio\_hal.h}!Audio\_Init@{Audio\_Init}}
+\index{Audio\_Init@{Audio\_Init}!thread\_audio\_hal.h@{thread\_audio\_hal.h}}
+\doxysubsubsection{\texorpdfstring{Audio\_Init()}{Audio\_Init()}}
+{\footnotesize\ttfamily void Audio\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+initializes the audio engine. Assume that all messages are sampled at 11,025 Ksps with 12 bits resolution 
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__audio__hal_8h_a6679ee7be991ded9e6e1edd02fdbf9d8_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__audio__hal_8h_ac55973b058909dfa33d3d55b4fcdbb8e}\label{thread__audio__hal_8h_ac55973b058909dfa33d3d55b4fcdbb8e} 
+\index{thread\_audio\_hal.h@{thread\_audio\_hal.h}!Audio\_Mute@{Audio\_Mute}}
+\index{Audio\_Mute@{Audio\_Mute}!thread\_audio\_hal.h@{thread\_audio\_hal.h}}
+\doxysubsubsection{\texorpdfstring{Audio\_Mute()}{Audio\_Mute()}}
+{\footnotesize\ttfamily void Audio\+\_\+\+Mute (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+mute the audio engine 
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=288pt]{thread__audio__hal_8h_ac55973b058909dfa33d3d55b4fcdbb8e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__audio__hal_8h_a285beaccee275c7e54b53d5c0cb17fdd}\label{thread__audio__hal_8h_a285beaccee275c7e54b53d5c0cb17fdd} 
+\index{thread\_audio\_hal.h@{thread\_audio\_hal.h}!Audio\_Mute\_Off@{Audio\_Mute\_Off}}
+\index{Audio\_Mute\_Off@{Audio\_Mute\_Off}!thread\_audio\_hal.h@{thread\_audio\_hal.h}}
+\doxysubsubsection{\texorpdfstring{Audio\_Mute\_Off()}{Audio\_Mute\_Off()}}
+{\footnotesize\ttfamily void Audio\+\_\+\+Mute\+\_\+\+Off (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+un-\/mute the audio engine 
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__audio__hal_8h_a285beaccee275c7e54b53d5c0cb17fdd_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__audio__hal_8h_a5860ff86766cdf6918ea51ba11a70ba6}\label{thread__audio__hal_8h_a5860ff86766cdf6918ea51ba11a70ba6} 
+\index{thread\_audio\_hal.h@{thread\_audio\_hal.h}!Audio\_Play\_Start@{Audio\_Play\_Start}}
+\index{Audio\_Play\_Start@{Audio\_Play\_Start}!thread\_audio\_hal.h@{thread\_audio\_hal.h}}
+\doxysubsubsection{\texorpdfstring{Audio\_Play\_Start()}{Audio\_Play\_Start()}}
+{\footnotesize\ttfamily void Audio\+\_\+\+Play\+\_\+\+Start (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Samples,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}}}]{n\+Samples }\end{DoxyParamCaption})}
+
+
+
+plays a single audio message 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Msg} & pointer to the message data samples \\
+\hline
+{\em size} & number of samples to transfer \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=293pt]{thread__audio__hal_8h_a5860ff86766cdf6918ea51ba11a70ba6_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__audio__hal_8h_a5860ff86766cdf6918ea51ba11a70ba6_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__audio__hal_8h_a5afdd4d24f2faf92baea80c7b0cedfdc}\label{thread__audio__hal_8h_a5afdd4d24f2faf92baea80c7b0cedfdc} 
+\index{thread\_audio\_hal.h@{thread\_audio\_hal.h}!Audio\_Stop@{Audio\_Stop}}
+\index{Audio\_Stop@{Audio\_Stop}!thread\_audio\_hal.h@{thread\_audio\_hal.h}}
+\doxysubsubsection{\texorpdfstring{Audio\_Stop()}{Audio\_Stop()}}
+{\footnotesize\ttfamily void Audio\+\_\+\+Stop (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+stops the audio reproduction 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Msg} & pointer to the message data \\
+\hline
+{\em size} & number of samples of the audio message \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__audio__hal_8h_a5afdd4d24f2faf92baea80c7b0cedfdc_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__audio__hal_8h_ac3f240b782d8c9c8c5a9b13dc31d0fb0}\label{thread__audio__hal_8h_ac3f240b782d8c9c8c5a9b13dc31d0fb0} 
+\index{thread\_audio\_hal.h@{thread\_audio\_hal.h}!Audio\_Volume\_Set@{Audio\_Volume\_Set}}
+\index{Audio\_Volume\_Set@{Audio\_Volume\_Set}!thread\_audio\_hal.h@{thread\_audio\_hal.h}}
+\doxysubsubsection{\texorpdfstring{Audio\_Volume\_Set()}{Audio\_Volume\_Set()}}
+{\footnotesize\ttfamily void Audio\+\_\+\+Volume\+\_\+\+Set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{volume }\end{DoxyParamCaption})}
+
+
+
+set playing audio volume 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__audio__hal_8h_ac3f240b782d8c9c8c5a9b13dc31d0fb0_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__audio__hal_8h_ac3f240b782d8c9c8c5a9b13dc31d0fb0_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__audio__hal_8h_a63caa5fecc35faf2d06dbc44b431f7dd}\label{thread__audio__hal_8h_a63caa5fecc35faf2d06dbc44b431f7dd} 
+\index{thread\_audio\_hal.h@{thread\_audio\_hal.h}!DMA\_Shot@{DMA\_Shot}}
+\index{DMA\_Shot@{DMA\_Shot}!thread\_audio\_hal.h@{thread\_audio\_hal.h}}
+\doxysubsubsection{\texorpdfstring{DMA\_Shot()}{DMA\_Shot()}}
+{\footnotesize\ttfamily void DMA\+\_\+\+Shot (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Samples,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}}}]{n\+Samples }\end{DoxyParamCaption})}
+
+
+
+program the DMA to transfer audio data samples 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Samples} & pointer to audio samples \\
+\hline
+{\em n\+Samples} & number of samples to transfer \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__audio__hal_8h_a63caa5fecc35faf2d06dbc44b431f7dd_icgraph}
+\end{center}
+\end{figure}

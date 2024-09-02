@@ -1,0 +1,73 @@
+\doxysection{ATCAHAL\+\_\+t Struct Reference}
+\hypertarget{struct_a_t_c_a_h_a_l__t}{}\label{struct_a_t_c_a_h_a_l__t}\index{ATCAHAL\_t@{ATCAHAL\_t}}
+
+
+HAL Driver Structure.  
+
+
+
+
+{\ttfamily \#include $<$atca\+\_\+iface.\+h$>$}
+
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}}(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_a_t_c_a_h_a_l__t_ab0ec68529226863aedc9b143c118e5db}{halinit}} )(\mbox{\hyperlink{group__interface_ga75c11126f3fe81df3d6c27f5bb393303}{ATCAIface}} iface, \mbox{\hyperlink{struct_a_t_c_a_iface_cfg}{ATCAIface\+Cfg}} \texorpdfstring{$\ast$}{*}cfg)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}}(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_a_t_c_a_h_a_l__t_a833092fd0a18711ee3d21e0b62bc8ff8}{halpostinit}} )(\mbox{\hyperlink{group__interface_ga75c11126f3fe81df3d6c27f5bb393303}{ATCAIface}} iface)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}}(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_a_t_c_a_h_a_l__t_a8d16f7f18b69fa0ed616184862033658}{halsend}} )(\mbox{\hyperlink{group__interface_ga75c11126f3fe81df3d6c27f5bb393303}{ATCAIface}} iface, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} word\+\_\+address, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}txdata, int txlength)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}}(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_a_t_c_a_h_a_l__t_ab3efd7d4862fed3424fe45f2912c5401}{halreceive}} )(\mbox{\hyperlink{group__interface_ga75c11126f3fe81df3d6c27f5bb393303}{ATCAIface}} iface, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} word\+\_\+address, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}rxdata, \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \texorpdfstring{$\ast$}{*}rxlength)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}}(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_a_t_c_a_h_a_l__t_a162e67300d3291f45ded16514203e7eb}{halcontrol}} )(\mbox{\hyperlink{group__interface_ga75c11126f3fe81df3d6c27f5bb393303}{ATCAIface}} iface, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} option, void \texorpdfstring{$\ast$}{*}param, size\+\_\+t paramlen)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}}(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_a_t_c_a_h_a_l__t_ac20a9d25952b9069d8f58ff40285f290}{halrelease}} )(void \texorpdfstring{$\ast$}{*}hal\+\_\+data)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+HAL Driver Structure. 
+
+\doxysubsection{Field Documentation}
+\Hypertarget{struct_a_t_c_a_h_a_l__t_a162e67300d3291f45ded16514203e7eb}\label{struct_a_t_c_a_h_a_l__t_a162e67300d3291f45ded16514203e7eb} 
+\index{ATCAHAL\_t@{ATCAHAL\_t}!halcontrol@{halcontrol}}
+\index{halcontrol@{halcontrol}!ATCAHAL\_t@{ATCAHAL\_t}}
+\doxysubsubsection{\texorpdfstring{halcontrol}{halcontrol}}
+{\footnotesize\ttfamily \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}}(\texorpdfstring{$\ast$}{*} ATCAHAL\+\_\+t\+::halcontrol) (\mbox{\hyperlink{group__interface_ga75c11126f3fe81df3d6c27f5bb393303}{ATCAIface}} iface, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} option, void \texorpdfstring{$\ast$}{*}param, size\+\_\+t paramlen)}
+
+\Hypertarget{struct_a_t_c_a_h_a_l__t_ab0ec68529226863aedc9b143c118e5db}\label{struct_a_t_c_a_h_a_l__t_ab0ec68529226863aedc9b143c118e5db} 
+\index{ATCAHAL\_t@{ATCAHAL\_t}!halinit@{halinit}}
+\index{halinit@{halinit}!ATCAHAL\_t@{ATCAHAL\_t}}
+\doxysubsubsection{\texorpdfstring{halinit}{halinit}}
+{\footnotesize\ttfamily \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}}(\texorpdfstring{$\ast$}{*} ATCAHAL\+\_\+t\+::halinit) (\mbox{\hyperlink{group__interface_ga75c11126f3fe81df3d6c27f5bb393303}{ATCAIface}} iface, \mbox{\hyperlink{struct_a_t_c_a_iface_cfg}{ATCAIface\+Cfg}} \texorpdfstring{$\ast$}{*}cfg)}
+
+\Hypertarget{struct_a_t_c_a_h_a_l__t_a833092fd0a18711ee3d21e0b62bc8ff8}\label{struct_a_t_c_a_h_a_l__t_a833092fd0a18711ee3d21e0b62bc8ff8} 
+\index{ATCAHAL\_t@{ATCAHAL\_t}!halpostinit@{halpostinit}}
+\index{halpostinit@{halpostinit}!ATCAHAL\_t@{ATCAHAL\_t}}
+\doxysubsubsection{\texorpdfstring{halpostinit}{halpostinit}}
+{\footnotesize\ttfamily \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}}(\texorpdfstring{$\ast$}{*} ATCAHAL\+\_\+t\+::halpostinit) (\mbox{\hyperlink{group__interface_ga75c11126f3fe81df3d6c27f5bb393303}{ATCAIface}} iface)}
+
+\Hypertarget{struct_a_t_c_a_h_a_l__t_ab3efd7d4862fed3424fe45f2912c5401}\label{struct_a_t_c_a_h_a_l__t_ab3efd7d4862fed3424fe45f2912c5401} 
+\index{ATCAHAL\_t@{ATCAHAL\_t}!halreceive@{halreceive}}
+\index{halreceive@{halreceive}!ATCAHAL\_t@{ATCAHAL\_t}}
+\doxysubsubsection{\texorpdfstring{halreceive}{halreceive}}
+{\footnotesize\ttfamily \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}}(\texorpdfstring{$\ast$}{*} ATCAHAL\+\_\+t\+::halreceive) (\mbox{\hyperlink{group__interface_ga75c11126f3fe81df3d6c27f5bb393303}{ATCAIface}} iface, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} word\+\_\+address, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}rxdata, \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \texorpdfstring{$\ast$}{*}rxlength)}
+
+\Hypertarget{struct_a_t_c_a_h_a_l__t_ac20a9d25952b9069d8f58ff40285f290}\label{struct_a_t_c_a_h_a_l__t_ac20a9d25952b9069d8f58ff40285f290} 
+\index{ATCAHAL\_t@{ATCAHAL\_t}!halrelease@{halrelease}}
+\index{halrelease@{halrelease}!ATCAHAL\_t@{ATCAHAL\_t}}
+\doxysubsubsection{\texorpdfstring{halrelease}{halrelease}}
+{\footnotesize\ttfamily \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}}(\texorpdfstring{$\ast$}{*} ATCAHAL\+\_\+t\+::halrelease) (void \texorpdfstring{$\ast$}{*}hal\+\_\+data)}
+
+\Hypertarget{struct_a_t_c_a_h_a_l__t_a8d16f7f18b69fa0ed616184862033658}\label{struct_a_t_c_a_h_a_l__t_a8d16f7f18b69fa0ed616184862033658} 
+\index{ATCAHAL\_t@{ATCAHAL\_t}!halsend@{halsend}}
+\index{halsend@{halsend}!ATCAHAL\_t@{ATCAHAL\_t}}
+\doxysubsubsection{\texorpdfstring{halsend}{halsend}}
+{\footnotesize\ttfamily \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}}(\texorpdfstring{$\ast$}{*} ATCAHAL\+\_\+t\+::halsend) (\mbox{\hyperlink{group__interface_ga75c11126f3fe81df3d6c27f5bb393303}{ATCAIface}} iface, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} word\+\_\+address, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}txdata, int txlength)}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\+SCE/\mbox{\hyperlink{atca__iface_8h}{atca\+\_\+iface.\+h}}\end{DoxyCompactItemize}

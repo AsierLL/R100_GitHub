@@ -1,0 +1,109 @@
+\doxysection{DB\+\_\+\+RESAMPLE\+\_\+\+BLOCK\+\_\+t Struct Reference}
+\hypertarget{a00274}{}\label{a00274}\index{DB\_RESAMPLE\_BLOCK\_t@{DB\_RESAMPLE\_BLOCK\_t}}
+
+
+Structure to hold resampled data.  
+
+
+
+
+{\ttfamily \#include $<$DB\+\_\+\+Episode.\+h$>$}
+
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \mbox{\hyperlink{a00274_ab7046be6660989fb485338349be5651a}{time\+\_\+stamp}}
+\begin{DoxyCompactList}\small\item\em Time stamp in ECG samples. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{a00274_a5d6718fc1fb53a12c76a747c377ca038}{data\+\_\+type}}
+\begin{DoxyCompactList}\small\item\em Type of data in the block. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{a00274_acc4c1b96790809c37512ff10ed8480ac}{zp\+\_\+ohms}}
+\begin{DoxyCompactList}\small\item\em Patient impedance (in ohms) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \mbox{\hyperlink{a00274_a9a7050511fd64e043a0fd76f443f4a87}{zp\+\_\+cal}}
+\begin{DoxyCompactList}\small\item\em dynamic ZP calibration (in ADCs) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_a269259c924dce846340ddbb810db2e3c}{int16\+\_\+t}} \mbox{\hyperlink{a00274_aed63e02ce7a46c08a6ce0a735bb8f6e1}{ecg}} \mbox{[}\mbox{\hyperlink{a00005_a97f13bedc46d5fb1be02fb79331d41fb}{EPISODE\+\_\+\+BLOCK\+\_\+\+ECG\+\_\+\+SZ}}/5\mbox{]}
+\begin{DoxyCompactList}\small\item\em ECG data section. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \mbox{\hyperlink{a00274_a3ecd6c97a418b1c65010c00b86acba66}{zp}} \mbox{[}\mbox{\hyperlink{a00005_ab33b9cecd56a25a560a0ee057dcae1c0}{EPISODE\+\_\+\+BLOCK\+\_\+\+ZP\+\_\+\+SZ}}/5\mbox{]}
+\begin{DoxyCompactList}\small\item\em ZP data section. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{a00274_a52f97d9e091173b6e029da6812667c62}{data\+\_\+aux}} \mbox{[}\mbox{\hyperlink{a00005_a9442218a0ec67bfa69e27c64b232676c}{DATA\+\_\+\+AUX\+\_\+\+SIZE}}\mbox{]}
+\begin{DoxyCompactList}\small\item\em Auxiliary data in the block (DRD, etc...) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Structure to hold resampled data. 
+
+\doxysubsection{Field Documentation}
+\Hypertarget{a00274_a52f97d9e091173b6e029da6812667c62}\label{a00274_a52f97d9e091173b6e029da6812667c62} 
+\index{DB\_RESAMPLE\_BLOCK\_t@{DB\_RESAMPLE\_BLOCK\_t}!data\_aux@{data\_aux}}
+\index{data\_aux@{data\_aux}!DB\_RESAMPLE\_BLOCK\_t@{DB\_RESAMPLE\_BLOCK\_t}}
+\doxysubsubsection{\texorpdfstring{data\_aux}{data\_aux}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} DB\+\_\+\+RESAMPLE\+\_\+\+BLOCK\+\_\+t\+::data\+\_\+aux\mbox{[}\mbox{\hyperlink{a00005_a9442218a0ec67bfa69e27c64b232676c}{DATA\+\_\+\+AUX\+\_\+\+SIZE}}\mbox{]}}
+
+
+
+Auxiliary data in the block (DRD, etc...) 
+
+\Hypertarget{a00274_a5d6718fc1fb53a12c76a747c377ca038}\label{a00274_a5d6718fc1fb53a12c76a747c377ca038} 
+\index{DB\_RESAMPLE\_BLOCK\_t@{DB\_RESAMPLE\_BLOCK\_t}!data\_type@{data\_type}}
+\index{data\_type@{data\_type}!DB\_RESAMPLE\_BLOCK\_t@{DB\_RESAMPLE\_BLOCK\_t}}
+\doxysubsubsection{\texorpdfstring{data\_type}{data\_type}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} DB\+\_\+\+RESAMPLE\+\_\+\+BLOCK\+\_\+t\+::data\+\_\+type}
+
+
+
+Type of data in the block. 
+
+\Hypertarget{a00274_aed63e02ce7a46c08a6ce0a735bb8f6e1}\label{a00274_aed63e02ce7a46c08a6ce0a735bb8f6e1} 
+\index{DB\_RESAMPLE\_BLOCK\_t@{DB\_RESAMPLE\_BLOCK\_t}!ecg@{ecg}}
+\index{ecg@{ecg}!DB\_RESAMPLE\_BLOCK\_t@{DB\_RESAMPLE\_BLOCK\_t}}
+\doxysubsubsection{\texorpdfstring{ecg}{ecg}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a269259c924dce846340ddbb810db2e3c}{int16\+\_\+t}} DB\+\_\+\+RESAMPLE\+\_\+\+BLOCK\+\_\+t\+::ecg\mbox{[}\mbox{\hyperlink{a00005_a97f13bedc46d5fb1be02fb79331d41fb}{EPISODE\+\_\+\+BLOCK\+\_\+\+ECG\+\_\+\+SZ}}/5\mbox{]}}
+
+
+
+ECG data section. 
+
+\Hypertarget{a00274_ab7046be6660989fb485338349be5651a}\label{a00274_ab7046be6660989fb485338349be5651a} 
+\index{DB\_RESAMPLE\_BLOCK\_t@{DB\_RESAMPLE\_BLOCK\_t}!time\_stamp@{time\_stamp}}
+\index{time\_stamp@{time\_stamp}!DB\_RESAMPLE\_BLOCK\_t@{DB\_RESAMPLE\_BLOCK\_t}}
+\doxysubsubsection{\texorpdfstring{time\_stamp}{time\_stamp}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} DB\+\_\+\+RESAMPLE\+\_\+\+BLOCK\+\_\+t\+::time\+\_\+stamp}
+
+
+
+Time stamp in ECG samples. 
+
+\Hypertarget{a00274_a3ecd6c97a418b1c65010c00b86acba66}\label{a00274_a3ecd6c97a418b1c65010c00b86acba66} 
+\index{DB\_RESAMPLE\_BLOCK\_t@{DB\_RESAMPLE\_BLOCK\_t}!zp@{zp}}
+\index{zp@{zp}!DB\_RESAMPLE\_BLOCK\_t@{DB\_RESAMPLE\_BLOCK\_t}}
+\doxysubsubsection{\texorpdfstring{zp}{zp}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} DB\+\_\+\+RESAMPLE\+\_\+\+BLOCK\+\_\+t\+::zp\mbox{[}\mbox{\hyperlink{a00005_ab33b9cecd56a25a560a0ee057dcae1c0}{EPISODE\+\_\+\+BLOCK\+\_\+\+ZP\+\_\+\+SZ}}/5\mbox{]}}
+
+
+
+ZP data section. 
+
+\Hypertarget{a00274_a9a7050511fd64e043a0fd76f443f4a87}\label{a00274_a9a7050511fd64e043a0fd76f443f4a87} 
+\index{DB\_RESAMPLE\_BLOCK\_t@{DB\_RESAMPLE\_BLOCK\_t}!zp\_cal@{zp\_cal}}
+\index{zp\_cal@{zp\_cal}!DB\_RESAMPLE\_BLOCK\_t@{DB\_RESAMPLE\_BLOCK\_t}}
+\doxysubsubsection{\texorpdfstring{zp\_cal}{zp\_cal}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} DB\+\_\+\+RESAMPLE\+\_\+\+BLOCK\+\_\+t\+::zp\+\_\+cal}
+
+
+
+dynamic ZP calibration (in ADCs) 
+
+\Hypertarget{a00274_acc4c1b96790809c37512ff10ed8480ac}\label{a00274_acc4c1b96790809c37512ff10ed8480ac} 
+\index{DB\_RESAMPLE\_BLOCK\_t@{DB\_RESAMPLE\_BLOCK\_t}!zp\_ohms@{zp\_ohms}}
+\index{zp\_ohms@{zp\_ohms}!DB\_RESAMPLE\_BLOCK\_t@{DB\_RESAMPLE\_BLOCK\_t}}
+\doxysubsubsection{\texorpdfstring{zp\_ohms}{zp\_ohms}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} DB\+\_\+\+RESAMPLE\+\_\+\+BLOCK\+\_\+t\+::zp\+\_\+ohms}
+
+
+
+Patient impedance (in ohms) 
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\mbox{\hyperlink{a00005}{DB\+\_\+\+Episode.\+h}}\end{DoxyCompactItemize}

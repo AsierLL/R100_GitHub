@@ -1,0 +1,63 @@
+\doxysection{Trace.\+h}
+\hypertarget{a00251_source}{}\label{a00251_source}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/Resources/Trace.h@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/Resources/Trace.h}}
+\mbox{\hyperlink{a00251}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Name\ \ \ \ \ \ :\ R100\_S3A7\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ :\ Osatu\ S.\ Coop\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Compiler\ \ :\ GNU\ ARM\ Embedded\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ Target\ \ \ \ :\ Reanibex\ Serie\ 100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ ******************************************************************************/}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#ifndef\ TRACE\_H\_}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#define\ TRACE\_H\_}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ **Includes}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{a00137}{types\_basic.h}}"{}}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ **\ Defines}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{comment}{//\ FLAGS}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#define\ TRACE\_NO\_FLAGS\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#define\ TRACE\_TIME\_STAMP\ \ \ \ \ \ \ \ \ \ \ \ 0x01}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#define\ TRACE\_NEWLINE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x02}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#define\ TRACE\_DISABLED\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x04}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00041\ \textcolor{comment}{\ **\ Typedefs}}
+\DoxyCodeLine{00042\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00045\ \textcolor{comment}{\ **\ Globals}}
+\DoxyCodeLine{00046\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00049\ \textcolor{comment}{\ **\ Prototypes}}
+\DoxyCodeLine{00050\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ \ \ \ \ \mbox{\hyperlink{a00251_a7b739c75f87182605802c312d4e85cf6}{Trace\_Init}}\ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00053\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ \ \ \ \ \mbox{\hyperlink{a00251_a8947b81ae09bdb57459cd1c81c78ab37}{Trace}}\ \ \ \ \ \ (\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ flags,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *pString);}
+\DoxyCodeLine{00054\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ \ \ \ \ \mbox{\hyperlink{a00251_abbe04e9d8a6f964c5a4f18901a95b0de}{Trace\_Arg}}\ \ (\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ flags,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *pString,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ aux\_code);}
+\DoxyCodeLine{00055\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ \ \ \ \ \mbox{\hyperlink{a00251_a833c0f353040c1cefc0bac94dc918f76}{Trace\_Char}}\ (\textcolor{keyword}{const}\ \mbox{\hyperlink{a00137_a40bb5262bf908c328fbcfbe5d29d0201}{char\_t}}\ data\_to\_send);}
+\DoxyCodeLine{00056\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \mbox{\hyperlink{a00251_a3deb76927453c6425cac2c0c5f872a24}{Boot\_Send\_Message}}\ (\textcolor{keyword}{const}\ \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ *pMsg,\ \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ size);}
+\DoxyCodeLine{00057\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \mbox{\hyperlink{a00251_a2bfb02f5ceda55d9f597551c4817fbff}{Boot\_Receive\_Message}}\ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00058\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ \ \ \ \ \mbox{\hyperlink{a00251_a2ec7f637e0bb5ec915d7ac8d057891aa}{Boot\_Sync}}\ (\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ nBeacons);}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#ifdef\ UNIT\_TESTS}}
+\DoxyCodeLine{00061\ \textcolor{keywordtype}{void}\ Trace\_Test\ (\textcolor{keyword}{const}\ \mbox{\hyperlink{a00137_a40bb5262bf908c328fbcfbe5d29d0201}{char\_t}}\ data\_to\_send);}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ TRACE\_H\_\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00067\ \textcolor{comment}{\ **\ \$Log\$}}
+\DoxyCodeLine{00068\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00069\ \textcolor{comment}{\ **\ end\ of\ Comm\_Trace.h}}
+\DoxyCodeLine{00070\ \textcolor{comment}{\ ******************************************************************************/}}
+
+\end{DoxyCode}

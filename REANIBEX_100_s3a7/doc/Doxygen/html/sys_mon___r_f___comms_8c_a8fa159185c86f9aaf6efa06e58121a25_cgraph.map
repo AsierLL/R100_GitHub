@@ -1,0 +1,36 @@
+<map id="Lis3dh_ACC_Init" name="Lis3dh_ACC_Init">
+<area shape="rect" id="Node000001" title="This function initialize and configure acclerometer According to the XYZ values in stable position,..." alt="" coords="5,132,123,159"/>
+<area shape="rect" id="Node000002" href="$bsp__acc___l_i_s3_d_h_8c.html#a4ca9c1b97ec25cb31b7be2f8e54c5643" title="Initialize the interruption reg and configure interruption threshold of accelerometer." alt="" coords="417,157,549,184"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="123,146,401,163,401,168,123,152"/>
+<area shape="rect" id="Node000009" href="$thread__comm__hal_8c.html#aef2d7460a2cd17cf6830333cbd5c7f3a" title="Read XYZ axis acceleration values." alt="" coords="366,5,600,32"/>
+<area shape="poly" id="edge11_Node000001_Node000009" title=" " alt="" coords="78,130,117,97,170,67,214,51,260,39,350,24,351,29,261,44,215,56,172,72,120,102,81,134"/>
+<area shape="rect" id="Node000010" href="$thread__comm__hal_8c.html#ace5f77a9b4079a5b7a0d44391357862a" title="If accelerometer presence is OK, then initialize Accelerometer setup." alt="" coords="171,81,318,108"/>
+<area shape="poly" id="edge13_Node000001_Node000010" title=" " alt="" coords="114,129,179,110,180,115,115,134"/>
+<area shape="rect" id="Node000013" href="$thread__sys_mon__entry_8c.html#aab815986ee52dfb7489873f856e3ecb9" title="Refresh the watchdog timer." alt="" coords="195,183,294,209"/>
+<area shape="poly" id="edge19_Node000001_Node000013" title=" " alt="" coords="115,157,180,175,179,181,114,162"/>
+<area shape="rect" id="Node000014" href="$_trace_8c.html#abbe04e9d8a6f964c5a4f18901a95b0de" title="Print a trace string inserting the time stamp." alt="" coords="204,233,285,260"/>
+<area shape="poly" id="edge20_Node000001_Node000014" title=" " alt="" coords="83,157,122,188,172,219,191,228,189,232,169,224,119,192,80,161"/>
+<area shape="rect" id="Node000003" href="$_i2_c__1_8c.html#ace04072c3cee76dcb968024ef77224f6" title="Function to read data byte at specific register address." alt="" coords="649,81,815,108"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="549,157,599,143,623,131,647,118,665,111,666,116,649,122,626,135,601,148,550,162"/>
+<area shape="rect" id="Node000008" href="$_i2_c__1_8c.html#abccb91036dc573b48c9b3733eac02efa" title="Function to write data byte at specific register address." alt="" coords="648,132,816,159"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="550,161,632,153,633,158,550,167"/>
+<area shape="rect" id="Node000004" href="$_i2_c__1_8c.html#a8721bef7537e00756c8c6e8ec8b4c3b4" title="Function to get a data byte from the i2C device." alt="" coords="880,31,984,57"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="787,78,864,58,865,64,788,83"/>
+<area shape="rect" id="Node000005" href="$_i2_c__1_8c.html#a58c06ede2d56b3068be6703981e4030a" title="Generate the START condition in the i2C line." alt="" coords="864,132,1000,159"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="788,106,862,125,861,130,787,111"/>
+<area shape="rect" id="Node000006" href="$_i2_c__1_8c.html#abe5880e856c1c213a8e0074d876f9b70" title="Generate the STOP condition in the i2C line." alt="" coords="864,183,1000,209"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="793,106,817,118,833,131,842,143,851,156,865,169,873,173,870,178,862,173,847,160,838,147,829,134,814,122,791,111"/>
+<area shape="rect" id="Node000007" href="$_i2_c__1_8c.html#a3be7740fdada1288f4bf53c6f8a4c84a" title="Function to send a data byte to the i2C device." alt="" coords="881,81,983,108"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="816,92,865,92,865,97,816,97"/>
+<area shape="poly" id="edge8_Node000008_Node000005" title=" " alt="" coords="816,143,848,143,848,148,816,148"/>
+<area shape="poly" id="edge9_Node000008_Node000006" title=" " alt="" coords="788,157,862,176,861,181,787,162"/>
+<area shape="poly" id="edge10_Node000008_Node000007" title=" " alt="" coords="787,129,865,109,866,114,788,134"/>
+<area shape="poly" id="edge12_Node000009_Node000003" title=" " alt="" coords="557,30,601,41,686,72,684,77,600,47,556,35"/>
+<area shape="rect" id="Node000011" href="$bsp__acc___l_i_s3_d_h_8c.html#afcbc051f96e6f31f234a07674c2027f3" title="Checks for presence of accelerometer by checking who_am_i register." alt="" coords="400,56,567,83"/>
+<area shape="poly" id="edge14_Node000010_Node000011" title=" " alt="" coords="318,84,384,77,384,82,319,90"/>
+<area shape="rect" id="Node000012" href="$bsp__acc___l_i_s3_d_h_8c.html#aea5b1f8a01e5ae4f2805aa689711694e" title="Setup basic configuration of accelerometer." alt="" coords="410,107,556,133"/>
+<area shape="poly" id="edge16_Node000010_Node000012" title=" " alt="" coords="319,100,395,108,394,113,318,105"/>
+<area shape="poly" id="edge15_Node000011_Node000003" title=" " alt="" coords="568,75,634,82,633,87,567,81"/>
+<area shape="poly" id="edge17_Node000012_Node000003" title=" " alt="" coords="556,110,633,102,634,107,557,115"/>
+<area shape="poly" id="edge18_Node000012_Node000008" title=" " alt="" coords="557,125,633,133,632,138,556,130"/>
+</map>

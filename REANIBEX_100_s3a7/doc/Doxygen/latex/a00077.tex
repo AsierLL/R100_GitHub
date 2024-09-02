@@ -1,0 +1,576 @@
+\doxysection{C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/thread\+\_\+audio\+\_\+entry.h File Reference}
+\hypertarget{a00077}{}\label{a00077}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/thread\_audio\_entry.h@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/thread\_audio\_entry.h}}
+
+
+Header with functions related to the audio service.  
+
+
+{\ttfamily \#include "{}R100\+\_\+\+Errors.\+h"{}}\newline
+{\ttfamily \#include "{}types\+\_\+basic.\+h"{}}\newline
+Include dependency graph for thread\+\_\+audio\+\_\+entry.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{a00077_ab361bebc26da7acaf52e0c276e92748e}{SYNC\+\_\+\+AUDIO\+\_\+\+ANY\+\_\+\+EVENT}}~(0x\+FFFFFFFF)
+\item 
+\#define \mbox{\hyperlink{a00077_a79cce6dbc60161d18617c362c4b09fa9}{SYNC\+\_\+\+AUDIO\+\_\+\+PLAY\+\_\+\+EVENT}}~(0x00000001 $<$$<$ 0)
+\item 
+\#define \mbox{\hyperlink{a00077_afff359d61ad152e5f40bcf81beed4b04}{MAX\+\_\+\+LANGUAGES}}~6
+\item 
+\#define \mbox{\hyperlink{a00077_a9ec546d7a433dc781134a1f8b660001a}{MAX\+\_\+\+AUDIO\+\_\+\+MSG}}~\mbox{\hyperlink{a00077_a03d56294790e98587e2ed35dcb3d8115afcb148cf6ea6e8220fe534eb05b3a6a4}{e\+AUDIO\+\_\+\+MAX\+\_\+\+ID}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{a00077_a2234573f549c7504677f8e4f86e06b34}{AUDIO\+\_\+\+CMD\+\_\+e}} \{ \newline
+\mbox{\hyperlink{a00077_a2234573f549c7504677f8e4f86e06b34a73ca9464f2aa6ad2e47b7f92a1d8797d}{e\+AUDIO\+\_\+\+CMD\+\_\+\+STOP}} = 0
+, \mbox{\hyperlink{a00077_a2234573f549c7504677f8e4f86e06b34af85342af1f508d011c6ccd369c82019b}{e\+AUDIO\+\_\+\+CMD\+\_\+\+PLAY}}
+, \mbox{\hyperlink{a00077_a2234573f549c7504677f8e4f86e06b34ad5588d3970edefaadb263c3b369e504e}{e\+AUDIO\+\_\+\+CMD\+\_\+\+CONCAT}}
+, \mbox{\hyperlink{a00077_a2234573f549c7504677f8e4f86e06b34aa9469a0d5267407fbcfd65706d41f220}{e\+AUDIO\+\_\+\+CMD\+\_\+\+STOP\+\_\+\+MESSAGE}}
+, \newline
+\mbox{\hyperlink{a00077_a2234573f549c7504677f8e4f86e06b34a497654c8d807883ad2135127d236e023}{e\+AUDIO\+\_\+\+CMD\+\_\+\+MAX}}
+ \}
+\begin{DoxyCompactList}\small\item\em Audio commands for message player. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{a00077_a03d56294790e98587e2ed35dcb3d8115}{AUDIO\+\_\+\+ID\+\_\+e}} \{ \newline
+\mbox{\hyperlink{a00077_a03d56294790e98587e2ed35dcb3d8115a5be2687980fab081ca239820abae0768}{e\+AUDIO\+\_\+\+MODE\+\_\+\+TEST}} = 0
+, \mbox{\hyperlink{a00077_a03d56294790e98587e2ed35dcb3d8115ac1a198744fca00a060de7e1c44f5a7e0}{e\+AUDIO\+\_\+\+CALL\+\_\+\+SAT}}
+, \mbox{\hyperlink{a00077_a03d56294790e98587e2ed35dcb3d8115aa9177baaf0f8f919e6ec4ccb1fdcae01}{e\+AUDIO\+\_\+\+KEEP\+\_\+\+CALM}}
+, \mbox{\hyperlink{a00077_a03d56294790e98587e2ed35dcb3d8115a99a5d8ea62d4d8e94c0853e0d49402b5}{e\+AUDIO\+\_\+\+FOLLOW\+\_\+\+INSTRUCTIONS}}
+, \newline
+\mbox{\hyperlink{a00077_a03d56294790e98587e2ed35dcb3d8115a0748a14d8001b7d21453fa3f2ce0e204}{e\+AUDIO\+\_\+\+ASK\+\_\+\+FOR\+\_\+\+HELP}}
+, \mbox{\hyperlink{a00077_a03d56294790e98587e2ed35dcb3d8115ad83d5ae887da039a950fe0ad4405380c}{e\+AUDIO\+\_\+\+REMOVE\+\_\+\+CHEST\+\_\+\+CLOTHES}}
+, \mbox{\hyperlink{a00077_a03d56294790e98587e2ed35dcb3d8115a64415b5e944140908eacf7cac4e08228}{e\+AUDIO\+\_\+\+OPEN\+\_\+\+ELECTRODE\+\_\+\+PACKAGE}}
+, \mbox{\hyperlink{a00077_a03d56294790e98587e2ed35dcb3d8115ada9c3da426165bd579f485c3b6669687}{e\+AUDIO\+\_\+\+APPLY\+\_\+\+ELECTRODES\+\_\+\+CHEST}}
+, \newline
+\mbox{\hyperlink{a00077_a03d56294790e98587e2ed35dcb3d8115ab2b05082ffe0dab181428b00d8d04eef}{e\+AUDIO\+\_\+\+PRESS\+\_\+\+ELECTRODES}}
+, \mbox{\hyperlink{a00077_a03d56294790e98587e2ed35dcb3d8115afb0ec35bdaa4ec25c9396af6a2023aa5}{e\+AUDIO\+\_\+\+CHECK\+\_\+\+ELECTRODES}}
+, \mbox{\hyperlink{a00077_a03d56294790e98587e2ed35dcb3d8115a93474e4864e37c779712afe5417daaba}{e\+AUDIO\+\_\+\+CONNECT\+\_\+\+ELECTRODES\+\_\+\+DEVICE}} = 10
+, \mbox{\hyperlink{a00077_a03d56294790e98587e2ed35dcb3d8115a545ce0f4c05262bfe196e66a6f34a190}{e\+AUDIO\+\_\+\+DO\+\_\+\+NOT\+\_\+\+TOUCH\+\_\+\+PATIENT}}
+, \newline
+\mbox{\hyperlink{a00077_a03d56294790e98587e2ed35dcb3d8115ac95d38b2f575f66e03504d83bc6edfdd}{e\+AUDIO\+\_\+\+ANALYZING\+\_\+\+HEART\+\_\+\+RATE}}
+, \mbox{\hyperlink{a00077_a03d56294790e98587e2ed35dcb3d8115aefe1473e461d8ff10f50478bbe738399}{e\+AUDIO\+\_\+\+NO\+\_\+\+SHOCK\+\_\+\+ADVISED}}
+, \mbox{\hyperlink{a00077_a03d56294790e98587e2ed35dcb3d8115a3d566825c903a5f357c07482a7804671}{e\+AUDIO\+\_\+\+CPR\+\_\+\+START}}
+, \mbox{\hyperlink{a00077_a03d56294790e98587e2ed35dcb3d8115ae150ea276c82e0a970b8c8ccdeb24785}{e\+AUDIO\+\_\+\+CPR\+\_\+\+COMPRESSIONS}}
+, \newline
+\mbox{\hyperlink{a00077_a03d56294790e98587e2ed35dcb3d8115a140fe8c4f551430234d70523d59debda}{e\+AUDIO\+\_\+\+CPR\+\_\+\+KEEP\+\_\+\+UP\+\_\+100}}
+, \mbox{\hyperlink{a00077_a03d56294790e98587e2ed35dcb3d8115a75a7a4ab0ccf7235a786fe7b6d62aa2c}{e\+AUDIO\+\_\+\+CPR\+\_\+\+KEEP\+\_\+\+UP\+\_\+110}}
+, \mbox{\hyperlink{a00077_a03d56294790e98587e2ed35dcb3d8115ae7731e5740de9b134063646b54875e15}{e\+AUDIO\+\_\+\+CPR\+\_\+\+KEEP\+\_\+\+UP\+\_\+120}}
+, \mbox{\hyperlink{a00077_a03d56294790e98587e2ed35dcb3d8115a255d588e8ae6553eb8a868f9aa1d1d2e}{e\+AUDIO\+\_\+\+CPR\+\_\+\+BREATH}}
+, \newline
+\mbox{\hyperlink{a00077_a03d56294790e98587e2ed35dcb3d8115aaa5e8c1870342c9426b4f84a77f01233}{e\+AUDIO\+\_\+\+BREATH\+\_\+2}} = 20
+, \mbox{\hyperlink{a00077_a03d56294790e98587e2ed35dcb3d8115ace74e36c1c6fe7a632bc5bd03906866d}{e\+AUDIO\+\_\+\+CPR\+\_\+\+START\+\_\+\+SHORT}}
+, \mbox{\hyperlink{a00077_a03d56294790e98587e2ed35dcb3d8115ababdb34716ecf90ef6c8f5a2dd75f504}{e\+AUDIO\+\_\+\+COMPRESSIONS\+\_\+\+CONTINUE}}
+, \mbox{\hyperlink{a00077_a03d56294790e98587e2ed35dcb3d8115a6899aef77566b0e7c0589a57feabab25}{e\+AUDIO\+\_\+\+COMPRESSIONS\+\_\+\+STOP}}
+, \newline
+\mbox{\hyperlink{a00077_a03d56294790e98587e2ed35dcb3d8115a2c08c89ad3cf182d8da70410ffa7b56f}{e\+AUDIO\+\_\+\+SHOCK\+\_\+\+ADVISED}}
+, \mbox{\hyperlink{a00077_a03d56294790e98587e2ed35dcb3d8115a74cd86334635e1ff0f9caa28ca96ac72}{e\+AUDIO\+\_\+\+PREPARING\+\_\+\+SHOCK}}
+, \mbox{\hyperlink{a00077_a03d56294790e98587e2ed35dcb3d8115a91011abe1c46cd553f24912d58b6f2dd}{e\+AUDIO\+\_\+\+PUSH\+\_\+\+TO\+\_\+\+SHOCK}}
+, \mbox{\hyperlink{a00077_a03d56294790e98587e2ed35dcb3d8115ae5740894b825b97c03623f020a9e622d}{e\+AUDIO\+\_\+\+SHOCK\+\_\+\+DELIVERED}}
+, \newline
+\mbox{\hyperlink{a00077_a03d56294790e98587e2ed35dcb3d8115a96862bea1e7f9c6337b8e737a29c3c2d}{e\+AUDIO\+\_\+\+NO\+\_\+\+SHOCK\+\_\+\+DELIVERED}}
+, \mbox{\hyperlink{a00077_a03d56294790e98587e2ed35dcb3d8115ad8777f9d35ea836f6bdc010af16165d3}{e\+AUDIO\+\_\+\+DEMO\+\_\+\+MODE}}
+, \mbox{\hyperlink{a00077_a03d56294790e98587e2ed35dcb3d8115adbac7cd1eb6907146205049d94557944}{e\+AUDIO\+\_\+\+CALL\+\_\+\+EMERGENCIES}} = 30
+, \mbox{\hyperlink{a00077_a03d56294790e98587e2ed35dcb3d8115a667ce398441f6a7e95566f3b1716917e}{e\+AUDIO\+\_\+\+LOW\+\_\+\+BATTERY}}
+, \newline
+\mbox{\hyperlink{a00077_a03d56294790e98587e2ed35dcb3d8115a243f2639dc34526ffc109dc0e6275499}{e\+AUDIO\+\_\+\+REPLACE\+\_\+\+BATTERY}}
+, \mbox{\hyperlink{a00077_a03d56294790e98587e2ed35dcb3d8115a8dc172c877252b83a61d4fa2191961a7}{e\+AUDIO\+\_\+\+STOP\+\_\+\+PATIENT\+\_\+\+MOVEMENT}}
+, \mbox{\hyperlink{a00077_a03d56294790e98587e2ed35dcb3d8115a5444390f030637709407514651c4098d}{e\+AUDIO\+\_\+\+ADULT\+\_\+\+MODE}}
+, \mbox{\hyperlink{a00077_a03d56294790e98587e2ed35dcb3d8115adf5fa2a958b04e8485fcd5a0515221d8}{e\+AUDIO\+\_\+\+PEDIATRIC\+\_\+\+MODE}}
+, \newline
+\mbox{\hyperlink{a00077_a03d56294790e98587e2ed35dcb3d8115a5f1d294323d6569736f185e0de3c7db7}{e\+AUDIO\+\_\+\+DISCONNECT\+\_\+\+PATIENT}}
+, \mbox{\hyperlink{a00077_a03d56294790e98587e2ed35dcb3d8115a62d551f220aef3bc724439c53e9a04f9}{e\+AUDIO\+\_\+\+GETTING\+\_\+\+LOCATION}}
+, \mbox{\hyperlink{a00077_a03d56294790e98587e2ed35dcb3d8115ab4537c0e36213cd04169f27f1387d6ca}{e\+AUDIO\+\_\+\+CHECK\+\_\+\+PATIENT}}
+, \mbox{\hyperlink{a00077_a03d56294790e98587e2ed35dcb3d8115a863b7badb58e6788a9dabb459a57a21f}{e\+AUDIO\+\_\+\+ASYSTOLE}}
+, \newline
+\mbox{\hyperlink{a00077_a03d56294790e98587e2ed35dcb3d8115a8fc8d88732cd3885b1c7b790f9c82dc3}{e\+AUDIO\+\_\+\+DEVICE\+\_\+\+READY}} = 40
+, \mbox{\hyperlink{a00077_a03d56294790e98587e2ed35dcb3d8115a8d8b1428e916b514c568d25131b66490}{e\+AUDIO\+\_\+\+REPLACE\+\_\+\+ELECTRODES}}
+, \mbox{\hyperlink{a00077_a03d56294790e98587e2ed35dcb3d8115af23f758f60fb611254367e492b8d3b0b}{e\+AUDIO\+\_\+\+CONN\+\_\+\+ERROR}}
+, \mbox{\hyperlink{a00077_a03d56294790e98587e2ed35dcb3d8115acf46de6f48be9e5c69a26156d51b3eac}{e\+AUDIO\+\_\+\+TRANSMISSION\+\_\+\+ONGOING}}
+, \newline
+\mbox{\hyperlink{a00077_a03d56294790e98587e2ed35dcb3d8115a39d06c19776798c3a023482883b54053}{e\+AUDIO\+\_\+\+TRANSMISSION\+\_\+\+DONE}}
+, \mbox{\hyperlink{a00077_a03d56294790e98587e2ed35dcb3d8115a2ef7cac6ab0ad7b2dc0a16cadd061b52}{e\+AUDIO\+\_\+\+TONE\+\_\+100}}
+, \mbox{\hyperlink{a00077_a03d56294790e98587e2ed35dcb3d8115abfd10246e6617df7faf3756c5d932881}{e\+AUDIO\+\_\+\+TONE\+\_\+110}}
+, \mbox{\hyperlink{a00077_a03d56294790e98587e2ed35dcb3d8115a215c8b2ab188d89e64be923ca8ec3857}{e\+AUDIO\+\_\+\+TONE\+\_\+120}}
+, \newline
+\mbox{\hyperlink{a00077_a03d56294790e98587e2ed35dcb3d8115a60546b72c9f5026c96b90c21789dc74c}{e\+AUDIO\+\_\+\+OPEN\+\_\+\+COVER}}
+, \mbox{\hyperlink{a00077_a03d56294790e98587e2ed35dcb3d8115ab7a01059e4728b02ef8cf464ae61bbb1}{e\+AUDIO\+\_\+\+TONE}}
+, \mbox{\hyperlink{a00077_a03d56294790e98587e2ed35dcb3d8115ad4ac1ee215a80837c6b2f205f271c111}{e\+AUDIO\+\_\+\+UPGRADING}} = 50
+, \mbox{\hyperlink{a00077_a03d56294790e98587e2ed35dcb3d8115a8ccdca4d8c8b9422959d1f999f650aed}{e\+AUDIO\+\_\+\+UPGRADE\+\_\+\+ERROR}}
+, \newline
+\mbox{\hyperlink{a00077_a03d56294790e98587e2ed35dcb3d8115ad3e5bfea0d17225a063234d7992fe878}{e\+AUDIO\+\_\+\+SHOCK\+\_\+3\+\_\+2\+\_\+1}}
+, \mbox{\hyperlink{a00077_a03d56294790e98587e2ed35dcb3d8115af4eaae7ef29e6f772fe90cd6ad13591a}{e\+AUDIO\+\_\+\+TAKE\+\_\+\+SEVERAL\+\_\+\+MINUTES}}
+, \mbox{\hyperlink{a00077_a03d56294790e98587e2ed35dcb3d8115a90feb3a6dc241d20374aea136be60013}{e\+AUDIO\+\_\+\+TRAINER\+\_\+\+MODE}}
+, \mbox{\hyperlink{a00077_a03d56294790e98587e2ed35dcb3d8115afcb148cf6ea6e8220fe534eb05b3a6a4}{e\+AUDIO\+\_\+\+MAX\+\_\+\+ID}}
+ \}
+\begin{DoxyCompactList}\small\item\em Audio message identifiers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{a00077_a582b1e500006c493b5303fc73c6753b5}{Load\+\_\+\+Audio\+\_\+\+Resources}} (\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}audio\+\_\+num)
+\begin{DoxyCompactList}\small\item\em load all the audio resources \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{a00077_a14225f592c271b4dbf4ccff67c11c0dc}{Audio\+\_\+\+Message}} (\mbox{\hyperlink{a00077_a2234573f549c7504677f8e4f86e06b34}{AUDIO\+\_\+\+CMD\+\_\+e}} cmd, \mbox{\hyperlink{a00077_a03d56294790e98587e2ed35dcb3d8115}{AUDIO\+\_\+\+ID\+\_\+e}} msg\+\_\+id, const \mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} force)
+\begin{DoxyCompactList}\small\item\em Function that performs an operation with the message player. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{a00077_a4457500838f7b52ae97f7e61a8f10ed9}{Audio\+\_\+\+Test}} (const \mbox{\hyperlink{a00077_a03d56294790e98587e2ed35dcb3d8115}{AUDIO\+\_\+\+ID\+\_\+e}} msg\+\_\+id, \mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} auto\+\_\+test)
+\begin{DoxyCompactList}\small\item\em Function that executes the audio test. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{a00077_aacd507f5759e6725a70d4b30dc65bbf6}{Is\+\_\+\+Audio\+\_\+\+Playing}} (void)
+\begin{DoxyCompactList}\small\item\em ask if the audio player is running \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{a00077_acc1174d8d26bc08f7cb86eebc819767d}{Is\+\_\+\+Audio\+\_\+\+Playing\+\_\+\+Last}} (void)
+\begin{DoxyCompactList}\small\item\em ask if the audio player is running playing the last audio message verifies that there are not more messages in the queue \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{a00077_aa245daa94d269a31a3008ebc384c3fad}{Is\+\_\+\+Task\+\_\+\+Audio\+\_\+\+Enabled}} (void)
+\begin{DoxyCompactList}\small\item\em Is audio task initialized? \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a00077_a5f6f3f910a0ffa01aa8da11920bb11c8}{Set\+\_\+\+Audio\+\_\+\+Player\+\_\+in\+\_\+error}} (void)
+\begin{DoxyCompactList}\small\item\em set in error \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+volatile \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \mbox{\hyperlink{a00077_a72f66d21255aeb2a1e015143d34fdeae}{sync\+\_\+audio}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header with functions related to the audio service. 
+
+\begin{DoxyVersion}{Version}
+v1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+16/01/2018 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+ltorres 
+\end{DoxyAuthor}
+\begin{DoxyWarning}{Warning}
+author date version .-\/ Edition 
+\end{DoxyWarning}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{a00257__bug000019}{Bug}}]\end{DoxyRefDesc}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{a00077_a9ec546d7a433dc781134a1f8b660001a}\label{a00077_a9ec546d7a433dc781134a1f8b660001a} 
+\index{thread\_audio\_entry.h@{thread\_audio\_entry.h}!MAX\_AUDIO\_MSG@{MAX\_AUDIO\_MSG}}
+\index{MAX\_AUDIO\_MSG@{MAX\_AUDIO\_MSG}!thread\_audio\_entry.h@{thread\_audio\_entry.h}}
+\doxysubsubsection{\texorpdfstring{MAX\_AUDIO\_MSG}{MAX\_AUDIO\_MSG}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+AUDIO\+\_\+\+MSG~\mbox{\hyperlink{a00077_a03d56294790e98587e2ed35dcb3d8115afcb148cf6ea6e8220fe534eb05b3a6a4}{e\+AUDIO\+\_\+\+MAX\+\_\+\+ID}}}
+
+\Hypertarget{a00077_afff359d61ad152e5f40bcf81beed4b04}\label{a00077_afff359d61ad152e5f40bcf81beed4b04} 
+\index{thread\_audio\_entry.h@{thread\_audio\_entry.h}!MAX\_LANGUAGES@{MAX\_LANGUAGES}}
+\index{MAX\_LANGUAGES@{MAX\_LANGUAGES}!thread\_audio\_entry.h@{thread\_audio\_entry.h}}
+\doxysubsubsection{\texorpdfstring{MAX\_LANGUAGES}{MAX\_LANGUAGES}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+LANGUAGES~6}
+
+\Hypertarget{a00077_ab361bebc26da7acaf52e0c276e92748e}\label{a00077_ab361bebc26da7acaf52e0c276e92748e} 
+\index{thread\_audio\_entry.h@{thread\_audio\_entry.h}!SYNC\_AUDIO\_ANY\_EVENT@{SYNC\_AUDIO\_ANY\_EVENT}}
+\index{SYNC\_AUDIO\_ANY\_EVENT@{SYNC\_AUDIO\_ANY\_EVENT}!thread\_audio\_entry.h@{thread\_audio\_entry.h}}
+\doxysubsubsection{\texorpdfstring{SYNC\_AUDIO\_ANY\_EVENT}{SYNC\_AUDIO\_ANY\_EVENT}}
+{\footnotesize\ttfamily \#define SYNC\+\_\+\+AUDIO\+\_\+\+ANY\+\_\+\+EVENT~(0x\+FFFFFFFF)}
+
+\Hypertarget{a00077_a79cce6dbc60161d18617c362c4b09fa9}\label{a00077_a79cce6dbc60161d18617c362c4b09fa9} 
+\index{thread\_audio\_entry.h@{thread\_audio\_entry.h}!SYNC\_AUDIO\_PLAY\_EVENT@{SYNC\_AUDIO\_PLAY\_EVENT}}
+\index{SYNC\_AUDIO\_PLAY\_EVENT@{SYNC\_AUDIO\_PLAY\_EVENT}!thread\_audio\_entry.h@{thread\_audio\_entry.h}}
+\doxysubsubsection{\texorpdfstring{SYNC\_AUDIO\_PLAY\_EVENT}{SYNC\_AUDIO\_PLAY\_EVENT}}
+{\footnotesize\ttfamily \#define SYNC\+\_\+\+AUDIO\+\_\+\+PLAY\+\_\+\+EVENT~(0x00000001 $<$$<$ 0)}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{a00077_a2234573f549c7504677f8e4f86e06b34}\label{a00077_a2234573f549c7504677f8e4f86e06b34} 
+\index{thread\_audio\_entry.h@{thread\_audio\_entry.h}!AUDIO\_CMD\_e@{AUDIO\_CMD\_e}}
+\index{AUDIO\_CMD\_e@{AUDIO\_CMD\_e}!thread\_audio\_entry.h@{thread\_audio\_entry.h}}
+\doxysubsubsection{\texorpdfstring{AUDIO\_CMD\_e}{AUDIO\_CMD\_e}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{a00077_a2234573f549c7504677f8e4f86e06b34}{AUDIO\+\_\+\+CMD\+\_\+e}}}
+
+
+
+Audio commands for message player. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eAUDIO\_CMD\_STOP@{eAUDIO\_CMD\_STOP}!thread\_audio\_entry.h@{thread\_audio\_entry.h}}\index{thread\_audio\_entry.h@{thread\_audio\_entry.h}!eAUDIO\_CMD\_STOP@{eAUDIO\_CMD\_STOP}}}\Hypertarget{a00077_a2234573f549c7504677f8e4f86e06b34a73ca9464f2aa6ad2e47b7f92a1d8797d}\label{a00077_a2234573f549c7504677f8e4f86e06b34a73ca9464f2aa6ad2e47b7f92a1d8797d} 
+e\+AUDIO\+\_\+\+CMD\+\_\+\+STOP&Stop the message player. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eAUDIO\_CMD\_PLAY@{eAUDIO\_CMD\_PLAY}!thread\_audio\_entry.h@{thread\_audio\_entry.h}}\index{thread\_audio\_entry.h@{thread\_audio\_entry.h}!eAUDIO\_CMD\_PLAY@{eAUDIO\_CMD\_PLAY}}}\Hypertarget{a00077_a2234573f549c7504677f8e4f86e06b34af85342af1f508d011c6ccd369c82019b}\label{a00077_a2234573f549c7504677f8e4f86e06b34af85342af1f508d011c6ccd369c82019b} 
+e\+AUDIO\+\_\+\+CMD\+\_\+\+PLAY&Plays a message anyway (if the player is running, the new message is played instead the current) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eAUDIO\_CMD\_CONCAT@{eAUDIO\_CMD\_CONCAT}!thread\_audio\_entry.h@{thread\_audio\_entry.h}}\index{thread\_audio\_entry.h@{thread\_audio\_entry.h}!eAUDIO\_CMD\_CONCAT@{eAUDIO\_CMD\_CONCAT}}}\Hypertarget{a00077_a2234573f549c7504677f8e4f86e06b34ad5588d3970edefaadb263c3b369e504e}\label{a00077_a2234573f549c7504677f8e4f86e06b34ad5588d3970edefaadb263c3b369e504e} 
+e\+AUDIO\+\_\+\+CMD\+\_\+\+CONCAT&Places the message in a queue so that it is played after the current one ends. If there is no current, it plays the message \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eAUDIO\_CMD\_STOP\_MESSAGE@{eAUDIO\_CMD\_STOP\_MESSAGE}!thread\_audio\_entry.h@{thread\_audio\_entry.h}}\index{thread\_audio\_entry.h@{thread\_audio\_entry.h}!eAUDIO\_CMD\_STOP\_MESSAGE@{eAUDIO\_CMD\_STOP\_MESSAGE}}}\Hypertarget{a00077_a2234573f549c7504677f8e4f86e06b34aa9469a0d5267407fbcfd65706d41f220}\label{a00077_a2234573f549c7504677f8e4f86e06b34aa9469a0d5267407fbcfd65706d41f220} 
+e\+AUDIO\+\_\+\+CMD\+\_\+\+STOP\+\_\+\+MESSAGE&stops current message and continue with next on queue if there are more \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eAUDIO\_CMD\_MAX@{eAUDIO\_CMD\_MAX}!thread\_audio\_entry.h@{thread\_audio\_entry.h}}\index{thread\_audio\_entry.h@{thread\_audio\_entry.h}!eAUDIO\_CMD\_MAX@{eAUDIO\_CMD\_MAX}}}\Hypertarget{a00077_a2234573f549c7504677f8e4f86e06b34a497654c8d807883ad2135127d236e023}\label{a00077_a2234573f549c7504677f8e4f86e06b34a497654c8d807883ad2135127d236e023} 
+e\+AUDIO\+\_\+\+CMD\+\_\+\+MAX&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{a00077_a03d56294790e98587e2ed35dcb3d8115}\label{a00077_a03d56294790e98587e2ed35dcb3d8115} 
+\index{thread\_audio\_entry.h@{thread\_audio\_entry.h}!AUDIO\_ID\_e@{AUDIO\_ID\_e}}
+\index{AUDIO\_ID\_e@{AUDIO\_ID\_e}!thread\_audio\_entry.h@{thread\_audio\_entry.h}}
+\doxysubsubsection{\texorpdfstring{AUDIO\_ID\_e}{AUDIO\_ID\_e}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{a00077_a03d56294790e98587e2ed35dcb3d8115}{AUDIO\+\_\+\+ID\+\_\+e}}}
+
+
+
+Audio message identifiers. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eAUDIO\_MODE\_TEST@{eAUDIO\_MODE\_TEST}!thread\_audio\_entry.h@{thread\_audio\_entry.h}}\index{thread\_audio\_entry.h@{thread\_audio\_entry.h}!eAUDIO\_MODE\_TEST@{eAUDIO\_MODE\_TEST}}}\Hypertarget{a00077_a03d56294790e98587e2ed35dcb3d8115a5be2687980fab081ca239820abae0768}\label{a00077_a03d56294790e98587e2ed35dcb3d8115a5be2687980fab081ca239820abae0768} 
+e\+AUDIO\+\_\+\+MODE\+\_\+\+TEST&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eAUDIO\_CALL\_SAT@{eAUDIO\_CALL\_SAT}!thread\_audio\_entry.h@{thread\_audio\_entry.h}}\index{thread\_audio\_entry.h@{thread\_audio\_entry.h}!eAUDIO\_CALL\_SAT@{eAUDIO\_CALL\_SAT}}}\Hypertarget{a00077_a03d56294790e98587e2ed35dcb3d8115ac1a198744fca00a060de7e1c44f5a7e0}\label{a00077_a03d56294790e98587e2ed35dcb3d8115ac1a198744fca00a060de7e1c44f5a7e0} 
+e\+AUDIO\+\_\+\+CALL\+\_\+\+SAT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eAUDIO\_KEEP\_CALM@{eAUDIO\_KEEP\_CALM}!thread\_audio\_entry.h@{thread\_audio\_entry.h}}\index{thread\_audio\_entry.h@{thread\_audio\_entry.h}!eAUDIO\_KEEP\_CALM@{eAUDIO\_KEEP\_CALM}}}\Hypertarget{a00077_a03d56294790e98587e2ed35dcb3d8115aa9177baaf0f8f919e6ec4ccb1fdcae01}\label{a00077_a03d56294790e98587e2ed35dcb3d8115aa9177baaf0f8f919e6ec4ccb1fdcae01} 
+e\+AUDIO\+\_\+\+KEEP\+\_\+\+CALM&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eAUDIO\_FOLLOW\_INSTRUCTIONS@{eAUDIO\_FOLLOW\_INSTRUCTIONS}!thread\_audio\_entry.h@{thread\_audio\_entry.h}}\index{thread\_audio\_entry.h@{thread\_audio\_entry.h}!eAUDIO\_FOLLOW\_INSTRUCTIONS@{eAUDIO\_FOLLOW\_INSTRUCTIONS}}}\Hypertarget{a00077_a03d56294790e98587e2ed35dcb3d8115a99a5d8ea62d4d8e94c0853e0d49402b5}\label{a00077_a03d56294790e98587e2ed35dcb3d8115a99a5d8ea62d4d8e94c0853e0d49402b5} 
+e\+AUDIO\+\_\+\+FOLLOW\+\_\+\+INSTRUCTIONS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eAUDIO\_ASK\_FOR\_HELP@{eAUDIO\_ASK\_FOR\_HELP}!thread\_audio\_entry.h@{thread\_audio\_entry.h}}\index{thread\_audio\_entry.h@{thread\_audio\_entry.h}!eAUDIO\_ASK\_FOR\_HELP@{eAUDIO\_ASK\_FOR\_HELP}}}\Hypertarget{a00077_a03d56294790e98587e2ed35dcb3d8115a0748a14d8001b7d21453fa3f2ce0e204}\label{a00077_a03d56294790e98587e2ed35dcb3d8115a0748a14d8001b7d21453fa3f2ce0e204} 
+e\+AUDIO\+\_\+\+ASK\+\_\+\+FOR\+\_\+\+HELP&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eAUDIO\_REMOVE\_CHEST\_CLOTHES@{eAUDIO\_REMOVE\_CHEST\_CLOTHES}!thread\_audio\_entry.h@{thread\_audio\_entry.h}}\index{thread\_audio\_entry.h@{thread\_audio\_entry.h}!eAUDIO\_REMOVE\_CHEST\_CLOTHES@{eAUDIO\_REMOVE\_CHEST\_CLOTHES}}}\Hypertarget{a00077_a03d56294790e98587e2ed35dcb3d8115ad83d5ae887da039a950fe0ad4405380c}\label{a00077_a03d56294790e98587e2ed35dcb3d8115ad83d5ae887da039a950fe0ad4405380c} 
+e\+AUDIO\+\_\+\+REMOVE\+\_\+\+CHEST\+\_\+\+CLOTHES&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eAUDIO\_OPEN\_ELECTRODE\_PACKAGE@{eAUDIO\_OPEN\_ELECTRODE\_PACKAGE}!thread\_audio\_entry.h@{thread\_audio\_entry.h}}\index{thread\_audio\_entry.h@{thread\_audio\_entry.h}!eAUDIO\_OPEN\_ELECTRODE\_PACKAGE@{eAUDIO\_OPEN\_ELECTRODE\_PACKAGE}}}\Hypertarget{a00077_a03d56294790e98587e2ed35dcb3d8115a64415b5e944140908eacf7cac4e08228}\label{a00077_a03d56294790e98587e2ed35dcb3d8115a64415b5e944140908eacf7cac4e08228} 
+e\+AUDIO\+\_\+\+OPEN\+\_\+\+ELECTRODE\+\_\+\+PACKAGE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eAUDIO\_APPLY\_ELECTRODES\_CHEST@{eAUDIO\_APPLY\_ELECTRODES\_CHEST}!thread\_audio\_entry.h@{thread\_audio\_entry.h}}\index{thread\_audio\_entry.h@{thread\_audio\_entry.h}!eAUDIO\_APPLY\_ELECTRODES\_CHEST@{eAUDIO\_APPLY\_ELECTRODES\_CHEST}}}\Hypertarget{a00077_a03d56294790e98587e2ed35dcb3d8115ada9c3da426165bd579f485c3b6669687}\label{a00077_a03d56294790e98587e2ed35dcb3d8115ada9c3da426165bd579f485c3b6669687} 
+e\+AUDIO\+\_\+\+APPLY\+\_\+\+ELECTRODES\+\_\+\+CHEST&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eAUDIO\_PRESS\_ELECTRODES@{eAUDIO\_PRESS\_ELECTRODES}!thread\_audio\_entry.h@{thread\_audio\_entry.h}}\index{thread\_audio\_entry.h@{thread\_audio\_entry.h}!eAUDIO\_PRESS\_ELECTRODES@{eAUDIO\_PRESS\_ELECTRODES}}}\Hypertarget{a00077_a03d56294790e98587e2ed35dcb3d8115ab2b05082ffe0dab181428b00d8d04eef}\label{a00077_a03d56294790e98587e2ed35dcb3d8115ab2b05082ffe0dab181428b00d8d04eef} 
+e\+AUDIO\+\_\+\+PRESS\+\_\+\+ELECTRODES&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eAUDIO\_CHECK\_ELECTRODES@{eAUDIO\_CHECK\_ELECTRODES}!thread\_audio\_entry.h@{thread\_audio\_entry.h}}\index{thread\_audio\_entry.h@{thread\_audio\_entry.h}!eAUDIO\_CHECK\_ELECTRODES@{eAUDIO\_CHECK\_ELECTRODES}}}\Hypertarget{a00077_a03d56294790e98587e2ed35dcb3d8115afb0ec35bdaa4ec25c9396af6a2023aa5}\label{a00077_a03d56294790e98587e2ed35dcb3d8115afb0ec35bdaa4ec25c9396af6a2023aa5} 
+e\+AUDIO\+\_\+\+CHECK\+\_\+\+ELECTRODES&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eAUDIO\_CONNECT\_ELECTRODES\_DEVICE@{eAUDIO\_CONNECT\_ELECTRODES\_DEVICE}!thread\_audio\_entry.h@{thread\_audio\_entry.h}}\index{thread\_audio\_entry.h@{thread\_audio\_entry.h}!eAUDIO\_CONNECT\_ELECTRODES\_DEVICE@{eAUDIO\_CONNECT\_ELECTRODES\_DEVICE}}}\Hypertarget{a00077_a03d56294790e98587e2ed35dcb3d8115a93474e4864e37c779712afe5417daaba}\label{a00077_a03d56294790e98587e2ed35dcb3d8115a93474e4864e37c779712afe5417daaba} 
+e\+AUDIO\+\_\+\+CONNECT\+\_\+\+ELECTRODES\+\_\+\+DEVICE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eAUDIO\_DO\_NOT\_TOUCH\_PATIENT@{eAUDIO\_DO\_NOT\_TOUCH\_PATIENT}!thread\_audio\_entry.h@{thread\_audio\_entry.h}}\index{thread\_audio\_entry.h@{thread\_audio\_entry.h}!eAUDIO\_DO\_NOT\_TOUCH\_PATIENT@{eAUDIO\_DO\_NOT\_TOUCH\_PATIENT}}}\Hypertarget{a00077_a03d56294790e98587e2ed35dcb3d8115a545ce0f4c05262bfe196e66a6f34a190}\label{a00077_a03d56294790e98587e2ed35dcb3d8115a545ce0f4c05262bfe196e66a6f34a190} 
+e\+AUDIO\+\_\+\+DO\+\_\+\+NOT\+\_\+\+TOUCH\+\_\+\+PATIENT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eAUDIO\_ANALYZING\_HEART\_RATE@{eAUDIO\_ANALYZING\_HEART\_RATE}!thread\_audio\_entry.h@{thread\_audio\_entry.h}}\index{thread\_audio\_entry.h@{thread\_audio\_entry.h}!eAUDIO\_ANALYZING\_HEART\_RATE@{eAUDIO\_ANALYZING\_HEART\_RATE}}}\Hypertarget{a00077_a03d56294790e98587e2ed35dcb3d8115ac95d38b2f575f66e03504d83bc6edfdd}\label{a00077_a03d56294790e98587e2ed35dcb3d8115ac95d38b2f575f66e03504d83bc6edfdd} 
+e\+AUDIO\+\_\+\+ANALYZING\+\_\+\+HEART\+\_\+\+RATE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eAUDIO\_NO\_SHOCK\_ADVISED@{eAUDIO\_NO\_SHOCK\_ADVISED}!thread\_audio\_entry.h@{thread\_audio\_entry.h}}\index{thread\_audio\_entry.h@{thread\_audio\_entry.h}!eAUDIO\_NO\_SHOCK\_ADVISED@{eAUDIO\_NO\_SHOCK\_ADVISED}}}\Hypertarget{a00077_a03d56294790e98587e2ed35dcb3d8115aefe1473e461d8ff10f50478bbe738399}\label{a00077_a03d56294790e98587e2ed35dcb3d8115aefe1473e461d8ff10f50478bbe738399} 
+e\+AUDIO\+\_\+\+NO\+\_\+\+SHOCK\+\_\+\+ADVISED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eAUDIO\_CPR\_START@{eAUDIO\_CPR\_START}!thread\_audio\_entry.h@{thread\_audio\_entry.h}}\index{thread\_audio\_entry.h@{thread\_audio\_entry.h}!eAUDIO\_CPR\_START@{eAUDIO\_CPR\_START}}}\Hypertarget{a00077_a03d56294790e98587e2ed35dcb3d8115a3d566825c903a5f357c07482a7804671}\label{a00077_a03d56294790e98587e2ed35dcb3d8115a3d566825c903a5f357c07482a7804671} 
+e\+AUDIO\+\_\+\+CPR\+\_\+\+START&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eAUDIO\_CPR\_COMPRESSIONS@{eAUDIO\_CPR\_COMPRESSIONS}!thread\_audio\_entry.h@{thread\_audio\_entry.h}}\index{thread\_audio\_entry.h@{thread\_audio\_entry.h}!eAUDIO\_CPR\_COMPRESSIONS@{eAUDIO\_CPR\_COMPRESSIONS}}}\Hypertarget{a00077_a03d56294790e98587e2ed35dcb3d8115ae150ea276c82e0a970b8c8ccdeb24785}\label{a00077_a03d56294790e98587e2ed35dcb3d8115ae150ea276c82e0a970b8c8ccdeb24785} 
+e\+AUDIO\+\_\+\+CPR\+\_\+\+COMPRESSIONS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eAUDIO\_CPR\_KEEP\_UP\_100@{eAUDIO\_CPR\_KEEP\_UP\_100}!thread\_audio\_entry.h@{thread\_audio\_entry.h}}\index{thread\_audio\_entry.h@{thread\_audio\_entry.h}!eAUDIO\_CPR\_KEEP\_UP\_100@{eAUDIO\_CPR\_KEEP\_UP\_100}}}\Hypertarget{a00077_a03d56294790e98587e2ed35dcb3d8115a140fe8c4f551430234d70523d59debda}\label{a00077_a03d56294790e98587e2ed35dcb3d8115a140fe8c4f551430234d70523d59debda} 
+e\+AUDIO\+\_\+\+CPR\+\_\+\+KEEP\+\_\+\+UP\+\_\+100&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eAUDIO\_CPR\_KEEP\_UP\_110@{eAUDIO\_CPR\_KEEP\_UP\_110}!thread\_audio\_entry.h@{thread\_audio\_entry.h}}\index{thread\_audio\_entry.h@{thread\_audio\_entry.h}!eAUDIO\_CPR\_KEEP\_UP\_110@{eAUDIO\_CPR\_KEEP\_UP\_110}}}\Hypertarget{a00077_a03d56294790e98587e2ed35dcb3d8115a75a7a4ab0ccf7235a786fe7b6d62aa2c}\label{a00077_a03d56294790e98587e2ed35dcb3d8115a75a7a4ab0ccf7235a786fe7b6d62aa2c} 
+e\+AUDIO\+\_\+\+CPR\+\_\+\+KEEP\+\_\+\+UP\+\_\+110&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eAUDIO\_CPR\_KEEP\_UP\_120@{eAUDIO\_CPR\_KEEP\_UP\_120}!thread\_audio\_entry.h@{thread\_audio\_entry.h}}\index{thread\_audio\_entry.h@{thread\_audio\_entry.h}!eAUDIO\_CPR\_KEEP\_UP\_120@{eAUDIO\_CPR\_KEEP\_UP\_120}}}\Hypertarget{a00077_a03d56294790e98587e2ed35dcb3d8115ae7731e5740de9b134063646b54875e15}\label{a00077_a03d56294790e98587e2ed35dcb3d8115ae7731e5740de9b134063646b54875e15} 
+e\+AUDIO\+\_\+\+CPR\+\_\+\+KEEP\+\_\+\+UP\+\_\+120&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eAUDIO\_CPR\_BREATH@{eAUDIO\_CPR\_BREATH}!thread\_audio\_entry.h@{thread\_audio\_entry.h}}\index{thread\_audio\_entry.h@{thread\_audio\_entry.h}!eAUDIO\_CPR\_BREATH@{eAUDIO\_CPR\_BREATH}}}\Hypertarget{a00077_a03d56294790e98587e2ed35dcb3d8115a255d588e8ae6553eb8a868f9aa1d1d2e}\label{a00077_a03d56294790e98587e2ed35dcb3d8115a255d588e8ae6553eb8a868f9aa1d1d2e} 
+e\+AUDIO\+\_\+\+CPR\+\_\+\+BREATH&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eAUDIO\_BREATH\_2@{eAUDIO\_BREATH\_2}!thread\_audio\_entry.h@{thread\_audio\_entry.h}}\index{thread\_audio\_entry.h@{thread\_audio\_entry.h}!eAUDIO\_BREATH\_2@{eAUDIO\_BREATH\_2}}}\Hypertarget{a00077_a03d56294790e98587e2ed35dcb3d8115aaa5e8c1870342c9426b4f84a77f01233}\label{a00077_a03d56294790e98587e2ed35dcb3d8115aaa5e8c1870342c9426b4f84a77f01233} 
+e\+AUDIO\+\_\+\+BREATH\+\_\+2&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eAUDIO\_CPR\_START\_SHORT@{eAUDIO\_CPR\_START\_SHORT}!thread\_audio\_entry.h@{thread\_audio\_entry.h}}\index{thread\_audio\_entry.h@{thread\_audio\_entry.h}!eAUDIO\_CPR\_START\_SHORT@{eAUDIO\_CPR\_START\_SHORT}}}\Hypertarget{a00077_a03d56294790e98587e2ed35dcb3d8115ace74e36c1c6fe7a632bc5bd03906866d}\label{a00077_a03d56294790e98587e2ed35dcb3d8115ace74e36c1c6fe7a632bc5bd03906866d} 
+e\+AUDIO\+\_\+\+CPR\+\_\+\+START\+\_\+\+SHORT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eAUDIO\_COMPRESSIONS\_CONTINUE@{eAUDIO\_COMPRESSIONS\_CONTINUE}!thread\_audio\_entry.h@{thread\_audio\_entry.h}}\index{thread\_audio\_entry.h@{thread\_audio\_entry.h}!eAUDIO\_COMPRESSIONS\_CONTINUE@{eAUDIO\_COMPRESSIONS\_CONTINUE}}}\Hypertarget{a00077_a03d56294790e98587e2ed35dcb3d8115ababdb34716ecf90ef6c8f5a2dd75f504}\label{a00077_a03d56294790e98587e2ed35dcb3d8115ababdb34716ecf90ef6c8f5a2dd75f504} 
+e\+AUDIO\+\_\+\+COMPRESSIONS\+\_\+\+CONTINUE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eAUDIO\_COMPRESSIONS\_STOP@{eAUDIO\_COMPRESSIONS\_STOP}!thread\_audio\_entry.h@{thread\_audio\_entry.h}}\index{thread\_audio\_entry.h@{thread\_audio\_entry.h}!eAUDIO\_COMPRESSIONS\_STOP@{eAUDIO\_COMPRESSIONS\_STOP}}}\Hypertarget{a00077_a03d56294790e98587e2ed35dcb3d8115a6899aef77566b0e7c0589a57feabab25}\label{a00077_a03d56294790e98587e2ed35dcb3d8115a6899aef77566b0e7c0589a57feabab25} 
+e\+AUDIO\+\_\+\+COMPRESSIONS\+\_\+\+STOP&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eAUDIO\_SHOCK\_ADVISED@{eAUDIO\_SHOCK\_ADVISED}!thread\_audio\_entry.h@{thread\_audio\_entry.h}}\index{thread\_audio\_entry.h@{thread\_audio\_entry.h}!eAUDIO\_SHOCK\_ADVISED@{eAUDIO\_SHOCK\_ADVISED}}}\Hypertarget{a00077_a03d56294790e98587e2ed35dcb3d8115a2c08c89ad3cf182d8da70410ffa7b56f}\label{a00077_a03d56294790e98587e2ed35dcb3d8115a2c08c89ad3cf182d8da70410ffa7b56f} 
+e\+AUDIO\+\_\+\+SHOCK\+\_\+\+ADVISED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eAUDIO\_PREPARING\_SHOCK@{eAUDIO\_PREPARING\_SHOCK}!thread\_audio\_entry.h@{thread\_audio\_entry.h}}\index{thread\_audio\_entry.h@{thread\_audio\_entry.h}!eAUDIO\_PREPARING\_SHOCK@{eAUDIO\_PREPARING\_SHOCK}}}\Hypertarget{a00077_a03d56294790e98587e2ed35dcb3d8115a74cd86334635e1ff0f9caa28ca96ac72}\label{a00077_a03d56294790e98587e2ed35dcb3d8115a74cd86334635e1ff0f9caa28ca96ac72} 
+e\+AUDIO\+\_\+\+PREPARING\+\_\+\+SHOCK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eAUDIO\_PUSH\_TO\_SHOCK@{eAUDIO\_PUSH\_TO\_SHOCK}!thread\_audio\_entry.h@{thread\_audio\_entry.h}}\index{thread\_audio\_entry.h@{thread\_audio\_entry.h}!eAUDIO\_PUSH\_TO\_SHOCK@{eAUDIO\_PUSH\_TO\_SHOCK}}}\Hypertarget{a00077_a03d56294790e98587e2ed35dcb3d8115a91011abe1c46cd553f24912d58b6f2dd}\label{a00077_a03d56294790e98587e2ed35dcb3d8115a91011abe1c46cd553f24912d58b6f2dd} 
+e\+AUDIO\+\_\+\+PUSH\+\_\+\+TO\+\_\+\+SHOCK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eAUDIO\_SHOCK\_DELIVERED@{eAUDIO\_SHOCK\_DELIVERED}!thread\_audio\_entry.h@{thread\_audio\_entry.h}}\index{thread\_audio\_entry.h@{thread\_audio\_entry.h}!eAUDIO\_SHOCK\_DELIVERED@{eAUDIO\_SHOCK\_DELIVERED}}}\Hypertarget{a00077_a03d56294790e98587e2ed35dcb3d8115ae5740894b825b97c03623f020a9e622d}\label{a00077_a03d56294790e98587e2ed35dcb3d8115ae5740894b825b97c03623f020a9e622d} 
+e\+AUDIO\+\_\+\+SHOCK\+\_\+\+DELIVERED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eAUDIO\_NO\_SHOCK\_DELIVERED@{eAUDIO\_NO\_SHOCK\_DELIVERED}!thread\_audio\_entry.h@{thread\_audio\_entry.h}}\index{thread\_audio\_entry.h@{thread\_audio\_entry.h}!eAUDIO\_NO\_SHOCK\_DELIVERED@{eAUDIO\_NO\_SHOCK\_DELIVERED}}}\Hypertarget{a00077_a03d56294790e98587e2ed35dcb3d8115a96862bea1e7f9c6337b8e737a29c3c2d}\label{a00077_a03d56294790e98587e2ed35dcb3d8115a96862bea1e7f9c6337b8e737a29c3c2d} 
+e\+AUDIO\+\_\+\+NO\+\_\+\+SHOCK\+\_\+\+DELIVERED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eAUDIO\_DEMO\_MODE@{eAUDIO\_DEMO\_MODE}!thread\_audio\_entry.h@{thread\_audio\_entry.h}}\index{thread\_audio\_entry.h@{thread\_audio\_entry.h}!eAUDIO\_DEMO\_MODE@{eAUDIO\_DEMO\_MODE}}}\Hypertarget{a00077_a03d56294790e98587e2ed35dcb3d8115ad8777f9d35ea836f6bdc010af16165d3}\label{a00077_a03d56294790e98587e2ed35dcb3d8115ad8777f9d35ea836f6bdc010af16165d3} 
+e\+AUDIO\+\_\+\+DEMO\+\_\+\+MODE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eAUDIO\_CALL\_EMERGENCIES@{eAUDIO\_CALL\_EMERGENCIES}!thread\_audio\_entry.h@{thread\_audio\_entry.h}}\index{thread\_audio\_entry.h@{thread\_audio\_entry.h}!eAUDIO\_CALL\_EMERGENCIES@{eAUDIO\_CALL\_EMERGENCIES}}}\Hypertarget{a00077_a03d56294790e98587e2ed35dcb3d8115adbac7cd1eb6907146205049d94557944}\label{a00077_a03d56294790e98587e2ed35dcb3d8115adbac7cd1eb6907146205049d94557944} 
+e\+AUDIO\+\_\+\+CALL\+\_\+\+EMERGENCIES&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eAUDIO\_LOW\_BATTERY@{eAUDIO\_LOW\_BATTERY}!thread\_audio\_entry.h@{thread\_audio\_entry.h}}\index{thread\_audio\_entry.h@{thread\_audio\_entry.h}!eAUDIO\_LOW\_BATTERY@{eAUDIO\_LOW\_BATTERY}}}\Hypertarget{a00077_a03d56294790e98587e2ed35dcb3d8115a667ce398441f6a7e95566f3b1716917e}\label{a00077_a03d56294790e98587e2ed35dcb3d8115a667ce398441f6a7e95566f3b1716917e} 
+e\+AUDIO\+\_\+\+LOW\+\_\+\+BATTERY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eAUDIO\_REPLACE\_BATTERY@{eAUDIO\_REPLACE\_BATTERY}!thread\_audio\_entry.h@{thread\_audio\_entry.h}}\index{thread\_audio\_entry.h@{thread\_audio\_entry.h}!eAUDIO\_REPLACE\_BATTERY@{eAUDIO\_REPLACE\_BATTERY}}}\Hypertarget{a00077_a03d56294790e98587e2ed35dcb3d8115a243f2639dc34526ffc109dc0e6275499}\label{a00077_a03d56294790e98587e2ed35dcb3d8115a243f2639dc34526ffc109dc0e6275499} 
+e\+AUDIO\+\_\+\+REPLACE\+\_\+\+BATTERY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eAUDIO\_STOP\_PATIENT\_MOVEMENT@{eAUDIO\_STOP\_PATIENT\_MOVEMENT}!thread\_audio\_entry.h@{thread\_audio\_entry.h}}\index{thread\_audio\_entry.h@{thread\_audio\_entry.h}!eAUDIO\_STOP\_PATIENT\_MOVEMENT@{eAUDIO\_STOP\_PATIENT\_MOVEMENT}}}\Hypertarget{a00077_a03d56294790e98587e2ed35dcb3d8115a8dc172c877252b83a61d4fa2191961a7}\label{a00077_a03d56294790e98587e2ed35dcb3d8115a8dc172c877252b83a61d4fa2191961a7} 
+e\+AUDIO\+\_\+\+STOP\+\_\+\+PATIENT\+\_\+\+MOVEMENT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eAUDIO\_ADULT\_MODE@{eAUDIO\_ADULT\_MODE}!thread\_audio\_entry.h@{thread\_audio\_entry.h}}\index{thread\_audio\_entry.h@{thread\_audio\_entry.h}!eAUDIO\_ADULT\_MODE@{eAUDIO\_ADULT\_MODE}}}\Hypertarget{a00077_a03d56294790e98587e2ed35dcb3d8115a5444390f030637709407514651c4098d}\label{a00077_a03d56294790e98587e2ed35dcb3d8115a5444390f030637709407514651c4098d} 
+e\+AUDIO\+\_\+\+ADULT\+\_\+\+MODE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eAUDIO\_PEDIATRIC\_MODE@{eAUDIO\_PEDIATRIC\_MODE}!thread\_audio\_entry.h@{thread\_audio\_entry.h}}\index{thread\_audio\_entry.h@{thread\_audio\_entry.h}!eAUDIO\_PEDIATRIC\_MODE@{eAUDIO\_PEDIATRIC\_MODE}}}\Hypertarget{a00077_a03d56294790e98587e2ed35dcb3d8115adf5fa2a958b04e8485fcd5a0515221d8}\label{a00077_a03d56294790e98587e2ed35dcb3d8115adf5fa2a958b04e8485fcd5a0515221d8} 
+e\+AUDIO\+\_\+\+PEDIATRIC\+\_\+\+MODE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eAUDIO\_DISCONNECT\_PATIENT@{eAUDIO\_DISCONNECT\_PATIENT}!thread\_audio\_entry.h@{thread\_audio\_entry.h}}\index{thread\_audio\_entry.h@{thread\_audio\_entry.h}!eAUDIO\_DISCONNECT\_PATIENT@{eAUDIO\_DISCONNECT\_PATIENT}}}\Hypertarget{a00077_a03d56294790e98587e2ed35dcb3d8115a5f1d294323d6569736f185e0de3c7db7}\label{a00077_a03d56294790e98587e2ed35dcb3d8115a5f1d294323d6569736f185e0de3c7db7} 
+e\+AUDIO\+\_\+\+DISCONNECT\+\_\+\+PATIENT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eAUDIO\_GETTING\_LOCATION@{eAUDIO\_GETTING\_LOCATION}!thread\_audio\_entry.h@{thread\_audio\_entry.h}}\index{thread\_audio\_entry.h@{thread\_audio\_entry.h}!eAUDIO\_GETTING\_LOCATION@{eAUDIO\_GETTING\_LOCATION}}}\Hypertarget{a00077_a03d56294790e98587e2ed35dcb3d8115a62d551f220aef3bc724439c53e9a04f9}\label{a00077_a03d56294790e98587e2ed35dcb3d8115a62d551f220aef3bc724439c53e9a04f9} 
+e\+AUDIO\+\_\+\+GETTING\+\_\+\+LOCATION&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eAUDIO\_CHECK\_PATIENT@{eAUDIO\_CHECK\_PATIENT}!thread\_audio\_entry.h@{thread\_audio\_entry.h}}\index{thread\_audio\_entry.h@{thread\_audio\_entry.h}!eAUDIO\_CHECK\_PATIENT@{eAUDIO\_CHECK\_PATIENT}}}\Hypertarget{a00077_a03d56294790e98587e2ed35dcb3d8115ab4537c0e36213cd04169f27f1387d6ca}\label{a00077_a03d56294790e98587e2ed35dcb3d8115ab4537c0e36213cd04169f27f1387d6ca} 
+e\+AUDIO\+\_\+\+CHECK\+\_\+\+PATIENT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eAUDIO\_ASYSTOLE@{eAUDIO\_ASYSTOLE}!thread\_audio\_entry.h@{thread\_audio\_entry.h}}\index{thread\_audio\_entry.h@{thread\_audio\_entry.h}!eAUDIO\_ASYSTOLE@{eAUDIO\_ASYSTOLE}}}\Hypertarget{a00077_a03d56294790e98587e2ed35dcb3d8115a863b7badb58e6788a9dabb459a57a21f}\label{a00077_a03d56294790e98587e2ed35dcb3d8115a863b7badb58e6788a9dabb459a57a21f} 
+e\+AUDIO\+\_\+\+ASYSTOLE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eAUDIO\_DEVICE\_READY@{eAUDIO\_DEVICE\_READY}!thread\_audio\_entry.h@{thread\_audio\_entry.h}}\index{thread\_audio\_entry.h@{thread\_audio\_entry.h}!eAUDIO\_DEVICE\_READY@{eAUDIO\_DEVICE\_READY}}}\Hypertarget{a00077_a03d56294790e98587e2ed35dcb3d8115a8fc8d88732cd3885b1c7b790f9c82dc3}\label{a00077_a03d56294790e98587e2ed35dcb3d8115a8fc8d88732cd3885b1c7b790f9c82dc3} 
+e\+AUDIO\+\_\+\+DEVICE\+\_\+\+READY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eAUDIO\_REPLACE\_ELECTRODES@{eAUDIO\_REPLACE\_ELECTRODES}!thread\_audio\_entry.h@{thread\_audio\_entry.h}}\index{thread\_audio\_entry.h@{thread\_audio\_entry.h}!eAUDIO\_REPLACE\_ELECTRODES@{eAUDIO\_REPLACE\_ELECTRODES}}}\Hypertarget{a00077_a03d56294790e98587e2ed35dcb3d8115a8d8b1428e916b514c568d25131b66490}\label{a00077_a03d56294790e98587e2ed35dcb3d8115a8d8b1428e916b514c568d25131b66490} 
+e\+AUDIO\+\_\+\+REPLACE\+\_\+\+ELECTRODES&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eAUDIO\_CONN\_ERROR@{eAUDIO\_CONN\_ERROR}!thread\_audio\_entry.h@{thread\_audio\_entry.h}}\index{thread\_audio\_entry.h@{thread\_audio\_entry.h}!eAUDIO\_CONN\_ERROR@{eAUDIO\_CONN\_ERROR}}}\Hypertarget{a00077_a03d56294790e98587e2ed35dcb3d8115af23f758f60fb611254367e492b8d3b0b}\label{a00077_a03d56294790e98587e2ed35dcb3d8115af23f758f60fb611254367e492b8d3b0b} 
+e\+AUDIO\+\_\+\+CONN\+\_\+\+ERROR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eAUDIO\_TRANSMISSION\_ONGOING@{eAUDIO\_TRANSMISSION\_ONGOING}!thread\_audio\_entry.h@{thread\_audio\_entry.h}}\index{thread\_audio\_entry.h@{thread\_audio\_entry.h}!eAUDIO\_TRANSMISSION\_ONGOING@{eAUDIO\_TRANSMISSION\_ONGOING}}}\Hypertarget{a00077_a03d56294790e98587e2ed35dcb3d8115acf46de6f48be9e5c69a26156d51b3eac}\label{a00077_a03d56294790e98587e2ed35dcb3d8115acf46de6f48be9e5c69a26156d51b3eac} 
+e\+AUDIO\+\_\+\+TRANSMISSION\+\_\+\+ONGOING&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eAUDIO\_TRANSMISSION\_DONE@{eAUDIO\_TRANSMISSION\_DONE}!thread\_audio\_entry.h@{thread\_audio\_entry.h}}\index{thread\_audio\_entry.h@{thread\_audio\_entry.h}!eAUDIO\_TRANSMISSION\_DONE@{eAUDIO\_TRANSMISSION\_DONE}}}\Hypertarget{a00077_a03d56294790e98587e2ed35dcb3d8115a39d06c19776798c3a023482883b54053}\label{a00077_a03d56294790e98587e2ed35dcb3d8115a39d06c19776798c3a023482883b54053} 
+e\+AUDIO\+\_\+\+TRANSMISSION\+\_\+\+DONE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eAUDIO\_TONE\_100@{eAUDIO\_TONE\_100}!thread\_audio\_entry.h@{thread\_audio\_entry.h}}\index{thread\_audio\_entry.h@{thread\_audio\_entry.h}!eAUDIO\_TONE\_100@{eAUDIO\_TONE\_100}}}\Hypertarget{a00077_a03d56294790e98587e2ed35dcb3d8115a2ef7cac6ab0ad7b2dc0a16cadd061b52}\label{a00077_a03d56294790e98587e2ed35dcb3d8115a2ef7cac6ab0ad7b2dc0a16cadd061b52} 
+e\+AUDIO\+\_\+\+TONE\+\_\+100&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eAUDIO\_TONE\_110@{eAUDIO\_TONE\_110}!thread\_audio\_entry.h@{thread\_audio\_entry.h}}\index{thread\_audio\_entry.h@{thread\_audio\_entry.h}!eAUDIO\_TONE\_110@{eAUDIO\_TONE\_110}}}\Hypertarget{a00077_a03d56294790e98587e2ed35dcb3d8115abfd10246e6617df7faf3756c5d932881}\label{a00077_a03d56294790e98587e2ed35dcb3d8115abfd10246e6617df7faf3756c5d932881} 
+e\+AUDIO\+\_\+\+TONE\+\_\+110&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eAUDIO\_TONE\_120@{eAUDIO\_TONE\_120}!thread\_audio\_entry.h@{thread\_audio\_entry.h}}\index{thread\_audio\_entry.h@{thread\_audio\_entry.h}!eAUDIO\_TONE\_120@{eAUDIO\_TONE\_120}}}\Hypertarget{a00077_a03d56294790e98587e2ed35dcb3d8115a215c8b2ab188d89e64be923ca8ec3857}\label{a00077_a03d56294790e98587e2ed35dcb3d8115a215c8b2ab188d89e64be923ca8ec3857} 
+e\+AUDIO\+\_\+\+TONE\+\_\+120&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eAUDIO\_OPEN\_COVER@{eAUDIO\_OPEN\_COVER}!thread\_audio\_entry.h@{thread\_audio\_entry.h}}\index{thread\_audio\_entry.h@{thread\_audio\_entry.h}!eAUDIO\_OPEN\_COVER@{eAUDIO\_OPEN\_COVER}}}\Hypertarget{a00077_a03d56294790e98587e2ed35dcb3d8115a60546b72c9f5026c96b90c21789dc74c}\label{a00077_a03d56294790e98587e2ed35dcb3d8115a60546b72c9f5026c96b90c21789dc74c} 
+e\+AUDIO\+\_\+\+OPEN\+\_\+\+COVER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eAUDIO\_TONE@{eAUDIO\_TONE}!thread\_audio\_entry.h@{thread\_audio\_entry.h}}\index{thread\_audio\_entry.h@{thread\_audio\_entry.h}!eAUDIO\_TONE@{eAUDIO\_TONE}}}\Hypertarget{a00077_a03d56294790e98587e2ed35dcb3d8115ab7a01059e4728b02ef8cf464ae61bbb1}\label{a00077_a03d56294790e98587e2ed35dcb3d8115ab7a01059e4728b02ef8cf464ae61bbb1} 
+e\+AUDIO\+\_\+\+TONE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eAUDIO\_UPGRADING@{eAUDIO\_UPGRADING}!thread\_audio\_entry.h@{thread\_audio\_entry.h}}\index{thread\_audio\_entry.h@{thread\_audio\_entry.h}!eAUDIO\_UPGRADING@{eAUDIO\_UPGRADING}}}\Hypertarget{a00077_a03d56294790e98587e2ed35dcb3d8115ad4ac1ee215a80837c6b2f205f271c111}\label{a00077_a03d56294790e98587e2ed35dcb3d8115ad4ac1ee215a80837c6b2f205f271c111} 
+e\+AUDIO\+\_\+\+UPGRADING&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eAUDIO\_UPGRADE\_ERROR@{eAUDIO\_UPGRADE\_ERROR}!thread\_audio\_entry.h@{thread\_audio\_entry.h}}\index{thread\_audio\_entry.h@{thread\_audio\_entry.h}!eAUDIO\_UPGRADE\_ERROR@{eAUDIO\_UPGRADE\_ERROR}}}\Hypertarget{a00077_a03d56294790e98587e2ed35dcb3d8115a8ccdca4d8c8b9422959d1f999f650aed}\label{a00077_a03d56294790e98587e2ed35dcb3d8115a8ccdca4d8c8b9422959d1f999f650aed} 
+e\+AUDIO\+\_\+\+UPGRADE\+\_\+\+ERROR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eAUDIO\_SHOCK\_3\_2\_1@{eAUDIO\_SHOCK\_3\_2\_1}!thread\_audio\_entry.h@{thread\_audio\_entry.h}}\index{thread\_audio\_entry.h@{thread\_audio\_entry.h}!eAUDIO\_SHOCK\_3\_2\_1@{eAUDIO\_SHOCK\_3\_2\_1}}}\Hypertarget{a00077_a03d56294790e98587e2ed35dcb3d8115ad3e5bfea0d17225a063234d7992fe878}\label{a00077_a03d56294790e98587e2ed35dcb3d8115ad3e5bfea0d17225a063234d7992fe878} 
+e\+AUDIO\+\_\+\+SHOCK\+\_\+3\+\_\+2\+\_\+1&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eAUDIO\_TAKE\_SEVERAL\_MINUTES@{eAUDIO\_TAKE\_SEVERAL\_MINUTES}!thread\_audio\_entry.h@{thread\_audio\_entry.h}}\index{thread\_audio\_entry.h@{thread\_audio\_entry.h}!eAUDIO\_TAKE\_SEVERAL\_MINUTES@{eAUDIO\_TAKE\_SEVERAL\_MINUTES}}}\Hypertarget{a00077_a03d56294790e98587e2ed35dcb3d8115af4eaae7ef29e6f772fe90cd6ad13591a}\label{a00077_a03d56294790e98587e2ed35dcb3d8115af4eaae7ef29e6f772fe90cd6ad13591a} 
+e\+AUDIO\+\_\+\+TAKE\+\_\+\+SEVERAL\+\_\+\+MINUTES&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eAUDIO\_TRAINER\_MODE@{eAUDIO\_TRAINER\_MODE}!thread\_audio\_entry.h@{thread\_audio\_entry.h}}\index{thread\_audio\_entry.h@{thread\_audio\_entry.h}!eAUDIO\_TRAINER\_MODE@{eAUDIO\_TRAINER\_MODE}}}\Hypertarget{a00077_a03d56294790e98587e2ed35dcb3d8115a90feb3a6dc241d20374aea136be60013}\label{a00077_a03d56294790e98587e2ed35dcb3d8115a90feb3a6dc241d20374aea136be60013} 
+e\+AUDIO\+\_\+\+TRAINER\+\_\+\+MODE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eAUDIO\_MAX\_ID@{eAUDIO\_MAX\_ID}!thread\_audio\_entry.h@{thread\_audio\_entry.h}}\index{thread\_audio\_entry.h@{thread\_audio\_entry.h}!eAUDIO\_MAX\_ID@{eAUDIO\_MAX\_ID}}}\Hypertarget{a00077_a03d56294790e98587e2ed35dcb3d8115afcb148cf6ea6e8220fe534eb05b3a6a4}\label{a00077_a03d56294790e98587e2ed35dcb3d8115afcb148cf6ea6e8220fe534eb05b3a6a4} 
+e\+AUDIO\+\_\+\+MAX\+\_\+\+ID&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{a00077_a14225f592c271b4dbf4ccff67c11c0dc}\label{a00077_a14225f592c271b4dbf4ccff67c11c0dc} 
+\index{thread\_audio\_entry.h@{thread\_audio\_entry.h}!Audio\_Message@{Audio\_Message}}
+\index{Audio\_Message@{Audio\_Message}!thread\_audio\_entry.h@{thread\_audio\_entry.h}}
+\doxysubsubsection{\texorpdfstring{Audio\_Message()}{Audio\_Message()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Audio\+\_\+\+Message (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00077_a2234573f549c7504677f8e4f86e06b34}{AUDIO\+\_\+\+CMD\+\_\+e}}}]{cmd,  }\item[{\mbox{\hyperlink{a00077_a03d56294790e98587e2ed35dcb3d8115}{AUDIO\+\_\+\+ID\+\_\+e}}}]{msg\+\_\+id,  }\item[{\mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}}}]{continue\+\_\+player }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Function that performs an operation with the message player. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cmd} & Command to execute \\
+\hline
+{\em msg\+\_\+id} & Message identifier \\
+\hline
+{\em continue} & player must be continued\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Operation result (OK or error code) 
+\end{DoxyReturn}
+\Hypertarget{a00077_a4457500838f7b52ae97f7e61a8f10ed9}\label{a00077_a4457500838f7b52ae97f7e61a8f10ed9} 
+\index{thread\_audio\_entry.h@{thread\_audio\_entry.h}!Audio\_Test@{Audio\_Test}}
+\index{Audio\_Test@{Audio\_Test}!thread\_audio\_entry.h@{thread\_audio\_entry.h}}
+\doxysubsubsection{\texorpdfstring{Audio\_Test()}{Audio\_Test()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Audio\+\_\+\+Test (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{a00077_a03d56294790e98587e2ed35dcb3d8115}{AUDIO\+\_\+\+ID\+\_\+e}}}]{msg\+\_\+id,  }\item[{\mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}}}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Function that executes the audio test. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg\+\_\+id} & audio message to play during the test\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+test result 
+\end{DoxyReturn}
+\Hypertarget{a00077_aacd507f5759e6725a70d4b30dc65bbf6}\label{a00077_aacd507f5759e6725a70d4b30dc65bbf6} 
+\index{thread\_audio\_entry.h@{thread\_audio\_entry.h}!Is\_Audio\_Playing@{Is\_Audio\_Playing}}
+\index{Is\_Audio\_Playing@{Is\_Audio\_Playing}!thread\_audio\_entry.h@{thread\_audio\_entry.h}}
+\doxysubsubsection{\texorpdfstring{Is\_Audio\_Playing()}{Is\_Audio\_Playing()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} Is\+\_\+\+Audio\+\_\+\+Playing (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+ask if the audio player is running 
+
+\begin{DoxyReturn}{Returns}
+true (playing) or false (stop) 
+\end{DoxyReturn}
+\Hypertarget{a00077_acc1174d8d26bc08f7cb86eebc819767d}\label{a00077_acc1174d8d26bc08f7cb86eebc819767d} 
+\index{thread\_audio\_entry.h@{thread\_audio\_entry.h}!Is\_Audio\_Playing\_Last@{Is\_Audio\_Playing\_Last}}
+\index{Is\_Audio\_Playing\_Last@{Is\_Audio\_Playing\_Last}!thread\_audio\_entry.h@{thread\_audio\_entry.h}}
+\doxysubsubsection{\texorpdfstring{Is\_Audio\_Playing\_Last()}{Is\_Audio\_Playing\_Last()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} Is\+\_\+\+Audio\+\_\+\+Playing\+\_\+\+Last (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+ask if the audio player is running playing the last audio message verifies that there are not more messages in the queue 
+
+\begin{DoxyReturn}{Returns}
+true (playing last) or false (stop or more messages queued) 
+\end{DoxyReturn}
+\Hypertarget{a00077_aa245daa94d269a31a3008ebc384c3fad}\label{a00077_aa245daa94d269a31a3008ebc384c3fad} 
+\index{thread\_audio\_entry.h@{thread\_audio\_entry.h}!Is\_Task\_Audio\_Enabled@{Is\_Task\_Audio\_Enabled}}
+\index{Is\_Task\_Audio\_Enabled@{Is\_Task\_Audio\_Enabled}!thread\_audio\_entry.h@{thread\_audio\_entry.h}}
+\doxysubsubsection{\texorpdfstring{Is\_Task\_Audio\_Enabled()}{Is\_Task\_Audio\_Enabled()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} Is\+\_\+\+Task\+\_\+\+Audio\+\_\+\+Enabled (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Is audio task initialized? 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true or false 
+\end{DoxyReturn}
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{a00258__todo000002}{Todo}}]none\end{DoxyRefDesc}
+\Hypertarget{a00077_a582b1e500006c493b5303fc73c6753b5}\label{a00077_a582b1e500006c493b5303fc73c6753b5} 
+\index{thread\_audio\_entry.h@{thread\_audio\_entry.h}!Load\_Audio\_Resources@{Load\_Audio\_Resources}}
+\index{Load\_Audio\_Resources@{Load\_Audio\_Resources}!thread\_audio\_entry.h@{thread\_audio\_entry.h}}
+\doxysubsubsection{\texorpdfstring{Load\_Audio\_Resources()}{Load\_Audio\_Resources()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Load\+\_\+\+Audio\+\_\+\+Resources (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{audio\+\_\+num }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+load all the audio resources 
+
+
+\begin{DoxyParams}{Parameters}
+{\em audio\+\_\+num} & number of audios that have been opened\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+error id 
+\end{DoxyReturn}
+\Hypertarget{a00077_a5f6f3f910a0ffa01aa8da11920bb11c8}\label{a00077_a5f6f3f910a0ffa01aa8da11920bb11c8} 
+\index{thread\_audio\_entry.h@{thread\_audio\_entry.h}!Set\_Audio\_Player\_in\_error@{Set\_Audio\_Player\_in\_error}}
+\index{Set\_Audio\_Player\_in\_error@{Set\_Audio\_Player\_in\_error}!thread\_audio\_entry.h@{thread\_audio\_entry.h}}
+\doxysubsubsection{\texorpdfstring{Set\_Audio\_Player\_in\_error()}{Set\_Audio\_Player\_in\_error()}}
+{\footnotesize\ttfamily void Set\+\_\+\+Audio\+\_\+\+Player\+\_\+in\+\_\+error (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+set in error 
+
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{a00077_a72f66d21255aeb2a1e015143d34fdeae}\label{a00077_a72f66d21255aeb2a1e015143d34fdeae} 
+\index{thread\_audio\_entry.h@{thread\_audio\_entry.h}!sync\_audio@{sync\_audio}}
+\index{sync\_audio@{sync\_audio}!thread\_audio\_entry.h@{thread\_audio\_entry.h}}
+\doxysubsubsection{\texorpdfstring{sync\_audio}{sync\_audio}}
+{\footnotesize\ttfamily volatile \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} sync\+\_\+audio}
+

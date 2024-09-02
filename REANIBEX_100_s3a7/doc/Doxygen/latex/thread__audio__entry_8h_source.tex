@@ -1,0 +1,150 @@
+\doxysection{thread\+\_\+audio\+\_\+entry.\+h}
+\hypertarget{thread__audio__entry_8h_source}{}\label{thread__audio__entry_8h_source}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/thread\_audio\_entry.h@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/thread\_audio\_entry.h}}
+\mbox{\hyperlink{thread__audio__entry_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Name\ \ \ \ \ \ :\ R100\_S3A7\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ :\ Osatu\ S.\ Coop\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Compiler\ \ :\ GNU\ ARM\ Embedded\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ Target\ \ \ \ :\ Reanibex\ Serie\ 100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ ******************************************************************************/}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#ifndef\ THREAD\_AUDIO\_ENTRY\_H\_}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#define\ THREAD\_AUDIO\_ENTRY\_H\_}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ **Includes}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_r100___errors_8h}{R100\_Errors.h}}"{}}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{types__basic_8h}{types\_basic.h}}"{}}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ **\ Defines}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#define\ SYNC\_AUDIO\_ANY\_EVENT\ \ \ \ \ \ \ \ (0xFFFFFFFF)}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#define\ SYNC\_AUDIO\_PLAY\_EVENT\ \ \ \ \ \ \ (0x00000001\ <<\ 0)}}
+\DoxyCodeLine{00035\ \textcolor{comment}{//\#define\ SYNC\_AUDIO\_CAT\_EVENT\ \ \ \ \ \ \ \ (0x00000001\ <<\ 1)}}
+\DoxyCodeLine{00036\ \textcolor{comment}{//\#define\ SYNC\_AUDIO\_MUTE\_EVENT\ \ \ \ \ \ \ (0x00000001\ <<\ 2)}}
+\DoxyCodeLine{00037\ \textcolor{comment}{//\#define\ SYNC\_AUDIO\_STOP\_EVENT\ \ \ \ \ \ \ (0x00000001\ <<\ 3)}}
+\DoxyCodeLine{00038\ \textcolor{comment}{//\#define\ SYNC\_AUDIO\_BEEP\_EVENT\ \ \ \ \ \ \ (0x00000001\ <<\ 4)}}
+\DoxyCodeLine{00039\ \textcolor{comment}{//\#define\ SYNC\_AUDIO\_MUTE\_OFF\_EVENT\ \ \ (0x00000001\ <<\ 5)}}
+\DoxyCodeLine{00040\ \textcolor{comment}{//\#define\ SYNC\_AUDIO\_VOL\_LV1\_EVENT\ \ \ \ (0x00000001\ <<\ 6)}}
+\DoxyCodeLine{00041\ \textcolor{comment}{//\#define\ SYNC\_AUDIO\_VOL\_LV2\_EVENT\ \ \ \ (0x00000001\ <<\ 7)}}
+\DoxyCodeLine{00042\ \textcolor{comment}{//\#define\ SYNC\_AUDIO\_VOL\_LV3\_EVENT\ \ \ \ (0x00000001\ <<\ 8)}}
+\DoxyCodeLine{00043\ \textcolor{comment}{//\#define\ SYNC\_AUDIO\_VOL\_LV4\_EVENT\ \ \ \ (0x00000001\ <<\ 9)}}
+\DoxyCodeLine{00044\ \textcolor{comment}{//\#define\ SYNC\_AUDIO\_VOL\_LV5\_EVENT\ \ \ \ (0x00000001\ <<\ 10)}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00048\ \textcolor{comment}{\ **\ Typedefs}}
+\DoxyCodeLine{00049\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00051\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \mbox{\hyperlink{thread__audio__entry_8h_a2234573f549c7504677f8e4f86e06b34a73ca9464f2aa6ad2e47b7f92a1d8797d}{eAUDIO\_CMD\_STOP}}\ =\ 0,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00053\ \ \ \ \ \mbox{\hyperlink{thread__audio__entry_8h_a2234573f549c7504677f8e4f86e06b34af85342af1f508d011c6ccd369c82019b}{eAUDIO\_CMD\_PLAY}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00055\ \ \ \ \ \mbox{\hyperlink{thread__audio__entry_8h_a2234573f549c7504677f8e4f86e06b34ad5588d3970edefaadb263c3b369e504e}{eAUDIO\_CMD\_CONCAT}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00057\ \ \ \ \ \mbox{\hyperlink{thread__audio__entry_8h_a2234573f549c7504677f8e4f86e06b34aa9469a0d5267407fbcfd65706d41f220}{eAUDIO\_CMD\_STOP\_MESSAGE}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00058\ \ \ \ \ \mbox{\hyperlink{thread__audio__entry_8h_a2234573f549c7504677f8e4f86e06b34a497654c8d807883ad2135127d236e023}{eAUDIO\_CMD\_MAX}}}
+\DoxyCodeLine{00059\ \}\ \mbox{\hyperlink{thread__audio__entry_8h_a2234573f549c7504677f8e4f86e06b34}{AUDIO\_CMD\_e}};}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00062\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00063\ \ \ \ \ \mbox{\hyperlink{thread__audio__entry_8h_a03d56294790e98587e2ed35dcb3d8115a5be2687980fab081ca239820abae0768}{eAUDIO\_MODE\_TEST}}\ =\ 0,}
+\DoxyCodeLine{00064\ \ \ \ \ \mbox{\hyperlink{thread__audio__entry_8h_a03d56294790e98587e2ed35dcb3d8115ac1a198744fca00a060de7e1c44f5a7e0}{eAUDIO\_CALL\_SAT}},}
+\DoxyCodeLine{00065\ \ \ \ \ \mbox{\hyperlink{thread__audio__entry_8h_a03d56294790e98587e2ed35dcb3d8115aa9177baaf0f8f919e6ec4ccb1fdcae01}{eAUDIO\_KEEP\_CALM}},}
+\DoxyCodeLine{00066\ \ \ \ \ \mbox{\hyperlink{thread__audio__entry_8h_a03d56294790e98587e2ed35dcb3d8115a99a5d8ea62d4d8e94c0853e0d49402b5}{eAUDIO\_FOLLOW\_INSTRUCTIONS}},}
+\DoxyCodeLine{00067\ \ \ \ \ \mbox{\hyperlink{thread__audio__entry_8h_a03d56294790e98587e2ed35dcb3d8115a0748a14d8001b7d21453fa3f2ce0e204}{eAUDIO\_ASK\_FOR\_HELP}},}
+\DoxyCodeLine{00068\ \ \ \ \ \mbox{\hyperlink{thread__audio__entry_8h_a03d56294790e98587e2ed35dcb3d8115ad83d5ae887da039a950fe0ad4405380c}{eAUDIO\_REMOVE\_CHEST\_CLOTHES}},}
+\DoxyCodeLine{00069\ \ \ \ \ \mbox{\hyperlink{thread__audio__entry_8h_a03d56294790e98587e2ed35dcb3d8115a64415b5e944140908eacf7cac4e08228}{eAUDIO\_OPEN\_ELECTRODE\_PACKAGE}},}
+\DoxyCodeLine{00070\ \ \ \ \ \mbox{\hyperlink{thread__audio__entry_8h_a03d56294790e98587e2ed35dcb3d8115ada9c3da426165bd579f485c3b6669687}{eAUDIO\_APPLY\_ELECTRODES\_CHEST}},}
+\DoxyCodeLine{00071\ \ \ \ \ \mbox{\hyperlink{thread__audio__entry_8h_a03d56294790e98587e2ed35dcb3d8115ab2b05082ffe0dab181428b00d8d04eef}{eAUDIO\_PRESS\_ELECTRODES}},}
+\DoxyCodeLine{00072\ \ \ \ \ \mbox{\hyperlink{thread__audio__entry_8h_a03d56294790e98587e2ed35dcb3d8115afb0ec35bdaa4ec25c9396af6a2023aa5}{eAUDIO\_CHECK\_ELECTRODES}},}
+\DoxyCodeLine{00073\ \ \ \ \ \mbox{\hyperlink{thread__audio__entry_8h_a03d56294790e98587e2ed35dcb3d8115a93474e4864e37c779712afe5417daaba}{eAUDIO\_CONNECT\_ELECTRODES\_DEVICE}}\ =\ 10,}
+\DoxyCodeLine{00074\ \ \ \ \ \mbox{\hyperlink{thread__audio__entry_8h_a03d56294790e98587e2ed35dcb3d8115a545ce0f4c05262bfe196e66a6f34a190}{eAUDIO\_DO\_NOT\_TOUCH\_PATIENT}},}
+\DoxyCodeLine{00075\ \ \ \ \ \mbox{\hyperlink{thread__audio__entry_8h_a03d56294790e98587e2ed35dcb3d8115ac95d38b2f575f66e03504d83bc6edfdd}{eAUDIO\_ANALYZING\_HEART\_RATE}},}
+\DoxyCodeLine{00076\ \ \ \ \ \mbox{\hyperlink{thread__audio__entry_8h_a03d56294790e98587e2ed35dcb3d8115aefe1473e461d8ff10f50478bbe738399}{eAUDIO\_NO\_SHOCK\_ADVISED}},}
+\DoxyCodeLine{00077\ \ \ \ \ \mbox{\hyperlink{thread__audio__entry_8h_a03d56294790e98587e2ed35dcb3d8115a3d566825c903a5f357c07482a7804671}{eAUDIO\_CPR\_START}},}
+\DoxyCodeLine{00078\ \ \ \ \ \mbox{\hyperlink{thread__audio__entry_8h_a03d56294790e98587e2ed35dcb3d8115ae150ea276c82e0a970b8c8ccdeb24785}{eAUDIO\_CPR\_COMPRESSIONS}},}
+\DoxyCodeLine{00079\ \ \ \ \ \mbox{\hyperlink{thread__audio__entry_8h_a03d56294790e98587e2ed35dcb3d8115a140fe8c4f551430234d70523d59debda}{eAUDIO\_CPR\_KEEP\_UP\_100}},}
+\DoxyCodeLine{00080\ \ \ \ \ \mbox{\hyperlink{thread__audio__entry_8h_a03d56294790e98587e2ed35dcb3d8115a75a7a4ab0ccf7235a786fe7b6d62aa2c}{eAUDIO\_CPR\_KEEP\_UP\_110}},}
+\DoxyCodeLine{00081\ \ \ \ \ \mbox{\hyperlink{thread__audio__entry_8h_a03d56294790e98587e2ed35dcb3d8115ae7731e5740de9b134063646b54875e15}{eAUDIO\_CPR\_KEEP\_UP\_120}},}
+\DoxyCodeLine{00082\ \ \ \ \ \mbox{\hyperlink{thread__audio__entry_8h_a03d56294790e98587e2ed35dcb3d8115a255d588e8ae6553eb8a868f9aa1d1d2e}{eAUDIO\_CPR\_BREATH}},}
+\DoxyCodeLine{00083\ \ \ \ \ \mbox{\hyperlink{thread__audio__entry_8h_a03d56294790e98587e2ed35dcb3d8115aaa5e8c1870342c9426b4f84a77f01233}{eAUDIO\_BREATH\_2}}\ =\ 20,}
+\DoxyCodeLine{00084\ \ \ \ \ \mbox{\hyperlink{thread__audio__entry_8h_a03d56294790e98587e2ed35dcb3d8115ace74e36c1c6fe7a632bc5bd03906866d}{eAUDIO\_CPR\_START\_SHORT}},}
+\DoxyCodeLine{00085\ \ \ \ \ \mbox{\hyperlink{thread__audio__entry_8h_a03d56294790e98587e2ed35dcb3d8115ababdb34716ecf90ef6c8f5a2dd75f504}{eAUDIO\_COMPRESSIONS\_CONTINUE}},}
+\DoxyCodeLine{00086\ \ \ \ \ \mbox{\hyperlink{thread__audio__entry_8h_a03d56294790e98587e2ed35dcb3d8115a6899aef77566b0e7c0589a57feabab25}{eAUDIO\_COMPRESSIONS\_STOP}},}
+\DoxyCodeLine{00087\ \ \ \ \ \mbox{\hyperlink{thread__audio__entry_8h_a03d56294790e98587e2ed35dcb3d8115a2c08c89ad3cf182d8da70410ffa7b56f}{eAUDIO\_SHOCK\_ADVISED}},}
+\DoxyCodeLine{00088\ \ \ \ \ \mbox{\hyperlink{thread__audio__entry_8h_a03d56294790e98587e2ed35dcb3d8115a74cd86334635e1ff0f9caa28ca96ac72}{eAUDIO\_PREPARING\_SHOCK}},}
+\DoxyCodeLine{00089\ \ \ \ \ \mbox{\hyperlink{thread__audio__entry_8h_a03d56294790e98587e2ed35dcb3d8115a91011abe1c46cd553f24912d58b6f2dd}{eAUDIO\_PUSH\_TO\_SHOCK}},}
+\DoxyCodeLine{00090\ \ \ \ \ \mbox{\hyperlink{thread__audio__entry_8h_a03d56294790e98587e2ed35dcb3d8115ae5740894b825b97c03623f020a9e622d}{eAUDIO\_SHOCK\_DELIVERED}},}
+\DoxyCodeLine{00091\ \ \ \ \ \mbox{\hyperlink{thread__audio__entry_8h_a03d56294790e98587e2ed35dcb3d8115a96862bea1e7f9c6337b8e737a29c3c2d}{eAUDIO\_NO\_SHOCK\_DELIVERED}},}
+\DoxyCodeLine{00092\ \ \ \ \ \mbox{\hyperlink{thread__audio__entry_8h_a03d56294790e98587e2ed35dcb3d8115ad8777f9d35ea836f6bdc010af16165d3}{eAUDIO\_DEMO\_MODE}},}
+\DoxyCodeLine{00093\ \ \ \ \ \mbox{\hyperlink{thread__audio__entry_8h_a03d56294790e98587e2ed35dcb3d8115adbac7cd1eb6907146205049d94557944}{eAUDIO\_CALL\_EMERGENCIES}}\ =\ 30,}
+\DoxyCodeLine{00094\ \ \ \ \ \mbox{\hyperlink{thread__audio__entry_8h_a03d56294790e98587e2ed35dcb3d8115a667ce398441f6a7e95566f3b1716917e}{eAUDIO\_LOW\_BATTERY}},}
+\DoxyCodeLine{00095\ \ \ \ \ \mbox{\hyperlink{thread__audio__entry_8h_a03d56294790e98587e2ed35dcb3d8115a243f2639dc34526ffc109dc0e6275499}{eAUDIO\_REPLACE\_BATTERY}},}
+\DoxyCodeLine{00096\ \ \ \ \ \mbox{\hyperlink{thread__audio__entry_8h_a03d56294790e98587e2ed35dcb3d8115a8dc172c877252b83a61d4fa2191961a7}{eAUDIO\_STOP\_PATIENT\_MOVEMENT}},}
+\DoxyCodeLine{00097\ \ \ \ \ \mbox{\hyperlink{thread__audio__entry_8h_a03d56294790e98587e2ed35dcb3d8115a5444390f030637709407514651c4098d}{eAUDIO\_ADULT\_MODE}},}
+\DoxyCodeLine{00098\ \ \ \ \ \mbox{\hyperlink{thread__audio__entry_8h_a03d56294790e98587e2ed35dcb3d8115adf5fa2a958b04e8485fcd5a0515221d8}{eAUDIO\_PEDIATRIC\_MODE}},}
+\DoxyCodeLine{00099\ \ \ \ \ \mbox{\hyperlink{thread__audio__entry_8h_a03d56294790e98587e2ed35dcb3d8115a5f1d294323d6569736f185e0de3c7db7}{eAUDIO\_DISCONNECT\_PATIENT}},}
+\DoxyCodeLine{00100\ \ \ \ \ \mbox{\hyperlink{thread__audio__entry_8h_a03d56294790e98587e2ed35dcb3d8115a62d551f220aef3bc724439c53e9a04f9}{eAUDIO\_GETTING\_LOCATION}},}
+\DoxyCodeLine{00101\ \ \ \ \ \mbox{\hyperlink{thread__audio__entry_8h_a03d56294790e98587e2ed35dcb3d8115ab4537c0e36213cd04169f27f1387d6ca}{eAUDIO\_CHECK\_PATIENT}},}
+\DoxyCodeLine{00102\ \ \ \ \ \mbox{\hyperlink{thread__audio__entry_8h_a03d56294790e98587e2ed35dcb3d8115a863b7badb58e6788a9dabb459a57a21f}{eAUDIO\_ASYSTOLE}},}
+\DoxyCodeLine{00103\ \ \ \ \ \mbox{\hyperlink{thread__audio__entry_8h_a03d56294790e98587e2ed35dcb3d8115a8fc8d88732cd3885b1c7b790f9c82dc3}{eAUDIO\_DEVICE\_READY}}\ =\ 40,}
+\DoxyCodeLine{00104\ \ \ \ \ \mbox{\hyperlink{thread__audio__entry_8h_a03d56294790e98587e2ed35dcb3d8115a8d8b1428e916b514c568d25131b66490}{eAUDIO\_REPLACE\_ELECTRODES}},}
+\DoxyCodeLine{00105\ \ \ \ \ \mbox{\hyperlink{thread__audio__entry_8h_a03d56294790e98587e2ed35dcb3d8115af23f758f60fb611254367e492b8d3b0b}{eAUDIO\_CONN\_ERROR}},}
+\DoxyCodeLine{00106\ \ \ \ \ \mbox{\hyperlink{thread__audio__entry_8h_a03d56294790e98587e2ed35dcb3d8115acf46de6f48be9e5c69a26156d51b3eac}{eAUDIO\_TRANSMISSION\_ONGOING}},}
+\DoxyCodeLine{00107\ \ \ \ \ \mbox{\hyperlink{thread__audio__entry_8h_a03d56294790e98587e2ed35dcb3d8115a39d06c19776798c3a023482883b54053}{eAUDIO\_TRANSMISSION\_DONE}},}
+\DoxyCodeLine{00108\ \ \ \ \ \mbox{\hyperlink{thread__audio__entry_8h_a03d56294790e98587e2ed35dcb3d8115a2ef7cac6ab0ad7b2dc0a16cadd061b52}{eAUDIO\_TONE\_100}},}
+\DoxyCodeLine{00109\ \ \ \ \ \mbox{\hyperlink{thread__audio__entry_8h_a03d56294790e98587e2ed35dcb3d8115abfd10246e6617df7faf3756c5d932881}{eAUDIO\_TONE\_110}},}
+\DoxyCodeLine{00110\ \ \ \ \ \mbox{\hyperlink{thread__audio__entry_8h_a03d56294790e98587e2ed35dcb3d8115a215c8b2ab188d89e64be923ca8ec3857}{eAUDIO\_TONE\_120}},}
+\DoxyCodeLine{00111\ \ \ \ \ \mbox{\hyperlink{thread__audio__entry_8h_a03d56294790e98587e2ed35dcb3d8115a60546b72c9f5026c96b90c21789dc74c}{eAUDIO\_OPEN\_COVER}},}
+\DoxyCodeLine{00112\ \ \ \ \ \mbox{\hyperlink{thread__audio__entry_8h_a03d56294790e98587e2ed35dcb3d8115ab7a01059e4728b02ef8cf464ae61bbb1}{eAUDIO\_TONE}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ CPR\ tone\ \ //\ <-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00113\ \ \ \ \ \mbox{\hyperlink{thread__audio__entry_8h_a03d56294790e98587e2ed35dcb3d8115ad4ac1ee215a80837c6b2f205f271c111}{eAUDIO\_UPGRADING}}\ =\ 50,}
+\DoxyCodeLine{00114\ \ \ \ \ \mbox{\hyperlink{thread__audio__entry_8h_a03d56294790e98587e2ed35dcb3d8115a8ccdca4d8c8b9422959d1f999f650aed}{eAUDIO\_UPGRADE\_ERROR}},}
+\DoxyCodeLine{00115\ \ \ \ \ \mbox{\hyperlink{thread__audio__entry_8h_a03d56294790e98587e2ed35dcb3d8115ad3e5bfea0d17225a063234d7992fe878}{eAUDIO\_SHOCK\_3\_2\_1}},}
+\DoxyCodeLine{00116\ \ \ \ \ \mbox{\hyperlink{thread__audio__entry_8h_a03d56294790e98587e2ed35dcb3d8115af4eaae7ef29e6f772fe90cd6ad13591a}{eAUDIO\_TAKE\_SEVERAL\_MINUTES}},}
+\DoxyCodeLine{00117\ \ \ \ \ \mbox{\hyperlink{thread__audio__entry_8h_a03d56294790e98587e2ed35dcb3d8115a90feb3a6dc241d20374aea136be60013}{eAUDIO\_TRAINER\_MODE}},}
+\DoxyCodeLine{00118\ \ \ \ \ \mbox{\hyperlink{thread__audio__entry_8h_a03d56294790e98587e2ed35dcb3d8115afcb148cf6ea6e8220fe534eb05b3a6a4}{eAUDIO\_MAX\_ID}}}
+\DoxyCodeLine{00119\ \}\ \mbox{\hyperlink{thread__audio__entry_8h_a03d56294790e98587e2ed35dcb3d8115}{AUDIO\_ID\_e}};}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \textcolor{preprocessor}{\#define\ MAX\_LANGUAGES\ \ \ \ \ \ \ 6\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00124\ \textcolor{preprocessor}{\#define\ MAX\_AUDIO\_MSG\ \ \ \ \ \ \ eAUDIO\_MAX\_ID\ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00129\ \textcolor{comment}{\ **\ Externals}}
+\DoxyCodeLine{00130\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00132\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00133\ \textcolor{comment}{\ **\ Globals}}
+\DoxyCodeLine{00134\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00136\ \textcolor{keyword}{volatile}\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ \ \ \mbox{\hyperlink{thread__audio__entry_8h_a72f66d21255aeb2a1e015143d34fdeae}{sync\_audio}};}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00138\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00139\ \textcolor{comment}{\ **\ Prototypes}}
+\DoxyCodeLine{00140\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00142\ \textcolor{keyword}{extern}\ \ \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\_ID\_e}}\ \ \mbox{\hyperlink{thread__audio__entry_8h_a582b1e500006c493b5303fc73c6753b5}{Load\_Audio\_Resources}}\ (\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}*\ audio\_num);}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00144\ \textcolor{keyword}{extern}\ \ \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\_ID\_e}}\ \ \mbox{\hyperlink{thread__audio__entry_8h_a14225f592c271b4dbf4ccff67c11c0dc}{Audio\_Message}}\ (\mbox{\hyperlink{thread__audio__entry_8h_a2234573f549c7504677f8e4f86e06b34}{AUDIO\_CMD\_e}}\ cmd,\ \mbox{\hyperlink{thread__audio__entry_8h_a03d56294790e98587e2ed35dcb3d8115}{AUDIO\_ID\_e}}\ msg\_id,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\_t}}\ force);}
+\DoxyCodeLine{00145\ \textcolor{keyword}{extern}\ \ \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\_ID\_e}}\ \ \mbox{\hyperlink{thread__audio__entry_8h_a4457500838f7b52ae97f7e61a8f10ed9}{Audio\_Test}}\ (\textcolor{keyword}{const}\ \mbox{\hyperlink{thread__audio__entry_8h_a03d56294790e98587e2ed35dcb3d8115}{AUDIO\_ID\_e}}\ msg\_id,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\_t}}\ auto\_test);}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00147\ \textcolor{keyword}{extern}\ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\_t}}\ \ \ \ \ \ \mbox{\hyperlink{thread__audio__entry_8h_aacd507f5759e6725a70d4b30dc65bbf6}{Is\_Audio\_Playing}}\ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00148\ \textcolor{keyword}{extern}\ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\_t}}\ \ \ \ \ \ \mbox{\hyperlink{thread__audio__entry_8h_acc1174d8d26bc08f7cb86eebc819767d}{Is\_Audio\_Playing\_Last}}\ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00150\ \textcolor{keyword}{extern}\ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\_t}}\ \ \ \ \ \ \mbox{\hyperlink{thread__audio__entry_8h_aa245daa94d269a31a3008ebc384c3fad}{Is\_Task\_Audio\_Enabled}}\ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00152\ \textcolor{keyword}{extern}\ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \mbox{\hyperlink{thread__audio__entry_8h_a5f6f3f910a0ffa01aa8da11920bb11c8}{Set\_Audio\_Player\_in\_error}}\ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00154\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ THREAD\_AUDIO\_ENTRY\_H\_\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00156\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00157\ \textcolor{comment}{\ **\ \$Log\$}}
+\DoxyCodeLine{00158\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00159\ \textcolor{comment}{\ **\ end\ of\ thread\_audio\_entry.h}}
+\DoxyCodeLine{00160\ \textcolor{comment}{\ ******************************************************************************/}}
+
+\end{DoxyCode}

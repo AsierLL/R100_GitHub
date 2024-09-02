@@ -1,0 +1,27 @@
+var thread__drd__entry_8c =
+[
+    [ "ECG_WIN_SIZE_EXT", "thread__drd__entry_8c.html#ac44f2ac331c8a33cf1b834de642e2527", null ],
+    [ "ECG_WIN_SIZE_RAW", "thread__drd__entry_8c.html#a0b9eb0143f3960aa8dba920359a0eef5", null ],
+    [ "iPMK_FRONT_PORCH", "thread__drd__entry_8c.html#a88892e56b679bcb16ca835aba5b59c50", null ],
+    [ "ecg_win_drd_t", "thread__drd__entry_8c.html#a9f54678ef902e0c16555d98e4ca2538c", null ],
+    [ "ecg_win_raw_t", "thread__drd__entry_8c.html#a19acc858a547116cc99b405691f85608", null ],
+    [ "Diagnose", "thread__drd__entry_8c.html#aeb1975ec3e8162dc709c60acc76806fc", null ],
+    [ "Downsample_ECG", "thread__drd__entry_8c.html#abbbf55ad0a3342ceaf347eb3b2e615e0", null ],
+    [ "DRD_Analyze", "thread__drd__entry_8c.html#aacbcb665fe537222e7b96f111e61ae94", null ],
+    [ "DRD_Diag_Ready", "thread__drd__entry_8c.html#a72940a1f7515f9d42ef708a671d73f81", null ],
+    [ "DRD_Get_Diag_nSample", "thread__drd__entry_8c.html#a98e2673f5c36106f6c0f321470cd8399", null ],
+    [ "DRD_Get_Diagnosis", "thread__drd__entry_8c.html#a919272f048aaf3454587b9c8dc4f3f2c", null ],
+    [ "DRD_Is_Running", "thread__drd__entry_8c.html#a1c1760dc4053276d1992666efc9dd6cf", null ],
+    [ "DRD_Start_Analysis", "thread__drd__entry_8c.html#ae7693334ab794c75495e50a59d09fbe2", null ],
+    [ "DRD_Stop_Analysis", "thread__drd__entry_8c.html#ababb96cb65ae9fa237773082c69b0b9c", null ],
+    [ "Execute_DRD", "thread__drd__entry_8c.html#acab42b4fc314a847629b30176678f841", null ],
+    [ "Send_DRD_Queue", "thread__drd__entry_8c.html#a4a8ef9e7fadb3d1f81ac4ca405a954f7", null ],
+    [ "thread_drd_entry", "thread__drd__entry_8c.html#af9f58bb4df45608b2569237b2f1394d2", null ],
+    [ "drd_diag", "thread__drd__entry_8c.html#a4b488dc20e6c491893423e1ccc77c11b", null ],
+    [ "drd_init", "thread__drd__entry_8c.html#ac6cdba5e326f81308edf1b95ac68a7e3", null ],
+    [ "drd_running", "thread__drd__entry_8c.html#ada03e7ae830a0d3ca19eda955d02b65b", null ],
+    [ "ecg_raw", "thread__drd__entry_8c.html#ae126bfa5afb30426488033061d003f7b", null ],
+    [ "firstSample_Drd", "thread__drd__entry_8c.html#a840af1382b83b1ea36eb601acf243e52", null ],
+    [ "firstSample_Wnd", "thread__drd__entry_8c.html#abab4c6e55a69b99a681610e1d63fefa4", null ],
+    [ "win_id", "thread__drd__entry_8c.html#a71830929b59d7ad4b3c25a51c73ce5f5", null ]
+];

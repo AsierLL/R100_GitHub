@@ -1,0 +1,119 @@
+\doxysection{atca\+\_\+gen\+\_\+key\+\_\+in\+\_\+out Struct Reference}
+\hypertarget{structatca__gen__key__in__out}{}\label{structatca__gen__key__in__out}\index{atca\_gen\_key\_in\_out@{atca\_gen\_key\_in\_out}}
+
+
+Input/output parameters for calculating the Pub\+Key digest put into Temp\+Key by the Gen\+Key command with the \doxylink{group__atcah_gabf2abd4bd62f47537756c9ab109050c0}{atcah\+\_\+gen\+\_\+key\+\_\+msg()} function.  
+
+
+
+
+{\ttfamily \#include $<$atca\+\_\+host.\+h$>$}
+
+
+
+Collaboration diagram for atca\+\_\+gen\+\_\+key\+\_\+in\+\_\+out\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=188pt]{structatca__gen__key__in__out__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{structatca__gen__key__in__out_afa39cec9e8d332618910a0f519b5b48d}{mode}}
+\begin{DoxyCompactList}\small\item\em \mbox{[}in\mbox{]} Gen\+Key Mode \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{structatca__gen__key__in__out_a2582ecc282bd3d712918e6109a18c7d2}{key\+\_\+id}}
+\begin{DoxyCompactList}\small\item\em \mbox{[}in\mbox{]} Gen\+Key Key\+ID \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structatca__gen__key__in__out_a4e24169b0b8ab323937b892001d8ef90}{public\+\_\+key}}
+\begin{DoxyCompactList}\small\item\em \mbox{[}in\mbox{]} Public key to be used in the Pub\+Key digest. X and Y integers in big-\/endian format. 64 bytes for P256 curve. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{structatca__gen__key__in__out_a44b034625f63afcfaab306ac6275cd5b}{public\+\_\+key\+\_\+size}}
+\begin{DoxyCompactList}\small\item\em \mbox{[}in\mbox{]} Total number of bytes in the public key. 64 bytes for P256 curve. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structatca__gen__key__in__out_ac932b3d81cdd732ec0a4dea5e897d81a}{other\+\_\+data}}
+\begin{DoxyCompactList}\small\item\em \mbox{[}in\mbox{]} 3 bytes required when bit 4 of the mode is set. Can be NULL otherwise. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structatca__gen__key__in__out_a83d8ced0a663e3dee0c239e5135418bb}{sn}}
+\begin{DoxyCompactList}\small\item\em \mbox{[}in\mbox{]} Device serial number SN\mbox{[}0\+:8\mbox{]} (9 bytes). Only SN\mbox{[}0\+:1\mbox{]} and SN\mbox{[}8\mbox{]} are required though. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structatca__temp__key}{atca\+\_\+temp\+\_\+key}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structatca__gen__key__in__out_a6d8f35d43ce487168d4c44412853462e}{temp\+\_\+key}}
+\begin{DoxyCompactList}\small\item\em \mbox{[}in,out\mbox{]} As input the current state of Temp\+Key. As output, the resulting Pub\+KEy digest. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Input/output parameters for calculating the Pub\+Key digest put into Temp\+Key by the Gen\+Key command with the \doxylink{group__atcah_gabf2abd4bd62f47537756c9ab109050c0}{atcah\+\_\+gen\+\_\+key\+\_\+msg()} function. 
+
+\doxysubsection{Field Documentation}
+\Hypertarget{structatca__gen__key__in__out_a2582ecc282bd3d712918e6109a18c7d2}\label{structatca__gen__key__in__out_a2582ecc282bd3d712918e6109a18c7d2} 
+\index{atca\_gen\_key\_in\_out@{atca\_gen\_key\_in\_out}!key\_id@{key\_id}}
+\index{key\_id@{key\_id}!atca\_gen\_key\_in\_out@{atca\_gen\_key\_in\_out}}
+\doxysubsubsection{\texorpdfstring{key\_id}{key\_id}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} atca\+\_\+gen\+\_\+key\+\_\+in\+\_\+out\+::key\+\_\+id}
+
+
+
+\mbox{[}in\mbox{]} Gen\+Key Key\+ID 
+
+\Hypertarget{structatca__gen__key__in__out_afa39cec9e8d332618910a0f519b5b48d}\label{structatca__gen__key__in__out_afa39cec9e8d332618910a0f519b5b48d} 
+\index{atca\_gen\_key\_in\_out@{atca\_gen\_key\_in\_out}!mode@{mode}}
+\index{mode@{mode}!atca\_gen\_key\_in\_out@{atca\_gen\_key\_in\_out}}
+\doxysubsubsection{\texorpdfstring{mode}{mode}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} atca\+\_\+gen\+\_\+key\+\_\+in\+\_\+out\+::mode}
+
+
+
+\mbox{[}in\mbox{]} Gen\+Key Mode 
+
+\Hypertarget{structatca__gen__key__in__out_ac932b3d81cdd732ec0a4dea5e897d81a}\label{structatca__gen__key__in__out_ac932b3d81cdd732ec0a4dea5e897d81a} 
+\index{atca\_gen\_key\_in\_out@{atca\_gen\_key\_in\_out}!other\_data@{other\_data}}
+\index{other\_data@{other\_data}!atca\_gen\_key\_in\_out@{atca\_gen\_key\_in\_out}}
+\doxysubsubsection{\texorpdfstring{other\_data}{other\_data}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} atca\+\_\+gen\+\_\+key\+\_\+in\+\_\+out\+::other\+\_\+data}
+
+
+
+\mbox{[}in\mbox{]} 3 bytes required when bit 4 of the mode is set. Can be NULL otherwise. 
+
+\Hypertarget{structatca__gen__key__in__out_a4e24169b0b8ab323937b892001d8ef90}\label{structatca__gen__key__in__out_a4e24169b0b8ab323937b892001d8ef90} 
+\index{atca\_gen\_key\_in\_out@{atca\_gen\_key\_in\_out}!public\_key@{public\_key}}
+\index{public\_key@{public\_key}!atca\_gen\_key\_in\_out@{atca\_gen\_key\_in\_out}}
+\doxysubsubsection{\texorpdfstring{public\_key}{public\_key}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} atca\+\_\+gen\+\_\+key\+\_\+in\+\_\+out\+::public\+\_\+key}
+
+
+
+\mbox{[}in\mbox{]} Public key to be used in the Pub\+Key digest. X and Y integers in big-\/endian format. 64 bytes for P256 curve. 
+
+\Hypertarget{structatca__gen__key__in__out_a44b034625f63afcfaab306ac6275cd5b}\label{structatca__gen__key__in__out_a44b034625f63afcfaab306ac6275cd5b} 
+\index{atca\_gen\_key\_in\_out@{atca\_gen\_key\_in\_out}!public\_key\_size@{public\_key\_size}}
+\index{public\_key\_size@{public\_key\_size}!atca\_gen\_key\_in\_out@{atca\_gen\_key\_in\_out}}
+\doxysubsubsection{\texorpdfstring{public\_key\_size}{public\_key\_size}}
+{\footnotesize\ttfamily size\+\_\+t atca\+\_\+gen\+\_\+key\+\_\+in\+\_\+out\+::public\+\_\+key\+\_\+size}
+
+
+
+\mbox{[}in\mbox{]} Total number of bytes in the public key. 64 bytes for P256 curve. 
+
+\Hypertarget{structatca__gen__key__in__out_a83d8ced0a663e3dee0c239e5135418bb}\label{structatca__gen__key__in__out_a83d8ced0a663e3dee0c239e5135418bb} 
+\index{atca\_gen\_key\_in\_out@{atca\_gen\_key\_in\_out}!sn@{sn}}
+\index{sn@{sn}!atca\_gen\_key\_in\_out@{atca\_gen\_key\_in\_out}}
+\doxysubsubsection{\texorpdfstring{sn}{sn}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} atca\+\_\+gen\+\_\+key\+\_\+in\+\_\+out\+::sn}
+
+
+
+\mbox{[}in\mbox{]} Device serial number SN\mbox{[}0\+:8\mbox{]} (9 bytes). Only SN\mbox{[}0\+:1\mbox{]} and SN\mbox{[}8\mbox{]} are required though. 
+
+\Hypertarget{structatca__gen__key__in__out_a6d8f35d43ce487168d4c44412853462e}\label{structatca__gen__key__in__out_a6d8f35d43ce487168d4c44412853462e} 
+\index{atca\_gen\_key\_in\_out@{atca\_gen\_key\_in\_out}!temp\_key@{temp\_key}}
+\index{temp\_key@{temp\_key}!atca\_gen\_key\_in\_out@{atca\_gen\_key\_in\_out}}
+\doxysubsubsection{\texorpdfstring{temp\_key}{temp\_key}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structatca__temp__key}{atca\+\_\+temp\+\_\+key}} \texorpdfstring{$\ast$}{*} atca\+\_\+gen\+\_\+key\+\_\+in\+\_\+out\+::temp\+\_\+key}
+
+
+
+\mbox{[}in,out\mbox{]} As input the current state of Temp\+Key. As output, the resulting Pub\+KEy digest. 
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\+SCE/\mbox{\hyperlink{atca__host_8h}{atca\+\_\+host.\+h}}\item 
+C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\+SCE/host/\mbox{\hyperlink{host_2atca__host_8h}{atca\+\_\+host.\+h}}\end{DoxyCompactItemize}

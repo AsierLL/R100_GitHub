@@ -1,0 +1,62 @@
+\doxysection{thread\+\_\+audio\+\_\+hal.\+h}
+\hypertarget{a00185_source}{}\label{a00185_source}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/HAL/thread\_audio\_hal.h@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/HAL/thread\_audio\_hal.h}}
+\mbox{\hyperlink{a00185}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Name\ \ \ \ \ \ :\ R100\_S3A7\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ :\ Osatu\ S.\ Coop\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Compiler\ \ :\ GNU\ ARM\ Embedded\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ Target\ \ \ \ :\ Reanibex\ Serie\ 100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ ******************************************************************************/}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#ifndef\ THREAD\_AUDIO\_HAL\_H\_}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#define\ THREAD\_AUDIO\_HAL\_H\_}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ **Includes}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{a00137}{types\_basic.h}}"{}}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ **\ Defines}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#define\ MAX\_AUDIO\_VOLUME\ \ \ \ \ \ \ \ \ \ \ \ 63\ \ \ \ \ \ }\textcolor{comment}{//\ maximum\ Audio\ volume\ value}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#define\ MIN\_AUDIO\_VOLUME\ \ \ \ \ \ \ \ \ \ \ \ 25\ \ \ \ \ \ }\textcolor{comment}{//\ minimum\ Audio\ volume\ value}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{comment}{//\ I/O\ ports}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#define\ \ \ \ \ AUDIO\_PLAYER\_SHDN\ \ \ IOPORT\_PORT\_05\_PIN\_01}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#define\ \ \ \ \ AUDIO\_PLAYER\_MUTE\ \ \ IOPORT\_PORT\_05\_PIN\_00}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00043\ \textcolor{comment}{\ **\ Typedefs}}
+\DoxyCodeLine{00044\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00047\ \textcolor{comment}{\ **\ Globals}}
+\DoxyCodeLine{00048\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00051\ \textcolor{comment}{\ **\ Prototypes}}
+\DoxyCodeLine{00052\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \mbox{\hyperlink{a00185_a6679ee7be991ded9e6e1edd02fdbf9d8}{Audio\_Init}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00055\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \mbox{\hyperlink{a00185_a5860ff86766cdf6918ea51ba11a70ba6}{Audio\_Play\_Start}}\ \ \ \ \ \ \ \ (\textcolor{keyword}{const}\ \mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ *pSamples,\ \mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ nSamples);}
+\DoxyCodeLine{00056\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \mbox{\hyperlink{a00185_a5afdd4d24f2faf92baea80c7b0cedfdc}{Audio\_Stop}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00057\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \mbox{\hyperlink{a00185_ac55973b058909dfa33d3d55b4fcdbb8e}{Audio\_Mute}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00058\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \mbox{\hyperlink{a00185_a285beaccee275c7e54b53d5c0cb17fdd}{Audio\_Mute\_Off}}\ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00059\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \mbox{\hyperlink{a00185_ac3f240b782d8c9c8c5a9b13dc31d0fb0}{Audio\_Volume\_Set}}\ \ \ \ \ \ \ \ (\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ volume);}
+\DoxyCodeLine{00060\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \mbox{\hyperlink{a00185_a63caa5fecc35faf2d06dbc44b431f7dd}{DMA\_Shot}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ *pSamples,\ \mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ nSamples);}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ THREAD\_AUDIO\_HAL\_H\_\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00065\ \textcolor{comment}{\ **\ \$Log\$}}
+\DoxyCodeLine{00066\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00067\ \textcolor{comment}{\ **\ end\ of\ thread\_audio\_hal.h}}
+\DoxyCodeLine{00068\ \textcolor{comment}{\ ******************************************************************************/}}
+
+\end{DoxyCode}

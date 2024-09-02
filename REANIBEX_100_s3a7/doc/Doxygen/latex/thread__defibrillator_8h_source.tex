@@ -1,0 +1,50 @@
+\doxysection{thread\+\_\+defibrillator.\+h}
+\hypertarget{thread__defibrillator_8h_source}{}\label{thread__defibrillator_8h_source}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/synergy\_gen/thread\_defibrillator.h@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/synergy\_gen/thread\_defibrillator.h}}
+\mbox{\hyperlink{thread__defibrillator_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ generated\ thread\ header\ file\ -\/\ do\ not\ edit\ */}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#ifndef\ THREAD\_DEFIBRILLATOR\_H\_}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#define\ THREAD\_DEFIBRILLATOR\_H\_}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}bsp\_api.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}tx\_api.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{hal__data_8h}{hal\_data.h}}"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00008\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{thread__defibrillator_8h_a014514ab55b6ebfaf6275d3ed0867068}{thread\_defibrillator\_entry}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00010\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{thread__defibrillator_8h_a014514ab55b6ebfaf6275d3ed0867068}{thread\_defibrillator\_entry}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}r\_gpt.h"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}r\_timer\_api.h"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}r\_adc.h"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}r\_adc\_api.h"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00017\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}}
+\DoxyCodeLine{00018\ \{}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00021\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ timer\_instance\_t\ \mbox{\hyperlink{thread__defibrillator_8h_a1ba09d931cbe298db55429203a2128c1}{gpt\_shock\_L}};}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#ifndef\ GPT\_Shock\_Callback}}
+\DoxyCodeLine{00023\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{thread__defibrillator_8h_ad3ddee68089f1a0009454b0ac3ce897a}{GPT\_Shock\_Callback}}(timer\_callback\_args\_t\ *p\_args);}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00026\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ timer\_instance\_t\ \mbox{\hyperlink{thread__defibrillator_8h_a2d1dc8ad07b7b8b60a5ea1890aed1500}{gpt\_shock\_H}};}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#ifndef\ NULL}}
+\DoxyCodeLine{00028\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}}(timer\_callback\_args\_t\ *p\_args);}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00031\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ adc\_instance\_t\ \mbox{\hyperlink{thread__defibrillator_8h_ac28851491325e2972e68dd5f7c65c373}{adc\_defib}};}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#ifndef\ NULL}}
+\DoxyCodeLine{00033\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}}(adc\_callback\_args\_t\ *p\_args);}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00036\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ timer\_instance\_t\ \mbox{\hyperlink{thread__defibrillator_8h_a667c3652096caad3d5dbcd9a26f74992}{gpt\_ovch}};}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#ifndef\ NULL}}
+\DoxyCodeLine{00038\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}}(timer\_callback\_args\_t\ *p\_args);}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00041\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ timer\_instance\_t\ \mbox{\hyperlink{thread__defibrillator_8h_af601d891d9eeeced2c813fcce9b3613e}{gpt\_charger}};}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#ifndef\ NULL}}
+\DoxyCodeLine{00043\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}}(timer\_callback\_args\_t\ *p\_args);}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00045\ \textcolor{keyword}{extern}\ TX\_QUEUE\ \mbox{\hyperlink{thread__defibrillator_8h_acc8d4d9bf6f215acdea90e9e9629659b}{queue\_def}};}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00047\ \}\ \textcolor{comment}{/*\ extern\ "{}C"{}\ */}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ THREAD\_DEFIBRILLATOR\_H\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

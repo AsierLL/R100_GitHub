@@ -1,0 +1,233 @@
+\doxysection{NV\+\_\+\+DATA\+\_\+t Struct Reference}
+\hypertarget{a00438}{}\label{a00438}\index{NV\_DATA\_t@{NV\_DATA\_t}}
+
+
+Non volatile data (implemented in the internal data flash)  
+
+
+
+
+{\ttfamily \#include $<$thread\+\_\+sys\+Mon\+\_\+entry.\+h$>$}
+
+
+
+Collaboration diagram for NV\+\_\+\+DATA\+\_\+t\+:
+% FIG 0
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \mbox{\hyperlink{a00438_a4b4fc574616d4f28ff7e22468a8e6142}{time\+\_\+warning}}
+\begin{DoxyCompactList}\small\item\em formatted time (HH\+:\+MM\+:SS) to generate a warning \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{a00438_afdae96d3d4b5edc77be3ce2e881da237}{time\+\_\+test}}
+\begin{DoxyCompactList}\small\item\em time to execute the test (hour identifier) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{a00438_ab62d1f099b6cdc7698a62d72f8a8f480}{error\+\_\+code}}
+\begin{DoxyCompactList}\small\item\em active error code (only codes that requires SAT) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{a00438_a8bf4067555be19d5d2f051d0c6dd4262}{test\+\_\+id}}
+\begin{DoxyCompactList}\small\item\em test identifier (test executed in the last session) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{a00438_abc479de3c1466c28f1cf842f09172e18}{test\+\_\+pending}}
+\begin{DoxyCompactList}\small\item\em flag to indicate that a test is pending to be executed \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{a00438_abeb56ccd18bee77d2c3855035bce9e54}{latitude}} \mbox{[}12\mbox{]}
+\begin{DoxyCompactList}\small\item\em device gps latitude \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{a00438_a9a28861952f33ce7e164533cb0d71d1e}{longitude}} \mbox{[}12\mbox{]}
+\begin{DoxyCompactList}\small\item\em device gps longitude \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{a00438_a9fb776e8e4e374d158000a0b6408183a}{lat\+\_\+long\+\_\+dir}}
+\begin{DoxyCompactList}\small\item\em bit1 N or S;bit0 E or W \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \mbox{\hyperlink{a00438_afc5c3ee35791dc32a1cf14e70e85643e}{open\+\_\+cover}}
+\begin{DoxyCompactList}\small\item\em counter to detect open cover state during extended periods \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{a00438_aa6d086f7bcb7e9301eee6385d75ef78d}{open\+\_\+cover\+\_\+tx\+\_\+flag}}
+\begin{DoxyCompactList}\small\item\em open cover transmission flag \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{a00438_a7902ec99e6308436b1a8824b6ee4c70d}{open\+\_\+cover\+\_\+first}}
+\begin{DoxyCompactList}\small\item\em open cover first flag \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{a00438_a7f612f4b7e03eb5e6488d2e87adb86af}{prev\+\_\+cover\+\_\+status}}
+\begin{DoxyCompactList}\small\item\em previous cover status \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{a00438_a7b67a750586b0731b671e441c9b55d30}{update\+\_\+flag}}
+\begin{DoxyCompactList}\small\item\em update firmware flag \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{a00438_aa0e1aff0de42718e2dc0cd177dac8b8a}{status\+\_\+led\+\_\+blink}}
+\begin{DoxyCompactList}\small\item\em force the blink of the status LED (do not blink with expired electrodes or battery) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00358}{NFC\+\_\+\+SETTINGS\+\_\+t}} \mbox{\hyperlink{a00438_aae753837f1e984273bc8efcd8029f539}{default\+\_\+settings}}
+\begin{DoxyCompactList}\small\item\em default settings \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{a00438_afc39d49784c391b643b53ba048481d88}{must\+\_\+be\+\_\+0x55}}
+\begin{DoxyCompactList}\small\item\em reserved (fixed to 0x55) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{a00438_a8a1622ebac3c3ae0a5c6720ba6d1bf73}{checksum\+\_\+xor}}
+\begin{DoxyCompactList}\small\item\em data checksum \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Non volatile data (implemented in the internal data flash) 
+
+\doxysubsection{Field Documentation}
+\Hypertarget{a00438_a8a1622ebac3c3ae0a5c6720ba6d1bf73}\label{a00438_a8a1622ebac3c3ae0a5c6720ba6d1bf73} 
+\index{NV\_DATA\_t@{NV\_DATA\_t}!checksum\_xor@{checksum\_xor}}
+\index{checksum\_xor@{checksum\_xor}!NV\_DATA\_t@{NV\_DATA\_t}}
+\doxysubsubsection{\texorpdfstring{checksum\_xor}{checksum\_xor}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} NV\+\_\+\+DATA\+\_\+t\+::checksum\+\_\+xor}
+
+
+
+data checksum 
+
+\Hypertarget{a00438_aae753837f1e984273bc8efcd8029f539}\label{a00438_aae753837f1e984273bc8efcd8029f539} 
+\index{NV\_DATA\_t@{NV\_DATA\_t}!default\_settings@{default\_settings}}
+\index{default\_settings@{default\_settings}!NV\_DATA\_t@{NV\_DATA\_t}}
+\doxysubsubsection{\texorpdfstring{default\_settings}{default\_settings}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00358}{NFC\+\_\+\+SETTINGS\+\_\+t}} NV\+\_\+\+DATA\+\_\+t\+::default\+\_\+settings}
+
+
+
+default settings 
+
+\Hypertarget{a00438_ab62d1f099b6cdc7698a62d72f8a8f480}\label{a00438_ab62d1f099b6cdc7698a62d72f8a8f480} 
+\index{NV\_DATA\_t@{NV\_DATA\_t}!error\_code@{error\_code}}
+\index{error\_code@{error\_code}!NV\_DATA\_t@{NV\_DATA\_t}}
+\doxysubsubsection{\texorpdfstring{error\_code}{error\_code}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} NV\+\_\+\+DATA\+\_\+t\+::error\+\_\+code}
+
+
+
+active error code (only codes that requires SAT) 
+
+\Hypertarget{a00438_a9fb776e8e4e374d158000a0b6408183a}\label{a00438_a9fb776e8e4e374d158000a0b6408183a} 
+\index{NV\_DATA\_t@{NV\_DATA\_t}!lat\_long\_dir@{lat\_long\_dir}}
+\index{lat\_long\_dir@{lat\_long\_dir}!NV\_DATA\_t@{NV\_DATA\_t}}
+\doxysubsubsection{\texorpdfstring{lat\_long\_dir}{lat\_long\_dir}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} NV\+\_\+\+DATA\+\_\+t\+::lat\+\_\+long\+\_\+dir}
+
+
+
+bit1 N or S;bit0 E or W 
+
+\Hypertarget{a00438_abeb56ccd18bee77d2c3855035bce9e54}\label{a00438_abeb56ccd18bee77d2c3855035bce9e54} 
+\index{NV\_DATA\_t@{NV\_DATA\_t}!latitude@{latitude}}
+\index{latitude@{latitude}!NV\_DATA\_t@{NV\_DATA\_t}}
+\doxysubsubsection{\texorpdfstring{latitude}{latitude}}
+{\footnotesize\ttfamily char NV\+\_\+\+DATA\+\_\+t\+::latitude\mbox{[}12\mbox{]}}
+
+
+
+device gps latitude 
+
+\Hypertarget{a00438_a9a28861952f33ce7e164533cb0d71d1e}\label{a00438_a9a28861952f33ce7e164533cb0d71d1e} 
+\index{NV\_DATA\_t@{NV\_DATA\_t}!longitude@{longitude}}
+\index{longitude@{longitude}!NV\_DATA\_t@{NV\_DATA\_t}}
+\doxysubsubsection{\texorpdfstring{longitude}{longitude}}
+{\footnotesize\ttfamily char NV\+\_\+\+DATA\+\_\+t\+::longitude\mbox{[}12\mbox{]}}
+
+
+
+device gps longitude 
+
+\Hypertarget{a00438_afc39d49784c391b643b53ba048481d88}\label{a00438_afc39d49784c391b643b53ba048481d88} 
+\index{NV\_DATA\_t@{NV\_DATA\_t}!must\_be\_0x55@{must\_be\_0x55}}
+\index{must\_be\_0x55@{must\_be\_0x55}!NV\_DATA\_t@{NV\_DATA\_t}}
+\doxysubsubsection{\texorpdfstring{must\_be\_0x55}{must\_be\_0x55}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} NV\+\_\+\+DATA\+\_\+t\+::must\+\_\+be\+\_\+0x55}
+
+
+
+reserved (fixed to 0x55) 
+
+\Hypertarget{a00438_afc5c3ee35791dc32a1cf14e70e85643e}\label{a00438_afc5c3ee35791dc32a1cf14e70e85643e} 
+\index{NV\_DATA\_t@{NV\_DATA\_t}!open\_cover@{open\_cover}}
+\index{open\_cover@{open\_cover}!NV\_DATA\_t@{NV\_DATA\_t}}
+\doxysubsubsection{\texorpdfstring{open\_cover}{open\_cover}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} NV\+\_\+\+DATA\+\_\+t\+::open\+\_\+cover}
+
+
+
+counter to detect open cover state during extended periods 
+
+\Hypertarget{a00438_a7902ec99e6308436b1a8824b6ee4c70d}\label{a00438_a7902ec99e6308436b1a8824b6ee4c70d} 
+\index{NV\_DATA\_t@{NV\_DATA\_t}!open\_cover\_first@{open\_cover\_first}}
+\index{open\_cover\_first@{open\_cover\_first}!NV\_DATA\_t@{NV\_DATA\_t}}
+\doxysubsubsection{\texorpdfstring{open\_cover\_first}{open\_cover\_first}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} NV\+\_\+\+DATA\+\_\+t\+::open\+\_\+cover\+\_\+first}
+
+
+
+open cover first flag 
+
+\Hypertarget{a00438_aa6d086f7bcb7e9301eee6385d75ef78d}\label{a00438_aa6d086f7bcb7e9301eee6385d75ef78d} 
+\index{NV\_DATA\_t@{NV\_DATA\_t}!open\_cover\_tx\_flag@{open\_cover\_tx\_flag}}
+\index{open\_cover\_tx\_flag@{open\_cover\_tx\_flag}!NV\_DATA\_t@{NV\_DATA\_t}}
+\doxysubsubsection{\texorpdfstring{open\_cover\_tx\_flag}{open\_cover\_tx\_flag}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} NV\+\_\+\+DATA\+\_\+t\+::open\+\_\+cover\+\_\+tx\+\_\+flag}
+
+
+
+open cover transmission flag 
+
+\Hypertarget{a00438_a7f612f4b7e03eb5e6488d2e87adb86af}\label{a00438_a7f612f4b7e03eb5e6488d2e87adb86af} 
+\index{NV\_DATA\_t@{NV\_DATA\_t}!prev\_cover\_status@{prev\_cover\_status}}
+\index{prev\_cover\_status@{prev\_cover\_status}!NV\_DATA\_t@{NV\_DATA\_t}}
+\doxysubsubsection{\texorpdfstring{prev\_cover\_status}{prev\_cover\_status}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} NV\+\_\+\+DATA\+\_\+t\+::prev\+\_\+cover\+\_\+status}
+
+
+
+previous cover status 
+
+\Hypertarget{a00438_aa0e1aff0de42718e2dc0cd177dac8b8a}\label{a00438_aa0e1aff0de42718e2dc0cd177dac8b8a} 
+\index{NV\_DATA\_t@{NV\_DATA\_t}!status\_led\_blink@{status\_led\_blink}}
+\index{status\_led\_blink@{status\_led\_blink}!NV\_DATA\_t@{NV\_DATA\_t}}
+\doxysubsubsection{\texorpdfstring{status\_led\_blink}{status\_led\_blink}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} NV\+\_\+\+DATA\+\_\+t\+::status\+\_\+led\+\_\+blink}
+
+
+
+force the blink of the status LED (do not blink with expired electrodes or battery) 
+
+\Hypertarget{a00438_a8bf4067555be19d5d2f051d0c6dd4262}\label{a00438_a8bf4067555be19d5d2f051d0c6dd4262} 
+\index{NV\_DATA\_t@{NV\_DATA\_t}!test\_id@{test\_id}}
+\index{test\_id@{test\_id}!NV\_DATA\_t@{NV\_DATA\_t}}
+\doxysubsubsection{\texorpdfstring{test\_id}{test\_id}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} NV\+\_\+\+DATA\+\_\+t\+::test\+\_\+id}
+
+
+
+test identifier (test executed in the last session) 
+
+\Hypertarget{a00438_abc479de3c1466c28f1cf842f09172e18}\label{a00438_abc479de3c1466c28f1cf842f09172e18} 
+\index{NV\_DATA\_t@{NV\_DATA\_t}!test\_pending@{test\_pending}}
+\index{test\_pending@{test\_pending}!NV\_DATA\_t@{NV\_DATA\_t}}
+\doxysubsubsection{\texorpdfstring{test\_pending}{test\_pending}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} NV\+\_\+\+DATA\+\_\+t\+::test\+\_\+pending}
+
+
+
+flag to indicate that a test is pending to be executed 
+
+\Hypertarget{a00438_afdae96d3d4b5edc77be3ce2e881da237}\label{a00438_afdae96d3d4b5edc77be3ce2e881da237} 
+\index{NV\_DATA\_t@{NV\_DATA\_t}!time\_test@{time\_test}}
+\index{time\_test@{time\_test}!NV\_DATA\_t@{NV\_DATA\_t}}
+\doxysubsubsection{\texorpdfstring{time\_test}{time\_test}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} NV\+\_\+\+DATA\+\_\+t\+::time\+\_\+test}
+
+
+
+time to execute the test (hour identifier) 
+
+\Hypertarget{a00438_a4b4fc574616d4f28ff7e22468a8e6142}\label{a00438_a4b4fc574616d4f28ff7e22468a8e6142} 
+\index{NV\_DATA\_t@{NV\_DATA\_t}!time\_warning@{time\_warning}}
+\index{time\_warning@{time\_warning}!NV\_DATA\_t@{NV\_DATA\_t}}
+\doxysubsubsection{\texorpdfstring{time\_warning}{time\_warning}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} NV\+\_\+\+DATA\+\_\+t\+::time\+\_\+warning}
+
+
+
+formatted time (HH\+:\+MM\+:SS) to generate a warning 
+
+\Hypertarget{a00438_a7b67a750586b0731b671e441c9b55d30}\label{a00438_a7b67a750586b0731b671e441c9b55d30} 
+\index{NV\_DATA\_t@{NV\_DATA\_t}!update\_flag@{update\_flag}}
+\index{update\_flag@{update\_flag}!NV\_DATA\_t@{NV\_DATA\_t}}
+\doxysubsubsection{\texorpdfstring{update\_flag}{update\_flag}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} NV\+\_\+\+DATA\+\_\+t\+::update\+\_\+flag}
+
+
+
+update firmware flag 
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\mbox{\hyperlink{a00131}{thread\+\_\+sys\+Mon\+\_\+entry.\+h}}\end{DoxyCompactItemize}

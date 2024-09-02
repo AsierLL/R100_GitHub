@@ -1,0 +1,77 @@
+\doxysection{sha2\+\_\+context Struct Reference}
+\hypertarget{structsha2__context}{}\label{structsha2__context}\index{sha2\_context@{sha2\_context}}
+
+
+SHA-\/256 context structure.  
+
+
+
+
+{\ttfamily \#include $<$sha2.\+h$>$}
+
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+unsigned long \mbox{\hyperlink{structsha2__context_a485843c955ab26a3d78d499934371df1}{total}} \mbox{[}2\mbox{]}
+\item 
+unsigned long \mbox{\hyperlink{structsha2__context_a61a62a66ac1851bcd90aa65e7fad1328}{state}} \mbox{[}8\mbox{]}
+\item 
+unsigned char \mbox{\hyperlink{structsha2__context_aa5c93c2e2e8fc23008a849ea4f9a0b91}{buffer}} \mbox{[}64\mbox{]}
+\item 
+unsigned char \mbox{\hyperlink{structsha2__context_a4b003f9de8a8d823d19e813311764bd2}{ipad}} \mbox{[}64\mbox{]}
+\item 
+unsigned char \mbox{\hyperlink{structsha2__context_a3f710fbbb4c2c1ce3d57de40b1036cea}{opad}} \mbox{[}64\mbox{]}
+\item 
+int \mbox{\hyperlink{structsha2__context_a20fd61f8c14d811e93b7186ca71ecfbd}{is224}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+SHA-\/256 context structure. 
+
+\doxysubsection{Field Documentation}
+\Hypertarget{structsha2__context_aa5c93c2e2e8fc23008a849ea4f9a0b91}\label{structsha2__context_aa5c93c2e2e8fc23008a849ea4f9a0b91} 
+\index{sha2\_context@{sha2\_context}!buffer@{buffer}}
+\index{buffer@{buffer}!sha2\_context@{sha2\_context}}
+\doxysubsubsection{\texorpdfstring{buffer}{buffer}}
+{\footnotesize\ttfamily unsigned char sha2\+\_\+context\+::buffer\mbox{[}64\mbox{]}}
+
+data block being processed \Hypertarget{structsha2__context_a4b003f9de8a8d823d19e813311764bd2}\label{structsha2__context_a4b003f9de8a8d823d19e813311764bd2} 
+\index{sha2\_context@{sha2\_context}!ipad@{ipad}}
+\index{ipad@{ipad}!sha2\_context@{sha2\_context}}
+\doxysubsubsection{\texorpdfstring{ipad}{ipad}}
+{\footnotesize\ttfamily unsigned char sha2\+\_\+context\+::ipad\mbox{[}64\mbox{]}}
+
+HMAC\+: inner padding ~\newline
+ \Hypertarget{structsha2__context_a20fd61f8c14d811e93b7186ca71ecfbd}\label{structsha2__context_a20fd61f8c14d811e93b7186ca71ecfbd} 
+\index{sha2\_context@{sha2\_context}!is224@{is224}}
+\index{is224@{is224}!sha2\_context@{sha2\_context}}
+\doxysubsubsection{\texorpdfstring{is224}{is224}}
+{\footnotesize\ttfamily int sha2\+\_\+context\+::is224}
+
+0 =\texorpdfstring{$>$}{>} SHA-\/256, else SHA-\/224 \Hypertarget{structsha2__context_a3f710fbbb4c2c1ce3d57de40b1036cea}\label{structsha2__context_a3f710fbbb4c2c1ce3d57de40b1036cea} 
+\index{sha2\_context@{sha2\_context}!opad@{opad}}
+\index{opad@{opad}!sha2\_context@{sha2\_context}}
+\doxysubsubsection{\texorpdfstring{opad}{opad}}
+{\footnotesize\ttfamily unsigned char sha2\+\_\+context\+::opad\mbox{[}64\mbox{]}}
+
+HMAC\+: outer padding ~\newline
+ \Hypertarget{structsha2__context_a61a62a66ac1851bcd90aa65e7fad1328}\label{structsha2__context_a61a62a66ac1851bcd90aa65e7fad1328} 
+\index{sha2\_context@{sha2\_context}!state@{state}}
+\index{state@{state}!sha2\_context@{sha2\_context}}
+\doxysubsubsection{\texorpdfstring{state}{state}}
+{\footnotesize\ttfamily unsigned long sha2\+\_\+context\+::state\mbox{[}8\mbox{]}}
+
+intermediate digest state ~\newline
+ \Hypertarget{structsha2__context_a485843c955ab26a3d78d499934371df1}\label{structsha2__context_a485843c955ab26a3d78d499934371df1} 
+\index{sha2\_context@{sha2\_context}!total@{total}}
+\index{total@{total}!sha2\_context@{sha2\_context}}
+\doxysubsubsection{\texorpdfstring{total}{total}}
+{\footnotesize\ttfamily unsigned long sha2\+\_\+context\+::total\mbox{[}2\mbox{]}}
+
+number of bytes processed ~\newline
+ 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\+SCEF/\mbox{\hyperlink{sha2_8h}{sha2.\+h}}\end{DoxyCompactItemize}

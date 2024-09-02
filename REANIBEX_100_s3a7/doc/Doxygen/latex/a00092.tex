@@ -1,0 +1,196 @@
+\doxysection{C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/thread\+\_\+defibrillator\+\_\+entry.c File Reference}
+\hypertarget{a00092}{}\label{a00092}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/thread\_defibrillator\_entry.c@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/thread\_defibrillator\_entry.c}}
+{\ttfamily \#include "{}Trace.\+h"{}}\newline
+{\ttfamily \#include "{}types\+\_\+basic.\+h"{}}\newline
+{\ttfamily \#include "{}R100\+\_\+\+Tables.\+h"{}}\newline
+{\ttfamily \#include "{}event\+\_\+ids.\+h"{}}\newline
+{\ttfamily \#include "{}thread\+\_\+defibrillator.\+h"{}}\newline
+{\ttfamily \#include "{}thread\+\_\+defibrillator\+\_\+hal.\+h"{}}\newline
+{\ttfamily \#include "{}thread\+\_\+defibrillator\+\_\+entry.\+h"{}}\newline
+{\ttfamily \#include "{}thread\+\_\+sys\+Mon\+\_\+entry.\+h"{}}\newline
+{\ttfamily \#include "{}thread\+\_\+pat\+Mon\+\_\+hal.\+h"{}}\newline
+{\ttfamily \#include "{}thread\+\_\+core.\+h"{}}\newline
+{\ttfamily \#include "{}thread\+\_\+core\+\_\+entry.\+h"{}}\newline
+{\ttfamily \#include "{}sys\+Mon\+\_\+\+Battery.\+h"{}}\newline
+Include dependency graph for thread\+\_\+defibrillator\+\_\+entry.\+c\+:
+% FIG 0
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{a00092_a0a9c47f9e29c41b8847eed50d98b4468}{Send\+\_\+\+Defib\+\_\+\+Queue}} (\mbox{\hyperlink{a00020_a610cd7de90c58acf8dfb3345f1e53697}{EVENT\+\_\+\+ID\+\_\+e}} ev)
+\begin{DoxyCompactList}\small\item\em Process events related to defib. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a00092_ad314699291afd26b074870648c850107}{Defib\+\_\+\+Cmd\+\_\+\+Precharge}} (\mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} force)
+\begin{DoxyCompactList}\small\item\em Precharge the capacitor\+: -\/-\/\texorpdfstring{$>$}{>} If the capacitor has a voltage lower than the precharge voltage, proceed to charge. -\/-\/\texorpdfstring{$>$}{>} If the capacitor has a voltage higher than the precharge voltage, reuse the current voltage in the next shock OR force to charge to the precharge value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a00092_a22d8c14349be676ae8cd44221ad850f1}{Defib\+\_\+\+Cmd\+\_\+\+Disarm}} (void)
+\begin{DoxyCompactList}\small\item\em Disarm the capacitor\+: \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a00092_a9e678d0288d5e848d6c36c223609d52a}{Defib\+\_\+\+Cmd\+\_\+\+Charge}} (\mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} energy)
+\begin{DoxyCompactList}\small\item\em Command a capacitor charge. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a00092_ad4231b9f523e235ed7306b2bf31ecea9}{Defib\+\_\+\+Cmd\+\_\+\+Shock}} (\mbox{\hyperlink{a00101_adfbfcd79f8c1d114daaee816fd406b9f}{RYTHM\+\_\+\+TYPE\+\_\+e}} \mbox{\hyperlink{a00023_ac8569cc3da067d4877bcf4157b9b6396}{rythm\+\_\+type}})
+\begin{DoxyCompactList}\small\item\em Command a shock. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a00092_a014514ab55b6ebfaf6275d3ed0867068}{thread\+\_\+defibrillator\+\_\+entry}} (void)
+\begin{DoxyCompactList}\small\item\em A description of the function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a00394}{BATTERY\+\_\+\+INFO\+\_\+t}} \mbox{\hyperlink{a00092_aac6cdd0b09ff7f6bab3d59458076d2e1}{battery\+\_\+info}}
+\item 
+static \mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{a00092_a266ac7715fc5d7c4609eb40ff3cd01cd}{voltage\+\_\+to\+\_\+charge}}
+\item 
+static \mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{a00092_ac478d97c649bdeabaa16566fbfc3b708}{energy\+\_\+to\+\_\+shock}}
+\item 
+static \mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{a00092_acebccf9c86a58f0ac4cd02a2d57c3e3d}{zp\+\_\+when\+\_\+shock}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVersion}{Version}
+v1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+16/01/2018 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+ltorres 
+\end{DoxyAuthor}
+\begin{DoxyWarning}{Warning}
+author date version .-\/ Edition 
+\end{DoxyWarning}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{a00257__bug000024}{Bug}}]\end{DoxyRefDesc}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{a00092_a9e678d0288d5e848d6c36c223609d52a}\label{a00092_a9e678d0288d5e848d6c36c223609d52a} 
+\index{thread\_defibrillator\_entry.c@{thread\_defibrillator\_entry.c}!Defib\_Cmd\_Charge@{Defib\_Cmd\_Charge}}
+\index{Defib\_Cmd\_Charge@{Defib\_Cmd\_Charge}!thread\_defibrillator\_entry.c@{thread\_defibrillator\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Defib\_Cmd\_Charge()}{Defib\_Cmd\_Charge()}}
+{\footnotesize\ttfamily void Defib\+\_\+\+Cmd\+\_\+\+Charge (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}}}]{energy }\end{DoxyParamCaption})}
+
+
+
+Command a capacitor charge. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em energy} & energy to discharge (in joules)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\Hypertarget{a00092_a22d8c14349be676ae8cd44221ad850f1}\label{a00092_a22d8c14349be676ae8cd44221ad850f1} 
+\index{thread\_defibrillator\_entry.c@{thread\_defibrillator\_entry.c}!Defib\_Cmd\_Disarm@{Defib\_Cmd\_Disarm}}
+\index{Defib\_Cmd\_Disarm@{Defib\_Cmd\_Disarm}!thread\_defibrillator\_entry.c@{thread\_defibrillator\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Defib\_Cmd\_Disarm()}{Defib\_Cmd\_Disarm()}}
+{\footnotesize\ttfamily void Defib\+\_\+\+Cmd\+\_\+\+Disarm (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Disarm the capacitor\+: 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\Hypertarget{a00092_ad314699291afd26b074870648c850107}\label{a00092_ad314699291afd26b074870648c850107} 
+\index{thread\_defibrillator\_entry.c@{thread\_defibrillator\_entry.c}!Defib\_Cmd\_Precharge@{Defib\_Cmd\_Precharge}}
+\index{Defib\_Cmd\_Precharge@{Defib\_Cmd\_Precharge}!thread\_defibrillator\_entry.c@{thread\_defibrillator\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Defib\_Cmd\_Precharge()}{Defib\_Cmd\_Precharge()}}
+{\footnotesize\ttfamily void Defib\+\_\+\+Cmd\+\_\+\+Precharge (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}}}]{force }\end{DoxyParamCaption})}
+
+
+
+Precharge the capacitor\+: -\/-\/\texorpdfstring{$>$}{>} If the capacitor has a voltage lower than the precharge voltage, proceed to charge. -\/-\/\texorpdfstring{$>$}{>} If the capacitor has a voltage higher than the precharge voltage, reuse the current voltage in the next shock OR force to charge to the precharge value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em force} & if true, force the precharge voltage if false, maintain the voltage if higher\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\texorpdfstring{$<$}{<} special\+\_\+mode; do not precharge\Hypertarget{a00092_ad4231b9f523e235ed7306b2bf31ecea9}\label{a00092_ad4231b9f523e235ed7306b2bf31ecea9} 
+\index{thread\_defibrillator\_entry.c@{thread\_defibrillator\_entry.c}!Defib\_Cmd\_Shock@{Defib\_Cmd\_Shock}}
+\index{Defib\_Cmd\_Shock@{Defib\_Cmd\_Shock}!thread\_defibrillator\_entry.c@{thread\_defibrillator\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Defib\_Cmd\_Shock()}{Defib\_Cmd\_Shock()}}
+{\footnotesize\ttfamily void Defib\+\_\+\+Cmd\+\_\+\+Shock (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00101_adfbfcd79f8c1d114daaee816fd406b9f}{RYTHM\+\_\+\+TYPE\+\_\+e}}}]{rythm\+\_\+type }\end{DoxyParamCaption})}
+
+
+
+Command a shock. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rythm\+\_\+type} & type of the rythm\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\Hypertarget{a00092_a0a9c47f9e29c41b8847eed50d98b4468}\label{a00092_a0a9c47f9e29c41b8847eed50d98b4468} 
+\index{thread\_defibrillator\_entry.c@{thread\_defibrillator\_entry.c}!Send\_Defib\_Queue@{Send\_Defib\_Queue}}
+\index{Send\_Defib\_Queue@{Send\_Defib\_Queue}!thread\_defibrillator\_entry.c@{thread\_defibrillator\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Send\_Defib\_Queue()}{Send\_Defib\_Queue()}}
+{\footnotesize\ttfamily static void Send\+\_\+\+Defib\+\_\+\+Queue (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00020_a610cd7de90c58acf8dfb3345f1e53697}{EVENT\+\_\+\+ID\+\_\+e}}}]{ev }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Process events related to defib. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ev} & event identifier \\
+\hline
+\end{DoxyParams}
+\Hypertarget{a00092_a014514ab55b6ebfaf6275d3ed0867068}\label{a00092_a014514ab55b6ebfaf6275d3ed0867068} 
+\index{thread\_defibrillator\_entry.c@{thread\_defibrillator\_entry.c}!thread\_defibrillator\_entry@{thread\_defibrillator\_entry}}
+\index{thread\_defibrillator\_entry@{thread\_defibrillator\_entry}!thread\_defibrillator\_entry.c@{thread\_defibrillator\_entry.c}}
+\doxysubsubsection{\texorpdfstring{thread\_defibrillator\_entry()}{thread\_defibrillator\_entry()}}
+{\footnotesize\ttfamily void thread\+\_\+defibrillator\+\_\+entry (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+A description of the function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{a00258__todo000005}{Todo}}]pending things to be done\end{DoxyRefDesc}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{a00092_aac6cdd0b09ff7f6bab3d59458076d2e1}\label{a00092_aac6cdd0b09ff7f6bab3d59458076d2e1} 
+\index{thread\_defibrillator\_entry.c@{thread\_defibrillator\_entry.c}!battery\_info@{battery\_info}}
+\index{battery\_info@{battery\_info}!thread\_defibrillator\_entry.c@{thread\_defibrillator\_entry.c}}
+\doxysubsubsection{\texorpdfstring{battery\_info}{battery\_info}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00394}{BATTERY\+\_\+\+INFO\+\_\+t}} battery\+\_\+info}
+
+\Hypertarget{a00092_ac478d97c649bdeabaa16566fbfc3b708}\label{a00092_ac478d97c649bdeabaa16566fbfc3b708} 
+\index{thread\_defibrillator\_entry.c@{thread\_defibrillator\_entry.c}!energy\_to\_shock@{energy\_to\_shock}}
+\index{energy\_to\_shock@{energy\_to\_shock}!thread\_defibrillator\_entry.c@{thread\_defibrillator\_entry.c}}
+\doxysubsubsection{\texorpdfstring{energy\_to\_shock}{energy\_to\_shock}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} energy\+\_\+to\+\_\+shock\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{a00092_a266ac7715fc5d7c4609eb40ff3cd01cd}\label{a00092_a266ac7715fc5d7c4609eb40ff3cd01cd} 
+\index{thread\_defibrillator\_entry.c@{thread\_defibrillator\_entry.c}!voltage\_to\_charge@{voltage\_to\_charge}}
+\index{voltage\_to\_charge@{voltage\_to\_charge}!thread\_defibrillator\_entry.c@{thread\_defibrillator\_entry.c}}
+\doxysubsubsection{\texorpdfstring{voltage\_to\_charge}{voltage\_to\_charge}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} voltage\+\_\+to\+\_\+charge\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{a00092_acebccf9c86a58f0ac4cd02a2d57c3e3d}\label{a00092_acebccf9c86a58f0ac4cd02a2d57c3e3d} 
+\index{thread\_defibrillator\_entry.c@{thread\_defibrillator\_entry.c}!zp\_when\_shock@{zp\_when\_shock}}
+\index{zp\_when\_shock@{zp\_when\_shock}!thread\_defibrillator\_entry.c@{thread\_defibrillator\_entry.c}}
+\doxysubsubsection{\texorpdfstring{zp\_when\_shock}{zp\_when\_shock}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} zp\+\_\+when\+\_\+shock\hspace{0.3cm}{\ttfamily [static]}}
+

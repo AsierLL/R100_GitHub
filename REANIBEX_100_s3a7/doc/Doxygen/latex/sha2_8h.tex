@@ -1,0 +1,446 @@
+\doxysection{C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\+SCEF/sha2.h File Reference}
+\hypertarget{sha2_8h}{}\label{sha2_8h}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/SCEF/sha2.h@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/SCEF/sha2.h}}
+
+
+SHA-\/224 and SHA-\/256 cryptographic hash function.  
+
+
+{\ttfamily \#include $<$string.\+h$>$}\newline
+Include dependency graph for sha2.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=269pt]{sha2_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sha2_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structsha2__context}{sha2\+\_\+context}}
+\begin{DoxyCompactList}\small\item\em SHA-\/256 context structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{sha2_8h_ac29e062cc6867de786fa8e4390d723c6}{SCOPE\+\_\+\+SSH}}~extern
+\item 
+\#define \mbox{\hyperlink{sha2_8h_a13420b4798ef01ab497741c0d6f0e67e}{ERR\+\_\+\+SHA2\+\_\+\+FILE\+\_\+\+IO\+\_\+\+ERROR}}~-\/0x0078
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{sha2_8h_ac29e062cc6867de786fa8e4390d723c6}{SCOPE\+\_\+\+SSH}} void \mbox{\hyperlink{sha2_8h_af59c9ec06285a79a1343ff581fe5184a}{sha2\+\_\+starts}} (\mbox{\hyperlink{structsha2__context}{sha2\+\_\+context}} \texorpdfstring{$\ast$}{*}ctx, int is224)
+\begin{DoxyCompactList}\small\item\em SHA-\/256 context setup. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{sha2_8h_ac29e062cc6867de786fa8e4390d723c6}{SCOPE\+\_\+\+SSH}} void \mbox{\hyperlink{sha2_8h_aa35d56c311f65e648be8d59b220eaf0b}{sha2\+\_\+update}} (\mbox{\hyperlink{structsha2__context}{sha2\+\_\+context}} \texorpdfstring{$\ast$}{*}ctx, const unsigned char \texorpdfstring{$\ast$}{*}input, size\+\_\+t ilen)
+\begin{DoxyCompactList}\small\item\em SHA-\/256 process buffer. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{sha2_8h_ac29e062cc6867de786fa8e4390d723c6}{SCOPE\+\_\+\+SSH}} void \mbox{\hyperlink{sha2_8h_a3db426694504f949e8cd1151c8c90fc3}{sha2\+\_\+finish}} (\mbox{\hyperlink{structsha2__context}{sha2\+\_\+context}} \texorpdfstring{$\ast$}{*}ctx, unsigned char output\mbox{[}32\mbox{]})
+\begin{DoxyCompactList}\small\item\em SHA-\/256 final digest. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{sha2_8h_ac29e062cc6867de786fa8e4390d723c6}{SCOPE\+\_\+\+SSH}} void \mbox{\hyperlink{sha2_8h_a9b274c0403839a9bd01ff45c6ee885f2}{sha2}} (const unsigned char \texorpdfstring{$\ast$}{*}input, size\+\_\+t ilen, unsigned char output\mbox{[}32\mbox{]}, int is224)
+\begin{DoxyCompactList}\small\item\em Output = SHA-\/256( input buffer ) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{sha2_8h_ac29e062cc6867de786fa8e4390d723c6}{SCOPE\+\_\+\+SSH}} void \mbox{\hyperlink{sha2_8h_abef9e6d358028202280f270cd018fe91}{sha2\+\_\+hmac\+\_\+starts}} (\mbox{\hyperlink{structsha2__context}{sha2\+\_\+context}} \texorpdfstring{$\ast$}{*}ctx, const unsigned char \texorpdfstring{$\ast$}{*}key, size\+\_\+t keylen, int is224)
+\begin{DoxyCompactList}\small\item\em Output = SHA-\/256( file contents ) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{sha2_8h_ac29e062cc6867de786fa8e4390d723c6}{SCOPE\+\_\+\+SSH}} void \mbox{\hyperlink{sha2_8h_acb56e9ca99e567f74c4475bb334c3d2a}{sha2\+\_\+hmac\+\_\+update}} (\mbox{\hyperlink{structsha2__context}{sha2\+\_\+context}} \texorpdfstring{$\ast$}{*}ctx, const unsigned char \texorpdfstring{$\ast$}{*}input, size\+\_\+t ilen)
+\begin{DoxyCompactList}\small\item\em SHA-\/256 HMAC process buffer. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{sha2_8h_ac29e062cc6867de786fa8e4390d723c6}{SCOPE\+\_\+\+SSH}} void \mbox{\hyperlink{sha2_8h_a9ba30fb5cf12d28a126f7b176905f893}{sha2\+\_\+hmac\+\_\+finish}} (\mbox{\hyperlink{structsha2__context}{sha2\+\_\+context}} \texorpdfstring{$\ast$}{*}ctx, unsigned char output\mbox{[}32\mbox{]})
+\begin{DoxyCompactList}\small\item\em SHA-\/256 HMAC final digest. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{sha2_8h_ac29e062cc6867de786fa8e4390d723c6}{SCOPE\+\_\+\+SSH}} void \mbox{\hyperlink{sha2_8h_aba48704791856189b76c50d190b20791}{sha2\+\_\+hmac\+\_\+reset}} (\mbox{\hyperlink{structsha2__context}{sha2\+\_\+context}} \texorpdfstring{$\ast$}{*}ctx)
+\begin{DoxyCompactList}\small\item\em SHA-\/256 HMAC context reset. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{sha2_8h_ac29e062cc6867de786fa8e4390d723c6}{SCOPE\+\_\+\+SSH}} void \mbox{\hyperlink{sha2_8h_aeaf8327ac507e3992acf3c170de31b82}{sha2\+\_\+hmac}} (const unsigned char \texorpdfstring{$\ast$}{*}key, size\+\_\+t keylen, const unsigned char \texorpdfstring{$\ast$}{*}input, size\+\_\+t ilen, unsigned char output\mbox{[}32\mbox{]}, int is224)
+\begin{DoxyCompactList}\small\item\em Output = HMAC-\/\+SHA-\/256( hmac key, input buffer ) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static const int \mbox{\hyperlink{sha2_8h_ada9496386d36e4d228d8b32d017d090f}{sha2\+\_\+test\+\_\+buflen}} \mbox{[}3\mbox{]}
+\item 
+static const unsigned char \mbox{\hyperlink{sha2_8h_afa197728c9129f32189da1adc1c054f9}{sha2\+\_\+test\+\_\+sum}} \mbox{[}6\mbox{]}\mbox{[}32\mbox{]}
+\item 
+static const int \mbox{\hyperlink{sha2_8h_a2b13ed6519a722c5411667526d1c08cb}{sha2\+\_\+hmac\+\_\+test\+\_\+keylen}} \mbox{[}7\mbox{]}
+\item 
+static const int \mbox{\hyperlink{sha2_8h_a35bb31a5fa41d56dba62273aa53b183c}{sha2\+\_\+hmac\+\_\+test\+\_\+buflen}} \mbox{[}7\mbox{]}
+\item 
+static const unsigned char \mbox{\hyperlink{sha2_8h_a398562d66bbb9a31bd4e888126a3007f}{sha2\+\_\+hmac\+\_\+test\+\_\+sum}} \mbox{[}14\mbox{]}\mbox{[}32\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+SHA-\/224 and SHA-\/256 cryptographic hash function. 
+
+Copyright (C) 2006-\/2010, Brainspark B.\+V.
+
+All rights reserved.
+
+This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-\/1301 USA. 
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{sha2_8h_a13420b4798ef01ab497741c0d6f0e67e}\label{sha2_8h_a13420b4798ef01ab497741c0d6f0e67e} 
+\index{sha2.h@{sha2.h}!ERR\_SHA2\_FILE\_IO\_ERROR@{ERR\_SHA2\_FILE\_IO\_ERROR}}
+\index{ERR\_SHA2\_FILE\_IO\_ERROR@{ERR\_SHA2\_FILE\_IO\_ERROR}!sha2.h@{sha2.h}}
+\doxysubsubsection{\texorpdfstring{ERR\_SHA2\_FILE\_IO\_ERROR}{ERR\_SHA2\_FILE\_IO\_ERROR}}
+{\footnotesize\ttfamily \#define ERR\+\_\+\+SHA2\+\_\+\+FILE\+\_\+\+IO\+\_\+\+ERROR~-\/0x0078}
+
+Read/write error in file. \Hypertarget{sha2_8h_ac29e062cc6867de786fa8e4390d723c6}\label{sha2_8h_ac29e062cc6867de786fa8e4390d723c6} 
+\index{sha2.h@{sha2.h}!SCOPE\_SSH@{SCOPE\_SSH}}
+\index{SCOPE\_SSH@{SCOPE\_SSH}!sha2.h@{sha2.h}}
+\doxysubsubsection{\texorpdfstring{SCOPE\_SSH}{SCOPE\_SSH}}
+{\footnotesize\ttfamily \#define SCOPE\+\_\+\+SSH~extern}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{sha2_8h_a9b274c0403839a9bd01ff45c6ee885f2}\label{sha2_8h_a9b274c0403839a9bd01ff45c6ee885f2} 
+\index{sha2.h@{sha2.h}!sha2@{sha2}}
+\index{sha2@{sha2}!sha2.h@{sha2.h}}
+\doxysubsubsection{\texorpdfstring{sha2()}{sha2()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sha2_8h_ac29e062cc6867de786fa8e4390d723c6}{SCOPE\+\_\+\+SSH}} void sha2 (\begin{DoxyParamCaption}\item[{const unsigned char \texorpdfstring{$\ast$}{*}}]{input,  }\item[{size\+\_\+t}]{ilen,  }\item[{unsigned char}]{output\mbox{[}32\mbox{]},  }\item[{int}]{is224 }\end{DoxyParamCaption})}
+
+
+
+Output = SHA-\/256( input buffer ) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & buffer holding the data \\
+\hline
+{\em ilen} & length of the input data \\
+\hline
+{\em output} & SHA-\/224/256 checksum result \\
+\hline
+{\em is224} & 0 = use SHA256, 1 = use SHA224 \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sha2_8h_a9b274c0403839a9bd01ff45c6ee885f2_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sha2_8h_a9b274c0403839a9bd01ff45c6ee885f2_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{sha2_8h_a3db426694504f949e8cd1151c8c90fc3}\label{sha2_8h_a3db426694504f949e8cd1151c8c90fc3} 
+\index{sha2.h@{sha2.h}!sha2\_finish@{sha2\_finish}}
+\index{sha2\_finish@{sha2\_finish}!sha2.h@{sha2.h}}
+\doxysubsubsection{\texorpdfstring{sha2\_finish()}{sha2\_finish()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sha2_8h_ac29e062cc6867de786fa8e4390d723c6}{SCOPE\+\_\+\+SSH}} void sha2\+\_\+finish (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structsha2__context}{sha2\+\_\+context}} \texorpdfstring{$\ast$}{*}}]{ctx,  }\item[{unsigned char}]{output\mbox{[}32\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+SHA-\/256 final digest. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & SHA-\/256 context \\
+\hline
+{\em output} & SHA-\/224/256 checksum result \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sha2_8h_a3db426694504f949e8cd1151c8c90fc3_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sha2_8h_a3db426694504f949e8cd1151c8c90fc3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{sha2_8h_aeaf8327ac507e3992acf3c170de31b82}\label{sha2_8h_aeaf8327ac507e3992acf3c170de31b82} 
+\index{sha2.h@{sha2.h}!sha2\_hmac@{sha2\_hmac}}
+\index{sha2\_hmac@{sha2\_hmac}!sha2.h@{sha2.h}}
+\doxysubsubsection{\texorpdfstring{sha2\_hmac()}{sha2\_hmac()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sha2_8h_ac29e062cc6867de786fa8e4390d723c6}{SCOPE\+\_\+\+SSH}} void sha2\+\_\+hmac (\begin{DoxyParamCaption}\item[{const unsigned char \texorpdfstring{$\ast$}{*}}]{key,  }\item[{size\+\_\+t}]{keylen,  }\item[{const unsigned char \texorpdfstring{$\ast$}{*}}]{input,  }\item[{size\+\_\+t}]{ilen,  }\item[{unsigned char}]{output\mbox{[}32\mbox{]},  }\item[{int}]{is224 }\end{DoxyParamCaption})}
+
+
+
+Output = HMAC-\/\+SHA-\/256( hmac key, input buffer ) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & HMAC secret key \\
+\hline
+{\em keylen} & length of the HMAC key \\
+\hline
+{\em input} & buffer holding the data \\
+\hline
+{\em ilen} & length of the input data \\
+\hline
+{\em output} & HMAC-\/\+SHA-\/224/256 result \\
+\hline
+{\em is224} & 0 = use SHA256, 1 = use SHA224 \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sha2_8h_aeaf8327ac507e3992acf3c170de31b82_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{sha2_8h_a9ba30fb5cf12d28a126f7b176905f893}\label{sha2_8h_a9ba30fb5cf12d28a126f7b176905f893} 
+\index{sha2.h@{sha2.h}!sha2\_hmac\_finish@{sha2\_hmac\_finish}}
+\index{sha2\_hmac\_finish@{sha2\_hmac\_finish}!sha2.h@{sha2.h}}
+\doxysubsubsection{\texorpdfstring{sha2\_hmac\_finish()}{sha2\_hmac\_finish()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sha2_8h_ac29e062cc6867de786fa8e4390d723c6}{SCOPE\+\_\+\+SSH}} void sha2\+\_\+hmac\+\_\+finish (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structsha2__context}{sha2\+\_\+context}} \texorpdfstring{$\ast$}{*}}]{ctx,  }\item[{unsigned char}]{output\mbox{[}32\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+SHA-\/256 HMAC final digest. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & HMAC context \\
+\hline
+{\em output} & SHA-\/224/256 HMAC checksum result \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sha2_8h_a9ba30fb5cf12d28a126f7b176905f893_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=276pt]{sha2_8h_a9ba30fb5cf12d28a126f7b176905f893_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{sha2_8h_aba48704791856189b76c50d190b20791}\label{sha2_8h_aba48704791856189b76c50d190b20791} 
+\index{sha2.h@{sha2.h}!sha2\_hmac\_reset@{sha2\_hmac\_reset}}
+\index{sha2\_hmac\_reset@{sha2\_hmac\_reset}!sha2.h@{sha2.h}}
+\doxysubsubsection{\texorpdfstring{sha2\_hmac\_reset()}{sha2\_hmac\_reset()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sha2_8h_ac29e062cc6867de786fa8e4390d723c6}{SCOPE\+\_\+\+SSH}} void sha2\+\_\+hmac\+\_\+reset (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structsha2__context}{sha2\+\_\+context}} \texorpdfstring{$\ast$}{*}}]{ctx }\end{DoxyParamCaption})}
+
+
+
+SHA-\/256 HMAC context reset. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & HMAC context to be reset \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sha2_8h_aba48704791856189b76c50d190b20791_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{sha2_8h_abef9e6d358028202280f270cd018fe91}\label{sha2_8h_abef9e6d358028202280f270cd018fe91} 
+\index{sha2.h@{sha2.h}!sha2\_hmac\_starts@{sha2\_hmac\_starts}}
+\index{sha2\_hmac\_starts@{sha2\_hmac\_starts}!sha2.h@{sha2.h}}
+\doxysubsubsection{\texorpdfstring{sha2\_hmac\_starts()}{sha2\_hmac\_starts()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sha2_8h_ac29e062cc6867de786fa8e4390d723c6}{SCOPE\+\_\+\+SSH}} void sha2\+\_\+hmac\+\_\+starts (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structsha2__context}{sha2\+\_\+context}} \texorpdfstring{$\ast$}{*}}]{ctx,  }\item[{const unsigned char \texorpdfstring{$\ast$}{*}}]{key,  }\item[{size\+\_\+t}]{keylen,  }\item[{int}]{is224 }\end{DoxyParamCaption})}
+
+
+
+Output = SHA-\/256( file contents ) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & input file name \\
+\hline
+{\em output} & SHA-\/224/256 checksum result \\
+\hline
+{\em is224} & 0 = use SHA256, 1 = use SHA224\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful, or ERR\+\_\+\+SHA2\+\_\+\+FILE\+\_\+\+IO\+\_\+\+ERROR
+\end{DoxyReturn}
+SHA-\/256 HMAC context setup
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & HMAC context to be initialized \\
+\hline
+{\em key} & HMAC secret key \\
+\hline
+{\em keylen} & length of the HMAC key \\
+\hline
+{\em is224} & 0 = use SHA256, 1 = use SHA224 \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sha2_8h_abef9e6d358028202280f270cd018fe91_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=279pt]{sha2_8h_abef9e6d358028202280f270cd018fe91_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{sha2_8h_acb56e9ca99e567f74c4475bb334c3d2a}\label{sha2_8h_acb56e9ca99e567f74c4475bb334c3d2a} 
+\index{sha2.h@{sha2.h}!sha2\_hmac\_update@{sha2\_hmac\_update}}
+\index{sha2\_hmac\_update@{sha2\_hmac\_update}!sha2.h@{sha2.h}}
+\doxysubsubsection{\texorpdfstring{sha2\_hmac\_update()}{sha2\_hmac\_update()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sha2_8h_ac29e062cc6867de786fa8e4390d723c6}{SCOPE\+\_\+\+SSH}} void sha2\+\_\+hmac\+\_\+update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structsha2__context}{sha2\+\_\+context}} \texorpdfstring{$\ast$}{*}}]{ctx,  }\item[{const unsigned char \texorpdfstring{$\ast$}{*}}]{input,  }\item[{size\+\_\+t}]{ilen }\end{DoxyParamCaption})}
+
+
+
+SHA-\/256 HMAC process buffer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & HMAC context \\
+\hline
+{\em input} & buffer holding the data \\
+\hline
+{\em ilen} & length of the input data \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sha2_8h_acb56e9ca99e567f74c4475bb334c3d2a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=283pt]{sha2_8h_acb56e9ca99e567f74c4475bb334c3d2a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{sha2_8h_af59c9ec06285a79a1343ff581fe5184a}\label{sha2_8h_af59c9ec06285a79a1343ff581fe5184a} 
+\index{sha2.h@{sha2.h}!sha2\_starts@{sha2\_starts}}
+\index{sha2\_starts@{sha2\_starts}!sha2.h@{sha2.h}}
+\doxysubsubsection{\texorpdfstring{sha2\_starts()}{sha2\_starts()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sha2_8h_ac29e062cc6867de786fa8e4390d723c6}{SCOPE\+\_\+\+SSH}} void sha2\+\_\+starts (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structsha2__context}{sha2\+\_\+context}} \texorpdfstring{$\ast$}{*}}]{ctx,  }\item[{int}]{is224 }\end{DoxyParamCaption})}
+
+
+
+SHA-\/256 context setup. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & context to be initialized \\
+\hline
+{\em is224} & 0 = use SHA256, 1 = use SHA224 \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sha2_8h_af59c9ec06285a79a1343ff581fe5184a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{sha2_8h_aa35d56c311f65e648be8d59b220eaf0b}\label{sha2_8h_aa35d56c311f65e648be8d59b220eaf0b} 
+\index{sha2.h@{sha2.h}!sha2\_update@{sha2\_update}}
+\index{sha2\_update@{sha2\_update}!sha2.h@{sha2.h}}
+\doxysubsubsection{\texorpdfstring{sha2\_update()}{sha2\_update()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sha2_8h_ac29e062cc6867de786fa8e4390d723c6}{SCOPE\+\_\+\+SSH}} void sha2\+\_\+update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structsha2__context}{sha2\+\_\+context}} \texorpdfstring{$\ast$}{*}}]{ctx,  }\item[{const unsigned char \texorpdfstring{$\ast$}{*}}]{input,  }\item[{size\+\_\+t}]{ilen }\end{DoxyParamCaption})}
+
+
+
+SHA-\/256 process buffer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ctx} & SHA-\/256 context \\
+\hline
+{\em input} & buffer holding the data \\
+\hline
+{\em ilen} & length of the input data \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=264pt]{sha2_8h_aa35d56c311f65e648be8d59b220eaf0b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sha2_8h_aa35d56c311f65e648be8d59b220eaf0b_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{sha2_8h_a35bb31a5fa41d56dba62273aa53b183c}\label{sha2_8h_a35bb31a5fa41d56dba62273aa53b183c} 
+\index{sha2.h@{sha2.h}!sha2\_hmac\_test\_buflen@{sha2\_hmac\_test\_buflen}}
+\index{sha2\_hmac\_test\_buflen@{sha2\_hmac\_test\_buflen}!sha2.h@{sha2.h}}
+\doxysubsubsection{\texorpdfstring{sha2\_hmac\_test\_buflen}{sha2\_hmac\_test\_buflen}}
+{\footnotesize\ttfamily const int sha2\+\_\+hmac\+\_\+test\+\_\+buflen\mbox{[}7\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ 8,\ 28,\ 50,\ 50,\ 20,\ 54,\ 152}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\Hypertarget{sha2_8h_a2b13ed6519a722c5411667526d1c08cb}\label{sha2_8h_a2b13ed6519a722c5411667526d1c08cb} 
+\index{sha2.h@{sha2.h}!sha2\_hmac\_test\_keylen@{sha2\_hmac\_test\_keylen}}
+\index{sha2\_hmac\_test\_keylen@{sha2\_hmac\_test\_keylen}!sha2.h@{sha2.h}}
+\doxysubsubsection{\texorpdfstring{sha2\_hmac\_test\_keylen}{sha2\_hmac\_test\_keylen}}
+{\footnotesize\ttfamily const int sha2\+\_\+hmac\+\_\+test\+\_\+keylen\mbox{[}7\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ 20,\ 4,\ 20,\ 25,\ 20,\ 131,\ 131}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\Hypertarget{sha2_8h_a398562d66bbb9a31bd4e888126a3007f}\label{sha2_8h_a398562d66bbb9a31bd4e888126a3007f} 
+\index{sha2.h@{sha2.h}!sha2\_hmac\_test\_sum@{sha2\_hmac\_test\_sum}}
+\index{sha2\_hmac\_test\_sum@{sha2\_hmac\_test\_sum}!sha2.h@{sha2.h}}
+\doxysubsubsection{\texorpdfstring{sha2\_hmac\_test\_sum}{sha2\_hmac\_test\_sum}}
+{\footnotesize\ttfamily const unsigned char sha2\+\_\+hmac\+\_\+test\+\_\+sum\mbox{[}14\mbox{]}\mbox{[}32\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{sha2_8h_ada9496386d36e4d228d8b32d017d090f}\label{sha2_8h_ada9496386d36e4d228d8b32d017d090f} 
+\index{sha2.h@{sha2.h}!sha2\_test\_buflen@{sha2\_test\_buflen}}
+\index{sha2\_test\_buflen@{sha2\_test\_buflen}!sha2.h@{sha2.h}}
+\doxysubsubsection{\texorpdfstring{sha2\_test\_buflen}{sha2\_test\_buflen}}
+{\footnotesize\ttfamily const int sha2\+\_\+test\+\_\+buflen\mbox{[}3\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ 3,\ 56,\ 1000}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\Hypertarget{sha2_8h_afa197728c9129f32189da1adc1c054f9}\label{sha2_8h_afa197728c9129f32189da1adc1c054f9} 
+\index{sha2.h@{sha2.h}!sha2\_test\_sum@{sha2\_test\_sum}}
+\index{sha2\_test\_sum@{sha2\_test\_sum}!sha2.h@{sha2.h}}
+\doxysubsubsection{\texorpdfstring{sha2\_test\_sum}{sha2\_test\_sum}}
+{\footnotesize\ttfamily const unsigned char sha2\+\_\+test\+\_\+sum\mbox{[}6\mbox{]}\mbox{[}32\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+

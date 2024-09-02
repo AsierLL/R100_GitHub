@@ -1,0 +1,122 @@
+<map id="Power_Off" name="Power_Off">
+<area shape="rect" id="Node000001" title="controlled Power off the device" alt="" coords="5,512,86,539"/>
+<area shape="rect" id="Node000002" href="$thread__audio__entry_8c.html#a7bc63559c8d1198f7036bf7d08def712" title="Function that performs an operation with the message player." alt="" coords="165,56,279,83"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="45,511,53,428,69,305,95,183,112,134,132,100,149,85,152,89,136,103,117,136,100,184,75,306,58,429,51,512"/>
+<area shape="rect" id="Node000007" href="$thread__sys_mon__entry_8c.html#a0d2a806043e6e3322c75bb359f06500f" title="Determine if status led must be on." alt="" coords="134,664,310,691"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="64,537,195,652,192,656,60,541"/>
+<area shape="rect" id="Node000011" href="$sys_mon___battery_8c.html#ae8f3f32f49df7702f6405467130ce8fd" title="Function that report if the battery is DEMO or not." alt="" coords="1044,309,1204,336"/>
+<area shape="poly" id="edge31_Node000001_Node000011" title=" " alt="" coords="44,511,46,458,57,380,67,338,83,296,104,256,132,221,169,185,205,159,240,141,276,129,314,122,355,118,454,117,689,117,778,112,849,105,883,105,918,110,955,122,997,143,1039,175,1072,216,1097,258,1115,294,1110,296,1093,261,1068,219,1035,179,995,148,953,127,916,115,882,110,849,110,778,117,689,123,454,123,356,124,315,127,277,134,242,145,208,164,173,190,136,224,109,259,88,298,73,339,62,381,51,458,49,511"/>
+<area shape="rect" id="Node000037" href="$_d_b___episode_8c.html#ad9d862bce53be58f17e8d75fa3e8b15f" title="Writes an event in the episode block." alt="" coords="830,157,989,184"/>
+<area shape="poly" id="edge19_Node000001_Node000037" title=" " alt="" coords="45,511,49,466,62,402,73,367,88,332,108,300,132,271,154,255,182,240,254,216,342,198,440,185,643,170,814,167,814,172,643,176,441,190,343,203,255,221,184,245,156,259,136,275,112,303,93,335,78,368,68,403,55,467,50,512"/>
+<area shape="rect" id="Node000038" href="$thread__defibrillator__hal_8c.html#a6e81b634f93bb25286835f828f840c94" title="charge the main capacitor to a predefined value applying a hysteresis ..." alt="" coords="173,411,271,437"/>
+<area shape="poly" id="edge21_Node000001_Node000038" title=" " alt="" coords="69,509,183,443,185,448,72,514"/>
+<area shape="rect" id="Node000047" href="$thread__defibrillator__hal_8c.html#a51d3d1bc2120f01ddcb0ed702a23e913" title="Read the Vc value from the main capacitor." alt="" coords="171,1845,273,1872"/>
+<area shape="poly" id="edge27_Node000001_Node000047" title=" " alt="" coords="50,539,52,781,63,1192,73,1406,89,1598,109,1745,122,1795,136,1825,159,1843,155,1847,132,1828,117,1797,104,1746,83,1599,68,1407,57,1192,46,781,44,539"/>
+<area shape="rect" id="Node000048" href="$thread__sys_mon__entry_8c.html#aeeb458bcec8909373038cfd816e475db" title="Get electrodes signature." alt="" coords="823,259,996,285"/>
+<area shape="poly" id="edge28_Node000001_Node000048" title=" " alt="" coords="47,511,55,476,70,428,96,378,112,354,132,334,172,303,215,278,261,257,309,241,408,220,509,213,608,215,699,225,779,238,843,252,842,257,778,243,698,230,607,221,509,218,409,226,310,246,263,262,218,282,175,308,135,338,116,358,100,380,75,430,60,477,52,512"/>
+<area shape="rect" id="Node000049" href="$thread__audio__entry_8c.html#aacd507f5759e6725a70d4b30dc65bbf6" title="ask if the audio player is running" alt="" coords="161,1896,283,1923"/>
+<area shape="poly" id="edge30_Node000001_Node000049" title=" " alt="" coords="49,539,50,791,59,1221,70,1446,85,1646,107,1800,121,1851,136,1882,149,1894,146,1898,132,1886,116,1853,102,1801,80,1647,64,1446,54,1222,45,792,44,539"/>
+<area shape="rect" id="Node000050" href="$device__init_8c.html#a435ba18195f588c000fd0a5b0ecabb46" title="Write device and accessories (electrodes &amp; battery) info the NFC memory." alt="" coords="609,461,766,488"/>
+<area shape="poly" id="edge32_Node000001_Node000050" title=" " alt="" coords="51,510,81,457,104,425,132,397,188,354,236,328,289,310,357,295,413,282,458,273,502,276,553,295,577,309,597,326,633,367,659,409,677,446,673,448,655,412,628,370,594,330,573,313,551,300,501,281,458,279,414,287,359,300,290,316,238,333,191,359,135,401,108,428,85,459,55,513"/>
+<area shape="rect" id="Node000056" href="$_d_b___test_8c.html#a5fe6c18c1c2f842b420d557b7ab42887" title="Before power off the device, write the last time the decive has been used in the test." alt="" coords="134,1567,310,1593"/>
+<area shape="poly" id="edge38_Node000001_Node000056" title=" " alt="" coords="52,539,218,1551,213,1552,46,539"/>
+<area shape="rect" id="Node000060" href="$_trace_8c.html#a8947b81ae09bdb57459cd1c81c78ab37" title="Print a trace string inserting the time stamp." alt="" coords="661,1693,714,1720"/>
+<area shape="poly" id="edge70_Node000001_Node000060" title=" " alt="" coords="50,539,58,742,75,1080,87,1256,101,1414,118,1536,127,1578,136,1604,179,1673,201,1698,225,1718,282,1751,359,1780,412,1795,454,1799,498,1793,552,1780,580,1770,608,1757,655,1727,658,1732,611,1761,582,1775,553,1785,499,1799,454,1804,411,1800,357,1785,280,1756,222,1723,197,1702,175,1676,131,1606,121,1579,112,1537,96,1414,82,1256,69,1080,52,742,45,539"/>
+<area shape="rect" id="Node000063" href="$thread__sys_mon__entry_8c.html#a4f1d875d2e1ad5991d6ce2ba7c56af91" title="Power off the device programming an automatic power&#45;on." alt="" coords="167,993,277,1020"/>
+<area shape="poly" id="edge49_Node000001_Node000063" title=" " alt="" coords="54,538,213,978,208,979,49,540"/>
+<area shape="rect" id="Node000083" href="$thread__sys_mon__entry_8c.html#a6f3942cc79b24bc2c4b1aaa93e44351e" title="Program the auto test to be executed at least 1 hour after the last manual power off." alt="" coords="140,512,304,539"/>
+<area shape="poly" id="edge68_Node000001_Node000083" title=" " alt="" coords="86,523,124,523,124,528,86,528"/>
+<area shape="rect" id="Node000003" href="$thread__audio__entry_8c.html#a05b96411bbd2b24e86ae0cc21146b4cb" title="Function that loads and plays a message." alt="" coords="382,5,529,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="279,54,375,33,376,38,280,60"/>
+<area shape="rect" id="Node000005" href="$thread__audio__entry_8c.html#a2c1714b5b8e79621e3a35b0624309f63" title="Stops the audio engine in a predefined sequence." alt="" coords="388,56,523,83"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="280,67,372,67,372,72,280,72"/>
+<area shape="rect" id="Node000004" href="$thread__audio__entry_8c.html#a29f40d7e3dc151283bfb0e69dbd8b132" title="Get an audio frame from the audio file." alt="" coords="600,5,775,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="529,16,585,16,585,21,529,21"/>
+<area shape="rect" id="Node000006" href="$thread__audio__hal_8c.html#a5afdd4d24f2faf92baea80c7b0cedfdc" title="stops the audio reproduction" alt="" coords="643,56,732,83"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="523,67,628,67,628,72,523,72"/>
+<area shape="rect" id="Node000008" href="$sys_mon___battery_8c.html#a6a908c00382961d78f2da4ee84cb4263" title="Computes the remaining capacity in the battery." alt="" coords="840,537,979,564"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="310,671,426,664,552,649,664,629,774,599,861,568,862,573,775,604,665,635,553,655,426,669,311,677"/>
+<area shape="rect" id="Node000012" href="$sys_mon___battery_8c.html#ab90eec6eff79dd7fdd5142ab73af12d5" title="Initializes the battery i2c port to communicate with internals RTC and EEprom." alt="" coords="383,563,528,589"/>
+<area shape="poly" id="edge11_Node000007_Node000012" title=" " alt="" coords="242,661,293,630,357,599,376,592,378,597,359,604,296,635,245,666"/>
+<area shape="rect" id="Node000021" href="$thread__sys_mon__entry_8c.html#a09b3d44686a8345050669e3ae7c9e6c7" title="Check electrodes type." alt="" coords="358,765,552,792"/>
+<area shape="poly" id="edge13_Node000007_Node000021" title=" " alt="" coords="249,689,299,716,359,744,394,757,392,762,357,749,297,721,246,694"/>
+<area shape="rect" id="Node000035" href="$thread__sys_mon__entry_8c.html#a9c961ad97558f92f8f4d44373bca3702" title="Determine if an error requires a SAT service or not." alt="" coords="638,689,737,716"/>
+<area shape="poly" id="edge18_Node000007_Node000035" title=" " alt="" coords="311,688,358,693,500,700,623,701,623,706,500,705,358,699,310,694"/>
+<area shape="rect" id="Node000009" href="$sys_mon___battery_8c.html#af6e0839479117b02185cb5786de7d15b" title="Computes the difference time between two dates (in days) (date_1 &#45; date_2)" alt="" coords="1072,512,1176,539"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="979,540,1056,531,1057,536,980,545"/>
+<area shape="rect" id="Node000010" href="$device__init_8c.html#ac9272954c69640cbc76d2ea99e68bc43" title="Function for accessing NFC device info struct." alt="" coords="1051,563,1198,589"/>
+<area shape="poly" id="edge9_Node000008_Node000010" title=" " alt="" coords="980,556,1035,563,1034,568,979,562"/>
+<area shape="poly" id="edge10_Node000008_Node000011" title=" " alt="" coords="975,534,994,523,1036,483,1069,436,1094,389,1110,349,1115,352,1098,391,1073,438,1040,486,998,527,977,539"/>
+<area shape="rect" id="Node000013" href="$sys_mon___battery_8c.html#aa19967644b300db88bf94528f16a7e8e" title=" " alt="" coords="621,563,754,589"/>
+<area shape="poly" id="edge12_Node000012_Node000013" title=" " alt="" coords="528,573,606,573,606,579,528,579"/>
+<area shape="poly" id="edge16_Node000021_Node000011" title=" " alt="" coords="552,772,661,757,718,744,774,726,844,696,896,667,942,630,994,574,1022,532,1054,470,1109,349,1114,351,1059,472,1026,535,998,578,946,633,899,671,846,701,776,730,720,749,662,762,553,777"/>
+<area shape="rect" id="Node000022" href="$thread__sys_mon__entry_8c.html#aa0eafd2018eb10797d790d6b8bf98b95" title="Read the electrodes all data." alt="" coords="610,791,765,817"/>
+<area shape="poly" id="edge14_Node000021_Node000022" title=" " alt="" coords="553,787,595,791,595,797,552,792"/>
+<area shape="poly" id="edge17_Node000021_Node000035" title=" " alt="" coords="498,762,629,719,630,724,499,767"/>
+<area shape="rect" id="Node000033" href="$thread__sys_mon__entry_8c.html#aab815986ee52dfb7489873f856e3ecb9" title="Refresh the watchdog timer." alt="" coords="860,1221,959,1248"/>
+<area shape="poly" id="edge15_Node000022_Node000033" title=" " alt="" coords="698,817,897,1206,892,1209,694,819"/>
+<area shape="poly" id="edge20_Node000037_Node000011" title=" " alt="" coords="931,182,1093,298,1090,303,928,187"/>
+<area shape="rect" id="Node000039" href="$thread__defibrillator__hal_8c.html#ae0bcdc5c577816bcf7a730c82fa13d6a" title="start the charge process of the main cap" alt="" coords="621,512,754,539"/>
+<area shape="poly" id="edge22_Node000038_Node000039" title=" " alt="" coords="271,415,330,411,402,412,480,422,517,433,554,447,570,459,579,472,588,485,602,498,612,503,609,508,599,502,584,489,575,475,566,462,551,452,516,438,478,427,402,417,330,416,271,420"/>
+<area shape="rect" id="Node000044" href="$thread__defibrillator__hal_8c.html#ab375925948ca3cd49a4f463e009ed9da" title="start the complete discharge of the main cap" alt="" coords="380,360,530,387"/>
+<area shape="poly" id="edge24_Node000038_Node000044" title=" " alt="" coords="271,411,375,388,376,393,272,416"/>
+<area shape="rect" id="Node000046" href="$thread__defibrillator__hal_8c.html#ae8b16e9b9a65c0819957023d975c77a9" title="start the complete discharge of the main cap to 0V" alt="" coords="361,309,549,336"/>
+<area shape="poly" id="edge25_Node000038_Node000046" title=" " alt="" coords="242,408,293,377,357,346,376,339,378,344,359,350,296,382,245,412"/>
+<area shape="rect" id="Node000042" href="$device__init_8c.html#a2f7047dc1ce0a3687c48872ed81aff5f" title="Function for accessing device info variable." alt="" coords="398,461,512,488"/>
+<area shape="poly" id="edge26_Node000038_Node000042" title=" " alt="" coords="272,432,383,456,382,462,271,437"/>
+<area shape="poly" id="edge23_Node000039_Node000008" title=" " alt="" coords="755,530,825,538,824,544,754,536"/>
+<area shape="poly" id="edge29_Node000048_Node000011" title=" " alt="" coords="970,283,1050,303,1049,308,969,289"/>
+<area shape="poly" id="edge33_Node000050_Node000008" title=" " alt="" coords="743,486,776,498,824,523,842,530,840,535,822,528,774,502,741,491"/>
+<area shape="rect" id="Node000051" href="$sys_mon___battery_8c.html#a743a4c0921f5224970196cca7f4e0eb5" title="Get the battery information." alt="" coords="850,436,969,463"/>
+<area shape="poly" id="edge34_Node000050_Node000051" title=" " alt="" coords="766,463,835,455,835,460,767,468"/>
+<area shape="rect" id="Node000052" href="$thread__sys_mon__entry_8c.html#adce4182129c1b341756893a8c387e2b7" title="Get the electrodes data (sn, info and event register)" alt="" coords="837,1019,982,1045"/>
+<area shape="poly" id="edge35_Node000050_Node000052" title=" " alt="" coords="761,486,777,498,803,538,826,595,846,665,864,742,892,892,907,1003,902,1004,886,893,859,743,841,666,821,597,798,540,773,502,758,491"/>
+<area shape="rect" id="Node000053" href="$thread__sys_mon__entry_8c.html#a5d710674bd8ab574159b5f0d01d1d67f" title="Function that gets the non volatile data." alt="" coords="859,487,960,513"/>
+<area shape="poly" id="edge36_Node000050_Node000053" title=" " alt="" coords="767,481,843,490,843,495,766,486"/>
+<area shape="rect" id="Node000054" href="$device__init_8c.html#a20e74a2a8c6410c9013be9edd8a85408" title="Write device info in the NFC memory." alt="" coords="867,385,952,412"/>
+<area shape="poly" id="edge37_Node000050_Node000054" title=" " alt="" coords="722,458,822,421,851,412,853,417,824,427,724,463"/>
+<area shape="poly" id="edge39_Node000056_Node000008" title=" " alt="" coords="240,1564,527,1345,687,1215,743,1164,772,1132,794,1085,815,1020,853,858,883,695,901,579,907,580,888,696,858,859,820,1021,799,1087,777,1135,747,1168,691,1219,531,1349,243,1569"/>
+<area shape="poly" id="edge40_Node000056_Node000052" title=" " alt="" coords="257,1564,357,1527,413,1513,458,1506,501,1495,551,1470,613,1423,670,1369,723,1310,770,1250,845,1139,892,1058,896,1060,850,1142,774,1253,727,1314,674,1372,616,1427,554,1474,503,1500,460,1511,414,1518,359,1532,259,1569"/>
+<area shape="rect" id="Node000057" href="$_d_b___test_8c.html#a7ec87003cf7b1f13d7f71af99cbfe1f6" title="Fill a string with a generic date." alt="" coords="393,1592,517,1619"/>
+<area shape="poly" id="edge41_Node000056_Node000057" title=" " alt="" coords="310,1587,378,1594,377,1600,309,1592"/>
+<area shape="rect" id="Node000058" href="$_d_b___test_8c.html#ab7a2e6fc6e6d920610d4939bd63e4300" title="Fill a string with a generic Time." alt="" coords="393,1643,518,1669"/>
+<area shape="poly" id="edge42_Node000056_Node000058" title=" " alt="" coords="258,1591,359,1628,384,1636,382,1641,357,1633,256,1596"/>
+<area shape="rect" id="Node000059" href="$_d_b___test_8c.html#ad64eda05c1c2ef1238c8d43a8995835d" title="Fill the string number to create a Json entry (using 3 tabs)" alt="" coords="392,1693,519,1720"/>
+<area shape="poly" id="edge43_Node000056_Node000059" title=" " alt="" coords="239,1592,290,1635,323,1659,359,1679,378,1687,376,1692,357,1684,321,1663,287,1639,236,1596"/>
+<area shape="rect" id="Node000061" href="$_d_b___test_8c.html#a121e39406fe7a111a315ee29c5aa822a" title="Fill the string number to create a Json entry (using 3 tabs)" alt="" coords="390,1744,521,1771"/>
+<area shape="poly" id="edge45_Node000056_Node000061" title=" " alt="" coords="234,1592,281,1659,317,1697,359,1730,376,1738,374,1743,357,1734,314,1701,277,1662,229,1595"/>
+<area shape="rect" id="Node000062" href="$_d_b___test_8c.html#a3771da54aaa27e44ade7955f1042a35e" title="Fill the string to create a Json entry (using 3 tabs)" alt="" coords="395,1541,515,1568"/>
+<area shape="poly" id="edge47_Node000056_Node000062" title=" " alt="" coords="309,1568,379,1560,380,1565,310,1573"/>
+<area shape="poly" id="edge44_Node000059_Node000060" title=" " alt="" coords="519,1704,645,1704,645,1709,519,1709"/>
+<area shape="poly" id="edge46_Node000061_Node000060" title=" " alt="" coords="519,1741,645,1713,647,1718,520,1746"/>
+<area shape="poly" id="edge48_Node000062_Node000060" title=" " alt="" coords="517,1563,554,1578,588,1601,620,1628,668,1679,664,1683,616,1631,585,1605,551,1582,515,1568"/>
+<area shape="poly" id="edge58_Node000063_Node000011" title=" " alt="" coords="228,992,246,961,275,922,312,883,357,852,416,830,468,821,516,821,562,828,609,835,658,840,712,839,774,827,844,808,899,791,923,779,946,762,970,741,994,712,1011,685,1022,660,1028,612,1029,561,1033,532,1041,499,1074,416,1106,349,1111,351,1079,418,1047,501,1038,533,1035,562,1033,613,1027,661,1016,687,998,715,973,744,950,767,926,783,901,796,846,814,775,832,713,844,658,846,608,840,561,833,516,827,469,826,417,835,359,857,315,887,279,925,251,964,233,994"/>
+<area shape="poly" id="edge52_Node000063_Node000021" title=" " alt="" coords="226,992,244,956,271,906,309,854,356,809,378,796,380,801,360,813,313,858,276,909,248,958,231,994"/>
+<area shape="poly" id="edge63_Node000063_Node000033" title=" " alt="" coords="230,1019,245,1059,271,1111,309,1165,333,1188,359,1207,398,1222,451,1232,584,1241,726,1241,844,1236,844,1241,726,1246,584,1247,450,1237,396,1227,357,1212,329,1192,305,1169,266,1114,240,1061,225,1021"/>
+<area shape="poly" id="edge55_Node000063_Node000042" title=" " alt="" coords="225,992,296,746,356,549,383,518,415,494,418,499,387,522,360,552,301,748,230,994"/>
+<area shape="poly" id="edge67_Node000063_Node000060" title=" " alt="" coords="228,1020,239,1081,263,1175,281,1228,303,1282,329,1334,360,1382,384,1410,406,1430,452,1458,500,1484,526,1503,554,1527,590,1566,622,1607,672,1678,667,1681,618,1611,586,1570,550,1531,523,1507,497,1489,449,1463,403,1435,380,1414,356,1386,324,1337,298,1284,276,1230,258,1176,234,1082,223,1021"/>
+<area shape="rect" id="Node000064" href="$sys_mon___battery_8c.html#aacda44f15717d41d0e57207ef9f7d766" title="Write the battery statistics." alt="" coords="374,1171,537,1197"/>
+<area shape="poly" id="edge50_Node000063_Node000064" title=" " alt="" coords="234,1019,281,1085,317,1124,359,1156,370,1162,367,1167,357,1161,314,1128,277,1089,229,1022"/>
+<area shape="rect" id="Node000070" href="$sys_mon___battery_8c.html#ac64859eb7511e20eff22aae21d9594be" title="Write the battery statistics." alt="" coords="374,1272,537,1315"/>
+<area shape="poly" id="edge51_Node000063_Node000070" title=" " alt="" coords="230,1020,245,1064,271,1125,309,1192,333,1223,360,1251,373,1262,370,1266,356,1255,329,1227,305,1195,266,1128,240,1065,225,1021"/>
+<area shape="rect" id="Node000072" href="$_comm_8c.html#aceced6fe6160f18c11e8d0ea46cfe881" title="Send a string through the UART." alt="" coords="392,1120,519,1147"/>
+<area shape="poly" id="edge53_Node000063_Node000072" title=" " alt="" coords="241,1018,292,1058,359,1099,390,1112,388,1117,357,1104,289,1062,238,1023"/>
+<area shape="rect" id="Node000073" href="$thread__sys_mon__entry_8c.html#a33ca5a33ab10af89dcb290e9d052b724" title="Function that report if the devioce is in test mode montador or not." alt="" coords="606,1095,769,1121"/>
+<area shape="poly" id="edge59_Node000063_Node000073" title=" " alt="" coords="256,1018,304,1037,359,1055,479,1080,591,1096,590,1101,478,1085,357,1060,302,1042,254,1023"/>
+<area shape="rect" id="Node000074" href="$sys_mon___battery_8c.html#ad8fb2c1b917c628a847b4d7774462498" title="Increment the number of running time." alt="" coords="383,968,527,995"/>
+<area shape="poly" id="edge56_Node000063_Node000074" title=" " alt="" coords="277,998,367,988,368,993,278,1003"/>
+<area shape="rect" id="Node000075" href="$sys_mon___battery_8c.html#a3b4e8cdc5b59f991841d44e36105e40a" title="Increment the number of Vc test charges." alt="" coords="396,1019,514,1045"/>
+<area shape="poly" id="edge57_Node000063_Node000075" title=" " alt="" coords="278,1010,381,1021,380,1027,277,1015"/>
+<area shape="rect" id="Node000076" href="$thread__sys_mon__entry_8c.html#ae158ddc17edc766e6adc7f0c1988f2b9" title="Function that updates the test id and saves it to data flash memory." alt="" coords="400,867,511,893"/>
+<area shape="poly" id="edge60_Node000063_Node000076" title=" " alt="" coords="236,991,287,948,321,924,357,903,384,892,386,897,359,908,323,928,290,952,239,995"/>
+<area shape="rect" id="Node000079" href="$thread__sys_mon__entry_8c.html#aea83c8517300aa0759f0088c0f2dfa2f" title="Pass time doing nothing, but refreshing the watchdog !!!" alt="" coords="639,1541,736,1568"/>
+<area shape="poly" id="edge61_Node000063_Node000079" title=" " alt="" coords="227,1020,237,1076,260,1159,277,1204,299,1248,327,1289,360,1325,384,1342,407,1351,453,1356,500,1360,526,1367,554,1382,593,1415,627,1454,674,1526,670,1529,623,1457,590,1419,551,1386,524,1372,500,1365,452,1362,406,1356,381,1347,356,1329,322,1292,295,1250,272,1206,255,1160,232,1078,222,1021"/>
+<area shape="rect" id="Node000080" href="$_r_t_c_8c.html#a4b5714f714efa3b70be5422bdb55c4b7" title="program the wakeup time in the internal RTC and kill the processor" alt="" coords="394,917,516,944"/>
+<area shape="poly" id="edge64_Node000063_Node000080" title=" " alt="" coords="256,990,357,953,382,946,384,951,359,959,258,995"/>
+<area shape="rect" id="Node000081" href="$thread__sys_mon__entry_8c.html#ae9c7d0baccca3c88a832853738fd85f3" title="Save data before power off." alt="" coords="380,613,530,640"/>
+<area shape="poly" id="edge65_Node000063_Node000081" title=" " alt="" coords="227,992,277,890,314,821,356,752,394,697,430,651,435,654,399,700,360,755,319,824,282,893,232,994"/>
+<area shape="poly" id="edge54_Node000072_Node000073" title=" " alt="" coords="519,1124,590,1116,591,1121,520,1129"/>
+<area shape="poly" id="edge62_Node000079_Node000033" title=" " alt="" coords="736,1542,755,1533,773,1521,800,1491,824,1458,861,1386,886,1317,900,1263,905,1264,891,1318,866,1388,828,1461,804,1495,776,1525,758,1538,738,1547"/>
+<area shape="poly" id="edge66_Node000081_Node000050" title=" " alt="" coords="530,612,551,599,562,588,568,576,574,550,580,524,587,511,599,498,603,494,607,498,602,502,591,514,585,526,579,551,573,578,566,591,554,603,532,616"/>
+<area shape="poly" id="edge69_Node000083_Node000013" title=" " alt="" coords="304,526,422,534,553,548,607,557,606,562,552,553,421,540,304,532"/>
+</map>

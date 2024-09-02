@@ -1,0 +1,365 @@
+\doxysection{device\+\_\+init.\+h}
+\hypertarget{device__init_8h_source}{}\label{device__init_8h_source}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/device\_init.h@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/device\_init.h}}
+\mbox{\hyperlink{device__init_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Name\ \ \ \ \ \ :\ R100\_S3A7\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ :\ Osatu\ S.\ Coop\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Compiler\ \ :\ GNU\ ARM\ Embedded\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ Target\ \ \ \ :\ Reanibex\ Serie\ 100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ ******************************************************************************/}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#ifndef\ DEVICE\_INIT\_H\_}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#define\ DEVICE\_INIT\_H\_}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ **\ Includes}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{types__basic_8h}{types\_basic.h}}"{}}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **\ Defines}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ RSC\_NAME\_SZ\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 16\ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{comment}{//\ Application\ revision\ code}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#define\ APP\_REV\_CODE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x30323130\ \ }}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#define\ NFC\_REV\_CODE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x30323031\ \ }}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#define\ \ \ \ \ FNAME\_VERSION\ \ \ \ \ \ \ \ \ \ \ "{}version.info"{}\ \ \ \ \ \ }}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#define\ \ \ \ \ UPGRADE\_FILENAME\ \ \ \ \ \ \ \ "{}firmware.srec"{}\ \ \ \ \ }}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#define\ \ \ \ \ GOLDEN\_FILENAME\ \ \ \ \ \ \ \ \ "{}golden.srec"{}\ \ \ \ \ \ \ }}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#define\ \ \ \ \ CFG\_FILENAME\ \ \ \ \ \ \ \ \ \ \ \ "{}R100.cfg"{}\ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#define\ \ \ \ \ USB\_FILENAME\ \ \ \ \ \ \ \ \ \ \ \ "{}USB.cfg"{}\ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#define\ \ \ \ \ WIFI\_FILENAME\ \ \ \ \ \ \ \ \ \ \ "{}wifi.dat"{}\ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#define\ \ \ \ \ WIFI\_FILENAME\_PLAIN\ \ \ \ \ "{}wifi.plain"{}\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#define\ \ \ \ \ FNAME\_DATE\ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}fw\_date.info"{}\ \ \ \ \ \ }}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#define\ \ \ \ \ UPDATE\_REG\ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}update\_reg.log"{}\ \ \ \ }}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ ENABLE\_OPT\_ACCEL\ \ \ \ \ \ \ \ \ \ \ \ 0x08\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#define\ ENABLE\_OPT\_WIFI\ \ \ \ \ \ \ \ \ \ \ \ \ 0x04\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#define\ ENABLE\_OPT\_SIGFOX\ \ \ \ \ \ \ \ \ \ \ 0x02\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#define\ ENABLE\_OPT\_GPS\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x01\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#define\ NFC\_BYTES\_PER\_PAGE\ \ \ \ \ \ \ \ \ \ 16\ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#define\ NFC\_LOCKING\_BLOCK\ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#define\ NFC\_DEVICE\_ID\_BLOCK\ \ \ \ \ \ \ \ \ \ 1\ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#define\ NFC\_DEVICE\_INFO\_BLOCK\ \ \ \ \ \ \ \ 4\ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#define\ NFC\_DEVICE\_SETTINGS\_BLOCK\ \ \ 11\ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#define\ NFC\_DEVICE\_COMM\_BLOCK\ \ \ \ \ \ \ 15\ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#define\ NFC\_DEVICE\_COMM\_KEY\ \ \ \ \ \ \ \ \ 31\ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#define\ MAX\_RCP\_TIME\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 180\ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#define\ MAX\_ENERGY\_A\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 200\ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#define\ MAX\_ENERGY\_P\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 100\ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#define\ MAX\_CONSEC\_SHOCKS\ \ \ \ \ \ \ \ \ \ \ 4\ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#define\ MAX\_ASYSTOLE\_TIME\ \ \ \ \ \ \ \ \ \ \ 60\ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#define\ MIN\_ENERGY\_A\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 150\ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#define\ MIN\_ENERGY\_P\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 50\ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#define\ MAX\_AUD\_VOLUME\ \ \ \ \ \ \ \ \ \ \ \ \ \ 8\ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00078\ \textcolor{comment}{\ **\ Typedefs}}
+\DoxyCodeLine{00079\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00082\ \ \ \ \ \mbox{\hyperlink{device__init_8h_a36b691401b5e467e859b941dc4ab7c5aacf5c0a526dec6bf4264c6dc307153359}{DEVELOP\_DISABLE}}\ =\ 0,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00083\ \ \ \ \ \mbox{\hyperlink{device__init_8h_a36b691401b5e467e859b941dc4ab7c5aa67fc50347776b9a7688cce1e70e4e968}{DEVELOP\_TEST\_2500\_eSHOCK}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00084\ \ \ \ \ \mbox{\hyperlink{device__init_8h_a36b691401b5e467e859b941dc4ab7c5aa9d5a1fa168531a2f0030f56e3de10ae2}{DEVELOP\_TEST\_500\_iSHOCK}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00085\ \ \ \ \ \mbox{\hyperlink{device__init_8h_a36b691401b5e467e859b941dc4ab7c5aa940d258748d16bad3f4be7141e5a2f27}{DEVELOP\_FORCE\_SHOCKABLE}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00086\ \ \ \ \ \mbox{\hyperlink{device__init_8h_a36b691401b5e467e859b941dc4ab7c5aa78472a84685a02c99d4864595b49ff2f}{DEVELOP\_TEST\_RELAY}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00087\ \ \ \ \ \mbox{\hyperlink{device__init_8h_a36b691401b5e467e859b941dc4ab7c5aa9aca54de6042cc6b2f05a66b7a6afd18}{DEVELOP\_ZP\_CALIBRATION}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00088\ \ \ \ \ \mbox{\hyperlink{device__init_8h_a36b691401b5e467e859b941dc4ab7c5aa15869c101bcf1404b4321af95d5a23bc}{DEVELOP\_SAVE\_GPS\_POSITION}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00089\ \ \ \ \ \mbox{\hyperlink{device__init_8h_a36b691401b5e467e859b941dc4ab7c5aa0464ceccf28bd055138cca8899b78eeb}{DEVELOP\_MANUFACTURE\_CONTROL}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00090\ \ \ \ \ \mbox{\hyperlink{device__init_8h_a36b691401b5e467e859b941dc4ab7c5aaaeb4b1851cfc651c46caf84e33c264c8}{DEVELOP\_DELETE\_ERRORS}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00091\ \ \ \ \ \mbox{\hyperlink{device__init_8h_a36b691401b5e467e859b941dc4ab7c5aacc2882b245d2dec4849aa0c0f97589cd}{DEVELOP\_ATECC}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00092\ \}\ \mbox{\hyperlink{device__init_8h_a36b691401b5e467e859b941dc4ab7c5a}{DEVELOP\_OPERATIONS\_t}};}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00095\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00096\ \{}
+\DoxyCodeLine{00097\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ \mbox{\hyperlink{struct_d_e_v_i_c_e___d_a_t_e__t_a3e75a759d9ceb0a26e5e2de15abbcc97}{year}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00098\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ \mbox{\hyperlink{struct_d_e_v_i_c_e___d_a_t_e__t_a6917ad6e9b7b94d0f9bcc8bbca3756c6}{month}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00099\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ \mbox{\hyperlink{struct_d_e_v_i_c_e___d_a_t_e__t_a4665574b56665c7dd91db51c140b7419}{date}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00100\ \}\ \mbox{\hyperlink{struct_d_e_v_i_c_e___d_a_t_e__t}{DEVICE\_DATE\_t}};}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00103\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00104\ \{}
+\DoxyCodeLine{00105\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ \mbox{\hyperlink{struct_d_e_v_i_c_e___t_i_m_e__t_a6fd43bdde5c615d0a36ebfe5242f4f1f}{hour}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00106\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ \mbox{\hyperlink{struct_d_e_v_i_c_e___t_i_m_e__t_a3f447b05b10f616307a5107373916ebb}{min}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00107\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ \mbox{\hyperlink{struct_d_e_v_i_c_e___t_i_m_e__t_a1fca75d9bd6de951307c2cc74f54a68b}{sec}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00108\ \}\ \mbox{\hyperlink{struct_d_e_v_i_c_e___t_i_m_e__t}{DEVICE\_TIME\_t}};}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00111\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00112\ \{}
+\DoxyCodeLine{00113\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a40bb5262bf908c328fbcfbe5d29d0201}{char\_t}}\ \ \ \ \ \ \ \ \ \ model\ \ \ \ \ \ \ \ \ \ \ \ [\mbox{\hyperlink{device__init_8h_a633ded5bcc6018dd045e1ef28d7ad7c9}{RSC\_NAME\_SZ}}];\ \ \ \ \ }
+\DoxyCodeLine{00114\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a40bb5262bf908c328fbcfbe5d29d0201}{char\_t}}\ \ \ \ \ \ \ \ \ \ sn\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\mbox{\hyperlink{device__init_8h_a633ded5bcc6018dd045e1ef28d7ad7c9}{RSC\_NAME\_SZ}}];\ \ \ \ \ }
+\DoxyCodeLine{00115\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a40bb5262bf908c328fbcfbe5d29d0201}{char\_t}}\ \ \ \ \ \ \ \ \ \ manufacture\_date\ [\mbox{\hyperlink{device__init_8h_a633ded5bcc6018dd045e1ef28d7ad7c9}{RSC\_NAME\_SZ}}];\ \ \ \ \ }
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keyword}{union}}
+\DoxyCodeLine{00118\ \ \ \ \ \{}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \mbox{\hyperlink{struct_d_e_v_i_c_e___i_n_f_o__t_a1f158b49c3381eee04dfc471c39abcf7}{device\_options}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \mbox{\hyperlink{struct_d_e_v_i_c_e___i_n_f_o__t_a6ac0972860ed484fa71ffa9906328be4}{gps}}\ \ \ \ \ \ \ \ \ \ \ \ :1;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \mbox{\hyperlink{struct_d_e_v_i_c_e___i_n_f_o__t_a25fbae21dc3217745fa1fee98d8c8b30}{sigfox}}\ \ \ \ \ \ \ \ \ :1;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \mbox{\hyperlink{struct_d_e_v_i_c_e___i_n_f_o__t_a94924a2bbf4c95ec3665916e3ab5b63e}{wifi}}\ \ \ \ \ \ \ \ \ \ \ :1;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \mbox{\hyperlink{struct_d_e_v_i_c_e___i_n_f_o__t_a9de2cc8844769808a30dd3b52fc1be30}{accelerometer}}\ \ :1;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \mbox{\hyperlink{struct_d_e_v_i_c_e___i_n_f_o__t_ac09130c909fdeca59783161616733079}{reserved}}\ \ \ \ \ \ \ :3;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \mbox{\hyperlink{struct_d_e_v_i_c_e___i_n_f_o__t_a9ff97979d99d20786640fc7212b708f2}{aed\_fully\_auto}}\ :1;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \}\ enable\_b;\ }
+\DoxyCodeLine{00129\ \ \ \ \ \};}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_d_e_v_i_c_e___i_n_f_o__t_a8d7b1c1a3b284e345f41533a2578ece3}{zp\_adcs\_short}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00132\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_d_e_v_i_c_e___i_n_f_o__t_a3dfc88820843ce8fe23d6a5aa42d19e6}{zp\_adcs\_calibration}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00133\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_d_e_v_i_c_e___i_n_f_o__t_a58de6a1c924654e889cfb81a5253f67a}{develop\_mode}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00134\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_d_e_v_i_c_e___i_n_f_o__t_a3ee1f3e74956e2e6bf985dda831d2944}{align\_2}};}
+\DoxyCodeLine{00135\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_d_e_v_i_c_e___i_n_f_o__t_a1296beaec47e59efee75d68a43ed9716}{checksum}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00136\ \}\ \mbox{\hyperlink{struct_d_e_v_i_c_e___i_n_f_o__t}{DEVICE\_INFO\_t}};}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00139\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00140\ \{}
+\DoxyCodeLine{00141\ \ \ \ \ \textcolor{comment}{//\ Configuration\ -\/\ AED}}
+\DoxyCodeLine{00142\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \mbox{\hyperlink{struct_a_e_d___s_e_t_t_i_n_g_s__t_a55d0cf3daaba1110c0b0cde4ee25c60c}{aed\_aCPR\_init}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00143\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \mbox{\hyperlink{struct_a_e_d___s_e_t_t_i_n_g_s__t_a2b8c264faf5f68fe7a9f11797c996887}{aed\_aCPR\_1}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00144\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \mbox{\hyperlink{struct_a_e_d___s_e_t_t_i_n_g_s__t_abf8524b6821f949b226657a03d3317a1}{aed\_aCPR\_2}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00145\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \mbox{\hyperlink{struct_a_e_d___s_e_t_t_i_n_g_s__t_ac843c3b79a5128af899c187c66ad581d}{aed\_pCPR\_init}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00146\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \mbox{\hyperlink{struct_a_e_d___s_e_t_t_i_n_g_s__t_a9d0c7e80f82f48a4d8447e52e58d7f6f}{aed\_pCPR\_1}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00147\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \mbox{\hyperlink{struct_a_e_d___s_e_t_t_i_n_g_s__t_a7e2a24fcfb117789164bfc6591130e2e}{aed\_pCPR\_2}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00148\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \mbox{\hyperlink{struct_a_e_d___s_e_t_t_i_n_g_s__t_a9ee9026d7516044fb22bce381f327bf7}{aed\_cpr\_msg\_long}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00149\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \mbox{\hyperlink{struct_a_e_d___s_e_t_t_i_n_g_s__t_a701c9d38bea3aef3632451a7fbfd53b8}{aed\_analysis\_cpr}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00150\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \mbox{\hyperlink{struct_a_e_d___s_e_t_t_i_n_g_s__t_a500e48b14745c701153026876142d65d}{aed\_asys\_detect}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00151\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \mbox{\hyperlink{struct_a_e_d___s_e_t_t_i_n_g_s__t_af1768aa6de38f8e09625bc4e47b47e86}{aed\_asys\_time}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00152\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \mbox{\hyperlink{struct_a_e_d___s_e_t_t_i_n_g_s__t_a6943abb7e4e491b992f2eed9ee102eec}{aed\_metronome\_en}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00153\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \mbox{\hyperlink{struct_a_e_d___s_e_t_t_i_n_g_s__t_a2c8bf8b6c9285ce72256d7049efbd2e0}{aed\_feedback\_en}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00154\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \mbox{\hyperlink{struct_a_e_d___s_e_t_t_i_n_g_s__t_adf1c72061faa25ea501a7749ed35c9bc}{aed\_consec\_shocks}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00155\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \mbox{\hyperlink{struct_a_e_d___s_e_t_t_i_n_g_s__t_abd5ba4452d8fbf02e415c91fc0897a9d}{aed\_energy\_shock1\_a}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00156\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \mbox{\hyperlink{struct_a_e_d___s_e_t_t_i_n_g_s__t_ad12d74137f9377090a28a9450bf3205a}{aed\_energy\_shock2\_a}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00157\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \mbox{\hyperlink{struct_a_e_d___s_e_t_t_i_n_g_s__t_a00884eea8ee1588d866840fbad934691}{aed\_energy\_shock3\_a}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00158\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \mbox{\hyperlink{struct_a_e_d___s_e_t_t_i_n_g_s__t_ae802ae673299bbe6b52dada0eb15524d}{aed\_metronome\_ratio\_a}};\ \ \ \ \ \ }
+\DoxyCodeLine{00159\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \mbox{\hyperlink{struct_a_e_d___s_e_t_t_i_n_g_s__t_abc8cf8e3dc9b885b10e605b22c87b257}{aed\_energy\_shock1\_p}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00160\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \mbox{\hyperlink{struct_a_e_d___s_e_t_t_i_n_g_s__t_a6050ee6eb4dbdfbf07337abe00f8fb30}{aed\_energy\_shock2\_p}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00161\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \mbox{\hyperlink{struct_a_e_d___s_e_t_t_i_n_g_s__t_ada4eed5378f864fe947003a2420c2910}{aed\_energy\_shock3\_p}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00162\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \mbox{\hyperlink{struct_a_e_d___s_e_t_t_i_n_g_s__t_a4893e549bb7c4c27399040b44d5986e1}{aed\_metronome\_ratio\_p}};\ \ \ \ \ \ }
+\DoxyCodeLine{00163\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \mbox{\hyperlink{struct_a_e_d___s_e_t_t_i_n_g_s__t_a526972e1d3a2c9c3a98afd913ce803da}{aed\_metronome\_rate}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00164\ \}\ \mbox{\hyperlink{struct_a_e_d___s_e_t_t_i_n_g_s__t}{AED\_SETTINGS\_t}};}
+\DoxyCodeLine{00165\ }
+\DoxyCodeLine{00167\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00168\ \{}
+\DoxyCodeLine{00169\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \mbox{\hyperlink{struct_m_i_s_c___s_e_t_t_i_n_g_s__t_af1899aeaa36435f873e112d72400beab}{glo\_filter}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00170\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ \mbox{\hyperlink{struct_m_i_s_c___s_e_t_t_i_n_g_s__t_a92a7ff21d0dcd426915d4293cff6958f}{glo\_auto\_test\_hour}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00171\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ \mbox{\hyperlink{struct_m_i_s_c___s_e_t_t_i_n_g_s__t_a5d35af866a4c576385c8838bd461685c}{glo\_auto\_test\_min}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00172\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \mbox{\hyperlink{struct_m_i_s_c___s_e_t_t_i_n_g_s__t_a5a10c61c067f368804639c6ce5438a32}{glo\_patient\_adult}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00173\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \mbox{\hyperlink{struct_m_i_s_c___s_e_t_t_i_n_g_s__t_a0018e27815bffb2867f47b506241f58c}{glo\_language}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00174\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \mbox{\hyperlink{struct_m_i_s_c___s_e_t_t_i_n_g_s__t_a814de73fc0d66c26aeb2651322661a9e}{glo\_volume}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00175\ \ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a269259c924dce846340ddbb810db2e3c}{int16\_t}}\ \ \ \ \mbox{\hyperlink{struct_m_i_s_c___s_e_t_t_i_n_g_s__t_a1ec21b1e0c067e39b768df1af6ce4b58}{glo\_utc\_time}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00176\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \mbox{\hyperlink{struct_m_i_s_c___s_e_t_t_i_n_g_s__t_ac1c2448c374f874f4196e2ed8beab2e1}{glo\_ecg\_format}};\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00177\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \mbox{\hyperlink{struct_m_i_s_c___s_e_t_t_i_n_g_s__t_ac4c89f53a44809bb7272c6db65d85369}{glo\_demo\_mode}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00178\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \mbox{\hyperlink{struct_m_i_s_c___s_e_t_t_i_n_g_s__t_af9dd18660039f5b20f9de5a41936be3d}{glo\_patient\_alert}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00179\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \mbox{\hyperlink{struct_m_i_s_c___s_e_t_t_i_n_g_s__t_a509caa9d192149ec87ba64d604aa0516}{glo\_movement\_alert}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00180\ \ \ \ \ \textcolor{keyword}{union}}
+\DoxyCodeLine{00181\ \ \ \ \ \{}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \mbox{\hyperlink{struct_m_i_s_c___s_e_t_t_i_n_g_s__t_a0d94511bd28cc5fa8675aef09da23221}{glo\_transmis\_mode}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \mbox{\hyperlink{struct_m_i_s_c___s_e_t_t_i_n_g_s__t_a52c5b13007bd95e7442394b6baa6d848}{sigfox\_only}}\ \ \ \ :1;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \mbox{\hyperlink{struct_m_i_s_c___s_e_t_t_i_n_g_s__t_aa6d629ff5b5bb45cebf10736fdd56477}{sigfox\_pri}}\ \ \ \ \ :1;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \mbox{\hyperlink{struct_m_i_s_c___s_e_t_t_i_n_g_s__t_a76b269c5a5607f584890cdc2d608eaf0}{wifi\_only}}\ \ \ \ \ \ :1;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \mbox{\hyperlink{struct_m_i_s_c___s_e_t_t_i_n_g_s__t_a12fac67a33fcb1243334b7d962e87808}{wifi\_pri}}\ \ \ \ \ \ \ :1;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \mbox{\hyperlink{struct_m_i_s_c___s_e_t_t_i_n_g_s__t_a1c729f00ccf15eae868c0488aa4a00c4}{gps}}\ \ \ \ \ \ \ \ \ \ \ \ :1;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \mbox{\hyperlink{struct_m_i_s_c___s_e_t_t_i_n_g_s__t_a5ff5a51078f92784802562a1dc1398cc}{wifi\_1\_day}}\ \ \ \ \ :1;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \mbox{\hyperlink{struct_m_i_s_c___s_e_t_t_i_n_g_s__t_a6d8359fc48c4830aa284e4a5287f6fb8}{wifi\_7\_day}}\ \ \ \ \ :1;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \mbox{\hyperlink{struct_m_i_s_c___s_e_t_t_i_n_g_s__t_ab1b1829c41f2cf9252ca10cd93763b91}{wifi\_30\_day}}\ \ \ \ :1;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \mbox{\hyperlink{struct_m_i_s_c___s_e_t_t_i_n_g_s__t_a35eaa09309f083f0d41e26241847eece}{reserve}}\ \ \ \ \ \ \ \ :8;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \}\ alert\_options;\ }
+\DoxyCodeLine{00195\ \ \ \ \ \};}
+\DoxyCodeLine{00196\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \mbox{\hyperlink{struct_m_i_s_c___s_e_t_t_i_n_g_s__t_a07485cb72a57058b3aeddc40474bf1e6}{glo\_warning\_alert}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00197\ \}\ \mbox{\hyperlink{struct_m_i_s_c___s_e_t_t_i_n_g_s__t}{MISC\_SETTINGS\_t}};}
+\DoxyCodeLine{00198\ }
+\DoxyCodeLine{00200\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00201\ \{}
+\DoxyCodeLine{00202\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \mbox{\hyperlink{struct_c_o_m_m___s_e_t_t_i_n_g_s__t_a4f0d65dd80797b6f07de89a7609b1e70}{wpa\_eap\_enabled}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00203\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \mbox{\hyperlink{struct_c_o_m_m___s_e_t_t_i_n_g_s__t_aaa0f1b428c84126d999e95eff8bc42ed}{advs}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00204\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ wlan\_ssid\ [32];\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00205\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ wlan\_pass\ [32];\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00206\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ router\_pass\_key\ [32];\ \ \ \ \ \ \ }
+\DoxyCodeLine{00207\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ eap\_cnf\ [32];\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00208\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ eap\_pass\ [32];\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00209\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ ip[16];\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00210\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ mask[16];\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00211\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ gateway[16];\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00212\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ pdns[16];\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00213\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ sdns[16];\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00214\ \}\ \mbox{\hyperlink{struct_c_o_m_m___s_e_t_t_i_n_g_s__t}{COMM\_SETTINGS\_t}};}
+\DoxyCodeLine{00215\ }
+\DoxyCodeLine{00217\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00218\ \{}
+\DoxyCodeLine{00219\ \ \ \ \ \mbox{\hyperlink{struct_a_e_d___s_e_t_t_i_n_g_s__t}{AED\_SETTINGS\_t}}\ \ \mbox{\hyperlink{struct_d_e_v_i_c_e___s_e_t_t_i_n_g_s__t_a32003d7c0abc33eaf02c822cf66ee1f7}{aed}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00220\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ \ \ \ \ align\_1[2];\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00221\ \ \ \ \ \mbox{\hyperlink{struct_m_i_s_c___s_e_t_t_i_n_g_s__t}{MISC\_SETTINGS\_t}}\ \mbox{\hyperlink{struct_d_e_v_i_c_e___s_e_t_t_i_n_g_s__t_ae6001fcde624e56ea15632bdaab656bc}{misc}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00222\ \ \ \ \ \mbox{\hyperlink{struct_c_o_m_m___s_e_t_t_i_n_g_s__t}{COMM\_SETTINGS\_t}}\ \mbox{\hyperlink{struct_d_e_v_i_c_e___s_e_t_t_i_n_g_s__t_a772401d99cdfa3cecf1a45998433d5cc}{comm}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00223\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_d_e_v_i_c_e___s_e_t_t_i_n_g_s__t_adef1bf843e396eece4e0c012676fc16e}{align\_2}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00224\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_d_e_v_i_c_e___s_e_t_t_i_n_g_s__t_aaa0bec8153b99d1f51e59582de669f0a}{checksum}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00225\ \}\ \mbox{\hyperlink{struct_d_e_v_i_c_e___s_e_t_t_i_n_g_s__t}{DEVICE\_SETTINGS\_t}};}
+\DoxyCodeLine{00226\ }
+\DoxyCodeLine{00228\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00229\ \{}
+\DoxyCodeLine{00230\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \mbox{\hyperlink{struct_n_f_c___s_e_t_t_i_n_g_s__t_a17554b0ef58d043d27c8a81e12ea0231}{aCPR\_init}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00231\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \mbox{\hyperlink{struct_n_f_c___s_e_t_t_i_n_g_s__t_a73e4b7d1958ce48e174f595cecccff61}{aCPR\_1}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00232\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \mbox{\hyperlink{struct_n_f_c___s_e_t_t_i_n_g_s__t_a60d70a8f6dcaf641b55935c979f1aaad}{aCPR\_2}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00233\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \mbox{\hyperlink{struct_n_f_c___s_e_t_t_i_n_g_s__t_abca3014e6b0b33cf310287003df001fd}{pCPR\_init}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00234\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \mbox{\hyperlink{struct_n_f_c___s_e_t_t_i_n_g_s__t_ac5bdf32806ac2dc2570a66a4dd8e40c2}{pCPR\_1}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00235\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \mbox{\hyperlink{struct_n_f_c___s_e_t_t_i_n_g_s__t_a8112a33c4da3c0c75d1265e679845529}{pCPR\_2}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00236\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \mbox{\hyperlink{struct_n_f_c___s_e_t_t_i_n_g_s__t_ae7e223c82cecd5289f74e6fc1a9e499e}{cpr\_msg\_long}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00237\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \mbox{\hyperlink{struct_n_f_c___s_e_t_t_i_n_g_s__t_a8000deccc243fe61534c57223fc2d673}{analysis\_cpr}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00238\ }
+\DoxyCodeLine{00239\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \mbox{\hyperlink{struct_n_f_c___s_e_t_t_i_n_g_s__t_a05805d40247b7d27c555640a70d8307c}{asys\_detect}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00240\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \mbox{\hyperlink{struct_n_f_c___s_e_t_t_i_n_g_s__t_a2240679e24408c24affc9836d31488ce}{asys\_time}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00241\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \mbox{\hyperlink{struct_n_f_c___s_e_t_t_i_n_g_s__t_aa4556c631f2cceb2f5e83416cdcabeb1}{metronome\_en}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00242\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \mbox{\hyperlink{struct_n_f_c___s_e_t_t_i_n_g_s__t_a2bdae383dcce65f0504dbd1bc5e08bfb}{metronome\_ratio\_a}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00243\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \mbox{\hyperlink{struct_n_f_c___s_e_t_t_i_n_g_s__t_a852a1aa893a04214c36924c2aead7977}{metronome\_ratio\_p}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00244\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \mbox{\hyperlink{struct_n_f_c___s_e_t_t_i_n_g_s__t_a3f2628b1926418eedb5c4bd44c8a2d24}{metronome\_rate}};\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00245\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \mbox{\hyperlink{struct_n_f_c___s_e_t_t_i_n_g_s__t_a2038307a13238cf5df9a105f9278d4a8}{feedback\_en}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00246\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \mbox{\hyperlink{struct_n_f_c___s_e_t_t_i_n_g_s__t_abdd460edbaf1af27e9da3af501219131}{consec\_shocks}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00247\ }
+\DoxyCodeLine{00248\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \mbox{\hyperlink{struct_n_f_c___s_e_t_t_i_n_g_s__t_a5a0c999453af32986241c1127f4998c9}{energy\_shock1\_a}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00249\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \mbox{\hyperlink{struct_n_f_c___s_e_t_t_i_n_g_s__t_a09b600c504b5c70a9b4a72dafbe45efa}{energy\_shock2\_a}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00250\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \mbox{\hyperlink{struct_n_f_c___s_e_t_t_i_n_g_s__t_a0e2469ccb0660423cf63dd987566c2ea}{energy\_shock3\_a}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00251\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \mbox{\hyperlink{struct_n_f_c___s_e_t_t_i_n_g_s__t_a5752808c9254e0a3baa6349a80f7deeb}{energy\_shock1\_p}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00252\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \mbox{\hyperlink{struct_n_f_c___s_e_t_t_i_n_g_s__t_a9940caeb93d9d0d5fd4091fffa7584eb}{energy\_shock2\_p}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00253\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \mbox{\hyperlink{struct_n_f_c___s_e_t_t_i_n_g_s__t_a27ba966ba8968f843e17e5ec7418b040}{energy\_shock3\_p}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00254\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \mbox{\hyperlink{struct_n_f_c___s_e_t_t_i_n_g_s__t_a82f02a2ae10d611bc70a91ee40f862ab}{patient\_type}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00255\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \mbox{\hyperlink{struct_n_f_c___s_e_t_t_i_n_g_s__t_a0781b3955888c30617f92963217d3174}{mains\_filter}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00256\ }
+\DoxyCodeLine{00257\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \mbox{\hyperlink{struct_n_f_c___s_e_t_t_i_n_g_s__t_ad62e8d2beab6e528193f8ee4227e6dea}{language}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00258\ \ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a269259c924dce846340ddbb810db2e3c}{int16\_t}}\ \ \ \ \mbox{\hyperlink{struct_n_f_c___s_e_t_t_i_n_g_s__t_ac3dd82e0ed2f2bb6e85db559d11fd468}{utc\_time}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00259\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \mbox{\hyperlink{struct_n_f_c___s_e_t_t_i_n_g_s__t_a6f77180008a88b021f4bb65ad7b526d1}{audio\_volume}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00260\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \mbox{\hyperlink{struct_n_f_c___s_e_t_t_i_n_g_s__t_a39dc6a9500738fa0a2ee47d6b913beac}{demo\_mode}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00261\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \mbox{\hyperlink{struct_n_f_c___s_e_t_t_i_n_g_s__t_a6bfa86cb2e13cbefef18015f8b05152a}{patient\_alert}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00262\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \mbox{\hyperlink{struct_n_f_c___s_e_t_t_i_n_g_s__t_ad81bca1696401e91f3ae42aac81bb335}{movement\_alert}};\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00263\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \mbox{\hyperlink{struct_n_f_c___s_e_t_t_i_n_g_s__t_af906a808430e1191be7732edc9167f63}{transmis\_mode}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00264\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \mbox{\hyperlink{struct_n_f_c___s_e_t_t_i_n_g_s__t_acc75859cf8e91c49f9c772e5dc5fcc74}{warning\_alert}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00265\ \}\ \mbox{\hyperlink{struct_n_f_c___s_e_t_t_i_n_g_s__t}{NFC\_SETTINGS\_t}};}
+\DoxyCodeLine{00266\ }
+\DoxyCodeLine{00268\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00269\ \{}
+\DoxyCodeLine{00270\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \mbox{\hyperlink{struct_n_f_c___d_e_v_i_c_e___c_o_m__t_ae036cd20b84b73739d31d5ea8617eb56}{wpa\_eap\_enabled}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00271\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \mbox{\hyperlink{struct_n_f_c___d_e_v_i_c_e___c_o_m__t_a78522efae97835d1b24d26b3927c24d9}{advs}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00272\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ reserved\_2\ [6];\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00273\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ wlan\_ssid\ [32];\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00274\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ wlan\_pass\ [32];\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00275\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ router\_pass\_key\ [32];\ \ \ \ \ \ \ }
+\DoxyCodeLine{00276\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ eap\_cnf\ [32];\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00277\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ eap\_pass\ [32];\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00278\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ ip[16];\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00279\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ mask[16];\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00280\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ gateway[16];\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00281\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ pdns[16];\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00282\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ sdns[16];\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00283\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ wifi\_dat\_key[32];\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00284\ \}\ \mbox{\hyperlink{struct_n_f_c___d_e_v_i_c_e___c_o_m__t}{NFC\_DEVICE\_COM\_t}};}
+\DoxyCodeLine{00285\ }
+\DoxyCodeLine{00287\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00288\ \{}
+\DoxyCodeLine{00289\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ \ \ \ \mbox{\hyperlink{struct_n_f_c___d_e_v_i_c_e___i_d__t_abdc517ae53beaf33cc157d4d82e33989}{structure\_version}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00290\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \mbox{\hyperlink{struct_n_f_c___d_e_v_i_c_e___i_d__t_a96e080e8e17a3757e92669c94208801e}{develop\_mode}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00291\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \mbox{\hyperlink{struct_n_f_c___d_e_v_i_c_e___i_d__t_ae62aab65be06ba82ef23ddd71f0266ae}{device\_options}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00292\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ \ \ \ \mbox{\hyperlink{struct_n_f_c___d_e_v_i_c_e___i_d__t_af270a6c0d3a0ea2e753cc84a76bd0f0c}{zp\_adcs\_short}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00293\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ \ \ \ \mbox{\hyperlink{struct_n_f_c___d_e_v_i_c_e___i_d__t_a6abdae63695697a2e15cdaa9cc84f118}{zp\_adcs\_calibration}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00294\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ device\_sn\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ [\mbox{\hyperlink{device__init_8h_a633ded5bcc6018dd045e1ef28d7ad7c9}{RSC\_NAME\_SZ}}];\ \ }
+\DoxyCodeLine{00295\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ device\_manufacture\_date\ [\mbox{\hyperlink{device__init_8h_a633ded5bcc6018dd045e1ef28d7ad7c9}{RSC\_NAME\_SZ}}];\ \ }
+\DoxyCodeLine{00296\ \}\ \mbox{\hyperlink{struct_n_f_c___d_e_v_i_c_e___i_d__t}{NFC\_DEVICE\_ID\_t}};}
+\DoxyCodeLine{00297\ }
+\DoxyCodeLine{00299\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00300\ \{}
+\DoxyCodeLine{00301\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ \ \ \ \mbox{\hyperlink{struct_n_f_c___d_e_v_i_c_e___i_n_f_o__t_a3fc67b7a01e3d8c8cf9c003609dda755}{free1}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00302\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ \ \ \ \mbox{\hyperlink{struct_n_f_c___d_e_v_i_c_e___i_n_f_o__t_a4d764fd2455fed75ac6707ffa1951b63}{free2}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00303\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ \ \ \ \mbox{\hyperlink{struct_n_f_c___d_e_v_i_c_e___i_n_f_o__t_ae3a29254b1b0c6dcb4372a5f6d8beaae}{internal\_memory\_cap}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00304\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ \ \ \ \mbox{\hyperlink{struct_n_f_c___d_e_v_i_c_e___i_n_f_o__t_a8dd2d0d0d516fb98d1b68ce944d3b452}{internal\_memory\_rem}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00305\ }
+\DoxyCodeLine{00306\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ \ \ \ \mbox{\hyperlink{struct_n_f_c___d_e_v_i_c_e___i_n_f_o__t_a0d6cd783685ca05c7e82004d26b94531}{electrodes\_sn1}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00307\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ \ \ \ \mbox{\hyperlink{struct_n_f_c___d_e_v_i_c_e___i_n_f_o__t_a8828ae05c8038584c59062b8e9ba2e35}{electrodes\_sn2}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00308\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ \ \ \ \mbox{\hyperlink{struct_n_f_c___d_e_v_i_c_e___i_n_f_o__t_ac1db9db8cd53d5d2751ffd640fba9ff7}{electrodes\_manufacture\_date}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00309\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ \ \ \ \mbox{\hyperlink{struct_n_f_c___d_e_v_i_c_e___i_n_f_o__t_af2d2b04eb38977e7360b2896447d9b03}{electrodes\_expiration\_date}};\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00310\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ \ \ \ \mbox{\hyperlink{struct_n_f_c___d_e_v_i_c_e___i_n_f_o__t_aeaf5781648d79c0d479f1df4488c2319}{electrodes\_event\_date}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00311\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ \ \ \ \mbox{\hyperlink{struct_n_f_c___d_e_v_i_c_e___i_n_f_o__t_a9fa17c445c8803381066b3d2f53c7896}{electrodes\_event\_time}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00312\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ \ \ \ \mbox{\hyperlink{struct_n_f_c___d_e_v_i_c_e___i_n_f_o__t_ac6f8901bbbb6d7a60c2cb2684225520c}{electrodes\_event\_id}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00313\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ \ \ \ \mbox{\hyperlink{struct_n_f_c___d_e_v_i_c_e___i_n_f_o__t_a36a96afab7889310101b427232dce759}{reserved\_electrodes}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00314\ }
+\DoxyCodeLine{00315\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ battery\_sn\ [\mbox{\hyperlink{device__init_8h_a633ded5bcc6018dd045e1ef28d7ad7c9}{RSC\_NAME\_SZ}}];\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00316\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ \ \ \ \mbox{\hyperlink{struct_n_f_c___d_e_v_i_c_e___i_n_f_o__t_a696ffe115412df40789f17effaf9d1cc}{battery\_manufacture\_date}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00317\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ \ \ \ \mbox{\hyperlink{struct_n_f_c___d_e_v_i_c_e___i_n_f_o__t_ab498d0e6d95a66c3313ff9aa5ff3a9f0}{battery\_expiration\_date}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00318\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \mbox{\hyperlink{struct_n_f_c___d_e_v_i_c_e___i_n_f_o__t_a9df8518c8619cf45dbc411136ad60891}{battery\_cap}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00319\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \mbox{\hyperlink{struct_n_f_c___d_e_v_i_c_e___i_n_f_o__t_a70c0813f5012d5fb59da93bfa496ff36}{battery\_rem}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00320\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ \ \ \ \mbox{\hyperlink{struct_n_f_c___d_e_v_i_c_e___i_n_f_o__t_ab5e534adad480e5d31edc35e72ed4b44}{reserved\_battery}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00321\ }
+\DoxyCodeLine{00322\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ \ \ \ \mbox{\hyperlink{struct_n_f_c___d_e_v_i_c_e___i_n_f_o__t_a62a181891feecab63fc246105ba3c240}{app\_sw\_version}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00323\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \mbox{\hyperlink{struct_n_f_c___d_e_v_i_c_e___i_n_f_o__t_a547c1bd46ee601520f580a480fe210eb}{error\_code}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00324\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \mbox{\hyperlink{struct_n_f_c___d_e_v_i_c_e___i_n_f_o__t_a399af530b6110bc9a841d38976e90e82}{compiler\_date}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00325\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \mbox{\hyperlink{struct_n_f_c___d_e_v_i_c_e___i_n_f_o__t_af4820f61204480e24357f7dfdbaa8e7e}{compiler\_time}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00326\ \ \ \ \ \textcolor{keyword}{union}}
+\DoxyCodeLine{00327\ \ \ \ \ \{}
+\DoxyCodeLine{00328\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \mbox{\hyperlink{struct_n_f_c___d_e_v_i_c_e___i_n_f_o__t_a473c741ca42f3e959f0b4720c7c27373}{pcb\_hw\_options}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00329\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00330\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00331\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \mbox{\hyperlink{struct_n_f_c___d_e_v_i_c_e___i_n_f_o__t_ac0e7254eaea11055b71bd7041724eaaa}{pcb\_hw\_version}}:\ \ \ \ \ 8;\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00332\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \mbox{\hyperlink{struct_n_f_c___d_e_v_i_c_e___i_n_f_o__t_ad3091e316aef534354cbbd610f27e52a}{pcb\_hw\_extended}}:\ \ \ \ 8;\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00333\ \ \ \ \ \ \ \ \ \}\ pcb\_hw;}
+\DoxyCodeLine{00334\ \ \ \ \ \};}
+\DoxyCodeLine{00335\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ reserved\_0[2];\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00336\ }
+\DoxyCodeLine{00337\ \}\ \mbox{\hyperlink{struct_n_f_c___d_e_v_i_c_e___i_n_f_o__t}{NFC\_DEVICE\_INFO\_t}};}
+\DoxyCodeLine{00338\ }
+\DoxyCodeLine{00340\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00341\ \{}
+\DoxyCodeLine{00342\ \ \ \ \ \mbox{\hyperlink{struct_n_f_c___d_e_v_i_c_e___i_d__t}{NFC\_DEVICE\_ID\_t}}\ \ \ \ \ \mbox{\hyperlink{struct_n_f_c___m_a_i_n___i_n_f_o__t_ab56caced49f1e11cc945fb84fe065609}{dev\_id}};}
+\DoxyCodeLine{00343\ \ \ \ \ \mbox{\hyperlink{struct_n_f_c___d_e_v_i_c_e___i_n_f_o__t}{NFC\_DEVICE\_INFO\_t}}\ \ \ \mbox{\hyperlink{struct_n_f_c___m_a_i_n___i_n_f_o__t_a058d35d36e264a417fbfe2c6af40174d}{dev\_info}};}
+\DoxyCodeLine{00344\ \}\ \mbox{\hyperlink{struct_n_f_c___m_a_i_n___i_n_f_o__t}{NFC\_MAIN\_INFO\_t}};}
+\DoxyCodeLine{00345\ }
+\DoxyCodeLine{00346\ }
+\DoxyCodeLine{00347\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00348\ \textcolor{comment}{\ **\ Globals}}
+\DoxyCodeLine{00349\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00350\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{struct_n_f_c___d_e_v_i_c_e___i_d__t}{NFC\_DEVICE\_ID\_t}}\ \mbox{\hyperlink{device__init_8h_a4584daa837f73e9d4988a7238f9321a1}{write\_nfc\_device\_id}};\ \textcolor{comment}{//\ Global\ struct\ for\ comparing\ NFC\ reading\ and\ writing}}
+\DoxyCodeLine{00351\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{struct_n_f_c___d_e_v_i_c_e___i_d__t}{NFC\_DEVICE\_ID\_t}}\ \mbox{\hyperlink{device__init_8h_aeba627762207489ddb31b9e4bead28c5}{read\_nfc\_device\_id}};\ \ \textcolor{comment}{//\ Global\ struct\ for\ comparing\ NFC\ reading\ and\ writing}}
+\DoxyCodeLine{00352\ }
+\DoxyCodeLine{00353\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00354\ \textcolor{comment}{\ **\ Prototypes}}
+\DoxyCodeLine{00355\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00356\ }
+\DoxyCodeLine{00357\ \textcolor{keyword}{extern}\ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{device__init_8h_af7c4026c56bc283f791f176e1318d3e4}{Device\_Init}}\ \ \ \ \ (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a40bb5262bf908c328fbcfbe5d29d0201}{char\_t}}\ *serial\_num);\ \ \ }
+\DoxyCodeLine{00358\ }
+\DoxyCodeLine{00359\ \textcolor{comment}{//\ Device\ Info}}
+\DoxyCodeLine{00360\ \textcolor{keyword}{extern}\ \ \mbox{\hyperlink{struct_n_f_c___d_e_v_i_c_e___i_n_f_o__t}{NFC\_DEVICE\_INFO\_t}}*\ \ \mbox{\hyperlink{device__init_8h_ac9272954c69640cbc76d2ea99e68bc43}{Get\_NFC\_Device\_Info}}\ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00361\ \textcolor{keyword}{extern}\ \ \mbox{\hyperlink{struct_n_f_c___d_e_v_i_c_e___i_d__t}{NFC\_DEVICE\_ID\_t}}*\ \ \ \ \mbox{\hyperlink{device__init_8h_af3eb670abc546c577ec8d71cf1998c01}{Get\_NFC\_Device\_ID}}\ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00362\ \textcolor{keyword}{extern}\ \ \mbox{\hyperlink{struct_d_e_v_i_c_e___i_n_f_o__t}{DEVICE\_INFO\_t}}*\ \ \ \ \ \ \mbox{\hyperlink{device__init_8h_a2f7047dc1ce0a3687c48872ed81aff5f}{Get\_Device\_Info}}\ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00363\ \textcolor{keyword}{extern}\ \ \mbox{\hyperlink{struct_d_e_v_i_c_e___d_a_t_e__t}{DEVICE\_DATE\_t}}*\ \ \ \ \ \ \mbox{\hyperlink{device__init_8h_ac4a64cfba553307cc5131725f13de451}{Get\_Device\_Date}}\ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00364\ \textcolor{keyword}{extern}\ \ \mbox{\hyperlink{struct_d_e_v_i_c_e___t_i_m_e__t}{DEVICE\_TIME\_t}}*\ \ \ \ \ \ \mbox{\hyperlink{device__init_8h_a464553d5f2366a3e2e49ee42256cbefc}{Get\_Device\_Time}}\ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00365\ \textcolor{keyword}{extern}\ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{device__init_8h_ae1e4a2b488a7638681f285fcfc957e2d}{Set\_Device\_Date\_time}}\ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00366\ \textcolor{keyword}{extern}\ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{device__init_8h_af8ee5f8563062293ed67377b60f47a84}{Get\_APP\_SW\_Version}}\ \ (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a40bb5262bf908c328fbcfbe5d29d0201}{char\_t}}*\ sw\_version);}
+\DoxyCodeLine{00367\ }
+\DoxyCodeLine{00368\ \textcolor{comment}{//\ Device\ Settings}}
+\DoxyCodeLine{00369\ \textcolor{keyword}{extern}\ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{device__init_8h_a2ca372a823df8236adbb87a8143be4fe}{Settings\_Open\_From\_uSD}}\ (\textcolor{keywordtype}{void});\ \ \ \ \ \ }
+\DoxyCodeLine{00370\ \textcolor{keyword}{extern}\ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{device__init_8h_a3b40e935bf43479866fb9469d739a24b}{Settings\_Save\_To\_uSD}}\ \ \ (\textcolor{keywordtype}{void});\ \ \ \ \ \ }
+\DoxyCodeLine{00371\ \textcolor{keyword}{extern}\ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{device__init_8h_a996f6e90cfa31a701808ea89e319a375}{Settings\_Open\_From\_NFC}}\ (\textcolor{keywordtype}{void});\ \ \ \ \ \ }
+\DoxyCodeLine{00372\ \textcolor{keyword}{extern}\ \ \mbox{\hyperlink{struct_a_e_d___s_e_t_t_i_n_g_s__t}{AED\_SETTINGS\_t}}*\ \ \ \ \ \mbox{\hyperlink{device__init_8h_abef0104e237796d45d49992f69d3b160}{Get\_AED\_Settings}}\ \ \ \ \ \ \ (\textcolor{keywordtype}{void});\ \ \ \ \ \ }
+\DoxyCodeLine{00373\ \textcolor{keyword}{extern}\ \ \mbox{\hyperlink{struct_m_i_s_c___s_e_t_t_i_n_g_s__t}{MISC\_SETTINGS\_t}}*\ \ \ \ \mbox{\hyperlink{device__init_8h_ab2b90e918e591ab7b2dfbfc2d6e3bb6a}{Get\_Misc\_Settings}}\ \ \ \ \ \ (\textcolor{keywordtype}{void});\ \ \ \ \ \ }
+\DoxyCodeLine{00374\ \textcolor{keyword}{extern}\ \ \mbox{\hyperlink{struct_d_e_v_i_c_e___s_e_t_t_i_n_g_s__t}{DEVICE\_SETTINGS\_t}}*\ \ \mbox{\hyperlink{device__init_8h_a8f21d9db8b7a1530e06a4ade480d91bc}{Get\_Device\_Settings}}\ \ \ \ (\textcolor{keywordtype}{void});\ \ \ \ \ \ }
+\DoxyCodeLine{00375\ \textcolor{keyword}{extern}\ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{device__init_8h_ad59af5cb88583ffa1dd4320db9aec759}{NFC\_Write\_Settings}}\ \ \ \ \ (\textcolor{keywordtype}{void});\ \ \ \ \ \ }
+\DoxyCodeLine{00376\ \textcolor{keyword}{extern}\ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{device__init_8h_a52d0b44655d86d60ecfb68817351601a}{NFC\_Write\_Settings\_Montador}}\ \ \ \ \ (\textcolor{keywordtype}{void});\ \ \ \ \ \ }
+\DoxyCodeLine{00377\ \textcolor{keyword}{extern}\ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{device__init_8h_a25a3c802ebae4efe4c7ae416a597bb9e}{NFC\_Write\_Device\_ID}}\ \ \ \ (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\_t}}\ flag\_write,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\_t}}\ flag\_cal\_write);\ \ \ \ \ \ }
+\DoxyCodeLine{00378\ \textcolor{keyword}{extern}\ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{device__init_8h_a435ba18195f588c000fd0a5b0ecabb46}{NFC\_Write\_Device\_Info}}\ \ \ (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\_t}}\ flag\_write);\ }
+\DoxyCodeLine{00379\ \textcolor{keyword}{extern}\ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{device__init_8h_aaad6694e92e7d7d9eefb2aa080887f97}{Wifi\_Save\_To\_uSD}}\ \ \ \ \ \ \ (\textcolor{keywordtype}{void});\ \ \ \ \ \ }
+\DoxyCodeLine{00380\ }
+\DoxyCodeLine{00381\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{device__init_8h_a49226dbe65b391c9844fd67bc70be961}{Get\_Compile\_Date\_Time}}\ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00382\ }
+\DoxyCodeLine{00383\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ DEVICE\_INIT\_H\_\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00384\ }
+\DoxyCodeLine{00385\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00386\ \textcolor{comment}{\ **\ \$Log\$}}
+\DoxyCodeLine{00387\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00388\ \textcolor{comment}{\ **\ end\ of\ device.h}}
+\DoxyCodeLine{00389\ \textcolor{comment}{\ ******************************************************************************/}}
+
+\end{DoxyCode}

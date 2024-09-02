@@ -1,0 +1,110 @@
+\doxysection{C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\+SCE/crypto/atca\+\_\+crypto\+\_\+sw.h File Reference}
+\hypertarget{crypto_2atca__crypto__sw_8h}{}\label{crypto_2atca__crypto__sw_8h}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/SCE/crypto/atca\_crypto\_sw.h@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/SCE/crypto/atca\_crypto\_sw.h}}
+
+
+Common defines for Crypto\+Auth\+Lib software crypto wrappers.  
+
+
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include "{}atca\+\_\+config.\+h"{}}\newline
+{\ttfamily \#include "{}atca\+\_\+status.\+h"{}}\newline
+Include dependency graph for atca\+\_\+crypto\+\_\+sw.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=326pt]{crypto_2atca__crypto__sw_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{crypto_2atca__crypto__sw_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structatcac__sha1__ctx}{atcac\+\_\+sha1\+\_\+ctx}}
+\item 
+struct \mbox{\hyperlink{structatcac__sha2__256__ctx}{atcac\+\_\+sha2\+\_\+256\+\_\+ctx}}
+\item 
+struct \mbox{\hyperlink{structatcac__hmac__sha256__ctx}{atcac\+\_\+hmac\+\_\+sha256\+\_\+ctx}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{crypto_2atca__crypto__sw_8h_adb94a0991eb670ff1bf90253dfea0bfa}{ATCA\+\_\+\+SHA1\+\_\+\+DIGEST\+\_\+\+SIZE}}~(20)
+\item 
+\#define \mbox{\hyperlink{crypto_2atca__crypto__sw_8h_a86364f6d07b86740f3170d9d1ca60641}{ATCA\+\_\+\+SHA2\+\_\+256\+\_\+\+DIGEST\+\_\+\+SIZE}}~(32)
+\item 
+\#define \mbox{\hyperlink{crypto_2atca__crypto__sw_8h_a4c4ce6cbfabda05b03f992165ea96431}{ATCA\+\_\+\+SHA2\+\_\+256\+\_\+\+BLOCK\+\_\+\+SIZE}}~(64)
+\item 
+\#define \mbox{\hyperlink{crypto_2atca__crypto__sw_8h_adf014170297332a12bb2f14e5188ae38}{ATCA\+\_\+\+ENABLE\+\_\+\+SHA1\+\_\+\+IMPL}}~1
+\item 
+\#define \mbox{\hyperlink{crypto_2atca__crypto__sw_8h_a29e8e8b01f1094943ebe73d5f902be5b}{ATCA\+\_\+\+ENABLE\+\_\+\+SHA256\+\_\+\+IMPL}}~1
+\item 
+\#define \mbox{\hyperlink{crypto_2atca__crypto__sw_8h_a58581132706418dbb4adfd9f7bce939a}{ATCA\+\_\+\+ENABLE\+\_\+\+RAND\+\_\+\+IMPL}}~1
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{crypto_2atca__crypto__sw_8h_aa2acec2154a2d60e4cd4c437c94ef495}{atcac\+\_\+pbkdf2\+\_\+sha256}} (const \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} iter, const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}password, const size\+\_\+t password\+\_\+len, const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}salt, const size\+\_\+t salt\+\_\+len, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}result, size\+\_\+t result\+\_\+len)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Common defines for Crypto\+Auth\+Lib software crypto wrappers. 
+
+\begin{DoxyCopyright}{Copyright}
+(c) 2015-\/2020 Microchip Technology Inc. and its subsidiaries. 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{crypto_2atca__crypto__sw_8h_a58581132706418dbb4adfd9f7bce939a}\label{crypto_2atca__crypto__sw_8h_a58581132706418dbb4adfd9f7bce939a} 
+\index{atca\_crypto\_sw.h@{atca\_crypto\_sw.h}!ATCA\_ENABLE\_RAND\_IMPL@{ATCA\_ENABLE\_RAND\_IMPL}}
+\index{ATCA\_ENABLE\_RAND\_IMPL@{ATCA\_ENABLE\_RAND\_IMPL}!atca\_crypto\_sw.h@{atca\_crypto\_sw.h}}
+\doxysubsubsection{\texorpdfstring{ATCA\_ENABLE\_RAND\_IMPL}{ATCA\_ENABLE\_RAND\_IMPL}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+ENABLE\+\_\+\+RAND\+\_\+\+IMPL~1}
+
+\Hypertarget{crypto_2atca__crypto__sw_8h_adf014170297332a12bb2f14e5188ae38}\label{crypto_2atca__crypto__sw_8h_adf014170297332a12bb2f14e5188ae38} 
+\index{atca\_crypto\_sw.h@{atca\_crypto\_sw.h}!ATCA\_ENABLE\_SHA1\_IMPL@{ATCA\_ENABLE\_SHA1\_IMPL}}
+\index{ATCA\_ENABLE\_SHA1\_IMPL@{ATCA\_ENABLE\_SHA1\_IMPL}!atca\_crypto\_sw.h@{atca\_crypto\_sw.h}}
+\doxysubsubsection{\texorpdfstring{ATCA\_ENABLE\_SHA1\_IMPL}{ATCA\_ENABLE\_SHA1\_IMPL}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+ENABLE\+\_\+\+SHA1\+\_\+\+IMPL~1}
+
+\Hypertarget{crypto_2atca__crypto__sw_8h_a29e8e8b01f1094943ebe73d5f902be5b}\label{crypto_2atca__crypto__sw_8h_a29e8e8b01f1094943ebe73d5f902be5b} 
+\index{atca\_crypto\_sw.h@{atca\_crypto\_sw.h}!ATCA\_ENABLE\_SHA256\_IMPL@{ATCA\_ENABLE\_SHA256\_IMPL}}
+\index{ATCA\_ENABLE\_SHA256\_IMPL@{ATCA\_ENABLE\_SHA256\_IMPL}!atca\_crypto\_sw.h@{atca\_crypto\_sw.h}}
+\doxysubsubsection{\texorpdfstring{ATCA\_ENABLE\_SHA256\_IMPL}{ATCA\_ENABLE\_SHA256\_IMPL}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+ENABLE\+\_\+\+SHA256\+\_\+\+IMPL~1}
+
+\Hypertarget{crypto_2atca__crypto__sw_8h_adb94a0991eb670ff1bf90253dfea0bfa}\label{crypto_2atca__crypto__sw_8h_adb94a0991eb670ff1bf90253dfea0bfa} 
+\index{atca\_crypto\_sw.h@{atca\_crypto\_sw.h}!ATCA\_SHA1\_DIGEST\_SIZE@{ATCA\_SHA1\_DIGEST\_SIZE}}
+\index{ATCA\_SHA1\_DIGEST\_SIZE@{ATCA\_SHA1\_DIGEST\_SIZE}!atca\_crypto\_sw.h@{atca\_crypto\_sw.h}}
+\doxysubsubsection{\texorpdfstring{ATCA\_SHA1\_DIGEST\_SIZE}{ATCA\_SHA1\_DIGEST\_SIZE}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+SHA1\+\_\+\+DIGEST\+\_\+\+SIZE~(20)}
+
+\Hypertarget{crypto_2atca__crypto__sw_8h_a4c4ce6cbfabda05b03f992165ea96431}\label{crypto_2atca__crypto__sw_8h_a4c4ce6cbfabda05b03f992165ea96431} 
+\index{atca\_crypto\_sw.h@{atca\_crypto\_sw.h}!ATCA\_SHA2\_256\_BLOCK\_SIZE@{ATCA\_SHA2\_256\_BLOCK\_SIZE}}
+\index{ATCA\_SHA2\_256\_BLOCK\_SIZE@{ATCA\_SHA2\_256\_BLOCK\_SIZE}!atca\_crypto\_sw.h@{atca\_crypto\_sw.h}}
+\doxysubsubsection{\texorpdfstring{ATCA\_SHA2\_256\_BLOCK\_SIZE}{ATCA\_SHA2\_256\_BLOCK\_SIZE}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+SHA2\+\_\+256\+\_\+\+BLOCK\+\_\+\+SIZE~(64)}
+
+\Hypertarget{crypto_2atca__crypto__sw_8h_a86364f6d07b86740f3170d9d1ca60641}\label{crypto_2atca__crypto__sw_8h_a86364f6d07b86740f3170d9d1ca60641} 
+\index{atca\_crypto\_sw.h@{atca\_crypto\_sw.h}!ATCA\_SHA2\_256\_DIGEST\_SIZE@{ATCA\_SHA2\_256\_DIGEST\_SIZE}}
+\index{ATCA\_SHA2\_256\_DIGEST\_SIZE@{ATCA\_SHA2\_256\_DIGEST\_SIZE}!atca\_crypto\_sw.h@{atca\_crypto\_sw.h}}
+\doxysubsubsection{\texorpdfstring{ATCA\_SHA2\_256\_DIGEST\_SIZE}{ATCA\_SHA2\_256\_DIGEST\_SIZE}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+SHA2\+\_\+256\+\_\+\+DIGEST\+\_\+\+SIZE~(32)}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{crypto_2atca__crypto__sw_8h_aa2acec2154a2d60e4cd4c437c94ef495}\label{crypto_2atca__crypto__sw_8h_aa2acec2154a2d60e4cd4c437c94ef495} 
+\index{atca\_crypto\_sw.h@{atca\_crypto\_sw.h}!atcac\_pbkdf2\_sha256@{atcac\_pbkdf2\_sha256}}
+\index{atcac\_pbkdf2\_sha256@{atcac\_pbkdf2\_sha256}!atca\_crypto\_sw.h@{atca\_crypto\_sw.h}}
+\doxysubsubsection{\texorpdfstring{atcac\_pbkdf2\_sha256()}{atcac\_pbkdf2\_sha256()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} atcac\+\_\+pbkdf2\+\_\+sha256 (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}}}]{iter,  }\item[{const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{password,  }\item[{const size\+\_\+t}]{password\+\_\+len,  }\item[{const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{salt,  }\item[{const size\+\_\+t}]{salt\+\_\+len,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{result,  }\item[{size\+\_\+t}]{result\+\_\+len }\end{DoxyParamCaption})}
+

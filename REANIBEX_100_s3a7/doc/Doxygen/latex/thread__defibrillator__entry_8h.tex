@@ -1,0 +1,178 @@
+\doxysection{C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/thread\+\_\+defibrillator\+\_\+entry.h File Reference}
+\hypertarget{thread__defibrillator__entry_8h}{}\label{thread__defibrillator__entry_8h}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/thread\_defibrillator\_entry.h@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/thread\_defibrillator\_entry.h}}
+{\ttfamily \#include "{}thread\+\_\+drd\+\_\+entry.\+h"{}}\newline
+Include dependency graph for thread\+\_\+defibrillator\+\_\+entry.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__defibrillator__entry_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__defibrillator__entry_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{thread__defibrillator__entry_8h_ad314699291afd26b074870648c850107}{Defib\+\_\+\+Cmd\+\_\+\+Precharge}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} force)
+\begin{DoxyCompactList}\small\item\em Precharge the capacitor\+: -\/-\/\texorpdfstring{$>$}{>} If the capacitor has a voltage lower than the precharge voltage, proceed to charge. -\/-\/\texorpdfstring{$>$}{>} If the capacitor has a voltage higher than the precharge voltage, reuse the current voltage in the next shock OR force to charge to the precharge value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{thread__defibrillator__entry_8h_a22d8c14349be676ae8cd44221ad850f1}{Defib\+\_\+\+Cmd\+\_\+\+Disarm}} (void)
+\begin{DoxyCompactList}\small\item\em Disarm the capacitor\+: \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{thread__defibrillator__entry_8h_a9e678d0288d5e848d6c36c223609d52a}{Defib\+\_\+\+Cmd\+\_\+\+Charge}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} energy)
+\begin{DoxyCompactList}\small\item\em Command a capacitor charge. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{thread__defibrillator__entry_8h_ad4231b9f523e235ed7306b2bf31ecea9}{Defib\+\_\+\+Cmd\+\_\+\+Shock}} (\mbox{\hyperlink{thread__drd__entry_8h_adfbfcd79f8c1d114daaee816fd406b9f}{RYTHM\+\_\+\+TYPE\+\_\+e}} \mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_ac8569cc3da067d4877bcf4157b9b6396}{rythm\+\_\+type}})
+\begin{DoxyCompactList}\small\item\em Command a shock. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVersion}{Version}
+v1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+06/06/2018 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+ltorres 
+\end{DoxyAuthor}
+\begin{DoxyWarning}{Warning}
+author date version .-\/ Edition 
+\end{DoxyWarning}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000080}{Bug}}]\end{DoxyRefDesc}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{thread__defibrillator__entry_8h_a9e678d0288d5e848d6c36c223609d52a}\label{thread__defibrillator__entry_8h_a9e678d0288d5e848d6c36c223609d52a} 
+\index{thread\_defibrillator\_entry.h@{thread\_defibrillator\_entry.h}!Defib\_Cmd\_Charge@{Defib\_Cmd\_Charge}}
+\index{Defib\_Cmd\_Charge@{Defib\_Cmd\_Charge}!thread\_defibrillator\_entry.h@{thread\_defibrillator\_entry.h}}
+\doxysubsubsection{\texorpdfstring{Defib\_Cmd\_Charge()}{Defib\_Cmd\_Charge()}}
+{\footnotesize\ttfamily void Defib\+\_\+\+Cmd\+\_\+\+Charge (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}}}]{energy }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Command a capacitor charge. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em energy} & energy to discharge (in joules)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{thread__defibrillator__entry_8h_a9e678d0288d5e848d6c36c223609d52a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__defibrillator__entry_8h_a9e678d0288d5e848d6c36c223609d52a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__defibrillator__entry_8h_a22d8c14349be676ae8cd44221ad850f1}\label{thread__defibrillator__entry_8h_a22d8c14349be676ae8cd44221ad850f1} 
+\index{thread\_defibrillator\_entry.h@{thread\_defibrillator\_entry.h}!Defib\_Cmd\_Disarm@{Defib\_Cmd\_Disarm}}
+\index{Defib\_Cmd\_Disarm@{Defib\_Cmd\_Disarm}!thread\_defibrillator\_entry.h@{thread\_defibrillator\_entry.h}}
+\doxysubsubsection{\texorpdfstring{Defib\_Cmd\_Disarm()}{Defib\_Cmd\_Disarm()}}
+{\footnotesize\ttfamily void Defib\+\_\+\+Cmd\+\_\+\+Disarm (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Disarm the capacitor\+: 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=315pt]{thread__defibrillator__entry_8h_a22d8c14349be676ae8cd44221ad850f1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__defibrillator__entry_8h_a22d8c14349be676ae8cd44221ad850f1_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__defibrillator__entry_8h_ad314699291afd26b074870648c850107}\label{thread__defibrillator__entry_8h_ad314699291afd26b074870648c850107} 
+\index{thread\_defibrillator\_entry.h@{thread\_defibrillator\_entry.h}!Defib\_Cmd\_Precharge@{Defib\_Cmd\_Precharge}}
+\index{Defib\_Cmd\_Precharge@{Defib\_Cmd\_Precharge}!thread\_defibrillator\_entry.h@{thread\_defibrillator\_entry.h}}
+\doxysubsubsection{\texorpdfstring{Defib\_Cmd\_Precharge()}{Defib\_Cmd\_Precharge()}}
+{\footnotesize\ttfamily void Defib\+\_\+\+Cmd\+\_\+\+Precharge (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}}}]{force }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Precharge the capacitor\+: -\/-\/\texorpdfstring{$>$}{>} If the capacitor has a voltage lower than the precharge voltage, proceed to charge. -\/-\/\texorpdfstring{$>$}{>} If the capacitor has a voltage higher than the precharge voltage, reuse the current voltage in the next shock OR force to charge to the precharge value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em force} & if true, force the precharge voltage if false, maintain the voltage if higher\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\texorpdfstring{$<$}{<} special\+\_\+mode; do not prechargeHere is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{thread__defibrillator__entry_8h_ad314699291afd26b074870648c850107_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__defibrillator__entry_8h_ad314699291afd26b074870648c850107_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__defibrillator__entry_8h_ad4231b9f523e235ed7306b2bf31ecea9}\label{thread__defibrillator__entry_8h_ad4231b9f523e235ed7306b2bf31ecea9} 
+\index{thread\_defibrillator\_entry.h@{thread\_defibrillator\_entry.h}!Defib\_Cmd\_Shock@{Defib\_Cmd\_Shock}}
+\index{Defib\_Cmd\_Shock@{Defib\_Cmd\_Shock}!thread\_defibrillator\_entry.h@{thread\_defibrillator\_entry.h}}
+\doxysubsubsection{\texorpdfstring{Defib\_Cmd\_Shock()}{Defib\_Cmd\_Shock()}}
+{\footnotesize\ttfamily void Defib\+\_\+\+Cmd\+\_\+\+Shock (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{thread__drd__entry_8h_adfbfcd79f8c1d114daaee816fd406b9f}{RYTHM\+\_\+\+TYPE\+\_\+e}}}]{rythm\+\_\+type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Command a shock. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rythm\+\_\+type} & type of the rythm\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=329pt]{thread__defibrillator__entry_8h_ad4231b9f523e235ed7306b2bf31ecea9_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__defibrillator__entry_8h_ad4231b9f523e235ed7306b2bf31ecea9_icgraph}
+\end{center}
+\end{figure}

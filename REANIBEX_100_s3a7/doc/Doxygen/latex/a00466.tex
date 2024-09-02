@@ -1,0 +1,911 @@
+\doxysection{R\+\_\+\+VBATT\+\_\+\+Type Struct Reference}
+\hypertarget{a00466}{}\label{a00466}\index{R\_VBATT\_Type@{R\_VBATT\_Type}}
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+union \{\\
+\>\_\_IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}} \mbox{\hyperlink{a00466_ab6d0af2a00f97095463a18180310c6e4}{BKRACR}}\\
+\>struct \{\\
+\>\>\_\_IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}} \mbox{\hyperlink{a00466_aa8291468ba5bb557681c90a71c1f92ba}{BKRACS}}:3\\
+\>\} \mbox{\hyperlink{a00466_af59dc5af62ae00e6d66e10753db8f149}{BKRACR\_b}}\\
+\}; \\
+
+\end{tabbing}\item 
+\+\_\+\+\_\+I \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{a00466_a20d8fe8d4778fdc4384c670f175e2e61}{RESERVED1}} \mbox{[}856\mbox{]}
+\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+union \{\\
+\>\_\_IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}} \mbox{\hyperlink{a00466_a97eca542fabb71e0956e3ad61962b6e1}{VBTCR1}}\\
+\>struct \{\\
+\>\>\_\_IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}} \mbox{\hyperlink{a00466_afd9d09d5e86450f16800b5bfa860b02b}{BPWSWSTP}}:1\\
+\>\} \mbox{\hyperlink{a00466_a5912ed2c16302bd8baf138b48e7d5c70}{VBTCR1\_b}}\\
+\}; \\
+
+\end{tabbing}\item 
+\+\_\+\+\_\+I \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{a00466_a8daa8ff49c1e965e038f2e379b3dd059}{RESERVED2}} \mbox{[}144\mbox{]}
+\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+union \{\\
+\>\_\_IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}} \mbox{\hyperlink{a00466_a0f5595283ddbc6a08607e66a38f9dcfa}{VBTCR2}}\\
+\>struct \{\\
+\>\>\_\_IO \mbox{\hyperlink{a00466_a5451c32a0911dcd9c224cd104db488e4}{uint8\_t}}:4\\
+\>\>\_\_IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}} \mbox{\hyperlink{a00466_a43a7d4185c5b2e330f11662792bb8590}{VBTLVDEN}}:1\\
+\>\>\_\_IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}} \mbox{\hyperlink{a00466_a5c7077e087b2ccca34ad615da706192e}{VBTLVDLVL}}:2\\
+\>\} \mbox{\hyperlink{a00466_a02dc09cfbf372ae67b2c37ec6b28caf1}{VBTCR2\_b}}\\
+\}; \\
+
+\end{tabbing}\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+union \{\\
+\>\_\_IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}} \mbox{\hyperlink{a00466_a763a1eb56d7a0b77178e7dbc08e1a490}{VBTSR}}\\
+\>struct \{\\
+\>\>\_\_IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}} \mbox{\hyperlink{a00466_afafeff911dc536d9c1d0a6af2fc4cacc}{VBTRDF}}:1\\
+\>\>\_\_IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}} \mbox{\hyperlink{a00466_a7a10bad8cd0c1ef8edfd7f5b38fd8246}{VBTBLDF}}:1\\
+\>\>\_\_IO \mbox{\hyperlink{a00466_a5451c32a0911dcd9c224cd104db488e4}{uint8\_t}}:2\\
+\>\>\_\_IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}} \mbox{\hyperlink{a00466_a3018ae5141824c798b2a6c3506fe25d2}{VBTRVLD}}:1\\
+\>\} \mbox{\hyperlink{a00466_a7d51533a88fff4daa3515f2469123ddf}{VBTSR\_b}}\\
+\}; \\
+
+\end{tabbing}\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+union \{\\
+\>\_\_IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}} \mbox{\hyperlink{a00466_a491332a3937dde42e9a3d8566319e90c}{VBTCMPCR}}\\
+\>struct \{\\
+\>\>\_\_IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}} \mbox{\hyperlink{a00466_a0648e09f839b3915d3ad7712b6e3df39}{VBTCMPE}}:1\\
+\>\} \mbox{\hyperlink{a00466_af02b301d6628a1fdcf5fbde102cedfa0}{VBTCMPCR\_b}}\\
+\}; \\
+
+\end{tabbing}\item 
+\+\_\+\+\_\+I \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{a00466_a0635132d756058aac368a9843dbd0d1f}{RESERVED3}}
+\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+union \{\\
+\>\_\_IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}} \mbox{\hyperlink{a00466_a75e82f1734397e772e2e51202bb37dda}{VBTLVDICR}}\\
+\>struct \{\\
+\>\>\_\_IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}} \mbox{\hyperlink{a00466_acc72d7e0d585223dcf21030a866b0282}{VBTLVDIE}}:1\\
+\>\>\_\_IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}} \mbox{\hyperlink{a00466_ae62cf66741d13f873df195fcece8b50e}{VBTLVDISEL}}:1\\
+\>\} \mbox{\hyperlink{a00466_a0c7559df80a86b4c5bd6240bbaeae5f7}{VBTLVDICR\_b}}\\
+\}; \\
+
+\end{tabbing}\item 
+\+\_\+\+\_\+I \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{a00466_a7465d28434794a58e3f670f2d70a4dd3}{RESERVED4}}
+\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+union \{\\
+\>\_\_IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}} \mbox{\hyperlink{a00466_a41bc986be689e053041453b88fefcfb2}{VBTWCTLR}}\\
+\>struct \{\\
+\>\>\_\_IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}} \mbox{\hyperlink{a00466_adcd21be73b9e8bba2ae638ce7c8cf5e3}{VWEN}}:1\\
+\>\} \mbox{\hyperlink{a00466_a11392c95f1467e801c4829f565dbef9b}{VBTWCTLR\_b}}\\
+\}; \\
+
+\end{tabbing}\item 
+\+\_\+\+\_\+I \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{a00466_a1df6c349e0ae714afb6c6e05bb931a73}{RESERVED5}}
+\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+union \{\\
+\>\_\_IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}} \mbox{\hyperlink{a00466_a9c7872a844c75410a6e5645941c4a9ba}{VBTWCH0OTSR}}\\
+\>struct \{\\
+\>\>\_\_IO \mbox{\hyperlink{a00466_a5451c32a0911dcd9c224cd104db488e4}{uint8\_t}}:1\\
+\>\>\_\_IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}} \mbox{\hyperlink{a00466_a8d26ee4849ea29cd969d4ca76021ac5f}{CH0VCH1TE}}:1\\
+\>\>\_\_IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}} \mbox{\hyperlink{a00466_af8bbcbc3d6bab1df7ee77cf58341d462}{CH0VCH2TE}}:1\\
+\>\>\_\_IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}} \mbox{\hyperlink{a00466_a927c7509e805e7d9924533c3fedfa0a5}{CH0VRTCTE}}:1\\
+\>\>\_\_IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}} \mbox{\hyperlink{a00466_a92f788fe75faa00754d77ba0662e9dd5}{CH0VRTCATE}}:1\\
+\>\>\_\_IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}} \mbox{\hyperlink{a00466_a697043a8fb2eb92961831cbfe3519c97}{CH0VAGTUTE}}:1\\
+\>\} \mbox{\hyperlink{a00466_aaf0e0d54c34181c33e8bb367c50c5b23}{VBTWCH0OTSR\_b}}\\
+\}; \\
+
+\end{tabbing}\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+union \{\\
+\>\_\_IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}} \mbox{\hyperlink{a00466_aa9245c3af7ced6f2eb528141cbe3be2a}{VBTWCH1OTSR}}\\
+\>struct \{\\
+\>\>\_\_IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}} \mbox{\hyperlink{a00466_aadce53b35caac3b4ae801bd8cf90a1d9}{CH1VCH0TE}}:1\\
+\>\>\_\_IO \mbox{\hyperlink{a00466_a5451c32a0911dcd9c224cd104db488e4}{uint8\_t}}:1\\
+\>\>\_\_IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}} \mbox{\hyperlink{a00466_a3046720cbc7e37867c39692137d46b9e}{CH1VCH2TE}}:1\\
+\>\>\_\_IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}} \mbox{\hyperlink{a00466_ac49b80b230f08b505d4e0199fefc3f6e}{CH1VRTCTE}}:1\\
+\>\>\_\_IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}} \mbox{\hyperlink{a00466_ad69a39a83b0188a9c2c30f941029fe69}{CH1VRTCATE}}:1\\
+\>\>\_\_IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}} \mbox{\hyperlink{a00466_a4d90835686218bc1a122f5e1ca7094dc}{CH1VAGTUTE}}:1\\
+\>\} \mbox{\hyperlink{a00466_af5918ec12e617bb99156ec4bdb045def}{VBTWCH1OTSR\_b}}\\
+\}; \\
+
+\end{tabbing}\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+union \{\\
+\>\_\_IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}} \mbox{\hyperlink{a00466_aa69697d69e345575b3e39d07a2c6bcaa}{VBTWCH2OTSR}}\\
+\>struct \{\\
+\>\>\_\_IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}} \mbox{\hyperlink{a00466_a2da649a2a7e5e478d176bddb08a68159}{CH2VCH0TE}}:1\\
+\>\>\_\_IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}} \mbox{\hyperlink{a00466_a1f6f99954a9df4c17cd3cdf4cd31e4ac}{CH2VCH1TE}}:1\\
+\>\>\_\_IO \mbox{\hyperlink{a00466_a5451c32a0911dcd9c224cd104db488e4}{uint8\_t}}:1\\
+\>\>\_\_IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}} \mbox{\hyperlink{a00466_aebc99da47b7d06a9677d4a9204787be4}{CH2VRTCTE}}:1\\
+\>\>\_\_IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}} \mbox{\hyperlink{a00466_ab6702a4abc54d1d771324cfaeb3bcee3}{CH2VRTCATE}}:1\\
+\>\>\_\_IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}} \mbox{\hyperlink{a00466_a9e23e26dcf596f8885eddeab37b3672c}{CH2VAGTUTE}}:1\\
+\>\} \mbox{\hyperlink{a00466_a6d5583f68baa75c231b7bac654003386}{VBTWCH2OTSR\_b}}\\
+\}; \\
+
+\end{tabbing}\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+union \{\\
+\>\_\_IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}} \mbox{\hyperlink{a00466_a66322276d4b2e35e65bef13c90a42bcb}{VBTICTLR}}\\
+\>struct \{\\
+\>\>\_\_IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}} \mbox{\hyperlink{a00466_ab55596ab5f9f783d137a220e89211728}{VCH0INEN}}:1\\
+\>\>\_\_IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}} \mbox{\hyperlink{a00466_afe67e96d91843addbb55a90d0ff152a5}{VCH1INEN}}:1\\
+\>\>\_\_IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}} \mbox{\hyperlink{a00466_ac8435f80a9a7fda4a5933a9d047b960d}{VCH2INEN}}:1\\
+\>\} \mbox{\hyperlink{a00466_aa41a5fc6eef6401f9eb71e5c96de2491}{VBTICTLR\_b}}\\
+\}; \\
+
+\end{tabbing}\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+union \{\\
+\>\_\_IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}} \mbox{\hyperlink{a00466_a509c1421a00c58e23a99d81f3621ba34}{VBTOCTLR}}\\
+\>struct \{\\
+\>\>\_\_IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}} \mbox{\hyperlink{a00466_af6aca4eea5300f5c7322e0459025a17b}{VCH0OEN}}:1\\
+\>\>\_\_IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}} \mbox{\hyperlink{a00466_a598ee5efe82c8e32ff85cf2c83cba91a}{VCH1OEN}}:1\\
+\>\>\_\_IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}} \mbox{\hyperlink{a00466_a37a62c8cabbd2a32a553b041e514939e}{VCH2OEN}}:1\\
+\>\>\_\_IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}} \mbox{\hyperlink{a00466_a2a8288073ac2f8bdfa400fc4d61b4f49}{VOUT0LSEL}}:1\\
+\>\>\_\_IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}} \mbox{\hyperlink{a00466_ade9df711861dcc3430507de1dd276b87}{VOUT1LSEL}}:1\\
+\>\>\_\_IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}} \mbox{\hyperlink{a00466_a2a458bd1739ebecaf5d171b959348768}{VOUT2LSEL}}:1\\
+\>\} \mbox{\hyperlink{a00466_af8d7dd4283a4d87d23a372f4c7b15ae9}{VBTOCTLR\_b}}\\
+\}; \\
+
+\end{tabbing}\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+union \{\\
+\>\_\_IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}} \mbox{\hyperlink{a00466_a08ec0038a3f39520e0d9f6635bc71b0c}{VBTWTER}}\\
+\>struct \{\\
+\>\>\_\_IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}} \mbox{\hyperlink{a00466_afb3b541a21bac87e1d27df6fb6941956}{VCH0E}}:1\\
+\>\>\_\_IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}} \mbox{\hyperlink{a00466_a46af7e5bf9758d7829f8c86f1d43a303}{VCH1E}}:1\\
+\>\>\_\_IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}} \mbox{\hyperlink{a00466_ac5bfd10427ce273546d69b9661b5072d}{VCH2E}}:1\\
+\>\>\_\_IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}} \mbox{\hyperlink{a00466_ab9ae500375eb1e628b85aa65b7ed45c9}{VRTCIE}}:1\\
+\>\>\_\_IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}} \mbox{\hyperlink{a00466_a255197e8d254d33f0526e14aa1249469}{VRTCAE}}:1\\
+\>\>\_\_IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}} \mbox{\hyperlink{a00466_a6c74dbed11aaf6683318d00be55309cb}{VAGTUE}}:1\\
+\>\} \mbox{\hyperlink{a00466_a0708a21a1ae2f8293ef2a75f30089690}{VBTWTER\_b}}\\
+\}; \\
+
+\end{tabbing}\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+union \{\\
+\>\_\_IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}} \mbox{\hyperlink{a00466_a7c7b54f1ed03a096027904bc68392c66}{VBTWEGR}}\\
+\>struct \{\\
+\>\>\_\_IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}} \mbox{\hyperlink{a00466_a462664375bffcf60057195e0af1f8d6b}{VCH0EG}}:1\\
+\>\>\_\_IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}} \mbox{\hyperlink{a00466_a2f8de2551a103308673eb55f4c82f582}{VCH1EG}}:1\\
+\>\>\_\_IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}} \mbox{\hyperlink{a00466_adb4d1537b2dbc5c92a2b2c78b23f88d1}{VCH2EG}}:1\\
+\>\} \mbox{\hyperlink{a00466_a21f6c7f56335025f09bfce0e64fcd47e}{VBTWEGR\_b}}\\
+\}; \\
+
+\end{tabbing}\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+union \{\\
+\>\_\_IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}} \mbox{\hyperlink{a00466_a6e7d6dfbc6cede8c0ca4b56039aef255}{VBTWFR}}\\
+\>struct \{\\
+\>\>\_\_IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}} \mbox{\hyperlink{a00466_a72c0b0d8af23c75dfb16c8d0e68c951d}{VCH0F}}:1\\
+\>\>\_\_IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}} \mbox{\hyperlink{a00466_a1b0c3585f7edba7d916abef451225b3f}{VCH1F}}:1\\
+\>\>\_\_IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}} \mbox{\hyperlink{a00466_afe0e83510631a58d46610c3442ddd4db}{VCH2F}}:1\\
+\>\>\_\_IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}} \mbox{\hyperlink{a00466_a5b5f7affef0a098dee7c9ef6c1ca70e7}{VRTCIF}}:1\\
+\>\>\_\_IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}} \mbox{\hyperlink{a00466_a718bf6551917d8987d6016ebe570fb65}{VRTCAF}}:1\\
+\>\>\_\_IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}} \mbox{\hyperlink{a00466_a10c0670f27002aa2ac67e3b058a307d3}{VAGTUF}}:1\\
+\>\} \mbox{\hyperlink{a00466_a144cb09f20760bea88ff8b8a0b5c5f75}{VBTWFR\_b}}\\
+\}; \\
+
+\end{tabbing}\item 
+\+\_\+\+\_\+I \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{a00466_a3c2ef2721930f042f4496f0994d8d3ad}{RESERVED6}} \mbox{[}64\mbox{]}
+\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+union \{\\
+\>\_\_IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}} \mbox{\hyperlink{a00466_abbc783c180eb738c41a772560eb63f2c}{VBTBKRn}} \mbox{[}512\mbox{]}\\
+\>struct \{\\
+\>\>\_\_IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}} \mbox{\hyperlink{a00466_a4f94aa307a83bcf6721df96ffc0427ff}{VBTBKR}}:8\\
+\>\} \mbox{\hyperlink{a00466_aba028b3871a24840a38f4db717908706}{VBTBKRn\_b}} \mbox{[}512\mbox{]}\\
+\}; \\
+
+\end{tabbing}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{a00466_a768cf1bc153d95af8a2c22072e4aa708}\label{a00466_a768cf1bc153d95af8a2c22072e4aa708} 
+\doxysubsubsection{\texorpdfstring{[union]}{[union]}}
+{\footnotesize\ttfamily union  \{ ... \}  \mbox{\hyperlink{a00466}{R\+\_\+\+VBATT\+\_\+\+Type}}}
+
+\Hypertarget{a00466_ae92accd8f7b3b1441f1187758d607f2f}\label{a00466_ae92accd8f7b3b1441f1187758d607f2f} 
+\doxysubsubsection{\texorpdfstring{[union]}{[union]}}
+{\footnotesize\ttfamily union  \{ ... \}  \mbox{\hyperlink{a00466}{R\+\_\+\+VBATT\+\_\+\+Type}}}
+
+\Hypertarget{a00466_a0bb6c519db500aec550b656b139b12de}\label{a00466_a0bb6c519db500aec550b656b139b12de} 
+\doxysubsubsection{\texorpdfstring{[union]}{[union]}}
+{\footnotesize\ttfamily union  \{ ... \}  \mbox{\hyperlink{a00466}{R\+\_\+\+VBATT\+\_\+\+Type}}}
+
+\Hypertarget{a00466_a079b655bcbeaa70147014da7dd21d987}\label{a00466_a079b655bcbeaa70147014da7dd21d987} 
+\doxysubsubsection{\texorpdfstring{[union]}{[union]}}
+{\footnotesize\ttfamily union  \{ ... \}  \mbox{\hyperlink{a00466}{R\+\_\+\+VBATT\+\_\+\+Type}}}
+
+\Hypertarget{a00466_ac8e349a50b58162ba3633fd68cb7882e}\label{a00466_ac8e349a50b58162ba3633fd68cb7882e} 
+\doxysubsubsection{\texorpdfstring{[union]}{[union]}}
+{\footnotesize\ttfamily union  \{ ... \}  \mbox{\hyperlink{a00466}{R\+\_\+\+VBATT\+\_\+\+Type}}}
+
+\Hypertarget{a00466_a0c92eb34a7b928d4e3ae8e563f38ad0d}\label{a00466_a0c92eb34a7b928d4e3ae8e563f38ad0d} 
+\doxysubsubsection{\texorpdfstring{[union]}{[union]}}
+{\footnotesize\ttfamily union  \{ ... \}  \mbox{\hyperlink{a00466}{R\+\_\+\+VBATT\+\_\+\+Type}}}
+
+\Hypertarget{a00466_ae69ebf6f2849707c5832ff5b72907dea}\label{a00466_ae69ebf6f2849707c5832ff5b72907dea} 
+\doxysubsubsection{\texorpdfstring{[union]}{[union]}}
+{\footnotesize\ttfamily union  \{ ... \}  \mbox{\hyperlink{a00466}{R\+\_\+\+VBATT\+\_\+\+Type}}}
+
+\Hypertarget{a00466_abee6a6353661e85ba4b0df2b47c666b8}\label{a00466_abee6a6353661e85ba4b0df2b47c666b8} 
+\doxysubsubsection{\texorpdfstring{[union]}{[union]}}
+{\footnotesize\ttfamily union  \{ ... \}  \mbox{\hyperlink{a00466}{R\+\_\+\+VBATT\+\_\+\+Type}}}
+
+\Hypertarget{a00466_ab874942203a941567992e8952d8ed3d5}\label{a00466_ab874942203a941567992e8952d8ed3d5} 
+\doxysubsubsection{\texorpdfstring{[union]}{[union]}}
+{\footnotesize\ttfamily union  \{ ... \}  \mbox{\hyperlink{a00466}{R\+\_\+\+VBATT\+\_\+\+Type}}}
+
+\Hypertarget{a00466_a3285ee04594d02a94cfd5a98609076f6}\label{a00466_a3285ee04594d02a94cfd5a98609076f6} 
+\doxysubsubsection{\texorpdfstring{[union]}{[union]}}
+{\footnotesize\ttfamily union  \{ ... \}  \mbox{\hyperlink{a00466}{R\+\_\+\+VBATT\+\_\+\+Type}}}
+
+\Hypertarget{a00466_a8a29841dc23ed55525d9debc8d5cbc5c}\label{a00466_a8a29841dc23ed55525d9debc8d5cbc5c} 
+\doxysubsubsection{\texorpdfstring{[union]}{[union]}}
+{\footnotesize\ttfamily union  \{ ... \}  \mbox{\hyperlink{a00466}{R\+\_\+\+VBATT\+\_\+\+Type}}}
+
+\Hypertarget{a00466_aa33841c6593f7a872f01831dd0165900}\label{a00466_aa33841c6593f7a872f01831dd0165900} 
+\doxysubsubsection{\texorpdfstring{[union]}{[union]}}
+{\footnotesize\ttfamily union  \{ ... \}  \mbox{\hyperlink{a00466}{R\+\_\+\+VBATT\+\_\+\+Type}}}
+
+\Hypertarget{a00466_aa27aade16f1b9f7d2e376000da7f17c4}\label{a00466_aa27aade16f1b9f7d2e376000da7f17c4} 
+\doxysubsubsection{\texorpdfstring{[union]}{[union]}}
+{\footnotesize\ttfamily union  \{ ... \}  \mbox{\hyperlink{a00466}{R\+\_\+\+VBATT\+\_\+\+Type}}}
+
+\Hypertarget{a00466_a88e43dd7cf89eee99ab971609c20be77}\label{a00466_a88e43dd7cf89eee99ab971609c20be77} 
+\doxysubsubsection{\texorpdfstring{[union]}{[union]}}
+{\footnotesize\ttfamily union  \{ ... \}  \mbox{\hyperlink{a00466}{R\+\_\+\+VBATT\+\_\+\+Type}}}
+
+\Hypertarget{a00466_ae2b8e11904801643cb25579eb05b05af}\label{a00466_ae2b8e11904801643cb25579eb05b05af} 
+\doxysubsubsection{\texorpdfstring{[union]}{[union]}}
+{\footnotesize\ttfamily union  \{ ... \}  \mbox{\hyperlink{a00466}{R\+\_\+\+VBATT\+\_\+\+Type}}}
+
+\Hypertarget{a00466_aa7cb233eca7794d8bf3dafb4926a0172}\label{a00466_aa7cb233eca7794d8bf3dafb4926a0172} 
+\doxysubsubsection{\texorpdfstring{[union]}{[union]}}
+{\footnotesize\ttfamily union  \{ ... \}  \mbox{\hyperlink{a00466}{R\+\_\+\+VBATT\+\_\+\+Type}}}
+
+\Hypertarget{a00466_ab6d0af2a00f97095463a18180310c6e4}\label{a00466_ab6d0af2a00f97095463a18180310c6e4} 
+\index{R\_VBATT\_Type@{R\_VBATT\_Type}!BKRACR@{BKRACR}}
+\index{BKRACR@{BKRACR}!R\_VBATT\_Type@{R\_VBATT\_Type}}
+\doxysubsubsection{\texorpdfstring{BKRACR}{BKRACR}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} R\+\_\+\+VBATT\+\_\+\+Type\+::\+BKRACR}
+
+Backup Register Access Control Register (BKRACR) ~\newline
+ \Hypertarget{a00466_af59dc5af62ae00e6d66e10753db8f149}\label{a00466_af59dc5af62ae00e6d66e10753db8f149} 
+\index{R\_VBATT\_Type@{R\_VBATT\_Type}!BKRACR\_b@{BKRACR\_b}}
+\index{BKRACR\_b@{BKRACR\_b}!R\_VBATT\_Type@{R\_VBATT\_Type}}
+\doxysubsubsection{\texorpdfstring{[struct]}{[struct]}}
+{\footnotesize\ttfamily struct  \{ ... \}  R\+\_\+\+VBATT\+\_\+\+Type\+::\+BKRACR\+\_\+b}
+
+Bit\+Size ~\newline
+ \Hypertarget{a00466_aa8291468ba5bb557681c90a71c1f92ba}\label{a00466_aa8291468ba5bb557681c90a71c1f92ba} 
+\index{R\_VBATT\_Type@{R\_VBATT\_Type}!BKRACS@{BKRACS}}
+\index{BKRACS@{BKRACS}!R\_VBATT\_Type@{R\_VBATT\_Type}}
+\doxysubsubsection{\texorpdfstring{BKRACS}{BKRACS}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} R\+\_\+\+VBATT\+\_\+\+Type\+::\+BKRACS}
+
+Backup Register Access cycle Select ~\newline
+ \Hypertarget{a00466_afd9d09d5e86450f16800b5bfa860b02b}\label{a00466_afd9d09d5e86450f16800b5bfa860b02b} 
+\index{R\_VBATT\_Type@{R\_VBATT\_Type}!BPWSWSTP@{BPWSWSTP}}
+\index{BPWSWSTP@{BPWSWSTP}!R\_VBATT\_Type@{R\_VBATT\_Type}}
+\doxysubsubsection{\texorpdfstring{BPWSWSTP}{BPWSWSTP}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} R\+\_\+\+VBATT\+\_\+\+Type\+::\+BPWSWSTP}
+
+Battery Power Supply Switch Stop ~\newline
+ \Hypertarget{a00466_a697043a8fb2eb92961831cbfe3519c97}\label{a00466_a697043a8fb2eb92961831cbfe3519c97} 
+\index{R\_VBATT\_Type@{R\_VBATT\_Type}!CH0VAGTUTE@{CH0VAGTUTE}}
+\index{CH0VAGTUTE@{CH0VAGTUTE}!R\_VBATT\_Type@{R\_VBATT\_Type}}
+\doxysubsubsection{\texorpdfstring{CH0VAGTUTE}{CH0VAGTUTE}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} R\+\_\+\+VBATT\+\_\+\+Type\+::\+CH0\+VAGTUTE}
+
+VBATWIO0 Output AGT Underflow Signal Enable ~\newline
+ \Hypertarget{a00466_a8d26ee4849ea29cd969d4ca76021ac5f}\label{a00466_a8d26ee4849ea29cd969d4ca76021ac5f} 
+\index{R\_VBATT\_Type@{R\_VBATT\_Type}!CH0VCH1TE@{CH0VCH1TE}}
+\index{CH0VCH1TE@{CH0VCH1TE}!R\_VBATT\_Type@{R\_VBATT\_Type}}
+\doxysubsubsection{\texorpdfstring{CH0VCH1TE}{CH0VCH1TE}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} R\+\_\+\+VBATT\+\_\+\+Type\+::\+CH0\+VCH1\+TE}
+
+VBATWIO0 Output VBATWIO1 Trigger Enable ~\newline
+ \Hypertarget{a00466_af8bbcbc3d6bab1df7ee77cf58341d462}\label{a00466_af8bbcbc3d6bab1df7ee77cf58341d462} 
+\index{R\_VBATT\_Type@{R\_VBATT\_Type}!CH0VCH2TE@{CH0VCH2TE}}
+\index{CH0VCH2TE@{CH0VCH2TE}!R\_VBATT\_Type@{R\_VBATT\_Type}}
+\doxysubsubsection{\texorpdfstring{CH0VCH2TE}{CH0VCH2TE}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} R\+\_\+\+VBATT\+\_\+\+Type\+::\+CH0\+VCH2\+TE}
+
+VBATWIO0 Output VBATWIO2 Trigger Enable ~\newline
+ \Hypertarget{a00466_a92f788fe75faa00754d77ba0662e9dd5}\label{a00466_a92f788fe75faa00754d77ba0662e9dd5} 
+\index{R\_VBATT\_Type@{R\_VBATT\_Type}!CH0VRTCATE@{CH0VRTCATE}}
+\index{CH0VRTCATE@{CH0VRTCATE}!R\_VBATT\_Type@{R\_VBATT\_Type}}
+\doxysubsubsection{\texorpdfstring{CH0VRTCATE}{CH0VRTCATE}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} R\+\_\+\+VBATT\+\_\+\+Type\+::\+CH0\+VRTCATE}
+
+VBATWIO0 Output RTC Alarm Signal Enable ~\newline
+ \Hypertarget{a00466_a927c7509e805e7d9924533c3fedfa0a5}\label{a00466_a927c7509e805e7d9924533c3fedfa0a5} 
+\index{R\_VBATT\_Type@{R\_VBATT\_Type}!CH0VRTCTE@{CH0VRTCTE}}
+\index{CH0VRTCTE@{CH0VRTCTE}!R\_VBATT\_Type@{R\_VBATT\_Type}}
+\doxysubsubsection{\texorpdfstring{CH0VRTCTE}{CH0VRTCTE}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} R\+\_\+\+VBATT\+\_\+\+Type\+::\+CH0\+VRTCTE}
+
+VBATWIO0 Output RTC Periodic Signal Enable ~\newline
+ \Hypertarget{a00466_a4d90835686218bc1a122f5e1ca7094dc}\label{a00466_a4d90835686218bc1a122f5e1ca7094dc} 
+\index{R\_VBATT\_Type@{R\_VBATT\_Type}!CH1VAGTUTE@{CH1VAGTUTE}}
+\index{CH1VAGTUTE@{CH1VAGTUTE}!R\_VBATT\_Type@{R\_VBATT\_Type}}
+\doxysubsubsection{\texorpdfstring{CH1VAGTUTE}{CH1VAGTUTE}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} R\+\_\+\+VBATT\+\_\+\+Type\+::\+CH1\+VAGTUTE}
+
+VBATWIO1 Output AGT underflow Signal Enable ~\newline
+ \Hypertarget{a00466_aadce53b35caac3b4ae801bd8cf90a1d9}\label{a00466_aadce53b35caac3b4ae801bd8cf90a1d9} 
+\index{R\_VBATT\_Type@{R\_VBATT\_Type}!CH1VCH0TE@{CH1VCH0TE}}
+\index{CH1VCH0TE@{CH1VCH0TE}!R\_VBATT\_Type@{R\_VBATT\_Type}}
+\doxysubsubsection{\texorpdfstring{CH1VCH0TE}{CH1VCH0TE}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} R\+\_\+\+VBATT\+\_\+\+Type\+::\+CH1\+VCH0\+TE}
+
+VBATWIO1 Output VBATWIO0 Trigger Enable ~\newline
+ \Hypertarget{a00466_a3046720cbc7e37867c39692137d46b9e}\label{a00466_a3046720cbc7e37867c39692137d46b9e} 
+\index{R\_VBATT\_Type@{R\_VBATT\_Type}!CH1VCH2TE@{CH1VCH2TE}}
+\index{CH1VCH2TE@{CH1VCH2TE}!R\_VBATT\_Type@{R\_VBATT\_Type}}
+\doxysubsubsection{\texorpdfstring{CH1VCH2TE}{CH1VCH2TE}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} R\+\_\+\+VBATT\+\_\+\+Type\+::\+CH1\+VCH2\+TE}
+
+VBATWIO1 Output VBATWIO2 Trigger Enable ~\newline
+ \Hypertarget{a00466_ad69a39a83b0188a9c2c30f941029fe69}\label{a00466_ad69a39a83b0188a9c2c30f941029fe69} 
+\index{R\_VBATT\_Type@{R\_VBATT\_Type}!CH1VRTCATE@{CH1VRTCATE}}
+\index{CH1VRTCATE@{CH1VRTCATE}!R\_VBATT\_Type@{R\_VBATT\_Type}}
+\doxysubsubsection{\texorpdfstring{CH1VRTCATE}{CH1VRTCATE}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} R\+\_\+\+VBATT\+\_\+\+Type\+::\+CH1\+VRTCATE}
+
+VBATWIO1 Output RTC Alarm Signal Enable ~\newline
+ \Hypertarget{a00466_ac49b80b230f08b505d4e0199fefc3f6e}\label{a00466_ac49b80b230f08b505d4e0199fefc3f6e} 
+\index{R\_VBATT\_Type@{R\_VBATT\_Type}!CH1VRTCTE@{CH1VRTCTE}}
+\index{CH1VRTCTE@{CH1VRTCTE}!R\_VBATT\_Type@{R\_VBATT\_Type}}
+\doxysubsubsection{\texorpdfstring{CH1VRTCTE}{CH1VRTCTE}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} R\+\_\+\+VBATT\+\_\+\+Type\+::\+CH1\+VRTCTE}
+
+VBATWIO1 Output RTC Periodic Signal Enable ~\newline
+ \Hypertarget{a00466_a9e23e26dcf596f8885eddeab37b3672c}\label{a00466_a9e23e26dcf596f8885eddeab37b3672c} 
+\index{R\_VBATT\_Type@{R\_VBATT\_Type}!CH2VAGTUTE@{CH2VAGTUTE}}
+\index{CH2VAGTUTE@{CH2VAGTUTE}!R\_VBATT\_Type@{R\_VBATT\_Type}}
+\doxysubsubsection{\texorpdfstring{CH2VAGTUTE}{CH2VAGTUTE}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} R\+\_\+\+VBATT\+\_\+\+Type\+::\+CH2\+VAGTUTE}
+
+VBATWIO2 Output AGT underflow Signal Enable ~\newline
+ \Hypertarget{a00466_a2da649a2a7e5e478d176bddb08a68159}\label{a00466_a2da649a2a7e5e478d176bddb08a68159} 
+\index{R\_VBATT\_Type@{R\_VBATT\_Type}!CH2VCH0TE@{CH2VCH0TE}}
+\index{CH2VCH0TE@{CH2VCH0TE}!R\_VBATT\_Type@{R\_VBATT\_Type}}
+\doxysubsubsection{\texorpdfstring{CH2VCH0TE}{CH2VCH0TE}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} R\+\_\+\+VBATT\+\_\+\+Type\+::\+CH2\+VCH0\+TE}
+
+VBATWIO2 Output VBATWIO0 Trigger Enable ~\newline
+ \Hypertarget{a00466_a1f6f99954a9df4c17cd3cdf4cd31e4ac}\label{a00466_a1f6f99954a9df4c17cd3cdf4cd31e4ac} 
+\index{R\_VBATT\_Type@{R\_VBATT\_Type}!CH2VCH1TE@{CH2VCH1TE}}
+\index{CH2VCH1TE@{CH2VCH1TE}!R\_VBATT\_Type@{R\_VBATT\_Type}}
+\doxysubsubsection{\texorpdfstring{CH2VCH1TE}{CH2VCH1TE}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} R\+\_\+\+VBATT\+\_\+\+Type\+::\+CH2\+VCH1\+TE}
+
+VBATWIO2 Output VBATWIO1 Trigger Enable ~\newline
+ \Hypertarget{a00466_ab6702a4abc54d1d771324cfaeb3bcee3}\label{a00466_ab6702a4abc54d1d771324cfaeb3bcee3} 
+\index{R\_VBATT\_Type@{R\_VBATT\_Type}!CH2VRTCATE@{CH2VRTCATE}}
+\index{CH2VRTCATE@{CH2VRTCATE}!R\_VBATT\_Type@{R\_VBATT\_Type}}
+\doxysubsubsection{\texorpdfstring{CH2VRTCATE}{CH2VRTCATE}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} R\+\_\+\+VBATT\+\_\+\+Type\+::\+CH2\+VRTCATE}
+
+VBATWIO2 Output RTC Alarm Signal Enable ~\newline
+ \Hypertarget{a00466_aebc99da47b7d06a9677d4a9204787be4}\label{a00466_aebc99da47b7d06a9677d4a9204787be4} 
+\index{R\_VBATT\_Type@{R\_VBATT\_Type}!CH2VRTCTE@{CH2VRTCTE}}
+\index{CH2VRTCTE@{CH2VRTCTE}!R\_VBATT\_Type@{R\_VBATT\_Type}}
+\doxysubsubsection{\texorpdfstring{CH2VRTCTE}{CH2VRTCTE}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} R\+\_\+\+VBATT\+\_\+\+Type\+::\+CH2\+VRTCTE}
+
+VBATWIO2 Output RTC Periodic Signal Enable ~\newline
+ \Hypertarget{a00466_a20d8fe8d4778fdc4384c670f175e2e61}\label{a00466_a20d8fe8d4778fdc4384c670f175e2e61} 
+\index{R\_VBATT\_Type@{R\_VBATT\_Type}!RESERVED1@{RESERVED1}}
+\index{RESERVED1@{RESERVED1}!R\_VBATT\_Type@{R\_VBATT\_Type}}
+\doxysubsubsection{\texorpdfstring{RESERVED1}{RESERVED1}}
+{\footnotesize\ttfamily \+\_\+\+\_\+I \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} R\+\_\+\+VBATT\+\_\+\+Type\+::\+RESERVED1\mbox{[}856\mbox{]}}
+
+\Hypertarget{a00466_a8daa8ff49c1e965e038f2e379b3dd059}\label{a00466_a8daa8ff49c1e965e038f2e379b3dd059} 
+\index{R\_VBATT\_Type@{R\_VBATT\_Type}!RESERVED2@{RESERVED2}}
+\index{RESERVED2@{RESERVED2}!R\_VBATT\_Type@{R\_VBATT\_Type}}
+\doxysubsubsection{\texorpdfstring{RESERVED2}{RESERVED2}}
+{\footnotesize\ttfamily \+\_\+\+\_\+I \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} R\+\_\+\+VBATT\+\_\+\+Type\+::\+RESERVED2\mbox{[}144\mbox{]}}
+
+\Hypertarget{a00466_a0635132d756058aac368a9843dbd0d1f}\label{a00466_a0635132d756058aac368a9843dbd0d1f} 
+\index{R\_VBATT\_Type@{R\_VBATT\_Type}!RESERVED3@{RESERVED3}}
+\index{RESERVED3@{RESERVED3}!R\_VBATT\_Type@{R\_VBATT\_Type}}
+\doxysubsubsection{\texorpdfstring{RESERVED3}{RESERVED3}}
+{\footnotesize\ttfamily \+\_\+\+\_\+I \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} R\+\_\+\+VBATT\+\_\+\+Type\+::\+RESERVED3}
+
+\Hypertarget{a00466_a7465d28434794a58e3f670f2d70a4dd3}\label{a00466_a7465d28434794a58e3f670f2d70a4dd3} 
+\index{R\_VBATT\_Type@{R\_VBATT\_Type}!RESERVED4@{RESERVED4}}
+\index{RESERVED4@{RESERVED4}!R\_VBATT\_Type@{R\_VBATT\_Type}}
+\doxysubsubsection{\texorpdfstring{RESERVED4}{RESERVED4}}
+{\footnotesize\ttfamily \+\_\+\+\_\+I \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} R\+\_\+\+VBATT\+\_\+\+Type\+::\+RESERVED4}
+
+\Hypertarget{a00466_a1df6c349e0ae714afb6c6e05bb931a73}\label{a00466_a1df6c349e0ae714afb6c6e05bb931a73} 
+\index{R\_VBATT\_Type@{R\_VBATT\_Type}!RESERVED5@{RESERVED5}}
+\index{RESERVED5@{RESERVED5}!R\_VBATT\_Type@{R\_VBATT\_Type}}
+\doxysubsubsection{\texorpdfstring{RESERVED5}{RESERVED5}}
+{\footnotesize\ttfamily \+\_\+\+\_\+I \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} R\+\_\+\+VBATT\+\_\+\+Type\+::\+RESERVED5}
+
+\Hypertarget{a00466_a3c2ef2721930f042f4496f0994d8d3ad}\label{a00466_a3c2ef2721930f042f4496f0994d8d3ad} 
+\index{R\_VBATT\_Type@{R\_VBATT\_Type}!RESERVED6@{RESERVED6}}
+\index{RESERVED6@{RESERVED6}!R\_VBATT\_Type@{R\_VBATT\_Type}}
+\doxysubsubsection{\texorpdfstring{RESERVED6}{RESERVED6}}
+{\footnotesize\ttfamily \+\_\+\+\_\+I \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} R\+\_\+\+VBATT\+\_\+\+Type\+::\+RESERVED6\mbox{[}64\mbox{]}}
+
+\Hypertarget{a00466_a5451c32a0911dcd9c224cd104db488e4}\label{a00466_a5451c32a0911dcd9c224cd104db488e4} 
+\index{R\_VBATT\_Type@{R\_VBATT\_Type}!uint8\_t@{uint8\_t}}
+\index{uint8\_t@{uint8\_t}!R\_VBATT\_Type@{R\_VBATT\_Type}}
+\doxysubsubsection{\texorpdfstring{uint8\_t}{uint8\_t}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+IO R\+\_\+\+VBATT\+\_\+\+Type\+::uint8\+\_\+t}
+
+\Hypertarget{a00466_a6c74dbed11aaf6683318d00be55309cb}\label{a00466_a6c74dbed11aaf6683318d00be55309cb} 
+\index{R\_VBATT\_Type@{R\_VBATT\_Type}!VAGTUE@{VAGTUE}}
+\index{VAGTUE@{VAGTUE}!R\_VBATT\_Type@{R\_VBATT\_Type}}
+\doxysubsubsection{\texorpdfstring{VAGTUE}{VAGTUE}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} R\+\_\+\+VBATT\+\_\+\+Type\+::\+VAGTUE}
+
+AGT1 underflow Signal Enable ~\newline
+ \Hypertarget{a00466_a10c0670f27002aa2ac67e3b058a307d3}\label{a00466_a10c0670f27002aa2ac67e3b058a307d3} 
+\index{R\_VBATT\_Type@{R\_VBATT\_Type}!VAGTUF@{VAGTUF}}
+\index{VAGTUF@{VAGTUF}!R\_VBATT\_Type@{R\_VBATT\_Type}}
+\doxysubsubsection{\texorpdfstring{VAGTUF}{VAGTUF}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} R\+\_\+\+VBATT\+\_\+\+Type\+::\+VAGTUF}
+
+AGT1 underflow Wakeup Trigger Flag ~\newline
+ \Hypertarget{a00466_a4f94aa307a83bcf6721df96ffc0427ff}\label{a00466_a4f94aa307a83bcf6721df96ffc0427ff} 
+\index{R\_VBATT\_Type@{R\_VBATT\_Type}!VBTBKR@{VBTBKR}}
+\index{VBTBKR@{VBTBKR}!R\_VBATT\_Type@{R\_VBATT\_Type}}
+\doxysubsubsection{\texorpdfstring{VBTBKR}{VBTBKR}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} R\+\_\+\+VBATT\+\_\+\+Type\+::\+VBTBKR}
+
+VBTBKR is a 512-\/byte readable/writeable register to store data powered by VBATT.\+The value of this register is retained even when VCC is not powered but VBATT is powered.\+VBTBKR is initialized by VBATT selected voltage power-\/on-\/reset. ~\newline
+ \Hypertarget{a00466_abbc783c180eb738c41a772560eb63f2c}\label{a00466_abbc783c180eb738c41a772560eb63f2c} 
+\index{R\_VBATT\_Type@{R\_VBATT\_Type}!VBTBKRn@{VBTBKRn}}
+\index{VBTBKRn@{VBTBKRn}!R\_VBATT\_Type@{R\_VBATT\_Type}}
+\doxysubsubsection{\texorpdfstring{VBTBKRn}{VBTBKRn}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} R\+\_\+\+VBATT\+\_\+\+Type\+::\+VBTBKRn\mbox{[}512\mbox{]}}
+
+VBATT Backup Register s ~\newline
+ \Hypertarget{a00466_aba028b3871a24840a38f4db717908706}\label{a00466_aba028b3871a24840a38f4db717908706} 
+\index{R\_VBATT\_Type@{R\_VBATT\_Type}!VBTBKRn\_b@{VBTBKRn\_b}}
+\index{VBTBKRn\_b@{VBTBKRn\_b}!R\_VBATT\_Type@{R\_VBATT\_Type}}
+\doxysubsubsection{\texorpdfstring{[struct]}{[struct]}}
+{\footnotesize\ttfamily struct  \{ ... \}  R\+\_\+\+VBATT\+\_\+\+Type\+::\+VBTBKRn\+\_\+b\mbox{[}512\mbox{]}}
+
+Bit\+Size ~\newline
+ \Hypertarget{a00466_a7a10bad8cd0c1ef8edfd7f5b38fd8246}\label{a00466_a7a10bad8cd0c1ef8edfd7f5b38fd8246} 
+\index{R\_VBATT\_Type@{R\_VBATT\_Type}!VBTBLDF@{VBTBLDF}}
+\index{VBTBLDF@{VBTBLDF}!R\_VBATT\_Type@{R\_VBATT\_Type}}
+\doxysubsubsection{\texorpdfstring{VBTBLDF}{VBTBLDF}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} R\+\_\+\+VBATT\+\_\+\+Type\+::\+VBTBLDF}
+
+VBATT Battery Low Detect Flag ~\newline
+ \Hypertarget{a00466_a491332a3937dde42e9a3d8566319e90c}\label{a00466_a491332a3937dde42e9a3d8566319e90c} 
+\index{R\_VBATT\_Type@{R\_VBATT\_Type}!VBTCMPCR@{VBTCMPCR}}
+\index{VBTCMPCR@{VBTCMPCR}!R\_VBATT\_Type@{R\_VBATT\_Type}}
+\doxysubsubsection{\texorpdfstring{VBTCMPCR}{VBTCMPCR}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} R\+\_\+\+VBATT\+\_\+\+Type\+::\+VBTCMPCR}
+
+VBATT Comparator Control register (VBTCMPCR) ~\newline
+ \Hypertarget{a00466_af02b301d6628a1fdcf5fbde102cedfa0}\label{a00466_af02b301d6628a1fdcf5fbde102cedfa0} 
+\index{R\_VBATT\_Type@{R\_VBATT\_Type}!VBTCMPCR\_b@{VBTCMPCR\_b}}
+\index{VBTCMPCR\_b@{VBTCMPCR\_b}!R\_VBATT\_Type@{R\_VBATT\_Type}}
+\doxysubsubsection{\texorpdfstring{[struct]}{[struct]}}
+{\footnotesize\ttfamily struct  \{ ... \}  R\+\_\+\+VBATT\+\_\+\+Type\+::\+VBTCMPCR\+\_\+b}
+
+Bit\+Size ~\newline
+ \Hypertarget{a00466_a0648e09f839b3915d3ad7712b6e3df39}\label{a00466_a0648e09f839b3915d3ad7712b6e3df39} 
+\index{R\_VBATT\_Type@{R\_VBATT\_Type}!VBTCMPE@{VBTCMPE}}
+\index{VBTCMPE@{VBTCMPE}!R\_VBATT\_Type@{R\_VBATT\_Type}}
+\doxysubsubsection{\texorpdfstring{VBTCMPE}{VBTCMPE}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} R\+\_\+\+VBATT\+\_\+\+Type\+::\+VBTCMPE}
+
+Battery Power Supply Switch Stop ~\newline
+ \Hypertarget{a00466_a97eca542fabb71e0956e3ad61962b6e1}\label{a00466_a97eca542fabb71e0956e3ad61962b6e1} 
+\index{R\_VBATT\_Type@{R\_VBATT\_Type}!VBTCR1@{VBTCR1}}
+\index{VBTCR1@{VBTCR1}!R\_VBATT\_Type@{R\_VBATT\_Type}}
+\doxysubsubsection{\texorpdfstring{VBTCR1}{VBTCR1}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} R\+\_\+\+VBATT\+\_\+\+Type\+::\+VBTCR1}
+
+VBATT Control Register 1 (VBTCR1) ~\newline
+ \Hypertarget{a00466_a5912ed2c16302bd8baf138b48e7d5c70}\label{a00466_a5912ed2c16302bd8baf138b48e7d5c70} 
+\index{R\_VBATT\_Type@{R\_VBATT\_Type}!VBTCR1\_b@{VBTCR1\_b}}
+\index{VBTCR1\_b@{VBTCR1\_b}!R\_VBATT\_Type@{R\_VBATT\_Type}}
+\doxysubsubsection{\texorpdfstring{[struct]}{[struct]}}
+{\footnotesize\ttfamily struct  \{ ... \}  R\+\_\+\+VBATT\+\_\+\+Type\+::\+VBTCR1\+\_\+b}
+
+Bit\+Size ~\newline
+ \Hypertarget{a00466_a0f5595283ddbc6a08607e66a38f9dcfa}\label{a00466_a0f5595283ddbc6a08607e66a38f9dcfa} 
+\index{R\_VBATT\_Type@{R\_VBATT\_Type}!VBTCR2@{VBTCR2}}
+\index{VBTCR2@{VBTCR2}!R\_VBATT\_Type@{R\_VBATT\_Type}}
+\doxysubsubsection{\texorpdfstring{VBTCR2}{VBTCR2}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} R\+\_\+\+VBATT\+\_\+\+Type\+::\+VBTCR2}
+
+VBATT Control Register 2 (VBTCR2) ~\newline
+ \Hypertarget{a00466_a02dc09cfbf372ae67b2c37ec6b28caf1}\label{a00466_a02dc09cfbf372ae67b2c37ec6b28caf1} 
+\index{R\_VBATT\_Type@{R\_VBATT\_Type}!VBTCR2\_b@{VBTCR2\_b}}
+\index{VBTCR2\_b@{VBTCR2\_b}!R\_VBATT\_Type@{R\_VBATT\_Type}}
+\doxysubsubsection{\texorpdfstring{[struct]}{[struct]}}
+{\footnotesize\ttfamily struct  \{ ... \}  R\+\_\+\+VBATT\+\_\+\+Type\+::\+VBTCR2\+\_\+b}
+
+Bit\+Size ~\newline
+ \Hypertarget{a00466_a66322276d4b2e35e65bef13c90a42bcb}\label{a00466_a66322276d4b2e35e65bef13c90a42bcb} 
+\index{R\_VBATT\_Type@{R\_VBATT\_Type}!VBTICTLR@{VBTICTLR}}
+\index{VBTICTLR@{VBTICTLR}!R\_VBATT\_Type@{R\_VBATT\_Type}}
+\doxysubsubsection{\texorpdfstring{VBTICTLR}{VBTICTLR}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} R\+\_\+\+VBATT\+\_\+\+Type\+::\+VBTICTLR}
+
+VBATT Input Control Register (VBTICTLR) ~\newline
+ \Hypertarget{a00466_aa41a5fc6eef6401f9eb71e5c96de2491}\label{a00466_aa41a5fc6eef6401f9eb71e5c96de2491} 
+\index{R\_VBATT\_Type@{R\_VBATT\_Type}!VBTICTLR\_b@{VBTICTLR\_b}}
+\index{VBTICTLR\_b@{VBTICTLR\_b}!R\_VBATT\_Type@{R\_VBATT\_Type}}
+\doxysubsubsection{\texorpdfstring{[struct]}{[struct]}}
+{\footnotesize\ttfamily struct  \{ ... \}  R\+\_\+\+VBATT\+\_\+\+Type\+::\+VBTICTLR\+\_\+b}
+
+Bit\+Size ~\newline
+ \Hypertarget{a00466_a43a7d4185c5b2e330f11662792bb8590}\label{a00466_a43a7d4185c5b2e330f11662792bb8590} 
+\index{R\_VBATT\_Type@{R\_VBATT\_Type}!VBTLVDEN@{VBTLVDEN}}
+\index{VBTLVDEN@{VBTLVDEN}!R\_VBATT\_Type@{R\_VBATT\_Type}}
+\doxysubsubsection{\texorpdfstring{VBTLVDEN}{VBTLVDEN}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} R\+\_\+\+VBATT\+\_\+\+Type\+::\+VBTLVDEN}
+
+VBATT Pin Low Voltage Detect Enable ~\newline
+ \Hypertarget{a00466_a75e82f1734397e772e2e51202bb37dda}\label{a00466_a75e82f1734397e772e2e51202bb37dda} 
+\index{R\_VBATT\_Type@{R\_VBATT\_Type}!VBTLVDICR@{VBTLVDICR}}
+\index{VBTLVDICR@{VBTLVDICR}!R\_VBATT\_Type@{R\_VBATT\_Type}}
+\doxysubsubsection{\texorpdfstring{VBTLVDICR}{VBTLVDICR}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} R\+\_\+\+VBATT\+\_\+\+Type\+::\+VBTLVDICR}
+
+VBATT Pin Low Voltage Detect Interrupt Control Register (VBTLVDICR) \Hypertarget{a00466_a0c7559df80a86b4c5bd6240bbaeae5f7}\label{a00466_a0c7559df80a86b4c5bd6240bbaeae5f7} 
+\index{R\_VBATT\_Type@{R\_VBATT\_Type}!VBTLVDICR\_b@{VBTLVDICR\_b}}
+\index{VBTLVDICR\_b@{VBTLVDICR\_b}!R\_VBATT\_Type@{R\_VBATT\_Type}}
+\doxysubsubsection{\texorpdfstring{[struct]}{[struct]}}
+{\footnotesize\ttfamily struct  \{ ... \}  R\+\_\+\+VBATT\+\_\+\+Type\+::\+VBTLVDICR\+\_\+b}
+
+Bit\+Size ~\newline
+ \Hypertarget{a00466_acc72d7e0d585223dcf21030a866b0282}\label{a00466_acc72d7e0d585223dcf21030a866b0282} 
+\index{R\_VBATT\_Type@{R\_VBATT\_Type}!VBTLVDIE@{VBTLVDIE}}
+\index{VBTLVDIE@{VBTLVDIE}!R\_VBATT\_Type@{R\_VBATT\_Type}}
+\doxysubsubsection{\texorpdfstring{VBTLVDIE}{VBTLVDIE}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} R\+\_\+\+VBATT\+\_\+\+Type\+::\+VBTLVDIE}
+
+VBATT Pin Low Voltage Detect Interrupt Enable ~\newline
+ \Hypertarget{a00466_ae62cf66741d13f873df195fcece8b50e}\label{a00466_ae62cf66741d13f873df195fcece8b50e} 
+\index{R\_VBATT\_Type@{R\_VBATT\_Type}!VBTLVDISEL@{VBTLVDISEL}}
+\index{VBTLVDISEL@{VBTLVDISEL}!R\_VBATT\_Type@{R\_VBATT\_Type}}
+\doxysubsubsection{\texorpdfstring{VBTLVDISEL}{VBTLVDISEL}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} R\+\_\+\+VBATT\+\_\+\+Type\+::\+VBTLVDISEL}
+
+Pin Low Voltage Detect Interrupt Select ~\newline
+ \Hypertarget{a00466_a5c7077e087b2ccca34ad615da706192e}\label{a00466_a5c7077e087b2ccca34ad615da706192e} 
+\index{R\_VBATT\_Type@{R\_VBATT\_Type}!VBTLVDLVL@{VBTLVDLVL}}
+\index{VBTLVDLVL@{VBTLVDLVL}!R\_VBATT\_Type@{R\_VBATT\_Type}}
+\doxysubsubsection{\texorpdfstring{VBTLVDLVL}{VBTLVDLVL}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} R\+\_\+\+VBATT\+\_\+\+Type\+::\+VBTLVDLVL}
+
+VBATT Pin Low Voltage Detect Level Select ~\newline
+ \Hypertarget{a00466_a509c1421a00c58e23a99d81f3621ba34}\label{a00466_a509c1421a00c58e23a99d81f3621ba34} 
+\index{R\_VBATT\_Type@{R\_VBATT\_Type}!VBTOCTLR@{VBTOCTLR}}
+\index{VBTOCTLR@{VBTOCTLR}!R\_VBATT\_Type@{R\_VBATT\_Type}}
+\doxysubsubsection{\texorpdfstring{VBTOCTLR}{VBTOCTLR}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} R\+\_\+\+VBATT\+\_\+\+Type\+::\+VBTOCTLR}
+
+VBATT Output Control Register (VBTOCTLR) ~\newline
+ \Hypertarget{a00466_af8d7dd4283a4d87d23a372f4c7b15ae9}\label{a00466_af8d7dd4283a4d87d23a372f4c7b15ae9} 
+\index{R\_VBATT\_Type@{R\_VBATT\_Type}!VBTOCTLR\_b@{VBTOCTLR\_b}}
+\index{VBTOCTLR\_b@{VBTOCTLR\_b}!R\_VBATT\_Type@{R\_VBATT\_Type}}
+\doxysubsubsection{\texorpdfstring{[struct]}{[struct]}}
+{\footnotesize\ttfamily struct  \{ ... \}  R\+\_\+\+VBATT\+\_\+\+Type\+::\+VBTOCTLR\+\_\+b}
+
+Bit\+Size ~\newline
+ \Hypertarget{a00466_afafeff911dc536d9c1d0a6af2fc4cacc}\label{a00466_afafeff911dc536d9c1d0a6af2fc4cacc} 
+\index{R\_VBATT\_Type@{R\_VBATT\_Type}!VBTRDF@{VBTRDF}}
+\index{VBTRDF@{VBTRDF}!R\_VBATT\_Type@{R\_VBATT\_Type}}
+\doxysubsubsection{\texorpdfstring{VBTRDF}{VBTRDF}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} R\+\_\+\+VBATT\+\_\+\+Type\+::\+VBTRDF}
+
+VBATT\+\_\+R Reset Detect Flag ~\newline
+ \Hypertarget{a00466_a3018ae5141824c798b2a6c3506fe25d2}\label{a00466_a3018ae5141824c798b2a6c3506fe25d2} 
+\index{R\_VBATT\_Type@{R\_VBATT\_Type}!VBTRVLD@{VBTRVLD}}
+\index{VBTRVLD@{VBTRVLD}!R\_VBATT\_Type@{R\_VBATT\_Type}}
+\doxysubsubsection{\texorpdfstring{VBTRVLD}{VBTRVLD}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} R\+\_\+\+VBATT\+\_\+\+Type\+::\+VBTRVLD}
+
+VBATT\+\_\+R Valid ~\newline
+ \Hypertarget{a00466_a763a1eb56d7a0b77178e7dbc08e1a490}\label{a00466_a763a1eb56d7a0b77178e7dbc08e1a490} 
+\index{R\_VBATT\_Type@{R\_VBATT\_Type}!VBTSR@{VBTSR}}
+\index{VBTSR@{VBTSR}!R\_VBATT\_Type@{R\_VBATT\_Type}}
+\doxysubsubsection{\texorpdfstring{VBTSR}{VBTSR}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} R\+\_\+\+VBATT\+\_\+\+Type\+::\+VBTSR}
+
+VBATT Status Register (VBTSR) ~\newline
+ \Hypertarget{a00466_a7d51533a88fff4daa3515f2469123ddf}\label{a00466_a7d51533a88fff4daa3515f2469123ddf} 
+\index{R\_VBATT\_Type@{R\_VBATT\_Type}!VBTSR\_b@{VBTSR\_b}}
+\index{VBTSR\_b@{VBTSR\_b}!R\_VBATT\_Type@{R\_VBATT\_Type}}
+\doxysubsubsection{\texorpdfstring{[struct]}{[struct]}}
+{\footnotesize\ttfamily struct  \{ ... \}  R\+\_\+\+VBATT\+\_\+\+Type\+::\+VBTSR\+\_\+b}
+
+Bit\+Size ~\newline
+ \Hypertarget{a00466_a9c7872a844c75410a6e5645941c4a9ba}\label{a00466_a9c7872a844c75410a6e5645941c4a9ba} 
+\index{R\_VBATT\_Type@{R\_VBATT\_Type}!VBTWCH0OTSR@{VBTWCH0OTSR}}
+\index{VBTWCH0OTSR@{VBTWCH0OTSR}!R\_VBATT\_Type@{R\_VBATT\_Type}}
+\doxysubsubsection{\texorpdfstring{VBTWCH0OTSR}{VBTWCH0OTSR}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} R\+\_\+\+VBATT\+\_\+\+Type\+::\+VBTWCH0\+OTSR}
+
+VBATT Wakeup I/O 0 Output Trigger Select Register (VBTWCH0\+OTSR) ~\newline
+ \Hypertarget{a00466_aaf0e0d54c34181c33e8bb367c50c5b23}\label{a00466_aaf0e0d54c34181c33e8bb367c50c5b23} 
+\index{R\_VBATT\_Type@{R\_VBATT\_Type}!VBTWCH0OTSR\_b@{VBTWCH0OTSR\_b}}
+\index{VBTWCH0OTSR\_b@{VBTWCH0OTSR\_b}!R\_VBATT\_Type@{R\_VBATT\_Type}}
+\doxysubsubsection{\texorpdfstring{[struct]}{[struct]}}
+{\footnotesize\ttfamily struct  \{ ... \}  R\+\_\+\+VBATT\+\_\+\+Type\+::\+VBTWCH0\+OTSR\+\_\+b}
+
+Bit\+Size ~\newline
+ \Hypertarget{a00466_aa9245c3af7ced6f2eb528141cbe3be2a}\label{a00466_aa9245c3af7ced6f2eb528141cbe3be2a} 
+\index{R\_VBATT\_Type@{R\_VBATT\_Type}!VBTWCH1OTSR@{VBTWCH1OTSR}}
+\index{VBTWCH1OTSR@{VBTWCH1OTSR}!R\_VBATT\_Type@{R\_VBATT\_Type}}
+\doxysubsubsection{\texorpdfstring{VBTWCH1OTSR}{VBTWCH1OTSR}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} R\+\_\+\+VBATT\+\_\+\+Type\+::\+VBTWCH1\+OTSR}
+
+VBATT Wakeup I/O 1 Output Trigger Select Register (VBTWCH1\+OTSR) ~\newline
+ \Hypertarget{a00466_af5918ec12e617bb99156ec4bdb045def}\label{a00466_af5918ec12e617bb99156ec4bdb045def} 
+\index{R\_VBATT\_Type@{R\_VBATT\_Type}!VBTWCH1OTSR\_b@{VBTWCH1OTSR\_b}}
+\index{VBTWCH1OTSR\_b@{VBTWCH1OTSR\_b}!R\_VBATT\_Type@{R\_VBATT\_Type}}
+\doxysubsubsection{\texorpdfstring{[struct]}{[struct]}}
+{\footnotesize\ttfamily struct  \{ ... \}  R\+\_\+\+VBATT\+\_\+\+Type\+::\+VBTWCH1\+OTSR\+\_\+b}
+
+Bit\+Size ~\newline
+ \Hypertarget{a00466_aa69697d69e345575b3e39d07a2c6bcaa}\label{a00466_aa69697d69e345575b3e39d07a2c6bcaa} 
+\index{R\_VBATT\_Type@{R\_VBATT\_Type}!VBTWCH2OTSR@{VBTWCH2OTSR}}
+\index{VBTWCH2OTSR@{VBTWCH2OTSR}!R\_VBATT\_Type@{R\_VBATT\_Type}}
+\doxysubsubsection{\texorpdfstring{VBTWCH2OTSR}{VBTWCH2OTSR}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} R\+\_\+\+VBATT\+\_\+\+Type\+::\+VBTWCH2\+OTSR}
+
+VBATT Wakeup I/O 2 Output Trigger Select Register (VBTWCH2\+OTSR) ~\newline
+ \Hypertarget{a00466_a6d5583f68baa75c231b7bac654003386}\label{a00466_a6d5583f68baa75c231b7bac654003386} 
+\index{R\_VBATT\_Type@{R\_VBATT\_Type}!VBTWCH2OTSR\_b@{VBTWCH2OTSR\_b}}
+\index{VBTWCH2OTSR\_b@{VBTWCH2OTSR\_b}!R\_VBATT\_Type@{R\_VBATT\_Type}}
+\doxysubsubsection{\texorpdfstring{[struct]}{[struct]}}
+{\footnotesize\ttfamily struct  \{ ... \}  R\+\_\+\+VBATT\+\_\+\+Type\+::\+VBTWCH2\+OTSR\+\_\+b}
+
+Bit\+Size ~\newline
+ \Hypertarget{a00466_a41bc986be689e053041453b88fefcfb2}\label{a00466_a41bc986be689e053041453b88fefcfb2} 
+\index{R\_VBATT\_Type@{R\_VBATT\_Type}!VBTWCTLR@{VBTWCTLR}}
+\index{VBTWCTLR@{VBTWCTLR}!R\_VBATT\_Type@{R\_VBATT\_Type}}
+\doxysubsubsection{\texorpdfstring{VBTWCTLR}{VBTWCTLR}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} R\+\_\+\+VBATT\+\_\+\+Type\+::\+VBTWCTLR}
+
+VBATT Wakeup Control Register (VBTWCTLR) ~\newline
+ \Hypertarget{a00466_a11392c95f1467e801c4829f565dbef9b}\label{a00466_a11392c95f1467e801c4829f565dbef9b} 
+\index{R\_VBATT\_Type@{R\_VBATT\_Type}!VBTWCTLR\_b@{VBTWCTLR\_b}}
+\index{VBTWCTLR\_b@{VBTWCTLR\_b}!R\_VBATT\_Type@{R\_VBATT\_Type}}
+\doxysubsubsection{\texorpdfstring{[struct]}{[struct]}}
+{\footnotesize\ttfamily struct  \{ ... \}  R\+\_\+\+VBATT\+\_\+\+Type\+::\+VBTWCTLR\+\_\+b}
+
+Bit\+Size ~\newline
+ \Hypertarget{a00466_a7c7b54f1ed03a096027904bc68392c66}\label{a00466_a7c7b54f1ed03a096027904bc68392c66} 
+\index{R\_VBATT\_Type@{R\_VBATT\_Type}!VBTWEGR@{VBTWEGR}}
+\index{VBTWEGR@{VBTWEGR}!R\_VBATT\_Type@{R\_VBATT\_Type}}
+\doxysubsubsection{\texorpdfstring{VBTWEGR}{VBTWEGR}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} R\+\_\+\+VBATT\+\_\+\+Type\+::\+VBTWEGR}
+
+VBATT Wakeup Trigger Source Edge Register (VBTWEGR) ~\newline
+ \Hypertarget{a00466_a21f6c7f56335025f09bfce0e64fcd47e}\label{a00466_a21f6c7f56335025f09bfce0e64fcd47e} 
+\index{R\_VBATT\_Type@{R\_VBATT\_Type}!VBTWEGR\_b@{VBTWEGR\_b}}
+\index{VBTWEGR\_b@{VBTWEGR\_b}!R\_VBATT\_Type@{R\_VBATT\_Type}}
+\doxysubsubsection{\texorpdfstring{[struct]}{[struct]}}
+{\footnotesize\ttfamily struct  \{ ... \}  R\+\_\+\+VBATT\+\_\+\+Type\+::\+VBTWEGR\+\_\+b}
+
+Bit\+Size ~\newline
+ \Hypertarget{a00466_a6e7d6dfbc6cede8c0ca4b56039aef255}\label{a00466_a6e7d6dfbc6cede8c0ca4b56039aef255} 
+\index{R\_VBATT\_Type@{R\_VBATT\_Type}!VBTWFR@{VBTWFR}}
+\index{VBTWFR@{VBTWFR}!R\_VBATT\_Type@{R\_VBATT\_Type}}
+\doxysubsubsection{\texorpdfstring{VBTWFR}{VBTWFR}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} R\+\_\+\+VBATT\+\_\+\+Type\+::\+VBTWFR}
+
+VBATT Wakeup Trigger Source Flag Register (VBTWFR) ~\newline
+ \Hypertarget{a00466_a144cb09f20760bea88ff8b8a0b5c5f75}\label{a00466_a144cb09f20760bea88ff8b8a0b5c5f75} 
+\index{R\_VBATT\_Type@{R\_VBATT\_Type}!VBTWFR\_b@{VBTWFR\_b}}
+\index{VBTWFR\_b@{VBTWFR\_b}!R\_VBATT\_Type@{R\_VBATT\_Type}}
+\doxysubsubsection{\texorpdfstring{[struct]}{[struct]}}
+{\footnotesize\ttfamily struct  \{ ... \}  R\+\_\+\+VBATT\+\_\+\+Type\+::\+VBTWFR\+\_\+b}
+
+Bit\+Size ~\newline
+ \Hypertarget{a00466_a08ec0038a3f39520e0d9f6635bc71b0c}\label{a00466_a08ec0038a3f39520e0d9f6635bc71b0c} 
+\index{R\_VBATT\_Type@{R\_VBATT\_Type}!VBTWTER@{VBTWTER}}
+\index{VBTWTER@{VBTWTER}!R\_VBATT\_Type@{R\_VBATT\_Type}}
+\doxysubsubsection{\texorpdfstring{VBTWTER}{VBTWTER}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} R\+\_\+\+VBATT\+\_\+\+Type\+::\+VBTWTER}
+
+VBATT Wakeup Trigger Source Enable Register (VBTWTER) ~\newline
+ \Hypertarget{a00466_a0708a21a1ae2f8293ef2a75f30089690}\label{a00466_a0708a21a1ae2f8293ef2a75f30089690} 
+\index{R\_VBATT\_Type@{R\_VBATT\_Type}!VBTWTER\_b@{VBTWTER\_b}}
+\index{VBTWTER\_b@{VBTWTER\_b}!R\_VBATT\_Type@{R\_VBATT\_Type}}
+\doxysubsubsection{\texorpdfstring{[struct]}{[struct]}}
+{\footnotesize\ttfamily struct  \{ ... \}  R\+\_\+\+VBATT\+\_\+\+Type\+::\+VBTWTER\+\_\+b}
+
+Bit\+Size ~\newline
+ \Hypertarget{a00466_afb3b541a21bac87e1d27df6fb6941956}\label{a00466_afb3b541a21bac87e1d27df6fb6941956} 
+\index{R\_VBATT\_Type@{R\_VBATT\_Type}!VCH0E@{VCH0E}}
+\index{VCH0E@{VCH0E}!R\_VBATT\_Type@{R\_VBATT\_Type}}
+\doxysubsubsection{\texorpdfstring{VCH0E}{VCH0E}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} R\+\_\+\+VBATT\+\_\+\+Type\+::\+VCH0E}
+
+VBATWIO0 Pin Enable ~\newline
+ \Hypertarget{a00466_a462664375bffcf60057195e0af1f8d6b}\label{a00466_a462664375bffcf60057195e0af1f8d6b} 
+\index{R\_VBATT\_Type@{R\_VBATT\_Type}!VCH0EG@{VCH0EG}}
+\index{VCH0EG@{VCH0EG}!R\_VBATT\_Type@{R\_VBATT\_Type}}
+\doxysubsubsection{\texorpdfstring{VCH0EG}{VCH0EG}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} R\+\_\+\+VBATT\+\_\+\+Type\+::\+VCH0\+EG}
+
+VBATWIO0 Wakeup Trigger Source Edge Select ~\newline
+ \Hypertarget{a00466_a72c0b0d8af23c75dfb16c8d0e68c951d}\label{a00466_a72c0b0d8af23c75dfb16c8d0e68c951d} 
+\index{R\_VBATT\_Type@{R\_VBATT\_Type}!VCH0F@{VCH0F}}
+\index{VCH0F@{VCH0F}!R\_VBATT\_Type@{R\_VBATT\_Type}}
+\doxysubsubsection{\texorpdfstring{VCH0F}{VCH0F}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} R\+\_\+\+VBATT\+\_\+\+Type\+::\+VCH0F}
+
+VBATWIO0 Wakeup Trigger Flag ~\newline
+ \Hypertarget{a00466_ab55596ab5f9f783d137a220e89211728}\label{a00466_ab55596ab5f9f783d137a220e89211728} 
+\index{R\_VBATT\_Type@{R\_VBATT\_Type}!VCH0INEN@{VCH0INEN}}
+\index{VCH0INEN@{VCH0INEN}!R\_VBATT\_Type@{R\_VBATT\_Type}}
+\doxysubsubsection{\texorpdfstring{VCH0INEN}{VCH0INEN}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} R\+\_\+\+VBATT\+\_\+\+Type\+::\+VCH0\+INEN}
+
+VBATT Wakeup I/O 0 Input Enable ~\newline
+ \Hypertarget{a00466_af6aca4eea5300f5c7322e0459025a17b}\label{a00466_af6aca4eea5300f5c7322e0459025a17b} 
+\index{R\_VBATT\_Type@{R\_VBATT\_Type}!VCH0OEN@{VCH0OEN}}
+\index{VCH0OEN@{VCH0OEN}!R\_VBATT\_Type@{R\_VBATT\_Type}}
+\doxysubsubsection{\texorpdfstring{VCH0OEN}{VCH0OEN}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} R\+\_\+\+VBATT\+\_\+\+Type\+::\+VCH0\+OEN}
+
+VBATT Wakeup I/O 0 Output Enable ~\newline
+ \Hypertarget{a00466_a46af7e5bf9758d7829f8c86f1d43a303}\label{a00466_a46af7e5bf9758d7829f8c86f1d43a303} 
+\index{R\_VBATT\_Type@{R\_VBATT\_Type}!VCH1E@{VCH1E}}
+\index{VCH1E@{VCH1E}!R\_VBATT\_Type@{R\_VBATT\_Type}}
+\doxysubsubsection{\texorpdfstring{VCH1E}{VCH1E}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} R\+\_\+\+VBATT\+\_\+\+Type\+::\+VCH1E}
+
+VBATWIO1 Pin Enable ~\newline
+ \Hypertarget{a00466_a2f8de2551a103308673eb55f4c82f582}\label{a00466_a2f8de2551a103308673eb55f4c82f582} 
+\index{R\_VBATT\_Type@{R\_VBATT\_Type}!VCH1EG@{VCH1EG}}
+\index{VCH1EG@{VCH1EG}!R\_VBATT\_Type@{R\_VBATT\_Type}}
+\doxysubsubsection{\texorpdfstring{VCH1EG}{VCH1EG}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} R\+\_\+\+VBATT\+\_\+\+Type\+::\+VCH1\+EG}
+
+VBATWIO1 Wakeup Trigger Source Edge Select ~\newline
+ \Hypertarget{a00466_a1b0c3585f7edba7d916abef451225b3f}\label{a00466_a1b0c3585f7edba7d916abef451225b3f} 
+\index{R\_VBATT\_Type@{R\_VBATT\_Type}!VCH1F@{VCH1F}}
+\index{VCH1F@{VCH1F}!R\_VBATT\_Type@{R\_VBATT\_Type}}
+\doxysubsubsection{\texorpdfstring{VCH1F}{VCH1F}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} R\+\_\+\+VBATT\+\_\+\+Type\+::\+VCH1F}
+
+VBATWIO1 Wakeup Trigger Flag ~\newline
+ \Hypertarget{a00466_afe67e96d91843addbb55a90d0ff152a5}\label{a00466_afe67e96d91843addbb55a90d0ff152a5} 
+\index{R\_VBATT\_Type@{R\_VBATT\_Type}!VCH1INEN@{VCH1INEN}}
+\index{VCH1INEN@{VCH1INEN}!R\_VBATT\_Type@{R\_VBATT\_Type}}
+\doxysubsubsection{\texorpdfstring{VCH1INEN}{VCH1INEN}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} R\+\_\+\+VBATT\+\_\+\+Type\+::\+VCH1\+INEN}
+
+VBATT Wakeup I/O 1 Input Enable ~\newline
+ \Hypertarget{a00466_a598ee5efe82c8e32ff85cf2c83cba91a}\label{a00466_a598ee5efe82c8e32ff85cf2c83cba91a} 
+\index{R\_VBATT\_Type@{R\_VBATT\_Type}!VCH1OEN@{VCH1OEN}}
+\index{VCH1OEN@{VCH1OEN}!R\_VBATT\_Type@{R\_VBATT\_Type}}
+\doxysubsubsection{\texorpdfstring{VCH1OEN}{VCH1OEN}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} R\+\_\+\+VBATT\+\_\+\+Type\+::\+VCH1\+OEN}
+
+VBATT Wakeup I/O 1 Output Enable ~\newline
+ \Hypertarget{a00466_ac5bfd10427ce273546d69b9661b5072d}\label{a00466_ac5bfd10427ce273546d69b9661b5072d} 
+\index{R\_VBATT\_Type@{R\_VBATT\_Type}!VCH2E@{VCH2E}}
+\index{VCH2E@{VCH2E}!R\_VBATT\_Type@{R\_VBATT\_Type}}
+\doxysubsubsection{\texorpdfstring{VCH2E}{VCH2E}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} R\+\_\+\+VBATT\+\_\+\+Type\+::\+VCH2E}
+
+VBATWIO2 Pin Enable ~\newline
+ \Hypertarget{a00466_adb4d1537b2dbc5c92a2b2c78b23f88d1}\label{a00466_adb4d1537b2dbc5c92a2b2c78b23f88d1} 
+\index{R\_VBATT\_Type@{R\_VBATT\_Type}!VCH2EG@{VCH2EG}}
+\index{VCH2EG@{VCH2EG}!R\_VBATT\_Type@{R\_VBATT\_Type}}
+\doxysubsubsection{\texorpdfstring{VCH2EG}{VCH2EG}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} R\+\_\+\+VBATT\+\_\+\+Type\+::\+VCH2\+EG}
+
+VBATWIO2 Wakeup Trigger Source Edge Select ~\newline
+ \Hypertarget{a00466_afe0e83510631a58d46610c3442ddd4db}\label{a00466_afe0e83510631a58d46610c3442ddd4db} 
+\index{R\_VBATT\_Type@{R\_VBATT\_Type}!VCH2F@{VCH2F}}
+\index{VCH2F@{VCH2F}!R\_VBATT\_Type@{R\_VBATT\_Type}}
+\doxysubsubsection{\texorpdfstring{VCH2F}{VCH2F}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} R\+\_\+\+VBATT\+\_\+\+Type\+::\+VCH2F}
+
+VBATWIO2 Wakeup Trigger Flag ~\newline
+ \Hypertarget{a00466_ac8435f80a9a7fda4a5933a9d047b960d}\label{a00466_ac8435f80a9a7fda4a5933a9d047b960d} 
+\index{R\_VBATT\_Type@{R\_VBATT\_Type}!VCH2INEN@{VCH2INEN}}
+\index{VCH2INEN@{VCH2INEN}!R\_VBATT\_Type@{R\_VBATT\_Type}}
+\doxysubsubsection{\texorpdfstring{VCH2INEN}{VCH2INEN}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} R\+\_\+\+VBATT\+\_\+\+Type\+::\+VCH2\+INEN}
+
+VBATT Wakeup I/O 2 Input Enable ~\newline
+ \Hypertarget{a00466_a37a62c8cabbd2a32a553b041e514939e}\label{a00466_a37a62c8cabbd2a32a553b041e514939e} 
+\index{R\_VBATT\_Type@{R\_VBATT\_Type}!VCH2OEN@{VCH2OEN}}
+\index{VCH2OEN@{VCH2OEN}!R\_VBATT\_Type@{R\_VBATT\_Type}}
+\doxysubsubsection{\texorpdfstring{VCH2OEN}{VCH2OEN}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} R\+\_\+\+VBATT\+\_\+\+Type\+::\+VCH2\+OEN}
+
+VBATT Wakeup I/O 2 Output Enable ~\newline
+ \Hypertarget{a00466_a2a8288073ac2f8bdfa400fc4d61b4f49}\label{a00466_a2a8288073ac2f8bdfa400fc4d61b4f49} 
+\index{R\_VBATT\_Type@{R\_VBATT\_Type}!VOUT0LSEL@{VOUT0LSEL}}
+\index{VOUT0LSEL@{VOUT0LSEL}!R\_VBATT\_Type@{R\_VBATT\_Type}}
+\doxysubsubsection{\texorpdfstring{VOUT0LSEL}{VOUT0LSEL}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} R\+\_\+\+VBATT\+\_\+\+Type\+::\+VOUT0\+LSEL}
+
+VBATT Wakeup I/O 0 Output Level Selection ~\newline
+ \Hypertarget{a00466_ade9df711861dcc3430507de1dd276b87}\label{a00466_ade9df711861dcc3430507de1dd276b87} 
+\index{R\_VBATT\_Type@{R\_VBATT\_Type}!VOUT1LSEL@{VOUT1LSEL}}
+\index{VOUT1LSEL@{VOUT1LSEL}!R\_VBATT\_Type@{R\_VBATT\_Type}}
+\doxysubsubsection{\texorpdfstring{VOUT1LSEL}{VOUT1LSEL}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} R\+\_\+\+VBATT\+\_\+\+Type\+::\+VOUT1\+LSEL}
+
+VBATT Wakeup I/O 1 Output Level Selection ~\newline
+ \Hypertarget{a00466_a2a458bd1739ebecaf5d171b959348768}\label{a00466_a2a458bd1739ebecaf5d171b959348768} 
+\index{R\_VBATT\_Type@{R\_VBATT\_Type}!VOUT2LSEL@{VOUT2LSEL}}
+\index{VOUT2LSEL@{VOUT2LSEL}!R\_VBATT\_Type@{R\_VBATT\_Type}}
+\doxysubsubsection{\texorpdfstring{VOUT2LSEL}{VOUT2LSEL}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} R\+\_\+\+VBATT\+\_\+\+Type\+::\+VOUT2\+LSEL}
+
+VBATT Wakeup I/O 2 Output Level Selection ~\newline
+ \Hypertarget{a00466_a255197e8d254d33f0526e14aa1249469}\label{a00466_a255197e8d254d33f0526e14aa1249469} 
+\index{R\_VBATT\_Type@{R\_VBATT\_Type}!VRTCAE@{VRTCAE}}
+\index{VRTCAE@{VRTCAE}!R\_VBATT\_Type@{R\_VBATT\_Type}}
+\doxysubsubsection{\texorpdfstring{VRTCAE}{VRTCAE}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} R\+\_\+\+VBATT\+\_\+\+Type\+::\+VRTCAE}
+
+RTC Alarm Signal Enable ~\newline
+ \Hypertarget{a00466_a718bf6551917d8987d6016ebe570fb65}\label{a00466_a718bf6551917d8987d6016ebe570fb65} 
+\index{R\_VBATT\_Type@{R\_VBATT\_Type}!VRTCAF@{VRTCAF}}
+\index{VRTCAF@{VRTCAF}!R\_VBATT\_Type@{R\_VBATT\_Type}}
+\doxysubsubsection{\texorpdfstring{VRTCAF}{VRTCAF}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} R\+\_\+\+VBATT\+\_\+\+Type\+::\+VRTCAF}
+
+RTC Alarm Wakeup Trigger Flag ~\newline
+ \Hypertarget{a00466_ab9ae500375eb1e628b85aa65b7ed45c9}\label{a00466_ab9ae500375eb1e628b85aa65b7ed45c9} 
+\index{R\_VBATT\_Type@{R\_VBATT\_Type}!VRTCIE@{VRTCIE}}
+\index{VRTCIE@{VRTCIE}!R\_VBATT\_Type@{R\_VBATT\_Type}}
+\doxysubsubsection{\texorpdfstring{VRTCIE}{VRTCIE}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} R\+\_\+\+VBATT\+\_\+\+Type\+::\+VRTCIE}
+
+RTC Periodic Signal Enable ~\newline
+ \Hypertarget{a00466_a5b5f7affef0a098dee7c9ef6c1ca70e7}\label{a00466_a5b5f7affef0a098dee7c9ef6c1ca70e7} 
+\index{R\_VBATT\_Type@{R\_VBATT\_Type}!VRTCIF@{VRTCIF}}
+\index{VRTCIF@{VRTCIF}!R\_VBATT\_Type@{R\_VBATT\_Type}}
+\doxysubsubsection{\texorpdfstring{VRTCIF}{VRTCIF}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} R\+\_\+\+VBATT\+\_\+\+Type\+::\+VRTCIF}
+
+RTC Periodic Wakeup Trigger Flag ~\newline
+ \Hypertarget{a00466_adcd21be73b9e8bba2ae638ce7c8cf5e3}\label{a00466_adcd21be73b9e8bba2ae638ce7c8cf5e3} 
+\index{R\_VBATT\_Type@{R\_VBATT\_Type}!VWEN@{VWEN}}
+\index{VWEN@{VWEN}!R\_VBATT\_Type@{R\_VBATT\_Type}}
+\doxysubsubsection{\texorpdfstring{VWEN}{VWEN}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+IO \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} R\+\_\+\+VBATT\+\_\+\+Type\+::\+VWEN}
+
+VBATT Wakeup Enable ~\newline
+ 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\+Drivers/\mbox{\hyperlink{a00170}{RTC.\+c}}\end{DoxyCompactItemize}

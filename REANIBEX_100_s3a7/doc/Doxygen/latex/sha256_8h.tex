@@ -1,0 +1,110 @@
+\doxysection{C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\+SCE/sha256.h File Reference}
+\hypertarget{sha256_8h}{}\label{sha256_8h}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/SCE/sha256.h@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/SCE/sha256.h}}
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+Include dependency graph for sha256.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=230pt]{sha256_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sha256_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_s_h_a256___c_t_x}{SHA256\+\_\+\+CTX}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{sha256_8h_af3c27260a93c88f4fddf2503b516a74b}{SOFT\+\_\+\+SHA256\+\_\+\+BLOCK\+\_\+\+SIZE}}~32
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef unsigned char \mbox{\hyperlink{sha256_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}}
+\item 
+typedef unsigned int \mbox{\hyperlink{sha256_8h_ad2baa11c897721ff6f14b452b547f9bc}{WORD}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{sha256_8h_ade6fde6ef9ea137449d72891931c77ef}{sha256\+\_\+init}} (\mbox{\hyperlink{struct_s_h_a256___c_t_x}{SHA256\+\_\+\+CTX}} \texorpdfstring{$\ast$}{*}ctx)
+\item 
+void \mbox{\hyperlink{sha256_8h_ac98a25de627f4cded12b7312dee1ffa0}{sha256\+\_\+update}} (\mbox{\hyperlink{struct_s_h_a256___c_t_x}{SHA256\+\_\+\+CTX}} \texorpdfstring{$\ast$}{*}ctx, const \mbox{\hyperlink{sha256_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}} data\mbox{[}$\,$\mbox{]}, size\+\_\+t len)
+\item 
+void \mbox{\hyperlink{sha256_8h_a8f4b55bd1e49af6e4620bc9ba9549397}{sha256\+\_\+final}} (\mbox{\hyperlink{struct_s_h_a256___c_t_x}{SHA256\+\_\+\+CTX}} \texorpdfstring{$\ast$}{*}ctx, \mbox{\hyperlink{sha256_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}} hash\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{sha256_8h_af3c27260a93c88f4fddf2503b516a74b}\label{sha256_8h_af3c27260a93c88f4fddf2503b516a74b} 
+\index{sha256.h@{sha256.h}!SOFT\_SHA256\_BLOCK\_SIZE@{SOFT\_SHA256\_BLOCK\_SIZE}}
+\index{SOFT\_SHA256\_BLOCK\_SIZE@{SOFT\_SHA256\_BLOCK\_SIZE}!sha256.h@{sha256.h}}
+\doxysubsubsection{\texorpdfstring{SOFT\_SHA256\_BLOCK\_SIZE}{SOFT\_SHA256\_BLOCK\_SIZE}}
+{\footnotesize\ttfamily \#define SOFT\+\_\+\+SHA256\+\_\+\+BLOCK\+\_\+\+SIZE~32}
+
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{sha256_8h_a4ae1dab0fb4b072a66584546209e7d58}\label{sha256_8h_a4ae1dab0fb4b072a66584546209e7d58} 
+\index{sha256.h@{sha256.h}!BYTE@{BYTE}}
+\index{BYTE@{BYTE}!sha256.h@{sha256.h}}
+\doxysubsubsection{\texorpdfstring{BYTE}{BYTE}}
+{\footnotesize\ttfamily typedef unsigned char \mbox{\hyperlink{sha256_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}}}
+
+\Hypertarget{sha256_8h_ad2baa11c897721ff6f14b452b547f9bc}\label{sha256_8h_ad2baa11c897721ff6f14b452b547f9bc} 
+\index{sha256.h@{sha256.h}!WORD@{WORD}}
+\index{WORD@{WORD}!sha256.h@{sha256.h}}
+\doxysubsubsection{\texorpdfstring{WORD}{WORD}}
+{\footnotesize\ttfamily typedef unsigned int \mbox{\hyperlink{sha256_8h_ad2baa11c897721ff6f14b452b547f9bc}{WORD}}}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{sha256_8h_a8f4b55bd1e49af6e4620bc9ba9549397}\label{sha256_8h_a8f4b55bd1e49af6e4620bc9ba9549397} 
+\index{sha256.h@{sha256.h}!sha256\_final@{sha256\_final}}
+\index{sha256\_final@{sha256\_final}!sha256.h@{sha256.h}}
+\doxysubsubsection{\texorpdfstring{sha256\_final()}{sha256\_final()}}
+{\footnotesize\ttfamily void sha256\+\_\+final (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_s_h_a256___c_t_x}{SHA256\+\_\+\+CTX}} \texorpdfstring{$\ast$}{*}}]{ctx,  }\item[{\mbox{\hyperlink{sha256_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}}}]{hash\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sha256_8h_a8f4b55bd1e49af6e4620bc9ba9549397_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{sha256_8h_ade6fde6ef9ea137449d72891931c77ef}\label{sha256_8h_ade6fde6ef9ea137449d72891931c77ef} 
+\index{sha256.h@{sha256.h}!sha256\_init@{sha256\_init}}
+\index{sha256\_init@{sha256\_init}!sha256.h@{sha256.h}}
+\doxysubsubsection{\texorpdfstring{sha256\_init()}{sha256\_init()}}
+{\footnotesize\ttfamily void sha256\+\_\+init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_s_h_a256___c_t_x}{SHA256\+\_\+\+CTX}} \texorpdfstring{$\ast$}{*}}]{ctx }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sha256_8h_ade6fde6ef9ea137449d72891931c77ef_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{sha256_8h_ac98a25de627f4cded12b7312dee1ffa0}\label{sha256_8h_ac98a25de627f4cded12b7312dee1ffa0} 
+\index{sha256.h@{sha256.h}!sha256\_update@{sha256\_update}}
+\index{sha256\_update@{sha256\_update}!sha256.h@{sha256.h}}
+\doxysubsubsection{\texorpdfstring{sha256\_update()}{sha256\_update()}}
+{\footnotesize\ttfamily void sha256\+\_\+update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_s_h_a256___c_t_x}{SHA256\+\_\+\+CTX}} \texorpdfstring{$\ast$}{*}}]{ctx,  }\item[{const \mbox{\hyperlink{sha256_8h_a4ae1dab0fb4b072a66584546209e7d58}{BYTE}}}]{data\mbox{[}$\,$\mbox{]},  }\item[{size\+\_\+t}]{len }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sha256_8h_ac98a25de627f4cded12b7312dee1ffa0_icgraph}
+\end{center}
+\end{figure}

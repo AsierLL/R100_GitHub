@@ -1,0 +1,66 @@
+\doxysection{atca\+\_\+iface Struct Reference}
+\hypertarget{structatca__iface}{}\label{structatca__iface}\index{atca\_iface@{atca\_iface}}
+
+
+\doxylink{structatca__iface}{atca\+\_\+iface} is the context structure for a configured interface  
+
+
+
+
+{\ttfamily \#include $<$atca\+\_\+iface.\+h$>$}
+
+
+
+Collaboration diagram for atca\+\_\+iface\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=242pt]{structatca__iface__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_a_t_c_a_iface_cfg}{ATCAIface\+Cfg}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structatca__iface_a093b94b5d693f4e7a8facfc40f1443b0}{m\+Iface\+CFG}}
+\item 
+\mbox{\hyperlink{struct_a_t_c_a_h_a_l__t}{ATCAHAL\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structatca__iface_a7cee716c7c8c20d0d8aac6243baff819}{hal}}
+\item 
+\mbox{\hyperlink{struct_a_t_c_a_h_a_l__t}{ATCAHAL\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structatca__iface_a3ac7e576da4958d6c0488ec606d9cbff}{phy}}
+\item 
+void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structatca__iface_ab316c2d139b46380bc97be4d23428caa}{hal\+\_\+data}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{structatca__iface}{atca\+\_\+iface} is the context structure for a configured interface 
+
+\doxysubsection{Field Documentation}
+\Hypertarget{structatca__iface_a7cee716c7c8c20d0d8aac6243baff819}\label{structatca__iface_a7cee716c7c8c20d0d8aac6243baff819} 
+\index{atca\_iface@{atca\_iface}!hal@{hal}}
+\index{hal@{hal}!atca\_iface@{atca\_iface}}
+\doxysubsubsection{\texorpdfstring{hal}{hal}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_a_t_c_a_h_a_l__t}{ATCAHAL\+\_\+t}}\texorpdfstring{$\ast$}{*} atca\+\_\+iface\+::hal}
+
+The configured HAL for the interface \Hypertarget{structatca__iface_ab316c2d139b46380bc97be4d23428caa}\label{structatca__iface_ab316c2d139b46380bc97be4d23428caa} 
+\index{atca\_iface@{atca\_iface}!hal\_data@{hal\_data}}
+\index{hal\_data@{hal\_data}!atca\_iface@{atca\_iface}}
+\doxysubsubsection{\texorpdfstring{hal\_data}{hal\_data}}
+{\footnotesize\ttfamily void\texorpdfstring{$\ast$}{*} atca\+\_\+iface\+::hal\+\_\+data}
+
+Pointer to HAL specific context/data \Hypertarget{structatca__iface_a093b94b5d693f4e7a8facfc40f1443b0}\label{structatca__iface_a093b94b5d693f4e7a8facfc40f1443b0} 
+\index{atca\_iface@{atca\_iface}!mIfaceCFG@{mIfaceCFG}}
+\index{mIfaceCFG@{mIfaceCFG}!atca\_iface@{atca\_iface}}
+\doxysubsubsection{\texorpdfstring{mIfaceCFG}{mIfaceCFG}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_a_t_c_a_iface_cfg}{ATCAIface\+Cfg}}\texorpdfstring{$\ast$}{*} atca\+\_\+iface\+::m\+Iface\+CFG}
+
+Points to previous defined/given Cfg object, the caller manages this \Hypertarget{structatca__iface_a3ac7e576da4958d6c0488ec606d9cbff}\label{structatca__iface_a3ac7e576da4958d6c0488ec606d9cbff} 
+\index{atca\_iface@{atca\_iface}!phy@{phy}}
+\index{phy@{phy}!atca\_iface@{atca\_iface}}
+\doxysubsubsection{\texorpdfstring{phy}{phy}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_a_t_c_a_h_a_l__t}{ATCAHAL\+\_\+t}}\texorpdfstring{$\ast$}{*} atca\+\_\+iface\+::phy}
+
+When a HAL is not a "{}native"{} hal it needs a physical layer to be associated with it 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\+SCE/\mbox{\hyperlink{atca__iface_8h}{atca\+\_\+iface.\+h}}\end{DoxyCompactItemize}

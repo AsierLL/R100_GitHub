@@ -1,0 +1,145 @@
+\doxysection{DB\+\_\+\+DATA\+\_\+\+DEFAULT\+\_\+t Struct Reference}
+\hypertarget{a00266}{}\label{a00266}\index{DB\_DATA\_DEFAULT\_t@{DB\_DATA\_DEFAULT\_t}}
+
+
+Structure to hold default data before writing to episode file.  
+
+
+
+
+{\ttfamily \#include $<$DB\+\_\+\+Episode.\+h$>$}
+
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a00137_aef44329758059c91c76d334e8fc09700}{int8\+\_\+t}} \mbox{\hyperlink{a00266_ae2ee73ced3f2fa7143ea6c8521d547f4}{temperature}}
+\begin{DoxyCompactList}\small\item\em Temperature in degrees (ºC) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{a00266_a60be0a8a12642d079572243da4b51eb3}{battery\+\_\+charge}}
+\begin{DoxyCompactList}\small\item\em Battery charge (percent) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{a00266_a307819521bec60b5bcc756177bed7dbe}{battery\+\_\+voltage}}
+\begin{DoxyCompactList}\small\item\em Battery voltage (in mv) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{a00266_ae1ee579f1c3507e536aaf36e08d07e81}{Vc}}
+\begin{DoxyCompactList}\small\item\em Capacitor voltage (volts) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{a00266_a03b9c33bab8990e06485af932d4b2ed2}{shock\+\_\+energy}}
+\begin{DoxyCompactList}\small\item\em Energy used in last shock event. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{a00266_ac4934c1e317b60405364d8e453038c10}{rcp\+\_\+time}}
+\begin{DoxyCompactList}\small\item\em RCP time in last RCP event. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{a00266_af31a3388f0f08433c6bedf457914af3b}{error}}
+\begin{DoxyCompactList}\small\item\em Error code from error manager. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{a00266_a20976d53426fb5c9d2365dc2433c193c}{rythm\+\_\+type}}
+\begin{DoxyCompactList}\small\item\em Rythm type. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \mbox{\hyperlink{a00266_a3fa24626bcab876eeee41826af07aee4}{event\+\_\+offset\+\_\+time}} \mbox{[}8\mbox{]}
+\begin{DoxyCompactList}\small\item\em Event time in ECG samples\texorpdfstring{$\ast$}{*}2 (2ms increments) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{a00266_a965127e9d09d316e71d6b54a3d099a5e}{event\+\_\+id}} \mbox{[}8\mbox{]}
+\begin{DoxyCompactList}\small\item\em Event identifier. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Structure to hold default data before writing to episode file. 
+
+\doxysubsection{Field Documentation}
+\Hypertarget{a00266_a60be0a8a12642d079572243da4b51eb3}\label{a00266_a60be0a8a12642d079572243da4b51eb3} 
+\index{DB\_DATA\_DEFAULT\_t@{DB\_DATA\_DEFAULT\_t}!battery\_charge@{battery\_charge}}
+\index{battery\_charge@{battery\_charge}!DB\_DATA\_DEFAULT\_t@{DB\_DATA\_DEFAULT\_t}}
+\doxysubsubsection{\texorpdfstring{battery\_charge}{battery\_charge}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} DB\+\_\+\+DATA\+\_\+\+DEFAULT\+\_\+t\+::battery\+\_\+charge}
+
+
+
+Battery charge (percent) 
+
+\Hypertarget{a00266_a307819521bec60b5bcc756177bed7dbe}\label{a00266_a307819521bec60b5bcc756177bed7dbe} 
+\index{DB\_DATA\_DEFAULT\_t@{DB\_DATA\_DEFAULT\_t}!battery\_voltage@{battery\_voltage}}
+\index{battery\_voltage@{battery\_voltage}!DB\_DATA\_DEFAULT\_t@{DB\_DATA\_DEFAULT\_t}}
+\doxysubsubsection{\texorpdfstring{battery\_voltage}{battery\_voltage}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} DB\+\_\+\+DATA\+\_\+\+DEFAULT\+\_\+t\+::battery\+\_\+voltage}
+
+
+
+Battery voltage (in mv) 
+
+\Hypertarget{a00266_af31a3388f0f08433c6bedf457914af3b}\label{a00266_af31a3388f0f08433c6bedf457914af3b} 
+\index{DB\_DATA\_DEFAULT\_t@{DB\_DATA\_DEFAULT\_t}!error@{error}}
+\index{error@{error}!DB\_DATA\_DEFAULT\_t@{DB\_DATA\_DEFAULT\_t}}
+\doxysubsubsection{\texorpdfstring{error}{error}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} DB\+\_\+\+DATA\+\_\+\+DEFAULT\+\_\+t\+::error}
+
+
+
+Error code from error manager. 
+
+\Hypertarget{a00266_a965127e9d09d316e71d6b54a3d099a5e}\label{a00266_a965127e9d09d316e71d6b54a3d099a5e} 
+\index{DB\_DATA\_DEFAULT\_t@{DB\_DATA\_DEFAULT\_t}!event\_id@{event\_id}}
+\index{event\_id@{event\_id}!DB\_DATA\_DEFAULT\_t@{DB\_DATA\_DEFAULT\_t}}
+\doxysubsubsection{\texorpdfstring{event\_id}{event\_id}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} DB\+\_\+\+DATA\+\_\+\+DEFAULT\+\_\+t\+::event\+\_\+id\mbox{[}8\mbox{]}}
+
+
+
+Event identifier. 
+
+\Hypertarget{a00266_a3fa24626bcab876eeee41826af07aee4}\label{a00266_a3fa24626bcab876eeee41826af07aee4} 
+\index{DB\_DATA\_DEFAULT\_t@{DB\_DATA\_DEFAULT\_t}!event\_offset\_time@{event\_offset\_time}}
+\index{event\_offset\_time@{event\_offset\_time}!DB\_DATA\_DEFAULT\_t@{DB\_DATA\_DEFAULT\_t}}
+\doxysubsubsection{\texorpdfstring{event\_offset\_time}{event\_offset\_time}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} DB\+\_\+\+DATA\+\_\+\+DEFAULT\+\_\+t\+::event\+\_\+offset\+\_\+time\mbox{[}8\mbox{]}}
+
+
+
+Event time in ECG samples\texorpdfstring{$\ast$}{*}2 (2ms increments) 
+
+\Hypertarget{a00266_ac4934c1e317b60405364d8e453038c10}\label{a00266_ac4934c1e317b60405364d8e453038c10} 
+\index{DB\_DATA\_DEFAULT\_t@{DB\_DATA\_DEFAULT\_t}!rcp\_time@{rcp\_time}}
+\index{rcp\_time@{rcp\_time}!DB\_DATA\_DEFAULT\_t@{DB\_DATA\_DEFAULT\_t}}
+\doxysubsubsection{\texorpdfstring{rcp\_time}{rcp\_time}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} DB\+\_\+\+DATA\+\_\+\+DEFAULT\+\_\+t\+::rcp\+\_\+time}
+
+
+
+RCP time in last RCP event. 
+
+\Hypertarget{a00266_a20976d53426fb5c9d2365dc2433c193c}\label{a00266_a20976d53426fb5c9d2365dc2433c193c} 
+\index{DB\_DATA\_DEFAULT\_t@{DB\_DATA\_DEFAULT\_t}!rythm\_type@{rythm\_type}}
+\index{rythm\_type@{rythm\_type}!DB\_DATA\_DEFAULT\_t@{DB\_DATA\_DEFAULT\_t}}
+\doxysubsubsection{\texorpdfstring{rythm\_type}{rythm\_type}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} DB\+\_\+\+DATA\+\_\+\+DEFAULT\+\_\+t\+::rythm\+\_\+type}
+
+
+
+Rythm type. 
+
+\Hypertarget{a00266_a03b9c33bab8990e06485af932d4b2ed2}\label{a00266_a03b9c33bab8990e06485af932d4b2ed2} 
+\index{DB\_DATA\_DEFAULT\_t@{DB\_DATA\_DEFAULT\_t}!shock\_energy@{shock\_energy}}
+\index{shock\_energy@{shock\_energy}!DB\_DATA\_DEFAULT\_t@{DB\_DATA\_DEFAULT\_t}}
+\doxysubsubsection{\texorpdfstring{shock\_energy}{shock\_energy}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} DB\+\_\+\+DATA\+\_\+\+DEFAULT\+\_\+t\+::shock\+\_\+energy}
+
+
+
+Energy used in last shock event. 
+
+\Hypertarget{a00266_ae2ee73ced3f2fa7143ea6c8521d547f4}\label{a00266_ae2ee73ced3f2fa7143ea6c8521d547f4} 
+\index{DB\_DATA\_DEFAULT\_t@{DB\_DATA\_DEFAULT\_t}!temperature@{temperature}}
+\index{temperature@{temperature}!DB\_DATA\_DEFAULT\_t@{DB\_DATA\_DEFAULT\_t}}
+\doxysubsubsection{\texorpdfstring{temperature}{temperature}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_aef44329758059c91c76d334e8fc09700}{int8\+\_\+t}} DB\+\_\+\+DATA\+\_\+\+DEFAULT\+\_\+t\+::temperature}
+
+
+
+Temperature in degrees (ºC) 
+
+\Hypertarget{a00266_ae1ee579f1c3507e536aaf36e08d07e81}\label{a00266_ae1ee579f1c3507e536aaf36e08d07e81} 
+\index{DB\_DATA\_DEFAULT\_t@{DB\_DATA\_DEFAULT\_t}!Vc@{Vc}}
+\index{Vc@{Vc}!DB\_DATA\_DEFAULT\_t@{DB\_DATA\_DEFAULT\_t}}
+\doxysubsubsection{\texorpdfstring{Vc}{Vc}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} DB\+\_\+\+DATA\+\_\+\+DEFAULT\+\_\+t\+::\+Vc}
+
+
+
+Capacitor voltage (volts) 
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\mbox{\hyperlink{a00005}{DB\+\_\+\+Episode.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,750 @@
+\doxysection{C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/secure\+\_\+crypto.h File Reference}
+\hypertarget{secure__crypto_8h}{}\label{secure__crypto_8h}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/secure\_crypto.h@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/secure\_crypto.h}}
+
+
+Header with functions related to the system monitor services.  
+
+
+{\ttfamily \#include "{}nx\+\_\+secure\+\_\+x509.\+h"{}}\newline
+{\ttfamily \#include "{}HAL/thread\+\_\+comm\+\_\+hal.\+h"{}}\newline
+{\ttfamily \#include "{}device\+\_\+init.\+h"{}}\newline
+{\ttfamily \#include "{}resources/\+Trace.\+h"{}}\newline
+{\ttfamily \#include "{}R100\+\_\+\+Errors.\+h"{}}\newline
+{\ttfamily \#include "{}types\+\_\+basic.\+h"{}}\newline
+{\ttfamily \#include "{}types\+\_\+app.\+h"{}}\newline
+{\ttfamily \#include "{}HAL/thread\+\_\+defibrillator\+\_\+hal.\+h"{}}\newline
+{\ttfamily \#include "{}HAL/thread\+\_\+pat\+Mon\+\_\+hal.\+h"{}}\newline
+{\ttfamily \#include "{}HAL/thread\+\_\+audio\+\_\+hal.\+h"{}}\newline
+{\ttfamily \#include "{}thread\+\_\+comm\+\_\+entry.\+h"{}}\newline
+{\ttfamily \#include "{}thread\+\_\+pat\+Mon\+\_\+entry.\+h"{}}\newline
+{\ttfamily \#include "{}thread\+\_\+sys\+Mon\+\_\+entry.\+h"{}}\newline
+{\ttfamily \#include "{}thread\+\_\+sys\+Mon.\+h"{}}\newline
+{\ttfamily \#include "{}thread\+\_\+audio\+\_\+entry.\+h"{}}\newline
+{\ttfamily \#include "{}thread\+\_\+audio.\+h"{}}\newline
+{\ttfamily \#include "{}thread\+\_\+core\+\_\+entry.\+h"{}}\newline
+{\ttfamily \#include "{}thread\+\_\+core.\+h"{}}\newline
+{\ttfamily \#include "{}thread\+\_\+comm.\+h"{}}\newline
+{\ttfamily \#include "{}thread\+\_\+api.\+h"{}}\newline
+{\ttfamily \#include "{}sha256.\+h"{}}\newline
+{\ttfamily \#include $<$Bexlib.\+h$>$}\newline
+Include dependency graph for secure\+\_\+crypto.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{secure__crypto_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{secure__crypto_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{secure__crypto_8h_a4bda6f3d1db43fa03db97fd05843d3b9}{DER\+\_\+\+Size\+\_\+\+Limit}}~2048
+\item 
+\#define \mbox{\hyperlink{secure__crypto_8h_a74fb04594529b5adb108048738d70d16}{CERT\+\_\+\+VALID}}~0
+\begin{DoxyCompactList}\small\item\em The ertificate is valid. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{secure__crypto_8h_a7ac650cee21b42da6bc16da739f2f23f}{CERT\+\_\+\+EXP\+\_\+\+SOON}}~1
+\begin{DoxyCompactList}\small\item\em The certificate will expire soon. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{secure__crypto_8h_a25726ac8e9e8892a0beee93fbadb502a}{CERT\+\_\+\+NOT\+\_\+\+VALID}}~2
+\begin{DoxyCompactList}\small\item\em The ertificate is not valid. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{secure__crypto_8h_a8eb52e5ab358c7b73aa22bf8df819f29}{CERT\+\_\+\+FOLDER\+\_\+\+NAME}}~"{}CERT"{}
+\item 
+\#define \mbox{\hyperlink{secure__crypto_8h_a75f575fe6a2059012ec1f1e42d54e412}{WPA\+\_\+\+EAP\+\_\+\+CA\+\_\+\+CERT\+\_\+\+FILENAME}}~"{}client\+\_\+router\+\_\+ca.\+der"{}
+\begin{DoxyCompactList}\small\item\em Es el ca.\+der copiado de Docker. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{secure__crypto_8h_ae3ac0f5326a10d6e3c2745605e9c8325}{WPA\+\_\+\+EAP\+\_\+\+CERT\+\_\+\+FILENAME}}~"{}client\+\_\+router.\+crt"{}
+\begin{DoxyCompactList}\small\item\em Es el client.\+der copiado de Docker. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{secure__crypto_8h_a7bfeff63c385f23edf4dbf7cbeb7a7ce}{WPA\+\_\+\+EAP\+\_\+\+CERT\+\_\+\+KEY\+\_\+\+FILENAME}}~"{}client\+\_\+router\+\_\+key.\+key"{}
+\begin{DoxyCompactList}\small\item\em Es la llave del cliente copiado de Docker. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{secure__crypto_8h_ab5df85c2c753110d8d26257232df4168}{TLS\+\_\+\+CA\+\_\+\+CERT\+\_\+\+FILENAME}}~"{}server\+\_\+tls\+\_\+ca.\+der"{}
+\begin{DoxyCompactList}\small\item\em ca.\+der creado por mi del servidor \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{secure__crypto_8h_a596b4ae0260dc981d725622dafcb2793}{DIGEST}}~"{}digest.\+txt"{}
+\item 
+\#define \mbox{\hyperlink{secure__crypto_8h_ae72ce63657183560f1b11dbce5a0a5f6}{SIGNATURE}}~"{}signature.\+txt"{}
+\item 
+\#define \mbox{\hyperlink{secure__crypto_8h_a2b0fa397470250a95b9636671f243991}{PUBLIC\+\_\+\+KEY}}~"{}public\+\_\+key.\+txt"{}
+\item 
+\#define \mbox{\hyperlink{secure__crypto_8h_a5ba898dcd6e92f327d3914037f8e4d94}{USB\+\_\+\+KEY}}~"{}things01.\+dat"{}
+\item 
+\#define \mbox{\hyperlink{secure__crypto_8h_ac698ea8643f84283e631b959ff9fc492}{CRYPTO\+\_\+\+SIZE}}~256
+\item 
+\#define \mbox{\hyperlink{secure__crypto_8h_a561133c5be793263bb54036059793d76}{WIFI\+\_\+\+SIZE}}~330
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{secure__crypto_8h_a194be93715f62cac9647944022809aef}{NX\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em This function initialize NetX system. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{secure__crypto_8h_aa28dd36bf21dbc5a6de72f702a9e0260}{Check\+\_\+\+TLS\+\_\+\+Cacert}} (void)
+\begin{DoxyCompactList}\small\item\em This function read TLS CA certificate from SD and check the validity of the certificate. The certificate must be in DER format. DER is a binary encoding for X.\+509 certificate. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{secure__crypto_8h_a2d4a144c2fca7de6f8c228eff5bb255e}{Check\+\_\+\+WPA\+\_\+\+EAP\+\_\+\+Cert}} (void)
+\begin{DoxyCompactList}\small\item\em This function read WPA-\/\+EAP certificate from SD and check the validity of the certificate. The certificate must be in DER format. DER is a binary encoding for X.\+509 certificate. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{secure__crypto_8h_a5f6c33db5481046f663c49275fd6681f}{Crypto\+\_\+\+ATECC\+\_\+\+Is\+Present}} (void)
+\begin{DoxyCompactList}\small\item\em Function to check if ATECC is present. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{secure__crypto_8h_a5958138a098c78007a0101dd4ce35857}{Is\+\_\+\+ATECC\+\_\+\+Initialized}} (void)
+\begin{DoxyCompactList}\small\item\em Checks if atecc initialization process completed. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{secure__crypto_8h_af7c91f21e106a9c4f7190aa91088341b}{Crypto\+\_\+\+ATECC\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Function to initialize the ATECC608B secure element. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{secure__crypto_8h_a9495bf897dd771714c7d8969772dc3c2}{Crypto\+\_\+\+ATECC\+\_\+\+Config}} (void)
+\begin{DoxyCompactList}\small\item\em Function to configure and lock data and config zone. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{secure__crypto_8h_af7102d0a16428208caf8679720ce0738}{Crypto\+\_\+\+ATECC\+\_\+\+Encrypt\+\_\+\+File}} (void)
+\begin{DoxyCompactList}\small\item\em Function to encrypt file. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{secure__crypto_8h_a67f41d2b9732ec05f80c48ee883019d2}{Crypto\+\_\+\+ATECC\+\_\+\+Encrypt\+\_\+\+NFC}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}r\+\_\+w\+\_\+data)
+\begin{DoxyCompactList}\small\item\em Function to encrypt file. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{secure__crypto_8h_ad76358be60b9987ce85bc2dee9fb8457}{Crypto\+\_\+\+ATECC\+\_\+\+Decrypt}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}r\+\_\+w\+\_\+data)
+\begin{DoxyCompactList}\small\item\em Function to encrypt data. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{secure__crypto_8h_a3adbe2a78ac92b9c62a56e1ad4651493}{Crypto\+\_\+\+ATECC\+\_\+\+Decrypt\+\_\+\+File}} (void)
+\begin{DoxyCompactList}\small\item\em Function to decrypt file. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{secure__crypto_8h_a331dc32b20633662da2a010ea44c5c9b}{Crypto\+\_\+\+ATECC\+\_\+\+Inject}} (void)
+\begin{DoxyCompactList}\small\item\em Function to inject public key and USB key in slot. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{secure__crypto_8h_a8436921bbeae99e5d1dff39b4b46f2ed}{Crypto\+\_\+\+ATECC\+\_\+\+Inject\+\_\+\+Zero}} (void)
+\begin{DoxyCompactList}\small\item\em Function to inject in slot. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{secure__crypto_8h_ae5519bd75c4f1192ca68d8376a574234}{Crypto\+\_\+\+ATECC\+\_\+\+Verify}} (bool \texorpdfstring{$\ast$}{*}is\+\_\+verified)
+\begin{DoxyCompactList}\small\item\em Function to verify signature. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{secure__crypto_8h_a6cd4bbf18723fdb1b403c13c2b73bb4b}{Crypto\+\_\+\+ATECC\+\_\+\+SHA256}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}digest)
+\begin{DoxyCompactList}\small\item\em Function to generate SHA256. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{secure__crypto_8h_aadac43bf0ff020fc6fc31c4cfb573f41}{Crypto\+\_\+\+ATECC\+\_\+\+SHA256\+\_\+\+HMAC}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}digest)
+\begin{DoxyCompactList}\small\item\em Function to generate SHA256 HMAC. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{secure__crypto_8h_ac85f934b12796ea8d753520b18c4058e}{Crypto\+\_\+\+ATECC\+\_\+\+Verify\+\_\+\+Test}} (bool \texorpdfstring{$\ast$}{*}is\+\_\+verified)
+\begin{DoxyCompactList}\small\item\em Function to verify signature only for test. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{secure__crypto_8h_a94db3f6c96aa7258b8ab5ffbb6a0d220}{SHA2\+\_\+\+SHA256}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \texorpdfstring{$\ast$}{*}data\+\_\+hex)
+\item 
+void \mbox{\hyperlink{secure__crypto_8h_a548aaf5d6c50ba0e0cdd5a84fe75d6b7}{SHA2\+\_\+\+SHA256\+\_\+\+HMAC}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \texorpdfstring{$\ast$}{*}data\+\_\+hex)
+\item 
+void \mbox{\hyperlink{secure__crypto_8h_a4e5f6ad214bdd7e5e1b84dfb3cf242a1}{AES\+\_\+\+Algo\+\_\+\+Encrypt\+\_\+\+File}} (void)
+\item 
+void \mbox{\hyperlink{secure__crypto_8h_a086bbb20e434346c5b9d6031a1ec794f}{AES\+\_\+\+Algo\+\_\+\+Decrypt\+\_\+\+File}} (void)
+\item 
+void \mbox{\hyperlink{secure__crypto_8h_a27b01edf6d8726aa43351b7638f9c603}{AES\+\_\+\+Algo\+\_\+\+Decrypt}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \texorpdfstring{$\ast$}{*}r\+\_\+w\+\_\+data)
+\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{secure__crypto_8h_a658755a698e5b683e00b9d9a274bbb7c}{AES\+\_\+\+Algo\+\_\+\+Verify}} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header with functions related to the system monitor services. 
+
+\begin{DoxyVersion}{Version}
+v1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+08/10/2021 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+ivicente 
+\end{DoxyAuthor}
+\begin{DoxyWarning}{Warning}
+author date version .-\/ Edition 
+\end{DoxyWarning}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000065}{Bug}}]\end{DoxyRefDesc}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{secure__crypto_8h_a7ac650cee21b42da6bc16da739f2f23f}\label{secure__crypto_8h_a7ac650cee21b42da6bc16da739f2f23f} 
+\index{secure\_crypto.h@{secure\_crypto.h}!CERT\_EXP\_SOON@{CERT\_EXP\_SOON}}
+\index{CERT\_EXP\_SOON@{CERT\_EXP\_SOON}!secure\_crypto.h@{secure\_crypto.h}}
+\doxysubsubsection{\texorpdfstring{CERT\_EXP\_SOON}{CERT\_EXP\_SOON}}
+{\footnotesize\ttfamily \#define CERT\+\_\+\+EXP\+\_\+\+SOON~1}
+
+
+
+The certificate will expire soon. 
+
+\Hypertarget{secure__crypto_8h_a8eb52e5ab358c7b73aa22bf8df819f29}\label{secure__crypto_8h_a8eb52e5ab358c7b73aa22bf8df819f29} 
+\index{secure\_crypto.h@{secure\_crypto.h}!CERT\_FOLDER\_NAME@{CERT\_FOLDER\_NAME}}
+\index{CERT\_FOLDER\_NAME@{CERT\_FOLDER\_NAME}!secure\_crypto.h@{secure\_crypto.h}}
+\doxysubsubsection{\texorpdfstring{CERT\_FOLDER\_NAME}{CERT\_FOLDER\_NAME}}
+{\footnotesize\ttfamily \#define CERT\+\_\+\+FOLDER\+\_\+\+NAME~"{}CERT"{}}
+
+\Hypertarget{secure__crypto_8h_a25726ac8e9e8892a0beee93fbadb502a}\label{secure__crypto_8h_a25726ac8e9e8892a0beee93fbadb502a} 
+\index{secure\_crypto.h@{secure\_crypto.h}!CERT\_NOT\_VALID@{CERT\_NOT\_VALID}}
+\index{CERT\_NOT\_VALID@{CERT\_NOT\_VALID}!secure\_crypto.h@{secure\_crypto.h}}
+\doxysubsubsection{\texorpdfstring{CERT\_NOT\_VALID}{CERT\_NOT\_VALID}}
+{\footnotesize\ttfamily \#define CERT\+\_\+\+NOT\+\_\+\+VALID~2}
+
+
+
+The ertificate is not valid. 
+
+\Hypertarget{secure__crypto_8h_a74fb04594529b5adb108048738d70d16}\label{secure__crypto_8h_a74fb04594529b5adb108048738d70d16} 
+\index{secure\_crypto.h@{secure\_crypto.h}!CERT\_VALID@{CERT\_VALID}}
+\index{CERT\_VALID@{CERT\_VALID}!secure\_crypto.h@{secure\_crypto.h}}
+\doxysubsubsection{\texorpdfstring{CERT\_VALID}{CERT\_VALID}}
+{\footnotesize\ttfamily \#define CERT\+\_\+\+VALID~0}
+
+
+
+The ertificate is valid. 
+
+\Hypertarget{secure__crypto_8h_ac698ea8643f84283e631b959ff9fc492}\label{secure__crypto_8h_ac698ea8643f84283e631b959ff9fc492} 
+\index{secure\_crypto.h@{secure\_crypto.h}!CRYPTO\_SIZE@{CRYPTO\_SIZE}}
+\index{CRYPTO\_SIZE@{CRYPTO\_SIZE}!secure\_crypto.h@{secure\_crypto.h}}
+\doxysubsubsection{\texorpdfstring{CRYPTO\_SIZE}{CRYPTO\_SIZE}}
+{\footnotesize\ttfamily \#define CRYPTO\+\_\+\+SIZE~256}
+
+\Hypertarget{secure__crypto_8h_a4bda6f3d1db43fa03db97fd05843d3b9}\label{secure__crypto_8h_a4bda6f3d1db43fa03db97fd05843d3b9} 
+\index{secure\_crypto.h@{secure\_crypto.h}!DER\_Size\_Limit@{DER\_Size\_Limit}}
+\index{DER\_Size\_Limit@{DER\_Size\_Limit}!secure\_crypto.h@{secure\_crypto.h}}
+\doxysubsubsection{\texorpdfstring{DER\_Size\_Limit}{DER\_Size\_Limit}}
+{\footnotesize\ttfamily \#define DER\+\_\+\+Size\+\_\+\+Limit~2048}
+
+\Hypertarget{secure__crypto_8h_a596b4ae0260dc981d725622dafcb2793}\label{secure__crypto_8h_a596b4ae0260dc981d725622dafcb2793} 
+\index{secure\_crypto.h@{secure\_crypto.h}!DIGEST@{DIGEST}}
+\index{DIGEST@{DIGEST}!secure\_crypto.h@{secure\_crypto.h}}
+\doxysubsubsection{\texorpdfstring{DIGEST}{DIGEST}}
+{\footnotesize\ttfamily \#define DIGEST~"{}digest.\+txt"{}}
+
+\Hypertarget{secure__crypto_8h_a2b0fa397470250a95b9636671f243991}\label{secure__crypto_8h_a2b0fa397470250a95b9636671f243991} 
+\index{secure\_crypto.h@{secure\_crypto.h}!PUBLIC\_KEY@{PUBLIC\_KEY}}
+\index{PUBLIC\_KEY@{PUBLIC\_KEY}!secure\_crypto.h@{secure\_crypto.h}}
+\doxysubsubsection{\texorpdfstring{PUBLIC\_KEY}{PUBLIC\_KEY}}
+{\footnotesize\ttfamily \#define PUBLIC\+\_\+\+KEY~"{}public\+\_\+key.\+txt"{}}
+
+\Hypertarget{secure__crypto_8h_ae72ce63657183560f1b11dbce5a0a5f6}\label{secure__crypto_8h_ae72ce63657183560f1b11dbce5a0a5f6} 
+\index{secure\_crypto.h@{secure\_crypto.h}!SIGNATURE@{SIGNATURE}}
+\index{SIGNATURE@{SIGNATURE}!secure\_crypto.h@{secure\_crypto.h}}
+\doxysubsubsection{\texorpdfstring{SIGNATURE}{SIGNATURE}}
+{\footnotesize\ttfamily \#define SIGNATURE~"{}signature.\+txt"{}}
+
+\Hypertarget{secure__crypto_8h_ab5df85c2c753110d8d26257232df4168}\label{secure__crypto_8h_ab5df85c2c753110d8d26257232df4168} 
+\index{secure\_crypto.h@{secure\_crypto.h}!TLS\_CA\_CERT\_FILENAME@{TLS\_CA\_CERT\_FILENAME}}
+\index{TLS\_CA\_CERT\_FILENAME@{TLS\_CA\_CERT\_FILENAME}!secure\_crypto.h@{secure\_crypto.h}}
+\doxysubsubsection{\texorpdfstring{TLS\_CA\_CERT\_FILENAME}{TLS\_CA\_CERT\_FILENAME}}
+{\footnotesize\ttfamily \#define TLS\+\_\+\+CA\+\_\+\+CERT\+\_\+\+FILENAME~"{}server\+\_\+tls\+\_\+ca.\+der"{}}
+
+
+
+ca.\+der creado por mi del servidor 
+
+\Hypertarget{secure__crypto_8h_a5ba898dcd6e92f327d3914037f8e4d94}\label{secure__crypto_8h_a5ba898dcd6e92f327d3914037f8e4d94} 
+\index{secure\_crypto.h@{secure\_crypto.h}!USB\_KEY@{USB\_KEY}}
+\index{USB\_KEY@{USB\_KEY}!secure\_crypto.h@{secure\_crypto.h}}
+\doxysubsubsection{\texorpdfstring{USB\_KEY}{USB\_KEY}}
+{\footnotesize\ttfamily \#define USB\+\_\+\+KEY~"{}things01.\+dat"{}}
+
+\Hypertarget{secure__crypto_8h_a561133c5be793263bb54036059793d76}\label{secure__crypto_8h_a561133c5be793263bb54036059793d76} 
+\index{secure\_crypto.h@{secure\_crypto.h}!WIFI\_SIZE@{WIFI\_SIZE}}
+\index{WIFI\_SIZE@{WIFI\_SIZE}!secure\_crypto.h@{secure\_crypto.h}}
+\doxysubsubsection{\texorpdfstring{WIFI\_SIZE}{WIFI\_SIZE}}
+{\footnotesize\ttfamily \#define WIFI\+\_\+\+SIZE~330}
+
+\Hypertarget{secure__crypto_8h_a75f575fe6a2059012ec1f1e42d54e412}\label{secure__crypto_8h_a75f575fe6a2059012ec1f1e42d54e412} 
+\index{secure\_crypto.h@{secure\_crypto.h}!WPA\_EAP\_CA\_CERT\_FILENAME@{WPA\_EAP\_CA\_CERT\_FILENAME}}
+\index{WPA\_EAP\_CA\_CERT\_FILENAME@{WPA\_EAP\_CA\_CERT\_FILENAME}!secure\_crypto.h@{secure\_crypto.h}}
+\doxysubsubsection{\texorpdfstring{WPA\_EAP\_CA\_CERT\_FILENAME}{WPA\_EAP\_CA\_CERT\_FILENAME}}
+{\footnotesize\ttfamily \#define WPA\+\_\+\+EAP\+\_\+\+CA\+\_\+\+CERT\+\_\+\+FILENAME~"{}client\+\_\+router\+\_\+ca.\+der"{}}
+
+
+
+Es el ca.\+der copiado de Docker. 
+
+\Hypertarget{secure__crypto_8h_ae3ac0f5326a10d6e3c2745605e9c8325}\label{secure__crypto_8h_ae3ac0f5326a10d6e3c2745605e9c8325} 
+\index{secure\_crypto.h@{secure\_crypto.h}!WPA\_EAP\_CERT\_FILENAME@{WPA\_EAP\_CERT\_FILENAME}}
+\index{WPA\_EAP\_CERT\_FILENAME@{WPA\_EAP\_CERT\_FILENAME}!secure\_crypto.h@{secure\_crypto.h}}
+\doxysubsubsection{\texorpdfstring{WPA\_EAP\_CERT\_FILENAME}{WPA\_EAP\_CERT\_FILENAME}}
+{\footnotesize\ttfamily \#define WPA\+\_\+\+EAP\+\_\+\+CERT\+\_\+\+FILENAME~"{}client\+\_\+router.\+crt"{}}
+
+
+
+Es el client.\+der copiado de Docker. 
+
+\Hypertarget{secure__crypto_8h_a7bfeff63c385f23edf4dbf7cbeb7a7ce}\label{secure__crypto_8h_a7bfeff63c385f23edf4dbf7cbeb7a7ce} 
+\index{secure\_crypto.h@{secure\_crypto.h}!WPA\_EAP\_CERT\_KEY\_FILENAME@{WPA\_EAP\_CERT\_KEY\_FILENAME}}
+\index{WPA\_EAP\_CERT\_KEY\_FILENAME@{WPA\_EAP\_CERT\_KEY\_FILENAME}!secure\_crypto.h@{secure\_crypto.h}}
+\doxysubsubsection{\texorpdfstring{WPA\_EAP\_CERT\_KEY\_FILENAME}{WPA\_EAP\_CERT\_KEY\_FILENAME}}
+{\footnotesize\ttfamily \#define WPA\+\_\+\+EAP\+\_\+\+CERT\+\_\+\+KEY\+\_\+\+FILENAME~"{}client\+\_\+router\+\_\+key.\+key"{}}
+
+
+
+Es la llave del cliente copiado de Docker. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{secure__crypto_8h_a27b01edf6d8726aa43351b7638f9c603}\label{secure__crypto_8h_a27b01edf6d8726aa43351b7638f9c603} 
+\index{secure\_crypto.h@{secure\_crypto.h}!AES\_Algo\_Decrypt@{AES\_Algo\_Decrypt}}
+\index{AES\_Algo\_Decrypt@{AES\_Algo\_Decrypt}!secure\_crypto.h@{secure\_crypto.h}}
+\doxysubsubsection{\texorpdfstring{AES\_Algo\_Decrypt()}{AES\_Algo\_Decrypt()}}
+{\footnotesize\ttfamily void AES\+\_\+\+Algo\+\_\+\+Decrypt (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{r\+\_\+w\+\_\+data }\end{DoxyParamCaption})}
+
+\Hypertarget{secure__crypto_8h_a086bbb20e434346c5b9d6031a1ec794f}\label{secure__crypto_8h_a086bbb20e434346c5b9d6031a1ec794f} 
+\index{secure\_crypto.h@{secure\_crypto.h}!AES\_Algo\_Decrypt\_File@{AES\_Algo\_Decrypt\_File}}
+\index{AES\_Algo\_Decrypt\_File@{AES\_Algo\_Decrypt\_File}!secure\_crypto.h@{secure\_crypto.h}}
+\doxysubsubsection{\texorpdfstring{AES\_Algo\_Decrypt\_File()}{AES\_Algo\_Decrypt\_File()}}
+{\footnotesize\ttfamily void AES\+\_\+\+Algo\+\_\+\+Decrypt\+\_\+\+File (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{secure__crypto_8h_a4e5f6ad214bdd7e5e1b84dfb3cf242a1}\label{secure__crypto_8h_a4e5f6ad214bdd7e5e1b84dfb3cf242a1} 
+\index{secure\_crypto.h@{secure\_crypto.h}!AES\_Algo\_Encrypt\_File@{AES\_Algo\_Encrypt\_File}}
+\index{AES\_Algo\_Encrypt\_File@{AES\_Algo\_Encrypt\_File}!secure\_crypto.h@{secure\_crypto.h}}
+\doxysubsubsection{\texorpdfstring{AES\_Algo\_Encrypt\_File()}{AES\_Algo\_Encrypt\_File()}}
+{\footnotesize\ttfamily void AES\+\_\+\+Algo\+\_\+\+Encrypt\+\_\+\+File (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{secure__crypto_8h_a658755a698e5b683e00b9d9a274bbb7c}\label{secure__crypto_8h_a658755a698e5b683e00b9d9a274bbb7c} 
+\index{secure\_crypto.h@{secure\_crypto.h}!AES\_Algo\_Verify@{AES\_Algo\_Verify}}
+\index{AES\_Algo\_Verify@{AES\_Algo\_Verify}!secure\_crypto.h@{secure\_crypto.h}}
+\doxysubsubsection{\texorpdfstring{AES\_Algo\_Verify()}{AES\_Algo\_Verify()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} AES\+\_\+\+Algo\+\_\+\+Verify (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{secure__crypto_8h_aa28dd36bf21dbc5a6de72f702a9e0260}\label{secure__crypto_8h_aa28dd36bf21dbc5a6de72f702a9e0260} 
+\index{secure\_crypto.h@{secure\_crypto.h}!Check\_TLS\_Cacert@{Check\_TLS\_Cacert}}
+\index{Check\_TLS\_Cacert@{Check\_TLS\_Cacert}!secure\_crypto.h@{secure\_crypto.h}}
+\doxysubsubsection{\texorpdfstring{Check\_TLS\_Cacert()}{Check\_TLS\_Cacert()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} Check\+\_\+\+TLS\+\_\+\+Cacert (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+This function read TLS CA certificate from SD and check the validity of the certificate. The certificate must be in DER format. DER is a binary encoding for X.\+509 certificate. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{secure__crypto_8h_a74fb04594529b5adb108048738d70d16}{CERT\+\_\+\+VALID} 
+
+\doxylink{secure__crypto_8h_a25726ac8e9e8892a0beee93fbadb502a}{CERT\+\_\+\+NOT\+\_\+\+VALID} 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{secure__crypto_8h_aa28dd36bf21dbc5a6de72f702a9e0260_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{secure__crypto_8h_aa28dd36bf21dbc5a6de72f702a9e0260_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{secure__crypto_8h_a2d4a144c2fca7de6f8c228eff5bb255e}\label{secure__crypto_8h_a2d4a144c2fca7de6f8c228eff5bb255e} 
+\index{secure\_crypto.h@{secure\_crypto.h}!Check\_WPA\_EAP\_Cert@{Check\_WPA\_EAP\_Cert}}
+\index{Check\_WPA\_EAP\_Cert@{Check\_WPA\_EAP\_Cert}!secure\_crypto.h@{secure\_crypto.h}}
+\doxysubsubsection{\texorpdfstring{Check\_WPA\_EAP\_Cert()}{Check\_WPA\_EAP\_Cert()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} Check\+\_\+\+WPA\+\_\+\+EAP\+\_\+\+Cert (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+This function read WPA-\/\+EAP certificate from SD and check the validity of the certificate. The certificate must be in DER format. DER is a binary encoding for X.\+509 certificate. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{secure__crypto_8h_a74fb04594529b5adb108048738d70d16}{CERT\+\_\+\+VALID} 
+
+\doxylink{secure__crypto_8h_a25726ac8e9e8892a0beee93fbadb502a}{CERT\+\_\+\+NOT\+\_\+\+VALID} 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{secure__crypto_8h_a2d4a144c2fca7de6f8c228eff5bb255e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{secure__crypto_8h_a2d4a144c2fca7de6f8c228eff5bb255e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{secure__crypto_8h_a9495bf897dd771714c7d8969772dc3c2}\label{secure__crypto_8h_a9495bf897dd771714c7d8969772dc3c2} 
+\index{secure\_crypto.h@{secure\_crypto.h}!Crypto\_ATECC\_Config@{Crypto\_ATECC\_Config}}
+\index{Crypto\_ATECC\_Config@{Crypto\_ATECC\_Config}!secure\_crypto.h@{secure\_crypto.h}}
+\doxysubsubsection{\texorpdfstring{Crypto\_ATECC\_Config()}{Crypto\_ATECC\_Config()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} Crypto\+\_\+\+ATECC\+\_\+\+Config (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Function to configure and lock data and config zone. 
+
+\begin{DoxyReturn}{Returns}
+ATCA\+\_\+\+STATUS 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{secure__crypto_8h_a9495bf897dd771714c7d8969772dc3c2_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{secure__crypto_8h_a9495bf897dd771714c7d8969772dc3c2_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{secure__crypto_8h_ad76358be60b9987ce85bc2dee9fb8457}\label{secure__crypto_8h_ad76358be60b9987ce85bc2dee9fb8457} 
+\index{secure\_crypto.h@{secure\_crypto.h}!Crypto\_ATECC\_Decrypt@{Crypto\_ATECC\_Decrypt}}
+\index{Crypto\_ATECC\_Decrypt@{Crypto\_ATECC\_Decrypt}!secure\_crypto.h@{secure\_crypto.h}}
+\doxysubsubsection{\texorpdfstring{Crypto\_ATECC\_Decrypt()}{Crypto\_ATECC\_Decrypt()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} Crypto\+\_\+\+ATECC\+\_\+\+Decrypt (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{r\+\_\+w\+\_\+data }\end{DoxyParamCaption})}
+
+
+
+Function to encrypt data. 
+
+\begin{DoxyReturn}{Returns}
+ATCA\+\_\+\+STATUS 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{secure__crypto_8h_ad76358be60b9987ce85bc2dee9fb8457_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{secure__crypto_8h_ad76358be60b9987ce85bc2dee9fb8457_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{secure__crypto_8h_a3adbe2a78ac92b9c62a56e1ad4651493}\label{secure__crypto_8h_a3adbe2a78ac92b9c62a56e1ad4651493} 
+\index{secure\_crypto.h@{secure\_crypto.h}!Crypto\_ATECC\_Decrypt\_File@{Crypto\_ATECC\_Decrypt\_File}}
+\index{Crypto\_ATECC\_Decrypt\_File@{Crypto\_ATECC\_Decrypt\_File}!secure\_crypto.h@{secure\_crypto.h}}
+\doxysubsubsection{\texorpdfstring{Crypto\_ATECC\_Decrypt\_File()}{Crypto\_ATECC\_Decrypt\_File()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} Crypto\+\_\+\+ATECC\+\_\+\+Decrypt\+\_\+\+File (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Function to decrypt file. 
+
+\begin{DoxyReturn}{Returns}
+ATCA\+\_\+\+STATUS 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{secure__crypto_8h_a3adbe2a78ac92b9c62a56e1ad4651493_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{secure__crypto_8h_af7102d0a16428208caf8679720ce0738}\label{secure__crypto_8h_af7102d0a16428208caf8679720ce0738} 
+\index{secure\_crypto.h@{secure\_crypto.h}!Crypto\_ATECC\_Encrypt\_File@{Crypto\_ATECC\_Encrypt\_File}}
+\index{Crypto\_ATECC\_Encrypt\_File@{Crypto\_ATECC\_Encrypt\_File}!secure\_crypto.h@{secure\_crypto.h}}
+\doxysubsubsection{\texorpdfstring{Crypto\_ATECC\_Encrypt\_File()}{Crypto\_ATECC\_Encrypt\_File()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} Crypto\+\_\+\+ATECC\+\_\+\+Encrypt\+\_\+\+File (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Function to encrypt file. 
+
+\begin{DoxyReturn}{Returns}
+ATCA\+\_\+\+STATUS 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{secure__crypto_8h_af7102d0a16428208caf8679720ce0738_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{secure__crypto_8h_af7102d0a16428208caf8679720ce0738_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{secure__crypto_8h_a67f41d2b9732ec05f80c48ee883019d2}\label{secure__crypto_8h_a67f41d2b9732ec05f80c48ee883019d2} 
+\index{secure\_crypto.h@{secure\_crypto.h}!Crypto\_ATECC\_Encrypt\_NFC@{Crypto\_ATECC\_Encrypt\_NFC}}
+\index{Crypto\_ATECC\_Encrypt\_NFC@{Crypto\_ATECC\_Encrypt\_NFC}!secure\_crypto.h@{secure\_crypto.h}}
+\doxysubsubsection{\texorpdfstring{Crypto\_ATECC\_Encrypt\_NFC()}{Crypto\_ATECC\_Encrypt\_NFC()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} Crypto\+\_\+\+ATECC\+\_\+\+Encrypt\+\_\+\+NFC (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{r\+\_\+w\+\_\+data }\end{DoxyParamCaption})}
+
+
+
+Function to encrypt file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r\+\_\+w\+\_\+data} & data to be encrypted\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ATCA\+\_\+\+STATUS 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{secure__crypto_8h_a67f41d2b9732ec05f80c48ee883019d2_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{secure__crypto_8h_a67f41d2b9732ec05f80c48ee883019d2_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{secure__crypto_8h_af7c91f21e106a9c4f7190aa91088341b}\label{secure__crypto_8h_af7c91f21e106a9c4f7190aa91088341b} 
+\index{secure\_crypto.h@{secure\_crypto.h}!Crypto\_ATECC\_Init@{Crypto\_ATECC\_Init}}
+\index{Crypto\_ATECC\_Init@{Crypto\_ATECC\_Init}!secure\_crypto.h@{secure\_crypto.h}}
+\doxysubsubsection{\texorpdfstring{Crypto\_ATECC\_Init()}{Crypto\_ATECC\_Init()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} Crypto\+\_\+\+ATECC\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Function to initialize the ATECC608B secure element. 
+
+\begin{DoxyReturn}{Returns}
+ATCA\+\_\+\+STATUS 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=291pt]{secure__crypto_8h_af7c91f21e106a9c4f7190aa91088341b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{secure__crypto_8h_af7c91f21e106a9c4f7190aa91088341b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{secure__crypto_8h_a331dc32b20633662da2a010ea44c5c9b}\label{secure__crypto_8h_a331dc32b20633662da2a010ea44c5c9b} 
+\index{secure\_crypto.h@{secure\_crypto.h}!Crypto\_ATECC\_Inject@{Crypto\_ATECC\_Inject}}
+\index{Crypto\_ATECC\_Inject@{Crypto\_ATECC\_Inject}!secure\_crypto.h@{secure\_crypto.h}}
+\doxysubsubsection{\texorpdfstring{Crypto\_ATECC\_Inject()}{Crypto\_ATECC\_Inject()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} Crypto\+\_\+\+ATECC\+\_\+\+Inject (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Function to inject public key and USB key in slot. 
+
+\begin{DoxyReturn}{Returns}
+ATCA\+\_\+\+STATUS 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{secure__crypto_8h_a331dc32b20633662da2a010ea44c5c9b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{secure__crypto_8h_a331dc32b20633662da2a010ea44c5c9b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{secure__crypto_8h_a8436921bbeae99e5d1dff39b4b46f2ed}\label{secure__crypto_8h_a8436921bbeae99e5d1dff39b4b46f2ed} 
+\index{secure\_crypto.h@{secure\_crypto.h}!Crypto\_ATECC\_Inject\_Zero@{Crypto\_ATECC\_Inject\_Zero}}
+\index{Crypto\_ATECC\_Inject\_Zero@{Crypto\_ATECC\_Inject\_Zero}!secure\_crypto.h@{secure\_crypto.h}}
+\doxysubsubsection{\texorpdfstring{Crypto\_ATECC\_Inject\_Zero()}{Crypto\_ATECC\_Inject\_Zero()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} Crypto\+\_\+\+ATECC\+\_\+\+Inject\+\_\+\+Zero (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Function to inject in slot. 
+
+\begin{DoxyReturn}{Returns}
+ATCA\+\_\+\+STATUS 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{secure__crypto_8h_a8436921bbeae99e5d1dff39b4b46f2ed_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{secure__crypto_8h_a8436921bbeae99e5d1dff39b4b46f2ed_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{secure__crypto_8h_a5f6c33db5481046f663c49275fd6681f}\label{secure__crypto_8h_a5f6c33db5481046f663c49275fd6681f} 
+\index{secure\_crypto.h@{secure\_crypto.h}!Crypto\_ATECC\_IsPresent@{Crypto\_ATECC\_IsPresent}}
+\index{Crypto\_ATECC\_IsPresent@{Crypto\_ATECC\_IsPresent}!secure\_crypto.h@{secure\_crypto.h}}
+\doxysubsubsection{\texorpdfstring{Crypto\_ATECC\_IsPresent()}{Crypto\_ATECC\_IsPresent()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} Crypto\+\_\+\+ATECC\+\_\+\+Is\+Present (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Function to check if ATECC is present. 
+
+\begin{DoxyReturn}{Returns}
+TRUE if is Present/ FALSE not present 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{secure__crypto_8h_a5f6c33db5481046f663c49275fd6681f_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{secure__crypto_8h_a6cd4bbf18723fdb1b403c13c2b73bb4b}\label{secure__crypto_8h_a6cd4bbf18723fdb1b403c13c2b73bb4b} 
+\index{secure\_crypto.h@{secure\_crypto.h}!Crypto\_ATECC\_SHA256@{Crypto\_ATECC\_SHA256}}
+\index{Crypto\_ATECC\_SHA256@{Crypto\_ATECC\_SHA256}!secure\_crypto.h@{secure\_crypto.h}}
+\doxysubsubsection{\texorpdfstring{Crypto\_ATECC\_SHA256()}{Crypto\_ATECC\_SHA256()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} Crypto\+\_\+\+ATECC\+\_\+\+SHA256 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{digest }\end{DoxyParamCaption})}
+
+
+
+Function to generate SHA256. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em digest} & Array to save digest\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ATCA\+\_\+\+STATUS 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=321pt]{secure__crypto_8h_a6cd4bbf18723fdb1b403c13c2b73bb4b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{secure__crypto_8h_a6cd4bbf18723fdb1b403c13c2b73bb4b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{secure__crypto_8h_aadac43bf0ff020fc6fc31c4cfb573f41}\label{secure__crypto_8h_aadac43bf0ff020fc6fc31c4cfb573f41} 
+\index{secure\_crypto.h@{secure\_crypto.h}!Crypto\_ATECC\_SHA256\_HMAC@{Crypto\_ATECC\_SHA256\_HMAC}}
+\index{Crypto\_ATECC\_SHA256\_HMAC@{Crypto\_ATECC\_SHA256\_HMAC}!secure\_crypto.h@{secure\_crypto.h}}
+\doxysubsubsection{\texorpdfstring{Crypto\_ATECC\_SHA256\_HMAC()}{Crypto\_ATECC\_SHA256\_HMAC()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} Crypto\+\_\+\+ATECC\+\_\+\+SHA256\+\_\+\+HMAC (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{digest }\end{DoxyParamCaption})}
+
+
+
+Function to generate SHA256 HMAC. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em digest} & Array to save digest\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ATCA\+\_\+\+STATUS 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{secure__crypto_8h_aadac43bf0ff020fc6fc31c4cfb573f41_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{secure__crypto_8h_ae5519bd75c4f1192ca68d8376a574234}\label{secure__crypto_8h_ae5519bd75c4f1192ca68d8376a574234} 
+\index{secure\_crypto.h@{secure\_crypto.h}!Crypto\_ATECC\_Verify@{Crypto\_ATECC\_Verify}}
+\index{Crypto\_ATECC\_Verify@{Crypto\_ATECC\_Verify}!secure\_crypto.h@{secure\_crypto.h}}
+\doxysubsubsection{\texorpdfstring{Crypto\_ATECC\_Verify()}{Crypto\_ATECC\_Verify()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} Crypto\+\_\+\+ATECC\+\_\+\+Verify (\begin{DoxyParamCaption}\item[{bool \texorpdfstring{$\ast$}{*}}]{is\+\_\+verified }\end{DoxyParamCaption})}
+
+
+
+Function to verify signature. 
+
+\begin{DoxyReturn}{Returns}
+ATCA\+\_\+\+STATUS 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{secure__crypto_8h_ae5519bd75c4f1192ca68d8376a574234_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{secure__crypto_8h_ae5519bd75c4f1192ca68d8376a574234_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{secure__crypto_8h_ac85f934b12796ea8d753520b18c4058e}\label{secure__crypto_8h_ac85f934b12796ea8d753520b18c4058e} 
+\index{secure\_crypto.h@{secure\_crypto.h}!Crypto\_ATECC\_Verify\_Test@{Crypto\_ATECC\_Verify\_Test}}
+\index{Crypto\_ATECC\_Verify\_Test@{Crypto\_ATECC\_Verify\_Test}!secure\_crypto.h@{secure\_crypto.h}}
+\doxysubsubsection{\texorpdfstring{Crypto\_ATECC\_Verify\_Test()}{Crypto\_ATECC\_Verify\_Test()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} Crypto\+\_\+\+ATECC\+\_\+\+Verify\+\_\+\+Test (\begin{DoxyParamCaption}\item[{bool \texorpdfstring{$\ast$}{*}}]{is\+\_\+verified }\end{DoxyParamCaption})}
+
+
+
+Function to verify signature only for test. 
+
+\begin{DoxyReturn}{Returns}
+ATCA\+\_\+\+STATUS 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{secure__crypto_8h_ac85f934b12796ea8d753520b18c4058e_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{secure__crypto_8h_a5958138a098c78007a0101dd4ce35857}\label{secure__crypto_8h_a5958138a098c78007a0101dd4ce35857} 
+\index{secure\_crypto.h@{secure\_crypto.h}!Is\_ATECC\_Initialized@{Is\_ATECC\_Initialized}}
+\index{Is\_ATECC\_Initialized@{Is\_ATECC\_Initialized}!secure\_crypto.h@{secure\_crypto.h}}
+\doxysubsubsection{\texorpdfstring{Is\_ATECC\_Initialized()}{Is\_ATECC\_Initialized()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} Is\+\_\+\+ATECC\+\_\+\+Initialized (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Checks if atecc initialization process completed. 
+
+\begin{DoxyReturn}{Returns}
+TRUE if atecc initialized and FALSE if not 
+\end{DoxyReturn}
+\Hypertarget{secure__crypto_8h_a194be93715f62cac9647944022809aef}\label{secure__crypto_8h_a194be93715f62cac9647944022809aef} 
+\index{secure\_crypto.h@{secure\_crypto.h}!NX\_Init@{NX\_Init}}
+\index{NX\_Init@{NX\_Init}!secure\_crypto.h@{secure\_crypto.h}}
+\doxysubsubsection{\texorpdfstring{NX\_Init()}{NX\_Init()}}
+{\footnotesize\ttfamily void NX\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+This function initialize NetX system. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{secure__crypto_8h_a194be93715f62cac9647944022809aef_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{secure__crypto_8h_a94db3f6c96aa7258b8ab5ffbb6a0d220}\label{secure__crypto_8h_a94db3f6c96aa7258b8ab5ffbb6a0d220} 
+\index{secure\_crypto.h@{secure\_crypto.h}!SHA2\_SHA256@{SHA2\_SHA256}}
+\index{SHA2\_SHA256@{SHA2\_SHA256}!secure\_crypto.h@{secure\_crypto.h}}
+\doxysubsubsection{\texorpdfstring{SHA2\_SHA256()}{SHA2\_SHA256()}}
+{\footnotesize\ttfamily void SHA2\+\_\+\+SHA256 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{data\+\_\+hex }\end{DoxyParamCaption})}
+
+\Hypertarget{secure__crypto_8h_a548aaf5d6c50ba0e0cdd5a84fe75d6b7}\label{secure__crypto_8h_a548aaf5d6c50ba0e0cdd5a84fe75d6b7} 
+\index{secure\_crypto.h@{secure\_crypto.h}!SHA2\_SHA256\_HMAC@{SHA2\_SHA256\_HMAC}}
+\index{SHA2\_SHA256\_HMAC@{SHA2\_SHA256\_HMAC}!secure\_crypto.h@{secure\_crypto.h}}
+\doxysubsubsection{\texorpdfstring{SHA2\_SHA256\_HMAC()}{SHA2\_SHA256\_HMAC()}}
+{\footnotesize\ttfamily void SHA2\+\_\+\+SHA256\+\_\+\+HMAC (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{data\+\_\+hex }\end{DoxyParamCaption})}
+

@@ -1,0 +1,70 @@
+\doxysection{thread\+\_\+core\+\_\+entry.\+h}
+\hypertarget{a00089_source}{}\label{a00089_source}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/thread\_core\_entry.h@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/thread\_core\_entry.h}}
+\mbox{\hyperlink{a00089}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Name\ \ \ \ \ \ :\ R100\_S3A7\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ :\ Osatu\ S.\ Coop\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Compiler\ \ :\ GNU\ ARM\ Embedded\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ Target\ \ \ \ :\ Reanibex\ Serie\ 100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ ******************************************************************************/}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#ifndef\ THREAD\_CORE\_HAL\_H\_}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#define\ THREAD\_CORE\_HAL\_H\_}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ **Includes}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{a00017}{device\_init.h}}>}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{a00134}{types\_app.h}}"{}}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{a00020}{event\_ids.h}}"{}}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{a00131}{thread\_sysMon\_entry.h}}"{}}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ **\ Defines}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#define\ \ \ \ \ LED\_VALUE\_OFF\ \ \ IOPORT\_LEVEL\_LOW}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#define\ \ \ \ \ LED\_VALUE\_ON\ \ \ \ IOPORT\_LEVEL\_HIGH}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00041\ \textcolor{comment}{\ **\ Typedefs}}
+\DoxyCodeLine{00042\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00045\ \textcolor{comment}{\ **\ Globals}}
+\DoxyCodeLine{00046\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00047\ \textcolor{keyword}{extern}\ \ \mbox{\hyperlink{a00134_a72bf2916658241ff5c65acd6d8a5ed4c}{WORKING\_MODE\_e}}\ \ \ \ \ \ \ \mbox{\hyperlink{a00089_a866cc90724d82d3674cec36af3a6656b}{curr\_working\_mode}};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{keyword}{extern}\ \ \mbox{\hyperlink{a00354}{DEVICE\_SETTINGS\_t}}*\ \ \ \mbox{\hyperlink{a00089_a7696debdbb4df854622a71c3cbacadc5}{pDevice\_Settings}};}
+\DoxyCodeLine{00050\ \textcolor{keyword}{extern}\ \ \mbox{\hyperlink{a00334}{AED\_SETTINGS\_t}}*\ \ \ \ \ \ \mbox{\hyperlink{a00089_a1b517e767cd50ebf84e6f84fa8fe59d6}{pAed\_Settings}};}
+\DoxyCodeLine{00051\ \textcolor{keyword}{extern}\ \ \mbox{\hyperlink{a00338}{MISC\_SETTINGS\_t}}*\ \ \ \ \ \mbox{\hyperlink{a00089_a0ab3bf0c9b8d8a9f0af67be61ddc0752}{pMisc\_Settings}};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00055\ \textcolor{comment}{\ **\ Prototypes}}
+\DoxyCodeLine{00056\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{keyword}{extern}\ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \mbox{\hyperlink{a00089_a45cfcc998186af39961ade62a140bc31}{FSM\_R100\_AED}}\ (\mbox{\hyperlink{a00020_a610cd7de90c58acf8dfb3345f1e53697}{EVENT\_ID\_e}}\ aed\_event);}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{keyword}{extern}\ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \mbox{\hyperlink{a00089_a6f4a81c7e67ef4f60fb3d68b4f9acc19}{Pastime\_While\_Audio\_Playing}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00062\ \textcolor{keyword}{extern}\ \ \mbox{\hyperlink{a00221_a71de8cbe1b830973cbf1b3b2dd5b57ba}{RCP\_BREAK\_t}}\ \mbox{\hyperlink{a00089_a3eb1c7bea6a7e44589b65a1a98fc1de3}{Pastime\_While\_Audio\_Playing\_with\_Break\_PT}}\ \ \ \ (\mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ delay);}
+\DoxyCodeLine{00063\ \textcolor{keyword}{extern}\ \ \mbox{\hyperlink{a00221_a71de8cbe1b830973cbf1b3b2dd5b57ba}{RCP\_BREAK\_t}}\ \mbox{\hyperlink{a00089_a4c91aeda537a55c0e8f54abe253a0c4b}{Pastime\_While\_Audio\_Playing\_with\_Break\_PT\_OC}}\ (\mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ delay);}
+\DoxyCodeLine{00064\ \textcolor{keyword}{extern}\ \ \mbox{\hyperlink{a00221_a71de8cbe1b830973cbf1b3b2dd5b57ba}{RCP\_BREAK\_t}}\ \mbox{\hyperlink{a00089_a7ee6fc368635a86cdeb84f3d6c692329}{Pastime\_While\_Audio\_Playing\_with\_Break\_PT\_CC}}\ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \textcolor{keyword}{extern}\ \ \mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\_t}}\ \ \ \ \ \ \mbox{\hyperlink{a00089_afe7922236ddc997c50ed61aeaca4c204}{Is\_Patient\_Type\_Change}}\ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00067\ \textcolor{keyword}{extern}\ \ \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ \mbox{\hyperlink{a00089_a12572cc8f7aa64bfff52a5e69376529b}{Get\_RCP\_Rate}}\ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00068\ \textcolor{keyword}{extern}\ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \mbox{\hyperlink{a00089_ab5cc7004066a53f633a1891cc016a473}{Send\_Core\_Queue}}(\mbox{\hyperlink{a00020_a610cd7de90c58acf8dfb3345f1e53697}{EVENT\_ID\_e}}\ ev);}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ THREAD\_CORE\_HAL\_H\_\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00073\ \textcolor{comment}{\ **\ \$Log\$}}
+\DoxyCodeLine{00074\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00075\ \textcolor{comment}{\ **\ end\ of\ thread\_core\_hal.h}}
+\DoxyCodeLine{00076\ \textcolor{comment}{\ ******************************************************************************/}}
+
+\end{DoxyCode}

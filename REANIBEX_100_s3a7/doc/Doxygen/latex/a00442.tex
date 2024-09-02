@@ -1,0 +1,77 @@
+\doxysection{NV\+\_\+\+DATA\+\_\+\+BLOCK\+\_\+t Struct Reference}
+\hypertarget{a00442}{}\label{a00442}\index{NV\_DATA\_BLOCK\_t@{NV\_DATA\_BLOCK\_t}}
+
+
+{\ttfamily \#include $<$thread\+\_\+sys\+Mon\+\_\+entry.\+h$>$}
+
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \mbox{\hyperlink{a00442_aa0a3fb811db179b03df1613b46688953}{zp\+\_\+adcs\+\_\+short}}
+\begin{DoxyCompactList}\small\item\em zp with electrodes in short-\/circuit (in ADCs) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \mbox{\hyperlink{a00442_a16c5446a75bf7d5bb0ef1d69162505dc}{zp\+\_\+adcs\+\_\+calibration}}
+\begin{DoxyCompactList}\small\item\em zp input connected to calibration (in ADCs) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{a00442_aae0183dd37f053f54f8d701e4334cedc}{acc\+\_\+pos\+\_\+hvi}}
+\begin{DoxyCompactList}\small\item\em Determine accelerometer position (horizontal/vertical/inclined) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{a00442_a523161ae8f0a35d08516b204ca68873a}{must\+\_\+be\+\_\+0x55}}
+\begin{DoxyCompactList}\small\item\em reserved (fixed to 0x55) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{a00442_a5a2cc29ec68dee00834eeb2dae552d9f}{checksum\+\_\+xor}}
+\begin{DoxyCompactList}\small\item\em data checksum \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{a00442_aae0183dd37f053f54f8d701e4334cedc}\label{a00442_aae0183dd37f053f54f8d701e4334cedc} 
+\index{NV\_DATA\_BLOCK\_t@{NV\_DATA\_BLOCK\_t}!acc\_pos\_hvi@{acc\_pos\_hvi}}
+\index{acc\_pos\_hvi@{acc\_pos\_hvi}!NV\_DATA\_BLOCK\_t@{NV\_DATA\_BLOCK\_t}}
+\doxysubsubsection{\texorpdfstring{acc\_pos\_hvi}{acc\_pos\_hvi}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} NV\+\_\+\+DATA\+\_\+\+BLOCK\+\_\+t\+::acc\+\_\+pos\+\_\+hvi}
+
+
+
+Determine accelerometer position (horizontal/vertical/inclined) 
+
+\Hypertarget{a00442_a5a2cc29ec68dee00834eeb2dae552d9f}\label{a00442_a5a2cc29ec68dee00834eeb2dae552d9f} 
+\index{NV\_DATA\_BLOCK\_t@{NV\_DATA\_BLOCK\_t}!checksum\_xor@{checksum\_xor}}
+\index{checksum\_xor@{checksum\_xor}!NV\_DATA\_BLOCK\_t@{NV\_DATA\_BLOCK\_t}}
+\doxysubsubsection{\texorpdfstring{checksum\_xor}{checksum\_xor}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} NV\+\_\+\+DATA\+\_\+\+BLOCK\+\_\+t\+::checksum\+\_\+xor}
+
+
+
+data checksum 
+
+\Hypertarget{a00442_a523161ae8f0a35d08516b204ca68873a}\label{a00442_a523161ae8f0a35d08516b204ca68873a} 
+\index{NV\_DATA\_BLOCK\_t@{NV\_DATA\_BLOCK\_t}!must\_be\_0x55@{must\_be\_0x55}}
+\index{must\_be\_0x55@{must\_be\_0x55}!NV\_DATA\_BLOCK\_t@{NV\_DATA\_BLOCK\_t}}
+\doxysubsubsection{\texorpdfstring{must\_be\_0x55}{must\_be\_0x55}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} NV\+\_\+\+DATA\+\_\+\+BLOCK\+\_\+t\+::must\+\_\+be\+\_\+0x55}
+
+
+
+reserved (fixed to 0x55) 
+
+\Hypertarget{a00442_a16c5446a75bf7d5bb0ef1d69162505dc}\label{a00442_a16c5446a75bf7d5bb0ef1d69162505dc} 
+\index{NV\_DATA\_BLOCK\_t@{NV\_DATA\_BLOCK\_t}!zp\_adcs\_calibration@{zp\_adcs\_calibration}}
+\index{zp\_adcs\_calibration@{zp\_adcs\_calibration}!NV\_DATA\_BLOCK\_t@{NV\_DATA\_BLOCK\_t}}
+\doxysubsubsection{\texorpdfstring{zp\_adcs\_calibration}{zp\_adcs\_calibration}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} NV\+\_\+\+DATA\+\_\+\+BLOCK\+\_\+t\+::zp\+\_\+adcs\+\_\+calibration}
+
+
+
+zp input connected to calibration (in ADCs) 
+
+\Hypertarget{a00442_aa0a3fb811db179b03df1613b46688953}\label{a00442_aa0a3fb811db179b03df1613b46688953} 
+\index{NV\_DATA\_BLOCK\_t@{NV\_DATA\_BLOCK\_t}!zp\_adcs\_short@{zp\_adcs\_short}}
+\index{zp\_adcs\_short@{zp\_adcs\_short}!NV\_DATA\_BLOCK\_t@{NV\_DATA\_BLOCK\_t}}
+\doxysubsubsection{\texorpdfstring{zp\_adcs\_short}{zp\_adcs\_short}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} NV\+\_\+\+DATA\+\_\+\+BLOCK\+\_\+t\+::zp\+\_\+adcs\+\_\+short}
+
+
+
+zp with electrodes in short-\/circuit (in ADCs) 
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\mbox{\hyperlink{a00131}{thread\+\_\+sys\+Mon\+\_\+entry.\+h}}\end{DoxyCompactItemize}

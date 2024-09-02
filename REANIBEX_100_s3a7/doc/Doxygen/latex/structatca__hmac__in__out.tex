@@ -1,0 +1,46 @@
+\doxysection{atca\+\_\+hmac\+\_\+in\+\_\+out Struct Reference}
+\hypertarget{structatca__hmac__in__out}{}\label{structatca__hmac__in__out}\index{atca\_hmac\_in\_out@{atca\_hmac\_in\_out}}
+
+
+Input/output parameters for function atca\+\_\+hmac().  
+
+
+
+
+{\ttfamily \#include $<$atca\+\_\+host.\+h$>$}
+
+
+
+Collaboration diagram for atca\+\_\+hmac\+\_\+in\+\_\+out\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=176pt]{structatca__hmac__in__out__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{group__atcah_gaf4252196a042189c1f698ee0e923bd43}{mode}}
+\begin{DoxyCompactList}\small\item\em \mbox{[}in\mbox{]} Mode parameter used in HMAC command (Param1). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{group__atcah_ga6b3945336987b20a9f4d7e8b7e031097}{key\+\_\+id}}
+\begin{DoxyCompactList}\small\item\em \mbox{[}in\mbox{]} Key\+ID parameter used in HMAC command (Param2). \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group__atcah_ga8356351666b53907b054c7942ad17a2e}{key}}
+\begin{DoxyCompactList}\small\item\em \mbox{[}in\mbox{]} Pointer to 32-\/byte key used to generate HMAC digest. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group__atcah_ga16aae705a1832f6e17f3cb4e0489c777}{otp}}
+\begin{DoxyCompactList}\small\item\em \mbox{[}in\mbox{]} Pointer to 11-\/byte OTP, optionally included in HMAC digest, depending on mode. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group__atcah_ga6bce5839f6daaedc3033bce5d1d8543f}{sn}}
+\begin{DoxyCompactList}\small\item\em \mbox{[}in\mbox{]} Pointer to 9-\/byte SN, optionally included in HMAC digest, depending on mode. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group__atcah_ga488809b419a3da691ba469e156eabc08}{response}}
+\begin{DoxyCompactList}\small\item\em \mbox{[}out\mbox{]} Pointer to 32-\/byte SHA-\/256 HMAC digest. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structatca__temp__key}{atca\+\_\+temp\+\_\+key}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group__atcah_ga2bcb39533e946ffea2972a7f7e475617}{temp\+\_\+key}}
+\begin{DoxyCompactList}\small\item\em \mbox{[}in,out\mbox{]} Pointer to Temp\+Key structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Input/output parameters for function atca\+\_\+hmac(). 
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\+SCE/\mbox{\hyperlink{atca__host_8h}{atca\+\_\+host.\+h}}\item 
+C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\+SCE/host/\mbox{\hyperlink{host_2atca__host_8h}{atca\+\_\+host.\+h}}\end{DoxyCompactItemize}

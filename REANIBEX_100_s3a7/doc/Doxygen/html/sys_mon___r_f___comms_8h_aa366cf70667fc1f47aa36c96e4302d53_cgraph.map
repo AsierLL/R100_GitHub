@@ -1,0 +1,16 @@
+<map id="Send_Sigfox_Position" name="Send_Sigfox_Position">
+<area shape="rect" id="Node000001" title="Function to send position by Sigfox." alt="" coords="5,115,154,141"/>
+<area shape="rect" id="Node000002" href="$thread__comm__hal_8c.html#a14b282886d75e45f70a7ffe548732dba" title="Returns the selected Comms UART." alt="" coords="204,5,380,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="95,112,141,77,200,42,216,35,218,40,203,46,144,82,99,116"/>
+<area shape="rect" id="Node000003" href="$thread__comm__entry_8c.html#a6f2ca4d1ab63af942461484f1451146c" title="Checks if sigfox initialization process completed." alt="" coords="202,56,382,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="130,112,225,85,227,90,131,117"/>
+<area shape="rect" id="Node000004" href="$thread__comm__entry_8c.html#aa5bebfa6dad376f9d2c79e2256f29d40" title="Generate R100 Sigfox GPS position." alt="" coords="211,107,373,149"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="154,125,195,125,195,131,154,131"/>
+<area shape="rect" id="Node000006" href="$thread__comm__entry_8c.html#aae63ed01fe3ee64c1d194e97ca3877b3" title="Open Sigfox Communication." alt="" coords="222,173,362,200"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="131,139,227,166,225,171,130,144"/>
+<area shape="rect" id="Node000007" href="$sys_mon___battery_8c.html#ae8f3f32f49df7702f6405467130ce8fd" title="Function that report if the battery is DEMO or not." alt="" coords="212,224,372,251"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="99,140,144,174,203,210,218,216,216,221,200,214,141,179,95,144"/>
+<area shape="rect" id="Node000005" href="$thread__comm__entry_8c.html#af7921d111a91795221d7b493716d54c3" title="Process events related to All COMM modules." alt="" coords="430,144,571,171"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="374,137,415,143,414,148,373,142"/>
+<area shape="poly" id="edge6_Node000006_Node000005" title=" " alt="" coords="362,174,414,167,415,172,363,179"/>
+</map>

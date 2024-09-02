@@ -1,0 +1,438 @@
+<?xml version="1.0" ?>
+<synergyModuleDescription>
+    <config id="config.framework.sf_firmware_image" path="ssp_cfg/framework/sf_firmware_image_cfg.h" version="0">
+        <property default="config.framework.sf_firmware_image.param_checking_enable.bsp" display="Parameter Checking" id="config.framework.sf_firmware_image.param_checking_enable">
+            <option display="Default (BSP)" id="config.framework.sf_firmware_image.param_checking_enable.bsp" value="(BSP_CFG_PARAM_CHECKING_ENABLE)"/>
+            <option display="Enabled" id="config.framework.sf_firmware_image.param_checking_enable.enabled" value="(1)"/>
+            <option display="Disabled" id="config.framework.sf_firmware_image.param_checking_enable.disabled" value="(0)"/>
+        </property>
+        <content>
+            #define SF_FIRMWARE_IMAGE_CFG_PARAM_CHECKING_ENABLE ${config.framework.sf_firmware_image.param_checking_enable}
+        </content>
+    </config>
+    <module config="config.framework.sf_firmware_image" display="Renesas|Flashloader|${module.framework.sf_firmware_image.name} Bootloader Firmware Image Internal Framework on sf_firmware_image_internal" id="module.framework.sf_firmware_image_internal_bootloader"  common="100" version="1">
+        <constraint display="Module instances must have unique names">
+            "${interface.framework.sf_firmware_image.${module.framework.sf_firmware_image.name}}" === "1"
+        </constraint>
+        <requires id="module.framework.sf_firmware_image.requires.crc" interface="interface.driver.crc" display="Add r_crc instance" >
+            <override property="module.driver.crc.crc_polynomial" value="module.driver.crc.crc_polynomial.gps_crc_ccitt"/>
+            <override property="module.driver.crc.crc_bit_order" value="module.driver.crc.crc_bit_order.lms_msb"/>
+        </requires>
+        <requires id="module.framework.sf_firmware_image.requires.sf_memory_mcu_flash" interface="interface.framework.sf_memory_mcu_flash" display="Add sf_memory_mcu_flash">
+            <override property="module.framework.sf_memory_mcu_flash.p_callback" value="NULL"/>
+        </requires>
+        <provides interface="interface.framework.sf_firmware_image" />
+        <provides interface="interface.framework.sf_firmware_image_internal_bootloader" />
+        <provides interface="interface.framework.sf_firmware_image_internal" />
+        <provides interface="interface.framework.sf_firmware_image_internal_on_sf_firmware_image_internal" />
+        <provides interface="interface.framework.sf_firmware_image.${module.framework.sf_firmware_image.name}" />
+        <property id="module.framework.sf_firmware_image.name" display="Name" default="g_sf_firmware_image_internal${_instance}">
+            <constraint display="Name must be a valid C symbol">testSymbol("${module.framework.sf_firmware_image.name}")</constraint>
+        </property>
+        <!-- sf_firmware_image_record_t -->
+         <property id="module.framework.sf_firmware_image.base_address_of_storage" display="Enter the starting address of the first flash area" default="0">
+            <constraint display="Starting address:">testInteger("${module.framework.sf_firmware_image.base_address_of_storage}")</constraint>
+        </property>
+         <property id="module.framework.sf_firmware_image.total_size_of_storage" display="Enter the size of the first flash area" default="1">
+            <constraint display="Starting address:">testInteger("${module.framework.sf_firmware_image.total_size_of_storage}")  &amp;&amp; ("${module.framework.sf_firmware_image.total_size_of_storage}" &gt; 0)</constraint>
+        </property>
+         <property id="module.framework.sf_firmware_image.num_slots" display="Number of slots supported (1 or 2 slots supported)" default="1">
+            <constraint display="1 or 2 slots permitted">testInteger("${module.framework.sf_firmware_image.num_slots}")  &amp;&amp; ("${module.framework.sf_firmware_image.num_slots}" &gt; 0) &amp;&amp; ("${module.framework.sf_firmware_image.num_slots}" &lt; 3)</constraint>
+        </property>
+        <!-- sf_firmware_image_cfg_t -->
+        <property id="module.framework.sf_firmware_image.p_callback" display="Callback" default="NULL">
+            <constraint display="Name must be a valid C symbol">testSymbol("${module.framework.sf_firmware_image.p_callback}")</constraint>
+        </property>
+        <header>
+            #ifndef ${module.framework.sf_firmware_image.p_callback}
+                void ${module.framework.sf_firmware_image.p_callback}(sf_firmware_image_callback_args_t * p_args);
+            #endif
+            /** Firmware Image instance */
+            extern const sf_firmware_image_instance_t ${module.framework.sf_firmware_image.name};
+            #define INTERNAL_FLASH_PARTITION_SIZE_${module.framework.sf_firmware_image.name}      (${module.framework.sf_firmware_image.total_size_of_storage} / ${module.framework.sf_firmware_image.num_slots})
+        </header>
+        <includes>
+            #include &quot;sf_firmware_image.h&quot;
+        </includes>
+        <declarations>
+                const sf_firmware_image_record_t ${module.framework.sf_firmware_image.name}_record BSP_PLACE_IN_SECTION(".bootloader_record") =
+                {
+                    .record_state       = SF_FIRMWARE_IMAGE_RECORD_STATE_VALID,
+                    .memory_type        = SF_FIRMWARE_IMAGE_MEMORY_TYPE_RAW,
+                    .image_addresses    =
+                    {
+                        (uint32_t)(${module.framework.sf_firmware_image.base_address_of_storage}),
+                        (uint32_t)(${module.framework.sf_firmware_image.base_address_of_storage} + INTERNAL_FLASH_PARTITION_SIZE_${module.framework.sf_firmware_image.name}),
+                    },
+                    .image_header_raw   =
+                    {
+                        (sf_firmware_image_file_header_t *)(${module.framework.sf_firmware_image.base_address_of_storage} + SF_FIRMWARE_IMAGE_APP_HEADER_OFFSET),
+                        (sf_firmware_image_file_header_t *)(${module.framework.sf_firmware_image.base_address_of_storage} + SF_FIRMWARE_IMAGE_APP_HEADER_OFFSET + INTERNAL_FLASH_PARTITION_SIZE_${module.framework.sf_firmware_image.name}),
+                    },
+                    .num_slots          = ${module.framework.sf_firmware_image.num_slots},
+                };
+            const sf_firmware_image_memory_instance_t ${module.framework.sf_firmware_image.name}_memory_instances [] =
+            {
+                {
+                    .p_lower_lvl_memory     = &amp;${module.framework.sf_firmware_image.requires.sf_memory_mcu_flash::module.framework.sf_memory_mcu_flash.name},
+                    .start_address          = (uint32_t)(${module.framework.sf_firmware_image.base_address_of_storage}),
+                    .slot_size              = (uint32_t)INTERNAL_FLASH_PARTITION_SIZE_${module.framework.sf_firmware_image.name},
+                    .num_slots              = (uint32_t)${module.framework.sf_firmware_image.num_slots},
+                    .checksum               = {0U},
+                },
+                <!-- {
+                    #ifndef ${module.framework.sf_firmware_image.p_sf_memory_api_instance_2}
+                        .p_lower_lvl_memory     = &amp;${module.framework.sf_firmware_image.p_sf_memory_api_instance_2},
+                        .start_address          = (uint32_t)(${module.framework.sf_firmware_image.base_address_of_storage_area_2}),
+                        .slot_size              = (uint32_t)${module.framework.sf_firmware_image.total_size_of_storage_2},
+                        .num_slots              = (uint32_t)${module.framework.sf_firmware_image.num_slots},
+                        .checksum               = {0U},
+                    #else
+                        NULL
+                    #endif
+                },
+                {
+                    #ifndef ${module.framework.sf_firmware_image.p_sf_memory_api_instance_3}
+                        .p_lower_lvl_memory     = &amp;${module.framework.sf_firmware_image.p_sf_memory_api_instance_3},
+                        .start_address          = (uint32_t)(${module.framework.sf_firmware_image.base_address_of_storage_area_3}),
+                        .slot_size              = (uint32_t)${module.framework.sf_firmware_image.total_size_of_storage_3},
+                        .num_slots              = (uint32_t)${module.framework.sf_firmware_image.num_slots},
+                        .checksum               = {0U},
+                    #else
+                        NULL
+                    #endif
+                }, -->
+            };
+            static uint8_t ${module.framework.sf_firmware_image.name}_buffer[sizeof(sf_firmware_image_file_header_t)];
+            static sf_firmware_image_instance_ctrl_t ${module.framework.sf_firmware_image.name}_ctrl;
+            static const sf_firmware_image_cfg_t ${module.framework.sf_firmware_image.name}_cfg =
+            {
+                .p_lower_lvl_crc        = &amp;${module.framework.sf_firmware_image.requires.crc::module.driver.crc.name},
+                .num_memory_instances   = 1U,
+                .memory_type            = SF_FIRMWARE_IMAGE_MEMORY_TYPE_RAW,
+                    .p_record               = (sf_firmware_image_record_t *)&amp;${module.framework.sf_firmware_image.name}_record,
+                .p_buffer               = ${module.framework.sf_firmware_image.name}_buffer,
+                .buffer_size            = (uint32_t)sizeof(${module.framework.sf_firmware_image.name}_buffer),
+                .p_callback             = ${module.framework.sf_firmware_image.p_callback},
+                .p_extend               = (void *)NULL,
+                .p_context              = (void *)&amp;${module.framework.sf_firmware_image.name}_ctrl,
+                .p_memory_instances     = (sf_firmware_image_memory_instance_t *)&amp;${module.framework.sf_firmware_image.name}_memory_instances,
+            };
+            const sf_firmware_image_instance_t ${module.framework.sf_firmware_image.name} =
+            {
+                .p_api  = &amp;g_sf_firmware_image_on_sf_firmware_image,
+                .p_ctrl = &amp;${module.framework.sf_firmware_image.name}_ctrl,
+                .p_cfg  = (sf_firmware_image_cfg_t const *)&amp;${module.framework.sf_firmware_image.name}_cfg
+            };
+        </declarations>
+    </module>
+    <module config="config.framework.sf_firmware_image" display="Renesas|Flashloader|${module.framework.sf_firmware_image.name} Firmware Image Internal Framework on sf_firmware_image_internal" id="module.framework.sf_firmware_image_internal"  common="100" version="1">
+        <constraint display="Module instances must have unique names">
+            "${interface.framework.sf_firmware_image.${module.framework.sf_firmware_image.name}}" === "1"
+        </constraint>
+        <requires id="module.framework.sf_firmware_image.requires.crc" interface="interface.driver.crc" display="Add r_crc instance" >
+            <override property="module.driver.crc.crc_polynomial" value="module.driver.crc.crc_polynomial.gps_crc_ccitt"/>
+            <override property="module.driver.crc.crc_bit_order" value="module.driver.crc.crc_bit_order.lms_msb"/>
+        </requires>
+        <requires id="module.framework.sf_firmware_image.requires.sf_memory_mcu_flash" interface="interface.framework.sf_memory_mcu_flash" display="Add sf_memory_mcu_flash" find="false">
+            <override property="module.framework.sf_memory_mcu_flash.p_callback" value="NULL"/>
+        </requires>
+        <provides interface="interface.framework.sf_firmware_image" />
+        <provides interface="interface.framework.sf_firmware_image_internal" />
+        <provides interface="interface.framework.sf_firmware_image_internal_on_sf_firmware_image_internal" />
+        <provides interface="interface.framework.sf_firmware_image.${module.framework.sf_firmware_image.name}" />
+        <property id="module.framework.sf_firmware_image.name" display="Name" default="g_sf_firmware_image_internal${_instance}">
+            <constraint display="Name must be a valid C symbol">testSymbol("${module.framework.sf_firmware_image.name}")</constraint>
+        </property>
+        <!-- sf_firmware_image_record_t -->
+         <property id="module.framework.sf_firmware_image.base_address_of_storage" display="Enter the starting address of the first flash area" default="0">
+            <constraint display="Starting address:">testInteger("${module.framework.sf_firmware_image.base_address_of_storage}")</constraint>
+        </property>
+         <property id="module.framework.sf_firmware_image.total_size_of_storage" display="Enter the size of the first flash area" default="1">
+            <constraint display="Starting address:">testInteger("${module.framework.sf_firmware_image.total_size_of_storage}")  &amp;&amp; ("${module.framework.sf_firmware_image.total_size_of_storage}" &gt; 0)</constraint>
+        </property>
+         <property id="module.framework.sf_firmware_image.num_slots" display="Number of slots supported (1 or 2 slots supported)" default="1">
+            <constraint display="1 or 2 slots permitted">testInteger("${module.framework.sf_firmware_image.num_slots}")  &amp;&amp; ("${module.framework.sf_firmware_image.num_slots}" &gt; 0) &amp;&amp; ("${module.framework.sf_firmware_image.num_slots}" &lt; 3)</constraint>
+        </property>
+        <!-- sf_firmware_image_memory_instance_t -->
+        <!-- sf_firmware_image_cfg_t -->
+        <property id="module.framework.sf_firmware_image.p_record" display="Address/Pointer to Firmware Image Records" default="NULL"></property>
+        <property id="module.framework.sf_firmware_image.p_callback" display="Callback" default="NULL">
+            <constraint display="Name must be a valid C symbol">testSymbol("${module.framework.sf_firmware_image.p_callback}")</constraint>
+        </property>
+        <!-- sf_firmware_image_file_header_t -->
+        <property id="module.framework.sf_firmware_image.image_identifier" display="Image Identifier" default="0">
+            <constraint display="">testInteger("${module.framework.sf_firmware_image.image_identifier}") &amp;&amp; ("${module.framework.sf_firmware_image.image_identifier}" &lt; 65536)</constraint>
+        </property>
+        <property id="module.framework.sf_firmware_image.version_number" display="Version Number" default="0">
+            <constraint display="">testInteger("${module.framework.sf_firmware_image.version_number}") &amp;&amp; ("${module.framework.sf_firmware_image.version_number}" &lt; 256)</constraint>
+        </property>
+        <header>
+            #ifndef ${module.framework.sf_firmware_image.p_callback}
+                void ${module.framework.sf_firmware_image.p_callback}(sf_firmware_image_callback_args_t * p_args);
+            #endif
+            /** Firmware Image instance */
+            extern const sf_firmware_image_instance_t ${module.framework.sf_firmware_image.name};
+            #define INTERNAL_FLASH_PARTITION_SIZE_${module.framework.sf_firmware_image.name}      (${module.framework.sf_firmware_image.total_size_of_storage} / ${module.framework.sf_firmware_image.num_slots})
+        </header>
+        <includes>
+            #include &quot;sf_firmware_image.h&quot;
+        </includes>
+        <declarations>
+            const sf_firmware_image_memory_instance_t ${module.framework.sf_firmware_image.name}_memory_instances [] =
+            {
+                {
+                    .p_lower_lvl_memory     = &amp;${module.framework.sf_firmware_image.requires.sf_memory_mcu_flash::module.framework.sf_memory_mcu_flash.name},
+                    .start_address          = (uint32_t)(${module.framework.sf_firmware_image.base_address_of_storage}),
+                    .slot_size              = (uint32_t)INTERNAL_FLASH_PARTITION_SIZE_${module.framework.sf_firmware_image.name},
+                    .num_slots              = (uint32_t)${module.framework.sf_firmware_image.num_slots},
+                    .checksum               = {0U},
+                },
+                <!-- {
+                    #ifndef ${module.framework.sf_firmware_image.p_sf_memory_api_instance_2}
+                        .p_lower_lvl_memory     = &amp;${module.framework.sf_firmware_image.p_sf_memory_api_instance_2},
+                        .start_address          = (uint32_t)(${module.framework.sf_firmware_image.base_address_of_storage_area_2}),
+                        .slot_size              = (uint32_t)${module.framework.sf_firmware_image.total_size_of_storage_2},
+                        .num_slots              = (uint32_t)${module.framework.sf_firmware_image.num_slots},
+                        .checksum               = {0U},
+                    #else
+                        NULL
+                    #endif
+                },
+                {
+                    #ifndef ${module.framework.sf_firmware_image.p_sf_memory_api_instance_3}
+                        .p_lower_lvl_memory     = &amp;${module.framework.sf_firmware_image.p_sf_memory_api_instance_3},
+                        .start_address          = (uint32_t)(${module.framework.sf_firmware_image.base_address_of_storage_area_3}),
+                        .slot_size              = (uint32_t)${module.framework.sf_firmware_image.total_size_of_storage_3},
+                        .num_slots              = (uint32_t)${module.framework.sf_firmware_image.num_slots},
+                        .checksum               = {0U},
+                    #else
+                        NULL
+                    #endif
+                }, -->
+            };
+            static uint8_t ${module.framework.sf_firmware_image.name}_buffer[sizeof(sf_firmware_image_file_header_t)];
+            static sf_firmware_image_instance_ctrl_t ${module.framework.sf_firmware_image.name}_ctrl;
+            static const sf_firmware_image_cfg_t ${module.framework.sf_firmware_image.name}_cfg =
+            {
+                .p_lower_lvl_crc        = &amp;${module.framework.sf_firmware_image.requires.crc::module.driver.crc.name},
+                .num_memory_instances   = 1U,
+                .memory_type            = SF_FIRMWARE_IMAGE_MEMORY_TYPE_RAW,
+                .p_record               = (sf_firmware_image_record_t *)${module.framework.sf_firmware_image.p_record},
+                .p_buffer               = ${module.framework.sf_firmware_image.name}_buffer,
+                .buffer_size            = (uint32_t)sizeof(${module.framework.sf_firmware_image.name}_buffer),
+                .p_callback             = ${module.framework.sf_firmware_image.p_callback},
+                .p_extend               = (void *)NULL,
+                .p_context              = (void *)&amp;${module.framework.sf_firmware_image.name}_ctrl,
+                .p_memory_instances     = (sf_firmware_image_memory_instance_t *)&amp;${module.framework.sf_firmware_image.name}_memory_instances,
+            };
+            const sf_firmware_image_instance_t ${module.framework.sf_firmware_image.name} =
+            {
+                .p_api  = &amp;g_sf_firmware_image_on_sf_firmware_image,
+                .p_ctrl = &amp;${module.framework.sf_firmware_image.name}_ctrl,
+                .p_cfg  = (sf_firmware_image_cfg_t const *)&amp;${module.framework.sf_firmware_image.name}_cfg
+            };
+                const sf_firmware_image_file_header_t ${module.framework.sf_firmware_image.name}_image_file_header BSP_PLACE_IN_SECTION(".sf_firmware_image_file_header") =
+                {
+                    .valid_mask                     = (uint8_t)SF_FIRMWARE_IMAGE_VALID_MASK_8_BIT,
+                    .version_number                 = (uint8_t)${module.framework.sf_firmware_image.version_number},
+                    .image_identifier               = (uint16_t)${module.framework.sf_firmware_image.image_identifier},
+                    .num_blocks                     = 0U,           /* Not used for sf_firmware_image internal */
+                    .size_bch                       = 0U,           /* Not used for sf_firmware_image internal */
+                    .size_raw                       = 0U,           /* Not used for sf_firmware_image internal */
+                    .maximum_block_size             = 0U,           /* Not used for sf_firmware_image internal */
+                    .checksum_bch_file              = 0U,           /* Not used for sf_firmware_image internal */
+                    .checksum_fw_image              = 0U,           /* Not used for sf_firmware_image internal */
+                    .first_block_address            = 0xFFFFFFFFU,  /* Not used for sf_firmware_image internal */
+                    .application_start_address      = 0U,           /* Not used for sf_firmware_image internal */
+                    .num_memory_instances           = 1U,           /* Not used for sf_firmware_image internal */
+                    .p_app_memory_instance          = ${module.framework.sf_firmware_image.name}_memory_instances, /* Not used for sf_firmware_image internal */
+                    .successfully_stored            = 0xFFFFFFFFU,  /* Not used for sf_firmware_image internal */
+                    .checksum_bch_file_header       = 0U,           /* Not used for sf_firmware_image internal */
+                };
+        </declarations>
+    </module>
+    <module config="config.framework.sf_firmware_image" display="Renesas|Flashloader|${module.framework.sf_firmware_image.name} Bootloader Firmware Image External Framework on sf_firmware_image_external" id="module.framework.sf_firmware_image_external_bootloader" common="100" version="1">
+        <constraint display="Module instances must have unique names">
+            "${interface.framework.sf_firmware_image.${module.framework.sf_firmware_image.name}}" === "1"
+        </constraint>
+        <requires id="module.framework.sf_firmware_image.requires.crc" interface="interface.driver.crc" display="Add r_crc instance" >
+            <override property="module.driver.crc.crc_polynomial" value="module.driver.crc.crc_polynomial.gps_crc_ccitt"/>
+            <override property="module.driver.crc.crc_bit_order" value="module.driver.crc.crc_bit_order.lms_msb"/>
+        </requires>
+        <requires id="module.framework.sf_firmware_image.requires.sf_memory_api" interface="interface.framework.sf_memory_api" display="Add sf_memory_api instance" >
+            <override property="module.framework.sf_memory_api.p_callback" value="NULL"/>
+        </requires>
+        <provides interface="interface.framework.sf_firmware_image" />
+        <provides interface="interface.framework.sf_firmware_image_external_bootloader" />
+        <provides interface="interface.framework.sf_firmware_image_external" />
+        <provides interface="interface.framework.sf_firmware_image_external_on_sf_firmware_image_external" />
+        <provides interface="interface.framework.sf_firmware_image.${module.framework.sf_firmware_image.name}" />
+        <property id="module.framework.sf_firmware_image.name" display="Name" default="g_sf_firmware_image_external${_instance}">
+            <constraint display="Name must be a valid C symbol">testSymbol("${module.framework.sf_firmware_image.name}")</constraint>
+        </property>
+        <!-- sf_firmware_image_record_t -->
+         <property id="module.framework.sf_firmware_image.base_address_of_storage" display="Enter the starting address of the memory storage area" default="0">
+            <constraint display="Starting address:">testInteger("${module.framework.sf_firmware_image.base_address_of_storage}")</constraint>
+        </property>
+         <property id="module.framework.sf_firmware_image.total_size_of_storage" display="Enter the size of the memory storage area" default="1">
+            <constraint display="Starting address:">testInteger("${module.framework.sf_firmware_image.total_size_of_storage}")  &amp;&amp; ("${module.framework.sf_firmware_image.total_size_of_storage}" &gt; 0)</constraint>
+        </property>
+         <property id="module.framework.sf_firmware_image.num_slots" display="Number of slots supported (1 to 4 slots supported)" default="1">
+            <constraint display="1 or 2 slots permitted">testInteger("${module.framework.sf_firmware_image.num_slots}")  &amp;&amp; ("${module.framework.sf_firmware_image.num_slots}" &gt; 0) &amp;&amp; ("${module.framework.sf_firmware_image.num_slots}" &lt; 5)</constraint>
+        </property>
+        <!-- sf_firmware_image_memory_instance_t -->
+        <!-- sf_firmware_image_file_header_t -->
+        <!-- sf_firmware_image_cfg_t -->
+        <property id="module.framework.sf_firmware_image.p_record" display="Address/Pointer to Firmware Image Records (Not applicable for a Bootloader Project)" default="NULL"></property>
+        <property id="module.framework.sf_firmware_image.p_callback" display="Callback" default="NULL">
+            <constraint display="Name must be a valid C symbol">testSymbol("${module.framework.sf_firmware_image.p_callback}")</constraint>
+        </property>
+         <property id="module.framework.sf_firmware_image.maximum_block_size" display="Maximum size of a BCH block in bytes" default="1024">
+            <constraint display="Value must be an integer greater than 0">testInteger("${module.framework.sf_firmware_image.maximum_block_size}")  &amp;&amp; ("${module.framework.sf_firmware_image.maximum_block_size}" &gt; 0)</constraint>
+        </property>
+        <header>
+            #ifndef ${module.framework.sf_firmware_image.p_callback}
+                void ${module.framework.sf_firmware_image.p_callback}(sf_firmware_image_callback_args_t * p_args);
+            #endif
+            /** Firmware Image instance */
+            extern const sf_firmware_image_instance_t ${module.framework.sf_firmware_image.name};
+            #define STORAGE_PARTITION_SIZE_${module.framework.sf_firmware_image.name}      (${module.framework.sf_firmware_image.total_size_of_storage} / ${module.framework.sf_firmware_image.num_slots})
+        </header>
+        <includes>
+            #include &quot;sf_firmware_image.h&quot;
+        </includes>
+        <declarations>
+                const sf_firmware_image_record_t ${module.framework.sf_firmware_image.name}_record BSP_PLACE_IN_SECTION(".bootloader_record") =
+                {
+                    .record_state       = SF_FIRMWARE_IMAGE_RECORD_STATE_VALID,
+                    .memory_type        = SF_FIRMWARE_IMAGE_MEMORY_TYPE_BCH,
+                    .image_addresses    =
+                    {
+                        (uint32_t)(${module.framework.sf_firmware_image.base_address_of_storage}),
+                        (uint32_t)(${module.framework.sf_firmware_image.base_address_of_storage} + STORAGE_PARTITION_SIZE_${module.framework.sf_firmware_image.name}),
+                    },
+                    .image_header_raw   =
+                    {
+                        (sf_firmware_image_file_header_t *)(${module.framework.sf_firmware_image.base_address_of_storage} + SF_FIRMWARE_IMAGE_APP_HEADER_OFFSET),
+                        (sf_firmware_image_file_header_t *)(${module.framework.sf_firmware_image.base_address_of_storage} + SF_FIRMWARE_IMAGE_APP_HEADER_OFFSET + STORAGE_PARTITION_SIZE_${module.framework.sf_firmware_image.name}),
+                    },
+                    .num_slots          = ${module.framework.sf_firmware_image.num_slots},
+                };
+            const sf_firmware_image_memory_instance_t ${module.framework.sf_firmware_image.name}_memory_instances [] =
+            {
+                {
+                    .p_lower_lvl_memory     = &amp;${module.framework.sf_firmware_image.requires.sf_memory_api::module.framework.sf_memory_api.name},
+                    .start_address          = (uint32_t)(${module.framework.sf_firmware_image.base_address_of_storage}),
+                    .slot_size              = (uint32_t)STORAGE_PARTITION_SIZE_${module.framework.sf_firmware_image.name},
+                    .num_slots              = (uint32_t)${module.framework.sf_firmware_image.num_slots},
+                    .checksum               = {0U},
+                },
+            };
+            static uint8_t ${module.framework.sf_firmware_image.name}_buffer[${module.framework.sf_firmware_image.maximum_block_size}];
+            static sf_firmware_image_instance_ctrl_t ${module.framework.sf_firmware_image.name}_ctrl;
+            static const sf_firmware_image_cfg_t ${module.framework.sf_firmware_image.name}_cfg =
+            {
+                .p_lower_lvl_crc        = &amp;${module.framework.sf_firmware_image.requires.crc::module.driver.crc.name},
+                .num_memory_instances   = 1U,
+                .memory_type            = SF_FIRMWARE_IMAGE_MEMORY_TYPE_BCH,
+                    .p_record               = (sf_firmware_image_record_t *)&amp;${module.framework.sf_firmware_image.name}_record,
+                .p_buffer               = ${module.framework.sf_firmware_image.name}_buffer,
+                .buffer_size            = (uint32_t)sizeof(${module.framework.sf_firmware_image.name}_buffer),
+                .p_callback             = ${module.framework.sf_firmware_image.p_callback},
+                .p_extend               = (void *)NULL,
+                .p_context              = (void *)&amp;${module.framework.sf_firmware_image.name}_ctrl,
+                .p_memory_instances     = (sf_firmware_image_memory_instance_t *)&amp;${module.framework.sf_firmware_image.name}_memory_instances,
+            };
+            const sf_firmware_image_instance_t ${module.framework.sf_firmware_image.name} =
+            {
+                .p_api  = &amp;g_sf_firmware_image_on_sf_firmware_image,
+                .p_ctrl = &amp;${module.framework.sf_firmware_image.name}_ctrl,
+                .p_cfg  = (sf_firmware_image_cfg_t const *)&amp;${module.framework.sf_firmware_image.name}_cfg
+            };
+        </declarations>
+    </module>
+    <module config="config.framework.sf_firmware_image" display="Renesas|Flashloader|${module.framework.sf_firmware_image.name} Firmware Image External Framework on sf_firmware_image_external" id="module.framework.sf_firmware_image_external" common="100" version="1">
+        <constraint display="Module instances must have unique names">
+            "${interface.framework.sf_firmware_image.${module.framework.sf_firmware_image.name}}" === "1"
+        </constraint>
+        <requires id="module.framework.sf_firmware_image.requires.crc" interface="interface.driver.crc" display="Add r_crc instance" >
+            <override property="module.driver.crc.crc_polynomial" value="module.driver.crc.crc_polynomial.gps_crc_ccitt"/>
+            <override property="module.driver.crc.crc_bit_order" value="module.driver.crc.crc_bit_order.lms_msb"/>
+        </requires>
+        <requires id="module.framework.sf_firmware_image.requires.sf_memory_api" interface="interface.framework.sf_memory_api" display="Add sf_memory_api instance" >
+            <override property="module.framework.sf_memory_api.p_callback" value="NULL"/>
+        </requires>
+        <provides interface="interface.framework.sf_firmware_image" />
+        <provides interface="interface.framework.sf_firmware_image_external" />
+        <provides interface="interface.framework.sf_firmware_image_external_on_sf_firmware_image_external" />
+        <provides interface="interface.framework.sf_firmware_image.${module.framework.sf_firmware_image.name}" />
+        <property id="module.framework.sf_firmware_image.name" display="Name" default="g_sf_firmware_image_external${_instance}">
+            <constraint display="Name must be a valid C symbol">testSymbol("${module.framework.sf_firmware_image.name}")</constraint>
+        </property>
+        <!-- sf_firmware_image_record_t -->
+         <property id="module.framework.sf_firmware_image.base_address_of_storage" display="Enter the starting address of the memory storage area" default="0">
+            <constraint display="Starting address:">testInteger("${module.framework.sf_firmware_image.base_address_of_storage}")</constraint>
+        </property>
+         <property id="module.framework.sf_firmware_image.total_size_of_storage" display="Enter the size of the memory storage area" default="1">
+            <constraint display="Starting address:">testInteger("${module.framework.sf_firmware_image.total_size_of_storage}")  &amp;&amp; ("${module.framework.sf_firmware_image.total_size_of_storage}" &gt; 0)</constraint>
+        </property>
+         <property id="module.framework.sf_firmware_image.num_slots" display="Number of slots supported (1 to 4 slots supported)" default="1">
+            <constraint display="1 or 2 slots permitted">testInteger("${module.framework.sf_firmware_image.num_slots}")  &amp;&amp; ("${module.framework.sf_firmware_image.num_slots}" &gt; 0) &amp;&amp; ("${module.framework.sf_firmware_image.num_slots}" &lt; 5)</constraint>
+        </property>
+        <!-- sf_firmware_image_memory_instance_t -->
+        <!-- sf_firmware_image_file_header_t -->
+        <!-- sf_firmware_image_cfg_t -->
+        <property id="module.framework.sf_firmware_image.p_record" display="Address/Pointer to Firmware Image Records (Not applicable for a Bootloader Project)" default="NULL"></property>
+        <property id="module.framework.sf_firmware_image.p_callback" display="Callback" default="NULL">
+            <constraint display="Name must be a valid C symbol">testSymbol("${module.framework.sf_firmware_image.p_callback}")</constraint>
+        </property>
+         <property id="module.framework.sf_firmware_image.maximum_block_size" display="Maximum size of a BCH block in bytes" default="1024">
+            <constraint display="Value must be an integer greater than 0">testInteger("${module.framework.sf_firmware_image.maximum_block_size}")  &amp;&amp; ("${module.framework.sf_firmware_image.maximum_block_size}" &gt; 0)</constraint>
+        </property>
+        <header>
+            #ifndef ${module.framework.sf_firmware_image.p_callback}
+                void ${module.framework.sf_firmware_image.p_callback}(sf_firmware_image_callback_args_t * p_args);
+            #endif
+            /** Firmware Image instance */
+            extern const sf_firmware_image_instance_t ${module.framework.sf_firmware_image.name};
+            #define STORAGE_PARTITION_SIZE_${module.framework.sf_firmware_image.name}      (${module.framework.sf_firmware_image.total_size_of_storage} / ${module.framework.sf_firmware_image.num_slots})
+        </header>
+        <includes>
+            #include &quot;sf_firmware_image.h&quot;
+        </includes>
+        <declarations>
+            const sf_firmware_image_memory_instance_t ${module.framework.sf_firmware_image.name}_memory_instances [] =
+            {
+                {
+                    .p_lower_lvl_memory     = &amp;${module.framework.sf_firmware_image.requires.sf_memory_api::module.framework.sf_memory_api.name},
+                    .start_address          = (uint32_t)(${module.framework.sf_firmware_image.base_address_of_storage}),
+                    .slot_size              = (uint32_t)STORAGE_PARTITION_SIZE_${module.framework.sf_firmware_image.name},
+                    .num_slots              = (uint32_t)${module.framework.sf_firmware_image.num_slots},
+                    .checksum               = {0U},
+                },
+            };
+            static uint8_t ${module.framework.sf_firmware_image.name}_buffer[${module.framework.sf_firmware_image.maximum_block_size}];
+            static sf_firmware_image_instance_ctrl_t ${module.framework.sf_firmware_image.name}_ctrl;
+            static const sf_firmware_image_cfg_t ${module.framework.sf_firmware_image.name}_cfg =
+            {
+                .p_lower_lvl_crc        = &amp;${module.framework.sf_firmware_image.requires.crc::module.driver.crc.name},
+                .num_memory_instances   = 1U,
+                .memory_type            = SF_FIRMWARE_IMAGE_MEMORY_TYPE_BCH,
+                    .p_record               = (sf_firmware_image_record_t *)${module.framework.sf_firmware_image.p_record},
+                .p_buffer               = ${module.framework.sf_firmware_image.name}_buffer,
+                .buffer_size            = (uint32_t)sizeof(${module.framework.sf_firmware_image.name}_buffer),
+                .p_callback             = ${module.framework.sf_firmware_image.p_callback},
+                .p_extend               = (void *)NULL,
+                .p_context              = (void *)&amp;${module.framework.sf_firmware_image.name}_ctrl,
+                .p_memory_instances     = (sf_firmware_image_memory_instance_t *)&amp;${module.framework.sf_firmware_image.name}_memory_instances,
+            };
+            const sf_firmware_image_instance_t ${module.framework.sf_firmware_image.name} =
+            {
+                .p_api  = &amp;g_sf_firmware_image_on_sf_firmware_image,
+                .p_ctrl = &amp;${module.framework.sf_firmware_image.name}_ctrl,
+                .p_cfg  = (sf_firmware_image_cfg_t const *)&amp;${module.framework.sf_firmware_image.name}_cfg
+            };
+        </declarations>
+    </module>
+</synergyModuleDescription>

@@ -1,0 +1,45 @@
+\doxysection{sha2\+\_\+routines.\+h}
+\hypertarget{sha2__routines_8h_source}{}\label{sha2__routines_8h_source}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/SCE/crypto/hashes/sha2\_routines.h@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/SCE/crypto/hashes/sha2\_routines.h}}
+\mbox{\hyperlink{sha2__routines_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#ifndef\ SHA2\_ROUTINES\_H}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#define\ SHA2\_ROUTINES\_H}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#ifndef\ SHA256\_DIGEST\_SIZE}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#define\ SHA256\_DIGEST\_SIZE\ (32)}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#ifndef\ SHA256\_BLOCK\_SIZE}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#define\ SHA256\_BLOCK\_SIZE\ \ (64)}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00042\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00046\ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ \mbox{\hyperlink{structsw__sha256__ctx_abda48eb7b450d079b3c04ba51d824334}{total\_msg\_size}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00048\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ \mbox{\hyperlink{structsw__sha256__ctx_ae49db58199cf54a15c307cb01b738c09}{block\_size}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00049\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \mbox{\hyperlink{frcp_8c_acc0ee3405c81fcfc13a4a900e1d4cffb}{block}}[\mbox{\hyperlink{sha2__routines_8h_a9c1fe69ad43d4ca74b84303a0ed64f2f}{SHA256\_BLOCK\_SIZE}}\ *\ 2];\ \ }
+\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ hash[8];\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00051\ \}\ \mbox{\hyperlink{structsw__sha256__ctx}{sw\_sha256\_ctx}};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{sha2__routines_8h_acfb7028e6f10d29c548cbecdbfa53ac8}{sw\_sha256\_init}}(\mbox{\hyperlink{structsw__sha256__ctx}{sw\_sha256\_ctx}}*\ ctx);}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{sha2__routines_8h_a7f5d8ad85631d77bfdb10dfb728bfbce}{sw\_sha256\_update}}(\mbox{\hyperlink{structsw__sha256__ctx}{sw\_sha256\_ctx}}*\ ctx,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}*\ message,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ len);}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{sha2__routines_8h_ace8eb02759b23942f866ddcd2057390a}{sw\_sha256\_final}}(\mbox{\hyperlink{structsw__sha256__ctx}{sw\_sha256\_ctx}}\ *\ ctx,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ digest[\mbox{\hyperlink{sha2__routines_8h_a81efbc0fc101b06a914f7ff9e2fbc0e9}{SHA256\_DIGEST\_SIZE}}]);}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{sha2__routines_8h_a5f6c75bec312e0d2faa7d645b62c3898}{sw\_sha256}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ *\ message,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ len,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ digest[\mbox{\hyperlink{sha2__routines_8h_a81efbc0fc101b06a914f7ff9e2fbc0e9}{SHA256\_DIGEST\_SIZE}}]);}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00062\ \}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SHA2\_ROUTINES\_H}}
+
+\end{DoxyCode}

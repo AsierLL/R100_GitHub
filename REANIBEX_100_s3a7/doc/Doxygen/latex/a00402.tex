@@ -1,0 +1,229 @@
+\doxysection{BATTERY\+\_\+\+STATISTICS\+\_\+\+COMMS\+\_\+t Struct Reference}
+\hypertarget{a00402}{}\label{a00402}\index{BATTERY\_STATISTICS\_COMMS\_t@{BATTERY\_STATISTICS\_COMMS\_t}}
+
+
+Comms Battery statistics (stored in the battery pack)  
+
+
+
+
+{\ttfamily \#include $<$sys\+Mon\+\_\+\+Battery.\+h$>$}
+
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \mbox{\hyperlink{a00402_a3abf71859e1630dfca8b5d949bc6a261}{wifi\+\_\+run\+Time\+\_\+total}}
+\begin{DoxyCompactList}\small\item\em Accumulated run time (in minutes) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{a00402_a0283757e14973a284fbd0a14cadc0cdb}{daily\+\_\+test}}
+\begin{DoxyCompactList}\small\item\em Number of daily test. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{a00402_aa75a546c2e95a3cb848c22f17c05899b}{n\+Test\+\_\+charges}}
+\begin{DoxyCompactList}\small\item\em Number of charges in manual test. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{a00402_a6609d506dfbd3cf6ae0c28832307e4f0}{rtc\+\_\+warning}}
+\begin{DoxyCompactList}\small\item\em Number of alerts that have been said by audio in RTC(Close cover, Call SAT, BEEP-\/\+BEEP) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{a00402_acf0156f00e63be270b2c37516c8f3e8f}{sigfox\+\_\+open\+\_\+close\+\_\+cover}}
+\begin{DoxyCompactList}\small\item\em Number of alerts that have been sent with the open and close cover with Sigfox. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{a00402_afc3b1fbb554287ceecb019efd0b97230}{sigfox\+\_\+daily\+\_\+test}}
+\begin{DoxyCompactList}\small\item\em Number of daily test that have been sent with Sigfox. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{a00402_ac8298628f2af736a0a1542c480a34f4f}{sigfox\+\_\+manual\+\_\+test}}
+\begin{DoxyCompactList}\small\item\em Number of monthly test that have been sent with Sigfox. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{a00402_af91d3068546dd117715892de67b0b4b4}{sigfox\+\_\+manual\+\_\+test\+\_\+gps}}
+\begin{DoxyCompactList}\small\item\em Number of monthly test that have been sent with Sigfox + GPS. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{a00402_a9c7a28c9dc9065437f2681dbec93aecc}{wifi\+\_\+test\+\_\+connect}}
+\begin{DoxyCompactList}\small\item\em Number of times that Wi\+Fi has been connected successfully. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{a00402_a79b68d5bcf41f072973c4508e544b79e}{wifi\+\_\+test\+\_\+no\+\_\+connect}}
+\begin{DoxyCompactList}\small\item\em Number of times that Wi\+Fi has not been connected successfully. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{a00402_a4bb17201cd85056b299be896cada889c}{wifi\+\_\+test\+\_\+connect\+\_\+gps}}
+\begin{DoxyCompactList}\small\item\em Number of fully test that have been sent with Wifi + GPS. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{a00402_a8fb517d734e63012868d76df18325108}{wifi\+\_\+cover\+\_\+connect}}
+\begin{DoxyCompactList}\small\item\em Number of alerts that have been sent with the open and close cover with Wifi. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{a00402_af6121dd986c27956f3db5abbb196d459}{wifi\+\_\+cover\+\_\+no\+\_\+connect}}
+\begin{DoxyCompactList}\small\item\em Number of alerts that have no been sent with the open and close cover with Wifi. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{a00402_aa35673413b2c68598c601be708c7e71e}{enable}}
+\begin{DoxyCompactList}\small\item\em Bit to know if the battery has been used. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{a00402_ace7023393d5cacc856e0b23c5efb6767}{reserved}}
+\begin{DoxyCompactList}\small\item\em Reserved for future use. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{a00402_a8a91f2fc12fcbd8a1c39f197eb177253}{must\+\_\+be\+\_\+0x55}}
+\begin{DoxyCompactList}\small\item\em Reserved (fixed to 0x55) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{a00402_ae6e1d816ca26f33ab6666ec8f567fa56}{checksum\+\_\+xor}}
+\begin{DoxyCompactList}\small\item\em Data checksum. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Comms Battery statistics (stored in the battery pack) 
+
+\doxysubsection{Field Documentation}
+\Hypertarget{a00402_ae6e1d816ca26f33ab6666ec8f567fa56}\label{a00402_ae6e1d816ca26f33ab6666ec8f567fa56} 
+\index{BATTERY\_STATISTICS\_COMMS\_t@{BATTERY\_STATISTICS\_COMMS\_t}!checksum\_xor@{checksum\_xor}}
+\index{checksum\_xor@{checksum\_xor}!BATTERY\_STATISTICS\_COMMS\_t@{BATTERY\_STATISTICS\_COMMS\_t}}
+\doxysubsubsection{\texorpdfstring{checksum\_xor}{checksum\_xor}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} BATTERY\+\_\+\+STATISTICS\+\_\+\+COMMS\+\_\+t\+::checksum\+\_\+xor}
+
+
+
+Data checksum. 
+
+\Hypertarget{a00402_a0283757e14973a284fbd0a14cadc0cdb}\label{a00402_a0283757e14973a284fbd0a14cadc0cdb} 
+\index{BATTERY\_STATISTICS\_COMMS\_t@{BATTERY\_STATISTICS\_COMMS\_t}!daily\_test@{daily\_test}}
+\index{daily\_test@{daily\_test}!BATTERY\_STATISTICS\_COMMS\_t@{BATTERY\_STATISTICS\_COMMS\_t}}
+\doxysubsubsection{\texorpdfstring{daily\_test}{daily\_test}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} BATTERY\+\_\+\+STATISTICS\+\_\+\+COMMS\+\_\+t\+::daily\+\_\+test}
+
+
+
+Number of daily test. 
+
+\Hypertarget{a00402_aa35673413b2c68598c601be708c7e71e}\label{a00402_aa35673413b2c68598c601be708c7e71e} 
+\index{BATTERY\_STATISTICS\_COMMS\_t@{BATTERY\_STATISTICS\_COMMS\_t}!enable@{enable}}
+\index{enable@{enable}!BATTERY\_STATISTICS\_COMMS\_t@{BATTERY\_STATISTICS\_COMMS\_t}}
+\doxysubsubsection{\texorpdfstring{enable}{enable}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} BATTERY\+\_\+\+STATISTICS\+\_\+\+COMMS\+\_\+t\+::enable}
+
+
+
+Bit to know if the battery has been used. 
+
+\Hypertarget{a00402_a8a91f2fc12fcbd8a1c39f197eb177253}\label{a00402_a8a91f2fc12fcbd8a1c39f197eb177253} 
+\index{BATTERY\_STATISTICS\_COMMS\_t@{BATTERY\_STATISTICS\_COMMS\_t}!must\_be\_0x55@{must\_be\_0x55}}
+\index{must\_be\_0x55@{must\_be\_0x55}!BATTERY\_STATISTICS\_COMMS\_t@{BATTERY\_STATISTICS\_COMMS\_t}}
+\doxysubsubsection{\texorpdfstring{must\_be\_0x55}{must\_be\_0x55}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} BATTERY\+\_\+\+STATISTICS\+\_\+\+COMMS\+\_\+t\+::must\+\_\+be\+\_\+0x55}
+
+
+
+Reserved (fixed to 0x55) 
+
+\Hypertarget{a00402_aa75a546c2e95a3cb848c22f17c05899b}\label{a00402_aa75a546c2e95a3cb848c22f17c05899b} 
+\index{BATTERY\_STATISTICS\_COMMS\_t@{BATTERY\_STATISTICS\_COMMS\_t}!nTest\_charges@{nTest\_charges}}
+\index{nTest\_charges@{nTest\_charges}!BATTERY\_STATISTICS\_COMMS\_t@{BATTERY\_STATISTICS\_COMMS\_t}}
+\doxysubsubsection{\texorpdfstring{nTest\_charges}{nTest\_charges}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} BATTERY\+\_\+\+STATISTICS\+\_\+\+COMMS\+\_\+t\+::n\+Test\+\_\+charges}
+
+
+
+Number of charges in manual test. 
+
+\Hypertarget{a00402_ace7023393d5cacc856e0b23c5efb6767}\label{a00402_ace7023393d5cacc856e0b23c5efb6767} 
+\index{BATTERY\_STATISTICS\_COMMS\_t@{BATTERY\_STATISTICS\_COMMS\_t}!reserved@{reserved}}
+\index{reserved@{reserved}!BATTERY\_STATISTICS\_COMMS\_t@{BATTERY\_STATISTICS\_COMMS\_t}}
+\doxysubsubsection{\texorpdfstring{reserved}{reserved}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} BATTERY\+\_\+\+STATISTICS\+\_\+\+COMMS\+\_\+t\+::reserved}
+
+
+
+Reserved for future use. 
+
+\Hypertarget{a00402_a6609d506dfbd3cf6ae0c28832307e4f0}\label{a00402_a6609d506dfbd3cf6ae0c28832307e4f0} 
+\index{BATTERY\_STATISTICS\_COMMS\_t@{BATTERY\_STATISTICS\_COMMS\_t}!rtc\_warning@{rtc\_warning}}
+\index{rtc\_warning@{rtc\_warning}!BATTERY\_STATISTICS\_COMMS\_t@{BATTERY\_STATISTICS\_COMMS\_t}}
+\doxysubsubsection{\texorpdfstring{rtc\_warning}{rtc\_warning}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} BATTERY\+\_\+\+STATISTICS\+\_\+\+COMMS\+\_\+t\+::rtc\+\_\+warning}
+
+
+
+Number of alerts that have been said by audio in RTC(Close cover, Call SAT, BEEP-\/\+BEEP) 
+
+\Hypertarget{a00402_afc3b1fbb554287ceecb019efd0b97230}\label{a00402_afc3b1fbb554287ceecb019efd0b97230} 
+\index{BATTERY\_STATISTICS\_COMMS\_t@{BATTERY\_STATISTICS\_COMMS\_t}!sigfox\_daily\_test@{sigfox\_daily\_test}}
+\index{sigfox\_daily\_test@{sigfox\_daily\_test}!BATTERY\_STATISTICS\_COMMS\_t@{BATTERY\_STATISTICS\_COMMS\_t}}
+\doxysubsubsection{\texorpdfstring{sigfox\_daily\_test}{sigfox\_daily\_test}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} BATTERY\+\_\+\+STATISTICS\+\_\+\+COMMS\+\_\+t\+::sigfox\+\_\+daily\+\_\+test}
+
+
+
+Number of daily test that have been sent with Sigfox. 
+
+\Hypertarget{a00402_ac8298628f2af736a0a1542c480a34f4f}\label{a00402_ac8298628f2af736a0a1542c480a34f4f} 
+\index{BATTERY\_STATISTICS\_COMMS\_t@{BATTERY\_STATISTICS\_COMMS\_t}!sigfox\_manual\_test@{sigfox\_manual\_test}}
+\index{sigfox\_manual\_test@{sigfox\_manual\_test}!BATTERY\_STATISTICS\_COMMS\_t@{BATTERY\_STATISTICS\_COMMS\_t}}
+\doxysubsubsection{\texorpdfstring{sigfox\_manual\_test}{sigfox\_manual\_test}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} BATTERY\+\_\+\+STATISTICS\+\_\+\+COMMS\+\_\+t\+::sigfox\+\_\+manual\+\_\+test}
+
+
+
+Number of monthly test that have been sent with Sigfox. 
+
+\Hypertarget{a00402_af91d3068546dd117715892de67b0b4b4}\label{a00402_af91d3068546dd117715892de67b0b4b4} 
+\index{BATTERY\_STATISTICS\_COMMS\_t@{BATTERY\_STATISTICS\_COMMS\_t}!sigfox\_manual\_test\_gps@{sigfox\_manual\_test\_gps}}
+\index{sigfox\_manual\_test\_gps@{sigfox\_manual\_test\_gps}!BATTERY\_STATISTICS\_COMMS\_t@{BATTERY\_STATISTICS\_COMMS\_t}}
+\doxysubsubsection{\texorpdfstring{sigfox\_manual\_test\_gps}{sigfox\_manual\_test\_gps}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} BATTERY\+\_\+\+STATISTICS\+\_\+\+COMMS\+\_\+t\+::sigfox\+\_\+manual\+\_\+test\+\_\+gps}
+
+
+
+Number of monthly test that have been sent with Sigfox + GPS. 
+
+\Hypertarget{a00402_acf0156f00e63be270b2c37516c8f3e8f}\label{a00402_acf0156f00e63be270b2c37516c8f3e8f} 
+\index{BATTERY\_STATISTICS\_COMMS\_t@{BATTERY\_STATISTICS\_COMMS\_t}!sigfox\_open\_close\_cover@{sigfox\_open\_close\_cover}}
+\index{sigfox\_open\_close\_cover@{sigfox\_open\_close\_cover}!BATTERY\_STATISTICS\_COMMS\_t@{BATTERY\_STATISTICS\_COMMS\_t}}
+\doxysubsubsection{\texorpdfstring{sigfox\_open\_close\_cover}{sigfox\_open\_close\_cover}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} BATTERY\+\_\+\+STATISTICS\+\_\+\+COMMS\+\_\+t\+::sigfox\+\_\+open\+\_\+close\+\_\+cover}
+
+
+
+Number of alerts that have been sent with the open and close cover with Sigfox. 
+
+\Hypertarget{a00402_a8fb517d734e63012868d76df18325108}\label{a00402_a8fb517d734e63012868d76df18325108} 
+\index{BATTERY\_STATISTICS\_COMMS\_t@{BATTERY\_STATISTICS\_COMMS\_t}!wifi\_cover\_connect@{wifi\_cover\_connect}}
+\index{wifi\_cover\_connect@{wifi\_cover\_connect}!BATTERY\_STATISTICS\_COMMS\_t@{BATTERY\_STATISTICS\_COMMS\_t}}
+\doxysubsubsection{\texorpdfstring{wifi\_cover\_connect}{wifi\_cover\_connect}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} BATTERY\+\_\+\+STATISTICS\+\_\+\+COMMS\+\_\+t\+::wifi\+\_\+cover\+\_\+connect}
+
+
+
+Number of alerts that have been sent with the open and close cover with Wifi. 
+
+\Hypertarget{a00402_af6121dd986c27956f3db5abbb196d459}\label{a00402_af6121dd986c27956f3db5abbb196d459} 
+\index{BATTERY\_STATISTICS\_COMMS\_t@{BATTERY\_STATISTICS\_COMMS\_t}!wifi\_cover\_no\_connect@{wifi\_cover\_no\_connect}}
+\index{wifi\_cover\_no\_connect@{wifi\_cover\_no\_connect}!BATTERY\_STATISTICS\_COMMS\_t@{BATTERY\_STATISTICS\_COMMS\_t}}
+\doxysubsubsection{\texorpdfstring{wifi\_cover\_no\_connect}{wifi\_cover\_no\_connect}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} BATTERY\+\_\+\+STATISTICS\+\_\+\+COMMS\+\_\+t\+::wifi\+\_\+cover\+\_\+no\+\_\+connect}
+
+
+
+Number of alerts that have no been sent with the open and close cover with Wifi. 
+
+\Hypertarget{a00402_a3abf71859e1630dfca8b5d949bc6a261}\label{a00402_a3abf71859e1630dfca8b5d949bc6a261} 
+\index{BATTERY\_STATISTICS\_COMMS\_t@{BATTERY\_STATISTICS\_COMMS\_t}!wifi\_runTime\_total@{wifi\_runTime\_total}}
+\index{wifi\_runTime\_total@{wifi\_runTime\_total}!BATTERY\_STATISTICS\_COMMS\_t@{BATTERY\_STATISTICS\_COMMS\_t}}
+\doxysubsubsection{\texorpdfstring{wifi\_runTime\_total}{wifi\_runTime\_total}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} BATTERY\+\_\+\+STATISTICS\+\_\+\+COMMS\+\_\+t\+::wifi\+\_\+run\+Time\+\_\+total}
+
+
+
+Accumulated run time (in minutes) 
+
+\Hypertarget{a00402_a9c7a28c9dc9065437f2681dbec93aecc}\label{a00402_a9c7a28c9dc9065437f2681dbec93aecc} 
+\index{BATTERY\_STATISTICS\_COMMS\_t@{BATTERY\_STATISTICS\_COMMS\_t}!wifi\_test\_connect@{wifi\_test\_connect}}
+\index{wifi\_test\_connect@{wifi\_test\_connect}!BATTERY\_STATISTICS\_COMMS\_t@{BATTERY\_STATISTICS\_COMMS\_t}}
+\doxysubsubsection{\texorpdfstring{wifi\_test\_connect}{wifi\_test\_connect}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} BATTERY\+\_\+\+STATISTICS\+\_\+\+COMMS\+\_\+t\+::wifi\+\_\+test\+\_\+connect}
+
+
+
+Number of times that Wi\+Fi has been connected successfully. 
+
+\Hypertarget{a00402_a4bb17201cd85056b299be896cada889c}\label{a00402_a4bb17201cd85056b299be896cada889c} 
+\index{BATTERY\_STATISTICS\_COMMS\_t@{BATTERY\_STATISTICS\_COMMS\_t}!wifi\_test\_connect\_gps@{wifi\_test\_connect\_gps}}
+\index{wifi\_test\_connect\_gps@{wifi\_test\_connect\_gps}!BATTERY\_STATISTICS\_COMMS\_t@{BATTERY\_STATISTICS\_COMMS\_t}}
+\doxysubsubsection{\texorpdfstring{wifi\_test\_connect\_gps}{wifi\_test\_connect\_gps}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} BATTERY\+\_\+\+STATISTICS\+\_\+\+COMMS\+\_\+t\+::wifi\+\_\+test\+\_\+connect\+\_\+gps}
+
+
+
+Number of fully test that have been sent with Wifi + GPS. 
+
+\Hypertarget{a00402_a79b68d5bcf41f072973c4508e544b79e}\label{a00402_a79b68d5bcf41f072973c4508e544b79e} 
+\index{BATTERY\_STATISTICS\_COMMS\_t@{BATTERY\_STATISTICS\_COMMS\_t}!wifi\_test\_no\_connect@{wifi\_test\_no\_connect}}
+\index{wifi\_test\_no\_connect@{wifi\_test\_no\_connect}!BATTERY\_STATISTICS\_COMMS\_t@{BATTERY\_STATISTICS\_COMMS\_t}}
+\doxysubsubsection{\texorpdfstring{wifi\_test\_no\_connect}{wifi\_test\_no\_connect}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} BATTERY\+\_\+\+STATISTICS\+\_\+\+COMMS\+\_\+t\+::wifi\+\_\+test\+\_\+no\+\_\+connect}
+
+
+
+Number of times that Wi\+Fi has not been connected successfully. 
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\mbox{\hyperlink{a00056}{sys\+Mon\+\_\+\+Battery.\+h}}\end{DoxyCompactItemize}

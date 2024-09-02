@@ -1,0 +1,81 @@
+<?xml version="1.0" ?>
+<synergyModuleDescription>
+    <config id="config.framework.sf_memory_mcu_flash" path="ssp_cfg/framework/sf_memory_mcu_flash_cfg.h" version="0">
+        <property default="config.framework.sf_memory_mcu_flash.param_checking_enable.bsp" display="Parameter Checking" id="config.framework.sf_memory_mcu_flash.param_checking_enable">
+            <option display="Default (BSP)" id="config.framework.sf_memory_mcu_flash.param_checking_enable.bsp" value="(BSP_CFG_PARAM_CHECKING_ENABLE)"/>
+            <option display="Enabled" id="config.framework.sf_memory_mcu_flash.param_checking_enable.enabled" value="(1)"/>
+            <option display="Disabled" id="config.framework.sf_memory_mcu_flash.param_checking_enable.disabled" value="(0)"/>
+        </property>
+        <content>
+            #define SF_MEMORY_MCU_FLASH_CFG_PARAM_CHECKING_ENABLE ${config.framework.sf_memory_mcu_flash.param_checking_enable}
+        </content>
+    </config>
+    <module config="config.framework.sf_memory_mcu_flash" display="Renesas|Flashloader|${module.framework.sf_memory_mcu_flash.name} Memory mcu flash Framework on sf_memory_mcu_flash" id="module.framework.sf_memory_mcu_flash" version="1">
+	    <constraint display="Module instances must have unique names">
+            "${interface.framework.sf_memory_mcu_flash.${module.framework.sf_memory_mcu_flash.name}}" === "1"
+        </constraint>
+		<requires id="module.framework.sf_memory_mcu_flash.requires.flash" interface="interface.driver.flash" display="Add flash">
+			<override property="module.driver.flash.data_flash_bgo" value="module.driver.flash.data_flash_bgo.disabled"/>
+			<override property="module.driver.flash.p_callback" value="NULL"/>
+			<override property="module.driver.flash.irq_ipl" value="board.icu.common.irq.disabled"/>
+			<override property="module.driver.flash.err_irq_ipl" value="board.icu.common.irq.disabled"/>
+		</requires>
+        <provides interface="interface.framework.sf_memory_mcu_flash" />
+		<provides interface="interface.framework.sf_memory_mcu_flash_on_sf_memory_mcu_flash" />
+        <provides interface="interface.framework.sf_memory_mcu_flash.${module.framework.sf_memory_mcu_flash.name}" />
+        <property id="module.framework.sf_memory_mcu_flash.name" display="Name" default="g_sf_memory_mcu_flash${_instance}">
+            <constraint display="Name must be a valid C symbol">testSymbol("${module.framework.sf_memory_mcu_flash.name}")</constraint>
+        </property>
+		<!-- <property default="3" display="Number of Flash Regions" id="module.framework.sf_memory_mcu_flash.number_of_regions">
+            <constraint display="Value must be an integer greater than 0">testInteger("${module.framework.sf_memory_mcu_flash.number_of_regions}")  &amp;&amp; ("${module.framework.sf_memory_mcu_flash.number_of_regions}" &gt; 0)</constraint>
+        </property> -->
+        <property id="module.framework.sf_memory_mcu_flash.p_callback" display="Callback" default="NULL">
+            <constraint display="Name must be a valid C symbol">testSymbol("${module.framework.sf_memory_mcu_flash.p_callback}")</constraint>
+        </property>
+        <header>
+            #ifdef ${module.framework.sf_memory_mcu_flash.p_callback}
+                #define SF_MEMORY_MCU_FLASH_CALLBACK_USED_${module.framework.sf_memory_mcu_flash.name} (0)
+            #else
+                #define SF_MEMORY_MCU_FLASH_CALLBACK_USED_${module.framework.sf_memory_mcu_flash.name} (1)
+            #endif
+            #if SF_MEMORY_MCU_FLASH_CALLBACK_USED_${module.framework.sf_memory_mcu_flash.name}
+                void ${module.framework.sf_memory_mcu_flash.p_callback}(sf_memory_callback_args_t * p_args);
+            #endif
+            #define SF_MEMORY_MCU_FLASH_FLUSH_BUFFER_SIZE     (1 &lt;&lt; 8)
+            #define SF_MEMORY_MCU_FLASH_NUMBER_OF_REGIONS   3
+            extern const sf_memory_instance_t ${module.framework.sf_memory_mcu_flash.name};
+        </header>
+        <includes>
+            #include &quot;sf_memory_mcu_flash.h&quot;
+        </includes>
+        <declarations>
+            static sf_memory_mcu_flash_ctrl_t ${module.framework.sf_memory_mcu_flash.name}_mcu_flash_ctrl;
+            static uint8_t ${module.framework.sf_memory_mcu_flash.name}_flush_buffer[SF_MEMORY_MCU_FLASH_FLUSH_BUFFER_SIZE];
+            static sf_memory_region_info_t ${module.framework.sf_memory_mcu_flash.name}_region_info[SF_MEMORY_MCU_FLASH_NUMBER_OF_REGIONS];
+            static const sf_memory_mcu_flash_cfg_t  ${module.framework.sf_memory_mcu_flash.name}_mcu_flash_cfg =
+            {
+                .p_lower_lvl_flash  = &amp;${module.framework.sf_memory_mcu_flash.requires.flash::module.driver.flash.name},
+                .p_memory_mcu_flash_ctrl = &amp;${module.framework.sf_memory_mcu_flash.name}_mcu_flash_ctrl,
+                .p_flush_buffer     = (uint8_t *)&amp;${module.framework.sf_memory_mcu_flash.name}_flush_buffer,
+                .flush_buffer_size  = SF_MEMORY_MCU_FLASH_FLUSH_BUFFER_SIZE,
+                .p_memory_regions_info      = ${module.framework.sf_memory_mcu_flash.name}_region_info,
+                .number_of_memory_regions   = SF_MEMORY_MCU_FLASH_NUMBER_OF_REGIONS,
+            };
+            static sf_memory_mcu_flash_instance_ctrl_t ${module.framework.sf_memory_mcu_flash.name}_ctrl;
+            static const sf_memory_cfg_t  ${module.framework.sf_memory_mcu_flash.name}_cfg =
+            {
+                .p_callback         = ${module.framework.sf_memory_mcu_flash.p_callback},
+                .p_context          = (void *)&amp;${module.framework.sf_memory_mcu_flash.name},
+                .p_extend           = &amp;${module.framework.sf_memory_mcu_flash.name}_mcu_flash_cfg,
+            };
+            const sf_memory_instance_t ${module.framework.sf_memory_mcu_flash.name} = {
+                .p_api  =  &amp;g_sf_memory_on_mcu_flash,
+                .p_ctrl =  &amp;${module.framework.sf_memory_mcu_flash.name}_ctrl,
+                .p_cfg  =  (sf_memory_cfg_t const *)&amp;${module.framework.sf_memory_mcu_flash.name}_cfg
+            };
+            #if SF_MEMORY_MCU_FLASH_CALLBACK_USED_${module.framework.sf_memory_mcu_flash.name}
+                void ${module.framework.sf_memory_mcu_flash.p_callback}(sf_memory_mcu_flash_callback_args_t * p_args);
+            #endif
+        </declarations>
+    </module>
+</synergyModuleDescription>

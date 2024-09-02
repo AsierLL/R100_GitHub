@@ -1,0 +1,1213 @@
+\doxysection{C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/synergy\+\_\+gen/common\+\_\+data.c File Reference}
+\hypertarget{common__data_8c}{}\label{common__data_8c}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/synergy\_gen/common\_data.c@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/synergy\_gen/common\_data.c}}
+{\ttfamily \#include "{}common\+\_\+data.\+h"{}}\newline
+Include dependency graph for common\+\_\+data.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{common__data_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{common__data_8c_af7f0d289d91d43af5b0a3a3644b762a8}{FX\+\_\+\+COMMON\+\_\+\+INITIALIZE}}~(1)
+\item 
+\#define \mbox{\hyperlink{common__data_8c_ae1cd4a59bc12c80d599f625b3ab38f45}{SF\+\_\+\+EL\+\_\+\+FX\+\_\+\+FORMAT\+\_\+\+MEDIA\+\_\+\+ENABLE\+\_\+sd\+\_\+fx\+\_\+media}}~(0)
+\item 
+\#define \mbox{\hyperlink{common__data_8c_a4c3b86c56f99c78915a1bbf22771c49f}{SF\+\_\+\+EL\+\_\+\+FX\+\_\+\+FORMAT\+\_\+\+FULL\+\_\+\+MEDIA\+\_\+sd\+\_\+fx\+\_\+media}}~(1)
+\item 
+\#define \mbox{\hyperlink{common__data_8c_a89992d3fc9e7283772316c58a86797b6}{SF\+\_\+\+EL\+\_\+\+FX\+\_\+\+AUTO\+\_\+\+INIT\+\_\+sd\+\_\+fx\+\_\+media}}~(0)
+\item 
+\#define \mbox{\hyperlink{common__data_8c_a93733fce93521b633f3f18da3c964a5e}{RSPI\+\_\+\+TRANSFER\+\_\+\+SIZE\+\_\+1\+\_\+\+BYTE}}~(0x52535049)
+\item 
+\#define \mbox{\hyperlink{common__data_8c_a775bdbf398c1d8bbd99863f36ad91913}{RSPI\+\_\+\+SYNERGY\+\_\+\+NOT\+\_\+\+DEFINED}}~1
+\item 
+\#define \mbox{\hyperlink{common__data_8c_a87be04890adaafd334aba7f693efa51c}{USB\+\_\+\+IFD\+\_\+\+SIZE\+\_\+0x00}}~(sizeof(g\+\_\+usb\+\_\+interface\+\_\+descriptor\+\_\+storage\+\_\+0\+\_\+full\+\_\+speed))
+\item 
+\#define \mbox{\hyperlink{common__data_8c_aedca99a57dfe6c001ac6ac5b8604136b}{USB\+\_\+\+IFD\+\_\+\+NUM\+\_\+0x00}}~(1)
+\item 
+\#define \mbox{\hyperlink{common__data_8c_a5c51bf5e1ed15c150269c2375ecb9bde}{USB\+\_\+\+IFD\+\_\+\+NUM\+\_\+0}}~\mbox{\hyperlink{common__data_8c_aedca99a57dfe6c001ac6ac5b8604136b}{USB\+\_\+\+IFD\+\_\+\+NUM\+\_\+0x00}}
+\item 
+\#define \mbox{\hyperlink{common__data_8c_aa5138695dbfaa640a557ceb58b0c8e14}{USB\+\_\+\+IFD\+\_\+\+SIZE\+\_\+0}}~\mbox{\hyperlink{common__data_8c_a87be04890adaafd334aba7f693efa51c}{USB\+\_\+\+IFD\+\_\+\+SIZE\+\_\+0x00}}
+\item 
+\#define \mbox{\hyperlink{common__data_8c_a4f3ef4aee8e7b89b14b1c517d52a411c}{SYNERGY\+\_\+\+NOT\+\_\+\+DEFINED}}~(1)
+\item 
+\#define \mbox{\hyperlink{common__data_8c_a4324e41e1347c5d6e44280a9ae66de4e}{USB\+\_\+\+IFD\+\_\+\+NUM\+\_\+1}}~(0)
+\item 
+\#define \mbox{\hyperlink{common__data_8c_adf264fb2c282f45b4ed399d2e276eade}{USB\+\_\+\+IFD\+\_\+\+SIZE\+\_\+1}}~(0)
+\item 
+\#define \mbox{\hyperlink{common__data_8c_a04801ad21b34675d6f6fa57611404887}{USB\+\_\+\+IFD\+\_\+\+NUM\+\_\+2}}~(0)
+\item 
+\#define \mbox{\hyperlink{common__data_8c_a15a97e1b1329b9b9a6c4b2910abac60a}{USB\+\_\+\+IFD\+\_\+\+SIZE\+\_\+2}}~(0)
+\item 
+\#define \mbox{\hyperlink{common__data_8c_addf331d88a5457b50c5388dd4e63201a}{USB\+\_\+\+IFD\+\_\+\+NUM\+\_\+3}}~(0)
+\item 
+\#define \mbox{\hyperlink{common__data_8c_a71c23aa477098c37b11d06a4a5f6ac03}{USB\+\_\+\+IFD\+\_\+\+SIZE\+\_\+3}}~(0)
+\item 
+\#define \mbox{\hyperlink{common__data_8c_ac9ffa2dc6f5b936522f826d3f25489a8}{USB\+\_\+\+IFD\+\_\+\+NUM\+\_\+4}}~(0)
+\item 
+\#define \mbox{\hyperlink{common__data_8c_a11ea72af7b207675b065a1dbf94ee382}{USB\+\_\+\+IFD\+\_\+\+SIZE\+\_\+4}}~(0)
+\item 
+\#define \mbox{\hyperlink{common__data_8c_a4df2c5e464b5f4061390a20a1740bfdd}{USB\+\_\+\+IFD\+\_\+\+NUM\+\_\+5}}~(0)
+\item 
+\#define \mbox{\hyperlink{common__data_8c_abbcc7cb2a1b461f1e540446f0853ea6a}{USB\+\_\+\+IFD\+\_\+\+SIZE\+\_\+5}}~(0)
+\item 
+\#define \mbox{\hyperlink{common__data_8c_aceb98553aaa509994d248a3c637cf334}{USB\+\_\+\+IFD\+\_\+\+NUM\+\_\+6}}~(0)
+\item 
+\#define \mbox{\hyperlink{common__data_8c_a1ee4456265ff7ad313dd1a8e5c9124bd}{USB\+\_\+\+IFD\+\_\+\+SIZE\+\_\+6}}~(0)
+\item 
+\#define \mbox{\hyperlink{common__data_8c_a21c31ec0fc7e3e9463db249922ccbc11}{USB\+\_\+\+IFD\+\_\+\+NUM\+\_\+7}}~(0)
+\item 
+\#define \mbox{\hyperlink{common__data_8c_a79e1122a896c7595bb6e6dfa381cfdf0}{USB\+\_\+\+IFD\+\_\+\+SIZE\+\_\+7}}~(0)
+\item 
+\#define \mbox{\hyperlink{common__data_8c_a2e84541a3eca016cf43d7020cf7cb9f4}{USB\+\_\+\+IFD\+\_\+\+NUM\+\_\+8}}~(0)
+\item 
+\#define \mbox{\hyperlink{common__data_8c_a7668f6f418f4daf3cd965af418e6fb42}{USB\+\_\+\+IFD\+\_\+\+SIZE\+\_\+8}}~(0)
+\item 
+\#define \mbox{\hyperlink{common__data_8c_a78d6c7f088d8ee2d09c37509626d6afa}{USB\+\_\+\+IFD\+\_\+\+NUM\+\_\+9}}~(0)
+\item 
+\#define \mbox{\hyperlink{common__data_8c_a26ceddc5a589a976d63fb61404f55bd5}{USB\+\_\+\+IFD\+\_\+\+SIZE\+\_\+9}}~(0)
+\item 
+\#define \mbox{\hyperlink{common__data_8c_a54ae33a411a6db2aca2c6e4c42c2e1c8}{USB\+\_\+\+NUMBER\+\_\+\+OF\+\_\+\+INTERFACE}}~\mbox{\hyperlink{common__data_8c_a5c51bf5e1ed15c150269c2375ecb9bde}{USB\+\_\+\+IFD\+\_\+\+NUM\+\_\+0}} + \mbox{\hyperlink{common__data_8c_a4324e41e1347c5d6e44280a9ae66de4e}{USB\+\_\+\+IFD\+\_\+\+NUM\+\_\+1}} + \mbox{\hyperlink{common__data_8c_a04801ad21b34675d6f6fa57611404887}{USB\+\_\+\+IFD\+\_\+\+NUM\+\_\+2}} + \mbox{\hyperlink{common__data_8c_addf331d88a5457b50c5388dd4e63201a}{USB\+\_\+\+IFD\+\_\+\+NUM\+\_\+3}} + \mbox{\hyperlink{common__data_8c_ac9ffa2dc6f5b936522f826d3f25489a8}{USB\+\_\+\+IFD\+\_\+\+NUM\+\_\+4}} + \mbox{\hyperlink{common__data_8c_a4df2c5e464b5f4061390a20a1740bfdd}{USB\+\_\+\+IFD\+\_\+\+NUM\+\_\+5}} + \mbox{\hyperlink{common__data_8c_aceb98553aaa509994d248a3c637cf334}{USB\+\_\+\+IFD\+\_\+\+NUM\+\_\+6}} + \mbox{\hyperlink{common__data_8c_a21c31ec0fc7e3e9463db249922ccbc11}{USB\+\_\+\+IFD\+\_\+\+NUM\+\_\+7}} + \mbox{\hyperlink{common__data_8c_a2e84541a3eca016cf43d7020cf7cb9f4}{USB\+\_\+\+IFD\+\_\+\+NUM\+\_\+8}} + \mbox{\hyperlink{common__data_8c_a78d6c7f088d8ee2d09c37509626d6afa}{USB\+\_\+\+IFD\+\_\+\+NUM\+\_\+9}}
+\item 
+\#define \mbox{\hyperlink{common__data_8c_af054a0322e9fe41c0ae0ff9af86423d3}{USB\+\_\+\+TOTAL\+\_\+\+LENGTH}}~\mbox{\hyperlink{common__data_8c_aa5138695dbfaa640a557ceb58b0c8e14}{USB\+\_\+\+IFD\+\_\+\+SIZE\+\_\+0}} + \mbox{\hyperlink{common__data_8c_adf264fb2c282f45b4ed399d2e276eade}{USB\+\_\+\+IFD\+\_\+\+SIZE\+\_\+1}} + \mbox{\hyperlink{common__data_8c_a15a97e1b1329b9b9a6c4b2910abac60a}{USB\+\_\+\+IFD\+\_\+\+SIZE\+\_\+2}} + \mbox{\hyperlink{common__data_8c_a71c23aa477098c37b11d06a4a5f6ac03}{USB\+\_\+\+IFD\+\_\+\+SIZE\+\_\+3}} + \mbox{\hyperlink{common__data_8c_a11ea72af7b207675b065a1dbf94ee382}{USB\+\_\+\+IFD\+\_\+\+SIZE\+\_\+4}} + \mbox{\hyperlink{common__data_8c_abbcc7cb2a1b461f1e540446f0853ea6a}{USB\+\_\+\+IFD\+\_\+\+SIZE\+\_\+5}} + \mbox{\hyperlink{common__data_8c_a1ee4456265ff7ad313dd1a8e5c9124bd}{USB\+\_\+\+IFD\+\_\+\+SIZE\+\_\+6}} + \mbox{\hyperlink{common__data_8c_a79e1122a896c7595bb6e6dfa381cfdf0}{USB\+\_\+\+IFD\+\_\+\+SIZE\+\_\+7}} + \mbox{\hyperlink{common__data_8c_a7668f6f418f4daf3cd965af418e6fb42}{USB\+\_\+\+IFD\+\_\+\+SIZE\+\_\+8}} + \mbox{\hyperlink{common__data_8c_a26ceddc5a589a976d63fb61404f55bd5}{USB\+\_\+\+IFD\+\_\+\+SIZE\+\_\+9}}
+\item 
+\#define \mbox{\hyperlink{common__data_8c_a2dff130f4c01261380612d176e76e2fe}{USB\+\_\+\+CFG\+\_\+\+DESCRIPTOR\+\_\+b\+Num\+Interfaces}}~(\mbox{\hyperlink{common__data_8c_a54ae33a411a6db2aca2c6e4c42c2e1c8}{USB\+\_\+\+NUMBER\+\_\+\+OF\+\_\+\+INTERFACE}})
+\item 
+\#define \mbox{\hyperlink{common__data_8c_a12a683c3fdb343820b39d400e38737a7}{USB\+\_\+\+CFG\+\_\+\+DESCRIPTOR\+\_\+w\+Total\+Length}}~(0x09 + \mbox{\hyperlink{common__data_8c_af054a0322e9fe41c0ae0ff9af86423d3}{USB\+\_\+\+TOTAL\+\_\+\+LENGTH}})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{common__data_8c_a69c6482fc38b2d19b47d9916115ffc23}{fx\+\_\+common\+\_\+init0}} (void)
+\begin{DoxyCompactList}\small\item\em Initialization function that the user can choose to have called automatically during thread entry. The user can call this function at a later time if desired using the prototype below. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{common__data_8c_a60fb0a744cab479d07171e7d2fb7caa7}{SSP\+\_\+\+VECTOR\+\_\+\+DEFINE\+\_\+\+CHAN}} (dmac\+\_\+int\+\_\+isr, DMAC, INT, 2)
+\item 
+\mbox{\hyperlink{common__data_8c_a756bd68089cddace6cc0a0ba53a2b584}{SSP\+\_\+\+VECTOR\+\_\+\+DEFINE\+\_\+\+CHAN}} (sdhimmc\+\_\+accs\+\_\+isr, SDHIMMC, ACCS, 0)
+\item 
+\mbox{\hyperlink{common__data_8c_a0b7b6d246de8e2cbd53277d9a156b143}{SSP\+\_\+\+VECTOR\+\_\+\+DEFINE\+\_\+\+CHAN}} (sdhimmc\+\_\+card\+\_\+isr, SDHIMMC, CARD, 0)
+\item 
+void \mbox{\hyperlink{common__data_8c_a73bd67eae5d2109d05205f509b0e4c7f}{sd\+\_\+fx\+\_\+media\+\_\+err\+\_\+callback}} (void \texorpdfstring{$\ast$}{*}p\+\_\+instance, void \texorpdfstring{$\ast$}{*}p\+\_\+data) sd\+\_\+fx\+\_\+media\+\_\+err\+\_\+callback\+\_\+\+WEAK\+\_\+\+ATTRIBUTE
+\item 
+ssp\+\_\+err\+\_\+t \mbox{\hyperlink{common__data_8c_abc802f78e9145d70d6dd580c632c37fa}{SF\+\_\+\+EL\+\_\+\+FX\+\_\+\+Get\+\_\+\+MEDIA\+\_\+\+Info}} (sf\+\_\+block\+\_\+media\+\_\+instance\+\_\+t \texorpdfstring{$\ast$}{*}p\+\_\+block\+\_\+media, \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \texorpdfstring{$\ast$}{*}sector\+\_\+size, \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \texorpdfstring{$\ast$}{*}sector\+\_\+count)
+\item 
+void \mbox{\hyperlink{common__data_8c_ad940c1bcaaa2a10c022778ab2d1bde90}{sd\+\_\+fx\+\_\+media\+\_\+err\+\_\+callback\+\_\+internal}} (void \texorpdfstring{$\ast$}{*}p\+\_\+instance, void \texorpdfstring{$\ast$}{*}p\+\_\+data)
+\begin{DoxyCompactList}\small\item\em This is a weak example initialization error function. It should be overridden by defining a user function with the prototype below. \end{DoxyCompactList}\item 
+ssp\+\_\+err\+\_\+t \mbox{\hyperlink{common__data_8c_aeae032b14e2e74ed47d04de04233b599}{fx\+\_\+media\+\_\+init0\+\_\+format}} (void)
+\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \mbox{\hyperlink{common__data_8c_ad0f0e3fb1120fdd5a41790f89df49bb7}{fx\+\_\+media\+\_\+init0\+\_\+open}} (void)
+\item 
+void \mbox{\hyperlink{common__data_8c_a2dc986f32090c0fb53e90ad03de0598f}{fx\+\_\+media\+\_\+init0}} (void)
+\begin{DoxyCompactList}\small\item\em Initialization function that the user can choose to have called automatically during thread entry. The user can call this function at a later time if desired using the prototype below. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{common__data_8c_ae276c2f0d8ba104d439746dd3826ab75}{SSP\+\_\+\+VECTOR\+\_\+\+DEFINE\+\_\+\+CHAN}} (spi\+\_\+rxi\+\_\+isr, SPI, RXI, 0)
+\item 
+\mbox{\hyperlink{common__data_8c_a9e5e599c9285acd2b800c8967f242853}{SSP\+\_\+\+VECTOR\+\_\+\+DEFINE\+\_\+\+CHAN}} (spi\+\_\+txi\+\_\+isr, SPI, TXI, 0)
+\item 
+\mbox{\hyperlink{common__data_8c_a0f89aa89072b33c736a91be3bdbe856d}{SSP\+\_\+\+VECTOR\+\_\+\+DEFINE\+\_\+\+CHAN}} (spi\+\_\+eri\+\_\+isr, SPI, ERI, 0)
+\item 
+\mbox{\hyperlink{common__data_8c_a88b135a46b3d01a1726d55e2c46f96ac}{SSP\+\_\+\+VECTOR\+\_\+\+DEFINE\+\_\+\+CHAN}} (spi\+\_\+tei\+\_\+isr, SPI, TEI, 0)
+\item 
+static \+\_\+\+\_\+root const unsigned char g\+\_\+usb\+\_\+interface\+\_\+descriptor\+\_\+storage\+\_\+0\+\_\+full\+\_\+speed\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{common__data_8c_a5d9a08f4b20dcefd918dcc6e5a248e83}{BSP\+\_\+\+PLACE\+\_\+\+IN\+\_\+\+SECTION\+\_\+\+V2}} ("{}.usb\+\_\+interface\+\_\+desc\+\_\+fs"{})
+\item 
+void \mbox{\hyperlink{common__data_8c_a475bc62e14f73d52fa30e384d67d844d}{ux\+\_\+v2\+\_\+err\+\_\+callback}} (void \texorpdfstring{$\ast$}{*}p\+\_\+instance, void \texorpdfstring{$\ast$}{*}p\+\_\+data) ux\+\_\+v2\+\_\+err\+\_\+callback\+\_\+\+WEAK\+\_\+\+ATTRIBUTE
+\item 
+void \mbox{\hyperlink{common__data_8c_a8b7c1c528a5f2519b83ec537cf6c466e}{ux\+\_\+v2\+\_\+err\+\_\+callback\+\_\+internal}} (void \texorpdfstring{$\ast$}{*}p\+\_\+instance, void \texorpdfstring{$\ast$}{*}p\+\_\+data)
+\begin{DoxyCompactList}\small\item\em This is a weak example initialization error function. It should be overridden by defining a user function with the prototype below. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{common__data_8c_a0c4837de033f51ac10879cfd1b1fbd63}{ux\+\_\+common\+\_\+init0}} (void)
+\begin{DoxyCompactList}\small\item\em Initialization function that the user can choose to have called automatically during thread entry. The user can call this function at a later time if desired using the prototype below. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{common__data_8c_afa12084aa3b67e91570bf75b67668bbc}{g\+\_\+sf\+\_\+el\+\_\+ux\+\_\+dcd\+\_\+fs\+\_\+0\+\_\+err\+\_\+callback}} (void \texorpdfstring{$\ast$}{*}p\+\_\+instance, void \texorpdfstring{$\ast$}{*}p\+\_\+data) g\+\_\+sf\+\_\+el\+\_\+ux\+\_\+dcd\+\_\+fs\+\_\+0\+\_\+err\+\_\+callback\+\_\+\+WEAK\+\_\+\+ATTRIBUTE
+\item 
+void \mbox{\hyperlink{common__data_8c_aa5778696d849d34494e0a346a2d864f6}{ux\+\_\+dcd\+\_\+initialize}} (void)
+\item 
+void \mbox{\hyperlink{common__data_8c_acb36f2a3390b96f94cd1da22112a1c32}{g\+\_\+sf\+\_\+el\+\_\+ux\+\_\+dcd\+\_\+fs\+\_\+0\+\_\+err\+\_\+callback\+\_\+internal}} (void \texorpdfstring{$\ast$}{*}p\+\_\+instance, void \texorpdfstring{$\ast$}{*}p\+\_\+data)
+\begin{DoxyCompactList}\small\item\em This is a weak example initialization error function. It should be overridden by defining a user function with the prototype below. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{common__data_8c_aab9d804775fae05bbae3cd923a33b369}{ux\+\_\+device\+\_\+err\+\_\+callback}} (void \texorpdfstring{$\ast$}{*}p\+\_\+instance, void \texorpdfstring{$\ast$}{*}p\+\_\+data) ux\+\_\+device\+\_\+err\+\_\+callback\+\_\+\+WEAK\+\_\+\+ATTRIBUTE
+\item 
+static \+\_\+\+\_\+root const unsigned char device\+\_\+framework\+\_\+full\+\_\+speed\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{common__data_8c_a456f09ee561ede557486544aea46fb84}{BSP\+\_\+\+PLACE\+\_\+\+IN\+\_\+\+SECTION\+\_\+\+V2}} ("{}.usb\+\_\+device\+\_\+desc\+\_\+fs"{})
+\item 
+static \+\_\+\+\_\+root const unsigned char ux\+\_\+cfg\+\_\+descriptor\+\_\+full\+\_\+speed\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{common__data_8c_adc429a4bf518f5cd7ee70333552dfea7}{BSP\+\_\+\+PLACE\+\_\+\+IN\+\_\+\+SECTION\+\_\+\+V2}} ("{}.usb\+\_\+config\+\_\+desc\+\_\+fs"{})
+\item 
+void \mbox{\hyperlink{common__data_8c_a939a453aab8364b0f26bb2ee9d9e4f38}{ux\+\_\+device\+\_\+err\+\_\+callback\+\_\+internal}} (void \texorpdfstring{$\ast$}{*}p\+\_\+instance, void \texorpdfstring{$\ast$}{*}p\+\_\+data)
+\begin{DoxyCompactList}\small\item\em This is a weak example initialization error function. It should be overridden by defining a user function with the prototype below. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{common__data_8c_af626dbef572835e3f44d083263783d7c}{ux\+\_\+device\+\_\+init0}} (void)
+\begin{DoxyCompactList}\small\item\em Initialization function that the user can choose to have called automatically during thread entry. The user can call this function at a later time if desired using the prototype below. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{common__data_8c_aa98a5c803b02a8f0a093bfb76b605ce3}{g\+\_\+ux\+\_\+device\+\_\+class\+\_\+storage\+\_\+setup}} (void)
+\item 
+void \mbox{\hyperlink{common__data_8c_a86c182665e034d66cc94e9e1ed4a8bd0}{ux\+\_\+device\+\_\+class\+\_\+storage\+\_\+init0}} (void)
+\begin{DoxyCompactList}\small\item\em Initialization function that the user can choose to have called automatically during thread entry. The user can call this function at a later time if desired using the prototype below. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{common__data_8c_ad9cbc93ced342131f9cb13ef84da081d}{g\+\_\+common\+\_\+init}} (void)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+dmac\+\_\+instance\+\_\+ctrl\+\_\+t \mbox{\hyperlink{common__data_8c_ac3cbc2a0f383b69d6cf08075e05d12b4}{g\+\_\+transfer\+\_\+ctrl}}
+\item 
+transfer\+\_\+info\+\_\+t \mbox{\hyperlink{common__data_8c_ae6858bb9decb4c902af7df44cb7b523e}{g\+\_\+transfer\+\_\+info}}
+\item 
+const transfer\+\_\+on\+\_\+dmac\+\_\+cfg\+\_\+t \mbox{\hyperlink{common__data_8c_accca31f22eb95edea3e2671e11cfc028}{g\+\_\+transfer\+\_\+extend}}
+\item 
+const transfer\+\_\+cfg\+\_\+t \mbox{\hyperlink{common__data_8c_a3f21382025aa973258861c19aa2c4476}{g\+\_\+transfer\+\_\+cfg}}
+\item 
+const transfer\+\_\+instance\+\_\+t \mbox{\hyperlink{common__data_8c_aa1accc5bdb9159a9c85ff6e6c679efe4}{g\+\_\+transfer}}
+\item 
+sdmmc\+\_\+instance\+\_\+ctrl\+\_\+t \mbox{\hyperlink{common__data_8c_aac7ee8510eeb9a54959278322c526d3e}{g\+\_\+sdmmc\+\_\+ctrl}}
+\item 
+const sdmmc\+\_\+extended\+\_\+cfg\+\_\+t \mbox{\hyperlink{common__data_8c_a8be6f079b09ee657e0788a2502ebb69c}{g\+\_\+sdmmc\+\_\+ext\+\_\+cfg\+\_\+t}}
+\item 
+sdmmc\+\_\+cfg\+\_\+t \mbox{\hyperlink{common__data_8c_ad36a2d2949f5fe56c6310a9a75e670f4}{g\+\_\+sdmmc\+\_\+cfg}}
+\item 
+const sdmmc\+\_\+instance\+\_\+t \mbox{\hyperlink{common__data_8c_acfce838e5493050983a7f3b836a9d042}{g\+\_\+sdmmc}}
+\item 
+static const sf\+\_\+block\+\_\+media\+\_\+on\+\_\+sdmmc\+\_\+cfg\+\_\+t \mbox{\hyperlink{common__data_8c_a65cede781b7fb0f88f6ea258a9d9137e}{g\+\_\+sf\+\_\+block\+\_\+media\+\_\+sdmmc0\+\_\+block\+\_\+media\+\_\+cfg}}
+\item 
+static sf\+\_\+block\+\_\+media\+\_\+sdmmc\+\_\+instance\+\_\+ctrl\+\_\+t \mbox{\hyperlink{common__data_8c_a32cec63b2f615b6ca9dee6520badacf9}{g\+\_\+sf\+\_\+block\+\_\+media\+\_\+sdmmc0\+\_\+ctrl}}
+\item 
+static sf\+\_\+block\+\_\+media\+\_\+cfg\+\_\+t \mbox{\hyperlink{common__data_8c_acae97aab48b7dc8e2734134ef12a0944}{g\+\_\+sf\+\_\+block\+\_\+media\+\_\+sdmmc0\+\_\+cfg}}
+\item 
+sf\+\_\+block\+\_\+media\+\_\+instance\+\_\+t \mbox{\hyperlink{common__data_8c_adef9088a3d47d753ae2b99a5235ebbc6}{g\+\_\+sf\+\_\+block\+\_\+media\+\_\+sdmmc0}}
+\item 
+sf\+\_\+el\+\_\+fx\+\_\+t \mbox{\hyperlink{common__data_8c_ae74a32fe94e7fb60095cf0da28c83379}{g\+\_\+sf\+\_\+el\+\_\+fx\+\_\+cfg}}
+\item 
+FX\+\_\+\+MEDIA \mbox{\hyperlink{common__data_8c_a1c0e8dd57ba68387918cb46d55242ef3}{sd\+\_\+fx\+\_\+media}}
+\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{common__data_8c_a0545a643f53040f6a1337db451a3e660}{g\+\_\+media\+\_\+memory\+\_\+sd\+\_\+fx\+\_\+media}} \mbox{[}512\mbox{]}
+\item 
+rspi\+\_\+instance\+\_\+ctrl\+\_\+t \mbox{\hyperlink{common__data_8c_a6ac7636c3b5001438376e3642316bad8}{g\+\_\+spi0\+\_\+ctrl}}
+\item 
+const spi\+\_\+on\+\_\+rspi\+\_\+cfg\+\_\+t \mbox{\hyperlink{common__data_8c_ae36c46d3c04f5b419fa6630400511190}{g\+\_\+spi0\+\_\+ext\+\_\+cfg}}
+\item 
+const spi\+\_\+cfg\+\_\+t \mbox{\hyperlink{common__data_8c_a8b8921936ccd5089f894e7369b332343}{g\+\_\+spi0\+\_\+cfg}}
+\item 
+const spi\+\_\+instance\+\_\+t \mbox{\hyperlink{common__data_8c_a30a3956710e13e6d2ccb9c3535be1e0c}{g\+\_\+spi0}}
+\item 
+static TX\+\_\+\+MUTEX \mbox{\hyperlink{common__data_8c_ace259fe3c5dc475fa18a4cbe959b99ce}{sf\+\_\+bus\+\_\+mutex\+\_\+spi\+\_\+bus0}}
+\item 
+static TX\+\_\+\+EVENT\+\_\+\+FLAGS\+\_\+\+GROUP \mbox{\hyperlink{common__data_8c_aecc76f561dbcc0577e23eb502e77038f}{sf\+\_\+bus\+\_\+eventflag\+\_\+spi\+\_\+bus0}}
+\item 
+static sf\+\_\+spi\+\_\+ctrl\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{common__data_8c_a92224b65fa994ad4f231c203dd3bd544}{p\+\_\+sf\+\_\+curr\+\_\+ctrl\+\_\+spi\+\_\+bus0}}
+\item 
+sf\+\_\+spi\+\_\+bus\+\_\+t \mbox{\hyperlink{common__data_8c_a9c429bf9cd974c89feedc2f37f98939a}{spi\+\_\+bus0}}
+\item 
+static CHAR \mbox{\hyperlink{common__data_8c_a88683fcaeb14fde667b184cc0253073f}{g\+\_\+ux\+\_\+pool\+\_\+memory}} \mbox{[}18432\mbox{]}
+\item 
+static \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{common__data_8c_a168bb8dc78f007df3dd5e8651e6f37a3}{g\+\_\+usbx\+\_\+number\+\_\+of\+\_\+interface\+\_\+count}} = 0
+\item 
+static volatile const UCHAR \mbox{\hyperlink{common__data_8c_acc9ecee573f29fc665e28d8fd30f42b4}{language\+\_\+id\+\_\+framework\+\_\+default}} \mbox{[}$\,$\mbox{]}
+\item 
+static UX\+\_\+\+SLAVE\+\_\+\+CLASS\+\_\+\+STORAGE\+\_\+\+PARAMETER \mbox{\hyperlink{common__data_8c_ab4fd96ce6c49887b55952cc9d6a0f3cd}{g\+\_\+ux\+\_\+device\+\_\+class\+\_\+storage\+\_\+parameter}}
+\item 
+const elc\+\_\+instance\+\_\+t \mbox{\hyperlink{common__data_8c_a5ebf73650a002c734983e3e1efd5d23e}{g\+\_\+elc}}
+\item 
+const fmi\+\_\+instance\+\_\+t \mbox{\hyperlink{common__data_8c_ac062274fd6f5092fb2836f2e3fe881f4}{g\+\_\+fmi}}
+\item 
+const ioport\+\_\+instance\+\_\+t \mbox{\hyperlink{common__data_8c_a550bce613d93ced8a87da8051eb18314}{g\+\_\+ioport}}
+\item 
+const cgc\+\_\+instance\+\_\+t \mbox{\hyperlink{common__data_8c_ad6d6f2eae7e4cabe30094d76c4e16ee4}{g\+\_\+cgc}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{common__data_8c_af7f0d289d91d43af5b0a3a3644b762a8}\label{common__data_8c_af7f0d289d91d43af5b0a3a3644b762a8} 
+\index{common\_data.c@{common\_data.c}!FX\_COMMON\_INITIALIZE@{FX\_COMMON\_INITIALIZE}}
+\index{FX\_COMMON\_INITIALIZE@{FX\_COMMON\_INITIALIZE}!common\_data.c@{common\_data.c}}
+\doxysubsubsection{\texorpdfstring{FX\_COMMON\_INITIALIZE}{FX\_COMMON\_INITIALIZE}}
+{\footnotesize\ttfamily \#define FX\+\_\+\+COMMON\+\_\+\+INITIALIZE~(1)}
+
+\Hypertarget{common__data_8c_a775bdbf398c1d8bbd99863f36ad91913}\label{common__data_8c_a775bdbf398c1d8bbd99863f36ad91913} 
+\index{common\_data.c@{common\_data.c}!RSPI\_SYNERGY\_NOT\_DEFINED@{RSPI\_SYNERGY\_NOT\_DEFINED}}
+\index{RSPI\_SYNERGY\_NOT\_DEFINED@{RSPI\_SYNERGY\_NOT\_DEFINED}!common\_data.c@{common\_data.c}}
+\doxysubsubsection{\texorpdfstring{RSPI\_SYNERGY\_NOT\_DEFINED}{RSPI\_SYNERGY\_NOT\_DEFINED}}
+{\footnotesize\ttfamily \#define RSPI\+\_\+\+SYNERGY\+\_\+\+NOT\+\_\+\+DEFINED~1}
+
+\Hypertarget{common__data_8c_a93733fce93521b633f3f18da3c964a5e}\label{common__data_8c_a93733fce93521b633f3f18da3c964a5e} 
+\index{common\_data.c@{common\_data.c}!RSPI\_TRANSFER\_SIZE\_1\_BYTE@{RSPI\_TRANSFER\_SIZE\_1\_BYTE}}
+\index{RSPI\_TRANSFER\_SIZE\_1\_BYTE@{RSPI\_TRANSFER\_SIZE\_1\_BYTE}!common\_data.c@{common\_data.c}}
+\doxysubsubsection{\texorpdfstring{RSPI\_TRANSFER\_SIZE\_1\_BYTE}{RSPI\_TRANSFER\_SIZE\_1\_BYTE}}
+{\footnotesize\ttfamily \#define RSPI\+\_\+\+TRANSFER\+\_\+\+SIZE\+\_\+1\+\_\+\+BYTE~(0x52535049)}
+
+\Hypertarget{common__data_8c_a89992d3fc9e7283772316c58a86797b6}\label{common__data_8c_a89992d3fc9e7283772316c58a86797b6} 
+\index{common\_data.c@{common\_data.c}!SF\_EL\_FX\_AUTO\_INIT\_sd\_fx\_media@{SF\_EL\_FX\_AUTO\_INIT\_sd\_fx\_media}}
+\index{SF\_EL\_FX\_AUTO\_INIT\_sd\_fx\_media@{SF\_EL\_FX\_AUTO\_INIT\_sd\_fx\_media}!common\_data.c@{common\_data.c}}
+\doxysubsubsection{\texorpdfstring{SF\_EL\_FX\_AUTO\_INIT\_sd\_fx\_media}{SF\_EL\_FX\_AUTO\_INIT\_sd\_fx\_media}}
+{\footnotesize\ttfamily \#define SF\+\_\+\+EL\+\_\+\+FX\+\_\+\+AUTO\+\_\+\+INIT\+\_\+sd\+\_\+fx\+\_\+media~(0)}
+
+\Hypertarget{common__data_8c_a4c3b86c56f99c78915a1bbf22771c49f}\label{common__data_8c_a4c3b86c56f99c78915a1bbf22771c49f} 
+\index{common\_data.c@{common\_data.c}!SF\_EL\_FX\_FORMAT\_FULL\_MEDIA\_sd\_fx\_media@{SF\_EL\_FX\_FORMAT\_FULL\_MEDIA\_sd\_fx\_media}}
+\index{SF\_EL\_FX\_FORMAT\_FULL\_MEDIA\_sd\_fx\_media@{SF\_EL\_FX\_FORMAT\_FULL\_MEDIA\_sd\_fx\_media}!common\_data.c@{common\_data.c}}
+\doxysubsubsection{\texorpdfstring{SF\_EL\_FX\_FORMAT\_FULL\_MEDIA\_sd\_fx\_media}{SF\_EL\_FX\_FORMAT\_FULL\_MEDIA\_sd\_fx\_media}}
+{\footnotesize\ttfamily \#define SF\+\_\+\+EL\+\_\+\+FX\+\_\+\+FORMAT\+\_\+\+FULL\+\_\+\+MEDIA\+\_\+sd\+\_\+fx\+\_\+media~(1)}
+
+\Hypertarget{common__data_8c_ae1cd4a59bc12c80d599f625b3ab38f45}\label{common__data_8c_ae1cd4a59bc12c80d599f625b3ab38f45} 
+\index{common\_data.c@{common\_data.c}!SF\_EL\_FX\_FORMAT\_MEDIA\_ENABLE\_sd\_fx\_media@{SF\_EL\_FX\_FORMAT\_MEDIA\_ENABLE\_sd\_fx\_media}}
+\index{SF\_EL\_FX\_FORMAT\_MEDIA\_ENABLE\_sd\_fx\_media@{SF\_EL\_FX\_FORMAT\_MEDIA\_ENABLE\_sd\_fx\_media}!common\_data.c@{common\_data.c}}
+\doxysubsubsection{\texorpdfstring{SF\_EL\_FX\_FORMAT\_MEDIA\_ENABLE\_sd\_fx\_media}{SF\_EL\_FX\_FORMAT\_MEDIA\_ENABLE\_sd\_fx\_media}}
+{\footnotesize\ttfamily \#define SF\+\_\+\+EL\+\_\+\+FX\+\_\+\+FORMAT\+\_\+\+MEDIA\+\_\+\+ENABLE\+\_\+sd\+\_\+fx\+\_\+media~(0)}
+
+\Hypertarget{common__data_8c_a4f3ef4aee8e7b89b14b1c517d52a411c}\label{common__data_8c_a4f3ef4aee8e7b89b14b1c517d52a411c} 
+\index{common\_data.c@{common\_data.c}!SYNERGY\_NOT\_DEFINED@{SYNERGY\_NOT\_DEFINED}}
+\index{SYNERGY\_NOT\_DEFINED@{SYNERGY\_NOT\_DEFINED}!common\_data.c@{common\_data.c}}
+\doxysubsubsection{\texorpdfstring{SYNERGY\_NOT\_DEFINED}{SYNERGY\_NOT\_DEFINED}}
+{\footnotesize\ttfamily \#define SYNERGY\+\_\+\+NOT\+\_\+\+DEFINED~(1)}
+
+\Hypertarget{common__data_8c_a2dff130f4c01261380612d176e76e2fe}\label{common__data_8c_a2dff130f4c01261380612d176e76e2fe} 
+\index{common\_data.c@{common\_data.c}!USB\_CFG\_DESCRIPTOR\_bNumInterfaces@{USB\_CFG\_DESCRIPTOR\_bNumInterfaces}}
+\index{USB\_CFG\_DESCRIPTOR\_bNumInterfaces@{USB\_CFG\_DESCRIPTOR\_bNumInterfaces}!common\_data.c@{common\_data.c}}
+\doxysubsubsection{\texorpdfstring{USB\_CFG\_DESCRIPTOR\_bNumInterfaces}{USB\_CFG\_DESCRIPTOR\_bNumInterfaces}}
+{\footnotesize\ttfamily \#define USB\+\_\+\+CFG\+\_\+\+DESCRIPTOR\+\_\+b\+Num\+Interfaces~(\mbox{\hyperlink{common__data_8c_a54ae33a411a6db2aca2c6e4c42c2e1c8}{USB\+\_\+\+NUMBER\+\_\+\+OF\+\_\+\+INTERFACE}})}
+
+\Hypertarget{common__data_8c_a12a683c3fdb343820b39d400e38737a7}\label{common__data_8c_a12a683c3fdb343820b39d400e38737a7} 
+\index{common\_data.c@{common\_data.c}!USB\_CFG\_DESCRIPTOR\_wTotalLength@{USB\_CFG\_DESCRIPTOR\_wTotalLength}}
+\index{USB\_CFG\_DESCRIPTOR\_wTotalLength@{USB\_CFG\_DESCRIPTOR\_wTotalLength}!common\_data.c@{common\_data.c}}
+\doxysubsubsection{\texorpdfstring{USB\_CFG\_DESCRIPTOR\_wTotalLength}{USB\_CFG\_DESCRIPTOR\_wTotalLength}}
+{\footnotesize\ttfamily \#define USB\+\_\+\+CFG\+\_\+\+DESCRIPTOR\+\_\+w\+Total\+Length~(0x09 + \mbox{\hyperlink{common__data_8c_af054a0322e9fe41c0ae0ff9af86423d3}{USB\+\_\+\+TOTAL\+\_\+\+LENGTH}})}
+
+\Hypertarget{common__data_8c_a5c51bf5e1ed15c150269c2375ecb9bde}\label{common__data_8c_a5c51bf5e1ed15c150269c2375ecb9bde} 
+\index{common\_data.c@{common\_data.c}!USB\_IFD\_NUM\_0@{USB\_IFD\_NUM\_0}}
+\index{USB\_IFD\_NUM\_0@{USB\_IFD\_NUM\_0}!common\_data.c@{common\_data.c}}
+\doxysubsubsection{\texorpdfstring{USB\_IFD\_NUM\_0}{USB\_IFD\_NUM\_0}}
+{\footnotesize\ttfamily \#define USB\+\_\+\+IFD\+\_\+\+NUM\+\_\+0~\mbox{\hyperlink{common__data_8c_aedca99a57dfe6c001ac6ac5b8604136b}{USB\+\_\+\+IFD\+\_\+\+NUM\+\_\+0x00}}}
+
+\Hypertarget{common__data_8c_aedca99a57dfe6c001ac6ac5b8604136b}\label{common__data_8c_aedca99a57dfe6c001ac6ac5b8604136b} 
+\index{common\_data.c@{common\_data.c}!USB\_IFD\_NUM\_0x00@{USB\_IFD\_NUM\_0x00}}
+\index{USB\_IFD\_NUM\_0x00@{USB\_IFD\_NUM\_0x00}!common\_data.c@{common\_data.c}}
+\doxysubsubsection{\texorpdfstring{USB\_IFD\_NUM\_0x00}{USB\_IFD\_NUM\_0x00}}
+{\footnotesize\ttfamily \#define USB\+\_\+\+IFD\+\_\+\+NUM\+\_\+0x00~(1)}
+
+\Hypertarget{common__data_8c_a4324e41e1347c5d6e44280a9ae66de4e}\label{common__data_8c_a4324e41e1347c5d6e44280a9ae66de4e} 
+\index{common\_data.c@{common\_data.c}!USB\_IFD\_NUM\_1@{USB\_IFD\_NUM\_1}}
+\index{USB\_IFD\_NUM\_1@{USB\_IFD\_NUM\_1}!common\_data.c@{common\_data.c}}
+\doxysubsubsection{\texorpdfstring{USB\_IFD\_NUM\_1}{USB\_IFD\_NUM\_1}}
+{\footnotesize\ttfamily \#define USB\+\_\+\+IFD\+\_\+\+NUM\+\_\+1~(0)}
+
+\Hypertarget{common__data_8c_a04801ad21b34675d6f6fa57611404887}\label{common__data_8c_a04801ad21b34675d6f6fa57611404887} 
+\index{common\_data.c@{common\_data.c}!USB\_IFD\_NUM\_2@{USB\_IFD\_NUM\_2}}
+\index{USB\_IFD\_NUM\_2@{USB\_IFD\_NUM\_2}!common\_data.c@{common\_data.c}}
+\doxysubsubsection{\texorpdfstring{USB\_IFD\_NUM\_2}{USB\_IFD\_NUM\_2}}
+{\footnotesize\ttfamily \#define USB\+\_\+\+IFD\+\_\+\+NUM\+\_\+2~(0)}
+
+\Hypertarget{common__data_8c_addf331d88a5457b50c5388dd4e63201a}\label{common__data_8c_addf331d88a5457b50c5388dd4e63201a} 
+\index{common\_data.c@{common\_data.c}!USB\_IFD\_NUM\_3@{USB\_IFD\_NUM\_3}}
+\index{USB\_IFD\_NUM\_3@{USB\_IFD\_NUM\_3}!common\_data.c@{common\_data.c}}
+\doxysubsubsection{\texorpdfstring{USB\_IFD\_NUM\_3}{USB\_IFD\_NUM\_3}}
+{\footnotesize\ttfamily \#define USB\+\_\+\+IFD\+\_\+\+NUM\+\_\+3~(0)}
+
+\Hypertarget{common__data_8c_ac9ffa2dc6f5b936522f826d3f25489a8}\label{common__data_8c_ac9ffa2dc6f5b936522f826d3f25489a8} 
+\index{common\_data.c@{common\_data.c}!USB\_IFD\_NUM\_4@{USB\_IFD\_NUM\_4}}
+\index{USB\_IFD\_NUM\_4@{USB\_IFD\_NUM\_4}!common\_data.c@{common\_data.c}}
+\doxysubsubsection{\texorpdfstring{USB\_IFD\_NUM\_4}{USB\_IFD\_NUM\_4}}
+{\footnotesize\ttfamily \#define USB\+\_\+\+IFD\+\_\+\+NUM\+\_\+4~(0)}
+
+\Hypertarget{common__data_8c_a4df2c5e464b5f4061390a20a1740bfdd}\label{common__data_8c_a4df2c5e464b5f4061390a20a1740bfdd} 
+\index{common\_data.c@{common\_data.c}!USB\_IFD\_NUM\_5@{USB\_IFD\_NUM\_5}}
+\index{USB\_IFD\_NUM\_5@{USB\_IFD\_NUM\_5}!common\_data.c@{common\_data.c}}
+\doxysubsubsection{\texorpdfstring{USB\_IFD\_NUM\_5}{USB\_IFD\_NUM\_5}}
+{\footnotesize\ttfamily \#define USB\+\_\+\+IFD\+\_\+\+NUM\+\_\+5~(0)}
+
+\Hypertarget{common__data_8c_aceb98553aaa509994d248a3c637cf334}\label{common__data_8c_aceb98553aaa509994d248a3c637cf334} 
+\index{common\_data.c@{common\_data.c}!USB\_IFD\_NUM\_6@{USB\_IFD\_NUM\_6}}
+\index{USB\_IFD\_NUM\_6@{USB\_IFD\_NUM\_6}!common\_data.c@{common\_data.c}}
+\doxysubsubsection{\texorpdfstring{USB\_IFD\_NUM\_6}{USB\_IFD\_NUM\_6}}
+{\footnotesize\ttfamily \#define USB\+\_\+\+IFD\+\_\+\+NUM\+\_\+6~(0)}
+
+\Hypertarget{common__data_8c_a21c31ec0fc7e3e9463db249922ccbc11}\label{common__data_8c_a21c31ec0fc7e3e9463db249922ccbc11} 
+\index{common\_data.c@{common\_data.c}!USB\_IFD\_NUM\_7@{USB\_IFD\_NUM\_7}}
+\index{USB\_IFD\_NUM\_7@{USB\_IFD\_NUM\_7}!common\_data.c@{common\_data.c}}
+\doxysubsubsection{\texorpdfstring{USB\_IFD\_NUM\_7}{USB\_IFD\_NUM\_7}}
+{\footnotesize\ttfamily \#define USB\+\_\+\+IFD\+\_\+\+NUM\+\_\+7~(0)}
+
+\Hypertarget{common__data_8c_a2e84541a3eca016cf43d7020cf7cb9f4}\label{common__data_8c_a2e84541a3eca016cf43d7020cf7cb9f4} 
+\index{common\_data.c@{common\_data.c}!USB\_IFD\_NUM\_8@{USB\_IFD\_NUM\_8}}
+\index{USB\_IFD\_NUM\_8@{USB\_IFD\_NUM\_8}!common\_data.c@{common\_data.c}}
+\doxysubsubsection{\texorpdfstring{USB\_IFD\_NUM\_8}{USB\_IFD\_NUM\_8}}
+{\footnotesize\ttfamily \#define USB\+\_\+\+IFD\+\_\+\+NUM\+\_\+8~(0)}
+
+\Hypertarget{common__data_8c_a78d6c7f088d8ee2d09c37509626d6afa}\label{common__data_8c_a78d6c7f088d8ee2d09c37509626d6afa} 
+\index{common\_data.c@{common\_data.c}!USB\_IFD\_NUM\_9@{USB\_IFD\_NUM\_9}}
+\index{USB\_IFD\_NUM\_9@{USB\_IFD\_NUM\_9}!common\_data.c@{common\_data.c}}
+\doxysubsubsection{\texorpdfstring{USB\_IFD\_NUM\_9}{USB\_IFD\_NUM\_9}}
+{\footnotesize\ttfamily \#define USB\+\_\+\+IFD\+\_\+\+NUM\+\_\+9~(0)}
+
+\Hypertarget{common__data_8c_aa5138695dbfaa640a557ceb58b0c8e14}\label{common__data_8c_aa5138695dbfaa640a557ceb58b0c8e14} 
+\index{common\_data.c@{common\_data.c}!USB\_IFD\_SIZE\_0@{USB\_IFD\_SIZE\_0}}
+\index{USB\_IFD\_SIZE\_0@{USB\_IFD\_SIZE\_0}!common\_data.c@{common\_data.c}}
+\doxysubsubsection{\texorpdfstring{USB\_IFD\_SIZE\_0}{USB\_IFD\_SIZE\_0}}
+{\footnotesize\ttfamily \#define USB\+\_\+\+IFD\+\_\+\+SIZE\+\_\+0~\mbox{\hyperlink{common__data_8c_a87be04890adaafd334aba7f693efa51c}{USB\+\_\+\+IFD\+\_\+\+SIZE\+\_\+0x00}}}
+
+\Hypertarget{common__data_8c_a87be04890adaafd334aba7f693efa51c}\label{common__data_8c_a87be04890adaafd334aba7f693efa51c} 
+\index{common\_data.c@{common\_data.c}!USB\_IFD\_SIZE\_0x00@{USB\_IFD\_SIZE\_0x00}}
+\index{USB\_IFD\_SIZE\_0x00@{USB\_IFD\_SIZE\_0x00}!common\_data.c@{common\_data.c}}
+\doxysubsubsection{\texorpdfstring{USB\_IFD\_SIZE\_0x00}{USB\_IFD\_SIZE\_0x00}}
+{\footnotesize\ttfamily \#define USB\+\_\+\+IFD\+\_\+\+SIZE\+\_\+0x00~(sizeof(g\+\_\+usb\+\_\+interface\+\_\+descriptor\+\_\+storage\+\_\+0\+\_\+full\+\_\+speed))}
+
+\Hypertarget{common__data_8c_adf264fb2c282f45b4ed399d2e276eade}\label{common__data_8c_adf264fb2c282f45b4ed399d2e276eade} 
+\index{common\_data.c@{common\_data.c}!USB\_IFD\_SIZE\_1@{USB\_IFD\_SIZE\_1}}
+\index{USB\_IFD\_SIZE\_1@{USB\_IFD\_SIZE\_1}!common\_data.c@{common\_data.c}}
+\doxysubsubsection{\texorpdfstring{USB\_IFD\_SIZE\_1}{USB\_IFD\_SIZE\_1}}
+{\footnotesize\ttfamily \#define USB\+\_\+\+IFD\+\_\+\+SIZE\+\_\+1~(0)}
+
+\Hypertarget{common__data_8c_a15a97e1b1329b9b9a6c4b2910abac60a}\label{common__data_8c_a15a97e1b1329b9b9a6c4b2910abac60a} 
+\index{common\_data.c@{common\_data.c}!USB\_IFD\_SIZE\_2@{USB\_IFD\_SIZE\_2}}
+\index{USB\_IFD\_SIZE\_2@{USB\_IFD\_SIZE\_2}!common\_data.c@{common\_data.c}}
+\doxysubsubsection{\texorpdfstring{USB\_IFD\_SIZE\_2}{USB\_IFD\_SIZE\_2}}
+{\footnotesize\ttfamily \#define USB\+\_\+\+IFD\+\_\+\+SIZE\+\_\+2~(0)}
+
+\Hypertarget{common__data_8c_a71c23aa477098c37b11d06a4a5f6ac03}\label{common__data_8c_a71c23aa477098c37b11d06a4a5f6ac03} 
+\index{common\_data.c@{common\_data.c}!USB\_IFD\_SIZE\_3@{USB\_IFD\_SIZE\_3}}
+\index{USB\_IFD\_SIZE\_3@{USB\_IFD\_SIZE\_3}!common\_data.c@{common\_data.c}}
+\doxysubsubsection{\texorpdfstring{USB\_IFD\_SIZE\_3}{USB\_IFD\_SIZE\_3}}
+{\footnotesize\ttfamily \#define USB\+\_\+\+IFD\+\_\+\+SIZE\+\_\+3~(0)}
+
+\Hypertarget{common__data_8c_a11ea72af7b207675b065a1dbf94ee382}\label{common__data_8c_a11ea72af7b207675b065a1dbf94ee382} 
+\index{common\_data.c@{common\_data.c}!USB\_IFD\_SIZE\_4@{USB\_IFD\_SIZE\_4}}
+\index{USB\_IFD\_SIZE\_4@{USB\_IFD\_SIZE\_4}!common\_data.c@{common\_data.c}}
+\doxysubsubsection{\texorpdfstring{USB\_IFD\_SIZE\_4}{USB\_IFD\_SIZE\_4}}
+{\footnotesize\ttfamily \#define USB\+\_\+\+IFD\+\_\+\+SIZE\+\_\+4~(0)}
+
+\Hypertarget{common__data_8c_abbcc7cb2a1b461f1e540446f0853ea6a}\label{common__data_8c_abbcc7cb2a1b461f1e540446f0853ea6a} 
+\index{common\_data.c@{common\_data.c}!USB\_IFD\_SIZE\_5@{USB\_IFD\_SIZE\_5}}
+\index{USB\_IFD\_SIZE\_5@{USB\_IFD\_SIZE\_5}!common\_data.c@{common\_data.c}}
+\doxysubsubsection{\texorpdfstring{USB\_IFD\_SIZE\_5}{USB\_IFD\_SIZE\_5}}
+{\footnotesize\ttfamily \#define USB\+\_\+\+IFD\+\_\+\+SIZE\+\_\+5~(0)}
+
+\Hypertarget{common__data_8c_a1ee4456265ff7ad313dd1a8e5c9124bd}\label{common__data_8c_a1ee4456265ff7ad313dd1a8e5c9124bd} 
+\index{common\_data.c@{common\_data.c}!USB\_IFD\_SIZE\_6@{USB\_IFD\_SIZE\_6}}
+\index{USB\_IFD\_SIZE\_6@{USB\_IFD\_SIZE\_6}!common\_data.c@{common\_data.c}}
+\doxysubsubsection{\texorpdfstring{USB\_IFD\_SIZE\_6}{USB\_IFD\_SIZE\_6}}
+{\footnotesize\ttfamily \#define USB\+\_\+\+IFD\+\_\+\+SIZE\+\_\+6~(0)}
+
+\Hypertarget{common__data_8c_a79e1122a896c7595bb6e6dfa381cfdf0}\label{common__data_8c_a79e1122a896c7595bb6e6dfa381cfdf0} 
+\index{common\_data.c@{common\_data.c}!USB\_IFD\_SIZE\_7@{USB\_IFD\_SIZE\_7}}
+\index{USB\_IFD\_SIZE\_7@{USB\_IFD\_SIZE\_7}!common\_data.c@{common\_data.c}}
+\doxysubsubsection{\texorpdfstring{USB\_IFD\_SIZE\_7}{USB\_IFD\_SIZE\_7}}
+{\footnotesize\ttfamily \#define USB\+\_\+\+IFD\+\_\+\+SIZE\+\_\+7~(0)}
+
+\Hypertarget{common__data_8c_a7668f6f418f4daf3cd965af418e6fb42}\label{common__data_8c_a7668f6f418f4daf3cd965af418e6fb42} 
+\index{common\_data.c@{common\_data.c}!USB\_IFD\_SIZE\_8@{USB\_IFD\_SIZE\_8}}
+\index{USB\_IFD\_SIZE\_8@{USB\_IFD\_SIZE\_8}!common\_data.c@{common\_data.c}}
+\doxysubsubsection{\texorpdfstring{USB\_IFD\_SIZE\_8}{USB\_IFD\_SIZE\_8}}
+{\footnotesize\ttfamily \#define USB\+\_\+\+IFD\+\_\+\+SIZE\+\_\+8~(0)}
+
+\Hypertarget{common__data_8c_a26ceddc5a589a976d63fb61404f55bd5}\label{common__data_8c_a26ceddc5a589a976d63fb61404f55bd5} 
+\index{common\_data.c@{common\_data.c}!USB\_IFD\_SIZE\_9@{USB\_IFD\_SIZE\_9}}
+\index{USB\_IFD\_SIZE\_9@{USB\_IFD\_SIZE\_9}!common\_data.c@{common\_data.c}}
+\doxysubsubsection{\texorpdfstring{USB\_IFD\_SIZE\_9}{USB\_IFD\_SIZE\_9}}
+{\footnotesize\ttfamily \#define USB\+\_\+\+IFD\+\_\+\+SIZE\+\_\+9~(0)}
+
+\Hypertarget{common__data_8c_a54ae33a411a6db2aca2c6e4c42c2e1c8}\label{common__data_8c_a54ae33a411a6db2aca2c6e4c42c2e1c8} 
+\index{common\_data.c@{common\_data.c}!USB\_NUMBER\_OF\_INTERFACE@{USB\_NUMBER\_OF\_INTERFACE}}
+\index{USB\_NUMBER\_OF\_INTERFACE@{USB\_NUMBER\_OF\_INTERFACE}!common\_data.c@{common\_data.c}}
+\doxysubsubsection{\texorpdfstring{USB\_NUMBER\_OF\_INTERFACE}{USB\_NUMBER\_OF\_INTERFACE}}
+{\footnotesize\ttfamily \#define USB\+\_\+\+NUMBER\+\_\+\+OF\+\_\+\+INTERFACE~\mbox{\hyperlink{common__data_8c_a5c51bf5e1ed15c150269c2375ecb9bde}{USB\+\_\+\+IFD\+\_\+\+NUM\+\_\+0}} + \mbox{\hyperlink{common__data_8c_a4324e41e1347c5d6e44280a9ae66de4e}{USB\+\_\+\+IFD\+\_\+\+NUM\+\_\+1}} + \mbox{\hyperlink{common__data_8c_a04801ad21b34675d6f6fa57611404887}{USB\+\_\+\+IFD\+\_\+\+NUM\+\_\+2}} + \mbox{\hyperlink{common__data_8c_addf331d88a5457b50c5388dd4e63201a}{USB\+\_\+\+IFD\+\_\+\+NUM\+\_\+3}} + \mbox{\hyperlink{common__data_8c_ac9ffa2dc6f5b936522f826d3f25489a8}{USB\+\_\+\+IFD\+\_\+\+NUM\+\_\+4}} + \mbox{\hyperlink{common__data_8c_a4df2c5e464b5f4061390a20a1740bfdd}{USB\+\_\+\+IFD\+\_\+\+NUM\+\_\+5}} + \mbox{\hyperlink{common__data_8c_aceb98553aaa509994d248a3c637cf334}{USB\+\_\+\+IFD\+\_\+\+NUM\+\_\+6}} + \mbox{\hyperlink{common__data_8c_a21c31ec0fc7e3e9463db249922ccbc11}{USB\+\_\+\+IFD\+\_\+\+NUM\+\_\+7}} + \mbox{\hyperlink{common__data_8c_a2e84541a3eca016cf43d7020cf7cb9f4}{USB\+\_\+\+IFD\+\_\+\+NUM\+\_\+8}} + \mbox{\hyperlink{common__data_8c_a78d6c7f088d8ee2d09c37509626d6afa}{USB\+\_\+\+IFD\+\_\+\+NUM\+\_\+9}}}
+
+\Hypertarget{common__data_8c_af054a0322e9fe41c0ae0ff9af86423d3}\label{common__data_8c_af054a0322e9fe41c0ae0ff9af86423d3} 
+\index{common\_data.c@{common\_data.c}!USB\_TOTAL\_LENGTH@{USB\_TOTAL\_LENGTH}}
+\index{USB\_TOTAL\_LENGTH@{USB\_TOTAL\_LENGTH}!common\_data.c@{common\_data.c}}
+\doxysubsubsection{\texorpdfstring{USB\_TOTAL\_LENGTH}{USB\_TOTAL\_LENGTH}}
+{\footnotesize\ttfamily \#define USB\+\_\+\+TOTAL\+\_\+\+LENGTH~\mbox{\hyperlink{common__data_8c_aa5138695dbfaa640a557ceb58b0c8e14}{USB\+\_\+\+IFD\+\_\+\+SIZE\+\_\+0}} + \mbox{\hyperlink{common__data_8c_adf264fb2c282f45b4ed399d2e276eade}{USB\+\_\+\+IFD\+\_\+\+SIZE\+\_\+1}} + \mbox{\hyperlink{common__data_8c_a15a97e1b1329b9b9a6c4b2910abac60a}{USB\+\_\+\+IFD\+\_\+\+SIZE\+\_\+2}} + \mbox{\hyperlink{common__data_8c_a71c23aa477098c37b11d06a4a5f6ac03}{USB\+\_\+\+IFD\+\_\+\+SIZE\+\_\+3}} + \mbox{\hyperlink{common__data_8c_a11ea72af7b207675b065a1dbf94ee382}{USB\+\_\+\+IFD\+\_\+\+SIZE\+\_\+4}} + \mbox{\hyperlink{common__data_8c_abbcc7cb2a1b461f1e540446f0853ea6a}{USB\+\_\+\+IFD\+\_\+\+SIZE\+\_\+5}} + \mbox{\hyperlink{common__data_8c_a1ee4456265ff7ad313dd1a8e5c9124bd}{USB\+\_\+\+IFD\+\_\+\+SIZE\+\_\+6}} + \mbox{\hyperlink{common__data_8c_a79e1122a896c7595bb6e6dfa381cfdf0}{USB\+\_\+\+IFD\+\_\+\+SIZE\+\_\+7}} + \mbox{\hyperlink{common__data_8c_a7668f6f418f4daf3cd965af418e6fb42}{USB\+\_\+\+IFD\+\_\+\+SIZE\+\_\+8}} + \mbox{\hyperlink{common__data_8c_a26ceddc5a589a976d63fb61404f55bd5}{USB\+\_\+\+IFD\+\_\+\+SIZE\+\_\+9}}}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{common__data_8c_adc429a4bf518f5cd7ee70333552dfea7}\label{common__data_8c_adc429a4bf518f5cd7ee70333552dfea7} 
+\index{common\_data.c@{common\_data.c}!BSP\_PLACE\_IN\_SECTION\_V2@{BSP\_PLACE\_IN\_SECTION\_V2}}
+\index{BSP\_PLACE\_IN\_SECTION\_V2@{BSP\_PLACE\_IN\_SECTION\_V2}!common\_data.c@{common\_data.c}}
+\doxysubsubsection{\texorpdfstring{BSP\_PLACE\_IN\_SECTION\_V2()}{BSP\_PLACE\_IN\_SECTION\_V2()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily static \+\_\+\+\_\+root const unsigned char ux\+\_\+cfg\+\_\+descriptor\+\_\+full\+\_\+speed\mbox{[}$\,$\mbox{]} BSP\+\_\+\+PLACE\+\_\+\+IN\+\_\+\+SECTION\+\_\+\+V2 (\begin{DoxyParamCaption}\item[{"{}.usb\+\_\+config\+\_\+desc\+\_\+fs"{}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{common__data_8c_a456f09ee561ede557486544aea46fb84}\label{common__data_8c_a456f09ee561ede557486544aea46fb84} 
+\index{common\_data.c@{common\_data.c}!BSP\_PLACE\_IN\_SECTION\_V2@{BSP\_PLACE\_IN\_SECTION\_V2}}
+\index{BSP\_PLACE\_IN\_SECTION\_V2@{BSP\_PLACE\_IN\_SECTION\_V2}!common\_data.c@{common\_data.c}}
+\doxysubsubsection{\texorpdfstring{BSP\_PLACE\_IN\_SECTION\_V2()}{BSP\_PLACE\_IN\_SECTION\_V2()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily static \+\_\+\+\_\+root const unsigned char device\+\_\+framework\+\_\+full\+\_\+speed\mbox{[}$\,$\mbox{]} BSP\+\_\+\+PLACE\+\_\+\+IN\+\_\+\+SECTION\+\_\+\+V2 (\begin{DoxyParamCaption}\item[{"{}.usb\+\_\+device\+\_\+desc\+\_\+fs"{}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{common__data_8c_a5d9a08f4b20dcefd918dcc6e5a248e83}\label{common__data_8c_a5d9a08f4b20dcefd918dcc6e5a248e83} 
+\index{common\_data.c@{common\_data.c}!BSP\_PLACE\_IN\_SECTION\_V2@{BSP\_PLACE\_IN\_SECTION\_V2}}
+\index{BSP\_PLACE\_IN\_SECTION\_V2@{BSP\_PLACE\_IN\_SECTION\_V2}!common\_data.c@{common\_data.c}}
+\doxysubsubsection{\texorpdfstring{BSP\_PLACE\_IN\_SECTION\_V2()}{BSP\_PLACE\_IN\_SECTION\_V2()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily static \+\_\+\+\_\+root const unsigned char g\+\_\+usb\+\_\+interface\+\_\+descriptor\+\_\+storage\+\_\+0\+\_\+full\+\_\+speed\mbox{[}$\,$\mbox{]} BSP\+\_\+\+PLACE\+\_\+\+IN\+\_\+\+SECTION\+\_\+\+V2 (\begin{DoxyParamCaption}\item[{"{}.usb\+\_\+interface\+\_\+desc\+\_\+fs"{}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{common__data_8c_a69c6482fc38b2d19b47d9916115ffc23}\label{common__data_8c_a69c6482fc38b2d19b47d9916115ffc23} 
+\index{common\_data.c@{common\_data.c}!fx\_common\_init0@{fx\_common\_init0}}
+\index{fx\_common\_init0@{fx\_common\_init0}!common\_data.c@{common\_data.c}}
+\doxysubsubsection{\texorpdfstring{fx\_common\_init0()}{fx\_common\_init0()}}
+{\footnotesize\ttfamily void fx\+\_\+common\+\_\+init0 (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Initialization function that the user can choose to have called automatically during thread entry. The user can call this function at a later time if desired using the prototype below. 
+
+
+\begin{DoxyItemize}
+\item void \doxylink{common__data_8c_a69c6482fc38b2d19b47d9916115ffc23}{fx\+\_\+common\+\_\+init0(void)} 
+\end{DoxyItemize}Initialize the FileX system.Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{common__data_8c_a69c6482fc38b2d19b47d9916115ffc23_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{common__data_8c_a2dc986f32090c0fb53e90ad03de0598f}\label{common__data_8c_a2dc986f32090c0fb53e90ad03de0598f} 
+\index{common\_data.c@{common\_data.c}!fx\_media\_init0@{fx\_media\_init0}}
+\index{fx\_media\_init0@{fx\_media\_init0}!common\_data.c@{common\_data.c}}
+\doxysubsubsection{\texorpdfstring{fx\_media\_init0()}{fx\_media\_init0()}}
+{\footnotesize\ttfamily void fx\+\_\+media\+\_\+init0 (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Initialization function that the user can choose to have called automatically during thread entry. The user can call this function at a later time if desired using the prototype below. 
+
+
+\begin{DoxyItemize}
+\item void \doxylink{common__data_8c_a2dc986f32090c0fb53e90ad03de0598f}{fx\+\_\+media\+\_\+init0(void)} 
+\end{DoxyItemize}Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{common__data_8c_a2dc986f32090c0fb53e90ad03de0598f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{common__data_8c_a2dc986f32090c0fb53e90ad03de0598f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{common__data_8c_aeae032b14e2e74ed47d04de04233b599}\label{common__data_8c_aeae032b14e2e74ed47d04de04233b599} 
+\index{common\_data.c@{common\_data.c}!fx\_media\_init0\_format@{fx\_media\_init0\_format}}
+\index{fx\_media\_init0\_format@{fx\_media\_init0\_format}!common\_data.c@{common\_data.c}}
+\doxysubsubsection{\texorpdfstring{fx\_media\_init0\_format()}{fx\_media\_init0\_format()}}
+{\footnotesize\ttfamily ssp\+\_\+err\+\_\+t fx\+\_\+media\+\_\+init0\+\_\+format (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{common__data_8c_aeae032b14e2e74ed47d04de04233b599_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{common__data_8c_aeae032b14e2e74ed47d04de04233b599_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{common__data_8c_ad0f0e3fb1120fdd5a41790f89df49bb7}\label{common__data_8c_ad0f0e3fb1120fdd5a41790f89df49bb7} 
+\index{common\_data.c@{common\_data.c}!fx\_media\_init0\_open@{fx\_media\_init0\_open}}
+\index{fx\_media\_init0\_open@{fx\_media\_init0\_open}!common\_data.c@{common\_data.c}}
+\doxysubsubsection{\texorpdfstring{fx\_media\_init0\_open()}{fx\_media\_init0\_open()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} fx\+\_\+media\+\_\+init0\+\_\+open (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{common__data_8c_ad0f0e3fb1120fdd5a41790f89df49bb7_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{common__data_8c_ad9cbc93ced342131f9cb13ef84da081d}\label{common__data_8c_ad9cbc93ced342131f9cb13ef84da081d} 
+\index{common\_data.c@{common\_data.c}!g\_common\_init@{g\_common\_init}}
+\index{g\_common\_init@{g\_common\_init}!common\_data.c@{common\_data.c}}
+\doxysubsubsection{\texorpdfstring{g\_common\_init()}{g\_common\_init()}}
+{\footnotesize\ttfamily void g\+\_\+common\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Call initialization function if user has selected to do so.
+
+Call initialization function if user has selected to do so.
+
+Call initialization function if user has selected to do so.
+
+Call initialization function if user has selected to do so.
+
+Call initialization function if user has selected to do soHere is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{common__data_8c_ad9cbc93ced342131f9cb13ef84da081d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{common__data_8c_ad9cbc93ced342131f9cb13ef84da081d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{common__data_8c_afa12084aa3b67e91570bf75b67668bbc}\label{common__data_8c_afa12084aa3b67e91570bf75b67668bbc} 
+\index{common\_data.c@{common\_data.c}!g\_sf\_el\_ux\_dcd\_fs\_0\_err\_callback@{g\_sf\_el\_ux\_dcd\_fs\_0\_err\_callback}}
+\index{g\_sf\_el\_ux\_dcd\_fs\_0\_err\_callback@{g\_sf\_el\_ux\_dcd\_fs\_0\_err\_callback}!common\_data.c@{common\_data.c}}
+\doxysubsubsection{\texorpdfstring{g\_sf\_el\_ux\_dcd\_fs\_0\_err\_callback()}{g\_sf\_el\_ux\_dcd\_fs\_0\_err\_callback()}}
+{\footnotesize\ttfamily void g\+\_\+sf\+\_\+el\+\_\+ux\+\_\+dcd\+\_\+fs\+\_\+0\+\_\+err\+\_\+callback (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{p\+\_\+instance,  }\item[{void \texorpdfstring{$\ast$}{*}}]{p\+\_\+data }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{common__data_8c_afa12084aa3b67e91570bf75b67668bbc_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{common__data_8c_acb36f2a3390b96f94cd1da22112a1c32}\label{common__data_8c_acb36f2a3390b96f94cd1da22112a1c32} 
+\index{common\_data.c@{common\_data.c}!g\_sf\_el\_ux\_dcd\_fs\_0\_err\_callback\_internal@{g\_sf\_el\_ux\_dcd\_fs\_0\_err\_callback\_internal}}
+\index{g\_sf\_el\_ux\_dcd\_fs\_0\_err\_callback\_internal@{g\_sf\_el\_ux\_dcd\_fs\_0\_err\_callback\_internal}!common\_data.c@{common\_data.c}}
+\doxysubsubsection{\texorpdfstring{g\_sf\_el\_ux\_dcd\_fs\_0\_err\_callback\_internal()}{g\_sf\_el\_ux\_dcd\_fs\_0\_err\_callback\_internal()}}
+{\footnotesize\ttfamily void g\+\_\+sf\+\_\+el\+\_\+ux\+\_\+dcd\+\_\+fs\+\_\+0\+\_\+err\+\_\+callback\+\_\+internal (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{p\+\_\+instance,  }\item[{void \texorpdfstring{$\ast$}{*}}]{p\+\_\+data }\end{DoxyParamCaption})}
+
+
+
+This is a weak example initialization error function. It should be overridden by defining a user function with the prototype below. 
+
+
+\begin{DoxyItemize}
+\item void \doxylink{common__data_8c_afa12084aa3b67e91570bf75b67668bbc}{g\+\_\+sf\+\_\+el\+\_\+ux\+\_\+dcd\+\_\+fs\+\_\+0\+\_\+err\+\_\+callback(void \texorpdfstring{$\ast$}{*} p\+\_\+instance, void \texorpdfstring{$\ast$}{*} p\+\_\+data)}
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em p\+\_\+instance} & arguments used to identify which instance caused the error and p\+\_\+data Callback arguments used to identify what error caused the callback. \\
+\hline
+\end{DoxyParams}
+Suppress compiler warning for not using parameters.
+
+An error has occurred. Please check function arguments for more information.\Hypertarget{common__data_8c_aa98a5c803b02a8f0a093bfb76b605ce3}\label{common__data_8c_aa98a5c803b02a8f0a093bfb76b605ce3} 
+\index{common\_data.c@{common\_data.c}!g\_ux\_device\_class\_storage\_setup@{g\_ux\_device\_class\_storage\_setup}}
+\index{g\_ux\_device\_class\_storage\_setup@{g\_ux\_device\_class\_storage\_setup}!common\_data.c@{common\_data.c}}
+\doxysubsubsection{\texorpdfstring{g\_ux\_device\_class\_storage\_setup()}{g\_ux\_device\_class\_storage\_setup()}}
+{\footnotesize\ttfamily void g\+\_\+ux\+\_\+device\+\_\+class\+\_\+storage\+\_\+setup (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{common__data_8c_aa98a5c803b02a8f0a093bfb76b605ce3_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{common__data_8c_aa98a5c803b02a8f0a093bfb76b605ce3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{common__data_8c_a73bd67eae5d2109d05205f509b0e4c7f}\label{common__data_8c_a73bd67eae5d2109d05205f509b0e4c7f} 
+\index{common\_data.c@{common\_data.c}!sd\_fx\_media\_err\_callback@{sd\_fx\_media\_err\_callback}}
+\index{sd\_fx\_media\_err\_callback@{sd\_fx\_media\_err\_callback}!common\_data.c@{common\_data.c}}
+\doxysubsubsection{\texorpdfstring{sd\_fx\_media\_err\_callback()}{sd\_fx\_media\_err\_callback()}}
+{\footnotesize\ttfamily void sd\+\_\+fx\+\_\+media\+\_\+err\+\_\+callback (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{p\+\_\+instance,  }\item[{void \texorpdfstring{$\ast$}{*}}]{p\+\_\+data }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{common__data_8c_a73bd67eae5d2109d05205f509b0e4c7f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{common__data_8c_ad940c1bcaaa2a10c022778ab2d1bde90}\label{common__data_8c_ad940c1bcaaa2a10c022778ab2d1bde90} 
+\index{common\_data.c@{common\_data.c}!sd\_fx\_media\_err\_callback\_internal@{sd\_fx\_media\_err\_callback\_internal}}
+\index{sd\_fx\_media\_err\_callback\_internal@{sd\_fx\_media\_err\_callback\_internal}!common\_data.c@{common\_data.c}}
+\doxysubsubsection{\texorpdfstring{sd\_fx\_media\_err\_callback\_internal()}{sd\_fx\_media\_err\_callback\_internal()}}
+{\footnotesize\ttfamily void sd\+\_\+fx\+\_\+media\+\_\+err\+\_\+callback\+\_\+internal (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{p\+\_\+instance,  }\item[{void \texorpdfstring{$\ast$}{*}}]{p\+\_\+data }\end{DoxyParamCaption})}
+
+
+
+This is a weak example initialization error function. It should be overridden by defining a user function with the prototype below. 
+
+
+\begin{DoxyItemize}
+\item void \doxylink{common__data_8c_a73bd67eae5d2109d05205f509b0e4c7f}{sd\+\_\+fx\+\_\+media\+\_\+err\+\_\+callback(void \texorpdfstring{$\ast$}{*} p\+\_\+instance, void \texorpdfstring{$\ast$}{*} p\+\_\+data)}
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em p\+\_\+instance} & arguments used to identify which instance caused the error and p\+\_\+data Callback arguments used to identify what error caused the callback. \\
+\hline
+\end{DoxyParams}
+Suppress compiler warning for not using parameters.
+
+An error has occurred. Please check function arguments for more information.\Hypertarget{common__data_8c_abc802f78e9145d70d6dd580c632c37fa}\label{common__data_8c_abc802f78e9145d70d6dd580c632c37fa} 
+\index{common\_data.c@{common\_data.c}!SF\_EL\_FX\_Get\_MEDIA\_Info@{SF\_EL\_FX\_Get\_MEDIA\_Info}}
+\index{SF\_EL\_FX\_Get\_MEDIA\_Info@{SF\_EL\_FX\_Get\_MEDIA\_Info}!common\_data.c@{common\_data.c}}
+\doxysubsubsection{\texorpdfstring{SF\_EL\_FX\_Get\_MEDIA\_Info()}{SF\_EL\_FX\_Get\_MEDIA\_Info()}}
+{\footnotesize\ttfamily ssp\+\_\+err\+\_\+t SF\+\_\+\+EL\+\_\+\+FX\+\_\+\+Get\+\_\+\+MEDIA\+\_\+\+Info (\begin{DoxyParamCaption}\item[{sf\+\_\+block\+\_\+media\+\_\+instance\+\_\+t \texorpdfstring{$\ast$}{*}}]{p\+\_\+block\+\_\+media,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{sector\+\_\+size,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{sector\+\_\+count }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{common__data_8c_abc802f78e9145d70d6dd580c632c37fa_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{common__data_8c_a60fb0a744cab479d07171e7d2fb7caa7}\label{common__data_8c_a60fb0a744cab479d07171e7d2fb7caa7} 
+\index{common\_data.c@{common\_data.c}!SSP\_VECTOR\_DEFINE\_CHAN@{SSP\_VECTOR\_DEFINE\_CHAN}}
+\index{SSP\_VECTOR\_DEFINE\_CHAN@{SSP\_VECTOR\_DEFINE\_CHAN}!common\_data.c@{common\_data.c}}
+\doxysubsubsection{\texorpdfstring{SSP\_VECTOR\_DEFINE\_CHAN()}{SSP\_VECTOR\_DEFINE\_CHAN()}\hspace{0.1cm}{\footnotesize\ttfamily [1/7]}}
+{\footnotesize\ttfamily SSP\+\_\+\+VECTOR\+\_\+\+DEFINE\+\_\+\+CHAN (\begin{DoxyParamCaption}\item[{dmac\+\_\+int\+\_\+isr}]{,  }\item[{DMAC}]{,  }\item[{INT}]{,  }\item[{2}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{common__data_8c_a756bd68089cddace6cc0a0ba53a2b584}\label{common__data_8c_a756bd68089cddace6cc0a0ba53a2b584} 
+\index{common\_data.c@{common\_data.c}!SSP\_VECTOR\_DEFINE\_CHAN@{SSP\_VECTOR\_DEFINE\_CHAN}}
+\index{SSP\_VECTOR\_DEFINE\_CHAN@{SSP\_VECTOR\_DEFINE\_CHAN}!common\_data.c@{common\_data.c}}
+\doxysubsubsection{\texorpdfstring{SSP\_VECTOR\_DEFINE\_CHAN()}{SSP\_VECTOR\_DEFINE\_CHAN()}\hspace{0.1cm}{\footnotesize\ttfamily [2/7]}}
+{\footnotesize\ttfamily SSP\+\_\+\+VECTOR\+\_\+\+DEFINE\+\_\+\+CHAN (\begin{DoxyParamCaption}\item[{sdhimmc\+\_\+accs\+\_\+isr}]{,  }\item[{SDHIMMC}]{,  }\item[{ACCS}]{,  }\item[{0}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{common__data_8c_a0b7b6d246de8e2cbd53277d9a156b143}\label{common__data_8c_a0b7b6d246de8e2cbd53277d9a156b143} 
+\index{common\_data.c@{common\_data.c}!SSP\_VECTOR\_DEFINE\_CHAN@{SSP\_VECTOR\_DEFINE\_CHAN}}
+\index{SSP\_VECTOR\_DEFINE\_CHAN@{SSP\_VECTOR\_DEFINE\_CHAN}!common\_data.c@{common\_data.c}}
+\doxysubsubsection{\texorpdfstring{SSP\_VECTOR\_DEFINE\_CHAN()}{SSP\_VECTOR\_DEFINE\_CHAN()}\hspace{0.1cm}{\footnotesize\ttfamily [3/7]}}
+{\footnotesize\ttfamily SSP\+\_\+\+VECTOR\+\_\+\+DEFINE\+\_\+\+CHAN (\begin{DoxyParamCaption}\item[{sdhimmc\+\_\+card\+\_\+isr}]{,  }\item[{SDHIMMC}]{,  }\item[{CARD}]{,  }\item[{0}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{common__data_8c_a0f89aa89072b33c736a91be3bdbe856d}\label{common__data_8c_a0f89aa89072b33c736a91be3bdbe856d} 
+\index{common\_data.c@{common\_data.c}!SSP\_VECTOR\_DEFINE\_CHAN@{SSP\_VECTOR\_DEFINE\_CHAN}}
+\index{SSP\_VECTOR\_DEFINE\_CHAN@{SSP\_VECTOR\_DEFINE\_CHAN}!common\_data.c@{common\_data.c}}
+\doxysubsubsection{\texorpdfstring{SSP\_VECTOR\_DEFINE\_CHAN()}{SSP\_VECTOR\_DEFINE\_CHAN()}\hspace{0.1cm}{\footnotesize\ttfamily [4/7]}}
+{\footnotesize\ttfamily SSP\+\_\+\+VECTOR\+\_\+\+DEFINE\+\_\+\+CHAN (\begin{DoxyParamCaption}\item[{spi\+\_\+eri\+\_\+isr}]{,  }\item[{SPI}]{,  }\item[{ERI}]{,  }\item[{0}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{common__data_8c_ae276c2f0d8ba104d439746dd3826ab75}\label{common__data_8c_ae276c2f0d8ba104d439746dd3826ab75} 
+\index{common\_data.c@{common\_data.c}!SSP\_VECTOR\_DEFINE\_CHAN@{SSP\_VECTOR\_DEFINE\_CHAN}}
+\index{SSP\_VECTOR\_DEFINE\_CHAN@{SSP\_VECTOR\_DEFINE\_CHAN}!common\_data.c@{common\_data.c}}
+\doxysubsubsection{\texorpdfstring{SSP\_VECTOR\_DEFINE\_CHAN()}{SSP\_VECTOR\_DEFINE\_CHAN()}\hspace{0.1cm}{\footnotesize\ttfamily [5/7]}}
+{\footnotesize\ttfamily SSP\+\_\+\+VECTOR\+\_\+\+DEFINE\+\_\+\+CHAN (\begin{DoxyParamCaption}\item[{spi\+\_\+rxi\+\_\+isr}]{,  }\item[{SPI}]{,  }\item[{RXI}]{,  }\item[{0}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{common__data_8c_a88b135a46b3d01a1726d55e2c46f96ac}\label{common__data_8c_a88b135a46b3d01a1726d55e2c46f96ac} 
+\index{common\_data.c@{common\_data.c}!SSP\_VECTOR\_DEFINE\_CHAN@{SSP\_VECTOR\_DEFINE\_CHAN}}
+\index{SSP\_VECTOR\_DEFINE\_CHAN@{SSP\_VECTOR\_DEFINE\_CHAN}!common\_data.c@{common\_data.c}}
+\doxysubsubsection{\texorpdfstring{SSP\_VECTOR\_DEFINE\_CHAN()}{SSP\_VECTOR\_DEFINE\_CHAN()}\hspace{0.1cm}{\footnotesize\ttfamily [6/7]}}
+{\footnotesize\ttfamily SSP\+\_\+\+VECTOR\+\_\+\+DEFINE\+\_\+\+CHAN (\begin{DoxyParamCaption}\item[{spi\+\_\+tei\+\_\+isr}]{,  }\item[{SPI}]{,  }\item[{TEI}]{,  }\item[{0}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{common__data_8c_a9e5e599c9285acd2b800c8967f242853}\label{common__data_8c_a9e5e599c9285acd2b800c8967f242853} 
+\index{common\_data.c@{common\_data.c}!SSP\_VECTOR\_DEFINE\_CHAN@{SSP\_VECTOR\_DEFINE\_CHAN}}
+\index{SSP\_VECTOR\_DEFINE\_CHAN@{SSP\_VECTOR\_DEFINE\_CHAN}!common\_data.c@{common\_data.c}}
+\doxysubsubsection{\texorpdfstring{SSP\_VECTOR\_DEFINE\_CHAN()}{SSP\_VECTOR\_DEFINE\_CHAN()}\hspace{0.1cm}{\footnotesize\ttfamily [7/7]}}
+{\footnotesize\ttfamily SSP\+\_\+\+VECTOR\+\_\+\+DEFINE\+\_\+\+CHAN (\begin{DoxyParamCaption}\item[{spi\+\_\+txi\+\_\+isr}]{,  }\item[{SPI}]{,  }\item[{TXI}]{,  }\item[{0}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{common__data_8c_a0c4837de033f51ac10879cfd1b1fbd63}\label{common__data_8c_a0c4837de033f51ac10879cfd1b1fbd63} 
+\index{common\_data.c@{common\_data.c}!ux\_common\_init0@{ux\_common\_init0}}
+\index{ux\_common\_init0@{ux\_common\_init0}!common\_data.c@{common\_data.c}}
+\doxysubsubsection{\texorpdfstring{ux\_common\_init0()}{ux\_common\_init0()}}
+{\footnotesize\ttfamily void ux\+\_\+common\+\_\+init0 (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Initialization function that the user can choose to have called automatically during thread entry. The user can call this function at a later time if desired using the prototype below. 
+
+
+\begin{DoxyItemize}
+\item void \doxylink{common__data_8c_a0c4837de033f51ac10879cfd1b1fbd63}{ux\+\_\+common\+\_\+init0(void)} 
+\end{DoxyItemize}Initialize the USBX system.Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=307pt]{common__data_8c_a0c4837de033f51ac10879cfd1b1fbd63_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{common__data_8c_a0c4837de033f51ac10879cfd1b1fbd63_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{common__data_8c_aa5778696d849d34494e0a346a2d864f6}\label{common__data_8c_aa5778696d849d34494e0a346a2d864f6} 
+\index{common\_data.c@{common\_data.c}!ux\_dcd\_initialize@{ux\_dcd\_initialize}}
+\index{ux\_dcd\_initialize@{ux\_dcd\_initialize}!common\_data.c@{common\_data.c}}
+\doxysubsubsection{\texorpdfstring{ux\_dcd\_initialize()}{ux\_dcd\_initialize()}}
+{\footnotesize\ttfamily void ux\+\_\+dcd\+\_\+initialize (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=311pt]{common__data_8c_aa5778696d849d34494e0a346a2d864f6_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{common__data_8c_aa5778696d849d34494e0a346a2d864f6_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{common__data_8c_a86c182665e034d66cc94e9e1ed4a8bd0}\label{common__data_8c_a86c182665e034d66cc94e9e1ed4a8bd0} 
+\index{common\_data.c@{common\_data.c}!ux\_device\_class\_storage\_init0@{ux\_device\_class\_storage\_init0}}
+\index{ux\_device\_class\_storage\_init0@{ux\_device\_class\_storage\_init0}!common\_data.c@{common\_data.c}}
+\doxysubsubsection{\texorpdfstring{ux\_device\_class\_storage\_init0()}{ux\_device\_class\_storage\_init0()}}
+{\footnotesize\ttfamily void ux\+\_\+device\+\_\+class\+\_\+storage\+\_\+init0 (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Initialization function that the user can choose to have called automatically during thread entry. The user can call this function at a later time if desired using the prototype below. 
+
+
+\begin{DoxyItemize}
+\item void \doxylink{common__data_8c_a86c182665e034d66cc94e9e1ed4a8bd0}{ux\+\_\+device\+\_\+class\+\_\+storage\+\_\+init0(void)} 
+\end{DoxyItemize}Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{common__data_8c_a86c182665e034d66cc94e9e1ed4a8bd0_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{common__data_8c_a86c182665e034d66cc94e9e1ed4a8bd0_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{common__data_8c_aab9d804775fae05bbae3cd923a33b369}\label{common__data_8c_aab9d804775fae05bbae3cd923a33b369} 
+\index{common\_data.c@{common\_data.c}!ux\_device\_err\_callback@{ux\_device\_err\_callback}}
+\index{ux\_device\_err\_callback@{ux\_device\_err\_callback}!common\_data.c@{common\_data.c}}
+\doxysubsubsection{\texorpdfstring{ux\_device\_err\_callback()}{ux\_device\_err\_callback()}}
+{\footnotesize\ttfamily void ux\+\_\+device\+\_\+err\+\_\+callback (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{p\+\_\+instance,  }\item[{void \texorpdfstring{$\ast$}{*}}]{p\+\_\+data }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{common__data_8c_aab9d804775fae05bbae3cd923a33b369_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{common__data_8c_a939a453aab8364b0f26bb2ee9d9e4f38}\label{common__data_8c_a939a453aab8364b0f26bb2ee9d9e4f38} 
+\index{common\_data.c@{common\_data.c}!ux\_device\_err\_callback\_internal@{ux\_device\_err\_callback\_internal}}
+\index{ux\_device\_err\_callback\_internal@{ux\_device\_err\_callback\_internal}!common\_data.c@{common\_data.c}}
+\doxysubsubsection{\texorpdfstring{ux\_device\_err\_callback\_internal()}{ux\_device\_err\_callback\_internal()}}
+{\footnotesize\ttfamily void ux\+\_\+device\+\_\+err\+\_\+callback\+\_\+internal (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{p\+\_\+instance,  }\item[{void \texorpdfstring{$\ast$}{*}}]{p\+\_\+data }\end{DoxyParamCaption})}
+
+
+
+This is a weak example initialization error function. It should be overridden by defining a user function with the prototype below. 
+
+
+\begin{DoxyItemize}
+\item void \doxylink{common__data_8c_aab9d804775fae05bbae3cd923a33b369}{ux\+\_\+device\+\_\+err\+\_\+callback(void \texorpdfstring{$\ast$}{*} p\+\_\+instance, void \texorpdfstring{$\ast$}{*} p\+\_\+data)}
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em p\+\_\+instance} & arguments used to identify which instance caused the error and p\+\_\+data Callback arguments used to identify what error caused the callback. \\
+\hline
+\end{DoxyParams}
+Suppress compiler warning for not using parameters.
+
+An error has occurred. Please check function arguments for more information.\Hypertarget{common__data_8c_af626dbef572835e3f44d083263783d7c}\label{common__data_8c_af626dbef572835e3f44d083263783d7c} 
+\index{common\_data.c@{common\_data.c}!ux\_device\_init0@{ux\_device\_init0}}
+\index{ux\_device\_init0@{ux\_device\_init0}!common\_data.c@{common\_data.c}}
+\doxysubsubsection{\texorpdfstring{ux\_device\_init0()}{ux\_device\_init0()}}
+{\footnotesize\ttfamily void ux\+\_\+device\+\_\+init0 (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Initialization function that the user can choose to have called automatically during thread entry. The user can call this function at a later time if desired using the prototype below. 
+
+
+\begin{DoxyItemize}
+\item void \doxylink{common__data_8c_af626dbef572835e3f44d083263783d7c}{ux\+\_\+device\+\_\+init0(void)} 
+\end{DoxyItemize}Calculate the size of USBX String Framework.
+
+Calculate the size of USB Language Framework.
+
+Initialize the USB Device stack.Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=315pt]{common__data_8c_af626dbef572835e3f44d083263783d7c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{common__data_8c_af626dbef572835e3f44d083263783d7c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{common__data_8c_a475bc62e14f73d52fa30e384d67d844d}\label{common__data_8c_a475bc62e14f73d52fa30e384d67d844d} 
+\index{common\_data.c@{common\_data.c}!ux\_v2\_err\_callback@{ux\_v2\_err\_callback}}
+\index{ux\_v2\_err\_callback@{ux\_v2\_err\_callback}!common\_data.c@{common\_data.c}}
+\doxysubsubsection{\texorpdfstring{ux\_v2\_err\_callback()}{ux\_v2\_err\_callback()}}
+{\footnotesize\ttfamily void ux\+\_\+v2\+\_\+err\+\_\+callback (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{p\+\_\+instance,  }\item[{void \texorpdfstring{$\ast$}{*}}]{p\+\_\+data }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{common__data_8c_a475bc62e14f73d52fa30e384d67d844d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{common__data_8c_a8b7c1c528a5f2519b83ec537cf6c466e}\label{common__data_8c_a8b7c1c528a5f2519b83ec537cf6c466e} 
+\index{common\_data.c@{common\_data.c}!ux\_v2\_err\_callback\_internal@{ux\_v2\_err\_callback\_internal}}
+\index{ux\_v2\_err\_callback\_internal@{ux\_v2\_err\_callback\_internal}!common\_data.c@{common\_data.c}}
+\doxysubsubsection{\texorpdfstring{ux\_v2\_err\_callback\_internal()}{ux\_v2\_err\_callback\_internal()}}
+{\footnotesize\ttfamily void ux\+\_\+v2\+\_\+err\+\_\+callback\+\_\+internal (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{p\+\_\+instance,  }\item[{void \texorpdfstring{$\ast$}{*}}]{p\+\_\+data }\end{DoxyParamCaption})}
+
+
+
+This is a weak example initialization error function. It should be overridden by defining a user function with the prototype below. 
+
+
+\begin{DoxyItemize}
+\item void \doxylink{common__data_8c_a475bc62e14f73d52fa30e384d67d844d}{ux\+\_\+v2\+\_\+err\+\_\+callback(void \texorpdfstring{$\ast$}{*} p\+\_\+instance, void \texorpdfstring{$\ast$}{*} p\+\_\+data)}
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em p\+\_\+instance} & arguments used to identify which instance caused the error and p\+\_\+data Callback arguments used to identify what error caused the callback. \\
+\hline
+\end{DoxyParams}
+Suppress compiler warning for not using parameters.
+
+An error has occurred. Please check function arguments for more information.
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{common__data_8c_ad6d6f2eae7e4cabe30094d76c4e16ee4}\label{common__data_8c_ad6d6f2eae7e4cabe30094d76c4e16ee4} 
+\index{common\_data.c@{common\_data.c}!g\_cgc@{g\_cgc}}
+\index{g\_cgc@{g\_cgc}!common\_data.c@{common\_data.c}}
+\doxysubsubsection{\texorpdfstring{g\_cgc}{g\_cgc}}
+{\footnotesize\ttfamily const cgc\+\_\+instance\+\_\+t g\+\_\+cgc}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{\ .p\_api\ =\ \&g\_cgc\_on\_cgc,\ .p\_cfg\ =\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}}\ \}}
+
+\end{DoxyCode}
+CGC Instance \Hypertarget{common__data_8c_a5ebf73650a002c734983e3e1efd5d23e}\label{common__data_8c_a5ebf73650a002c734983e3e1efd5d23e} 
+\index{common\_data.c@{common\_data.c}!g\_elc@{g\_elc}}
+\index{g\_elc@{g\_elc}!common\_data.c@{common\_data.c}}
+\doxysubsubsection{\texorpdfstring{g\_elc}{g\_elc}}
+{\footnotesize\ttfamily const elc\+\_\+instance\+\_\+t g\+\_\+elc}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{\ .p\_api\ =\ \&g\_elc\_on\_elc,\ .p\_cfg\ =\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}}\ \}}
+
+\end{DoxyCode}
+ELC Instance \Hypertarget{common__data_8c_ac062274fd6f5092fb2836f2e3fe881f4}\label{common__data_8c_ac062274fd6f5092fb2836f2e3fe881f4} 
+\index{common\_data.c@{common\_data.c}!g\_fmi@{g\_fmi}}
+\index{g\_fmi@{g\_fmi}!common\_data.c@{common\_data.c}}
+\doxysubsubsection{\texorpdfstring{g\_fmi}{g\_fmi}}
+{\footnotesize\ttfamily const fmi\+\_\+instance\+\_\+t g\+\_\+fmi}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{\ .p\_api\ =\ \&g\_fmi\_on\_fmi\ \}}
+
+\end{DoxyCode}
+FMI on FMI Instance. \Hypertarget{common__data_8c_a550bce613d93ced8a87da8051eb18314}\label{common__data_8c_a550bce613d93ced8a87da8051eb18314} 
+\index{common\_data.c@{common\_data.c}!g\_ioport@{g\_ioport}}
+\index{g\_ioport@{g\_ioport}!common\_data.c@{common\_data.c}}
+\doxysubsubsection{\texorpdfstring{g\_ioport}{g\_ioport}}
+{\footnotesize\ttfamily const ioport\+\_\+instance\+\_\+t g\+\_\+ioport}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{\ .p\_api\ =\ \&g\_ioport\_on\_ioport,\ .p\_cfg\ =\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}}\ \}}
+
+\end{DoxyCode}
+IOPORT Instance \Hypertarget{common__data_8c_a0545a643f53040f6a1337db451a3e660}\label{common__data_8c_a0545a643f53040f6a1337db451a3e660} 
+\index{common\_data.c@{common\_data.c}!g\_media\_memory\_sd\_fx\_media@{g\_media\_memory\_sd\_fx\_media}}
+\index{g\_media\_memory\_sd\_fx\_media@{g\_media\_memory\_sd\_fx\_media}!common\_data.c@{common\_data.c}}
+\doxysubsubsection{\texorpdfstring{g\_media\_memory\_sd\_fx\_media}{g\_media\_memory\_sd\_fx\_media}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} g\+\_\+media\+\_\+memory\+\_\+sd\+\_\+fx\+\_\+media\mbox{[}512\mbox{]}}
+
+\Hypertarget{common__data_8c_acfce838e5493050983a7f3b836a9d042}\label{common__data_8c_acfce838e5493050983a7f3b836a9d042} 
+\index{common\_data.c@{common\_data.c}!g\_sdmmc@{g\_sdmmc}}
+\index{g\_sdmmc@{g\_sdmmc}!common\_data.c@{common\_data.c}}
+\doxysubsubsection{\texorpdfstring{g\_sdmmc}{g\_sdmmc}}
+{\footnotesize\ttfamily const sdmmc\+\_\+instance\+\_\+t g\+\_\+sdmmc}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{\ .p\_ctrl\ =\ \&\mbox{\hyperlink{common__data_8c_aac7ee8510eeb9a54959278322c526d3e}{g\_sdmmc\_ctrl}},\ .p\_cfg\ =\ \&\mbox{\hyperlink{common__data_8c_ad36a2d2949f5fe56c6310a9a75e670f4}{g\_sdmmc\_cfg}},\ .p\_api\ =\ \&g\_sdmmc\_on\_sdmmc\ \}}
+
+\end{DoxyCode}
+SDMMC on SDMMC Instance. \Hypertarget{common__data_8c_ad36a2d2949f5fe56c6310a9a75e670f4}\label{common__data_8c_ad36a2d2949f5fe56c6310a9a75e670f4} 
+\index{common\_data.c@{common\_data.c}!g\_sdmmc\_cfg@{g\_sdmmc\_cfg}}
+\index{g\_sdmmc\_cfg@{g\_sdmmc\_cfg}!common\_data.c@{common\_data.c}}
+\doxysubsubsection{\texorpdfstring{g\_sdmmc\_cfg}{g\_sdmmc\_cfg}}
+{\footnotesize\ttfamily sdmmc\+\_\+cfg\+\_\+t g\+\_\+sdmmc\+\_\+cfg}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{\ .hw\ =}
+\DoxyCodeLine{\{\ .media\_type\ =\ SDMMC\_MEDIA\_TYPE\_CARD,\ .bus\_width\ =\ SDMMC\_BUS\_WIDTH\_4\_BITS,\ .channel\ =\ 0,\ \},}
+\DoxyCodeLine{\ \ .p\_callback\ =\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}},}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ .p\_extend\ =\ (\textcolor{keywordtype}{void}\ *)\ \&\mbox{\hyperlink{common__data_8c_a8be6f079b09ee657e0788a2502ebb69c}{g\_sdmmc\_ext\_cfg\_t}},}
+\DoxyCodeLine{\ \ .p\_lower\_lvl\_transfer\ =\ \&\mbox{\hyperlink{common__data_8c_aa1accc5bdb9159a9c85ff6e6c679efe4}{g\_transfer}},}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ .access\_ipl\ =\ (14),}
+\DoxyCodeLine{\ \ .sdio\_ipl\ =\ BSP\_IRQ\_DISABLED,\ .card\_ipl\ =\ (14),\ .dma\_req\_ipl\ =\ (BSP\_IRQ\_DISABLED),\ \}}
+
+\end{DoxyCode}
+\Hypertarget{common__data_8c_aac7ee8510eeb9a54959278322c526d3e}\label{common__data_8c_aac7ee8510eeb9a54959278322c526d3e} 
+\index{common\_data.c@{common\_data.c}!g\_sdmmc\_ctrl@{g\_sdmmc\_ctrl}}
+\index{g\_sdmmc\_ctrl@{g\_sdmmc\_ctrl}!common\_data.c@{common\_data.c}}
+\doxysubsubsection{\texorpdfstring{g\_sdmmc\_ctrl}{g\_sdmmc\_ctrl}}
+{\footnotesize\ttfamily sdmmc\+\_\+instance\+\_\+ctrl\+\_\+t g\+\_\+sdmmc\+\_\+ctrl}
+
+\Hypertarget{common__data_8c_a8be6f079b09ee657e0788a2502ebb69c}\label{common__data_8c_a8be6f079b09ee657e0788a2502ebb69c} 
+\index{common\_data.c@{common\_data.c}!g\_sdmmc\_ext\_cfg\_t@{g\_sdmmc\_ext\_cfg\_t}}
+\index{g\_sdmmc\_ext\_cfg\_t@{g\_sdmmc\_ext\_cfg\_t}!common\_data.c@{common\_data.c}}
+\doxysubsubsection{\texorpdfstring{g\_sdmmc\_ext\_cfg\_t}{g\_sdmmc\_ext\_cfg\_t}}
+{\footnotesize\ttfamily const sdmmc\+\_\+extended\+\_\+cfg\+\_\+t g\+\_\+sdmmc\+\_\+ext\+\_\+cfg\+\_\+t}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{\ .block\_size\ =\ 512,\ .card\_detect\ =\ SDMMC\_CARD\_DETECT\_NONE,\ .write\_protect\ =\ SDMMC\_WRITE\_PROTECT\_WP,\ \}}
+
+\end{DoxyCode}
+SDMMC extended configuration \Hypertarget{common__data_8c_adef9088a3d47d753ae2b99a5235ebbc6}\label{common__data_8c_adef9088a3d47d753ae2b99a5235ebbc6} 
+\index{common\_data.c@{common\_data.c}!g\_sf\_block\_media\_sdmmc0@{g\_sf\_block\_media\_sdmmc0}}
+\index{g\_sf\_block\_media\_sdmmc0@{g\_sf\_block\_media\_sdmmc0}!common\_data.c@{common\_data.c}}
+\doxysubsubsection{\texorpdfstring{g\_sf\_block\_media\_sdmmc0}{g\_sf\_block\_media\_sdmmc0}}
+{\footnotesize\ttfamily sf\+\_\+block\+\_\+media\+\_\+instance\+\_\+t g\+\_\+sf\+\_\+block\+\_\+media\+\_\+sdmmc0}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{\ .p\_ctrl\ =\ \&\mbox{\hyperlink{common__data_8c_a32cec63b2f615b6ca9dee6520badacf9}{g\_sf\_block\_media\_sdmmc0\_ctrl}},\ .p\_cfg\ =\ \&\mbox{\hyperlink{common__data_8c_acae97aab48b7dc8e2734134ef12a0944}{g\_sf\_block\_media\_sdmmc0\_cfg}},\ .p\_api\ =\ \&g\_sf\_block\_media\_on\_sdmmc\ \}}
+
+\end{DoxyCode}
+Block Media on SDMMC Instance \Hypertarget{common__data_8c_a65cede781b7fb0f88f6ea258a9d9137e}\label{common__data_8c_a65cede781b7fb0f88f6ea258a9d9137e} 
+\index{common\_data.c@{common\_data.c}!g\_sf\_block\_media\_sdmmc0\_block\_media\_cfg@{g\_sf\_block\_media\_sdmmc0\_block\_media\_cfg}}
+\index{g\_sf\_block\_media\_sdmmc0\_block\_media\_cfg@{g\_sf\_block\_media\_sdmmc0\_block\_media\_cfg}!common\_data.c@{common\_data.c}}
+\doxysubsubsection{\texorpdfstring{g\_sf\_block\_media\_sdmmc0\_block\_media\_cfg}{g\_sf\_block\_media\_sdmmc0\_block\_media\_cfg}}
+{\footnotesize\ttfamily const sf\+\_\+block\+\_\+media\+\_\+on\+\_\+sdmmc\+\_\+cfg\+\_\+t g\+\_\+sf\+\_\+block\+\_\+media\+\_\+sdmmc0\+\_\+block\+\_\+media\+\_\+cfg\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{\ .p\_lower\_lvl\_sdmmc\ =\ \&\mbox{\hyperlink{common__data_8c_acfce838e5493050983a7f3b836a9d042}{g\_sdmmc}},\ \}}
+
+\end{DoxyCode}
+\Hypertarget{common__data_8c_acae97aab48b7dc8e2734134ef12a0944}\label{common__data_8c_acae97aab48b7dc8e2734134ef12a0944} 
+\index{common\_data.c@{common\_data.c}!g\_sf\_block\_media\_sdmmc0\_cfg@{g\_sf\_block\_media\_sdmmc0\_cfg}}
+\index{g\_sf\_block\_media\_sdmmc0\_cfg@{g\_sf\_block\_media\_sdmmc0\_cfg}!common\_data.c@{common\_data.c}}
+\doxysubsubsection{\texorpdfstring{g\_sf\_block\_media\_sdmmc0\_cfg}{g\_sf\_block\_media\_sdmmc0\_cfg}}
+{\footnotesize\ttfamily sf\+\_\+block\+\_\+media\+\_\+cfg\+\_\+t g\+\_\+sf\+\_\+block\+\_\+media\+\_\+sdmmc0\+\_\+cfg\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{\ .block\_size\ =\ 512,\ .p\_extend\ =\ \&\mbox{\hyperlink{common__data_8c_a65cede781b7fb0f88f6ea258a9d9137e}{g\_sf\_block\_media\_sdmmc0\_block\_media\_cfg}}\ \}}
+
+\end{DoxyCode}
+\Hypertarget{common__data_8c_a32cec63b2f615b6ca9dee6520badacf9}\label{common__data_8c_a32cec63b2f615b6ca9dee6520badacf9} 
+\index{common\_data.c@{common\_data.c}!g\_sf\_block\_media\_sdmmc0\_ctrl@{g\_sf\_block\_media\_sdmmc0\_ctrl}}
+\index{g\_sf\_block\_media\_sdmmc0\_ctrl@{g\_sf\_block\_media\_sdmmc0\_ctrl}!common\_data.c@{common\_data.c}}
+\doxysubsubsection{\texorpdfstring{g\_sf\_block\_media\_sdmmc0\_ctrl}{g\_sf\_block\_media\_sdmmc0\_ctrl}}
+{\footnotesize\ttfamily sf\+\_\+block\+\_\+media\+\_\+sdmmc\+\_\+instance\+\_\+ctrl\+\_\+t g\+\_\+sf\+\_\+block\+\_\+media\+\_\+sdmmc0\+\_\+ctrl\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{common__data_8c_ae74a32fe94e7fb60095cf0da28c83379}\label{common__data_8c_ae74a32fe94e7fb60095cf0da28c83379} 
+\index{common\_data.c@{common\_data.c}!g\_sf\_el\_fx\_cfg@{g\_sf\_el\_fx\_cfg}}
+\index{g\_sf\_el\_fx\_cfg@{g\_sf\_el\_fx\_cfg}!common\_data.c@{common\_data.c}}
+\doxysubsubsection{\texorpdfstring{g\_sf\_el\_fx\_cfg}{g\_sf\_el\_fx\_cfg}}
+{\footnotesize\ttfamily sf\+\_\+el\+\_\+fx\+\_\+t g\+\_\+sf\+\_\+el\+\_\+fx\+\_\+cfg}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{\ .p\_lower\_lvl\_block\_media\ =\ \&\mbox{\hyperlink{common__data_8c_adef9088a3d47d753ae2b99a5235ebbc6}{g\_sf\_block\_media\_sdmmc0}}\ \}}
+
+\end{DoxyCode}
+\Hypertarget{common__data_8c_a30a3956710e13e6d2ccb9c3535be1e0c}\label{common__data_8c_a30a3956710e13e6d2ccb9c3535be1e0c} 
+\index{common\_data.c@{common\_data.c}!g\_spi0@{g\_spi0}}
+\index{g\_spi0@{g\_spi0}!common\_data.c@{common\_data.c}}
+\doxysubsubsection{\texorpdfstring{g\_spi0}{g\_spi0}}
+{\footnotesize\ttfamily const spi\+\_\+instance\+\_\+t g\+\_\+spi0}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{\ .p\_ctrl\ =\ \&\mbox{\hyperlink{common__data_8c_a6ac7636c3b5001438376e3642316bad8}{g\_spi0\_ctrl}},\ .p\_cfg\ =\ \&\mbox{\hyperlink{common__data_8c_a8b8921936ccd5089f894e7369b332343}{g\_spi0\_cfg}},\ .p\_api\ =\ \&\mbox{\hyperlink{common__data_8h_ac56a413c5512a6a50a7ce25ee20265fb}{g\_spi\_on\_rspi}}\ \}}
+
+\end{DoxyCode}
+SPI on RSPI Instance. \Hypertarget{common__data_8c_a8b8921936ccd5089f894e7369b332343}\label{common__data_8c_a8b8921936ccd5089f894e7369b332343} 
+\index{common\_data.c@{common\_data.c}!g\_spi0\_cfg@{g\_spi0\_cfg}}
+\index{g\_spi0\_cfg@{g\_spi0\_cfg}!common\_data.c@{common\_data.c}}
+\doxysubsubsection{\texorpdfstring{g\_spi0\_cfg}{g\_spi0\_cfg}}
+{\footnotesize\ttfamily const spi\+\_\+cfg\+\_\+t g\+\_\+spi0\+\_\+cfg}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{\ .channel\ =\ 0,\ .operating\_mode\ =\ SPI\_MODE\_MASTER,\ .clk\_phase\ =\ SPI\_CLK\_PHASE\_EDGE\_ODD,\ .clk\_polarity\ =}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ SPI\_CLK\_POLARITY\_LOW,}
+\DoxyCodeLine{\ \ .mode\_fault\ =\ SPI\_MODE\_FAULT\_ERROR\_DISABLE,\ .bit\_order\ =\ SPI\_BIT\_ORDER\_MSB\_FIRST,\ .bitrate\ =\ 800000,\ .p\_transfer\_tx\ =}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{common__data_8h_a98ad31b947b9d43dff6a14ddf14363c3}{g\_spi0\_P\_TRANSFER\_TX}},}
+\DoxyCodeLine{\ \ .p\_transfer\_rx\ =\ \mbox{\hyperlink{common__data_8h_a5c2cc2a5bbd244c989fa1c295a903feb}{g\_spi0\_P\_TRANSFER\_RX}},\ .p\_callback\ =\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}},\ .p\_context\ =\ (\textcolor{keywordtype}{void}\ *)\ \&\mbox{\hyperlink{common__data_8c_a30a3956710e13e6d2ccb9c3535be1e0c}{g\_spi0}},\ .p\_extend\ =}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void}\ *)\ \&\mbox{\hyperlink{common__data_8c_ae36c46d3c04f5b419fa6630400511190}{g\_spi0\_ext\_cfg}},}
+\DoxyCodeLine{\ \ .rxi\_ipl\ =\ (4),\ .txi\_ipl\ =\ (4),\ .eri\_ipl\ =\ (4),\ .tei\_ipl\ =\ (4),\ \}}
+
+\end{DoxyCode}
+SPI config \Hypertarget{common__data_8c_a6ac7636c3b5001438376e3642316bad8}\label{common__data_8c_a6ac7636c3b5001438376e3642316bad8} 
+\index{common\_data.c@{common\_data.c}!g\_spi0\_ctrl@{g\_spi0\_ctrl}}
+\index{g\_spi0\_ctrl@{g\_spi0\_ctrl}!common\_data.c@{common\_data.c}}
+\doxysubsubsection{\texorpdfstring{g\_spi0\_ctrl}{g\_spi0\_ctrl}}
+{\footnotesize\ttfamily rspi\+\_\+instance\+\_\+ctrl\+\_\+t g\+\_\+spi0\+\_\+ctrl}
+
+SPI instance control \Hypertarget{common__data_8c_ae36c46d3c04f5b419fa6630400511190}\label{common__data_8c_ae36c46d3c04f5b419fa6630400511190} 
+\index{common\_data.c@{common\_data.c}!g\_spi0\_ext\_cfg@{g\_spi0\_ext\_cfg}}
+\index{g\_spi0\_ext\_cfg@{g\_spi0\_ext\_cfg}!common\_data.c@{common\_data.c}}
+\doxysubsubsection{\texorpdfstring{g\_spi0\_ext\_cfg}{g\_spi0\_ext\_cfg}}
+{\footnotesize\ttfamily const spi\+\_\+on\+\_\+rspi\+\_\+cfg\+\_\+t g\+\_\+spi0\+\_\+ext\+\_\+cfg}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \{\ .rspi\_clksyn\ =\ RSPI\_OPERATION\_SPI,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \ \ \ \ \ \ .rspi\_comm\ =\ RSPI\_COMMUNICATION\_FULL\_DUPLEX,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ .ssl\_polarity.rspi\_ssl0\ =\ RSPI\_SSLP\_LOW,\ .ssl\_polarity.rspi\_ssl1\ =\ RSPI\_SSLP\_LOW,\ .ssl\_polarity.rspi\_ssl2\ =}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ RSPI\_SSLP\_LOW,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ .ssl\_polarity.rspi\_ssl3\ =\ RSPI\_SSLP\_LOW,\ .loopback.rspi\_loopback1\ =\ RSPI\_LOOPBACK1\_NORMAL\_DATA,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ .loopback.rspi\_loopback2\ =\ RSPI\_LOOPBACK2\_NORMAL\_DATA,\ .mosi\_idle.rspi\_mosi\_idle\_fixed\_val\ =}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ RSPI\_MOSI\_IDLE\_FIXED\_VAL\_LOW,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ .mosi\_idle.rspi\_mosi\_idle\_val\_fixing\ =\ RSPI\_MOSI\_IDLE\_VAL\_FIXING\_DISABLE,\ .parity.rspi\_parity\ =}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ RSPI\_PARITY\_STATE\_DISABLE,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ .parity.rspi\_parity\_mode\ =\ RSPI\_PARITY\_MODE\_ODD,\ .ssl\_select\ =\ RSPI\_SSL\_SELECT\_SSL0,\ .ssl\_level\_keep\ =}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ RSPI\_SSL\_LEVEL\_KEEP,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ .clock\_delay.rspi\_clock\_delay\_count\ =\ RSPI\_CLOCK\_DELAY\_COUNT\_1,\ .clock\_delay.rspi\_clock\_delay\_state\ =}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ RSPI\_CLOCK\_DELAY\_STATE\_DISABLE,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ .ssl\_neg\_delay.rspi\_ssl\_neg\_delay\_count\ =\ RSPI\_SSL\_NEGATION\_DELAY\_1,\ .ssl\_neg\_delay.rspi\_ssl\_neg\_delay\_state\ =}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ RSPI\_SSL\_NEGATION\_DELAY\_DISABLE,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ .access\_delay.rspi\_next\_access\_delay\_count\ =\ RSPI\_NEXT\_ACCESS\_DELAY\_COUNT\_1,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ .access\_delay.rspi\_next\_access\_delay\_state\ =\ RSPI\_NEXT\_ACCESS\_DELAY\_STATE\_DISABLE,\ .byte\_swap\ =}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ RSPI\_BYTE\_SWAP\_DISABLE,\ \}}
+
+\end{DoxyCode}
+RSPI extended configuration for RSPI HAL driver \Hypertarget{common__data_8c_aa1accc5bdb9159a9c85ff6e6c679efe4}\label{common__data_8c_aa1accc5bdb9159a9c85ff6e6c679efe4} 
+\index{common\_data.c@{common\_data.c}!g\_transfer@{g\_transfer}}
+\index{g\_transfer@{g\_transfer}!common\_data.c@{common\_data.c}}
+\doxysubsubsection{\texorpdfstring{g\_transfer}{g\_transfer}}
+{\footnotesize\ttfamily const transfer\+\_\+instance\+\_\+t g\+\_\+transfer}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{\ .p\_ctrl\ =\ \&\mbox{\hyperlink{common__data_8c_ac3cbc2a0f383b69d6cf08075e05d12b4}{g\_transfer\_ctrl}},\ .p\_cfg\ =\ \&\mbox{\hyperlink{common__data_8c_a3f21382025aa973258861c19aa2c4476}{g\_transfer\_cfg}},\ .p\_api\ =\ \&g\_transfer\_on\_dmac\ \}}
+
+\end{DoxyCode}
+\Hypertarget{common__data_8c_a3f21382025aa973258861c19aa2c4476}\label{common__data_8c_a3f21382025aa973258861c19aa2c4476} 
+\index{common\_data.c@{common\_data.c}!g\_transfer\_cfg@{g\_transfer\_cfg}}
+\index{g\_transfer\_cfg@{g\_transfer\_cfg}!common\_data.c@{common\_data.c}}
+\doxysubsubsection{\texorpdfstring{g\_transfer\_cfg}{g\_transfer\_cfg}}
+{\footnotesize\ttfamily const transfer\+\_\+cfg\+\_\+t g\+\_\+transfer\+\_\+cfg}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{\ .p\_info\ =\ \&\mbox{\hyperlink{common__data_8c_ae6858bb9decb4c902af7df44cb7b523e}{g\_transfer\_info}},\ .activation\_source\ =\ ELC\_EVENT\_ADC0\_COMPARE\_MATCH,\ .auto\_enable\ =\ \textcolor{keyword}{false},\ .p\_callback\ =}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}},}
+\DoxyCodeLine{\ \ .p\_context\ =\ \&\mbox{\hyperlink{common__data_8c_aa1accc5bdb9159a9c85ff6e6c679efe4}{g\_transfer}},\ .irq\_ipl\ =\ (14),\ .p\_extend\ =\ \&\mbox{\hyperlink{common__data_8c_accca31f22eb95edea3e2671e11cfc028}{g\_transfer\_extend}},\ \}}
+
+\end{DoxyCode}
+\Hypertarget{common__data_8c_ac3cbc2a0f383b69d6cf08075e05d12b4}\label{common__data_8c_ac3cbc2a0f383b69d6cf08075e05d12b4} 
+\index{common\_data.c@{common\_data.c}!g\_transfer\_ctrl@{g\_transfer\_ctrl}}
+\index{g\_transfer\_ctrl@{g\_transfer\_ctrl}!common\_data.c@{common\_data.c}}
+\doxysubsubsection{\texorpdfstring{g\_transfer\_ctrl}{g\_transfer\_ctrl}}
+{\footnotesize\ttfamily dmac\+\_\+instance\+\_\+ctrl\+\_\+t g\+\_\+transfer\+\_\+ctrl}
+
+\Hypertarget{common__data_8c_accca31f22eb95edea3e2671e11cfc028}\label{common__data_8c_accca31f22eb95edea3e2671e11cfc028} 
+\index{common\_data.c@{common\_data.c}!g\_transfer\_extend@{g\_transfer\_extend}}
+\index{g\_transfer\_extend@{g\_transfer\_extend}!common\_data.c@{common\_data.c}}
+\doxysubsubsection{\texorpdfstring{g\_transfer\_extend}{g\_transfer\_extend}}
+{\footnotesize\ttfamily const transfer\+\_\+on\+\_\+dmac\+\_\+cfg\+\_\+t g\+\_\+transfer\+\_\+extend}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{\ .channel\ =\ 2,\ \}}
+
+\end{DoxyCode}
+\Hypertarget{common__data_8c_ae6858bb9decb4c902af7df44cb7b523e}\label{common__data_8c_ae6858bb9decb4c902af7df44cb7b523e} 
+\index{common\_data.c@{common\_data.c}!g\_transfer\_info@{g\_transfer\_info}}
+\index{g\_transfer\_info@{g\_transfer\_info}!common\_data.c@{common\_data.c}}
+\doxysubsubsection{\texorpdfstring{g\_transfer\_info}{g\_transfer\_info}}
+{\footnotesize\ttfamily transfer\+\_\+info\+\_\+t g\+\_\+transfer\+\_\+info}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{\ .dest\_addr\_mode\ =\ TRANSFER\_ADDR\_MODE\_FIXED,\ .repeat\_area\ =\ TRANSFER\_REPEAT\_AREA\_SOURCE,\ .irq\ =\ TRANSFER\_IRQ\_EACH,}
+\DoxyCodeLine{\ \ .chain\_mode\ =\ TRANSFER\_CHAIN\_MODE\_DISABLED,\ .src\_addr\_mode\ =\ TRANSFER\_ADDR\_MODE\_INCREMENTED,\ .size\ =}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ TRANSFER\_SIZE\_1\_BYTE,}
+\DoxyCodeLine{\ \ .mode\ =\ TRANSFER\_MODE\_NORMAL,\ .p\_dest\ =\ (\textcolor{keywordtype}{void}\ *)\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}},\ .p\_src\ =\ (\textcolor{keywordtype}{void}\ \textcolor{keyword}{const}\ *)\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}},\ .num\_blocks\ =\ 0,\ .length\ =\ 0,\ \}}
+
+\end{DoxyCode}
+\Hypertarget{common__data_8c_a168bb8dc78f007df3dd5e8651e6f37a3}\label{common__data_8c_a168bb8dc78f007df3dd5e8651e6f37a3} 
+\index{common\_data.c@{common\_data.c}!g\_usbx\_number\_of\_interface\_count@{g\_usbx\_number\_of\_interface\_count}}
+\index{g\_usbx\_number\_of\_interface\_count@{g\_usbx\_number\_of\_interface\_count}!common\_data.c@{common\_data.c}}
+\doxysubsubsection{\texorpdfstring{g\_usbx\_number\_of\_interface\_count}{g\_usbx\_number\_of\_interface\_count}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} g\+\_\+usbx\+\_\+number\+\_\+of\+\_\+interface\+\_\+count = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{common__data_8c_ab4fd96ce6c49887b55952cc9d6a0f3cd}\label{common__data_8c_ab4fd96ce6c49887b55952cc9d6a0f3cd} 
+\index{common\_data.c@{common\_data.c}!g\_ux\_device\_class\_storage\_parameter@{g\_ux\_device\_class\_storage\_parameter}}
+\index{g\_ux\_device\_class\_storage\_parameter@{g\_ux\_device\_class\_storage\_parameter}!common\_data.c@{common\_data.c}}
+\doxysubsubsection{\texorpdfstring{g\_ux\_device\_class\_storage\_parameter}{g\_ux\_device\_class\_storage\_parameter}}
+{\footnotesize\ttfamily UX\+\_\+\+SLAVE\+\_\+\+CLASS\+\_\+\+STORAGE\+\_\+\+PARAMETER g\+\_\+ux\+\_\+device\+\_\+class\+\_\+storage\+\_\+parameter\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{common__data_8c_a88683fcaeb14fde667b184cc0253073f}\label{common__data_8c_a88683fcaeb14fde667b184cc0253073f} 
+\index{common\_data.c@{common\_data.c}!g\_ux\_pool\_memory@{g\_ux\_pool\_memory}}
+\index{g\_ux\_pool\_memory@{g\_ux\_pool\_memory}!common\_data.c@{common\_data.c}}
+\doxysubsubsection{\texorpdfstring{g\_ux\_pool\_memory}{g\_ux\_pool\_memory}}
+{\footnotesize\ttfamily CHAR g\+\_\+ux\+\_\+pool\+\_\+memory\mbox{[}18432\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{common__data_8c_acc9ecee573f29fc665e28d8fd30f42b4}\label{common__data_8c_acc9ecee573f29fc665e28d8fd30f42b4} 
+\index{common\_data.c@{common\_data.c}!language\_id\_framework\_default@{language\_id\_framework\_default}}
+\index{language\_id\_framework\_default@{language\_id\_framework\_default}!common\_data.c@{common\_data.c}}
+\doxysubsubsection{\texorpdfstring{language\_id\_framework\_default}{language\_id\_framework\_default}}
+{\footnotesize\ttfamily volatile const UCHAR language\+\_\+id\+\_\+framework\+\_\+default\mbox{[}$\,$\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{\ (\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}})\ (0x0409),\ }
+\DoxyCodeLine{\ \ (\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}})\ (0x0409\ >>\ 8)\ }
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\Hypertarget{common__data_8c_a92224b65fa994ad4f231c203dd3bd544}\label{common__data_8c_a92224b65fa994ad4f231c203dd3bd544} 
+\index{common\_data.c@{common\_data.c}!p\_sf\_curr\_ctrl\_spi\_bus0@{p\_sf\_curr\_ctrl\_spi\_bus0}}
+\index{p\_sf\_curr\_ctrl\_spi\_bus0@{p\_sf\_curr\_ctrl\_spi\_bus0}!common\_data.c@{common\_data.c}}
+\doxysubsubsection{\texorpdfstring{p\_sf\_curr\_ctrl\_spi\_bus0}{p\_sf\_curr\_ctrl\_spi\_bus0}}
+{\footnotesize\ttfamily sf\+\_\+spi\+\_\+ctrl\+\_\+t\texorpdfstring{$\ast$}{*} p\+\_\+sf\+\_\+curr\+\_\+ctrl\+\_\+spi\+\_\+bus0\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{common__data_8c_a1c0e8dd57ba68387918cb46d55242ef3}\label{common__data_8c_a1c0e8dd57ba68387918cb46d55242ef3} 
+\index{common\_data.c@{common\_data.c}!sd\_fx\_media@{sd\_fx\_media}}
+\index{sd\_fx\_media@{sd\_fx\_media}!common\_data.c@{common\_data.c}}
+\doxysubsubsection{\texorpdfstring{sd\_fx\_media}{sd\_fx\_media}}
+{\footnotesize\ttfamily FX\+\_\+\+MEDIA sd\+\_\+fx\+\_\+media}
+
+\Hypertarget{common__data_8c_aecc76f561dbcc0577e23eb502e77038f}\label{common__data_8c_aecc76f561dbcc0577e23eb502e77038f} 
+\index{common\_data.c@{common\_data.c}!sf\_bus\_eventflag\_spi\_bus0@{sf\_bus\_eventflag\_spi\_bus0}}
+\index{sf\_bus\_eventflag\_spi\_bus0@{sf\_bus\_eventflag\_spi\_bus0}!common\_data.c@{common\_data.c}}
+\doxysubsubsection{\texorpdfstring{sf\_bus\_eventflag\_spi\_bus0}{sf\_bus\_eventflag\_spi\_bus0}}
+{\footnotesize\ttfamily TX\+\_\+\+EVENT\+\_\+\+FLAGS\+\_\+\+GROUP sf\+\_\+bus\+\_\+eventflag\+\_\+spi\+\_\+bus0\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{common__data_8c_ace259fe3c5dc475fa18a4cbe959b99ce}\label{common__data_8c_ace259fe3c5dc475fa18a4cbe959b99ce} 
+\index{common\_data.c@{common\_data.c}!sf\_bus\_mutex\_spi\_bus0@{sf\_bus\_mutex\_spi\_bus0}}
+\index{sf\_bus\_mutex\_spi\_bus0@{sf\_bus\_mutex\_spi\_bus0}!common\_data.c@{common\_data.c}}
+\doxysubsubsection{\texorpdfstring{sf\_bus\_mutex\_spi\_bus0}{sf\_bus\_mutex\_spi\_bus0}}
+{\footnotesize\ttfamily TX\+\_\+\+MUTEX sf\+\_\+bus\+\_\+mutex\+\_\+spi\+\_\+bus0\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{common__data_8c_a9c429bf9cd974c89feedc2f37f98939a}\label{common__data_8c_a9c429bf9cd974c89feedc2f37f98939a} 
+\index{common\_data.c@{common\_data.c}!spi\_bus0@{spi\_bus0}}
+\index{spi\_bus0@{spi\_bus0}!common\_data.c@{common\_data.c}}
+\doxysubsubsection{\texorpdfstring{spi\_bus0}{spi\_bus0}}
+{\footnotesize\ttfamily sf\+\_\+spi\+\_\+bus\+\_\+t spi\+\_\+bus0}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{\ .p\_bus\_name\ =\ (\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ *)\ \textcolor{stringliteral}{"{}spi\_bus0"{}},\ .channel\ =\ 0,\ .freq\_hz\_min\ =\ 0,\ .p\_lock\_mutex\ =\ \&\mbox{\hyperlink{common__data_8c_ace259fe3c5dc475fa18a4cbe959b99ce}{sf\_bus\_mutex\_spi\_bus0}},}
+\DoxyCodeLine{\ \ .p\_sync\_eventflag\ =\ \&\mbox{\hyperlink{common__data_8c_aecc76f561dbcc0577e23eb502e77038f}{sf\_bus\_eventflag\_spi\_bus0}},\ .pp\_curr\_ctrl\ =\ (sf\_spi\_ctrl\_t\ **)\ \&\mbox{\hyperlink{common__data_8c_a92224b65fa994ad4f231c203dd3bd544}{p\_sf\_curr\_ctrl\_spi\_bus0}},}
+\DoxyCodeLine{\ \ .p\_lower\_lvl\_api\ =\ (spi\_api\_t\ *)\ \&\mbox{\hyperlink{common__data_8h_ac56a413c5512a6a50a7ce25ee20265fb}{g\_spi\_on\_rspi}},\ .device\_count\ =\ 0,\ \}}
+
+\end{DoxyCode}

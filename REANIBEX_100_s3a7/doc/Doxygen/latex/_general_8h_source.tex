@@ -1,0 +1,83 @@
+\doxysection{General.\+h}
+\hypertarget{_general_8h_source}{}\label{_general_8h_source}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/DRD/General.h@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/DRD/General.h}}
+\mbox{\hyperlink{_general_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{*\ Name\ \ \ \ \ \ :\ Defibrillable\ Rhythm\ Detector\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{*\ Copyright\ :\ Osatu\ S.Coop\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{*\ Compiler\ \ :\ Renesas\ C/C++\ compiler\ for\ SH2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{*\ Target\ \ \ \ :\ Reanibex\ Series\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{******************************************************************************/}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#ifndef\ GENERAL\_h}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#define\ GENERAL\_h}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00023\ \textcolor{comment}{**\ Includes}}
+\DoxyCodeLine{00024\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00027\ \textcolor{comment}{**\ Defines}}
+\DoxyCodeLine{00028\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00029\ \textcolor{comment}{//\ GENERAL\ PARAMETER\ DEFINITION}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ FS\ \ \ \ \ \ \ \ \ \ \ \ \ \ 150L\ \ \ \ \ \ }}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#define\ PI\ \ \ \ \ \ \ \ \ \ \ \ \ \ 3.14159265358979}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#define\ NMW\ \ \ \ \ \ \ \ \ \ \ \ \ ECG\_WIN\_SIZE\_DRD}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#define\ NMF\ \ \ \ \ \ \ \ \ \ \ \ \ 2}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#define\ NW\ \ \ \ \ \ \ \ \ \ \ \ \ \ 2L}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#define\ SNMW\ \ \ \ \ \ \ \ \ \ \ \ 240L}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#define\ NFFT\ \ \ \ \ \ \ \ \ \ \ \ 1024L}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#define\ TRUE\ \ \ \ \ \ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#define\ FALSE\ \ \ \ \ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#define\ ESCALA\ \ \ \ \ \ \ \ \ \ 4095L}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#define\ RANGEmV\ \ \ \ \ \ \ \ \ 20}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{comment}{//\ TYPE\ AND\ SHOCK\ DEFINITION}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#define\ SHOCK\ \ \ \ \ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#define\ NOSHOCK\ \ \ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{comment}{//\ LIMITS\ OF\ MAIN\ DEFINITION}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ bWT\_REG\ \ \ \ \ \ \ \ \ -\/11.2572}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#define\ bCP\_REG\ \ \ \ \ \ \ \ \ 14.9565}}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#define\ bW\_REG\ \ \ \ \ \ \ \ \ \ 0.5831}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#define\ d\_REG\ \ \ \ \ \ \ \ \ \ \ -\/4.0186}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#define\ limREG\ \ \ \ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#define\ limbW\_FD\ \ \ \ \ \ \ \ 0.65}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#define\ limFD\_FD\ \ \ \ \ \ \ \ 2.5}}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#define\ limbWT\_QRS\ \ \ \ \ \ 0.235}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#define\ limbCP\_QRS\ \ \ \ \ \ 0.48}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#define\ maxP\_PIC\ \ \ \ \ \ \ \ 100L}}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#define\ limVal\_PIC\ \ \ \ \ \ 0.14}}
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#define\ SepMin\_PIC\ \ \ \ \ \ 18}}
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#define\ limMin\_PIC\ \ \ \ \ \ 2}}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#define\ limfcaHz\_CAS1\ \ \ 2.5}}
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#define\ limfcaHz\_CAS2\ \ \ 1.3333}}
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#define\ limbCP\_CAS\ \ \ \ \ \ 0.145}}
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#define\ limfC\_CAS\ \ \ \ \ \ \ 2.65}}
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\#define\ limbWT\_CAS\ \ \ \ \ \ 0.400}}
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#define\ limCVT\_CAS\ \ \ \ \ \ 0.15}}
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#define\ limnP\_CAS\ \ \ \ \ \ \ 3}}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00079\ \textcolor{comment}{**\ Typedefs}}
+\DoxyCodeLine{00080\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00083\ \textcolor{comment}{**\ Prototypes}}
+\DoxyCodeLine{00084\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00087\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00088\ \textcolor{preprocessor}{\#endif\ \ }\textcolor{comment}{/*GENERAL\_H*/}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

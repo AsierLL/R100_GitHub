@@ -1,0 +1,79 @@
+\doxysection{C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\+DRD/\+FFT.h File Reference}
+\hypertarget{_f_f_t_8h}{}\label{_f_f_t_8h}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/DRD/FFT.h@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/DRD/FFT.h}}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_f_f_t_8h_a71a73ee9281a958aa9917445fb94f49a}{EFFTALLSCALE}}~(-\/1L)
+\item 
+\#define \mbox{\hyperlink{_f_f_t_8h_a80ed6c99b10145226c952c4942f53f7f}{EFFTMIDSCALE}}~0x55555555L
+\item 
+\#define \mbox{\hyperlink{_f_f_t_8h_af97b0b3b7a25ee4f846ef8e1b5119669}{EFFTNOSCALE}}~0x00000000L
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_f_f_t_8h_a7ff38dad8703a91cfdb242c42f476403}{Fft\+Real}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a2ba621978a511250f7250fb10e05ffbe}{int32\+\_\+t}} output\mbox{[}$\,$\mbox{]}, \mbox{\hyperlink{_s_c_e_2types__basic_8h_a2ba621978a511250f7250fb10e05ffbe}{int32\+\_\+t}} size, \mbox{\hyperlink{_s_c_e_2types__basic_8h_a2ba621978a511250f7250fb10e05ffbe}{int32\+\_\+t}} scale)
+\item 
+void \mbox{\hyperlink{_f_f_t_8h_acf6e4a7efb5cdbcd7b598ee133c477bb}{Gen\+Bit\+Rev}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a2ba621978a511250f7250fb10e05ffbe}{int32\+\_\+t}} size)
+\item 
+void \mbox{\hyperlink{_f_f_t_8h_a0dc7d7ac7e2748a0b52b3f94ab7bd9ba}{Gen\+Twiddle}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a2ba621978a511250f7250fb10e05ffbe}{int32\+\_\+t}} sz)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVersion}{Version}
+0.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2011-\/09-\/21 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+EG (\href{mailto:egarcia@osatu.com}{\texttt{ egarcia@osatu.\+com}}) 
+\end{DoxyAuthor}
+\begin{DoxyWarning}{Warning}
+EG 2011-\/09-\/21 V0.\+0 .-\/ First edition 
+\end{DoxyWarning}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000016}{Bug}}]\end{DoxyRefDesc}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{_f_f_t_8h_a71a73ee9281a958aa9917445fb94f49a}\label{_f_f_t_8h_a71a73ee9281a958aa9917445fb94f49a} 
+\index{FFT.h@{FFT.h}!EFFTALLSCALE@{EFFTALLSCALE}}
+\index{EFFTALLSCALE@{EFFTALLSCALE}!FFT.h@{FFT.h}}
+\doxysubsubsection{\texorpdfstring{EFFTALLSCALE}{EFFTALLSCALE}}
+{\footnotesize\ttfamily \#define EFFTALLSCALE~(-\/1L)}
+
+\Hypertarget{_f_f_t_8h_a80ed6c99b10145226c952c4942f53f7f}\label{_f_f_t_8h_a80ed6c99b10145226c952c4942f53f7f} 
+\index{FFT.h@{FFT.h}!EFFTMIDSCALE@{EFFTMIDSCALE}}
+\index{EFFTMIDSCALE@{EFFTMIDSCALE}!FFT.h@{FFT.h}}
+\doxysubsubsection{\texorpdfstring{EFFTMIDSCALE}{EFFTMIDSCALE}}
+{\footnotesize\ttfamily \#define EFFTMIDSCALE~0x55555555L}
+
+\Hypertarget{_f_f_t_8h_af97b0b3b7a25ee4f846ef8e1b5119669}\label{_f_f_t_8h_af97b0b3b7a25ee4f846ef8e1b5119669} 
+\index{FFT.h@{FFT.h}!EFFTNOSCALE@{EFFTNOSCALE}}
+\index{EFFTNOSCALE@{EFFTNOSCALE}!FFT.h@{FFT.h}}
+\doxysubsubsection{\texorpdfstring{EFFTNOSCALE}{EFFTNOSCALE}}
+{\footnotesize\ttfamily \#define EFFTNOSCALE~0x00000000L}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_f_f_t_8h_a7ff38dad8703a91cfdb242c42f476403}\label{_f_f_t_8h_a7ff38dad8703a91cfdb242c42f476403} 
+\index{FFT.h@{FFT.h}!FftReal@{FftReal}}
+\index{FftReal@{FftReal}!FFT.h@{FFT.h}}
+\doxysubsubsection{\texorpdfstring{FftReal()}{FftReal()}}
+{\footnotesize\ttfamily void Fft\+Real (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a2ba621978a511250f7250fb10e05ffbe}{int32\+\_\+t}}}]{output\mbox{[}$\,$\mbox{]},  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a2ba621978a511250f7250fb10e05ffbe}{int32\+\_\+t}}}]{size,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a2ba621978a511250f7250fb10e05ffbe}{int32\+\_\+t}}}]{scale }\end{DoxyParamCaption})}
+
+\Hypertarget{_f_f_t_8h_acf6e4a7efb5cdbcd7b598ee133c477bb}\label{_f_f_t_8h_acf6e4a7efb5cdbcd7b598ee133c477bb} 
+\index{FFT.h@{FFT.h}!GenBitRev@{GenBitRev}}
+\index{GenBitRev@{GenBitRev}!FFT.h@{FFT.h}}
+\doxysubsubsection{\texorpdfstring{GenBitRev()}{GenBitRev()}}
+{\footnotesize\ttfamily void Gen\+Bit\+Rev (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a2ba621978a511250f7250fb10e05ffbe}{int32\+\_\+t}}}]{size }\end{DoxyParamCaption})}
+
+\Hypertarget{_f_f_t_8h_a0dc7d7ac7e2748a0b52b3f94ab7bd9ba}\label{_f_f_t_8h_a0dc7d7ac7e2748a0b52b3f94ab7bd9ba} 
+\index{FFT.h@{FFT.h}!GenTwiddle@{GenTwiddle}}
+\index{GenTwiddle@{GenTwiddle}!FFT.h@{FFT.h}}
+\doxysubsubsection{\texorpdfstring{GenTwiddle()}{GenTwiddle()}}
+{\footnotesize\ttfamily void Gen\+Twiddle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a2ba621978a511250f7250fb10e05ffbe}{int32\+\_\+t}}}]{sz }\end{DoxyParamCaption})}
+

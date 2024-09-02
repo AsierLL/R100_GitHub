@@ -1,0 +1,236 @@
+\doxysection{C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\+DRD/drd.h File Reference}
+\hypertarget{drd_8h}{}\label{drd_8h}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/DRD/drd.h@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/DRD/drd.h}}
+
+
+Basic Types Definition.  
+
+
+{\ttfamily \#include "{}types\+\_\+basic.\+h"{}}\newline
+Include dependency graph for drd.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=255pt]{drd_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{drd_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_w_s___p_a_r__t}{WS\+\_\+\+PAR\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{struct_d_r_d___d_a_t_a__t}{DRD\+\_\+\+DATA\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{struct_d_r_d___r_e_s_u_l_t__t}{DRD\+\_\+\+RESULT\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{drd_8h_a7e2271364d5cff6f472a2a5a859083d2}{ECG\+\_\+\+WIN\+\_\+\+SIZE\+\_\+\+DRD}}~480
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{drd_8h_a5a8d344de938df8566332f2e9978d079}{TYPO\+\_\+\+RHYTM\+\_\+e}} \{ \newline
+\mbox{\hyperlink{drd_8h_a5a8d344de938df8566332f2e9978d079a7dff49f9ab962e06b767b26f4e88b494}{e\+TYPO\+\_\+\+RHYTM\+\_\+\+ASISTOLIA\+\_\+1}} = 0
+, \mbox{\hyperlink{drd_8h_a5a8d344de938df8566332f2e9978d079ad2a87925e03cf57f747be10946fd3aae}{e\+TYPO\+\_\+\+RHYTM\+\_\+\+NSR}} = 1
+, \mbox{\hyperlink{drd_8h_a5a8d344de938df8566332f2e9978d079ae50076357521b512ebec09c27ebd311a}{e\+TYPO\+\_\+\+RHYTM\+\_\+\+ASISTOLIA\+\_\+2}} = 2
+, \mbox{\hyperlink{drd_8h_a5a8d344de938df8566332f2e9978d079a6c76e5ca49253d06a15a99db3a4d7ac9}{e\+TYPO\+\_\+\+RHYTM\+\_\+\+TV}} = 3
+, \newline
+\mbox{\hyperlink{drd_8h_a5a8d344de938df8566332f2e9978d079a595c65028c2d6e5b190626b42c07520c}{e\+TYPO\+\_\+\+RHYTM\+\_\+\+TSV}} = 4
+, \mbox{\hyperlink{drd_8h_a5a8d344de938df8566332f2e9978d079a402371e175a31095ff97312c2af56ff3}{e\+TYPO\+\_\+\+RHYTM\+\_\+\+TV\+\_\+\+LENTA}} = 5
+, \mbox{\hyperlink{drd_8h_a5a8d344de938df8566332f2e9978d079a2162266541c663312c96689d224c8bb0}{e\+TYPO\+\_\+\+RHYTM\+\_\+\+FV\+\_\+1}} = 6
+, \mbox{\hyperlink{drd_8h_a5a8d344de938df8566332f2e9978d079af7c7677b3875c5cbcd8aea85726d6787}{e\+TYPO\+\_\+\+RHYTM\+\_\+\+FV\+\_\+2}} = 7
+, \newline
+\mbox{\hyperlink{drd_8h_a5a8d344de938df8566332f2e9978d079aa12d6f29ee11a3e863a7840de8242b8a}{e\+TYPO\+\_\+\+RHYTM\+\_\+\+FV\+\_\+3}} = 8
+, \mbox{\hyperlink{drd_8h_a5a8d344de938df8566332f2e9978d079a54d1253860a85d9c1d2b4da5d2674ba5}{e\+TYPO\+\_\+\+RHYTM\+\_\+\+LENTO\+\_\+1}} = 9
+, \mbox{\hyperlink{drd_8h_a5a8d344de938df8566332f2e9978d079aff9372d15aa4029eecde3abb70e2e51f}{e\+TYPO\+\_\+\+RHYTM\+\_\+\+LENTO\+\_\+2}} = 10
+, \mbox{\hyperlink{drd_8h_a5a8d344de938df8566332f2e9978d079a1bf6361e951dd0fae32c779030cba22c}{e\+TYPO\+\_\+\+RHYTM\+\_\+\+LENTO\+\_\+3}} = 11
+, \newline
+\mbox{\hyperlink{drd_8h_a5a8d344de938df8566332f2e9978d079af6b0759f76b2121d9ebfffb36729414e}{e\+TYPO\+\_\+\+RHYTM\+\_\+\+LENTO\+\_\+4}} = 12
+ \}
+\item 
+enum \mbox{\hyperlink{drd_8h_a09b2fccc54d1debfbc2e2d97318859b8}{RHYTHM\+\_\+e}} \{ \newline
+\mbox{\hyperlink{drd_8h_a09b2fccc54d1debfbc2e2d97318859b8ad349a7d26c52823e09dfc0161d181167}{e\+RHYTHM\+\_\+\+UNKNOWN}} = 0x00
+, \mbox{\hyperlink{drd_8h_a09b2fccc54d1debfbc2e2d97318859b8a4f652b6b0507e4deb7149be0f7926ed6}{e\+RHYTHM\+\_\+\+ASYSTOLE}} = 0x01
+, \mbox{\hyperlink{drd_8h_a09b2fccc54d1debfbc2e2d97318859b8a65cf0740ba7ff4a14258d9efe0ea0e26}{e\+RHYTHM\+\_\+\+NORMAL}} = 0x02
+, \mbox{\hyperlink{drd_8h_a09b2fccc54d1debfbc2e2d97318859b8a5009427f2b9a15961a17714c6f387230}{e\+RHYTHM\+\_\+\+VT\+\_\+\+NON\+\_\+\+SHOCK}} = 0x04
+, \newline
+\mbox{\hyperlink{drd_8h_a09b2fccc54d1debfbc2e2d97318859b8a597ae667f5f20dde7a4740cf21eeeca8}{e\+RHYTHM\+\_\+\+VT\+\_\+\+SHOCK}} = 0x08
+, \mbox{\hyperlink{drd_8h_a09b2fccc54d1debfbc2e2d97318859b8a9b064006378e817cd66c75e39ebaa9df}{e\+RHYTHM\+\_\+\+VF\+\_\+\+SHOCK}} = 0x10
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{drd_8h_a604473ae3a07455d5bd16bb301a29fbe}{DRD\+\_\+\+Get\+\_\+\+Result}} (\mbox{\hyperlink{struct_d_r_d___r_e_s_u_l_t__t}{DRD\+\_\+\+RESULT\+\_\+t}} \texorpdfstring{$\ast$}{*}drd\+\_\+param)
+\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{drd_8h_aa0ec36a90113488df81f09b4a315927a}{DRD\+\_\+\+Get\+\_\+\+Rev\+\_\+\+Code}} (void)
+\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{drd_8h_a373b55e912f66d3a802dabd1a604265f}{DRD\+\_\+\+Process\+\_\+\+Ecg}} (const \mbox{\hyperlink{_s_c_e_2types__basic_8h_a269259c924dce846340ddbb810db2e3c}{int16\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Ecg, \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} flag, \mbox{\hyperlink{drd_8h_a09b2fccc54d1debfbc2e2d97318859b8}{RHYTHM\+\_\+e}} \texorpdfstring{$\ast$}{*}p\+\_\+rhythm, \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} flag\+\_\+pediatric)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Basic Types Definition. 
+
+\begin{DoxyVersion}{Version}
+0.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2011-\/09-\/21 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+EG (\href{mailto:egarcia@osatu.com}{\texttt{ egarcia@osatu.\+com}}) 
+\end{DoxyAuthor}
+\begin{DoxyWarning}{Warning}
+EG 2011-\/09-\/21 V0.\+0 .-\/ First edition 
+\end{DoxyWarning}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000015}{Bug}}]\end{DoxyRefDesc}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{drd_8h_a7e2271364d5cff6f472a2a5a859083d2}\label{drd_8h_a7e2271364d5cff6f472a2a5a859083d2} 
+\index{drd.h@{drd.h}!ECG\_WIN\_SIZE\_DRD@{ECG\_WIN\_SIZE\_DRD}}
+\index{ECG\_WIN\_SIZE\_DRD@{ECG\_WIN\_SIZE\_DRD}!drd.h@{drd.h}}
+\doxysubsubsection{\texorpdfstring{ECG\_WIN\_SIZE\_DRD}{ECG\_WIN\_SIZE\_DRD}}
+{\footnotesize\ttfamily \#define ECG\+\_\+\+WIN\+\_\+\+SIZE\+\_\+\+DRD~480}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{drd_8h_a09b2fccc54d1debfbc2e2d97318859b8}\label{drd_8h_a09b2fccc54d1debfbc2e2d97318859b8} 
+\index{drd.h@{drd.h}!RHYTHM\_e@{RHYTHM\_e}}
+\index{RHYTHM\_e@{RHYTHM\_e}!drd.h@{drd.h}}
+\doxysubsubsection{\texorpdfstring{RHYTHM\_e}{RHYTHM\_e}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{drd_8h_a09b2fccc54d1debfbc2e2d97318859b8}{RHYTHM\+\_\+e}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eRHYTHM\_UNKNOWN@{eRHYTHM\_UNKNOWN}!drd.h@{drd.h}}\index{drd.h@{drd.h}!eRHYTHM\_UNKNOWN@{eRHYTHM\_UNKNOWN}}}\Hypertarget{drd_8h_a09b2fccc54d1debfbc2e2d97318859b8ad349a7d26c52823e09dfc0161d181167}\label{drd_8h_a09b2fccc54d1debfbc2e2d97318859b8ad349a7d26c52823e09dfc0161d181167} 
+e\+RHYTHM\+\_\+\+UNKNOWN&not clasified rythm \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eRHYTHM\_ASYSTOLE@{eRHYTHM\_ASYSTOLE}!drd.h@{drd.h}}\index{drd.h@{drd.h}!eRHYTHM\_ASYSTOLE@{eRHYTHM\_ASYSTOLE}}}\Hypertarget{drd_8h_a09b2fccc54d1debfbc2e2d97318859b8a4f652b6b0507e4deb7149be0f7926ed6}\label{drd_8h_a09b2fccc54d1debfbc2e2d97318859b8a4f652b6b0507e4deb7149be0f7926ed6} 
+e\+RHYTHM\+\_\+\+ASYSTOLE&asystole \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eRHYTHM\_NORMAL@{eRHYTHM\_NORMAL}!drd.h@{drd.h}}\index{drd.h@{drd.h}!eRHYTHM\_NORMAL@{eRHYTHM\_NORMAL}}}\Hypertarget{drd_8h_a09b2fccc54d1debfbc2e2d97318859b8a65cf0740ba7ff4a14258d9efe0ea0e26}\label{drd_8h_a09b2fccc54d1debfbc2e2d97318859b8a65cf0740ba7ff4a14258d9efe0ea0e26} 
+e\+RHYTHM\+\_\+\+NORMAL&normal sinus rhythm \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eRHYTHM\_VT\_NON\_SHOCK@{eRHYTHM\_VT\_NON\_SHOCK}!drd.h@{drd.h}}\index{drd.h@{drd.h}!eRHYTHM\_VT\_NON\_SHOCK@{eRHYTHM\_VT\_NON\_SHOCK}}}\Hypertarget{drd_8h_a09b2fccc54d1debfbc2e2d97318859b8a5009427f2b9a15961a17714c6f387230}\label{drd_8h_a09b2fccc54d1debfbc2e2d97318859b8a5009427f2b9a15961a17714c6f387230} 
+e\+RHYTHM\+\_\+\+VT\+\_\+\+NON\+\_\+\+SHOCK&ventricular taquicardia (no shockable) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eRHYTHM\_VT\_SHOCK@{eRHYTHM\_VT\_SHOCK}!drd.h@{drd.h}}\index{drd.h@{drd.h}!eRHYTHM\_VT\_SHOCK@{eRHYTHM\_VT\_SHOCK}}}\Hypertarget{drd_8h_a09b2fccc54d1debfbc2e2d97318859b8a597ae667f5f20dde7a4740cf21eeeca8}\label{drd_8h_a09b2fccc54d1debfbc2e2d97318859b8a597ae667f5f20dde7a4740cf21eeeca8} 
+e\+RHYTHM\+\_\+\+VT\+\_\+\+SHOCK&ventricular taquicardia \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eRHYTHM\_VF\_SHOCK@{eRHYTHM\_VF\_SHOCK}!drd.h@{drd.h}}\index{drd.h@{drd.h}!eRHYTHM\_VF\_SHOCK@{eRHYTHM\_VF\_SHOCK}}}\Hypertarget{drd_8h_a09b2fccc54d1debfbc2e2d97318859b8a9b064006378e817cd66c75e39ebaa9df}\label{drd_8h_a09b2fccc54d1debfbc2e2d97318859b8a9b064006378e817cd66c75e39ebaa9df} 
+e\+RHYTHM\+\_\+\+VF\+\_\+\+SHOCK&ventricular fibrilation \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{drd_8h_a5a8d344de938df8566332f2e9978d079}\label{drd_8h_a5a8d344de938df8566332f2e9978d079} 
+\index{drd.h@{drd.h}!TYPO\_RHYTM\_e@{TYPO\_RHYTM\_e}}
+\index{TYPO\_RHYTM\_e@{TYPO\_RHYTM\_e}!drd.h@{drd.h}}
+\doxysubsubsection{\texorpdfstring{TYPO\_RHYTM\_e}{TYPO\_RHYTM\_e}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{drd_8h_a5a8d344de938df8566332f2e9978d079}{TYPO\+\_\+\+RHYTM\+\_\+e}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eTYPO\_RHYTM\_ASISTOLIA\_1@{eTYPO\_RHYTM\_ASISTOLIA\_1}!drd.h@{drd.h}}\index{drd.h@{drd.h}!eTYPO\_RHYTM\_ASISTOLIA\_1@{eTYPO\_RHYTM\_ASISTOLIA\_1}}}\Hypertarget{drd_8h_a5a8d344de938df8566332f2e9978d079a7dff49f9ab962e06b767b26f4e88b494}\label{drd_8h_a5a8d344de938df8566332f2e9978d079a7dff49f9ab962e06b767b26f4e88b494} 
+e\+TYPO\+\_\+\+RHYTM\+\_\+\+ASISTOLIA\+\_\+1&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eTYPO\_RHYTM\_NSR@{eTYPO\_RHYTM\_NSR}!drd.h@{drd.h}}\index{drd.h@{drd.h}!eTYPO\_RHYTM\_NSR@{eTYPO\_RHYTM\_NSR}}}\Hypertarget{drd_8h_a5a8d344de938df8566332f2e9978d079ad2a87925e03cf57f747be10946fd3aae}\label{drd_8h_a5a8d344de938df8566332f2e9978d079ad2a87925e03cf57f747be10946fd3aae} 
+e\+TYPO\+\_\+\+RHYTM\+\_\+\+NSR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eTYPO\_RHYTM\_ASISTOLIA\_2@{eTYPO\_RHYTM\_ASISTOLIA\_2}!drd.h@{drd.h}}\index{drd.h@{drd.h}!eTYPO\_RHYTM\_ASISTOLIA\_2@{eTYPO\_RHYTM\_ASISTOLIA\_2}}}\Hypertarget{drd_8h_a5a8d344de938df8566332f2e9978d079ae50076357521b512ebec09c27ebd311a}\label{drd_8h_a5a8d344de938df8566332f2e9978d079ae50076357521b512ebec09c27ebd311a} 
+e\+TYPO\+\_\+\+RHYTM\+\_\+\+ASISTOLIA\+\_\+2&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eTYPO\_RHYTM\_TV@{eTYPO\_RHYTM\_TV}!drd.h@{drd.h}}\index{drd.h@{drd.h}!eTYPO\_RHYTM\_TV@{eTYPO\_RHYTM\_TV}}}\Hypertarget{drd_8h_a5a8d344de938df8566332f2e9978d079a6c76e5ca49253d06a15a99db3a4d7ac9}\label{drd_8h_a5a8d344de938df8566332f2e9978d079a6c76e5ca49253d06a15a99db3a4d7ac9} 
+e\+TYPO\+\_\+\+RHYTM\+\_\+\+TV&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eTYPO\_RHYTM\_TSV@{eTYPO\_RHYTM\_TSV}!drd.h@{drd.h}}\index{drd.h@{drd.h}!eTYPO\_RHYTM\_TSV@{eTYPO\_RHYTM\_TSV}}}\Hypertarget{drd_8h_a5a8d344de938df8566332f2e9978d079a595c65028c2d6e5b190626b42c07520c}\label{drd_8h_a5a8d344de938df8566332f2e9978d079a595c65028c2d6e5b190626b42c07520c} 
+e\+TYPO\+\_\+\+RHYTM\+\_\+\+TSV&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eTYPO\_RHYTM\_TV\_LENTA@{eTYPO\_RHYTM\_TV\_LENTA}!drd.h@{drd.h}}\index{drd.h@{drd.h}!eTYPO\_RHYTM\_TV\_LENTA@{eTYPO\_RHYTM\_TV\_LENTA}}}\Hypertarget{drd_8h_a5a8d344de938df8566332f2e9978d079a402371e175a31095ff97312c2af56ff3}\label{drd_8h_a5a8d344de938df8566332f2e9978d079a402371e175a31095ff97312c2af56ff3} 
+e\+TYPO\+\_\+\+RHYTM\+\_\+\+TV\+\_\+\+LENTA&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eTYPO\_RHYTM\_FV\_1@{eTYPO\_RHYTM\_FV\_1}!drd.h@{drd.h}}\index{drd.h@{drd.h}!eTYPO\_RHYTM\_FV\_1@{eTYPO\_RHYTM\_FV\_1}}}\Hypertarget{drd_8h_a5a8d344de938df8566332f2e9978d079a2162266541c663312c96689d224c8bb0}\label{drd_8h_a5a8d344de938df8566332f2e9978d079a2162266541c663312c96689d224c8bb0} 
+e\+TYPO\+\_\+\+RHYTM\+\_\+\+FV\+\_\+1&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eTYPO\_RHYTM\_FV\_2@{eTYPO\_RHYTM\_FV\_2}!drd.h@{drd.h}}\index{drd.h@{drd.h}!eTYPO\_RHYTM\_FV\_2@{eTYPO\_RHYTM\_FV\_2}}}\Hypertarget{drd_8h_a5a8d344de938df8566332f2e9978d079af7c7677b3875c5cbcd8aea85726d6787}\label{drd_8h_a5a8d344de938df8566332f2e9978d079af7c7677b3875c5cbcd8aea85726d6787} 
+e\+TYPO\+\_\+\+RHYTM\+\_\+\+FV\+\_\+2&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eTYPO\_RHYTM\_FV\_3@{eTYPO\_RHYTM\_FV\_3}!drd.h@{drd.h}}\index{drd.h@{drd.h}!eTYPO\_RHYTM\_FV\_3@{eTYPO\_RHYTM\_FV\_3}}}\Hypertarget{drd_8h_a5a8d344de938df8566332f2e9978d079aa12d6f29ee11a3e863a7840de8242b8a}\label{drd_8h_a5a8d344de938df8566332f2e9978d079aa12d6f29ee11a3e863a7840de8242b8a} 
+e\+TYPO\+\_\+\+RHYTM\+\_\+\+FV\+\_\+3&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eTYPO\_RHYTM\_LENTO\_1@{eTYPO\_RHYTM\_LENTO\_1}!drd.h@{drd.h}}\index{drd.h@{drd.h}!eTYPO\_RHYTM\_LENTO\_1@{eTYPO\_RHYTM\_LENTO\_1}}}\Hypertarget{drd_8h_a5a8d344de938df8566332f2e9978d079a54d1253860a85d9c1d2b4da5d2674ba5}\label{drd_8h_a5a8d344de938df8566332f2e9978d079a54d1253860a85d9c1d2b4da5d2674ba5} 
+e\+TYPO\+\_\+\+RHYTM\+\_\+\+LENTO\+\_\+1&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eTYPO\_RHYTM\_LENTO\_2@{eTYPO\_RHYTM\_LENTO\_2}!drd.h@{drd.h}}\index{drd.h@{drd.h}!eTYPO\_RHYTM\_LENTO\_2@{eTYPO\_RHYTM\_LENTO\_2}}}\Hypertarget{drd_8h_a5a8d344de938df8566332f2e9978d079aff9372d15aa4029eecde3abb70e2e51f}\label{drd_8h_a5a8d344de938df8566332f2e9978d079aff9372d15aa4029eecde3abb70e2e51f} 
+e\+TYPO\+\_\+\+RHYTM\+\_\+\+LENTO\+\_\+2&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eTYPO\_RHYTM\_LENTO\_3@{eTYPO\_RHYTM\_LENTO\_3}!drd.h@{drd.h}}\index{drd.h@{drd.h}!eTYPO\_RHYTM\_LENTO\_3@{eTYPO\_RHYTM\_LENTO\_3}}}\Hypertarget{drd_8h_a5a8d344de938df8566332f2e9978d079a1bf6361e951dd0fae32c779030cba22c}\label{drd_8h_a5a8d344de938df8566332f2e9978d079a1bf6361e951dd0fae32c779030cba22c} 
+e\+TYPO\+\_\+\+RHYTM\+\_\+\+LENTO\+\_\+3&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eTYPO\_RHYTM\_LENTO\_4@{eTYPO\_RHYTM\_LENTO\_4}!drd.h@{drd.h}}\index{drd.h@{drd.h}!eTYPO\_RHYTM\_LENTO\_4@{eTYPO\_RHYTM\_LENTO\_4}}}\Hypertarget{drd_8h_a5a8d344de938df8566332f2e9978d079af6b0759f76b2121d9ebfffb36729414e}\label{drd_8h_a5a8d344de938df8566332f2e9978d079af6b0759f76b2121d9ebfffb36729414e} 
+e\+TYPO\+\_\+\+RHYTM\+\_\+\+LENTO\+\_\+4&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{drd_8h_a604473ae3a07455d5bd16bb301a29fbe}\label{drd_8h_a604473ae3a07455d5bd16bb301a29fbe} 
+\index{drd.h@{drd.h}!DRD\_Get\_Result@{DRD\_Get\_Result}}
+\index{DRD\_Get\_Result@{DRD\_Get\_Result}!drd.h@{drd.h}}
+\doxysubsubsection{\texorpdfstring{DRD\_Get\_Result()}{DRD\_Get\_Result()}}
+{\footnotesize\ttfamily void DRD\+\_\+\+Get\+\_\+\+Result (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_d_r_d___r_e_s_u_l_t__t}{DRD\+\_\+\+RESULT\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{drd\+\_\+param }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{drd_8h_a604473ae3a07455d5bd16bb301a29fbe_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{drd_8h_aa0ec36a90113488df81f09b4a315927a}\label{drd_8h_aa0ec36a90113488df81f09b4a315927a} 
+\index{drd.h@{drd.h}!DRD\_Get\_Rev\_Code@{DRD\_Get\_Rev\_Code}}
+\index{DRD\_Get\_Rev\_Code@{DRD\_Get\_Rev\_Code}!drd.h@{drd.h}}
+\doxysubsubsection{\texorpdfstring{DRD\_Get\_Rev\_Code()}{DRD\_Get\_Rev\_Code()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \texorpdfstring{$\ast$}{*} DRD\+\_\+\+Get\+\_\+\+Rev\+\_\+\+Code (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{drd_8h_a373b55e912f66d3a802dabd1a604265f}\label{drd_8h_a373b55e912f66d3a802dabd1a604265f} 
+\index{drd.h@{drd.h}!DRD\_Process\_Ecg@{DRD\_Process\_Ecg}}
+\index{DRD\_Process\_Ecg@{DRD\_Process\_Ecg}!drd.h@{drd.h}}
+\doxysubsubsection{\texorpdfstring{DRD\_Process\_Ecg()}{DRD\_Process\_Ecg()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} DRD\+\_\+\+Process\+\_\+\+Ecg (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{_s_c_e_2types__basic_8h_a269259c924dce846340ddbb810db2e3c}{int16\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Ecg,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}}}]{flag,  }\item[{\mbox{\hyperlink{drd_8h_a09b2fccc54d1debfbc2e2d97318859b8}{RHYTHM\+\_\+e}} \texorpdfstring{$\ast$}{*}}]{p\+\_\+rhythm,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}}}]{flag\+\_\+pediatric }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{drd_8h_a373b55e912f66d3a802dabd1a604265f_icgraph}
+\end{center}
+\end{figure}

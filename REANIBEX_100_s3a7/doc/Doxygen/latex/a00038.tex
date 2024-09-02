@@ -1,0 +1,580 @@
+\doxysection{C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\+R100\+\_\+\+Errors.h File Reference}
+\hypertarget{a00038}{}\label{a00038}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/R100\_Errors.h@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/R100\_Errors.h}}
+{\ttfamily \#include "{}R100\+\_\+\+Errors\+\_\+cfg.\+h"{}}\newline
+Include dependency graph for R100\+\_\+\+Errors.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{a00038_aba51915c87d64af47fb1cc59348961c9}{OK}}~\mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a4f48e4214dad2e7b13ff7edc4feffe94}{e\+ERR\+\_\+\+NONE}}
+\item 
+\#define \mbox{\hyperlink{a00038_a6f1697638c852ea3b0a042a13442a882}{DATA\+\_\+\+NOT\+\_\+\+AVAILABLE}}~-\/1
+\begin{DoxyCompactList}\small\item\em Data is not available. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{a00038_a2b2143bdb035a021756cb3345c36f72e}{APP\+\_\+\+ERR\+\_\+\+TRAP}}(a)~if (a) \{/\texorpdfstring{$\ast$}{*}\+\_\+\+\_\+\+BKPT(0); \texorpdfstring{$\ast$}{*}/\mbox{\hyperlink{a00128_a2c5836202a13b4d23eb7b1b9211db6ac}{Lock\+\_\+on\+\_\+\+Panic}}();\}
+\item 
+\#define \mbox{\hyperlink{a00038_aee6f4b0b74820d727dd8fba4f5efa061}{MAX\+\_\+\+ERRORS}}~256
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \{ \newline
+\mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a4f48e4214dad2e7b13ff7edc4feffe94}{e\+ERR\+\_\+\+NONE}} = 0
+, \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a34f42b64aea207f88cc1ae6b463b9219}{e\+ERR\+\_\+\+OPTION\+\_\+\+DISABLED}} = 1
+, \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a59b4b2f8e8448fc101cdfaa3b46e20b0}{e\+ERR\+\_\+\+NV\+\_\+\+SZ}} = 2
+, \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9aa7c5a5cf38aa255fee51b6d65876f4a6}{e\+ERR\+\_\+\+NFC\+\_\+\+INFO}} = 4
+, \newline
+\mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a390d2cd94365f6a71d32b637d2ce51ed}{e\+ERR\+\_\+\+ZP\+\_\+\+DATA}} = 5
+, \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9aac9201135ebc628e0cad80a132157a35}{e\+ERR\+\_\+\+AUDIO\+\_\+\+MAX}} = 6
+, \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a3f195b3ded315c2c5cff0ffe8976dd6a}{e\+ERR\+\_\+\+DEF\+\_\+\+CHARGING\+\_\+\+FAST}} = 10
+, \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a9898edb874b6b6b25c84313530932892}{e\+ERR\+\_\+\+DEF\+\_\+\+CHARGING\+\_\+\+SLOW}} = 11
+, \newline
+\mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a91f66705eeb810f8612b9bbbf03c92bc}{e\+ERR\+\_\+\+DEF\+\_\+\+DISCHARGING\+\_\+H}} = 12
+, \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a4ad6f4379e739357ca5c8b4eb17476eb}{e\+ERR\+\_\+\+DEF\+\_\+\+DISCHARGING\+\_\+R}} = 13
+, \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a20fbe5f540f31c976c591ad75b4a3b3e}{e\+ERR\+\_\+\+DEF\+\_\+\+SHOCK}} = 14
+, \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9acdc2efbc9e6306e89f11c6fb6d1516a6}{e\+ERR\+\_\+\+DEF\+\_\+\+CURRENT\+\_\+\+SENSE}} = 15
+, \newline
+\mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a1f3a3aee4ff4cd6fceaeb7834a0771ec}{e\+ERR\+\_\+\+ELECTRODE\+\_\+\+EXPIRED}} = 20
+, \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a4970354e4121e20f767337c7ee53cbbf}{e\+ERR\+\_\+\+ELECTRODE\+\_\+\+USED}} = 21
+, \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9ab8de1d45d69f86d99656c4c185d33b30}{e\+ERR\+\_\+\+ELECTRODE\+\_\+\+NOT\+\_\+\+CONNECTED}} = 22
+, \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a1de79b246c27d25bcce94f2c91cfe2ab}{e\+ERR\+\_\+\+ELECTRODE\+\_\+\+WRONG}} = 23
+, \newline
+\mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a9fe0637edbe793dac317a929019f217f}{e\+ERR\+\_\+\+BATTERY\+\_\+\+EXPIRED}} = 30
+, \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9acf5d4b6ccf45326b19b1b57e6d233f55}{e\+ERR\+\_\+\+BATTERY\+\_\+\+UNKNOWN}} = 31
+, \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a9ad9d49b8a1ac5559315c253c87914bb}{e\+ERR\+\_\+\+BATTERY\+\_\+\+LOW}} = 32
+, \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9af0279293762fa15beb176b89d3e38a68}{e\+ERR\+\_\+\+BATTERY\+\_\+\+REPLACE}} = 33
+, \newline
+\mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a392eab9802a13b9e08d26fc591668c8b}{e\+ERR\+\_\+\+BATTERY\+\_\+\+TEMP\+\_\+\+OUT\+\_\+\+RANGE}} = 34
+, \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a0ebefd4a0d6967ec011be0b50654d787}{e\+ERR\+\_\+\+BATTERY\+\_\+\+TEMP\+\_\+\+OUT\+\_\+\+RANGE\+\_\+\+OFF}} = 35
+, \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a077781a0f5535a73409e451779883e65}{e\+RR\+\_\+\+RTC}} = 36
+, \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a78aed6d0ad45f8bae2b98b2d0f70e0ed}{e\+ERR\+\_\+\+SMON\+\_\+\+DCMAIN\+\_\+\+TOO\+\_\+\+HIGH}} = 40
+, \newline
+\mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a117ec9bb17dc4b7a4f1d98c3f4a2bed3}{e\+ERR\+\_\+\+SMON\+\_\+\+DCMAIN\+\_\+\+TOO\+\_\+\+LOW}} = 41
+, \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a01198730067a5bf4035a41015ac8c25f}{e\+ERR\+\_\+\+SMON\+\_\+18\+V\+\_\+\+TOO\+\_\+\+HIGH}} = 42
+, \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a81cd8f8ca98c6697cb9da2bb5c09040a}{e\+ERR\+\_\+\+SMON\+\_\+18\+V\+\_\+\+TOO\+\_\+\+LOW}} = 43
+, \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a602af6bf6848ce46e68f0a2051a66a21}{e\+ERR\+\_\+\+ADS\+\_\+\+DEVICE\+\_\+\+ID}} = 50
+, \newline
+\mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a72a52d464d923f56d616bdbbf751b328}{e\+ERR\+\_\+\+ADS\+\_\+\+DEVICE\+\_\+\+ACCESS}} = 51
+, \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a91c1f80dbeaa65eac5d09a5ebce80983}{e\+ERR\+\_\+\+ADS\+\_\+\+CALIBRATION}} = 52
+, \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a7368545a78f76c5ed719388342832d35}{e\+ERR\+\_\+\+ADS\+\_\+\+PAT\+\_\+\+CONNECTED}} = 53
+, \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a94ea057263ee1e9c89b72d0598c8f934}{e\+ERR\+\_\+\+BOOT\+\_\+\+PROCESSOR}} = 60
+, \newline
+\mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a43fc9663e70109a2f3e956f03ba2a4be}{e\+ERR\+\_\+\+BOOT\+\_\+\+PROCESSOR\+\_\+\+UPDATE}} = 61
+, \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a4648ecdf935d4d978ed9ee1c669cb525}{e\+ERR\+\_\+\+BOOT\+\_\+\+SPI\+\_\+\+MEMORY}} = 62
+, \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a9545930be92e9653a007e67eaea8c3ad}{e\+ERR\+\_\+\+AUDIO\+\_\+\+PLAYER}} = 70
+, \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a8c2d2a7d622a4f772397d251ca744e5e}{e\+ERR\+\_\+\+AUDIO\+\_\+\+QUEUE\+\_\+\+FULL}} = 71
+, \newline
+\mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a9a0e446e3f03cd59d7337506ab3e7348}{e\+ERR\+\_\+\+COMM\+\_\+\+UART\+\_\+\+SELECT}} = 80
+, \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9aaae164fa0e8340837ea80480c86d3b6e}{e\+ERR\+\_\+\+COMM\+\_\+\+UART\+\_\+\+BAUD\+\_\+\+RATE}} = 81
+, \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a7c156b58f06ba925a4e551a54f4fa6c5}{e\+ERR\+\_\+\+COMM\+\_\+\+UART\+\_\+\+RX\+\_\+\+ERROR}} = 82
+, \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9af28710772129336f441525c30b5075a9}{e\+ERR\+\_\+\+COMM\+\_\+\+WIFI\+\_\+\+INIT}} = 100
+, \newline
+\mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9af8f7399823e54a7d216db02711d7a9f5}{e\+ERR\+\_\+\+COMM\+\_\+\+WIFI\+\_\+\+CHECK\+\_\+\+STATUS}} = 101
+, \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a394d5e5c97033458c8c0b24f96933403}{e\+ERR\+\_\+\+COMM\+\_\+\+WIFI\+\_\+\+INIT\+\_\+\+SYNC}} = 102
+, \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9ab11e91e1749e58f6f0f96ff843bd3975}{e\+ERR\+\_\+\+COMM\+\_\+\+WIFI\+\_\+\+INIT\+\_\+\+CONFIG\+\_\+\+UART\+\_\+\+DATA}} = 103
+, \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a9969a2870683d568742b48cf3ffbb95d}{e\+ERR\+\_\+\+COMM\+\_\+\+WIFI\+\_\+\+INIT\+\_\+\+CONFIG\+\_\+\+UART\+\_\+\+BAUD}} = 104
+, \newline
+\mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a8b2102059f6e745ee6b2b35ab0dd02ef}{e\+ERR\+\_\+\+COMM\+\_\+\+WIFI\+\_\+\+INIT\+\_\+\+CONFIG\+\_\+\+UART\+\_\+\+FLOW}} = 105
+, \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a4025a01744fdfaec3b125c154d7f2b02}{e\+ERR\+\_\+\+COMM\+\_\+\+WIFI\+\_\+\+INIT\+\_\+\+CONFIG\+\_\+\+UART\+\_\+\+PARITY}} = 106
+, \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9aa5d06333daf8be31ab68ed9ee86e11ce}{e\+ERR\+\_\+\+COMM\+\_\+\+WIFI\+\_\+\+INIT\+\_\+\+CONFIG\+\_\+\+UART\+\_\+\+STOP}} = 107
+, \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a782684b7c1fdc3f10ef67897af2a5253}{e\+ERR\+\_\+\+COMM\+\_\+\+WIFI\+\_\+\+INIT\+\_\+\+GET\+\_\+\+MAC\+\_\+\+ADDRESS}} = 108
+, \newline
+\mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9ae434f796e437ad5ba47623033b642c0b}{e\+ERR\+\_\+\+COMM\+\_\+\+WIFI\+\_\+\+INIT\+\_\+\+GET\+\_\+\+IP\+\_\+\+ADDRESS}} = 109
+, \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a96fe52dd2173d8e354dd147ee42813b6}{e\+ERR\+\_\+\+COMM\+\_\+\+WIFI\+\_\+\+INIT\+\_\+\+OPEN}} = 110
+, \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9abe745cae6eaf15f79e6e1b0288474fbf}{e\+ERR\+\_\+\+COMM\+\_\+\+WIFI\+\_\+\+CERT\+\_\+\+CLIENT\+\_\+\+ROUTER}} = 111
+, \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9ae0447f3c91c3c51272b0b5d6590c7f6a}{e\+ERR\+\_\+\+COMM\+\_\+\+WIFI\+\_\+\+CERT\+\_\+\+CLIENT\+\_\+\+ROUTER\+\_\+\+CA}} = 112
+, \newline
+\mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9adb85bdda555a136ee143cd4560bc29cd}{e\+ERR\+\_\+\+COMM\+\_\+\+WIFI\+\_\+\+CERT\+\_\+\+CLIENT\+\_\+\+ROUTER\+\_\+\+KEY}} = 113
+, \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a26e281ffab22335b8fc791b9e0ff962a}{e\+ERR\+\_\+\+COMM\+\_\+\+WIFI\+\_\+\+CERT\+\_\+\+EAP\+\_\+\+CONFIG}} = 114
+, \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a1bda7d14737935f001a7b98d4802f4d9}{e\+ERR\+\_\+\+COMM\+\_\+\+WIFI\+\_\+\+CERT\+\_\+\+SERVER\+\_\+\+TLS\+\_\+\+CA}} = 115
+, \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a51b3038886d6bac45dca42ab11715139}{e\+ERR\+\_\+\+COMM\+\_\+\+WIFI\+\_\+\+CERT\+\_\+\+SERVER\+\_\+\+TLS\+\_\+\+CONFIG}} = 116
+, \newline
+\mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a5dd19dea72117d4cf137afd29c09450e}{e\+ERR\+\_\+\+COMM\+\_\+\+WIFI\+\_\+\+CERT\+\_\+\+LIST}} = 117
+, \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a35d6a5eaa54e58a3aafd081704cf537f}{e\+ERR\+\_\+\+COMM\+\_\+\+WIFI\+\_\+\+CERT\+\_\+\+RESET\+\_\+\+STORE}} = 118
+, \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a0e7df6084335fb79e74a4b25f3c0e366}{e\+ERR\+\_\+\+COMM\+\_\+\+WIFI\+\_\+\+OPEN\+\_\+\+TCP}} = 120
+, \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a1534c0fe8a9bc9b8e7d79fdc999effe4}{e\+ERR\+\_\+\+COMM\+\_\+\+WIFI\+\_\+\+CLOSE\+\_\+\+TCP}} = 121
+, \newline
+\mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a5801095e8247ea4f96fe778ba2dd6329}{e\+ERR\+\_\+\+COMM\+\_\+\+WIFI\+\_\+\+OPEN\+\_\+\+UDP}} = 122
+, \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a07d61e922a84276936dd9413cd056f0a}{e\+ERR\+\_\+\+COMM\+\_\+\+WIFI\+\_\+\+CLOSE\+\_\+\+UDP}} = 123
+, \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a319b2bd02bce37c75da77fce9a964ac4}{e\+ERR\+\_\+\+COMM\+\_\+\+WIFI\+\_\+\+OPEN\+\_\+\+UDP\+\_\+\+SERVER}} = 124
+, \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9af7083496f4a071bf142f39969456472c}{e\+ERR\+\_\+\+COMM\+\_\+\+WIFI\+\_\+\+CLOSE\+\_\+\+UDP\+\_\+\+SERVER}} = 125
+, \newline
+\mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a8c662104af63fcbe97241d312788451b}{e\+ERR\+\_\+\+COMM\+\_\+\+WIFI\+\_\+\+OPEN\+\_\+\+TLS}} = 126
+, \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9aad7299cfb8a37995dbd8347f3502e18a}{e\+ERR\+\_\+\+COMM\+\_\+\+WIFI\+\_\+\+CLOSE\+\_\+\+TLS}} = 127
+, \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a62bcbe6194fa1ef7570a5e706cf9de62}{e\+ERR\+\_\+\+COMM\+\_\+\+WIFI\+\_\+\+SERVER\+\_\+\+ALIVE}} = 129
+, \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9ae9de01556d5f3e2549bb28a4fe892597}{e\+ERR\+\_\+\+COMM\+\_\+\+WIFI\+\_\+\+SEND\+\_\+\+FRAME\+\_\+\+TEST}} = 130
+, \newline
+\mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a00f0148bd392a3d72021a30ea9c7fb49}{e\+ERR\+\_\+\+COMM\+\_\+\+WIFI\+\_\+\+SEND\+\_\+\+FRAME\+\_\+\+ALERT}} = 131
+, \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a7b2ebb4c0ca85eb0e2e2bb3622c65b21}{e\+ERR\+\_\+\+COMM\+\_\+\+WIFI\+\_\+\+SEND\+\_\+\+FRAME\+\_\+\+GPS}} = 132
+, \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a30a354f309afdc9ff6eaf6e95b5d329d}{e\+ERR\+\_\+\+COMM\+\_\+\+WIFI\+\_\+\+SEND\+\_\+\+EPISODE}} = 133
+, \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a1adf9c407872a594ded9fd5b028aa258}{e\+ERR\+\_\+\+COMM\+\_\+\+WIFI\+\_\+\+SEND\+\_\+\+TEST}} = 134
+, \newline
+\mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a835bdbe16fb2c21b22551d699fee038a}{e\+ERR\+\_\+\+COMM\+\_\+\+WIFI\+\_\+\+SEND\+\_\+\+DATA}} = 135
+, \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a369740b85f664812c14baf766335e837}{e\+ERR\+\_\+\+COMM\+\_\+\+WIFI\+\_\+\+RECEIVE\+\_\+\+UPGRADE\+\_\+\+FILE}} = 136
+, \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9afd2c25a07dd3ec60f9e18c8ce2b8fe88}{e\+ERR\+\_\+\+COMM\+\_\+\+WIFI\+\_\+\+RECEIVE\+\_\+\+CONFIG\+\_\+\+FILE}} = 137
+, \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9ad8d92f4b184ed1778beca0723c746dc4}{e\+RR\+\_\+\+COMM\+\_\+\+WIFI\+\_\+\+SERVER\+\_\+\+RPS\+\_\+\+ER}} = 139
+, \newline
+\mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a7912afb6e34de929e3469ad376f7729a}{e\+ERR\+\_\+\+COMM\+\_\+\+SIGFOX}} = 140
+, \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9ab5020abe288f28adb710d796e1c21fe3}{e\+ERR\+\_\+\+COMM\+\_\+\+SIGFOX\+\_\+\+STATUS}} = 141
+, \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a82112dc45a8a58367a0e331dbe081819}{e\+ERR\+\_\+\+COMM\+\_\+\+SIGFOX\+\_\+\+MAX\+\_\+\+POWER}} = 142
+, \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a30b8b0f8b90d71e9d2c9baca87b0c82e}{e\+ERR\+\_\+\+COMM\+\_\+\+SIGFOX\+\_\+\+RX}} = 143
+, \newline
+\mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a7a7a2a40fcf762eb57d93f58da28b742}{e\+ERR\+\_\+\+COMM\+\_\+\+SIGFOX\+\_\+\+TEST\+\_\+\+TX\+\_\+\+FREQ}} = 144
+, \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9af647bffc07c95ae3e9e6545e8ffb858b}{e\+ERR\+\_\+\+COMM\+\_\+\+SIGFOX\+\_\+\+TEST\+\_\+\+RX\+\_\+\+FREQ}} = 145
+, \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a297ef01c0a8c2df1269f122bdda222d2}{e\+ERR\+\_\+\+COMM\+\_\+\+SIGFOX\+\_\+\+CW\+\_\+\+TEST\+\_\+\+START}} = 146
+, \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9ab84497cc7fbd467d11b9f48c23ee53b2}{e\+ERR\+\_\+\+COMM\+\_\+\+SIGFOX\+\_\+\+CW\+\_\+\+TEST\+\_\+\+STOP}} = 147
+, \newline
+\mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a81cbed10f9ea508f9729cae0eae14747}{e\+ERR\+\_\+\+COMM\+\_\+\+SIGFOX\+\_\+\+RX\+\_\+\+GFSK\+\_\+\+TEST}} = 148
+, \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9aad441fa60c028a12d56dbeff429d6a46}{e\+ERR\+\_\+\+COMM\+\_\+\+GPS}} = 150
+, \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9aaf2af7016d77a5b1516c1f41f685557f}{e\+ERR\+\_\+\+COMM\+\_\+\+ACC}} = 160
+, \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a7927d5bd44eef8945739fb275e6ba7c6}{e\+ERR\+\_\+\+COMM\+\_\+\+ACC\+\_\+\+PRESENCE}} = 161
+, \newline
+\mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a802d3aa38a1ee1e6c4a71c3d8ecfd2e4}{e\+ERR\+\_\+\+COMM\+\_\+\+ACC\+\_\+\+CONFIGURATION}} = 162
+, \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9ab525ba1b98a7a6e1a9c751fe5988b366}{e\+ERR\+\_\+\+COMM\+\_\+\+ACC\+\_\+\+INTERRUPT}} = 163
+, \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a64199dc4a6bb5aa036f56535c67306be}{e\+ERR\+\_\+\+KEYS}} = 180
+, \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9acf2a2dd01893d32ac086d383fea152a6}{e\+ERR\+\_\+\+LEDS}} = 181
+, \newline
+\mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a1fc94fb9ad0928613de2d406beea29d5}{e\+RR\+\_\+\+CRYPTO\+\_\+\+AUTH}} = 189
+, \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a4f170d0a64533010c69b7c473ec6e134}{e\+RR\+\_\+\+EXPIRED\+\_\+\+CERT\+\_\+\+TLS}} = 190
+, \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a3726c64dd5b0234233936e57ba6ccd98}{e\+RR\+\_\+\+EXPIRED\+\_\+\+SOON\+\_\+\+CERT\+\_\+\+TLS}} = 191
+, \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a3e873cebcc3edb9b09b9c401c95d68f9}{e\+RR\+\_\+\+EXPIRED\+\_\+\+WPA\+\_\+\+EAP}} = 192
+, \newline
+\mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a22fe407847dd67980023cb8b13944185}{e\+RR\+\_\+\+EXPIRED\+\_\+\+SOON\+\_\+\+WPA\+\_\+\+EAP}} = 193
+, \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9af031c3e455eaaef06f17c6eb9b95b11c}{e\+ERR\+\_\+\+END}} = MAX\+\_\+\+ERRORS-\/1
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{a00038_a2b2143bdb035a021756cb3345c36f72e}\label{a00038_a2b2143bdb035a021756cb3345c36f72e} 
+\index{R100\_Errors.h@{R100\_Errors.h}!APP\_ERR\_TRAP@{APP\_ERR\_TRAP}}
+\index{APP\_ERR\_TRAP@{APP\_ERR\_TRAP}!R100\_Errors.h@{R100\_Errors.h}}
+\doxysubsubsection{\texorpdfstring{APP\_ERR\_TRAP}{APP\_ERR\_TRAP}}
+{\footnotesize\ttfamily \#define APP\+\_\+\+ERR\+\_\+\+TRAP(\begin{DoxyParamCaption}\item[{}]{a }\end{DoxyParamCaption})~if (a) \{/\texorpdfstring{$\ast$}{*}\+\_\+\+\_\+\+BKPT(0); \texorpdfstring{$\ast$}{*}/\mbox{\hyperlink{a00128_a2c5836202a13b4d23eb7b1b9211db6ac}{Lock\+\_\+on\+\_\+\+Panic}}();\}}
+
+\Hypertarget{a00038_a6f1697638c852ea3b0a042a13442a882}\label{a00038_a6f1697638c852ea3b0a042a13442a882} 
+\index{R100\_Errors.h@{R100\_Errors.h}!DATA\_NOT\_AVAILABLE@{DATA\_NOT\_AVAILABLE}}
+\index{DATA\_NOT\_AVAILABLE@{DATA\_NOT\_AVAILABLE}!R100\_Errors.h@{R100\_Errors.h}}
+\doxysubsubsection{\texorpdfstring{DATA\_NOT\_AVAILABLE}{DATA\_NOT\_AVAILABLE}}
+{\footnotesize\ttfamily \#define DATA\+\_\+\+NOT\+\_\+\+AVAILABLE~-\/1}
+
+
+
+Data is not available. 
+
+\Hypertarget{a00038_aee6f4b0b74820d727dd8fba4f5efa061}\label{a00038_aee6f4b0b74820d727dd8fba4f5efa061} 
+\index{R100\_Errors.h@{R100\_Errors.h}!MAX\_ERRORS@{MAX\_ERRORS}}
+\index{MAX\_ERRORS@{MAX\_ERRORS}!R100\_Errors.h@{R100\_Errors.h}}
+\doxysubsubsection{\texorpdfstring{MAX\_ERRORS}{MAX\_ERRORS}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+ERRORS~256}
+
+\Hypertarget{a00038_aba51915c87d64af47fb1cc59348961c9}\label{a00038_aba51915c87d64af47fb1cc59348961c9} 
+\index{R100\_Errors.h@{R100\_Errors.h}!OK@{OK}}
+\index{OK@{OK}!R100\_Errors.h@{R100\_Errors.h}}
+\doxysubsubsection{\texorpdfstring{OK}{OK}}
+{\footnotesize\ttfamily \#define OK~\mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a4f48e4214dad2e7b13ff7edc4feffe94}{e\+ERR\+\_\+\+NONE}}}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}\label{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9} 
+\index{R100\_Errors.h@{R100\_Errors.h}!ERROR\_ID\_e@{ERROR\_ID\_e}}
+\index{ERROR\_ID\_e@{ERROR\_ID\_e}!R100\_Errors.h@{R100\_Errors.h}}
+\doxysubsubsection{\texorpdfstring{ERROR\_ID\_e}{ERROR\_ID\_e}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eERR\_NONE@{eERR\_NONE}!R100\_Errors.h@{R100\_Errors.h}}\index{R100\_Errors.h@{R100\_Errors.h}!eERR\_NONE@{eERR\_NONE}}}\Hypertarget{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a4f48e4214dad2e7b13ff7edc4feffe94}\label{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a4f48e4214dad2e7b13ff7edc4feffe94} 
+e\+ERR\+\_\+\+NONE&OK condition\+: no error. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eERR\_OPTION\_DISABLED@{eERR\_OPTION\_DISABLED}!R100\_Errors.h@{R100\_Errors.h}}\index{R100\_Errors.h@{R100\_Errors.h}!eERR\_OPTION\_DISABLED@{eERR\_OPTION\_DISABLED}}}\Hypertarget{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a34f42b64aea207f88cc1ae6b463b9219}\label{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a34f42b64aea207f88cc1ae6b463b9219} 
+e\+ERR\+\_\+\+OPTION\+\_\+\+DISABLED&Option is disabled. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eERR\_NV\_SZ@{eERR\_NV\_SZ}!R100\_Errors.h@{R100\_Errors.h}}\index{R100\_Errors.h@{R100\_Errors.h}!eERR\_NV\_SZ@{eERR\_NV\_SZ}}}\Hypertarget{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a59b4b2f8e8448fc101cdfaa3b46e20b0}\label{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a59b4b2f8e8448fc101cdfaa3b46e20b0} 
+e\+ERR\+\_\+\+NV\+\_\+\+SZ&Error in non-\/volatile data \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eERR\_NFC\_INFO@{eERR\_NFC\_INFO}!R100\_Errors.h@{R100\_Errors.h}}\index{R100\_Errors.h@{R100\_Errors.h}!eERR\_NFC\_INFO@{eERR\_NFC\_INFO}}}\Hypertarget{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9aa7c5a5cf38aa255fee51b6d65876f4a6}\label{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9aa7c5a5cf38aa255fee51b6d65876f4a6} 
+e\+ERR\+\_\+\+NFC\+\_\+\+INFO&free to use = 3, NFC info is not available \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eERR\_ZP\_DATA@{eERR\_ZP\_DATA}!R100\_Errors.h@{R100\_Errors.h}}\index{R100\_Errors.h@{R100\_Errors.h}!eERR\_ZP\_DATA@{eERR\_ZP\_DATA}}}\Hypertarget{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a390d2cd94365f6a71d32b637d2ce51ed}\label{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a390d2cd94365f6a71d32b637d2ce51ed} 
+e\+ERR\+\_\+\+ZP\+\_\+\+DATA&ZP data are wrong. Calibration required. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eERR\_AUDIO\_MAX@{eERR\_AUDIO\_MAX}!R100\_Errors.h@{R100\_Errors.h}}\index{R100\_Errors.h@{R100\_Errors.h}!eERR\_AUDIO\_MAX@{eERR\_AUDIO\_MAX}}}\Hypertarget{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9aac9201135ebc628e0cad80a132157a35}\label{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9aac9201135ebc628e0cad80a132157a35} 
+e\+ERR\+\_\+\+AUDIO\+\_\+\+MAX&Minimum number of audio files is not correct \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eERR\_DEF\_CHARGING\_FAST@{eERR\_DEF\_CHARGING\_FAST}!R100\_Errors.h@{R100\_Errors.h}}\index{R100\_Errors.h@{R100\_Errors.h}!eERR\_DEF\_CHARGING\_FAST@{eERR\_DEF\_CHARGING\_FAST}}}\Hypertarget{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a3f195b3ded315c2c5cff0ffe8976dd6a}\label{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a3f195b3ded315c2c5cff0ffe8976dd6a} 
+e\+ERR\+\_\+\+DEF\+\_\+\+CHARGING\+\_\+\+FAST&The capacitor has charged very fast. free to use = 7, free to use = 8, free to use = 9, \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eERR\_DEF\_CHARGING\_SLOW@{eERR\_DEF\_CHARGING\_SLOW}!R100\_Errors.h@{R100\_Errors.h}}\index{R100\_Errors.h@{R100\_Errors.h}!eERR\_DEF\_CHARGING\_SLOW@{eERR\_DEF\_CHARGING\_SLOW}}}\Hypertarget{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a9898edb874b6b6b25c84313530932892}\label{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a9898edb874b6b6b25c84313530932892} 
+e\+ERR\+\_\+\+DEF\+\_\+\+CHARGING\+\_\+\+SLOW&The capacitor has charged very slow. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eERR\_DEF\_DISCHARGING\_H@{eERR\_DEF\_DISCHARGING\_H}!R100\_Errors.h@{R100\_Errors.h}}\index{R100\_Errors.h@{R100\_Errors.h}!eERR\_DEF\_DISCHARGING\_H@{eERR\_DEF\_DISCHARGING\_H}}}\Hypertarget{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a91f66705eeb810f8612b9bbbf03c92bc}\label{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a91f66705eeb810f8612b9bbbf03c92bc} 
+e\+ERR\+\_\+\+DEF\+\_\+\+DISCHARGING\+\_\+H&The CAP could not be discharged by the H hybrid. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eERR\_DEF\_DISCHARGING\_R@{eERR\_DEF\_DISCHARGING\_R}!R100\_Errors.h@{R100\_Errors.h}}\index{R100\_Errors.h@{R100\_Errors.h}!eERR\_DEF\_DISCHARGING\_R@{eERR\_DEF\_DISCHARGING\_R}}}\Hypertarget{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a4ad6f4379e739357ca5c8b4eb17476eb}\label{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a4ad6f4379e739357ca5c8b4eb17476eb} 
+e\+ERR\+\_\+\+DEF\+\_\+\+DISCHARGING\+\_\+R&The CAP could not be discharged by the relay. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eERR\_DEF\_SHOCK@{eERR\_DEF\_SHOCK}!R100\_Errors.h@{R100\_Errors.h}}\index{R100\_Errors.h@{R100\_Errors.h}!eERR\_DEF\_SHOCK@{eERR\_DEF\_SHOCK}}}\Hypertarget{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a20fbe5f540f31c976c591ad75b4a3b3e}\label{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a20fbe5f540f31c976c591ad75b4a3b3e} 
+e\+ERR\+\_\+\+DEF\+\_\+\+SHOCK&Error during shock. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eERR\_DEF\_CURRENT\_SENSE@{eERR\_DEF\_CURRENT\_SENSE}!R100\_Errors.h@{R100\_Errors.h}}\index{R100\_Errors.h@{R100\_Errors.h}!eERR\_DEF\_CURRENT\_SENSE@{eERR\_DEF\_CURRENT\_SENSE}}}\Hypertarget{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9acdc2efbc9e6306e89f11c6fb6d1516a6}\label{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9acdc2efbc9e6306e89f11c6fb6d1516a6} 
+e\+ERR\+\_\+\+DEF\+\_\+\+CURRENT\+\_\+\+SENSE&Error in capacitor current sense circuit \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eERR\_ELECTRODE\_EXPIRED@{eERR\_ELECTRODE\_EXPIRED}!R100\_Errors.h@{R100\_Errors.h}}\index{R100\_Errors.h@{R100\_Errors.h}!eERR\_ELECTRODE\_EXPIRED@{eERR\_ELECTRODE\_EXPIRED}}}\Hypertarget{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a1f3a3aee4ff4cd6fceaeb7834a0771ec}\label{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a1f3a3aee4ff4cd6fceaeb7834a0771ec} 
+e\+ERR\+\_\+\+ELECTRODE\+\_\+\+EXPIRED&Expired pads. free to use = 16, free to use = 17, free to use = 18, free to use = 19, \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eERR\_ELECTRODE\_USED@{eERR\_ELECTRODE\_USED}!R100\_Errors.h@{R100\_Errors.h}}\index{R100\_Errors.h@{R100\_Errors.h}!eERR\_ELECTRODE\_USED@{eERR\_ELECTRODE\_USED}}}\Hypertarget{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a4970354e4121e20f767337c7ee53cbbf}\label{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a4970354e4121e20f767337c7ee53cbbf} 
+e\+ERR\+\_\+\+ELECTRODE\+\_\+\+USED&Used pads. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eERR\_ELECTRODE\_NOT\_CONNECTED@{eERR\_ELECTRODE\_NOT\_CONNECTED}!R100\_Errors.h@{R100\_Errors.h}}\index{R100\_Errors.h@{R100\_Errors.h}!eERR\_ELECTRODE\_NOT\_CONNECTED@{eERR\_ELECTRODE\_NOT\_CONNECTED}}}\Hypertarget{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9ab8de1d45d69f86d99656c4c185d33b30}\label{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9ab8de1d45d69f86d99656c4c185d33b30} 
+e\+ERR\+\_\+\+ELECTRODE\+\_\+\+NOT\+\_\+\+CONNECTED&No pads connected during the test. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eERR\_ELECTRODE\_WRONG@{eERR\_ELECTRODE\_WRONG}!R100\_Errors.h@{R100\_Errors.h}}\index{R100\_Errors.h@{R100\_Errors.h}!eERR\_ELECTRODE\_WRONG@{eERR\_ELECTRODE\_WRONG}}}\Hypertarget{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a1de79b246c27d25bcce94f2c91cfe2ab}\label{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a1de79b246c27d25bcce94f2c91cfe2ab} 
+e\+ERR\+\_\+\+ELECTRODE\+\_\+\+WRONG&Electrodes are incorrent \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eERR\_BATTERY\_EXPIRED@{eERR\_BATTERY\_EXPIRED}!R100\_Errors.h@{R100\_Errors.h}}\index{R100\_Errors.h@{R100\_Errors.h}!eERR\_BATTERY\_EXPIRED@{eERR\_BATTERY\_EXPIRED}}}\Hypertarget{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a9fe0637edbe793dac317a929019f217f}\label{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a9fe0637edbe793dac317a929019f217f} 
+e\+ERR\+\_\+\+BATTERY\+\_\+\+EXPIRED&Expired battery. free to use = 24, free to use = 25, free to use = 26, free to use = 27, free to use = 28, free to use = 29, \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eERR\_BATTERY\_UNKNOWN@{eERR\_BATTERY\_UNKNOWN}!R100\_Errors.h@{R100\_Errors.h}}\index{R100\_Errors.h@{R100\_Errors.h}!eERR\_BATTERY\_UNKNOWN@{eERR\_BATTERY\_UNKNOWN}}}\Hypertarget{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9acf5d4b6ccf45326b19b1b57e6d233f55}\label{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9acf5d4b6ccf45326b19b1b57e6d233f55} 
+e\+ERR\+\_\+\+BATTERY\+\_\+\+UNKNOWN&Battery not identified. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eERR\_BATTERY\_LOW@{eERR\_BATTERY\_LOW}!R100\_Errors.h@{R100\_Errors.h}}\index{R100\_Errors.h@{R100\_Errors.h}!eERR\_BATTERY\_LOW@{eERR\_BATTERY\_LOW}}}\Hypertarget{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a9ad9d49b8a1ac5559315c253c87914bb}\label{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a9ad9d49b8a1ac5559315c253c87914bb} 
+e\+ERR\+\_\+\+BATTERY\+\_\+\+LOW&Low battery (\texorpdfstring{$<$}{<}20\%) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eERR\_BATTERY\_REPLACE@{eERR\_BATTERY\_REPLACE}!R100\_Errors.h@{R100\_Errors.h}}\index{R100\_Errors.h@{R100\_Errors.h}!eERR\_BATTERY\_REPLACE@{eERR\_BATTERY\_REPLACE}}}\Hypertarget{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9af0279293762fa15beb176b89d3e38a68}\label{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9af0279293762fa15beb176b89d3e38a68} 
+e\+ERR\+\_\+\+BATTERY\+\_\+\+REPLACE&Replace battery (\texorpdfstring{$<$}{<}10\%) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eERR\_BATTERY\_TEMP\_OUT\_RANGE@{eERR\_BATTERY\_TEMP\_OUT\_RANGE}!R100\_Errors.h@{R100\_Errors.h}}\index{R100\_Errors.h@{R100\_Errors.h}!eERR\_BATTERY\_TEMP\_OUT\_RANGE@{eERR\_BATTERY\_TEMP\_OUT\_RANGE}}}\Hypertarget{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a392eab9802a13b9e08d26fc591668c8b}\label{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a392eab9802a13b9e08d26fc591668c8b} 
+e\+ERR\+\_\+\+BATTERY\+\_\+\+TEMP\+\_\+\+OUT\+\_\+\+RANGE&Battery temperature out of range. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eERR\_BATTERY\_TEMP\_OUT\_RANGE\_OFF@{eERR\_BATTERY\_TEMP\_OUT\_RANGE\_OFF}!R100\_Errors.h@{R100\_Errors.h}}\index{R100\_Errors.h@{R100\_Errors.h}!eERR\_BATTERY\_TEMP\_OUT\_RANGE\_OFF@{eERR\_BATTERY\_TEMP\_OUT\_RANGE\_OFF}}}\Hypertarget{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a0ebefd4a0d6967ec011be0b50654d787}\label{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a0ebefd4a0d6967ec011be0b50654d787} 
+e\+ERR\+\_\+\+BATTERY\+\_\+\+TEMP\+\_\+\+OUT\+\_\+\+RANGE\+\_\+\+OFF&Battery temperature out of range OFF device. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eRR\_RTC@{eRR\_RTC}!R100\_Errors.h@{R100\_Errors.h}}\index{R100\_Errors.h@{R100\_Errors.h}!eRR\_RTC@{eRR\_RTC}}}\Hypertarget{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a077781a0f5535a73409e451779883e65}\label{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a077781a0f5535a73409e451779883e65} 
+e\+RR\+\_\+\+RTC&Battery RTC reading error \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eERR\_SMON\_DCMAIN\_TOO\_HIGH@{eERR\_SMON\_DCMAIN\_TOO\_HIGH}!R100\_Errors.h@{R100\_Errors.h}}\index{R100\_Errors.h@{R100\_Errors.h}!eERR\_SMON\_DCMAIN\_TOO\_HIGH@{eERR\_SMON\_DCMAIN\_TOO\_HIGH}}}\Hypertarget{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a78aed6d0ad45f8bae2b98b2d0f70e0ed}\label{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a78aed6d0ad45f8bae2b98b2d0f70e0ed} 
+e\+ERR\+\_\+\+SMON\+\_\+\+DCMAIN\+\_\+\+TOO\+\_\+\+HIGH&Power supply is too high. free to use = 37, free to use = 38, free to use = 39, \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eERR\_SMON\_DCMAIN\_TOO\_LOW@{eERR\_SMON\_DCMAIN\_TOO\_LOW}!R100\_Errors.h@{R100\_Errors.h}}\index{R100\_Errors.h@{R100\_Errors.h}!eERR\_SMON\_DCMAIN\_TOO\_LOW@{eERR\_SMON\_DCMAIN\_TOO\_LOW}}}\Hypertarget{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a117ec9bb17dc4b7a4f1d98c3f4a2bed3}\label{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a117ec9bb17dc4b7a4f1d98c3f4a2bed3} 
+e\+ERR\+\_\+\+SMON\+\_\+\+DCMAIN\+\_\+\+TOO\+\_\+\+LOW&Power supply is too low. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eERR\_SMON\_18V\_TOO\_HIGH@{eERR\_SMON\_18V\_TOO\_HIGH}!R100\_Errors.h@{R100\_Errors.h}}\index{R100\_Errors.h@{R100\_Errors.h}!eERR\_SMON\_18V\_TOO\_HIGH@{eERR\_SMON\_18V\_TOO\_HIGH}}}\Hypertarget{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a01198730067a5bf4035a41015ac8c25f}\label{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a01198730067a5bf4035a41015ac8c25f} 
+e\+ERR\+\_\+\+SMON\+\_\+18\+V\+\_\+\+TOO\+\_\+\+HIGH&Capacitor power supply is too high. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eERR\_SMON\_18V\_TOO\_LOW@{eERR\_SMON\_18V\_TOO\_LOW}!R100\_Errors.h@{R100\_Errors.h}}\index{R100\_Errors.h@{R100\_Errors.h}!eERR\_SMON\_18V\_TOO\_LOW@{eERR\_SMON\_18V\_TOO\_LOW}}}\Hypertarget{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a81cd8f8ca98c6697cb9da2bb5c09040a}\label{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a81cd8f8ca98c6697cb9da2bb5c09040a} 
+e\+ERR\+\_\+\+SMON\+\_\+18\+V\+\_\+\+TOO\+\_\+\+LOW&Capacitor power supply is too low \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eERR\_ADS\_DEVICE\_ID@{eERR\_ADS\_DEVICE\_ID}!R100\_Errors.h@{R100\_Errors.h}}\index{R100\_Errors.h@{R100\_Errors.h}!eERR\_ADS\_DEVICE\_ID@{eERR\_ADS\_DEVICE\_ID}}}\Hypertarget{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a602af6bf6848ce46e68f0a2051a66a21}\label{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a602af6bf6848ce46e68f0a2051a66a21} 
+e\+ERR\+\_\+\+ADS\+\_\+\+DEVICE\+\_\+\+ID&Error in state of ADS. free to use = 44, free to use = 45, free to use = 46, free to use = 47, free to use = 48, free to use = 49, \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eERR\_ADS\_DEVICE\_ACCESS@{eERR\_ADS\_DEVICE\_ACCESS}!R100\_Errors.h@{R100\_Errors.h}}\index{R100\_Errors.h@{R100\_Errors.h}!eERR\_ADS\_DEVICE\_ACCESS@{eERR\_ADS\_DEVICE\_ACCESS}}}\Hypertarget{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a72a52d464d923f56d616bdbbf751b328}\label{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a72a52d464d923f56d616bdbbf751b328} 
+e\+ERR\+\_\+\+ADS\+\_\+\+DEVICE\+\_\+\+ACCESS&Error in patient module. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eERR\_ADS\_CALIBRATION@{eERR\_ADS\_CALIBRATION}!R100\_Errors.h@{R100\_Errors.h}}\index{R100\_Errors.h@{R100\_Errors.h}!eERR\_ADS\_CALIBRATION@{eERR\_ADS\_CALIBRATION}}}\Hypertarget{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a91c1f80dbeaa65eac5d09a5ebce80983}\label{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a91c1f80dbeaa65eac5d09a5ebce80983} 
+e\+ERR\+\_\+\+ADS\+\_\+\+CALIBRATION&Device calibration error. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eERR\_ADS\_PAT\_CONNECTED@{eERR\_ADS\_PAT\_CONNECTED}!R100\_Errors.h@{R100\_Errors.h}}\index{R100\_Errors.h@{R100\_Errors.h}!eERR\_ADS\_PAT\_CONNECTED@{eERR\_ADS\_PAT\_CONNECTED}}}\Hypertarget{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a7368545a78f76c5ed719388342832d35}\label{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a7368545a78f76c5ed719388342832d35} 
+e\+ERR\+\_\+\+ADS\+\_\+\+PAT\+\_\+\+CONNECTED&The patient is connected \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eERR\_BOOT\_PROCESSOR@{eERR\_BOOT\_PROCESSOR}!R100\_Errors.h@{R100\_Errors.h}}\index{R100\_Errors.h@{R100\_Errors.h}!eERR\_BOOT\_PROCESSOR@{eERR\_BOOT\_PROCESSOR}}}\Hypertarget{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a94ea057263ee1e9c89b72d0598c8f934}\label{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a94ea057263ee1e9c89b72d0598c8f934} 
+e\+ERR\+\_\+\+BOOT\+\_\+\+PROCESSOR&Bootloader processor is not responding. free to use = 54, free to use = 55, free to use = 56, free to use = 57, free to use = 58, free to use = 59, \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eERR\_BOOT\_PROCESSOR\_UPDATE@{eERR\_BOOT\_PROCESSOR\_UPDATE}!R100\_Errors.h@{R100\_Errors.h}}\index{R100\_Errors.h@{R100\_Errors.h}!eERR\_BOOT\_PROCESSOR\_UPDATE@{eERR\_BOOT\_PROCESSOR\_UPDATE}}}\Hypertarget{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a43fc9663e70109a2f3e956f03ba2a4be}\label{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a43fc9663e70109a2f3e956f03ba2a4be} 
+e\+ERR\+\_\+\+BOOT\+\_\+\+PROCESSOR\+\_\+\+UPDATE&Error during the upgrade process. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eERR\_BOOT\_SPI\_MEMORY@{eERR\_BOOT\_SPI\_MEMORY}!R100\_Errors.h@{R100\_Errors.h}}\index{R100\_Errors.h@{R100\_Errors.h}!eERR\_BOOT\_SPI\_MEMORY@{eERR\_BOOT\_SPI\_MEMORY}}}\Hypertarget{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a4648ecdf935d4d978ed9ee1c669cb525}\label{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a4648ecdf935d4d978ed9ee1c669cb525} 
+e\+ERR\+\_\+\+BOOT\+\_\+\+SPI\+\_\+\+MEMORY&Error in SPI memory \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eERR\_AUDIO\_PLAYER@{eERR\_AUDIO\_PLAYER}!R100\_Errors.h@{R100\_Errors.h}}\index{R100\_Errors.h@{R100\_Errors.h}!eERR\_AUDIO\_PLAYER@{eERR\_AUDIO\_PLAYER}}}\Hypertarget{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a9545930be92e9653a007e67eaea8c3ad}\label{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a9545930be92e9653a007e67eaea8c3ad} 
+e\+ERR\+\_\+\+AUDIO\+\_\+\+PLAYER&Error in audio player. free to use = 63, free to use = 64, free to use = 65, free to use = 66, free to use = 67, free to use = 68, free to use = 69, \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eERR\_AUDIO\_QUEUE\_FULL@{eERR\_AUDIO\_QUEUE\_FULL}!R100\_Errors.h@{R100\_Errors.h}}\index{R100\_Errors.h@{R100\_Errors.h}!eERR\_AUDIO\_QUEUE\_FULL@{eERR\_AUDIO\_QUEUE\_FULL}}}\Hypertarget{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a8c2d2a7d622a4f772397d251ca744e5e}\label{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a8c2d2a7d622a4f772397d251ca744e5e} 
+e\+ERR\+\_\+\+AUDIO\+\_\+\+QUEUE\+\_\+\+FULL&Concatenated queue is full \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eERR\_COMM\_UART\_SELECT@{eERR\_COMM\_UART\_SELECT}!R100\_Errors.h@{R100\_Errors.h}}\index{R100\_Errors.h@{R100\_Errors.h}!eERR\_COMM\_UART\_SELECT@{eERR\_COMM\_UART\_SELECT}}}\Hypertarget{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a9a0e446e3f03cd59d7337506ab3e7348}\label{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a9a0e446e3f03cd59d7337506ab3e7348} 
+e\+ERR\+\_\+\+COMM\+\_\+\+UART\+\_\+\+SELECT&Error in the select of the UART for comms. free to use = 72, free to use = 73, free to use = 74, free to use = 75, free to use = 76, free to use = 77, free to use = 78, free to use = 79, \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eERR\_COMM\_UART\_BAUD\_RATE@{eERR\_COMM\_UART\_BAUD\_RATE}!R100\_Errors.h@{R100\_Errors.h}}\index{R100\_Errors.h@{R100\_Errors.h}!eERR\_COMM\_UART\_BAUD\_RATE@{eERR\_COMM\_UART\_BAUD\_RATE}}}\Hypertarget{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9aaae164fa0e8340837ea80480c86d3b6e}\label{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9aaae164fa0e8340837ea80480c86d3b6e} 
+e\+ERR\+\_\+\+COMM\+\_\+\+UART\+\_\+\+BAUD\+\_\+\+RATE&Error in the UART baud rate setting. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eERR\_COMM\_UART\_RX\_ERROR@{eERR\_COMM\_UART\_RX\_ERROR}!R100\_Errors.h@{R100\_Errors.h}}\index{R100\_Errors.h@{R100\_Errors.h}!eERR\_COMM\_UART\_RX\_ERROR@{eERR\_COMM\_UART\_RX\_ERROR}}}\Hypertarget{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a7c156b58f06ba925a4e551a54f4fa6c5}\label{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a7c156b58f06ba925a4e551a54f4fa6c5} 
+e\+ERR\+\_\+\+COMM\+\_\+\+UART\+\_\+\+RX\+\_\+\+ERROR&Error in the UART data reception \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eERR\_COMM\_WIFI\_INIT@{eERR\_COMM\_WIFI\_INIT}!R100\_Errors.h@{R100\_Errors.h}}\index{R100\_Errors.h@{R100\_Errors.h}!eERR\_COMM\_WIFI\_INIT@{eERR\_COMM\_WIFI\_INIT}}}\Hypertarget{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9af28710772129336f441525c30b5075a9}\label{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9af28710772129336f441525c30b5075a9} 
+e\+ERR\+\_\+\+COMM\+\_\+\+WIFI\+\_\+\+INIT&Wi-\/\+Fi module initializing error. free to use = 83, free to use = 84, free to use = 85, free to use = 86, free to use = 87, free to use = 88, free to use = 89, free to use = 90, free to use = 91, free to use = 92, free to use = 93, free to use = 94, free to use = 95, free to use = 96, free to use = 97, free to use = 98, free to use = 99, \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eERR\_COMM\_WIFI\_CHECK\_STATUS@{eERR\_COMM\_WIFI\_CHECK\_STATUS}!R100\_Errors.h@{R100\_Errors.h}}\index{R100\_Errors.h@{R100\_Errors.h}!eERR\_COMM\_WIFI\_CHECK\_STATUS@{eERR\_COMM\_WIFI\_CHECK\_STATUS}}}\Hypertarget{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9af8f7399823e54a7d216db02711d7a9f5}\label{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9af8f7399823e54a7d216db02711d7a9f5} 
+e\+ERR\+\_\+\+COMM\+\_\+\+WIFI\+\_\+\+CHECK\+\_\+\+STATUS&Wi-\/\+Fi module check status error. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eERR\_COMM\_WIFI\_INIT\_SYNC@{eERR\_COMM\_WIFI\_INIT\_SYNC}!R100\_Errors.h@{R100\_Errors.h}}\index{R100\_Errors.h@{R100\_Errors.h}!eERR\_COMM\_WIFI\_INIT\_SYNC@{eERR\_COMM\_WIFI\_INIT\_SYNC}}}\Hypertarget{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a394d5e5c97033458c8c0b24f96933403}\label{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a394d5e5c97033458c8c0b24f96933403} 
+e\+ERR\+\_\+\+COMM\+\_\+\+WIFI\+\_\+\+INIT\+\_\+\+SYNC&Wi-\/\+Fi module synchronization error. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eERR\_COMM\_WIFI\_INIT\_CONFIG\_UART\_DATA@{eERR\_COMM\_WIFI\_INIT\_CONFIG\_UART\_DATA}!R100\_Errors.h@{R100\_Errors.h}}\index{R100\_Errors.h@{R100\_Errors.h}!eERR\_COMM\_WIFI\_INIT\_CONFIG\_UART\_DATA@{eERR\_COMM\_WIFI\_INIT\_CONFIG\_UART\_DATA}}}\Hypertarget{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9ab11e91e1749e58f6f0f96ff843bd3975}\label{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9ab11e91e1749e58f6f0f96ff843bd3975} 
+e\+ERR\+\_\+\+COMM\+\_\+\+WIFI\+\_\+\+INIT\+\_\+\+CONFIG\+\_\+\+UART\+\_\+\+DATA&Wi-\/\+Fi configuration UART data bits error. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eERR\_COMM\_WIFI\_INIT\_CONFIG\_UART\_BAUD@{eERR\_COMM\_WIFI\_INIT\_CONFIG\_UART\_BAUD}!R100\_Errors.h@{R100\_Errors.h}}\index{R100\_Errors.h@{R100\_Errors.h}!eERR\_COMM\_WIFI\_INIT\_CONFIG\_UART\_BAUD@{eERR\_COMM\_WIFI\_INIT\_CONFIG\_UART\_BAUD}}}\Hypertarget{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a9969a2870683d568742b48cf3ffbb95d}\label{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a9969a2870683d568742b48cf3ffbb95d} 
+e\+ERR\+\_\+\+COMM\+\_\+\+WIFI\+\_\+\+INIT\+\_\+\+CONFIG\+\_\+\+UART\+\_\+\+BAUD&Wi-\/\+Fi configuration UART baud rate error. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eERR\_COMM\_WIFI\_INIT\_CONFIG\_UART\_FLOW@{eERR\_COMM\_WIFI\_INIT\_CONFIG\_UART\_FLOW}!R100\_Errors.h@{R100\_Errors.h}}\index{R100\_Errors.h@{R100\_Errors.h}!eERR\_COMM\_WIFI\_INIT\_CONFIG\_UART\_FLOW@{eERR\_COMM\_WIFI\_INIT\_CONFIG\_UART\_FLOW}}}\Hypertarget{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a8b2102059f6e745ee6b2b35ab0dd02ef}\label{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a8b2102059f6e745ee6b2b35ab0dd02ef} 
+e\+ERR\+\_\+\+COMM\+\_\+\+WIFI\+\_\+\+INIT\+\_\+\+CONFIG\+\_\+\+UART\+\_\+\+FLOW&Wi-\/\+Fi configuration UART flow control error. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eERR\_COMM\_WIFI\_INIT\_CONFIG\_UART\_PARITY@{eERR\_COMM\_WIFI\_INIT\_CONFIG\_UART\_PARITY}!R100\_Errors.h@{R100\_Errors.h}}\index{R100\_Errors.h@{R100\_Errors.h}!eERR\_COMM\_WIFI\_INIT\_CONFIG\_UART\_PARITY@{eERR\_COMM\_WIFI\_INIT\_CONFIG\_UART\_PARITY}}}\Hypertarget{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a4025a01744fdfaec3b125c154d7f2b02}\label{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a4025a01744fdfaec3b125c154d7f2b02} 
+e\+ERR\+\_\+\+COMM\+\_\+\+WIFI\+\_\+\+INIT\+\_\+\+CONFIG\+\_\+\+UART\+\_\+\+PARITY&Wi-\/\+Ficonfiguration UART parity error. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eERR\_COMM\_WIFI\_INIT\_CONFIG\_UART\_STOP@{eERR\_COMM\_WIFI\_INIT\_CONFIG\_UART\_STOP}!R100\_Errors.h@{R100\_Errors.h}}\index{R100\_Errors.h@{R100\_Errors.h}!eERR\_COMM\_WIFI\_INIT\_CONFIG\_UART\_STOP@{eERR\_COMM\_WIFI\_INIT\_CONFIG\_UART\_STOP}}}\Hypertarget{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9aa5d06333daf8be31ab68ed9ee86e11ce}\label{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9aa5d06333daf8be31ab68ed9ee86e11ce} 
+e\+ERR\+\_\+\+COMM\+\_\+\+WIFI\+\_\+\+INIT\+\_\+\+CONFIG\+\_\+\+UART\+\_\+\+STOP&Wi-\/\+Fi configuration UART stop bits error. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eERR\_COMM\_WIFI\_INIT\_GET\_MAC\_ADDRESS@{eERR\_COMM\_WIFI\_INIT\_GET\_MAC\_ADDRESS}!R100\_Errors.h@{R100\_Errors.h}}\index{R100\_Errors.h@{R100\_Errors.h}!eERR\_COMM\_WIFI\_INIT\_GET\_MAC\_ADDRESS@{eERR\_COMM\_WIFI\_INIT\_GET\_MAC\_ADDRESS}}}\Hypertarget{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a782684b7c1fdc3f10ef67897af2a5253}\label{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a782684b7c1fdc3f10ef67897af2a5253} 
+e\+ERR\+\_\+\+COMM\+\_\+\+WIFI\+\_\+\+INIT\+\_\+\+GET\+\_\+\+MAC\+\_\+\+ADDRESS&Wi-\/\+Fi module get MAC address error. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eERR\_COMM\_WIFI\_INIT\_GET\_IP\_ADDRESS@{eERR\_COMM\_WIFI\_INIT\_GET\_IP\_ADDRESS}!R100\_Errors.h@{R100\_Errors.h}}\index{R100\_Errors.h@{R100\_Errors.h}!eERR\_COMM\_WIFI\_INIT\_GET\_IP\_ADDRESS@{eERR\_COMM\_WIFI\_INIT\_GET\_IP\_ADDRESS}}}\Hypertarget{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9ae434f796e437ad5ba47623033b642c0b}\label{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9ae434f796e437ad5ba47623033b642c0b} 
+e\+ERR\+\_\+\+COMM\+\_\+\+WIFI\+\_\+\+INIT\+\_\+\+GET\+\_\+\+IP\+\_\+\+ADDRESS&Wi-\/\+Fi module get IP address error. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eERR\_COMM\_WIFI\_INIT\_OPEN@{eERR\_COMM\_WIFI\_INIT\_OPEN}!R100\_Errors.h@{R100\_Errors.h}}\index{R100\_Errors.h@{R100\_Errors.h}!eERR\_COMM\_WIFI\_INIT\_OPEN@{eERR\_COMM\_WIFI\_INIT\_OPEN}}}\Hypertarget{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a96fe52dd2173d8e354dd147ee42813b6}\label{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a96fe52dd2173d8e354dd147ee42813b6} 
+e\+ERR\+\_\+\+COMM\+\_\+\+WIFI\+\_\+\+INIT\+\_\+\+OPEN&Wi-\/\+Fi module open comunication error. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eERR\_COMM\_WIFI\_CERT\_CLIENT\_ROUTER@{eERR\_COMM\_WIFI\_CERT\_CLIENT\_ROUTER}!R100\_Errors.h@{R100\_Errors.h}}\index{R100\_Errors.h@{R100\_Errors.h}!eERR\_COMM\_WIFI\_CERT\_CLIENT\_ROUTER@{eERR\_COMM\_WIFI\_CERT\_CLIENT\_ROUTER}}}\Hypertarget{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9abe745cae6eaf15f79e6e1b0288474fbf}\label{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9abe745cae6eaf15f79e6e1b0288474fbf} 
+e\+ERR\+\_\+\+COMM\+\_\+\+WIFI\+\_\+\+CERT\+\_\+\+CLIENT\+\_\+\+ROUTER&Wi-\/\+Fi client certficate configuration error. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eERR\_COMM\_WIFI\_CERT\_CLIENT\_ROUTER\_CA@{eERR\_COMM\_WIFI\_CERT\_CLIENT\_ROUTER\_CA}!R100\_Errors.h@{R100\_Errors.h}}\index{R100\_Errors.h@{R100\_Errors.h}!eERR\_COMM\_WIFI\_CERT\_CLIENT\_ROUTER\_CA@{eERR\_COMM\_WIFI\_CERT\_CLIENT\_ROUTER\_CA}}}\Hypertarget{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9ae0447f3c91c3c51272b0b5d6590c7f6a}\label{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9ae0447f3c91c3c51272b0b5d6590c7f6a} 
+e\+ERR\+\_\+\+COMM\+\_\+\+WIFI\+\_\+\+CERT\+\_\+\+CLIENT\+\_\+\+ROUTER\+\_\+\+CA&Wi-\/\+Fi client CA certficate configuration error. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eERR\_COMM\_WIFI\_CERT\_CLIENT\_ROUTER\_KEY@{eERR\_COMM\_WIFI\_CERT\_CLIENT\_ROUTER\_KEY}!R100\_Errors.h@{R100\_Errors.h}}\index{R100\_Errors.h@{R100\_Errors.h}!eERR\_COMM\_WIFI\_CERT\_CLIENT\_ROUTER\_KEY@{eERR\_COMM\_WIFI\_CERT\_CLIENT\_ROUTER\_KEY}}}\Hypertarget{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9adb85bdda555a136ee143cd4560bc29cd}\label{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9adb85bdda555a136ee143cd4560bc29cd} 
+e\+ERR\+\_\+\+COMM\+\_\+\+WIFI\+\_\+\+CERT\+\_\+\+CLIENT\+\_\+\+ROUTER\+\_\+\+KEY&Wi-\/\+Fi client key certficate configuration error. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eERR\_COMM\_WIFI\_CERT\_EAP\_CONFIG@{eERR\_COMM\_WIFI\_CERT\_EAP\_CONFIG}!R100\_Errors.h@{R100\_Errors.h}}\index{R100\_Errors.h@{R100\_Errors.h}!eERR\_COMM\_WIFI\_CERT\_EAP\_CONFIG@{eERR\_COMM\_WIFI\_CERT\_EAP\_CONFIG}}}\Hypertarget{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a26e281ffab22335b8fc791b9e0ff962a}\label{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a26e281ffab22335b8fc791b9e0ff962a} 
+e\+ERR\+\_\+\+COMM\+\_\+\+WIFI\+\_\+\+CERT\+\_\+\+EAP\+\_\+\+CONFIG&Wi-\/\+Fi EAP certficate configuration error. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eERR\_COMM\_WIFI\_CERT\_SERVER\_TLS\_CA@{eERR\_COMM\_WIFI\_CERT\_SERVER\_TLS\_CA}!R100\_Errors.h@{R100\_Errors.h}}\index{R100\_Errors.h@{R100\_Errors.h}!eERR\_COMM\_WIFI\_CERT\_SERVER\_TLS\_CA@{eERR\_COMM\_WIFI\_CERT\_SERVER\_TLS\_CA}}}\Hypertarget{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a1bda7d14737935f001a7b98d4802f4d9}\label{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a1bda7d14737935f001a7b98d4802f4d9} 
+e\+ERR\+\_\+\+COMM\+\_\+\+WIFI\+\_\+\+CERT\+\_\+\+SERVER\+\_\+\+TLS\+\_\+\+CA&Wi-\/\+Fiserver TLS CA certficate configuration error. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eERR\_COMM\_WIFI\_CERT\_SERVER\_TLS\_CONFIG@{eERR\_COMM\_WIFI\_CERT\_SERVER\_TLS\_CONFIG}!R100\_Errors.h@{R100\_Errors.h}}\index{R100\_Errors.h@{R100\_Errors.h}!eERR\_COMM\_WIFI\_CERT\_SERVER\_TLS\_CONFIG@{eERR\_COMM\_WIFI\_CERT\_SERVER\_TLS\_CONFIG}}}\Hypertarget{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a51b3038886d6bac45dca42ab11715139}\label{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a51b3038886d6bac45dca42ab11715139} 
+e\+ERR\+\_\+\+COMM\+\_\+\+WIFI\+\_\+\+CERT\+\_\+\+SERVER\+\_\+\+TLS\+\_\+\+CONFIG&Wi-\/\+Fi server TLS certficate configuration error. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eERR\_COMM\_WIFI\_CERT\_LIST@{eERR\_COMM\_WIFI\_CERT\_LIST}!R100\_Errors.h@{R100\_Errors.h}}\index{R100\_Errors.h@{R100\_Errors.h}!eERR\_COMM\_WIFI\_CERT\_LIST@{eERR\_COMM\_WIFI\_CERT\_LIST}}}\Hypertarget{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a5dd19dea72117d4cf137afd29c09450e}\label{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a5dd19dea72117d4cf137afd29c09450e} 
+e\+ERR\+\_\+\+COMM\+\_\+\+WIFI\+\_\+\+CERT\+\_\+\+LIST&Wi-\/\+Fi certficate listed error. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eERR\_COMM\_WIFI\_CERT\_RESET\_STORE@{eERR\_COMM\_WIFI\_CERT\_RESET\_STORE}!R100\_Errors.h@{R100\_Errors.h}}\index{R100\_Errors.h@{R100\_Errors.h}!eERR\_COMM\_WIFI\_CERT\_RESET\_STORE@{eERR\_COMM\_WIFI\_CERT\_RESET\_STORE}}}\Hypertarget{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a35d6a5eaa54e58a3aafd081704cf537f}\label{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a35d6a5eaa54e58a3aafd081704cf537f} 
+e\+ERR\+\_\+\+COMM\+\_\+\+WIFI\+\_\+\+CERT\+\_\+\+RESET\+\_\+\+STORE&Wi-\/\+Fi certficate storage error \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eERR\_COMM\_WIFI\_OPEN\_TCP@{eERR\_COMM\_WIFI\_OPEN\_TCP}!R100\_Errors.h@{R100\_Errors.h}}\index{R100\_Errors.h@{R100\_Errors.h}!eERR\_COMM\_WIFI\_OPEN\_TCP@{eERR\_COMM\_WIFI\_OPEN\_TCP}}}\Hypertarget{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a0e7df6084335fb79e74a4b25f3c0e366}\label{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a0e7df6084335fb79e74a4b25f3c0e366} 
+e\+ERR\+\_\+\+COMM\+\_\+\+WIFI\+\_\+\+OPEN\+\_\+\+TCP&free to use = 119, Wi-\/\+Fi TCP port opening error \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eERR\_COMM\_WIFI\_CLOSE\_TCP@{eERR\_COMM\_WIFI\_CLOSE\_TCP}!R100\_Errors.h@{R100\_Errors.h}}\index{R100\_Errors.h@{R100\_Errors.h}!eERR\_COMM\_WIFI\_CLOSE\_TCP@{eERR\_COMM\_WIFI\_CLOSE\_TCP}}}\Hypertarget{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a1534c0fe8a9bc9b8e7d79fdc999effe4}\label{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a1534c0fe8a9bc9b8e7d79fdc999effe4} 
+e\+ERR\+\_\+\+COMM\+\_\+\+WIFI\+\_\+\+CLOSE\+\_\+\+TCP&Wi-\/\+Fi TCP port closing error. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eERR\_COMM\_WIFI\_OPEN\_UDP@{eERR\_COMM\_WIFI\_OPEN\_UDP}!R100\_Errors.h@{R100\_Errors.h}}\index{R100\_Errors.h@{R100\_Errors.h}!eERR\_COMM\_WIFI\_OPEN\_UDP@{eERR\_COMM\_WIFI\_OPEN\_UDP}}}\Hypertarget{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a5801095e8247ea4f96fe778ba2dd6329}\label{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a5801095e8247ea4f96fe778ba2dd6329} 
+e\+ERR\+\_\+\+COMM\+\_\+\+WIFI\+\_\+\+OPEN\+\_\+\+UDP&Wi-\/\+Fi UDP port opening error. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eERR\_COMM\_WIFI\_CLOSE\_UDP@{eERR\_COMM\_WIFI\_CLOSE\_UDP}!R100\_Errors.h@{R100\_Errors.h}}\index{R100\_Errors.h@{R100\_Errors.h}!eERR\_COMM\_WIFI\_CLOSE\_UDP@{eERR\_COMM\_WIFI\_CLOSE\_UDP}}}\Hypertarget{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a07d61e922a84276936dd9413cd056f0a}\label{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a07d61e922a84276936dd9413cd056f0a} 
+e\+ERR\+\_\+\+COMM\+\_\+\+WIFI\+\_\+\+CLOSE\+\_\+\+UDP&Wi-\/\+Fi UDP port closing error. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eERR\_COMM\_WIFI\_OPEN\_UDP\_SERVER@{eERR\_COMM\_WIFI\_OPEN\_UDP\_SERVER}!R100\_Errors.h@{R100\_Errors.h}}\index{R100\_Errors.h@{R100\_Errors.h}!eERR\_COMM\_WIFI\_OPEN\_UDP\_SERVER@{eERR\_COMM\_WIFI\_OPEN\_UDP\_SERVER}}}\Hypertarget{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a319b2bd02bce37c75da77fce9a964ac4}\label{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a319b2bd02bce37c75da77fce9a964ac4} 
+e\+ERR\+\_\+\+COMM\+\_\+\+WIFI\+\_\+\+OPEN\+\_\+\+UDP\+\_\+\+SERVER&Wi-\/\+Fi UDP server port opening error. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eERR\_COMM\_WIFI\_CLOSE\_UDP\_SERVER@{eERR\_COMM\_WIFI\_CLOSE\_UDP\_SERVER}!R100\_Errors.h@{R100\_Errors.h}}\index{R100\_Errors.h@{R100\_Errors.h}!eERR\_COMM\_WIFI\_CLOSE\_UDP\_SERVER@{eERR\_COMM\_WIFI\_CLOSE\_UDP\_SERVER}}}\Hypertarget{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9af7083496f4a071bf142f39969456472c}\label{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9af7083496f4a071bf142f39969456472c} 
+e\+ERR\+\_\+\+COMM\+\_\+\+WIFI\+\_\+\+CLOSE\+\_\+\+UDP\+\_\+\+SERVER&Wi-\/\+Fi UDP server port closing error. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eERR\_COMM\_WIFI\_OPEN\_TLS@{eERR\_COMM\_WIFI\_OPEN\_TLS}!R100\_Errors.h@{R100\_Errors.h}}\index{R100\_Errors.h@{R100\_Errors.h}!eERR\_COMM\_WIFI\_OPEN\_TLS@{eERR\_COMM\_WIFI\_OPEN\_TLS}}}\Hypertarget{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a8c662104af63fcbe97241d312788451b}\label{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a8c662104af63fcbe97241d312788451b} 
+e\+ERR\+\_\+\+COMM\+\_\+\+WIFI\+\_\+\+OPEN\+\_\+\+TLS&Wi-\/\+Fi TLS port opening error. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eERR\_COMM\_WIFI\_CLOSE\_TLS@{eERR\_COMM\_WIFI\_CLOSE\_TLS}!R100\_Errors.h@{R100\_Errors.h}}\index{R100\_Errors.h@{R100\_Errors.h}!eERR\_COMM\_WIFI\_CLOSE\_TLS@{eERR\_COMM\_WIFI\_CLOSE\_TLS}}}\Hypertarget{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9aad7299cfb8a37995dbd8347f3502e18a}\label{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9aad7299cfb8a37995dbd8347f3502e18a} 
+e\+ERR\+\_\+\+COMM\+\_\+\+WIFI\+\_\+\+CLOSE\+\_\+\+TLS&Wi-\/\+Fi TLS port closing error \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eERR\_COMM\_WIFI\_SERVER\_ALIVE@{eERR\_COMM\_WIFI\_SERVER\_ALIVE}!R100\_Errors.h@{R100\_Errors.h}}\index{R100\_Errors.h@{R100\_Errors.h}!eERR\_COMM\_WIFI\_SERVER\_ALIVE@{eERR\_COMM\_WIFI\_SERVER\_ALIVE}}}\Hypertarget{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a62bcbe6194fa1ef7570a5e706cf9de62}\label{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a62bcbe6194fa1ef7570a5e706cf9de62} 
+e\+ERR\+\_\+\+COMM\+\_\+\+WIFI\+\_\+\+SERVER\+\_\+\+ALIVE&free to use = 128, Wi-\/\+Fi server alive sending error \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eERR\_COMM\_WIFI\_SEND\_FRAME\_TEST@{eERR\_COMM\_WIFI\_SEND\_FRAME\_TEST}!R100\_Errors.h@{R100\_Errors.h}}\index{R100\_Errors.h@{R100\_Errors.h}!eERR\_COMM\_WIFI\_SEND\_FRAME\_TEST@{eERR\_COMM\_WIFI\_SEND\_FRAME\_TEST}}}\Hypertarget{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9ae9de01556d5f3e2549bb28a4fe892597}\label{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9ae9de01556d5f3e2549bb28a4fe892597} 
+e\+ERR\+\_\+\+COMM\+\_\+\+WIFI\+\_\+\+SEND\+\_\+\+FRAME\+\_\+\+TEST&Wi-\/\+Fi test data frame sending error. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eERR\_COMM\_WIFI\_SEND\_FRAME\_ALERT@{eERR\_COMM\_WIFI\_SEND\_FRAME\_ALERT}!R100\_Errors.h@{R100\_Errors.h}}\index{R100\_Errors.h@{R100\_Errors.h}!eERR\_COMM\_WIFI\_SEND\_FRAME\_ALERT@{eERR\_COMM\_WIFI\_SEND\_FRAME\_ALERT}}}\Hypertarget{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a00f0148bd392a3d72021a30ea9c7fb49}\label{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a00f0148bd392a3d72021a30ea9c7fb49} 
+e\+ERR\+\_\+\+COMM\+\_\+\+WIFI\+\_\+\+SEND\+\_\+\+FRAME\+\_\+\+ALERT&Wi-\/\+Fi alert data frame sending error. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eERR\_COMM\_WIFI\_SEND\_FRAME\_GPS@{eERR\_COMM\_WIFI\_SEND\_FRAME\_GPS}!R100\_Errors.h@{R100\_Errors.h}}\index{R100\_Errors.h@{R100\_Errors.h}!eERR\_COMM\_WIFI\_SEND\_FRAME\_GPS@{eERR\_COMM\_WIFI\_SEND\_FRAME\_GPS}}}\Hypertarget{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a7b2ebb4c0ca85eb0e2e2bb3622c65b21}\label{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a7b2ebb4c0ca85eb0e2e2bb3622c65b21} 
+e\+ERR\+\_\+\+COMM\+\_\+\+WIFI\+\_\+\+SEND\+\_\+\+FRAME\+\_\+\+GPS&Wi-\/\+Fi GPS data frame sending error. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eERR\_COMM\_WIFI\_SEND\_EPISODE@{eERR\_COMM\_WIFI\_SEND\_EPISODE}!R100\_Errors.h@{R100\_Errors.h}}\index{R100\_Errors.h@{R100\_Errors.h}!eERR\_COMM\_WIFI\_SEND\_EPISODE@{eERR\_COMM\_WIFI\_SEND\_EPISODE}}}\Hypertarget{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a30a354f309afdc9ff6eaf6e95b5d329d}\label{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a30a354f309afdc9ff6eaf6e95b5d329d} 
+e\+ERR\+\_\+\+COMM\+\_\+\+WIFI\+\_\+\+SEND\+\_\+\+EPISODE&Wi-\/\+Fi episode file data sending error. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eERR\_COMM\_WIFI\_SEND\_TEST@{eERR\_COMM\_WIFI\_SEND\_TEST}!R100\_Errors.h@{R100\_Errors.h}}\index{R100\_Errors.h@{R100\_Errors.h}!eERR\_COMM\_WIFI\_SEND\_TEST@{eERR\_COMM\_WIFI\_SEND\_TEST}}}\Hypertarget{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a1adf9c407872a594ded9fd5b028aa258}\label{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a1adf9c407872a594ded9fd5b028aa258} 
+e\+ERR\+\_\+\+COMM\+\_\+\+WIFI\+\_\+\+SEND\+\_\+\+TEST&Wi-\/\+Fi test file data sending error. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eERR\_COMM\_WIFI\_SEND\_DATA@{eERR\_COMM\_WIFI\_SEND\_DATA}!R100\_Errors.h@{R100\_Errors.h}}\index{R100\_Errors.h@{R100\_Errors.h}!eERR\_COMM\_WIFI\_SEND\_DATA@{eERR\_COMM\_WIFI\_SEND\_DATA}}}\Hypertarget{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a835bdbe16fb2c21b22551d699fee038a}\label{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a835bdbe16fb2c21b22551d699fee038a} 
+e\+ERR\+\_\+\+COMM\+\_\+\+WIFI\+\_\+\+SEND\+\_\+\+DATA&Wi-\/\+Fi data sending error. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eERR\_COMM\_WIFI\_RECEIVE\_UPGRADE\_FILE@{eERR\_COMM\_WIFI\_RECEIVE\_UPGRADE\_FILE}!R100\_Errors.h@{R100\_Errors.h}}\index{R100\_Errors.h@{R100\_Errors.h}!eERR\_COMM\_WIFI\_RECEIVE\_UPGRADE\_FILE@{eERR\_COMM\_WIFI\_RECEIVE\_UPGRADE\_FILE}}}\Hypertarget{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a369740b85f664812c14baf766335e837}\label{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a369740b85f664812c14baf766335e837} 
+e\+ERR\+\_\+\+COMM\+\_\+\+WIFI\+\_\+\+RECEIVE\+\_\+\+UPGRADE\+\_\+\+FILE&Wi-\/\+Fi upgrade file receiving error. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eERR\_COMM\_WIFI\_RECEIVE\_CONFIG\_FILE@{eERR\_COMM\_WIFI\_RECEIVE\_CONFIG\_FILE}!R100\_Errors.h@{R100\_Errors.h}}\index{R100\_Errors.h@{R100\_Errors.h}!eERR\_COMM\_WIFI\_RECEIVE\_CONFIG\_FILE@{eERR\_COMM\_WIFI\_RECEIVE\_CONFIG\_FILE}}}\Hypertarget{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9afd2c25a07dd3ec60f9e18c8ce2b8fe88}\label{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9afd2c25a07dd3ec60f9e18c8ce2b8fe88} 
+e\+ERR\+\_\+\+COMM\+\_\+\+WIFI\+\_\+\+RECEIVE\+\_\+\+CONFIG\+\_\+\+FILE&Wi-\/\+Fi configuration file receiving error \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eRR\_COMM\_WIFI\_SERVER\_RPS\_ER@{eRR\_COMM\_WIFI\_SERVER\_RPS\_ER}!R100\_Errors.h@{R100\_Errors.h}}\index{R100\_Errors.h@{R100\_Errors.h}!eRR\_COMM\_WIFI\_SERVER\_RPS\_ER@{eRR\_COMM\_WIFI\_SERVER\_RPS\_ER}}}\Hypertarget{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9ad8d92f4b184ed1778beca0723c746dc4}\label{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9ad8d92f4b184ed1778beca0723c746dc4} 
+e\+RR\+\_\+\+COMM\+\_\+\+WIFI\+\_\+\+SERVER\+\_\+\+RPS\+\_\+\+ER&free to use = 138, Wi-\/\+Fi server response ER error \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eERR\_COMM\_SIGFOX@{eERR\_COMM\_SIGFOX}!R100\_Errors.h@{R100\_Errors.h}}\index{R100\_Errors.h@{R100\_Errors.h}!eERR\_COMM\_SIGFOX@{eERR\_COMM\_SIGFOX}}}\Hypertarget{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a7912afb6e34de929e3469ad376f7729a}\label{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a7912afb6e34de929e3469ad376f7729a} 
+e\+ERR\+\_\+\+COMM\+\_\+\+SIGFOX&Sigfox comunication error. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eERR\_COMM\_SIGFOX\_STATUS@{eERR\_COMM\_SIGFOX\_STATUS}!R100\_Errors.h@{R100\_Errors.h}}\index{R100\_Errors.h@{R100\_Errors.h}!eERR\_COMM\_SIGFOX\_STATUS@{eERR\_COMM\_SIGFOX\_STATUS}}}\Hypertarget{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9ab5020abe288f28adb710d796e1c21fe3}\label{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9ab5020abe288f28adb710d796e1c21fe3} 
+e\+ERR\+\_\+\+COMM\+\_\+\+SIGFOX\+\_\+\+STATUS&Sigfox check status error. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eERR\_COMM\_SIGFOX\_MAX\_POWER@{eERR\_COMM\_SIGFOX\_MAX\_POWER}!R100\_Errors.h@{R100\_Errors.h}}\index{R100\_Errors.h@{R100\_Errors.h}!eERR\_COMM\_SIGFOX\_MAX\_POWER@{eERR\_COMM\_SIGFOX\_MAX\_POWER}}}\Hypertarget{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a82112dc45a8a58367a0e331dbe081819}\label{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a82112dc45a8a58367a0e331dbe081819} 
+e\+ERR\+\_\+\+COMM\+\_\+\+SIGFOX\+\_\+\+MAX\+\_\+\+POWER&Sigfox configation of trasmit max power error. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eERR\_COMM\_SIGFOX\_RX@{eERR\_COMM\_SIGFOX\_RX}!R100\_Errors.h@{R100\_Errors.h}}\index{R100\_Errors.h@{R100\_Errors.h}!eERR\_COMM\_SIGFOX\_RX@{eERR\_COMM\_SIGFOX\_RX}}}\Hypertarget{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a30b8b0f8b90d71e9d2c9baca87b0c82e}\label{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a30b8b0f8b90d71e9d2c9baca87b0c82e} 
+e\+ERR\+\_\+\+COMM\+\_\+\+SIGFOX\+\_\+\+RX&Sigfox RX error. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eERR\_COMM\_SIGFOX\_TEST\_TX\_FREQ@{eERR\_COMM\_SIGFOX\_TEST\_TX\_FREQ}!R100\_Errors.h@{R100\_Errors.h}}\index{R100\_Errors.h@{R100\_Errors.h}!eERR\_COMM\_SIGFOX\_TEST\_TX\_FREQ@{eERR\_COMM\_SIGFOX\_TEST\_TX\_FREQ}}}\Hypertarget{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a7a7a2a40fcf762eb57d93f58da28b742}\label{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a7a7a2a40fcf762eb57d93f58da28b742} 
+e\+ERR\+\_\+\+COMM\+\_\+\+SIGFOX\+\_\+\+TEST\+\_\+\+TX\+\_\+\+FREQ&Sigfox TX frecuencies test error. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eERR\_COMM\_SIGFOX\_TEST\_RX\_FREQ@{eERR\_COMM\_SIGFOX\_TEST\_RX\_FREQ}!R100\_Errors.h@{R100\_Errors.h}}\index{R100\_Errors.h@{R100\_Errors.h}!eERR\_COMM\_SIGFOX\_TEST\_RX\_FREQ@{eERR\_COMM\_SIGFOX\_TEST\_RX\_FREQ}}}\Hypertarget{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9af647bffc07c95ae3e9e6545e8ffb858b}\label{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9af647bffc07c95ae3e9e6545e8ffb858b} 
+e\+ERR\+\_\+\+COMM\+\_\+\+SIGFOX\+\_\+\+TEST\+\_\+\+RX\+\_\+\+FREQ&Sigfox RX frecuencies test error. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eERR\_COMM\_SIGFOX\_CW\_TEST\_START@{eERR\_COMM\_SIGFOX\_CW\_TEST\_START}!R100\_Errors.h@{R100\_Errors.h}}\index{R100\_Errors.h@{R100\_Errors.h}!eERR\_COMM\_SIGFOX\_CW\_TEST\_START@{eERR\_COMM\_SIGFOX\_CW\_TEST\_START}}}\Hypertarget{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a297ef01c0a8c2df1269f122bdda222d2}\label{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a297ef01c0a8c2df1269f122bdda222d2} 
+e\+ERR\+\_\+\+COMM\+\_\+\+SIGFOX\+\_\+\+CW\+\_\+\+TEST\+\_\+\+START&Sigfox continuous wave test star error. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eERR\_COMM\_SIGFOX\_CW\_TEST\_STOP@{eERR\_COMM\_SIGFOX\_CW\_TEST\_STOP}!R100\_Errors.h@{R100\_Errors.h}}\index{R100\_Errors.h@{R100\_Errors.h}!eERR\_COMM\_SIGFOX\_CW\_TEST\_STOP@{eERR\_COMM\_SIGFOX\_CW\_TEST\_STOP}}}\Hypertarget{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9ab84497cc7fbd467d11b9f48c23ee53b2}\label{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9ab84497cc7fbd467d11b9f48c23ee53b2} 
+e\+ERR\+\_\+\+COMM\+\_\+\+SIGFOX\+\_\+\+CW\+\_\+\+TEST\+\_\+\+STOP&Sigfox continuous wave test stop error. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eERR\_COMM\_SIGFOX\_RX\_GFSK\_TEST@{eERR\_COMM\_SIGFOX\_RX\_GFSK\_TEST}!R100\_Errors.h@{R100\_Errors.h}}\index{R100\_Errors.h@{R100\_Errors.h}!eERR\_COMM\_SIGFOX\_RX\_GFSK\_TEST@{eERR\_COMM\_SIGFOX\_RX\_GFSK\_TEST}}}\Hypertarget{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a81cbed10f9ea508f9729cae0eae14747}\label{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a81cbed10f9ea508f9729cae0eae14747} 
+e\+ERR\+\_\+\+COMM\+\_\+\+SIGFOX\+\_\+\+RX\+\_\+\+GFSK\+\_\+\+TEST&Sigfox RX GFSK test error \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eERR\_COMM\_GPS@{eERR\_COMM\_GPS}!R100\_Errors.h@{R100\_Errors.h}}\index{R100\_Errors.h@{R100\_Errors.h}!eERR\_COMM\_GPS@{eERR\_COMM\_GPS}}}\Hypertarget{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9aad441fa60c028a12d56dbeff429d6a46}\label{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9aad441fa60c028a12d56dbeff429d6a46} 
+e\+ERR\+\_\+\+COMM\+\_\+\+GPS&free to use = 149, GPS module comunication error \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eERR\_COMM\_ACC@{eERR\_COMM\_ACC}!R100\_Errors.h@{R100\_Errors.h}}\index{R100\_Errors.h@{R100\_Errors.h}!eERR\_COMM\_ACC@{eERR\_COMM\_ACC}}}\Hypertarget{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9aaf2af7016d77a5b1516c1f41f685557f}\label{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9aaf2af7016d77a5b1516c1f41f685557f} 
+e\+ERR\+\_\+\+COMM\+\_\+\+ACC&Acelerometer test error. free to use = 151, free to use = 152, free to use = 153, free to use = 154, free to use = 155, free to use = 156, free to use = 157, free to use = 158, free to use = 159, \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eERR\_COMM\_ACC\_PRESENCE@{eERR\_COMM\_ACC\_PRESENCE}!R100\_Errors.h@{R100\_Errors.h}}\index{R100\_Errors.h@{R100\_Errors.h}!eERR\_COMM\_ACC\_PRESENCE@{eERR\_COMM\_ACC\_PRESENCE}}}\Hypertarget{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a7927d5bd44eef8945739fb275e6ba7c6}\label{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a7927d5bd44eef8945739fb275e6ba7c6} 
+e\+ERR\+\_\+\+COMM\+\_\+\+ACC\+\_\+\+PRESENCE&Acelerometer presence error. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eERR\_COMM\_ACC\_CONFIGURATION@{eERR\_COMM\_ACC\_CONFIGURATION}!R100\_Errors.h@{R100\_Errors.h}}\index{R100\_Errors.h@{R100\_Errors.h}!eERR\_COMM\_ACC\_CONFIGURATION@{eERR\_COMM\_ACC\_CONFIGURATION}}}\Hypertarget{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a802d3aa38a1ee1e6c4a71c3d8ecfd2e4}\label{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a802d3aa38a1ee1e6c4a71c3d8ecfd2e4} 
+e\+ERR\+\_\+\+COMM\+\_\+\+ACC\+\_\+\+CONFIGURATION&Acelerometer register configuration error. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eERR\_COMM\_ACC\_INTERRUPT@{eERR\_COMM\_ACC\_INTERRUPT}!R100\_Errors.h@{R100\_Errors.h}}\index{R100\_Errors.h@{R100\_Errors.h}!eERR\_COMM\_ACC\_INTERRUPT@{eERR\_COMM\_ACC\_INTERRUPT}}}\Hypertarget{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9ab525ba1b98a7a6e1a9c751fe5988b366}\label{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9ab525ba1b98a7a6e1a9c751fe5988b366} 
+e\+ERR\+\_\+\+COMM\+\_\+\+ACC\+\_\+\+INTERRUPT&Error in the config of the interrupts of the acc \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eERR\_KEYS@{eERR\_KEYS}!R100\_Errors.h@{R100\_Errors.h}}\index{R100\_Errors.h@{R100\_Errors.h}!eERR\_KEYS@{eERR\_KEYS}}}\Hypertarget{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a64199dc4a6bb5aa036f56535c67306be}\label{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a64199dc4a6bb5aa036f56535c67306be} 
+e\+ERR\+\_\+\+KEYS&Error in keys. free to use = 164, free to use = 165, free to use = 166, free to use = 167, free to use = 168, free to use = 169, free to use = 170, free to use = 171, free to use = 172, free to use = 173, free to use = 174, free to use = 175, free to use = 176, free to use = 177, free to use = 178, free to use = 179, \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eERR\_LEDS@{eERR\_LEDS}!R100\_Errors.h@{R100\_Errors.h}}\index{R100\_Errors.h@{R100\_Errors.h}!eERR\_LEDS@{eERR\_LEDS}}}\Hypertarget{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9acf2a2dd01893d32ac086d383fea152a6}\label{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9acf2a2dd01893d32ac086d383fea152a6} 
+e\+ERR\+\_\+\+LEDS&Error in leds \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eRR\_CRYPTO\_AUTH@{eRR\_CRYPTO\_AUTH}!R100\_Errors.h@{R100\_Errors.h}}\index{R100\_Errors.h@{R100\_Errors.h}!eRR\_CRYPTO\_AUTH@{eRR\_CRYPTO\_AUTH}}}\Hypertarget{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a1fc94fb9ad0928613de2d406beea29d5}\label{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a1fc94fb9ad0928613de2d406beea29d5} 
+e\+RR\+\_\+\+CRYPTO\+\_\+\+AUTH&Crypto authentication error. free to use = 182, free to use = 183, free to use = 184, free to use = 185, free to use = 186, free to use = 187, free to use = 188, \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eRR\_EXPIRED\_CERT\_TLS@{eRR\_EXPIRED\_CERT\_TLS}!R100\_Errors.h@{R100\_Errors.h}}\index{R100\_Errors.h@{R100\_Errors.h}!eRR\_EXPIRED\_CERT\_TLS@{eRR\_EXPIRED\_CERT\_TLS}}}\Hypertarget{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a4f170d0a64533010c69b7c473ec6e134}\label{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a4f170d0a64533010c69b7c473ec6e134} 
+e\+RR\+\_\+\+EXPIRED\+\_\+\+CERT\+\_\+\+TLS&TLS certificate expired. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eRR\_EXPIRED\_SOON\_CERT\_TLS@{eRR\_EXPIRED\_SOON\_CERT\_TLS}!R100\_Errors.h@{R100\_Errors.h}}\index{R100\_Errors.h@{R100\_Errors.h}!eRR\_EXPIRED\_SOON\_CERT\_TLS@{eRR\_EXPIRED\_SOON\_CERT\_TLS}}}\Hypertarget{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a3726c64dd5b0234233936e57ba6ccd98}\label{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a3726c64dd5b0234233936e57ba6ccd98} 
+e\+RR\+\_\+\+EXPIRED\+\_\+\+SOON\+\_\+\+CERT\+\_\+\+TLS&TLS certificate expired soon. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eRR\_EXPIRED\_WPA\_EAP@{eRR\_EXPIRED\_WPA\_EAP}!R100\_Errors.h@{R100\_Errors.h}}\index{R100\_Errors.h@{R100\_Errors.h}!eRR\_EXPIRED\_WPA\_EAP@{eRR\_EXPIRED\_WPA\_EAP}}}\Hypertarget{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a3e873cebcc3edb9b09b9c401c95d68f9}\label{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a3e873cebcc3edb9b09b9c401c95d68f9} 
+e\+RR\+\_\+\+EXPIRED\+\_\+\+WPA\+\_\+\+EAP&WPA-\/\+EAP certificate expired. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eRR\_EXPIRED\_SOON\_WPA\_EAP@{eRR\_EXPIRED\_SOON\_WPA\_EAP}!R100\_Errors.h@{R100\_Errors.h}}\index{R100\_Errors.h@{R100\_Errors.h}!eRR\_EXPIRED\_SOON\_WPA\_EAP@{eRR\_EXPIRED\_SOON\_WPA\_EAP}}}\Hypertarget{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a22fe407847dd67980023cb8b13944185}\label{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a22fe407847dd67980023cb8b13944185} 
+e\+RR\+\_\+\+EXPIRED\+\_\+\+SOON\+\_\+\+WPA\+\_\+\+EAP&WPA-\/\+EAP certificate expired soon \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eERR\_END@{eERR\_END}!R100\_Errors.h@{R100\_Errors.h}}\index{R100\_Errors.h@{R100\_Errors.h}!eERR\_END@{eERR\_END}}}\Hypertarget{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9af031c3e455eaaef06f17c6eb9b95b11c}\label{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9af031c3e455eaaef06f17c6eb9b95b11c} 
+e\+ERR\+\_\+\+END&free to use = 194, free to use = 195, free to use = 196, free to use = 197, free to use = 198, free to use = 199, free to use = 200, free to use = 201, free to use = 202, free to use = 203, free to use = 204, free to use = 205, free to use = 206, free to use = 207, free to use = 208, free to use = 209, free to use = 210, free to use = 211, free to use = 212, free to use = 213, free to use = 214, free to use = 215, free to use = 216, free to use = 217, free to use = 218, free to use = 219, free to use = 220, free to use = 221, free to use = 222, free to use = 223, free to use = 224, free to use = 225, free to use = 226, free to use = 227, free to use = 228, free to use = 229, free to use = 230, free to use = 231, free to use = 232, free to use = 233, free to use = 234, free to use = 235, free to use = 236, free to use = 237, free to use = 238, free to use = 239, free to use = 240, free to use = 241, free to use = 242, free to use = 243, free to use = 244, free to use = 245, free to use = 246, free to use = 247, free to use = 248, free to use = 249, free to use = 250, free to use = 251, free to use = 252, free to use = 253, free to use = 254, \\
+\hline
+
+\end{DoxyEnumFields}

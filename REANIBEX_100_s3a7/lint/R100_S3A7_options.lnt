@@ -1,0 +1,32 @@
+-fff
+au-misra3.lnt    // MISRA-C:2012 rules
+
+// Include standard GNU options
+co-gcc.lnt
+ 
+// Include paths used
+--i%PROJ_PATH%\src
+--i%PROJ_PATH%\src\DRD
+--i%PROJ_PATH%\src\Drivers
+--i%PROJ_PATH%\src\HAL
+--i%PROJ_PATH%\src\Resources
+--i%PROJ_PATH%\src\synergy_gen
+--i%PROJ_PATH%\synergy_cfg\ssp_cfg\bsp
+--i%PROJ_PATH%\synergy_cfg\ssp_cfg\driver
+--i%PROJ_PATH%\synergy_cfg\ssp_cfg\framework
+--i%PROJ_PATH%\synergy_cfg\ssp_cfg\framework\el
+--i%PROJ_PATH%\synergy\ssp\inc
+--i%PROJ_PATH%\synergy\ssp\inc\bsp
+--i%PROJ_PATH%\synergy\ssp\inc\bsp\cmsis\Include
+--i%PROJ_PATH%\synergy\ssp\inc\driver\api
+--i%PROJ_PATH%\synergy\ssp\inc\driver\instances
+--i%PROJ_PATH%\synergy\ssp\inc\framework\api
+--i%PROJ_PATH%\synergy\ssp\inc\framework\el
+--i%PROJ_PATH%\synergy\ssp\inc\framework\instances
+--i%PROJ_PATH%\synergy\ssp\inc\framework\el\tx
+
+ 
+// inhibit messages for Processor Expert libraries
+-elib(19, 10)
+-e766
++libh(Events.h, Cpu.h)

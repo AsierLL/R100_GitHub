@@ -1,0 +1,586 @@
+\doxysection{C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/thread\+\_\+core\+\_\+entry.c File Reference}
+\hypertarget{thread__core__entry_8c}{}\label{thread__core__entry_8c}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/thread\_core\_entry.c@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/thread\_core\_entry.c}}
+{\ttfamily \#include $<$device\+\_\+init.\+h$>$}\newline
+{\ttfamily \#include "{}Trace.\+h"{}}\newline
+{\ttfamily \#include "{}types\+\_\+basic.\+h"{}}\newline
+{\ttfamily \#include "{}types\+\_\+app.\+h"{}}\newline
+{\ttfamily \#include "{}thread\+\_\+core\+\_\+entry.\+h"{}}\newline
+{\ttfamily \#include "{}thread\+\_\+audio\+\_\+entry.\+h"{}}\newline
+{\ttfamily \#include "{}thread\+\_\+drd\+\_\+entry.\+h"{}}\newline
+{\ttfamily \#include "{}thread\+\_\+pat\+Mon\+\_\+entry.\+h"{}}\newline
+{\ttfamily \#include "{}thread\+\_\+sys\+Mon\+\_\+entry.\+h"{}}\newline
+{\ttfamily \#include "{}thread\+\_\+comm\+\_\+entry.\+h"{}}\newline
+{\ttfamily \#include "{}HAL/thread\+\_\+core\+\_\+hal.\+h"{}}\newline
+{\ttfamily \#include "{}thread\+\_\+core.\+h"{}}\newline
+{\ttfamily \#include "{}thread\+\_\+api.\+h"{}}\newline
+{\ttfamily \#include "{}thread\+\_\+comm.\+h"{}}\newline
+{\ttfamily \#include "{}thread\+\_\+audio\+\_\+hal.\+h"{}}\newline
+{\ttfamily \#include "{}thread\+\_\+sys\+Mon\+\_\+hal.\+h"{}}\newline
+{\ttfamily \#include "{}thread\+\_\+defibrillator\+\_\+hal.\+h"{}}\newline
+{\ttfamily \#include "{}RTC.\+h"{}}\newline
+{\ttfamily \#include "{}keypad.\+h"{}}\newline
+{\ttfamily \#include "{}event\+\_\+ids.\+h"{}}\newline
+{\ttfamily \#include "{}DB\+\_\+\+Episode.\+h"{}}\newline
+{\ttfamily \#include "{}sys\+Mon\+\_\+\+RF\+\_\+\+Comms.\+h"{}}\newline
+Include dependency graph for thread\+\_\+core\+\_\+entry.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__core__entry_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{thread__core__entry_8c_ab0144f3741cf65fd8ce7bb87417b7e5a}{CDCACM\+\_\+\+FLAG}}~((ULONG)0x0001)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{thread__core__entry_8c_a6459d7b439752990fec0e0dce5e26fc1}{AED\+\_\+\+Mode}} (void)
+\begin{DoxyCompactList}\small\item\em Manages AED operation mode. Sends all received events to the AED statechart. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{thread__core__entry_8c_ae519cba4735c9bc77b71c6c87be54fef}{CFG\+\_\+\+Mode}} (void)
+\begin{DoxyCompactList}\small\item\em Manages device configuration mode. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{thread__core__entry_8c_ac92318c2c177359d04d27c92a63911dc}{USB\+\_\+\+Device\+\_\+\+Connected}} ()
+\begin{DoxyCompactList}\small\item\em Return if a USB device is connected. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{thread__core__entry_8c_a524c58570086bddb5b033966b6e48bb5}{Update\+\_\+\+Patient\+\_\+\+Type\+\_\+\+Led}} (void)
+\begin{DoxyCompactList}\small\item\em updates the patient type led \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{thread__core__entry_8c_a89e7508f0300b317323069218276f45f}{Power\+\_\+\+Off}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} usb)
+\begin{DoxyCompactList}\small\item\em controlled Power off the device \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{thread__core__entry_8c_ad1317d76239f303c25d469c2b6c964fa}{Process\+\_\+\+Key}} (\mbox{\hyperlink{event__ids_8h_a610cd7de90c58acf8dfb3345f1e53697}{EVENT\+\_\+\+ID\+\_\+e}} my\+\_\+event)
+\begin{DoxyCompactList}\small\item\em Transmit Wifi alerts when poweroff button is pressed. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{thread__core__entry_8c_afe7922236ddc997c50ed61aeaca4c204}{Is\+\_\+\+Patient\+\_\+\+Type\+\_\+\+Change}} (void)
+\begin{DoxyCompactList}\small\item\em Check if patient type has changed. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{thread__core__entry_8c_a12572cc8f7aa64bfff52a5e69376529b}{Get\+\_\+\+RCP\+\_\+\+Rate}} (void)
+\begin{DoxyCompactList}\small\item\em Return the configured RCP rate. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{thread__core__entry_8c_a6f4a81c7e67ef4f60fb3d68b4f9acc19}{Pastime\+\_\+\+While\+\_\+\+Audio\+\_\+\+Playing}} (void)
+\begin{DoxyCompactList}\small\item\em pass time while the audio message is playing \end{DoxyCompactList}\item 
+\mbox{\hyperlink{thread__pat_mon__hal_8h_a71de8cbe1b830973cbf1b3b2dd5b57ba}{RCP\+\_\+\+BREAK\+\_\+t}} \mbox{\hyperlink{thread__core__entry_8c_a3eb1c7bea6a7e44589b65a1a98fc1de3}{Pastime\+\_\+\+While\+\_\+\+Audio\+\_\+\+Playing\+\_\+with\+\_\+\+Break\+\_\+\+PT}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} delay)
+\begin{DoxyCompactList}\small\item\em pass time while the audio message is playing \end{DoxyCompactList}\item 
+\mbox{\hyperlink{thread__pat_mon__hal_8h_a71de8cbe1b830973cbf1b3b2dd5b57ba}{RCP\+\_\+\+BREAK\+\_\+t}} \mbox{\hyperlink{thread__core__entry_8c_a4c91aeda537a55c0e8f54abe253a0c4b}{Pastime\+\_\+\+While\+\_\+\+Audio\+\_\+\+Playing\+\_\+with\+\_\+\+Break\+\_\+\+PT\+\_\+\+OC}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} delay)
+\begin{DoxyCompactList}\small\item\em pass time while the audio message is playing \end{DoxyCompactList}\item 
+\mbox{\hyperlink{thread__pat_mon__hal_8h_a71de8cbe1b830973cbf1b3b2dd5b57ba}{RCP\+\_\+\+BREAK\+\_\+t}} \mbox{\hyperlink{thread__core__entry_8c_a7ee6fc368635a86cdeb84f3d6c692329}{Pastime\+\_\+\+While\+\_\+\+Audio\+\_\+\+Playing\+\_\+with\+\_\+\+Break\+\_\+\+PT\+\_\+\+CC}} (void)
+\begin{DoxyCompactList}\small\item\em pass time while the audio message is playing \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{thread__core__entry_8c_ad3dfeb7aa19371bdae2b4d20eee5a063}{thread\+\_\+core\+\_\+entry}} (void)
+\begin{DoxyCompactList}\small\item\em Main task. Executes both, AED and CFG, operation modes. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{thread__core__entry_8c_ab5cc7004066a53f633a1891cc016a473}{Send\+\_\+\+Core\+\_\+\+Queue}} (\mbox{\hyperlink{event__ids_8h_a610cd7de90c58acf8dfb3345f1e53697}{EVENT\+\_\+\+ID\+\_\+e}} ev)
+\begin{DoxyCompactList}\small\item\em Process events related to DRD. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{types__app_8h_a72bf2916658241ff5c65acd6d8a5ed4c}{WORKING\+\_\+\+MODE\+\_\+e}} \mbox{\hyperlink{thread__core__entry_8c_a866cc90724d82d3674cec36af3a6656b}{curr\+\_\+working\+\_\+mode}} = \mbox{\hyperlink{types__app_8h_a72bf2916658241ff5c65acd6d8a5ed4caf63ab7a51d31f5c008176c533ccdb19f}{e\+WMODE\+\_\+\+NOMODE}}
+\item 
+\mbox{\hyperlink{struct_d_e_v_i_c_e___s_e_t_t_i_n_g_s__t}{DEVICE\+\_\+\+SETTINGS\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{thread__core__entry_8c_a7696debdbb4df854622a71c3cbacadc5}{p\+Device\+\_\+\+Settings}}
+\item 
+\mbox{\hyperlink{struct_a_e_d___s_e_t_t_i_n_g_s__t}{AED\+\_\+\+SETTINGS\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{thread__core__entry_8c_a1b517e767cd50ebf84e6f84fa8fe59d6}{p\+Aed\+\_\+\+Settings}}
+\item 
+\mbox{\hyperlink{struct_m_i_s_c___s_e_t_t_i_n_g_s__t}{MISC\+\_\+\+SETTINGS\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{thread__core__entry_8c_a0ab3bf0c9b8d8a9f0af67be61ddc0752}{p\+Misc\+\_\+\+Settings}}
+\item 
+static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{thread__core__entry_8c_a0b3145407e316d9eb783f46314a225aa}{patient\+\_\+type\+\_\+change}} = false
+\begin{DoxyCompactList}\small\item\em Patient type change indicator. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{struct_d_e_v_i_c_e___i_n_f_o__t}{DEVICE\+\_\+\+INFO\+\_\+t}} \mbox{\hyperlink{thread__core__entry_8c_ad1765465385921406c4e233c8580f04d}{my\+\_\+\+Device\+\_\+\+Info}}
+\begin{DoxyCompactList}\small\item\em Pointer to the device info. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVersion}{Version}
+v1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+16/01/2018 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+ltorres 
+\end{DoxyAuthor}
+\begin{DoxyWarning}{Warning}
+author date version .-\/ Edition 
+\end{DoxyWarning}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000077}{Bug}}]\end{DoxyRefDesc}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{thread__core__entry_8c_ab0144f3741cf65fd8ce7bb87417b7e5a}\label{thread__core__entry_8c_ab0144f3741cf65fd8ce7bb87417b7e5a} 
+\index{thread\_core\_entry.c@{thread\_core\_entry.c}!CDCACM\_FLAG@{CDCACM\_FLAG}}
+\index{CDCACM\_FLAG@{CDCACM\_FLAG}!thread\_core\_entry.c@{thread\_core\_entry.c}}
+\doxysubsubsection{\texorpdfstring{CDCACM\_FLAG}{CDCACM\_FLAG}}
+{\footnotesize\ttfamily \#define CDCACM\+\_\+\+FLAG~((ULONG)0x0001)}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{thread__core__entry_8c_a6459d7b439752990fec0e0dce5e26fc1}\label{thread__core__entry_8c_a6459d7b439752990fec0e0dce5e26fc1} 
+\index{thread\_core\_entry.c@{thread\_core\_entry.c}!AED\_Mode@{AED\_Mode}}
+\index{AED\_Mode@{AED\_Mode}!thread\_core\_entry.c@{thread\_core\_entry.c}}
+\doxysubsubsection{\texorpdfstring{AED\_Mode()}{AED\_Mode()}}
+{\footnotesize\ttfamily static void AED\+\_\+\+Mode (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Manages AED operation mode. Sends all received events to the AED statechart. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__core__entry_8c_a6459d7b439752990fec0e0dce5e26fc1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__core__entry_8c_a6459d7b439752990fec0e0dce5e26fc1_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__core__entry_8c_ae519cba4735c9bc77b71c6c87be54fef}\label{thread__core__entry_8c_ae519cba4735c9bc77b71c6c87be54fef} 
+\index{thread\_core\_entry.c@{thread\_core\_entry.c}!CFG\_Mode@{CFG\_Mode}}
+\index{CFG\_Mode@{CFG\_Mode}!thread\_core\_entry.c@{thread\_core\_entry.c}}
+\doxysubsubsection{\texorpdfstring{CFG\_Mode()}{CFG\_Mode()}}
+{\footnotesize\ttfamily static void CFG\+\_\+\+Mode (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Manages device configuration mode. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__core__entry_8c_ae519cba4735c9bc77b71c6c87be54fef_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__core__entry_8c_ae519cba4735c9bc77b71c6c87be54fef_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__core__entry_8c_a12572cc8f7aa64bfff52a5e69376529b}\label{thread__core__entry_8c_a12572cc8f7aa64bfff52a5e69376529b} 
+\index{thread\_core\_entry.c@{thread\_core\_entry.c}!Get\_RCP\_Rate@{Get\_RCP\_Rate}}
+\index{Get\_RCP\_Rate@{Get\_RCP\_Rate}!thread\_core\_entry.c@{thread\_core\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Get\_RCP\_Rate()}{Get\_RCP\_Rate()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} Get\+\_\+\+RCP\+\_\+\+Rate (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Return the configured RCP rate. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+RCP rate (100, 110 or 120) 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__core__entry_8c_a12572cc8f7aa64bfff52a5e69376529b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__core__entry_8c_afe7922236ddc997c50ed61aeaca4c204}\label{thread__core__entry_8c_afe7922236ddc997c50ed61aeaca4c204} 
+\index{thread\_core\_entry.c@{thread\_core\_entry.c}!Is\_Patient\_Type\_Change@{Is\_Patient\_Type\_Change}}
+\index{Is\_Patient\_Type\_Change@{Is\_Patient\_Type\_Change}!thread\_core\_entry.c@{thread\_core\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Is\_Patient\_Type\_Change()}{Is\_Patient\_Type\_Change()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} Is\+\_\+\+Patient\+\_\+\+Type\+\_\+\+Change (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Check if patient type has changed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The connected electrodes type 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__core__entry_8c_afe7922236ddc997c50ed61aeaca4c204_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__core__entry_8c_a6f4a81c7e67ef4f60fb3d68b4f9acc19}\label{thread__core__entry_8c_a6f4a81c7e67ef4f60fb3d68b4f9acc19} 
+\index{thread\_core\_entry.c@{thread\_core\_entry.c}!Pastime\_While\_Audio\_Playing@{Pastime\_While\_Audio\_Playing}}
+\index{Pastime\_While\_Audio\_Playing@{Pastime\_While\_Audio\_Playing}!thread\_core\_entry.c@{thread\_core\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Pastime\_While\_Audio\_Playing()}{Pastime\_While\_Audio\_Playing()}}
+{\footnotesize\ttfamily void Pastime\+\_\+\+While\+\_\+\+Audio\+\_\+\+Playing (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+pass time while the audio message is playing 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__core__entry_8c_a6f4a81c7e67ef4f60fb3d68b4f9acc19_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__core__entry_8c_a6f4a81c7e67ef4f60fb3d68b4f9acc19_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__core__entry_8c_a3eb1c7bea6a7e44589b65a1a98fc1de3}\label{thread__core__entry_8c_a3eb1c7bea6a7e44589b65a1a98fc1de3} 
+\index{thread\_core\_entry.c@{thread\_core\_entry.c}!Pastime\_While\_Audio\_Playing\_with\_Break\_PT@{Pastime\_While\_Audio\_Playing\_with\_Break\_PT}}
+\index{Pastime\_While\_Audio\_Playing\_with\_Break\_PT@{Pastime\_While\_Audio\_Playing\_with\_Break\_PT}!thread\_core\_entry.c@{thread\_core\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Pastime\_While\_Audio\_Playing\_with\_Break\_PT()}{Pastime\_While\_Audio\_Playing\_with\_Break\_PT()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{thread__pat_mon__hal_8h_a71de8cbe1b830973cbf1b3b2dd5b57ba}{RCP\+\_\+\+BREAK\+\_\+t}} Pastime\+\_\+\+While\+\_\+\+Audio\+\_\+\+Playing\+\_\+with\+\_\+\+Break\+\_\+\+PT (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}}}]{delay }\end{DoxyParamCaption})}
+
+
+
+pass time while the audio message is playing 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__core__entry_8c_a3eb1c7bea6a7e44589b65a1a98fc1de3_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__core__entry_8c_a3eb1c7bea6a7e44589b65a1a98fc1de3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__core__entry_8c_a7ee6fc368635a86cdeb84f3d6c692329}\label{thread__core__entry_8c_a7ee6fc368635a86cdeb84f3d6c692329} 
+\index{thread\_core\_entry.c@{thread\_core\_entry.c}!Pastime\_While\_Audio\_Playing\_with\_Break\_PT\_CC@{Pastime\_While\_Audio\_Playing\_with\_Break\_PT\_CC}}
+\index{Pastime\_While\_Audio\_Playing\_with\_Break\_PT\_CC@{Pastime\_While\_Audio\_Playing\_with\_Break\_PT\_CC}!thread\_core\_entry.c@{thread\_core\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Pastime\_While\_Audio\_Playing\_with\_Break\_PT\_CC()}{Pastime\_While\_Audio\_Playing\_with\_Break\_PT\_CC()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{thread__pat_mon__hal_8h_a71de8cbe1b830973cbf1b3b2dd5b57ba}{RCP\+\_\+\+BREAK\+\_\+t}} Pastime\+\_\+\+While\+\_\+\+Audio\+\_\+\+Playing\+\_\+with\+\_\+\+Break\+\_\+\+PT\+\_\+\+CC (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+pass time while the audio message is playing 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+if the loop has been break or not RCP\+\_\+\+BREAK\+\_\+\+NONE -\/-\/\texorpdfstring{$>$}{>} no break RCP\+\_\+\+BREAK\+\_\+\+ZP -\/-\/\texorpdfstring{$>$}{>} break due to impedance change RCP\+\_\+\+BREAK\+\_\+\+PATIENT\+\_\+\+TYPE -\/-\/\texorpdfstring{$>$}{>} break due to patient type change 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__core__entry_8c_a7ee6fc368635a86cdeb84f3d6c692329_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__core__entry_8c_a7ee6fc368635a86cdeb84f3d6c692329_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__core__entry_8c_a4c91aeda537a55c0e8f54abe253a0c4b}\label{thread__core__entry_8c_a4c91aeda537a55c0e8f54abe253a0c4b} 
+\index{thread\_core\_entry.c@{thread\_core\_entry.c}!Pastime\_While\_Audio\_Playing\_with\_Break\_PT\_OC@{Pastime\_While\_Audio\_Playing\_with\_Break\_PT\_OC}}
+\index{Pastime\_While\_Audio\_Playing\_with\_Break\_PT\_OC@{Pastime\_While\_Audio\_Playing\_with\_Break\_PT\_OC}!thread\_core\_entry.c@{thread\_core\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Pastime\_While\_Audio\_Playing\_with\_Break\_PT\_OC()}{Pastime\_While\_Audio\_Playing\_with\_Break\_PT\_OC()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{thread__pat_mon__hal_8h_a71de8cbe1b830973cbf1b3b2dd5b57ba}{RCP\+\_\+\+BREAK\+\_\+t}} Pastime\+\_\+\+While\+\_\+\+Audio\+\_\+\+Playing\+\_\+with\+\_\+\+Break\+\_\+\+PT\+\_\+\+OC (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}}}]{delay }\end{DoxyParamCaption})}
+
+
+
+pass time while the audio message is playing 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+if the loop has been break or not RCP\+\_\+\+BREAK\+\_\+\+NONE -\/-\/\texorpdfstring{$>$}{>} no break RCP\+\_\+\+BREAK\+\_\+\+ZP -\/-\/\texorpdfstring{$>$}{>} break due to impedance change RCP\+\_\+\+BREAK\+\_\+\+PATIENT\+\_\+\+TYPE -\/-\/\texorpdfstring{$>$}{>} break due to patient type change 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__core__entry_8c_a4c91aeda537a55c0e8f54abe253a0c4b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__core__entry_8c_a4c91aeda537a55c0e8f54abe253a0c4b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__core__entry_8c_a89e7508f0300b317323069218276f45f}\label{thread__core__entry_8c_a89e7508f0300b317323069218276f45f} 
+\index{thread\_core\_entry.c@{thread\_core\_entry.c}!Power\_Off@{Power\_Off}}
+\index{Power\_Off@{Power\_Off}!thread\_core\_entry.c@{thread\_core\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Power\_Off()}{Power\_Off()}}
+{\footnotesize\ttfamily static void Power\+\_\+\+Off (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}}}]{usb }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+controlled Power off the device 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__core__entry_8c_a89e7508f0300b317323069218276f45f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__core__entry_8c_a89e7508f0300b317323069218276f45f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__core__entry_8c_ad1317d76239f303c25d469c2b6c964fa}\label{thread__core__entry_8c_ad1317d76239f303c25d469c2b6c964fa} 
+\index{thread\_core\_entry.c@{thread\_core\_entry.c}!Process\_Key@{Process\_Key}}
+\index{Process\_Key@{Process\_Key}!thread\_core\_entry.c@{thread\_core\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Process\_Key()}{Process\_Key()}}
+{\footnotesize\ttfamily static void Process\+\_\+\+Key (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{event__ids_8h_a610cd7de90c58acf8dfb3345f1e53697}{EVENT\+\_\+\+ID\+\_\+e}}}]{my\+\_\+event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Transmit Wifi alerts when poweroff button is pressed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none
+\end{DoxyReturn}
+Process the user pressed key
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__core__entry_8c_ad1317d76239f303c25d469c2b6c964fa_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__core__entry_8c_ad1317d76239f303c25d469c2b6c964fa_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__core__entry_8c_ab5cc7004066a53f633a1891cc016a473}\label{thread__core__entry_8c_ab5cc7004066a53f633a1891cc016a473} 
+\index{thread\_core\_entry.c@{thread\_core\_entry.c}!Send\_Core\_Queue@{Send\_Core\_Queue}}
+\index{Send\_Core\_Queue@{Send\_Core\_Queue}!thread\_core\_entry.c@{thread\_core\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Send\_Core\_Queue()}{Send\_Core\_Queue()}}
+{\footnotesize\ttfamily void Send\+\_\+\+Core\+\_\+\+Queue (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{event__ids_8h_a610cd7de90c58acf8dfb3345f1e53697}{EVENT\+\_\+\+ID\+\_\+e}}}]{ev }\end{DoxyParamCaption})}
+
+
+
+Process events related to DRD. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ev} & event identifier \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__core__entry_8c_ab5cc7004066a53f633a1891cc016a473_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__core__entry_8c_ad3dfeb7aa19371bdae2b4d20eee5a063}\label{thread__core__entry_8c_ad3dfeb7aa19371bdae2b4d20eee5a063} 
+\index{thread\_core\_entry.c@{thread\_core\_entry.c}!thread\_core\_entry@{thread\_core\_entry}}
+\index{thread\_core\_entry@{thread\_core\_entry}!thread\_core\_entry.c@{thread\_core\_entry.c}}
+\doxysubsubsection{\texorpdfstring{thread\_core\_entry()}{thread\_core\_entry()}}
+{\footnotesize\ttfamily void thread\+\_\+core\+\_\+entry (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Main task. Executes both, AED and CFG, operation modes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__core__entry_8c_ad3dfeb7aa19371bdae2b4d20eee5a063_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__core__entry_8c_ad3dfeb7aa19371bdae2b4d20eee5a063_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__core__entry_8c_a524c58570086bddb5b033966b6e48bb5}\label{thread__core__entry_8c_a524c58570086bddb5b033966b6e48bb5} 
+\index{thread\_core\_entry.c@{thread\_core\_entry.c}!Update\_Patient\_Type\_Led@{Update\_Patient\_Type\_Led}}
+\index{Update\_Patient\_Type\_Led@{Update\_Patient\_Type\_Led}!thread\_core\_entry.c@{thread\_core\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Update\_Patient\_Type\_Led()}{Update\_Patient\_Type\_Led()}}
+{\footnotesize\ttfamily static void Update\+\_\+\+Patient\+\_\+\+Type\+\_\+\+Led (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+updates the patient type led 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=296pt]{thread__core__entry_8c_a524c58570086bddb5b033966b6e48bb5_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__core__entry_8c_a524c58570086bddb5b033966b6e48bb5_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__core__entry_8c_ac92318c2c177359d04d27c92a63911dc}\label{thread__core__entry_8c_ac92318c2c177359d04d27c92a63911dc} 
+\index{thread\_core\_entry.c@{thread\_core\_entry.c}!USB\_Device\_Connected@{USB\_Device\_Connected}}
+\index{USB\_Device\_Connected@{USB\_Device\_Connected}!thread\_core\_entry.c@{thread\_core\_entry.c}}
+\doxysubsubsection{\texorpdfstring{USB\_Device\_Connected()}{USB\_Device\_Connected()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} USB\+\_\+\+Device\+\_\+\+Connected (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Return if a USB device is connected. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false \+: USB device not connected true \+: USB device connected 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__core__entry_8c_ac92318c2c177359d04d27c92a63911dc_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{thread__core__entry_8c_a866cc90724d82d3674cec36af3a6656b}\label{thread__core__entry_8c_a866cc90724d82d3674cec36af3a6656b} 
+\index{thread\_core\_entry.c@{thread\_core\_entry.c}!curr\_working\_mode@{curr\_working\_mode}}
+\index{curr\_working\_mode@{curr\_working\_mode}!thread\_core\_entry.c@{thread\_core\_entry.c}}
+\doxysubsubsection{\texorpdfstring{curr\_working\_mode}{curr\_working\_mode}}
+{\footnotesize\ttfamily \mbox{\hyperlink{types__app_8h_a72bf2916658241ff5c65acd6d8a5ed4c}{WORKING\+\_\+\+MODE\+\_\+e}} curr\+\_\+working\+\_\+mode = \mbox{\hyperlink{types__app_8h_a72bf2916658241ff5c65acd6d8a5ed4caf63ab7a51d31f5c008176c533ccdb19f}{e\+WMODE\+\_\+\+NOMODE}}}
+
+\Hypertarget{thread__core__entry_8c_ad1765465385921406c4e233c8580f04d}\label{thread__core__entry_8c_ad1765465385921406c4e233c8580f04d} 
+\index{thread\_core\_entry.c@{thread\_core\_entry.c}!my\_Device\_Info@{my\_Device\_Info}}
+\index{my\_Device\_Info@{my\_Device\_Info}!thread\_core\_entry.c@{thread\_core\_entry.c}}
+\doxysubsubsection{\texorpdfstring{my\_Device\_Info}{my\_Device\_Info}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_d_e_v_i_c_e___i_n_f_o__t}{DEVICE\+\_\+\+INFO\+\_\+t}} my\+\_\+\+Device\+\_\+\+Info\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Pointer to the device info. 
+
+\Hypertarget{thread__core__entry_8c_a1b517e767cd50ebf84e6f84fa8fe59d6}\label{thread__core__entry_8c_a1b517e767cd50ebf84e6f84fa8fe59d6} 
+\index{thread\_core\_entry.c@{thread\_core\_entry.c}!pAed\_Settings@{pAed\_Settings}}
+\index{pAed\_Settings@{pAed\_Settings}!thread\_core\_entry.c@{thread\_core\_entry.c}}
+\doxysubsubsection{\texorpdfstring{pAed\_Settings}{pAed\_Settings}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_a_e_d___s_e_t_t_i_n_g_s__t}{AED\+\_\+\+SETTINGS\+\_\+t}}\texorpdfstring{$\ast$}{*} p\+Aed\+\_\+\+Settings}
+
+\Hypertarget{thread__core__entry_8c_a0b3145407e316d9eb783f46314a225aa}\label{thread__core__entry_8c_a0b3145407e316d9eb783f46314a225aa} 
+\index{thread\_core\_entry.c@{thread\_core\_entry.c}!patient\_type\_change@{patient\_type\_change}}
+\index{patient\_type\_change@{patient\_type\_change}!thread\_core\_entry.c@{thread\_core\_entry.c}}
+\doxysubsubsection{\texorpdfstring{patient\_type\_change}{patient\_type\_change}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} patient\+\_\+type\+\_\+change = false\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Patient type change indicator. 
+
+\Hypertarget{thread__core__entry_8c_a7696debdbb4df854622a71c3cbacadc5}\label{thread__core__entry_8c_a7696debdbb4df854622a71c3cbacadc5} 
+\index{thread\_core\_entry.c@{thread\_core\_entry.c}!pDevice\_Settings@{pDevice\_Settings}}
+\index{pDevice\_Settings@{pDevice\_Settings}!thread\_core\_entry.c@{thread\_core\_entry.c}}
+\doxysubsubsection{\texorpdfstring{pDevice\_Settings}{pDevice\_Settings}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_d_e_v_i_c_e___s_e_t_t_i_n_g_s__t}{DEVICE\+\_\+\+SETTINGS\+\_\+t}}\texorpdfstring{$\ast$}{*} p\+Device\+\_\+\+Settings}
+
+\Hypertarget{thread__core__entry_8c_a0ab3bf0c9b8d8a9f0af67be61ddc0752}\label{thread__core__entry_8c_a0ab3bf0c9b8d8a9f0af67be61ddc0752} 
+\index{thread\_core\_entry.c@{thread\_core\_entry.c}!pMisc\_Settings@{pMisc\_Settings}}
+\index{pMisc\_Settings@{pMisc\_Settings}!thread\_core\_entry.c@{thread\_core\_entry.c}}
+\doxysubsubsection{\texorpdfstring{pMisc\_Settings}{pMisc\_Settings}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_m_i_s_c___s_e_t_t_i_n_g_s__t}{MISC\+\_\+\+SETTINGS\+\_\+t}}\texorpdfstring{$\ast$}{*} p\+Misc\+\_\+\+Settings}
+

@@ -1,0 +1,32 @@
+<map id="Comm_GPS_Send_Command" name="Comm_GPS_Send_Command">
+<area shape="rect" id="Node000001" title="Send GPS commands." alt="" coords="5,132,203,159"/>
+<area shape="rect" id="Node000002" href="$thread__comm__hal_8c.html#a14b282886d75e45f70a7ffe548732dba" title="Returns the selected Comms UART." alt="" coords="257,5,433,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="120,129,175,86,211,62,250,42,265,35,268,40,252,46,214,67,178,91,123,134"/>
+<area shape="rect" id="Node000003" href="$thread__comm__hal_8c.html#a7bec2de2a4a0bd5ee235fc2c4579cee6" title="Returns if Comms UART is free." alt="" coords="269,56,421,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="142,129,250,92,274,85,276,90,251,97,144,134"/>
+<area shape="rect" id="Node000004" href="$thread__comm__entry_8c.html#a1ed8688e4f2bb331195db3b77d38b9eb" title="Returns if Comms UART is free." alt="" coords="276,107,414,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="203,132,260,126,260,132,204,138"/>
+<area shape="rect" id="Node000005" href="$thread__comm__hal_8c.html#a63b3e38ecaf443421eb673e2342e2f08" title="Select Uart to send and receive data. This function sets the SN74CBT Multiplexer/Demultiplexer via th..." alt="" coords="278,157,412,184"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="204,153,263,159,262,165,203,158"/>
+<area shape="rect" id="Node000012" href="$_comm_8c.html#aceced6fe6160f18c11e8d0ea46cfe881" title="Send a string through the UART." alt="" coords="281,208,409,235"/>
+<area shape="poly" id="edge14_Node000001_Node000012" title=" " alt="" coords="144,157,251,193,276,201,274,206,250,199,142,162"/>
+<area shape="rect" id="Node000014" href="$_comm_8c.html#ae40e9c681ca7b454e790d494b96c2284" title="Change SCI3 (UART) baud rate." alt="" coords="251,259,439,285"/>
+<area shape="poly" id="edge16_Node000001_Node000014" title=" " alt="" coords="123,157,178,200,214,224,252,244,268,251,265,256,250,249,211,228,175,204,120,161"/>
+<area shape="rect" id="Node000006" href="$_i2_c__2_8c.html#aba3d08d9b33082a1c0aa61ae3e6b5e23" title="Function to read a byte data from a specific address." alt="" coords="513,157,624,184"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="413,168,497,168,497,173,413,173"/>
+<area shape="rect" id="Node000011" href="$_i2_c__2_8c.html#abb5323ebe9e05f1fe983ee0c53fa732e" title="Function to write a data byte at specific address." alt="" coords="513,107,625,133"/>
+<area shape="poly" id="edge10_Node000005_Node000011" title=" " alt="" coords="407,154,497,133,498,139,408,159"/>
+<area shape="rect" id="Node000007" href="$_i2_c__2_8c.html#aa504ef0b681fc32e47f923cc52b93067" title="Function to get a data byte from the i2C device." alt="" coords="714,208,819,235"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="625,182,700,202,699,207,623,187"/>
+<area shape="rect" id="Node000008" href="$_i2_c__2_8c.html#afb25d38eef88c072ab6ce216e1965501" title="Generate the START condition in the i2C line." alt="" coords="698,157,835,184"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="625,168,683,168,683,173,625,173"/>
+<area shape="rect" id="Node000009" href="$_i2_c__2_8c.html#a24d35a4dc09bc8d6c5be604be9a2102b" title="Generate the STOP condition in the i2C line." alt="" coords="699,56,834,83"/>
+<area shape="poly" id="edge8_Node000006_Node000009" title=" " alt="" coords="624,155,649,143,663,131,672,119,682,106,697,93,705,88,708,92,700,97,686,109,677,122,667,135,652,148,626,160"/>
+<area shape="rect" id="Node000010" href="$_i2_c__2_8c.html#a5a45bd2c0aa3fd6619ad4e682466200c" title="Function to send a data byte to the i2C device." alt="" coords="715,107,818,133"/>
+<area shape="poly" id="edge9_Node000006_Node000010" title=" " alt="" coords="623,154,700,134,701,139,625,159"/>
+<area shape="poly" id="edge11_Node000011_Node000008" title=" " alt="" coords="625,131,698,150,696,156,623,137"/>
+<area shape="poly" id="edge12_Node000011_Node000009" title=" " alt="" coords="623,103,696,84,698,90,625,109"/>
+<area shape="poly" id="edge13_Node000011_Node000010" title=" " alt="" coords="625,117,700,117,700,123,625,123"/>
+<area shape="rect" id="Node000013" href="$thread__sys_mon__entry_8c.html#a33ca5a33ab10af89dcb290e9d052b724" title="Function that report if the devioce is in test mode montador or not." alt="" coords="487,208,650,235"/>
+<area shape="poly" id="edge15_Node000012_Node000013" title=" " alt="" coords="409,219,471,219,471,224,409,224"/>
+</map>

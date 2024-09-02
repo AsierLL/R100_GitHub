@@ -1,0 +1,40 @@
+\doxysection{thread\+\_\+pat\+Mon.\+h}
+\hypertarget{thread__pat_mon_8h_source}{}\label{thread__pat_mon_8h_source}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/synergy\_gen/thread\_patMon.h@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/synergy\_gen/thread\_patMon.h}}
+\mbox{\hyperlink{thread__pat_mon_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ generated\ thread\ header\ file\ -\/\ do\ not\ edit\ */}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#ifndef\ THREAD\_PATMON\_H\_}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#define\ THREAD\_PATMON\_H\_}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}bsp\_api.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}tx\_api.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{hal__data_8h}{hal\_data.h}}"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00008\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{thread__pat_mon_8h_acba6891b85ed8b43afb29b84f25a1162}{thread\_patMon\_entry}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00010\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{thread__pat_mon_8h_acba6891b85ed8b43afb29b84f25a1162}{thread\_patMon\_entry}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}r\_icu.h"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}r\_external\_irq\_api.h"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}r\_dac.h"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}r\_dac\_api.h"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}sf\_spi.h"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}sf\_spi\_api.h"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00019\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}}
+\DoxyCodeLine{00020\ \{}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00022\ \textcolor{comment}{/*\ External\ IRQ\ on\ ICU\ Instance.\ */}}
+\DoxyCodeLine{00023\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ external\_irq\_instance\_t\ \mbox{\hyperlink{thread__pat_mon_8h_a35f833e66fc266dfd54a90bb8f952916}{g\_external\_irq}};}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#ifndef\ g\_irq8\_callback}}
+\DoxyCodeLine{00025\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{thread__pat_mon_8h_ac4ee9c57661e2fe83c4532e88ba5beae}{g\_irq8\_callback}}(external\_irq\_callback\_args\_t\ *p\_args);}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00028\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ dac\_instance\_t\ \mbox{\hyperlink{thread__pat_mon_8h_ade68b76b76a90f22b7562549511fff45}{g\_dac0}};}
+\DoxyCodeLine{00029\ \textcolor{comment}{/*\ SF\ SPI\ on\ SF\ SPI\ Instance.\ */}}
+\DoxyCodeLine{00030\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ sf\_spi\_instance\_t\ \mbox{\hyperlink{thread__pat_mon_8h_a74fcce906e07d60ed79947d334c723c5}{spi\_patmon}};}
+\DoxyCodeLine{00031\ \textcolor{keyword}{extern}\ TX\_EVENT\_FLAGS\_GROUP\ \mbox{\hyperlink{thread__pat_mon_8h_acd82f8b72ed5ce773c71fe9c008a6d0d}{g\_events\_PatMon}};}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00033\ \}\ \textcolor{comment}{/*\ extern\ "{}C"{}\ */}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ THREAD\_PATMON\_H\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

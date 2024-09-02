@@ -1,0 +1,32 @@
+<map id="Send_Sigfox_Alert" name="Send_Sigfox_Alert">
+<area shape="rect" id="Node000001" title="Function to send alerts by Sigfox." alt="" coords="5,149,134,176"/>
+<area shape="rect" id="Node000002" href="$thread__comm__hal_8c.html#a14b282886d75e45f70a7ffe548732dba" title="Returns the selected Comms UART." alt="" coords="184,40,360,67"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="84,147,125,112,180,76,195,70,197,75,183,81,128,116,87,151"/>
+<area shape="rect" id="Node000003" href="$thread__comm__entry_8c.html#a6f2ca4d1ab63af942461484f1451146c" title="Checks if sigfox initialization process completed." alt="" coords="182,91,362,117"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="116,146,181,127,206,119,208,125,182,132,117,151"/>
+<area shape="rect" id="Node000004" href="$thread__comm__entry_8c.html#aec3cb8d1147721b26dbcca359d4c2a1c" title="Generate and send R100 Sigfox Alert." alt="" coords="191,141,353,184"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="134,160,175,160,175,165,134,165"/>
+<area shape="rect" id="Node000008" href="$sys_mon___battery_8c.html#ae8f3f32f49df7702f6405467130ce8fd" title="Function that report if the battery is DEMO or not." alt="" coords="631,157,792,184"/>
+<area shape="poly" id="edge16_Node000001_Node000008" title=" " alt="" coords="85,174,125,212,153,230,183,244,292,275,338,282,381,283,425,280,471,272,583,244,610,234,636,221,681,191,684,196,639,226,612,239,584,249,472,277,426,285,381,289,338,287,291,280,181,249,150,235,122,216,81,178"/>
+<area shape="rect" id="Node000014" href="$thread__comm__entry_8c.html#aae63ed01fe3ee64c1d194e97ca3877b3" title="Open Sigfox Communication." alt="" coords="202,208,342,235"/>
+<area shape="poly" id="edge14_Node000001_Node000014" title=" " alt="" coords="117,174,182,193,208,201,206,206,181,199,116,179"/>
+<area shape="rect" id="Node000005" href="$sys_mon___battery_8c.html#a6a908c00382961d78f2da4ee84cb4263" title="Computes the remaining capacity in the battery." alt="" coords="427,107,566,133"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="353,145,411,133,412,139,354,150"/>
+<area shape="rect" id="Node000009" href="$thread__drd__entry_8c.html#a919272f048aaf3454587b9c8dc4f3f2c" title="return the diagnosis" alt="" coords="427,5,567,32"/>
+<area shape="poly" id="edge8_Node000004_Node000009" title=" " alt="" coords="344,138,360,127,376,107,383,85,390,64,408,42,415,37,418,42,412,46,395,66,388,87,381,109,364,131,347,143"/>
+<area shape="rect" id="Node000011" href="$thread__sys_mon__entry_8c.html#aeeb458bcec8909373038cfd816e475db" title="Get electrodes signature." alt="" coords="410,157,583,184"/>
+<area shape="poly" id="edge10_Node000004_Node000011" title=" " alt="" coords="353,163,395,164,395,170,353,168"/>
+<area shape="rect" id="Node000012" href="$thread__pat_mon__hal_8c.html#a6b07f419fb5494de970c245ba09885a4" title="report the impedance value (in Ohms, ADCs or virtual)" alt="" coords="419,56,574,83"/>
+<area shape="poly" id="edge12_Node000004_Node000012" title=" " alt="" coords="337,138,361,127,384,110,409,92,423,86,426,91,411,97,387,114,363,132,339,143"/>
+<area shape="rect" id="Node000013" href="$thread__comm__entry_8c.html#af7921d111a91795221d7b493716d54c3" title="Process events related to All COMM modules." alt="" coords="426,208,567,235"/>
+<area shape="poly" id="edge13_Node000004_Node000013" title=" " alt="" coords="354,181,429,201,427,206,353,186"/>
+<area shape="rect" id="Node000006" href="$sys_mon___battery_8c.html#af6e0839479117b02185cb5786de7d15b" title="Computes the difference time between two dates (in days) (date_1 &#45; date_2)" alt="" coords="659,107,764,133"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="567,117,644,117,644,123,567,123"/>
+<area shape="rect" id="Node000007" href="$device__init_8c.html#ac9272954c69640cbc76d2ea99e68bc43" title="Function for accessing NFC device info struct." alt="" coords="638,56,785,83"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="556,103,637,84,638,89,557,109"/>
+<area shape="poly" id="edge7_Node000005_Node000008" title=" " alt="" coords="557,131,638,151,637,156,556,137"/>
+<area shape="rect" id="Node000010" href="$drd_8h.html#a604473ae3a07455d5bd16bb301a29fbe" title=" " alt="" coords="651,5,772,32"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="567,16,636,16,636,21,567,21"/>
+<area shape="poly" id="edge11_Node000011_Node000008" title=" " alt="" coords="584,168,615,168,615,173,584,173"/>
+<area shape="poly" id="edge15_Node000014_Node000013" title=" " alt="" coords="342,219,410,219,410,224,342,224"/>
+</map>

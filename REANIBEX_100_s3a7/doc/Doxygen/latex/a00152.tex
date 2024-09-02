@@ -1,0 +1,300 @@
+\doxysection{C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\+DRD/\+General.h File Reference}
+\hypertarget{a00152}{}\label{a00152}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/DRD/General.h@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/DRD/General.h}}
+
+
+Basic Types Definition.  
+
+
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{a00152_a30588c5eca7c9cb6ebba02a0236f0119}{FS}}~150L
+\begin{DoxyCompactList}\small\item\em Sampling frecuency. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{a00152_a598a3330b3c21701223ee0ca14316eca}{PI}}~3.\+14159265358979
+\item 
+\#define \mbox{\hyperlink{a00152_a9d76cc31537af0aac0544f448ffaa430}{NMW}}~\mbox{\hyperlink{a00140_a7e2271364d5cff6f472a2a5a859083d2}{ECG\+\_\+\+WIN\+\_\+\+SIZE\+\_\+\+DRD}}
+\item 
+\#define \mbox{\hyperlink{a00152_a7e41263c109c3cc5a9f462e1912a9fab}{NMF}}~2
+\item 
+\#define \mbox{\hyperlink{a00152_af9cccf331f045b89a9f12366df5f7687}{NW}}~2L
+\item 
+\#define \mbox{\hyperlink{a00152_ab550e58aec728d6413ee728b4ce8d5a8}{SNMW}}~240L
+\item 
+\#define \mbox{\hyperlink{a00152_ad0eeed801313b10305ba73f66ecf7853}{NFFT}}~1024L
+\item 
+\#define \mbox{\hyperlink{a00152_aa8cecfc5c5c054d2875c03e77b7be15d}{TRUE}}~1
+\item 
+\#define \mbox{\hyperlink{a00152_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}~0
+\item 
+\#define \mbox{\hyperlink{a00152_a7e7f9ccd7feb0127c199885b51bb8772}{ESCALA}}~4095L
+\item 
+\#define \mbox{\hyperlink{a00152_ae47562bed3e19139141d807e51c339ff}{RANGEmV}}~20
+\item 
+\#define \mbox{\hyperlink{a00152_a8ebfe37493b7b31f6752a4fb44defd39}{SHOCK}}~1
+\item 
+\#define \mbox{\hyperlink{a00152_a9e014db9c17dae31a35a45070eefb08b}{NOSHOCK}}~0
+\item 
+\#define \mbox{\hyperlink{a00152_a66e8c6e6a07373238fb5b5d6d530f99f}{b\+WT\+\_\+\+REG}}~-\/11.\+2572
+\item 
+\#define \mbox{\hyperlink{a00152_a3b8af56c7d70ba2ae94be522398120c9}{b\+CP\+\_\+\+REG}}~14.\+9565
+\item 
+\#define \mbox{\hyperlink{a00152_aae1fcbd35d20c1e3ea624877f755d69e}{b\+W\+\_\+\+REG}}~0.\+5831
+\item 
+\#define \mbox{\hyperlink{a00152_a786a5e538e4ce5ec5bf4af1d4ccf2e12}{d\+\_\+\+REG}}~-\/4.\+0186
+\item 
+\#define \mbox{\hyperlink{a00152_aabe3865567c60decd94a692cd5f5ac27}{lim\+REG}}~0
+\item 
+\#define \mbox{\hyperlink{a00152_adad36a34732f00afdf6ea03e0b75da20}{limb\+W\+\_\+\+FD}}~0.\+65
+\item 
+\#define \mbox{\hyperlink{a00152_afc10e589577c4545b9345017f3e611f8}{lim\+FD\+\_\+\+FD}}~2.\+5
+\item 
+\#define \mbox{\hyperlink{a00152_a8a645595e1b6370e5624999f69ac1bb3}{limb\+WT\+\_\+\+QRS}}~0.\+235
+\item 
+\#define \mbox{\hyperlink{a00152_a50419916520bde457d4ed600e7d03f80}{limb\+CP\+\_\+\+QRS}}~0.\+48
+\item 
+\#define \mbox{\hyperlink{a00152_af4038bc29b55fd51796db3c159418476}{max\+P\+\_\+\+PIC}}~100L
+\item 
+\#define \mbox{\hyperlink{a00152_a46ac3ad5decbcb6b3f0638263ecaaf94}{lim\+Val\+\_\+\+PIC}}~0.\+14
+\item 
+\#define \mbox{\hyperlink{a00152_a790ea9f0b45b09b7ca26d1e4ddf44e00}{Sep\+Min\+\_\+\+PIC}}~18
+\item 
+\#define \mbox{\hyperlink{a00152_a6e90165e15218927faed6afe4a98e8ef}{lim\+Min\+\_\+\+PIC}}~2
+\item 
+\#define \mbox{\hyperlink{a00152_ae1330683f6b23cc245ca76b943584242}{limfca\+Hz\+\_\+\+CAS1}}~2.\+5
+\item 
+\#define \mbox{\hyperlink{a00152_a5053ed4a0737033b01ef5be0dbbd3539}{limfca\+Hz\+\_\+\+CAS2}}~1.\+3333
+\item 
+\#define \mbox{\hyperlink{a00152_ac956eb54845dfc4e43222e83031d8fba}{limb\+CP\+\_\+\+CAS}}~0.\+145
+\item 
+\#define \mbox{\hyperlink{a00152_a66b091582ff169bcc61405bd2eacaadc}{limf\+C\+\_\+\+CAS}}~2.\+65
+\item 
+\#define \mbox{\hyperlink{a00152_ac9314a425d32416b6d2d313dd0c2e36d}{limb\+WT\+\_\+\+CAS}}~0.\+400
+\item 
+\#define \mbox{\hyperlink{a00152_ad6b82f0188913b9c3c2778c95bc58b90}{lim\+CVT\+\_\+\+CAS}}~0.\+15
+\item 
+\#define \mbox{\hyperlink{a00152_a55a65d2d865fb44ecd966c6e0e2cf5b8}{limn\+P\+\_\+\+CAS}}~3
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Basic Types Definition. 
+
+\begin{DoxyVersion}{Version}
+0.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2011-\/09-\/21 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+EG (\href{mailto:egarcia@osatu.com}{\texttt{ egarcia@osatu.\+com}}) 
+\end{DoxyAuthor}
+\begin{DoxyWarning}{Warning}
+EG 2011-\/09-\/21 V0.\+0 .-\/ First edition 
+\end{DoxyWarning}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{a00257__bug000040}{Bug}}]\end{DoxyRefDesc}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{a00152_a3b8af56c7d70ba2ae94be522398120c9}\label{a00152_a3b8af56c7d70ba2ae94be522398120c9} 
+\index{General.h@{General.h}!bCP\_REG@{bCP\_REG}}
+\index{bCP\_REG@{bCP\_REG}!General.h@{General.h}}
+\doxysubsubsection{\texorpdfstring{bCP\_REG}{bCP\_REG}}
+{\footnotesize\ttfamily \#define b\+CP\+\_\+\+REG~14.\+9565}
+
+\Hypertarget{a00152_aae1fcbd35d20c1e3ea624877f755d69e}\label{a00152_aae1fcbd35d20c1e3ea624877f755d69e} 
+\index{General.h@{General.h}!bW\_REG@{bW\_REG}}
+\index{bW\_REG@{bW\_REG}!General.h@{General.h}}
+\doxysubsubsection{\texorpdfstring{bW\_REG}{bW\_REG}}
+{\footnotesize\ttfamily \#define b\+W\+\_\+\+REG~0.\+5831}
+
+\Hypertarget{a00152_a66e8c6e6a07373238fb5b5d6d530f99f}\label{a00152_a66e8c6e6a07373238fb5b5d6d530f99f} 
+\index{General.h@{General.h}!bWT\_REG@{bWT\_REG}}
+\index{bWT\_REG@{bWT\_REG}!General.h@{General.h}}
+\doxysubsubsection{\texorpdfstring{bWT\_REG}{bWT\_REG}}
+{\footnotesize\ttfamily \#define b\+WT\+\_\+\+REG~-\/11.\+2572}
+
+\Hypertarget{a00152_a786a5e538e4ce5ec5bf4af1d4ccf2e12}\label{a00152_a786a5e538e4ce5ec5bf4af1d4ccf2e12} 
+\index{General.h@{General.h}!d\_REG@{d\_REG}}
+\index{d\_REG@{d\_REG}!General.h@{General.h}}
+\doxysubsubsection{\texorpdfstring{d\_REG}{d\_REG}}
+{\footnotesize\ttfamily \#define d\+\_\+\+REG~-\/4.\+0186}
+
+\Hypertarget{a00152_a7e7f9ccd7feb0127c199885b51bb8772}\label{a00152_a7e7f9ccd7feb0127c199885b51bb8772} 
+\index{General.h@{General.h}!ESCALA@{ESCALA}}
+\index{ESCALA@{ESCALA}!General.h@{General.h}}
+\doxysubsubsection{\texorpdfstring{ESCALA}{ESCALA}}
+{\footnotesize\ttfamily \#define ESCALA~4095L}
+
+\Hypertarget{a00152_aa93f0eb578d23995850d61f7d61c55c1}\label{a00152_aa93f0eb578d23995850d61f7d61c55c1} 
+\index{General.h@{General.h}!FALSE@{FALSE}}
+\index{FALSE@{FALSE}!General.h@{General.h}}
+\doxysubsubsection{\texorpdfstring{FALSE}{FALSE}}
+{\footnotesize\ttfamily \#define FALSE~0}
+
+\Hypertarget{a00152_a30588c5eca7c9cb6ebba02a0236f0119}\label{a00152_a30588c5eca7c9cb6ebba02a0236f0119} 
+\index{General.h@{General.h}!FS@{FS}}
+\index{FS@{FS}!General.h@{General.h}}
+\doxysubsubsection{\texorpdfstring{FS}{FS}}
+{\footnotesize\ttfamily \#define FS~150L}
+
+
+
+Sampling frecuency. 
+
+\Hypertarget{a00152_ac956eb54845dfc4e43222e83031d8fba}\label{a00152_ac956eb54845dfc4e43222e83031d8fba} 
+\index{General.h@{General.h}!limbCP\_CAS@{limbCP\_CAS}}
+\index{limbCP\_CAS@{limbCP\_CAS}!General.h@{General.h}}
+\doxysubsubsection{\texorpdfstring{limbCP\_CAS}{limbCP\_CAS}}
+{\footnotesize\ttfamily \#define limb\+CP\+\_\+\+CAS~0.\+145}
+
+\Hypertarget{a00152_a50419916520bde457d4ed600e7d03f80}\label{a00152_a50419916520bde457d4ed600e7d03f80} 
+\index{General.h@{General.h}!limbCP\_QRS@{limbCP\_QRS}}
+\index{limbCP\_QRS@{limbCP\_QRS}!General.h@{General.h}}
+\doxysubsubsection{\texorpdfstring{limbCP\_QRS}{limbCP\_QRS}}
+{\footnotesize\ttfamily \#define limb\+CP\+\_\+\+QRS~0.\+48}
+
+\Hypertarget{a00152_adad36a34732f00afdf6ea03e0b75da20}\label{a00152_adad36a34732f00afdf6ea03e0b75da20} 
+\index{General.h@{General.h}!limbW\_FD@{limbW\_FD}}
+\index{limbW\_FD@{limbW\_FD}!General.h@{General.h}}
+\doxysubsubsection{\texorpdfstring{limbW\_FD}{limbW\_FD}}
+{\footnotesize\ttfamily \#define limb\+W\+\_\+\+FD~0.\+65}
+
+\Hypertarget{a00152_ac9314a425d32416b6d2d313dd0c2e36d}\label{a00152_ac9314a425d32416b6d2d313dd0c2e36d} 
+\index{General.h@{General.h}!limbWT\_CAS@{limbWT\_CAS}}
+\index{limbWT\_CAS@{limbWT\_CAS}!General.h@{General.h}}
+\doxysubsubsection{\texorpdfstring{limbWT\_CAS}{limbWT\_CAS}}
+{\footnotesize\ttfamily \#define limb\+WT\+\_\+\+CAS~0.\+400}
+
+\Hypertarget{a00152_a8a645595e1b6370e5624999f69ac1bb3}\label{a00152_a8a645595e1b6370e5624999f69ac1bb3} 
+\index{General.h@{General.h}!limbWT\_QRS@{limbWT\_QRS}}
+\index{limbWT\_QRS@{limbWT\_QRS}!General.h@{General.h}}
+\doxysubsubsection{\texorpdfstring{limbWT\_QRS}{limbWT\_QRS}}
+{\footnotesize\ttfamily \#define limb\+WT\+\_\+\+QRS~0.\+235}
+
+\Hypertarget{a00152_ad6b82f0188913b9c3c2778c95bc58b90}\label{a00152_ad6b82f0188913b9c3c2778c95bc58b90} 
+\index{General.h@{General.h}!limCVT\_CAS@{limCVT\_CAS}}
+\index{limCVT\_CAS@{limCVT\_CAS}!General.h@{General.h}}
+\doxysubsubsection{\texorpdfstring{limCVT\_CAS}{limCVT\_CAS}}
+{\footnotesize\ttfamily \#define lim\+CVT\+\_\+\+CAS~0.\+15}
+
+\Hypertarget{a00152_a66b091582ff169bcc61405bd2eacaadc}\label{a00152_a66b091582ff169bcc61405bd2eacaadc} 
+\index{General.h@{General.h}!limfC\_CAS@{limfC\_CAS}}
+\index{limfC\_CAS@{limfC\_CAS}!General.h@{General.h}}
+\doxysubsubsection{\texorpdfstring{limfC\_CAS}{limfC\_CAS}}
+{\footnotesize\ttfamily \#define limf\+C\+\_\+\+CAS~2.\+65}
+
+\Hypertarget{a00152_ae1330683f6b23cc245ca76b943584242}\label{a00152_ae1330683f6b23cc245ca76b943584242} 
+\index{General.h@{General.h}!limfcaHz\_CAS1@{limfcaHz\_CAS1}}
+\index{limfcaHz\_CAS1@{limfcaHz\_CAS1}!General.h@{General.h}}
+\doxysubsubsection{\texorpdfstring{limfcaHz\_CAS1}{limfcaHz\_CAS1}}
+{\footnotesize\ttfamily \#define limfca\+Hz\+\_\+\+CAS1~2.\+5}
+
+\Hypertarget{a00152_a5053ed4a0737033b01ef5be0dbbd3539}\label{a00152_a5053ed4a0737033b01ef5be0dbbd3539} 
+\index{General.h@{General.h}!limfcaHz\_CAS2@{limfcaHz\_CAS2}}
+\index{limfcaHz\_CAS2@{limfcaHz\_CAS2}!General.h@{General.h}}
+\doxysubsubsection{\texorpdfstring{limfcaHz\_CAS2}{limfcaHz\_CAS2}}
+{\footnotesize\ttfamily \#define limfca\+Hz\+\_\+\+CAS2~1.\+3333}
+
+\Hypertarget{a00152_afc10e589577c4545b9345017f3e611f8}\label{a00152_afc10e589577c4545b9345017f3e611f8} 
+\index{General.h@{General.h}!limFD\_FD@{limFD\_FD}}
+\index{limFD\_FD@{limFD\_FD}!General.h@{General.h}}
+\doxysubsubsection{\texorpdfstring{limFD\_FD}{limFD\_FD}}
+{\footnotesize\ttfamily \#define lim\+FD\+\_\+\+FD~2.\+5}
+
+\Hypertarget{a00152_a6e90165e15218927faed6afe4a98e8ef}\label{a00152_a6e90165e15218927faed6afe4a98e8ef} 
+\index{General.h@{General.h}!limMin\_PIC@{limMin\_PIC}}
+\index{limMin\_PIC@{limMin\_PIC}!General.h@{General.h}}
+\doxysubsubsection{\texorpdfstring{limMin\_PIC}{limMin\_PIC}}
+{\footnotesize\ttfamily \#define lim\+Min\+\_\+\+PIC~2}
+
+\Hypertarget{a00152_a55a65d2d865fb44ecd966c6e0e2cf5b8}\label{a00152_a55a65d2d865fb44ecd966c6e0e2cf5b8} 
+\index{General.h@{General.h}!limnP\_CAS@{limnP\_CAS}}
+\index{limnP\_CAS@{limnP\_CAS}!General.h@{General.h}}
+\doxysubsubsection{\texorpdfstring{limnP\_CAS}{limnP\_CAS}}
+{\footnotesize\ttfamily \#define limn\+P\+\_\+\+CAS~3}
+
+\Hypertarget{a00152_aabe3865567c60decd94a692cd5f5ac27}\label{a00152_aabe3865567c60decd94a692cd5f5ac27} 
+\index{General.h@{General.h}!limREG@{limREG}}
+\index{limREG@{limREG}!General.h@{General.h}}
+\doxysubsubsection{\texorpdfstring{limREG}{limREG}}
+{\footnotesize\ttfamily \#define lim\+REG~0}
+
+\Hypertarget{a00152_a46ac3ad5decbcb6b3f0638263ecaaf94}\label{a00152_a46ac3ad5decbcb6b3f0638263ecaaf94} 
+\index{General.h@{General.h}!limVal\_PIC@{limVal\_PIC}}
+\index{limVal\_PIC@{limVal\_PIC}!General.h@{General.h}}
+\doxysubsubsection{\texorpdfstring{limVal\_PIC}{limVal\_PIC}}
+{\footnotesize\ttfamily \#define lim\+Val\+\_\+\+PIC~0.\+14}
+
+\Hypertarget{a00152_af4038bc29b55fd51796db3c159418476}\label{a00152_af4038bc29b55fd51796db3c159418476} 
+\index{General.h@{General.h}!maxP\_PIC@{maxP\_PIC}}
+\index{maxP\_PIC@{maxP\_PIC}!General.h@{General.h}}
+\doxysubsubsection{\texorpdfstring{maxP\_PIC}{maxP\_PIC}}
+{\footnotesize\ttfamily \#define max\+P\+\_\+\+PIC~100L}
+
+\Hypertarget{a00152_ad0eeed801313b10305ba73f66ecf7853}\label{a00152_ad0eeed801313b10305ba73f66ecf7853} 
+\index{General.h@{General.h}!NFFT@{NFFT}}
+\index{NFFT@{NFFT}!General.h@{General.h}}
+\doxysubsubsection{\texorpdfstring{NFFT}{NFFT}}
+{\footnotesize\ttfamily \#define NFFT~1024L}
+
+\Hypertarget{a00152_a7e41263c109c3cc5a9f462e1912a9fab}\label{a00152_a7e41263c109c3cc5a9f462e1912a9fab} 
+\index{General.h@{General.h}!NMF@{NMF}}
+\index{NMF@{NMF}!General.h@{General.h}}
+\doxysubsubsection{\texorpdfstring{NMF}{NMF}}
+{\footnotesize\ttfamily \#define NMF~2}
+
+\Hypertarget{a00152_a9d76cc31537af0aac0544f448ffaa430}\label{a00152_a9d76cc31537af0aac0544f448ffaa430} 
+\index{General.h@{General.h}!NMW@{NMW}}
+\index{NMW@{NMW}!General.h@{General.h}}
+\doxysubsubsection{\texorpdfstring{NMW}{NMW}}
+{\footnotesize\ttfamily \#define NMW~\mbox{\hyperlink{a00140_a7e2271364d5cff6f472a2a5a859083d2}{ECG\+\_\+\+WIN\+\_\+\+SIZE\+\_\+\+DRD}}}
+
+\Hypertarget{a00152_a9e014db9c17dae31a35a45070eefb08b}\label{a00152_a9e014db9c17dae31a35a45070eefb08b} 
+\index{General.h@{General.h}!NOSHOCK@{NOSHOCK}}
+\index{NOSHOCK@{NOSHOCK}!General.h@{General.h}}
+\doxysubsubsection{\texorpdfstring{NOSHOCK}{NOSHOCK}}
+{\footnotesize\ttfamily \#define NOSHOCK~0}
+
+\Hypertarget{a00152_af9cccf331f045b89a9f12366df5f7687}\label{a00152_af9cccf331f045b89a9f12366df5f7687} 
+\index{General.h@{General.h}!NW@{NW}}
+\index{NW@{NW}!General.h@{General.h}}
+\doxysubsubsection{\texorpdfstring{NW}{NW}}
+{\footnotesize\ttfamily \#define NW~2L}
+
+\Hypertarget{a00152_a598a3330b3c21701223ee0ca14316eca}\label{a00152_a598a3330b3c21701223ee0ca14316eca} 
+\index{General.h@{General.h}!PI@{PI}}
+\index{PI@{PI}!General.h@{General.h}}
+\doxysubsubsection{\texorpdfstring{PI}{PI}}
+{\footnotesize\ttfamily \#define PI~3.\+14159265358979}
+
+\Hypertarget{a00152_ae47562bed3e19139141d807e51c339ff}\label{a00152_ae47562bed3e19139141d807e51c339ff} 
+\index{General.h@{General.h}!RANGEmV@{RANGEmV}}
+\index{RANGEmV@{RANGEmV}!General.h@{General.h}}
+\doxysubsubsection{\texorpdfstring{RANGEmV}{RANGEmV}}
+{\footnotesize\ttfamily \#define RANGEmV~20}
+
+\Hypertarget{a00152_a790ea9f0b45b09b7ca26d1e4ddf44e00}\label{a00152_a790ea9f0b45b09b7ca26d1e4ddf44e00} 
+\index{General.h@{General.h}!SepMin\_PIC@{SepMin\_PIC}}
+\index{SepMin\_PIC@{SepMin\_PIC}!General.h@{General.h}}
+\doxysubsubsection{\texorpdfstring{SepMin\_PIC}{SepMin\_PIC}}
+{\footnotesize\ttfamily \#define Sep\+Min\+\_\+\+PIC~18}
+
+\Hypertarget{a00152_a8ebfe37493b7b31f6752a4fb44defd39}\label{a00152_a8ebfe37493b7b31f6752a4fb44defd39} 
+\index{General.h@{General.h}!SHOCK@{SHOCK}}
+\index{SHOCK@{SHOCK}!General.h@{General.h}}
+\doxysubsubsection{\texorpdfstring{SHOCK}{SHOCK}}
+{\footnotesize\ttfamily \#define SHOCK~1}
+
+\Hypertarget{a00152_ab550e58aec728d6413ee728b4ce8d5a8}\label{a00152_ab550e58aec728d6413ee728b4ce8d5a8} 
+\index{General.h@{General.h}!SNMW@{SNMW}}
+\index{SNMW@{SNMW}!General.h@{General.h}}
+\doxysubsubsection{\texorpdfstring{SNMW}{SNMW}}
+{\footnotesize\ttfamily \#define SNMW~240L}
+
+\Hypertarget{a00152_aa8cecfc5c5c054d2875c03e77b7be15d}\label{a00152_aa8cecfc5c5c054d2875c03e77b7be15d} 
+\index{General.h@{General.h}!TRUE@{TRUE}}
+\index{TRUE@{TRUE}!General.h@{General.h}}
+\doxysubsubsection{\texorpdfstring{TRUE}{TRUE}}
+{\footnotesize\ttfamily \#define TRUE~1}
+

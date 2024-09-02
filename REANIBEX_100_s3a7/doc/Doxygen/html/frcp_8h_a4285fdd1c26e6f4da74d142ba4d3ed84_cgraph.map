@@ -1,0 +1,31 @@
+<map id="FRCP_Process_Zpwin" name="FRCP_Process_Zpwin">
+<area shape="rect" id="Node000001" title="Calcule the FRCP of the current window." alt="" coords="5,183,157,209"/>
+<area shape="rect" id="Node000002" href="$frcp_8c.html#ad6eb78aad65f607d7da803f41e8ffa7f" title="Funcion que calcula para cada fluctuacion dos parametros: amplitud (media de las diferencias de ampli..." alt="" coords="210,5,357,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="88,181,131,115,164,76,203,42,211,37,214,42,206,46,168,79,135,118,92,183"/>
+<area shape="rect" id="Node000003" href="$frcp_8c.html#a1ab0f7c3216c6c0c7e5064a545138ebc" title="Funcion que a partir de un array de posiciones de las compresiones del �ltimo bloque calcula la frecu..." alt="" coords="205,56,362,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="94,180,140,138,170,114,203,92,215,86,218,91,206,97,173,118,143,142,97,184"/>
+<area shape="rect" id="Node000005" href="$frcp_8c.html#a92d5c99a99bed1fd14ef11dca74fd6ca" title="Funcion que a partir de los arrays de features (par�metros) de cada fluctuaci�n decide �sta ha sido p..." alt="" coords="206,107,361,133"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="113,180,204,143,222,136,224,141,206,148,115,185"/>
+<area shape="rect" id="Node000006" href="$frcp_8c.html#a9969fd4574fa73360d66b3a384fc7e00" title="Funcion que comprueba si las ultimas compresiones detectadas pertenecen a un bloque de compresiones...." alt="" coords="224,157,343,184"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="157,184,208,177,209,183,158,189"/>
+<area shape="rect" id="Node000008" href="$frcp_8c.html#a1565afa647ed6ab27c18ff4257cf3760" title="Funcion que actualiza el valor de frecuencia de las compresiones." alt="" coords="211,208,356,235"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="158,203,196,208,195,213,157,208"/>
+<area shape="rect" id="Node000009" href="$frcp_8c.html#a6121587ec280009201098222cb0e9120" title="Funcion que actualiza el umbral de amplitud en Funcion de las amplitudes de las ultimas compresiones ..." alt="" coords="213,259,354,285"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="115,207,206,244,224,251,222,256,204,249,113,212"/>
+<area shape="rect" id="Node000010" href="$frcp_8c.html#ae0ae74d64db8a194d20446eec2670afb" title="Funcion que recibe un tramo de impedancia y devuelve sus maximos y minimos relativos." alt="" coords="242,309,325,336"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="97,208,143,250,173,274,206,295,228,305,226,310,203,300,170,278,140,254,94,212"/>
+<area shape="rect" id="Node000013" href="$frcp_8c.html#a9cda9a5d032db229a00b88e37a9cbb3a" title="IIR passband filtering function (2.5 &#45; 30 Hz). Implementation based on 10th order butterworth filter ..." alt="" coords="244,360,323,387"/>
+<area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="92,209,135,274,168,313,206,346,231,358,228,363,203,350,164,316,131,277,88,211"/>
+<area shape="rect" id="Node000004" href="$frcp_8c.html#a2d2f5147df66b194b2492fb0ec84d0d4" title="Function that calculates the median of an array of integers." alt="" coords="412,56,517,83"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="362,67,396,67,396,72,362,72"/>
+<area shape="rect" id="Node000007" href="$frcp_8c.html#a98a29d36e405c6b9781d0b245c7364fa" title="Function to initialize the block buffer." alt="" coords="420,157,508,184"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="343,168,405,168,405,173,343,173"/>
+<area shape="rect" id="Node000011" href="$frcp_8c.html#a913c8d48e4055555665fc82027e69772" title="Funcion que identifica un posible maximo en un tramo de impedancia." alt="" coords="410,259,518,285"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="325,308,399,287,400,293,326,314"/>
+<area shape="rect" id="Node000012" href="$frcp_8c.html#acff226b96220fbd9cfea0b8064e3f3dc" title="Funcion que identifica un posible minimo en un tramo de impedancia." alt="" coords="412,309,516,336"/>
+<area shape="poly" id="edge11_Node000010_Node000012" title=" " alt="" coords="326,320,397,320,397,325,326,325"/>
+<area shape="rect" id="Node000014" href="$frcp_8c.html#aa0d38369b0c55dcf304794e0b077ffe5" title="IIR second order filtering function." alt="" coords="411,360,517,387"/>
+<area shape="poly" id="edge13_Node000013_Node000014" title=" " alt="" coords="323,371,395,371,395,376,323,376"/>
+<area shape="rect" id="Node000015" href="$frcp_8c.html#a863e0f1052437340e1c7573fd61eaba9" title="Second order IIR filtering function." alt="" coords="411,411,517,437"/>
+<area shape="poly" id="edge14_Node000013_Node000015" title=" " alt="" coords="324,382,400,403,398,408,322,387"/>
+</map>

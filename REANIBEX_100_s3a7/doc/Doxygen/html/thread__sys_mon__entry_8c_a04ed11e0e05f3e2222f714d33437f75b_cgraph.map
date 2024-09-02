@@ -1,0 +1,31 @@
+<map id="sysMon_trace" name="sysMon_trace">
+<area shape="rect" id="Node000001" title="Trace some items from the system monitor." alt="" coords="5,321,109,348"/>
+<area shape="rect" id="Node000002" href="$sys_mon___battery_8c.html#a6a908c00382961d78f2da4ee84cb4263" title="Computes the remaining capacity in the battery." alt="" coords="180,81,320,108"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="59,320,69,283,88,232,116,178,134,153,155,130,180,113,183,117,158,134,138,156,120,181,93,235,74,285,64,322"/>
+<area shape="rect" id="Node000006" href="$thread__defibrillator__hal_8c.html#a3e86b71d391996bf2ffc968da01e5326" title="Read the Vbatt value from the main supply voltage." alt="" coords="192,144,308,171"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="61,320,93,253,120,214,155,181,176,169,178,174,158,185,124,217,98,256,66,322"/>
+<area shape="rect" id="Node000008" href="$thread__defibrillator__hal_8c.html#a51d3d1bc2120f01ddcb0ed702a23e913" title="Read the Vc value from the main capacitor." alt="" coords="199,195,301,221"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="66,319,102,276,127,252,155,231,183,219,185,223,158,236,130,256,106,279,70,323"/>
+<area shape="rect" id="Node000009" href="$device__init_8c.html#a2f7047dc1ce0a3687c48872ed81aff5f" title="Function for accessing device info variable." alt="" coords="193,245,307,272"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="81,318,156,282,177,274,178,279,158,286,83,323"/>
+<area shape="rect" id="Node000010" href="$thread__pat_mon__hal_8c.html#a38356e80b22420c57c34439af0dc1250" title="report the temperature value in degrees be careful, the PGA gain is 4" alt="" coords="164,296,336,323"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="109,325,148,320,149,325,110,331"/>
+<area shape="rect" id="Node000011" href="$thread__pat_mon__hal_8c.html#a9ba28eb3a7a634bf9a4a495d90a705b1" title="report the impedance value in ADCs (this value is not compensated !!!)" alt="" coords="173,347,327,373"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="110,339,158,345,157,350,109,344"/>
+<area shape="rect" id="Node000012" href="$thread__pat_mon__hal_8c.html#ae98728fc9430398da8683e46653aac5b" title="report the calibration impedance value in ADCs" alt="" coords="157,397,343,424"/>
+<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="83,346,158,383,178,390,176,395,156,388,81,351"/>
+<area shape="rect" id="Node000013" href="$thread__pat_mon__hal_8c.html#a6b07f419fb5494de970c245ba09885a4" title="report the impedance value (in Ohms, ADCs or virtual)" alt="" coords="172,448,328,475"/>
+<area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="70,347,106,390,130,414,158,434,169,439,166,444,155,438,127,418,102,394,66,350"/>
+<area shape="rect" id="Node000014" href="$_trace_8c.html#a8947b81ae09bdb57459cd1c81c78ab37" title="Print a trace string inserting the time stamp." alt="" coords="223,499,277,525"/>
+<area shape="poly" id="edge13_Node000001_Node000014" title=" " alt="" coords="66,347,98,414,124,452,158,485,182,497,208,505,207,510,180,502,155,489,120,455,93,416,61,350"/>
+<area shape="rect" id="Node000015" href="$_trace_8c.html#abbe04e9d8a6f964c5a4f18901a95b0de" title="Print a trace string inserting the time stamp." alt="" coords="210,549,290,576"/>
+<area shape="poly" id="edge14_Node000001_Node000015" title=" " alt="" coords="64,348,73,385,91,436,119,490,137,514,158,535,176,546,195,553,194,558,173,551,155,539,133,518,114,493,86,438,68,387,58,349"/>
+<area shape="rect" id="Node000003" href="$sys_mon___battery_8c.html#af6e0839479117b02185cb5786de7d15b" title="Computes the difference time between two dates (in days) (date_1 &#45; date_2)" alt="" coords="419,5,523,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="288,78,390,41,410,35,412,40,392,47,289,83"/>
+<area shape="rect" id="Node000004" href="$device__init_8c.html#ac9272954c69640cbc76d2ea99e68bc43" title="Function for accessing NFC device info struct." alt="" coords="398,56,545,83"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="319,84,382,77,382,82,320,89"/>
+<area shape="rect" id="Node000005" href="$sys_mon___battery_8c.html#ae8f3f32f49df7702f6405467130ce8fd" title="Function that report if the battery is DEMO or not." alt="" coords="391,107,551,133"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="320,100,376,106,375,112,319,105"/>
+<area shape="rect" id="Node000007" href="$thread__defibrillator__hal_8c.html#a1732c6fa09148497f9b79f530fb94a8a" title="report the current state of the defibrillator" alt="" coords="413,157,529,184"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="309,158,397,164,397,169,308,163"/>
+</map>

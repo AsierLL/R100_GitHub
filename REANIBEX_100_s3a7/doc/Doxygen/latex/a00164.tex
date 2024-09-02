@@ -1,0 +1,277 @@
+\doxysection{C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\+Drivers/\+I2\+C\+\_\+2.c File Reference}
+\hypertarget{a00164}{}\label{a00164}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/Drivers/I2C\_2.c@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/Drivers/I2C\_2.c}}
+
+
+All functions related to the I2\+C-\/2.  
+
+
+{\ttfamily \#include $<$thread\+\_\+sys\+Mon.\+h$>$}\newline
+{\ttfamily \#include "{}hal\+\_\+data.\+h"{}}\newline
+{\ttfamily \#include "{}types\+\_\+basic.\+h"{}}\newline
+{\ttfamily \#include "{}I2\+C\+\_\+2.\+h"{}}\newline
+Include dependency graph for I2\+C\+\_\+2.\+c\+:
+% FIG 0
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{a00164_a2ef47c72ed141be7037a5e61fccd1d8f}{I2\+C2\+\_\+\+SCL}}~IOPORT\+\_\+\+PORT\+\_\+02\+\_\+\+PIN\+\_\+02
+\item 
+\#define \mbox{\hyperlink{a00164_ae16eb7443d75d7ea88228a64f2d1b638}{I2\+C2\+\_\+\+SDA}}~IOPORT\+\_\+\+PORT\+\_\+02\+\_\+\+PIN\+\_\+03
+\item 
+\#define \mbox{\hyperlink{a00164_a2ef60af3eae85c1510b5e87a8c18f2fb}{I2\+C2\+\_\+\+CLK\+\_\+\+PULSE}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{a00164_afb25d38eef88c072ab6ce216e1965501}{I2\+C2\+\_\+\+Start\+Condition}} (void)
+\begin{DoxyCompactList}\small\item\em Generate the START condition in the i2C line. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{a00164_a24d35a4dc09bc8d6c5be604be9a2102b}{I2\+C2\+\_\+\+Stop\+Condition}} (void)
+\begin{DoxyCompactList}\small\item\em Generate the STOP condition in the i2C line. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{a00164_a5a45bd2c0aa3fd6619ad4e682466200c}{I2\+C2\+\_\+\+TX\+\_\+\+Byte}} (\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} data)
+\begin{DoxyCompactList}\small\item\em Function to send a data byte to the i2C device. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{a00164_aa504ef0b681fc32e47f923cc52b93067}{I2\+C2\+\_\+\+RX\+\_\+\+Byte}} (\mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} ack\+\_\+flag)
+\begin{DoxyCompactList}\small\item\em Function to get a data byte from the i2C device. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a00164_aba3d08d9b33082a1c0aa61ae3e6b5e23}{I2\+C2\+\_\+\+Read\+Byte}} (\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} addr, \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Data)
+\begin{DoxyCompactList}\small\item\em Function to read a byte data from a specific address. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a00164_ab2d6470085f0f13033eca2373bcf4b41}{I2\+C2\+\_\+\+Read}} (\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} addr, \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}data, \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} n\+Bytes)
+\begin{DoxyCompactList}\small\item\em Function to read data from a specific address. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a00164_abb5323ebe9e05f1fe983ee0c53fa732e}{I2\+C2\+\_\+\+Write\+Byte}} (\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} addr, \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} data)
+\begin{DoxyCompactList}\small\item\em Function to write a data byte at specific address. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a00164_a54092e1b35159f28a6fae808c1c909e0}{I2\+C2\+\_\+\+Write}} (\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} addr, \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}data, \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} n\+Bytes)
+\begin{DoxyCompactList}\small\item\em Function to write data at specific address. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a00164_a75998894ee4aceb2f03ebc36a0000d3f}{I2\+C2\+\_\+\+Write\+\_\+\+NFC}} (\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} block\+\_\+idx, \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}data, \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} n\+Bytes)
+\begin{DoxyCompactList}\small\item\em Function to write data at specific address in the NTag memory. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a00164_a48856cefb69c8a4371722c1ef5455ba0}{I2\+C2\+\_\+\+Write\+\_\+\+OW}} (\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} command, \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} data)
+\begin{DoxyCompactList}\small\item\em Function to write a data byte at specific address. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a00164_a7ba82d621147cdcae270e9926abb3736}{I2\+C2\+\_\+\+Read\+Byte\+\_\+\+OW}} (\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Data, \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} n\+Bytes)
+\begin{DoxyCompactList}\small\item\em Function to read data byte at specific address. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+All functions related to the I2\+C-\/2. 
+
+\begin{DoxyVersion}{Version}
+v1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+16/01/2018 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+ltorres 
+\end{DoxyAuthor}
+\begin{DoxyWarning}{Warning}
+author date version .-\/ Edition 
+\end{DoxyWarning}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{a00257__bug000044}{Bug}}]\end{DoxyRefDesc}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{a00164_a2ef60af3eae85c1510b5e87a8c18f2fb}\label{a00164_a2ef60af3eae85c1510b5e87a8c18f2fb} 
+\index{I2C\_2.c@{I2C\_2.c}!I2C2\_CLK\_PULSE@{I2C2\_CLK\_PULSE}}
+\index{I2C2\_CLK\_PULSE@{I2C2\_CLK\_PULSE}!I2C\_2.c@{I2C\_2.c}}
+\doxysubsubsection{\texorpdfstring{I2C2\_CLK\_PULSE}{I2C2\_CLK\_PULSE}}
+{\footnotesize\ttfamily \#define I2\+C2\+\_\+\+CLK\+\_\+\+PULSE}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ g\_ioport.p\_api-\/>pinWrite\ (\mbox{\hyperlink{a00164_a2ef47c72ed141be7037a5e61fccd1d8f}{I2C2\_SCL}},\ IOPORT\_LEVEL\_HIGH);\ \(\backslash\)\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ g\_ioport.p\_api-\/>pinWrite\ (\mbox{\hyperlink{a00164_a2ef47c72ed141be7037a5e61fccd1d8f}{I2C2\_SCL}},\ IOPORT\_LEVEL\_LOW);\ \}}
+
+\end{DoxyCode}
+\Hypertarget{a00164_a2ef47c72ed141be7037a5e61fccd1d8f}\label{a00164_a2ef47c72ed141be7037a5e61fccd1d8f} 
+\index{I2C\_2.c@{I2C\_2.c}!I2C2\_SCL@{I2C2\_SCL}}
+\index{I2C2\_SCL@{I2C2\_SCL}!I2C\_2.c@{I2C\_2.c}}
+\doxysubsubsection{\texorpdfstring{I2C2\_SCL}{I2C2\_SCL}}
+{\footnotesize\ttfamily \#define I2\+C2\+\_\+\+SCL~IOPORT\+\_\+\+PORT\+\_\+02\+\_\+\+PIN\+\_\+02}
+
+\Hypertarget{a00164_ae16eb7443d75d7ea88228a64f2d1b638}\label{a00164_ae16eb7443d75d7ea88228a64f2d1b638} 
+\index{I2C\_2.c@{I2C\_2.c}!I2C2\_SDA@{I2C2\_SDA}}
+\index{I2C2\_SDA@{I2C2\_SDA}!I2C\_2.c@{I2C\_2.c}}
+\doxysubsubsection{\texorpdfstring{I2C2\_SDA}{I2C2\_SDA}}
+{\footnotesize\ttfamily \#define I2\+C2\+\_\+\+SDA~IOPORT\+\_\+\+PORT\+\_\+02\+\_\+\+PIN\+\_\+03}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{a00164_ab2d6470085f0f13033eca2373bcf4b41}\label{a00164_ab2d6470085f0f13033eca2373bcf4b41} 
+\index{I2C\_2.c@{I2C\_2.c}!I2C2\_Read@{I2C2\_Read}}
+\index{I2C2\_Read@{I2C2\_Read}!I2C\_2.c@{I2C\_2.c}}
+\doxysubsubsection{\texorpdfstring{I2C2\_Read()}{I2C2\_Read()}}
+{\footnotesize\ttfamily void I2\+C2\+\_\+\+Read (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{addr,  }\item[{\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{data,  }\item[{\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{n\+Bytes }\end{DoxyParamCaption})}
+
+
+
+Function to read data from a specific address. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em addr} & --- slave device address \\
+\hline
+{\em data} & --- Pointer to memory to store the read data \\
+\hline
+{\em n\+Bytes} & --- data size in bytes \\
+\hline
+\end{DoxyParams}
+\Hypertarget{a00164_aba3d08d9b33082a1c0aa61ae3e6b5e23}\label{a00164_aba3d08d9b33082a1c0aa61ae3e6b5e23} 
+\index{I2C\_2.c@{I2C\_2.c}!I2C2\_ReadByte@{I2C2\_ReadByte}}
+\index{I2C2\_ReadByte@{I2C2\_ReadByte}!I2C\_2.c@{I2C\_2.c}}
+\doxysubsubsection{\texorpdfstring{I2C2\_ReadByte()}{I2C2\_ReadByte()}}
+{\footnotesize\ttfamily void I2\+C2\+\_\+\+Read\+Byte (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{addr,  }\item[{\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Data }\end{DoxyParamCaption})}
+
+
+
+Function to read a byte data from a specific address. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em addr} & --- slave device address \\
+\hline
+{\em p\+Data} & --- Pointer to memory to store the read data \\
+\hline
+\end{DoxyParams}
+\Hypertarget{a00164_a7ba82d621147cdcae270e9926abb3736}\label{a00164_a7ba82d621147cdcae270e9926abb3736} 
+\index{I2C\_2.c@{I2C\_2.c}!I2C2\_ReadByte\_OW@{I2C2\_ReadByte\_OW}}
+\index{I2C2\_ReadByte\_OW@{I2C2\_ReadByte\_OW}!I2C\_2.c@{I2C\_2.c}}
+\doxysubsubsection{\texorpdfstring{I2C2\_ReadByte\_OW()}{I2C2\_ReadByte\_OW()}}
+{\footnotesize\ttfamily void I2\+C2\+\_\+\+Read\+Byte\+\_\+\+OW (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Data,  }\item[{\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{n\+Bytes }\end{DoxyParamCaption})}
+
+
+
+Function to read data byte at specific address. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Data} & --- pointer to data store \\
+\hline
+{\em n\+Bytes} & --- number of byte data to read \\
+\hline
+\end{DoxyParams}
+\Hypertarget{a00164_aa504ef0b681fc32e47f923cc52b93067}\label{a00164_aa504ef0b681fc32e47f923cc52b93067} 
+\index{I2C\_2.c@{I2C\_2.c}!I2C2\_RX\_Byte@{I2C2\_RX\_Byte}}
+\index{I2C2\_RX\_Byte@{I2C2\_RX\_Byte}!I2C\_2.c@{I2C\_2.c}}
+\doxysubsubsection{\texorpdfstring{I2C2\_RX\_Byte()}{I2C2\_RX\_Byte()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} I2\+C2\+\_\+\+RX\+\_\+\+Byte (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}}}]{ack\+\_\+flag }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Function to get a data byte from the i2C device. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ack\+\_\+flag} & if the operation must ACK the slave or not \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+read data 
+\end{DoxyReturn}
+\Hypertarget{a00164_afb25d38eef88c072ab6ce216e1965501}\label{a00164_afb25d38eef88c072ab6ce216e1965501} 
+\index{I2C\_2.c@{I2C\_2.c}!I2C2\_StartCondition@{I2C2\_StartCondition}}
+\index{I2C2\_StartCondition@{I2C2\_StartCondition}!I2C\_2.c@{I2C\_2.c}}
+\doxysubsubsection{\texorpdfstring{I2C2\_StartCondition()}{I2C2\_StartCondition()}}
+{\footnotesize\ttfamily static void I2\+C2\+\_\+\+Start\+Condition (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Generate the START condition in the i2C line. 
+
+\Hypertarget{a00164_a24d35a4dc09bc8d6c5be604be9a2102b}\label{a00164_a24d35a4dc09bc8d6c5be604be9a2102b} 
+\index{I2C\_2.c@{I2C\_2.c}!I2C2\_StopCondition@{I2C2\_StopCondition}}
+\index{I2C2\_StopCondition@{I2C2\_StopCondition}!I2C\_2.c@{I2C\_2.c}}
+\doxysubsubsection{\texorpdfstring{I2C2\_StopCondition()}{I2C2\_StopCondition()}}
+{\footnotesize\ttfamily static void I2\+C2\+\_\+\+Stop\+Condition (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Generate the STOP condition in the i2C line. 
+
+\Hypertarget{a00164_a5a45bd2c0aa3fd6619ad4e682466200c}\label{a00164_a5a45bd2c0aa3fd6619ad4e682466200c} 
+\index{I2C\_2.c@{I2C\_2.c}!I2C2\_TX\_Byte@{I2C2\_TX\_Byte}}
+\index{I2C2\_TX\_Byte@{I2C2\_TX\_Byte}!I2C\_2.c@{I2C\_2.c}}
+\doxysubsubsection{\texorpdfstring{I2C2\_TX\_Byte()}{I2C2\_TX\_Byte()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} I2\+C2\+\_\+\+TX\+\_\+\+Byte (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Function to send a data byte to the i2C device. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & --- byte to send \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+operation error code (0 if no error) 
+\end{DoxyReturn}
+\Hypertarget{a00164_a54092e1b35159f28a6fae808c1c909e0}\label{a00164_a54092e1b35159f28a6fae808c1c909e0} 
+\index{I2C\_2.c@{I2C\_2.c}!I2C2\_Write@{I2C2\_Write}}
+\index{I2C2\_Write@{I2C2\_Write}!I2C\_2.c@{I2C\_2.c}}
+\doxysubsubsection{\texorpdfstring{I2C2\_Write()}{I2C2\_Write()}}
+{\footnotesize\ttfamily void I2\+C2\+\_\+\+Write (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{addr,  }\item[{\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{data,  }\item[{\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{n\+Bytes }\end{DoxyParamCaption})}
+
+
+
+Function to write data at specific address. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em addr} & --- slave device address \\
+\hline
+{\em data} & --- data buffer to write \\
+\hline
+{\em n\+Bytes} & --- number of data in bytes \\
+\hline
+\end{DoxyParams}
+\Hypertarget{a00164_a75998894ee4aceb2f03ebc36a0000d3f}\label{a00164_a75998894ee4aceb2f03ebc36a0000d3f} 
+\index{I2C\_2.c@{I2C\_2.c}!I2C2\_Write\_NFC@{I2C2\_Write\_NFC}}
+\index{I2C2\_Write\_NFC@{I2C2\_Write\_NFC}!I2C\_2.c@{I2C\_2.c}}
+\doxysubsubsection{\texorpdfstring{I2C2\_Write\_NFC()}{I2C2\_Write\_NFC()}}
+{\footnotesize\ttfamily void I2\+C2\+\_\+\+Write\+\_\+\+NFC (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{block\+\_\+idx,  }\item[{\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{data,  }\item[{\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{n\+Bytes }\end{DoxyParamCaption})}
+
+
+
+Function to write data at specific address in the NTag memory. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em block\+\_\+idx} & --- block idx \\
+\hline
+{\em data} & --- data buffer to write \\
+\hline
+{\em n\+Bytes} & --- number of data in bytes \\
+\hline
+\end{DoxyParams}
+\Hypertarget{a00164_a48856cefb69c8a4371722c1ef5455ba0}\label{a00164_a48856cefb69c8a4371722c1ef5455ba0} 
+\index{I2C\_2.c@{I2C\_2.c}!I2C2\_Write\_OW@{I2C2\_Write\_OW}}
+\index{I2C2\_Write\_OW@{I2C2\_Write\_OW}!I2C\_2.c@{I2C\_2.c}}
+\doxysubsubsection{\texorpdfstring{I2C2\_Write\_OW()}{I2C2\_Write\_OW()}}
+{\footnotesize\ttfamily void I2\+C2\+\_\+\+Write\+\_\+\+OW (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{command,  }\item[{\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{data }\end{DoxyParamCaption})}
+
+
+
+Function to write a data byte at specific address. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em command} & --- command sent to DS2482 \\
+\hline
+{\em data} & --- a byte data to write \\
+\hline
+\end{DoxyParams}
+\Hypertarget{a00164_abb5323ebe9e05f1fe983ee0c53fa732e}\label{a00164_abb5323ebe9e05f1fe983ee0c53fa732e} 
+\index{I2C\_2.c@{I2C\_2.c}!I2C2\_WriteByte@{I2C2\_WriteByte}}
+\index{I2C2\_WriteByte@{I2C2\_WriteByte}!I2C\_2.c@{I2C\_2.c}}
+\doxysubsubsection{\texorpdfstring{I2C2\_WriteByte()}{I2C2\_WriteByte()}}
+{\footnotesize\ttfamily void I2\+C2\+\_\+\+Write\+Byte (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{addr,  }\item[{\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{data }\end{DoxyParamCaption})}
+
+
+
+Function to write a data byte at specific address. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em addr} & --- slave device address \\
+\hline
+{\em data} & --- a byte data to write \\
+\hline
+\end{DoxyParams}

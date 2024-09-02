@@ -1,0 +1,32 @@
+\doxysection{atca\+\_\+crypto\+\_\+sw\+\_\+ecdsa.\+h}
+\hypertarget{atca__crypto__sw__ecdsa_8h_source}{}\label{atca__crypto__sw__ecdsa_8h_source}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/SCE/crypto/atca\_crypto\_sw\_ecdsa.h@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/SCE/crypto/atca\_crypto\_sw\_ecdsa.h}}
+\mbox{\hyperlink{atca__crypto__sw__ecdsa_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#ifndef\ ATCA\_CRYPTO\_SW\_ECDSA\_H}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ ATCA\_CRYPTO\_SW\_ECDSA\_H}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{crypto_2atca__crypto__sw_8h}{atca\_crypto\_sw.h}}"{}}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ <stddef.h>}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#define\ ATCA\_ECC\_P256\_FIELD\_SIZE\ \ \ \ \ \ \ (256\ /\ 8)}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#define\ ATCA\_ECC\_P256\_PRIVATE\_KEY\_SIZE\ (ATCA\_ECC\_P256\_FIELD\_SIZE)}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#define\ ATCA\_ECC\_P256\_PUBLIC\_KEY\_SIZE\ \ (ATCA\_ECC\_P256\_FIELD\_SIZE\ *\ 2)}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#define\ ATCA\_ECC\_P256\_SIGNATURE\_SIZE\ \ \ (ATCA\_ECC\_P256\_FIELD\_SIZE\ *\ 2)}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00050\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__atcac___gaa61eee6f208a1633d35cdf8d628a6835}{atcac\_sw\_ecdsa\_verify\_p256}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ msg[\mbox{\hyperlink{group__atcac___gab6935877a2675bfc95af283fb43affb5}{ATCA\_ECC\_P256\_FIELD\_SIZE}}],}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ signature[\mbox{\hyperlink{group__atcac___ga6eba254effebfbbb95381511fc7d80d5}{ATCA\_ECC\_P256\_SIGNATURE\_SIZE}}],}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ public\_key[\mbox{\hyperlink{group__atcac___ga6bcf19f52fbceb7801fc3216d528fb3c}{ATCA\_ECC\_P256\_PUBLIC\_KEY\_SIZE}}]);}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00058\ \}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

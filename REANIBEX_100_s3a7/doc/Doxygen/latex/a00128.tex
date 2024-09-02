@@ -1,0 +1,2016 @@
+\doxysection{C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/thread\+\_\+sys\+Mon\+\_\+entry.c File Reference}
+\hypertarget{a00128}{}\label{a00128}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/thread\_sysMon\_entry.c@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/thread\_sysMon\_entry.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$ctype.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include $<$device\+\_\+init.\+h$>$}\newline
+{\ttfamily \#include "{}R100\+\_\+\+Errors.\+h"{}}\newline
+{\ttfamily \#include "{}types\+\_\+basic.\+h"{}}\newline
+{\ttfamily \#include "{}types\+\_\+app.\+h"{}}\newline
+{\ttfamily \#include "{}Trace.\+h"{}}\newline
+{\ttfamily \#include "{}Comm.\+h"{}}\newline
+{\ttfamily \#include "{}I2\+C\+\_\+1.\+h"{}}\newline
+{\ttfamily \#include "{}I2\+C\+\_\+2.\+h"{}}\newline
+{\ttfamily \#include "{}RTC.\+h"{}}\newline
+{\ttfamily \#include "{}Keypad.\+h"{}}\newline
+{\ttfamily \#include "{}DB\+\_\+\+Test.\+h"{}}\newline
+{\ttfamily \#include "{}DB\+\_\+\+Episode.\+h"{}}\newline
+{\ttfamily \#include "{}bsp\+\_\+acc\+\_\+\+LIS3\+DH.\+h"{}}\newline
+{\ttfamily \#include "{}HAL/thread\+\_\+defibrillator\+\_\+hal.\+h"{}}\newline
+{\ttfamily \#include "{}HAL/thread\+\_\+pat\+Mon\+\_\+hal.\+h"{}}\newline
+{\ttfamily \#include "{}HAL/thread\+\_\+audio\+\_\+hal.\+h"{}}\newline
+{\ttfamily \#include "{}thread\+\_\+comm\+\_\+entry.\+h"{}}\newline
+{\ttfamily \#include "{}thread\+\_\+pat\+Mon\+\_\+entry.\+h"{}}\newline
+{\ttfamily \#include "{}thread\+\_\+sys\+Mon\+\_\+entry.\+h"{}}\newline
+{\ttfamily \#include "{}thread\+\_\+sys\+Mon.\+h"{}}\newline
+{\ttfamily \#include "{}thread\+\_\+audio\+\_\+entry.\+h"{}}\newline
+{\ttfamily \#include "{}thread\+\_\+audio.\+h"{}}\newline
+{\ttfamily \#include "{}thread\+\_\+core\+\_\+entry.\+h"{}}\newline
+{\ttfamily \#include "{}thread\+\_\+core.\+h"{}}\newline
+{\ttfamily \#include "{}thread\+\_\+acc.\+h"{}}\newline
+{\ttfamily \#include "{}thread\+\_\+acc\+\_\+entry.\+h"{}}\newline
+{\ttfamily \#include "{}thread\+\_\+comm.\+h"{}}\newline
+{\ttfamily \#include "{}thread\+\_\+api.\+h"{}}\newline
+{\ttfamily \#include "{}sys\+Mon\+\_\+\+RF\+\_\+\+Comms.\+h"{}}\newline
+{\ttfamily \#include "{}sys\+Mon\+\_\+\+Battery.\+h"{}}\newline
+Include dependency graph for thread\+\_\+sys\+Mon\+\_\+entry.\+c\+:
+% FIG 0
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{a00128_a2e4f52a547b043439c8e25015b8b334b}{HEX\+\_\+\+TO\+\_\+\+ASCII}}(x)~(\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}) (((x$<$=9) ? (x+\textquotesingle{}0\textquotesingle{}) \+: ((x + \textquotesingle{}A\textquotesingle{}) -\/ 10)))
+\item 
+\#define \mbox{\hyperlink{a00128_a82ed3a575da308849865718320b03b66}{EXEC\+\_\+\+TEST}}~IOPORT\+\_\+\+PORT\+\_\+06\+\_\+\+PIN\+\_\+01
+\item 
+\#define \mbox{\hyperlink{a00128_ab957955e83755ab38800f5e18df28faa}{LED\+\_\+\+BLINK\+\_\+\+OFF}}~0x00
+\item 
+\#define \mbox{\hyperlink{a00128_af7deeda8ad41e6338d6711cc2e077c52}{LED\+\_\+\+BLINK\+\_\+\+ON}}~0x01
+\item 
+\#define \mbox{\hyperlink{a00128_a5974f918773d31d9a3611c2a8774bc8c}{FLASH\+\_\+\+DATA\+\_\+\+ADD}}~0x40100000
+\item 
+\#define \mbox{\hyperlink{a00128_a8919c797f2d5ccbaf02ae962f07ed830}{FLASH\+\_\+\+DATA\+\_\+\+SZ}}~0x0004000
+\item 
+\#define \mbox{\hyperlink{a00128_a6afb081a75593f3c034881ada625cf8d}{FLASH\+\_\+\+BLOCK\+\_\+\+SIZE}}~1024
+\item 
+\#define \mbox{\hyperlink{a00128_abb92930e7442d642feb08fee18c730a5}{TIME\+\_\+\+TO\+\_\+\+AUTOTEST}}~3
+\item 
+\#define \mbox{\hyperlink{a00128_a7a2b6149e9b99a6fb5cd71e1952c76a4}{ACCELERATOR\+\_\+\+TIME}}~0
+\item 
+\#define \mbox{\hyperlink{a00128_af03eb4cd23286e7b30fb8ef32ea9c860}{WARNING\+\_\+\+PERIOD\+\_\+\+SAT}}~1200
+\item 
+\#define \mbox{\hyperlink{a00128_a6d85ecbf430c6f44314e33b0c786d95c}{TEST\+\_\+\+CURRENT}}~4000
+\item 
+\#define \mbox{\hyperlink{a00128_a6d85ecbf430c6f44314e33b0c786d95c}{TEST\+\_\+\+CURRENT}}~4000
+\item 
+\#define \mbox{\hyperlink{a00128_aa97b392e011e6b4c564ebb6a12873b8b}{COUNT\+\_\+\+VOLTAGE\+\_\+\+SAFE}}~5
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+unsigned char \mbox{\hyperlink{a00128_a24201038745365a3b1883d840a8ca0e8}{\+\_\+\+\_\+attribute\+\_\+\+\_\+}} ((section("{}.Sign\+\_\+\+Section"{})))
+\item 
+static \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \mbox{\hyperlink{a00128_aa3ddb4058ff8853f1771e5bb44003be8}{Check\+\_\+\+Battery\+\_\+\+Voltage}} (\mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} my\+\_\+vb, \mbox{\hyperlink{a00137_aef44329758059c91c76d334e8fc09700}{int8\+\_\+t}} my\+\_\+temperature, \mbox{\hyperlink{a00077_a03d56294790e98587e2ed35dcb3d8115}{AUDIO\+\_\+\+ID\+\_\+e}} \texorpdfstring{$\ast$}{*}p\+Audio\+\_\+msg)
+\begin{DoxyCompactList}\small\item\em Check that the battery voltage is in range. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{a00128_ae6569a3b0fdcd805b8b1061810327fc0}{prv\+Get\+Registers\+From\+Stack}} (\mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \texorpdfstring{$\ast$}{*}pul\+Fault\+Stack\+Address)
+\item 
+void \mbox{\hyperlink{a00128_a2bffc10d5bd4106753b7c30e86903bea}{Hard\+Fault\+\_\+\+Handler}} (void)
+\item 
+\mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{a00128_a86d6de0ddbdd8704798336aa29003fb5}{Check\+\_\+\+Test\+\_\+\+Abort\+\_\+\+User}} (\mbox{\hyperlink{a00310}{DB\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Result)
+\begin{DoxyCompactList}\small\item\em Check if user abort running test. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{a00128_a8ca2b3f1ae1239a7fe368eeb284cbd34}{Fill\+\_\+\+Update\+\_\+\+Reg}} (\mbox{\hyperlink{a00137_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Str, \mbox{\hyperlink{a00314}{DEVICE\+\_\+\+DATE\+\_\+t}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{a00002_a2e103a2447fead44e4331b13d3f2bdd8}{p\+Date}}, \mbox{\hyperlink{a00318}{DEVICE\+\_\+\+TIME\+\_\+t}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{a00002_a0ea21360d95640023da09cc1306fe29d}{p\+Time}})
+\begin{DoxyCompactList}\small\item\em Initializes the update register data string. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{a00128_a5cccaa163f937bcc50a69f4b0887f450}{RTC\+\_\+\+Test\+\_\+\+Time}} (void)
+\begin{DoxyCompactList}\small\item\em Compensate UTC time zone with TEST TIME. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{a00128_a9c961ad97558f92f8f4d44373bca3702}{Is\+\_\+\+SAT\+\_\+\+Error}} (\mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} dev\+\_\+error)
+\begin{DoxyCompactList}\small\item\em Determine if an error requires a SAT service or not. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a00128_a7514b80ba83366eb1792a5de56de25d1}{NV\+\_\+\+Data\+\_\+\+Read}} (\mbox{\hyperlink{a00438}{NV\+\_\+\+DATA\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+NV\+\_\+data, \mbox{\hyperlink{a00442}{NV\+\_\+\+DATA\+\_\+\+BLOCK\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+NV\+\_\+data\+\_\+block)
+\begin{DoxyCompactList}\small\item\em Function that gets the non volatile data from the internal Data Flash. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a00128_ae158ddc17edc766e6adc7f0c1988f2b9}{NV\+\_\+\+Data\+\_\+\+Write}} (\mbox{\hyperlink{a00438}{NV\+\_\+\+DATA\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+NV\+\_\+data, \mbox{\hyperlink{a00442}{NV\+\_\+\+DATA\+\_\+\+BLOCK\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+NV\+\_\+data\+\_\+block)
+\begin{DoxyCompactList}\small\item\em Function that updates the test id and saves it to data flash memory. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{a00128_aa1af180c605ec797a038deb05c38898a}{Is\+\_\+\+Sysmon\+\_\+\+Task\+\_\+\+Initialized}} (void)
+\begin{DoxyCompactList}\small\item\em Is task initialized? \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00438}{NV\+\_\+\+DATA\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a00128_a5d710674bd8ab574159b5f0d01d1d67f}{Get\+\_\+\+NV\+\_\+\+Data}} (void)
+\begin{DoxyCompactList}\small\item\em Function that gets the non volatile data. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00442}{NV\+\_\+\+DATA\+\_\+\+BLOCK\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a00128_aebbdcccc2dcf3573e1ec3761e55c998c}{Get\+\_\+\+NV\+\_\+\+Data\+\_\+\+Block}} (void)
+\begin{DoxyCompactList}\small\item\em Function that gets the second block of the non volatile data. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a00128_a4f834bab7058bdaecdf1eb4f9b4f8d00}{Set\+\_\+\+NV\+\_\+\+Data\+\_\+\+Error\+\_\+\+IF\+\_\+\+NOT\+\_\+\+SAT}} (\mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} error)
+\begin{DoxyCompactList}\small\item\em Function that sets the non volatile data error. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a00128_ab5d13add30041382fa545103a702582f}{Set\+\_\+\+NV\+\_\+\+Data\+\_\+\+Error\+\_\+\+IF\+\_\+\+NOT\+\_\+\+SAT\+\_\+\+Comms}} (\mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} error)
+\begin{DoxyCompactList}\small\item\em Function that sets the non volatile data error. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{a00128_a99fe1a42e34a2be16886a951d9712fd7}{Save\+\_\+\+Comms\+\_\+\+Error}} (void)
+\begin{DoxyCompactList}\small\item\em Save Communication error. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{a00128_a04996a39aeb722a8df6c6643864cc670}{Is\+\_\+\+Test\+\_\+\+Mode}} (void)
+\begin{DoxyCompactList}\small\item\em Function that report if the devioce is in test mode or not. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{a00128_a33ca5a33ab10af89dcb290e9d052b724}{Is\+\_\+\+Test\+\_\+\+Mode\+\_\+\+Montador}} (void)
+\begin{DoxyCompactList}\small\item\em Function that report if the devioce is in test mode montador or not. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a00128_ac9febdbd1dca2289134e4a83fd008574}{Device\+\_\+pw}} (\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Password, \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Device\+\_\+sn, \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} size)
+\begin{DoxyCompactList}\small\item\em Function that report if the device is in mode DEMO or not. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a00128_aab815986ee52dfb7489873f856e3ecb9}{Refresh\+\_\+\+Wdg}} (void)
+\begin{DoxyCompactList}\small\item\em Refresh the watchdog timer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a00128_aea83c8517300aa0759f0088c0f2dfa2f}{Pasatiempos}} (\mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} n\+Ticks)
+\begin{DoxyCompactList}\small\item\em Pass time doing nothing, but refreshing the watchdog !!! \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a00128_ae266dd5355d4644da21295b8a95ca1af}{Pasatiempos\+\_\+\+Listening}} (void)
+\begin{DoxyCompactList}\small\item\em Pass time doing nothing while is listening an audio message and refreshing the watchdog !!! \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{a00128_ae9c7d0baccca3c88a832853738fd85f3}{Save\+\_\+\+Data\+\_\+\+Before\+\_\+\+Off}} (\mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} ec)
+\begin{DoxyCompactList}\small\item\em Save data before power off. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a00128_a2c5836202a13b4d23eb7b1b9211db6ac}{Lock\+\_\+on\+\_\+\+Panic}} (\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} error, \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} num)
+\begin{DoxyCompactList}\small\item\em Lock the device because the program can not be executed normally. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{a00134_a7e34c706bde6f3522650864d7352ae86}{POWER\+\_\+\+ON\+\_\+\+SOURCE\+\_\+e}} \mbox{\hyperlink{a00128_a5d80fd856305d7534bcd8f561cab9e92}{Identify\+\_\+\+Power\+On\+\_\+\+Event}} (void)
+\begin{DoxyCompactList}\small\item\em Identifies the agent that roots the power on. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{a00128_ad375e204aa11fb59b9a46766a45a885b}{RTC\+\_\+\+Normalize\+\_\+\+Time}} (\mbox{\hyperlink{a00406}{BATTERY\+\_\+\+RTC\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+RTC)
+\begin{DoxyCompactList}\small\item\em Compensate UTC time zone. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{a00128_af4573aa4c984963e9ec343ee18f704fd}{One\+Wire\+\_\+\+Wait\+\_\+\+While\+\_\+\+Busy}} (void)
+\begin{DoxyCompactList}\small\item\em Wait until One\+Wire is free. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{a00128_a2746a250fe0f33c32b88fd7c86139d53}{Electrodes\+\_\+\+Presence}} (void)
+\begin{DoxyCompactList}\small\item\em Try to detect the presence of electrodes. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{a00128_a1ff511824d4951cf7a02c97726ecaac5}{One\+Wire\+\_\+\+Write\+\_\+\+Byte}} (\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} cmd)
+\begin{DoxyCompactList}\small\item\em Write a single byte in the One\+Wire device (locking function) \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{a00128_a2aec3599f75cd59a888333fe2a470ded}{One\+Wire\+\_\+\+Read\+\_\+\+Array}} (\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Array, \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} n\+Bytes)
+\begin{DoxyCompactList}\small\item\em Write a single byte in the One\+Wire device (locking function) \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{a00128_a956237995bc7008095717ea307c33755}{Electrodes\+\_\+\+Write\+\_\+\+Scratchpad}} (\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Data, \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} n\+Bytes, \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} address)
+\begin{DoxyCompactList}\small\item\em Writes a single scratchpad into electrodes memory. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{a00128_a777bb99d33e0b631192d6b09ed44f016}{Electrodes\+\_\+\+Write\+\_\+\+Event}} (\mbox{\hyperlink{a00430}{ELECTRODES\+\_\+\+EVENT\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Event)
+\begin{DoxyCompactList}\small\item\em Writes event into electrodes memory. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{a00128_aa0eafd2018eb10797d790d6b8bf98b95}{Electrodes\+\_\+\+Read\+\_\+\+Data}} (\mbox{\hyperlink{a00434}{ELECTRODES\+\_\+\+DATA\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Data)
+\begin{DoxyCompactList}\small\item\em Read the electrodes all data. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{a00128_a03e4c8533bb8ce3fd3a1f9b8120797fd}{R100\+\_\+\+Check\+\_\+\+SAT}} (\mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} dev\+\_\+error, \mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} force\+\_\+warning)
+\begin{DoxyCompactList}\small\item\em Power off the device due to critical error. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{a00134_a7e34c706bde6f3522650864d7352ae86}{POWER\+\_\+\+ON\+\_\+\+SOURCE\+\_\+e}} \mbox{\hyperlink{a00128_ac0c7edb2de59294bfcfbc443b6981cec}{R100\+\_\+\+Check\+\_\+\+Cover}} (void)
+\begin{DoxyCompactList}\small\item\em Check if cover has been opened during an extended period of time. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{a00128_afe83c8bef31fa0fc1360b7d84ed07486}{R100\+\_\+\+Check\+\_\+\+Warning}} (void)
+\begin{DoxyCompactList}\small\item\em Check if beep audio must be emitted due to warning error. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{a00128_a211217e6361a440c7d378a8f24e3fd76}{R100\+\_\+\+Check\+\_\+\+Update}} (\mbox{\hyperlink{a00134_a7e34c706bde6f3522650864d7352ae86}{POWER\+\_\+\+ON\+\_\+\+SOURCE\+\_\+e}} \texorpdfstring{$\ast$}{*}paux)
+\begin{DoxyCompactList}\small\item\em Check if firmware has been updated. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00221_ab5a454b85186a6663fc81c4685af3281}{EL\+\_\+\+SIGN\+\_\+e}} \mbox{\hyperlink{a00128_aeeb458bcec8909373038cfd816e475db}{Electrodes\+\_\+\+Get\+\_\+\+Signature}} (void)
+\begin{DoxyCompactList}\small\item\em Get electrodes signature. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a00128_adce4182129c1b341756893a8c387e2b7}{Electrodes\+\_\+\+Get\+\_\+\+Data}} (\mbox{\hyperlink{a00434}{ELECTRODES\+\_\+\+DATA\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Data)
+\begin{DoxyCompactList}\small\item\em Get the electrodes data (sn, info and event register) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a00128_adf630b74d86769125fbc7c5355695cdc}{Electrodes\+\_\+\+Register\+\_\+\+Event}} (void)
+\begin{DoxyCompactList}\small\item\em Command to register electrodes event. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a00128_a90fd604d6e8ca2b285c486b7f837956f}{Electrodes\+\_\+\+Register\+\_\+\+Shock}} (void)
+\begin{DoxyCompactList}\small\item\em Command to register shock sending alert. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{a00128_acc715921ec9f0fa6ede1d5c7e6f3547a}{Execute\+\_\+\+Test\+\_\+\+Leds\+\_\+\+Keys}} (\mbox{\hyperlink{a00298}{TEST\+\_\+\+MISC\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Misc)
+\begin{DoxyCompactList}\small\item\em Function that executes the electrode test. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{a00128_a2fca41f496a3b6beea55a8ef0f38c850}{Execute\+\_\+\+Test\+\_\+\+Electrodes}} (\mbox{\hyperlink{a00286}{TEST\+\_\+\+ELECTRODES\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Electrodes, \mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} auto\+\_\+test, \mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} pat\+\_\+mode)
+\begin{DoxyCompactList}\small\item\em Function that executes the electrode test. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{a00128_a314477032fa47b8dd581908331045876}{Execute\+\_\+\+Test\+\_\+\+Voltage}} (\mbox{\hyperlink{a00278}{TEST\+\_\+\+VOLTAGE\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Voltage)
+\begin{DoxyCompactList}\small\item\em Function that executes the voltage test. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{a00128_a059671cf3ed7abd51a66f9de8cc3251b}{Execute\+\_\+\+Test\+\_\+\+Misc}} (\mbox{\hyperlink{a00298}{TEST\+\_\+\+MISC\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Misc, \mbox{\hyperlink{a00137_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Device\+\_\+sn, \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} test\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Function that executes the miscellaneous test. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{a00128_a973e134ad9fa805bf48d53f009b5258b}{Execute\+\_\+calibration}} (void)
+\begin{DoxyCompactList}\small\item\em Function that executes the ECG test. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{a00128_a05a59ff01a62a67642e2dd64f3922c0a}{Execute\+\_\+\+Test\+\_\+\+Patmon}} (\mbox{\hyperlink{a00290}{TEST\+\_\+\+PATMON\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Patmon, \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} test\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Function that executes the Patient Monitor test. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{a00128_ac9ecbba1f09db36499f7df86a646aac2}{Execute\+\_\+\+Test\+\_\+\+Comms}} (\mbox{\hyperlink{a00294}{TEST\+\_\+\+COMMS\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Comms, \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} force)
+\begin{DoxyCompactList}\small\item\em Function that executes the Comms test. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{a00128_aacd0a85f95141c68a25562ed7ea3bd53}{Execute\+\_\+\+Test\+\_\+\+Defib\+\_\+\+Montador}} (\mbox{\hyperlink{a00302}{TEST\+\_\+\+DEFIB\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Defib)
+\begin{DoxyCompactList}\small\item\em Function that executes the GPS test. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{a00128_a6211aaf23d16365e7f4a2989537f1f45}{Execute\+\_\+\+Test\+\_\+\+Defib}} (\mbox{\hyperlink{a00302}{TEST\+\_\+\+DEFIB\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Defib)
+\begin{DoxyCompactList}\small\item\em Function that executes the Defibrillator test. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{a00128_a3ad2403f07c6d8129531068c67827398}{Execute\+\_\+\+Test\+\_\+\+Battery}} (\mbox{\hyperlink{a00282}{TEST\+\_\+\+BATTERY\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Battery, \mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} auto\+\_\+test, \mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} pat\+\_\+mode)
+\begin{DoxyCompactList}\small\item\em Function that executes the battery test. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{a00128_a2cc3fd20c4853e53ab7621927f0c67e4}{Load\+\_\+\+GOLD\+\_\+\+File}} (void)
+\begin{DoxyCompactList}\small\item\em This function use to upload Golden file. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{a00128_a4b7d7a3d9d38c4f0336d198fc76c84ff}{Load\+\_\+\+FW\+\_\+\+File}} (void)
+\begin{DoxyCompactList}\small\item\em This function use to upload firmware file. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{a00128_a933eee506a6d0eee2047bc80c8986d82}{R100\+\_\+\+Check\+\_\+\+SAT\+\_\+\+RTC}} (\mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} dev\+\_\+error, \mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} force\+\_\+warning)
+\begin{DoxyCompactList}\small\item\em Power off the device programming an automatic power-\/on. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{a00128_a23282fccfa9048cde05ec8f267a26bf3}{Test\+\_\+u\+SD\+\_\+\+Resources}} (void)
+\begin{DoxyCompactList}\small\item\em Function to check the presence of the audio resources and firmware updates. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{a00128_a741a6c64dea4e2e838bc03ac6f1174a6}{Execute\+\_\+\+Test\+\_\+\+Cert}} (\mbox{\hyperlink{a00306}{TEST\+\_\+\+CERT\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Cert)
+\begin{DoxyCompactList}\small\item\em Function to load certificates. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{a00128_ad7a8a06d67cdd43cdd5bc7f5d4db0cd7}{Execute\+\_\+\+Test}} (\mbox{\hyperlink{a00310}{DB\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Result, \mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} auto\+\_\+test)
+\begin{DoxyCompactList}\small\item\em Function that executes the device test\+: .-\/ verify the resources memory (checksum) .-\/ power supplies (DC-\/\+MAIN and +12volts) .-\/ Batteries percent (battery 1 and 2) .-\/ Temperature. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{a00128_a569e2a19584fea41c2c54780106f24d7}{Execute\+\_\+\+Startup\+\_\+\+Test}} (\mbox{\hyperlink{a00310}{DB\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Result)
+\begin{DoxyCompactList}\small\item\em Function that executes the device startup test\+: .-\/ verify the resources memory (checksum) .-\/ power supplies (DC-\/\+MAIN and +12volts) .-\/ Battery state of charge .-\/ Battery temperature .-\/ Pat\+Mon operative. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{a00128_a45e8a3b71abc5aaf4a3de43e37b2c426}{Execute\+\_\+\+Test\+\_\+\+Montador}} (\mbox{\hyperlink{a00310}{DB\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Result, \mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} auto\+\_\+test)
+\begin{DoxyCompactList}\small\item\em Function that executes the device test\+: .-\/ verify the resources memory (checksum) .-\/ power supplies (DC-\/\+MAIN and +12volts) .-\/ Batteries percent (battery 1 and 2) .-\/ Temperature. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a00128_ab14f7437b50af474b3ed633fcf53e423}{bsp\+\_\+clock\+\_\+init\+\_\+\+Reconfigure}} (void)
+\item 
+static \mbox{\hyperlink{a00134_a7e34c706bde6f3522650864d7352ae86}{POWER\+\_\+\+ON\+\_\+\+SOURCE\+\_\+e}} \mbox{\hyperlink{a00128_ab93dae7b1a69e3ba8c62412e0fce2a06}{RTC\+\_\+\+Function}} (void)
+\begin{DoxyCompactList}\small\item\em Process events related to acelerometer. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{a00134_a7e34c706bde6f3522650864d7352ae86}{POWER\+\_\+\+ON\+\_\+\+SOURCE\+\_\+e}} \mbox{\hyperlink{a00128_a563202ab53d918f96e7470c54ed5d009}{R100\+\_\+\+Startup}} (void)
+\begin{DoxyCompactList}\small\item\em Execute some startup functions\+: \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a00128_a6f3942cc79b24bc2c4b1aaa93e44351e}{R100\+\_\+\+Program\+\_\+\+Autotest}} (void)
+\begin{DoxyCompactList}\small\item\em Program the auto test to be executed at least 1 hour after the last manual power off. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{a00128_a611ae76887c3da1252bb965073ed1032}{Check\+\_\+\+Electrodes\+\_\+\+Type}} (\mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} force)
+\begin{DoxyCompactList}\small\item\em Check electrodes type. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{a00128_a09b3d44686a8345050669e3ae7c9e6c7}{Check\+\_\+\+Electrodes\+\_\+\+Type\+\_\+\+RTC}} (void)
+\begin{DoxyCompactList}\small\item\em Check electrodes type. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a00128_a0d2a806043e6e3322c75bb359f06500f}{Check\+\_\+\+Device\+\_\+\+Led\+\_\+\+Status}} (void)
+\begin{DoxyCompactList}\small\item\em Determine if status led must be on. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a00128_a4f1d875d2e1ad5991d6ce2ba7c56af91}{R100\+\_\+\+Power\+Off}} (void)
+\begin{DoxyCompactList}\small\item\em Power off the device programming an automatic power-\/on. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a00128_a5d3acf9068cad21d046f9d8834ce6946}{R100\+\_\+\+Power\+Off\+\_\+\+RTC}} (void)
+\begin{DoxyCompactList}\small\item\em Power off the device programming an automatic power-\/on. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{a00128_a5dd242a7fdc70850458d3f93bcefc30c}{Check\+\_\+dead\+\_\+man}} (void)
+\begin{DoxyCompactList}\small\item\em Check if the dead-\/man effect is triggered to automatic power off the device. Use timeout of 3 minutes Assume that the function is called every 500 msecs. aprox. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{a00128_ac42b77715d78cfceab5996444e83cf4b}{Run\+\_\+\+USB\+\_\+\+Mode}} (void)
+\begin{DoxyCompactList}\small\item\em Run the application in USB mode. This is a non return function. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{a00128_a2908683be7f003ce7ce1c3069908c318}{Check\+\_\+\+Battery}} (void)
+\begin{DoxyCompactList}\small\item\em Check the battery availability. If the battery is not available, advise the user and switch off the device. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{a00128_a08c6cf485f2a11bbd9915ffd1c18e2cb}{Check\+\_\+\+Battery\+\_\+\+Temperature}} (\mbox{\hyperlink{a00137_aef44329758059c91c76d334e8fc09700}{int8\+\_\+t}} my\+\_\+temperature, \mbox{\hyperlink{a00077_a03d56294790e98587e2ed35dcb3d8115}{AUDIO\+\_\+\+ID\+\_\+e}} \texorpdfstring{$\ast$}{*}p\+Audio\+\_\+msg)
+\begin{DoxyCompactList}\small\item\em Check the battery temperature to register events. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{a00128_a72f7661ea341de8646b4b0241d87ed71}{Call\+\_\+\+SAT}} (void)
+\begin{DoxyCompactList}\small\item\em Call SAT service because a critical error is detected register and report the event. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{a00128_aa941a86ae8e6114568829c668d5fc09c}{Parrot\+\_\+\+Audio\+\_\+\+Message}} (\mbox{\hyperlink{a00077_a03d56294790e98587e2ed35dcb3d8115}{AUDIO\+\_\+\+ID\+\_\+e}} message\+\_\+to\+\_\+play)
+\begin{DoxyCompactList}\small\item\em Parrot or play periodically an audio message assume that there is a message to play !!! \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{a00128_a04ed11e0e05f3e2222f714d33437f75b}{sys\+Mon\+\_\+trace}} (void)
+\begin{DoxyCompactList}\small\item\em Trace some items from the system monitor. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{a00128_a679c807ced4c0434c9abb371da32f3bb}{Generate\+\_\+\+Battery\+\_\+\+Statistics}} (\mbox{\hyperlink{a00077_a03d56294790e98587e2ed35dcb3d8115}{AUDIO\+\_\+\+ID\+\_\+e}} \texorpdfstring{$\ast$}{*}p\+Audio\+\_\+msg)
+\begin{DoxyCompactList}\small\item\em Generate battery statistics to be considered to compute the remaining charge. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{a00128_ac57ddf7101a91b2a674d46030e881968}{Process\+\_\+\+Electrodes\+\_\+\+Event}} (void)
+\begin{DoxyCompactList}\small\item\em Process and register an electrodes event. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a00128_a743a7940e667165b42c74a8c9ff51a1a}{thread\+\_\+sys\+Mon\+\_\+entry}} (void)
+\begin{DoxyCompactList}\small\item\em Startup to run the application and system monitoring. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a00134_a7e34c706bde6f3522650864d7352ae86}{POWER\+\_\+\+ON\+\_\+\+SOURCE\+\_\+e}} \mbox{\hyperlink{a00128_a387cde176445aa5bad41053b2b4a872c}{poweron\+\_\+event}}
+\item 
+\mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \mbox{\hyperlink{a00128_a478b868b24be4f0bd5df6de2543b1fbb}{thread\+\_\+supervisor}}
+\item 
+\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{a00128_a486054448411d560755b3efc767d3ab2}{access\+\_\+key}} \mbox{[}12\mbox{]}
+\item 
+\mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{a00128_a34db28df8d20239e4a1a9246b186b4df}{first\+\_\+time\+\_\+gps}} = true
+\item 
+\mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{a00128_a15166a4c16208d4ed8a396f4a75f4466}{write\+\_\+elec\+\_\+last\+\_\+event}} = false
+\item 
+\mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{a00128_a40996dbb57618650ec40ff1275299ec4}{global\+\_\+poweron\+\_\+event}} = false
+\item 
+\mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{a00128_ad98125f4fdcd1ffd2acb0422ae7b0ba0}{comm\+\_\+error}} = \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a4f48e4214dad2e7b13ff7edc4feffe94}{e\+ERR\+\_\+\+NONE}}
+\item 
+static \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \mbox{\hyperlink{a00128_ace52a1ba58065e4978df648f5c08e732}{pon\+\_\+date}}
+\item 
+static \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \mbox{\hyperlink{a00128_a2ad4ca7cf94169b48726c96b8aac0af3}{pon\+\_\+time}}
+\item 
+static \mbox{\hyperlink{a00434}{ELECTRODES\+\_\+\+DATA\+\_\+t}} \mbox{\hyperlink{a00128_afea848ad7318663b689f90d72fc565f7}{electrodes\+\_\+data}}
+\item 
+static \mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{a00128_a54d133e0bc07c02fb26818275f9b4fb5}{electrodes\+\_\+presence\+\_\+flag}}
+\item 
+static \mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{a00128_aa7b7447450e155f48806507dec031688}{electrodes\+\_\+pending\+\_\+event}}
+\item 
+static \mbox{\hyperlink{a00221_ad86d69a0b4d65ddf120f056f448beff3}{ZP\+\_\+\+SEGMENT\+\_\+e}} \mbox{\hyperlink{a00128_a022c079cd40e26458edde88aa2499b61}{electrodes\+\_\+zp\+\_\+segment}}
+\item 
+static \mbox{\hyperlink{a00438}{NV\+\_\+\+DATA\+\_\+t}} \mbox{\hyperlink{a00128_afd7aabf1f95ea86068526ceaa030ad38}{nv\+\_\+data}}
+\item 
+static \mbox{\hyperlink{a00442}{NV\+\_\+\+DATA\+\_\+\+BLOCK\+\_\+t}} \mbox{\hyperlink{a00128_a8d2c566909bc43ec9cf207e739bc98b9}{nv\+\_\+data\+\_\+block}}
+\item 
+static \mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{a00128_ae70012801747a50c7fc489ca4d493a54}{test\+\_\+mode}} = false
+\item 
+static \mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{a00128_a30c87254da423b503899af04e6734d9b}{test\+\_\+mode\+\_\+montador}} = false
+\item 
+static \mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{a00128_a869b20288c78d56d569f1f6461d66971}{flag\+\_\+sysmon\+\_\+task}} = false
+\item 
+static \mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{a00128_ab6cc3ce872e60ec4c164e991ef6ccaa3}{flag\+\_\+power\+\_\+off}} = false
+\item 
+static \mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{a00128_a2a54fb769f1a42d76185a384e4093976}{first\+\_\+time}} = true
+\item 
+static \mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{a00128_ab906a77980a4785aa928e92e9f1369ef}{pon\+\_\+acc\+\_\+active}} = false
+\item 
+static \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{a00128_ab86f1b579d1bda5f0d12de996b00b0b1}{pic\+\_\+version\+\_\+major}}
+\item 
+static \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{a00128_a601f363b5ad5dabcf0a9730b515c5926}{pic\+\_\+version\+\_\+minor}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVersion}{Version}
+v1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+16/01/2018 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+ltorres 
+\end{DoxyAuthor}
+\begin{DoxyWarning}{Warning}
+author date version .-\/ Edition 
+\end{DoxyWarning}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{a00257__bug000034}{Bug}}]\end{DoxyRefDesc}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{a00128_a7a2b6149e9b99a6fb5cd71e1952c76a4}\label{a00128_a7a2b6149e9b99a6fb5cd71e1952c76a4} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!ACCELERATOR\_TIME@{ACCELERATOR\_TIME}}
+\index{ACCELERATOR\_TIME@{ACCELERATOR\_TIME}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{ACCELERATOR\_TIME}{ACCELERATOR\_TIME}}
+{\footnotesize\ttfamily \#define ACCELERATOR\+\_\+\+TIME~0}
+
+\Hypertarget{a00128_aa97b392e011e6b4c564ebb6a12873b8b}\label{a00128_aa97b392e011e6b4c564ebb6a12873b8b} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!COUNT\_VOLTAGE\_SAFE@{COUNT\_VOLTAGE\_SAFE}}
+\index{COUNT\_VOLTAGE\_SAFE@{COUNT\_VOLTAGE\_SAFE}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{COUNT\_VOLTAGE\_SAFE}{COUNT\_VOLTAGE\_SAFE}}
+{\footnotesize\ttfamily \#define COUNT\+\_\+\+VOLTAGE\+\_\+\+SAFE~5}
+
+\Hypertarget{a00128_a82ed3a575da308849865718320b03b66}\label{a00128_a82ed3a575da308849865718320b03b66} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!EXEC\_TEST@{EXEC\_TEST}}
+\index{EXEC\_TEST@{EXEC\_TEST}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{EXEC\_TEST}{EXEC\_TEST}}
+{\footnotesize\ttfamily \#define EXEC\+\_\+\+TEST~IOPORT\+\_\+\+PORT\+\_\+06\+\_\+\+PIN\+\_\+01}
+
+\Hypertarget{a00128_a6afb081a75593f3c034881ada625cf8d}\label{a00128_a6afb081a75593f3c034881ada625cf8d} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!FLASH\_BLOCK\_SIZE@{FLASH\_BLOCK\_SIZE}}
+\index{FLASH\_BLOCK\_SIZE@{FLASH\_BLOCK\_SIZE}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{FLASH\_BLOCK\_SIZE}{FLASH\_BLOCK\_SIZE}}
+{\footnotesize\ttfamily \#define FLASH\+\_\+\+BLOCK\+\_\+\+SIZE~1024}
+
+\Hypertarget{a00128_a5974f918773d31d9a3611c2a8774bc8c}\label{a00128_a5974f918773d31d9a3611c2a8774bc8c} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!FLASH\_DATA\_ADD@{FLASH\_DATA\_ADD}}
+\index{FLASH\_DATA\_ADD@{FLASH\_DATA\_ADD}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{FLASH\_DATA\_ADD}{FLASH\_DATA\_ADD}}
+{\footnotesize\ttfamily \#define FLASH\+\_\+\+DATA\+\_\+\+ADD~0x40100000}
+
+\Hypertarget{a00128_a8919c797f2d5ccbaf02ae962f07ed830}\label{a00128_a8919c797f2d5ccbaf02ae962f07ed830} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!FLASH\_DATA\_SZ@{FLASH\_DATA\_SZ}}
+\index{FLASH\_DATA\_SZ@{FLASH\_DATA\_SZ}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{FLASH\_DATA\_SZ}{FLASH\_DATA\_SZ}}
+{\footnotesize\ttfamily \#define FLASH\+\_\+\+DATA\+\_\+\+SZ~0x0004000}
+
+\Hypertarget{a00128_a2e4f52a547b043439c8e25015b8b334b}\label{a00128_a2e4f52a547b043439c8e25015b8b334b} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!HEX\_TO\_ASCII@{HEX\_TO\_ASCII}}
+\index{HEX\_TO\_ASCII@{HEX\_TO\_ASCII}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{HEX\_TO\_ASCII}{HEX\_TO\_ASCII}}
+{\footnotesize\ttfamily \#define HEX\+\_\+\+TO\+\_\+\+ASCII(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~(\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}) (((x$<$=9) ? (x+\textquotesingle{}0\textquotesingle{}) \+: ((x + \textquotesingle{}A\textquotesingle{}) -\/ 10)))}
+
+\Hypertarget{a00128_ab957955e83755ab38800f5e18df28faa}\label{a00128_ab957955e83755ab38800f5e18df28faa} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!LED\_BLINK\_OFF@{LED\_BLINK\_OFF}}
+\index{LED\_BLINK\_OFF@{LED\_BLINK\_OFF}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{LED\_BLINK\_OFF}{LED\_BLINK\_OFF}}
+{\footnotesize\ttfamily \#define LED\+\_\+\+BLINK\+\_\+\+OFF~0x00}
+
+\Hypertarget{a00128_af7deeda8ad41e6338d6711cc2e077c52}\label{a00128_af7deeda8ad41e6338d6711cc2e077c52} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!LED\_BLINK\_ON@{LED\_BLINK\_ON}}
+\index{LED\_BLINK\_ON@{LED\_BLINK\_ON}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{LED\_BLINK\_ON}{LED\_BLINK\_ON}}
+{\footnotesize\ttfamily \#define LED\+\_\+\+BLINK\+\_\+\+ON~0x01}
+
+\Hypertarget{a00128_a6d85ecbf430c6f44314e33b0c786d95c}\label{a00128_a6d85ecbf430c6f44314e33b0c786d95c} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!TEST\_CURRENT@{TEST\_CURRENT}}
+\index{TEST\_CURRENT@{TEST\_CURRENT}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{TEST\_CURRENT}{TEST\_CURRENT}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \#define TEST\+\_\+\+CURRENT~4000}
+
+\Hypertarget{a00128_a6d85ecbf430c6f44314e33b0c786d95c}\label{a00128_a6d85ecbf430c6f44314e33b0c786d95c} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!TEST\_CURRENT@{TEST\_CURRENT}}
+\index{TEST\_CURRENT@{TEST\_CURRENT}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{TEST\_CURRENT}{TEST\_CURRENT}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \#define TEST\+\_\+\+CURRENT~4000}
+
+\Hypertarget{a00128_abb92930e7442d642feb08fee18c730a5}\label{a00128_abb92930e7442d642feb08fee18c730a5} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!TIME\_TO\_AUTOTEST@{TIME\_TO\_AUTOTEST}}
+\index{TIME\_TO\_AUTOTEST@{TIME\_TO\_AUTOTEST}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{TIME\_TO\_AUTOTEST}{TIME\_TO\_AUTOTEST}}
+{\footnotesize\ttfamily \#define TIME\+\_\+\+TO\+\_\+\+AUTOTEST~3}
+
+\Hypertarget{a00128_af03eb4cd23286e7b30fb8ef32ea9c860}\label{a00128_af03eb4cd23286e7b30fb8ef32ea9c860} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!WARNING\_PERIOD\_SAT@{WARNING\_PERIOD\_SAT}}
+\index{WARNING\_PERIOD\_SAT@{WARNING\_PERIOD\_SAT}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{WARNING\_PERIOD\_SAT}{WARNING\_PERIOD\_SAT}}
+{\footnotesize\ttfamily \#define WARNING\+\_\+\+PERIOD\+\_\+\+SAT~1200}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{a00128_a24201038745365a3b1883d840a8ca0e8}\label{a00128_a24201038745365a3b1883d840a8ca0e8} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!\_\_attribute\_\_@{\_\_attribute\_\_}}
+\index{\_\_attribute\_\_@{\_\_attribute\_\_}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{\_\_attribute\_\_()}{\_\_attribute\_\_()}}
+{\footnotesize\ttfamily unsigned char \+\_\+\+\_\+attribute\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{(section("{}.Sign\+\_\+\+Section"{}))}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{a00128_ab14f7437b50af474b3ed633fcf53e423}\label{a00128_ab14f7437b50af474b3ed633fcf53e423} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!bsp\_clock\_init\_Reconfigure@{bsp\_clock\_init\_Reconfigure}}
+\index{bsp\_clock\_init\_Reconfigure@{bsp\_clock\_init\_Reconfigure}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{bsp\_clock\_init\_Reconfigure()}{bsp\_clock\_init\_Reconfigure()}}
+{\footnotesize\ttfamily void bsp\+\_\+clock\+\_\+init\+\_\+\+Reconfigure (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+PLL Source clock is always the main oscillator.
+
+Need to start PLL source clock and let it stabilize before starting PLL
+
+Set PLL Divider.
+
+Set PLL Multiplier.
+
+PLL Source clock is always the main oscillator.
+
+Wait for PLL clock source to stabilize
+
+If the system clock has failed to start call the unrecoverable error handler.
+
+MOCO, LOCO, and subclock do not have stabilization flags that can be checked.
+
+Wait for clock source to stabilize
+
+Set which clock to use for system clock and divisors for all system clocks.
+
+If the system clock has failed to be configured properly call the unrecoverable error handler.\Hypertarget{a00128_a72f7661ea341de8646b4b0241d87ed71}\label{a00128_a72f7661ea341de8646b4b0241d87ed71} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!Call\_SAT@{Call\_SAT}}
+\index{Call\_SAT@{Call\_SAT}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Call\_SAT()}{Call\_SAT()}}
+{\footnotesize\ttfamily static void Call\+\_\+\+SAT (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Call SAT service because a critical error is detected register and report the event. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\Hypertarget{a00128_a2908683be7f003ce7ce1c3069908c318}\label{a00128_a2908683be7f003ce7ce1c3069908c318} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!Check\_Battery@{Check\_Battery}}
+\index{Check\_Battery@{Check\_Battery}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Check\_Battery()}{Check\_Battery()}}
+{\footnotesize\ttfamily static void Check\+\_\+\+Battery (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Check the battery availability. If the battery is not available, advise the user and switch off the device. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\Hypertarget{a00128_a08c6cf485f2a11bbd9915ffd1c18e2cb}\label{a00128_a08c6cf485f2a11bbd9915ffd1c18e2cb} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!Check\_Battery\_Temperature@{Check\_Battery\_Temperature}}
+\index{Check\_Battery\_Temperature@{Check\_Battery\_Temperature}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Check\_Battery\_Temperature()}{Check\_Battery\_Temperature()}}
+{\footnotesize\ttfamily static void Check\+\_\+\+Battery\+\_\+\+Temperature (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00137_aef44329758059c91c76d334e8fc09700}{int8\+\_\+t}}}]{my\+\_\+temperature,  }\item[{\mbox{\hyperlink{a00077_a03d56294790e98587e2ed35dcb3d8115}{AUDIO\+\_\+\+ID\+\_\+e}} \texorpdfstring{$\ast$}{*}}]{p\+Audio\+\_\+msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Check the battery temperature to register events. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em my\+\_\+temperature} & battery temperature value \\
+\hline
+{\em p\+Audio\+\_\+msg} & pointer to the audio message to report\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\Hypertarget{a00128_aa3ddb4058ff8853f1771e5bb44003be8}\label{a00128_aa3ddb4058ff8853f1771e5bb44003be8} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!Check\_Battery\_Voltage@{Check\_Battery\_Voltage}}
+\index{Check\_Battery\_Voltage@{Check\_Battery\_Voltage}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Check\_Battery\_Voltage()}{Check\_Battery\_Voltage()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} Check\+\_\+\+Battery\+\_\+\+Voltage (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}}}]{my\+\_\+vb,  }\item[{\mbox{\hyperlink{a00137_aef44329758059c91c76d334e8fc09700}{int8\+\_\+t}}}]{my\+\_\+temperature,  }\item[{\mbox{\hyperlink{a00077_a03d56294790e98587e2ed35dcb3d8115}{AUDIO\+\_\+\+ID\+\_\+e}} \texorpdfstring{$\ast$}{*}}]{p\+Audio\+\_\+msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Check that the battery voltage is in range. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em my\+\_\+vb} & current battery voltage \\
+\hline
+{\em my\+\_\+temperature} & current temperature \\
+\hline
+{\em p\+Audio\+\_\+msg} & pointer to the audio message to report\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+v\+Limit\+\_\+safe replace battery limit only for test 
+\end{DoxyReturn}
+\Hypertarget{a00128_a5dd242a7fdc70850458d3f93bcefc30c}\label{a00128_a5dd242a7fdc70850458d3f93bcefc30c} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!Check\_dead\_man@{Check\_dead\_man}}
+\index{Check\_dead\_man@{Check\_dead\_man}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Check\_dead\_man()}{Check\_dead\_man()}}
+{\footnotesize\ttfamily static void Check\+\_\+dead\+\_\+man (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Check if the dead-\/man effect is triggered to automatic power off the device. Use timeout of 3 minutes Assume that the function is called every 500 msecs. aprox. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\Hypertarget{a00128_a0d2a806043e6e3322c75bb359f06500f}\label{a00128_a0d2a806043e6e3322c75bb359f06500f} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!Check\_Device\_Led\_Status@{Check\_Device\_Led\_Status}}
+\index{Check\_Device\_Led\_Status@{Check\_Device\_Led\_Status}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Check\_Device\_Led\_Status()}{Check\_Device\_Led\_Status()}}
+{\footnotesize\ttfamily void Check\+\_\+\+Device\+\_\+\+Led\+\_\+\+Status (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Determine if status led must be on. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\Hypertarget{a00128_a611ae76887c3da1252bb965073ed1032}\label{a00128_a611ae76887c3da1252bb965073ed1032} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!Check\_Electrodes\_Type@{Check\_Electrodes\_Type}}
+\index{Check\_Electrodes\_Type@{Check\_Electrodes\_Type}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Check\_Electrodes\_Type()}{Check\_Electrodes\_Type()}}
+{\footnotesize\ttfamily static void Check\+\_\+\+Electrodes\+\_\+\+Type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}}}]{force }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Check electrodes type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em force} & force writing statistics of electrodes\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\Hypertarget{a00128_a09b3d44686a8345050669e3ae7c9e6c7}\label{a00128_a09b3d44686a8345050669e3ae7c9e6c7} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!Check\_Electrodes\_Type\_RTC@{Check\_Electrodes\_Type\_RTC}}
+\index{Check\_Electrodes\_Type\_RTC@{Check\_Electrodes\_Type\_RTC}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Check\_Electrodes\_Type\_RTC()}{Check\_Electrodes\_Type\_RTC()}}
+{\footnotesize\ttfamily static void Check\+\_\+\+Electrodes\+\_\+\+Type\+\_\+\+RTC (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Check electrodes type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\Hypertarget{a00128_a86d6de0ddbdd8704798336aa29003fb5}\label{a00128_a86d6de0ddbdd8704798336aa29003fb5} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!Check\_Test\_Abort\_User@{Check\_Test\_Abort\_User}}
+\index{Check\_Test\_Abort\_User@{Check\_Test\_Abort\_User}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Check\_Test\_Abort\_User()}{Check\_Test\_Abort\_User()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} Check\+\_\+\+Test\+\_\+\+Abort\+\_\+\+User (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00310}{DB\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Result }\end{DoxyParamCaption})}
+
+
+
+Check if user abort running test. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Result} & Pointer to test result\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True or False 
+\end{DoxyReturn}
+\Hypertarget{a00128_ac9febdbd1dca2289134e4a83fd008574}\label{a00128_ac9febdbd1dca2289134e4a83fd008574} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!Device\_pw@{Device\_pw}}
+\index{Device\_pw@{Device\_pw}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Device\_pw()}{Device\_pw()}}
+{\footnotesize\ttfamily void Device\+\_\+pw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Password,  }\item[{\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Device\+\_\+sn,  }\item[{\mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}}}]{size }\end{DoxyParamCaption})}
+
+
+
+Function that report if the device is in mode DEMO or not. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+DEMO mode
+\end{DoxyReturn}
+Function that report if the device is in mode DEMO or not
+
+
+\begin{DoxyParams}{Parameters}
+{\em aux} & aux variable to set DEMO mode\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none
+\end{DoxyReturn}
+Generates the device password for USB operation based on device serial number
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Password} & generated device USB password \\
+\hline
+{\em p\+Device\+\_\+sn} & device serial number \\
+\hline
+{\em size} & number of bytes to process\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\Hypertarget{a00128_adce4182129c1b341756893a8c387e2b7}\label{a00128_adce4182129c1b341756893a8c387e2b7} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!Electrodes\_Get\_Data@{Electrodes\_Get\_Data}}
+\index{Electrodes\_Get\_Data@{Electrodes\_Get\_Data}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Electrodes\_Get\_Data()}{Electrodes\_Get\_Data()}}
+{\footnotesize\ttfamily void Electrodes\+\_\+\+Get\+\_\+\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00434}{ELECTRODES\+\_\+\+DATA\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Data }\end{DoxyParamCaption})}
+
+
+
+Get the electrodes data (sn, info and event register) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Data} & pointer to electrodes structure\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\Hypertarget{a00128_aeeb458bcec8909373038cfd816e475db}\label{a00128_aeeb458bcec8909373038cfd816e475db} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!Electrodes\_Get\_Signature@{Electrodes\_Get\_Signature}}
+\index{Electrodes\_Get\_Signature@{Electrodes\_Get\_Signature}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Electrodes\_Get\_Signature()}{Electrodes\_Get\_Signature()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00221_ab5a454b85186a6663fc81c4685af3281}{EL\+\_\+\+SIGN\+\_\+e}} Electrodes\+\_\+\+Get\+\_\+\+Signature (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Get electrodes signature. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+electrodes signature 
+\end{DoxyReturn}
+\Hypertarget{a00128_a2746a250fe0f33c32b88fd7c86139d53}\label{a00128_a2746a250fe0f33c32b88fd7c86139d53} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!Electrodes\_Presence@{Electrodes\_Presence}}
+\index{Electrodes\_Presence@{Electrodes\_Presence}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Electrodes\_Presence()}{Electrodes\_Presence()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} Electrodes\+\_\+\+Presence (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Try to detect the presence of electrodes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+electrodes presence flag (true if are present) 
+\end{DoxyReturn}
+\Hypertarget{a00128_aa0eafd2018eb10797d790d6b8bf98b95}\label{a00128_aa0eafd2018eb10797d790d6b8bf98b95} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!Electrodes\_Read\_Data@{Electrodes\_Read\_Data}}
+\index{Electrodes\_Read\_Data@{Electrodes\_Read\_Data}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Electrodes\_Read\_Data()}{Electrodes\_Read\_Data()}}
+{\footnotesize\ttfamily static void Electrodes\+\_\+\+Read\+\_\+\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00434}{ELECTRODES\+\_\+\+DATA\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Read the electrodes all data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Event} & pointer to data\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\Hypertarget{a00128_adf630b74d86769125fbc7c5355695cdc}\label{a00128_adf630b74d86769125fbc7c5355695cdc} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!Electrodes\_Register\_Event@{Electrodes\_Register\_Event}}
+\index{Electrodes\_Register\_Event@{Electrodes\_Register\_Event}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Electrodes\_Register\_Event()}{Electrodes\_Register\_Event()}}
+{\footnotesize\ttfamily void Electrodes\+\_\+\+Register\+\_\+\+Event (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Command to register electrodes event. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\Hypertarget{a00128_a90fd604d6e8ca2b285c486b7f837956f}\label{a00128_a90fd604d6e8ca2b285c486b7f837956f} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!Electrodes\_Register\_Shock@{Electrodes\_Register\_Shock}}
+\index{Electrodes\_Register\_Shock@{Electrodes\_Register\_Shock}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Electrodes\_Register\_Shock()}{Electrodes\_Register\_Shock()}}
+{\footnotesize\ttfamily void Electrodes\+\_\+\+Register\+\_\+\+Shock (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Command to register shock sending alert. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\Hypertarget{a00128_a777bb99d33e0b631192d6b09ed44f016}\label{a00128_a777bb99d33e0b631192d6b09ed44f016} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!Electrodes\_Write\_Event@{Electrodes\_Write\_Event}}
+\index{Electrodes\_Write\_Event@{Electrodes\_Write\_Event}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Electrodes\_Write\_Event()}{Electrodes\_Write\_Event()}}
+{\footnotesize\ttfamily static void Electrodes\+\_\+\+Write\+\_\+\+Event (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00430}{ELECTRODES\+\_\+\+EVENT\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Writes event into electrodes memory. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Event} & pointer to data\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\Hypertarget{a00128_a956237995bc7008095717ea307c33755}\label{a00128_a956237995bc7008095717ea307c33755} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!Electrodes\_Write\_Scratchpad@{Electrodes\_Write\_Scratchpad}}
+\index{Electrodes\_Write\_Scratchpad@{Electrodes\_Write\_Scratchpad}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Electrodes\_Write\_Scratchpad()}{Electrodes\_Write\_Scratchpad()}}
+{\footnotesize\ttfamily static void Electrodes\+\_\+\+Write\+\_\+\+Scratchpad (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Data,  }\item[{\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{n\+Bytes,  }\item[{\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{address }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Writes a single scratchpad into electrodes memory. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Data} & pointer to data \\
+\hline
+{\em n\+Bytes} & number of bytes to write (must be up to 8) \\
+\hline
+{\em address} & memory address to write in\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\Hypertarget{a00128_a973e134ad9fa805bf48d53f009b5258b}\label{a00128_a973e134ad9fa805bf48d53f009b5258b} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!Execute\_calibration@{Execute\_calibration}}
+\index{Execute\_calibration@{Execute\_calibration}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Execute\_calibration()}{Execute\_calibration()}}
+{\footnotesize\ttfamily static void Execute\+\_\+calibration (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Function that executes the ECG test. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true or false if code execute correctly or not
+\end{DoxyReturn}
+Function that executes the impedance calibration of the device
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\Hypertarget{a00128_a569e2a19584fea41c2c54780106f24d7}\label{a00128_a569e2a19584fea41c2c54780106f24d7} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!Execute\_Startup\_Test@{Execute\_Startup\_Test}}
+\index{Execute\_Startup\_Test@{Execute\_Startup\_Test}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Execute\_Startup\_Test()}{Execute\_Startup\_Test()}}
+{\footnotesize\ttfamily static void Execute\+\_\+\+Startup\+\_\+\+Test (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00310}{DB\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Result }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Function that executes the device startup test\+: .-\/ verify the resources memory (checksum) .-\/ power supplies (DC-\/\+MAIN and +12volts) .-\/ Battery state of charge .-\/ Battery temperature .-\/ Pat\+Mon operative. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Result} & pointer to result parameters \\
+\hline
+{\em test\+\_\+id} & test identifier\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\Hypertarget{a00128_ad7a8a06d67cdd43cdd5bc7f5d4db0cd7}\label{a00128_ad7a8a06d67cdd43cdd5bc7f5d4db0cd7} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!Execute\_Test@{Execute\_Test}}
+\index{Execute\_Test@{Execute\_Test}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Execute\_Test()}{Execute\_Test()}}
+{\footnotesize\ttfamily static void Execute\+\_\+\+Test (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00310}{DB\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Result,  }\item[{\mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}}}]{auto\+\_\+test }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Function that executes the device test\+: .-\/ verify the resources memory (checksum) .-\/ power supplies (DC-\/\+MAIN and +12volts) .-\/ Batteries percent (battery 1 and 2) .-\/ Temperature. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Result} & pointer to result parameters \\
+\hline
+{\em auto\+\_\+test} & if the test is automatic or forced by an user\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\Hypertarget{a00128_a3ad2403f07c6d8129531068c67827398}\label{a00128_a3ad2403f07c6d8129531068c67827398} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!Execute\_Test\_Battery@{Execute\_Test\_Battery}}
+\index{Execute\_Test\_Battery@{Execute\_Test\_Battery}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Execute\_Test\_Battery()}{Execute\_Test\_Battery()}}
+{\footnotesize\ttfamily static void Execute\+\_\+\+Test\+\_\+\+Battery (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00282}{TEST\+\_\+\+BATTERY\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Battery,  }\item[{\mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}}}]{auto\+\_\+test,  }\item[{\mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}}}]{pat\+\_\+mode }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Function that executes the battery test. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Battery} & pointer to result parameters \\
+\hline
+{\em auto\+\_\+test} & if the test is automatic or forced by an user \\
+\hline
+{\em pat\+\_\+mode} & if the test is done in Patient mode\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\Hypertarget{a00128_a741a6c64dea4e2e838bc03ac6f1174a6}\label{a00128_a741a6c64dea4e2e838bc03ac6f1174a6} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!Execute\_Test\_Cert@{Execute\_Test\_Cert}}
+\index{Execute\_Test\_Cert@{Execute\_Test\_Cert}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Execute\_Test\_Cert()}{Execute\_Test\_Cert()}}
+{\footnotesize\ttfamily static void Execute\+\_\+\+Test\+\_\+\+Cert (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00306}{TEST\+\_\+\+CERT\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Cert }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Function to load certificates. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Cert} & pointer to certificate parameters\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\Hypertarget{a00128_ac9ecbba1f09db36499f7df86a646aac2}\label{a00128_ac9ecbba1f09db36499f7df86a646aac2} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!Execute\_Test\_Comms@{Execute\_Test\_Comms}}
+\index{Execute\_Test\_Comms@{Execute\_Test\_Comms}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Execute\_Test\_Comms()}{Execute\_Test\_Comms()}}
+{\footnotesize\ttfamily static void Execute\+\_\+\+Test\+\_\+\+Comms (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00294}{TEST\+\_\+\+COMMS\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Comms,  }\item[{\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{force }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Function that executes the Comms test. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Comms} & pointer to result parameters \\
+\hline
+{\em force} & force test\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\Hypertarget{a00128_a6211aaf23d16365e7f4a2989537f1f45}\label{a00128_a6211aaf23d16365e7f4a2989537f1f45} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!Execute\_Test\_Defib@{Execute\_Test\_Defib}}
+\index{Execute\_Test\_Defib@{Execute\_Test\_Defib}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Execute\_Test\_Defib()}{Execute\_Test\_Defib()}}
+{\footnotesize\ttfamily static void Execute\+\_\+\+Test\+\_\+\+Defib (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00302}{TEST\+\_\+\+DEFIB\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Defib }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Function that executes the Defibrillator test. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Defib} & pointer to result parameters\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\Hypertarget{a00128_aacd0a85f95141c68a25562ed7ea3bd53}\label{a00128_aacd0a85f95141c68a25562ed7ea3bd53} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!Execute\_Test\_Defib\_Montador@{Execute\_Test\_Defib\_Montador}}
+\index{Execute\_Test\_Defib\_Montador@{Execute\_Test\_Defib\_Montador}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Execute\_Test\_Defib\_Montador()}{Execute\_Test\_Defib\_Montador()}}
+{\footnotesize\ttfamily static void Execute\+\_\+\+Test\+\_\+\+Defib\+\_\+\+Montador (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00302}{TEST\+\_\+\+DEFIB\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Defib }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Function that executes the GPS test. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+GPS\+\_\+\+String} & pointer to result string\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none
+\end{DoxyReturn}
+Function that executes the Defibrillator test
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Defib} & pointer to result parameters\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\Hypertarget{a00128_a2fca41f496a3b6beea55a8ef0f38c850}\label{a00128_a2fca41f496a3b6beea55a8ef0f38c850} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!Execute\_Test\_Electrodes@{Execute\_Test\_Electrodes}}
+\index{Execute\_Test\_Electrodes@{Execute\_Test\_Electrodes}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Execute\_Test\_Electrodes()}{Execute\_Test\_Electrodes()}}
+{\footnotesize\ttfamily static void Execute\+\_\+\+Test\+\_\+\+Electrodes (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00286}{TEST\+\_\+\+ELECTRODES\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Electrodes,  }\item[{\mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}}}]{auto\+\_\+test,  }\item[{\mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}}}]{pat\+\_\+mode }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Function that executes the electrode test. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Electrodes} & pointer to result parameters \\
+\hline
+{\em auto\+\_\+test} & if the test is automatic or forced by an user \\
+\hline
+{\em pat\+\_\+mode} & if the test is done in Patient mode\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\Hypertarget{a00128_acc715921ec9f0fa6ede1d5c7e6f3547a}\label{a00128_acc715921ec9f0fa6ede1d5c7e6f3547a} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!Execute\_Test\_Leds\_Keys@{Execute\_Test\_Leds\_Keys}}
+\index{Execute\_Test\_Leds\_Keys@{Execute\_Test\_Leds\_Keys}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Execute\_Test\_Leds\_Keys()}{Execute\_Test\_Leds\_Keys()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Execute\+\_\+\+Test\+\_\+\+Leds\+\_\+\+Keys (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00298}{TEST\+\_\+\+MISC\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Misc }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Function that executes the electrode test. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Misc} & pointer to result parameters\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\Hypertarget{a00128_a059671cf3ed7abd51a66f9de8cc3251b}\label{a00128_a059671cf3ed7abd51a66f9de8cc3251b} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!Execute\_Test\_Misc@{Execute\_Test\_Misc}}
+\index{Execute\_Test\_Misc@{Execute\_Test\_Misc}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Execute\_Test\_Misc()}{Execute\_Test\_Misc()}}
+{\footnotesize\ttfamily static void Execute\+\_\+\+Test\+\_\+\+Misc (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00298}{TEST\+\_\+\+MISC\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Misc,  }\item[{\mbox{\hyperlink{a00137_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Device\+\_\+sn,  }\item[{\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{test\+\_\+id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Function that executes the miscellaneous test. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Misc} & pointer to result parameters \\
+\hline
+{\em p\+Device\+\_\+sn} & device serial number \\
+\hline
+{\em test\+\_\+id} & test number\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\Hypertarget{a00128_a45e8a3b71abc5aaf4a3de43e37b2c426}\label{a00128_a45e8a3b71abc5aaf4a3de43e37b2c426} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!Execute\_Test\_Montador@{Execute\_Test\_Montador}}
+\index{Execute\_Test\_Montador@{Execute\_Test\_Montador}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Execute\_Test\_Montador()}{Execute\_Test\_Montador()}}
+{\footnotesize\ttfamily static void Execute\+\_\+\+Test\+\_\+\+Montador (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00310}{DB\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Result,  }\item[{\mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}}}]{auto\+\_\+test }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Function that executes the device test\+: .-\/ verify the resources memory (checksum) .-\/ power supplies (DC-\/\+MAIN and +12volts) .-\/ Batteries percent (battery 1 and 2) .-\/ Temperature. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Result} & pointer to result parameters \\
+\hline
+{\em auto\+\_\+test} & if the test is automatic or forced by an user\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\Hypertarget{a00128_a05a59ff01a62a67642e2dd64f3922c0a}\label{a00128_a05a59ff01a62a67642e2dd64f3922c0a} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!Execute\_Test\_Patmon@{Execute\_Test\_Patmon}}
+\index{Execute\_Test\_Patmon@{Execute\_Test\_Patmon}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Execute\_Test\_Patmon()}{Execute\_Test\_Patmon()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} Execute\+\_\+\+Test\+\_\+\+Patmon (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00290}{TEST\+\_\+\+PATMON\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Patmon,  }\item[{\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{test\+\_\+id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Function that executes the Patient Monitor test. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Patmon} & pointer to result parameters \\
+\hline
+{\em test\+\_\+id} & test ientifier\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\Hypertarget{a00128_a314477032fa47b8dd581908331045876}\label{a00128_a314477032fa47b8dd581908331045876} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!Execute\_Test\_Voltage@{Execute\_Test\_Voltage}}
+\index{Execute\_Test\_Voltage@{Execute\_Test\_Voltage}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Execute\_Test\_Voltage()}{Execute\_Test\_Voltage()}}
+{\footnotesize\ttfamily static void Execute\+\_\+\+Test\+\_\+\+Voltage (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00278}{TEST\+\_\+\+VOLTAGE\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Voltage }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Function that executes the voltage test. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Voltage} & pointer to result parameters\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\Hypertarget{a00128_a8ca2b3f1ae1239a7fe368eeb284cbd34}\label{a00128_a8ca2b3f1ae1239a7fe368eeb284cbd34} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!Fill\_Update\_Reg@{Fill\_Update\_Reg}}
+\index{Fill\_Update\_Reg@{Fill\_Update\_Reg}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Fill\_Update\_Reg()}{Fill\_Update\_Reg()}}
+{\footnotesize\ttfamily static void Fill\+\_\+\+Update\+\_\+\+Reg (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00137_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Str,  }\item[{\mbox{\hyperlink{a00314}{DEVICE\+\_\+\+DATE\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Date,  }\item[{\mbox{\hyperlink{a00318}{DEVICE\+\_\+\+TIME\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Initializes the update register data string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Str} & \+: pointer to a data string \\
+\hline
+{\em p\+Date} & \+: pointer to a date struct \\
+\hline
+{\em p\+Time} & \+: pointer to a time struct\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\Hypertarget{a00128_a679c807ced4c0434c9abb371da32f3bb}\label{a00128_a679c807ced4c0434c9abb371da32f3bb} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!Generate\_Battery\_Statistics@{Generate\_Battery\_Statistics}}
+\index{Generate\_Battery\_Statistics@{Generate\_Battery\_Statistics}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Generate\_Battery\_Statistics()}{Generate\_Battery\_Statistics()}}
+{\footnotesize\ttfamily static void Generate\+\_\+\+Battery\+\_\+\+Statistics (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00077_a03d56294790e98587e2ed35dcb3d8115}{AUDIO\+\_\+\+ID\+\_\+e}} \texorpdfstring{$\ast$}{*}}]{p\+Audio\+\_\+msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Generate battery statistics to be considered to compute the remaining charge. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Audio\+\_\+msg} & pointer to the audio message to report\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\Hypertarget{a00128_a5d710674bd8ab574159b5f0d01d1d67f}\label{a00128_a5d710674bd8ab574159b5f0d01d1d67f} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!Get\_NV\_Data@{Get\_NV\_Data}}
+\index{Get\_NV\_Data@{Get\_NV\_Data}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Get\_NV\_Data()}{Get\_NV\_Data()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00438}{NV\+\_\+\+DATA\+\_\+t}} \texorpdfstring{$\ast$}{*} Get\+\_\+\+NV\+\_\+\+Data (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Function that gets the non volatile data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to nv\+\_\+data 
+\end{DoxyReturn}
+\Hypertarget{a00128_aebbdcccc2dcf3573e1ec3761e55c998c}\label{a00128_aebbdcccc2dcf3573e1ec3761e55c998c} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!Get\_NV\_Data\_Block@{Get\_NV\_Data\_Block}}
+\index{Get\_NV\_Data\_Block@{Get\_NV\_Data\_Block}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Get\_NV\_Data\_Block()}{Get\_NV\_Data\_Block()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00442}{NV\+\_\+\+DATA\+\_\+\+BLOCK\+\_\+t}} \texorpdfstring{$\ast$}{*} Get\+\_\+\+NV\+\_\+\+Data\+\_\+\+Block (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Function that gets the second block of the non volatile data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to nv\+\_\+data 
+\end{DoxyReturn}
+\Hypertarget{a00128_a2bffc10d5bd4106753b7c30e86903bea}\label{a00128_a2bffc10d5bd4106753b7c30e86903bea} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!HardFault\_Handler@{HardFault\_Handler}}
+\index{HardFault\_Handler@{HardFault\_Handler}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{HardFault\_Handler()}{HardFault\_Handler()}}
+{\footnotesize\ttfamily void Hard\+Fault\+\_\+\+Handler (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{a00128_a5d80fd856305d7534bcd8f561cab9e92}\label{a00128_a5d80fd856305d7534bcd8f561cab9e92} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!Identify\_PowerOn\_Event@{Identify\_PowerOn\_Event}}
+\index{Identify\_PowerOn\_Event@{Identify\_PowerOn\_Event}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Identify\_PowerOn\_Event()}{Identify\_PowerOn\_Event()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{a00134_a7e34c706bde6f3522650864d7352ae86}{POWER\+\_\+\+ON\+\_\+\+SOURCE\+\_\+e}} Identify\+\_\+\+Power\+On\+\_\+\+Event (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Identifies the agent that roots the power on. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+source of the power on 
+\end{DoxyReturn}
+\Hypertarget{a00128_a9c961ad97558f92f8f4d44373bca3702}\label{a00128_a9c961ad97558f92f8f4d44373bca3702} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!Is\_SAT\_Error@{Is\_SAT\_Error}}
+\index{Is\_SAT\_Error@{Is\_SAT\_Error}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Is\_SAT\_Error()}{Is\_SAT\_Error()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} Is\+\_\+\+SAT\+\_\+\+Error (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}}}]{dev\+\_\+error }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Determine if an error requires a SAT service or not. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dev\+\_\+error} & Error code to check\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If the error is categorized as SAT or not 
+\end{DoxyReturn}
+\Hypertarget{a00128_aa1af180c605ec797a038deb05c38898a}\label{a00128_aa1af180c605ec797a038deb05c38898a} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!Is\_Sysmon\_Task\_Initialized@{Is\_Sysmon\_Task\_Initialized}}
+\index{Is\_Sysmon\_Task\_Initialized@{Is\_Sysmon\_Task\_Initialized}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Is\_Sysmon\_Task\_Initialized()}{Is\_Sysmon\_Task\_Initialized()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} Is\+\_\+\+Sysmon\+\_\+\+Task\+\_\+\+Initialized (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Is task initialized? 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+flag system monitor task 
+\end{DoxyReturn}
+\Hypertarget{a00128_a04996a39aeb722a8df6c6643864cc670}\label{a00128_a04996a39aeb722a8df6c6643864cc670} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!Is\_Test\_Mode@{Is\_Test\_Mode}}
+\index{Is\_Test\_Mode@{Is\_Test\_Mode}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Is\_Test\_Mode()}{Is\_Test\_Mode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} Is\+\_\+\+Test\+\_\+\+Mode (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Function that report if the devioce is in test mode or not. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+test mode 
+\end{DoxyReturn}
+\Hypertarget{a00128_a33ca5a33ab10af89dcb290e9d052b724}\label{a00128_a33ca5a33ab10af89dcb290e9d052b724} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!Is\_Test\_Mode\_Montador@{Is\_Test\_Mode\_Montador}}
+\index{Is\_Test\_Mode\_Montador@{Is\_Test\_Mode\_Montador}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Is\_Test\_Mode\_Montador()}{Is\_Test\_Mode\_Montador()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} Is\+\_\+\+Test\+\_\+\+Mode\+\_\+\+Montador (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Function that report if the devioce is in test mode montador or not. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+montador mode 
+\end{DoxyReturn}
+\Hypertarget{a00128_a4b7d7a3d9d38c4f0336d198fc76c84ff}\label{a00128_a4b7d7a3d9d38c4f0336d198fc76c84ff} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!Load\_FW\_File@{Load\_FW\_File}}
+\index{Load\_FW\_File@{Load\_FW\_File}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Load\_FW\_File()}{Load\_FW\_File()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} Load\+\_\+\+FW\+\_\+\+File (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+This function use to upload firmware file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true Firmware is upload but update is pending 
+
+false No update found in u\+SD. 
+\end{DoxyReturn}
+\Hypertarget{a00128_a2cc3fd20c4853e53ab7621927f0c67e4}\label{a00128_a2cc3fd20c4853e53ab7621927f0c67e4} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!Load\_GOLD\_File@{Load\_GOLD\_File}}
+\index{Load\_GOLD\_File@{Load\_GOLD\_File}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Load\_GOLD\_File()}{Load\_GOLD\_File()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} Load\+\_\+\+GOLD\+\_\+\+File (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+This function use to upload Golden file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true Golden firmware uploaded 
+
+false No update found in u\+SD. 
+\end{DoxyReturn}
+\Hypertarget{a00128_a2c5836202a13b4d23eb7b1b9211db6ac}\label{a00128_a2c5836202a13b4d23eb7b1b9211db6ac} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!Lock\_on\_Panic@{Lock\_on\_Panic}}
+\index{Lock\_on\_Panic@{Lock\_on\_Panic}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Lock\_on\_Panic()}{Lock\_on\_Panic()}}
+{\footnotesize\ttfamily void Lock\+\_\+on\+\_\+\+Panic (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{error,  }\item[{\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{num }\end{DoxyParamCaption})}
+
+
+
+Lock the device because the program can not be executed normally. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\Hypertarget{a00128_a7514b80ba83366eb1792a5de56de25d1}\label{a00128_a7514b80ba83366eb1792a5de56de25d1} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!NV\_Data\_Read@{NV\_Data\_Read}}
+\index{NV\_Data\_Read@{NV\_Data\_Read}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{NV\_Data\_Read()}{NV\_Data\_Read()}}
+{\footnotesize\ttfamily void NV\+\_\+\+Data\+\_\+\+Read (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00438}{NV\+\_\+\+DATA\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+NV\+\_\+data,  }\item[{\mbox{\hyperlink{a00442}{NV\+\_\+\+DATA\+\_\+\+BLOCK\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+NV\+\_\+data\+\_\+block }\end{DoxyParamCaption})}
+
+
+
+Function that gets the non volatile data from the internal Data Flash. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+NV\+\_\+data} & to the structure to fill \\
+\hline
+{\em p\+NV\+\_\+data\+\_\+block} & to the structure to fill\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\Hypertarget{a00128_ae158ddc17edc766e6adc7f0c1988f2b9}\label{a00128_ae158ddc17edc766e6adc7f0c1988f2b9} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!NV\_Data\_Write@{NV\_Data\_Write}}
+\index{NV\_Data\_Write@{NV\_Data\_Write}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{NV\_Data\_Write()}{NV\_Data\_Write()}}
+{\footnotesize\ttfamily void NV\+\_\+\+Data\+\_\+\+Write (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00438}{NV\+\_\+\+DATA\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+NV\+\_\+data,  }\item[{\mbox{\hyperlink{a00442}{NV\+\_\+\+DATA\+\_\+\+BLOCK\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+NV\+\_\+data\+\_\+block }\end{DoxyParamCaption})}
+
+
+
+Function that updates the test id and saves it to data flash memory. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+NV\+\_\+data} & to the structure to write in the Data Flash\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\Hypertarget{a00128_a2aec3599f75cd59a888333fe2a470ded}\label{a00128_a2aec3599f75cd59a888333fe2a470ded} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!OneWire\_Read\_Array@{OneWire\_Read\_Array}}
+\index{OneWire\_Read\_Array@{OneWire\_Read\_Array}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{OneWire\_Read\_Array()}{OneWire\_Read\_Array()}}
+{\footnotesize\ttfamily static void One\+Wire\+\_\+\+Read\+\_\+\+Array (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Array,  }\item[{\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{n\+Bytes }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Write a single byte in the One\+Wire device (locking function) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Array} & pointer to destination array \\
+\hline
+{\em n\+Bytes} & number of bytes to read\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\Hypertarget{a00128_af4573aa4c984963e9ec343ee18f704fd}\label{a00128_af4573aa4c984963e9ec343ee18f704fd} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!OneWire\_Wait\_While\_Busy@{OneWire\_Wait\_While\_Busy}}
+\index{OneWire\_Wait\_While\_Busy@{OneWire\_Wait\_While\_Busy}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{OneWire\_Wait\_While\_Busy()}{OneWire\_Wait\_While\_Busy()}}
+{\footnotesize\ttfamily static void One\+Wire\+\_\+\+Wait\+\_\+\+While\+\_\+\+Busy (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Wait until One\+Wire is free. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\Hypertarget{a00128_a1ff511824d4951cf7a02c97726ecaac5}\label{a00128_a1ff511824d4951cf7a02c97726ecaac5} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!OneWire\_Write\_Byte@{OneWire\_Write\_Byte}}
+\index{OneWire\_Write\_Byte@{OneWire\_Write\_Byte}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{OneWire\_Write\_Byte()}{OneWire\_Write\_Byte()}}
+{\footnotesize\ttfamily static void One\+Wire\+\_\+\+Write\+\_\+\+Byte (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{cmd }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Write a single byte in the One\+Wire device (locking function) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em command} & identifier\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\Hypertarget{a00128_aa941a86ae8e6114568829c668d5fc09c}\label{a00128_aa941a86ae8e6114568829c668d5fc09c} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!Parrot\_Audio\_Message@{Parrot\_Audio\_Message}}
+\index{Parrot\_Audio\_Message@{Parrot\_Audio\_Message}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Parrot\_Audio\_Message()}{Parrot\_Audio\_Message()}}
+{\footnotesize\ttfamily static void Parrot\+\_\+\+Audio\+\_\+\+Message (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00077_a03d56294790e98587e2ed35dcb3d8115}{AUDIO\+\_\+\+ID\+\_\+e}}}]{message\+\_\+to\+\_\+play }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Parrot or play periodically an audio message assume that there is a message to play !!! 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message\+\_\+to\+\_\+play} & identifier of the audio mesage to play\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\Hypertarget{a00128_aea83c8517300aa0759f0088c0f2dfa2f}\label{a00128_aea83c8517300aa0759f0088c0f2dfa2f} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!Pasatiempos@{Pasatiempos}}
+\index{Pasatiempos@{Pasatiempos}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Pasatiempos()}{Pasatiempos()}}
+{\footnotesize\ttfamily void Pasatiempos (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}}}]{n\+Ticks }\end{DoxyParamCaption})}
+
+
+
+Pass time doing nothing, but refreshing the watchdog !!! 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n\+Ticks} & number of ticks to stay in the hamaca\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\Hypertarget{a00128_ae266dd5355d4644da21295b8a95ca1af}\label{a00128_ae266dd5355d4644da21295b8a95ca1af} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!Pasatiempos\_Listening@{Pasatiempos\_Listening}}
+\index{Pasatiempos\_Listening@{Pasatiempos\_Listening}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Pasatiempos\_Listening()}{Pasatiempos\_Listening()}}
+{\footnotesize\ttfamily void Pasatiempos\+\_\+\+Listening (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Pass time doing nothing while is listening an audio message and refreshing the watchdog !!! 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\Hypertarget{a00128_ac57ddf7101a91b2a674d46030e881968}\label{a00128_ac57ddf7101a91b2a674d46030e881968} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!Process\_Electrodes\_Event@{Process\_Electrodes\_Event}}
+\index{Process\_Electrodes\_Event@{Process\_Electrodes\_Event}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Process\_Electrodes\_Event()}{Process\_Electrodes\_Event()}}
+{\footnotesize\ttfamily static void Process\+\_\+\+Electrodes\+\_\+\+Event (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Process and register an electrodes event. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\Hypertarget{a00128_ae6569a3b0fdcd805b8b1061810327fc0}\label{a00128_ae6569a3b0fdcd805b8b1061810327fc0} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!prvGetRegistersFromStack@{prvGetRegistersFromStack}}
+\index{prvGetRegistersFromStack@{prvGetRegistersFromStack}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{prvGetRegistersFromStack()}{prvGetRegistersFromStack()}}
+{\footnotesize\ttfamily static void prv\+Get\+Registers\+From\+Stack (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{pul\+Fault\+Stack\+Address }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{a00128_ac0c7edb2de59294bfcfbc443b6981cec}\label{a00128_ac0c7edb2de59294bfcfbc443b6981cec} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!R100\_Check\_Cover@{R100\_Check\_Cover}}
+\index{R100\_Check\_Cover@{R100\_Check\_Cover}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{R100\_Check\_Cover()}{R100\_Check\_Cover()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{a00134_a7e34c706bde6f3522650864d7352ae86}{POWER\+\_\+\+ON\+\_\+\+SOURCE\+\_\+e}} R100\+\_\+\+Check\+\_\+\+Cover (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Check if cover has been opened during an extended period of time. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\Hypertarget{a00128_a03e4c8533bb8ce3fd3a1f9b8120797fd}\label{a00128_a03e4c8533bb8ce3fd3a1f9b8120797fd} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!R100\_Check\_SAT@{R100\_Check\_SAT}}
+\index{R100\_Check\_SAT@{R100\_Check\_SAT}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{R100\_Check\_SAT()}{R100\_Check\_SAT()}}
+{\footnotesize\ttfamily static void R100\+\_\+\+Check\+\_\+\+SAT (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}}}]{dev\+\_\+error,  }\item[{\mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}}}]{force\+\_\+warning }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Power off the device due to critical error. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dev\+\_\+error} & current device error \\
+\hline
+{\em force\+\_\+warning} & force the warning message\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\Hypertarget{a00128_a933eee506a6d0eee2047bc80c8986d82}\label{a00128_a933eee506a6d0eee2047bc80c8986d82} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!R100\_Check\_SAT\_RTC@{R100\_Check\_SAT\_RTC}}
+\index{R100\_Check\_SAT\_RTC@{R100\_Check\_SAT\_RTC}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{R100\_Check\_SAT\_RTC()}{R100\_Check\_SAT\_RTC()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} R100\+\_\+\+Check\+\_\+\+SAT\+\_\+\+RTC (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}}}]{dev\+\_\+error,  }\item[{\mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}}}]{force\+\_\+warning }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Power off the device programming an automatic power-\/on. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dev\+\_\+error} & current device error \\
+\hline
+{\em force\+\_\+warning} & force the warning message\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+e\+ERR\+\_\+\+NONE 
+\end{DoxyReturn}
+\Hypertarget{a00128_a211217e6361a440c7d378a8f24e3fd76}\label{a00128_a211217e6361a440c7d378a8f24e3fd76} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!R100\_Check\_Update@{R100\_Check\_Update}}
+\index{R100\_Check\_Update@{R100\_Check\_Update}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{R100\_Check\_Update()}{R100\_Check\_Update()}}
+{\footnotesize\ttfamily static void R100\+\_\+\+Check\+\_\+\+Update (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00134_a7e34c706bde6f3522650864d7352ae86}{POWER\+\_\+\+ON\+\_\+\+SOURCE\+\_\+e}} \texorpdfstring{$\ast$}{*}}]{paux }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Check if firmware has been updated. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em paux} & to power-\/on type\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\Hypertarget{a00128_afe83c8bef31fa0fc1360b7d84ed07486}\label{a00128_afe83c8bef31fa0fc1360b7d84ed07486} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!R100\_Check\_Warning@{R100\_Check\_Warning}}
+\index{R100\_Check\_Warning@{R100\_Check\_Warning}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{R100\_Check\_Warning()}{R100\_Check\_Warning()}}
+{\footnotesize\ttfamily static void R100\+\_\+\+Check\+\_\+\+Warning (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Check if beep audio must be emitted due to warning error. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\Hypertarget{a00128_a4f1d875d2e1ad5991d6ce2ba7c56af91}\label{a00128_a4f1d875d2e1ad5991d6ce2ba7c56af91} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!R100\_PowerOff@{R100\_PowerOff}}
+\index{R100\_PowerOff@{R100\_PowerOff}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{R100\_PowerOff()}{R100\_PowerOff()}}
+{\footnotesize\ttfamily void R100\+\_\+\+Power\+Off (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Power off the device programming an automatic power-\/on. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\Hypertarget{a00128_a5d3acf9068cad21d046f9d8834ce6946}\label{a00128_a5d3acf9068cad21d046f9d8834ce6946} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!R100\_PowerOff\_RTC@{R100\_PowerOff\_RTC}}
+\index{R100\_PowerOff\_RTC@{R100\_PowerOff\_RTC}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{R100\_PowerOff\_RTC()}{R100\_PowerOff\_RTC()}}
+{\footnotesize\ttfamily void R100\+\_\+\+Power\+Off\+\_\+\+RTC (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Power off the device programming an automatic power-\/on. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\Hypertarget{a00128_a6f3942cc79b24bc2c4b1aaa93e44351e}\label{a00128_a6f3942cc79b24bc2c4b1aaa93e44351e} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!R100\_Program\_Autotest@{R100\_Program\_Autotest}}
+\index{R100\_Program\_Autotest@{R100\_Program\_Autotest}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{R100\_Program\_Autotest()}{R100\_Program\_Autotest()}}
+{\footnotesize\ttfamily void R100\+\_\+\+Program\+\_\+\+Autotest (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Program the auto test to be executed at least 1 hour after the last manual power off. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\Hypertarget{a00128_a563202ab53d918f96e7470c54ed5d009}\label{a00128_a563202ab53d918f96e7470c54ed5d009} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!R100\_Startup@{R100\_Startup}}
+\index{R100\_Startup@{R100\_Startup}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{R100\_Startup()}{R100\_Startup()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{a00134_a7e34c706bde6f3522650864d7352ae86}{POWER\+\_\+\+ON\+\_\+\+SOURCE\+\_\+e}} R100\+\_\+\+Startup (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Execute some startup functions\+: 
+
+\begin{DoxyVerb}           >> maintain the power ON
+           >> identify the power-on source
+           -- if (automatic startup):
+                  >> must initialize the RTOS ... ????
+                  >> execute some tests
+                  >> wait an spare time
+                  >> program the next automatic power-on
+                  >> switch-off the device
+
+           -- if (press button or open the cover)
+                  >> normal startup. must initialize the RTOS ...
+\end{DoxyVerb}
+ 
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+power-\/on source identifier 
+\end{DoxyReturn}
+\Hypertarget{a00128_aab815986ee52dfb7489873f856e3ecb9}\label{a00128_aab815986ee52dfb7489873f856e3ecb9} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!Refresh\_Wdg@{Refresh\_Wdg}}
+\index{Refresh\_Wdg@{Refresh\_Wdg}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Refresh\_Wdg()}{Refresh\_Wdg()}}
+{\footnotesize\ttfamily void Refresh\+\_\+\+Wdg (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Refresh the watchdog timer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\Hypertarget{a00128_ab93dae7b1a69e3ba8c62412e0fce2a06}\label{a00128_ab93dae7b1a69e3ba8c62412e0fce2a06} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!RTC\_Function@{RTC\_Function}}
+\index{RTC\_Function@{RTC\_Function}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{RTC\_Function()}{RTC\_Function()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{a00134_a7e34c706bde6f3522650864d7352ae86}{POWER\+\_\+\+ON\+\_\+\+SOURCE\+\_\+e}} RTC\+\_\+\+Function (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Process events related to acelerometer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ev} & event identifier\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+if the event has been processed or not
+\end{DoxyReturn}
+Execute ACC Function\+:
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none
+\end{DoxyReturn}
+Execute RTC Function\+:
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+power-\/on source identifier 
+\end{DoxyReturn}
+\Hypertarget{a00128_ad375e204aa11fb59b9a46766a45a885b}\label{a00128_ad375e204aa11fb59b9a46766a45a885b} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!RTC\_Normalize\_Time@{RTC\_Normalize\_Time}}
+\index{RTC\_Normalize\_Time@{RTC\_Normalize\_Time}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{RTC\_Normalize\_Time()}{RTC\_Normalize\_Time()}}
+{\footnotesize\ttfamily static void RTC\+\_\+\+Normalize\+\_\+\+Time (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00406}{BATTERY\+\_\+\+RTC\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+RTC }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Compensate UTC time zone. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+RTC} & pointer to the structure to fill\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\Hypertarget{a00128_a5cccaa163f937bcc50a69f4b0887f450}\label{a00128_a5cccaa163f937bcc50a69f4b0887f450} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!RTC\_Test\_Time@{RTC\_Test\_Time}}
+\index{RTC\_Test\_Time@{RTC\_Test\_Time}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{RTC\_Test\_Time()}{RTC\_Test\_Time()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} RTC\+\_\+\+Test\+\_\+\+Time (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Compensate UTC time zone with TEST TIME. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Autotest time (UTC applied) 
+\end{DoxyReturn}
+\Hypertarget{a00128_ac42b77715d78cfceab5996444e83cf4b}\label{a00128_ac42b77715d78cfceab5996444e83cf4b} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!Run\_USB\_Mode@{Run\_USB\_Mode}}
+\index{Run\_USB\_Mode@{Run\_USB\_Mode}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Run\_USB\_Mode()}{Run\_USB\_Mode()}}
+{\footnotesize\ttfamily static void Run\+\_\+\+USB\+\_\+\+Mode (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Run the application in USB mode. This is a non return function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\Hypertarget{a00128_a99fe1a42e34a2be16886a951d9712fd7}\label{a00128_a99fe1a42e34a2be16886a951d9712fd7} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!Save\_Comms\_Error@{Save\_Comms\_Error}}
+\index{Save\_Comms\_Error@{Save\_Comms\_Error}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Save\_Comms\_Error()}{Save\_Comms\_Error()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Save\+\_\+\+Comms\+\_\+\+Error (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Save Communication error. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em error} & error identifier\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\Hypertarget{a00128_ae9c7d0baccca3c88a832853738fd85f3}\label{a00128_ae9c7d0baccca3c88a832853738fd85f3} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!Save\_Data\_Before\_Off@{Save\_Data\_Before\_Off}}
+\index{Save\_Data\_Before\_Off@{Save\_Data\_Before\_Off}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Save\_Data\_Before\_Off()}{Save\_Data\_Before\_Off()}}
+{\footnotesize\ttfamily static void Save\+\_\+\+Data\+\_\+\+Before\+\_\+\+Off (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}}}]{ec }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Save data before power off. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ec} & error code to save in NFC\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\Hypertarget{a00128_a4f834bab7058bdaecdf1eb4f9b4f8d00}\label{a00128_a4f834bab7058bdaecdf1eb4f9b4f8d00} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!Set\_NV\_Data\_Error\_IF\_NOT\_SAT@{Set\_NV\_Data\_Error\_IF\_NOT\_SAT}}
+\index{Set\_NV\_Data\_Error\_IF\_NOT\_SAT@{Set\_NV\_Data\_Error\_IF\_NOT\_SAT}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Set\_NV\_Data\_Error\_IF\_NOT\_SAT()}{Set\_NV\_Data\_Error\_IF\_NOT\_SAT()}}
+{\footnotesize\ttfamily void Set\+\_\+\+NV\+\_\+\+Data\+\_\+\+Error\+\_\+\+IF\+\_\+\+NOT\+\_\+\+SAT (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}}}]{error }\end{DoxyParamCaption})}
+
+
+
+Function that sets the non volatile data error. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em error} & error identifier\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\Hypertarget{a00128_ab5d13add30041382fa545103a702582f}\label{a00128_ab5d13add30041382fa545103a702582f} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!Set\_NV\_Data\_Error\_IF\_NOT\_SAT\_Comms@{Set\_NV\_Data\_Error\_IF\_NOT\_SAT\_Comms}}
+\index{Set\_NV\_Data\_Error\_IF\_NOT\_SAT\_Comms@{Set\_NV\_Data\_Error\_IF\_NOT\_SAT\_Comms}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Set\_NV\_Data\_Error\_IF\_NOT\_SAT\_Comms()}{Set\_NV\_Data\_Error\_IF\_NOT\_SAT\_Comms()}}
+{\footnotesize\ttfamily void Set\+\_\+\+NV\+\_\+\+Data\+\_\+\+Error\+\_\+\+IF\+\_\+\+NOT\+\_\+\+SAT\+\_\+\+Comms (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}}}]{error }\end{DoxyParamCaption})}
+
+
+
+Function that sets the non volatile data error. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em error} & error identifier\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\Hypertarget{a00128_a04ed11e0e05f3e2222f714d33437f75b}\label{a00128_a04ed11e0e05f3e2222f714d33437f75b} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!sysMon\_trace@{sysMon\_trace}}
+\index{sysMon\_trace@{sysMon\_trace}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{sysMon\_trace()}{sysMon\_trace()}}
+{\footnotesize\ttfamily static void sys\+Mon\+\_\+trace (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Trace some items from the system monitor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\Hypertarget{a00128_a23282fccfa9048cde05ec8f267a26bf3}\label{a00128_a23282fccfa9048cde05ec8f267a26bf3} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!Test\_uSD\_Resources@{Test\_uSD\_Resources}}
+\index{Test\_uSD\_Resources@{Test\_uSD\_Resources}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Test\_uSD\_Resources()}{Test\_uSD\_Resources()}}
+{\footnotesize\ttfamily static void Test\+\_\+u\+SD\+\_\+\+Resources (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Function to check the presence of the audio resources and firmware updates. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\Hypertarget{a00128_a743a7940e667165b42c74a8c9ff51a1a}\label{a00128_a743a7940e667165b42c74a8c9ff51a1a} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!thread\_sysMon\_entry@{thread\_sysMon\_entry}}
+\index{thread\_sysMon\_entry@{thread\_sysMon\_entry}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{thread\_sysMon\_entry()}{thread\_sysMon\_entry()}}
+{\footnotesize\ttfamily void thread\+\_\+sys\+Mon\+\_\+entry (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Startup to run the application and system monitoring. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{a00128_a486054448411d560755b3efc767d3ab2}\label{a00128_a486054448411d560755b3efc767d3ab2} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!access\_key@{access\_key}}
+\index{access\_key@{access\_key}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{access\_key}{access\_key}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} access\+\_\+key\mbox{[}12\mbox{]}}
+
+\Hypertarget{a00128_ad98125f4fdcd1ffd2acb0422ae7b0ba0}\label{a00128_ad98125f4fdcd1ffd2acb0422ae7b0ba0} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!comm\_error@{comm\_error}}
+\index{comm\_error@{comm\_error}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{comm\_error}{comm\_error}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} comm\+\_\+error = \mbox{\hyperlink{a00038_ab896ba744d4a4eca0dfcf1a66c8fe0f9a4f48e4214dad2e7b13ff7edc4feffe94}{e\+ERR\+\_\+\+NONE}}}
+
+\Hypertarget{a00128_afea848ad7318663b689f90d72fc565f7}\label{a00128_afea848ad7318663b689f90d72fc565f7} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!electrodes\_data@{electrodes\_data}}
+\index{electrodes\_data@{electrodes\_data}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{electrodes\_data}{electrodes\_data}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00434}{ELECTRODES\+\_\+\+DATA\+\_\+t}} electrodes\+\_\+data\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{a00128_aa7b7447450e155f48806507dec031688}\label{a00128_aa7b7447450e155f48806507dec031688} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!electrodes\_pending\_event@{electrodes\_pending\_event}}
+\index{electrodes\_pending\_event@{electrodes\_pending\_event}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{electrodes\_pending\_event}{electrodes\_pending\_event}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} electrodes\+\_\+pending\+\_\+event\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{a00128_a54d133e0bc07c02fb26818275f9b4fb5}\label{a00128_a54d133e0bc07c02fb26818275f9b4fb5} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!electrodes\_presence\_flag@{electrodes\_presence\_flag}}
+\index{electrodes\_presence\_flag@{electrodes\_presence\_flag}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{electrodes\_presence\_flag}{electrodes\_presence\_flag}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} electrodes\+\_\+presence\+\_\+flag\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{a00128_a022c079cd40e26458edde88aa2499b61}\label{a00128_a022c079cd40e26458edde88aa2499b61} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!electrodes\_zp\_segment@{electrodes\_zp\_segment}}
+\index{electrodes\_zp\_segment@{electrodes\_zp\_segment}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{electrodes\_zp\_segment}{electrodes\_zp\_segment}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00221_ad86d69a0b4d65ddf120f056f448beff3}{ZP\+\_\+\+SEGMENT\+\_\+e}} electrodes\+\_\+zp\+\_\+segment\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{a00128_a2a54fb769f1a42d76185a384e4093976}\label{a00128_a2a54fb769f1a42d76185a384e4093976} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!first\_time@{first\_time}}
+\index{first\_time@{first\_time}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{first\_time}{first\_time}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} first\+\_\+time = true\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{a00128_a34db28df8d20239e4a1a9246b186b4df}\label{a00128_a34db28df8d20239e4a1a9246b186b4df} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!first\_time\_gps@{first\_time\_gps}}
+\index{first\_time\_gps@{first\_time\_gps}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{first\_time\_gps}{first\_time\_gps}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} first\+\_\+time\+\_\+gps = true}
+
+\Hypertarget{a00128_ab6cc3ce872e60ec4c164e991ef6ccaa3}\label{a00128_ab6cc3ce872e60ec4c164e991ef6ccaa3} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!flag\_power\_off@{flag\_power\_off}}
+\index{flag\_power\_off@{flag\_power\_off}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{flag\_power\_off}{flag\_power\_off}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} flag\+\_\+power\+\_\+off = false\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{a00128_a869b20288c78d56d569f1f6461d66971}\label{a00128_a869b20288c78d56d569f1f6461d66971} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!flag\_sysmon\_task@{flag\_sysmon\_task}}
+\index{flag\_sysmon\_task@{flag\_sysmon\_task}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{flag\_sysmon\_task}{flag\_sysmon\_task}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} flag\+\_\+sysmon\+\_\+task = false\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{a00128_a40996dbb57618650ec40ff1275299ec4}\label{a00128_a40996dbb57618650ec40ff1275299ec4} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!global\_poweron\_event@{global\_poweron\_event}}
+\index{global\_poweron\_event@{global\_poweron\_event}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{global\_poweron\_event}{global\_poweron\_event}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} global\+\_\+poweron\+\_\+event = false}
+
+\Hypertarget{a00128_afd7aabf1f95ea86068526ceaa030ad38}\label{a00128_afd7aabf1f95ea86068526ceaa030ad38} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!nv\_data@{nv\_data}}
+\index{nv\_data@{nv\_data}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{nv\_data}{nv\_data}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00438}{NV\+\_\+\+DATA\+\_\+t}} nv\+\_\+data\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{a00128_a8d2c566909bc43ec9cf207e739bc98b9}\label{a00128_a8d2c566909bc43ec9cf207e739bc98b9} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!nv\_data\_block@{nv\_data\_block}}
+\index{nv\_data\_block@{nv\_data\_block}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{nv\_data\_block}{nv\_data\_block}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00442}{NV\+\_\+\+DATA\+\_\+\+BLOCK\+\_\+t}} nv\+\_\+data\+\_\+block\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{a00128_ab86f1b579d1bda5f0d12de996b00b0b1}\label{a00128_ab86f1b579d1bda5f0d12de996b00b0b1} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!pic\_version\_major@{pic\_version\_major}}
+\index{pic\_version\_major@{pic\_version\_major}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{pic\_version\_major}{pic\_version\_major}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} pic\+\_\+version\+\_\+major\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{a00128_a601f363b5ad5dabcf0a9730b515c5926}\label{a00128_a601f363b5ad5dabcf0a9730b515c5926} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!pic\_version\_minor@{pic\_version\_minor}}
+\index{pic\_version\_minor@{pic\_version\_minor}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{pic\_version\_minor}{pic\_version\_minor}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} pic\+\_\+version\+\_\+minor\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{a00128_ab906a77980a4785aa928e92e9f1369ef}\label{a00128_ab906a77980a4785aa928e92e9f1369ef} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!pon\_acc\_active@{pon\_acc\_active}}
+\index{pon\_acc\_active@{pon\_acc\_active}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{pon\_acc\_active}{pon\_acc\_active}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} pon\+\_\+acc\+\_\+active = false\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{a00128_ace52a1ba58065e4978df648f5c08e732}\label{a00128_ace52a1ba58065e4978df648f5c08e732} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!pon\_date@{pon\_date}}
+\index{pon\_date@{pon\_date}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{pon\_date}{pon\_date}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} pon\+\_\+date\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{a00128_a2ad4ca7cf94169b48726c96b8aac0af3}\label{a00128_a2ad4ca7cf94169b48726c96b8aac0af3} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!pon\_time@{pon\_time}}
+\index{pon\_time@{pon\_time}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{pon\_time}{pon\_time}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} pon\+\_\+time\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{a00128_a387cde176445aa5bad41053b2b4a872c}\label{a00128_a387cde176445aa5bad41053b2b4a872c} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!poweron\_event@{poweron\_event}}
+\index{poweron\_event@{poweron\_event}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{poweron\_event}{poweron\_event}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00134_a7e34c706bde6f3522650864d7352ae86}{POWER\+\_\+\+ON\+\_\+\+SOURCE\+\_\+e}} poweron\+\_\+event}
+
+\Hypertarget{a00128_ae70012801747a50c7fc489ca4d493a54}\label{a00128_ae70012801747a50c7fc489ca4d493a54} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!test\_mode@{test\_mode}}
+\index{test\_mode@{test\_mode}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{test\_mode}{test\_mode}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} test\+\_\+mode = false\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{a00128_a30c87254da423b503899af04e6734d9b}\label{a00128_a30c87254da423b503899af04e6734d9b} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!test\_mode\_montador@{test\_mode\_montador}}
+\index{test\_mode\_montador@{test\_mode\_montador}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{test\_mode\_montador}{test\_mode\_montador}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} test\+\_\+mode\+\_\+montador = false\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{a00128_a478b868b24be4f0bd5df6de2543b1fbb}\label{a00128_a478b868b24be4f0bd5df6de2543b1fbb} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!thread\_supervisor@{thread\_supervisor}}
+\index{thread\_supervisor@{thread\_supervisor}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{thread\_supervisor}{thread\_supervisor}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} thread\+\_\+supervisor}
+
+\Hypertarget{a00128_a15166a4c16208d4ed8a396f4a75f4466}\label{a00128_a15166a4c16208d4ed8a396f4a75f4466} 
+\index{thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}!write\_elec\_last\_event@{write\_elec\_last\_event}}
+\index{write\_elec\_last\_event@{write\_elec\_last\_event}!thread\_sysMon\_entry.c@{thread\_sysMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{write\_elec\_last\_event}{write\_elec\_last\_event}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} write\+\_\+elec\+\_\+last\+\_\+event = false}
+

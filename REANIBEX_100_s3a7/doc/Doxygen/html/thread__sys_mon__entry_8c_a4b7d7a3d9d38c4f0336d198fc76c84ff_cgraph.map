@@ -1,0 +1,32 @@
+<map id="Load_FW_File" name="Load_FW_File">
+<area shape="rect" id="Node000001" title="This function use to upload firmware file." alt="" coords="5,183,111,209"/>
+<area shape="rect" id="Node000002" href="$thread__audio__entry_8c.html#a7bc63559c8d1198f7036bf7d08def712" title="Function that performs an operation with the message player." alt="" coords="174,31,289,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="64,181,100,126,126,95,157,67,165,62,168,67,160,71,130,98,104,129,69,184"/>
+<area shape="rect" id="Node000007" href="$_trace_8c.html#a3deb76927453c6425cac2c0c5f872a24" title="Send a message to the Boot processor." alt="" coords="159,81,304,108"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="72,181,109,150,157,118,169,112,172,117,160,122,112,154,76,185"/>
+<area shape="rect" id="Node000008" href="$_trace_8c.html#a2ec7f637e0bb5ec915d7ac8d057891aa" title="synchronize the Boot processor&#39;s FRC frequency sending a beacon signal (MUST guarantee a 250Kbps baud..." alt="" coords="189,132,274,159"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="106,179,173,159,175,165,107,185"/>
+<area shape="rect" id="Node000009" href="$thread__sys_mon__entry_8c.html#ae158ddc17edc766e6adc7f0c1988f2b9" title="Function that updates the test id and saves it to data flash memory." alt="" coords="176,183,287,209"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="111,193,161,193,161,199,111,199"/>
+<area shape="rect" id="Node000013" href="$thread__sys_mon__entry_8c.html#aea83c8517300aa0759f0088c0f2dfa2f" title="Pass time doing nothing, but refreshing the watchdog !!!" alt="" coords="183,233,280,260"/>
+<area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="107,207,169,226,168,231,106,213"/>
+<area shape="rect" id="Node000014" href="$thread__sys_mon__entry_8c.html#aab815986ee52dfb7489873f856e3ecb9" title="Refresh the watchdog timer." alt="" coords="376,259,475,285"/>
+<area shape="poly" id="edge14_Node000001_Node000014" title=" " alt="" coords="73,207,109,241,133,257,160,269,211,282,264,286,315,285,360,281,361,286,315,290,264,291,210,287,158,275,131,262,106,245,69,211"/>
+<area shape="rect" id="Node000015" href="$_trace_8c.html#a8947b81ae09bdb57459cd1c81c78ab37" title="Print a trace string inserting the time stamp." alt="" coords="205,335,258,361"/>
+<area shape="poly" id="edge15_Node000001_Node000015" title=" " alt="" coords="70,208,106,259,131,288,160,314,191,332,189,336,157,318,128,292,102,262,66,212"/>
+<area shape="rect" id="Node000003" href="$thread__audio__entry_8c.html#a05b96411bbd2b24e86ae0cc21146b4cb" title="Function that loads and plays a message." alt="" coords="352,5,499,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="289,34,336,28,337,33,289,39"/>
+<area shape="rect" id="Node000005" href="$thread__audio__entry_8c.html#a2c1714b5b8e79621e3a35b0624309f63" title="Stops the audio engine in a predefined sequence." alt="" coords="358,56,493,83"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="289,49,343,56,342,61,289,54"/>
+<area shape="rect" id="Node000004" href="$thread__audio__entry_8c.html#a29f40d7e3dc151283bfb0e69dbd8b132" title="Get an audio frame from the audio file." alt="" coords="547,5,722,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="500,16,532,16,532,21,500,21"/>
+<area shape="rect" id="Node000006" href="$thread__audio__hal_8c.html#a5afdd4d24f2faf92baea80c7b0cedfdc" title="stops the audio reproduction" alt="" coords="590,56,679,83"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="494,67,575,67,575,72,494,72"/>
+<area shape="rect" id="Node000010" href="$thread__sys_mon__entry_8c.html#a7514b80ba83366eb1792a5de56de25d1" title="Function that gets the non volatile data from the internal Data Flash." alt="" coords="371,183,481,209"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="288,193,355,193,355,199,288,199"/>
+<area shape="rect" id="Node000011" href="$thread__sys_mon__entry_8c.html#a5cccaa163f937bcc50a69f4b0887f450" title="Compensate UTC time zone with TEST TIME." alt="" coords="578,183,691,209"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="481,193,562,193,562,199,481,199"/>
+<area shape="rect" id="Node000012" href="$device__init_8c.html#a8f21d9db8b7a1530e06a4ade480d91bc" title="Return Device Settings." alt="" coords="770,183,912,209"/>
+<area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="691,193,754,193,754,199,691,199"/>
+<area shape="poly" id="edge13_Node000013_Node000014" title=" " alt="" coords="281,250,361,261,360,266,280,256"/>
+</map>

@@ -1,0 +1,97 @@
+\doxysection{SIGFOX\+\_\+\+ELEC\+\_\+\+BATT\+\_\+\+EXPIRATION\+\_\+t Struct Reference}
+\hypertarget{struct_s_i_g_f_o_x___e_l_e_c___b_a_t_t___e_x_p_i_r_a_t_i_o_n__t}{}\label{struct_s_i_g_f_o_x___e_l_e_c___b_a_t_t___e_x_p_i_r_a_t_i_o_n__t}\index{SIGFOX\_ELEC\_BATT\_EXPIRATION\_t@{SIGFOX\_ELEC\_BATT\_EXPIRATION\_t}}
+
+
+Sigfox structure to report the test result.  
+
+
+
+
+{\ttfamily \#include $<$thread\+\_\+comm\+\_\+hal.\+h$>$}
+
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{thread__comm__hal_8h_a5aa347e2a685a85a377a26337e9c5cc3}{SIGFOX\+\_\+\+MSG\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{struct_s_i_g_f_o_x___e_l_e_c___b_a_t_t___e_x_p_i_r_a_t_i_o_n__t_a2d6233bfdd0273bc29787c0a1834fad6}{info\+\_\+type}}
+\begin{DoxyCompactList}\small\item\em identifies the information to report \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \mbox{\hyperlink{struct_s_i_g_f_o_x___e_l_e_c___b_a_t_t___e_x_p_i_r_a_t_i_o_n__t_a12e27300f7fcd80488865b4d20bce86b}{batt\+\_\+expiration}}
+\begin{DoxyCompactList}\small\item\em battery expiration date \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \mbox{\hyperlink{struct_s_i_g_f_o_x___e_l_e_c___b_a_t_t___e_x_p_i_r_a_t_i_o_n__t_a23be1a9c45cff5aa006543be8d718944}{elec\+\_\+expiration}}
+\begin{DoxyCompactList}\small\item\em electrodes expiration date \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{struct_s_i_g_f_o_x___e_l_e_c___b_a_t_t___e_x_p_i_r_a_t_i_o_n__t_ab39e01816b531b673e404302164066e2}{demo\+\_\+mode}}
+\begin{DoxyCompactList}\small\item\em if device is configured in DEMO mode or not \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{struct_s_i_g_f_o_x___e_l_e_c___b_a_t_t___e_x_p_i_r_a_t_i_o_n__t_a07b43ca31545089dfaf9e6e2460d933d}{open\+\_\+cover}}
+\begin{DoxyCompactList}\small\item\em open cover flag (0 -\/ closed; 1 -\/ opened) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{struct_s_i_g_f_o_x___e_l_e_c___b_a_t_t___e_x_p_i_r_a_t_i_o_n__t_a761a6ff5d83aa4091b02ff13f38404d9}{must\+\_\+be\+\_\+0x55}}
+\begin{DoxyCompactList}\small\item\em Fixed value = 0x55. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Sigfox structure to report the test result. 
+
+\doxysubsection{Field Documentation}
+\Hypertarget{struct_s_i_g_f_o_x___e_l_e_c___b_a_t_t___e_x_p_i_r_a_t_i_o_n__t_a12e27300f7fcd80488865b4d20bce86b}\label{struct_s_i_g_f_o_x___e_l_e_c___b_a_t_t___e_x_p_i_r_a_t_i_o_n__t_a12e27300f7fcd80488865b4d20bce86b} 
+\index{SIGFOX\_ELEC\_BATT\_EXPIRATION\_t@{SIGFOX\_ELEC\_BATT\_EXPIRATION\_t}!batt\_expiration@{batt\_expiration}}
+\index{batt\_expiration@{batt\_expiration}!SIGFOX\_ELEC\_BATT\_EXPIRATION\_t@{SIGFOX\_ELEC\_BATT\_EXPIRATION\_t}}
+\doxysubsubsection{\texorpdfstring{batt\_expiration}{batt\_expiration}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} SIGFOX\+\_\+\+ELEC\+\_\+\+BATT\+\_\+\+EXPIRATION\+\_\+t\+::batt\+\_\+expiration}
+
+
+
+battery expiration date 
+
+\Hypertarget{struct_s_i_g_f_o_x___e_l_e_c___b_a_t_t___e_x_p_i_r_a_t_i_o_n__t_ab39e01816b531b673e404302164066e2}\label{struct_s_i_g_f_o_x___e_l_e_c___b_a_t_t___e_x_p_i_r_a_t_i_o_n__t_ab39e01816b531b673e404302164066e2} 
+\index{SIGFOX\_ELEC\_BATT\_EXPIRATION\_t@{SIGFOX\_ELEC\_BATT\_EXPIRATION\_t}!demo\_mode@{demo\_mode}}
+\index{demo\_mode@{demo\_mode}!SIGFOX\_ELEC\_BATT\_EXPIRATION\_t@{SIGFOX\_ELEC\_BATT\_EXPIRATION\_t}}
+\doxysubsubsection{\texorpdfstring{demo\_mode}{demo\_mode}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} SIGFOX\+\_\+\+ELEC\+\_\+\+BATT\+\_\+\+EXPIRATION\+\_\+t\+::demo\+\_\+mode}
+
+
+
+if device is configured in DEMO mode or not 
+
+\Hypertarget{struct_s_i_g_f_o_x___e_l_e_c___b_a_t_t___e_x_p_i_r_a_t_i_o_n__t_a23be1a9c45cff5aa006543be8d718944}\label{struct_s_i_g_f_o_x___e_l_e_c___b_a_t_t___e_x_p_i_r_a_t_i_o_n__t_a23be1a9c45cff5aa006543be8d718944} 
+\index{SIGFOX\_ELEC\_BATT\_EXPIRATION\_t@{SIGFOX\_ELEC\_BATT\_EXPIRATION\_t}!elec\_expiration@{elec\_expiration}}
+\index{elec\_expiration@{elec\_expiration}!SIGFOX\_ELEC\_BATT\_EXPIRATION\_t@{SIGFOX\_ELEC\_BATT\_EXPIRATION\_t}}
+\doxysubsubsection{\texorpdfstring{elec\_expiration}{elec\_expiration}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} SIGFOX\+\_\+\+ELEC\+\_\+\+BATT\+\_\+\+EXPIRATION\+\_\+t\+::elec\+\_\+expiration}
+
+
+
+electrodes expiration date 
+
+\Hypertarget{struct_s_i_g_f_o_x___e_l_e_c___b_a_t_t___e_x_p_i_r_a_t_i_o_n__t_a2d6233bfdd0273bc29787c0a1834fad6}\label{struct_s_i_g_f_o_x___e_l_e_c___b_a_t_t___e_x_p_i_r_a_t_i_o_n__t_a2d6233bfdd0273bc29787c0a1834fad6} 
+\index{SIGFOX\_ELEC\_BATT\_EXPIRATION\_t@{SIGFOX\_ELEC\_BATT\_EXPIRATION\_t}!info\_type@{info\_type}}
+\index{info\_type@{info\_type}!SIGFOX\_ELEC\_BATT\_EXPIRATION\_t@{SIGFOX\_ELEC\_BATT\_EXPIRATION\_t}}
+\doxysubsubsection{\texorpdfstring{info\_type}{info\_type}}
+{\footnotesize\ttfamily \mbox{\hyperlink{thread__comm__hal_8h_a5aa347e2a685a85a377a26337e9c5cc3}{SIGFOX\+\_\+\+MSG\+\_\+\+ID\+\_\+e}} SIGFOX\+\_\+\+ELEC\+\_\+\+BATT\+\_\+\+EXPIRATION\+\_\+t\+::info\+\_\+type}
+
+
+
+identifies the information to report 
+
+\Hypertarget{struct_s_i_g_f_o_x___e_l_e_c___b_a_t_t___e_x_p_i_r_a_t_i_o_n__t_a761a6ff5d83aa4091b02ff13f38404d9}\label{struct_s_i_g_f_o_x___e_l_e_c___b_a_t_t___e_x_p_i_r_a_t_i_o_n__t_a761a6ff5d83aa4091b02ff13f38404d9} 
+\index{SIGFOX\_ELEC\_BATT\_EXPIRATION\_t@{SIGFOX\_ELEC\_BATT\_EXPIRATION\_t}!must\_be\_0x55@{must\_be\_0x55}}
+\index{must\_be\_0x55@{must\_be\_0x55}!SIGFOX\_ELEC\_BATT\_EXPIRATION\_t@{SIGFOX\_ELEC\_BATT\_EXPIRATION\_t}}
+\doxysubsubsection{\texorpdfstring{must\_be\_0x55}{must\_be\_0x55}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} SIGFOX\+\_\+\+ELEC\+\_\+\+BATT\+\_\+\+EXPIRATION\+\_\+t\+::must\+\_\+be\+\_\+0x55}
+
+
+
+Fixed value = 0x55. 
+
+\Hypertarget{struct_s_i_g_f_o_x___e_l_e_c___b_a_t_t___e_x_p_i_r_a_t_i_o_n__t_a07b43ca31545089dfaf9e6e2460d933d}\label{struct_s_i_g_f_o_x___e_l_e_c___b_a_t_t___e_x_p_i_r_a_t_i_o_n__t_a07b43ca31545089dfaf9e6e2460d933d} 
+\index{SIGFOX\_ELEC\_BATT\_EXPIRATION\_t@{SIGFOX\_ELEC\_BATT\_EXPIRATION\_t}!open\_cover@{open\_cover}}
+\index{open\_cover@{open\_cover}!SIGFOX\_ELEC\_BATT\_EXPIRATION\_t@{SIGFOX\_ELEC\_BATT\_EXPIRATION\_t}}
+\doxysubsubsection{\texorpdfstring{open\_cover}{open\_cover}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} SIGFOX\+\_\+\+ELEC\+\_\+\+BATT\+\_\+\+EXPIRATION\+\_\+t\+::open\+\_\+cover}
+
+
+
+open cover flag (0 -\/ closed; 1 -\/ opened) 
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\+HAL/\mbox{\hyperlink{thread__comm__hal_8h}{thread\+\_\+comm\+\_\+hal.\+h}}\end{DoxyCompactItemize}

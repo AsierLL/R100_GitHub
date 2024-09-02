@@ -1,0 +1,219 @@
+\doxysection{DEVICE\+\_\+\+INFO\+\_\+t Struct Reference}
+\hypertarget{a00322}{}\label{a00322}\index{DEVICE\_INFO\_t@{DEVICE\_INFO\_t}}
+
+
+Device Information.  
+
+
+
+
+{\ttfamily \#include $<$device\+\_\+init.\+h$>$}
+
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a00137_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \mbox{\hyperlink{a00322_aa3d2269f2f421fd9ce5bdc1a6a9565bb}{model}} \mbox{[}\mbox{\hyperlink{a00017_a633ded5bcc6018dd045e1ef28d7ad7c9}{RSC\+\_\+\+NAME\+\_\+\+SZ}}\mbox{]}
+\begin{DoxyCompactList}\small\item\em Device model. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \mbox{\hyperlink{a00322_a065b1d4a5dc9d47cedbd3168da2859fd}{sn}} \mbox{[}\mbox{\hyperlink{a00017_a633ded5bcc6018dd045e1ef28d7ad7c9}{RSC\+\_\+\+NAME\+\_\+\+SZ}}\mbox{]}
+\begin{DoxyCompactList}\small\item\em Device serial number. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \mbox{\hyperlink{a00322_a727f7b31ee4d54e1601a3ee8902908b9}{manufacture\+\_\+date}} \mbox{[}\mbox{\hyperlink{a00017_a633ded5bcc6018dd045e1ef28d7ad7c9}{RSC\+\_\+\+NAME\+\_\+\+SZ}}\mbox{]}
+\begin{DoxyCompactList}\small\item\em Manufacturing date. \end{DoxyCompactList}\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+union \{\\
+\>\mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\_t}} \mbox{\hyperlink{a00322_a1f158b49c3381eee04dfc471c39abcf7}{device\_options}}\\
+\>\>{\em bitset for device options }\\
+\>struct \{\\
+\>\>\mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\_t}} \mbox{\hyperlink{a00322_a6ac0972860ed484fa71ffa9906328be4}{gps}}:1\\
+\>\>\>{\em GPS. }\\
+\>\>\mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\_t}} \mbox{\hyperlink{a00322_a25fbae21dc3217745fa1fee98d8c8b30}{sigfox}}:1\\
+\>\>\>{\em Sigfox platform. }\\
+\>\>\mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\_t}} \mbox{\hyperlink{a00322_a94924a2bbf4c95ec3665916e3ab5b63e}{wifi}}:1\\
+\>\>\>{\em Wifi remote access. }\\
+\>\>\mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\_t}} \mbox{\hyperlink{a00322_a9de2cc8844769808a30dd3b52fc1be30}{accelerometer}}:1\\
+\>\>\>{\em Accelerometer for wake-\/up. }\\
+\>\>\mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\_t}} \mbox{\hyperlink{a00322_ac09130c909fdeca59783161616733079}{reserved}}:3\\
+\>\>\>{\em reserved for future use }\\
+\>\>\mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\_t}} \mbox{\hyperlink{a00322_a9ff97979d99d20786640fc7212b708f2}{aed\_fully\_auto}}:1\\
+\>\>\>{\em Fully auto AED. }\\
+\>\} \mbox{\hyperlink{a00322_a3de921e2b788460406f278a6c3752ad6}{enable\_b}}\\
+\}; \\
+
+\end{tabbing}\item 
+\mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \mbox{\hyperlink{a00322_a8d7b1c1a3b284e345f41533a2578ece3}{zp\+\_\+adcs\+\_\+short}}
+\begin{DoxyCompactList}\small\item\em Zp with electrodes in short-\/circuit (in ADCs) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \mbox{\hyperlink{a00322_a3dfc88820843ce8fe23d6a5aa42d19e6}{zp\+\_\+adcs\+\_\+calibration}}
+\begin{DoxyCompactList}\small\item\em Zp input connected to calibration (in ADCs) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{a00322_a58de6a1c924654e889cfb81a5253f67a}{develop\+\_\+mode}}
+\begin{DoxyCompactList}\small\item\em Development mode. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{a00322_a3ee1f3e74956e2e6bf985dda831d2944}{align\+\_\+2}}
+\item 
+\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{a00322_a1296beaec47e59efee75d68a43ed9716}{checksum}}
+\begin{DoxyCompactList}\small\item\em Checksum of data integrity. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Device Information. 
+
+\doxysubsection{Field Documentation}
+\Hypertarget{a00322_a5ac2986b82ed27d1695505e18926c624}\label{a00322_a5ac2986b82ed27d1695505e18926c624} 
+\doxysubsubsection{\texorpdfstring{[union]}{[union]}}
+{\footnotesize\ttfamily union  \{ ... \}  \mbox{\hyperlink{a00322}{DEVICE\+\_\+\+INFO\+\_\+t}}}
+
+\Hypertarget{a00322_a9de2cc8844769808a30dd3b52fc1be30}\label{a00322_a9de2cc8844769808a30dd3b52fc1be30} 
+\index{DEVICE\_INFO\_t@{DEVICE\_INFO\_t}!accelerometer@{accelerometer}}
+\index{accelerometer@{accelerometer}!DEVICE\_INFO\_t@{DEVICE\_INFO\_t}}
+\doxysubsubsection{\texorpdfstring{accelerometer}{accelerometer}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} DEVICE\+\_\+\+INFO\+\_\+t\+::accelerometer}
+
+
+
+Accelerometer for wake-\/up. 
+
+\Hypertarget{a00322_a9ff97979d99d20786640fc7212b708f2}\label{a00322_a9ff97979d99d20786640fc7212b708f2} 
+\index{DEVICE\_INFO\_t@{DEVICE\_INFO\_t}!aed\_fully\_auto@{aed\_fully\_auto}}
+\index{aed\_fully\_auto@{aed\_fully\_auto}!DEVICE\_INFO\_t@{DEVICE\_INFO\_t}}
+\doxysubsubsection{\texorpdfstring{aed\_fully\_auto}{aed\_fully\_auto}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} DEVICE\+\_\+\+INFO\+\_\+t\+::aed\+\_\+fully\+\_\+auto}
+
+
+
+Fully auto AED. 
+
+\Hypertarget{a00322_a3ee1f3e74956e2e6bf985dda831d2944}\label{a00322_a3ee1f3e74956e2e6bf985dda831d2944} 
+\index{DEVICE\_INFO\_t@{DEVICE\_INFO\_t}!align\_2@{align\_2}}
+\index{align\_2@{align\_2}!DEVICE\_INFO\_t@{DEVICE\_INFO\_t}}
+\doxysubsubsection{\texorpdfstring{align\_2}{align\_2}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} DEVICE\+\_\+\+INFO\+\_\+t\+::align\+\_\+2}
+
+\Hypertarget{a00322_a1296beaec47e59efee75d68a43ed9716}\label{a00322_a1296beaec47e59efee75d68a43ed9716} 
+\index{DEVICE\_INFO\_t@{DEVICE\_INFO\_t}!checksum@{checksum}}
+\index{checksum@{checksum}!DEVICE\_INFO\_t@{DEVICE\_INFO\_t}}
+\doxysubsubsection{\texorpdfstring{checksum}{checksum}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} DEVICE\+\_\+\+INFO\+\_\+t\+::checksum}
+
+
+
+Checksum of data integrity. 
+
+\Hypertarget{a00322_a58de6a1c924654e889cfb81a5253f67a}\label{a00322_a58de6a1c924654e889cfb81a5253f67a} 
+\index{DEVICE\_INFO\_t@{DEVICE\_INFO\_t}!develop\_mode@{develop\_mode}}
+\index{develop\_mode@{develop\_mode}!DEVICE\_INFO\_t@{DEVICE\_INFO\_t}}
+\doxysubsubsection{\texorpdfstring{develop\_mode}{develop\_mode}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} DEVICE\+\_\+\+INFO\+\_\+t\+::develop\+\_\+mode}
+
+
+
+Development mode. 
+
+\Hypertarget{a00322_a1f158b49c3381eee04dfc471c39abcf7}\label{a00322_a1f158b49c3381eee04dfc471c39abcf7} 
+\index{DEVICE\_INFO\_t@{DEVICE\_INFO\_t}!device\_options@{device\_options}}
+\index{device\_options@{device\_options}!DEVICE\_INFO\_t@{DEVICE\_INFO\_t}}
+\doxysubsubsection{\texorpdfstring{device\_options}{device\_options}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} DEVICE\+\_\+\+INFO\+\_\+t\+::device\+\_\+options}
+
+
+
+bitset for device options 
+
+\Hypertarget{a00322_a3de921e2b788460406f278a6c3752ad6}\label{a00322_a3de921e2b788460406f278a6c3752ad6} 
+\index{DEVICE\_INFO\_t@{DEVICE\_INFO\_t}!enable\_b@{enable\_b}}
+\index{enable\_b@{enable\_b}!DEVICE\_INFO\_t@{DEVICE\_INFO\_t}}
+\doxysubsubsection{\texorpdfstring{[struct]}{[struct]}}
+{\footnotesize\ttfamily struct  \{ ... \}  DEVICE\+\_\+\+INFO\+\_\+t\+::enable\+\_\+b}
+
+Bit\+Size \Hypertarget{a00322_a6ac0972860ed484fa71ffa9906328be4}\label{a00322_a6ac0972860ed484fa71ffa9906328be4} 
+\index{DEVICE\_INFO\_t@{DEVICE\_INFO\_t}!gps@{gps}}
+\index{gps@{gps}!DEVICE\_INFO\_t@{DEVICE\_INFO\_t}}
+\doxysubsubsection{\texorpdfstring{gps}{gps}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} DEVICE\+\_\+\+INFO\+\_\+t\+::gps}
+
+
+
+GPS. 
+
+\Hypertarget{a00322_a727f7b31ee4d54e1601a3ee8902908b9}\label{a00322_a727f7b31ee4d54e1601a3ee8902908b9} 
+\index{DEVICE\_INFO\_t@{DEVICE\_INFO\_t}!manufacture\_date@{manufacture\_date}}
+\index{manufacture\_date@{manufacture\_date}!DEVICE\_INFO\_t@{DEVICE\_INFO\_t}}
+\doxysubsubsection{\texorpdfstring{manufacture\_date}{manufacture\_date}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} DEVICE\+\_\+\+INFO\+\_\+t\+::manufacture\+\_\+date\mbox{[}\mbox{\hyperlink{a00017_a633ded5bcc6018dd045e1ef28d7ad7c9}{RSC\+\_\+\+NAME\+\_\+\+SZ}}\mbox{]}}
+
+
+
+Manufacturing date. 
+
+\Hypertarget{a00322_aa3d2269f2f421fd9ce5bdc1a6a9565bb}\label{a00322_aa3d2269f2f421fd9ce5bdc1a6a9565bb} 
+\index{DEVICE\_INFO\_t@{DEVICE\_INFO\_t}!model@{model}}
+\index{model@{model}!DEVICE\_INFO\_t@{DEVICE\_INFO\_t}}
+\doxysubsubsection{\texorpdfstring{model}{model}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} DEVICE\+\_\+\+INFO\+\_\+t\+::model\mbox{[}\mbox{\hyperlink{a00017_a633ded5bcc6018dd045e1ef28d7ad7c9}{RSC\+\_\+\+NAME\+\_\+\+SZ}}\mbox{]}}
+
+
+
+Device model. 
+
+\Hypertarget{a00322_ac09130c909fdeca59783161616733079}\label{a00322_ac09130c909fdeca59783161616733079} 
+\index{DEVICE\_INFO\_t@{DEVICE\_INFO\_t}!reserved@{reserved}}
+\index{reserved@{reserved}!DEVICE\_INFO\_t@{DEVICE\_INFO\_t}}
+\doxysubsubsection{\texorpdfstring{reserved}{reserved}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} DEVICE\+\_\+\+INFO\+\_\+t\+::reserved}
+
+
+
+reserved for future use 
+
+\Hypertarget{a00322_a25fbae21dc3217745fa1fee98d8c8b30}\label{a00322_a25fbae21dc3217745fa1fee98d8c8b30} 
+\index{DEVICE\_INFO\_t@{DEVICE\_INFO\_t}!sigfox@{sigfox}}
+\index{sigfox@{sigfox}!DEVICE\_INFO\_t@{DEVICE\_INFO\_t}}
+\doxysubsubsection{\texorpdfstring{sigfox}{sigfox}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} DEVICE\+\_\+\+INFO\+\_\+t\+::sigfox}
+
+
+
+Sigfox platform. 
+
+\Hypertarget{a00322_a065b1d4a5dc9d47cedbd3168da2859fd}\label{a00322_a065b1d4a5dc9d47cedbd3168da2859fd} 
+\index{DEVICE\_INFO\_t@{DEVICE\_INFO\_t}!sn@{sn}}
+\index{sn@{sn}!DEVICE\_INFO\_t@{DEVICE\_INFO\_t}}
+\doxysubsubsection{\texorpdfstring{sn}{sn}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} DEVICE\+\_\+\+INFO\+\_\+t\+::sn\mbox{[}\mbox{\hyperlink{a00017_a633ded5bcc6018dd045e1ef28d7ad7c9}{RSC\+\_\+\+NAME\+\_\+\+SZ}}\mbox{]}}
+
+
+
+Device serial number. 
+
+\Hypertarget{a00322_a94924a2bbf4c95ec3665916e3ab5b63e}\label{a00322_a94924a2bbf4c95ec3665916e3ab5b63e} 
+\index{DEVICE\_INFO\_t@{DEVICE\_INFO\_t}!wifi@{wifi}}
+\index{wifi@{wifi}!DEVICE\_INFO\_t@{DEVICE\_INFO\_t}}
+\doxysubsubsection{\texorpdfstring{wifi}{wifi}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} DEVICE\+\_\+\+INFO\+\_\+t\+::wifi}
+
+
+
+Wifi remote access. 
+
+\Hypertarget{a00322_a3dfc88820843ce8fe23d6a5aa42d19e6}\label{a00322_a3dfc88820843ce8fe23d6a5aa42d19e6} 
+\index{DEVICE\_INFO\_t@{DEVICE\_INFO\_t}!zp\_adcs\_calibration@{zp\_adcs\_calibration}}
+\index{zp\_adcs\_calibration@{zp\_adcs\_calibration}!DEVICE\_INFO\_t@{DEVICE\_INFO\_t}}
+\doxysubsubsection{\texorpdfstring{zp\_adcs\_calibration}{zp\_adcs\_calibration}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} DEVICE\+\_\+\+INFO\+\_\+t\+::zp\+\_\+adcs\+\_\+calibration}
+
+
+
+Zp input connected to calibration (in ADCs) 
+
+\Hypertarget{a00322_a8d7b1c1a3b284e345f41533a2578ece3}\label{a00322_a8d7b1c1a3b284e345f41533a2578ece3} 
+\index{DEVICE\_INFO\_t@{DEVICE\_INFO\_t}!zp\_adcs\_short@{zp\_adcs\_short}}
+\index{zp\_adcs\_short@{zp\_adcs\_short}!DEVICE\_INFO\_t@{DEVICE\_INFO\_t}}
+\doxysubsubsection{\texorpdfstring{zp\_adcs\_short}{zp\_adcs\_short}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} DEVICE\+\_\+\+INFO\+\_\+t\+::zp\+\_\+adcs\+\_\+short}
+
+
+
+Zp with electrodes in short-\/circuit (in ADCs) 
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\mbox{\hyperlink{a00017}{device\+\_\+init.\+h}}\end{DoxyCompactItemize}

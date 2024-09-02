@@ -1,0 +1,58 @@
+\doxysection{atca\+\_\+helpers.\+h}
+\hypertarget{atca__helpers_8h_source}{}\label{atca__helpers_8h_source}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/SCE/atca\_helpers.h@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/SCE/atca\_helpers.h}}
+\mbox{\hyperlink{atca__helpers_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#ifndef\ ATCA\_HELPERS\_H\_}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#define\ ATCA\_HELPERS\_H\_}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{cryptoauthlib_8h}{cryptoauthlib.h}}"{}}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00038\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ \mbox{\hyperlink{group__atcab___ga72601de415fd0bbc73faa1ddbc52e56e}{atcab\_printbin}}(\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}*\ binary,\ \textcolor{keywordtype}{size\_t}\ bin\_len,\ \textcolor{keywordtype}{bool}\ add\_space);}
+\DoxyCodeLine{00042\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ \mbox{\hyperlink{atca__helpers_8h_ae31a9fd8e9deca79aa5fef0292fe5272}{atcab\_bin2hex}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}*\ bin,\ \textcolor{keywordtype}{size\_t}\ bin\_size,\ \textcolor{keywordtype}{char}*\ hex,\ \textcolor{keywordtype}{size\_t}*\ hex\_size);}
+\DoxyCodeLine{00043\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ \mbox{\hyperlink{atca__helpers_8h_a40b70cfab865fa4fd9a5e7a29ca59d38}{atcab\_bin2hex\_}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}*\ bin,\ \textcolor{keywordtype}{size\_t}\ bin\_size,\ \textcolor{keywordtype}{char}*\ hex,\ \textcolor{keywordtype}{size\_t}*\ hex\_size,\ \textcolor{keywordtype}{bool}\ is\_pretty,\ \textcolor{keywordtype}{bool}\ is\_space,\ \textcolor{keywordtype}{bool}\ is\_upper);}
+\DoxyCodeLine{00044\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ \mbox{\hyperlink{atca__helpers_8h_a481179181349c801c16fc1ab698f2f24}{atcab\_hex2bin}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ ascii\_hex,\ \textcolor{keywordtype}{size\_t}\ ascii\_hex\_len,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}*\ binary,\ \textcolor{keywordtype}{size\_t}*\ bin\_len);}
+\DoxyCodeLine{00045\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ \mbox{\hyperlink{atca__helpers_8h_a4ef30ca351b13623043917b5ed86cbb8}{atcab\_hex2bin\_}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ hex,\ \textcolor{keywordtype}{size\_t}\ hex\_size,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}*\ bin,\ \textcolor{keywordtype}{size\_t}*\ bin\_size,\ \textcolor{keywordtype}{bool}\ is\_space);}
+\DoxyCodeLine{00046\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ \mbox{\hyperlink{atca__helpers_8h_a1f88c481b376a7be9112ff081c4ad854}{atcab\_printbin\_sp}}(\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}*\ binary,\ \textcolor{keywordtype}{size\_t}\ bin\_len);}
+\DoxyCodeLine{00047\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ \mbox{\hyperlink{atca__helpers_8h_a248355e3b4bcdd5d728f214fc2eb79e4}{atcab\_printbin\_label}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ label,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}*\ binary,\ \textcolor{keywordtype}{size\_t}\ bin\_len);}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ \mbox{\hyperlink{atca__helpers_8h_ad017ae33af5a7ea062cea7d54de675a8}{packHex}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ ascii\_hex,\ \textcolor{keywordtype}{size\_t}\ ascii\_hex\_len,\ \textcolor{keywordtype}{char}*\ packed\_hex,\ \textcolor{keywordtype}{size\_t}*\ packed\_len);}
+\DoxyCodeLine{00051\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{atca__helpers_8h_a7a929bf65cbc777bab7e533a2755cfad}{isDigit}}(\textcolor{keywordtype}{char}\ c);}
+\DoxyCodeLine{00052\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{atca__helpers_8h_a04fefe2ff5a7d2e937b2634acd22982a}{isBlankSpace}}(\textcolor{keywordtype}{char}\ c);}
+\DoxyCodeLine{00053\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{atca__helpers_8h_a592c23e94097ad5e212beb6390aa88c6}{isAlpha}}(\textcolor{keywordtype}{char}\ c);}
+\DoxyCodeLine{00054\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{atca__helpers_8h_a78abefc293c0a04d8ef649c94c8a1057}{isHexAlpha}}(\textcolor{keywordtype}{char}\ c);}
+\DoxyCodeLine{00055\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{atca__helpers_8h_ab7ca9ee391118aafe6f3cf7df4fa5de3}{isHex}}(\textcolor{keywordtype}{char}\ c);}
+\DoxyCodeLine{00056\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{atca__helpers_8h_a39003da4dc8a0b8999f1325c2f96f641}{isHexDigit}}(\textcolor{keywordtype}{char}\ c);}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{atca__helpers_8h_ac873a37c53fdd922d5b36efd737e3ec3}{isBase64}}(\textcolor{keywordtype}{char}\ c,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ *\ rules);}
+\DoxyCodeLine{00059\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{atca__helpers_8h_ad10d15454308230fbef54bdd43001ed2}{isBase64Digit}}(\textcolor{keywordtype}{char}\ c,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ *\ rules);}
+\DoxyCodeLine{00060\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \mbox{\hyperlink{atca__helpers_8h_a175f401662f82c1e2ef822a9e1fd0b57}{base64Index}}(\textcolor{keywordtype}{char}\ c,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ *\ rules);}
+\DoxyCodeLine{00061\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{atca__helpers_8h_a3cf48d232ffbc9000c4d8547120f8b2d}{base64Char}}(\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \textcolor{keywordtype}{id},\ \textcolor{keyword}{const}\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ *\ rules);}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \mbox{\hyperlink{atca__compiler_8h_a3c406311bad62403b4ba379576214108}{ATCA\_DLL}}\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \mbox{\hyperlink{atca__helpers_8h_ac45ffe47caf5faac76c26b79e7b96bdf}{atcab\_b64rules\_default}}[4];}
+\DoxyCodeLine{00064\ \mbox{\hyperlink{atca__compiler_8h_a3c406311bad62403b4ba379576214108}{ATCA\_DLL}}\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \mbox{\hyperlink{atca__helpers_8h_a624260712d937ea3f5cf829f5b0c66b2}{atcab\_b64rules\_mime}}[4];}
+\DoxyCodeLine{00065\ \mbox{\hyperlink{atca__compiler_8h_a3c406311bad62403b4ba379576214108}{ATCA\_DLL}}\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \mbox{\hyperlink{atca__helpers_8h_a7d9e52622c285db7376eb664e516aa19}{atcab\_b64rules\_urlsafe}}[4];}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ \mbox{\hyperlink{atca__helpers_8h_a55ba8a1787f69d44d6e40db041fbd786}{atcab\_base64decode\_}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ encoded,\ \textcolor{keywordtype}{size\_t}\ encoded\_size,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}*\ data,\ \textcolor{keywordtype}{size\_t}*\ data\_size,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ *\ rules);}
+\DoxyCodeLine{00068\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ \mbox{\hyperlink{atca__helpers_8h_a1593f87c555ab964d3ebd5edd49aeb0b}{atcab\_base64decode}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ encoded,\ \textcolor{keywordtype}{size\_t}\ encoded\_size,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}*\ data,\ \textcolor{keywordtype}{size\_t}*\ data\_size);}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ \mbox{\hyperlink{atca__helpers_8h_aeeff0177acf29e6e7b134a14d7119d69}{atcab\_base64encode\_}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}*\ data,\ \textcolor{keywordtype}{size\_t}\ data\_size,\ \textcolor{keywordtype}{char}*\ encoded,\ \textcolor{keywordtype}{size\_t}*\ encoded\_size,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ *\ rules);}
+\DoxyCodeLine{00071\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ \mbox{\hyperlink{atca__helpers_8h_a4b7e341b530fcac3f4eaae874bb36422}{atcab\_base64encode}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}*\ data,\ \textcolor{keywordtype}{size\_t}\ data\_size,\ \textcolor{keywordtype}{char}*\ encoded,\ \textcolor{keywordtype}{size\_t}*\ encoded\_size);}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ \mbox{\hyperlink{atca__helpers_8h_a7371f490659b6fd68739d2b1fee50696}{atcab\_reversal}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}*\ bin,\ \textcolor{keywordtype}{size\_t}\ bin\_size,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}*\ dest,\ \textcolor{keywordtype}{size\_t}*\ dest\_size);}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{atca__helpers_8h_ac37b319dabc5b9492a422f6d3d4e118b}{atcab\_memset\_s}}(\textcolor{keywordtype}{void}*\ dest,\ \textcolor{keywordtype}{size\_t}\ destsz,\ \textcolor{keywordtype}{int}\ ch,\ \textcolor{keywordtype}{size\_t}\ count);}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00079\ \}}
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ ATCA\_HELPERS\_H\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

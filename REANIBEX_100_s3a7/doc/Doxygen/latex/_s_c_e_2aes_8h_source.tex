@@ -1,0 +1,29 @@
+\doxysection{aes.\+h}
+\hypertarget{_s_c_e_2aes_8h_source}{}\label{_s_c_e_2aes_8h_source}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/SCE/aes.h@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/SCE/aes.h}}
+\mbox{\hyperlink{_s_c_e_2aes_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ \_\_AES\_ECB\_H\_\_}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ \_\_AES\_ECB\_H\_\_}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structencdec}{encdec}}}
+\DoxyCodeLine{00009\ \{}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{structencdec_a44f91489b2e43c0cd8a8be71b21ae300}{src}};}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{structencdec_adf2eb905dc5d1297a299006133e2c0ba}{dst}};}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{structencdec_a5a73c5d1b2e1ecc88a30e8b8053c22eb}{key}};}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structencdec_a2c238768d01f873ff979edf634787932}{keylen}};}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structencdec_a4bdc54f6350bf3fc325b77a527ca689a}{srclen}};}
+\DoxyCodeLine{00015\ \}\ \mbox{\hyperlink{_s_c_e_2aes_8h_aa5c0b2a155328a95fc72a58089727f0b}{encdec\_t}};}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_s_c_e_2aes_8h_a55c6eee7b0416e82a543c077dc0b5a20}{aes\_s\_encrypt}}(\textcolor{keywordtype}{char}\ *encrypt,\ \textcolor{keywordtype}{char}\ *encrypted,\ \textcolor{keywordtype}{char}\ *key,\ \textcolor{keywordtype}{int}\ keylen,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a2ba621978a511250f7250fb10e05ffbe}{int32\_t}}\ num);}
+\DoxyCodeLine{00018\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_s_c_e_2aes_8h_ae370d3b8b1380b2d845db155f6256524}{aes\_s\_decrypt}}(\textcolor{keywordtype}{char}\ *decrypt,\ \textcolor{keywordtype}{char}\ *decrypted,\ \textcolor{keywordtype}{char}\ *key,\ \textcolor{keywordtype}{int}\ keylen,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a2ba621978a511250f7250fb10e05ffbe}{int32\_t}}\ num);}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_s_c_e_2aes_8h_ae23fc094a0a21a891bfb6024b3554328}{user\_decrypt}}(\mbox{\hyperlink{structencdec}{encdec\_t}}\ *\mbox{\hyperlink{structencdec}{encdec}});}
+\DoxyCodeLine{00021\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{_s_c_e_2aes_8h_a6407aecb31c22c399f3ca667df9d6a40}{user\_encrypt}}(\mbox{\hyperlink{structencdec}{encdec\_t}}\ *\mbox{\hyperlink{structencdec}{encdec}});}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

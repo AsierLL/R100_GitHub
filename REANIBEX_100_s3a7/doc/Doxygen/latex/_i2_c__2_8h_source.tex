@@ -1,0 +1,88 @@
+\doxysection{I2\+C\+\_\+2.\+h}
+\hypertarget{_i2_c__2_8h_source}{}\label{_i2_c__2_8h_source}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/Drivers/I2C\_2.h@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/Drivers/I2C\_2.h}}
+\mbox{\hyperlink{_i2_c__2_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Name\ \ \ \ \ \ :\ R100\_S3A7\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ :\ Osatu\ S.\ Coop\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Compiler\ \ :\ GNU\ ARM\ Embedded\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ Target\ \ \ \ :\ Reanibex\ Serie\ 100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ ******************************************************************************/}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#ifndef\ I2C\_2\_H\_}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#define\ I2C\_2\_H\_}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ **Includes}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ "{}types\_basic.h"{}}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ **\ Defines}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{comment}{//\ the\ i2C\ addresses\ includes\ the\ R/W\ bit}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#define\ i2C\_ADD\_GPIO\ \ \ \ \ \ \ \ \ \ \ \ 0x70\ \ \ \ }}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#define\ i2C\_ADD\_AUDIO\ \ \ \ \ \ \ \ \ \ \ 0x92\ \ \ \ }}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#define\ i2C\_ADD\_NTAG\ \ \ \ \ \ \ \ \ \ \ \ 0xAA\ \ \ \ }}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#define\ i2C\_ADD\_OW\_MASTER\ \ \ \ \ \ \ 0x30\ \ \ \ }}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{comment}{//\ I2C\ to\ 1-\/Wire\ interface\ commands\ (send\ to\ i2C-\/1Wire\ transceiver)}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#define\ OWC\_DEVICE\_RESET\ \ \ \ \ \ \ \ 0xF0}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#define\ OWC\_SET\_REG\_POINTER\ \ \ \ \ 0xE1}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#define\ OWC\_WRITE\_BYTE\ \ \ \ \ \ \ \ \ \ 0xA5}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#define\ OWC\_READ\_BYTE\ \ \ \ \ \ \ \ \ \ \ 0x96}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#define\ OWC\_1WIRE\_RESET\ \ \ \ \ \ \ \ \ 0xB4}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{comment}{//\ 1-\/Wire\ commands}}
+\DoxyCodeLine{00047\ \textcolor{comment}{//\ ROM\ commands}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#define\ OWC\_READ\_ROM\ \ \ \ \ \ \ \ \ \ \ \ 0x33}}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#define\ OWC\_SKIP\_ROM\ \ \ \ \ \ \ \ \ \ \ \ 0xCC}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{comment}{//\ memory\ commands}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#define\ OW\_WRITE\_SCRATCHPAD\ \ \ \ \ 0x0F}}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#define\ OW\_READ\_SCRATCHPAD\ \ \ \ \ \ 0xAA}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#define\ OW\_COPY\_SCRATCHPAD\ \ \ \ \ \ 0x55}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#define\ OW\_READ\_MEMORY\ \ \ \ \ \ \ \ \ \ 0xF0}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \textcolor{comment}{//\ i2C-\/1Wire\ transceiver\ registers}}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#define\ OWC\_REG\_STATUS\ \ \ \ \ \ \ \ \ \ 0xF0}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#define\ OWC\_REG\_READ\_DATA\ \ \ \ \ \ \ 0xE1}}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#define\ OWC\_REG\_CONFIGURATION\ \ \ 0xC3}}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00068\ \textcolor{comment}{\ **\ Typedefs}}
+\DoxyCodeLine{00069\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00072\ \textcolor{comment}{\ **\ Globals}}
+\DoxyCodeLine{00073\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00076\ \textcolor{comment}{\ **\ Prototypes}}
+\DoxyCodeLine{00077\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{_i2_c__2_8h_ad58a8d00d5d29090187568bd3f80da2f}{I2C2\_ReadByte}}\ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ addr,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ *data);}
+\DoxyCodeLine{00080\ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{_i2_c__2_8h_abb5323ebe9e05f1fe983ee0c53fa732e}{I2C2\_WriteByte}}\ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ addr,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ data);}
+\DoxyCodeLine{00081\ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{_i2_c__2_8h_ab2d6470085f0f13033eca2373bcf4b41}{I2C2\_Read}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ addr,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ *data,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ nBytes);}
+\DoxyCodeLine{00082\ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{_i2_c__2_8h_a54092e1b35159f28a6fae808c1c909e0}{I2C2\_Write}}\ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ addr,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ *data,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ nBytes);}
+\DoxyCodeLine{00083\ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{_i2_c__2_8h_a75998894ee4aceb2f03ebc36a0000d3f}{I2C2\_Write\_NFC}}\ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ block\_idx,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ *data,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ nBytes);}
+\DoxyCodeLine{00084\ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{_i2_c__2_8h_a48856cefb69c8a4371722c1ef5455ba0}{I2C2\_Write\_OW}}\ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ command,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ data);}
+\DoxyCodeLine{00085\ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{_i2_c__2_8h_a7ba82d621147cdcae270e9926abb3736}{I2C2\_ReadByte\_OW}}\ \ \ \ \ \ \ (\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ *pData,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ nBytes);}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ I2C\_2\_H\_\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00090\ \textcolor{comment}{\ **\ \$Log\$}}
+\DoxyCodeLine{00091\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00092\ \textcolor{comment}{\ **\ end\ of\ I2C\_2.h}}
+\DoxyCodeLine{00093\ \textcolor{comment}{\ ******************************************************************************/}}
+\DoxyCodeLine{00094\ }
+
+\end{DoxyCode}

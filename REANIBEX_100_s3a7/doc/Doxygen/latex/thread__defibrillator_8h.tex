@@ -1,0 +1,163 @@
+\doxysection{C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/synergy\+\_\+gen/thread\+\_\+defibrillator.h File Reference}
+\hypertarget{thread__defibrillator_8h}{}\label{thread__defibrillator_8h}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/synergy\_gen/thread\_defibrillator.h@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/synergy\_gen/thread\_defibrillator.h}}
+{\ttfamily \#include "{}bsp\+\_\+api.\+h"{}}\newline
+{\ttfamily \#include "{}tx\+\_\+api.\+h"{}}\newline
+{\ttfamily \#include "{}hal\+\_\+data.\+h"{}}\newline
+{\ttfamily \#include "{}r\+\_\+gpt.\+h"{}}\newline
+{\ttfamily \#include "{}r\+\_\+timer\+\_\+api.\+h"{}}\newline
+{\ttfamily \#include "{}r\+\_\+adc.\+h"{}}\newline
+{\ttfamily \#include "{}r\+\_\+adc\+\_\+api.\+h"{}}\newline
+Include dependency graph for thread\+\_\+defibrillator.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__defibrillator_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__defibrillator_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{thread__defibrillator_8h_a014514ab55b6ebfaf6275d3ed0867068}{thread\+\_\+defibrillator\+\_\+entry}} (void)
+\begin{DoxyCompactList}\small\item\em A description of the function. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{thread__defibrillator_8h_ad3ddee68089f1a0009454b0ac3ce897a}{GPT\+\_\+\+Shock\+\_\+\+Callback}} (timer\+\_\+callback\+\_\+args\+\_\+t \texorpdfstring{$\ast$}{*}p\+\_\+args)
+\begin{DoxyCompactList}\small\item\em callback function at shock end \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{thread__defibrillator_8h_a2f692484b28acb80135899db764144c7}{NULL}} (timer\+\_\+callback\+\_\+args\+\_\+t \texorpdfstring{$\ast$}{*}p\+\_\+args)
+\item 
+void \mbox{\hyperlink{thread__defibrillator_8h_ab1b4ab4c75e3ac21cdbbc4baeb97c965}{NULL}} (adc\+\_\+callback\+\_\+args\+\_\+t \texorpdfstring{$\ast$}{*}p\+\_\+args)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const timer\+\_\+instance\+\_\+t \mbox{\hyperlink{thread__defibrillator_8h_a1ba09d931cbe298db55429203a2128c1}{gpt\+\_\+shock\+\_\+L}}
+\item 
+const timer\+\_\+instance\+\_\+t \mbox{\hyperlink{thread__defibrillator_8h_a2d1dc8ad07b7b8b60a5ea1890aed1500}{gpt\+\_\+shock\+\_\+H}}
+\item 
+const adc\+\_\+instance\+\_\+t \mbox{\hyperlink{thread__defibrillator_8h_ac28851491325e2972e68dd5f7c65c373}{adc\+\_\+defib}}
+\item 
+const timer\+\_\+instance\+\_\+t \mbox{\hyperlink{thread__defibrillator_8h_a667c3652096caad3d5dbcd9a26f74992}{gpt\+\_\+ovch}}
+\item 
+const timer\+\_\+instance\+\_\+t \mbox{\hyperlink{thread__defibrillator_8h_af601d891d9eeeced2c813fcce9b3613e}{gpt\+\_\+charger}}
+\item 
+TX\+\_\+\+QUEUE \mbox{\hyperlink{thread__defibrillator_8h_acc8d4d9bf6f215acdea90e9e9629659b}{queue\+\_\+def}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{thread__defibrillator_8h_ad3ddee68089f1a0009454b0ac3ce897a}\label{thread__defibrillator_8h_ad3ddee68089f1a0009454b0ac3ce897a} 
+\index{thread\_defibrillator.h@{thread\_defibrillator.h}!GPT\_Shock\_Callback@{GPT\_Shock\_Callback}}
+\index{GPT\_Shock\_Callback@{GPT\_Shock\_Callback}!thread\_defibrillator.h@{thread\_defibrillator.h}}
+\doxysubsubsection{\texorpdfstring{GPT\_Shock\_Callback()}{GPT\_Shock\_Callback()}}
+{\footnotesize\ttfamily void GPT\+\_\+\+Shock\+\_\+\+Callback (\begin{DoxyParamCaption}\item[{timer\+\_\+callback\+\_\+args\+\_\+t \texorpdfstring{$\ast$}{*}}]{p\+\_\+args }\end{DoxyParamCaption})}
+
+
+
+callback function at shock end 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+\_\+args} & pointer to ADC descriptor (unit in use, callback event ...)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__defibrillator_8h_ad3ddee68089f1a0009454b0ac3ce897a_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__defibrillator_8h_ab1b4ab4c75e3ac21cdbbc4baeb97c965}\label{thread__defibrillator_8h_ab1b4ab4c75e3ac21cdbbc4baeb97c965} 
+\index{thread\_defibrillator.h@{thread\_defibrillator.h}!NULL@{NULL}}
+\index{NULL@{NULL}!thread\_defibrillator.h@{thread\_defibrillator.h}}
+\doxysubsubsection{\texorpdfstring{NULL()}{NULL()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void NULL (\begin{DoxyParamCaption}\item[{adc\+\_\+callback\+\_\+args\+\_\+t \texorpdfstring{$\ast$}{*}}]{p\+\_\+args }\end{DoxyParamCaption})}
+
+\Hypertarget{thread__defibrillator_8h_a2f692484b28acb80135899db764144c7}\label{thread__defibrillator_8h_a2f692484b28acb80135899db764144c7} 
+\index{thread\_defibrillator.h@{thread\_defibrillator.h}!NULL@{NULL}}
+\index{NULL@{NULL}!thread\_defibrillator.h@{thread\_defibrillator.h}}
+\doxysubsubsection{\texorpdfstring{NULL()}{NULL()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void NULL (\begin{DoxyParamCaption}\item[{timer\+\_\+callback\+\_\+args\+\_\+t \texorpdfstring{$\ast$}{*}}]{p\+\_\+args }\end{DoxyParamCaption})}
+
+\Hypertarget{thread__defibrillator_8h_a014514ab55b6ebfaf6275d3ed0867068}\label{thread__defibrillator_8h_a014514ab55b6ebfaf6275d3ed0867068} 
+\index{thread\_defibrillator.h@{thread\_defibrillator.h}!thread\_defibrillator\_entry@{thread\_defibrillator\_entry}}
+\index{thread\_defibrillator\_entry@{thread\_defibrillator\_entry}!thread\_defibrillator.h@{thread\_defibrillator.h}}
+\doxysubsubsection{\texorpdfstring{thread\_defibrillator\_entry()}{thread\_defibrillator\_entry()}}
+{\footnotesize\ttfamily void thread\+\_\+defibrillator\+\_\+entry (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+A description of the function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000020}{Todo}}]pending things to be done\end{DoxyRefDesc}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__defibrillator_8h_a014514ab55b6ebfaf6275d3ed0867068_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__defibrillator_8h_a014514ab55b6ebfaf6275d3ed0867068_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{thread__defibrillator_8h_ac28851491325e2972e68dd5f7c65c373}\label{thread__defibrillator_8h_ac28851491325e2972e68dd5f7c65c373} 
+\index{thread\_defibrillator.h@{thread\_defibrillator.h}!adc\_defib@{adc\_defib}}
+\index{adc\_defib@{adc\_defib}!thread\_defibrillator.h@{thread\_defibrillator.h}}
+\doxysubsubsection{\texorpdfstring{adc\_defib}{adc\_defib}}
+{\footnotesize\ttfamily const adc\+\_\+instance\+\_\+t adc\+\_\+defib\hspace{0.3cm}{\ttfamily [extern]}}
+
+ADC on ADC Instance. \Hypertarget{thread__defibrillator_8h_af601d891d9eeeced2c813fcce9b3613e}\label{thread__defibrillator_8h_af601d891d9eeeced2c813fcce9b3613e} 
+\index{thread\_defibrillator.h@{thread\_defibrillator.h}!gpt\_charger@{gpt\_charger}}
+\index{gpt\_charger@{gpt\_charger}!thread\_defibrillator.h@{thread\_defibrillator.h}}
+\doxysubsubsection{\texorpdfstring{gpt\_charger}{gpt\_charger}}
+{\footnotesize\ttfamily const timer\+\_\+instance\+\_\+t gpt\+\_\+charger\hspace{0.3cm}{\ttfamily [extern]}}
+
+Timer on GPT Instance. \Hypertarget{thread__defibrillator_8h_a667c3652096caad3d5dbcd9a26f74992}\label{thread__defibrillator_8h_a667c3652096caad3d5dbcd9a26f74992} 
+\index{thread\_defibrillator.h@{thread\_defibrillator.h}!gpt\_ovch@{gpt\_ovch}}
+\index{gpt\_ovch@{gpt\_ovch}!thread\_defibrillator.h@{thread\_defibrillator.h}}
+\doxysubsubsection{\texorpdfstring{gpt\_ovch}{gpt\_ovch}}
+{\footnotesize\ttfamily const timer\+\_\+instance\+\_\+t gpt\+\_\+ovch\hspace{0.3cm}{\ttfamily [extern]}}
+
+Timer on GPT Instance. \Hypertarget{thread__defibrillator_8h_a2d1dc8ad07b7b8b60a5ea1890aed1500}\label{thread__defibrillator_8h_a2d1dc8ad07b7b8b60a5ea1890aed1500} 
+\index{thread\_defibrillator.h@{thread\_defibrillator.h}!gpt\_shock\_H@{gpt\_shock\_H}}
+\index{gpt\_shock\_H@{gpt\_shock\_H}!thread\_defibrillator.h@{thread\_defibrillator.h}}
+\doxysubsubsection{\texorpdfstring{gpt\_shock\_H}{gpt\_shock\_H}}
+{\footnotesize\ttfamily const timer\+\_\+instance\+\_\+t gpt\+\_\+shock\+\_\+H\hspace{0.3cm}{\ttfamily [extern]}}
+
+Timer on GPT Instance. \Hypertarget{thread__defibrillator_8h_a1ba09d931cbe298db55429203a2128c1}\label{thread__defibrillator_8h_a1ba09d931cbe298db55429203a2128c1} 
+\index{thread\_defibrillator.h@{thread\_defibrillator.h}!gpt\_shock\_L@{gpt\_shock\_L}}
+\index{gpt\_shock\_L@{gpt\_shock\_L}!thread\_defibrillator.h@{thread\_defibrillator.h}}
+\doxysubsubsection{\texorpdfstring{gpt\_shock\_L}{gpt\_shock\_L}}
+{\footnotesize\ttfamily const timer\+\_\+instance\+\_\+t gpt\+\_\+shock\+\_\+L\hspace{0.3cm}{\ttfamily [extern]}}
+
+Timer on GPT Instance. \Hypertarget{thread__defibrillator_8h_acc8d4d9bf6f215acdea90e9e9629659b}\label{thread__defibrillator_8h_acc8d4d9bf6f215acdea90e9e9629659b} 
+\index{thread\_defibrillator.h@{thread\_defibrillator.h}!queue\_def@{queue\_def}}
+\index{queue\_def@{queue\_def}!thread\_defibrillator.h@{thread\_defibrillator.h}}
+\doxysubsubsection{\texorpdfstring{queue\_def}{queue\_def}}
+{\footnotesize\ttfamily TX\+\_\+\+QUEUE queue\+\_\+def\hspace{0.3cm}{\ttfamily [extern]}}
+

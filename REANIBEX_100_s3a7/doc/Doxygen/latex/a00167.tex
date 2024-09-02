@@ -1,0 +1,326 @@
+\doxysection{C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\+Drivers/\+I2\+C\+\_\+2.h File Reference}
+\hypertarget{a00167}{}\label{a00167}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/Drivers/I2C\_2.h@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/Drivers/I2C\_2.h}}
+
+
+Header with functions related to the I2\+C-\/2.  
+
+
+{\ttfamily \#include "{}types\+\_\+basic.\+h"{}}\newline
+Include dependency graph for I2\+C\+\_\+2.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{a00167_af209f3a25b0fd4630aed202063f5c6a6}{i2\+C\+\_\+\+ADD\+\_\+\+GPIO}}~0x70
+\item 
+\#define \mbox{\hyperlink{a00167_affcd40d37faf18329f6c5416caaa25a4}{i2\+C\+\_\+\+ADD\+\_\+\+AUDIO}}~0x92
+\item 
+\#define \mbox{\hyperlink{a00167_a6b98e69d8073ca6ab6aa1178426fa23b}{i2\+C\+\_\+\+ADD\+\_\+\+NTAG}}~0x\+AA
+\item 
+\#define \mbox{\hyperlink{a00167_af2e258363cc5e0787f3f7f1e9b7e514e}{i2\+C\+\_\+\+ADD\+\_\+\+OW\+\_\+\+MASTER}}~0x30
+\item 
+\#define \mbox{\hyperlink{a00167_ab491ed5a443c2d9766e5a7e4b82e5fc3}{OWC\+\_\+\+DEVICE\+\_\+\+RESET}}~0x\+F0
+\item 
+\#define \mbox{\hyperlink{a00167_aeeb4cbf0fd27776435d2f9c9e99e061a}{OWC\+\_\+\+SET\+\_\+\+REG\+\_\+\+POINTER}}~0x\+E1
+\item 
+\#define \mbox{\hyperlink{a00167_a4b2e0347ee39e4198f9fb3c982c07f66}{OWC\+\_\+\+WRITE\+\_\+\+BYTE}}~0x\+A5
+\item 
+\#define \mbox{\hyperlink{a00167_a9059f7b48d100840298602ae974f7a2d}{OWC\+\_\+\+READ\+\_\+\+BYTE}}~0x96
+\item 
+\#define \mbox{\hyperlink{a00167_a7d7d0bd616854ee29ae179ad24469e35}{OWC\+\_\+1\+WIRE\+\_\+\+RESET}}~0x\+B4
+\item 
+\#define \mbox{\hyperlink{a00167_ab8fc3363627ca7aeb2172fd5a331b3e8}{OWC\+\_\+\+READ\+\_\+\+ROM}}~0x33
+\item 
+\#define \mbox{\hyperlink{a00167_ab76ceb7218d2b7d5d842e86fc9f63aad}{OWC\+\_\+\+SKIP\+\_\+\+ROM}}~0x\+CC
+\item 
+\#define \mbox{\hyperlink{a00167_ad05970146c079512eb128eec80fc4b36}{OW\+\_\+\+WRITE\+\_\+\+SCRATCHPAD}}~0x0F
+\item 
+\#define \mbox{\hyperlink{a00167_a3fab10c3fcf965ad6746a7006d66f86a}{OW\+\_\+\+READ\+\_\+\+SCRATCHPAD}}~0x\+AA
+\item 
+\#define \mbox{\hyperlink{a00167_ac825be078b6d883d319256cf4c362185}{OW\+\_\+\+COPY\+\_\+\+SCRATCHPAD}}~0x55
+\item 
+\#define \mbox{\hyperlink{a00167_a1c4805588ca41ea5acde4b01620abee4}{OW\+\_\+\+READ\+\_\+\+MEMORY}}~0x\+F0
+\item 
+\#define \mbox{\hyperlink{a00167_a67d1d4edb65a21d38f6c3e80cddc80d4}{OWC\+\_\+\+REG\+\_\+\+STATUS}}~0x\+F0
+\item 
+\#define \mbox{\hyperlink{a00167_a455a6b4e86b876fc027fbfa57d6eab7f}{OWC\+\_\+\+REG\+\_\+\+READ\+\_\+\+DATA}}~0x\+E1
+\item 
+\#define \mbox{\hyperlink{a00167_a70e3a7efe691510b722c3782a15b935c}{OWC\+\_\+\+REG\+\_\+\+CONFIGURATION}}~0x\+C3
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{a00167_ad58a8d00d5d29090187568bd3f80da2f}{I2\+C2\+\_\+\+Read\+Byte}} (\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} addr, \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}data)
+\begin{DoxyCompactList}\small\item\em Function to read a byte data from a specific address. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a00167_abb5323ebe9e05f1fe983ee0c53fa732e}{I2\+C2\+\_\+\+Write\+Byte}} (\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} addr, \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} data)
+\begin{DoxyCompactList}\small\item\em Function to write a data byte at specific address. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a00167_ab2d6470085f0f13033eca2373bcf4b41}{I2\+C2\+\_\+\+Read}} (\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} addr, \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}data, \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} n\+Bytes)
+\begin{DoxyCompactList}\small\item\em Function to read data from a specific address. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a00167_a54092e1b35159f28a6fae808c1c909e0}{I2\+C2\+\_\+\+Write}} (\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} addr, \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}data, \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} n\+Bytes)
+\begin{DoxyCompactList}\small\item\em Function to write data at specific address. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a00167_a75998894ee4aceb2f03ebc36a0000d3f}{I2\+C2\+\_\+\+Write\+\_\+\+NFC}} (\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} block\+\_\+idx, \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}data, \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} n\+Bytes)
+\begin{DoxyCompactList}\small\item\em Function to write data at specific address in the NTag memory. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a00167_a48856cefb69c8a4371722c1ef5455ba0}{I2\+C2\+\_\+\+Write\+\_\+\+OW}} (\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} command, \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} data)
+\begin{DoxyCompactList}\small\item\em Function to write a data byte at specific address. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a00167_a7ba82d621147cdcae270e9926abb3736}{I2\+C2\+\_\+\+Read\+Byte\+\_\+\+OW}} (\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Data, \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} n\+Bytes)
+\begin{DoxyCompactList}\small\item\em Function to read data byte at specific address. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header with functions related to the I2\+C-\/2. 
+
+\begin{DoxyVersion}{Version}
+v1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+16/01/2018 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+ltorres 
+\end{DoxyAuthor}
+\begin{DoxyWarning}{Warning}
+author date version .-\/ Edition 
+\end{DoxyWarning}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{a00257__bug000045}{Bug}}]\end{DoxyRefDesc}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{a00167_affcd40d37faf18329f6c5416caaa25a4}\label{a00167_affcd40d37faf18329f6c5416caaa25a4} 
+\index{I2C\_2.h@{I2C\_2.h}!i2C\_ADD\_AUDIO@{i2C\_ADD\_AUDIO}}
+\index{i2C\_ADD\_AUDIO@{i2C\_ADD\_AUDIO}!I2C\_2.h@{I2C\_2.h}}
+\doxysubsubsection{\texorpdfstring{i2C\_ADD\_AUDIO}{i2C\_ADD\_AUDIO}}
+{\footnotesize\ttfamily \#define i2\+C\+\_\+\+ADD\+\_\+\+AUDIO~0x92}
+
+\Hypertarget{a00167_af209f3a25b0fd4630aed202063f5c6a6}\label{a00167_af209f3a25b0fd4630aed202063f5c6a6} 
+\index{I2C\_2.h@{I2C\_2.h}!i2C\_ADD\_GPIO@{i2C\_ADD\_GPIO}}
+\index{i2C\_ADD\_GPIO@{i2C\_ADD\_GPIO}!I2C\_2.h@{I2C\_2.h}}
+\doxysubsubsection{\texorpdfstring{i2C\_ADD\_GPIO}{i2C\_ADD\_GPIO}}
+{\footnotesize\ttfamily \#define i2\+C\+\_\+\+ADD\+\_\+\+GPIO~0x70}
+
+\Hypertarget{a00167_a6b98e69d8073ca6ab6aa1178426fa23b}\label{a00167_a6b98e69d8073ca6ab6aa1178426fa23b} 
+\index{I2C\_2.h@{I2C\_2.h}!i2C\_ADD\_NTAG@{i2C\_ADD\_NTAG}}
+\index{i2C\_ADD\_NTAG@{i2C\_ADD\_NTAG}!I2C\_2.h@{I2C\_2.h}}
+\doxysubsubsection{\texorpdfstring{i2C\_ADD\_NTAG}{i2C\_ADD\_NTAG}}
+{\footnotesize\ttfamily \#define i2\+C\+\_\+\+ADD\+\_\+\+NTAG~0x\+AA}
+
+\Hypertarget{a00167_af2e258363cc5e0787f3f7f1e9b7e514e}\label{a00167_af2e258363cc5e0787f3f7f1e9b7e514e} 
+\index{I2C\_2.h@{I2C\_2.h}!i2C\_ADD\_OW\_MASTER@{i2C\_ADD\_OW\_MASTER}}
+\index{i2C\_ADD\_OW\_MASTER@{i2C\_ADD\_OW\_MASTER}!I2C\_2.h@{I2C\_2.h}}
+\doxysubsubsection{\texorpdfstring{i2C\_ADD\_OW\_MASTER}{i2C\_ADD\_OW\_MASTER}}
+{\footnotesize\ttfamily \#define i2\+C\+\_\+\+ADD\+\_\+\+OW\+\_\+\+MASTER~0x30}
+
+\Hypertarget{a00167_ac825be078b6d883d319256cf4c362185}\label{a00167_ac825be078b6d883d319256cf4c362185} 
+\index{I2C\_2.h@{I2C\_2.h}!OW\_COPY\_SCRATCHPAD@{OW\_COPY\_SCRATCHPAD}}
+\index{OW\_COPY\_SCRATCHPAD@{OW\_COPY\_SCRATCHPAD}!I2C\_2.h@{I2C\_2.h}}
+\doxysubsubsection{\texorpdfstring{OW\_COPY\_SCRATCHPAD}{OW\_COPY\_SCRATCHPAD}}
+{\footnotesize\ttfamily \#define OW\+\_\+\+COPY\+\_\+\+SCRATCHPAD~0x55}
+
+\Hypertarget{a00167_a1c4805588ca41ea5acde4b01620abee4}\label{a00167_a1c4805588ca41ea5acde4b01620abee4} 
+\index{I2C\_2.h@{I2C\_2.h}!OW\_READ\_MEMORY@{OW\_READ\_MEMORY}}
+\index{OW\_READ\_MEMORY@{OW\_READ\_MEMORY}!I2C\_2.h@{I2C\_2.h}}
+\doxysubsubsection{\texorpdfstring{OW\_READ\_MEMORY}{OW\_READ\_MEMORY}}
+{\footnotesize\ttfamily \#define OW\+\_\+\+READ\+\_\+\+MEMORY~0x\+F0}
+
+\Hypertarget{a00167_a3fab10c3fcf965ad6746a7006d66f86a}\label{a00167_a3fab10c3fcf965ad6746a7006d66f86a} 
+\index{I2C\_2.h@{I2C\_2.h}!OW\_READ\_SCRATCHPAD@{OW\_READ\_SCRATCHPAD}}
+\index{OW\_READ\_SCRATCHPAD@{OW\_READ\_SCRATCHPAD}!I2C\_2.h@{I2C\_2.h}}
+\doxysubsubsection{\texorpdfstring{OW\_READ\_SCRATCHPAD}{OW\_READ\_SCRATCHPAD}}
+{\footnotesize\ttfamily \#define OW\+\_\+\+READ\+\_\+\+SCRATCHPAD~0x\+AA}
+
+\Hypertarget{a00167_ad05970146c079512eb128eec80fc4b36}\label{a00167_ad05970146c079512eb128eec80fc4b36} 
+\index{I2C\_2.h@{I2C\_2.h}!OW\_WRITE\_SCRATCHPAD@{OW\_WRITE\_SCRATCHPAD}}
+\index{OW\_WRITE\_SCRATCHPAD@{OW\_WRITE\_SCRATCHPAD}!I2C\_2.h@{I2C\_2.h}}
+\doxysubsubsection{\texorpdfstring{OW\_WRITE\_SCRATCHPAD}{OW\_WRITE\_SCRATCHPAD}}
+{\footnotesize\ttfamily \#define OW\+\_\+\+WRITE\+\_\+\+SCRATCHPAD~0x0F}
+
+\Hypertarget{a00167_a7d7d0bd616854ee29ae179ad24469e35}\label{a00167_a7d7d0bd616854ee29ae179ad24469e35} 
+\index{I2C\_2.h@{I2C\_2.h}!OWC\_1WIRE\_RESET@{OWC\_1WIRE\_RESET}}
+\index{OWC\_1WIRE\_RESET@{OWC\_1WIRE\_RESET}!I2C\_2.h@{I2C\_2.h}}
+\doxysubsubsection{\texorpdfstring{OWC\_1WIRE\_RESET}{OWC\_1WIRE\_RESET}}
+{\footnotesize\ttfamily \#define OWC\+\_\+1\+WIRE\+\_\+\+RESET~0x\+B4}
+
+\Hypertarget{a00167_ab491ed5a443c2d9766e5a7e4b82e5fc3}\label{a00167_ab491ed5a443c2d9766e5a7e4b82e5fc3} 
+\index{I2C\_2.h@{I2C\_2.h}!OWC\_DEVICE\_RESET@{OWC\_DEVICE\_RESET}}
+\index{OWC\_DEVICE\_RESET@{OWC\_DEVICE\_RESET}!I2C\_2.h@{I2C\_2.h}}
+\doxysubsubsection{\texorpdfstring{OWC\_DEVICE\_RESET}{OWC\_DEVICE\_RESET}}
+{\footnotesize\ttfamily \#define OWC\+\_\+\+DEVICE\+\_\+\+RESET~0x\+F0}
+
+\Hypertarget{a00167_a9059f7b48d100840298602ae974f7a2d}\label{a00167_a9059f7b48d100840298602ae974f7a2d} 
+\index{I2C\_2.h@{I2C\_2.h}!OWC\_READ\_BYTE@{OWC\_READ\_BYTE}}
+\index{OWC\_READ\_BYTE@{OWC\_READ\_BYTE}!I2C\_2.h@{I2C\_2.h}}
+\doxysubsubsection{\texorpdfstring{OWC\_READ\_BYTE}{OWC\_READ\_BYTE}}
+{\footnotesize\ttfamily \#define OWC\+\_\+\+READ\+\_\+\+BYTE~0x96}
+
+\Hypertarget{a00167_ab8fc3363627ca7aeb2172fd5a331b3e8}\label{a00167_ab8fc3363627ca7aeb2172fd5a331b3e8} 
+\index{I2C\_2.h@{I2C\_2.h}!OWC\_READ\_ROM@{OWC\_READ\_ROM}}
+\index{OWC\_READ\_ROM@{OWC\_READ\_ROM}!I2C\_2.h@{I2C\_2.h}}
+\doxysubsubsection{\texorpdfstring{OWC\_READ\_ROM}{OWC\_READ\_ROM}}
+{\footnotesize\ttfamily \#define OWC\+\_\+\+READ\+\_\+\+ROM~0x33}
+
+\Hypertarget{a00167_a70e3a7efe691510b722c3782a15b935c}\label{a00167_a70e3a7efe691510b722c3782a15b935c} 
+\index{I2C\_2.h@{I2C\_2.h}!OWC\_REG\_CONFIGURATION@{OWC\_REG\_CONFIGURATION}}
+\index{OWC\_REG\_CONFIGURATION@{OWC\_REG\_CONFIGURATION}!I2C\_2.h@{I2C\_2.h}}
+\doxysubsubsection{\texorpdfstring{OWC\_REG\_CONFIGURATION}{OWC\_REG\_CONFIGURATION}}
+{\footnotesize\ttfamily \#define OWC\+\_\+\+REG\+\_\+\+CONFIGURATION~0x\+C3}
+
+\Hypertarget{a00167_a455a6b4e86b876fc027fbfa57d6eab7f}\label{a00167_a455a6b4e86b876fc027fbfa57d6eab7f} 
+\index{I2C\_2.h@{I2C\_2.h}!OWC\_REG\_READ\_DATA@{OWC\_REG\_READ\_DATA}}
+\index{OWC\_REG\_READ\_DATA@{OWC\_REG\_READ\_DATA}!I2C\_2.h@{I2C\_2.h}}
+\doxysubsubsection{\texorpdfstring{OWC\_REG\_READ\_DATA}{OWC\_REG\_READ\_DATA}}
+{\footnotesize\ttfamily \#define OWC\+\_\+\+REG\+\_\+\+READ\+\_\+\+DATA~0x\+E1}
+
+\Hypertarget{a00167_a67d1d4edb65a21d38f6c3e80cddc80d4}\label{a00167_a67d1d4edb65a21d38f6c3e80cddc80d4} 
+\index{I2C\_2.h@{I2C\_2.h}!OWC\_REG\_STATUS@{OWC\_REG\_STATUS}}
+\index{OWC\_REG\_STATUS@{OWC\_REG\_STATUS}!I2C\_2.h@{I2C\_2.h}}
+\doxysubsubsection{\texorpdfstring{OWC\_REG\_STATUS}{OWC\_REG\_STATUS}}
+{\footnotesize\ttfamily \#define OWC\+\_\+\+REG\+\_\+\+STATUS~0x\+F0}
+
+\Hypertarget{a00167_aeeb4cbf0fd27776435d2f9c9e99e061a}\label{a00167_aeeb4cbf0fd27776435d2f9c9e99e061a} 
+\index{I2C\_2.h@{I2C\_2.h}!OWC\_SET\_REG\_POINTER@{OWC\_SET\_REG\_POINTER}}
+\index{OWC\_SET\_REG\_POINTER@{OWC\_SET\_REG\_POINTER}!I2C\_2.h@{I2C\_2.h}}
+\doxysubsubsection{\texorpdfstring{OWC\_SET\_REG\_POINTER}{OWC\_SET\_REG\_POINTER}}
+{\footnotesize\ttfamily \#define OWC\+\_\+\+SET\+\_\+\+REG\+\_\+\+POINTER~0x\+E1}
+
+\Hypertarget{a00167_ab76ceb7218d2b7d5d842e86fc9f63aad}\label{a00167_ab76ceb7218d2b7d5d842e86fc9f63aad} 
+\index{I2C\_2.h@{I2C\_2.h}!OWC\_SKIP\_ROM@{OWC\_SKIP\_ROM}}
+\index{OWC\_SKIP\_ROM@{OWC\_SKIP\_ROM}!I2C\_2.h@{I2C\_2.h}}
+\doxysubsubsection{\texorpdfstring{OWC\_SKIP\_ROM}{OWC\_SKIP\_ROM}}
+{\footnotesize\ttfamily \#define OWC\+\_\+\+SKIP\+\_\+\+ROM~0x\+CC}
+
+\Hypertarget{a00167_a4b2e0347ee39e4198f9fb3c982c07f66}\label{a00167_a4b2e0347ee39e4198f9fb3c982c07f66} 
+\index{I2C\_2.h@{I2C\_2.h}!OWC\_WRITE\_BYTE@{OWC\_WRITE\_BYTE}}
+\index{OWC\_WRITE\_BYTE@{OWC\_WRITE\_BYTE}!I2C\_2.h@{I2C\_2.h}}
+\doxysubsubsection{\texorpdfstring{OWC\_WRITE\_BYTE}{OWC\_WRITE\_BYTE}}
+{\footnotesize\ttfamily \#define OWC\+\_\+\+WRITE\+\_\+\+BYTE~0x\+A5}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{a00167_ab2d6470085f0f13033eca2373bcf4b41}\label{a00167_ab2d6470085f0f13033eca2373bcf4b41} 
+\index{I2C\_2.h@{I2C\_2.h}!I2C2\_Read@{I2C2\_Read}}
+\index{I2C2\_Read@{I2C2\_Read}!I2C\_2.h@{I2C\_2.h}}
+\doxysubsubsection{\texorpdfstring{I2C2\_Read()}{I2C2\_Read()}}
+{\footnotesize\ttfamily void I2\+C2\+\_\+\+Read (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{addr,  }\item[{\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{data,  }\item[{\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{n\+Bytes }\end{DoxyParamCaption})}
+
+
+
+Function to read data from a specific address. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em addr} & --- slave device address \\
+\hline
+{\em data} & --- Pointer to memory to store the read data \\
+\hline
+{\em n\+Bytes} & --- data size in bytes \\
+\hline
+\end{DoxyParams}
+\Hypertarget{a00167_ad58a8d00d5d29090187568bd3f80da2f}\label{a00167_ad58a8d00d5d29090187568bd3f80da2f} 
+\index{I2C\_2.h@{I2C\_2.h}!I2C2\_ReadByte@{I2C2\_ReadByte}}
+\index{I2C2\_ReadByte@{I2C2\_ReadByte}!I2C\_2.h@{I2C\_2.h}}
+\doxysubsubsection{\texorpdfstring{I2C2\_ReadByte()}{I2C2\_ReadByte()}}
+{\footnotesize\ttfamily void I2\+C2\+\_\+\+Read\+Byte (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{addr,  }\item[{\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Data }\end{DoxyParamCaption})}
+
+
+
+Function to read a byte data from a specific address. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em addr} & --- slave device address \\
+\hline
+{\em p\+Data} & --- Pointer to memory to store the read data \\
+\hline
+\end{DoxyParams}
+\Hypertarget{a00167_a7ba82d621147cdcae270e9926abb3736}\label{a00167_a7ba82d621147cdcae270e9926abb3736} 
+\index{I2C\_2.h@{I2C\_2.h}!I2C2\_ReadByte\_OW@{I2C2\_ReadByte\_OW}}
+\index{I2C2\_ReadByte\_OW@{I2C2\_ReadByte\_OW}!I2C\_2.h@{I2C\_2.h}}
+\doxysubsubsection{\texorpdfstring{I2C2\_ReadByte\_OW()}{I2C2\_ReadByte\_OW()}}
+{\footnotesize\ttfamily void I2\+C2\+\_\+\+Read\+Byte\+\_\+\+OW (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Data,  }\item[{\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{n\+Bytes }\end{DoxyParamCaption})}
+
+
+
+Function to read data byte at specific address. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Data} & --- pointer to data store \\
+\hline
+{\em n\+Bytes} & --- number of byte data to read \\
+\hline
+\end{DoxyParams}
+\Hypertarget{a00167_a54092e1b35159f28a6fae808c1c909e0}\label{a00167_a54092e1b35159f28a6fae808c1c909e0} 
+\index{I2C\_2.h@{I2C\_2.h}!I2C2\_Write@{I2C2\_Write}}
+\index{I2C2\_Write@{I2C2\_Write}!I2C\_2.h@{I2C\_2.h}}
+\doxysubsubsection{\texorpdfstring{I2C2\_Write()}{I2C2\_Write()}}
+{\footnotesize\ttfamily void I2\+C2\+\_\+\+Write (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{addr,  }\item[{\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{data,  }\item[{\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{n\+Bytes }\end{DoxyParamCaption})}
+
+
+
+Function to write data at specific address. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em addr} & --- slave device address \\
+\hline
+{\em data} & --- data buffer to write \\
+\hline
+{\em n\+Bytes} & --- number of data in bytes \\
+\hline
+\end{DoxyParams}
+\Hypertarget{a00167_a75998894ee4aceb2f03ebc36a0000d3f}\label{a00167_a75998894ee4aceb2f03ebc36a0000d3f} 
+\index{I2C\_2.h@{I2C\_2.h}!I2C2\_Write\_NFC@{I2C2\_Write\_NFC}}
+\index{I2C2\_Write\_NFC@{I2C2\_Write\_NFC}!I2C\_2.h@{I2C\_2.h}}
+\doxysubsubsection{\texorpdfstring{I2C2\_Write\_NFC()}{I2C2\_Write\_NFC()}}
+{\footnotesize\ttfamily void I2\+C2\+\_\+\+Write\+\_\+\+NFC (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{block\+\_\+idx,  }\item[{\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{data,  }\item[{\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{n\+Bytes }\end{DoxyParamCaption})}
+
+
+
+Function to write data at specific address in the NTag memory. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em block\+\_\+idx} & --- block idx \\
+\hline
+{\em data} & --- data buffer to write \\
+\hline
+{\em n\+Bytes} & --- number of data in bytes \\
+\hline
+\end{DoxyParams}
+\Hypertarget{a00167_a48856cefb69c8a4371722c1ef5455ba0}\label{a00167_a48856cefb69c8a4371722c1ef5455ba0} 
+\index{I2C\_2.h@{I2C\_2.h}!I2C2\_Write\_OW@{I2C2\_Write\_OW}}
+\index{I2C2\_Write\_OW@{I2C2\_Write\_OW}!I2C\_2.h@{I2C\_2.h}}
+\doxysubsubsection{\texorpdfstring{I2C2\_Write\_OW()}{I2C2\_Write\_OW()}}
+{\footnotesize\ttfamily void I2\+C2\+\_\+\+Write\+\_\+\+OW (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{command,  }\item[{\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{data }\end{DoxyParamCaption})}
+
+
+
+Function to write a data byte at specific address. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em command} & --- command sent to DS2482 \\
+\hline
+{\em data} & --- a byte data to write \\
+\hline
+\end{DoxyParams}
+\Hypertarget{a00167_abb5323ebe9e05f1fe983ee0c53fa732e}\label{a00167_abb5323ebe9e05f1fe983ee0c53fa732e} 
+\index{I2C\_2.h@{I2C\_2.h}!I2C2\_WriteByte@{I2C2\_WriteByte}}
+\index{I2C2\_WriteByte@{I2C2\_WriteByte}!I2C\_2.h@{I2C\_2.h}}
+\doxysubsubsection{\texorpdfstring{I2C2\_WriteByte()}{I2C2\_WriteByte()}}
+{\footnotesize\ttfamily void I2\+C2\+\_\+\+Write\+Byte (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{addr,  }\item[{\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{data }\end{DoxyParamCaption})}
+
+
+
+Function to write a data byte at specific address. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em addr} & --- slave device address \\
+\hline
+{\em data} & --- a byte data to write \\
+\hline
+\end{DoxyParams}

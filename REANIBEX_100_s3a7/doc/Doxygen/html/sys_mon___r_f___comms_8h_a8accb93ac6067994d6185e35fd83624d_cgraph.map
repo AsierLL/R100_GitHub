@@ -1,0 +1,42 @@
+<map id="Execute_Send_Wifi_Alert_Frame" name="Execute_Send_Wifi_Alert_Frame">
+<area shape="rect" id="Node000001" title="Function that executes the sending alert." alt="" coords="5,157,175,200"/>
+<area shape="rect" id="Node000002" href="$thread__audio__entry_8c.html#a7bc63559c8d1198f7036bf7d08def712" title="Function that performs an operation with the message player." alt="" coords="247,56,361,83"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="119,155,166,123,221,92,236,86,238,91,224,97,169,128,122,159"/>
+<area shape="rect" id="Node000007" href="$thread__sys_mon__entry_8c.html#a86d6de0ddbdd8704798336aa29003fb5" title="Check if user abort running test." alt="" coords="223,107,385,133"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="169,154,237,135,239,140,171,159"/>
+<area shape="rect" id="Node000009" href="$thread__comm__entry_8c.html#af8503a5741f300bddb0ce6c1bccb3292" title="Checks if wifi test frame sended process completed." alt="" coords="234,157,374,200"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="175,176,219,176,219,181,175,181"/>
+<area shape="rect" id="Node000010" href="$thread__comm__entry_8c.html#a87e4a8efc817a1a684329a09dfb6e32c" title="Generate and send R100 Wifi Alert." alt="" coords="230,224,378,267"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="161,198,219,216,218,221,160,203"/>
+<area shape="rect" id="Node000020" href="$thread__sys_mon__entry_8c.html#aab815986ee52dfb7489873f856e3ecb9" title="Refresh the watchdog timer." alt="" coords="254,291,354,317"/>
+<area shape="poly" id="edge20_Node000001_Node000020" title=" " alt="" coords="116,198,164,238,224,276,240,284,238,289,221,281,161,242,113,203"/>
+<area shape="rect" id="Node000003" href="$thread__audio__entry_8c.html#a05b96411bbd2b24e86ae0cc21146b4cb" title="Function that loads and plays a message." alt="" coords="446,5,593,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="361,53,444,34,445,39,362,59"/>
+<area shape="rect" id="Node000005" href="$thread__audio__entry_8c.html#a2c1714b5b8e79621e3a35b0624309f63" title="Stops the audio engine in a predefined sequence." alt="" coords="452,56,587,83"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="361,67,436,67,436,72,361,72"/>
+<area shape="rect" id="Node000004" href="$thread__audio__entry_8c.html#a29f40d7e3dc151283bfb0e69dbd8b132" title="Get an audio frame from the audio file." alt="" coords="654,5,829,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="594,16,639,16,639,21,594,21"/>
+<area shape="rect" id="Node000006" href="$thread__audio__hal_8c.html#a5afdd4d24f2faf92baea80c7b0cedfdc" title="stops the audio reproduction" alt="" coords="697,56,786,83"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="588,67,682,67,682,72,588,72"/>
+<area shape="rect" id="Node000008" href="$_keypad_8c.html#a65899dc7cce4138cd4488d27daff459d" title="Read from Key&#45;board." alt="" coords="479,107,560,133"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="385,117,463,117,463,123,385,123"/>
+<area shape="rect" id="Node000011" href="$sys_mon___battery_8c.html#a6a908c00382961d78f2da4ee84cb4263" title="Computes the remaining capacity in the battery." alt="" coords="450,157,589,184"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="358,221,432,193,453,187,455,192,434,199,360,226"/>
+<area shape="rect" id="Node000015" href="$thread__drd__entry_8c.html#a919272f048aaf3454587b9c8dc4f3f2c" title="return the diagnosis" alt="" coords="450,259,590,285"/>
+<area shape="poly" id="edge14_Node000010_Node000015" title=" " alt="" coords="379,252,434,259,434,264,378,257"/>
+<area shape="rect" id="Node000017" href="$thread__sys_mon__entry_8c.html#aeeb458bcec8909373038cfd816e475db" title="Get electrodes signature." alt="" coords="433,208,606,235"/>
+<area shape="poly" id="edge16_Node000010_Node000017" title=" " alt="" coords="378,234,417,230,417,235,379,240"/>
+<area shape="rect" id="Node000018" href="$thread__pat_mon__hal_8c.html#a6b07f419fb5494de970c245ba09885a4" title="report the impedance value (in Ohms, ADCs or virtual)" alt="" coords="442,309,597,336"/>
+<area shape="poly" id="edge18_Node000010_Node000018" title=" " alt="" coords="359,265,434,295,455,302,453,307,432,300,357,270"/>
+<area shape="rect" id="Node000019" href="$thread__comm__entry_8c.html#af7921d111a91795221d7b493716d54c3" title="Process events related to All COMM modules." alt="" coords="449,360,590,387"/>
+<area shape="poly" id="edge19_Node000010_Node000019" title=" " alt="" coords="369,265,387,277,403,295,411,313,419,330,435,346,442,351,439,355,431,350,415,333,406,315,398,298,383,281,366,269"/>
+<area shape="rect" id="Node000012" href="$sys_mon___battery_8c.html#af6e0839479117b02185cb5786de7d15b" title="Computes the difference time between two dates (in days) (date_1 &#45; date_2)" alt="" coords="689,107,794,133"/>
+<area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="581,154,673,133,675,138,582,159"/>
+<area shape="rect" id="Node000013" href="$device__init_8c.html#ac9272954c69640cbc76d2ea99e68bc43" title="Function for accessing NFC device info struct." alt="" coords="668,157,815,184"/>
+<area shape="poly" id="edge12_Node000011_Node000013" title=" " alt="" coords="590,168,653,168,653,173,590,173"/>
+<area shape="rect" id="Node000014" href="$sys_mon___battery_8c.html#ae8f3f32f49df7702f6405467130ce8fd" title="Function that report if the battery is DEMO or not." alt="" coords="661,208,822,235"/>
+<area shape="poly" id="edge13_Node000011_Node000014" title=" " alt="" coords="582,182,666,201,665,207,581,187"/>
+<area shape="rect" id="Node000016" href="$drd_8h.html#a604473ae3a07455d5bd16bb301a29fbe" title=" " alt="" coords="681,259,802,285"/>
+<area shape="poly" id="edge15_Node000015_Node000016" title=" " alt="" coords="590,269,666,269,666,275,590,275"/>
+<area shape="poly" id="edge17_Node000017_Node000014" title=" " alt="" coords="607,219,646,219,646,224,607,224"/>
+</map>

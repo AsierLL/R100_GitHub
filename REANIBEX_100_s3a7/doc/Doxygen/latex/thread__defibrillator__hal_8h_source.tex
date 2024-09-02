@@ -1,0 +1,112 @@
+\doxysection{thread\+\_\+defibrillator\+\_\+hal.\+h}
+\hypertarget{thread__defibrillator__hal_8h_source}{}\label{thread__defibrillator__hal_8h_source}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/HAL/thread\_defibrillator\_hal.h@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/HAL/thread\_defibrillator\_hal.h}}
+\mbox{\hyperlink{thread__defibrillator__hal_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Name\ \ \ \ \ \ :\ R100\_S3A7\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ :\ Osatu\ S.\ Coop\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Compiler\ \ :\ GNU\ ARM\ Embedded\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ Target\ \ \ \ :\ Reanibex\ Serie\ 100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ ******************************************************************************/}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#ifndef\ THREAD\_DEFIBRILLATOR\_HAL\_H\_}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#define\ THREAD\_DEFIBRILLATOR\_HAL\_H\_}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ **\ Includes}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ "{}types\_basic.h"{}}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_r100___errors_8h}{R100\_Errors.h}}"{}}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ **\ Defines}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#define\ \ \ \ \ DC\_LVTTL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 3300\ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#define\ \ \ \ \ PRE\_CHARGE\_VOLTAGE\ \ \ \ \ \ \ 700\ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#define\ \ \ \ \ MAX\_CHARGE\_VOLTAGE\ \ \ \ \ \ 1800\ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#define\ \ \ \ \ MAX\_CHARGE\_CURRENT\ \ \ \ \ \ 5000\ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{comment}{//\ I/O\ ports}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#define\ \ \ \ \ CHRG\_ONOFF\ \ \ \ \ \ \ \ \ \ \ \ \ \ IOPORT\_PORT\_05\_PIN\_03}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#define\ \ \ \ \ CHRG\_PSU\_EN\ \ \ \ \ \ \ \ \ \ \ \ \ IOPORT\_PORT\_08\_PIN\_09}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#define\ \ \ \ \ DEF\_PSU\_EN\ \ \ \ \ \ \ \ \ \ \ \ \ \ IOPORT\_PORT\_08\_PIN\_08}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#define\ \ \ \ \ IO\_PSU\_EN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ IOPORT\_PORT\_06\_PIN\_10}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#define\ \ \ \ \ RELAY\_CAP\_EN\ \ \ \ \ \ \ \ \ \ \ \ IOPORT\_PORT\_06\_PIN\_02}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#define\ \ \ \ \ RELAY\_HV\_SHOCK\ \ \ \ \ \ \ \ \ \ IOPORT\_PORT\_01\_PIN\_15}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#define\ \ \ \ \ HV\_OVC\_REARM\ \ \ \ \ \ \ \ \ \ \ \ IOPORT\_PORT\_06\_PIN\_03}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#define\ \ \ \ \ HV\_OVC\_FLAG\_N\ \ \ \ \ \ \ \ \ \ \ IOPORT\_PORT\_01\_PIN\_14}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#define\ \ \ \ \ HV\_OVCH\_FLAG\_N\ \ \ \ \ \ \ \ \ \ IOPORT\_PORT\_01\_PIN\_13}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#define\ \ \ \ \ IGBT\_1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ IOPORT\_PORT\_04\_PIN\_06}}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#define\ \ \ \ \ IGBT\_2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ IOPORT\_PORT\_04\_PIN\_05}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#define\ \ \ \ \ IGBT\_3\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ IOPORT\_PORT\_01\_PIN\_07}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#define\ \ \ \ \ IGBT\_4\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ IOPORT\_PORT\_01\_PIN\_06}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00062\ \textcolor{comment}{\ **\ Typedefs}}
+\DoxyCodeLine{00063\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00066\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \mbox{\hyperlink{thread__defibrillator__hal_8h_ac036bc3cb166129c3196cb82ee57d57ca394732f46490c94b981e4b48036bf3f2}{eDEFIB\_STATE\_STANDBY}}\ =\ 0,\ \ \ \ \ \ \ }
+\DoxyCodeLine{00068\ \ \ \ \ \mbox{\hyperlink{thread__defibrillator__hal_8h_ac036bc3cb166129c3196cb82ee57d57ca5d53f091b64078a9e7ecd34bf100c009}{eDEFIB\_STATE\_CHARGING}},\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00069\ \ \ \ \ \mbox{\hyperlink{thread__defibrillator__hal_8h_ac036bc3cb166129c3196cb82ee57d57cad6bdccb6228bf9c9e430f5393ad0171a}{eDEFIB\_STATE\_DISCHARGING}},\ \ \ \ \ \ \ }
+\DoxyCodeLine{00070\ \ \ \ \ \mbox{\hyperlink{thread__defibrillator__hal_8h_ac036bc3cb166129c3196cb82ee57d57ca022411497e4cdc8c8065d990f3bd2c64}{eDEFIB\_STATE\_CHARGED}},\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00071\ \ \ \ \ \mbox{\hyperlink{thread__defibrillator__hal_8h_ac036bc3cb166129c3196cb82ee57d57ca13458a445dab7710825c9b0bb8cb1dd8}{eDEFIB\_STATE\_SHOCKING}},\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00072\ \ \ \ \ \mbox{\hyperlink{thread__defibrillator__hal_8h_ac036bc3cb166129c3196cb82ee57d57ca207e7a3906210c6f9639d2bcd88487a1}{eDEFIB\_STATE\_AFTER\_SHOCK}},\ \ \ \ \ \ \ }
+\DoxyCodeLine{00073\ \ \ \ \ \mbox{\hyperlink{thread__defibrillator__hal_8h_ac036bc3cb166129c3196cb82ee57d57cafad4e5998406822eae8f374381214418}{eDEFIB\_STATE\_IN\_ERROR}},\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00074\ \ \ \ \ \mbox{\hyperlink{thread__defibrillator__hal_8h_ac036bc3cb166129c3196cb82ee57d57ca02f0d4c38703c6a4c39c62d9005380a1}{eDEFIB\_STATE\_OUT\_OF\_SERVICE}}\ \ \ \ \ }
+\DoxyCodeLine{00075\ \}\ \mbox{\hyperlink{thread__defibrillator__hal_8h_ac036bc3cb166129c3196cb82ee57d57c}{DEFIB\_STATE\_e}};}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00079\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \mbox{\hyperlink{struct_d_d___s_h_o_c_k__t_a4943610023994be0427f67e09fef2687}{zp}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Patient\ impedance\ in\ ohms}}
+\DoxyCodeLine{00080\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \mbox{\hyperlink{struct_d_d___s_h_o_c_k__t_afe32c99c9dc3198889c346f881922df1}{shock\_uTime\_1}};\ \ \ \ \ \ \textcolor{comment}{//\ Phase\ 1\ time\ (in\ usecs)}}
+\DoxyCodeLine{00081\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \mbox{\hyperlink{struct_d_d___s_h_o_c_k__t_a6bf50068fff441d73c8ee2b1853e758a}{pulse\_vc\_start}};\ \ \ \ \ \textcolor{comment}{//\ Capacitor\ voltage\ at\ pulse\ start}}
+\DoxyCodeLine{00082\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \mbox{\hyperlink{struct_d_d___s_h_o_c_k__t_a9bc1cbedf1d628fa9465548ccb559964}{pulse\_vc\_middle}};\ \ \ \ \textcolor{comment}{//\ Capacitor\ voltage\ at\ pulse\ middle}}
+\DoxyCodeLine{00083\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \mbox{\hyperlink{struct_d_d___s_h_o_c_k__t_a6659a882d3c50c9f2683eb782ecc980b}{pulse\_vc\_end}};\ \ \ \ \ \ \ \textcolor{comment}{//\ Capacitor\ voltage\ at\ pulse\ end}}
+\DoxyCodeLine{00084\ \}\ \mbox{\hyperlink{struct_d_d___s_h_o_c_k__t}{DD\_SHOCK\_t}};}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00088\ \textcolor{comment}{\ **\ Globals}}
+\DoxyCodeLine{00089\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00092\ \textcolor{comment}{\ **\ Prototypes}}
+\DoxyCodeLine{00093\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \textcolor{keyword}{extern}\ \ \mbox{\hyperlink{struct_d_d___s_h_o_c_k__t}{DD\_SHOCK\_t}}\ \ \ \ \ *\mbox{\hyperlink{thread__defibrillator__hal_8h_a181ef932a161bd19a95605c92ed7d62c}{Defib\_Get\_Shock\_DD}}\ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00096\ \textcolor{keyword}{extern}\ \ \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\_ID\_e}}\ \ \ \ \ \ \mbox{\hyperlink{thread__defibrillator__hal_8h_a1256f38c0ee4324a46ca4e9ff231588f}{Defib\_Get\_ErrorId}}\ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00097\ \textcolor{keyword}{extern}\ \ \mbox{\hyperlink{thread__defibrillator__hal_8h_ac036bc3cb166129c3196cb82ee57d57c}{DEFIB\_STATE\_e}}\ \ \ \mbox{\hyperlink{thread__defibrillator__hal_8h_a1732c6fa09148497f9b79f530fb94a8a}{Defib\_Get\_State}}\ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00098\ \textcolor{keyword}{extern}\ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \ \ \ \ \mbox{\hyperlink{thread__defibrillator__hal_8h_a51d3d1bc2120f01ddcb0ed702a23e913}{Defib\_Get\_Vc}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00099\ \textcolor{keyword}{extern}\ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ \ \ \ \ \ \ \ \mbox{\hyperlink{thread__defibrillator__hal_8h_ab3728d4c266f23659cbff349db9ba5a1}{Defib\_Get\_IH}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00100\ \textcolor{keyword}{extern}\ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \ \ \ \ \mbox{\hyperlink{thread__defibrillator__hal_8h_a3e86b71d391996bf2ffc968da01e5326}{Defib\_Get\_Vbatt}}\ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00101\ \textcolor{keyword}{extern}\ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \ \ \ \ \ \ \ \mbox{\hyperlink{thread__defibrillator__hal_8h_a601500a89b61d3f1303499f3f48c9ce9}{Defib\_Get\_Vdefib}}\ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00102\ \textcolor{keyword}{extern}\ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{thread__defibrillator__hal_8h_ae527cfe38401ea917a498d32618335cf}{Defib\_Set\_Out\_of\_Service}}\ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \textcolor{keyword}{extern}\ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{thread__defibrillator__hal_8h_a512f2b063560e5120e68f7fc11a865a0}{Defib\_Disarm}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00105\ \textcolor{keyword}{extern}\ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{thread__defibrillator__hal_8h_a6e81b634f93bb25286835f828f840c94}{Defib\_Charge}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ voltage,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ current);}
+\DoxyCodeLine{00106\ \textcolor{keyword}{extern}\ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{thread__defibrillator__hal_8h_a5c83cfd8a63ac9b016942a91160874ee}{Defib\_Shock}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_a71ed9970da0ab0cc11bbdc71998cb37e}{zp}});}
+\DoxyCodeLine{00107\ \textcolor{keyword}{extern}\ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{thread__defibrillator__hal_8h_a0784736ea79dd07b64d000da1214bd62}{Defib\_Shock\_Sync}}\ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_a71ed9970da0ab0cc11bbdc71998cb37e}{zp}});}
+\DoxyCodeLine{00108\ \textcolor{keyword}{extern}\ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{thread__defibrillator__hal_8h_a76aae876778cb493d0754a6f3374b3ab}{Defib\_Monitor}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00109\ \textcolor{keyword}{extern}\ \ \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\_ID\_e}}\ \ \ \ \ \ \mbox{\hyperlink{thread__defibrillator__hal_8h_a02431634058453ea052aed7a3bab6ecf}{Defib\_Initialize}}\ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \textcolor{keyword}{extern}\ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ \ \ \ \ \ \ \ \mbox{\hyperlink{thread__defibrillator__hal_8h_a25dc68351d66da2947740595a94ab2fc}{Get\_Audio\_Energy}}\ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ THREAD\_DEFIBRILLATOR\_HAL\_H\_\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00117\ \textcolor{comment}{\ **\ \$Log\$}}
+\DoxyCodeLine{00118\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00119\ \textcolor{comment}{\ **\ end\ of\ thread\_defibrillator\_hal.h}}
+\DoxyCodeLine{00120\ \textcolor{comment}{\ ******************************************************************************/}}
+
+\end{DoxyCode}

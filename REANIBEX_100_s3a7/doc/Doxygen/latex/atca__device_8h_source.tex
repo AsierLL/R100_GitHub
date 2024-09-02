@@ -1,0 +1,279 @@
+\doxysection{atca\+\_\+device.\+h}
+\hypertarget{atca__device_8h_source}{}\label{atca__device_8h_source}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/SCE/atca\_device.h@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/SCE/atca\_device.h}}
+\mbox{\hyperlink{atca__device_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#ifndef\ ATCA\_DEVICE\_H}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ ATCA\_DEVICE\_H}}
+\DoxyCodeLine{00031\ \textcolor{comment}{/*lint\ +flb\ */}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{atca__iface_8h}{atca\_iface.h}}"{}}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00038\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#ifndef\ ATCA\_NO\_PRAGMA\_PACK}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#pragma\ pack(push,\ 1)}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#define\ ATCA\_PACKED}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#define\ ATCA\_PACKED\ \ \ \ \ \_\_attribute\_\_\ ((packed))}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{group__device_gae081a49acc1fca72a8245249dfded8ef}{ATCA\_PACKED}}\ \mbox{\hyperlink{struct__atsha204a__config}{\_atsha204a\_config}}}
+\DoxyCodeLine{00049\ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ \mbox{\hyperlink{struct__atsha204a__config_ad21e73dc0f78a37020d68156b2ea3870}{SN03}};}
+\DoxyCodeLine{00051\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ \mbox{\hyperlink{struct__atsha204a__config_a8f743974e7ff6dcc9e98cd852ee461b3}{RevNum}};}
+\DoxyCodeLine{00052\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ \mbox{\hyperlink{struct__atsha204a__config_abc4a1b5e11923ea2f2832476df6517fe}{SN47}};}
+\DoxyCodeLine{00053\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \mbox{\hyperlink{struct__atsha204a__config_a7efe0b505636af3e51a3d4b73f8e2b83}{SN8}};}
+\DoxyCodeLine{00054\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \mbox{\hyperlink{struct__atsha204a__config_a62ab4eb7966e8fc1a5b4d7e795874010}{Reserved0}};}
+\DoxyCodeLine{00055\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \mbox{\hyperlink{struct__atsha204a__config_aa3dd329b6c2db5d5daabc48bbf2825f8}{I2C\_Enable}};}
+\DoxyCodeLine{00056\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \mbox{\hyperlink{struct__atsha204a__config_a89614b05102ee791b708915303680f71}{Reserved1}};}
+\DoxyCodeLine{00057\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \mbox{\hyperlink{struct__atsha204a__config_accdfeb957827ed121ef06173f2b53276}{I2C\_Address}};}
+\DoxyCodeLine{00058\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \mbox{\hyperlink{struct__atsha204a__config_a25afd939717222a5b94a17c1745f02db}{Reserved2}};}
+\DoxyCodeLine{00059\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \mbox{\hyperlink{struct__atsha204a__config_a60eb1045f2b961c9065ad59bc0dc943e}{OTPmode}};}
+\DoxyCodeLine{00060\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \mbox{\hyperlink{struct__atsha204a__config_a5586cdaffa48ec78b4ce9075ff71dbc1}{ChipMode}};}
+\DoxyCodeLine{00061\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ SlotConfig[16];}
+\DoxyCodeLine{00062\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ Counter[8];}
+\DoxyCodeLine{00063\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ LastKeyUse[16];}
+\DoxyCodeLine{00064\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \mbox{\hyperlink{struct__atsha204a__config_ae788cfea82648bb4fa89a5414b10205e}{UserExtra}};}
+\DoxyCodeLine{00065\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \mbox{\hyperlink{struct__atsha204a__config_af1dbb7c10c439852fc0621b0adb40f3a}{Selector}};}
+\DoxyCodeLine{00066\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \mbox{\hyperlink{struct__atsha204a__config_a40736e3adf10405e5c45ba14ca249afb}{LockValue}};}
+\DoxyCodeLine{00067\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \mbox{\hyperlink{struct__atsha204a__config_a2650f0c1952295225cc0b61de422ed8f}{LockConfig}};}
+\DoxyCodeLine{00068\ \}\ \mbox{\hyperlink{group__device_gaa0d57d5665793fa89fdab47726134824}{atsha204a\_config\_t}};}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{group__device_gae081a49acc1fca72a8245249dfded8ef}{ATCA\_PACKED}}\ \mbox{\hyperlink{struct__atecc508a__config}{\_atecc508a\_config}}}
+\DoxyCodeLine{00071\ \{}
+\DoxyCodeLine{00072\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ \mbox{\hyperlink{struct__atecc508a__config_a17358bd33e32d001ee8e98054a803a63}{SN03}};}
+\DoxyCodeLine{00073\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ \mbox{\hyperlink{struct__atecc508a__config_ac967e0e7745859b2d4f2341e57e88277}{RevNum}};}
+\DoxyCodeLine{00074\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ \mbox{\hyperlink{struct__atecc508a__config_ab27a4f7fb505318a64c5014a4ba5b93a}{SN47}};}
+\DoxyCodeLine{00075\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \mbox{\hyperlink{struct__atecc508a__config_a1b6d45861764d5a9f9d7cd0f7bbc0b9e}{SN8}};}
+\DoxyCodeLine{00076\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \mbox{\hyperlink{struct__atecc508a__config_a49e72ea0b0dc592dd3c2f1a3b2fa6fbd}{Reserved0}};}
+\DoxyCodeLine{00077\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \mbox{\hyperlink{struct__atecc508a__config_a52f8b8491c5c65c4360a65b942691a4c}{I2C\_Enable}};}
+\DoxyCodeLine{00078\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \mbox{\hyperlink{struct__atecc508a__config_a20810dfc63a0155b77636e4be7d3062d}{Reserved1}};}
+\DoxyCodeLine{00079\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \mbox{\hyperlink{struct__atecc508a__config_ada33a87ad472e92a9a393528bbbfc537}{I2C\_Address}};}
+\DoxyCodeLine{00080\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \mbox{\hyperlink{struct__atecc508a__config_ab4f591435b63fbb402f68d0d930ee4ce}{Reserved2}};}
+\DoxyCodeLine{00081\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \mbox{\hyperlink{struct__atecc508a__config_a08300e0bb63d13ce3cd6b82e1f84132e}{OTPmode}};}
+\DoxyCodeLine{00082\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \mbox{\hyperlink{struct__atecc508a__config_a25c0e135c18cd576de6a8e1b3a636625}{ChipMode}};}
+\DoxyCodeLine{00083\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ SlotConfig[16];}
+\DoxyCodeLine{00084\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ Counter0[8];}
+\DoxyCodeLine{00085\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ Counter1[8];}
+\DoxyCodeLine{00086\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ LastKeyUse[16];}
+\DoxyCodeLine{00087\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \mbox{\hyperlink{struct__atecc508a__config_a5d641c7bbd5b42e0dc913f9522b1d88e}{UserExtra}};}
+\DoxyCodeLine{00088\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \mbox{\hyperlink{struct__atecc508a__config_a569a3b1ea30921d6b24c681d71432522}{Selector}};}
+\DoxyCodeLine{00089\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \mbox{\hyperlink{struct__atecc508a__config_a55fc3837a75984ae12e4ce8a17c56fc6}{LockValue}};}
+\DoxyCodeLine{00090\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \mbox{\hyperlink{struct__atecc508a__config_a85f40681153ad696f198ce5b16643af8}{LockConfig}};}
+\DoxyCodeLine{00091\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \mbox{\hyperlink{struct__atecc508a__config_a2691e419d89d5996c74453531ed6a0da}{SlotLocked}};}
+\DoxyCodeLine{00092\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \mbox{\hyperlink{struct__atecc508a__config_a850cf4d425baac29fac5f0c7b5bb4630}{RFU}};}
+\DoxyCodeLine{00093\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ \mbox{\hyperlink{struct__atecc508a__config_aae4f33893db4c371d3c0fb1578bebe43}{X509format}};}
+\DoxyCodeLine{00094\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ KeyConfig[16];}
+\DoxyCodeLine{00095\ \}\ \mbox{\hyperlink{group__device_ga18d23fcfb15908fc3e285bee9e3ef697}{atecc508a\_config\_t}};}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{group__device_gae081a49acc1fca72a8245249dfded8ef}{ATCA\_PACKED}}\ \mbox{\hyperlink{struct__atecc608__config}{\_atecc608\_config}}}
+\DoxyCodeLine{00098\ \{}
+\DoxyCodeLine{00099\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ \mbox{\hyperlink{struct__atecc608__config_a6a0e8e2751d5f30e6c5653ac19a5254a}{SN03}};}
+\DoxyCodeLine{00100\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ \mbox{\hyperlink{struct__atecc608__config_aa065677a90ebe93cb7640a480e08ec8a}{RevNum}};}
+\DoxyCodeLine{00101\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ \mbox{\hyperlink{struct__atecc608__config_aaceaab739656c627a9ca5954472ec8aa}{SN47}};}
+\DoxyCodeLine{00102\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \mbox{\hyperlink{struct__atecc608__config_a834dd64dd2b8b74892f6ff398dc61ef5}{SN8}};}
+\DoxyCodeLine{00103\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \mbox{\hyperlink{struct__atecc608__config_a9ca9b07370f3423503eceeb2fe43d706}{AES\_Enable}};}
+\DoxyCodeLine{00104\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \mbox{\hyperlink{struct__atecc608__config_ad50b011de68bb7d35f882f95522b159c}{I2C\_Enable}};}
+\DoxyCodeLine{00105\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \mbox{\hyperlink{struct__atecc608__config_a2648613d8647fa2c8630e48d3128ece7}{Reserved1}};}
+\DoxyCodeLine{00106\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \mbox{\hyperlink{struct__atecc608__config_ac43b4d9fe32b89c266d2274be2b3a9d7}{I2C\_Address}};}
+\DoxyCodeLine{00107\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \mbox{\hyperlink{struct__atecc608__config_a62cbd33932c58ba49df9adaa2255ac9e}{Reserved2}};}
+\DoxyCodeLine{00108\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \mbox{\hyperlink{struct__atecc608__config_a99e587c72cbe2d56eb5a87c81cf45fcf}{CountMatch}};}
+\DoxyCodeLine{00109\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \mbox{\hyperlink{struct__atecc608__config_abd314f2db4bf05988e515dabc6772164}{ChipMode}};}
+\DoxyCodeLine{00110\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ SlotConfig[16];}
+\DoxyCodeLine{00111\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ Counter0[8];}
+\DoxyCodeLine{00112\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ Counter1[8];}
+\DoxyCodeLine{00113\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \mbox{\hyperlink{struct__atecc608__config_a2fa3a9fda938e93b9d86aed0990e41af}{UseLock}};}
+\DoxyCodeLine{00114\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \mbox{\hyperlink{struct__atecc608__config_a1a9793a16f6a9d204f82aaae0d93da03}{VolatileKeyPermission}};}
+\DoxyCodeLine{00115\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \mbox{\hyperlink{struct__atecc608__config_af98e853b121c20fbbd6851a6932c07ec}{SecureBoot}};}
+\DoxyCodeLine{00116\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \mbox{\hyperlink{struct__atecc608__config_ac3dba91c691c058c909114036392300e}{KdflvLoc}};}
+\DoxyCodeLine{00117\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \mbox{\hyperlink{struct__atecc608__config_a51e4a6c20a634685f99dcbecb26c04d3}{KdflvStr}};}
+\DoxyCodeLine{00118\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ Reserved3[9];}
+\DoxyCodeLine{00119\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \mbox{\hyperlink{struct__atecc608__config_a2da7ba08f40ddec73e011395c3386d08}{UserExtra}};}
+\DoxyCodeLine{00120\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \mbox{\hyperlink{struct__atecc608__config_a075ad63ac1813b05bd178755de762b90}{UserExtraAdd}};}
+\DoxyCodeLine{00121\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \mbox{\hyperlink{struct__atecc608__config_a9dbe7e97c7a89c4611d806ba1df8ed2d}{LockValue}};}
+\DoxyCodeLine{00122\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \mbox{\hyperlink{struct__atecc608__config_ad2569e7c77a4b2b3cca7f11979f2a7b1}{LockConfig}};}
+\DoxyCodeLine{00123\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \mbox{\hyperlink{struct__atecc608__config_aa3b250b9c1956ad9c827d3417e06bada}{SlotLocked}};}
+\DoxyCodeLine{00124\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \mbox{\hyperlink{struct__atecc608__config_a35e316d01c7f5476fe3ff597b7e0d1fb}{ChipOptions}};}
+\DoxyCodeLine{00125\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ \mbox{\hyperlink{struct__atecc608__config_af369b9fd540ea8b01b6eafeb74bf38dd}{X509format}};}
+\DoxyCodeLine{00126\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ KeyConfig[16];}
+\DoxyCodeLine{00127\ \}\ \mbox{\hyperlink{group__device_gabaf6170e59bd2ccdda5b53789e012505}{atecc608\_config\_t}};}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00129\ \textcolor{preprocessor}{\#ifndef\ ATCA\_NO\_PRAGMA\_PACK}}
+\DoxyCodeLine{00130\ \textcolor{preprocessor}{\#pragma\ pack(pop)}}
+\DoxyCodeLine{00131\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00135\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00136\ \{}
+\DoxyCodeLine{00137\ \ \ \ \ \mbox{\hyperlink{group__device_gga765308123cf522f5ec8b528bf4ea1243a63b66c34fbe9ae97d123487be138ad49}{ATCA\_DEVICE\_STATE\_UNKNOWN}}\ =\ 0,}
+\DoxyCodeLine{00138\ \ \ \ \ \mbox{\hyperlink{group__device_gga765308123cf522f5ec8b528bf4ea1243a94ff4a4e6aecf9bce31e3395eb13d080}{ATCA\_DEVICE\_STATE\_SLEEP}},}
+\DoxyCodeLine{00139\ \ \ \ \ \mbox{\hyperlink{group__device_gga765308123cf522f5ec8b528bf4ea1243a6387319b28607ca0b70a0e1f4b5d64fc}{ATCA\_DEVICE\_STATE\_IDLE}},}
+\DoxyCodeLine{00140\ \ \ \ \ \mbox{\hyperlink{group__device_gga765308123cf522f5ec8b528bf4ea1243ae56ae390858b5c3adda40857974f2269}{ATCA\_DEVICE\_STATE\_ACTIVE}}}
+\DoxyCodeLine{00141\ \}\ \mbox{\hyperlink{group__device_ga765308123cf522f5ec8b528bf4ea1243}{ATCADeviceState}};}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00147\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structatca__device}{atca\_device}}}
+\DoxyCodeLine{00148\ \{}
+\DoxyCodeLine{00149\ \ \ \ \ \mbox{\hyperlink{structatca__iface}{atca\_iface\_t}}\ \mbox{\hyperlink{structatca__device_a725646466f0ea8e0982251189c15724a}{mIface}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00150\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ \ \mbox{\hyperlink{structatca__device_a6ce22e245944629826d4869f69babf81}{device\_state}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00152\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \mbox{\hyperlink{structatca__device_af234458fd6f00d419ba251c85a094552}{clock\_divider}};}
+\DoxyCodeLine{00153\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \mbox{\hyperlink{structatca__device_a8233576666e94e6502b3dab6864d6a8d}{execution\_time\_msec}};}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00155\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \mbox{\hyperlink{structatca__device_a5ef5be53e038f637ebe8203308e7d21c}{session\_state}};\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00156\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \mbox{\hyperlink{structatca__device_a10e2bba93ab0eb51cd28375ef154f665}{session\_counter}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00157\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \mbox{\hyperlink{structatca__device_a3fa4c1266411ba23db39f53d547acfe6}{session\_key\_id}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00158\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}*\ \mbox{\hyperlink{structatca__device_a5ce110c62b5d94cbe36e41ae0a800953}{session\_key}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00159\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \mbox{\hyperlink{structatca__device_a2b7c90949bd561e10151c7e96a9a789c}{session\_key\_len}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00161\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \mbox{\hyperlink{structatca__device_a7e72f63e929fa9de4f63d785448a9217}{options}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00163\ \};}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00165\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structatca__device}{atca\_device}}\ *\ \mbox{\hyperlink{group__device_gaa94f7bb4af0a3d6735225cc85d92cb50}{ATCADevice}};}
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00167\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ \mbox{\hyperlink{group__device_ga2384229af05af1746b431772c815caf9}{initATCADevice}}(\mbox{\hyperlink{struct_a_t_c_a_iface_cfg}{ATCAIfaceCfg}}*\ cfg,\ \mbox{\hyperlink{structatca__device}{ATCADevice}}\ cadev);}
+\DoxyCodeLine{00168\ \mbox{\hyperlink{structatca__device}{ATCADevice}}\ \mbox{\hyperlink{group__device_gad5e12e12d3030e28d75164286df9e5e9}{newATCADevice}}(\mbox{\hyperlink{struct_a_t_c_a_iface_cfg}{ATCAIfaceCfg}}\ *cfg);}
+\DoxyCodeLine{00169\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ \mbox{\hyperlink{group__device_gab729e6c838c0a247d4f226fb92492d96}{releaseATCADevice}}(\mbox{\hyperlink{structatca__device}{ATCADevice}}\ ca\_dev);}
+\DoxyCodeLine{00170\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__device_gac087cf04cd5bd6ff2e026d89bfbf5e12}{deleteATCADevice}}(\mbox{\hyperlink{structatca__device}{ATCADevice}}\ *ca\_dev);}
+\DoxyCodeLine{00171\ }
+\DoxyCodeLine{00172\ \mbox{\hyperlink{structatca__iface}{ATCAIface}}\ \mbox{\hyperlink{group__device_ga3f98e29cffa06446fc91b329703606af}{atGetIFace}}(\mbox{\hyperlink{structatca__device}{ATCADevice}}\ dev);}
+\DoxyCodeLine{00173\ }
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00175\ }
+\DoxyCodeLine{00176\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00177\ \}}
+\DoxyCodeLine{00178\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00179\ \textcolor{preprocessor}{\#define\ ATCA\_AES\_ENABLE\_EN\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0)}}
+\DoxyCodeLine{00180\ \textcolor{preprocessor}{\#define\ ATCA\_AES\_ENABLE\_EN\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x01u\ <<\ ATCA\_AES\_ENABLE\_EN\_SHIFT)}}
+\DoxyCodeLine{00181\ }
+\DoxyCodeLine{00182\ \textcolor{comment}{/*\ I2C\ */}}
+\DoxyCodeLine{00183\ \textcolor{preprocessor}{\#define\ ATCA\_I2C\_ENABLE\_EN\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0)}}
+\DoxyCodeLine{00184\ \textcolor{preprocessor}{\#define\ ATCA\_I2C\_ENABLE\_EN\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x01u\ <<\ ATCA\_I2C\_ENABLE\_EN\_SHIFT)}}
+\DoxyCodeLine{00185\ }
+\DoxyCodeLine{00186\ \textcolor{comment}{/*\ Counter\ Match\ Feature\ */}}
+\DoxyCodeLine{00187\ \textcolor{preprocessor}{\#define\ ATCA\_COUNTER\_MATCH\_EN\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ (0)}}
+\DoxyCodeLine{00188\ \textcolor{preprocessor}{\#define\ ATCA\_COUNTER\_MATCH\_EN\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x01u\ <<\ ATCA\_COUNTER\_MATCH\_EN\_SHIFT)}}
+\DoxyCodeLine{00189\ \textcolor{preprocessor}{\#define\ ATCA\_COUNTER\_MATCH\_KEY\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ (4)}}
+\DoxyCodeLine{00190\ \textcolor{preprocessor}{\#define\ ATCA\_COUNTER\_MATCH\_KEY\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ (0x0Fu\ <<\ ATCA\_COUNTER\_MATCH\_KEY\_SHIFT)}}
+\DoxyCodeLine{00191\ \textcolor{preprocessor}{\#define\ ATCA\_COUNTER\_MATCH\_KEY(v)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (ATCA\_COUNTER\_MATCH\_KEY\_MASK\ \&\ (v\ <<\ ATCA\_COUNTER\_MATCH\_KEY\_SHIFT))}}
+\DoxyCodeLine{00192\ }
+\DoxyCodeLine{00193\ \textcolor{comment}{/*\ ChipMode\ */}}
+\DoxyCodeLine{00194\ \textcolor{preprocessor}{\#define\ ATCA\_CHIP\_MODE\_I2C\_EXTRA\_SHIFT\ \ \ \ \ \ \ \ \ \ (0)}}
+\DoxyCodeLine{00195\ \textcolor{preprocessor}{\#define\ ATCA\_CHIP\_MODE\_I2C\_EXTRA\_MASK\ \ \ \ \ \ \ \ \ \ \ (0x01u\ <<\ ATCA\_CHIP\_MODE\_I2C\_EXTRA\_SHIFT)}}
+\DoxyCodeLine{00196\ \textcolor{preprocessor}{\#define\ ATCA\_CHIP\_MODE\_TTL\_EN\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ (1)}}
+\DoxyCodeLine{00197\ \textcolor{preprocessor}{\#define\ ATCA\_CHIP\_MODE\_TTL\_EN\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x01u\ <<\ ATCA\_CHIP\_MODE\_TTL\_EN\_SHIFT)}}
+\DoxyCodeLine{00198\ \textcolor{preprocessor}{\#define\ ATCA\_CHIP\_MODE\_WDG\_LONG\_SHIFT\ \ \ \ \ \ \ \ \ \ \ (2)}}
+\DoxyCodeLine{00199\ \textcolor{preprocessor}{\#define\ ATCA\_CHIP\_MODE\_WDG\_LONG\_MASK\ \ \ \ \ \ \ \ \ \ \ \ (0x01u\ <<\ ATCA\_CHIP\_MODE\_WDG\_LONG\_SHIFT)}}
+\DoxyCodeLine{00200\ \textcolor{preprocessor}{\#define\ ATCA\_CHIP\_MODE\_CLK\_DIV\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ (3)}}
+\DoxyCodeLine{00201\ \textcolor{preprocessor}{\#define\ ATCA\_CHIP\_MODE\_CLK\_DIV\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ (0x1Fu\ <<\ ATCA\_CHIP\_MODE\_CLK\_DIV\_SHIFT)}}
+\DoxyCodeLine{00202\ \textcolor{preprocessor}{\#define\ ATCA\_CHIP\_MODE\_CLK\_DIV(v)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (ATCA\_CHIP\_MODE\_CLK\_DIV\_MASK\ \&\ (v\ <<\ ATCA\_CHIP\_MODE\_CLK\_DIV\_SHIFT))}}
+\DoxyCodeLine{00203\ }
+\DoxyCodeLine{00204\ \textcolor{comment}{/*\ General\ Purpose\ Slot\ Config\ (Not\ ECC\ Private\ Keys)\ */}}
+\DoxyCodeLine{00205\ \textcolor{preprocessor}{\#define\ ATCA\_SLOT\_CONFIG\_READKEY\_SHIFT\ \ \ \ \ \ \ \ \ \ (0)}}
+\DoxyCodeLine{00206\ \textcolor{preprocessor}{\#define\ ATCA\_SLOT\_CONFIG\_READKEY\_MASK\ \ \ \ \ \ \ \ \ \ \ (0x0Fu\ <<\ ATCA\_SLOT\_CONFIG\_READKEY\_SHIFT)}}
+\DoxyCodeLine{00207\ \textcolor{preprocessor}{\#define\ ATCA\_SLOT\_CONFIG\_READKEY(v)\ \ \ \ \ \ \ \ \ \ \ \ \ (ATCA\_SLOT\_CONFIG\_READKEY\_MASK\ \&\ (v\ <<\ ATCA\_SLOT\_CONFIG\_READKEY\_SHIFT))}}
+\DoxyCodeLine{00208\ \textcolor{preprocessor}{\#define\ ATCA\_SLOT\_CONFIG\_NOMAC\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ (4)}}
+\DoxyCodeLine{00209\ \textcolor{preprocessor}{\#define\ ATCA\_SLOT\_CONFIG\_NOMAC\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ (0x01u\ <<\ ATCA\_SLOT\_CONFIG\_NOMAC\_SHIFT)}}
+\DoxyCodeLine{00210\ \textcolor{preprocessor}{\#define\ ATCA\_SLOT\_CONFIG\_LIMITED\_USE\_SHIFT\ \ \ \ \ \ (5)}}
+\DoxyCodeLine{00211\ \textcolor{preprocessor}{\#define\ ATCA\_SLOT\_CONFIG\_LIMITED\_USE\_MASK\ \ \ \ \ \ \ (0x01u\ <<\ ATCA\_SLOT\_CONFIG\_LIMITED\_USE\_SHIFT)}}
+\DoxyCodeLine{00212\ \textcolor{preprocessor}{\#define\ ATCA\_SLOT\_CONFIG\_ENCRYPTED\_READ\_SHIFT\ \ \ (6)}}
+\DoxyCodeLine{00213\ \textcolor{preprocessor}{\#define\ ATCA\_SLOT\_CONFIG\_ENCRYPTED\_READ\_MASK\ \ \ \ (0x01u\ <<\ ATCA\_SLOT\_CONFIG\_ENCRYPTED\_READ\_SHIFT)}}
+\DoxyCodeLine{00214\ \textcolor{preprocessor}{\#define\ ATCA\_SLOT\_CONFIG\_IS\_SECRET\_SHIFT\ \ \ \ \ \ \ \ (7)}}
+\DoxyCodeLine{00215\ \textcolor{preprocessor}{\#define\ ATCA\_SLOT\_CONFIG\_IS\_SECRET\_MASK\ \ \ \ \ \ \ \ \ (0x01u\ <<\ ATCA\_SLOT\_CONFIG\_IS\_SECRET\_SHIFT)}}
+\DoxyCodeLine{00216\ \textcolor{preprocessor}{\#define\ ATCA\_SLOT\_CONFIG\_WRITE\_KEY\_SHIFT\ \ \ \ \ \ \ \ (8)}}
+\DoxyCodeLine{00217\ \textcolor{preprocessor}{\#define\ ATCA\_SLOT\_CONFIG\_WRITE\_KEY\_MASK\ \ \ \ \ \ \ \ \ (0x0Fu\ <<\ ATCA\_SLOT\_CONFIG\_WRITE\_KEY\_SHIFT)}}
+\DoxyCodeLine{00218\ \textcolor{preprocessor}{\#define\ ATCA\_SLOT\_CONFIG\_WRITE\_KEY(v)\ \ \ \ \ \ \ \ \ \ \ (ATCA\_SLOT\_CONFIG\_WRITE\_KEY\_MASK\ \&\ (v\ <<\ ATCA\_SLOT\_CONFIG\_WRITE\_KEY\_SHIFT))}}
+\DoxyCodeLine{00219\ \textcolor{preprocessor}{\#define\ ATCA\_SLOT\_CONFIG\_WRITE\_CONFIG\_SHIFT\ \ \ \ \ (12)}}
+\DoxyCodeLine{00220\ \textcolor{preprocessor}{\#define\ ATCA\_SLOT\_CONFIG\_WRITE\_CONFIG\_MASK\ \ \ \ \ \ (0x0Fu\ <<\ ATCA\_SLOT\_CONFIG\_WRITE\_CONFIG\_SHIFT)}}
+\DoxyCodeLine{00221\ \textcolor{preprocessor}{\#define\ ATCA\_SLOT\_CONFIG\_WRITE\_CONFIG(v)\ \ \ \ \ \ \ \ (ATCA\_SLOT\_CONFIG\_WRITE\_CONFIG\_MASK\ \&\ (v\ <<\ ATCA\_SLOT\_CONFIG\_WRITE\_CONFIG\_SHIFT))}}
+\DoxyCodeLine{00222\ }
+\DoxyCodeLine{00223\ \textcolor{comment}{/*\ Slot\ Config\ for\ ECC\ Private\ Keys\ */}}
+\DoxyCodeLine{00224\ \textcolor{preprocessor}{\#define\ ATCA\_SLOT\_CONFIG\_EXT\_SIG\_SHIFT\ \ \ \ \ \ \ \ \ \ (0)}}
+\DoxyCodeLine{00225\ \textcolor{preprocessor}{\#define\ ATCA\_SLOT\_CONFIG\_EXT\_SIG\_MASK\ \ \ \ \ \ \ \ \ \ \ (0x01u\ <<\ ATCA\_SLOT\_CONFIG\_EXT\_SIG\_SHIFT)}}
+\DoxyCodeLine{00226\ \textcolor{preprocessor}{\#define\ ATCA\_SLOT\_CONFIG\_INT\_SIG\_SHIFT\ \ \ \ \ \ \ \ \ \ (1)}}
+\DoxyCodeLine{00227\ \textcolor{preprocessor}{\#define\ ATCA\_SLOT\_CONFIG\_INT\_SIG\_MASK\ \ \ \ \ \ \ \ \ \ \ (0x01u\ <<\ ATCA\_SLOT\_CONFIG\_INT\_SIG\_SHIFT)}}
+\DoxyCodeLine{00228\ \textcolor{preprocessor}{\#define\ ATCA\_SLOT\_CONFIG\_ECDH\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ (2)}}
+\DoxyCodeLine{00229\ \textcolor{preprocessor}{\#define\ ATCA\_SLOT\_CONFIG\_ECDH\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x01u\ <<\ ATCA\_SLOT\_CONFIG\_ECDH\_SHIFT)}}
+\DoxyCodeLine{00230\ \textcolor{preprocessor}{\#define\ ATCA\_SLOT\_CONFIG\_WRITE\_ECDH\_SHIFT\ \ \ \ \ \ \ (3)}}
+\DoxyCodeLine{00231\ \textcolor{preprocessor}{\#define\ ATCA\_SLOT\_CONFIG\_WRITE\_ECDH\_MASK\ \ \ \ \ \ \ \ (0x01u\ <<\ ATCA\_SLOT\_CONFIG\_WRITE\_ECDH\_SHIFT)}}
+\DoxyCodeLine{00232\ \textcolor{preprocessor}{\#define\ ATCA\_SLOT\_CONFIG\_GEN\_KEY\_SHIFT\ \ \ \ \ \ \ \ \ \ (8)}}
+\DoxyCodeLine{00233\ \textcolor{preprocessor}{\#define\ ATCA\_SLOT\_CONFIG\_GEN\_KEY\_MASK\ \ \ \ \ \ \ \ \ \ \ (0x01u\ <<\ ATCA\_SLOT\_CONFIG\_GEN\_KEY\_SHIFT)}}
+\DoxyCodeLine{00234\ \textcolor{preprocessor}{\#define\ ATCA\_SLOT\_CONFIG\_PRIV\_WRITE\_SHIFT\ \ \ \ \ \ \ (9)}}
+\DoxyCodeLine{00235\ \textcolor{preprocessor}{\#define\ ATCA\_SLOT\_CONFIG\_PRIV\_WRITE\_MASK\ \ \ \ \ \ \ \ (0x01u\ <<\ ATCA\_SLOT\_CONFIG\_PRIV\_WRITE\_SHIFT)}}
+\DoxyCodeLine{00236\ }
+\DoxyCodeLine{00237\ \textcolor{comment}{/*\ Use\ Lock\ */}}
+\DoxyCodeLine{00238\ \textcolor{preprocessor}{\#define\ ATCA\_USE\_LOCK\_ENABLE\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ (0)}}
+\DoxyCodeLine{00239\ \textcolor{preprocessor}{\#define\ ATCA\_USE\_LOCK\_ENABLE\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x0Fu\ <<\ ATCA\_USE\_LOCK\_ENABLE\_SHIFT)}}
+\DoxyCodeLine{00240\ \textcolor{preprocessor}{\#define\ ATCA\_USE\_LOCK\_KEY\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (4)}}
+\DoxyCodeLine{00241\ \textcolor{preprocessor}{\#define\ ATCA\_USE\_LOCK\_KEY\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x0Fu\ <<\ ATCA\_USE\_LOCK\_KEY\_SHIFT)}}
+\DoxyCodeLine{00242\ }
+\DoxyCodeLine{00243\ \textcolor{comment}{/*\ Voltatile\ Key\ Permission\ */}}
+\DoxyCodeLine{00244\ \textcolor{preprocessor}{\#define\ ATCA\_VOL\_KEY\_PERM\_SLOT\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ (0)}}
+\DoxyCodeLine{00245\ \textcolor{preprocessor}{\#define\ ATCA\_VOL\_KEY\_PERM\_SLOT\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ (0x0Fu\ <<\ ATCA\_VOL\_KEY\_PERM\_SLOT\_SHIFT)}}
+\DoxyCodeLine{00246\ \textcolor{preprocessor}{\#define\ ATCA\_VOL\_KEY\_PERM\_SLOT(v)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (ATCA\_VOL\_KEY\_PERM\_SLOT\_MASK\ \&\ (v\ <<\ ATCA\_VOL\_KEY\_PERM\_SLOT\_SHIFT))}}
+\DoxyCodeLine{00247\ \textcolor{preprocessor}{\#define\ ATCA\_VOL\_KEY\_PERM\_EN\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ (7)}}
+\DoxyCodeLine{00248\ \textcolor{preprocessor}{\#define\ ATCA\_VOL\_KEY\_PERM\_EN\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x01u\ <<\ ATCA\_VOL\_KEY\_PERM\_EN\_SHIFT)}}
+\DoxyCodeLine{00249\ }
+\DoxyCodeLine{00250\ \textcolor{comment}{/*\ Secure\ Boot\ */}}
+\DoxyCodeLine{00251\ \textcolor{preprocessor}{\#define\ ATCA\_SECURE\_BOOT\_MODE\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ (0)}}
+\DoxyCodeLine{00252\ \textcolor{preprocessor}{\#define\ ATCA\_SECURE\_BOOT\_MODE\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x03u\ <<\ ATCA\_SECURE\_BOOT\_MODE\_SHIFT)}}
+\DoxyCodeLine{00253\ \textcolor{preprocessor}{\#define\ ATCA\_SECURE\_BOOT\_MODE(v)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (ATCA\_SECURE\_BOOT\_MODE\_MASK\ \&\ (v\ <<\ ATCA\_SECURE\_BOOT\_MODE\_SHIFT))}}
+\DoxyCodeLine{00254\ \textcolor{preprocessor}{\#define\ ATCA\_SECURE\_BOOT\_PERSIST\_EN\_SHIFT\ \ \ \ \ \ \ (3)}}
+\DoxyCodeLine{00255\ \textcolor{preprocessor}{\#define\ ATCA\_SECURE\_BOOT\_PERSIST\_EN\_MASK\ \ \ \ \ \ \ \ (0x01u\ <<\ ATCA\_SECURE\_BOOT\_PERSIST\_EN\_SHIFT)}}
+\DoxyCodeLine{00256\ \textcolor{preprocessor}{\#define\ ATCA\_SECURE\_BOOT\_RAND\_NONCE\_SHIFT\ \ \ \ \ \ \ (4)}}
+\DoxyCodeLine{00257\ \textcolor{preprocessor}{\#define\ ATCA\_SECURE\_BOOT\_RAND\_NONCE\_MASK\ \ \ \ \ \ \ \ (0x01u\ <<\ ATCA\_SECURE\_BOOT\_RAND\_NONCE\_SHIFT)}}
+\DoxyCodeLine{00258\ \textcolor{preprocessor}{\#define\ ATCA\_SECURE\_BOOT\_DIGEST\_SHIFT\ \ \ \ \ \ \ \ \ \ \ (8)}}
+\DoxyCodeLine{00259\ \textcolor{preprocessor}{\#define\ ATCA\_SECURE\_BOOT\_DIGEST\_MASK\ \ \ \ \ \ \ \ \ \ \ \ (0x0Fu\ <<\ ATCA\_SECURE\_BOOT\_DIGEST\_SHIFT)}}
+\DoxyCodeLine{00260\ \textcolor{preprocessor}{\#define\ ATCA\_SECURE\_BOOT\_DIGEST(v)\ \ \ \ \ \ \ \ \ \ \ \ \ \ (ATCA\_SECURE\_BOOT\_DIGEST\_MASK\ \&\ (v\ <<\ ATCA\_SECURE\_BOOT\_DIGEST\_SHIFT))}}
+\DoxyCodeLine{00261\ \textcolor{preprocessor}{\#define\ ATCA\_SECURE\_BOOT\_PUB\_KEY\_SHIFT\ \ \ \ \ \ \ \ \ \ (12)}}
+\DoxyCodeLine{00262\ \textcolor{preprocessor}{\#define\ ATCA\_SECURE\_BOOT\_PUB\_KEY\_MASK\ \ \ \ \ \ \ \ \ \ \ (0x0Fu\ <<\ ATCA\_SECURE\_BOOT\_PUB\_KEY\_SHIFT)}}
+\DoxyCodeLine{00263\ \textcolor{preprocessor}{\#define\ ATCA\_SECURE\_BOOT\_PUB\_KEY(v)\ \ \ \ \ \ \ \ \ \ \ \ \ (ATCA\_SECURE\_BOOT\_PUB\_KEY\_MASK\ \&\ (v\ <<\ ATCA\_SECURE\_BOOT\_PUB\_KEY\_SHIFT))}}
+\DoxyCodeLine{00264\ }
+\DoxyCodeLine{00265\ \textcolor{comment}{/*\ Slot\ Locked\ */}}
+\DoxyCodeLine{00266\ \textcolor{preprocessor}{\#define\ ATCA\_SLOT\_LOCKED(v)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((0x01\ <<\ v)\ \&\ 0xFFFFu)}}
+\DoxyCodeLine{00267\ }
+\DoxyCodeLine{00268\ \textcolor{comment}{/*\ Chip\ Options\ */}}
+\DoxyCodeLine{00269\ \textcolor{preprocessor}{\#define\ ATCA\_CHIP\_OPT\_POST\_EN\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ (0)}}
+\DoxyCodeLine{00270\ \textcolor{preprocessor}{\#define\ ATCA\_CHIP\_OPT\_POST\_EN\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x01u\ <<\ ATCA\_CHIP\_OPT\_POST\_EN\_SHIFT)}}
+\DoxyCodeLine{00271\ \textcolor{preprocessor}{\#define\ ATCA\_CHIP\_OPT\_IO\_PROT\_EN\_SHIFT\ \ \ \ \ \ \ \ \ \ (1)}}
+\DoxyCodeLine{00272\ \textcolor{preprocessor}{\#define\ ATCA\_CHIP\_OPT\_IO\_PROT\_EN\_MASK\ \ \ \ \ \ \ \ \ \ \ (0x01u\ <<\ ATCA\_CHIP\_OPT\_IO\_PROT\_EN\_SHIFT)}}
+\DoxyCodeLine{00273\ \textcolor{preprocessor}{\#define\ ATCA\_CHIP\_OPT\_KDF\_AES\_EN\_SHIFT\ \ \ \ \ \ \ \ \ \ (2)}}
+\DoxyCodeLine{00274\ \textcolor{preprocessor}{\#define\ ATCA\_CHIP\_OPT\_KDF\_AES\_EN\_MASK\ \ \ \ \ \ \ \ \ \ \ (0x01u\ <<\ ATCA\_CHIP\_OPT\_KDF\_AES\_EN\_SHIFT)}}
+\DoxyCodeLine{00275\ \textcolor{preprocessor}{\#define\ ATCA\_CHIP\_OPT\_ECDH\_PROT\_SHIFT\ \ \ \ \ \ \ \ \ \ \ (8)}}
+\DoxyCodeLine{00276\ \textcolor{preprocessor}{\#define\ ATCA\_CHIP\_OPT\_ECDH\_PROT\_MASK\ \ \ \ \ \ \ \ \ \ \ \ (0x03u\ <<\ ATCA\_CHIP\_OPT\_ECDH\_PROT\_SHIFT)}}
+\DoxyCodeLine{00277\ \textcolor{preprocessor}{\#define\ ATCA\_CHIP\_OPT\_ECDH\_PROT(v)\ \ \ \ \ \ \ \ \ \ \ \ \ \ (ATCA\_CHIP\_OPT\_ECDH\_PROT\_MASK\ \&\ (v\ <<\ ATCA\_CHIP\_OPT\_ECDH\_PROT\_SHIFT))}}
+\DoxyCodeLine{00278\ \textcolor{preprocessor}{\#define\ ATCA\_CHIP\_OPT\_KDF\_PROT\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ (10)}}
+\DoxyCodeLine{00279\ \textcolor{preprocessor}{\#define\ ATCA\_CHIP\_OPT\_KDF\_PROT\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ (0x03u\ <<\ ATCA\_CHIP\_OPT\_KDF\_PROT\_SHIFT)}}
+\DoxyCodeLine{00280\ \textcolor{preprocessor}{\#define\ ATCA\_CHIP\_OPT\_KDF\_PROT(v)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (ATCA\_CHIP\_OPT\_KDF\_PROT\_MASK\ \&\ (v\ <<\ ATCA\_CHIP\_OPT\_KDF\_PROT\_SHIFT))}}
+\DoxyCodeLine{00281\ \textcolor{preprocessor}{\#define\ ATCA\_CHIP\_OPT\_IO\_PROT\_KEY\_SHIFT\ \ \ \ \ \ \ \ \ (12)}}
+\DoxyCodeLine{00282\ \textcolor{preprocessor}{\#define\ ATCA\_CHIP\_OPT\_IO\_PROT\_KEY\_MASK\ \ \ \ \ \ \ \ \ \ (0x0Fu\ <<\ ATCA\_CHIP\_OPT\_IO\_PROT\_KEY\_SHIFT)}}
+\DoxyCodeLine{00283\ \textcolor{preprocessor}{\#define\ ATCA\_CHIP\_OPT\_IO\_PROT\_KEY(v)\ \ \ \ \ \ \ \ \ \ \ \ (ATCA\_CHIP\_OPT\_IO\_PROT\_KEY\_MASK\ \&\ (v\ <<\ ATCA\_CHIP\_OPT\_IO\_PROT\_KEY\_SHIFT))}}
+\DoxyCodeLine{00284\ }
+\DoxyCodeLine{00285\ \textcolor{comment}{/*\ Key\ Config\ */}}
+\DoxyCodeLine{00286\ \textcolor{preprocessor}{\#define\ ATCA\_KEY\_CONFIG\_OFFSET(x)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (96UL\ +\ (x)\ *\ 2)}}
+\DoxyCodeLine{00287\ \textcolor{preprocessor}{\#define\ ATCA\_KEY\_CONFIG\_PRIVATE\_SHIFT\ \ \ \ \ \ \ \ \ \ \ (0)}}
+\DoxyCodeLine{00288\ \textcolor{preprocessor}{\#define\ ATCA\_KEY\_CONFIG\_PRIVATE\_MASK\ \ \ \ \ \ \ \ \ \ \ \ (0x01u\ <<\ ATCA\_KEY\_CONFIG\_PRIVATE\_SHIFT)}}
+\DoxyCodeLine{00289\ \textcolor{preprocessor}{\#define\ ATCA\_KEY\_CONFIG\_PUB\_INFO\_SHIFT\ \ \ \ \ \ \ \ \ \ (1)}}
+\DoxyCodeLine{00290\ \textcolor{preprocessor}{\#define\ ATCA\_KEY\_CONFIG\_PUB\_INFO\_MASK\ \ \ \ \ \ \ \ \ \ \ (0x01u\ <<\ ATCA\_KEY\_CONFIG\_PUB\_INFO\_SHIFT)}}
+\DoxyCodeLine{00291\ \textcolor{preprocessor}{\#define\ ATCA\_KEY\_CONFIG\_KEY\_TYPE\_SHIFT\ \ \ \ \ \ \ \ \ \ (2)}}
+\DoxyCodeLine{00292\ \textcolor{preprocessor}{\#define\ ATCA\_KEY\_CONFIG\_KEY\_TYPE\_MASK\ \ \ \ \ \ \ \ \ \ \ (0x07u\ <<\ ATCA\_KEY\_CONFIG\_KEY\_TYPE\_SHIFT)}}
+\DoxyCodeLine{00293\ \textcolor{preprocessor}{\#define\ ATCA\_KEY\_CONFIG\_KEY\_TYPE(v)\ \ \ \ \ \ \ \ \ \ \ \ \ (ATCA\_KEY\_CONFIG\_KEY\_TYPE\_MASK\ \&\ (v\ <<\ ATCA\_KEY\_CONFIG\_KEY\_TYPE\_SHIFT))}}
+\DoxyCodeLine{00294\ \textcolor{preprocessor}{\#define\ ATCA\_KEY\_CONFIG\_LOCKABLE\_SHIFT\ \ \ \ \ \ \ \ \ \ (5)}}
+\DoxyCodeLine{00295\ \textcolor{preprocessor}{\#define\ ATCA\_KEY\_CONFIG\_LOCKABLE\_MASK\ \ \ \ \ \ \ \ \ \ \ (0x01u\ <<\ ATCA\_KEY\_CONFIG\_LOCKABLE\_SHIFT)}}
+\DoxyCodeLine{00296\ \textcolor{preprocessor}{\#define\ ATCA\_KEY\_CONFIG\_REQ\_RANDOM\_SHIFT\ \ \ \ \ \ \ \ (6)}}
+\DoxyCodeLine{00297\ \textcolor{preprocessor}{\#define\ ATCA\_KEY\_CONFIG\_REQ\_RANDOM\_MASK\ \ \ \ \ \ \ \ \ (0x01u\ <<\ ATCA\_KEY\_CONFIG\_REQ\_RANDOM\_SHIFT)}}
+\DoxyCodeLine{00298\ \textcolor{preprocessor}{\#define\ ATCA\_KEY\_CONFIG\_REQ\_AUTH\_SHIFT\ \ \ \ \ \ \ \ \ \ (7)}}
+\DoxyCodeLine{00299\ \textcolor{preprocessor}{\#define\ ATCA\_KEY\_CONFIG\_REQ\_AUTH\_MASK\ \ \ \ \ \ \ \ \ \ \ (0x01u\ <<\ ATCA\_KEY\_CONFIG\_REQ\_AUTH\_SHIFT)}}
+\DoxyCodeLine{00300\ \textcolor{preprocessor}{\#define\ ATCA\_KEY\_CONFIG\_AUTH\_KEY\_SHIFT\ \ \ \ \ \ \ \ \ \ (8)}}
+\DoxyCodeLine{00301\ \textcolor{preprocessor}{\#define\ ATCA\_KEY\_CONFIG\_AUTH\_KEY\_MASK\ \ \ \ \ \ \ \ \ \ \ (0x0Fu\ <<\ ATCA\_KEY\_CONFIG\_AUTH\_KEY\_SHIFT)}}
+\DoxyCodeLine{00302\ \textcolor{preprocessor}{\#define\ ATCA\_KEY\_CONFIG\_AUTH\_KEY(v)\ \ \ \ \ \ \ \ \ \ \ \ \ (ATCA\_KEY\_CONFIG\_AUTH\_KEY\_MASK\ \&\ (v\ <<\ ATCA\_KEY\_CONFIG\_AUTH\_KEY\_SHIFT))}}
+\DoxyCodeLine{00303\ \textcolor{preprocessor}{\#define\ ATCA\_KEY\_CONFIG\_PERSIST\_DISABLE\_SHIFT\ \ \ (12)}}
+\DoxyCodeLine{00304\ \textcolor{preprocessor}{\#define\ ATCA\_KEY\_CONFIG\_PERSIST\_DISABLE\_MASK\ \ \ \ (0x01u\ <<\ ATCA\_KEY\_CONFIG\_PERSIST\_DISABLE\_SHIFT)}}
+\DoxyCodeLine{00305\ \textcolor{preprocessor}{\#define\ ATCA\_KEY\_CONFIG\_RFU\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (13)}}
+\DoxyCodeLine{00306\ \textcolor{preprocessor}{\#define\ ATCA\_KEY\_CONFIG\_RFU\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x01u\ <<\ ATCA\_KEY\_CONFIG\_RFU\_SHIFT)}}
+\DoxyCodeLine{00307\ \textcolor{preprocessor}{\#define\ ATCA\_KEY\_CONFIG\_X509\_ID\_SHIFT\ \ \ \ \ \ \ \ \ \ \ (14)}}
+\DoxyCodeLine{00308\ \textcolor{preprocessor}{\#define\ ATCA\_KEY\_CONFIG\_X509\_ID\_MASK\ \ \ \ \ \ \ \ \ \ \ \ (0x03u\ <<\ ATCA\_KEY\_CONFIG\_X509\_ID\_SHIFT)}}
+\DoxyCodeLine{00309\ \textcolor{preprocessor}{\#define\ ATCA\_KEY\_CONFIG\_X509\_ID(v)\ \ \ \ \ \ \ \ \ \ \ \ \ \ (ATCA\_KEY\_CONFIG\_X509\_ID\_MASK\ \&\ (v\ <<\ ATCA\_KEY\_CONFIG\_X509\_ID\_SHIFT))}}
+\DoxyCodeLine{00311\ \textcolor{comment}{/*lint\ -\/flb*/}}
+\DoxyCodeLine{00312\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

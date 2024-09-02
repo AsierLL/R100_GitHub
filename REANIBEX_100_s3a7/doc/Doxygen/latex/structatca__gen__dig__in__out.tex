@@ -1,0 +1,167 @@
+\doxysection{atca\+\_\+gen\+\_\+dig\+\_\+in\+\_\+out Struct Reference}
+\hypertarget{structatca__gen__dig__in__out}{}\label{structatca__gen__dig__in__out}\index{atca\_gen\_dig\_in\_out@{atca\_gen\_dig\_in\_out}}
+
+
+Input/output parameters for function \doxylink{group__atcah_ga6f6043ba8eebbaab6e6f3b4fa5e31ad4}{atcah\+\_\+gen\+\_\+dig()}.  
+
+
+
+
+{\ttfamily \#include $<$atca\+\_\+host.\+h$>$}
+
+
+
+Collaboration diagram for atca\+\_\+gen\+\_\+dig\+\_\+in\+\_\+out\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=185pt]{structatca__gen__dig__in__out__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{structatca__gen__dig__in__out_aa4922c43b6dfecb5e39e286e960cdd88}{zone}}
+\begin{DoxyCompactList}\small\item\em \mbox{[}in\mbox{]} Zone/\+Param1 for the Gen\+Dig command \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{structatca__gen__dig__in__out_a8bb5e1f0ea943f4749ebf6faa450288b}{key\+\_\+id}}
+\begin{DoxyCompactList}\small\item\em \mbox{[}in\mbox{]} Key\+Id/\+Param2 for the Gen\+Dig command \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{structatca__gen__dig__in__out_a2d5854b66b7bc7246fa718a5d485d3fb}{slot\+\_\+conf}}
+\begin{DoxyCompactList}\small\item\em \mbox{[}in\mbox{]} Slot config for the Gen\+Dig command \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{structatca__gen__dig__in__out_a089cd58d7f5518ee9016eb40c281bdfc}{key\+\_\+conf}}
+\begin{DoxyCompactList}\small\item\em \mbox{[}in\mbox{]} Key config for the Gen\+Dig command \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{structatca__gen__dig__in__out_a787c86043a8c305bd23256248614a3f7}{slot\+\_\+locked}}
+\begin{DoxyCompactList}\small\item\em \mbox{[}in\mbox{]} slot locked for the Gen\+Dig command \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \mbox{\hyperlink{structatca__gen__dig__in__out_adb6743838ca7d8bd3ad390b7608492ba}{counter}}
+\begin{DoxyCompactList}\small\item\em \mbox{[}in\mbox{]} counter for the Gen\+Dig command \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{structatca__gen__dig__in__out_a45ea4bd1941244391f04343f993bacf0}{is\+\_\+key\+\_\+nomac}}
+\begin{DoxyCompactList}\small\item\em \mbox{[}in\mbox{]} Set to true if the slot pointed to be key\+\_\+id has the Sot\+Config.\+No\+Mac bit set \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structatca__gen__dig__in__out_a181991176738b6309ac6d92ca60564df}{sn}}
+\begin{DoxyCompactList}\small\item\em \mbox{[}in\mbox{]} Device serial number SN\mbox{[}0\+:8\mbox{]}. Only SN\mbox{[}0\+:1\mbox{]} and SN\mbox{[}8\mbox{]} are required though. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structatca__gen__dig__in__out_a6dd1c1da4bc4f7171ad095cbcecf0613}{stored\+\_\+value}}
+\begin{DoxyCompactList}\small\item\em \mbox{[}in\mbox{]} 32-\/byte slot value, config block, OTP block as specified by the Zone/\+Key\+Id parameters \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structatca__gen__dig__in__out_ab768fd14f2c4812b839d33460b3c2889}{other\+\_\+data}}
+\begin{DoxyCompactList}\small\item\em \mbox{[}in\mbox{]} 32-\/byte value for shared nonce zone, 4-\/byte value if is\+\_\+key\+\_\+nomac is true, ignored and/or NULL otherwise \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structatca__temp__key}{atca\+\_\+temp\+\_\+key}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structatca__gen__dig__in__out_a1d3023961cfec537025565fa94e88e78}{temp\+\_\+key}}
+\begin{DoxyCompactList}\small\item\em \mbox{[}inout\mbox{]} Current state of Temp\+Key \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Input/output parameters for function \doxylink{group__atcah_ga6f6043ba8eebbaab6e6f3b4fa5e31ad4}{atcah\+\_\+gen\+\_\+dig()}. 
+
+\doxysubsection{Field Documentation}
+\Hypertarget{structatca__gen__dig__in__out_adb6743838ca7d8bd3ad390b7608492ba}\label{structatca__gen__dig__in__out_adb6743838ca7d8bd3ad390b7608492ba} 
+\index{atca\_gen\_dig\_in\_out@{atca\_gen\_dig\_in\_out}!counter@{counter}}
+\index{counter@{counter}!atca\_gen\_dig\_in\_out@{atca\_gen\_dig\_in\_out}}
+\doxysubsubsection{\texorpdfstring{counter}{counter}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} atca\+\_\+gen\+\_\+dig\+\_\+in\+\_\+out\+::counter}
+
+
+
+\mbox{[}in\mbox{]} counter for the Gen\+Dig command 
+
+\Hypertarget{structatca__gen__dig__in__out_a45ea4bd1941244391f04343f993bacf0}\label{structatca__gen__dig__in__out_a45ea4bd1941244391f04343f993bacf0} 
+\index{atca\_gen\_dig\_in\_out@{atca\_gen\_dig\_in\_out}!is\_key\_nomac@{is\_key\_nomac}}
+\index{is\_key\_nomac@{is\_key\_nomac}!atca\_gen\_dig\_in\_out@{atca\_gen\_dig\_in\_out}}
+\doxysubsubsection{\texorpdfstring{is\_key\_nomac}{is\_key\_nomac}}
+{\footnotesize\ttfamily bool atca\+\_\+gen\+\_\+dig\+\_\+in\+\_\+out\+::is\+\_\+key\+\_\+nomac}
+
+
+
+\mbox{[}in\mbox{]} Set to true if the slot pointed to be key\+\_\+id has the Sot\+Config.\+No\+Mac bit set 
+
+\Hypertarget{structatca__gen__dig__in__out_a089cd58d7f5518ee9016eb40c281bdfc}\label{structatca__gen__dig__in__out_a089cd58d7f5518ee9016eb40c281bdfc} 
+\index{atca\_gen\_dig\_in\_out@{atca\_gen\_dig\_in\_out}!key\_conf@{key\_conf}}
+\index{key\_conf@{key\_conf}!atca\_gen\_dig\_in\_out@{atca\_gen\_dig\_in\_out}}
+\doxysubsubsection{\texorpdfstring{key\_conf}{key\_conf}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} atca\+\_\+gen\+\_\+dig\+\_\+in\+\_\+out\+::key\+\_\+conf}
+
+
+
+\mbox{[}in\mbox{]} Key config for the Gen\+Dig command 
+
+\Hypertarget{structatca__gen__dig__in__out_a8bb5e1f0ea943f4749ebf6faa450288b}\label{structatca__gen__dig__in__out_a8bb5e1f0ea943f4749ebf6faa450288b} 
+\index{atca\_gen\_dig\_in\_out@{atca\_gen\_dig\_in\_out}!key\_id@{key\_id}}
+\index{key\_id@{key\_id}!atca\_gen\_dig\_in\_out@{atca\_gen\_dig\_in\_out}}
+\doxysubsubsection{\texorpdfstring{key\_id}{key\_id}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} atca\+\_\+gen\+\_\+dig\+\_\+in\+\_\+out\+::key\+\_\+id}
+
+
+
+\mbox{[}in\mbox{]} Key\+Id/\+Param2 for the Gen\+Dig command 
+
+\Hypertarget{structatca__gen__dig__in__out_ab768fd14f2c4812b839d33460b3c2889}\label{structatca__gen__dig__in__out_ab768fd14f2c4812b839d33460b3c2889} 
+\index{atca\_gen\_dig\_in\_out@{atca\_gen\_dig\_in\_out}!other\_data@{other\_data}}
+\index{other\_data@{other\_data}!atca\_gen\_dig\_in\_out@{atca\_gen\_dig\_in\_out}}
+\doxysubsubsection{\texorpdfstring{other\_data}{other\_data}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} atca\+\_\+gen\+\_\+dig\+\_\+in\+\_\+out\+::other\+\_\+data}
+
+
+
+\mbox{[}in\mbox{]} 32-\/byte value for shared nonce zone, 4-\/byte value if is\+\_\+key\+\_\+nomac is true, ignored and/or NULL otherwise 
+
+\Hypertarget{structatca__gen__dig__in__out_a2d5854b66b7bc7246fa718a5d485d3fb}\label{structatca__gen__dig__in__out_a2d5854b66b7bc7246fa718a5d485d3fb} 
+\index{atca\_gen\_dig\_in\_out@{atca\_gen\_dig\_in\_out}!slot\_conf@{slot\_conf}}
+\index{slot\_conf@{slot\_conf}!atca\_gen\_dig\_in\_out@{atca\_gen\_dig\_in\_out}}
+\doxysubsubsection{\texorpdfstring{slot\_conf}{slot\_conf}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} atca\+\_\+gen\+\_\+dig\+\_\+in\+\_\+out\+::slot\+\_\+conf}
+
+
+
+\mbox{[}in\mbox{]} Slot config for the Gen\+Dig command 
+
+\Hypertarget{structatca__gen__dig__in__out_a787c86043a8c305bd23256248614a3f7}\label{structatca__gen__dig__in__out_a787c86043a8c305bd23256248614a3f7} 
+\index{atca\_gen\_dig\_in\_out@{atca\_gen\_dig\_in\_out}!slot\_locked@{slot\_locked}}
+\index{slot\_locked@{slot\_locked}!atca\_gen\_dig\_in\_out@{atca\_gen\_dig\_in\_out}}
+\doxysubsubsection{\texorpdfstring{slot\_locked}{slot\_locked}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} atca\+\_\+gen\+\_\+dig\+\_\+in\+\_\+out\+::slot\+\_\+locked}
+
+
+
+\mbox{[}in\mbox{]} slot locked for the Gen\+Dig command 
+
+\Hypertarget{structatca__gen__dig__in__out_a181991176738b6309ac6d92ca60564df}\label{structatca__gen__dig__in__out_a181991176738b6309ac6d92ca60564df} 
+\index{atca\_gen\_dig\_in\_out@{atca\_gen\_dig\_in\_out}!sn@{sn}}
+\index{sn@{sn}!atca\_gen\_dig\_in\_out@{atca\_gen\_dig\_in\_out}}
+\doxysubsubsection{\texorpdfstring{sn}{sn}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} atca\+\_\+gen\+\_\+dig\+\_\+in\+\_\+out\+::sn}
+
+
+
+\mbox{[}in\mbox{]} Device serial number SN\mbox{[}0\+:8\mbox{]}. Only SN\mbox{[}0\+:1\mbox{]} and SN\mbox{[}8\mbox{]} are required though. 
+
+\Hypertarget{structatca__gen__dig__in__out_a6dd1c1da4bc4f7171ad095cbcecf0613}\label{structatca__gen__dig__in__out_a6dd1c1da4bc4f7171ad095cbcecf0613} 
+\index{atca\_gen\_dig\_in\_out@{atca\_gen\_dig\_in\_out}!stored\_value@{stored\_value}}
+\index{stored\_value@{stored\_value}!atca\_gen\_dig\_in\_out@{atca\_gen\_dig\_in\_out}}
+\doxysubsubsection{\texorpdfstring{stored\_value}{stored\_value}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} atca\+\_\+gen\+\_\+dig\+\_\+in\+\_\+out\+::stored\+\_\+value}
+
+
+
+\mbox{[}in\mbox{]} 32-\/byte slot value, config block, OTP block as specified by the Zone/\+Key\+Id parameters 
+
+\Hypertarget{structatca__gen__dig__in__out_a1d3023961cfec537025565fa94e88e78}\label{structatca__gen__dig__in__out_a1d3023961cfec537025565fa94e88e78} 
+\index{atca\_gen\_dig\_in\_out@{atca\_gen\_dig\_in\_out}!temp\_key@{temp\_key}}
+\index{temp\_key@{temp\_key}!atca\_gen\_dig\_in\_out@{atca\_gen\_dig\_in\_out}}
+\doxysubsubsection{\texorpdfstring{temp\_key}{temp\_key}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structatca__temp__key}{atca\+\_\+temp\+\_\+key}} \texorpdfstring{$\ast$}{*} atca\+\_\+gen\+\_\+dig\+\_\+in\+\_\+out\+::temp\+\_\+key}
+
+
+
+\mbox{[}inout\mbox{]} Current state of Temp\+Key 
+
+\Hypertarget{structatca__gen__dig__in__out_aa4922c43b6dfecb5e39e286e960cdd88}\label{structatca__gen__dig__in__out_aa4922c43b6dfecb5e39e286e960cdd88} 
+\index{atca\_gen\_dig\_in\_out@{atca\_gen\_dig\_in\_out}!zone@{zone}}
+\index{zone@{zone}!atca\_gen\_dig\_in\_out@{atca\_gen\_dig\_in\_out}}
+\doxysubsubsection{\texorpdfstring{zone}{zone}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} atca\+\_\+gen\+\_\+dig\+\_\+in\+\_\+out\+::zone}
+
+
+
+\mbox{[}in\mbox{]} Zone/\+Param1 for the Gen\+Dig command 
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\+SCE/\mbox{\hyperlink{atca__host_8h}{atca\+\_\+host.\+h}}\item 
+C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\+SCE/host/\mbox{\hyperlink{host_2atca__host_8h}{atca\+\_\+host.\+h}}\end{DoxyCompactItemize}

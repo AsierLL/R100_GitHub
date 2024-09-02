@@ -1,0 +1,26 @@
+var struct__atecc508a__config =
+[
+    [ "ChipMode", "struct__atecc508a__config.html#a25c0e135c18cd576de6a8e1b3a636625", null ],
+    [ "Counter0", "struct__atecc508a__config.html#a95638099c94af13fe4cbfdd9e0871824", null ],
+    [ "Counter1", "struct__atecc508a__config.html#a110fb8bba2de179b673578d96286b04b", null ],
+    [ "I2C_Address", "struct__atecc508a__config.html#ada33a87ad472e92a9a393528bbbfc537", null ],
+    [ "I2C_Enable", "struct__atecc508a__config.html#a52f8b8491c5c65c4360a65b942691a4c", null ],
+    [ "KeyConfig", "struct__atecc508a__config.html#a52d6c1e36ce713a1863d2fadcb3fd975", null ],
+    [ "LastKeyUse", "struct__atecc508a__config.html#a606a9837f7cc8ec8284c2c95acbf34a4", null ],
+    [ "LockConfig", "struct__atecc508a__config.html#a85f40681153ad696f198ce5b16643af8", null ],
+    [ "LockValue", "struct__atecc508a__config.html#a55fc3837a75984ae12e4ce8a17c56fc6", null ],
+    [ "OTPmode", "struct__atecc508a__config.html#a08300e0bb63d13ce3cd6b82e1f84132e", null ],
+    [ "Reserved0", "struct__atecc508a__config.html#a49e72ea0b0dc592dd3c2f1a3b2fa6fbd", null ],
+    [ "Reserved1", "struct__atecc508a__config.html#a20810dfc63a0155b77636e4be7d3062d", null ],
+    [ "Reserved2", "struct__atecc508a__config.html#ab4f591435b63fbb402f68d0d930ee4ce", null ],
+    [ "RevNum", "struct__atecc508a__config.html#ac967e0e7745859b2d4f2341e57e88277", null ],
+    [ "RFU", "struct__atecc508a__config.html#a850cf4d425baac29fac5f0c7b5bb4630", null ],
+    [ "Selector", "struct__atecc508a__config.html#a569a3b1ea30921d6b24c681d71432522", null ],
+    [ "SlotConfig", "struct__atecc508a__config.html#a91bde84cf72c86a077cb91c608e19722", null ],
+    [ "SlotLocked", "struct__atecc508a__config.html#a2691e419d89d5996c74453531ed6a0da", null ],
+    [ "SN03", "struct__atecc508a__config.html#a17358bd33e32d001ee8e98054a803a63", null ],
+    [ "SN47", "struct__atecc508a__config.html#ab27a4f7fb505318a64c5014a4ba5b93a", null ],
+    [ "SN8", "struct__atecc508a__config.html#a1b6d45861764d5a9f9d7cd0f7bbc0b9e", null ],
+    [ "UserExtra", "struct__atecc508a__config.html#a5d641c7bbd5b42e0dc913f9522b1d88e", null ],
+    [ "X509format", "struct__atecc508a__config.html#aae4f33893db4c371d3c0fb1578bebe43", null ]
+];

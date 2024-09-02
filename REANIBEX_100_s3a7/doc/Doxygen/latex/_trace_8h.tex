@@ -1,0 +1,278 @@
+\doxysection{C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\+Resources/\+Trace.h File Reference}
+\hypertarget{_trace_8h}{}\label{_trace_8h}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/Resources/Trace.h@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/Resources/Trace.h}}
+
+
+Header with functions related to the output trace through serial port.  
+
+
+{\ttfamily \#include "{}types\+\_\+basic.\+h"{}}\newline
+Include dependency graph for Trace.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=257pt]{_trace_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_trace_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_trace_8h_a143751853345193e3029f795af5e8e05}{TRACE\+\_\+\+NO\+\_\+\+FLAGS}}~0x00
+\item 
+\#define \mbox{\hyperlink{_trace_8h_ac40439f75ccde809716737fc2a51c60c}{TRACE\+\_\+\+TIME\+\_\+\+STAMP}}~0x01
+\item 
+\#define \mbox{\hyperlink{_trace_8h_a1a87383c89f58beedcf5ce80e2074eb0}{TRACE\+\_\+\+NEWLINE}}~0x02
+\item 
+\#define \mbox{\hyperlink{_trace_8h_a849ef32dc21e50f73d5a92c6a8343f56}{TRACE\+\_\+\+DISABLED}}~0x04
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_trace_8h_a7b739c75f87182605802c312d4e85cf6}{Trace\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Open connection SCI1 (UART). Initialize semaphore. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_trace_8h_a8947b81ae09bdb57459cd1c81c78ab37}{Trace}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} flags, const char \texorpdfstring{$\ast$}{*}p\+String)
+\begin{DoxyCompactList}\small\item\em Print a trace string inserting the time stamp. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_trace_8h_abbe04e9d8a6f964c5a4f18901a95b0de}{Trace\+\_\+\+Arg}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} flags, const char \texorpdfstring{$\ast$}{*}p\+String, const \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} aux\+\_\+code)
+\begin{DoxyCompactList}\small\item\em Print a trace string inserting the time stamp. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_trace_8h_a833c0f353040c1cefc0bac94dc918f76}{Trace\+\_\+\+Char}} (const \mbox{\hyperlink{_s_c_e_2types__basic_8h_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} data\+\_\+to\+\_\+send)
+\begin{DoxyCompactList}\small\item\em Print a char without inserting the time stamp. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{_trace_8h_a3deb76927453c6425cac2c0c5f872a24}{Boot\+\_\+\+Send\+\_\+\+Message}} (const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Msg, \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} size)
+\begin{DoxyCompactList}\small\item\em Send a message to the Boot processor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{_trace_8h_a2bfb02f5ceda55d9f597551c4817fbff}{Boot\+\_\+\+Receive\+\_\+\+Message}} (void)
+\begin{DoxyCompactList}\small\item\em Receive a message to the Boot processor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_trace_8h_a2ec7f637e0bb5ec915d7ac8d057891aa}{Boot\+\_\+\+Sync}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} n\+Beacons)
+\begin{DoxyCompactList}\small\item\em synchronize the Boot processor\textquotesingle{}s FRC frequency sending a beacon signal (MUST guarantee a 250Kbps baud rate with a minimum error) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header with functions related to the output trace through serial port. 
+
+\begin{DoxyVersion}{Version}
+v1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+16/01/2018 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+ltorres 
+\end{DoxyAuthor}
+\begin{DoxyWarning}{Warning}
+author date version .-\/ Edition 
+\end{DoxyWarning}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000062}{Bug}}]\end{DoxyRefDesc}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{_trace_8h_a849ef32dc21e50f73d5a92c6a8343f56}\label{_trace_8h_a849ef32dc21e50f73d5a92c6a8343f56} 
+\index{Trace.h@{Trace.h}!TRACE\_DISABLED@{TRACE\_DISABLED}}
+\index{TRACE\_DISABLED@{TRACE\_DISABLED}!Trace.h@{Trace.h}}
+\doxysubsubsection{\texorpdfstring{TRACE\_DISABLED}{TRACE\_DISABLED}}
+{\footnotesize\ttfamily \#define TRACE\+\_\+\+DISABLED~0x04}
+
+\Hypertarget{_trace_8h_a1a87383c89f58beedcf5ce80e2074eb0}\label{_trace_8h_a1a87383c89f58beedcf5ce80e2074eb0} 
+\index{Trace.h@{Trace.h}!TRACE\_NEWLINE@{TRACE\_NEWLINE}}
+\index{TRACE\_NEWLINE@{TRACE\_NEWLINE}!Trace.h@{Trace.h}}
+\doxysubsubsection{\texorpdfstring{TRACE\_NEWLINE}{TRACE\_NEWLINE}}
+{\footnotesize\ttfamily \#define TRACE\+\_\+\+NEWLINE~0x02}
+
+\Hypertarget{_trace_8h_a143751853345193e3029f795af5e8e05}\label{_trace_8h_a143751853345193e3029f795af5e8e05} 
+\index{Trace.h@{Trace.h}!TRACE\_NO\_FLAGS@{TRACE\_NO\_FLAGS}}
+\index{TRACE\_NO\_FLAGS@{TRACE\_NO\_FLAGS}!Trace.h@{Trace.h}}
+\doxysubsubsection{\texorpdfstring{TRACE\_NO\_FLAGS}{TRACE\_NO\_FLAGS}}
+{\footnotesize\ttfamily \#define TRACE\+\_\+\+NO\+\_\+\+FLAGS~0x00}
+
+\Hypertarget{_trace_8h_ac40439f75ccde809716737fc2a51c60c}\label{_trace_8h_ac40439f75ccde809716737fc2a51c60c} 
+\index{Trace.h@{Trace.h}!TRACE\_TIME\_STAMP@{TRACE\_TIME\_STAMP}}
+\index{TRACE\_TIME\_STAMP@{TRACE\_TIME\_STAMP}!Trace.h@{Trace.h}}
+\doxysubsubsection{\texorpdfstring{TRACE\_TIME\_STAMP}{TRACE\_TIME\_STAMP}}
+{\footnotesize\ttfamily \#define TRACE\+\_\+\+TIME\+\_\+\+STAMP~0x01}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_trace_8h_a2bfb02f5ceda55d9f597551c4817fbff}\label{_trace_8h_a2bfb02f5ceda55d9f597551c4817fbff} 
+\index{Trace.h@{Trace.h}!Boot\_Receive\_Message@{Boot\_Receive\_Message}}
+\index{Boot\_Receive\_Message@{Boot\_Receive\_Message}!Trace.h@{Trace.h}}
+\doxysubsubsection{\texorpdfstring{Boot\_Receive\_Message()}{Boot\_Receive\_Message()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} Boot\+\_\+\+Receive\+\_\+\+Message (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Receive a message to the Boot processor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+received ACK character (NULL if does not receive nothing 
+\end{DoxyReturn}
+\Hypertarget{_trace_8h_a3deb76927453c6425cac2c0c5f872a24}\label{_trace_8h_a3deb76927453c6425cac2c0c5f872a24} 
+\index{Trace.h@{Trace.h}!Boot\_Send\_Message@{Boot\_Send\_Message}}
+\index{Boot\_Send\_Message@{Boot\_Send\_Message}!Trace.h@{Trace.h}}
+\doxysubsubsection{\texorpdfstring{Boot\_Send\_Message()}{Boot\_Send\_Message()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} Boot\+\_\+\+Send\+\_\+\+Message (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Msg,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}}}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Send a message to the Boot processor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Msg} & Pointer to message \\
+\hline
+{\em size} & message size or number of bytes to transfer\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+received ACK character (NULL if does not receive nothing 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_trace_8h_a3deb76927453c6425cac2c0c5f872a24_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_trace_8h_a2ec7f637e0bb5ec915d7ac8d057891aa}\label{_trace_8h_a2ec7f637e0bb5ec915d7ac8d057891aa} 
+\index{Trace.h@{Trace.h}!Boot\_Sync@{Boot\_Sync}}
+\index{Boot\_Sync@{Boot\_Sync}!Trace.h@{Trace.h}}
+\doxysubsubsection{\texorpdfstring{Boot\_Sync()}{Boot\_Sync()}}
+{\footnotesize\ttfamily void Boot\+\_\+\+Sync (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{n\+Beacons }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+synchronize the Boot processor\textquotesingle{}s FRC frequency sending a beacon signal (MUST guarantee a 250Kbps baud rate with a minimum error) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n\+Beacons} & number of beacons used to synchronize\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_trace_8h_a2ec7f637e0bb5ec915d7ac8d057891aa_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_trace_8h_a8947b81ae09bdb57459cd1c81c78ab37}\label{_trace_8h_a8947b81ae09bdb57459cd1c81c78ab37} 
+\index{Trace.h@{Trace.h}!Trace@{Trace}}
+\index{Trace@{Trace}!Trace.h@{Trace.h}}
+\doxysubsubsection{\texorpdfstring{Trace()}{Trace()}}
+{\footnotesize\ttfamily void Trace (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{flags,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{p\+String }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Print a trace string inserting the time stamp. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em flags} & Flags to print more information (Time or CRLF) \\
+\hline
+{\em p\+String} & Pointer to trace string\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000014}{Todo}}]pending things to be done\end{DoxyRefDesc}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_trace_8h_a8947b81ae09bdb57459cd1c81c78ab37_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_trace_8h_abbe04e9d8a6f964c5a4f18901a95b0de}\label{_trace_8h_abbe04e9d8a6f964c5a4f18901a95b0de} 
+\index{Trace.h@{Trace.h}!Trace\_Arg@{Trace\_Arg}}
+\index{Trace\_Arg@{Trace\_Arg}!Trace.h@{Trace.h}}
+\doxysubsubsection{\texorpdfstring{Trace\_Arg()}{Trace\_Arg()}}
+{\footnotesize\ttfamily void Trace\+\_\+\+Arg (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{flags,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{p\+String,  }\item[{const \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}}}]{aux\+\_\+code }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Print a trace string inserting the time stamp. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em flags} & Flags to print more information (Time or CRLF) \\
+\hline
+{\em p\+String} & Pointer to trace string \\
+\hline
+{\em aux\+\_\+code} & Additional parameter or code\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000015}{Todo}}]pending things to be done\end{DoxyRefDesc}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_trace_8h_abbe04e9d8a6f964c5a4f18901a95b0de_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_trace_8h_a833c0f353040c1cefc0bac94dc918f76}\label{_trace_8h_a833c0f353040c1cefc0bac94dc918f76} 
+\index{Trace.h@{Trace.h}!Trace\_Char@{Trace\_Char}}
+\index{Trace\_Char@{Trace\_Char}!Trace.h@{Trace.h}}
+\doxysubsubsection{\texorpdfstring{Trace\_Char()}{Trace\_Char()}}
+{\footnotesize\ttfamily void Trace\+\_\+\+Char (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{_s_c_e_2types__basic_8h_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}}}]{data\+\_\+to\+\_\+send }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Print a char without inserting the time stamp. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data\+\_\+to\+\_\+send} & byte to be printed\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000016}{Todo}}]pending things to be done\end{DoxyRefDesc}
+\Hypertarget{_trace_8h_a7b739c75f87182605802c312d4e85cf6}\label{_trace_8h_a7b739c75f87182605802c312d4e85cf6} 
+\index{Trace.h@{Trace.h}!Trace\_Init@{Trace\_Init}}
+\index{Trace\_Init@{Trace\_Init}!Trace.h@{Trace.h}}
+\doxysubsubsection{\texorpdfstring{Trace\_Init()}{Trace\_Init()}}
+{\footnotesize\ttfamily void Trace\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Open connection SCI1 (UART). Initialize semaphore. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000013}{Todo}}]pending things to be done\end{DoxyRefDesc}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_trace_8h_a7b739c75f87182605802c312d4e85cf6_icgraph}
+\end{center}
+\end{figure}

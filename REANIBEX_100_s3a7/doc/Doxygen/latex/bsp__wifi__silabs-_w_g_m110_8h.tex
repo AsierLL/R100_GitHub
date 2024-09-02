@@ -1,0 +1,1925 @@
+\doxysection{C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\+BSP/bsp\+\_\+wifi\+\_\+silabs-\/\+WGM110.h File Reference}
+\hypertarget{bsp__wifi__silabs-_w_g_m110_8h}{}\label{bsp__wifi__silabs-_w_g_m110_8h}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/BSP/bsp\_wifi\_silabs-\/WGM110.h@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/BSP/bsp\_wifi\_silabs-\/WGM110.h}}
+
+
+BSP Wifi Silicon Labs WGM110 header file.  
+
+
+{\ttfamily \#include "{}R100\+\_\+\+Errors.\+h"{}}\newline
+{\ttfamily \#include "{}types\+\_\+basic.\+h"{}}\newline
+Include dependency graph for bsp\+\_\+wifi\+\_\+silabs-\/\+WGM110.h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=263pt]{bsp__wifi__silabs-_w_g_m110_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__wifi__silabs-_w_g_m110_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structwifi__evt__t}{wifi\+\_\+evt\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{struct_w_i_f_i___h_e_a_d_e_r__t}{WIFI\+\_\+\+HEADER\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{struct_w_i_f_i___p_a_y_l_o_a_d__t}{WIFI\+\_\+\+PAYLOAD\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{struct_w_i_f_i___c_e_r_t__t}{WIFI\+\_\+\+CERT\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_aefda3c41e567de5717e579212109a355}{TRY\+\_\+\+AGAIN}}~1
+\item 
+\#define \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_a90ec114bc489f45b477e6cca01db7424}{BGLIB\+\_\+\+RESP\+\_\+\+NO\+\_\+\+BYTES}}~0
+\item 
+\#define \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_a1a1e234658b0476455dde651b9e3b3b8}{BGLIB\+\_\+\+RESP\+\_\+1\+\_\+\+BYTE}}~1
+\item 
+\#define \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_acaaa8fa8f3779f4278ce3b53fe4fc924}{BGLIB\+\_\+\+RESP\+\_\+2\+\_\+\+BYTES}}~2
+\item 
+\#define \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_a3be5c6b198092d3e399d24517f29abf9}{BGLIB\+\_\+\+RESP\+\_\+3\+\_\+\+BYTES}}~3
+\item 
+\#define \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_aefe726b8d1d3f01959ac562e4e97e6f1}{BGLIB\+\_\+\+RESP\+\_\+4\+\_\+\+BYTES}}~4
+\item 
+\#define \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_aa744444a0f9a2237bead83d8fdc4a2d5}{BGLIB\+\_\+\+RESP\+\_\+8\+\_\+\+BYTES}}~8
+\item 
+\#define \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_ad569bb90996d3879f76527efd7b15a1d}{BGLIB\+\_\+\+RESP\+\_\+9\+\_\+\+BYTES}}~9
+\item 
+\#define \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_a1a730054a5e0a40198c1bde48d64657c}{BGLIB\+\_\+\+RESP\+\_\+16\+\_\+\+BYTES}}~16
+\item 
+\#define \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_a06813d327c87f27c6b22366b4732d6a4}{BGLIB\+\_\+\+RESP\+\_\+18\+\_\+\+BYTES}}~18
+\item 
+\#define \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_a3583fbef333ee2fb12b698733e83dd04}{BGLIB\+\_\+\+RESP\+\_\+19\+\_\+\+BYTES}}~19
+\item 
+\#define \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_a50b732d56567e4b261085d6b5310b92b}{BGLIB\+\_\+\+MAX\+\_\+\+EVT}}~5
+\begin{DoxyCompactList}\small\item\em Max events to be stored. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_aa9b821b6f6d5784270ca8900cb725f8a}{BGLIB\+\_\+\+NO\+\_\+\+EVT}}~0
+\item 
+\#define \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_a1d632dee9f1d453955cdac61f60cc536}{BGLIB\+\_\+\+EVT\+\_\+\+HW\+\_\+\+UART\+\_\+\+CONF}}~13
+\item 
+\#define \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_a20d1e004cf23c8d983347ff8967846fa}{BGLIB\+\_\+\+EVT\+\_\+\+GET\+\_\+\+MAC}}~11
+\item 
+\#define \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_a691f55bdf2a264bae4dab1ceb6016ef6}{BGLIB\+\_\+\+EVT\+\_\+\+WIFI\+\_\+\+ON\+\_\+\+OFF}}~6
+\item 
+\#define \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_a22ceb3c494a94f05232d3af99438d385}{BGLIB\+\_\+\+EVT\+\_\+\+SCAN\+\_\+\+RESULT}}~16
+\item 
+\#define \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_a50a9bfef0232e858bd5e04b0d95b64f2}{BGLIB\+\_\+\+EVT\+\_\+\+CONNECTED}}~12
+\item 
+\#define \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_abb2e0ba46c155899c3dcf99e698b3997}{BGLIB\+\_\+\+EVT\+\_\+\+TCPIP\+\_\+\+CONF}}~17
+\item 
+\#define \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_a5f86a2ee8337d13b52dd7cff7ebb5fa4}{BGLIB\+\_\+\+EVT\+\_\+\+TCPIP\+\_\+\+ENDP\+\_\+\+STS}}~17
+\item 
+\#define \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_a762ea0e789b700d450062d3c62eb4fe0}{BGLIB\+\_\+\+EVT\+\_\+\+TCPIP\+\_\+\+UDP\+\_\+\+DATA}}~13
+\item 
+\#define \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_ac26237399748c47216f8583ad9d42ef1}{BGLIB\+\_\+\+EVT\+\_\+\+TCPIP\+\_\+\+DNS\+\_\+\+HOSTNAME}}~11
+\item 
+\#define \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_aeb276700e65cd80406ba09fbf40d7ed9}{BGLIB\+\_\+\+EVT\+\_\+\+DNS}}~9
+\item 
+\#define \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_a7272d97f1d4275e0408fe43e169a2276}{BGLIB\+\_\+\+EVT\+\_\+\+ENDP\+\_\+\+STS}}~12
+\item 
+\#define \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_ab57a3e8792bc66a51495a83b6ca8ae7a}{BGLIB\+\_\+\+EVT\+\_\+\+ENDP\+\_\+\+DATA}}~13
+\item 
+\#define \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_a2002131ccbebdedd02b9281889cbd38a}{BGLIB\+\_\+\+EVT\+\_\+\+ENDP\+\_\+\+DATA\+\_\+6}}~6
+\item 
+\#define \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_a9b1d87c42f7cea1f6afe60f91a756b8a}{BGLIB\+\_\+\+EVT\+\_\+\+ENDP\+\_\+\+DATA\+\_\+5}}~5
+\item 
+\#define \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_a6d79f4bbcbfb2f3ec3d9d83e2003a8ec}{BGLIB\+\_\+\+EVT\+\_\+\+ENDP\+\_\+\+DATA\+\_\+2}}~2
+\item 
+\#define \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_a9897d59d220e7da6334d5b68850e4a15}{BGLIB\+\_\+\+EVT\+\_\+\+RESPONSE}}~8
+\item 
+\#define \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_a18c25b4faabdff0bbb423e6936c60790}{BGLIB\+\_\+\+EVT\+\_\+\+TLS\+\_\+\+VERIFY}}~7
+\item 
+\#define \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_ab1a3a2d18eb7e602c9a7e343e14099e7}{BGLIB\+\_\+\+EVT\+\_\+\+X509\+\_\+\+CERT}}~8
+\item 
+\#define \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_ac46842d86b4746c2e35ede4011ae0c81}{BGLIB\+\_\+\+EVT\+\_\+\+X509\+\_\+\+ADD\+\_\+\+CERT\+\_\+\+FINISH}}~7
+\item 
+\#define \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_a0455decffa6346cab1b4cbe672208eb9}{BGLIB\+\_\+\+EVT\+\_\+\+X509\+\_\+\+CERT\+\_\+\+FINGER}}~16
+\item 
+\#define \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_a2e201cbb57e3cb43ea17429bce52731c}{BGLIB\+\_\+\+EVT\+\_\+\+X509\+\_\+\+CERT\+\_\+\+SUB}}~6
+\item 
+\#define \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_a612bcb3cc5a3e1cb82eb587e92cf1128}{BGLIB\+\_\+\+EVT\+\_\+\+X509\+\_\+\+CERT\+\_\+\+SUB\+\_\+\+LEN}}~54
+\item 
+\#define \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_adacc26ff34f9737ad2a1af0b17de40ce}{BGLIB\+\_\+\+EVT\+\_\+\+X509\+\_\+\+CERT\+\_\+\+LIST}}~4
+\item 
+\#define \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_a82cff3a7aacbae977acb329be0286819}{MAX\+\_\+\+WIFI\+\_\+\+HEADER\+\_\+\+BYTES}}~129
+\begin{DoxyCompactList}\small\item\em WIFI header bytes size. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_ae9499e755893c2fc53999b8d7653c09f}{MAX\+\_\+\+WIFI\+\_\+\+TEST\+\_\+\+FRAME}}~153
+\begin{DoxyCompactList}\small\item\em WIFI test frame size. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_a4d9ac04e112d67421517c9340bb442ae}{MAX\+\_\+\+WIFI\+\_\+\+ALERT\+\_\+\+GPS}}~141
+\begin{DoxyCompactList}\small\item\em WIFI alerts and GPS data size. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_a9a4e44302609c510e6e0407db04c026e}{MAX\+\_\+\+WIFI\+\_\+\+READ\+\_\+\+FILE}}~253
+\begin{DoxyCompactList}\small\item\em WIFI read data size. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_aa997eb76d8b474d51e621e511e33718f}{WIFI\+\_\+\+ID\+\_\+\+PAYLOAD\+\_\+\+SIZE}}~2
+\begin{DoxyCompactList}\small\item\em WIFI payload size. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_a655c84af1b0034986ff56e12e84f983d}{NONE}}~0
+\begin{DoxyCompactList}\small\item\em No authentication method. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_af409fb3ab68b0de34fadad58cd6f744f}{TLS}}~1
+\begin{DoxyCompactList}\small\item\em TLS authentication method. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_a2f3aca1b4c11e90ba74d121e1cb468f6}{PEAP}}~2
+\begin{DoxyCompactList}\small\item\em PEAP authentication method. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_a75f57de7f8ba1fe6d616d393d9a6279b}{MSCHAPv2}}~3
+\begin{DoxyCompactList}\small\item\em MSCHAPv2 authentication method. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_a715e8f9404bff82f87e845f4292448ff}{DHCP\+\_\+\+ON}}~1
+\begin{DoxyCompactList}\small\item\em Activate DHCP. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_a5da033ebe5f61229268915c4b1cf44ff}{DHCP\+\_\+\+OFF}}~0
+\begin{DoxyCompactList}\small\item\em Desactivate DHCP. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_ae77956bd9b201b0db3a1d383ad031de7}{PORT\+\_\+\+HOST\+\_\+\+ALIVE}}~20000
+\item 
+\#define \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_ac05ed83f19f738f43904a5dd98765667}{PORT\+\_\+\+DATA\+\_\+\+FRAME}}~20001
+\item 
+\#define \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_a719e9e489a733064c0b8d01996b79e95}{PORT\+\_\+\+TEST}}~20002
+\item 
+\#define \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_a5d5ca718e3f03e45ca880792334a0784}{PORT\+\_\+\+EPI}}~20003
+\item 
+\#define \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_aaa92742b348d084355ad318f97b646b9}{PORT\+\_\+\+FW}}~20004
+\item 
+\#define \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_af239c62f325c4a450832ba971ad30594}{PORT\+\_\+\+CFG}}~20005
+\item 
+\#define \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_a8eb52e5ab358c7b73aa22bf8df819f29}{CERT\+\_\+\+FOLDER\+\_\+\+NAME}}~"{}CERT"{}
+\begin{DoxyCompactList}\small\item\em CERT folder. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_a1bc4b2b0b3013678e7cfc46f0effc611}{CERT\+\_\+\+FILENAME}}~"{}cert.\+dat"{}
+\begin{DoxyCompactList}\small\item\em Cert configuration filename. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_a4817f778d24e668ce39ce114c98e0217}{COMPILE\+\_\+\+ASSERT}} ((sizeof(\mbox{\hyperlink{struct_w_i_f_i___h_e_a_d_e_r__t}{WIFI\+\_\+\+HEADER\+\_\+t}})==\mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_a82cff3a7aacbae977acb329be0286819}{MAX\+\_\+\+WIFI\+\_\+\+HEADER\+\_\+\+BYTES}}))
+\item 
+void \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_adb7a018f1bb07d857ad68f50ff060997}{Wifi\+\_\+\+Initialize\+\_\+\+BGLib}} (void)
+\begin{DoxyCompactList}\small\item\em Initialize library,and provide output function. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_a8089c2753e0d6f822691ba934ac6eaf5}{Wifi\+\_\+\+Set\+\_\+\+Operating\+\_\+\+Mode}} (void)
+\begin{DoxyCompactList}\small\item\em Wifi set operating mode\+: 1-\/client;2-\/Access Point;4-\/WIFI direct. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_a49fb3f4209cc581931376a8782b66a49}{Wifi\+\_\+\+Check\+\_\+\+Module\+\_\+\+Status}} (void)
+\begin{DoxyCompactList}\small\item\em Check Wifi module Status. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_abae4cf27e47c032f0f26b2f77b773648}{Wifi\+\_\+\+Configure\+\_\+\+Module\+\_\+\+Uart}} (void)
+\begin{DoxyCompactList}\small\item\em Configure Wifi module Uart. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_a496be96f131aa1adca8dad2fd7061395}{Wifi\+\_\+\+Get\+\_\+\+Module\+\_\+\+Status}} (void)
+\begin{DoxyCompactList}\small\item\em Get Wifi module status. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_a38347cc9ea2702829f7d84710086dd7a}{Wifi\+\_\+\+Get\+\_\+\+Module\+\_\+\+MAC\+\_\+\+Address}} (void)
+\begin{DoxyCompactList}\small\item\em Get Wifi module MAC Address. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_ab0d87361c94f4f901e9a009d62203827}{Wifi\+\_\+\+Get\+\_\+\+RSSI}} (void)
+\begin{DoxyCompactList}\small\item\em The received signal strength indication (RSSI) in d\+Bm units. RSSI\+: \texorpdfstring{$<$}{<} -\/30 d\+Bm = Very good; -\/40 / -\/60 d\+Bm = Good; -\/70 d\+Bm == Weak; -\/80 d\+Bm = Poor; -\/90 d\+Bm = No connection; SNR (Signal to Noise Ratio)\+: 10 -\/ 24 dB = Poor; 25 -\/ 40 dB = Good; \texorpdfstring{$>$}{>} 41 dB = Very Good;. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_a1b826a0d21e95c22f0a573dd7a5429ee}{Wifi\+\_\+\+Configure\+\_\+\+TCPIP\+\_\+\+DHCP\+\_\+\+Settings}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} dhcp)
+\begin{DoxyCompactList}\small\item\em Configure IP settings of the device. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_acc961764e51b751a91686c070452e374}{Wifi\+\_\+\+Configure\+\_\+\+DNS\+\_\+\+Settings}} (void)
+\begin{DoxyCompactList}\small\item\em Configure DNS settings of the device. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_a131e8f6711186a9da9bec9bff8730647}{Wifi\+\_\+\+Set\+\_\+\+Wifi\+\_\+\+Radio\+\_\+\+On}} (void)
+\begin{DoxyCompactList}\small\item\em Turn On Wifi module Radio. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_a5e6789110605df58b21c15813993ecec}{Wifi\+\_\+\+Set\+\_\+\+Wifi\+\_\+\+Radio\+\_\+\+Off}} (void)
+\begin{DoxyCompactList}\small\item\em Turn Off Wifi module Radio. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_a42ac38edd6c0a955425367880bfecd3f}{Wifi\+\_\+\+Scan\+\_\+\+Network}} (void)
+\begin{DoxyCompactList}\small\item\em Scan for an Access Point. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_a55aad59239beee7c625ef1480115d787}{Wifi\+\_\+\+Load\+\_\+\+EAP\+\_\+\+TLS\+\_\+\+Cert}} (void)
+\begin{DoxyCompactList}\small\item\em Load EAP certs to connect using EAP-\/\+TLS. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_a6fcc98353f9429f5732450389558c88c}{Wifi\+\_\+\+Load\+\_\+\+Server\+\_\+\+TLS\+\_\+\+Cacert}} (void)
+\begin{DoxyCompactList}\small\item\em Load Server TLS CA cert if present in SD and if not present in module flash. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_a7e8230c89c388139fc583139a2beb691}{Wifi\+\_\+\+Load\+\_\+\+EAP\+\_\+\+CA\+\_\+\+Cert}} (void)
+\begin{DoxyCompactList}\small\item\em Load EAP CA certificate to connect. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_a8925c99a5fdb7d5a2ab4736fd46a29e5}{Wifi\+\_\+\+Load\+\_\+\+EAP\+\_\+\+PEAP\+\_\+\+Cert}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} peap)
+\begin{DoxyCompactList}\small\item\em Load EAP certs to connect using PEAP-\/\+MSCHAPv2. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_afdc36b688c99cc7e9bb2fe8513118a1a}{Wifi\+\_\+\+No\+\_\+\+Load\+\_\+\+EAP\+\_\+\+TLS\+\_\+\+Cert}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \texorpdfstring{$\ast$}{*}fingerprint)
+\begin{DoxyCompactList}\small\item\em Configuration EAP certs to connect using EAP-\/\+TLS. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_a34598b4dd7f45c72e2c71cb393446e43}{Wifi\+\_\+\+Config\+\_\+\+Certs}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} write\+\_\+read, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} eap, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} tls, \mbox{\hyperlink{_s_c_e_2types__basic_8h_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \texorpdfstring{$\ast$}{*}write\+\_\+fingerprint)
+\begin{DoxyCompactList}\small\item\em Update of the cert.\+dat file to know which certificates have been loaded. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_af5b6814c179a062a84ef416012b52070}{Wifi\+\_\+\+Reset\+\_\+\+Certs\+\_\+\+Store}} (void)
+\begin{DoxyCompactList}\small\item\em Reset Certificates Store. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_a7ecf9128dd50ba1a157224384cfa215e}{Wifi\+\_\+\+Set\+\_\+\+Password}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} eap)
+\begin{DoxyCompactList}\small\item\em Set password to connection. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_ac8b4cae41fb1a2cebefddb7c10837b6e}{Wifi\+\_\+\+Connect\+\_\+\+Network}} (void)
+\begin{DoxyCompactList}\small\item\em Start a connection establishment procedure with an Access Point. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_a795b8325fcb76410bb9fdbee3254ca90}{Wifi\+\_\+\+Disconnect\+\_\+\+Network}} (void)
+\begin{DoxyCompactList}\small\item\em Disconnect from the currently connected Access Point. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_a81a4e4083b610dbb21ca775d13c9e6ec}{Wifi\+\_\+\+Module\+\_\+\+Reset}} (void)
+\begin{DoxyCompactList}\small\item\em Perform Wifi module software commanded Reset. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_a76a52ecb5bd6b0f2c2b5b5f0c59feff8}{Wifi\+\_\+\+Open\+\_\+\+TCP\+\_\+\+Client}} (void)
+\begin{DoxyCompactList}\small\item\em Open the tcp endpoint client connection. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_ace9d1100d1cb32d4f6ddd04d7f7e291e}{Wifi\+\_\+\+Close\+\_\+\+TCP\+\_\+\+Client}} (void)
+\begin{DoxyCompactList}\small\item\em Close the tcp endpoint client connection. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_aeacca39b2c852502e88afc9d71c38476}{Wifi\+\_\+\+Open\+\_\+\+UDP\+\_\+\+Client}} (void)
+\begin{DoxyCompactList}\small\item\em Open the udp endpoint client connection. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_a0c77368245dd6a5e13e27231e0902ac0}{Wifi\+\_\+\+Close\+\_\+\+UDP\+\_\+\+Client}} (void)
+\begin{DoxyCompactList}\small\item\em Close the udp endpoint client connection. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_a7e40e7d60e10b885e5ee6aeb2b5a8171}{Wifi\+\_\+\+Start\+\_\+\+UDP\+\_\+\+Server}} (void)
+\begin{DoxyCompactList}\small\item\em Start the udp server. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_a2f64e4476e6ef1d96abb4a27def96aaf}{Wifi\+\_\+\+Close\+\_\+\+UDP\+\_\+\+Server}} (void)
+\begin{DoxyCompactList}\small\item\em Close the udp server. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_aee5a5834eeaf73cf2e7e8470d956d57d}{Wifi\+\_\+\+Open\+\_\+\+TLS\+\_\+\+Client}} (void)
+\begin{DoxyCompactList}\small\item\em Open the tls endpoint client connection. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_a38026853cc249ed56816db34de0500e0}{Wifi\+\_\+\+Close\+\_\+\+TLS\+\_\+\+Client}} (void)
+\begin{DoxyCompactList}\small\item\em Close the tls endpoint client connection. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_a61a184f51f8d89e0f7cecade0732dae5}{Wifi\+\_\+\+Is\+\_\+\+Host\+\_\+\+Alive}} (void)
+\begin{DoxyCompactList}\small\item\em Check if host server is alive. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_ab2d30132091d65f9cc64adcf346c4607}{Wifi\+\_\+\+Send\+\_\+\+Data\+\_\+\+Frame}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}data, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} size\+\_\+data, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} frame\+\_\+type)
+\begin{DoxyCompactList}\small\item\em Send Data Frame using Wifi connection (for Sigfox data frames) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_a69cdbda6b544229acb4b866b2e26edb4}{Wifi\+\_\+\+Send\+\_\+\+Test}} (void)
+\begin{DoxyCompactList}\small\item\em Send a File from a u\+SD to the Server. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_a4d809acbf2bea224f2bea6d3e9b951d5}{Wifi\+\_\+\+Send\+\_\+\+Test\+\_\+\+Result}} (void)
+\begin{DoxyCompactList}\small\item\em Check if an error has occurred and reset directory. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_a786eafab9b14cb881758ba2729af3f08}{Wifi\+\_\+\+Send\+\_\+\+Episode}} (void)
+\begin{DoxyCompactList}\small\item\em Send a File from a u\+SD to the Server. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_a03ce170a4b98e4f7a315afad2f3ee24c}{Wifi\+\_\+\+Send\+\_\+\+Episode\+\_\+\+Result}} (void)
+\begin{DoxyCompactList}\small\item\em Check if an error has occurred and reset directory. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_a2dc45a78a54fd39ac066b6492047e4c2}{Wifi\+\_\+\+Receive\+\_\+\+Firmware}} (void)
+\begin{DoxyCompactList}\small\item\em Receive firmware update file. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_ac5c857d89b9b970102e0250632018ac2}{Wifi\+\_\+\+Receive\+\_\+\+Firmware\+\_\+\+Result}} (void)
+\begin{DoxyCompactList}\small\item\em Check if an error has occurred and if it has occurred, delete the firmware.\+srec so as not to record it because it may be corrupt. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_a8805d98a2439f4943e9a3ca175154e56}{Wifi\+\_\+\+Delete\+\_\+\+Firmware}} (void)
+\begin{DoxyCompactList}\small\item\em Delete Firmware. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_a35d5dc2d9b2d927b7f5010fd8d4f8256}{Wifi\+\_\+\+Receive\+\_\+\+Configuration}} (void)
+\begin{DoxyCompactList}\small\item\em Receive configuration update file. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_ac9f124d0da81d17346031b87f575c581}{Wifi\+\_\+\+Receive\+\_\+\+Configuration\+\_\+\+Result}} (void)
+\begin{DoxyCompactList}\small\item\em Check if an error has occurred and if it has occurred, delete the R100.\+cfg so as not to record it because it may be corrupt. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+BSP Wifi Silicon Labs WGM110 header file. 
+
+\begin{DoxyVersion}{Version}
+v1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+03/05/2019 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+jarribas 
+\end{DoxyAuthor}
+\begin{DoxyWarning}{Warning}
+author date version .-\/ Edition 
+\end{DoxyWarning}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000008}{Bug}}]\end{DoxyRefDesc}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{bsp__wifi__silabs-_w_g_m110_8h_a50a9bfef0232e858bd5e04b0d95b64f2}\label{bsp__wifi__silabs-_w_g_m110_8h_a50a9bfef0232e858bd5e04b0d95b64f2} 
+\index{bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}!BGLIB\_EVT\_CONNECTED@{BGLIB\_EVT\_CONNECTED}}
+\index{BGLIB\_EVT\_CONNECTED@{BGLIB\_EVT\_CONNECTED}!bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}}
+\doxysubsubsection{\texorpdfstring{BGLIB\_EVT\_CONNECTED}{BGLIB\_EVT\_CONNECTED}}
+{\footnotesize\ttfamily \#define BGLIB\+\_\+\+EVT\+\_\+\+CONNECTED~12}
+
+\Hypertarget{bsp__wifi__silabs-_w_g_m110_8h_aeb276700e65cd80406ba09fbf40d7ed9}\label{bsp__wifi__silabs-_w_g_m110_8h_aeb276700e65cd80406ba09fbf40d7ed9} 
+\index{bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}!BGLIB\_EVT\_DNS@{BGLIB\_EVT\_DNS}}
+\index{BGLIB\_EVT\_DNS@{BGLIB\_EVT\_DNS}!bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}}
+\doxysubsubsection{\texorpdfstring{BGLIB\_EVT\_DNS}{BGLIB\_EVT\_DNS}}
+{\footnotesize\ttfamily \#define BGLIB\+\_\+\+EVT\+\_\+\+DNS~9}
+
+\Hypertarget{bsp__wifi__silabs-_w_g_m110_8h_ab57a3e8792bc66a51495a83b6ca8ae7a}\label{bsp__wifi__silabs-_w_g_m110_8h_ab57a3e8792bc66a51495a83b6ca8ae7a} 
+\index{bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}!BGLIB\_EVT\_ENDP\_DATA@{BGLIB\_EVT\_ENDP\_DATA}}
+\index{BGLIB\_EVT\_ENDP\_DATA@{BGLIB\_EVT\_ENDP\_DATA}!bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}}
+\doxysubsubsection{\texorpdfstring{BGLIB\_EVT\_ENDP\_DATA}{BGLIB\_EVT\_ENDP\_DATA}}
+{\footnotesize\ttfamily \#define BGLIB\+\_\+\+EVT\+\_\+\+ENDP\+\_\+\+DATA~13}
+
+\Hypertarget{bsp__wifi__silabs-_w_g_m110_8h_a6d79f4bbcbfb2f3ec3d9d83e2003a8ec}\label{bsp__wifi__silabs-_w_g_m110_8h_a6d79f4bbcbfb2f3ec3d9d83e2003a8ec} 
+\index{bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}!BGLIB\_EVT\_ENDP\_DATA\_2@{BGLIB\_EVT\_ENDP\_DATA\_2}}
+\index{BGLIB\_EVT\_ENDP\_DATA\_2@{BGLIB\_EVT\_ENDP\_DATA\_2}!bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}}
+\doxysubsubsection{\texorpdfstring{BGLIB\_EVT\_ENDP\_DATA\_2}{BGLIB\_EVT\_ENDP\_DATA\_2}}
+{\footnotesize\ttfamily \#define BGLIB\+\_\+\+EVT\+\_\+\+ENDP\+\_\+\+DATA\+\_\+2~2}
+
+\Hypertarget{bsp__wifi__silabs-_w_g_m110_8h_a9b1d87c42f7cea1f6afe60f91a756b8a}\label{bsp__wifi__silabs-_w_g_m110_8h_a9b1d87c42f7cea1f6afe60f91a756b8a} 
+\index{bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}!BGLIB\_EVT\_ENDP\_DATA\_5@{BGLIB\_EVT\_ENDP\_DATA\_5}}
+\index{BGLIB\_EVT\_ENDP\_DATA\_5@{BGLIB\_EVT\_ENDP\_DATA\_5}!bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}}
+\doxysubsubsection{\texorpdfstring{BGLIB\_EVT\_ENDP\_DATA\_5}{BGLIB\_EVT\_ENDP\_DATA\_5}}
+{\footnotesize\ttfamily \#define BGLIB\+\_\+\+EVT\+\_\+\+ENDP\+\_\+\+DATA\+\_\+5~5}
+
+\Hypertarget{bsp__wifi__silabs-_w_g_m110_8h_a2002131ccbebdedd02b9281889cbd38a}\label{bsp__wifi__silabs-_w_g_m110_8h_a2002131ccbebdedd02b9281889cbd38a} 
+\index{bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}!BGLIB\_EVT\_ENDP\_DATA\_6@{BGLIB\_EVT\_ENDP\_DATA\_6}}
+\index{BGLIB\_EVT\_ENDP\_DATA\_6@{BGLIB\_EVT\_ENDP\_DATA\_6}!bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}}
+\doxysubsubsection{\texorpdfstring{BGLIB\_EVT\_ENDP\_DATA\_6}{BGLIB\_EVT\_ENDP\_DATA\_6}}
+{\footnotesize\ttfamily \#define BGLIB\+\_\+\+EVT\+\_\+\+ENDP\+\_\+\+DATA\+\_\+6~6}
+
+\Hypertarget{bsp__wifi__silabs-_w_g_m110_8h_a7272d97f1d4275e0408fe43e169a2276}\label{bsp__wifi__silabs-_w_g_m110_8h_a7272d97f1d4275e0408fe43e169a2276} 
+\index{bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}!BGLIB\_EVT\_ENDP\_STS@{BGLIB\_EVT\_ENDP\_STS}}
+\index{BGLIB\_EVT\_ENDP\_STS@{BGLIB\_EVT\_ENDP\_STS}!bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}}
+\doxysubsubsection{\texorpdfstring{BGLIB\_EVT\_ENDP\_STS}{BGLIB\_EVT\_ENDP\_STS}}
+{\footnotesize\ttfamily \#define BGLIB\+\_\+\+EVT\+\_\+\+ENDP\+\_\+\+STS~12}
+
+\Hypertarget{bsp__wifi__silabs-_w_g_m110_8h_a20d1e004cf23c8d983347ff8967846fa}\label{bsp__wifi__silabs-_w_g_m110_8h_a20d1e004cf23c8d983347ff8967846fa} 
+\index{bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}!BGLIB\_EVT\_GET\_MAC@{BGLIB\_EVT\_GET\_MAC}}
+\index{BGLIB\_EVT\_GET\_MAC@{BGLIB\_EVT\_GET\_MAC}!bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}}
+\doxysubsubsection{\texorpdfstring{BGLIB\_EVT\_GET\_MAC}{BGLIB\_EVT\_GET\_MAC}}
+{\footnotesize\ttfamily \#define BGLIB\+\_\+\+EVT\+\_\+\+GET\+\_\+\+MAC~11}
+
+\Hypertarget{bsp__wifi__silabs-_w_g_m110_8h_a1d632dee9f1d453955cdac61f60cc536}\label{bsp__wifi__silabs-_w_g_m110_8h_a1d632dee9f1d453955cdac61f60cc536} 
+\index{bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}!BGLIB\_EVT\_HW\_UART\_CONF@{BGLIB\_EVT\_HW\_UART\_CONF}}
+\index{BGLIB\_EVT\_HW\_UART\_CONF@{BGLIB\_EVT\_HW\_UART\_CONF}!bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}}
+\doxysubsubsection{\texorpdfstring{BGLIB\_EVT\_HW\_UART\_CONF}{BGLIB\_EVT\_HW\_UART\_CONF}}
+{\footnotesize\ttfamily \#define BGLIB\+\_\+\+EVT\+\_\+\+HW\+\_\+\+UART\+\_\+\+CONF~13}
+
+\Hypertarget{bsp__wifi__silabs-_w_g_m110_8h_a9897d59d220e7da6334d5b68850e4a15}\label{bsp__wifi__silabs-_w_g_m110_8h_a9897d59d220e7da6334d5b68850e4a15} 
+\index{bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}!BGLIB\_EVT\_RESPONSE@{BGLIB\_EVT\_RESPONSE}}
+\index{BGLIB\_EVT\_RESPONSE@{BGLIB\_EVT\_RESPONSE}!bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}}
+\doxysubsubsection{\texorpdfstring{BGLIB\_EVT\_RESPONSE}{BGLIB\_EVT\_RESPONSE}}
+{\footnotesize\ttfamily \#define BGLIB\+\_\+\+EVT\+\_\+\+RESPONSE~8}
+
+\Hypertarget{bsp__wifi__silabs-_w_g_m110_8h_a22ceb3c494a94f05232d3af99438d385}\label{bsp__wifi__silabs-_w_g_m110_8h_a22ceb3c494a94f05232d3af99438d385} 
+\index{bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}!BGLIB\_EVT\_SCAN\_RESULT@{BGLIB\_EVT\_SCAN\_RESULT}}
+\index{BGLIB\_EVT\_SCAN\_RESULT@{BGLIB\_EVT\_SCAN\_RESULT}!bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}}
+\doxysubsubsection{\texorpdfstring{BGLIB\_EVT\_SCAN\_RESULT}{BGLIB\_EVT\_SCAN\_RESULT}}
+{\footnotesize\ttfamily \#define BGLIB\+\_\+\+EVT\+\_\+\+SCAN\+\_\+\+RESULT~16}
+
+\Hypertarget{bsp__wifi__silabs-_w_g_m110_8h_abb2e0ba46c155899c3dcf99e698b3997}\label{bsp__wifi__silabs-_w_g_m110_8h_abb2e0ba46c155899c3dcf99e698b3997} 
+\index{bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}!BGLIB\_EVT\_TCPIP\_CONF@{BGLIB\_EVT\_TCPIP\_CONF}}
+\index{BGLIB\_EVT\_TCPIP\_CONF@{BGLIB\_EVT\_TCPIP\_CONF}!bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}}
+\doxysubsubsection{\texorpdfstring{BGLIB\_EVT\_TCPIP\_CONF}{BGLIB\_EVT\_TCPIP\_CONF}}
+{\footnotesize\ttfamily \#define BGLIB\+\_\+\+EVT\+\_\+\+TCPIP\+\_\+\+CONF~17}
+
+\Hypertarget{bsp__wifi__silabs-_w_g_m110_8h_ac26237399748c47216f8583ad9d42ef1}\label{bsp__wifi__silabs-_w_g_m110_8h_ac26237399748c47216f8583ad9d42ef1} 
+\index{bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}!BGLIB\_EVT\_TCPIP\_DNS\_HOSTNAME@{BGLIB\_EVT\_TCPIP\_DNS\_HOSTNAME}}
+\index{BGLIB\_EVT\_TCPIP\_DNS\_HOSTNAME@{BGLIB\_EVT\_TCPIP\_DNS\_HOSTNAME}!bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}}
+\doxysubsubsection{\texorpdfstring{BGLIB\_EVT\_TCPIP\_DNS\_HOSTNAME}{BGLIB\_EVT\_TCPIP\_DNS\_HOSTNAME}}
+{\footnotesize\ttfamily \#define BGLIB\+\_\+\+EVT\+\_\+\+TCPIP\+\_\+\+DNS\+\_\+\+HOSTNAME~11}
+
+\Hypertarget{bsp__wifi__silabs-_w_g_m110_8h_a5f86a2ee8337d13b52dd7cff7ebb5fa4}\label{bsp__wifi__silabs-_w_g_m110_8h_a5f86a2ee8337d13b52dd7cff7ebb5fa4} 
+\index{bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}!BGLIB\_EVT\_TCPIP\_ENDP\_STS@{BGLIB\_EVT\_TCPIP\_ENDP\_STS}}
+\index{BGLIB\_EVT\_TCPIP\_ENDP\_STS@{BGLIB\_EVT\_TCPIP\_ENDP\_STS}!bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}}
+\doxysubsubsection{\texorpdfstring{BGLIB\_EVT\_TCPIP\_ENDP\_STS}{BGLIB\_EVT\_TCPIP\_ENDP\_STS}}
+{\footnotesize\ttfamily \#define BGLIB\+\_\+\+EVT\+\_\+\+TCPIP\+\_\+\+ENDP\+\_\+\+STS~17}
+
+\Hypertarget{bsp__wifi__silabs-_w_g_m110_8h_a762ea0e789b700d450062d3c62eb4fe0}\label{bsp__wifi__silabs-_w_g_m110_8h_a762ea0e789b700d450062d3c62eb4fe0} 
+\index{bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}!BGLIB\_EVT\_TCPIP\_UDP\_DATA@{BGLIB\_EVT\_TCPIP\_UDP\_DATA}}
+\index{BGLIB\_EVT\_TCPIP\_UDP\_DATA@{BGLIB\_EVT\_TCPIP\_UDP\_DATA}!bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}}
+\doxysubsubsection{\texorpdfstring{BGLIB\_EVT\_TCPIP\_UDP\_DATA}{BGLIB\_EVT\_TCPIP\_UDP\_DATA}}
+{\footnotesize\ttfamily \#define BGLIB\+\_\+\+EVT\+\_\+\+TCPIP\+\_\+\+UDP\+\_\+\+DATA~13}
+
+\Hypertarget{bsp__wifi__silabs-_w_g_m110_8h_a18c25b4faabdff0bbb423e6936c60790}\label{bsp__wifi__silabs-_w_g_m110_8h_a18c25b4faabdff0bbb423e6936c60790} 
+\index{bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}!BGLIB\_EVT\_TLS\_VERIFY@{BGLIB\_EVT\_TLS\_VERIFY}}
+\index{BGLIB\_EVT\_TLS\_VERIFY@{BGLIB\_EVT\_TLS\_VERIFY}!bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}}
+\doxysubsubsection{\texorpdfstring{BGLIB\_EVT\_TLS\_VERIFY}{BGLIB\_EVT\_TLS\_VERIFY}}
+{\footnotesize\ttfamily \#define BGLIB\+\_\+\+EVT\+\_\+\+TLS\+\_\+\+VERIFY~7}
+
+\Hypertarget{bsp__wifi__silabs-_w_g_m110_8h_a691f55bdf2a264bae4dab1ceb6016ef6}\label{bsp__wifi__silabs-_w_g_m110_8h_a691f55bdf2a264bae4dab1ceb6016ef6} 
+\index{bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}!BGLIB\_EVT\_WIFI\_ON\_OFF@{BGLIB\_EVT\_WIFI\_ON\_OFF}}
+\index{BGLIB\_EVT\_WIFI\_ON\_OFF@{BGLIB\_EVT\_WIFI\_ON\_OFF}!bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}}
+\doxysubsubsection{\texorpdfstring{BGLIB\_EVT\_WIFI\_ON\_OFF}{BGLIB\_EVT\_WIFI\_ON\_OFF}}
+{\footnotesize\ttfamily \#define BGLIB\+\_\+\+EVT\+\_\+\+WIFI\+\_\+\+ON\+\_\+\+OFF~6}
+
+\Hypertarget{bsp__wifi__silabs-_w_g_m110_8h_ac46842d86b4746c2e35ede4011ae0c81}\label{bsp__wifi__silabs-_w_g_m110_8h_ac46842d86b4746c2e35ede4011ae0c81} 
+\index{bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}!BGLIB\_EVT\_X509\_ADD\_CERT\_FINISH@{BGLIB\_EVT\_X509\_ADD\_CERT\_FINISH}}
+\index{BGLIB\_EVT\_X509\_ADD\_CERT\_FINISH@{BGLIB\_EVT\_X509\_ADD\_CERT\_FINISH}!bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}}
+\doxysubsubsection{\texorpdfstring{BGLIB\_EVT\_X509\_ADD\_CERT\_FINISH}{BGLIB\_EVT\_X509\_ADD\_CERT\_FINISH}}
+{\footnotesize\ttfamily \#define BGLIB\+\_\+\+EVT\+\_\+\+X509\+\_\+\+ADD\+\_\+\+CERT\+\_\+\+FINISH~7}
+
+\Hypertarget{bsp__wifi__silabs-_w_g_m110_8h_ab1a3a2d18eb7e602c9a7e343e14099e7}\label{bsp__wifi__silabs-_w_g_m110_8h_ab1a3a2d18eb7e602c9a7e343e14099e7} 
+\index{bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}!BGLIB\_EVT\_X509\_CERT@{BGLIB\_EVT\_X509\_CERT}}
+\index{BGLIB\_EVT\_X509\_CERT@{BGLIB\_EVT\_X509\_CERT}!bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}}
+\doxysubsubsection{\texorpdfstring{BGLIB\_EVT\_X509\_CERT}{BGLIB\_EVT\_X509\_CERT}}
+{\footnotesize\ttfamily \#define BGLIB\+\_\+\+EVT\+\_\+\+X509\+\_\+\+CERT~8}
+
+\Hypertarget{bsp__wifi__silabs-_w_g_m110_8h_a0455decffa6346cab1b4cbe672208eb9}\label{bsp__wifi__silabs-_w_g_m110_8h_a0455decffa6346cab1b4cbe672208eb9} 
+\index{bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}!BGLIB\_EVT\_X509\_CERT\_FINGER@{BGLIB\_EVT\_X509\_CERT\_FINGER}}
+\index{BGLIB\_EVT\_X509\_CERT\_FINGER@{BGLIB\_EVT\_X509\_CERT\_FINGER}!bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}}
+\doxysubsubsection{\texorpdfstring{BGLIB\_EVT\_X509\_CERT\_FINGER}{BGLIB\_EVT\_X509\_CERT\_FINGER}}
+{\footnotesize\ttfamily \#define BGLIB\+\_\+\+EVT\+\_\+\+X509\+\_\+\+CERT\+\_\+\+FINGER~16}
+
+\Hypertarget{bsp__wifi__silabs-_w_g_m110_8h_adacc26ff34f9737ad2a1af0b17de40ce}\label{bsp__wifi__silabs-_w_g_m110_8h_adacc26ff34f9737ad2a1af0b17de40ce} 
+\index{bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}!BGLIB\_EVT\_X509\_CERT\_LIST@{BGLIB\_EVT\_X509\_CERT\_LIST}}
+\index{BGLIB\_EVT\_X509\_CERT\_LIST@{BGLIB\_EVT\_X509\_CERT\_LIST}!bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}}
+\doxysubsubsection{\texorpdfstring{BGLIB\_EVT\_X509\_CERT\_LIST}{BGLIB\_EVT\_X509\_CERT\_LIST}}
+{\footnotesize\ttfamily \#define BGLIB\+\_\+\+EVT\+\_\+\+X509\+\_\+\+CERT\+\_\+\+LIST~4}
+
+\Hypertarget{bsp__wifi__silabs-_w_g_m110_8h_a2e201cbb57e3cb43ea17429bce52731c}\label{bsp__wifi__silabs-_w_g_m110_8h_a2e201cbb57e3cb43ea17429bce52731c} 
+\index{bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}!BGLIB\_EVT\_X509\_CERT\_SUB@{BGLIB\_EVT\_X509\_CERT\_SUB}}
+\index{BGLIB\_EVT\_X509\_CERT\_SUB@{BGLIB\_EVT\_X509\_CERT\_SUB}!bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}}
+\doxysubsubsection{\texorpdfstring{BGLIB\_EVT\_X509\_CERT\_SUB}{BGLIB\_EVT\_X509\_CERT\_SUB}}
+{\footnotesize\ttfamily \#define BGLIB\+\_\+\+EVT\+\_\+\+X509\+\_\+\+CERT\+\_\+\+SUB~6}
+
+\Hypertarget{bsp__wifi__silabs-_w_g_m110_8h_a612bcb3cc5a3e1cb82eb587e92cf1128}\label{bsp__wifi__silabs-_w_g_m110_8h_a612bcb3cc5a3e1cb82eb587e92cf1128} 
+\index{bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}!BGLIB\_EVT\_X509\_CERT\_SUB\_LEN@{BGLIB\_EVT\_X509\_CERT\_SUB\_LEN}}
+\index{BGLIB\_EVT\_X509\_CERT\_SUB\_LEN@{BGLIB\_EVT\_X509\_CERT\_SUB\_LEN}!bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}}
+\doxysubsubsection{\texorpdfstring{BGLIB\_EVT\_X509\_CERT\_SUB\_LEN}{BGLIB\_EVT\_X509\_CERT\_SUB\_LEN}}
+{\footnotesize\ttfamily \#define BGLIB\+\_\+\+EVT\+\_\+\+X509\+\_\+\+CERT\+\_\+\+SUB\+\_\+\+LEN~54}
+
+\Hypertarget{bsp__wifi__silabs-_w_g_m110_8h_a50b732d56567e4b261085d6b5310b92b}\label{bsp__wifi__silabs-_w_g_m110_8h_a50b732d56567e4b261085d6b5310b92b} 
+\index{bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}!BGLIB\_MAX\_EVT@{BGLIB\_MAX\_EVT}}
+\index{BGLIB\_MAX\_EVT@{BGLIB\_MAX\_EVT}!bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}}
+\doxysubsubsection{\texorpdfstring{BGLIB\_MAX\_EVT}{BGLIB\_MAX\_EVT}}
+{\footnotesize\ttfamily \#define BGLIB\+\_\+\+MAX\+\_\+\+EVT~5}
+
+
+
+Max events to be stored. 
+
+\Hypertarget{bsp__wifi__silabs-_w_g_m110_8h_aa9b821b6f6d5784270ca8900cb725f8a}\label{bsp__wifi__silabs-_w_g_m110_8h_aa9b821b6f6d5784270ca8900cb725f8a} 
+\index{bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}!BGLIB\_NO\_EVT@{BGLIB\_NO\_EVT}}
+\index{BGLIB\_NO\_EVT@{BGLIB\_NO\_EVT}!bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}}
+\doxysubsubsection{\texorpdfstring{BGLIB\_NO\_EVT}{BGLIB\_NO\_EVT}}
+{\footnotesize\ttfamily \#define BGLIB\+\_\+\+NO\+\_\+\+EVT~0}
+
+\Hypertarget{bsp__wifi__silabs-_w_g_m110_8h_a1a730054a5e0a40198c1bde48d64657c}\label{bsp__wifi__silabs-_w_g_m110_8h_a1a730054a5e0a40198c1bde48d64657c} 
+\index{bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}!BGLIB\_RESP\_16\_BYTES@{BGLIB\_RESP\_16\_BYTES}}
+\index{BGLIB\_RESP\_16\_BYTES@{BGLIB\_RESP\_16\_BYTES}!bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}}
+\doxysubsubsection{\texorpdfstring{BGLIB\_RESP\_16\_BYTES}{BGLIB\_RESP\_16\_BYTES}}
+{\footnotesize\ttfamily \#define BGLIB\+\_\+\+RESP\+\_\+16\+\_\+\+BYTES~16}
+
+\Hypertarget{bsp__wifi__silabs-_w_g_m110_8h_a06813d327c87f27c6b22366b4732d6a4}\label{bsp__wifi__silabs-_w_g_m110_8h_a06813d327c87f27c6b22366b4732d6a4} 
+\index{bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}!BGLIB\_RESP\_18\_BYTES@{BGLIB\_RESP\_18\_BYTES}}
+\index{BGLIB\_RESP\_18\_BYTES@{BGLIB\_RESP\_18\_BYTES}!bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}}
+\doxysubsubsection{\texorpdfstring{BGLIB\_RESP\_18\_BYTES}{BGLIB\_RESP\_18\_BYTES}}
+{\footnotesize\ttfamily \#define BGLIB\+\_\+\+RESP\+\_\+18\+\_\+\+BYTES~18}
+
+\Hypertarget{bsp__wifi__silabs-_w_g_m110_8h_a3583fbef333ee2fb12b698733e83dd04}\label{bsp__wifi__silabs-_w_g_m110_8h_a3583fbef333ee2fb12b698733e83dd04} 
+\index{bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}!BGLIB\_RESP\_19\_BYTES@{BGLIB\_RESP\_19\_BYTES}}
+\index{BGLIB\_RESP\_19\_BYTES@{BGLIB\_RESP\_19\_BYTES}!bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}}
+\doxysubsubsection{\texorpdfstring{BGLIB\_RESP\_19\_BYTES}{BGLIB\_RESP\_19\_BYTES}}
+{\footnotesize\ttfamily \#define BGLIB\+\_\+\+RESP\+\_\+19\+\_\+\+BYTES~19}
+
+\Hypertarget{bsp__wifi__silabs-_w_g_m110_8h_a1a1e234658b0476455dde651b9e3b3b8}\label{bsp__wifi__silabs-_w_g_m110_8h_a1a1e234658b0476455dde651b9e3b3b8} 
+\index{bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}!BGLIB\_RESP\_1\_BYTE@{BGLIB\_RESP\_1\_BYTE}}
+\index{BGLIB\_RESP\_1\_BYTE@{BGLIB\_RESP\_1\_BYTE}!bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}}
+\doxysubsubsection{\texorpdfstring{BGLIB\_RESP\_1\_BYTE}{BGLIB\_RESP\_1\_BYTE}}
+{\footnotesize\ttfamily \#define BGLIB\+\_\+\+RESP\+\_\+1\+\_\+\+BYTE~1}
+
+\Hypertarget{bsp__wifi__silabs-_w_g_m110_8h_acaaa8fa8f3779f4278ce3b53fe4fc924}\label{bsp__wifi__silabs-_w_g_m110_8h_acaaa8fa8f3779f4278ce3b53fe4fc924} 
+\index{bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}!BGLIB\_RESP\_2\_BYTES@{BGLIB\_RESP\_2\_BYTES}}
+\index{BGLIB\_RESP\_2\_BYTES@{BGLIB\_RESP\_2\_BYTES}!bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}}
+\doxysubsubsection{\texorpdfstring{BGLIB\_RESP\_2\_BYTES}{BGLIB\_RESP\_2\_BYTES}}
+{\footnotesize\ttfamily \#define BGLIB\+\_\+\+RESP\+\_\+2\+\_\+\+BYTES~2}
+
+\Hypertarget{bsp__wifi__silabs-_w_g_m110_8h_a3be5c6b198092d3e399d24517f29abf9}\label{bsp__wifi__silabs-_w_g_m110_8h_a3be5c6b198092d3e399d24517f29abf9} 
+\index{bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}!BGLIB\_RESP\_3\_BYTES@{BGLIB\_RESP\_3\_BYTES}}
+\index{BGLIB\_RESP\_3\_BYTES@{BGLIB\_RESP\_3\_BYTES}!bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}}
+\doxysubsubsection{\texorpdfstring{BGLIB\_RESP\_3\_BYTES}{BGLIB\_RESP\_3\_BYTES}}
+{\footnotesize\ttfamily \#define BGLIB\+\_\+\+RESP\+\_\+3\+\_\+\+BYTES~3}
+
+\Hypertarget{bsp__wifi__silabs-_w_g_m110_8h_aefe726b8d1d3f01959ac562e4e97e6f1}\label{bsp__wifi__silabs-_w_g_m110_8h_aefe726b8d1d3f01959ac562e4e97e6f1} 
+\index{bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}!BGLIB\_RESP\_4\_BYTES@{BGLIB\_RESP\_4\_BYTES}}
+\index{BGLIB\_RESP\_4\_BYTES@{BGLIB\_RESP\_4\_BYTES}!bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}}
+\doxysubsubsection{\texorpdfstring{BGLIB\_RESP\_4\_BYTES}{BGLIB\_RESP\_4\_BYTES}}
+{\footnotesize\ttfamily \#define BGLIB\+\_\+\+RESP\+\_\+4\+\_\+\+BYTES~4}
+
+\Hypertarget{bsp__wifi__silabs-_w_g_m110_8h_aa744444a0f9a2237bead83d8fdc4a2d5}\label{bsp__wifi__silabs-_w_g_m110_8h_aa744444a0f9a2237bead83d8fdc4a2d5} 
+\index{bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}!BGLIB\_RESP\_8\_BYTES@{BGLIB\_RESP\_8\_BYTES}}
+\index{BGLIB\_RESP\_8\_BYTES@{BGLIB\_RESP\_8\_BYTES}!bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}}
+\doxysubsubsection{\texorpdfstring{BGLIB\_RESP\_8\_BYTES}{BGLIB\_RESP\_8\_BYTES}}
+{\footnotesize\ttfamily \#define BGLIB\+\_\+\+RESP\+\_\+8\+\_\+\+BYTES~8}
+
+\Hypertarget{bsp__wifi__silabs-_w_g_m110_8h_ad569bb90996d3879f76527efd7b15a1d}\label{bsp__wifi__silabs-_w_g_m110_8h_ad569bb90996d3879f76527efd7b15a1d} 
+\index{bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}!BGLIB\_RESP\_9\_BYTES@{BGLIB\_RESP\_9\_BYTES}}
+\index{BGLIB\_RESP\_9\_BYTES@{BGLIB\_RESP\_9\_BYTES}!bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}}
+\doxysubsubsection{\texorpdfstring{BGLIB\_RESP\_9\_BYTES}{BGLIB\_RESP\_9\_BYTES}}
+{\footnotesize\ttfamily \#define BGLIB\+\_\+\+RESP\+\_\+9\+\_\+\+BYTES~9}
+
+\Hypertarget{bsp__wifi__silabs-_w_g_m110_8h_a90ec114bc489f45b477e6cca01db7424}\label{bsp__wifi__silabs-_w_g_m110_8h_a90ec114bc489f45b477e6cca01db7424} 
+\index{bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}!BGLIB\_RESP\_NO\_BYTES@{BGLIB\_RESP\_NO\_BYTES}}
+\index{BGLIB\_RESP\_NO\_BYTES@{BGLIB\_RESP\_NO\_BYTES}!bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}}
+\doxysubsubsection{\texorpdfstring{BGLIB\_RESP\_NO\_BYTES}{BGLIB\_RESP\_NO\_BYTES}}
+{\footnotesize\ttfamily \#define BGLIB\+\_\+\+RESP\+\_\+\+NO\+\_\+\+BYTES~0}
+
+\Hypertarget{bsp__wifi__silabs-_w_g_m110_8h_a1bc4b2b0b3013678e7cfc46f0effc611}\label{bsp__wifi__silabs-_w_g_m110_8h_a1bc4b2b0b3013678e7cfc46f0effc611} 
+\index{bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}!CERT\_FILENAME@{CERT\_FILENAME}}
+\index{CERT\_FILENAME@{CERT\_FILENAME}!bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}}
+\doxysubsubsection{\texorpdfstring{CERT\_FILENAME}{CERT\_FILENAME}}
+{\footnotesize\ttfamily \#define CERT\+\_\+\+FILENAME~"{}cert.\+dat"{}}
+
+
+
+Cert configuration filename. 
+
+\Hypertarget{bsp__wifi__silabs-_w_g_m110_8h_a8eb52e5ab358c7b73aa22bf8df819f29}\label{bsp__wifi__silabs-_w_g_m110_8h_a8eb52e5ab358c7b73aa22bf8df819f29} 
+\index{bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}!CERT\_FOLDER\_NAME@{CERT\_FOLDER\_NAME}}
+\index{CERT\_FOLDER\_NAME@{CERT\_FOLDER\_NAME}!bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}}
+\doxysubsubsection{\texorpdfstring{CERT\_FOLDER\_NAME}{CERT\_FOLDER\_NAME}}
+{\footnotesize\ttfamily \#define CERT\+\_\+\+FOLDER\+\_\+\+NAME~"{}CERT"{}}
+
+
+
+CERT folder. 
+
+\Hypertarget{bsp__wifi__silabs-_w_g_m110_8h_a5da033ebe5f61229268915c4b1cf44ff}\label{bsp__wifi__silabs-_w_g_m110_8h_a5da033ebe5f61229268915c4b1cf44ff} 
+\index{bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}!DHCP\_OFF@{DHCP\_OFF}}
+\index{DHCP\_OFF@{DHCP\_OFF}!bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}}
+\doxysubsubsection{\texorpdfstring{DHCP\_OFF}{DHCP\_OFF}}
+{\footnotesize\ttfamily \#define DHCP\+\_\+\+OFF~0}
+
+
+
+Desactivate DHCP. 
+
+\Hypertarget{bsp__wifi__silabs-_w_g_m110_8h_a715e8f9404bff82f87e845f4292448ff}\label{bsp__wifi__silabs-_w_g_m110_8h_a715e8f9404bff82f87e845f4292448ff} 
+\index{bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}!DHCP\_ON@{DHCP\_ON}}
+\index{DHCP\_ON@{DHCP\_ON}!bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}}
+\doxysubsubsection{\texorpdfstring{DHCP\_ON}{DHCP\_ON}}
+{\footnotesize\ttfamily \#define DHCP\+\_\+\+ON~1}
+
+
+
+Activate DHCP. 
+
+\Hypertarget{bsp__wifi__silabs-_w_g_m110_8h_a4d9ac04e112d67421517c9340bb442ae}\label{bsp__wifi__silabs-_w_g_m110_8h_a4d9ac04e112d67421517c9340bb442ae} 
+\index{bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}!MAX\_WIFI\_ALERT\_GPS@{MAX\_WIFI\_ALERT\_GPS}}
+\index{MAX\_WIFI\_ALERT\_GPS@{MAX\_WIFI\_ALERT\_GPS}!bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}}
+\doxysubsubsection{\texorpdfstring{MAX\_WIFI\_ALERT\_GPS}{MAX\_WIFI\_ALERT\_GPS}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+WIFI\+\_\+\+ALERT\+\_\+\+GPS~141}
+
+
+
+WIFI alerts and GPS data size. 
+
+\Hypertarget{bsp__wifi__silabs-_w_g_m110_8h_a82cff3a7aacbae977acb329be0286819}\label{bsp__wifi__silabs-_w_g_m110_8h_a82cff3a7aacbae977acb329be0286819} 
+\index{bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}!MAX\_WIFI\_HEADER\_BYTES@{MAX\_WIFI\_HEADER\_BYTES}}
+\index{MAX\_WIFI\_HEADER\_BYTES@{MAX\_WIFI\_HEADER\_BYTES}!bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}}
+\doxysubsubsection{\texorpdfstring{MAX\_WIFI\_HEADER\_BYTES}{MAX\_WIFI\_HEADER\_BYTES}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+WIFI\+\_\+\+HEADER\+\_\+\+BYTES~129}
+
+
+
+WIFI header bytes size. 
+
+\Hypertarget{bsp__wifi__silabs-_w_g_m110_8h_a9a4e44302609c510e6e0407db04c026e}\label{bsp__wifi__silabs-_w_g_m110_8h_a9a4e44302609c510e6e0407db04c026e} 
+\index{bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}!MAX\_WIFI\_READ\_FILE@{MAX\_WIFI\_READ\_FILE}}
+\index{MAX\_WIFI\_READ\_FILE@{MAX\_WIFI\_READ\_FILE}!bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}}
+\doxysubsubsection{\texorpdfstring{MAX\_WIFI\_READ\_FILE}{MAX\_WIFI\_READ\_FILE}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+WIFI\+\_\+\+READ\+\_\+\+FILE~253}
+
+
+
+WIFI read data size. 
+
+\Hypertarget{bsp__wifi__silabs-_w_g_m110_8h_ae9499e755893c2fc53999b8d7653c09f}\label{bsp__wifi__silabs-_w_g_m110_8h_ae9499e755893c2fc53999b8d7653c09f} 
+\index{bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}!MAX\_WIFI\_TEST\_FRAME@{MAX\_WIFI\_TEST\_FRAME}}
+\index{MAX\_WIFI\_TEST\_FRAME@{MAX\_WIFI\_TEST\_FRAME}!bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}}
+\doxysubsubsection{\texorpdfstring{MAX\_WIFI\_TEST\_FRAME}{MAX\_WIFI\_TEST\_FRAME}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+WIFI\+\_\+\+TEST\+\_\+\+FRAME~153}
+
+
+
+WIFI test frame size. 
+
+\Hypertarget{bsp__wifi__silabs-_w_g_m110_8h_a75f57de7f8ba1fe6d616d393d9a6279b}\label{bsp__wifi__silabs-_w_g_m110_8h_a75f57de7f8ba1fe6d616d393d9a6279b} 
+\index{bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}!MSCHAPv2@{MSCHAPv2}}
+\index{MSCHAPv2@{MSCHAPv2}!bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}}
+\doxysubsubsection{\texorpdfstring{MSCHAPv2}{MSCHAPv2}}
+{\footnotesize\ttfamily \#define MSCHAPv2~3}
+
+
+
+MSCHAPv2 authentication method. 
+
+\Hypertarget{bsp__wifi__silabs-_w_g_m110_8h_a655c84af1b0034986ff56e12e84f983d}\label{bsp__wifi__silabs-_w_g_m110_8h_a655c84af1b0034986ff56e12e84f983d} 
+\index{bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}!NONE@{NONE}}
+\index{NONE@{NONE}!bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}}
+\doxysubsubsection{\texorpdfstring{NONE}{NONE}}
+{\footnotesize\ttfamily \#define NONE~0}
+
+
+
+No authentication method. 
+
+\Hypertarget{bsp__wifi__silabs-_w_g_m110_8h_a2f3aca1b4c11e90ba74d121e1cb468f6}\label{bsp__wifi__silabs-_w_g_m110_8h_a2f3aca1b4c11e90ba74d121e1cb468f6} 
+\index{bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}!PEAP@{PEAP}}
+\index{PEAP@{PEAP}!bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}}
+\doxysubsubsection{\texorpdfstring{PEAP}{PEAP}}
+{\footnotesize\ttfamily \#define PEAP~2}
+
+
+
+PEAP authentication method. 
+
+\Hypertarget{bsp__wifi__silabs-_w_g_m110_8h_af239c62f325c4a450832ba971ad30594}\label{bsp__wifi__silabs-_w_g_m110_8h_af239c62f325c4a450832ba971ad30594} 
+\index{bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}!PORT\_CFG@{PORT\_CFG}}
+\index{PORT\_CFG@{PORT\_CFG}!bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}}
+\doxysubsubsection{\texorpdfstring{PORT\_CFG}{PORT\_CFG}}
+{\footnotesize\ttfamily \#define PORT\+\_\+\+CFG~20005}
+
+\Hypertarget{bsp__wifi__silabs-_w_g_m110_8h_ac05ed83f19f738f43904a5dd98765667}\label{bsp__wifi__silabs-_w_g_m110_8h_ac05ed83f19f738f43904a5dd98765667} 
+\index{bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}!PORT\_DATA\_FRAME@{PORT\_DATA\_FRAME}}
+\index{PORT\_DATA\_FRAME@{PORT\_DATA\_FRAME}!bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}}
+\doxysubsubsection{\texorpdfstring{PORT\_DATA\_FRAME}{PORT\_DATA\_FRAME}}
+{\footnotesize\ttfamily \#define PORT\+\_\+\+DATA\+\_\+\+FRAME~20001}
+
+\Hypertarget{bsp__wifi__silabs-_w_g_m110_8h_a5d5ca718e3f03e45ca880792334a0784}\label{bsp__wifi__silabs-_w_g_m110_8h_a5d5ca718e3f03e45ca880792334a0784} 
+\index{bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}!PORT\_EPI@{PORT\_EPI}}
+\index{PORT\_EPI@{PORT\_EPI}!bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}}
+\doxysubsubsection{\texorpdfstring{PORT\_EPI}{PORT\_EPI}}
+{\footnotesize\ttfamily \#define PORT\+\_\+\+EPI~20003}
+
+\Hypertarget{bsp__wifi__silabs-_w_g_m110_8h_aaa92742b348d084355ad318f97b646b9}\label{bsp__wifi__silabs-_w_g_m110_8h_aaa92742b348d084355ad318f97b646b9} 
+\index{bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}!PORT\_FW@{PORT\_FW}}
+\index{PORT\_FW@{PORT\_FW}!bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}}
+\doxysubsubsection{\texorpdfstring{PORT\_FW}{PORT\_FW}}
+{\footnotesize\ttfamily \#define PORT\+\_\+\+FW~20004}
+
+\Hypertarget{bsp__wifi__silabs-_w_g_m110_8h_ae77956bd9b201b0db3a1d383ad031de7}\label{bsp__wifi__silabs-_w_g_m110_8h_ae77956bd9b201b0db3a1d383ad031de7} 
+\index{bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}!PORT\_HOST\_ALIVE@{PORT\_HOST\_ALIVE}}
+\index{PORT\_HOST\_ALIVE@{PORT\_HOST\_ALIVE}!bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}}
+\doxysubsubsection{\texorpdfstring{PORT\_HOST\_ALIVE}{PORT\_HOST\_ALIVE}}
+{\footnotesize\ttfamily \#define PORT\+\_\+\+HOST\+\_\+\+ALIVE~20000}
+
+\Hypertarget{bsp__wifi__silabs-_w_g_m110_8h_a719e9e489a733064c0b8d01996b79e95}\label{bsp__wifi__silabs-_w_g_m110_8h_a719e9e489a733064c0b8d01996b79e95} 
+\index{bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}!PORT\_TEST@{PORT\_TEST}}
+\index{PORT\_TEST@{PORT\_TEST}!bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}}
+\doxysubsubsection{\texorpdfstring{PORT\_TEST}{PORT\_TEST}}
+{\footnotesize\ttfamily \#define PORT\+\_\+\+TEST~20002}
+
+\Hypertarget{bsp__wifi__silabs-_w_g_m110_8h_af409fb3ab68b0de34fadad58cd6f744f}\label{bsp__wifi__silabs-_w_g_m110_8h_af409fb3ab68b0de34fadad58cd6f744f} 
+\index{bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}!TLS@{TLS}}
+\index{TLS@{TLS}!bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}}
+\doxysubsubsection{\texorpdfstring{TLS}{TLS}}
+{\footnotesize\ttfamily \#define TLS~1}
+
+
+
+TLS authentication method. 
+
+\Hypertarget{bsp__wifi__silabs-_w_g_m110_8h_aefda3c41e567de5717e579212109a355}\label{bsp__wifi__silabs-_w_g_m110_8h_aefda3c41e567de5717e579212109a355} 
+\index{bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}!TRY\_AGAIN@{TRY\_AGAIN}}
+\index{TRY\_AGAIN@{TRY\_AGAIN}!bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}}
+\doxysubsubsection{\texorpdfstring{TRY\_AGAIN}{TRY\_AGAIN}}
+{\footnotesize\ttfamily \#define TRY\+\_\+\+AGAIN~1}
+
+\Hypertarget{bsp__wifi__silabs-_w_g_m110_8h_aa997eb76d8b474d51e621e511e33718f}\label{bsp__wifi__silabs-_w_g_m110_8h_aa997eb76d8b474d51e621e511e33718f} 
+\index{bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}!WIFI\_ID\_PAYLOAD\_SIZE@{WIFI\_ID\_PAYLOAD\_SIZE}}
+\index{WIFI\_ID\_PAYLOAD\_SIZE@{WIFI\_ID\_PAYLOAD\_SIZE}!bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}}
+\doxysubsubsection{\texorpdfstring{WIFI\_ID\_PAYLOAD\_SIZE}{WIFI\_ID\_PAYLOAD\_SIZE}}
+{\footnotesize\ttfamily \#define WIFI\+\_\+\+ID\+\_\+\+PAYLOAD\+\_\+\+SIZE~2}
+
+
+
+WIFI payload size. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{bsp__wifi__silabs-_w_g_m110_8h_a4817f778d24e668ce39ce114c98e0217}\label{bsp__wifi__silabs-_w_g_m110_8h_a4817f778d24e668ce39ce114c98e0217} 
+\index{bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}!COMPILE\_ASSERT@{COMPILE\_ASSERT}}
+\index{COMPILE\_ASSERT@{COMPILE\_ASSERT}!bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}}
+\doxysubsubsection{\texorpdfstring{COMPILE\_ASSERT()}{COMPILE\_ASSERT()}}
+{\footnotesize\ttfamily COMPILE\+\_\+\+ASSERT (\begin{DoxyParamCaption}\item[{(sizeof(\mbox{\hyperlink{struct_w_i_f_i___h_e_a_d_e_r__t}{WIFI\+\_\+\+HEADER\+\_\+t}})==\mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h_a82cff3a7aacbae977acb329be0286819}{MAX\+\_\+\+WIFI\+\_\+\+HEADER\+\_\+\+BYTES}})}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{bsp__wifi__silabs-_w_g_m110_8h_a49fb3f4209cc581931376a8782b66a49}\label{bsp__wifi__silabs-_w_g_m110_8h_a49fb3f4209cc581931376a8782b66a49} 
+\index{bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}!Wifi\_Check\_Module\_Status@{Wifi\_Check\_Module\_Status}}
+\index{Wifi\_Check\_Module\_Status@{Wifi\_Check\_Module\_Status}!bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}}
+\doxysubsubsection{\texorpdfstring{Wifi\_Check\_Module\_Status()}{Wifi\_Check\_Module\_Status()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Wifi\+\_\+\+Check\+\_\+\+Module\+\_\+\+Status (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Check Wifi module Status. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR\+\_\+\+ID\+\_\+e error code 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__wifi__silabs-_w_g_m110_8h_a49fb3f4209cc581931376a8782b66a49_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__wifi__silabs-_w_g_m110_8h_a49fb3f4209cc581931376a8782b66a49_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{bsp__wifi__silabs-_w_g_m110_8h_ace9d1100d1cb32d4f6ddd04d7f7e291e}\label{bsp__wifi__silabs-_w_g_m110_8h_ace9d1100d1cb32d4f6ddd04d7f7e291e} 
+\index{bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}!Wifi\_Close\_TCP\_Client@{Wifi\_Close\_TCP\_Client}}
+\index{Wifi\_Close\_TCP\_Client@{Wifi\_Close\_TCP\_Client}!bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}}
+\doxysubsubsection{\texorpdfstring{Wifi\_Close\_TCP\_Client()}{Wifi\_Close\_TCP\_Client()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Wifi\+\_\+\+Close\+\_\+\+TCP\+\_\+\+Client (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Close the tcp endpoint client connection. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR\+\_\+\+ID\+\_\+e error code 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__wifi__silabs-_w_g_m110_8h_ace9d1100d1cb32d4f6ddd04d7f7e291e_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{bsp__wifi__silabs-_w_g_m110_8h_a38026853cc249ed56816db34de0500e0}\label{bsp__wifi__silabs-_w_g_m110_8h_a38026853cc249ed56816db34de0500e0} 
+\index{bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}!Wifi\_Close\_TLS\_Client@{Wifi\_Close\_TLS\_Client}}
+\index{Wifi\_Close\_TLS\_Client@{Wifi\_Close\_TLS\_Client}!bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}}
+\doxysubsubsection{\texorpdfstring{Wifi\_Close\_TLS\_Client()}{Wifi\_Close\_TLS\_Client()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Wifi\+\_\+\+Close\+\_\+\+TLS\+\_\+\+Client (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Close the tls endpoint client connection. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR\+\_\+\+ID\+\_\+e error code 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__wifi__silabs-_w_g_m110_8h_a38026853cc249ed56816db34de0500e0_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__wifi__silabs-_w_g_m110_8h_a38026853cc249ed56816db34de0500e0_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{bsp__wifi__silabs-_w_g_m110_8h_a0c77368245dd6a5e13e27231e0902ac0}\label{bsp__wifi__silabs-_w_g_m110_8h_a0c77368245dd6a5e13e27231e0902ac0} 
+\index{bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}!Wifi\_Close\_UDP\_Client@{Wifi\_Close\_UDP\_Client}}
+\index{Wifi\_Close\_UDP\_Client@{Wifi\_Close\_UDP\_Client}!bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}}
+\doxysubsubsection{\texorpdfstring{Wifi\_Close\_UDP\_Client()}{Wifi\_Close\_UDP\_Client()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Wifi\+\_\+\+Close\+\_\+\+UDP\+\_\+\+Client (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Close the udp endpoint client connection. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR\+\_\+\+ID\+\_\+e error code 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__wifi__silabs-_w_g_m110_8h_a0c77368245dd6a5e13e27231e0902ac0_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{bsp__wifi__silabs-_w_g_m110_8h_a2f64e4476e6ef1d96abb4a27def96aaf}\label{bsp__wifi__silabs-_w_g_m110_8h_a2f64e4476e6ef1d96abb4a27def96aaf} 
+\index{bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}!Wifi\_Close\_UDP\_Server@{Wifi\_Close\_UDP\_Server}}
+\index{Wifi\_Close\_UDP\_Server@{Wifi\_Close\_UDP\_Server}!bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}}
+\doxysubsubsection{\texorpdfstring{Wifi\_Close\_UDP\_Server()}{Wifi\_Close\_UDP\_Server()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Wifi\+\_\+\+Close\+\_\+\+UDP\+\_\+\+Server (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Close the udp server. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR\+\_\+\+ID\+\_\+e error code 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__wifi__silabs-_w_g_m110_8h_a2f64e4476e6ef1d96abb4a27def96aaf_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{bsp__wifi__silabs-_w_g_m110_8h_a34598b4dd7f45c72e2c71cb393446e43}\label{bsp__wifi__silabs-_w_g_m110_8h_a34598b4dd7f45c72e2c71cb393446e43} 
+\index{bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}!Wifi\_Config\_Certs@{Wifi\_Config\_Certs}}
+\index{Wifi\_Config\_Certs@{Wifi\_Config\_Certs}!bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}}
+\doxysubsubsection{\texorpdfstring{Wifi\_Config\_Certs()}{Wifi\_Config\_Certs()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Wifi\+\_\+\+Config\+\_\+\+Certs (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}}}]{write\+\_\+read,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{eap,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{tls,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{write\+\_\+fingerprint }\end{DoxyParamCaption})}
+
+
+
+Update of the cert.\+dat file to know which certificates have been loaded. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em write\+\_\+read} & Bit for read/write in the file\+: 0 read / 1 write \\
+\hline
+{\em eap\+\_\+tls} & To know which certificates have been loaded \\
+\hline
+{\em write\+\_\+fingerprint} & Certificate fingerprint data\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+fx\+\_\+res 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__wifi__silabs-_w_g_m110_8h_a34598b4dd7f45c72e2c71cb393446e43_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{bsp__wifi__silabs-_w_g_m110_8h_acc961764e51b751a91686c070452e374}\label{bsp__wifi__silabs-_w_g_m110_8h_acc961764e51b751a91686c070452e374} 
+\index{bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}!Wifi\_Configure\_DNS\_Settings@{Wifi\_Configure\_DNS\_Settings}}
+\index{Wifi\_Configure\_DNS\_Settings@{Wifi\_Configure\_DNS\_Settings}!bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}}
+\doxysubsubsection{\texorpdfstring{Wifi\_Configure\_DNS\_Settings()}{Wifi\_Configure\_DNS\_Settings()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Wifi\+\_\+\+Configure\+\_\+\+DNS\+\_\+\+Settings (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Configure DNS settings of the device. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR\+\_\+\+ID\+\_\+e error code 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__wifi__silabs-_w_g_m110_8h_acc961764e51b751a91686c070452e374_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__wifi__silabs-_w_g_m110_8h_acc961764e51b751a91686c070452e374_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{bsp__wifi__silabs-_w_g_m110_8h_abae4cf27e47c032f0f26b2f77b773648}\label{bsp__wifi__silabs-_w_g_m110_8h_abae4cf27e47c032f0f26b2f77b773648} 
+\index{bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}!Wifi\_Configure\_Module\_Uart@{Wifi\_Configure\_Module\_Uart}}
+\index{Wifi\_Configure\_Module\_Uart@{Wifi\_Configure\_Module\_Uart}!bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}}
+\doxysubsubsection{\texorpdfstring{Wifi\_Configure\_Module\_Uart()}{Wifi\_Configure\_Module\_Uart()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Wifi\+\_\+\+Configure\+\_\+\+Module\+\_\+\+Uart (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Configure Wifi module Uart. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR\+\_\+\+ID\+\_\+e error code 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__wifi__silabs-_w_g_m110_8h_abae4cf27e47c032f0f26b2f77b773648_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{bsp__wifi__silabs-_w_g_m110_8h_a1b826a0d21e95c22f0a573dd7a5429ee}\label{bsp__wifi__silabs-_w_g_m110_8h_a1b826a0d21e95c22f0a573dd7a5429ee} 
+\index{bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}!Wifi\_Configure\_TCPIP\_DHCP\_Settings@{Wifi\_Configure\_TCPIP\_DHCP\_Settings}}
+\index{Wifi\_Configure\_TCPIP\_DHCP\_Settings@{Wifi\_Configure\_TCPIP\_DHCP\_Settings}!bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}}
+\doxysubsubsection{\texorpdfstring{Wifi\_Configure\_TCPIP\_DHCP\_Settings()}{Wifi\_Configure\_TCPIP\_DHCP\_Settings()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Wifi\+\_\+\+Configure\+\_\+\+TCPIP\+\_\+\+DHCP\+\_\+\+Settings (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}}}]{dhcp }\end{DoxyParamCaption})}
+
+
+
+Configure IP settings of the device. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dhcp} & ON/\+OFF DHCP\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR\+\_\+\+ID\+\_\+e error code 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__wifi__silabs-_w_g_m110_8h_a1b826a0d21e95c22f0a573dd7a5429ee_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__wifi__silabs-_w_g_m110_8h_a1b826a0d21e95c22f0a573dd7a5429ee_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{bsp__wifi__silabs-_w_g_m110_8h_ac8b4cae41fb1a2cebefddb7c10837b6e}\label{bsp__wifi__silabs-_w_g_m110_8h_ac8b4cae41fb1a2cebefddb7c10837b6e} 
+\index{bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}!Wifi\_Connect\_Network@{Wifi\_Connect\_Network}}
+\index{Wifi\_Connect\_Network@{Wifi\_Connect\_Network}!bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}}
+\doxysubsubsection{\texorpdfstring{Wifi\_Connect\_Network()}{Wifi\_Connect\_Network()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Wifi\+\_\+\+Connect\+\_\+\+Network (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Start a connection establishment procedure with an Access Point. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR\+\_\+\+ID\+\_\+e error code 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__wifi__silabs-_w_g_m110_8h_ac8b4cae41fb1a2cebefddb7c10837b6e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__wifi__silabs-_w_g_m110_8h_ac8b4cae41fb1a2cebefddb7c10837b6e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{bsp__wifi__silabs-_w_g_m110_8h_a8805d98a2439f4943e9a3ca175154e56}\label{bsp__wifi__silabs-_w_g_m110_8h_a8805d98a2439f4943e9a3ca175154e56} 
+\index{bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}!Wifi\_Delete\_Firmware@{Wifi\_Delete\_Firmware}}
+\index{Wifi\_Delete\_Firmware@{Wifi\_Delete\_Firmware}!bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}}
+\doxysubsubsection{\texorpdfstring{Wifi\_Delete\_Firmware()}{Wifi\_Delete\_Firmware()}}
+{\footnotesize\ttfamily void Wifi\+\_\+\+Delete\+\_\+\+Firmware (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Delete Firmware. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__wifi__silabs-_w_g_m110_8h_a8805d98a2439f4943e9a3ca175154e56_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{bsp__wifi__silabs-_w_g_m110_8h_a795b8325fcb76410bb9fdbee3254ca90}\label{bsp__wifi__silabs-_w_g_m110_8h_a795b8325fcb76410bb9fdbee3254ca90} 
+\index{bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}!Wifi\_Disconnect\_Network@{Wifi\_Disconnect\_Network}}
+\index{Wifi\_Disconnect\_Network@{Wifi\_Disconnect\_Network}!bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}}
+\doxysubsubsection{\texorpdfstring{Wifi\_Disconnect\_Network()}{Wifi\_Disconnect\_Network()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Wifi\+\_\+\+Disconnect\+\_\+\+Network (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Disconnect from the currently connected Access Point. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR\+\_\+\+ID\+\_\+e error code 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__wifi__silabs-_w_g_m110_8h_a795b8325fcb76410bb9fdbee3254ca90_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__wifi__silabs-_w_g_m110_8h_a795b8325fcb76410bb9fdbee3254ca90_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{bsp__wifi__silabs-_w_g_m110_8h_a38347cc9ea2702829f7d84710086dd7a}\label{bsp__wifi__silabs-_w_g_m110_8h_a38347cc9ea2702829f7d84710086dd7a} 
+\index{bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}!Wifi\_Get\_Module\_MAC\_Address@{Wifi\_Get\_Module\_MAC\_Address}}
+\index{Wifi\_Get\_Module\_MAC\_Address@{Wifi\_Get\_Module\_MAC\_Address}!bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}}
+\doxysubsubsection{\texorpdfstring{Wifi\_Get\_Module\_MAC\_Address()}{Wifi\_Get\_Module\_MAC\_Address()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Wifi\+\_\+\+Get\+\_\+\+Module\+\_\+\+MAC\+\_\+\+Address (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Get Wifi module MAC Address. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR\+\_\+\+ID\+\_\+e error code 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__wifi__silabs-_w_g_m110_8h_a38347cc9ea2702829f7d84710086dd7a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__wifi__silabs-_w_g_m110_8h_a38347cc9ea2702829f7d84710086dd7a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{bsp__wifi__silabs-_w_g_m110_8h_a496be96f131aa1adca8dad2fd7061395}\label{bsp__wifi__silabs-_w_g_m110_8h_a496be96f131aa1adca8dad2fd7061395} 
+\index{bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}!Wifi\_Get\_Module\_Status@{Wifi\_Get\_Module\_Status}}
+\index{Wifi\_Get\_Module\_Status@{Wifi\_Get\_Module\_Status}!bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}}
+\doxysubsubsection{\texorpdfstring{Wifi\_Get\_Module\_Status()}{Wifi\_Get\_Module\_Status()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Wifi\+\_\+\+Get\+\_\+\+Module\+\_\+\+Status (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Get Wifi module status. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR\+\_\+\+ID\+\_\+e error code 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__wifi__silabs-_w_g_m110_8h_a496be96f131aa1adca8dad2fd7061395_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{bsp__wifi__silabs-_w_g_m110_8h_ab0d87361c94f4f901e9a009d62203827}\label{bsp__wifi__silabs-_w_g_m110_8h_ab0d87361c94f4f901e9a009d62203827} 
+\index{bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}!Wifi\_Get\_RSSI@{Wifi\_Get\_RSSI}}
+\index{Wifi\_Get\_RSSI@{Wifi\_Get\_RSSI}!bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}}
+\doxysubsubsection{\texorpdfstring{Wifi\_Get\_RSSI()}{Wifi\_Get\_RSSI()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Wifi\+\_\+\+Get\+\_\+\+RSSI (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+The received signal strength indication (RSSI) in d\+Bm units. RSSI\+: \texorpdfstring{$<$}{<} -\/30 d\+Bm = Very good; -\/40 / -\/60 d\+Bm = Good; -\/70 d\+Bm == Weak; -\/80 d\+Bm = Poor; -\/90 d\+Bm = No connection; SNR (Signal to Noise Ratio)\+: 10 -\/ 24 dB = Poor; 25 -\/ 40 dB = Good; \texorpdfstring{$>$}{>} 41 dB = Very Good;. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR\+\_\+\+ID\+\_\+e error code 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__wifi__silabs-_w_g_m110_8h_ab0d87361c94f4f901e9a009d62203827_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__wifi__silabs-_w_g_m110_8h_ab0d87361c94f4f901e9a009d62203827_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{bsp__wifi__silabs-_w_g_m110_8h_adb7a018f1bb07d857ad68f50ff060997}\label{bsp__wifi__silabs-_w_g_m110_8h_adb7a018f1bb07d857ad68f50ff060997} 
+\index{bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}!Wifi\_Initialize\_BGLib@{Wifi\_Initialize\_BGLib}}
+\index{Wifi\_Initialize\_BGLib@{Wifi\_Initialize\_BGLib}!bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}}
+\doxysubsubsection{\texorpdfstring{Wifi\_Initialize\_BGLib()}{Wifi\_Initialize\_BGLib()}}
+{\footnotesize\ttfamily void Wifi\+\_\+\+Initialize\+\_\+\+BGLib (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Initialize library,and provide output function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR\+\_\+\+ID\+\_\+e error code 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__wifi__silabs-_w_g_m110_8h_adb7a018f1bb07d857ad68f50ff060997_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__wifi__silabs-_w_g_m110_8h_adb7a018f1bb07d857ad68f50ff060997_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{bsp__wifi__silabs-_w_g_m110_8h_a61a184f51f8d89e0f7cecade0732dae5}\label{bsp__wifi__silabs-_w_g_m110_8h_a61a184f51f8d89e0f7cecade0732dae5} 
+\index{bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}!Wifi\_Is\_Host\_Alive@{Wifi\_Is\_Host\_Alive}}
+\index{Wifi\_Is\_Host\_Alive@{Wifi\_Is\_Host\_Alive}!bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}}
+\doxysubsubsection{\texorpdfstring{Wifi\_Is\_Host\_Alive()}{Wifi\_Is\_Host\_Alive()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Wifi\+\_\+\+Is\+\_\+\+Host\+\_\+\+Alive (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Check if host server is alive. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR\+\_\+\+ID\+\_\+e error code 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__wifi__silabs-_w_g_m110_8h_a61a184f51f8d89e0f7cecade0732dae5_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__wifi__silabs-_w_g_m110_8h_a61a184f51f8d89e0f7cecade0732dae5_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{bsp__wifi__silabs-_w_g_m110_8h_a7e8230c89c388139fc583139a2beb691}\label{bsp__wifi__silabs-_w_g_m110_8h_a7e8230c89c388139fc583139a2beb691} 
+\index{bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}!Wifi\_Load\_EAP\_CA\_Cert@{Wifi\_Load\_EAP\_CA\_Cert}}
+\index{Wifi\_Load\_EAP\_CA\_Cert@{Wifi\_Load\_EAP\_CA\_Cert}!bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}}
+\doxysubsubsection{\texorpdfstring{Wifi\_Load\_EAP\_CA\_Cert()}{Wifi\_Load\_EAP\_CA\_Cert()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Wifi\+\_\+\+Load\+\_\+\+EAP\+\_\+\+CA\+\_\+\+Cert (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Load EAP CA certificate to connect. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR\+\_\+\+ID\+\_\+e error code 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__wifi__silabs-_w_g_m110_8h_a7e8230c89c388139fc583139a2beb691_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__wifi__silabs-_w_g_m110_8h_a7e8230c89c388139fc583139a2beb691_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{bsp__wifi__silabs-_w_g_m110_8h_a8925c99a5fdb7d5a2ab4736fd46a29e5}\label{bsp__wifi__silabs-_w_g_m110_8h_a8925c99a5fdb7d5a2ab4736fd46a29e5} 
+\index{bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}!Wifi\_Load\_EAP\_PEAP\_Cert@{Wifi\_Load\_EAP\_PEAP\_Cert}}
+\index{Wifi\_Load\_EAP\_PEAP\_Cert@{Wifi\_Load\_EAP\_PEAP\_Cert}!bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}}
+\doxysubsubsection{\texorpdfstring{Wifi\_Load\_EAP\_PEAP\_Cert()}{Wifi\_Load\_EAP\_PEAP\_Cert()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Wifi\+\_\+\+Load\+\_\+\+EAP\+\_\+\+PEAP\+\_\+\+Cert (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{peap }\end{DoxyParamCaption})}
+
+
+
+Load EAP certs to connect using PEAP-\/\+MSCHAPv2. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR\+\_\+\+ID\+\_\+e error code 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__wifi__silabs-_w_g_m110_8h_a8925c99a5fdb7d5a2ab4736fd46a29e5_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__wifi__silabs-_w_g_m110_8h_a8925c99a5fdb7d5a2ab4736fd46a29e5_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{bsp__wifi__silabs-_w_g_m110_8h_a55aad59239beee7c625ef1480115d787}\label{bsp__wifi__silabs-_w_g_m110_8h_a55aad59239beee7c625ef1480115d787} 
+\index{bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}!Wifi\_Load\_EAP\_TLS\_Cert@{Wifi\_Load\_EAP\_TLS\_Cert}}
+\index{Wifi\_Load\_EAP\_TLS\_Cert@{Wifi\_Load\_EAP\_TLS\_Cert}!bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}}
+\doxysubsubsection{\texorpdfstring{Wifi\_Load\_EAP\_TLS\_Cert()}{Wifi\_Load\_EAP\_TLS\_Cert()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Wifi\+\_\+\+Load\+\_\+\+EAP\+\_\+\+TLS\+\_\+\+Cert (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Load EAP certs to connect using EAP-\/\+TLS. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR\+\_\+\+ID\+\_\+e error code 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__wifi__silabs-_w_g_m110_8h_a55aad59239beee7c625ef1480115d787_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__wifi__silabs-_w_g_m110_8h_a55aad59239beee7c625ef1480115d787_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{bsp__wifi__silabs-_w_g_m110_8h_a6fcc98353f9429f5732450389558c88c}\label{bsp__wifi__silabs-_w_g_m110_8h_a6fcc98353f9429f5732450389558c88c} 
+\index{bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}!Wifi\_Load\_Server\_TLS\_Cacert@{Wifi\_Load\_Server\_TLS\_Cacert}}
+\index{Wifi\_Load\_Server\_TLS\_Cacert@{Wifi\_Load\_Server\_TLS\_Cacert}!bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}}
+\doxysubsubsection{\texorpdfstring{Wifi\_Load\_Server\_TLS\_Cacert()}{Wifi\_Load\_Server\_TLS\_Cacert()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Wifi\+\_\+\+Load\+\_\+\+Server\+\_\+\+TLS\+\_\+\+Cacert (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Load Server TLS CA cert if present in SD and if not present in module flash. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR\+\_\+\+ID\+\_\+e error code 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__wifi__silabs-_w_g_m110_8h_a6fcc98353f9429f5732450389558c88c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__wifi__silabs-_w_g_m110_8h_a6fcc98353f9429f5732450389558c88c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{bsp__wifi__silabs-_w_g_m110_8h_a81a4e4083b610dbb21ca775d13c9e6ec}\label{bsp__wifi__silabs-_w_g_m110_8h_a81a4e4083b610dbb21ca775d13c9e6ec} 
+\index{bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}!Wifi\_Module\_Reset@{Wifi\_Module\_Reset}}
+\index{Wifi\_Module\_Reset@{Wifi\_Module\_Reset}!bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}}
+\doxysubsubsection{\texorpdfstring{Wifi\_Module\_Reset()}{Wifi\_Module\_Reset()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Wifi\+\_\+\+Module\+\_\+\+Reset (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Perform Wifi module software commanded Reset. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR\+\_\+\+ID\+\_\+e error code 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=313pt]{bsp__wifi__silabs-_w_g_m110_8h_a81a4e4083b610dbb21ca775d13c9e6ec_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{bsp__wifi__silabs-_w_g_m110_8h_afdc36b688c99cc7e9bb2fe8513118a1a}\label{bsp__wifi__silabs-_w_g_m110_8h_afdc36b688c99cc7e9bb2fe8513118a1a} 
+\index{bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}!Wifi\_No\_Load\_EAP\_TLS\_Cert@{Wifi\_No\_Load\_EAP\_TLS\_Cert}}
+\index{Wifi\_No\_Load\_EAP\_TLS\_Cert@{Wifi\_No\_Load\_EAP\_TLS\_Cert}!bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}}
+\doxysubsubsection{\texorpdfstring{Wifi\_No\_Load\_EAP\_TLS\_Cert()}{Wifi\_No\_Load\_EAP\_TLS\_Cert()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Wifi\+\_\+\+No\+\_\+\+Load\+\_\+\+EAP\+\_\+\+TLS\+\_\+\+Cert (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{fingerprint }\end{DoxyParamCaption})}
+
+
+
+Configuration EAP certs to connect using EAP-\/\+TLS. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em write\+\_\+fingerprint} & Certificate fingerprint data\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR\+\_\+\+ID\+\_\+e error code 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__wifi__silabs-_w_g_m110_8h_afdc36b688c99cc7e9bb2fe8513118a1a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__wifi__silabs-_w_g_m110_8h_afdc36b688c99cc7e9bb2fe8513118a1a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{bsp__wifi__silabs-_w_g_m110_8h_a76a52ecb5bd6b0f2c2b5b5f0c59feff8}\label{bsp__wifi__silabs-_w_g_m110_8h_a76a52ecb5bd6b0f2c2b5b5f0c59feff8} 
+\index{bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}!Wifi\_Open\_TCP\_Client@{Wifi\_Open\_TCP\_Client}}
+\index{Wifi\_Open\_TCP\_Client@{Wifi\_Open\_TCP\_Client}!bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}}
+\doxysubsubsection{\texorpdfstring{Wifi\_Open\_TCP\_Client()}{Wifi\_Open\_TCP\_Client()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Wifi\+\_\+\+Open\+\_\+\+TCP\+\_\+\+Client (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Open the tcp endpoint client connection. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR\+\_\+\+ID\+\_\+e error code 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__wifi__silabs-_w_g_m110_8h_a76a52ecb5bd6b0f2c2b5b5f0c59feff8_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{bsp__wifi__silabs-_w_g_m110_8h_aee5a5834eeaf73cf2e7e8470d956d57d}\label{bsp__wifi__silabs-_w_g_m110_8h_aee5a5834eeaf73cf2e7e8470d956d57d} 
+\index{bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}!Wifi\_Open\_TLS\_Client@{Wifi\_Open\_TLS\_Client}}
+\index{Wifi\_Open\_TLS\_Client@{Wifi\_Open\_TLS\_Client}!bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}}
+\doxysubsubsection{\texorpdfstring{Wifi\_Open\_TLS\_Client()}{Wifi\_Open\_TLS\_Client()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Wifi\+\_\+\+Open\+\_\+\+TLS\+\_\+\+Client (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Open the tls endpoint client connection. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR\+\_\+\+ID\+\_\+e error code 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__wifi__silabs-_w_g_m110_8h_aee5a5834eeaf73cf2e7e8470d956d57d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__wifi__silabs-_w_g_m110_8h_aee5a5834eeaf73cf2e7e8470d956d57d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{bsp__wifi__silabs-_w_g_m110_8h_aeacca39b2c852502e88afc9d71c38476}\label{bsp__wifi__silabs-_w_g_m110_8h_aeacca39b2c852502e88afc9d71c38476} 
+\index{bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}!Wifi\_Open\_UDP\_Client@{Wifi\_Open\_UDP\_Client}}
+\index{Wifi\_Open\_UDP\_Client@{Wifi\_Open\_UDP\_Client}!bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}}
+\doxysubsubsection{\texorpdfstring{Wifi\_Open\_UDP\_Client()}{Wifi\_Open\_UDP\_Client()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Wifi\+\_\+\+Open\+\_\+\+UDP\+\_\+\+Client (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Open the udp endpoint client connection. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR\+\_\+\+ID\+\_\+e error code 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__wifi__silabs-_w_g_m110_8h_aeacca39b2c852502e88afc9d71c38476_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{bsp__wifi__silabs-_w_g_m110_8h_a35d5dc2d9b2d927b7f5010fd8d4f8256}\label{bsp__wifi__silabs-_w_g_m110_8h_a35d5dc2d9b2d927b7f5010fd8d4f8256} 
+\index{bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}!Wifi\_Receive\_Configuration@{Wifi\_Receive\_Configuration}}
+\index{Wifi\_Receive\_Configuration@{Wifi\_Receive\_Configuration}!bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}}
+\doxysubsubsection{\texorpdfstring{Wifi\_Receive\_Configuration()}{Wifi\_Receive\_Configuration()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Wifi\+\_\+\+Receive\+\_\+\+Configuration (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Receive configuration update file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR\+\_\+\+ID\+\_\+e error code 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__wifi__silabs-_w_g_m110_8h_a35d5dc2d9b2d927b7f5010fd8d4f8256_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__wifi__silabs-_w_g_m110_8h_a35d5dc2d9b2d927b7f5010fd8d4f8256_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{bsp__wifi__silabs-_w_g_m110_8h_ac9f124d0da81d17346031b87f575c581}\label{bsp__wifi__silabs-_w_g_m110_8h_ac9f124d0da81d17346031b87f575c581} 
+\index{bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}!Wifi\_Receive\_Configuration\_Result@{Wifi\_Receive\_Configuration\_Result}}
+\index{Wifi\_Receive\_Configuration\_Result@{Wifi\_Receive\_Configuration\_Result}!bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}}
+\doxysubsubsection{\texorpdfstring{Wifi\_Receive\_Configuration\_Result()}{Wifi\_Receive\_Configuration\_Result()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Wifi\+\_\+\+Receive\+\_\+\+Configuration\+\_\+\+Result (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Check if an error has occurred and if it has occurred, delete the R100.\+cfg so as not to record it because it may be corrupt. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR\+\_\+\+ID\+\_\+e error code 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__wifi__silabs-_w_g_m110_8h_ac9f124d0da81d17346031b87f575c581_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__wifi__silabs-_w_g_m110_8h_ac9f124d0da81d17346031b87f575c581_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{bsp__wifi__silabs-_w_g_m110_8h_a2dc45a78a54fd39ac066b6492047e4c2}\label{bsp__wifi__silabs-_w_g_m110_8h_a2dc45a78a54fd39ac066b6492047e4c2} 
+\index{bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}!Wifi\_Receive\_Firmware@{Wifi\_Receive\_Firmware}}
+\index{Wifi\_Receive\_Firmware@{Wifi\_Receive\_Firmware}!bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}}
+\doxysubsubsection{\texorpdfstring{Wifi\_Receive\_Firmware()}{Wifi\_Receive\_Firmware()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Wifi\+\_\+\+Receive\+\_\+\+Firmware (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Receive firmware update file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR\+\_\+\+ID\+\_\+e error code 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__wifi__silabs-_w_g_m110_8h_a2dc45a78a54fd39ac066b6492047e4c2_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__wifi__silabs-_w_g_m110_8h_a2dc45a78a54fd39ac066b6492047e4c2_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{bsp__wifi__silabs-_w_g_m110_8h_ac5c857d89b9b970102e0250632018ac2}\label{bsp__wifi__silabs-_w_g_m110_8h_ac5c857d89b9b970102e0250632018ac2} 
+\index{bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}!Wifi\_Receive\_Firmware\_Result@{Wifi\_Receive\_Firmware\_Result}}
+\index{Wifi\_Receive\_Firmware\_Result@{Wifi\_Receive\_Firmware\_Result}!bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}}
+\doxysubsubsection{\texorpdfstring{Wifi\_Receive\_Firmware\_Result()}{Wifi\_Receive\_Firmware\_Result()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Wifi\+\_\+\+Receive\+\_\+\+Firmware\+\_\+\+Result (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Check if an error has occurred and if it has occurred, delete the firmware.\+srec so as not to record it because it may be corrupt. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR\+\_\+\+ID\+\_\+e error code 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__wifi__silabs-_w_g_m110_8h_ac5c857d89b9b970102e0250632018ac2_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__wifi__silabs-_w_g_m110_8h_ac5c857d89b9b970102e0250632018ac2_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{bsp__wifi__silabs-_w_g_m110_8h_af5b6814c179a062a84ef416012b52070}\label{bsp__wifi__silabs-_w_g_m110_8h_af5b6814c179a062a84ef416012b52070} 
+\index{bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}!Wifi\_Reset\_Certs\_Store@{Wifi\_Reset\_Certs\_Store}}
+\index{Wifi\_Reset\_Certs\_Store@{Wifi\_Reset\_Certs\_Store}!bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}}
+\doxysubsubsection{\texorpdfstring{Wifi\_Reset\_Certs\_Store()}{Wifi\_Reset\_Certs\_Store()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Wifi\+\_\+\+Reset\+\_\+\+Certs\+\_\+\+Store (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Reset Certificates Store. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR\+\_\+\+ID\+\_\+e error code 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__wifi__silabs-_w_g_m110_8h_af5b6814c179a062a84ef416012b52070_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__wifi__silabs-_w_g_m110_8h_af5b6814c179a062a84ef416012b52070_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{bsp__wifi__silabs-_w_g_m110_8h_a42ac38edd6c0a955425367880bfecd3f}\label{bsp__wifi__silabs-_w_g_m110_8h_a42ac38edd6c0a955425367880bfecd3f} 
+\index{bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}!Wifi\_Scan\_Network@{Wifi\_Scan\_Network}}
+\index{Wifi\_Scan\_Network@{Wifi\_Scan\_Network}!bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}}
+\doxysubsubsection{\texorpdfstring{Wifi\_Scan\_Network()}{Wifi\_Scan\_Network()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Wifi\+\_\+\+Scan\+\_\+\+Network (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Scan for an Access Point. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR\+\_\+\+ID\+\_\+e error code 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__wifi__silabs-_w_g_m110_8h_a42ac38edd6c0a955425367880bfecd3f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__wifi__silabs-_w_g_m110_8h_a42ac38edd6c0a955425367880bfecd3f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{bsp__wifi__silabs-_w_g_m110_8h_ab2d30132091d65f9cc64adcf346c4607}\label{bsp__wifi__silabs-_w_g_m110_8h_ab2d30132091d65f9cc64adcf346c4607} 
+\index{bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}!Wifi\_Send\_Data\_Frame@{Wifi\_Send\_Data\_Frame}}
+\index{Wifi\_Send\_Data\_Frame@{Wifi\_Send\_Data\_Frame}!bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}}
+\doxysubsubsection{\texorpdfstring{Wifi\_Send\_Data\_Frame()}{Wifi\_Send\_Data\_Frame()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Wifi\+\_\+\+Send\+\_\+\+Data\+\_\+\+Frame (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{data,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{size\+\_\+data,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{frame\+\_\+type }\end{DoxyParamCaption})}
+
+
+
+Send Data Frame using Wifi connection (for Sigfox data frames) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR\+\_\+\+ID\+\_\+e error code 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__wifi__silabs-_w_g_m110_8h_ab2d30132091d65f9cc64adcf346c4607_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__wifi__silabs-_w_g_m110_8h_ab2d30132091d65f9cc64adcf346c4607_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{bsp__wifi__silabs-_w_g_m110_8h_a786eafab9b14cb881758ba2729af3f08}\label{bsp__wifi__silabs-_w_g_m110_8h_a786eafab9b14cb881758ba2729af3f08} 
+\index{bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}!Wifi\_Send\_Episode@{Wifi\_Send\_Episode}}
+\index{Wifi\_Send\_Episode@{Wifi\_Send\_Episode}!bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}}
+\doxysubsubsection{\texorpdfstring{Wifi\_Send\_Episode()}{Wifi\_Send\_Episode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Wifi\+\_\+\+Send\+\_\+\+Episode (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Send a File from a u\+SD to the Server. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR\+\_\+\+ID\+\_\+e error code 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__wifi__silabs-_w_g_m110_8h_a786eafab9b14cb881758ba2729af3f08_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__wifi__silabs-_w_g_m110_8h_a786eafab9b14cb881758ba2729af3f08_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{bsp__wifi__silabs-_w_g_m110_8h_a03ce170a4b98e4f7a315afad2f3ee24c}\label{bsp__wifi__silabs-_w_g_m110_8h_a03ce170a4b98e4f7a315afad2f3ee24c} 
+\index{bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}!Wifi\_Send\_Episode\_Result@{Wifi\_Send\_Episode\_Result}}
+\index{Wifi\_Send\_Episode\_Result@{Wifi\_Send\_Episode\_Result}!bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}}
+\doxysubsubsection{\texorpdfstring{Wifi\_Send\_Episode\_Result()}{Wifi\_Send\_Episode\_Result()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Wifi\+\_\+\+Send\+\_\+\+Episode\+\_\+\+Result (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Check if an error has occurred and reset directory. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR\+\_\+\+ID\+\_\+e error code 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__wifi__silabs-_w_g_m110_8h_a03ce170a4b98e4f7a315afad2f3ee24c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__wifi__silabs-_w_g_m110_8h_a03ce170a4b98e4f7a315afad2f3ee24c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{bsp__wifi__silabs-_w_g_m110_8h_a69cdbda6b544229acb4b866b2e26edb4}\label{bsp__wifi__silabs-_w_g_m110_8h_a69cdbda6b544229acb4b866b2e26edb4} 
+\index{bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}!Wifi\_Send\_Test@{Wifi\_Send\_Test}}
+\index{Wifi\_Send\_Test@{Wifi\_Send\_Test}!bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}}
+\doxysubsubsection{\texorpdfstring{Wifi\_Send\_Test()}{Wifi\_Send\_Test()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Wifi\+\_\+\+Send\+\_\+\+Test (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Send a File from a u\+SD to the Server. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR\+\_\+\+ID\+\_\+e error code 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__wifi__silabs-_w_g_m110_8h_a69cdbda6b544229acb4b866b2e26edb4_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__wifi__silabs-_w_g_m110_8h_a69cdbda6b544229acb4b866b2e26edb4_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{bsp__wifi__silabs-_w_g_m110_8h_a4d809acbf2bea224f2bea6d3e9b951d5}\label{bsp__wifi__silabs-_w_g_m110_8h_a4d809acbf2bea224f2bea6d3e9b951d5} 
+\index{bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}!Wifi\_Send\_Test\_Result@{Wifi\_Send\_Test\_Result}}
+\index{Wifi\_Send\_Test\_Result@{Wifi\_Send\_Test\_Result}!bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}}
+\doxysubsubsection{\texorpdfstring{Wifi\_Send\_Test\_Result()}{Wifi\_Send\_Test\_Result()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Wifi\+\_\+\+Send\+\_\+\+Test\+\_\+\+Result (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Check if an error has occurred and reset directory. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR\+\_\+\+ID\+\_\+e error code 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__wifi__silabs-_w_g_m110_8h_a4d809acbf2bea224f2bea6d3e9b951d5_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__wifi__silabs-_w_g_m110_8h_a4d809acbf2bea224f2bea6d3e9b951d5_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{bsp__wifi__silabs-_w_g_m110_8h_a8089c2753e0d6f822691ba934ac6eaf5}\label{bsp__wifi__silabs-_w_g_m110_8h_a8089c2753e0d6f822691ba934ac6eaf5} 
+\index{bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}!Wifi\_Set\_Operating\_Mode@{Wifi\_Set\_Operating\_Mode}}
+\index{Wifi\_Set\_Operating\_Mode@{Wifi\_Set\_Operating\_Mode}!bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}}
+\doxysubsubsection{\texorpdfstring{Wifi\_Set\_Operating\_Mode()}{Wifi\_Set\_Operating\_Mode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Wifi\+\_\+\+Set\+\_\+\+Operating\+\_\+\+Mode (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Wifi set operating mode\+: 1-\/client;2-\/Access Point;4-\/WIFI direct. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR\+\_\+\+ID\+\_\+e error code 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__wifi__silabs-_w_g_m110_8h_a8089c2753e0d6f822691ba934ac6eaf5_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__wifi__silabs-_w_g_m110_8h_a8089c2753e0d6f822691ba934ac6eaf5_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{bsp__wifi__silabs-_w_g_m110_8h_a7ecf9128dd50ba1a157224384cfa215e}\label{bsp__wifi__silabs-_w_g_m110_8h_a7ecf9128dd50ba1a157224384cfa215e} 
+\index{bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}!Wifi\_Set\_Password@{Wifi\_Set\_Password}}
+\index{Wifi\_Set\_Password@{Wifi\_Set\_Password}!bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}}
+\doxysubsubsection{\texorpdfstring{Wifi\_Set\_Password()}{Wifi\_Set\_Password()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Wifi\+\_\+\+Set\+\_\+\+Password (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{eap }\end{DoxyParamCaption})}
+
+
+
+Set password to connection. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR\+\_\+\+ID\+\_\+e error code 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__wifi__silabs-_w_g_m110_8h_a7ecf9128dd50ba1a157224384cfa215e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__wifi__silabs-_w_g_m110_8h_a7ecf9128dd50ba1a157224384cfa215e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{bsp__wifi__silabs-_w_g_m110_8h_a5e6789110605df58b21c15813993ecec}\label{bsp__wifi__silabs-_w_g_m110_8h_a5e6789110605df58b21c15813993ecec} 
+\index{bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}!Wifi\_Set\_Wifi\_Radio\_Off@{Wifi\_Set\_Wifi\_Radio\_Off}}
+\index{Wifi\_Set\_Wifi\_Radio\_Off@{Wifi\_Set\_Wifi\_Radio\_Off}!bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}}
+\doxysubsubsection{\texorpdfstring{Wifi\_Set\_Wifi\_Radio\_Off()}{Wifi\_Set\_Wifi\_Radio\_Off()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Wifi\+\_\+\+Set\+\_\+\+Wifi\+\_\+\+Radio\+\_\+\+Off (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Turn Off Wifi module Radio. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR\+\_\+\+ID\+\_\+e error code 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__wifi__silabs-_w_g_m110_8h_a5e6789110605df58b21c15813993ecec_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__wifi__silabs-_w_g_m110_8h_a5e6789110605df58b21c15813993ecec_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{bsp__wifi__silabs-_w_g_m110_8h_a131e8f6711186a9da9bec9bff8730647}\label{bsp__wifi__silabs-_w_g_m110_8h_a131e8f6711186a9da9bec9bff8730647} 
+\index{bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}!Wifi\_Set\_Wifi\_Radio\_On@{Wifi\_Set\_Wifi\_Radio\_On}}
+\index{Wifi\_Set\_Wifi\_Radio\_On@{Wifi\_Set\_Wifi\_Radio\_On}!bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}}
+\doxysubsubsection{\texorpdfstring{Wifi\_Set\_Wifi\_Radio\_On()}{Wifi\_Set\_Wifi\_Radio\_On()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Wifi\+\_\+\+Set\+\_\+\+Wifi\+\_\+\+Radio\+\_\+\+On (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Turn On Wifi module Radio. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR\+\_\+\+ID\+\_\+e error code 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__wifi__silabs-_w_g_m110_8h_a131e8f6711186a9da9bec9bff8730647_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__wifi__silabs-_w_g_m110_8h_a131e8f6711186a9da9bec9bff8730647_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{bsp__wifi__silabs-_w_g_m110_8h_a7e40e7d60e10b885e5ee6aeb2b5a8171}\label{bsp__wifi__silabs-_w_g_m110_8h_a7e40e7d60e10b885e5ee6aeb2b5a8171} 
+\index{bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}!Wifi\_Start\_UDP\_Server@{Wifi\_Start\_UDP\_Server}}
+\index{Wifi\_Start\_UDP\_Server@{Wifi\_Start\_UDP\_Server}!bsp\_wifi\_silabs-\/WGM110.h@{bsp\_wifi\_silabs-\/WGM110.h}}
+\doxysubsubsection{\texorpdfstring{Wifi\_Start\_UDP\_Server()}{Wifi\_Start\_UDP\_Server()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_r100___errors_8h_ab896ba744d4a4eca0dfcf1a66c8fe0f9}{ERROR\+\_\+\+ID\+\_\+e}} Wifi\+\_\+\+Start\+\_\+\+UDP\+\_\+\+Server (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Start the udp server. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ERROR\+\_\+\+ID\+\_\+e error code 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{bsp__wifi__silabs-_w_g_m110_8h_a7e40e7d60e10b885e5ee6aeb2b5a8171_cgraph}
+\end{center}
+\end{figure}

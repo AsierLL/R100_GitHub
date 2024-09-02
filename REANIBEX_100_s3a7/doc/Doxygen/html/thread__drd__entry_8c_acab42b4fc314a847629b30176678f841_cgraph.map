@@ -1,0 +1,21 @@
+<map id="Execute_DRD" name="Execute_DRD">
+<area shape="rect" id="Node000001" title="Execute and monitor the DRD execution." alt="" coords="5,132,109,159"/>
+<area shape="rect" id="Node000002" href="$thread__drd__entry_8c.html#aeb1975ec3e8162dc709c60acc76806fc" title="gives a diagnosis based on the last two rythm classification" alt="" coords="209,31,285,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="71,130,107,98,155,67,193,52,195,57,158,72,111,103,74,134"/>
+<area shape="rect" id="Node000003" href="$thread__drd__entry_8c.html#aacbcb665fe537222e7b96f111e61ae94" title="gets the ecg, adapts it and performs the analysis" alt="" coords="196,81,298,108"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="108,129,180,110,182,115,110,134"/>
+<area shape="rect" id="Node000007" href="$thread__drd__entry_8c.html#a72940a1f7515f9d42ef708a671d73f81" title="DRD_Diag_Ready." alt="" coords="184,132,310,159"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="109,143,169,143,169,148,109,148"/>
+<area shape="rect" id="Node000009" href="$ipmk__removal_8c.html#a8e4edae281a93e76c81a61fe87984fee" title=" " alt="" coords="197,183,297,209"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="110,156,182,176,181,181,108,162"/>
+<area shape="rect" id="Node000010" href="$thread__pat_mon__hal_8c.html#a76fe3793dbe441d338e5ff2cf3225896" title="Read the last ECG samples from the ECG buffer." alt="" coords="157,233,337,260"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="74,157,111,188,158,219,172,225,170,230,155,224,107,192,71,161"/>
+<area shape="rect" id="Node000004" href="$thread__drd__entry_8c.html#abbbf55ad0a3342ceaf347eb3b2e615e0" title="downsamples from 1000Hz to 150Hz. As division is not exact 7,6,7,7,6,7... src samples are used to gen..." alt="" coords="387,5,517,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="298,80,336,67,384,42,397,36,399,41,386,46,338,72,299,85"/>
+<area shape="rect" id="Node000005" href="$drd_8h.html#a373b55e912f66d3a802dabd1a604265f" title=" " alt="" coords="385,56,518,83"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="298,86,369,77,370,82,299,91"/>
+<area shape="rect" id="Node000006" href="$device__init_8c.html#a2f7047dc1ce0a3687c48872ed81aff5f" title="Function for accessing device info variable." alt="" coords="395,107,509,133"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="299,98,379,108,379,114,298,104"/>
+<area shape="rect" id="Node000008" href="$thread__core__entry_8c.html#ab5cc7004066a53f633a1891cc016a473" title="Process events related to DRD." alt="" coords="387,157,517,184"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="310,150,371,158,371,163,310,156"/>
+</map>

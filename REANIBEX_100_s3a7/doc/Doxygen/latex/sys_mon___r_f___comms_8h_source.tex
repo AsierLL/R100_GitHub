@@ -1,0 +1,104 @@
+\doxysection{sys\+Mon\+\_\+\+RF\+\_\+\+Comms.\+h}
+\hypertarget{sys_mon___r_f___comms_8h_source}{}\label{sys_mon___r_f___comms_8h_source}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/sysMon\_RF\_Comms.h@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/sysMon\_RF\_Comms.h}}
+\mbox{\hyperlink{sys_mon___r_f___comms_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Name\ \ \ \ \ \ :\ R100\_S3A7\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ :\ Osatu\ S.\ Coop\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Compiler\ \ :\ GNU\ ARM\ Embedded\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ Target\ \ \ \ :\ Reanibex\ Serie\ 100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ ******************************************************************************/}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#ifndef\ SYSMON\_RF\_COMMS\_H\_}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#define\ SYSMON\_RF\_COMMS\_H\_}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ **Includes}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_r100___errors_8h}{R100\_Errors.h}}"{}}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{thread__pat_mon__hal_8h}{HAL/thread\_patMon\_hal.h}}"{}}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{thread__comm__hal_8h}{HAL/thread\_comm\_hal.h}}"{}}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_d_b___test_8h}{DB\_Test.h}}"{}}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{secure__crypto_8h}{secure\_crypto.h}}"{}}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h}{BSP/bsp\_wifi\_silabs-\/WGM110.h}}"{}}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{bsp__gps__quectel-_l96_8h}{BSP/bsp\_gps\_quectel-\/L96.h}}"{}}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ **\ Defines}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#define\ SIGFOX\_ONLY\ \ \ \ \ 1}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#define\ SIGFOX\_PRIOR\ \ \ \ 3}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#define\ WIFI\_ONLY\ \ \ \ \ \ \ 2}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#define\ WIFI\_PRIOR\ \ \ \ \ \ 4}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#define\ WIFI\_1\_DAY\ \ \ \ \ \ 1}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#define\ WIFI\_7\_DAY\ \ \ \ \ \ 7}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#define\ WIFI\_30\_DAY\ \ \ \ \ 29}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#define\ ABORT\_USER\ \ \ \ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#define\ OK\_CONNECT\ \ \ \ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#define\ ROUTER\_CONNECT\ \ \ \ \ \ 10}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#define\ ROUTER\_NO\_CONECT\ \ \ \ 11}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#define\ SERCER\_CONNECT\ \ \ \ \ \ 12}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ SERVER\_NO\_CONNECT\ \ \ 13}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00056\ \textcolor{comment}{\ **\ Typedefs}}
+\DoxyCodeLine{00057\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00060\ \textcolor{comment}{\ **\ Globals}}
+\DoxyCodeLine{00061\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00065\ \textcolor{comment}{\ **\ Prototypes}}
+\DoxyCodeLine{00066\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ \ \ \ \ \mbox{\hyperlink{sys_mon___r_f___comms_8h_aa258de7fff35ff304ffec0e526bb5d69}{Execute\_Get\_Gps\_Position\_Test}}\ \ \ \ \ \ \ (\mbox{\hyperlink{struct_d_b___t_e_s_t___r_e_s_u_l_t__t}{DB\_TEST\_RESULT\_t}}\ *pResult,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ tout);}
+\DoxyCodeLine{00069\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sys_mon___r_f___comms_8h_a94b93fa1317c67270311a868256f4712}{Execute\_Periodic\_Gps\_Init}}\ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00070\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sys_mon___r_f___comms_8h_a50aa6bd7010a95216a06c04ea2241c5f}{Execute\_Periodic\_Gps\_Position}}\ \ \ \ \ \ \ (\mbox{\hyperlink{struct_n_v___d_a_t_a__t}{NV\_DATA\_t}}\ *pNV\_data,\ \mbox{\hyperlink{struct_n_v___d_a_t_a___b_l_o_c_k__t}{NV\_DATA\_BLOCK\_t}}\ *pNV\_data\_block);}
+\DoxyCodeLine{00071\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sys_mon___r_f___comms_8h_a22a104a138d277055bb3bb4e216bf4fe}{Execute\_Save\_Gps\_Position}}\ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{struct_n_v___d_a_t_a__t}{NV\_DATA\_t}}\ *pNV\_data,\ \mbox{\hyperlink{struct_n_v___d_a_t_a___b_l_o_c_k__t}{NV\_DATA\_BLOCK\_t}}\ *pNV\_data\_block);}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\_t}}\ \ \ \ \ \ \ \mbox{\hyperlink{sys_mon___r_f___comms_8h_a52792279d23bf557b0a177590981b506}{Execute\_Send\_Sigfox\_Test}}\ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{struct_d_b___t_e_s_t___r_e_s_u_l_t__t}{DB\_TEST\_RESULT\_t}}\ *pResult,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\_t}}\ auto\_test);}
+\DoxyCodeLine{00074\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\_t}}\ \ \ \ \ \ \ \mbox{\hyperlink{sys_mon___r_f___comms_8h_a7d936e077834e45d4736ce0a1d37245f}{Execute\_Send\_Sigfox\_Exp}}\ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{struct_d_b___t_e_s_t___r_e_s_u_l_t__t}{DB\_TEST\_RESULT\_t}}\ *pResult,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\_t}}\ auto\_test);}
+\DoxyCodeLine{00075\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\_t}}\ \ \ \ \ \ \ \mbox{\hyperlink{sys_mon___r_f___comms_8h_ac85554de712c33f4bd960b06fa7ac0b5}{Execute\_Send\_Sigfox\_GPS}}\ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{struct_d_b___t_e_s_t___r_e_s_u_l_t__t}{DB\_TEST\_RESULT\_t}}\ *pResult,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\_t}}\ auto\_test,\ \mbox{\hyperlink{thread__comm__hal_8h_a5aa347e2a685a85a377a26337e9c5cc3}{SIGFOX\_MSG\_ID\_e}}\ gps\_id);}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\_t}}\ \ \ \ \ \ \ \mbox{\hyperlink{sys_mon___r_f___comms_8h_ac150a03431ba1cd0299f7f7c03866720}{Execute\_Wifi\_Open}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{struct_d_b___t_e_s_t___r_e_s_u_l_t__t}{DB\_TEST\_RESULT\_t}}\ *pResult,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\_t}}\ auto\_test);}
+\DoxyCodeLine{00078\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\_t}}\ \ \ \ \ \ \ \mbox{\hyperlink{sys_mon___r_f___comms_8h_ac38cbd0f0589c9060e10051a615280f7}{Execute\_Wifi\_Init\_Host\_Alive}}\ \ \ \ \ \ \ \ (\mbox{\hyperlink{struct_d_b___t_e_s_t___r_e_s_u_l_t__t}{DB\_TEST\_RESULT\_t}}\ *pResult,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\_t}}\ auto\_test);}
+\DoxyCodeLine{00079\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\_t}}\ \ \ \ \ \ \ \mbox{\hyperlink{sys_mon___r_f___comms_8h_abb685215a8f11633d11ffc4655d48de8}{Execute\_Send\_Wifi\_Test\_Frame}}\ \ \ \ \ \ \ \ (\mbox{\hyperlink{struct_d_b___t_e_s_t___r_e_s_u_l_t__t}{DB\_TEST\_RESULT\_t}}\ *pResult,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\_t}}\ auto\_test);}
+\DoxyCodeLine{00080\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\_t}}\ \ \ \ \ \ \ \mbox{\hyperlink{sys_mon___r_f___comms_8h_a8accb93ac6067994d6185e35fd83624d}{Execute\_Send\_Wifi\_Alert\_Frame}}\ \ \ \ \ \ \ (\mbox{\hyperlink{struct_d_b___t_e_s_t___r_e_s_u_l_t__t}{DB\_TEST\_RESULT\_t}}\ *pResult,\ \mbox{\hyperlink{thread__comm__hal_8h_a30bcce91a84082e55fabfd5098f0d7d7}{WIFI\_MSG\_ID\_e}}\ wifi\_msg\_id);}
+\DoxyCodeLine{00081\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\_t}}\ \ \ \ \ \ \ \mbox{\hyperlink{sys_mon___r_f___comms_8h_a94dfb316ec84e9d9e9a4974a04c3ed49}{Execute\_Send\_Wifi\_Position\_Frame}}\ \ \ \ (\mbox{\hyperlink{struct_d_b___t_e_s_t___r_e_s_u_l_t__t}{DB\_TEST\_RESULT\_t}}\ *pResult,\ \mbox{\hyperlink{thread__comm__hal_8h_a5aa347e2a685a85a377a26337e9c5cc3}{SIGFOX\_MSG\_ID\_e}}\ gps\_id,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\_t}}\ auto\_test);}
+\DoxyCodeLine{00082\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\_t}}\ \ \ \ \ \ \ \mbox{\hyperlink{sys_mon___r_f___comms_8h_a0f7ccfee98d59f30927c7fd43edc2284}{Execute\_Send\_Wifi\_Test\_File}}\ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{struct_d_b___t_e_s_t___r_e_s_u_l_t__t}{DB\_TEST\_RESULT\_t}}\ *pResult,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\_t}}\ auto\_test);}
+\DoxyCodeLine{00083\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\_t}}\ \ \ \ \ \ \ \mbox{\hyperlink{sys_mon___r_f___comms_8h_a75f1beb919d95887b1ffff58a5984f2e}{Execute\_Send\_Wifi\_Episode}}\ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{struct_d_b___t_e_s_t___r_e_s_u_l_t__t}{DB\_TEST\_RESULT\_t}}\ *pResult,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\_t}}\ auto\_test);}
+\DoxyCodeLine{00084\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\_t}}\ \ \ \ \ \ \ \mbox{\hyperlink{sys_mon___r_f___comms_8h_a46e2bcb284f0b6eeb57344536918998f}{Execute\_Receive\_Wifi\_Upgrade}}\ \ \ \ \ \ \ \ (\mbox{\hyperlink{struct_d_b___t_e_s_t___r_e_s_u_l_t__t}{DB\_TEST\_RESULT\_t}}\ *pResult,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\_t}}\ auto\_test);}
+\DoxyCodeLine{00085\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\_t}}\ \ \ \ \ \ \ \mbox{\hyperlink{sys_mon___r_f___comms_8h_a6de01e8935a0db1a2427b8efe9701739}{Execute\_Receive\_Wifi\_Configuration}}\ \ (\mbox{\hyperlink{struct_d_b___t_e_s_t___r_e_s_u_l_t__t}{DB\_TEST\_RESULT\_t}}\ *pResult,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\_t}}\ auto\_test);}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sys_mon___r_f___comms_8h_a746a3aa875b7eb411ea9a0b46efade94}{Send\_Sigfox\_Alert}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{thread__comm__hal_8h_a5aa347e2a685a85a377a26337e9c5cc3}{SIGFOX\_MSG\_ID\_e}}\ alert\_id);}
+\DoxyCodeLine{00088\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sys_mon___r_f___comms_8h_a1b432e87a6e7499fdf47de62fcc25671}{Send\_Sigfox\_Test}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{struct_d_b___t_e_s_t___r_e_s_u_l_t__t}{DB\_TEST\_RESULT\_t}}\ *pResult);}
+\DoxyCodeLine{00089\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sys_mon___r_f___comms_8h_aa366cf70667fc1f47aa36c96e4302d53}{Send\_Sigfox\_Position}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{thread__comm__hal_8h_a5aa347e2a685a85a377a26337e9c5cc3}{SIGFOX\_MSG\_ID\_e}}\ gps\_id);}
+\DoxyCodeLine{00090\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sys_mon___r_f___comms_8h_ad88a859306f62409eff276e10c03ee76}{Send\_Wifi\_Alert}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{thread__comm__hal_8h_a30bcce91a84082e55fabfd5098f0d7d7}{WIFI\_MSG\_ID\_e}}\ alert\_id);}
+\DoxyCodeLine{00091\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sys_mon___r_f___comms_8h_a43b9cedf2ff4b0c5bb865aaf4b21bdc6}{Send\_Wifi\_Test\_Frame}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{struct_d_b___t_e_s_t___r_e_s_u_l_t__t}{DB\_TEST\_RESULT\_t}}\ *pResult);}
+\DoxyCodeLine{00092\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sys_mon___r_f___comms_8h_a16faf3c767c0ebb480dac2fab85f0b14}{Send\_Wifi\_Position}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{thread__comm__hal_8h_a30bcce91a84082e55fabfd5098f0d7d7}{WIFI\_MSG\_ID\_e}}\ alert\_id);}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ \ \mbox{\hyperlink{sys_mon___r_f___comms_8h_a0aade06764d80aaf4558c6ee1b5a0190}{Is\_Sigfox\_TX\_Enabled}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00095\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ \ \mbox{\hyperlink{sys_mon___r_f___comms_8h_ad41447b535ece715d734f79bc8c54801}{Is\_Wifi\_TX\_Enabled}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00096\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\_t}}\ \ \ \ \ \ \ \mbox{\hyperlink{sys_mon___r_f___comms_8h_a59a54b635fba8538cb0ca3e32b0358b5}{Is\_GPS\_TX\_Enabled}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00097\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ \ \mbox{\hyperlink{sys_mon___r_f___comms_8h_a0857bf50e8e9213076fe482a19a2e7bd}{Wifi\_Trans\_Days}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sys_mon___r_f___comms_8h_a85880166a06c35e527a7d972684c1338}{Send\_Test\_By\_Comms}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{struct_d_b___t_e_s_t___r_e_s_u_l_t__t}{DB\_TEST\_RESULT\_t}}\ *pResult,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\_t}}\ auto\_test);}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{sys_mon___r_f___comms_8h_a8fa159185c86f9aaf6efa06e58121a25}{Lis3dh\_ACC\_Init}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{struct_n_v___d_a_t_a___b_l_o_c_k__t}{NV\_DATA\_BLOCK\_t}}\ *pNV\_data);}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ SYSMON\_RF\_COMMS\_H\_\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00107\ \textcolor{comment}{\ **\ \$Log\$}}
+\DoxyCodeLine{00108\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00109\ \textcolor{comment}{\ **\ end\ of\ sysMon\_RF\_Comms.h}}
+\DoxyCodeLine{00110\ \textcolor{comment}{\ ******************************************************************************/}}
+
+\end{DoxyCode}

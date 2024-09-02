@@ -1,0 +1,22 @@
+<map id="Battery_I2C_Init_RTC" name="Battery_I2C_Init_RTC">
+<area shape="rect" id="Node000001" title="Initializes the battery i2c port to communicate with internals RTC and EEprom." alt="" coords="5,56,151,83"/>
+<area shape="rect" id="Node000002" href="$sys_mon___battery_8c.html#aa19967644b300db88bf94528f16a7e8e" title=" " alt="" coords="199,56,331,83"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="151,67,183,67,183,72,151,72"/>
+<area shape="rect" id="Node000003" href="$device__init_8c.html#a8f21d9db8b7a1530e06a4ade480d91bc" title="Return Device Settings." alt="" coords="379,31,521,57"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="331,58,363,53,364,58,332,63"/>
+<area shape="rect" id="Node000004" href="$_i2_c__1_8c.html#a4421fd2991ef4524b2cc4374c1987443" title="Function to read the RTC date and time data." alt="" coords="392,81,508,108"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="332,76,377,82,376,87,331,81"/>
+<area shape="rect" id="Node000005" href="$_i2_c__1_8c.html#a38c496f5583fa722a64178a1d7a84dbb" title="Function to read data from a specific address." alt="" coords="569,56,654,83"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="508,83,554,76,555,81,509,88"/>
+<area shape="rect" id="Node000007" href="$_i2_c__1_8c.html#a58c06ede2d56b3068be6703981e4030a" title="Generate the START condition in the i2C line." alt="" coords="702,5,838,32"/>
+<area shape="poly" id="edge9_Node000004_Node000007" title=" " alt="" coords="492,78,520,67,544,53,568,41,628,27,686,20,686,25,629,33,570,47,546,58,522,72,494,83"/>
+<area shape="rect" id="Node000008" href="$_i2_c__1_8c.html#abe5880e856c1c213a8e0074d876f9b70" title="Generate the STOP condition in the i2C line." alt="" coords="702,107,838,133"/>
+<area shape="poly" id="edge10_Node000004_Node000008" title=" " alt="" coords="509,97,687,111,686,116,509,102"/>
+<area shape="rect" id="Node000009" href="$_i2_c__1_8c.html#a3be7740fdada1288f4bf53c6f8a4c84a" title="Function to send a data byte to the i2C device." alt="" coords="719,157,821,184"/>
+<area shape="poly" id="edge11_Node000004_Node000009" title=" " alt="" coords="510,106,704,153,703,158,508,111"/>
+<area shape="rect" id="Node000006" href="$_i2_c__1_8c.html#a8721bef7537e00756c8c6e8ec8b4c3b4" title="Function to get a data byte from the i2C device." alt="" coords="718,56,822,83"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="654,67,702,67,702,72,654,72"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="653,53,711,35,713,40,655,58"/>
+<area shape="poly" id="edge7_Node000005_Node000008" title=" " alt="" coords="655,80,713,99,711,104,653,85"/>
+<area shape="poly" id="edge8_Node000005_Node000009" title=" " alt="" coords="627,81,660,112,703,143,713,148,710,153,700,148,657,116,624,85"/>
+</map>

@@ -1,0 +1,297 @@
+\doxysection{ATCAIface\+Cfg Struct Reference}
+\hypertarget{struct_a_t_c_a_iface_cfg}{}\label{struct_a_t_c_a_iface_cfg}\index{ATCAIfaceCfg@{ATCAIfaceCfg}}
+
+
+{\ttfamily \#include $<$atca\+\_\+iface.\+h$>$}
+
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group__interface_gac7f674d4a0afb12d2f3c9c5e98cb1089}{ATCAIface\+Type}} \mbox{\hyperlink{struct_a_t_c_a_iface_cfg_a9575e0280a61704cb96e330708ce3b11}{iface\+\_\+type}}
+\item 
+\mbox{\hyperlink{group__device_gafb234ccd6a80d09c0efbe336c2354267}{ATCADevice\+Type}} \mbox{\hyperlink{struct_a_t_c_a_iface_cfg_a4ec393e4b92f56b334661fb12ad965ba}{devtype}}
+\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+union \{\\
+\>struct \{\\
+\>\>\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}} \mbox{\hyperlink{struct_a_t_c_a_iface_cfg_a553439e2acc31fe3587a4c883e134b66}{address}}\\
+\>\>\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}} \mbox{\hyperlink{struct_a_t_c_a_iface_cfg_a8f4a3a0fb49df5a775ea8bbb6f76c064}{bus}}\\
+\>\>\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\_t}} \mbox{\hyperlink{struct_a_t_c_a_iface_cfg_a1c312f138e41aac8b0b987bb8d4cdcef}{baud}}\\
+\>\} \mbox{\hyperlink{struct_a_t_c_a_iface_cfg_a912fbe8f59cd30b2e6df7bbee63454c6}{atcai2c}}\\
+\>struct \{\\
+\>\>\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}} \mbox{\hyperlink{struct_a_t_c_a_iface_cfg_a553439e2acc31fe3587a4c883e134b66}{address}}\\
+\>\>\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}} \mbox{\hyperlink{struct_a_t_c_a_iface_cfg_a8f4a3a0fb49df5a775ea8bbb6f76c064}{bus}}\\
+\>\} \mbox{\hyperlink{struct_a_t_c_a_iface_cfg_a34e0fd11d11c84a75cfa8fc06dc0a335}{atcaswi}}\\
+\>struct \{\\
+\>\>\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}} \mbox{\hyperlink{struct_a_t_c_a_iface_cfg_a8f4a3a0fb49df5a775ea8bbb6f76c064}{bus}}\\
+\>\>\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}} \mbox{\hyperlink{struct_a_t_c_a_iface_cfg_ae783ec209fda21aeb5536a8d18b728dc}{select\_pin}}\\
+\>\>\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\_t}} \mbox{\hyperlink{struct_a_t_c_a_iface_cfg_a1c312f138e41aac8b0b987bb8d4cdcef}{baud}}\\
+\>\} \mbox{\hyperlink{struct_a_t_c_a_iface_cfg_a701fb3f763ad3e1a6aa506d980c048a4}{atcaspi}}\\
+\>struct \{\\
+\>\>\mbox{\hyperlink{group__interface_ga4a5c4554e7355754d28123f08f05a060}{ATCAKitType}} \mbox{\hyperlink{struct_a_t_c_a_iface_cfg_a220114700c65ce9902c2eded5a750c97}{dev\_interface}}\\
+\>\>\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}} \mbox{\hyperlink{struct_a_t_c_a_iface_cfg_ab4cc48439344caf4de5d5bca4e582c5c}{dev\_identity}}\\
+\>\>\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}} \mbox{\hyperlink{struct_a_t_c_a_iface_cfg_af51f917a178e46c62dcf72936854cc12}{port}}\\
+\>\>\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\_t}} \mbox{\hyperlink{struct_a_t_c_a_iface_cfg_a1c312f138e41aac8b0b987bb8d4cdcef}{baud}}\\
+\>\>\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}} \mbox{\hyperlink{struct_a_t_c_a_iface_cfg_a80b1af8a38815be897fd5a192b1d36f6}{wordsize}}\\
+\>\>\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}} \mbox{\hyperlink{struct_a_t_c_a_iface_cfg_abff242dd076bad157b79e9804a544bc7}{parity}}\\
+\>\>\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}} \mbox{\hyperlink{struct_a_t_c_a_iface_cfg_a6ffaadb731a8a7b8471b96a68d154f33}{stopbits}}\\
+\>\} \mbox{\hyperlink{struct_a_t_c_a_iface_cfg_a70ac2c89145c7053c8184054f1d92835}{atcauart}}\\
+\>struct \{\\
+\>\>int \mbox{\hyperlink{struct_a_t_c_a_iface_cfg_a787485215666b45087522c4bf17fe6c0}{idx}}\\
+\>\>\mbox{\hyperlink{group__interface_ga4a5c4554e7355754d28123f08f05a060}{ATCAKitType}} \mbox{\hyperlink{struct_a_t_c_a_iface_cfg_a220114700c65ce9902c2eded5a750c97}{dev\_interface}}\\
+\>\>\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}} \mbox{\hyperlink{struct_a_t_c_a_iface_cfg_ab4cc48439344caf4de5d5bca4e582c5c}{dev\_identity}}\\
+\>\>\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\_t}} \mbox{\hyperlink{struct_a_t_c_a_iface_cfg_a2a74d150a05baa2d13489f856795a326}{vid}}\\
+\>\>\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\_t}} \mbox{\hyperlink{struct_a_t_c_a_iface_cfg_a8488bb0ccd4379aae487124f239aef10}{pid}}\\
+\>\>\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\_t}} \mbox{\hyperlink{struct_a_t_c_a_iface_cfg_a147ac7fa56601e4becf44a4675cd0f83}{packetsize}}\\
+\>\} \mbox{\hyperlink{struct_a_t_c_a_iface_cfg_a4388997a2f898325a0dee7145377051f}{atcahid}}\\
+\>struct \{\\
+\>\>\mbox{\hyperlink{group__interface_ga4a5c4554e7355754d28123f08f05a060}{ATCAKitType}} \mbox{\hyperlink{struct_a_t_c_a_iface_cfg_a220114700c65ce9902c2eded5a750c97}{dev\_interface}}\\
+\>\>\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}} \mbox{\hyperlink{struct_a_t_c_a_iface_cfg_ab4cc48439344caf4de5d5bca4e582c5c}{dev\_identity}}\\
+\>\>\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\_t}} \mbox{\hyperlink{struct_a_t_c_a_iface_cfg_a9b99a47b855491de67511c7d67000e9a}{flags}}\\
+\>\} \mbox{\hyperlink{struct_a_t_c_a_iface_cfg_a1d491ce0472f1e37daf1aff6903435e3}{atcakit}}\\
+\>struct \{\\
+\>\>\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_a_t_c_a_iface_cfg_a8ebf58865915b0dbc49e7fb84292b8d3}{halinit}} )(void \texorpdfstring{$\ast$}{*}hal, void \texorpdfstring{$\ast$}{*}cfg)\\
+\>\>\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_a_t_c_a_iface_cfg_a366a3df4c74335ba11b844b486705a15}{halpostinit}} )(void \texorpdfstring{$\ast$}{*}iface)\\
+\>\>\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_a_t_c_a_iface_cfg_a114295ed976756c927963cba724bc820}{halsend}} )(void \texorpdfstring{$\ast$}{*}iface, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}} \\
+\>\>\>word\_address, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}} \texorpdfstring{$\ast$}{*}txdata,\\
+\>\>\> int txlength)\\
+\>\>\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_a_t_c_a_iface_cfg_a552a9dd6af11873f3acccef712cfb03b}{halreceive}} )(void \texorpdfstring{$\ast$}{*}iface, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}} \\
+\>\>\>word\_address, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}} \texorpdfstring{$\ast$}{*}rxdata,\\
+\>\>\> \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}} \texorpdfstring{$\ast$}{*}rxlength)\\
+\>\>\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_a_t_c_a_iface_cfg_af93b5d0698ff1f83d7a3e7dba90e4f31}{halwake}} )(void \texorpdfstring{$\ast$}{*}iface)\\
+\>\>\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_a_t_c_a_iface_cfg_a3b83f6657019840196fc235408095bd6}{halidle}} )(void \texorpdfstring{$\ast$}{*}iface)\\
+\>\>\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_a_t_c_a_iface_cfg_aef0aff273a3f4281548f08a62c3dfa3e}{halsleep}} )(void \texorpdfstring{$\ast$}{*}iface)\\
+\>\>\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_a_t_c_a_iface_cfg_a4ea9b0165e0bec3962f96905763380ea}{halrelease}} )(void \texorpdfstring{$\ast$}{*}hal\_data)\\
+\>\} \mbox{\hyperlink{struct_a_t_c_a_iface_cfg_ae46d990c6b77390777662d89e397e50e}{atcacustom}}\\
+\}; \\
+
+\end{tabbing}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{struct_a_t_c_a_iface_cfg_a60911357c5fecf316cbb8a44f836d72a}{wake\+\_\+delay}}
+\item 
+int \mbox{\hyperlink{struct_a_t_c_a_iface_cfg_a426b5d6f7cf751e9743fa1fcdfeb2b7b}{rx\+\_\+retries}}
+\item 
+void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_a_t_c_a_iface_cfg_a1f38024a8a1094314f3ad4039e394ac7}{cfg\+\_\+data}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{struct_a_t_c_a_iface_cfg_a9c23b1fe181a5fa55d5f06d79229d8ef}\label{struct_a_t_c_a_iface_cfg_a9c23b1fe181a5fa55d5f06d79229d8ef} 
+\doxysubsubsection{\texorpdfstring{[union]}{[union]}}
+{\footnotesize\ttfamily union  \{ ... \}  \mbox{\hyperlink{struct_a_t_c_a_iface_cfg}{ATCAIface\+Cfg}}}
+
+\Hypertarget{struct_a_t_c_a_iface_cfg_a553439e2acc31fe3587a4c883e134b66}\label{struct_a_t_c_a_iface_cfg_a553439e2acc31fe3587a4c883e134b66} 
+\index{ATCAIfaceCfg@{ATCAIfaceCfg}!address@{address}}
+\index{address@{address}!ATCAIfaceCfg@{ATCAIfaceCfg}}
+\doxysubsubsection{\texorpdfstring{address}{address}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} ATCAIface\+Cfg\+::address}
+
+Device address -\/ the upper 7 bits are the I2c address bits \Hypertarget{struct_a_t_c_a_iface_cfg_ae46d990c6b77390777662d89e397e50e}\label{struct_a_t_c_a_iface_cfg_ae46d990c6b77390777662d89e397e50e} 
+\index{ATCAIfaceCfg@{ATCAIfaceCfg}!atcacustom@{atcacustom}}
+\index{atcacustom@{atcacustom}!ATCAIfaceCfg@{ATCAIfaceCfg}}
+\doxysubsubsection{\texorpdfstring{[struct]}{[struct]}}
+{\footnotesize\ttfamily struct  \{ ... \}  ATCAIface\+Cfg\+::atcacustom}
+
+\Hypertarget{struct_a_t_c_a_iface_cfg_a4388997a2f898325a0dee7145377051f}\label{struct_a_t_c_a_iface_cfg_a4388997a2f898325a0dee7145377051f} 
+\index{ATCAIfaceCfg@{ATCAIfaceCfg}!atcahid@{atcahid}}
+\index{atcahid@{atcahid}!ATCAIfaceCfg@{ATCAIfaceCfg}}
+\doxysubsubsection{\texorpdfstring{[struct]}{[struct]}}
+{\footnotesize\ttfamily struct  \{ ... \}  ATCAIface\+Cfg\+::atcahid}
+
+\Hypertarget{struct_a_t_c_a_iface_cfg_a912fbe8f59cd30b2e6df7bbee63454c6}\label{struct_a_t_c_a_iface_cfg_a912fbe8f59cd30b2e6df7bbee63454c6} 
+\index{ATCAIfaceCfg@{ATCAIfaceCfg}!atcai2c@{atcai2c}}
+\index{atcai2c@{atcai2c}!ATCAIfaceCfg@{ATCAIfaceCfg}}
+\doxysubsubsection{\texorpdfstring{[struct]}{[struct]}}
+{\footnotesize\ttfamily struct  \{ ... \}  ATCAIface\+Cfg\+::atcai2c}
+
+\Hypertarget{struct_a_t_c_a_iface_cfg_a1d491ce0472f1e37daf1aff6903435e3}\label{struct_a_t_c_a_iface_cfg_a1d491ce0472f1e37daf1aff6903435e3} 
+\index{ATCAIfaceCfg@{ATCAIfaceCfg}!atcakit@{atcakit}}
+\index{atcakit@{atcakit}!ATCAIfaceCfg@{ATCAIfaceCfg}}
+\doxysubsubsection{\texorpdfstring{[struct]}{[struct]}}
+{\footnotesize\ttfamily struct  \{ ... \}  ATCAIface\+Cfg\+::atcakit}
+
+\Hypertarget{struct_a_t_c_a_iface_cfg_a701fb3f763ad3e1a6aa506d980c048a4}\label{struct_a_t_c_a_iface_cfg_a701fb3f763ad3e1a6aa506d980c048a4} 
+\index{ATCAIfaceCfg@{ATCAIfaceCfg}!atcaspi@{atcaspi}}
+\index{atcaspi@{atcaspi}!ATCAIfaceCfg@{ATCAIfaceCfg}}
+\doxysubsubsection{\texorpdfstring{[struct]}{[struct]}}
+{\footnotesize\ttfamily struct  \{ ... \}  ATCAIface\+Cfg\+::atcaspi}
+
+\Hypertarget{struct_a_t_c_a_iface_cfg_a34e0fd11d11c84a75cfa8fc06dc0a335}\label{struct_a_t_c_a_iface_cfg_a34e0fd11d11c84a75cfa8fc06dc0a335} 
+\index{ATCAIfaceCfg@{ATCAIfaceCfg}!atcaswi@{atcaswi}}
+\index{atcaswi@{atcaswi}!ATCAIfaceCfg@{ATCAIfaceCfg}}
+\doxysubsubsection{\texorpdfstring{[struct]}{[struct]}}
+{\footnotesize\ttfamily struct  \{ ... \}  ATCAIface\+Cfg\+::atcaswi}
+
+\Hypertarget{struct_a_t_c_a_iface_cfg_a70ac2c89145c7053c8184054f1d92835}\label{struct_a_t_c_a_iface_cfg_a70ac2c89145c7053c8184054f1d92835} 
+\index{ATCAIfaceCfg@{ATCAIfaceCfg}!atcauart@{atcauart}}
+\index{atcauart@{atcauart}!ATCAIfaceCfg@{ATCAIfaceCfg}}
+\doxysubsubsection{\texorpdfstring{[struct]}{[struct]}}
+{\footnotesize\ttfamily struct  \{ ... \}  ATCAIface\+Cfg\+::atcauart}
+
+\Hypertarget{struct_a_t_c_a_iface_cfg_a1c312f138e41aac8b0b987bb8d4cdcef}\label{struct_a_t_c_a_iface_cfg_a1c312f138e41aac8b0b987bb8d4cdcef} 
+\index{ATCAIfaceCfg@{ATCAIfaceCfg}!baud@{baud}}
+\index{baud@{baud}!ATCAIfaceCfg@{ATCAIfaceCfg}}
+\doxysubsubsection{\texorpdfstring{baud}{baud}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} ATCAIface\+Cfg\+::baud}
+
+\Hypertarget{struct_a_t_c_a_iface_cfg_a8f4a3a0fb49df5a775ea8bbb6f76c064}\label{struct_a_t_c_a_iface_cfg_a8f4a3a0fb49df5a775ea8bbb6f76c064} 
+\index{ATCAIfaceCfg@{ATCAIfaceCfg}!bus@{bus}}
+\index{bus@{bus}!ATCAIfaceCfg@{ATCAIfaceCfg}}
+\doxysubsubsection{\texorpdfstring{bus}{bus}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} ATCAIface\+Cfg\+::bus}
+
+\Hypertarget{struct_a_t_c_a_iface_cfg_a1f38024a8a1094314f3ad4039e394ac7}\label{struct_a_t_c_a_iface_cfg_a1f38024a8a1094314f3ad4039e394ac7} 
+\index{ATCAIfaceCfg@{ATCAIfaceCfg}!cfg\_data@{cfg\_data}}
+\index{cfg\_data@{cfg\_data}!ATCAIfaceCfg@{ATCAIfaceCfg}}
+\doxysubsubsection{\texorpdfstring{cfg\_data}{cfg\_data}}
+{\footnotesize\ttfamily void\texorpdfstring{$\ast$}{*} ATCAIface\+Cfg\+::cfg\+\_\+data}
+
+\Hypertarget{struct_a_t_c_a_iface_cfg_ab4cc48439344caf4de5d5bca4e582c5c}\label{struct_a_t_c_a_iface_cfg_ab4cc48439344caf4de5d5bca4e582c5c} 
+\index{ATCAIfaceCfg@{ATCAIfaceCfg}!dev\_identity@{dev\_identity}}
+\index{dev\_identity@{dev\_identity}!ATCAIfaceCfg@{ATCAIfaceCfg}}
+\doxysubsubsection{\texorpdfstring{dev\_identity}{dev\_identity}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} ATCAIface\+Cfg\+::dev\+\_\+identity}
+
+\Hypertarget{struct_a_t_c_a_iface_cfg_a220114700c65ce9902c2eded5a750c97}\label{struct_a_t_c_a_iface_cfg_a220114700c65ce9902c2eded5a750c97} 
+\index{ATCAIfaceCfg@{ATCAIfaceCfg}!dev\_interface@{dev\_interface}}
+\index{dev\_interface@{dev\_interface}!ATCAIfaceCfg@{ATCAIfaceCfg}}
+\doxysubsubsection{\texorpdfstring{dev\_interface}{dev\_interface}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__interface_ga4a5c4554e7355754d28123f08f05a060}{ATCAKit\+Type}} ATCAIface\+Cfg\+::dev\+\_\+interface}
+
+\Hypertarget{struct_a_t_c_a_iface_cfg_a4ec393e4b92f56b334661fb12ad965ba}\label{struct_a_t_c_a_iface_cfg_a4ec393e4b92f56b334661fb12ad965ba} 
+\index{ATCAIfaceCfg@{ATCAIfaceCfg}!devtype@{devtype}}
+\index{devtype@{devtype}!ATCAIfaceCfg@{ATCAIfaceCfg}}
+\doxysubsubsection{\texorpdfstring{devtype}{devtype}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__device_gafb234ccd6a80d09c0efbe336c2354267}{ATCADevice\+Type}} ATCAIface\+Cfg\+::devtype}
+
+\Hypertarget{struct_a_t_c_a_iface_cfg_a9b99a47b855491de67511c7d67000e9a}\label{struct_a_t_c_a_iface_cfg_a9b99a47b855491de67511c7d67000e9a} 
+\index{ATCAIfaceCfg@{ATCAIfaceCfg}!flags@{flags}}
+\index{flags@{flags}!ATCAIfaceCfg@{ATCAIfaceCfg}}
+\doxysubsubsection{\texorpdfstring{flags}{flags}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} ATCAIface\+Cfg\+::flags}
+
+\Hypertarget{struct_a_t_c_a_iface_cfg_a3b83f6657019840196fc235408095bd6}\label{struct_a_t_c_a_iface_cfg_a3b83f6657019840196fc235408095bd6} 
+\index{ATCAIfaceCfg@{ATCAIfaceCfg}!halidle@{halidle}}
+\index{halidle@{halidle}!ATCAIfaceCfg@{ATCAIfaceCfg}}
+\doxysubsubsection{\texorpdfstring{halidle}{halidle}}
+{\footnotesize\ttfamily \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}}(\texorpdfstring{$\ast$}{*} ATCAIface\+Cfg\+::halidle) (void \texorpdfstring{$\ast$}{*}iface)}
+
+\Hypertarget{struct_a_t_c_a_iface_cfg_a8ebf58865915b0dbc49e7fb84292b8d3}\label{struct_a_t_c_a_iface_cfg_a8ebf58865915b0dbc49e7fb84292b8d3} 
+\index{ATCAIfaceCfg@{ATCAIfaceCfg}!halinit@{halinit}}
+\index{halinit@{halinit}!ATCAIfaceCfg@{ATCAIfaceCfg}}
+\doxysubsubsection{\texorpdfstring{halinit}{halinit}}
+{\footnotesize\ttfamily \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}}(\texorpdfstring{$\ast$}{*} ATCAIface\+Cfg\+::halinit) (void \texorpdfstring{$\ast$}{*}hal, void \texorpdfstring{$\ast$}{*}cfg)}
+
+\Hypertarget{struct_a_t_c_a_iface_cfg_a366a3df4c74335ba11b844b486705a15}\label{struct_a_t_c_a_iface_cfg_a366a3df4c74335ba11b844b486705a15} 
+\index{ATCAIfaceCfg@{ATCAIfaceCfg}!halpostinit@{halpostinit}}
+\index{halpostinit@{halpostinit}!ATCAIfaceCfg@{ATCAIfaceCfg}}
+\doxysubsubsection{\texorpdfstring{halpostinit}{halpostinit}}
+{\footnotesize\ttfamily \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}}(\texorpdfstring{$\ast$}{*} ATCAIface\+Cfg\+::halpostinit) (void \texorpdfstring{$\ast$}{*}iface)}
+
+\Hypertarget{struct_a_t_c_a_iface_cfg_a552a9dd6af11873f3acccef712cfb03b}\label{struct_a_t_c_a_iface_cfg_a552a9dd6af11873f3acccef712cfb03b} 
+\index{ATCAIfaceCfg@{ATCAIfaceCfg}!halreceive@{halreceive}}
+\index{halreceive@{halreceive}!ATCAIfaceCfg@{ATCAIfaceCfg}}
+\doxysubsubsection{\texorpdfstring{halreceive}{halreceive}}
+{\footnotesize\ttfamily \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}}(\texorpdfstring{$\ast$}{*} ATCAIface\+Cfg\+::halreceive) (void \texorpdfstring{$\ast$}{*}iface, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} word\+\_\+address, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}rxdata, \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \texorpdfstring{$\ast$}{*}rxlength)}
+
+\Hypertarget{struct_a_t_c_a_iface_cfg_a4ea9b0165e0bec3962f96905763380ea}\label{struct_a_t_c_a_iface_cfg_a4ea9b0165e0bec3962f96905763380ea} 
+\index{ATCAIfaceCfg@{ATCAIfaceCfg}!halrelease@{halrelease}}
+\index{halrelease@{halrelease}!ATCAIfaceCfg@{ATCAIfaceCfg}}
+\doxysubsubsection{\texorpdfstring{halrelease}{halrelease}}
+{\footnotesize\ttfamily \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}}(\texorpdfstring{$\ast$}{*} ATCAIface\+Cfg\+::halrelease) (void \texorpdfstring{$\ast$}{*}hal\+\_\+data)}
+
+\Hypertarget{struct_a_t_c_a_iface_cfg_a114295ed976756c927963cba724bc820}\label{struct_a_t_c_a_iface_cfg_a114295ed976756c927963cba724bc820} 
+\index{ATCAIfaceCfg@{ATCAIfaceCfg}!halsend@{halsend}}
+\index{halsend@{halsend}!ATCAIfaceCfg@{ATCAIfaceCfg}}
+\doxysubsubsection{\texorpdfstring{halsend}{halsend}}
+{\footnotesize\ttfamily \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}}(\texorpdfstring{$\ast$}{*} ATCAIface\+Cfg\+::halsend) (void \texorpdfstring{$\ast$}{*}iface, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} word\+\_\+address, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}txdata, int txlength)}
+
+\Hypertarget{struct_a_t_c_a_iface_cfg_aef0aff273a3f4281548f08a62c3dfa3e}\label{struct_a_t_c_a_iface_cfg_aef0aff273a3f4281548f08a62c3dfa3e} 
+\index{ATCAIfaceCfg@{ATCAIfaceCfg}!halsleep@{halsleep}}
+\index{halsleep@{halsleep}!ATCAIfaceCfg@{ATCAIfaceCfg}}
+\doxysubsubsection{\texorpdfstring{halsleep}{halsleep}}
+{\footnotesize\ttfamily \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}}(\texorpdfstring{$\ast$}{*} ATCAIface\+Cfg\+::halsleep) (void \texorpdfstring{$\ast$}{*}iface)}
+
+\Hypertarget{struct_a_t_c_a_iface_cfg_af93b5d0698ff1f83d7a3e7dba90e4f31}\label{struct_a_t_c_a_iface_cfg_af93b5d0698ff1f83d7a3e7dba90e4f31} 
+\index{ATCAIfaceCfg@{ATCAIfaceCfg}!halwake@{halwake}}
+\index{halwake@{halwake}!ATCAIfaceCfg@{ATCAIfaceCfg}}
+\doxysubsubsection{\texorpdfstring{halwake}{halwake}}
+{\footnotesize\ttfamily \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}}(\texorpdfstring{$\ast$}{*} ATCAIface\+Cfg\+::halwake) (void \texorpdfstring{$\ast$}{*}iface)}
+
+\Hypertarget{struct_a_t_c_a_iface_cfg_a787485215666b45087522c4bf17fe6c0}\label{struct_a_t_c_a_iface_cfg_a787485215666b45087522c4bf17fe6c0} 
+\index{ATCAIfaceCfg@{ATCAIfaceCfg}!idx@{idx}}
+\index{idx@{idx}!ATCAIfaceCfg@{ATCAIfaceCfg}}
+\doxysubsubsection{\texorpdfstring{idx}{idx}}
+{\footnotesize\ttfamily int ATCAIface\+Cfg\+::idx}
+
+\Hypertarget{struct_a_t_c_a_iface_cfg_a9575e0280a61704cb96e330708ce3b11}\label{struct_a_t_c_a_iface_cfg_a9575e0280a61704cb96e330708ce3b11} 
+\index{ATCAIfaceCfg@{ATCAIfaceCfg}!iface\_type@{iface\_type}}
+\index{iface\_type@{iface\_type}!ATCAIfaceCfg@{ATCAIfaceCfg}}
+\doxysubsubsection{\texorpdfstring{iface\_type}{iface\_type}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__interface_gac7f674d4a0afb12d2f3c9c5e98cb1089}{ATCAIface\+Type}} ATCAIface\+Cfg\+::iface\+\_\+type}
+
+\Hypertarget{struct_a_t_c_a_iface_cfg_a147ac7fa56601e4becf44a4675cd0f83}\label{struct_a_t_c_a_iface_cfg_a147ac7fa56601e4becf44a4675cd0f83} 
+\index{ATCAIfaceCfg@{ATCAIfaceCfg}!packetsize@{packetsize}}
+\index{packetsize@{packetsize}!ATCAIfaceCfg@{ATCAIfaceCfg}}
+\doxysubsubsection{\texorpdfstring{packetsize}{packetsize}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} ATCAIface\+Cfg\+::packetsize}
+
+\Hypertarget{struct_a_t_c_a_iface_cfg_abff242dd076bad157b79e9804a544bc7}\label{struct_a_t_c_a_iface_cfg_abff242dd076bad157b79e9804a544bc7} 
+\index{ATCAIfaceCfg@{ATCAIfaceCfg}!parity@{parity}}
+\index{parity@{parity}!ATCAIfaceCfg@{ATCAIfaceCfg}}
+\doxysubsubsection{\texorpdfstring{parity}{parity}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} ATCAIface\+Cfg\+::parity}
+
+\Hypertarget{struct_a_t_c_a_iface_cfg_a8488bb0ccd4379aae487124f239aef10}\label{struct_a_t_c_a_iface_cfg_a8488bb0ccd4379aae487124f239aef10} 
+\index{ATCAIfaceCfg@{ATCAIfaceCfg}!pid@{pid}}
+\index{pid@{pid}!ATCAIfaceCfg@{ATCAIfaceCfg}}
+\doxysubsubsection{\texorpdfstring{pid}{pid}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} ATCAIface\+Cfg\+::pid}
+
+\Hypertarget{struct_a_t_c_a_iface_cfg_af51f917a178e46c62dcf72936854cc12}\label{struct_a_t_c_a_iface_cfg_af51f917a178e46c62dcf72936854cc12} 
+\index{ATCAIfaceCfg@{ATCAIfaceCfg}!port@{port}}
+\index{port@{port}!ATCAIfaceCfg@{ATCAIfaceCfg}}
+\doxysubsubsection{\texorpdfstring{port}{port}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} ATCAIface\+Cfg\+::port}
+
+\Hypertarget{struct_a_t_c_a_iface_cfg_a426b5d6f7cf751e9743fa1fcdfeb2b7b}\label{struct_a_t_c_a_iface_cfg_a426b5d6f7cf751e9743fa1fcdfeb2b7b} 
+\index{ATCAIfaceCfg@{ATCAIfaceCfg}!rx\_retries@{rx\_retries}}
+\index{rx\_retries@{rx\_retries}!ATCAIfaceCfg@{ATCAIfaceCfg}}
+\doxysubsubsection{\texorpdfstring{rx\_retries}{rx\_retries}}
+{\footnotesize\ttfamily int ATCAIface\+Cfg\+::rx\+\_\+retries}
+
+\Hypertarget{struct_a_t_c_a_iface_cfg_ae783ec209fda21aeb5536a8d18b728dc}\label{struct_a_t_c_a_iface_cfg_ae783ec209fda21aeb5536a8d18b728dc} 
+\index{ATCAIfaceCfg@{ATCAIfaceCfg}!select\_pin@{select\_pin}}
+\index{select\_pin@{select\_pin}!ATCAIfaceCfg@{ATCAIfaceCfg}}
+\doxysubsubsection{\texorpdfstring{select\_pin}{select\_pin}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} ATCAIface\+Cfg\+::select\+\_\+pin}
+
+\Hypertarget{struct_a_t_c_a_iface_cfg_a6ffaadb731a8a7b8471b96a68d154f33}\label{struct_a_t_c_a_iface_cfg_a6ffaadb731a8a7b8471b96a68d154f33} 
+\index{ATCAIfaceCfg@{ATCAIfaceCfg}!stopbits@{stopbits}}
+\index{stopbits@{stopbits}!ATCAIfaceCfg@{ATCAIfaceCfg}}
+\doxysubsubsection{\texorpdfstring{stopbits}{stopbits}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} ATCAIface\+Cfg\+::stopbits}
+
+\Hypertarget{struct_a_t_c_a_iface_cfg_a2a74d150a05baa2d13489f856795a326}\label{struct_a_t_c_a_iface_cfg_a2a74d150a05baa2d13489f856795a326} 
+\index{ATCAIfaceCfg@{ATCAIfaceCfg}!vid@{vid}}
+\index{vid@{vid}!ATCAIfaceCfg@{ATCAIfaceCfg}}
+\doxysubsubsection{\texorpdfstring{vid}{vid}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} ATCAIface\+Cfg\+::vid}
+
+\Hypertarget{struct_a_t_c_a_iface_cfg_a60911357c5fecf316cbb8a44f836d72a}\label{struct_a_t_c_a_iface_cfg_a60911357c5fecf316cbb8a44f836d72a} 
+\index{ATCAIfaceCfg@{ATCAIfaceCfg}!wake\_delay@{wake\_delay}}
+\index{wake\_delay@{wake\_delay}!ATCAIfaceCfg@{ATCAIfaceCfg}}
+\doxysubsubsection{\texorpdfstring{wake\_delay}{wake\_delay}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} ATCAIface\+Cfg\+::wake\+\_\+delay}
+
+\Hypertarget{struct_a_t_c_a_iface_cfg_a80b1af8a38815be897fd5a192b1d36f6}\label{struct_a_t_c_a_iface_cfg_a80b1af8a38815be897fd5a192b1d36f6} 
+\index{ATCAIfaceCfg@{ATCAIfaceCfg}!wordsize@{wordsize}}
+\index{wordsize@{wordsize}!ATCAIfaceCfg@{ATCAIfaceCfg}}
+\doxysubsubsection{\texorpdfstring{wordsize}{wordsize}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} ATCAIface\+Cfg\+::wordsize}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\+SCE/\mbox{\hyperlink{atca__iface_8h}{atca\+\_\+iface.\+h}}\end{DoxyCompactItemize}

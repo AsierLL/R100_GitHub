@@ -1,0 +1,182 @@
+\doxysection{atca\+\_\+iface.\+h}
+\hypertarget{atca__iface_8h_source}{}\label{atca__iface_8h_source}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/SCE/atca\_iface.h@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/SCE/atca\_iface.h}}
+\mbox{\hyperlink{atca__iface_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#ifndef\ ATCA\_IFACE\_H}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ ATCA\_IFACE\_H}}
+\DoxyCodeLine{00031\ \textcolor{comment}{/*lint\ +flb\ */}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00040\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#include\ <stddef.h>}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{atca__config_8h}{atca\_config.h}}"{}}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{atca__devtypes_8h}{atca\_devtypes.h}}"{}}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{atca__status_8h}{atca\_status.h}}"{}}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00052\ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \mbox{\hyperlink{group__interface_ggac7f674d4a0afb12d2f3c9c5e98cb1089a872efba3aa5b7890acfe0f1e0e453bcb}{ATCA\_I2C\_IFACE}}\ =\ 0,\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00054\ \ \ \ \ \mbox{\hyperlink{group__interface_ggac7f674d4a0afb12d2f3c9c5e98cb1089a2ce2e46b7f4245ab3d750ea2805fdc26}{ATCA\_SWI\_IFACE}}\ =\ 1,\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00055\ \ \ \ \ \mbox{\hyperlink{group__interface_ggac7f674d4a0afb12d2f3c9c5e98cb1089a80ec8c070f1c711f2b16ad39d2a0486d}{ATCA\_UART\_IFACE}}\ =\ 2,\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00056\ \ \ \ \ \mbox{\hyperlink{group__interface_ggac7f674d4a0afb12d2f3c9c5e98cb1089a8d50943acfc67f797b9c8fbf565deeb7}{ATCA\_SPI\_IFACE}}\ =\ 3,\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00057\ \ \ \ \ \mbox{\hyperlink{group__interface_ggac7f674d4a0afb12d2f3c9c5e98cb1089a7da282c54282a02f5650c38a85d0dfb1}{ATCA\_HID\_IFACE}}\ =\ 4,\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00058\ \ \ \ \ \mbox{\hyperlink{group__interface_ggac7f674d4a0afb12d2f3c9c5e98cb1089a0c22b107512100a364378a0bbf6bdfb9}{ATCA\_KIT\_IFACE}}\ =\ 5,\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00059\ \ \ \ \ \mbox{\hyperlink{group__interface_ggac7f674d4a0afb12d2f3c9c5e98cb1089a1da1522f46e7dbd1a928ff130594561d}{ATCA\_CUSTOM\_IFACE}}\ =\ 6,\ \ \ \ \ \ }
+\DoxyCodeLine{00060\ \ \ \ \ \mbox{\hyperlink{group__interface_ggac7f674d4a0afb12d2f3c9c5e98cb1089a1b4b0b9522bab920782f2d781c9e489e}{ATCA\_I2C\_GPIO\_IFACE}}\ =\ 7,\ \ \ \ }
+\DoxyCodeLine{00061\ \ \ \ \ \mbox{\hyperlink{group__interface_ggac7f674d4a0afb12d2f3c9c5e98cb1089ab38797147196617d79ba041c899fdee2}{ATCA\_SWI\_GPIO\_IFACE}}\ =\ 8,\ \ \ \ }
+\DoxyCodeLine{00062\ \ \ \ \ \mbox{\hyperlink{group__interface_ggac7f674d4a0afb12d2f3c9c5e98cb1089a28c752d380cea80d9d35735979e623eb}{ATCA\_SPI\_GPIO\_IFACE}}\ =\ 9,\ \ \ \ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{comment}{//\ additional\ physical\ interface\ types\ here}}
+\DoxyCodeLine{00065\ \ \ \ \ \mbox{\hyperlink{group__interface_ggac7f674d4a0afb12d2f3c9c5e98cb1089ac300244b5b323ee44001db318f365cec}{ATCA\_UNKNOWN\_IFACE}}\ =\ 0xFE}
+\DoxyCodeLine{00066\ \}\ \mbox{\hyperlink{group__interface_gac7f674d4a0afb12d2f3c9c5e98cb1089}{ATCAIfaceType}};}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \textcolor{comment}{/*The\ types\ are\ used\ within\ the\ kit\ protocol\ to\ identify\ the\ correct\ interface*/}}
+\DoxyCodeLine{00070\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00071\ \{\ \ \ \mbox{\hyperlink{group__interface_gga4a5c4554e7355754d28123f08f05a060a664bb9916e1b47bcf6ae414ffcec2b53}{ATCA\_KIT\_AUTO\_IFACE}},\ \ \ \ \ \ \ \ \textcolor{comment}{//Selects\ the\ first\ device\ if\ the\ Kit\ interface\ is\ not\ defined}}
+\DoxyCodeLine{00072\ \ \ \ \ \mbox{\hyperlink{group__interface_gga4a5c4554e7355754d28123f08f05a060aaf3c1491bb0cb283b0ac35de770e2f45}{ATCA\_KIT\_I2C\_IFACE}},}
+\DoxyCodeLine{00073\ \ \ \ \ \mbox{\hyperlink{group__interface_gga4a5c4554e7355754d28123f08f05a060a159c23e460fd4d21d0e9ec5fdeb648f3}{ATCA\_KIT\_SWI\_IFACE}},}
+\DoxyCodeLine{00074\ \ \ \ \ \mbox{\hyperlink{group__interface_gga4a5c4554e7355754d28123f08f05a060a1ab1554696e001f082479a02f855210d}{ATCA\_KIT\_SPI\_IFACE}},}
+\DoxyCodeLine{00075\ \ \ \ \ \mbox{\hyperlink{group__interface_gga4a5c4554e7355754d28123f08f05a060ac9a530c71bc570d6d58c2c8d521253a3}{ATCA\_KIT\_UNKNOWN\_IFACE}}\ \}\ \mbox{\hyperlink{group__interface_ga4a5c4554e7355754d28123f08f05a060}{ATCAKitType}};}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \textcolor{comment}{/*\ ATCAIfaceCfg\ is\ the\ configuration\ object\ for\ a\ device}}
+\DoxyCodeLine{00079\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00082\ \{}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \ \ \ \ \mbox{\hyperlink{group__interface_gac7f674d4a0afb12d2f3c9c5e98cb1089}{ATCAIfaceType}}\ \ \mbox{\hyperlink{struct_a_t_c_a_iface_cfg_a9575e0280a61704cb96e330708ce3b11}{iface\_type}};\ \ \ \ \ \ \textcolor{comment}{//\ active\ iface\ -\/\ how\ to\ interpret\ the\ union\ below}}
+\DoxyCodeLine{00085\ \ \ \ \ \mbox{\hyperlink{group__device_gafb234ccd6a80d09c0efbe336c2354267}{ATCADeviceType}}\ \mbox{\hyperlink{struct_a_t_c_a_iface_cfg_a4ec393e4b92f56b334661fb12ad965ba}{devtype}};\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ explicit\ device\ type}}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keyword}{union\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{//\ each\ instance\ of\ an\ iface\ cfg\ defines\ a\ single\ type\ of\ interface}}
+\DoxyCodeLine{00088\ \ \ \ \ \{}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00091\ \textcolor{preprocessor}{\#ifdef\ ATCA\_ENABLE\_DEPRECATED}}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ slave\_address;\ \ \textcolor{comment}{//\ 8-\/bit\ slave\ address}}
+\DoxyCodeLine{00093\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \mbox{\hyperlink{struct_a_t_c_a_iface_cfg_a553439e2acc31fe3587a4c883e134b66}{address}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00095\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \mbox{\hyperlink{struct_a_t_c_a_iface_cfg_a8f4a3a0fb49df5a775ea8bbb6f76c064}{bus}};\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ logical\ i2c\ bus\ number,\ 0-\/based\ -\/\ HAL\ will\ map\ this\ to\ a\ pin\ pair\ for\ SDA\ SCL}}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ \mbox{\hyperlink{struct_a_t_c_a_iface_cfg_a1c312f138e41aac8b0b987bb8d4cdcef}{baud}};\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ typically\ 400000}}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \}\ atcai2c;}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ address;\ \ \ \ \ \ \ \ \textcolor{comment}{//\ 7-\/bit\ device\ address}}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ bus;\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ logical\ SWI\ bus\ -\/\ HAL\ will\ map\ this\ to\ a\ pin\ \ or\ uart\ port}}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \}\ atcaswi;}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ bus;\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ logical\ i2c\ bus\ number,\ 0-\/based\ -\/\ HAL\ will\ map\ this\ to\ a\ spi\ pheripheral}}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \mbox{\hyperlink{struct_a_t_c_a_iface_cfg_ae783ec209fda21aeb5536a8d18b728dc}{select\_pin}};\ \ \ \ \textcolor{comment}{//\ CS\ pin\ line\ typically\ 0}}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ baud;\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ typically\ 16000000}}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \}\ atcaspi;}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group__interface_ga4a5c4554e7355754d28123f08f05a060}{ATCAKitType}}\ \mbox{\hyperlink{struct_a_t_c_a_iface_cfg_a220114700c65ce9902c2eded5a750c97}{dev\_interface}};\ \textcolor{comment}{//\ Kit\ interface\ type}}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ \mbox{\hyperlink{struct_a_t_c_a_iface_cfg_ab4cc48439344caf4de5d5bca4e582c5c}{dev\_identity}};\ \ \textcolor{comment}{//\ I2C\ address\ for\ the\ I2C\ interface\ device\ or\ the\ bus\ number\ for\ the\ SWI\ interface\ device.}}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ \mbox{\hyperlink{struct_a_t_c_a_iface_cfg_af51f917a178e46c62dcf72936854cc12}{port}};\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Port\ numbers\ where\ supported\ -\/\ otherwise\ accept\ the\ device\ through\ config\ data}}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ \ \ \ baud;\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ typically\ 115200}}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ \mbox{\hyperlink{struct_a_t_c_a_iface_cfg_a80b1af8a38815be897fd5a192b1d36f6}{wordsize}};\ \ \ \ \ \ \textcolor{comment}{//\ usually\ 8}}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ \mbox{\hyperlink{struct_a_t_c_a_iface_cfg_abff242dd076bad157b79e9804a544bc7}{parity}};\ \ \ \ \ \ \ \ \textcolor{comment}{//\ 0\ ==\ even,\ 1\ ==\ odd,\ 2\ ==\ none}}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ \mbox{\hyperlink{struct_a_t_c_a_iface_cfg_a6ffaadb731a8a7b8471b96a68d154f33}{stopbits}};\ \ \ \ \ \ \textcolor{comment}{//\ 0,1,2}}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \}\ atcauart;}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_a_t_c_a_iface_cfg_a787485215666b45087522c4bf17fe6c0}{idx}};\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ HID\ enumeration\ index}}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group__interface_ga4a5c4554e7355754d28123f08f05a060}{ATCAKitType}}\ dev\_interface;\ \textcolor{comment}{//\ Kit\ interface\ type}}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ dev\_identity;\ \ \textcolor{comment}{//\ I2C\ address\ for\ the\ I2C\ interface\ device\ or\ the\ bus\ number\ for\ the\ SWI\ interface\ device.}}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ \ \ \ \mbox{\hyperlink{struct_a_t_c_a_iface_cfg_a2a74d150a05baa2d13489f856795a326}{vid}};\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Vendor\ ID\ of\ kit\ (0x03EB\ for\ CK101)}}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ \ \ \ \mbox{\hyperlink{struct_a_t_c_a_iface_cfg_a8488bb0ccd4379aae487124f239aef10}{pid}};\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Product\ ID\ of\ kit\ (0x2312\ for\ CK101)}}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ \ \ \ \mbox{\hyperlink{struct_a_t_c_a_iface_cfg_a147ac7fa56601e4becf44a4675cd0f83}{packetsize}};\ \ \ \ \textcolor{comment}{//\ Size\ of\ the\ USB\ packet}}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \}\ atcahid;}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group__interface_ga4a5c4554e7355754d28123f08f05a060}{ATCAKitType}}\ dev\_interface;\ \textcolor{comment}{//\ Target\ Bus\ Type}}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ \ \ \ dev\_identity;\ \ \textcolor{comment}{//\ Target\ device\ identity}}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ \ \ \ \mbox{\hyperlink{struct_a_t_c_a_iface_cfg_a9b99a47b855491de67511c7d67000e9a}{flags}};}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \}\ atcakit;}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ (*halinit)(\textcolor{keywordtype}{void}\ *hal,\ \textcolor{keywordtype}{void}\ *cfg);}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ (*halpostinit)(\textcolor{keywordtype}{void}\ *iface);}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ (*halsend)(\textcolor{keywordtype}{void}\ *iface,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ word\_address,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ *txdata,\ \textcolor{keywordtype}{int}\ txlength);}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ (*halreceive)(\textcolor{keywordtype}{void}\ *iface,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ word\_address,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}*\ rxdata,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}*\ rxlength);}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ (*halwake)(\textcolor{keywordtype}{void}\ *iface);}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ (*halidle)(\textcolor{keywordtype}{void}\ *iface);}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ (*halsleep)(\textcolor{keywordtype}{void}\ *iface);}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ (*halrelease)(\textcolor{keywordtype}{void}*\ hal\_data);}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \}\ atcacustom;}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00153\ \ \ \ \ \};}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00155\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \mbox{\hyperlink{struct_a_t_c_a_iface_cfg_a60911357c5fecf316cbb8a44f836d72a}{wake\_delay}};\ \ \ \ \textcolor{comment}{//\ microseconds\ of\ tWHI\ +\ tWLO\ which\ varies\ based\ on\ chip\ type}}
+\DoxyCodeLine{00156\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \mbox{\hyperlink{struct_a_t_c_a_iface_cfg_a426b5d6f7cf751e9743fa1fcdfeb2b7b}{rx\_retries}};\ \ \ \ \textcolor{comment}{//\ the\ number\ of\ retries\ to\ attempt\ for\ receiving\ bytes}}
+\DoxyCodeLine{00157\ \ \ \ \ \textcolor{keywordtype}{void}\ *\ \ \ \mbox{\hyperlink{struct_a_t_c_a_iface_cfg_a1f38024a8a1094314f3ad4039e394ac7}{cfg\_data}};\ \ \ \ \ \ \textcolor{comment}{//\ opaque\ data\ used\ by\ HAL\ in\ device\ discovery}}
+\DoxyCodeLine{00158\ \}\ \mbox{\hyperlink{struct_a_t_c_a_iface_cfg}{ATCAIfaceCfg}};}
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00162\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structatca__iface}{atca\_iface}}\ *\ \mbox{\hyperlink{group__interface_ga75c11126f3fe81df3d6c27f5bb393303}{ATCAIface}};}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00166\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00167\ \{}
+\DoxyCodeLine{00168\ \ \ \ \ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ (*halinit)(\mbox{\hyperlink{structatca__iface}{ATCAIface}}\ iface,\ \mbox{\hyperlink{struct_a_t_c_a_iface_cfg}{ATCAIfaceCfg}}*\ cfg);}
+\DoxyCodeLine{00169\ \ \ \ \ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ (*halpostinit)(\mbox{\hyperlink{structatca__iface}{ATCAIface}}\ iface);}
+\DoxyCodeLine{00170\ \ \ \ \ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ (*halsend)(\mbox{\hyperlink{structatca__iface}{ATCAIface}}\ iface,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ word\_address,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}*\ txdata,\ \textcolor{keywordtype}{int}\ txlength);}
+\DoxyCodeLine{00171\ \ \ \ \ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ (*halreceive)(\mbox{\hyperlink{structatca__iface}{ATCAIface}}\ iface,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ word\_address,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}*\ rxdata,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}*\ rxlength);}
+\DoxyCodeLine{00172\ \ \ \ \ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ (*halcontrol)(\mbox{\hyperlink{structatca__iface}{ATCAIface}}\ iface,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ option,\ \textcolor{keywordtype}{void}*\ param,\ \textcolor{keywordtype}{size\_t}\ paramlen);}
+\DoxyCodeLine{00173\ \ \ \ \ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ (*halrelease)(\textcolor{keywordtype}{void}*\ \mbox{\hyperlink{structatca__iface_ab316c2d139b46380bc97be4d23428caa}{hal\_data}});}
+\DoxyCodeLine{00174\ \}\ \mbox{\hyperlink{struct_a_t_c_a_h_a_l__t}{ATCAHAL\_t}};}
+\DoxyCodeLine{00175\ }
+\DoxyCodeLine{00178\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structatca__iface}{atca\_iface}}}
+\DoxyCodeLine{00179\ \{}
+\DoxyCodeLine{00180\ \ \ \ \ \mbox{\hyperlink{struct_a_t_c_a_iface_cfg}{ATCAIfaceCfg}}*\ \mbox{\hyperlink{structatca__iface_a093b94b5d693f4e7a8facfc40f1443b0}{mIfaceCFG}};\ \ \ \ }
+\DoxyCodeLine{00181\ \ \ \ \ \mbox{\hyperlink{struct_a_t_c_a_h_a_l__t}{ATCAHAL\_t}}*\ \ \ \ \mbox{\hyperlink{structatca__iface_a7cee716c7c8c20d0d8aac6243baff819}{hal}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00182\ \ \ \ \ \mbox{\hyperlink{struct_a_t_c_a_h_a_l__t}{ATCAHAL\_t}}*\ \ \ \ \mbox{\hyperlink{structatca__iface_a3ac7e576da4958d6c0488ec606d9cbff}{phy}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00183\ \ \ \ \ \textcolor{keywordtype}{void}*\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structatca__iface_ab316c2d139b46380bc97be4d23428caa}{hal\_data}};\ \ \ \ \ }
+\DoxyCodeLine{00184\ \}\ \mbox{\hyperlink{group__interface_gaa9323be08c4d757019e9863d9a7fb6b1}{atca\_iface\_t}};}
+\DoxyCodeLine{00185\ }
+\DoxyCodeLine{00186\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ \mbox{\hyperlink{group__interface_ga3a31087729a7a2e9a624572f234809fc}{initATCAIface}}(\mbox{\hyperlink{struct_a_t_c_a_iface_cfg}{ATCAIfaceCfg}}\ *cfg,\ \mbox{\hyperlink{structatca__iface}{ATCAIface}}\ ca\_iface);}
+\DoxyCodeLine{00187\ \mbox{\hyperlink{structatca__iface}{ATCAIface}}\ \mbox{\hyperlink{group__interface_ga6f28f18f0d00c5301939724325f6b6fc}{newATCAIface}}(\mbox{\hyperlink{struct_a_t_c_a_iface_cfg}{ATCAIfaceCfg}}\ *cfg);}
+\DoxyCodeLine{00188\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ \mbox{\hyperlink{group__interface_gab9ee16357a8e397a72eda7e9c8553fb3}{releaseATCAIface}}(\mbox{\hyperlink{structatca__iface}{ATCAIface}}\ ca\_iface);}
+\DoxyCodeLine{00189\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__interface_gaf8074d759241d3edd6d8ead1d7322a98}{deleteATCAIface}}(\mbox{\hyperlink{structatca__iface}{ATCAIface}}\ *ca\_iface);}
+\DoxyCodeLine{00190\ }
+\DoxyCodeLine{00191\ \textcolor{comment}{//\ IFace\ methods}}
+\DoxyCodeLine{00192\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ \mbox{\hyperlink{group__interface_ga386353e8700eec35e4548dfa29f13b8d}{atinit}}(\mbox{\hyperlink{structatca__iface}{ATCAIface}}\ ca\_iface);}
+\DoxyCodeLine{00193\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ \mbox{\hyperlink{group__interface_gabd4f20b06efedede6bc4a836cfad8f38}{atsend}}(\mbox{\hyperlink{structatca__iface}{ATCAIface}}\ ca\_iface,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ word\_address,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ *txdata,\ \textcolor{keywordtype}{int}\ txlength);}
+\DoxyCodeLine{00194\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ \mbox{\hyperlink{group__interface_ga01badea388343bdf5929c5c2be9f426b}{atreceive}}(\mbox{\hyperlink{structatca__iface}{ATCAIface}}\ ca\_iface,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ word\_address,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ *rxdata,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ *rxlength);}
+\DoxyCodeLine{00195\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ \mbox{\hyperlink{group__interface_ga324cef45a35e02b387001afdc9092778}{atcontrol}}(\mbox{\hyperlink{structatca__iface}{ATCAIface}}\ ca\_iface,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ option,\ \textcolor{keywordtype}{void}*\ param,\ \textcolor{keywordtype}{size\_t}\ paramlen);}
+\DoxyCodeLine{00196\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ \mbox{\hyperlink{group__interface_ga32693c852341e1b946bab3cca5f71761}{atwake}}(\mbox{\hyperlink{structatca__iface}{ATCAIface}}\ ca\_iface);}
+\DoxyCodeLine{00197\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ \mbox{\hyperlink{group__interface_gac794fffe040e6d47a34c756720f3cbea}{atidle}}(\mbox{\hyperlink{structatca__iface}{ATCAIface}}\ ca\_iface);}
+\DoxyCodeLine{00198\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ \mbox{\hyperlink{group__interface_gac06336335e5f3191e3b1fc06d2830d96}{atsleep}}(\mbox{\hyperlink{structatca__iface}{ATCAIface}}\ ca\_iface);}
+\DoxyCodeLine{00199\ }
+\DoxyCodeLine{00200\ \textcolor{comment}{//\ accessors}}
+\DoxyCodeLine{00201\ \mbox{\hyperlink{struct_a_t_c_a_iface_cfg}{ATCAIfaceCfg}}\ *\ \mbox{\hyperlink{group__interface_gac88ba81abfd42df65c6c0c64414dfc6e}{atgetifacecfg}}(\mbox{\hyperlink{structatca__iface}{ATCAIface}}\ ca\_iface);}
+\DoxyCodeLine{00202\ \textcolor{keywordtype}{void}*\ \mbox{\hyperlink{group__interface_ga5e4163b8882d4eb42d4d5191c8731da0}{atgetifacehaldat}}(\mbox{\hyperlink{structatca__iface}{ATCAIface}}\ ca\_iface);}
+\DoxyCodeLine{00203\ }
+\DoxyCodeLine{00204\ \textcolor{comment}{/*\ Utilities\ */}}
+\DoxyCodeLine{00205\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{group__interface_gacb09a6fa845efade7d47796bead14d2c}{atca\_iface\_is\_kit}}(\mbox{\hyperlink{structatca__iface}{ATCAIface}}\ ca\_iface);}
+\DoxyCodeLine{00206\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{group__interface_gad2276d5ebd02613fbeda8ae15b679d1e}{atca\_iface\_is\_swi}}(\mbox{\hyperlink{structatca__iface}{ATCAIface}}\ ca\_iface);}
+\DoxyCodeLine{00207\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__interface_ga349718dea5d5b558766a31b7dcd7e811}{atca\_iface\_get\_retries}}(\mbox{\hyperlink{structatca__iface}{ATCAIface}}\ ca\_iface);}
+\DoxyCodeLine{00208\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ \mbox{\hyperlink{group__interface_ga128f54833b5ed2105dae417333e1d651}{atca\_iface\_get\_wake\_delay}}(\mbox{\hyperlink{structatca__iface}{ATCAIface}}\ ca\_iface);}
+\DoxyCodeLine{00209\ }
+\DoxyCodeLine{00210\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00211\ \}}
+\DoxyCodeLine{00212\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00213\ \textcolor{comment}{/*lint\ -\/flb*/}}
+\DoxyCodeLine{00215\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,1305 @@
+\doxysection{Host side crypto methods (atcah\+\_\+)}
+\hypertarget{group__atcah}{}\label{group__atcah}\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+
+
+Use these functions if your system does not use an ATCADevice as a host but implements the host in firmware. The functions provide host-\/side cryptographic functionality for an ATECC client device. They are intended to accompany the Crypto\+Auth\+Lib functions. They can be called directly from an application, or integrated into an API.  
+
+
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structatca__temp__key}{atca\+\_\+temp\+\_\+key}}
+\begin{DoxyCompactList}\small\item\em Structure to hold Temp\+Key fields. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structatca__include__data__in__out}{atca\+\_\+include\+\_\+data\+\_\+in\+\_\+out}}
+\begin{DoxyCompactList}\small\item\em Input / output parameters for function atca\+\_\+include\+\_\+data(). \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structatca__nonce__in__out}{atca\+\_\+nonce\+\_\+in\+\_\+out}}
+\begin{DoxyCompactList}\small\item\em Input/output parameters for function atca\+\_\+nonce(). \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structatca__io__decrypt__in__out}{atca\+\_\+io\+\_\+decrypt\+\_\+in\+\_\+out}}
+\item 
+struct \mbox{\hyperlink{structatca__verify__mac}{atca\+\_\+verify\+\_\+mac}}
+\item 
+struct \mbox{\hyperlink{structatca__secureboot__enc__in__out}{atca\+\_\+secureboot\+\_\+enc\+\_\+in\+\_\+out}}
+\item 
+struct \mbox{\hyperlink{structatca__secureboot__mac__in__out}{atca\+\_\+secureboot\+\_\+mac\+\_\+in\+\_\+out}}
+\item 
+struct \mbox{\hyperlink{structatca__mac__in__out}{atca\+\_\+mac\+\_\+in\+\_\+out}}
+\begin{DoxyCompactList}\small\item\em Input/output parameters for function atca\+\_\+mac(). \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structatca__hmac__in__out}{atca\+\_\+hmac\+\_\+in\+\_\+out}}
+\begin{DoxyCompactList}\small\item\em Input/output parameters for function atca\+\_\+hmac(). \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structatca__gen__dig__in__out}{atca\+\_\+gen\+\_\+dig\+\_\+in\+\_\+out}}
+\begin{DoxyCompactList}\small\item\em Input/output parameters for function \doxylink{group__atcah_ga6f6043ba8eebbaab6e6f3b4fa5e31ad4}{atcah\+\_\+gen\+\_\+dig()}. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structatca__write__mac__in__out}{atca\+\_\+write\+\_\+mac\+\_\+in\+\_\+out}}
+\begin{DoxyCompactList}\small\item\em Input/output parameters for function \doxylink{group__atcah_ga47853951c57803eff1432780bf360057}{atcah\+\_\+write\+\_\+auth\+\_\+mac()} and \doxylink{group__atcah_gaed8aa58875c6bdf46a937313e69c6ebb}{atcah\+\_\+privwrite\+\_\+auth\+\_\+mac()}. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structatca__derive__key__in__out}{atca\+\_\+derive\+\_\+key\+\_\+in\+\_\+out}}
+\begin{DoxyCompactList}\small\item\em Input/output parameters for function \doxylink{group__atcah_ga02b3479eaee1bd1741675c2a1249ffda}{atcah\+\_\+derive\+\_\+key()}. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structatca__derive__key__mac__in__out}{atca\+\_\+derive\+\_\+key\+\_\+mac\+\_\+in\+\_\+out}}
+\begin{DoxyCompactList}\small\item\em Input/output parameters for function \doxylink{group__atcah_ga60fc543b3df6fa1dedfbf59e5bde554b}{atcah\+\_\+derive\+\_\+key\+\_\+mac()}. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structatca__decrypt__in__out}{atca\+\_\+decrypt\+\_\+in\+\_\+out}}
+\begin{DoxyCompactList}\small\item\em Input/output parameters for function atca\+\_\+decrypt(). \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structatca__check__mac__in__out}{atca\+\_\+check\+\_\+mac\+\_\+in\+\_\+out}}
+\begin{DoxyCompactList}\small\item\em Input/output parameters for function \doxylink{group__atcah_ga5b457cd0ccba73864eee4030b6079ba7}{atcah\+\_\+check\+\_\+mac()}. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structatca__verify__in__out}{atca\+\_\+verify\+\_\+in\+\_\+out}}
+\begin{DoxyCompactList}\small\item\em Input/output parameters for function atcah\+\_\+verify(). \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structatca__gen__key__in__out}{atca\+\_\+gen\+\_\+key\+\_\+in\+\_\+out}}
+\begin{DoxyCompactList}\small\item\em Input/output parameters for calculating the Pub\+Key digest put into Temp\+Key by the Gen\+Key command with the \doxylink{group__atcah_gabf2abd4bd62f47537756c9ab109050c0}{atcah\+\_\+gen\+\_\+key\+\_\+msg()} function. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structatca__sign__internal__in__out}{atca\+\_\+sign\+\_\+internal\+\_\+in\+\_\+out}}
+\begin{DoxyCompactList}\small\item\em Input/output parameters for calculating the message and digest used by the Sign(internal) command. Used with the \doxylink{group__atcah_ga680045caed6e8f6e136e1a2dc3fe1c9e}{atcah\+\_\+sign\+\_\+internal\+\_\+msg()} function. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structatca__session__key__in__out}{atca\+\_\+session\+\_\+key\+\_\+in\+\_\+out}}
+\begin{DoxyCompactList}\small\item\em Input/\+Output paramters for calculating the session key by the nonce command. Used with the \doxylink{group__atcah_ga567b3f9245252c2876c3ff54661a144f}{atcah\+\_\+gen\+\_\+session\+\_\+key()} function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{structatca__temp__key}{atca\+\_\+temp\+\_\+key}} \mbox{\hyperlink{group__atcah_ga2eb5b7f0471f9f14bd78c63104fb4cfe}{atca\+\_\+temp\+\_\+key\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Structure to hold Temp\+Key fields. \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{structatca__nonce__in__out}{atca\+\_\+nonce\+\_\+in\+\_\+out}} \mbox{\hyperlink{group__atcah_ga22be37d60bd8f57e367424fb0c7bacf4}{atca\+\_\+nonce\+\_\+in\+\_\+out\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{structatca__io__decrypt__in__out}{atca\+\_\+io\+\_\+decrypt\+\_\+in\+\_\+out}} \mbox{\hyperlink{group__atcah_gac5efe11aed6a5a47c36b748e71a35945}{atca\+\_\+io\+\_\+decrypt\+\_\+in\+\_\+out\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{structatca__verify__mac}{atca\+\_\+verify\+\_\+mac}} \mbox{\hyperlink{group__atcah_gaae7f658ac9525d887e70d918fc34bb31}{atca\+\_\+verify\+\_\+mac\+\_\+in\+\_\+out\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{structatca__secureboot__enc__in__out}{atca\+\_\+secureboot\+\_\+enc\+\_\+in\+\_\+out}} \mbox{\hyperlink{group__atcah_ga9675f5082f8c90b306414bebae70db75}{atca\+\_\+secureboot\+\_\+enc\+\_\+in\+\_\+out\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{structatca__secureboot__mac__in__out}{atca\+\_\+secureboot\+\_\+mac\+\_\+in\+\_\+out}} \mbox{\hyperlink{group__atcah_ga78f53ab779c77227c305ad4d4be118df}{atca\+\_\+secureboot\+\_\+mac\+\_\+in\+\_\+out\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{structatca__mac__in__out}{atca\+\_\+mac\+\_\+in\+\_\+out}} \mbox{\hyperlink{group__atcah_ga6835354266e1c13a133959aaeb8bfdba}{atca\+\_\+mac\+\_\+in\+\_\+out\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{structatca__gen__dig__in__out}{atca\+\_\+gen\+\_\+dig\+\_\+in\+\_\+out}} \mbox{\hyperlink{group__atcah_ga572abeaaabf22c386ebcba19b4f6236c}{atca\+\_\+gen\+\_\+dig\+\_\+in\+\_\+out\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Input/output parameters for function \doxylink{group__atcah_ga6f6043ba8eebbaab6e6f3b4fa5e31ad4}{atcah\+\_\+gen\+\_\+dig()}. \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{structatca__write__mac__in__out}{atca\+\_\+write\+\_\+mac\+\_\+in\+\_\+out}} \mbox{\hyperlink{group__atcah_gac077314e00956519884e609b44b9cbce}{atca\+\_\+write\+\_\+mac\+\_\+in\+\_\+out\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Input/output parameters for function \doxylink{group__atcah_ga47853951c57803eff1432780bf360057}{atcah\+\_\+write\+\_\+auth\+\_\+mac()} and \doxylink{group__atcah_gaed8aa58875c6bdf46a937313e69c6ebb}{atcah\+\_\+privwrite\+\_\+auth\+\_\+mac()}. \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{structatca__check__mac__in__out}{atca\+\_\+check\+\_\+mac\+\_\+in\+\_\+out}} \mbox{\hyperlink{group__atcah_ga62321bafeb0a9dd7c4ce657ece10109f}{atca\+\_\+check\+\_\+mac\+\_\+in\+\_\+out\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Input/output parameters for function \doxylink{group__atcah_ga5b457cd0ccba73864eee4030b6079ba7}{atcah\+\_\+check\+\_\+mac()}. \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{structatca__verify__in__out}{atca\+\_\+verify\+\_\+in\+\_\+out}} \mbox{\hyperlink{group__atcah_ga41028ecf36e87d294e91e551102dda5f}{atca\+\_\+verify\+\_\+in\+\_\+out\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{structatca__gen__key__in__out}{atca\+\_\+gen\+\_\+key\+\_\+in\+\_\+out}} \mbox{\hyperlink{group__atcah_gada8cf14261301ec18458cbcbbe3d9b32}{atca\+\_\+gen\+\_\+key\+\_\+in\+\_\+out\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Input/output parameters for calculating the Pub\+Key digest put into Temp\+Key by the Gen\+Key command with the \doxylink{group__atcah_gabf2abd4bd62f47537756c9ab109050c0}{atcah\+\_\+gen\+\_\+key\+\_\+msg()} function. \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{structatca__sign__internal__in__out}{atca\+\_\+sign\+\_\+internal\+\_\+in\+\_\+out}} \mbox{\hyperlink{group__atcah_ga1fdcaf886974acc1fcdfc3bace49b700}{atca\+\_\+sign\+\_\+internal\+\_\+in\+\_\+out\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Input/output parameters for calculating the message and digest used by the Sign(internal) command. Used with the \doxylink{group__atcah_ga680045caed6e8f6e136e1a2dc3fe1c9e}{atcah\+\_\+sign\+\_\+internal\+\_\+msg()} function. \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{structatca__session__key__in__out}{atca\+\_\+session\+\_\+key\+\_\+in\+\_\+out}} \mbox{\hyperlink{group__atcah_gab6d36ecdb6ea5e3c4024e2d10e82cd6e}{atca\+\_\+session\+\_\+key\+\_\+in\+\_\+out\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Input/\+Output paramters for calculating the session key by the nonce command. Used with the \doxylink{group__atcah_ga567b3f9245252c2876c3ff54661a144f}{atcah\+\_\+gen\+\_\+session\+\_\+key()} function. \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{structatca__temp__key}{atca\+\_\+temp\+\_\+key}} \mbox{\hyperlink{group__atcah_ga2eb5b7f0471f9f14bd78c63104fb4cfe}{atca\+\_\+temp\+\_\+key\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Structure to hold Temp\+Key fields. \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{structatca__nonce__in__out}{atca\+\_\+nonce\+\_\+in\+\_\+out}} \mbox{\hyperlink{group__atcah_ga22be37d60bd8f57e367424fb0c7bacf4}{atca\+\_\+nonce\+\_\+in\+\_\+out\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{structatca__io__decrypt__in__out}{atca\+\_\+io\+\_\+decrypt\+\_\+in\+\_\+out}} \mbox{\hyperlink{group__atcah_gac5efe11aed6a5a47c36b748e71a35945}{atca\+\_\+io\+\_\+decrypt\+\_\+in\+\_\+out\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{structatca__verify__mac}{atca\+\_\+verify\+\_\+mac}} \mbox{\hyperlink{group__atcah_gaae7f658ac9525d887e70d918fc34bb31}{atca\+\_\+verify\+\_\+mac\+\_\+in\+\_\+out\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{structatca__secureboot__enc__in__out}{atca\+\_\+secureboot\+\_\+enc\+\_\+in\+\_\+out}} \mbox{\hyperlink{group__atcah_ga9675f5082f8c90b306414bebae70db75}{atca\+\_\+secureboot\+\_\+enc\+\_\+in\+\_\+out\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{structatca__secureboot__mac__in__out}{atca\+\_\+secureboot\+\_\+mac\+\_\+in\+\_\+out}} \mbox{\hyperlink{group__atcah_ga78f53ab779c77227c305ad4d4be118df}{atca\+\_\+secureboot\+\_\+mac\+\_\+in\+\_\+out\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{structatca__mac__in__out}{atca\+\_\+mac\+\_\+in\+\_\+out}} \mbox{\hyperlink{group__atcah_ga6835354266e1c13a133959aaeb8bfdba}{atca\+\_\+mac\+\_\+in\+\_\+out\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{structatca__gen__dig__in__out}{atca\+\_\+gen\+\_\+dig\+\_\+in\+\_\+out}} \mbox{\hyperlink{group__atcah_ga572abeaaabf22c386ebcba19b4f6236c}{atca\+\_\+gen\+\_\+dig\+\_\+in\+\_\+out\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Input/output parameters for function \doxylink{group__atcah_ga6f6043ba8eebbaab6e6f3b4fa5e31ad4}{atcah\+\_\+gen\+\_\+dig()}. \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{structatca__write__mac__in__out}{atca\+\_\+write\+\_\+mac\+\_\+in\+\_\+out}} \mbox{\hyperlink{group__atcah_gac077314e00956519884e609b44b9cbce}{atca\+\_\+write\+\_\+mac\+\_\+in\+\_\+out\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Input/output parameters for function \doxylink{group__atcah_ga47853951c57803eff1432780bf360057}{atcah\+\_\+write\+\_\+auth\+\_\+mac()} and \doxylink{group__atcah_gaed8aa58875c6bdf46a937313e69c6ebb}{atcah\+\_\+privwrite\+\_\+auth\+\_\+mac()}. \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{structatca__check__mac__in__out}{atca\+\_\+check\+\_\+mac\+\_\+in\+\_\+out}} \mbox{\hyperlink{group__atcah_ga62321bafeb0a9dd7c4ce657ece10109f}{atca\+\_\+check\+\_\+mac\+\_\+in\+\_\+out\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Input/output parameters for function \doxylink{group__atcah_ga5b457cd0ccba73864eee4030b6079ba7}{atcah\+\_\+check\+\_\+mac()}. \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{structatca__verify__in__out}{atca\+\_\+verify\+\_\+in\+\_\+out}} \mbox{\hyperlink{group__atcah_ga41028ecf36e87d294e91e551102dda5f}{atca\+\_\+verify\+\_\+in\+\_\+out\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{structatca__gen__key__in__out}{atca\+\_\+gen\+\_\+key\+\_\+in\+\_\+out}} \mbox{\hyperlink{group__atcah_gada8cf14261301ec18458cbcbbe3d9b32}{atca\+\_\+gen\+\_\+key\+\_\+in\+\_\+out\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Input/output parameters for calculating the Pub\+Key digest put into Temp\+Key by the Gen\+Key command with the \doxylink{group__atcah_gabf2abd4bd62f47537756c9ab109050c0}{atcah\+\_\+gen\+\_\+key\+\_\+msg()} function. \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{structatca__sign__internal__in__out}{atca\+\_\+sign\+\_\+internal\+\_\+in\+\_\+out}} \mbox{\hyperlink{group__atcah_ga1fdcaf886974acc1fcdfc3bace49b700}{atca\+\_\+sign\+\_\+internal\+\_\+in\+\_\+out\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Input/output parameters for calculating the message and digest used by the Sign(internal) command. Used with the \doxylink{group__atcah_ga680045caed6e8f6e136e1a2dc3fe1c9e}{atcah\+\_\+sign\+\_\+internal\+\_\+msg()} function. \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{structatca__session__key__in__out}{atca\+\_\+session\+\_\+key\+\_\+in\+\_\+out}} \mbox{\hyperlink{group__atcah_gab6d36ecdb6ea5e3c4024e2d10e82cd6e}{atca\+\_\+session\+\_\+key\+\_\+in\+\_\+out\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Input/\+Output paramters for calculating the session key by the nonce command. Used with the \doxylink{group__atcah_ga567b3f9245252c2876c3ff54661a144f}{atcah\+\_\+gen\+\_\+session\+\_\+key()} function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{group__atcah_ga9ee18575f8b4c1560f9e5c741403ef1b}{atcah\+\_\+nonce}} (struct \mbox{\hyperlink{structatca__nonce__in__out}{atca\+\_\+nonce\+\_\+in\+\_\+out}} \texorpdfstring{$\ast$}{*}param)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{group__atcah_ga44361cadf1819cea687208eeadd57059}{atcah\+\_\+mac}} (struct \mbox{\hyperlink{structatca__mac__in__out}{atca\+\_\+mac\+\_\+in\+\_\+out}} \texorpdfstring{$\ast$}{*}param)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{group__atcah_ga5b457cd0ccba73864eee4030b6079ba7}{atcah\+\_\+check\+\_\+mac}} (struct \mbox{\hyperlink{structatca__check__mac__in__out}{atca\+\_\+check\+\_\+mac\+\_\+in\+\_\+out}} \texorpdfstring{$\ast$}{*}param)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{group__atcah_gab17435577e546d2954bd697f21e6d3cc}{atcah\+\_\+hmac}} (struct \mbox{\hyperlink{structatca__hmac__in__out}{atca\+\_\+hmac\+\_\+in\+\_\+out}} \texorpdfstring{$\ast$}{*}param)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{group__atcah_ga6f6043ba8eebbaab6e6f3b4fa5e31ad4}{atcah\+\_\+gen\+\_\+dig}} (struct \mbox{\hyperlink{structatca__gen__dig__in__out}{atca\+\_\+gen\+\_\+dig\+\_\+in\+\_\+out}} \texorpdfstring{$\ast$}{*}param)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{group__atcah_ga43ef2dc1159f28fbb100a2b9bf150c0c}{atcah\+\_\+gen\+\_\+mac}} (struct \mbox{\hyperlink{structatca__gen__dig__in__out}{atca\+\_\+gen\+\_\+dig\+\_\+in\+\_\+out}} \texorpdfstring{$\ast$}{*}param)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{group__atcah_ga47853951c57803eff1432780bf360057}{atcah\+\_\+write\+\_\+auth\+\_\+mac}} (struct \mbox{\hyperlink{structatca__write__mac__in__out}{atca\+\_\+write\+\_\+mac\+\_\+in\+\_\+out}} \texorpdfstring{$\ast$}{*}param)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{group__atcah_gaed8aa58875c6bdf46a937313e69c6ebb}{atcah\+\_\+privwrite\+\_\+auth\+\_\+mac}} (struct \mbox{\hyperlink{structatca__write__mac__in__out}{atca\+\_\+write\+\_\+mac\+\_\+in\+\_\+out}} \texorpdfstring{$\ast$}{*}param)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{group__atcah_ga02b3479eaee1bd1741675c2a1249ffda}{atcah\+\_\+derive\+\_\+key}} (struct \mbox{\hyperlink{structatca__derive__key__in__out}{atca\+\_\+derive\+\_\+key\+\_\+in\+\_\+out}} \texorpdfstring{$\ast$}{*}param)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{group__atcah_ga60fc543b3df6fa1dedfbf59e5bde554b}{atcah\+\_\+derive\+\_\+key\+\_\+mac}} (struct \mbox{\hyperlink{structatca__derive__key__mac__in__out}{atca\+\_\+derive\+\_\+key\+\_\+mac\+\_\+in\+\_\+out}} \texorpdfstring{$\ast$}{*}param)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{group__atcah_ga89408b8338dd9f43c4ba85b2a082c3ae}{atcah\+\_\+decrypt}} (struct \mbox{\hyperlink{structatca__decrypt__in__out}{atca\+\_\+decrypt\+\_\+in\+\_\+out}} \texorpdfstring{$\ast$}{*}param)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{group__atcah_gad7e2217cd71b77b6c1b08f2f2f6f0a3e}{atcah\+\_\+sha256}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a2ba621978a511250f7250fb10e05ffbe}{int32\+\_\+t}} len, const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}message, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}digest)
+\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group__atcah_ga279403b5a0f207a4fbba496fb663ec79}{atcah\+\_\+include\+\_\+data}} (struct \mbox{\hyperlink{structatca__include__data__in__out}{atca\+\_\+include\+\_\+data\+\_\+in\+\_\+out}} \texorpdfstring{$\ast$}{*}param)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{group__atcah_gabf2abd4bd62f47537756c9ab109050c0}{atcah\+\_\+gen\+\_\+key\+\_\+msg}} (struct \mbox{\hyperlink{structatca__gen__key__in__out}{atca\+\_\+gen\+\_\+key\+\_\+in\+\_\+out}} \texorpdfstring{$\ast$}{*}param)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{group__atcah_ga316e7eeaeedc7a30824294280488e24e}{atcah\+\_\+config\+\_\+to\+\_\+sign\+\_\+internal}} (\mbox{\hyperlink{group__device_gafb234ccd6a80d09c0efbe336c2354267}{ATCADevice\+Type}} device\+\_\+type, struct \mbox{\hyperlink{structatca__sign__internal__in__out}{atca\+\_\+sign\+\_\+internal\+\_\+in\+\_\+out}} \texorpdfstring{$\ast$}{*}param, const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}config)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{group__atcah_ga680045caed6e8f6e136e1a2dc3fe1c9e}{atcah\+\_\+sign\+\_\+internal\+\_\+msg}} (\mbox{\hyperlink{group__device_gafb234ccd6a80d09c0efbe336c2354267}{ATCADevice\+Type}} device\+\_\+type, struct \mbox{\hyperlink{structatca__sign__internal__in__out}{atca\+\_\+sign\+\_\+internal\+\_\+in\+\_\+out}} \texorpdfstring{$\ast$}{*}param)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{group__atcah_ga03632bc31f21bec0d13d4f0cab198958}{atcah\+\_\+verify\+\_\+mac}} (\mbox{\hyperlink{group__atcah_gaae7f658ac9525d887e70d918fc34bb31}{atca\+\_\+verify\+\_\+mac\+\_\+in\+\_\+out\+\_\+t}} \texorpdfstring{$\ast$}{*}param)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{group__atcah_ga4c89f8023aec521281824c0e35713baa}{atcah\+\_\+secureboot\+\_\+enc}} (\mbox{\hyperlink{group__atcah_ga9675f5082f8c90b306414bebae70db75}{atca\+\_\+secureboot\+\_\+enc\+\_\+in\+\_\+out\+\_\+t}} \texorpdfstring{$\ast$}{*}param)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{group__atcah_gaa795bec90432fbfa194913d8b4098fab}{atcah\+\_\+secureboot\+\_\+mac}} (\mbox{\hyperlink{group__atcah_ga78f53ab779c77227c305ad4d4be118df}{atca\+\_\+secureboot\+\_\+mac\+\_\+in\+\_\+out\+\_\+t}} \texorpdfstring{$\ast$}{*}param)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{group__atcah_ga809ad14c1d8da45d5f74fa4c55373638}{atcah\+\_\+encode\+\_\+counter\+\_\+match}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} counter, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}counter\+\_\+match)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{group__atcah_gaa0df5937081037684ce2894a8cc2c1e5}{atcah\+\_\+io\+\_\+decrypt}} (struct \mbox{\hyperlink{structatca__io__decrypt__in__out}{atca\+\_\+io\+\_\+decrypt\+\_\+in\+\_\+out}} \texorpdfstring{$\ast$}{*}param)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{group__atcah_ga860db9cfc460c8c46b1c9c218cf2e110}{atcah\+\_\+ecc204\+\_\+write\+\_\+auth\+\_\+mac}} (struct \mbox{\hyperlink{structatca__write__mac__in__out}{atca\+\_\+write\+\_\+mac\+\_\+in\+\_\+out}} \texorpdfstring{$\ast$}{*}param)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{group__atcah_ga567b3f9245252c2876c3ff54661a144f}{atcah\+\_\+gen\+\_\+session\+\_\+key}} (\mbox{\hyperlink{group__atcah_gab6d36ecdb6ea5e3c4024e2d10e82cd6e}{atca\+\_\+session\+\_\+key\+\_\+in\+\_\+out\+\_\+t}} \texorpdfstring{$\ast$}{*}param)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group__atcah_gabf13fbfd8720db20eb52ba6d2472a16b}{atca\+\_\+include\+\_\+data\+\_\+in\+\_\+out\+::p\+\_\+temp}}
+\begin{DoxyCompactList}\small\item\em \mbox{[}out\mbox{]} pointer to output buffer \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group__atcah_ga1afbecb27208c90d5dd91b0d517fcbe4}{atca\+\_\+include\+\_\+data\+\_\+in\+\_\+out\+::otp}}
+\begin{DoxyCompactList}\small\item\em \mbox{[}in\mbox{]} pointer to one-\/time-\/programming data \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group__atcah_ga490fb6b641128a00fc5284f5984df2fb}{atca\+\_\+include\+\_\+data\+\_\+in\+\_\+out\+::sn}}
+\begin{DoxyCompactList}\small\item\em \mbox{[}in\mbox{]} pointer to serial number data \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{group__atcah_ga686b51186581e5529bfe6784fbcb140a}{atca\+\_\+nonce\+\_\+in\+\_\+out\+::mode}}
+\begin{DoxyCompactList}\small\item\em \mbox{[}in\mbox{]} Mode parameter used in Nonce command (Param1). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{group__atcah_ga8b982653b0ec04693ae5b95d4f5f67e8}{atca\+\_\+nonce\+\_\+in\+\_\+out\+::zero}}
+\begin{DoxyCompactList}\small\item\em \mbox{[}in\mbox{]} Zero parameter used in Nonce command (Param2). \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group__atcah_ga391bcf11f2a7939013f6cbcf0291ca8a}{atca\+\_\+nonce\+\_\+in\+\_\+out\+::num\+\_\+in}}
+\begin{DoxyCompactList}\small\item\em \mbox{[}in\mbox{]} Pointer to 20-\/byte Num\+In data used in Nonce command. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group__atcah_ga7751f4308f48e26b832256446e71ddd8}{atca\+\_\+nonce\+\_\+in\+\_\+out\+::rand\+\_\+out}}
+\begin{DoxyCompactList}\small\item\em \mbox{[}in\mbox{]} Pointer to 32-\/byte Rand\+Out data from Nonce command. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structatca__temp__key}{atca\+\_\+temp\+\_\+key}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group__atcah_ga4ded5e1cbfd8a40da5182a56bfbe4e6c}{atca\+\_\+nonce\+\_\+in\+\_\+out\+::temp\+\_\+key}}
+\begin{DoxyCompactList}\small\item\em \mbox{[}in,out\mbox{]} Pointer to Temp\+Key structure. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{group__atcah_ga2d95152f18d2154046060210791806cd}{atca\+\_\+mac\+\_\+in\+\_\+out\+::mode}}
+\begin{DoxyCompactList}\small\item\em \mbox{[}in\mbox{]} Mode parameter used in MAC command (Param1). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{group__atcah_ga560e515951e93071c1ee17c1c9d5136a}{atca\+\_\+mac\+\_\+in\+\_\+out\+::key\+\_\+id}}
+\begin{DoxyCompactList}\small\item\em \mbox{[}in\mbox{]} Key\+ID parameter used in MAC command (Param2). \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group__atcah_ga674d5ad3408da73c4fe9dc6c1818bb33}{atca\+\_\+mac\+\_\+in\+\_\+out\+::challenge}}
+\begin{DoxyCompactList}\small\item\em \mbox{[}in\mbox{]} Pointer to 32-\/byte Challenge data used in MAC command, depending on mode. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group__atcah_ga9009dbc8d2ef20b94c4878d2666f03ea}{atca\+\_\+mac\+\_\+in\+\_\+out\+::key}}
+\begin{DoxyCompactList}\small\item\em \mbox{[}in\mbox{]} Pointer to 32-\/byte key used to generate MAC digest. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group__atcah_ga6ad8bbb887661d27db1470c9213e8d8a}{atca\+\_\+mac\+\_\+in\+\_\+out\+::otp}}
+\begin{DoxyCompactList}\small\item\em \mbox{[}in\mbox{]} Pointer to 11-\/byte OTP, optionally included in MAC digest, depending on mode. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group__atcah_ga05b4a7cdbec2cb5080658fc3e96a5cce}{atca\+\_\+mac\+\_\+in\+\_\+out\+::sn}}
+\begin{DoxyCompactList}\small\item\em \mbox{[}in\mbox{]} Pointer to 9-\/byte SN, optionally included in MAC digest, depending on mode. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group__atcah_gafc23e7855abfc10fd2068cebe0a2b901}{atca\+\_\+mac\+\_\+in\+\_\+out\+::response}}
+\begin{DoxyCompactList}\small\item\em \mbox{[}out\mbox{]} Pointer to 32-\/byte SHA-\/256 digest (MAC). \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structatca__temp__key}{atca\+\_\+temp\+\_\+key}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group__atcah_ga26287c5de54fcdfea9f7436c7ae1ebe6}{atca\+\_\+mac\+\_\+in\+\_\+out\+::temp\+\_\+key}}
+\begin{DoxyCompactList}\small\item\em \mbox{[}in,out\mbox{]} Pointer to Temp\+Key structure. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{group__atcah_gaf4252196a042189c1f698ee0e923bd43}{atca\+\_\+hmac\+\_\+in\+\_\+out\+::mode}}
+\begin{DoxyCompactList}\small\item\em \mbox{[}in\mbox{]} Mode parameter used in HMAC command (Param1). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{group__atcah_ga6b3945336987b20a9f4d7e8b7e031097}{atca\+\_\+hmac\+\_\+in\+\_\+out\+::key\+\_\+id}}
+\begin{DoxyCompactList}\small\item\em \mbox{[}in\mbox{]} Key\+ID parameter used in HMAC command (Param2). \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group__atcah_ga8356351666b53907b054c7942ad17a2e}{atca\+\_\+hmac\+\_\+in\+\_\+out\+::key}}
+\begin{DoxyCompactList}\small\item\em \mbox{[}in\mbox{]} Pointer to 32-\/byte key used to generate HMAC digest. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group__atcah_ga16aae705a1832f6e17f3cb4e0489c777}{atca\+\_\+hmac\+\_\+in\+\_\+out\+::otp}}
+\begin{DoxyCompactList}\small\item\em \mbox{[}in\mbox{]} Pointer to 11-\/byte OTP, optionally included in HMAC digest, depending on mode. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group__atcah_ga6bce5839f6daaedc3033bce5d1d8543f}{atca\+\_\+hmac\+\_\+in\+\_\+out\+::sn}}
+\begin{DoxyCompactList}\small\item\em \mbox{[}in\mbox{]} Pointer to 9-\/byte SN, optionally included in HMAC digest, depending on mode. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group__atcah_ga488809b419a3da691ba469e156eabc08}{atca\+\_\+hmac\+\_\+in\+\_\+out\+::response}}
+\begin{DoxyCompactList}\small\item\em \mbox{[}out\mbox{]} Pointer to 32-\/byte SHA-\/256 HMAC digest. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structatca__temp__key}{atca\+\_\+temp\+\_\+key}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group__atcah_ga2bcb39533e946ffea2972a7f7e475617}{atca\+\_\+hmac\+\_\+in\+\_\+out\+::temp\+\_\+key}}
+\begin{DoxyCompactList}\small\item\em \mbox{[}in,out\mbox{]} Pointer to Temp\+Key structure. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group__atcah_ga27fbace922a92c2227146507869b21fe}{atca\+\_\+decrypt\+\_\+in\+\_\+out\+::crypto\+\_\+data}}
+\begin{DoxyCompactList}\small\item\em \mbox{[}in,out\mbox{]} Pointer to 32-\/byte data. Input encrypted data from Read command (Contents field), output decrypted. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structatca__temp__key}{atca\+\_\+temp\+\_\+key}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group__atcah_ga41702b87a3f3e8a61b493407209c47c8}{atca\+\_\+decrypt\+\_\+in\+\_\+out\+::temp\+\_\+key}}
+\begin{DoxyCompactList}\small\item\em \mbox{[}in,out\mbox{]} Pointer to Temp\+Key structure. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{group__atcah_ga87a530f5c3b7e340175bc1f0b618320f}{atca\+\_\+verify\+\_\+in\+\_\+out\+::curve\+\_\+type}}
+\begin{DoxyCompactList}\small\item\em \mbox{[}in\mbox{]} Curve type used in Verify command (Param2). \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group__atcah_ga19eabf075a62edf66bb4a5e5306a2ec9}{atca\+\_\+verify\+\_\+in\+\_\+out\+::signature}}
+\begin{DoxyCompactList}\small\item\em \mbox{[}in\mbox{]} Pointer to ECDSA signature to be verified \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group__atcah_ga3ad0a707a2d2a32ede1c838cb1e79d48}{atca\+\_\+verify\+\_\+in\+\_\+out\+::public\+\_\+key}}
+\begin{DoxyCompactList}\small\item\em \mbox{[}in\mbox{]} Pointer to the public key to be used for verification \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structatca__temp__key}{atca\+\_\+temp\+\_\+key}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group__atcah_ga7db61655d216cb53d78de70b2b2dbf6c}{atca\+\_\+verify\+\_\+in\+\_\+out\+::temp\+\_\+key}}
+\begin{DoxyCompactList}\small\item\em \mbox{[}in,out\mbox{]} Pointer to Temp\+Key structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Definitions for ATECC Message Sizes to Calculate a SHA256 Hash}
+"{}\texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|}"{} is the concatenation operator. The number in braces is the length of the hash input value in bytes. \begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__atcah_gaebdc2d83274268bb48fc45e87aef38af}{ATCA\+\_\+\+MSG\+\_\+\+SIZE\+\_\+\+NONCE}}~(55)
+\begin{DoxyCompactList}\small\item\em Rand\+Out\{32\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Num\+In\{20\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Op\+Code\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Mode\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} LSB of Param2\{1\}. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__atcah_ga2b5993f5b7254d8c6e50794824cf47b6}{ATCA\+\_\+\+MSG\+\_\+\+SIZE\+\_\+\+MAC}}~(88)
+\begin{DoxyCompactList}\small\item\em (Key or Temp\+Key)\{32\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} (Challenge or Temp\+Key)\{32\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Op\+Code\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Mode\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Param2\{2\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} (OTP0\+\_\+7 or 0)\{8\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} (OTP8\+\_\+10 or 0)\{3\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} SN8\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} (SN4\+\_\+7 or 0)\{4\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} SN0\+\_\+1\{2\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} (SN2\+\_\+3 or 0)\{2\} \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__atcah_gae9245f524128f65f77f65002a5a7265f}{ATCA\+\_\+\+MSG\+\_\+\+SIZE\+\_\+\+HMAC}}~(88)
+\item 
+\#define \mbox{\hyperlink{group__atcah_ga656372cab66beeb5a333e9a33e342017}{ATCA\+\_\+\+MSG\+\_\+\+SIZE\+\_\+\+GEN\+\_\+\+DIG}}~(96)
+\begin{DoxyCompactList}\small\item\em Key\+Id\{32\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Op\+Code\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Param1\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Param2\{2\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} SN8\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} SN0\+\_\+1\{2\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} 0\{25\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Temp\+Key\{32\}. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__atcah_ga1f445a11e4da099fec31efd43eadc234}{ATCA\+\_\+\+MSG\+\_\+\+SIZE\+\_\+\+DERIVE\+\_\+\+KEY}}~(96)
+\begin{DoxyCompactList}\small\item\em Key\+Id\{32\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Op\+Code\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Param1\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Param2\{2\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} SN8\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} SN0\+\_\+1\{2\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} 0\{25\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Temp\+Key\{32\}. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__atcah_ga4ef7d31c60616cf5177f415e32607d10}{ATCA\+\_\+\+MSG\+\_\+\+SIZE\+\_\+\+DERIVE\+\_\+\+KEY\+\_\+\+MAC}}~(39)
+\begin{DoxyCompactList}\small\item\em Key\+Id\{32\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Op\+Code\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Param1\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Param2\{2\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} SN8\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} SN0\+\_\+1\{2\}. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__atcah_gafd8064c07a5f22cdb087c88e1b87c1be}{ATCA\+\_\+\+MSG\+\_\+\+SIZE\+\_\+\+ENCRYPT\+\_\+\+MAC}}~(96)
+\begin{DoxyCompactList}\small\item\em Key\+Id\{32\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Op\+Code\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Param1\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Param2\{2\}\texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} SN8\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} SN0\+\_\+1\{2\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} 0\{25\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Temp\+Key\{32\}. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__atcah_ga56b92d82ffddbd86c99107b12043f8db}{ATCA\+\_\+\+MSG\+\_\+\+SIZE\+\_\+\+SESSION\+\_\+\+KEY}}~(96)
+\begin{DoxyCompactList}\small\item\em Transport\+Key\{32\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} 0x15\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} 0x00\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Key\+Id\{2\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} SN8\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} SN0\+\_\+1\{2\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} 0\{25\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Nonce\{32\}. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__atcah_ga1039bfbe7e13d614814341bdee6afa7b}{ATCA\+\_\+\+MSG\+\_\+\+SIZE\+\_\+\+PRIVWRITE\+\_\+\+MAC}}~(96)
+\begin{DoxyCompactList}\small\item\em Key\+Id\{32\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Op\+Code\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Param1\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Param2\{2\}\texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} SN8\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} SN0\+\_\+1\{2\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} 0\{21\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Plain\+Text\{36\}. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__atcah_gab51341e9f564bc8f85c2e822835a8bcb}{ATCA\+\_\+\+COMMAND\+\_\+\+HEADER\+\_\+\+SIZE}}~( 4)
+\item 
+\#define \mbox{\hyperlink{group__atcah_ga5398e83ccfca8ada7cb609c1e34d2cc4}{ATCA\+\_\+\+GENDIG\+\_\+\+ZEROS\+\_\+\+SIZE}}~(25)
+\item 
+\#define \mbox{\hyperlink{group__atcah_ga43496218f8a98faad996489af047272f}{ATCA\+\_\+\+WRITE\+\_\+\+MAC\+\_\+\+ZEROS\+\_\+\+SIZE}}~(25)
+\item 
+\#define \mbox{\hyperlink{group__atcah_ga9c24dfde4798589fd98c2583d170aeb1}{ATCA\+\_\+\+PRIVWRITE\+\_\+\+MAC\+\_\+\+ZEROS\+\_\+\+SIZE}}~(21)
+\item 
+\#define \mbox{\hyperlink{group__atcah_ga6a06f47cbc2023edba7e8b0f2f4b08bb}{ATCA\+\_\+\+PRIVWRITE\+\_\+\+PLAIN\+\_\+\+TEXT\+\_\+\+SIZE}}~(36)
+\item 
+\#define \mbox{\hyperlink{group__atcah_ga7204dddd2ff69a1139a6a8d8f6c62c9c}{ATCA\+\_\+\+DERIVE\+\_\+\+KEY\+\_\+\+ZEROS\+\_\+\+SIZE}}~(25)
+\item 
+\#define \mbox{\hyperlink{group__atcah_ga81922e26e59a7cea775992c18c5975b9}{ATCA\+\_\+\+HMAC\+\_\+\+BLOCK\+\_\+\+SIZE}}~(64)
+\item 
+\#define \mbox{\hyperlink{group__atcah_gaeb6c1ee0fb04b12d185eee8bb766068c}{ENCRYPTION\+\_\+\+KEY\+\_\+\+SIZE}}~(64)
+\item 
+\#define \mbox{\hyperlink{group__atcah_gaebdc2d83274268bb48fc45e87aef38af}{ATCA\+\_\+\+MSG\+\_\+\+SIZE\+\_\+\+NONCE}}~(55)
+\begin{DoxyCompactList}\small\item\em Rand\+Out\{32\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Num\+In\{20\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Op\+Code\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Mode\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} LSB of Param2\{1\}. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__atcah_ga2b5993f5b7254d8c6e50794824cf47b6}{ATCA\+\_\+\+MSG\+\_\+\+SIZE\+\_\+\+MAC}}~(88)
+\begin{DoxyCompactList}\small\item\em (Key or Temp\+Key)\{32\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} (Challenge or Temp\+Key)\{32\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Op\+Code\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Mode\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Param2\{2\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} (OTP0\+\_\+7 or 0)\{8\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} (OTP8\+\_\+10 or 0)\{3\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} SN8\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} (SN4\+\_\+7 or 0)\{4\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} SN0\+\_\+1\{2\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} (SN2\+\_\+3 or 0)\{2\} \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__atcah_gae9245f524128f65f77f65002a5a7265f}{ATCA\+\_\+\+MSG\+\_\+\+SIZE\+\_\+\+HMAC}}~(88)
+\item 
+\#define \mbox{\hyperlink{group__atcah_ga656372cab66beeb5a333e9a33e342017}{ATCA\+\_\+\+MSG\+\_\+\+SIZE\+\_\+\+GEN\+\_\+\+DIG}}~(96)
+\begin{DoxyCompactList}\small\item\em Key\+Id\{32\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Op\+Code\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Param1\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Param2\{2\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} SN8\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} SN0\+\_\+1\{2\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} 0\{25\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Temp\+Key\{32\}. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__atcah_ga1f445a11e4da099fec31efd43eadc234}{ATCA\+\_\+\+MSG\+\_\+\+SIZE\+\_\+\+DERIVE\+\_\+\+KEY}}~(96)
+\begin{DoxyCompactList}\small\item\em Key\+Id\{32\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Op\+Code\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Param1\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Param2\{2\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} SN8\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} SN0\+\_\+1\{2\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} 0\{25\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Temp\+Key\{32\}. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__atcah_ga4ef7d31c60616cf5177f415e32607d10}{ATCA\+\_\+\+MSG\+\_\+\+SIZE\+\_\+\+DERIVE\+\_\+\+KEY\+\_\+\+MAC}}~(39)
+\begin{DoxyCompactList}\small\item\em Key\+Id\{32\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Op\+Code\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Param1\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Param2\{2\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} SN8\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} SN0\+\_\+1\{2\}. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__atcah_gafd8064c07a5f22cdb087c88e1b87c1be}{ATCA\+\_\+\+MSG\+\_\+\+SIZE\+\_\+\+ENCRYPT\+\_\+\+MAC}}~(96)
+\begin{DoxyCompactList}\small\item\em Key\+Id\{32\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Op\+Code\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Param1\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Param2\{2\}\texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} SN8\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} SN0\+\_\+1\{2\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} 0\{25\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Temp\+Key\{32\}. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__atcah_ga56b92d82ffddbd86c99107b12043f8db}{ATCA\+\_\+\+MSG\+\_\+\+SIZE\+\_\+\+SESSION\+\_\+\+KEY}}~(96)
+\begin{DoxyCompactList}\small\item\em Transport\+Key\{32\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} 0x15\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} 0x00\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Key\+Id\{2\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} SN8\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} SN0\+\_\+1\{2\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} 0\{25\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Nonce\{32\}. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__atcah_ga1039bfbe7e13d614814341bdee6afa7b}{ATCA\+\_\+\+MSG\+\_\+\+SIZE\+\_\+\+PRIVWRITE\+\_\+\+MAC}}~(96)
+\begin{DoxyCompactList}\small\item\em Key\+Id\{32\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Op\+Code\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Param1\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Param2\{2\}\texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} SN8\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} SN0\+\_\+1\{2\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} 0\{21\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Plain\+Text\{36\}. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__atcah_gab51341e9f564bc8f85c2e822835a8bcb}{ATCA\+\_\+\+COMMAND\+\_\+\+HEADER\+\_\+\+SIZE}}~( 4)
+\item 
+\#define \mbox{\hyperlink{group__atcah_ga5398e83ccfca8ada7cb609c1e34d2cc4}{ATCA\+\_\+\+GENDIG\+\_\+\+ZEROS\+\_\+\+SIZE}}~(25)
+\item 
+\#define \mbox{\hyperlink{group__atcah_ga43496218f8a98faad996489af047272f}{ATCA\+\_\+\+WRITE\+\_\+\+MAC\+\_\+\+ZEROS\+\_\+\+SIZE}}~(25)
+\item 
+\#define \mbox{\hyperlink{group__atcah_ga9c24dfde4798589fd98c2583d170aeb1}{ATCA\+\_\+\+PRIVWRITE\+\_\+\+MAC\+\_\+\+ZEROS\+\_\+\+SIZE}}~(21)
+\item 
+\#define \mbox{\hyperlink{group__atcah_ga6a06f47cbc2023edba7e8b0f2f4b08bb}{ATCA\+\_\+\+PRIVWRITE\+\_\+\+PLAIN\+\_\+\+TEXT\+\_\+\+SIZE}}~(36)
+\item 
+\#define \mbox{\hyperlink{group__atcah_ga7204dddd2ff69a1139a6a8d8f6c62c9c}{ATCA\+\_\+\+DERIVE\+\_\+\+KEY\+\_\+\+ZEROS\+\_\+\+SIZE}}~(25)
+\item 
+\#define \mbox{\hyperlink{group__atcah_ga81922e26e59a7cea775992c18c5975b9}{ATCA\+\_\+\+HMAC\+\_\+\+BLOCK\+\_\+\+SIZE}}~(64)
+\item 
+\#define \mbox{\hyperlink{group__atcah_gaeb6c1ee0fb04b12d185eee8bb766068c}{ENCRYPTION\+\_\+\+KEY\+\_\+\+SIZE}}~(64)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Default Fixed Byte Values of Serial Number (SN\mbox{[}0\+:1\mbox{]} and SN\mbox{[}8\mbox{]})}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__atcah_ga1a026ad1d6e4ccd5c32f7f0462877b39}{ATCA\+\_\+\+SN\+\_\+0\+\_\+\+DEF}}~(0x01)
+\item 
+\#define \mbox{\hyperlink{group__atcah_ga5e4f22a404b71cabba4fd7085dff5e7c}{ATCA\+\_\+\+SN\+\_\+1\+\_\+\+DEF}}~(0x23)
+\item 
+\#define \mbox{\hyperlink{group__atcah_ga232f0d699ece83f51d63e5a66d254be5}{ATCA\+\_\+\+SN\+\_\+8\+\_\+\+DEF}}~(0x\+EE)
+\item 
+\#define \mbox{\hyperlink{group__atcah_ga1a026ad1d6e4ccd5c32f7f0462877b39}{ATCA\+\_\+\+SN\+\_\+0\+\_\+\+DEF}}~(0x01)
+\item 
+\#define \mbox{\hyperlink{group__atcah_ga5e4f22a404b71cabba4fd7085dff5e7c}{ATCA\+\_\+\+SN\+\_\+1\+\_\+\+DEF}}~(0x23)
+\item 
+\#define \mbox{\hyperlink{group__atcah_ga232f0d699ece83f51d63e5a66d254be5}{ATCA\+\_\+\+SN\+\_\+8\+\_\+\+DEF}}~(0x\+EE)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Definition for Temp\+Key Mode}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__atcah_ga05323075c94849bf70e84f5a5931f058}{MAC\+\_\+\+MODE\+\_\+\+USE\+\_\+\+TEMPKEY\+\_\+\+MASK}}~((\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}})0x03)
+\begin{DoxyCompactList}\small\item\em mode mask for MAC command when using Temp\+Key \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__atcah_ga05323075c94849bf70e84f5a5931f058}{MAC\+\_\+\+MODE\+\_\+\+USE\+\_\+\+TEMPKEY\+\_\+\+MASK}}~((\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}})0x03)
+\begin{DoxyCompactList}\small\item\em mode mask for MAC command when using Temp\+Key \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Use these functions if your system does not use an ATCADevice as a host but implements the host in firmware. The functions provide host-\/side cryptographic functionality for an ATECC client device. They are intended to accompany the Crypto\+Auth\+Lib functions. They can be called directly from an application, or integrated into an API. 
+
+Modern compilers can garbage-\/collect unused functions. If your compiler does not support this feature, you can just discard this module from your project if you do use an ATECC as a host. Or, if you don\textquotesingle{}t, delete the functions you do not use.
+
+Modern compilers can garbage-\/collect unused functions. If your compiler does not support this feature, you can just discard this module from your project if you do use an ATECC as a host. Or, if you don\textquotesingle{}t, delete the functions you do not use. 
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{group__atcah_gab51341e9f564bc8f85c2e822835a8bcb}\label{group__atcah_gab51341e9f564bc8f85c2e822835a8bcb} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!ATCA\_COMMAND\_HEADER\_SIZE@{ATCA\_COMMAND\_HEADER\_SIZE}}
+\index{ATCA\_COMMAND\_HEADER\_SIZE@{ATCA\_COMMAND\_HEADER\_SIZE}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_COMMAND\_HEADER\_SIZE}{ATCA\_COMMAND\_HEADER\_SIZE}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+COMMAND\+\_\+\+HEADER\+\_\+\+SIZE~( 4)}
+
+\Hypertarget{group__atcah_gab51341e9f564bc8f85c2e822835a8bcb}\label{group__atcah_gab51341e9f564bc8f85c2e822835a8bcb} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!ATCA\_COMMAND\_HEADER\_SIZE@{ATCA\_COMMAND\_HEADER\_SIZE}}
+\index{ATCA\_COMMAND\_HEADER\_SIZE@{ATCA\_COMMAND\_HEADER\_SIZE}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_COMMAND\_HEADER\_SIZE}{ATCA\_COMMAND\_HEADER\_SIZE}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+COMMAND\+\_\+\+HEADER\+\_\+\+SIZE~( 4)}
+
+\Hypertarget{group__atcah_ga7204dddd2ff69a1139a6a8d8f6c62c9c}\label{group__atcah_ga7204dddd2ff69a1139a6a8d8f6c62c9c} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!ATCA\_DERIVE\_KEY\_ZEROS\_SIZE@{ATCA\_DERIVE\_KEY\_ZEROS\_SIZE}}
+\index{ATCA\_DERIVE\_KEY\_ZEROS\_SIZE@{ATCA\_DERIVE\_KEY\_ZEROS\_SIZE}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_DERIVE\_KEY\_ZEROS\_SIZE}{ATCA\_DERIVE\_KEY\_ZEROS\_SIZE}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+DERIVE\+\_\+\+KEY\+\_\+\+ZEROS\+\_\+\+SIZE~(25)}
+
+\Hypertarget{group__atcah_ga7204dddd2ff69a1139a6a8d8f6c62c9c}\label{group__atcah_ga7204dddd2ff69a1139a6a8d8f6c62c9c} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!ATCA\_DERIVE\_KEY\_ZEROS\_SIZE@{ATCA\_DERIVE\_KEY\_ZEROS\_SIZE}}
+\index{ATCA\_DERIVE\_KEY\_ZEROS\_SIZE@{ATCA\_DERIVE\_KEY\_ZEROS\_SIZE}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_DERIVE\_KEY\_ZEROS\_SIZE}{ATCA\_DERIVE\_KEY\_ZEROS\_SIZE}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+DERIVE\+\_\+\+KEY\+\_\+\+ZEROS\+\_\+\+SIZE~(25)}
+
+\Hypertarget{group__atcah_ga5398e83ccfca8ada7cb609c1e34d2cc4}\label{group__atcah_ga5398e83ccfca8ada7cb609c1e34d2cc4} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!ATCA\_GENDIG\_ZEROS\_SIZE@{ATCA\_GENDIG\_ZEROS\_SIZE}}
+\index{ATCA\_GENDIG\_ZEROS\_SIZE@{ATCA\_GENDIG\_ZEROS\_SIZE}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_GENDIG\_ZEROS\_SIZE}{ATCA\_GENDIG\_ZEROS\_SIZE}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+GENDIG\+\_\+\+ZEROS\+\_\+\+SIZE~(25)}
+
+\Hypertarget{group__atcah_ga5398e83ccfca8ada7cb609c1e34d2cc4}\label{group__atcah_ga5398e83ccfca8ada7cb609c1e34d2cc4} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!ATCA\_GENDIG\_ZEROS\_SIZE@{ATCA\_GENDIG\_ZEROS\_SIZE}}
+\index{ATCA\_GENDIG\_ZEROS\_SIZE@{ATCA\_GENDIG\_ZEROS\_SIZE}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_GENDIG\_ZEROS\_SIZE}{ATCA\_GENDIG\_ZEROS\_SIZE}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+GENDIG\+\_\+\+ZEROS\+\_\+\+SIZE~(25)}
+
+\Hypertarget{group__atcah_ga81922e26e59a7cea775992c18c5975b9}\label{group__atcah_ga81922e26e59a7cea775992c18c5975b9} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!ATCA\_HMAC\_BLOCK\_SIZE@{ATCA\_HMAC\_BLOCK\_SIZE}}
+\index{ATCA\_HMAC\_BLOCK\_SIZE@{ATCA\_HMAC\_BLOCK\_SIZE}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_HMAC\_BLOCK\_SIZE}{ATCA\_HMAC\_BLOCK\_SIZE}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+HMAC\+\_\+\+BLOCK\+\_\+\+SIZE~(64)}
+
+\Hypertarget{group__atcah_ga81922e26e59a7cea775992c18c5975b9}\label{group__atcah_ga81922e26e59a7cea775992c18c5975b9} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!ATCA\_HMAC\_BLOCK\_SIZE@{ATCA\_HMAC\_BLOCK\_SIZE}}
+\index{ATCA\_HMAC\_BLOCK\_SIZE@{ATCA\_HMAC\_BLOCK\_SIZE}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_HMAC\_BLOCK\_SIZE}{ATCA\_HMAC\_BLOCK\_SIZE}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+HMAC\+\_\+\+BLOCK\+\_\+\+SIZE~(64)}
+
+\Hypertarget{group__atcah_ga1f445a11e4da099fec31efd43eadc234}\label{group__atcah_ga1f445a11e4da099fec31efd43eadc234} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!ATCA\_MSG\_SIZE\_DERIVE\_KEY@{ATCA\_MSG\_SIZE\_DERIVE\_KEY}}
+\index{ATCA\_MSG\_SIZE\_DERIVE\_KEY@{ATCA\_MSG\_SIZE\_DERIVE\_KEY}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_MSG\_SIZE\_DERIVE\_KEY}{ATCA\_MSG\_SIZE\_DERIVE\_KEY}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+MSG\+\_\+\+SIZE\+\_\+\+DERIVE\+\_\+\+KEY~(96)}
+
+
+
+Key\+Id\{32\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Op\+Code\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Param1\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Param2\{2\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} SN8\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} SN0\+\_\+1\{2\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} 0\{25\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Temp\+Key\{32\}. 
+
+\Hypertarget{group__atcah_ga1f445a11e4da099fec31efd43eadc234}\label{group__atcah_ga1f445a11e4da099fec31efd43eadc234} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!ATCA\_MSG\_SIZE\_DERIVE\_KEY@{ATCA\_MSG\_SIZE\_DERIVE\_KEY}}
+\index{ATCA\_MSG\_SIZE\_DERIVE\_KEY@{ATCA\_MSG\_SIZE\_DERIVE\_KEY}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_MSG\_SIZE\_DERIVE\_KEY}{ATCA\_MSG\_SIZE\_DERIVE\_KEY}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+MSG\+\_\+\+SIZE\+\_\+\+DERIVE\+\_\+\+KEY~(96)}
+
+
+
+Key\+Id\{32\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Op\+Code\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Param1\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Param2\{2\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} SN8\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} SN0\+\_\+1\{2\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} 0\{25\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Temp\+Key\{32\}. 
+
+\Hypertarget{group__atcah_ga4ef7d31c60616cf5177f415e32607d10}\label{group__atcah_ga4ef7d31c60616cf5177f415e32607d10} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!ATCA\_MSG\_SIZE\_DERIVE\_KEY\_MAC@{ATCA\_MSG\_SIZE\_DERIVE\_KEY\_MAC}}
+\index{ATCA\_MSG\_SIZE\_DERIVE\_KEY\_MAC@{ATCA\_MSG\_SIZE\_DERIVE\_KEY\_MAC}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_MSG\_SIZE\_DERIVE\_KEY\_MAC}{ATCA\_MSG\_SIZE\_DERIVE\_KEY\_MAC}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+MSG\+\_\+\+SIZE\+\_\+\+DERIVE\+\_\+\+KEY\+\_\+\+MAC~(39)}
+
+
+
+Key\+Id\{32\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Op\+Code\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Param1\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Param2\{2\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} SN8\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} SN0\+\_\+1\{2\}. 
+
+\Hypertarget{group__atcah_ga4ef7d31c60616cf5177f415e32607d10}\label{group__atcah_ga4ef7d31c60616cf5177f415e32607d10} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!ATCA\_MSG\_SIZE\_DERIVE\_KEY\_MAC@{ATCA\_MSG\_SIZE\_DERIVE\_KEY\_MAC}}
+\index{ATCA\_MSG\_SIZE\_DERIVE\_KEY\_MAC@{ATCA\_MSG\_SIZE\_DERIVE\_KEY\_MAC}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_MSG\_SIZE\_DERIVE\_KEY\_MAC}{ATCA\_MSG\_SIZE\_DERIVE\_KEY\_MAC}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+MSG\+\_\+\+SIZE\+\_\+\+DERIVE\+\_\+\+KEY\+\_\+\+MAC~(39)}
+
+
+
+Key\+Id\{32\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Op\+Code\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Param1\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Param2\{2\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} SN8\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} SN0\+\_\+1\{2\}. 
+
+\Hypertarget{group__atcah_gafd8064c07a5f22cdb087c88e1b87c1be}\label{group__atcah_gafd8064c07a5f22cdb087c88e1b87c1be} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!ATCA\_MSG\_SIZE\_ENCRYPT\_MAC@{ATCA\_MSG\_SIZE\_ENCRYPT\_MAC}}
+\index{ATCA\_MSG\_SIZE\_ENCRYPT\_MAC@{ATCA\_MSG\_SIZE\_ENCRYPT\_MAC}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_MSG\_SIZE\_ENCRYPT\_MAC}{ATCA\_MSG\_SIZE\_ENCRYPT\_MAC}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+MSG\+\_\+\+SIZE\+\_\+\+ENCRYPT\+\_\+\+MAC~(96)}
+
+
+
+Key\+Id\{32\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Op\+Code\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Param1\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Param2\{2\}\texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} SN8\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} SN0\+\_\+1\{2\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} 0\{25\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Temp\+Key\{32\}. 
+
+\Hypertarget{group__atcah_gafd8064c07a5f22cdb087c88e1b87c1be}\label{group__atcah_gafd8064c07a5f22cdb087c88e1b87c1be} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!ATCA\_MSG\_SIZE\_ENCRYPT\_MAC@{ATCA\_MSG\_SIZE\_ENCRYPT\_MAC}}
+\index{ATCA\_MSG\_SIZE\_ENCRYPT\_MAC@{ATCA\_MSG\_SIZE\_ENCRYPT\_MAC}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_MSG\_SIZE\_ENCRYPT\_MAC}{ATCA\_MSG\_SIZE\_ENCRYPT\_MAC}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+MSG\+\_\+\+SIZE\+\_\+\+ENCRYPT\+\_\+\+MAC~(96)}
+
+
+
+Key\+Id\{32\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Op\+Code\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Param1\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Param2\{2\}\texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} SN8\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} SN0\+\_\+1\{2\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} 0\{25\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Temp\+Key\{32\}. 
+
+\Hypertarget{group__atcah_ga656372cab66beeb5a333e9a33e342017}\label{group__atcah_ga656372cab66beeb5a333e9a33e342017} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!ATCA\_MSG\_SIZE\_GEN\_DIG@{ATCA\_MSG\_SIZE\_GEN\_DIG}}
+\index{ATCA\_MSG\_SIZE\_GEN\_DIG@{ATCA\_MSG\_SIZE\_GEN\_DIG}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_MSG\_SIZE\_GEN\_DIG}{ATCA\_MSG\_SIZE\_GEN\_DIG}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+MSG\+\_\+\+SIZE\+\_\+\+GEN\+\_\+\+DIG~(96)}
+
+
+
+Key\+Id\{32\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Op\+Code\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Param1\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Param2\{2\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} SN8\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} SN0\+\_\+1\{2\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} 0\{25\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Temp\+Key\{32\}. 
+
+\Hypertarget{group__atcah_ga656372cab66beeb5a333e9a33e342017}\label{group__atcah_ga656372cab66beeb5a333e9a33e342017} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!ATCA\_MSG\_SIZE\_GEN\_DIG@{ATCA\_MSG\_SIZE\_GEN\_DIG}}
+\index{ATCA\_MSG\_SIZE\_GEN\_DIG@{ATCA\_MSG\_SIZE\_GEN\_DIG}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_MSG\_SIZE\_GEN\_DIG}{ATCA\_MSG\_SIZE\_GEN\_DIG}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+MSG\+\_\+\+SIZE\+\_\+\+GEN\+\_\+\+DIG~(96)}
+
+
+
+Key\+Id\{32\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Op\+Code\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Param1\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Param2\{2\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} SN8\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} SN0\+\_\+1\{2\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} 0\{25\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Temp\+Key\{32\}. 
+
+\Hypertarget{group__atcah_gae9245f524128f65f77f65002a5a7265f}\label{group__atcah_gae9245f524128f65f77f65002a5a7265f} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!ATCA\_MSG\_SIZE\_HMAC@{ATCA\_MSG\_SIZE\_HMAC}}
+\index{ATCA\_MSG\_SIZE\_HMAC@{ATCA\_MSG\_SIZE\_HMAC}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_MSG\_SIZE\_HMAC}{ATCA\_MSG\_SIZE\_HMAC}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+MSG\+\_\+\+SIZE\+\_\+\+HMAC~(88)}
+
+\Hypertarget{group__atcah_gae9245f524128f65f77f65002a5a7265f}\label{group__atcah_gae9245f524128f65f77f65002a5a7265f} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!ATCA\_MSG\_SIZE\_HMAC@{ATCA\_MSG\_SIZE\_HMAC}}
+\index{ATCA\_MSG\_SIZE\_HMAC@{ATCA\_MSG\_SIZE\_HMAC}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_MSG\_SIZE\_HMAC}{ATCA\_MSG\_SIZE\_HMAC}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+MSG\+\_\+\+SIZE\+\_\+\+HMAC~(88)}
+
+\Hypertarget{group__atcah_ga2b5993f5b7254d8c6e50794824cf47b6}\label{group__atcah_ga2b5993f5b7254d8c6e50794824cf47b6} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!ATCA\_MSG\_SIZE\_MAC@{ATCA\_MSG\_SIZE\_MAC}}
+\index{ATCA\_MSG\_SIZE\_MAC@{ATCA\_MSG\_SIZE\_MAC}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_MSG\_SIZE\_MAC}{ATCA\_MSG\_SIZE\_MAC}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+MSG\+\_\+\+SIZE\+\_\+\+MAC~(88)}
+
+
+
+(Key or Temp\+Key)\{32\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} (Challenge or Temp\+Key)\{32\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Op\+Code\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Mode\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Param2\{2\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} (OTP0\+\_\+7 or 0)\{8\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} (OTP8\+\_\+10 or 0)\{3\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} SN8\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} (SN4\+\_\+7 or 0)\{4\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} SN0\+\_\+1\{2\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} (SN2\+\_\+3 or 0)\{2\} 
+
+\Hypertarget{group__atcah_ga2b5993f5b7254d8c6e50794824cf47b6}\label{group__atcah_ga2b5993f5b7254d8c6e50794824cf47b6} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!ATCA\_MSG\_SIZE\_MAC@{ATCA\_MSG\_SIZE\_MAC}}
+\index{ATCA\_MSG\_SIZE\_MAC@{ATCA\_MSG\_SIZE\_MAC}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_MSG\_SIZE\_MAC}{ATCA\_MSG\_SIZE\_MAC}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+MSG\+\_\+\+SIZE\+\_\+\+MAC~(88)}
+
+
+
+(Key or Temp\+Key)\{32\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} (Challenge or Temp\+Key)\{32\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Op\+Code\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Mode\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Param2\{2\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} (OTP0\+\_\+7 or 0)\{8\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} (OTP8\+\_\+10 or 0)\{3\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} SN8\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} (SN4\+\_\+7 or 0)\{4\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} SN0\+\_\+1\{2\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} (SN2\+\_\+3 or 0)\{2\} 
+
+\Hypertarget{group__atcah_gaebdc2d83274268bb48fc45e87aef38af}\label{group__atcah_gaebdc2d83274268bb48fc45e87aef38af} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!ATCA\_MSG\_SIZE\_NONCE@{ATCA\_MSG\_SIZE\_NONCE}}
+\index{ATCA\_MSG\_SIZE\_NONCE@{ATCA\_MSG\_SIZE\_NONCE}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_MSG\_SIZE\_NONCE}{ATCA\_MSG\_SIZE\_NONCE}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+MSG\+\_\+\+SIZE\+\_\+\+NONCE~(55)}
+
+
+
+Rand\+Out\{32\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Num\+In\{20\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Op\+Code\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Mode\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} LSB of Param2\{1\}. 
+
+\Hypertarget{group__atcah_gaebdc2d83274268bb48fc45e87aef38af}\label{group__atcah_gaebdc2d83274268bb48fc45e87aef38af} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!ATCA\_MSG\_SIZE\_NONCE@{ATCA\_MSG\_SIZE\_NONCE}}
+\index{ATCA\_MSG\_SIZE\_NONCE@{ATCA\_MSG\_SIZE\_NONCE}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_MSG\_SIZE\_NONCE}{ATCA\_MSG\_SIZE\_NONCE}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+MSG\+\_\+\+SIZE\+\_\+\+NONCE~(55)}
+
+
+
+Rand\+Out\{32\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Num\+In\{20\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Op\+Code\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Mode\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} LSB of Param2\{1\}. 
+
+\Hypertarget{group__atcah_ga1039bfbe7e13d614814341bdee6afa7b}\label{group__atcah_ga1039bfbe7e13d614814341bdee6afa7b} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!ATCA\_MSG\_SIZE\_PRIVWRITE\_MAC@{ATCA\_MSG\_SIZE\_PRIVWRITE\_MAC}}
+\index{ATCA\_MSG\_SIZE\_PRIVWRITE\_MAC@{ATCA\_MSG\_SIZE\_PRIVWRITE\_MAC}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_MSG\_SIZE\_PRIVWRITE\_MAC}{ATCA\_MSG\_SIZE\_PRIVWRITE\_MAC}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+MSG\+\_\+\+SIZE\+\_\+\+PRIVWRITE\+\_\+\+MAC~(96)}
+
+
+
+Key\+Id\{32\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Op\+Code\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Param1\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Param2\{2\}\texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} SN8\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} SN0\+\_\+1\{2\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} 0\{21\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Plain\+Text\{36\}. 
+
+\Hypertarget{group__atcah_ga1039bfbe7e13d614814341bdee6afa7b}\label{group__atcah_ga1039bfbe7e13d614814341bdee6afa7b} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!ATCA\_MSG\_SIZE\_PRIVWRITE\_MAC@{ATCA\_MSG\_SIZE\_PRIVWRITE\_MAC}}
+\index{ATCA\_MSG\_SIZE\_PRIVWRITE\_MAC@{ATCA\_MSG\_SIZE\_PRIVWRITE\_MAC}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_MSG\_SIZE\_PRIVWRITE\_MAC}{ATCA\_MSG\_SIZE\_PRIVWRITE\_MAC}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+MSG\+\_\+\+SIZE\+\_\+\+PRIVWRITE\+\_\+\+MAC~(96)}
+
+
+
+Key\+Id\{32\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Op\+Code\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Param1\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Param2\{2\}\texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} SN8\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} SN0\+\_\+1\{2\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} 0\{21\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Plain\+Text\{36\}. 
+
+\Hypertarget{group__atcah_ga56b92d82ffddbd86c99107b12043f8db}\label{group__atcah_ga56b92d82ffddbd86c99107b12043f8db} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!ATCA\_MSG\_SIZE\_SESSION\_KEY@{ATCA\_MSG\_SIZE\_SESSION\_KEY}}
+\index{ATCA\_MSG\_SIZE\_SESSION\_KEY@{ATCA\_MSG\_SIZE\_SESSION\_KEY}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_MSG\_SIZE\_SESSION\_KEY}{ATCA\_MSG\_SIZE\_SESSION\_KEY}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+MSG\+\_\+\+SIZE\+\_\+\+SESSION\+\_\+\+KEY~(96)}
+
+
+
+Transport\+Key\{32\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} 0x15\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} 0x00\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Key\+Id\{2\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} SN8\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} SN0\+\_\+1\{2\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} 0\{25\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Nonce\{32\}. 
+
+\Hypertarget{group__atcah_ga56b92d82ffddbd86c99107b12043f8db}\label{group__atcah_ga56b92d82ffddbd86c99107b12043f8db} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!ATCA\_MSG\_SIZE\_SESSION\_KEY@{ATCA\_MSG\_SIZE\_SESSION\_KEY}}
+\index{ATCA\_MSG\_SIZE\_SESSION\_KEY@{ATCA\_MSG\_SIZE\_SESSION\_KEY}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_MSG\_SIZE\_SESSION\_KEY}{ATCA\_MSG\_SIZE\_SESSION\_KEY}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+MSG\+\_\+\+SIZE\+\_\+\+SESSION\+\_\+\+KEY~(96)}
+
+
+
+Transport\+Key\{32\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} 0x15\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} 0x00\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Key\+Id\{2\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} SN8\{1\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} SN0\+\_\+1\{2\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} 0\{25\} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|} Nonce\{32\}. 
+
+\Hypertarget{group__atcah_ga9c24dfde4798589fd98c2583d170aeb1}\label{group__atcah_ga9c24dfde4798589fd98c2583d170aeb1} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!ATCA\_PRIVWRITE\_MAC\_ZEROS\_SIZE@{ATCA\_PRIVWRITE\_MAC\_ZEROS\_SIZE}}
+\index{ATCA\_PRIVWRITE\_MAC\_ZEROS\_SIZE@{ATCA\_PRIVWRITE\_MAC\_ZEROS\_SIZE}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_PRIVWRITE\_MAC\_ZEROS\_SIZE}{ATCA\_PRIVWRITE\_MAC\_ZEROS\_SIZE}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+PRIVWRITE\+\_\+\+MAC\+\_\+\+ZEROS\+\_\+\+SIZE~(21)}
+
+\Hypertarget{group__atcah_ga9c24dfde4798589fd98c2583d170aeb1}\label{group__atcah_ga9c24dfde4798589fd98c2583d170aeb1} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!ATCA\_PRIVWRITE\_MAC\_ZEROS\_SIZE@{ATCA\_PRIVWRITE\_MAC\_ZEROS\_SIZE}}
+\index{ATCA\_PRIVWRITE\_MAC\_ZEROS\_SIZE@{ATCA\_PRIVWRITE\_MAC\_ZEROS\_SIZE}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_PRIVWRITE\_MAC\_ZEROS\_SIZE}{ATCA\_PRIVWRITE\_MAC\_ZEROS\_SIZE}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+PRIVWRITE\+\_\+\+MAC\+\_\+\+ZEROS\+\_\+\+SIZE~(21)}
+
+\Hypertarget{group__atcah_ga6a06f47cbc2023edba7e8b0f2f4b08bb}\label{group__atcah_ga6a06f47cbc2023edba7e8b0f2f4b08bb} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!ATCA\_PRIVWRITE\_PLAIN\_TEXT\_SIZE@{ATCA\_PRIVWRITE\_PLAIN\_TEXT\_SIZE}}
+\index{ATCA\_PRIVWRITE\_PLAIN\_TEXT\_SIZE@{ATCA\_PRIVWRITE\_PLAIN\_TEXT\_SIZE}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_PRIVWRITE\_PLAIN\_TEXT\_SIZE}{ATCA\_PRIVWRITE\_PLAIN\_TEXT\_SIZE}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+PRIVWRITE\+\_\+\+PLAIN\+\_\+\+TEXT\+\_\+\+SIZE~(36)}
+
+\Hypertarget{group__atcah_ga6a06f47cbc2023edba7e8b0f2f4b08bb}\label{group__atcah_ga6a06f47cbc2023edba7e8b0f2f4b08bb} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!ATCA\_PRIVWRITE\_PLAIN\_TEXT\_SIZE@{ATCA\_PRIVWRITE\_PLAIN\_TEXT\_SIZE}}
+\index{ATCA\_PRIVWRITE\_PLAIN\_TEXT\_SIZE@{ATCA\_PRIVWRITE\_PLAIN\_TEXT\_SIZE}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_PRIVWRITE\_PLAIN\_TEXT\_SIZE}{ATCA\_PRIVWRITE\_PLAIN\_TEXT\_SIZE}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+PRIVWRITE\+\_\+\+PLAIN\+\_\+\+TEXT\+\_\+\+SIZE~(36)}
+
+\Hypertarget{group__atcah_ga1a026ad1d6e4ccd5c32f7f0462877b39}\label{group__atcah_ga1a026ad1d6e4ccd5c32f7f0462877b39} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!ATCA\_SN\_0\_DEF@{ATCA\_SN\_0\_DEF}}
+\index{ATCA\_SN\_0\_DEF@{ATCA\_SN\_0\_DEF}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_SN\_0\_DEF}{ATCA\_SN\_0\_DEF}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+SN\+\_\+0\+\_\+\+DEF~(0x01)}
+
+\Hypertarget{group__atcah_ga1a026ad1d6e4ccd5c32f7f0462877b39}\label{group__atcah_ga1a026ad1d6e4ccd5c32f7f0462877b39} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!ATCA\_SN\_0\_DEF@{ATCA\_SN\_0\_DEF}}
+\index{ATCA\_SN\_0\_DEF@{ATCA\_SN\_0\_DEF}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_SN\_0\_DEF}{ATCA\_SN\_0\_DEF}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+SN\+\_\+0\+\_\+\+DEF~(0x01)}
+
+\Hypertarget{group__atcah_ga5e4f22a404b71cabba4fd7085dff5e7c}\label{group__atcah_ga5e4f22a404b71cabba4fd7085dff5e7c} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!ATCA\_SN\_1\_DEF@{ATCA\_SN\_1\_DEF}}
+\index{ATCA\_SN\_1\_DEF@{ATCA\_SN\_1\_DEF}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_SN\_1\_DEF}{ATCA\_SN\_1\_DEF}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+SN\+\_\+1\+\_\+\+DEF~(0x23)}
+
+\Hypertarget{group__atcah_ga5e4f22a404b71cabba4fd7085dff5e7c}\label{group__atcah_ga5e4f22a404b71cabba4fd7085dff5e7c} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!ATCA\_SN\_1\_DEF@{ATCA\_SN\_1\_DEF}}
+\index{ATCA\_SN\_1\_DEF@{ATCA\_SN\_1\_DEF}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_SN\_1\_DEF}{ATCA\_SN\_1\_DEF}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+SN\+\_\+1\+\_\+\+DEF~(0x23)}
+
+\Hypertarget{group__atcah_ga232f0d699ece83f51d63e5a66d254be5}\label{group__atcah_ga232f0d699ece83f51d63e5a66d254be5} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!ATCA\_SN\_8\_DEF@{ATCA\_SN\_8\_DEF}}
+\index{ATCA\_SN\_8\_DEF@{ATCA\_SN\_8\_DEF}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_SN\_8\_DEF}{ATCA\_SN\_8\_DEF}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+SN\+\_\+8\+\_\+\+DEF~(0x\+EE)}
+
+\Hypertarget{group__atcah_ga232f0d699ece83f51d63e5a66d254be5}\label{group__atcah_ga232f0d699ece83f51d63e5a66d254be5} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!ATCA\_SN\_8\_DEF@{ATCA\_SN\_8\_DEF}}
+\index{ATCA\_SN\_8\_DEF@{ATCA\_SN\_8\_DEF}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_SN\_8\_DEF}{ATCA\_SN\_8\_DEF}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+SN\+\_\+8\+\_\+\+DEF~(0x\+EE)}
+
+\Hypertarget{group__atcah_ga43496218f8a98faad996489af047272f}\label{group__atcah_ga43496218f8a98faad996489af047272f} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!ATCA\_WRITE\_MAC\_ZEROS\_SIZE@{ATCA\_WRITE\_MAC\_ZEROS\_SIZE}}
+\index{ATCA\_WRITE\_MAC\_ZEROS\_SIZE@{ATCA\_WRITE\_MAC\_ZEROS\_SIZE}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_WRITE\_MAC\_ZEROS\_SIZE}{ATCA\_WRITE\_MAC\_ZEROS\_SIZE}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+WRITE\+\_\+\+MAC\+\_\+\+ZEROS\+\_\+\+SIZE~(25)}
+
+\Hypertarget{group__atcah_ga43496218f8a98faad996489af047272f}\label{group__atcah_ga43496218f8a98faad996489af047272f} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!ATCA\_WRITE\_MAC\_ZEROS\_SIZE@{ATCA\_WRITE\_MAC\_ZEROS\_SIZE}}
+\index{ATCA\_WRITE\_MAC\_ZEROS\_SIZE@{ATCA\_WRITE\_MAC\_ZEROS\_SIZE}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_WRITE\_MAC\_ZEROS\_SIZE}{ATCA\_WRITE\_MAC\_ZEROS\_SIZE}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+WRITE\+\_\+\+MAC\+\_\+\+ZEROS\+\_\+\+SIZE~(25)}
+
+\Hypertarget{group__atcah_gaeb6c1ee0fb04b12d185eee8bb766068c}\label{group__atcah_gaeb6c1ee0fb04b12d185eee8bb766068c} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!ENCRYPTION\_KEY\_SIZE@{ENCRYPTION\_KEY\_SIZE}}
+\index{ENCRYPTION\_KEY\_SIZE@{ENCRYPTION\_KEY\_SIZE}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{ENCRYPTION\_KEY\_SIZE}{ENCRYPTION\_KEY\_SIZE}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \#define ENCRYPTION\+\_\+\+KEY\+\_\+\+SIZE~(64)}
+
+\Hypertarget{group__atcah_gaeb6c1ee0fb04b12d185eee8bb766068c}\label{group__atcah_gaeb6c1ee0fb04b12d185eee8bb766068c} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!ENCRYPTION\_KEY\_SIZE@{ENCRYPTION\_KEY\_SIZE}}
+\index{ENCRYPTION\_KEY\_SIZE@{ENCRYPTION\_KEY\_SIZE}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{ENCRYPTION\_KEY\_SIZE}{ENCRYPTION\_KEY\_SIZE}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \#define ENCRYPTION\+\_\+\+KEY\+\_\+\+SIZE~(64)}
+
+\Hypertarget{group__atcah_ga05323075c94849bf70e84f5a5931f058}\label{group__atcah_ga05323075c94849bf70e84f5a5931f058} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!MAC\_MODE\_USE\_TEMPKEY\_MASK@{MAC\_MODE\_USE\_TEMPKEY\_MASK}}
+\index{MAC\_MODE\_USE\_TEMPKEY\_MASK@{MAC\_MODE\_USE\_TEMPKEY\_MASK}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{MAC\_MODE\_USE\_TEMPKEY\_MASK}{MAC\_MODE\_USE\_TEMPKEY\_MASK}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \#define MAC\+\_\+\+MODE\+\_\+\+USE\+\_\+\+TEMPKEY\+\_\+\+MASK~((\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}})0x03)}
+
+
+
+mode mask for MAC command when using Temp\+Key 
+
+\Hypertarget{group__atcah_ga05323075c94849bf70e84f5a5931f058}\label{group__atcah_ga05323075c94849bf70e84f5a5931f058} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!MAC\_MODE\_USE\_TEMPKEY\_MASK@{MAC\_MODE\_USE\_TEMPKEY\_MASK}}
+\index{MAC\_MODE\_USE\_TEMPKEY\_MASK@{MAC\_MODE\_USE\_TEMPKEY\_MASK}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{MAC\_MODE\_USE\_TEMPKEY\_MASK}{MAC\_MODE\_USE\_TEMPKEY\_MASK}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \#define MAC\+\_\+\+MODE\+\_\+\+USE\+\_\+\+TEMPKEY\+\_\+\+MASK~((\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}})0x03)}
+
+
+
+mode mask for MAC command when using Temp\+Key 
+
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{group__atcah_ga62321bafeb0a9dd7c4ce657ece10109f}\label{group__atcah_ga62321bafeb0a9dd7c4ce657ece10109f} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!atca\_check\_mac\_in\_out\_t@{atca\_check\_mac\_in\_out\_t}}
+\index{atca\_check\_mac\_in\_out\_t@{atca\_check\_mac\_in\_out\_t}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{atca\_check\_mac\_in\_out\_t}{atca\_check\_mac\_in\_out\_t}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structatca__check__mac__in__out}{atca\+\_\+check\+\_\+mac\+\_\+in\+\_\+out}} \mbox{\hyperlink{group__atcah_ga62321bafeb0a9dd7c4ce657ece10109f}{atca\+\_\+check\+\_\+mac\+\_\+in\+\_\+out\+\_\+t}}}
+
+
+
+Input/output parameters for function \doxylink{group__atcah_ga5b457cd0ccba73864eee4030b6079ba7}{atcah\+\_\+check\+\_\+mac()}. 
+
+\Hypertarget{group__atcah_ga62321bafeb0a9dd7c4ce657ece10109f}\label{group__atcah_ga62321bafeb0a9dd7c4ce657ece10109f} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!atca\_check\_mac\_in\_out\_t@{atca\_check\_mac\_in\_out\_t}}
+\index{atca\_check\_mac\_in\_out\_t@{atca\_check\_mac\_in\_out\_t}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{atca\_check\_mac\_in\_out\_t}{atca\_check\_mac\_in\_out\_t}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structatca__check__mac__in__out}{atca\+\_\+check\+\_\+mac\+\_\+in\+\_\+out}} \mbox{\hyperlink{group__atcah_ga62321bafeb0a9dd7c4ce657ece10109f}{atca\+\_\+check\+\_\+mac\+\_\+in\+\_\+out\+\_\+t}}}
+
+
+
+Input/output parameters for function \doxylink{group__atcah_ga5b457cd0ccba73864eee4030b6079ba7}{atcah\+\_\+check\+\_\+mac()}. 
+
+\Hypertarget{group__atcah_ga572abeaaabf22c386ebcba19b4f6236c}\label{group__atcah_ga572abeaaabf22c386ebcba19b4f6236c} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!atca\_gen\_dig\_in\_out\_t@{atca\_gen\_dig\_in\_out\_t}}
+\index{atca\_gen\_dig\_in\_out\_t@{atca\_gen\_dig\_in\_out\_t}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{atca\_gen\_dig\_in\_out\_t}{atca\_gen\_dig\_in\_out\_t}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structatca__gen__dig__in__out}{atca\+\_\+gen\+\_\+dig\+\_\+in\+\_\+out}} \mbox{\hyperlink{group__atcah_ga572abeaaabf22c386ebcba19b4f6236c}{atca\+\_\+gen\+\_\+dig\+\_\+in\+\_\+out\+\_\+t}}}
+
+
+
+Input/output parameters for function \doxylink{group__atcah_ga6f6043ba8eebbaab6e6f3b4fa5e31ad4}{atcah\+\_\+gen\+\_\+dig()}. 
+
+\Hypertarget{group__atcah_ga572abeaaabf22c386ebcba19b4f6236c}\label{group__atcah_ga572abeaaabf22c386ebcba19b4f6236c} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!atca\_gen\_dig\_in\_out\_t@{atca\_gen\_dig\_in\_out\_t}}
+\index{atca\_gen\_dig\_in\_out\_t@{atca\_gen\_dig\_in\_out\_t}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{atca\_gen\_dig\_in\_out\_t}{atca\_gen\_dig\_in\_out\_t}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structatca__gen__dig__in__out}{atca\+\_\+gen\+\_\+dig\+\_\+in\+\_\+out}} \mbox{\hyperlink{group__atcah_ga572abeaaabf22c386ebcba19b4f6236c}{atca\+\_\+gen\+\_\+dig\+\_\+in\+\_\+out\+\_\+t}}}
+
+
+
+Input/output parameters for function \doxylink{group__atcah_ga6f6043ba8eebbaab6e6f3b4fa5e31ad4}{atcah\+\_\+gen\+\_\+dig()}. 
+
+\Hypertarget{group__atcah_gada8cf14261301ec18458cbcbbe3d9b32}\label{group__atcah_gada8cf14261301ec18458cbcbbe3d9b32} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!atca\_gen\_key\_in\_out\_t@{atca\_gen\_key\_in\_out\_t}}
+\index{atca\_gen\_key\_in\_out\_t@{atca\_gen\_key\_in\_out\_t}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{atca\_gen\_key\_in\_out\_t}{atca\_gen\_key\_in\_out\_t}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structatca__gen__key__in__out}{atca\+\_\+gen\+\_\+key\+\_\+in\+\_\+out}} \mbox{\hyperlink{group__atcah_gada8cf14261301ec18458cbcbbe3d9b32}{atca\+\_\+gen\+\_\+key\+\_\+in\+\_\+out\+\_\+t}}}
+
+
+
+Input/output parameters for calculating the Pub\+Key digest put into Temp\+Key by the Gen\+Key command with the \doxylink{group__atcah_gabf2abd4bd62f47537756c9ab109050c0}{atcah\+\_\+gen\+\_\+key\+\_\+msg()} function. 
+
+\Hypertarget{group__atcah_gada8cf14261301ec18458cbcbbe3d9b32}\label{group__atcah_gada8cf14261301ec18458cbcbbe3d9b32} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!atca\_gen\_key\_in\_out\_t@{atca\_gen\_key\_in\_out\_t}}
+\index{atca\_gen\_key\_in\_out\_t@{atca\_gen\_key\_in\_out\_t}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{atca\_gen\_key\_in\_out\_t}{atca\_gen\_key\_in\_out\_t}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structatca__gen__key__in__out}{atca\+\_\+gen\+\_\+key\+\_\+in\+\_\+out}} \mbox{\hyperlink{group__atcah_gada8cf14261301ec18458cbcbbe3d9b32}{atca\+\_\+gen\+\_\+key\+\_\+in\+\_\+out\+\_\+t}}}
+
+
+
+Input/output parameters for calculating the Pub\+Key digest put into Temp\+Key by the Gen\+Key command with the \doxylink{group__atcah_gabf2abd4bd62f47537756c9ab109050c0}{atcah\+\_\+gen\+\_\+key\+\_\+msg()} function. 
+
+\Hypertarget{group__atcah_gac5efe11aed6a5a47c36b748e71a35945}\label{group__atcah_gac5efe11aed6a5a47c36b748e71a35945} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!atca\_io\_decrypt\_in\_out\_t@{atca\_io\_decrypt\_in\_out\_t}}
+\index{atca\_io\_decrypt\_in\_out\_t@{atca\_io\_decrypt\_in\_out\_t}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{atca\_io\_decrypt\_in\_out\_t}{atca\_io\_decrypt\_in\_out\_t}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structatca__io__decrypt__in__out}{atca\+\_\+io\+\_\+decrypt\+\_\+in\+\_\+out}} \mbox{\hyperlink{group__atcah_gac5efe11aed6a5a47c36b748e71a35945}{atca\+\_\+io\+\_\+decrypt\+\_\+in\+\_\+out\+\_\+t}}}
+
+\Hypertarget{group__atcah_gac5efe11aed6a5a47c36b748e71a35945}\label{group__atcah_gac5efe11aed6a5a47c36b748e71a35945} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!atca\_io\_decrypt\_in\_out\_t@{atca\_io\_decrypt\_in\_out\_t}}
+\index{atca\_io\_decrypt\_in\_out\_t@{atca\_io\_decrypt\_in\_out\_t}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{atca\_io\_decrypt\_in\_out\_t}{atca\_io\_decrypt\_in\_out\_t}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structatca__io__decrypt__in__out}{atca\+\_\+io\+\_\+decrypt\+\_\+in\+\_\+out}} \mbox{\hyperlink{group__atcah_gac5efe11aed6a5a47c36b748e71a35945}{atca\+\_\+io\+\_\+decrypt\+\_\+in\+\_\+out\+\_\+t}}}
+
+\Hypertarget{group__atcah_ga6835354266e1c13a133959aaeb8bfdba}\label{group__atcah_ga6835354266e1c13a133959aaeb8bfdba} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!atca\_mac\_in\_out\_t@{atca\_mac\_in\_out\_t}}
+\index{atca\_mac\_in\_out\_t@{atca\_mac\_in\_out\_t}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{atca\_mac\_in\_out\_t}{atca\_mac\_in\_out\_t}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structatca__mac__in__out}{atca\+\_\+mac\+\_\+in\+\_\+out}} \mbox{\hyperlink{group__atcah_ga6835354266e1c13a133959aaeb8bfdba}{atca\+\_\+mac\+\_\+in\+\_\+out\+\_\+t}}}
+
+\Hypertarget{group__atcah_ga6835354266e1c13a133959aaeb8bfdba}\label{group__atcah_ga6835354266e1c13a133959aaeb8bfdba} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!atca\_mac\_in\_out\_t@{atca\_mac\_in\_out\_t}}
+\index{atca\_mac\_in\_out\_t@{atca\_mac\_in\_out\_t}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{atca\_mac\_in\_out\_t}{atca\_mac\_in\_out\_t}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structatca__mac__in__out}{atca\+\_\+mac\+\_\+in\+\_\+out}} \mbox{\hyperlink{group__atcah_ga6835354266e1c13a133959aaeb8bfdba}{atca\+\_\+mac\+\_\+in\+\_\+out\+\_\+t}}}
+
+\Hypertarget{group__atcah_ga22be37d60bd8f57e367424fb0c7bacf4}\label{group__atcah_ga22be37d60bd8f57e367424fb0c7bacf4} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!atca\_nonce\_in\_out\_t@{atca\_nonce\_in\_out\_t}}
+\index{atca\_nonce\_in\_out\_t@{atca\_nonce\_in\_out\_t}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{atca\_nonce\_in\_out\_t}{atca\_nonce\_in\_out\_t}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structatca__nonce__in__out}{atca\+\_\+nonce\+\_\+in\+\_\+out}} \mbox{\hyperlink{group__atcah_ga22be37d60bd8f57e367424fb0c7bacf4}{atca\+\_\+nonce\+\_\+in\+\_\+out\+\_\+t}}}
+
+\Hypertarget{group__atcah_ga22be37d60bd8f57e367424fb0c7bacf4}\label{group__atcah_ga22be37d60bd8f57e367424fb0c7bacf4} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!atca\_nonce\_in\_out\_t@{atca\_nonce\_in\_out\_t}}
+\index{atca\_nonce\_in\_out\_t@{atca\_nonce\_in\_out\_t}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{atca\_nonce\_in\_out\_t}{atca\_nonce\_in\_out\_t}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structatca__nonce__in__out}{atca\+\_\+nonce\+\_\+in\+\_\+out}} \mbox{\hyperlink{group__atcah_ga22be37d60bd8f57e367424fb0c7bacf4}{atca\+\_\+nonce\+\_\+in\+\_\+out\+\_\+t}}}
+
+\Hypertarget{group__atcah_ga9675f5082f8c90b306414bebae70db75}\label{group__atcah_ga9675f5082f8c90b306414bebae70db75} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!atca\_secureboot\_enc\_in\_out\_t@{atca\_secureboot\_enc\_in\_out\_t}}
+\index{atca\_secureboot\_enc\_in\_out\_t@{atca\_secureboot\_enc\_in\_out\_t}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{atca\_secureboot\_enc\_in\_out\_t}{atca\_secureboot\_enc\_in\_out\_t}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structatca__secureboot__enc__in__out}{atca\+\_\+secureboot\+\_\+enc\+\_\+in\+\_\+out}} \mbox{\hyperlink{group__atcah_ga9675f5082f8c90b306414bebae70db75}{atca\+\_\+secureboot\+\_\+enc\+\_\+in\+\_\+out\+\_\+t}}}
+
+\Hypertarget{group__atcah_ga9675f5082f8c90b306414bebae70db75}\label{group__atcah_ga9675f5082f8c90b306414bebae70db75} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!atca\_secureboot\_enc\_in\_out\_t@{atca\_secureboot\_enc\_in\_out\_t}}
+\index{atca\_secureboot\_enc\_in\_out\_t@{atca\_secureboot\_enc\_in\_out\_t}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{atca\_secureboot\_enc\_in\_out\_t}{atca\_secureboot\_enc\_in\_out\_t}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structatca__secureboot__enc__in__out}{atca\+\_\+secureboot\+\_\+enc\+\_\+in\+\_\+out}} \mbox{\hyperlink{group__atcah_ga9675f5082f8c90b306414bebae70db75}{atca\+\_\+secureboot\+\_\+enc\+\_\+in\+\_\+out\+\_\+t}}}
+
+\Hypertarget{group__atcah_ga78f53ab779c77227c305ad4d4be118df}\label{group__atcah_ga78f53ab779c77227c305ad4d4be118df} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!atca\_secureboot\_mac\_in\_out\_t@{atca\_secureboot\_mac\_in\_out\_t}}
+\index{atca\_secureboot\_mac\_in\_out\_t@{atca\_secureboot\_mac\_in\_out\_t}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{atca\_secureboot\_mac\_in\_out\_t}{atca\_secureboot\_mac\_in\_out\_t}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structatca__secureboot__mac__in__out}{atca\+\_\+secureboot\+\_\+mac\+\_\+in\+\_\+out}} \mbox{\hyperlink{group__atcah_ga78f53ab779c77227c305ad4d4be118df}{atca\+\_\+secureboot\+\_\+mac\+\_\+in\+\_\+out\+\_\+t}}}
+
+\Hypertarget{group__atcah_ga78f53ab779c77227c305ad4d4be118df}\label{group__atcah_ga78f53ab779c77227c305ad4d4be118df} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!atca\_secureboot\_mac\_in\_out\_t@{atca\_secureboot\_mac\_in\_out\_t}}
+\index{atca\_secureboot\_mac\_in\_out\_t@{atca\_secureboot\_mac\_in\_out\_t}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{atca\_secureboot\_mac\_in\_out\_t}{atca\_secureboot\_mac\_in\_out\_t}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structatca__secureboot__mac__in__out}{atca\+\_\+secureboot\+\_\+mac\+\_\+in\+\_\+out}} \mbox{\hyperlink{group__atcah_ga78f53ab779c77227c305ad4d4be118df}{atca\+\_\+secureboot\+\_\+mac\+\_\+in\+\_\+out\+\_\+t}}}
+
+\Hypertarget{group__atcah_gab6d36ecdb6ea5e3c4024e2d10e82cd6e}\label{group__atcah_gab6d36ecdb6ea5e3c4024e2d10e82cd6e} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!atca\_session\_key\_in\_out\_t@{atca\_session\_key\_in\_out\_t}}
+\index{atca\_session\_key\_in\_out\_t@{atca\_session\_key\_in\_out\_t}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{atca\_session\_key\_in\_out\_t}{atca\_session\_key\_in\_out\_t}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structatca__session__key__in__out}{atca\+\_\+session\+\_\+key\+\_\+in\+\_\+out}} \mbox{\hyperlink{group__atcah_gab6d36ecdb6ea5e3c4024e2d10e82cd6e}{atca\+\_\+session\+\_\+key\+\_\+in\+\_\+out\+\_\+t}}}
+
+
+
+Input/\+Output paramters for calculating the session key by the nonce command. Used with the \doxylink{group__atcah_ga567b3f9245252c2876c3ff54661a144f}{atcah\+\_\+gen\+\_\+session\+\_\+key()} function. 
+
+\Hypertarget{group__atcah_gab6d36ecdb6ea5e3c4024e2d10e82cd6e}\label{group__atcah_gab6d36ecdb6ea5e3c4024e2d10e82cd6e} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!atca\_session\_key\_in\_out\_t@{atca\_session\_key\_in\_out\_t}}
+\index{atca\_session\_key\_in\_out\_t@{atca\_session\_key\_in\_out\_t}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{atca\_session\_key\_in\_out\_t}{atca\_session\_key\_in\_out\_t}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structatca__session__key__in__out}{atca\+\_\+session\+\_\+key\+\_\+in\+\_\+out}} \mbox{\hyperlink{group__atcah_gab6d36ecdb6ea5e3c4024e2d10e82cd6e}{atca\+\_\+session\+\_\+key\+\_\+in\+\_\+out\+\_\+t}}}
+
+
+
+Input/\+Output paramters for calculating the session key by the nonce command. Used with the \doxylink{group__atcah_ga567b3f9245252c2876c3ff54661a144f}{atcah\+\_\+gen\+\_\+session\+\_\+key()} function. 
+
+\Hypertarget{group__atcah_ga1fdcaf886974acc1fcdfc3bace49b700}\label{group__atcah_ga1fdcaf886974acc1fcdfc3bace49b700} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!atca\_sign\_internal\_in\_out\_t@{atca\_sign\_internal\_in\_out\_t}}
+\index{atca\_sign\_internal\_in\_out\_t@{atca\_sign\_internal\_in\_out\_t}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{atca\_sign\_internal\_in\_out\_t}{atca\_sign\_internal\_in\_out\_t}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structatca__sign__internal__in__out}{atca\+\_\+sign\+\_\+internal\+\_\+in\+\_\+out}} \mbox{\hyperlink{group__atcah_ga1fdcaf886974acc1fcdfc3bace49b700}{atca\+\_\+sign\+\_\+internal\+\_\+in\+\_\+out\+\_\+t}}}
+
+
+
+Input/output parameters for calculating the message and digest used by the Sign(internal) command. Used with the \doxylink{group__atcah_ga680045caed6e8f6e136e1a2dc3fe1c9e}{atcah\+\_\+sign\+\_\+internal\+\_\+msg()} function. 
+
+\Hypertarget{group__atcah_ga1fdcaf886974acc1fcdfc3bace49b700}\label{group__atcah_ga1fdcaf886974acc1fcdfc3bace49b700} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!atca\_sign\_internal\_in\_out\_t@{atca\_sign\_internal\_in\_out\_t}}
+\index{atca\_sign\_internal\_in\_out\_t@{atca\_sign\_internal\_in\_out\_t}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{atca\_sign\_internal\_in\_out\_t}{atca\_sign\_internal\_in\_out\_t}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structatca__sign__internal__in__out}{atca\+\_\+sign\+\_\+internal\+\_\+in\+\_\+out}} \mbox{\hyperlink{group__atcah_ga1fdcaf886974acc1fcdfc3bace49b700}{atca\+\_\+sign\+\_\+internal\+\_\+in\+\_\+out\+\_\+t}}}
+
+
+
+Input/output parameters for calculating the message and digest used by the Sign(internal) command. Used with the \doxylink{group__atcah_ga680045caed6e8f6e136e1a2dc3fe1c9e}{atcah\+\_\+sign\+\_\+internal\+\_\+msg()} function. 
+
+\Hypertarget{group__atcah_ga2eb5b7f0471f9f14bd78c63104fb4cfe}\label{group__atcah_ga2eb5b7f0471f9f14bd78c63104fb4cfe} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!atca\_temp\_key\_t@{atca\_temp\_key\_t}}
+\index{atca\_temp\_key\_t@{atca\_temp\_key\_t}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{atca\_temp\_key\_t}{atca\_temp\_key\_t}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structatca__temp__key}{atca\+\_\+temp\+\_\+key}} \mbox{\hyperlink{group__atcah_ga2eb5b7f0471f9f14bd78c63104fb4cfe}{atca\+\_\+temp\+\_\+key\+\_\+t}}}
+
+
+
+Structure to hold Temp\+Key fields. 
+
+\Hypertarget{group__atcah_ga2eb5b7f0471f9f14bd78c63104fb4cfe}\label{group__atcah_ga2eb5b7f0471f9f14bd78c63104fb4cfe} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!atca\_temp\_key\_t@{atca\_temp\_key\_t}}
+\index{atca\_temp\_key\_t@{atca\_temp\_key\_t}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{atca\_temp\_key\_t}{atca\_temp\_key\_t}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structatca__temp__key}{atca\+\_\+temp\+\_\+key}} \mbox{\hyperlink{group__atcah_ga2eb5b7f0471f9f14bd78c63104fb4cfe}{atca\+\_\+temp\+\_\+key\+\_\+t}}}
+
+
+
+Structure to hold Temp\+Key fields. 
+
+\Hypertarget{group__atcah_ga41028ecf36e87d294e91e551102dda5f}\label{group__atcah_ga41028ecf36e87d294e91e551102dda5f} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!atca\_verify\_in\_out\_t@{atca\_verify\_in\_out\_t}}
+\index{atca\_verify\_in\_out\_t@{atca\_verify\_in\_out\_t}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{atca\_verify\_in\_out\_t}{atca\_verify\_in\_out\_t}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structatca__verify__in__out}{atca\+\_\+verify\+\_\+in\+\_\+out}} \mbox{\hyperlink{group__atcah_ga41028ecf36e87d294e91e551102dda5f}{atca\+\_\+verify\+\_\+in\+\_\+out\+\_\+t}}}
+
+\Hypertarget{group__atcah_ga41028ecf36e87d294e91e551102dda5f}\label{group__atcah_ga41028ecf36e87d294e91e551102dda5f} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!atca\_verify\_in\_out\_t@{atca\_verify\_in\_out\_t}}
+\index{atca\_verify\_in\_out\_t@{atca\_verify\_in\_out\_t}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{atca\_verify\_in\_out\_t}{atca\_verify\_in\_out\_t}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structatca__verify__in__out}{atca\+\_\+verify\+\_\+in\+\_\+out}} \mbox{\hyperlink{group__atcah_ga41028ecf36e87d294e91e551102dda5f}{atca\+\_\+verify\+\_\+in\+\_\+out\+\_\+t}}}
+
+\Hypertarget{group__atcah_gaae7f658ac9525d887e70d918fc34bb31}\label{group__atcah_gaae7f658ac9525d887e70d918fc34bb31} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!atca\_verify\_mac\_in\_out\_t@{atca\_verify\_mac\_in\_out\_t}}
+\index{atca\_verify\_mac\_in\_out\_t@{atca\_verify\_mac\_in\_out\_t}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{atca\_verify\_mac\_in\_out\_t}{atca\_verify\_mac\_in\_out\_t}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structatca__verify__mac}{atca\+\_\+verify\+\_\+mac}} \mbox{\hyperlink{group__atcah_gaae7f658ac9525d887e70d918fc34bb31}{atca\+\_\+verify\+\_\+mac\+\_\+in\+\_\+out\+\_\+t}}}
+
+\Hypertarget{group__atcah_gaae7f658ac9525d887e70d918fc34bb31}\label{group__atcah_gaae7f658ac9525d887e70d918fc34bb31} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!atca\_verify\_mac\_in\_out\_t@{atca\_verify\_mac\_in\_out\_t}}
+\index{atca\_verify\_mac\_in\_out\_t@{atca\_verify\_mac\_in\_out\_t}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{atca\_verify\_mac\_in\_out\_t}{atca\_verify\_mac\_in\_out\_t}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structatca__verify__mac}{atca\+\_\+verify\+\_\+mac}} \mbox{\hyperlink{group__atcah_gaae7f658ac9525d887e70d918fc34bb31}{atca\+\_\+verify\+\_\+mac\+\_\+in\+\_\+out\+\_\+t}}}
+
+\Hypertarget{group__atcah_gac077314e00956519884e609b44b9cbce}\label{group__atcah_gac077314e00956519884e609b44b9cbce} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!atca\_write\_mac\_in\_out\_t@{atca\_write\_mac\_in\_out\_t}}
+\index{atca\_write\_mac\_in\_out\_t@{atca\_write\_mac\_in\_out\_t}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{atca\_write\_mac\_in\_out\_t}{atca\_write\_mac\_in\_out\_t}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structatca__write__mac__in__out}{atca\+\_\+write\+\_\+mac\+\_\+in\+\_\+out}} \mbox{\hyperlink{group__atcah_gac077314e00956519884e609b44b9cbce}{atca\+\_\+write\+\_\+mac\+\_\+in\+\_\+out\+\_\+t}}}
+
+
+
+Input/output parameters for function \doxylink{group__atcah_ga47853951c57803eff1432780bf360057}{atcah\+\_\+write\+\_\+auth\+\_\+mac()} and \doxylink{group__atcah_gaed8aa58875c6bdf46a937313e69c6ebb}{atcah\+\_\+privwrite\+\_\+auth\+\_\+mac()}. 
+
+\Hypertarget{group__atcah_gac077314e00956519884e609b44b9cbce}\label{group__atcah_gac077314e00956519884e609b44b9cbce} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!atca\_write\_mac\_in\_out\_t@{atca\_write\_mac\_in\_out\_t}}
+\index{atca\_write\_mac\_in\_out\_t@{atca\_write\_mac\_in\_out\_t}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{atca\_write\_mac\_in\_out\_t}{atca\_write\_mac\_in\_out\_t}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structatca__write__mac__in__out}{atca\+\_\+write\+\_\+mac\+\_\+in\+\_\+out}} \mbox{\hyperlink{group__atcah_gac077314e00956519884e609b44b9cbce}{atca\+\_\+write\+\_\+mac\+\_\+in\+\_\+out\+\_\+t}}}
+
+
+
+Input/output parameters for function \doxylink{group__atcah_ga47853951c57803eff1432780bf360057}{atcah\+\_\+write\+\_\+auth\+\_\+mac()} and \doxylink{group__atcah_gaed8aa58875c6bdf46a937313e69c6ebb}{atcah\+\_\+privwrite\+\_\+auth\+\_\+mac()}. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{group__atcah_ga5b457cd0ccba73864eee4030b6079ba7}\label{group__atcah_ga5b457cd0ccba73864eee4030b6079ba7} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!atcah\_check\_mac@{atcah\_check\_mac}}
+\index{atcah\_check\_mac@{atcah\_check\_mac}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{atcah\_check\_mac()}{atcah\_check\_mac()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} atcah\+\_\+check\+\_\+mac (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structatca__check__mac__in__out}{atca\+\_\+check\+\_\+mac\+\_\+in\+\_\+out}} \texorpdfstring{$\ast$}{*}}]{param }\end{DoxyParamCaption})}
+
+\Hypertarget{group__atcah_ga316e7eeaeedc7a30824294280488e24e}\label{group__atcah_ga316e7eeaeedc7a30824294280488e24e} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!atcah\_config\_to\_sign\_internal@{atcah\_config\_to\_sign\_internal}}
+\index{atcah\_config\_to\_sign\_internal@{atcah\_config\_to\_sign\_internal}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{atcah\_config\_to\_sign\_internal()}{atcah\_config\_to\_sign\_internal()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} atcah\+\_\+config\+\_\+to\+\_\+sign\+\_\+internal (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__device_gafb234ccd6a80d09c0efbe336c2354267}{ATCADevice\+Type}}}]{device\+\_\+type,  }\item[{struct \mbox{\hyperlink{structatca__sign__internal__in__out}{atca\+\_\+sign\+\_\+internal\+\_\+in\+\_\+out}} \texorpdfstring{$\ast$}{*}}]{param,  }\item[{const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{config }\end{DoxyParamCaption})}
+
+\Hypertarget{group__atcah_ga89408b8338dd9f43c4ba85b2a082c3ae}\label{group__atcah_ga89408b8338dd9f43c4ba85b2a082c3ae} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!atcah\_decrypt@{atcah\_decrypt}}
+\index{atcah\_decrypt@{atcah\_decrypt}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{atcah\_decrypt()}{atcah\_decrypt()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} atcah\+\_\+decrypt (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structatca__decrypt__in__out}{atca\+\_\+decrypt\+\_\+in\+\_\+out}} \texorpdfstring{$\ast$}{*}}]{param }\end{DoxyParamCaption})}
+
+\Hypertarget{group__atcah_ga02b3479eaee1bd1741675c2a1249ffda}\label{group__atcah_ga02b3479eaee1bd1741675c2a1249ffda} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!atcah\_derive\_key@{atcah\_derive\_key}}
+\index{atcah\_derive\_key@{atcah\_derive\_key}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{atcah\_derive\_key()}{atcah\_derive\_key()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} atcah\+\_\+derive\+\_\+key (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structatca__derive__key__in__out}{atca\+\_\+derive\+\_\+key\+\_\+in\+\_\+out}} \texorpdfstring{$\ast$}{*}}]{param }\end{DoxyParamCaption})}
+
+\Hypertarget{group__atcah_ga60fc543b3df6fa1dedfbf59e5bde554b}\label{group__atcah_ga60fc543b3df6fa1dedfbf59e5bde554b} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!atcah\_derive\_key\_mac@{atcah\_derive\_key\_mac}}
+\index{atcah\_derive\_key\_mac@{atcah\_derive\_key\_mac}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{atcah\_derive\_key\_mac()}{atcah\_derive\_key\_mac()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} atcah\+\_\+derive\+\_\+key\+\_\+mac (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structatca__derive__key__mac__in__out}{atca\+\_\+derive\+\_\+key\+\_\+mac\+\_\+in\+\_\+out}} \texorpdfstring{$\ast$}{*}}]{param }\end{DoxyParamCaption})}
+
+\Hypertarget{group__atcah_ga860db9cfc460c8c46b1c9c218cf2e110}\label{group__atcah_ga860db9cfc460c8c46b1c9c218cf2e110} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!atcah\_ecc204\_write\_auth\_mac@{atcah\_ecc204\_write\_auth\_mac}}
+\index{atcah\_ecc204\_write\_auth\_mac@{atcah\_ecc204\_write\_auth\_mac}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{atcah\_ecc204\_write\_auth\_mac()}{atcah\_ecc204\_write\_auth\_mac()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} atcah\+\_\+ecc204\+\_\+write\+\_\+auth\+\_\+mac (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structatca__write__mac__in__out}{atca\+\_\+write\+\_\+mac\+\_\+in\+\_\+out}} \texorpdfstring{$\ast$}{*}}]{param }\end{DoxyParamCaption})}
+
+\Hypertarget{group__atcah_ga809ad14c1d8da45d5f74fa4c55373638}\label{group__atcah_ga809ad14c1d8da45d5f74fa4c55373638} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!atcah\_encode\_counter\_match@{atcah\_encode\_counter\_match}}
+\index{atcah\_encode\_counter\_match@{atcah\_encode\_counter\_match}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{atcah\_encode\_counter\_match()}{atcah\_encode\_counter\_match()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} atcah\+\_\+encode\+\_\+counter\+\_\+match (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}}}]{counter,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{counter\+\_\+match }\end{DoxyParamCaption})}
+
+\Hypertarget{group__atcah_ga6f6043ba8eebbaab6e6f3b4fa5e31ad4}\label{group__atcah_ga6f6043ba8eebbaab6e6f3b4fa5e31ad4} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!atcah\_gen\_dig@{atcah\_gen\_dig}}
+\index{atcah\_gen\_dig@{atcah\_gen\_dig}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{atcah\_gen\_dig()}{atcah\_gen\_dig()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} atcah\+\_\+gen\+\_\+dig (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structatca__gen__dig__in__out}{atca\+\_\+gen\+\_\+dig\+\_\+in\+\_\+out}} \texorpdfstring{$\ast$}{*}}]{param }\end{DoxyParamCaption})}
+
+\Hypertarget{group__atcah_gabf2abd4bd62f47537756c9ab109050c0}\label{group__atcah_gabf2abd4bd62f47537756c9ab109050c0} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!atcah\_gen\_key\_msg@{atcah\_gen\_key\_msg}}
+\index{atcah\_gen\_key\_msg@{atcah\_gen\_key\_msg}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{atcah\_gen\_key\_msg()}{atcah\_gen\_key\_msg()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} atcah\+\_\+gen\+\_\+key\+\_\+msg (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structatca__gen__key__in__out}{atca\+\_\+gen\+\_\+key\+\_\+in\+\_\+out}} \texorpdfstring{$\ast$}{*}}]{param }\end{DoxyParamCaption})}
+
+\Hypertarget{group__atcah_ga43ef2dc1159f28fbb100a2b9bf150c0c}\label{group__atcah_ga43ef2dc1159f28fbb100a2b9bf150c0c} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!atcah\_gen\_mac@{atcah\_gen\_mac}}
+\index{atcah\_gen\_mac@{atcah\_gen\_mac}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{atcah\_gen\_mac()}{atcah\_gen\_mac()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} atcah\+\_\+gen\+\_\+mac (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structatca__gen__dig__in__out}{atca\+\_\+gen\+\_\+dig\+\_\+in\+\_\+out}} \texorpdfstring{$\ast$}{*}}]{param }\end{DoxyParamCaption})}
+
+\Hypertarget{group__atcah_ga567b3f9245252c2876c3ff54661a144f}\label{group__atcah_ga567b3f9245252c2876c3ff54661a144f} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!atcah\_gen\_session\_key@{atcah\_gen\_session\_key}}
+\index{atcah\_gen\_session\_key@{atcah\_gen\_session\_key}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{atcah\_gen\_session\_key()}{atcah\_gen\_session\_key()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} atcah\+\_\+gen\+\_\+session\+\_\+key (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__atcah_gab6d36ecdb6ea5e3c4024e2d10e82cd6e}{atca\+\_\+session\+\_\+key\+\_\+in\+\_\+out\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{param }\end{DoxyParamCaption})}
+
+\Hypertarget{group__atcah_gab17435577e546d2954bd697f21e6d3cc}\label{group__atcah_gab17435577e546d2954bd697f21e6d3cc} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!atcah\_hmac@{atcah\_hmac}}
+\index{atcah\_hmac@{atcah\_hmac}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{atcah\_hmac()}{atcah\_hmac()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} atcah\+\_\+hmac (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structatca__hmac__in__out}{atca\+\_\+hmac\+\_\+in\+\_\+out}} \texorpdfstring{$\ast$}{*}}]{param }\end{DoxyParamCaption})}
+
+\Hypertarget{group__atcah_ga279403b5a0f207a4fbba496fb663ec79}\label{group__atcah_ga279403b5a0f207a4fbba496fb663ec79} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!atcah\_include\_data@{atcah\_include\_data}}
+\index{atcah\_include\_data@{atcah\_include\_data}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{atcah\_include\_data()}{atcah\_include\_data()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} atcah\+\_\+include\+\_\+data (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structatca__include__data__in__out}{atca\+\_\+include\+\_\+data\+\_\+in\+\_\+out}} \texorpdfstring{$\ast$}{*}}]{param }\end{DoxyParamCaption})}
+
+\Hypertarget{group__atcah_gaa0df5937081037684ce2894a8cc2c1e5}\label{group__atcah_gaa0df5937081037684ce2894a8cc2c1e5} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!atcah\_io\_decrypt@{atcah\_io\_decrypt}}
+\index{atcah\_io\_decrypt@{atcah\_io\_decrypt}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{atcah\_io\_decrypt()}{atcah\_io\_decrypt()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} atcah\+\_\+io\+\_\+decrypt (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structatca__io__decrypt__in__out}{atca\+\_\+io\+\_\+decrypt\+\_\+in\+\_\+out}} \texorpdfstring{$\ast$}{*}}]{param }\end{DoxyParamCaption})}
+
+\Hypertarget{group__atcah_ga44361cadf1819cea687208eeadd57059}\label{group__atcah_ga44361cadf1819cea687208eeadd57059} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!atcah\_mac@{atcah\_mac}}
+\index{atcah\_mac@{atcah\_mac}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{atcah\_mac()}{atcah\_mac()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} atcah\+\_\+mac (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structatca__mac__in__out}{atca\+\_\+mac\+\_\+in\+\_\+out}} \texorpdfstring{$\ast$}{*}}]{param }\end{DoxyParamCaption})}
+
+\Hypertarget{group__atcah_ga9ee18575f8b4c1560f9e5c741403ef1b}\label{group__atcah_ga9ee18575f8b4c1560f9e5c741403ef1b} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!atcah\_nonce@{atcah\_nonce}}
+\index{atcah\_nonce@{atcah\_nonce}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{atcah\_nonce()}{atcah\_nonce()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} atcah\+\_\+nonce (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structatca__nonce__in__out}{atca\+\_\+nonce\+\_\+in\+\_\+out}} \texorpdfstring{$\ast$}{*}}]{param }\end{DoxyParamCaption})}
+
+\Hypertarget{group__atcah_gaed8aa58875c6bdf46a937313e69c6ebb}\label{group__atcah_gaed8aa58875c6bdf46a937313e69c6ebb} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!atcah\_privwrite\_auth\_mac@{atcah\_privwrite\_auth\_mac}}
+\index{atcah\_privwrite\_auth\_mac@{atcah\_privwrite\_auth\_mac}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{atcah\_privwrite\_auth\_mac()}{atcah\_privwrite\_auth\_mac()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} atcah\+\_\+privwrite\+\_\+auth\+\_\+mac (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structatca__write__mac__in__out}{atca\+\_\+write\+\_\+mac\+\_\+in\+\_\+out}} \texorpdfstring{$\ast$}{*}}]{param }\end{DoxyParamCaption})}
+
+\Hypertarget{group__atcah_ga4c89f8023aec521281824c0e35713baa}\label{group__atcah_ga4c89f8023aec521281824c0e35713baa} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!atcah\_secureboot\_enc@{atcah\_secureboot\_enc}}
+\index{atcah\_secureboot\_enc@{atcah\_secureboot\_enc}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{atcah\_secureboot\_enc()}{atcah\_secureboot\_enc()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} atcah\+\_\+secureboot\+\_\+enc (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__atcah_ga9675f5082f8c90b306414bebae70db75}{atca\+\_\+secureboot\+\_\+enc\+\_\+in\+\_\+out\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{param }\end{DoxyParamCaption})}
+
+\Hypertarget{group__atcah_gaa795bec90432fbfa194913d8b4098fab}\label{group__atcah_gaa795bec90432fbfa194913d8b4098fab} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!atcah\_secureboot\_mac@{atcah\_secureboot\_mac}}
+\index{atcah\_secureboot\_mac@{atcah\_secureboot\_mac}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{atcah\_secureboot\_mac()}{atcah\_secureboot\_mac()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} atcah\+\_\+secureboot\+\_\+mac (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__atcah_ga78f53ab779c77227c305ad4d4be118df}{atca\+\_\+secureboot\+\_\+mac\+\_\+in\+\_\+out\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{param }\end{DoxyParamCaption})}
+
+\Hypertarget{group__atcah_gad7e2217cd71b77b6c1b08f2f2f6f0a3e}\label{group__atcah_gad7e2217cd71b77b6c1b08f2f2f6f0a3e} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!atcah\_sha256@{atcah\_sha256}}
+\index{atcah\_sha256@{atcah\_sha256}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{atcah\_sha256()}{atcah\_sha256()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} atcah\+\_\+sha256 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a2ba621978a511250f7250fb10e05ffbe}{int32\+\_\+t}}}]{len,  }\item[{const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{message,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{digest }\end{DoxyParamCaption})}
+
+\Hypertarget{group__atcah_ga680045caed6e8f6e136e1a2dc3fe1c9e}\label{group__atcah_ga680045caed6e8f6e136e1a2dc3fe1c9e} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!atcah\_sign\_internal\_msg@{atcah\_sign\_internal\_msg}}
+\index{atcah\_sign\_internal\_msg@{atcah\_sign\_internal\_msg}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{atcah\_sign\_internal\_msg()}{atcah\_sign\_internal\_msg()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} atcah\+\_\+sign\+\_\+internal\+\_\+msg (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__device_gafb234ccd6a80d09c0efbe336c2354267}{ATCADevice\+Type}}}]{device\+\_\+type,  }\item[{struct \mbox{\hyperlink{structatca__sign__internal__in__out}{atca\+\_\+sign\+\_\+internal\+\_\+in\+\_\+out}} \texorpdfstring{$\ast$}{*}}]{param }\end{DoxyParamCaption})}
+
+\Hypertarget{group__atcah_ga03632bc31f21bec0d13d4f0cab198958}\label{group__atcah_ga03632bc31f21bec0d13d4f0cab198958} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!atcah\_verify\_mac@{atcah\_verify\_mac}}
+\index{atcah\_verify\_mac@{atcah\_verify\_mac}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{atcah\_verify\_mac()}{atcah\_verify\_mac()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} atcah\+\_\+verify\+\_\+mac (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__atcah_gaae7f658ac9525d887e70d918fc34bb31}{atca\+\_\+verify\+\_\+mac\+\_\+in\+\_\+out\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{param }\end{DoxyParamCaption})}
+
+\Hypertarget{group__atcah_ga47853951c57803eff1432780bf360057}\label{group__atcah_ga47853951c57803eff1432780bf360057} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!atcah\_write\_auth\_mac@{atcah\_write\_auth\_mac}}
+\index{atcah\_write\_auth\_mac@{atcah\_write\_auth\_mac}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{atcah\_write\_auth\_mac()}{atcah\_write\_auth\_mac()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} atcah\+\_\+write\+\_\+auth\+\_\+mac (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structatca__write__mac__in__out}{atca\+\_\+write\+\_\+mac\+\_\+in\+\_\+out}} \texorpdfstring{$\ast$}{*}}]{param }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{group__atcah_ga674d5ad3408da73c4fe9dc6c1818bb33}\label{group__atcah_ga674d5ad3408da73c4fe9dc6c1818bb33} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!challenge@{challenge}}
+\index{challenge@{challenge}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{challenge}{challenge}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} atca\+\_\+mac\+\_\+in\+\_\+out\+::challenge}
+
+
+
+\mbox{[}in\mbox{]} Pointer to 32-\/byte Challenge data used in MAC command, depending on mode. 
+
+\Hypertarget{group__atcah_ga27fbace922a92c2227146507869b21fe}\label{group__atcah_ga27fbace922a92c2227146507869b21fe} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!crypto\_data@{crypto\_data}}
+\index{crypto\_data@{crypto\_data}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{crypto\_data}{crypto\_data}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} atca\+\_\+decrypt\+\_\+in\+\_\+out\+::crypto\+\_\+data}
+
+
+
+\mbox{[}in,out\mbox{]} Pointer to 32-\/byte data. Input encrypted data from Read command (Contents field), output decrypted. 
+
+\Hypertarget{group__atcah_ga87a530f5c3b7e340175bc1f0b618320f}\label{group__atcah_ga87a530f5c3b7e340175bc1f0b618320f} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!curve\_type@{curve\_type}}
+\index{curve\_type@{curve\_type}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{curve\_type}{curve\_type}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} atca\+\_\+verify\+\_\+in\+\_\+out\+::curve\+\_\+type}
+
+
+
+\mbox{[}in\mbox{]} Curve type used in Verify command (Param2). 
+
+\Hypertarget{group__atcah_ga9009dbc8d2ef20b94c4878d2666f03ea}\label{group__atcah_ga9009dbc8d2ef20b94c4878d2666f03ea} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!key@{key}}
+\index{key@{key}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{key}{key}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} atca\+\_\+mac\+\_\+in\+\_\+out\+::key}
+
+
+
+\mbox{[}in\mbox{]} Pointer to 32-\/byte key used to generate MAC digest. 
+
+\Hypertarget{group__atcah_ga8356351666b53907b054c7942ad17a2e}\label{group__atcah_ga8356351666b53907b054c7942ad17a2e} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!key@{key}}
+\index{key@{key}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{key}{key}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} atca\+\_\+hmac\+\_\+in\+\_\+out\+::key}
+
+
+
+\mbox{[}in\mbox{]} Pointer to 32-\/byte key used to generate HMAC digest. 
+
+\Hypertarget{group__atcah_ga560e515951e93071c1ee17c1c9d5136a}\label{group__atcah_ga560e515951e93071c1ee17c1c9d5136a} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!key\_id@{key\_id}}
+\index{key\_id@{key\_id}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{key\_id}{key\_id}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} atca\+\_\+mac\+\_\+in\+\_\+out\+::key\+\_\+id}
+
+
+
+\mbox{[}in\mbox{]} Key\+ID parameter used in MAC command (Param2). 
+
+\Hypertarget{group__atcah_ga6b3945336987b20a9f4d7e8b7e031097}\label{group__atcah_ga6b3945336987b20a9f4d7e8b7e031097} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!key\_id@{key\_id}}
+\index{key\_id@{key\_id}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{key\_id}{key\_id}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} atca\+\_\+hmac\+\_\+in\+\_\+out\+::key\+\_\+id}
+
+
+
+\mbox{[}in\mbox{]} Key\+ID parameter used in HMAC command (Param2). 
+
+\Hypertarget{group__atcah_ga686b51186581e5529bfe6784fbcb140a}\label{group__atcah_ga686b51186581e5529bfe6784fbcb140a} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!mode@{mode}}
+\index{mode@{mode}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{mode}{mode}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} atca\+\_\+nonce\+\_\+in\+\_\+out\+::mode}
+
+
+
+\mbox{[}in\mbox{]} Mode parameter used in Nonce command (Param1). 
+
+\Hypertarget{group__atcah_ga2d95152f18d2154046060210791806cd}\label{group__atcah_ga2d95152f18d2154046060210791806cd} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!mode@{mode}}
+\index{mode@{mode}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{mode}{mode}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} atca\+\_\+mac\+\_\+in\+\_\+out\+::mode}
+
+
+
+\mbox{[}in\mbox{]} Mode parameter used in MAC command (Param1). 
+
+\Hypertarget{group__atcah_gaf4252196a042189c1f698ee0e923bd43}\label{group__atcah_gaf4252196a042189c1f698ee0e923bd43} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!mode@{mode}}
+\index{mode@{mode}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{mode}{mode}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} atca\+\_\+hmac\+\_\+in\+\_\+out\+::mode}
+
+
+
+\mbox{[}in\mbox{]} Mode parameter used in HMAC command (Param1). 
+
+\Hypertarget{group__atcah_ga391bcf11f2a7939013f6cbcf0291ca8a}\label{group__atcah_ga391bcf11f2a7939013f6cbcf0291ca8a} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!num\_in@{num\_in}}
+\index{num\_in@{num\_in}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{num\_in}{num\_in}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} atca\+\_\+nonce\+\_\+in\+\_\+out\+::num\+\_\+in}
+
+
+
+\mbox{[}in\mbox{]} Pointer to 20-\/byte Num\+In data used in Nonce command. 
+
+\Hypertarget{group__atcah_ga1afbecb27208c90d5dd91b0d517fcbe4}\label{group__atcah_ga1afbecb27208c90d5dd91b0d517fcbe4} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!otp@{otp}}
+\index{otp@{otp}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{otp}{otp}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} atca\+\_\+include\+\_\+data\+\_\+in\+\_\+out\+::otp}
+
+
+
+\mbox{[}in\mbox{]} pointer to one-\/time-\/programming data 
+
+\Hypertarget{group__atcah_ga6ad8bbb887661d27db1470c9213e8d8a}\label{group__atcah_ga6ad8bbb887661d27db1470c9213e8d8a} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!otp@{otp}}
+\index{otp@{otp}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{otp}{otp}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} atca\+\_\+mac\+\_\+in\+\_\+out\+::otp}
+
+
+
+\mbox{[}in\mbox{]} Pointer to 11-\/byte OTP, optionally included in MAC digest, depending on mode. 
+
+\Hypertarget{group__atcah_ga16aae705a1832f6e17f3cb4e0489c777}\label{group__atcah_ga16aae705a1832f6e17f3cb4e0489c777} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!otp@{otp}}
+\index{otp@{otp}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{otp}{otp}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} atca\+\_\+hmac\+\_\+in\+\_\+out\+::otp}
+
+
+
+\mbox{[}in\mbox{]} Pointer to 11-\/byte OTP, optionally included in HMAC digest, depending on mode. 
+
+\Hypertarget{group__atcah_gabf13fbfd8720db20eb52ba6d2472a16b}\label{group__atcah_gabf13fbfd8720db20eb52ba6d2472a16b} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!p\_temp@{p\_temp}}
+\index{p\_temp@{p\_temp}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{p\_temp}{p\_temp}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} atca\+\_\+include\+\_\+data\+\_\+in\+\_\+out\+::p\+\_\+temp}
+
+
+
+\mbox{[}out\mbox{]} pointer to output buffer 
+
+\Hypertarget{group__atcah_ga3ad0a707a2d2a32ede1c838cb1e79d48}\label{group__atcah_ga3ad0a707a2d2a32ede1c838cb1e79d48} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!public\_key@{public\_key}}
+\index{public\_key@{public\_key}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{public\_key}{public\_key}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} atca\+\_\+verify\+\_\+in\+\_\+out\+::public\+\_\+key}
+
+
+
+\mbox{[}in\mbox{]} Pointer to the public key to be used for verification 
+
+\Hypertarget{group__atcah_ga7751f4308f48e26b832256446e71ddd8}\label{group__atcah_ga7751f4308f48e26b832256446e71ddd8} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!rand\_out@{rand\_out}}
+\index{rand\_out@{rand\_out}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{rand\_out}{rand\_out}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} atca\+\_\+nonce\+\_\+in\+\_\+out\+::rand\+\_\+out}
+
+
+
+\mbox{[}in\mbox{]} Pointer to 32-\/byte Rand\+Out data from Nonce command. 
+
+\Hypertarget{group__atcah_gafc23e7855abfc10fd2068cebe0a2b901}\label{group__atcah_gafc23e7855abfc10fd2068cebe0a2b901} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!response@{response}}
+\index{response@{response}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{response}{response}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} atca\+\_\+mac\+\_\+in\+\_\+out\+::response}
+
+
+
+\mbox{[}out\mbox{]} Pointer to 32-\/byte SHA-\/256 digest (MAC). 
+
+\Hypertarget{group__atcah_ga488809b419a3da691ba469e156eabc08}\label{group__atcah_ga488809b419a3da691ba469e156eabc08} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!response@{response}}
+\index{response@{response}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{response}{response}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} atca\+\_\+hmac\+\_\+in\+\_\+out\+::response}
+
+
+
+\mbox{[}out\mbox{]} Pointer to 32-\/byte SHA-\/256 HMAC digest. 
+
+\Hypertarget{group__atcah_ga19eabf075a62edf66bb4a5e5306a2ec9}\label{group__atcah_ga19eabf075a62edf66bb4a5e5306a2ec9} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!signature@{signature}}
+\index{signature@{signature}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{signature}{signature}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} atca\+\_\+verify\+\_\+in\+\_\+out\+::signature}
+
+
+
+\mbox{[}in\mbox{]} Pointer to ECDSA signature to be verified 
+
+\Hypertarget{group__atcah_ga490fb6b641128a00fc5284f5984df2fb}\label{group__atcah_ga490fb6b641128a00fc5284f5984df2fb} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!sn@{sn}}
+\index{sn@{sn}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{sn}{sn}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} atca\+\_\+include\+\_\+data\+\_\+in\+\_\+out\+::sn}
+
+
+
+\mbox{[}in\mbox{]} pointer to serial number data 
+
+\Hypertarget{group__atcah_ga05b4a7cdbec2cb5080658fc3e96a5cce}\label{group__atcah_ga05b4a7cdbec2cb5080658fc3e96a5cce} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!sn@{sn}}
+\index{sn@{sn}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{sn}{sn}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} atca\+\_\+mac\+\_\+in\+\_\+out\+::sn}
+
+
+
+\mbox{[}in\mbox{]} Pointer to 9-\/byte SN, optionally included in MAC digest, depending on mode. 
+
+\Hypertarget{group__atcah_ga6bce5839f6daaedc3033bce5d1d8543f}\label{group__atcah_ga6bce5839f6daaedc3033bce5d1d8543f} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!sn@{sn}}
+\index{sn@{sn}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{sn}{sn}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} atca\+\_\+hmac\+\_\+in\+\_\+out\+::sn}
+
+
+
+\mbox{[}in\mbox{]} Pointer to 9-\/byte SN, optionally included in HMAC digest, depending on mode. 
+
+\Hypertarget{group__atcah_ga4ded5e1cbfd8a40da5182a56bfbe4e6c}\label{group__atcah_ga4ded5e1cbfd8a40da5182a56bfbe4e6c} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!temp\_key@{temp\_key}}
+\index{temp\_key@{temp\_key}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{temp\_key}{temp\_key}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structatca__temp__key}{atca\+\_\+temp\+\_\+key}} \texorpdfstring{$\ast$}{*} atca\+\_\+nonce\+\_\+in\+\_\+out\+::temp\+\_\+key}
+
+
+
+\mbox{[}in,out\mbox{]} Pointer to Temp\+Key structure. 
+
+\Hypertarget{group__atcah_ga26287c5de54fcdfea9f7436c7ae1ebe6}\label{group__atcah_ga26287c5de54fcdfea9f7436c7ae1ebe6} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!temp\_key@{temp\_key}}
+\index{temp\_key@{temp\_key}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{temp\_key}{temp\_key}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structatca__temp__key}{atca\+\_\+temp\+\_\+key}} \texorpdfstring{$\ast$}{*} atca\+\_\+mac\+\_\+in\+\_\+out\+::temp\+\_\+key}
+
+
+
+\mbox{[}in,out\mbox{]} Pointer to Temp\+Key structure. 
+
+\Hypertarget{group__atcah_ga2bcb39533e946ffea2972a7f7e475617}\label{group__atcah_ga2bcb39533e946ffea2972a7f7e475617} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!temp\_key@{temp\_key}}
+\index{temp\_key@{temp\_key}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{temp\_key}{temp\_key}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structatca__temp__key}{atca\+\_\+temp\+\_\+key}} \texorpdfstring{$\ast$}{*} atca\+\_\+hmac\+\_\+in\+\_\+out\+::temp\+\_\+key}
+
+
+
+\mbox{[}in,out\mbox{]} Pointer to Temp\+Key structure. 
+
+\Hypertarget{group__atcah_ga41702b87a3f3e8a61b493407209c47c8}\label{group__atcah_ga41702b87a3f3e8a61b493407209c47c8} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!temp\_key@{temp\_key}}
+\index{temp\_key@{temp\_key}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{temp\_key}{temp\_key}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structatca__temp__key}{atca\+\_\+temp\+\_\+key}} \texorpdfstring{$\ast$}{*} atca\+\_\+decrypt\+\_\+in\+\_\+out\+::temp\+\_\+key}
+
+
+
+\mbox{[}in,out\mbox{]} Pointer to Temp\+Key structure. 
+
+\Hypertarget{group__atcah_ga7db61655d216cb53d78de70b2b2dbf6c}\label{group__atcah_ga7db61655d216cb53d78de70b2b2dbf6c} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!temp\_key@{temp\_key}}
+\index{temp\_key@{temp\_key}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{temp\_key}{temp\_key}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structatca__temp__key}{atca\+\_\+temp\+\_\+key}} \texorpdfstring{$\ast$}{*} atca\+\_\+verify\+\_\+in\+\_\+out\+::temp\+\_\+key}
+
+
+
+\mbox{[}in,out\mbox{]} Pointer to Temp\+Key structure. 
+
+\Hypertarget{group__atcah_ga8b982653b0ec04693ae5b95d4f5f67e8}\label{group__atcah_ga8b982653b0ec04693ae5b95d4f5f67e8} 
+\index{Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}!zero@{zero}}
+\index{zero@{zero}!Host side crypto methods (atcah\_)@{Host side crypto methods (atcah\_)}}
+\doxysubsubsection{\texorpdfstring{zero}{zero}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} atca\+\_\+nonce\+\_\+in\+\_\+out\+::zero}
+
+
+
+\mbox{[}in\mbox{]} Zero parameter used in Nonce command (Param2). 
+

@@ -1,0 +1,340 @@
+\doxysection{C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\+Resources/\+Keypad.h File Reference}
+\hypertarget{_keypad_8h}{}\label{_keypad_8h}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/Resources/Keypad.h@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/Resources/Keypad.h}}
+
+
+Header with functions related to the keyboard and LEDs manage.  
+
+
+{\ttfamily \#include "{}types\+\_\+basic.\+h"{}}\newline
+{\ttfamily \#include "{}types\+\_\+app.\+h"{}}\newline
+Include dependency graph for Keypad.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=257pt]{_keypad_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_keypad_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_keypad_8h_a0e00cc7e2e408fe040f4f7ba70b5c3f9}{LED\+\_\+\+VALUE\+\_\+\+OFF}}~IOPORT\+\_\+\+LEVEL\+\_\+\+LOW
+\item 
+\#define \mbox{\hyperlink{_keypad_8h_aaeede0ae638066aa6f9a1d863a773ba4}{LED\+\_\+\+VALUE\+\_\+\+ON}}~IOPORT\+\_\+\+LEVEL\+\_\+\+HIGH
+\item 
+\#define \mbox{\hyperlink{_keypad_8h_a19f6bcfb52def693fef4f6d22a302de6}{KEY\+\_\+\+SHOCK}}~IOPORT\+\_\+\+PORT\+\_\+02\+\_\+\+PIN\+\_\+00
+\item 
+\#define \mbox{\hyperlink{_keypad_8h_aeefc9d337f829d1e423d2250b1449fe0}{KEY\+\_\+\+PATYPE}}~IOPORT\+\_\+\+PORT\+\_\+03\+\_\+\+PIN\+\_\+07
+\item 
+\#define \mbox{\hyperlink{_keypad_8h_abfd77cb3cac76fec3449a837ae749984}{KEY\+\_\+\+ONOFF}}~IOPORT\+\_\+\+PORT\+\_\+04\+\_\+\+PIN\+\_\+15
+\item 
+\#define \mbox{\hyperlink{_keypad_8h_ae578437304fc0d600a9afe0e294fc353}{KEY\+\_\+\+COVER}}~IOPORT\+\_\+\+PORT\+\_\+04\+\_\+\+PIN\+\_\+04
+\item 
+\#define \mbox{\hyperlink{_keypad_8h_abfb0ec09a90a820c89c1ea0fba8329a3}{VBUS\+\_\+\+DET}}~IOPORT\+\_\+\+PORT\+\_\+04\+\_\+\+PIN\+\_\+07
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{_keypad_8h_aad7f10e79c2b7cac7fe25834e5fc1fa2}{KEY\+\_\+\+STATUS\+\_\+e}} \{ \mbox{\hyperlink{_keypad_8h_aad7f10e79c2b7cac7fe25834e5fc1fa2a6bc98461e9067d2702d77e4de77e2776}{KEY\+\_\+\+STATUS\+\_\+\+OFF}} = 0
+, \mbox{\hyperlink{_keypad_8h_aad7f10e79c2b7cac7fe25834e5fc1fa2a229469dc9e30330f62c5ede7d48a8df6}{KEY\+\_\+\+STATUS\+\_\+\+ON}}
+ \}
+\item 
+enum \mbox{\hyperlink{_keypad_8h_acd3ee7b802ee0e1c62c12b822423625c}{LED\+\_\+\+IDENT\+\_\+e}} \{ \mbox{\hyperlink{_keypad_8h_acd3ee7b802ee0e1c62c12b822423625ca883ee3ba05b98304cab6fce9faff16f0}{LED\+\_\+\+ONOFF}} = 0
+, \mbox{\hyperlink{_keypad_8h_acd3ee7b802ee0e1c62c12b822423625ca8efa3f72788658b2140755c051de0b37}{LED\+\_\+\+SHOCK}}
+, \mbox{\hyperlink{_keypad_8h_acd3ee7b802ee0e1c62c12b822423625ca2c94ef29902c022f89366d3791c5ac47}{LED\+\_\+\+PATYPE}}
+, \mbox{\hyperlink{_keypad_8h_acd3ee7b802ee0e1c62c12b822423625ca65302b648f723384a609693d44ab941d}{LED\+\_\+\+MAX}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_keypad_8h_a85f68c324bcd7f33e11be74a6758ce9c}{Led\+\_\+\+On}} (\mbox{\hyperlink{_keypad_8h_acd3ee7b802ee0e1c62c12b822423625c}{LED\+\_\+\+IDENT\+\_\+e}} led\+\_\+idx)
+\begin{DoxyCompactList}\small\item\em Turn on the led indicated by index. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_keypad_8h_a0c22a53e2eb89f7fbdd6df32dcf94023}{Led\+\_\+\+Off}} (\mbox{\hyperlink{_keypad_8h_acd3ee7b802ee0e1c62c12b822423625c}{LED\+\_\+\+IDENT\+\_\+e}} led\+\_\+idx)
+\begin{DoxyCompactList}\small\item\em Turn off the led indicated by index. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_keypad_8h_acaa4b7886f52b86feeae6440612657ee}{Led\+\_\+\+Blink}} (\mbox{\hyperlink{_keypad_8h_acd3ee7b802ee0e1c62c12b822423625c}{LED\+\_\+\+IDENT\+\_\+e}} led\+\_\+idx)
+\begin{DoxyCompactList}\small\item\em Blink the led indicated by index. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_keypad_8h_ac2fd516e7322a1e1b213a5c0a2ac476d}{Led\+\_\+\+Toggle}} (\mbox{\hyperlink{_keypad_8h_acd3ee7b802ee0e1c62c12b822423625c}{LED\+\_\+\+IDENT\+\_\+e}} led\+\_\+idx)
+\begin{DoxyCompactList}\small\item\em Toggle the led indicated by index. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_keypad_8h_a645b08dd1d804a4be4086c371f5f96bc}{Led\+\_\+\+Ongoing\+\_\+\+Transmission}} (void)
+\begin{DoxyCompactList}\small\item\em LED animation for transmission. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_keypad_8h_a839fe2480871da309772427ea7a49cf5}{Blink\+\_\+\+Refresh}} (void)
+\begin{DoxyCompactList}\small\item\em Refresh the blinking leds. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_keypad_8h_aad7f10e79c2b7cac7fe25834e5fc1fa2}{KEY\+\_\+\+STATUS\+\_\+e}} \mbox{\hyperlink{_keypad_8h_a65899dc7cce4138cd4488d27daff459d}{Key\+\_\+\+Read}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} key\+\_\+idx)
+\begin{DoxyCompactList}\small\item\em Read from Key-\/board. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header with functions related to the keyboard and LEDs manage. 
+
+\begin{DoxyVersion}{Version}
+v1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+01/02/2018 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+ltorres 
+\end{DoxyAuthor}
+\begin{DoxyWarning}{Warning}
+author date version .-\/ Edition 
+\end{DoxyWarning}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000060}{Bug}}]\end{DoxyRefDesc}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{_keypad_8h_ae578437304fc0d600a9afe0e294fc353}\label{_keypad_8h_ae578437304fc0d600a9afe0e294fc353} 
+\index{Keypad.h@{Keypad.h}!KEY\_COVER@{KEY\_COVER}}
+\index{KEY\_COVER@{KEY\_COVER}!Keypad.h@{Keypad.h}}
+\doxysubsubsection{\texorpdfstring{KEY\_COVER}{KEY\_COVER}}
+{\footnotesize\ttfamily \#define KEY\+\_\+\+COVER~IOPORT\+\_\+\+PORT\+\_\+04\+\_\+\+PIN\+\_\+04}
+
+\Hypertarget{_keypad_8h_abfd77cb3cac76fec3449a837ae749984}\label{_keypad_8h_abfd77cb3cac76fec3449a837ae749984} 
+\index{Keypad.h@{Keypad.h}!KEY\_ONOFF@{KEY\_ONOFF}}
+\index{KEY\_ONOFF@{KEY\_ONOFF}!Keypad.h@{Keypad.h}}
+\doxysubsubsection{\texorpdfstring{KEY\_ONOFF}{KEY\_ONOFF}}
+{\footnotesize\ttfamily \#define KEY\+\_\+\+ONOFF~IOPORT\+\_\+\+PORT\+\_\+04\+\_\+\+PIN\+\_\+15}
+
+\Hypertarget{_keypad_8h_aeefc9d337f829d1e423d2250b1449fe0}\label{_keypad_8h_aeefc9d337f829d1e423d2250b1449fe0} 
+\index{Keypad.h@{Keypad.h}!KEY\_PATYPE@{KEY\_PATYPE}}
+\index{KEY\_PATYPE@{KEY\_PATYPE}!Keypad.h@{Keypad.h}}
+\doxysubsubsection{\texorpdfstring{KEY\_PATYPE}{KEY\_PATYPE}}
+{\footnotesize\ttfamily \#define KEY\+\_\+\+PATYPE~IOPORT\+\_\+\+PORT\+\_\+03\+\_\+\+PIN\+\_\+07}
+
+\Hypertarget{_keypad_8h_a19f6bcfb52def693fef4f6d22a302de6}\label{_keypad_8h_a19f6bcfb52def693fef4f6d22a302de6} 
+\index{Keypad.h@{Keypad.h}!KEY\_SHOCK@{KEY\_SHOCK}}
+\index{KEY\_SHOCK@{KEY\_SHOCK}!Keypad.h@{Keypad.h}}
+\doxysubsubsection{\texorpdfstring{KEY\_SHOCK}{KEY\_SHOCK}}
+{\footnotesize\ttfamily \#define KEY\+\_\+\+SHOCK~IOPORT\+\_\+\+PORT\+\_\+02\+\_\+\+PIN\+\_\+00}
+
+\Hypertarget{_keypad_8h_a0e00cc7e2e408fe040f4f7ba70b5c3f9}\label{_keypad_8h_a0e00cc7e2e408fe040f4f7ba70b5c3f9} 
+\index{Keypad.h@{Keypad.h}!LED\_VALUE\_OFF@{LED\_VALUE\_OFF}}
+\index{LED\_VALUE\_OFF@{LED\_VALUE\_OFF}!Keypad.h@{Keypad.h}}
+\doxysubsubsection{\texorpdfstring{LED\_VALUE\_OFF}{LED\_VALUE\_OFF}}
+{\footnotesize\ttfamily \#define LED\+\_\+\+VALUE\+\_\+\+OFF~IOPORT\+\_\+\+LEVEL\+\_\+\+LOW}
+
+\Hypertarget{_keypad_8h_aaeede0ae638066aa6f9a1d863a773ba4}\label{_keypad_8h_aaeede0ae638066aa6f9a1d863a773ba4} 
+\index{Keypad.h@{Keypad.h}!LED\_VALUE\_ON@{LED\_VALUE\_ON}}
+\index{LED\_VALUE\_ON@{LED\_VALUE\_ON}!Keypad.h@{Keypad.h}}
+\doxysubsubsection{\texorpdfstring{LED\_VALUE\_ON}{LED\_VALUE\_ON}}
+{\footnotesize\ttfamily \#define LED\+\_\+\+VALUE\+\_\+\+ON~IOPORT\+\_\+\+LEVEL\+\_\+\+HIGH}
+
+\Hypertarget{_keypad_8h_abfb0ec09a90a820c89c1ea0fba8329a3}\label{_keypad_8h_abfb0ec09a90a820c89c1ea0fba8329a3} 
+\index{Keypad.h@{Keypad.h}!VBUS\_DET@{VBUS\_DET}}
+\index{VBUS\_DET@{VBUS\_DET}!Keypad.h@{Keypad.h}}
+\doxysubsubsection{\texorpdfstring{VBUS\_DET}{VBUS\_DET}}
+{\footnotesize\ttfamily \#define VBUS\+\_\+\+DET~IOPORT\+\_\+\+PORT\+\_\+04\+\_\+\+PIN\+\_\+07}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{_keypad_8h_aad7f10e79c2b7cac7fe25834e5fc1fa2}\label{_keypad_8h_aad7f10e79c2b7cac7fe25834e5fc1fa2} 
+\index{Keypad.h@{Keypad.h}!KEY\_STATUS\_e@{KEY\_STATUS\_e}}
+\index{KEY\_STATUS\_e@{KEY\_STATUS\_e}!Keypad.h@{Keypad.h}}
+\doxysubsubsection{\texorpdfstring{KEY\_STATUS\_e}{KEY\_STATUS\_e}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_keypad_8h_aad7f10e79c2b7cac7fe25834e5fc1fa2}{KEY\+\_\+\+STATUS\+\_\+e}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KEY\_STATUS\_OFF@{KEY\_STATUS\_OFF}!Keypad.h@{Keypad.h}}\index{Keypad.h@{Keypad.h}!KEY\_STATUS\_OFF@{KEY\_STATUS\_OFF}}}\Hypertarget{_keypad_8h_aad7f10e79c2b7cac7fe25834e5fc1fa2a6bc98461e9067d2702d77e4de77e2776}\label{_keypad_8h_aad7f10e79c2b7cac7fe25834e5fc1fa2a6bc98461e9067d2702d77e4de77e2776} 
+KEY\+\_\+\+STATUS\+\_\+\+OFF&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KEY\_STATUS\_ON@{KEY\_STATUS\_ON}!Keypad.h@{Keypad.h}}\index{Keypad.h@{Keypad.h}!KEY\_STATUS\_ON@{KEY\_STATUS\_ON}}}\Hypertarget{_keypad_8h_aad7f10e79c2b7cac7fe25834e5fc1fa2a229469dc9e30330f62c5ede7d48a8df6}\label{_keypad_8h_aad7f10e79c2b7cac7fe25834e5fc1fa2a229469dc9e30330f62c5ede7d48a8df6} 
+KEY\+\_\+\+STATUS\+\_\+\+ON&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{_keypad_8h_acd3ee7b802ee0e1c62c12b822423625c}\label{_keypad_8h_acd3ee7b802ee0e1c62c12b822423625c} 
+\index{Keypad.h@{Keypad.h}!LED\_IDENT\_e@{LED\_IDENT\_e}}
+\index{LED\_IDENT\_e@{LED\_IDENT\_e}!Keypad.h@{Keypad.h}}
+\doxysubsubsection{\texorpdfstring{LED\_IDENT\_e}{LED\_IDENT\_e}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_keypad_8h_acd3ee7b802ee0e1c62c12b822423625c}{LED\+\_\+\+IDENT\+\_\+e}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LED\_ONOFF@{LED\_ONOFF}!Keypad.h@{Keypad.h}}\index{Keypad.h@{Keypad.h}!LED\_ONOFF@{LED\_ONOFF}}}\Hypertarget{_keypad_8h_acd3ee7b802ee0e1c62c12b822423625ca883ee3ba05b98304cab6fce9faff16f0}\label{_keypad_8h_acd3ee7b802ee0e1c62c12b822423625ca883ee3ba05b98304cab6fce9faff16f0} 
+LED\+\_\+\+ONOFF&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LED\_SHOCK@{LED\_SHOCK}!Keypad.h@{Keypad.h}}\index{Keypad.h@{Keypad.h}!LED\_SHOCK@{LED\_SHOCK}}}\Hypertarget{_keypad_8h_acd3ee7b802ee0e1c62c12b822423625ca8efa3f72788658b2140755c051de0b37}\label{_keypad_8h_acd3ee7b802ee0e1c62c12b822423625ca8efa3f72788658b2140755c051de0b37} 
+LED\+\_\+\+SHOCK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LED\_PATYPE@{LED\_PATYPE}!Keypad.h@{Keypad.h}}\index{Keypad.h@{Keypad.h}!LED\_PATYPE@{LED\_PATYPE}}}\Hypertarget{_keypad_8h_acd3ee7b802ee0e1c62c12b822423625ca2c94ef29902c022f89366d3791c5ac47}\label{_keypad_8h_acd3ee7b802ee0e1c62c12b822423625ca2c94ef29902c022f89366d3791c5ac47} 
+LED\+\_\+\+PATYPE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LED\_MAX@{LED\_MAX}!Keypad.h@{Keypad.h}}\index{Keypad.h@{Keypad.h}!LED\_MAX@{LED\_MAX}}}\Hypertarget{_keypad_8h_acd3ee7b802ee0e1c62c12b822423625ca65302b648f723384a609693d44ab941d}\label{_keypad_8h_acd3ee7b802ee0e1c62c12b822423625ca65302b648f723384a609693d44ab941d} 
+LED\+\_\+\+MAX&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_keypad_8h_a839fe2480871da309772427ea7a49cf5}\label{_keypad_8h_a839fe2480871da309772427ea7a49cf5} 
+\index{Keypad.h@{Keypad.h}!Blink\_Refresh@{Blink\_Refresh}}
+\index{Blink\_Refresh@{Blink\_Refresh}!Keypad.h@{Keypad.h}}
+\doxysubsubsection{\texorpdfstring{Blink\_Refresh()}{Blink\_Refresh()}}
+{\footnotesize\ttfamily void Blink\+\_\+\+Refresh (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Refresh the blinking leds. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_keypad_8h_a839fe2480871da309772427ea7a49cf5_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_keypad_8h_a65899dc7cce4138cd4488d27daff459d}\label{_keypad_8h_a65899dc7cce4138cd4488d27daff459d} 
+\index{Keypad.h@{Keypad.h}!Key\_Read@{Key\_Read}}
+\index{Key\_Read@{Key\_Read}!Keypad.h@{Keypad.h}}
+\doxysubsubsection{\texorpdfstring{Key\_Read()}{Key\_Read()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_keypad_8h_aad7f10e79c2b7cac7fe25834e5fc1fa2}{KEY\+\_\+\+STATUS\+\_\+e}} Key\+\_\+\+Read (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}}}]{key\+\_\+idx }\end{DoxyParamCaption})}
+
+
+
+Read from Key-\/board. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key\+\_\+idx} & Key to check\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+KEY\+\_\+\+STATUS\+\_\+e 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_keypad_8h_a65899dc7cce4138cd4488d27daff459d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_keypad_8h_acaa4b7886f52b86feeae6440612657ee}\label{_keypad_8h_acaa4b7886f52b86feeae6440612657ee} 
+\index{Keypad.h@{Keypad.h}!Led\_Blink@{Led\_Blink}}
+\index{Led\_Blink@{Led\_Blink}!Keypad.h@{Keypad.h}}
+\doxysubsubsection{\texorpdfstring{Led\_Blink()}{Led\_Blink()}}
+{\footnotesize\ttfamily void Led\+\_\+\+Blink (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_keypad_8h_acd3ee7b802ee0e1c62c12b822423625c}{LED\+\_\+\+IDENT\+\_\+e}}}]{led\+\_\+idx }\end{DoxyParamCaption})}
+
+
+
+Blink the led indicated by index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em led\+\_\+idx} & Index of the led to blink \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_keypad_8h_acaa4b7886f52b86feeae6440612657ee_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_keypad_8h_a0c22a53e2eb89f7fbdd6df32dcf94023}\label{_keypad_8h_a0c22a53e2eb89f7fbdd6df32dcf94023} 
+\index{Keypad.h@{Keypad.h}!Led\_Off@{Led\_Off}}
+\index{Led\_Off@{Led\_Off}!Keypad.h@{Keypad.h}}
+\doxysubsubsection{\texorpdfstring{Led\_Off()}{Led\_Off()}}
+{\footnotesize\ttfamily void Led\+\_\+\+Off (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_keypad_8h_acd3ee7b802ee0e1c62c12b822423625c}{LED\+\_\+\+IDENT\+\_\+e}}}]{led\+\_\+idx }\end{DoxyParamCaption})}
+
+
+
+Turn off the led indicated by index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em led\+\_\+idx} & Index of the led to turn off \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_keypad_8h_a0c22a53e2eb89f7fbdd6df32dcf94023_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_keypad_8h_a85f68c324bcd7f33e11be74a6758ce9c}\label{_keypad_8h_a85f68c324bcd7f33e11be74a6758ce9c} 
+\index{Keypad.h@{Keypad.h}!Led\_On@{Led\_On}}
+\index{Led\_On@{Led\_On}!Keypad.h@{Keypad.h}}
+\doxysubsubsection{\texorpdfstring{Led\_On()}{Led\_On()}}
+{\footnotesize\ttfamily void Led\+\_\+\+On (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_keypad_8h_acd3ee7b802ee0e1c62c12b822423625c}{LED\+\_\+\+IDENT\+\_\+e}}}]{led\+\_\+idx }\end{DoxyParamCaption})}
+
+
+
+Turn on the led indicated by index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em led\+\_\+idx} & Index of the led to turn on \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_keypad_8h_a85f68c324bcd7f33e11be74a6758ce9c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_keypad_8h_a645b08dd1d804a4be4086c371f5f96bc}\label{_keypad_8h_a645b08dd1d804a4be4086c371f5f96bc} 
+\index{Keypad.h@{Keypad.h}!Led\_Ongoing\_Transmission@{Led\_Ongoing\_Transmission}}
+\index{Led\_Ongoing\_Transmission@{Led\_Ongoing\_Transmission}!Keypad.h@{Keypad.h}}
+\doxysubsubsection{\texorpdfstring{Led\_Ongoing\_Transmission()}{Led\_Ongoing\_Transmission()}}
+{\footnotesize\ttfamily void Led\+\_\+\+Ongoing\+\_\+\+Transmission (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+LED animation for transmission. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{_keypad_8h_a645b08dd1d804a4be4086c371f5f96bc_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_keypad_8h_a645b08dd1d804a4be4086c371f5f96bc_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_keypad_8h_ac2fd516e7322a1e1b213a5c0a2ac476d}\label{_keypad_8h_ac2fd516e7322a1e1b213a5c0a2ac476d} 
+\index{Keypad.h@{Keypad.h}!Led\_Toggle@{Led\_Toggle}}
+\index{Led\_Toggle@{Led\_Toggle}!Keypad.h@{Keypad.h}}
+\doxysubsubsection{\texorpdfstring{Led\_Toggle()}{Led\_Toggle()}}
+{\footnotesize\ttfamily void Led\+\_\+\+Toggle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_keypad_8h_acd3ee7b802ee0e1c62c12b822423625c}{LED\+\_\+\+IDENT\+\_\+e}}}]{led\+\_\+idx }\end{DoxyParamCaption})}
+
+
+
+Toggle the led indicated by index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em led\+\_\+idx} & Index of the led to toggle \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_keypad_8h_ac2fd516e7322a1e1b213a5c0a2ac476d_icgraph}
+\end{center}
+\end{figure}

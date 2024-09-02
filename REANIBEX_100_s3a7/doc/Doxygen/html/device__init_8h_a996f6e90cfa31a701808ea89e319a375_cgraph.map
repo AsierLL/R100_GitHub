@@ -1,0 +1,108 @@
+<map id="Settings_Open_From_NFC" name="Settings_Open_From_NFC">
+<area shape="rect" id="Node000001" title="Open the default settings from the NFC." alt="" coords="5,452,183,479"/>
+<area shape="rect" id="Node000002" href="$device__init_8c.html#a182c93e57b9fff393b61642f2dd2d8a5" title="Read data from NFC memory." alt="" coords="682,31,767,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="99,450,135,379,201,271,245,213,295,158,352,108,415,67,446,53,479,43,547,32,612,30,667,33,667,39,612,35,547,37,480,48,448,58,417,72,355,112,299,161,249,217,206,274,140,381,104,453"/>
+<area shape="rect" id="Node000009" href="$device__init_8c.html#ad542ba54e2d205a8f072330a48289ddd" title="Safe assignment of device settings from the NFC structure." alt="" coords="231,325,368,352"/>
+<area shape="poly" id="edge11_Node000001_Node000009" title=" " alt="" coords="116,449,262,358,265,363,119,454"/>
+<area shape="rect" id="Node000028" href="$_trace_8c.html#a8947b81ae09bdb57459cd1c81c78ab37" title="Print a trace string inserting the time stamp." alt="" coords="698,553,751,580"/>
+<area shape="poly" id="edge41_Node000001_Node000028" title=" " alt="" coords="123,477,247,534,330,563,417,585,462,592,497,592,579,585,682,572,683,577,580,591,497,598,461,597,415,591,329,569,245,539,121,482"/>
+<area shape="rect" id="Node000032" href="$device__init_8c.html#a38d58c1cef021fbc2be1db597a5e1fd8" title="Safe assignment of device wifi settings from the NFC structure." alt="" coords="239,655,360,681"/>
+<area shape="poly" id="edge42_Node000001_Node000032" title=" " alt="" coords="105,478,154,550,190,594,232,634,249,645,246,650,229,638,186,598,149,553,101,481"/>
+<area shape="rect" id="Node000003" href="$_i2_c__2_8c.html#ab2d6470085f0f13033eca2373bcf4b41" title="Function to read data from a specific address." alt="" coords="915,31,999,57"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="767,41,899,41,899,47,767,47"/>
+<area shape="rect" id="Node000008" href="$_i2_c__2_8c.html#abb5323ebe9e05f1fe983ee0c53fa732e" title="Function to write a data byte at specific address." alt="" coords="901,81,1013,108"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="767,50,886,77,885,82,766,56"/>
+<area shape="rect" id="Node000004" href="$_i2_c__2_8c.html#aa504ef0b681fc32e47f923cc52b93067" title="Function to get a data byte from the i2C device." alt="" coords="1108,5,1212,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="999,36,1092,24,1093,30,1000,41"/>
+<area shape="rect" id="Node000005" href="$_i2_c__2_8c.html#afb25d38eef88c072ab6ce216e1965501" title="Generate the START condition in the i2C line." alt="" coords="1092,56,1228,83"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="1000,47,1077,56,1076,62,999,52"/>
+<area shape="rect" id="Node000006" href="$_i2_c__2_8c.html#a24d35a4dc09bc8d6c5be604be9a2102b" title="Generate the STOP condition in the i2C line." alt="" coords="1093,107,1228,133"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="1000,52,1045,67,1093,92,1107,98,1105,103,1091,97,1043,72,998,57"/>
+<area shape="rect" id="Node000007" href="$_i2_c__2_8c.html#a5a45bd2c0aa3fd6619ad4e682466200c" title="Function to send a data byte to the i2C device." alt="" coords="1109,157,1211,184"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="1000,47,1024,55,1046,67,1063,86,1071,106,1078,125,1094,143,1099,147,1096,152,1090,147,1074,128,1066,108,1058,89,1042,71,1021,60,999,52"/>
+<area shape="poly" id="edge8_Node000008_Node000005" title=" " alt="" coords="1013,85,1076,77,1077,82,1014,90"/>
+<area shape="poly" id="edge9_Node000008_Node000006" title=" " alt="" coords="1014,99,1077,107,1076,112,1013,104"/>
+<area shape="poly" id="edge10_Node000008_Node000007" title=" " alt="" coords="1012,106,1045,118,1093,143,1107,149,1105,154,1091,148,1043,122,1011,111"/>
+<area shape="rect" id="Node000010" href="$thread__audio__entry_8c.html#a7bc63559c8d1198f7036bf7d08def712" title="Function that performs an operation with the message player." alt="" coords="441,132,555,159"/>
+<area shape="poly" id="edge12_Node000009_Node000010" title=" " alt="" coords="305,324,345,254,376,212,414,175,433,163,436,168,418,179,380,216,349,257,309,326"/>
+<area shape="rect" id="Node000015" href="$thread__sys_mon__entry_8c.html#a33ca5a33ab10af89dcb290e9d052b724" title="Function that report if the devioce is in test mode montador or not." alt="" coords="416,81,579,108"/>
+<area shape="poly" id="edge17_Node000009_Node000015" title=" " alt="" coords="301,324,313,284,335,229,369,169,390,142,414,118,420,114,423,118,418,122,394,146,373,172,340,231,318,286,306,326"/>
+<area shape="rect" id="Node000016" href="$device__init_8c.html#ad59af5cb88583ffa1dd4320db9aec759" title="Write device settings info the NFC memory. The NFC data structure is swapped." alt="" coords="428,300,568,327"/>
+<area shape="poly" id="edge18_Node000009_Node000016" title=" " alt="" coords="368,327,412,322,413,327,369,333"/>
+<area shape="rect" id="Node000020" href="$device__init_8c.html#aea70ef90e5b5eb9f793a39d77a7688f9" title="This function sets the default configuration." alt="" coords="422,452,573,479"/>
+<area shape="poly" id="edge25_Node000009_Node000020" title=" " alt="" coords="323,350,464,441,461,446,321,355"/>
+<area shape="rect" id="Node000027" href="$device__init_8c.html#a104e88d78d7097d306fcabcd675b263e" title="This function sets the default configuration." alt="" coords="426,503,569,529"/>
+<area shape="poly" id="edge32_Node000009_Node000027" title=" " alt="" coords="310,351,349,417,380,455,418,489,425,493,422,498,414,493,376,459,345,420,305,354"/>
+<area shape="poly" id="edge40_Node000009_Node000028" title=" " alt="" coords="306,352,318,391,339,443,372,496,393,520,417,539,450,556,484,567,557,579,626,578,682,572,683,577,626,584,556,584,483,573,447,561,415,544,389,524,368,500,334,445,313,393,301,353"/>
+<area shape="rect" id="Node000029" href="$device__init_8c.html#a7d385f6a619aaa520f2772c2ff889b39" title="Checks the coherence of the device settings through NFC." alt="" coords="651,233,798,260"/>
+<area shape="poly" id="edge35_Node000009_Node000029" title=" " alt="" coords="307,323,348,269,379,241,415,219,459,206,496,206,580,219,644,227,643,233,579,224,495,211,460,211,417,224,382,245,352,273,311,326"/>
+<area shape="rect" id="Node000030" href="$device__init_8c.html#a192100b6aea6682945bfbf931f6fefbe" title="Checks the coherence of the device settings through NFC and FIXED values for the PCB Manufacture." alt="" coords="425,233,571,276"/>
+<area shape="poly" id="edge37_Node000009_Node000030" title=" " alt="" coords="331,322,415,286,428,280,430,285,417,290,333,327"/>
+<area shape="rect" id="Node000031" href="$device__init_8c.html#aa1c4626750fbd27cc9f9798a262e81b3" title="Rationalize the device settings." alt="" coords="433,351,563,377"/>
+<area shape="poly" id="edge39_Node000009_Node000031" title=" " alt="" coords="369,345,417,351,416,356,368,350"/>
+<area shape="rect" id="Node000011" href="$thread__audio__entry_8c.html#a05b96411bbd2b24e86ae0cc21146b4cb" title="Function that loads and plays a message." alt="" coords="651,132,798,159"/>
+<area shape="poly" id="edge13_Node000010_Node000011" title=" " alt="" coords="555,143,635,143,635,148,555,148"/>
+<area shape="rect" id="Node000013" href="$thread__audio__entry_8c.html#a2c1714b5b8e79621e3a35b0624309f63" title="Stops the audio engine in a predefined sequence." alt="" coords="657,183,792,209"/>
+<area shape="poly" id="edge15_Node000010_Node000013" title=" " alt="" coords="556,155,647,176,646,181,554,161"/>
+<area shape="rect" id="Node000012" href="$thread__audio__entry_8c.html#a29f40d7e3dc151283bfb0e69dbd8b132" title="Get an audio frame from the audio file." alt="" coords="870,132,1044,159"/>
+<area shape="poly" id="edge14_Node000011_Node000012" title=" " alt="" coords="799,143,854,143,854,148,799,148"/>
+<area shape="rect" id="Node000014" href="$thread__audio__hal_8c.html#a5afdd4d24f2faf92baea80c7b0cedfdc" title="stops the audio reproduction" alt="" coords="913,183,1001,209"/>
+<area shape="poly" id="edge16_Node000013_Node000014" title=" " alt="" coords="792,193,897,193,897,199,792,199"/>
+<area shape="rect" id="Node000017" href="$device__init_8c.html#a20e74a2a8c6410c9013be9edd8a85408" title="Write device info in the NFC memory." alt="" coords="682,335,767,361"/>
+<area shape="poly" id="edge19_Node000016_Node000017" title=" " alt="" coords="568,321,667,337,666,342,568,327"/>
+<area shape="rect" id="Node000019" href="$device__init_8c.html#aaabe404ead3c917fa8a168e445f58e21" title="Swap settings variable." alt="" coords="903,233,1011,260"/>
+<area shape="poly" id="edge24_Node000016_Node000019" title=" " alt="" coords="568,303,821,269,887,258,888,263,822,275,569,308"/>
+<area shape="rect" id="Node000018" href="$_i2_c__2_8c.html#a75998894ee4aceb2f03ebc36a0000d3f" title="Function to write data at specific address in the NTag memory." alt="" coords="898,284,1016,311"/>
+<area shape="poly" id="edge20_Node000017_Node000018" title=" " alt="" coords="767,336,882,311,883,316,768,341"/>
+<area shape="poly" id="edge21_Node000018_Node000005" title=" " alt="" coords="1015,287,1042,270,1058,249,1065,228,1066,184,1067,139,1074,116,1090,93,1093,90,1096,94,1094,96,1079,118,1072,140,1072,184,1070,229,1063,251,1046,274,1018,291"/>
+<area shape="poly" id="edge22_Node000018_Node000006" title=" " alt="" coords="1015,286,1042,270,1055,255,1062,240,1066,209,1070,177,1077,160,1090,144,1093,140,1097,144,1094,147,1082,163,1075,178,1071,210,1067,242,1059,258,1046,274,1018,290"/>
+<area shape="poly" id="edge23_Node000018_Node000007" title=" " alt="" coords="1015,281,1043,270,1094,233,1135,194,1139,197,1098,237,1045,274,1017,286"/>
+<area shape="rect" id="Node000021" href="$thread__sys_mon__entry_8c.html#a5d710674bd8ab574159b5f0d01d1d67f" title="Function that gets the non volatile data." alt="" coords="674,503,775,529"/>
+<area shape="poly" id="edge26_Node000020_Node000021" title=" " alt="" coords="561,477,659,499,658,504,560,482"/>
+<area shape="rect" id="Node000022" href="$thread__sys_mon__entry_8c.html#aebbdcccc2dcf3573e1ec3761e55c998c" title="Function that gets the second block of the non volatile data." alt="" coords="654,401,795,428"/>
+<area shape="poly" id="edge27_Node000020_Node000022" title=" " alt="" coords="560,449,646,429,647,435,561,454"/>
+<area shape="rect" id="Node000023" href="$thread__sys_mon__entry_8c.html#ae158ddc17edc766e6adc7f0c1988f2b9" title="Function that updates the test id and saves it to data flash memory." alt="" coords="669,452,780,479"/>
+<area shape="poly" id="edge28_Node000020_Node000023" title=" " alt="" coords="574,463,653,463,653,468,574,468"/>
+<area shape="rect" id="Node000024" href="$thread__sys_mon__entry_8c.html#a7514b80ba83366eb1792a5de56de25d1" title="Function that gets the non volatile data from the internal Data Flash." alt="" coords="902,452,1012,479"/>
+<area shape="poly" id="edge29_Node000023_Node000024" title=" " alt="" coords="780,463,886,463,886,468,780,468"/>
+<area shape="rect" id="Node000025" href="$thread__sys_mon__entry_8c.html#a5cccaa163f937bcc50a69f4b0887f450" title="Compensate UTC time zone with TEST TIME." alt="" coords="1104,452,1217,479"/>
+<area shape="poly" id="edge30_Node000024_Node000025" title=" " alt="" coords="1012,463,1088,463,1088,468,1012,468"/>
+<area shape="rect" id="Node000026" href="$device__init_8c.html#a8f21d9db8b7a1530e06a4ade480d91bc" title="Return Device Settings." alt="" coords="1276,452,1419,479"/>
+<area shape="poly" id="edge31_Node000025_Node000026" title=" " alt="" coords="1217,463,1261,463,1261,468,1217,468"/>
+<area shape="poly" id="edge33_Node000027_Node000021" title=" " alt="" coords="570,513,658,513,658,519,570,519"/>
+<area shape="poly" id="edge34_Node000027_Node000028" title=" " alt="" coords="561,527,683,555,682,560,560,533"/>
+<area shape="poly" id="edge36_Node000029_Node000019" title=" " alt="" coords="798,244,887,244,887,249,798,249"/>
+<area shape="poly" id="edge38_Node000030_Node000029" title=" " alt="" coords="571,249,635,247,636,252,571,255"/>
+<area shape="poly" id="edge52_Node000032_Node000017" title=" " alt="" coords="301,654,312,612,334,554,367,492,389,463,415,438,666,362,668,367,417,442,393,467,372,495,339,556,317,613,306,655"/>
+<area shape="rect" id="Node000033" href="$device__init_8c.html#a90cfa3905b832cb07e7afe0311ce750a" title="Validates the wifi data validation key." alt="" coords="435,655,560,681"/>
+<area shape="poly" id="edge43_Node000032_Node000033" title=" " alt="" coords="360,665,420,665,420,671,360,671"/>
+<area shape="rect" id="Node000042" href="$device__init_8c.html#aaad6694e92e7d7d9eefb2aa080887f97" title="Saves wifi to uSD." alt="" coords="432,731,563,757"/>
+<area shape="poly" id="edge53_Node000032_Node000042" title=" " alt="" coords="338,679,447,722,445,727,336,684"/>
+<area shape="rect" id="Node000034" href="$thread__sys_mon__entry_8c.html#ac9febdbd1dca2289134e4a83fd008574" title="Function that report if the device is in mode DEMO or not." alt="" coords="683,629,766,656"/>
+<area shape="poly" id="edge44_Node000033_Node000034" title=" " alt="" coords="561,658,667,646,668,652,561,664"/>
+<area shape="rect" id="Node000035" href="$group__atcab__.html#ga25d0626815c3df9dd2b43d72eecd3a36" title=" " alt="" coords="879,629,1035,656"/>
+<area shape="poly" id="edge45_Node000034_Node000035" title=" " alt="" coords="766,640,863,640,863,645,766,645"/>
+<area shape="rect" id="Node000036" href="$group__atcab__.html#ga44aae7e0a28993eb6abf78bb3d42e26d" title=" " alt="" coords="883,528,1031,555"/>
+<area shape="poly" id="edge46_Node000034_Node000036" title=" " alt="" coords="751,626,869,564,887,557,889,562,871,569,753,631"/>
+<area shape="rect" id="Node000037" href="$secure__crypto_8c.html#af7c91f21e106a9c4f7190aa91088341b" title="Function to initialize the ATECC608B secure element." alt="" coords="890,680,1024,707"/>
+<area shape="poly" id="edge47_Node000034_Node000037" title=" " alt="" coords="766,649,878,674,877,679,765,654"/>
+<area shape="rect" id="Node000041" href="$_bexlib_8h.html#a13bca9979a4d72c1347716ab97640768" title=" " alt="" coords="919,579,995,605"/>
+<area shape="poly" id="edge51_Node000034_Node000041" title=" " alt="" coords="765,631,903,601,905,606,766,636"/>
+<area shape="rect" id="Node000038" href="$group__atcab__.html#gacdc4fa3d2f2f6d197af8c10ab1f288b8" title=" " alt="" coords="1122,629,1199,656"/>
+<area shape="poly" id="edge48_Node000037_Node000038" title=" " alt="" coords="1013,677,1106,653,1107,658,1014,682"/>
+<area shape="rect" id="Node000039" href="$group__hal__.html#gad4df1b6755e2d5b5d9e810371e45ca8c" title=" " alt="" coords="1111,680,1210,707"/>
+<area shape="poly" id="edge49_Node000037_Node000039" title=" " alt="" coords="1024,691,1095,691,1095,696,1024,696"/>
+<area shape="rect" id="Node000040" href="$_bexlib_8h.html#a303154c70ed1538bd946df8696a78bce" title=" " alt="" coords="1119,731,1202,757"/>
+<area shape="poly" id="edge50_Node000037_Node000040" title=" " alt="" coords="1014,705,1104,727,1103,733,1013,710"/>
+<area shape="rect" id="Node000043" href="$secure__crypto_8c.html#a67f41d2b9732ec05f80c48ee883019d2" title="Function to encrypt file." alt="" coords="627,731,822,757"/>
+<area shape="poly" id="edge54_Node000042_Node000043" title=" " alt="" coords="564,741,612,741,612,747,564,747"/>
+<area shape="rect" id="Node000046" href="$thread__sys_mon__entry_8c.html#ab5d13add30041382fa545103a702582f" title="Function that sets the non volatile data error." alt="" coords="648,803,801,845"/>
+<area shape="poly" id="edge58_Node000042_Node000046" title=" " alt="" coords="539,755,648,794,647,800,537,760"/>
+<area shape="poly" id="edge56_Node000043_Node000037" title=" " alt="" coords="789,727,877,708,878,713,790,733"/>
+<area shape="rect" id="Node000044" href="$_bexlib_8h.html#aa262635e35b6b414ae9bc62730b7dec0" title=" " alt="" coords="897,731,1017,757"/>
+<area shape="poly" id="edge55_Node000043_Node000044" title=" " alt="" coords="822,741,882,741,882,747,822,747"/>
+<area shape="rect" id="Node000045" href="$_bexlib_8h.html#a810fa7098125552c4f323d81ff9effee" title=" " alt="" coords="908,781,1006,808"/>
+<area shape="poly" id="edge57_Node000043_Node000045" title=" " alt="" coords="790,755,893,778,892,783,789,761"/>
+<area shape="rect" id="Node000047" href="$thread__sys_mon__entry_8c.html#a9c961ad97558f92f8f4d44373bca3702" title="Determine if an error requires a SAT service or not." alt="" coords="908,832,1006,859"/>
+<area shape="poly" id="edge59_Node000046_Node000047" title=" " alt="" coords="802,828,892,837,892,842,801,834"/>
+</map>

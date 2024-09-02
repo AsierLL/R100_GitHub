@@ -1,0 +1,1044 @@
+\doxysection{C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/sys\+Mon\+\_\+\+RF\+\_\+\+Comms.c File Reference}
+\hypertarget{sys_mon___r_f___comms_8c}{}\label{sys_mon___r_f___comms_8c}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/sysMon\_RF\_Comms.c@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/sysMon\_RF\_Comms.c}}
+
+
+RF communications executed in the context of the Sys\+Mon thread.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$ctype.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include $<$device\+\_\+init.\+h$>$}\newline
+{\ttfamily \#include "{}DB\+\_\+\+Episode.\+h"{}}\newline
+{\ttfamily \#include "{}sys\+Mon\+\_\+\+RF\+\_\+\+Comms.\+h"{}}\newline
+Include dependency graph for sys\+Mon\+\_\+\+RF\+\_\+\+Comms.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sys_mon___r_f___comms_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{sys_mon___r_f___comms_8c_a6d7663d0029b1968d58ab8e00a9126d1}{GPS\+\_\+\+ZERO}}~"{}\textbackslash{}0\textbackslash{}0\textbackslash{}0\textbackslash{}0"{}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \mbox{\hyperlink{sys_mon___r_f___comms_8c_aa258de7fff35ff304ffec0e526bb5d69}{Execute\+\_\+\+Get\+\_\+\+Gps\+\_\+\+Position\+\_\+\+Test}} (\mbox{\hyperlink{struct_d_b___t_e_s_t___r_e_s_u_l_t__t}{DB\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Result, \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} tout)
+\begin{DoxyCompactList}\small\item\em Function that executes the gps position after test. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{sys_mon___r_f___comms_8c_a94b93fa1317c67270311a868256f4712}{Execute\+\_\+\+Periodic\+\_\+\+Gps\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Function that executes the gps position periodically. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{sys_mon___r_f___comms_8c_a50aa6bd7010a95216a06c04ea2241c5f}{Execute\+\_\+\+Periodic\+\_\+\+Gps\+\_\+\+Position}} (\mbox{\hyperlink{struct_n_v___d_a_t_a__t}{NV\+\_\+\+DATA\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+NV\+\_\+data, \mbox{\hyperlink{struct_n_v___d_a_t_a___b_l_o_c_k__t}{NV\+\_\+\+DATA\+\_\+\+BLOCK\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+NV\+\_\+data\+\_\+block)
+\begin{DoxyCompactList}\small\item\em Function that executes the gps position periodically. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{sys_mon___r_f___comms_8c_a22a104a138d277055bb3bb4e216bf4fe}{Execute\+\_\+\+Save\+\_\+\+Gps\+\_\+\+Position}} (\mbox{\hyperlink{struct_n_v___d_a_t_a__t}{NV\+\_\+\+DATA\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+NV\+\_\+data, \mbox{\hyperlink{struct_n_v___d_a_t_a___b_l_o_c_k__t}{NV\+\_\+\+DATA\+\_\+\+BLOCK\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+NV\+\_\+data\+\_\+block)
+\begin{DoxyCompactList}\small\item\em Function that executes the storing of the GPS position. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{sys_mon___r_f___comms_8c_a52792279d23bf557b0a177590981b506}{Execute\+\_\+\+Send\+\_\+\+Sigfox\+\_\+\+Test}} (\mbox{\hyperlink{struct_d_b___t_e_s_t___r_e_s_u_l_t__t}{DB\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Result, \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} auto\+\_\+test)
+\begin{DoxyCompactList}\small\item\em Function that executes the sending of the Sigfox Test. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{sys_mon___r_f___comms_8c_a7d936e077834e45d4736ce0a1d37245f}{Execute\+\_\+\+Send\+\_\+\+Sigfox\+\_\+\+Exp}} (\mbox{\hyperlink{struct_d_b___t_e_s_t___r_e_s_u_l_t__t}{DB\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Result, \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} auto\+\_\+test)
+\begin{DoxyCompactList}\small\item\em Function that sends battery and electrodes expiration dates. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{sys_mon___r_f___comms_8c_ac85554de712c33f4bd960b06fa7ac0b5}{Execute\+\_\+\+Send\+\_\+\+Sigfox\+\_\+\+GPS}} (\mbox{\hyperlink{struct_d_b___t_e_s_t___r_e_s_u_l_t__t}{DB\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Result, \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} auto\+\_\+test, \mbox{\hyperlink{thread__comm__hal_8h_a5aa347e2a685a85a377a26337e9c5cc3}{SIGFOX\+\_\+\+MSG\+\_\+\+ID\+\_\+e}} gps\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Function that sends GPS positiion. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{sys_mon___r_f___comms_8c_ac150a03431ba1cd0299f7f7c03866720}{Execute\+\_\+\+Wifi\+\_\+\+Open}} (\mbox{\hyperlink{struct_d_b___t_e_s_t___r_e_s_u_l_t__t}{DB\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Result, \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} auto\+\_\+test)
+\begin{DoxyCompactList}\small\item\em Function that executes the wifi initialization. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{sys_mon___r_f___comms_8c_ac38cbd0f0589c9060e10051a615280f7}{Execute\+\_\+\+Wifi\+\_\+\+Init\+\_\+\+Host\+\_\+\+Alive}} (\mbox{\hyperlink{struct_d_b___t_e_s_t___r_e_s_u_l_t__t}{DB\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Result, \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} auto\+\_\+test)
+\begin{DoxyCompactList}\small\item\em Function that executes the wifi initialization and checks if the host is alive. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{sys_mon___r_f___comms_8c_abb685215a8f11633d11ffc4655d48de8}{Execute\+\_\+\+Send\+\_\+\+Wifi\+\_\+\+Test\+\_\+\+Frame}} (\mbox{\hyperlink{struct_d_b___t_e_s_t___r_e_s_u_l_t__t}{DB\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Result, \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} auto\+\_\+test)
+\begin{DoxyCompactList}\small\item\em Function that executes the sending of the last performed test frame. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{sys_mon___r_f___comms_8c_a8accb93ac6067994d6185e35fd83624d}{Execute\+\_\+\+Send\+\_\+\+Wifi\+\_\+\+Alert\+\_\+\+Frame}} (\mbox{\hyperlink{struct_d_b___t_e_s_t___r_e_s_u_l_t__t}{DB\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Result, \mbox{\hyperlink{thread__comm__hal_8h_a30bcce91a84082e55fabfd5098f0d7d7}{WIFI\+\_\+\+MSG\+\_\+\+ID\+\_\+e}} wifi\+\_\+msg\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Function that executes the sending alert. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{sys_mon___r_f___comms_8c_a94dfb316ec84e9d9e9a4974a04c3ed49}{Execute\+\_\+\+Send\+\_\+\+Wifi\+\_\+\+Position\+\_\+\+Frame}} (\mbox{\hyperlink{struct_d_b___t_e_s_t___r_e_s_u_l_t__t}{DB\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Result, \mbox{\hyperlink{thread__comm__hal_8h_a5aa347e2a685a85a377a26337e9c5cc3}{SIGFOX\+\_\+\+MSG\+\_\+\+ID\+\_\+e}} gps\+\_\+id, \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} auto\+\_\+test)
+\begin{DoxyCompactList}\small\item\em Function that executes the sending of the gps position. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{sys_mon___r_f___comms_8c_a0f7ccfee98d59f30927c7fd43edc2284}{Execute\+\_\+\+Send\+\_\+\+Wifi\+\_\+\+Test\+\_\+\+File}} (\mbox{\hyperlink{struct_d_b___t_e_s_t___r_e_s_u_l_t__t}{DB\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Result, \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} auto\+\_\+test)
+\begin{DoxyCompactList}\small\item\em Function that executes the sending of the last performed test File. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{sys_mon___r_f___comms_8c_a75f1beb919d95887b1ffff58a5984f2e}{Execute\+\_\+\+Send\+\_\+\+Wifi\+\_\+\+Episode}} (\mbox{\hyperlink{struct_d_b___t_e_s_t___r_e_s_u_l_t__t}{DB\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Result, \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} auto\+\_\+test)
+\begin{DoxyCompactList}\small\item\em Function that executes the sending of the wee episodes. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{sys_mon___r_f___comms_8c_a46e2bcb284f0b6eeb57344536918998f}{Execute\+\_\+\+Receive\+\_\+\+Wifi\+\_\+\+Upgrade}} (\mbox{\hyperlink{struct_d_b___t_e_s_t___r_e_s_u_l_t__t}{DB\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Result, \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} auto\+\_\+test)
+\begin{DoxyCompactList}\small\item\em Function that executes the receiving of the last firmware. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{sys_mon___r_f___comms_8c_a6de01e8935a0db1a2427b8efe9701739}{Execute\+\_\+\+Receive\+\_\+\+Wifi\+\_\+\+Configuration}} (\mbox{\hyperlink{struct_d_b___t_e_s_t___r_e_s_u_l_t__t}{DB\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Result, \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} auto\+\_\+test)
+\begin{DoxyCompactList}\small\item\em Function that executes the receiving of the last configuration. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{sys_mon___r_f___comms_8c_a746a3aa875b7eb411ea9a0b46efade94}{Send\+\_\+\+Sigfox\+\_\+\+Alert}} (\mbox{\hyperlink{thread__comm__hal_8h_a5aa347e2a685a85a377a26337e9c5cc3}{SIGFOX\+\_\+\+MSG\+\_\+\+ID\+\_\+e}} alert\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Function to send alerts by Sigfox. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{sys_mon___r_f___comms_8c_a1b432e87a6e7499fdf47de62fcc25671}{Send\+\_\+\+Sigfox\+\_\+\+Test}} (\mbox{\hyperlink{struct_d_b___t_e_s_t___r_e_s_u_l_t__t}{DB\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Result)
+\begin{DoxyCompactList}\small\item\em Function to send test results by Sigfox. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{sys_mon___r_f___comms_8c_aa366cf70667fc1f47aa36c96e4302d53}{Send\+\_\+\+Sigfox\+\_\+\+Position}} (\mbox{\hyperlink{thread__comm__hal_8h_a5aa347e2a685a85a377a26337e9c5cc3}{SIGFOX\+\_\+\+MSG\+\_\+\+ID\+\_\+e}} gps\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Function to send position by Sigfox. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{sys_mon___r_f___comms_8c_ad88a859306f62409eff276e10c03ee76}{Send\+\_\+\+Wifi\+\_\+\+Alert}} (\mbox{\hyperlink{thread__comm__hal_8h_a30bcce91a84082e55fabfd5098f0d7d7}{WIFI\+\_\+\+MSG\+\_\+\+ID\+\_\+e}} alert\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Function to send alerts by Wifi. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{sys_mon___r_f___comms_8c_a43b9cedf2ff4b0c5bb865aaf4b21bdc6}{Send\+\_\+\+Wifi\+\_\+\+Test\+\_\+\+Frame}} (\mbox{\hyperlink{struct_d_b___t_e_s_t___r_e_s_u_l_t__t}{DB\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Result)
+\begin{DoxyCompactList}\small\item\em Function to send test results by Wifi. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{sys_mon___r_f___comms_8c_a16faf3c767c0ebb480dac2fab85f0b14}{Send\+\_\+\+Wifi\+\_\+\+Position}} (\mbox{\hyperlink{thread__comm__hal_8h_a30bcce91a84082e55fabfd5098f0d7d7}{WIFI\+\_\+\+MSG\+\_\+\+ID\+\_\+e}} alert\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Function to send position by Wifi. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{sys_mon___r_f___comms_8c_a59a54b635fba8538cb0ca3e32b0358b5}{Is\+\_\+\+GPS\+\_\+\+TX\+\_\+\+Enabled}} (void)
+\begin{DoxyCompactList}\small\item\em Check if the GPS transmission is enabled. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{sys_mon___r_f___comms_8c_a0aade06764d80aaf4558c6ee1b5a0190}{Is\+\_\+\+Sigfox\+\_\+\+TX\+\_\+\+Enabled}} (void)
+\begin{DoxyCompactList}\small\item\em Check if the Sigfox transmission is enabled. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{sys_mon___r_f___comms_8c_ad41447b535ece715d734f79bc8c54801}{Is\+\_\+\+Wifi\+\_\+\+TX\+\_\+\+Enabled}} (void)
+\begin{DoxyCompactList}\small\item\em Check if the Wifi transmission enabled. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{sys_mon___r_f___comms_8c_a0857bf50e8e9213076fe482a19a2e7bd}{Wifi\+\_\+\+Trans\+\_\+\+Days}} (void)
+\begin{DoxyCompactList}\small\item\em Check if the Wifi transmission enabled. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \mbox{\hyperlink{sys_mon___r_f___comms_8c_a8fa159185c86f9aaf6efa06e58121a25}{Lis3dh\+\_\+\+ACC\+\_\+\+Init}} (\mbox{\hyperlink{struct_n_v___d_a_t_a___b_l_o_c_k__t}{NV\+\_\+\+DATA\+\_\+\+BLOCK\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+NV\+\_\+data)
+\begin{DoxyCompactList}\small\item\em This function initialize and configure acclerometer According to the XYZ values in stable position, the x, y or z axes will be enabled. If it is necessary to reverse the polarity of the interrupt, INT1 will also be configured. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{sys_mon___r_f___comms_8c_a85880166a06c35e527a7d972684c1338}{Send\+\_\+\+Test\+\_\+\+By\+\_\+\+Comms}} (\mbox{\hyperlink{struct_d_b___t_e_s_t___r_e_s_u_l_t__t}{DB\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Result, \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} auto\+\_\+test)
+\begin{DoxyCompactList}\small\item\em Function to check the wireless comms. devices. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structgps__config__t}{gps\+\_\+config\+\_\+t}} \mbox{\hyperlink{sys_mon___r_f___comms_8c_a30b1d67adb2fa0b8f99bfca1cc363d33}{R100\+\_\+gps}}
+\begin{DoxyCompactList}\small\item\em GPS data. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structacc__config__t}{acc\+\_\+config\+\_\+t}} \mbox{\hyperlink{sys_mon___r_f___comms_8c_af2189f9f55e3511c9cbe9c5b43f1dbfa}{R100\+\_\+acc}}
+\begin{DoxyCompactList}\small\item\em ACC data. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{sys_mon___r_f___comms_8c_a34db28df8d20239e4a1a9246b186b4df}{first\+\_\+time\+\_\+gps}}
+\begin{DoxyCompactList}\small\item\em Flag to transmit gps position only once. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+RF communications executed in the context of the Sys\+Mon thread. 
+
+\begin{DoxyVersion}{Version}
+v1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+24/11/2021 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+ilazkanoiturburu 
+\end{DoxyAuthor}
+\begin{DoxyWarning}{Warning}
+author date version .-\/ Edition 
+\end{DoxyWarning}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000068}{Bug}}]\end{DoxyRefDesc}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{sys_mon___r_f___comms_8c_a6d7663d0029b1968d58ab8e00a9126d1}\label{sys_mon___r_f___comms_8c_a6d7663d0029b1968d58ab8e00a9126d1} 
+\index{sysMon\_RF\_Comms.c@{sysMon\_RF\_Comms.c}!GPS\_ZERO@{GPS\_ZERO}}
+\index{GPS\_ZERO@{GPS\_ZERO}!sysMon\_RF\_Comms.c@{sysMon\_RF\_Comms.c}}
+\doxysubsubsection{\texorpdfstring{GPS\_ZERO}{GPS\_ZERO}}
+{\footnotesize\ttfamily \#define GPS\+\_\+\+ZERO~"{}\textbackslash{}0\textbackslash{}0\textbackslash{}0\textbackslash{}0"{}}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{sys_mon___r_f___comms_8c_aa258de7fff35ff304ffec0e526bb5d69}\label{sys_mon___r_f___comms_8c_aa258de7fff35ff304ffec0e526bb5d69} 
+\index{sysMon\_RF\_Comms.c@{sysMon\_RF\_Comms.c}!Execute\_Get\_Gps\_Position\_Test@{Execute\_Get\_Gps\_Position\_Test}}
+\index{Execute\_Get\_Gps\_Position\_Test@{Execute\_Get\_Gps\_Position\_Test}!sysMon\_RF\_Comms.c@{sysMon\_RF\_Comms.c}}
+\doxysubsubsection{\texorpdfstring{Execute\_Get\_Gps\_Position\_Test()}{Execute\_Get\_Gps\_Position\_Test()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} Execute\+\_\+\+Get\+\_\+\+Gps\+\_\+\+Position\+\_\+\+Test (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_d_b___t_e_s_t___r_e_s_u_l_t__t}{DB\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Result,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}}}]{tout }\end{DoxyParamCaption})}
+
+
+
+Function that executes the gps position after test. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Result} & pointer to result parameters \\
+\hline
+{\em tout} & time out\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 -\/ RTC position is invalid 1 -\/ RTC position is valid 2 -\/ device must be powered-\/off 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sys_mon___r_f___comms_8c_aa258de7fff35ff304ffec0e526bb5d69_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sys_mon___r_f___comms_8c_aa258de7fff35ff304ffec0e526bb5d69_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{sys_mon___r_f___comms_8c_a94b93fa1317c67270311a868256f4712}\label{sys_mon___r_f___comms_8c_a94b93fa1317c67270311a868256f4712} 
+\index{sysMon\_RF\_Comms.c@{sysMon\_RF\_Comms.c}!Execute\_Periodic\_Gps\_Init@{Execute\_Periodic\_Gps\_Init}}
+\index{Execute\_Periodic\_Gps\_Init@{Execute\_Periodic\_Gps\_Init}!sysMon\_RF\_Comms.c@{sysMon\_RF\_Comms.c}}
+\doxysubsubsection{\texorpdfstring{Execute\_Periodic\_Gps\_Init()}{Execute\_Periodic\_Gps\_Init()}}
+{\footnotesize\ttfamily void Execute\+\_\+\+Periodic\+\_\+\+Gps\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Function that executes the gps position periodically. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sys_mon___r_f___comms_8c_a94b93fa1317c67270311a868256f4712_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sys_mon___r_f___comms_8c_a94b93fa1317c67270311a868256f4712_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{sys_mon___r_f___comms_8c_a50aa6bd7010a95216a06c04ea2241c5f}\label{sys_mon___r_f___comms_8c_a50aa6bd7010a95216a06c04ea2241c5f} 
+\index{sysMon\_RF\_Comms.c@{sysMon\_RF\_Comms.c}!Execute\_Periodic\_Gps\_Position@{Execute\_Periodic\_Gps\_Position}}
+\index{Execute\_Periodic\_Gps\_Position@{Execute\_Periodic\_Gps\_Position}!sysMon\_RF\_Comms.c@{sysMon\_RF\_Comms.c}}
+\doxysubsubsection{\texorpdfstring{Execute\_Periodic\_Gps\_Position()}{Execute\_Periodic\_Gps\_Position()}}
+{\footnotesize\ttfamily void Execute\+\_\+\+Periodic\+\_\+\+Gps\+\_\+\+Position (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_n_v___d_a_t_a__t}{NV\+\_\+\+DATA\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+NV\+\_\+data,  }\item[{\mbox{\hyperlink{struct_n_v___d_a_t_a___b_l_o_c_k__t}{NV\+\_\+\+DATA\+\_\+\+BLOCK\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+NV\+\_\+data\+\_\+block }\end{DoxyParamCaption})}
+
+
+
+Function that executes the gps position periodically. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+NV\+\_\+data} & to the structure to fill\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sys_mon___r_f___comms_8c_a50aa6bd7010a95216a06c04ea2241c5f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sys_mon___r_f___comms_8c_a50aa6bd7010a95216a06c04ea2241c5f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{sys_mon___r_f___comms_8c_a6de01e8935a0db1a2427b8efe9701739}\label{sys_mon___r_f___comms_8c_a6de01e8935a0db1a2427b8efe9701739} 
+\index{sysMon\_RF\_Comms.c@{sysMon\_RF\_Comms.c}!Execute\_Receive\_Wifi\_Configuration@{Execute\_Receive\_Wifi\_Configuration}}
+\index{Execute\_Receive\_Wifi\_Configuration@{Execute\_Receive\_Wifi\_Configuration}!sysMon\_RF\_Comms.c@{sysMon\_RF\_Comms.c}}
+\doxysubsubsection{\texorpdfstring{Execute\_Receive\_Wifi\_Configuration()}{Execute\_Receive\_Wifi\_Configuration()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} Execute\+\_\+\+Receive\+\_\+\+Wifi\+\_\+\+Configuration (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_d_b___t_e_s_t___r_e_s_u_l_t__t}{DB\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Result,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}}}]{auto\+\_\+test }\end{DoxyParamCaption})}
+
+
+
+Function that executes the receiving of the last configuration. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Result} & pointer to result parameters \\
+\hline
+{\em auto\+\_\+test} & if the test is automatic or forced by an user\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Check if cover is closed or ON\+\_\+\+OFF key is pressed 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sys_mon___r_f___comms_8c_a6de01e8935a0db1a2427b8efe9701739_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{sys_mon___r_f___comms_8c_a46e2bcb284f0b6eeb57344536918998f}\label{sys_mon___r_f___comms_8c_a46e2bcb284f0b6eeb57344536918998f} 
+\index{sysMon\_RF\_Comms.c@{sysMon\_RF\_Comms.c}!Execute\_Receive\_Wifi\_Upgrade@{Execute\_Receive\_Wifi\_Upgrade}}
+\index{Execute\_Receive\_Wifi\_Upgrade@{Execute\_Receive\_Wifi\_Upgrade}!sysMon\_RF\_Comms.c@{sysMon\_RF\_Comms.c}}
+\doxysubsubsection{\texorpdfstring{Execute\_Receive\_Wifi\_Upgrade()}{Execute\_Receive\_Wifi\_Upgrade()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} Execute\+\_\+\+Receive\+\_\+\+Wifi\+\_\+\+Upgrade (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_d_b___t_e_s_t___r_e_s_u_l_t__t}{DB\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Result,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}}}]{auto\+\_\+test }\end{DoxyParamCaption})}
+
+
+
+Function that executes the receiving of the last firmware. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Result} & pointer to result parameters \\
+\hline
+{\em auto\+\_\+test} & if the test is automatic or forced by an user\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Check if cover is closed or ON\+\_\+\+OFF key is pressed 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sys_mon___r_f___comms_8c_a46e2bcb284f0b6eeb57344536918998f_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{sys_mon___r_f___comms_8c_a22a104a138d277055bb3bb4e216bf4fe}\label{sys_mon___r_f___comms_8c_a22a104a138d277055bb3bb4e216bf4fe} 
+\index{sysMon\_RF\_Comms.c@{sysMon\_RF\_Comms.c}!Execute\_Save\_Gps\_Position@{Execute\_Save\_Gps\_Position}}
+\index{Execute\_Save\_Gps\_Position@{Execute\_Save\_Gps\_Position}!sysMon\_RF\_Comms.c@{sysMon\_RF\_Comms.c}}
+\doxysubsubsection{\texorpdfstring{Execute\_Save\_Gps\_Position()}{Execute\_Save\_Gps\_Position()}}
+{\footnotesize\ttfamily void Execute\+\_\+\+Save\+\_\+\+Gps\+\_\+\+Position (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_n_v___d_a_t_a__t}{NV\+\_\+\+DATA\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+NV\+\_\+data,  }\item[{\mbox{\hyperlink{struct_n_v___d_a_t_a___b_l_o_c_k__t}{NV\+\_\+\+DATA\+\_\+\+BLOCK\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+NV\+\_\+data\+\_\+block }\end{DoxyParamCaption})}
+
+
+
+Function that executes the storing of the GPS position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+NV\+\_\+data} & to the structure to fill\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sys_mon___r_f___comms_8c_a22a104a138d277055bb3bb4e216bf4fe_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sys_mon___r_f___comms_8c_a22a104a138d277055bb3bb4e216bf4fe_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{sys_mon___r_f___comms_8c_a7d936e077834e45d4736ce0a1d37245f}\label{sys_mon___r_f___comms_8c_a7d936e077834e45d4736ce0a1d37245f} 
+\index{sysMon\_RF\_Comms.c@{sysMon\_RF\_Comms.c}!Execute\_Send\_Sigfox\_Exp@{Execute\_Send\_Sigfox\_Exp}}
+\index{Execute\_Send\_Sigfox\_Exp@{Execute\_Send\_Sigfox\_Exp}!sysMon\_RF\_Comms.c@{sysMon\_RF\_Comms.c}}
+\doxysubsubsection{\texorpdfstring{Execute\_Send\_Sigfox\_Exp()}{Execute\_Send\_Sigfox\_Exp()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} Execute\+\_\+\+Send\+\_\+\+Sigfox\+\_\+\+Exp (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_d_b___t_e_s_t___r_e_s_u_l_t__t}{DB\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Result,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}}}]{auto\+\_\+test }\end{DoxyParamCaption})}
+
+
+
+Function that sends battery and electrodes expiration dates. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Result} & pointer to result parameters \\
+\hline
+{\em auto\+\_\+test} & if the test is automatic or forced by an user\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+False if device must be power-\/off 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sys_mon___r_f___comms_8c_a7d936e077834e45d4736ce0a1d37245f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sys_mon___r_f___comms_8c_a7d936e077834e45d4736ce0a1d37245f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{sys_mon___r_f___comms_8c_ac85554de712c33f4bd960b06fa7ac0b5}\label{sys_mon___r_f___comms_8c_ac85554de712c33f4bd960b06fa7ac0b5} 
+\index{sysMon\_RF\_Comms.c@{sysMon\_RF\_Comms.c}!Execute\_Send\_Sigfox\_GPS@{Execute\_Send\_Sigfox\_GPS}}
+\index{Execute\_Send\_Sigfox\_GPS@{Execute\_Send\_Sigfox\_GPS}!sysMon\_RF\_Comms.c@{sysMon\_RF\_Comms.c}}
+\doxysubsubsection{\texorpdfstring{Execute\_Send\_Sigfox\_GPS()}{Execute\_Send\_Sigfox\_GPS()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} Execute\+\_\+\+Send\+\_\+\+Sigfox\+\_\+\+GPS (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_d_b___t_e_s_t___r_e_s_u_l_t__t}{DB\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Result,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}}}]{auto\+\_\+test,  }\item[{\mbox{\hyperlink{thread__comm__hal_8h_a5aa347e2a685a85a377a26337e9c5cc3}{SIGFOX\+\_\+\+MSG\+\_\+\+ID\+\_\+e}}}]{gps\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Function that sends GPS positiion. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Result} & pointer to result parameters \\
+\hline
+{\em auto\+\_\+test} & if the test is automatic or forced by an user \\
+\hline
+{\em gps\+\_\+id} & GPS ID to send position\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+False if device must be power-\/off 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sys_mon___r_f___comms_8c_ac85554de712c33f4bd960b06fa7ac0b5_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sys_mon___r_f___comms_8c_ac85554de712c33f4bd960b06fa7ac0b5_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{sys_mon___r_f___comms_8c_a52792279d23bf557b0a177590981b506}\label{sys_mon___r_f___comms_8c_a52792279d23bf557b0a177590981b506} 
+\index{sysMon\_RF\_Comms.c@{sysMon\_RF\_Comms.c}!Execute\_Send\_Sigfox\_Test@{Execute\_Send\_Sigfox\_Test}}
+\index{Execute\_Send\_Sigfox\_Test@{Execute\_Send\_Sigfox\_Test}!sysMon\_RF\_Comms.c@{sysMon\_RF\_Comms.c}}
+\doxysubsubsection{\texorpdfstring{Execute\_Send\_Sigfox\_Test()}{Execute\_Send\_Sigfox\_Test()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} Execute\+\_\+\+Send\+\_\+\+Sigfox\+\_\+\+Test (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_d_b___t_e_s_t___r_e_s_u_l_t__t}{DB\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Result,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}}}]{auto\+\_\+test }\end{DoxyParamCaption})}
+
+
+
+Function that executes the sending of the Sigfox Test. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Result} & pointer to result parameters \\
+\hline
+{\em auto\+\_\+test} & if the test is automatic or forced by an user\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+False if device must be power-\/off 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sys_mon___r_f___comms_8c_a52792279d23bf557b0a177590981b506_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sys_mon___r_f___comms_8c_a52792279d23bf557b0a177590981b506_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{sys_mon___r_f___comms_8c_a8accb93ac6067994d6185e35fd83624d}\label{sys_mon___r_f___comms_8c_a8accb93ac6067994d6185e35fd83624d} 
+\index{sysMon\_RF\_Comms.c@{sysMon\_RF\_Comms.c}!Execute\_Send\_Wifi\_Alert\_Frame@{Execute\_Send\_Wifi\_Alert\_Frame}}
+\index{Execute\_Send\_Wifi\_Alert\_Frame@{Execute\_Send\_Wifi\_Alert\_Frame}!sysMon\_RF\_Comms.c@{sysMon\_RF\_Comms.c}}
+\doxysubsubsection{\texorpdfstring{Execute\_Send\_Wifi\_Alert\_Frame()}{Execute\_Send\_Wifi\_Alert\_Frame()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} Execute\+\_\+\+Send\+\_\+\+Wifi\+\_\+\+Alert\+\_\+\+Frame (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_d_b___t_e_s_t___r_e_s_u_l_t__t}{DB\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Result,  }\item[{\mbox{\hyperlink{thread__comm__hal_8h_a30bcce91a84082e55fabfd5098f0d7d7}{WIFI\+\_\+\+MSG\+\_\+\+ID\+\_\+e}}}]{wifi\+\_\+msg\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Function that executes the sending alert. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Result} & pointer to result parameters \\
+\hline
+{\em wifi\+\_\+msg\+\_\+id} & Message ID to send alert\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Check if cover is closed or ON\+\_\+\+OFF key is pressed 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sys_mon___r_f___comms_8c_a8accb93ac6067994d6185e35fd83624d_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{sys_mon___r_f___comms_8c_a75f1beb919d95887b1ffff58a5984f2e}\label{sys_mon___r_f___comms_8c_a75f1beb919d95887b1ffff58a5984f2e} 
+\index{sysMon\_RF\_Comms.c@{sysMon\_RF\_Comms.c}!Execute\_Send\_Wifi\_Episode@{Execute\_Send\_Wifi\_Episode}}
+\index{Execute\_Send\_Wifi\_Episode@{Execute\_Send\_Wifi\_Episode}!sysMon\_RF\_Comms.c@{sysMon\_RF\_Comms.c}}
+\doxysubsubsection{\texorpdfstring{Execute\_Send\_Wifi\_Episode()}{Execute\_Send\_Wifi\_Episode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} Execute\+\_\+\+Send\+\_\+\+Wifi\+\_\+\+Episode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_d_b___t_e_s_t___r_e_s_u_l_t__t}{DB\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Result,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}}}]{auto\+\_\+test }\end{DoxyParamCaption})}
+
+
+
+Function that executes the sending of the wee episodes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Result} & pointer to result parameters \\
+\hline
+{\em auto\+\_\+test} & if the test is automatic or forced by an user\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Check if cover is closed or ON\+\_\+\+OFF key is pressed 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sys_mon___r_f___comms_8c_a75f1beb919d95887b1ffff58a5984f2e_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{sys_mon___r_f___comms_8c_a94dfb316ec84e9d9e9a4974a04c3ed49}\label{sys_mon___r_f___comms_8c_a94dfb316ec84e9d9e9a4974a04c3ed49} 
+\index{sysMon\_RF\_Comms.c@{sysMon\_RF\_Comms.c}!Execute\_Send\_Wifi\_Position\_Frame@{Execute\_Send\_Wifi\_Position\_Frame}}
+\index{Execute\_Send\_Wifi\_Position\_Frame@{Execute\_Send\_Wifi\_Position\_Frame}!sysMon\_RF\_Comms.c@{sysMon\_RF\_Comms.c}}
+\doxysubsubsection{\texorpdfstring{Execute\_Send\_Wifi\_Position\_Frame()}{Execute\_Send\_Wifi\_Position\_Frame()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} Execute\+\_\+\+Send\+\_\+\+Wifi\+\_\+\+Position\+\_\+\+Frame (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_d_b___t_e_s_t___r_e_s_u_l_t__t}{DB\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Result,  }\item[{\mbox{\hyperlink{thread__comm__hal_8h_a5aa347e2a685a85a377a26337e9c5cc3}{SIGFOX\+\_\+\+MSG\+\_\+\+ID\+\_\+e}}}]{gps\+\_\+id,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}}}]{auto\+\_\+test }\end{DoxyParamCaption})}
+
+
+
+Function that executes the sending of the gps position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Result} & pointer to result parameters \\
+\hline
+{\em gps\+\_\+id} & GPS ID to send position \\
+\hline
+{\em auto\+\_\+test} & if the test is automatic or forced by an user\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Check if cover is closed or ON\+\_\+\+OFF key is pressed 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sys_mon___r_f___comms_8c_a94dfb316ec84e9d9e9a4974a04c3ed49_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sys_mon___r_f___comms_8c_a94dfb316ec84e9d9e9a4974a04c3ed49_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{sys_mon___r_f___comms_8c_a0f7ccfee98d59f30927c7fd43edc2284}\label{sys_mon___r_f___comms_8c_a0f7ccfee98d59f30927c7fd43edc2284} 
+\index{sysMon\_RF\_Comms.c@{sysMon\_RF\_Comms.c}!Execute\_Send\_Wifi\_Test\_File@{Execute\_Send\_Wifi\_Test\_File}}
+\index{Execute\_Send\_Wifi\_Test\_File@{Execute\_Send\_Wifi\_Test\_File}!sysMon\_RF\_Comms.c@{sysMon\_RF\_Comms.c}}
+\doxysubsubsection{\texorpdfstring{Execute\_Send\_Wifi\_Test\_File()}{Execute\_Send\_Wifi\_Test\_File()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} Execute\+\_\+\+Send\+\_\+\+Wifi\+\_\+\+Test\+\_\+\+File (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_d_b___t_e_s_t___r_e_s_u_l_t__t}{DB\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Result,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}}}]{auto\+\_\+test }\end{DoxyParamCaption})}
+
+
+
+Function that executes the sending of the last performed test File. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Result} & pointer to result parameters \\
+\hline
+{\em auto\+\_\+test} & if the test is automatic or forced by an user\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Check if cover is closed or ON\+\_\+\+OFF key is pressed 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sys_mon___r_f___comms_8c_a0f7ccfee98d59f30927c7fd43edc2284_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{sys_mon___r_f___comms_8c_abb685215a8f11633d11ffc4655d48de8}\label{sys_mon___r_f___comms_8c_abb685215a8f11633d11ffc4655d48de8} 
+\index{sysMon\_RF\_Comms.c@{sysMon\_RF\_Comms.c}!Execute\_Send\_Wifi\_Test\_Frame@{Execute\_Send\_Wifi\_Test\_Frame}}
+\index{Execute\_Send\_Wifi\_Test\_Frame@{Execute\_Send\_Wifi\_Test\_Frame}!sysMon\_RF\_Comms.c@{sysMon\_RF\_Comms.c}}
+\doxysubsubsection{\texorpdfstring{Execute\_Send\_Wifi\_Test\_Frame()}{Execute\_Send\_Wifi\_Test\_Frame()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} Execute\+\_\+\+Send\+\_\+\+Wifi\+\_\+\+Test\+\_\+\+Frame (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_d_b___t_e_s_t___r_e_s_u_l_t__t}{DB\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Result,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}}}]{auto\+\_\+test }\end{DoxyParamCaption})}
+
+
+
+Function that executes the sending of the last performed test frame. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Result} & pointer to result parameters \\
+\hline
+{\em auto\+\_\+test} & if the test is automatic or forced by an user\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Check if cover is closed or ON\+\_\+\+OFF key is pressed 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sys_mon___r_f___comms_8c_abb685215a8f11633d11ffc4655d48de8_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sys_mon___r_f___comms_8c_abb685215a8f11633d11ffc4655d48de8_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{sys_mon___r_f___comms_8c_ac38cbd0f0589c9060e10051a615280f7}\label{sys_mon___r_f___comms_8c_ac38cbd0f0589c9060e10051a615280f7} 
+\index{sysMon\_RF\_Comms.c@{sysMon\_RF\_Comms.c}!Execute\_Wifi\_Init\_Host\_Alive@{Execute\_Wifi\_Init\_Host\_Alive}}
+\index{Execute\_Wifi\_Init\_Host\_Alive@{Execute\_Wifi\_Init\_Host\_Alive}!sysMon\_RF\_Comms.c@{sysMon\_RF\_Comms.c}}
+\doxysubsubsection{\texorpdfstring{Execute\_Wifi\_Init\_Host\_Alive()}{Execute\_Wifi\_Init\_Host\_Alive()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} Execute\+\_\+\+Wifi\+\_\+\+Init\+\_\+\+Host\+\_\+\+Alive (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_d_b___t_e_s_t___r_e_s_u_l_t__t}{DB\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Result,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}}}]{auto\+\_\+test }\end{DoxyParamCaption})}
+
+
+
+Function that executes the wifi initialization and checks if the host is alive. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Result} & pointer to result parameters \\
+\hline
+{\em auto\+\_\+test} & if the test is automatic or forced by an user\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Check if cover is closed or ON\+\_\+\+OFF key is pressed 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sys_mon___r_f___comms_8c_ac38cbd0f0589c9060e10051a615280f7_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sys_mon___r_f___comms_8c_ac38cbd0f0589c9060e10051a615280f7_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{sys_mon___r_f___comms_8c_ac150a03431ba1cd0299f7f7c03866720}\label{sys_mon___r_f___comms_8c_ac150a03431ba1cd0299f7f7c03866720} 
+\index{sysMon\_RF\_Comms.c@{sysMon\_RF\_Comms.c}!Execute\_Wifi\_Open@{Execute\_Wifi\_Open}}
+\index{Execute\_Wifi\_Open@{Execute\_Wifi\_Open}!sysMon\_RF\_Comms.c@{sysMon\_RF\_Comms.c}}
+\doxysubsubsection{\texorpdfstring{Execute\_Wifi\_Open()}{Execute\_Wifi\_Open()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} Execute\+\_\+\+Wifi\+\_\+\+Open (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_d_b___t_e_s_t___r_e_s_u_l_t__t}{DB\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Result,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}}}]{auto\+\_\+test }\end{DoxyParamCaption})}
+
+
+
+Function that executes the wifi initialization. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Result} & pointer to result parameters \\
+\hline
+{\em auto\+\_\+test} & if the test is automatic or forced by an user\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Check if cover is closed or ON\+\_\+\+OFF key is pressed 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sys_mon___r_f___comms_8c_ac150a03431ba1cd0299f7f7c03866720_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sys_mon___r_f___comms_8c_ac150a03431ba1cd0299f7f7c03866720_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{sys_mon___r_f___comms_8c_a59a54b635fba8538cb0ca3e32b0358b5}\label{sys_mon___r_f___comms_8c_a59a54b635fba8538cb0ca3e32b0358b5} 
+\index{sysMon\_RF\_Comms.c@{sysMon\_RF\_Comms.c}!Is\_GPS\_TX\_Enabled@{Is\_GPS\_TX\_Enabled}}
+\index{Is\_GPS\_TX\_Enabled@{Is\_GPS\_TX\_Enabled}!sysMon\_RF\_Comms.c@{sysMon\_RF\_Comms.c}}
+\doxysubsubsection{\texorpdfstring{Is\_GPS\_TX\_Enabled()}{Is\_GPS\_TX\_Enabled()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} Is\+\_\+\+GPS\+\_\+\+TX\+\_\+\+Enabled (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Check if the GPS transmission is enabled. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+TRUE if enabled, else FALSE 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=329pt]{sys_mon___r_f___comms_8c_a59a54b635fba8538cb0ca3e32b0358b5_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sys_mon___r_f___comms_8c_a59a54b635fba8538cb0ca3e32b0358b5_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{sys_mon___r_f___comms_8c_a0aade06764d80aaf4558c6ee1b5a0190}\label{sys_mon___r_f___comms_8c_a0aade06764d80aaf4558c6ee1b5a0190} 
+\index{sysMon\_RF\_Comms.c@{sysMon\_RF\_Comms.c}!Is\_Sigfox\_TX\_Enabled@{Is\_Sigfox\_TX\_Enabled}}
+\index{Is\_Sigfox\_TX\_Enabled@{Is\_Sigfox\_TX\_Enabled}!sysMon\_RF\_Comms.c@{sysMon\_RF\_Comms.c}}
+\doxysubsubsection{\texorpdfstring{Is\_Sigfox\_TX\_Enabled()}{Is\_Sigfox\_TX\_Enabled()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} Is\+\_\+\+Sigfox\+\_\+\+TX\+\_\+\+Enabled (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Check if the Sigfox transmission is enabled. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+TRUE if enabled, else FALSE 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=335pt]{sys_mon___r_f___comms_8c_a0aade06764d80aaf4558c6ee1b5a0190_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sys_mon___r_f___comms_8c_a0aade06764d80aaf4558c6ee1b5a0190_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{sys_mon___r_f___comms_8c_ad41447b535ece715d734f79bc8c54801}\label{sys_mon___r_f___comms_8c_ad41447b535ece715d734f79bc8c54801} 
+\index{sysMon\_RF\_Comms.c@{sysMon\_RF\_Comms.c}!Is\_Wifi\_TX\_Enabled@{Is\_Wifi\_TX\_Enabled}}
+\index{Is\_Wifi\_TX\_Enabled@{Is\_Wifi\_TX\_Enabled}!sysMon\_RF\_Comms.c@{sysMon\_RF\_Comms.c}}
+\doxysubsubsection{\texorpdfstring{Is\_Wifi\_TX\_Enabled()}{Is\_Wifi\_TX\_Enabled()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} Is\+\_\+\+Wifi\+\_\+\+TX\+\_\+\+Enabled (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Check if the Wifi transmission enabled. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+TRUE if enabled, else FALSE 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{sys_mon___r_f___comms_8c_ad41447b535ece715d734f79bc8c54801_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sys_mon___r_f___comms_8c_ad41447b535ece715d734f79bc8c54801_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{sys_mon___r_f___comms_8c_a8fa159185c86f9aaf6efa06e58121a25}\label{sys_mon___r_f___comms_8c_a8fa159185c86f9aaf6efa06e58121a25} 
+\index{sysMon\_RF\_Comms.c@{sysMon\_RF\_Comms.c}!Lis3dh\_ACC\_Init@{Lis3dh\_ACC\_Init}}
+\index{Lis3dh\_ACC\_Init@{Lis3dh\_ACC\_Init}!sysMon\_RF\_Comms.c@{sysMon\_RF\_Comms.c}}
+\doxysubsubsection{\texorpdfstring{Lis3dh\_ACC\_Init()}{Lis3dh\_ACC\_Init()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} Lis3dh\+\_\+\+ACC\+\_\+\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_n_v___d_a_t_a___b_l_o_c_k__t}{NV\+\_\+\+DATA\+\_\+\+BLOCK\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+NV\+\_\+data }\end{DoxyParamCaption})}
+
+
+
+This function initialize and configure acclerometer According to the XYZ values in stable position, the x, y or z axes will be enabled. If it is necessary to reverse the polarity of the interrupt, INT1 will also be configured. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+NV\+\_\+data} & pointer to NV data\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+acc errors 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sys_mon___r_f___comms_8c_a8fa159185c86f9aaf6efa06e58121a25_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{sys_mon___r_f___comms_8c_a746a3aa875b7eb411ea9a0b46efade94}\label{sys_mon___r_f___comms_8c_a746a3aa875b7eb411ea9a0b46efade94} 
+\index{sysMon\_RF\_Comms.c@{sysMon\_RF\_Comms.c}!Send\_Sigfox\_Alert@{Send\_Sigfox\_Alert}}
+\index{Send\_Sigfox\_Alert@{Send\_Sigfox\_Alert}!sysMon\_RF\_Comms.c@{sysMon\_RF\_Comms.c}}
+\doxysubsubsection{\texorpdfstring{Send\_Sigfox\_Alert()}{Send\_Sigfox\_Alert()}}
+{\footnotesize\ttfamily void Send\+\_\+\+Sigfox\+\_\+\+Alert (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{thread__comm__hal_8h_a5aa347e2a685a85a377a26337e9c5cc3}{SIGFOX\+\_\+\+MSG\+\_\+\+ID\+\_\+e}}}]{alert\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Function to send alerts by Sigfox. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em alert\+\_\+id} & alert identifier\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sys_mon___r_f___comms_8c_a746a3aa875b7eb411ea9a0b46efade94_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sys_mon___r_f___comms_8c_a746a3aa875b7eb411ea9a0b46efade94_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{sys_mon___r_f___comms_8c_aa366cf70667fc1f47aa36c96e4302d53}\label{sys_mon___r_f___comms_8c_aa366cf70667fc1f47aa36c96e4302d53} 
+\index{sysMon\_RF\_Comms.c@{sysMon\_RF\_Comms.c}!Send\_Sigfox\_Position@{Send\_Sigfox\_Position}}
+\index{Send\_Sigfox\_Position@{Send\_Sigfox\_Position}!sysMon\_RF\_Comms.c@{sysMon\_RF\_Comms.c}}
+\doxysubsubsection{\texorpdfstring{Send\_Sigfox\_Position()}{Send\_Sigfox\_Position()}}
+{\footnotesize\ttfamily void Send\+\_\+\+Sigfox\+\_\+\+Position (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{thread__comm__hal_8h_a5aa347e2a685a85a377a26337e9c5cc3}{SIGFOX\+\_\+\+MSG\+\_\+\+ID\+\_\+e}}}]{gps\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Function to send position by Sigfox. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em gps\+\_\+id} & gps identifier\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sys_mon___r_f___comms_8c_aa366cf70667fc1f47aa36c96e4302d53_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sys_mon___r_f___comms_8c_aa366cf70667fc1f47aa36c96e4302d53_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{sys_mon___r_f___comms_8c_a1b432e87a6e7499fdf47de62fcc25671}\label{sys_mon___r_f___comms_8c_a1b432e87a6e7499fdf47de62fcc25671} 
+\index{sysMon\_RF\_Comms.c@{sysMon\_RF\_Comms.c}!Send\_Sigfox\_Test@{Send\_Sigfox\_Test}}
+\index{Send\_Sigfox\_Test@{Send\_Sigfox\_Test}!sysMon\_RF\_Comms.c@{sysMon\_RF\_Comms.c}}
+\doxysubsubsection{\texorpdfstring{Send\_Sigfox\_Test()}{Send\_Sigfox\_Test()}}
+{\footnotesize\ttfamily void Send\+\_\+\+Sigfox\+\_\+\+Test (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_d_b___t_e_s_t___r_e_s_u_l_t__t}{DB\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Result }\end{DoxyParamCaption})}
+
+
+
+Function to send test results by Sigfox. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Result} & test result\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sys_mon___r_f___comms_8c_a1b432e87a6e7499fdf47de62fcc25671_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sys_mon___r_f___comms_8c_a1b432e87a6e7499fdf47de62fcc25671_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{sys_mon___r_f___comms_8c_a85880166a06c35e527a7d972684c1338}\label{sys_mon___r_f___comms_8c_a85880166a06c35e527a7d972684c1338} 
+\index{sysMon\_RF\_Comms.c@{sysMon\_RF\_Comms.c}!Send\_Test\_By\_Comms@{Send\_Test\_By\_Comms}}
+\index{Send\_Test\_By\_Comms@{Send\_Test\_By\_Comms}!sysMon\_RF\_Comms.c@{sysMon\_RF\_Comms.c}}
+\doxysubsubsection{\texorpdfstring{Send\_Test\_By\_Comms()}{Send\_Test\_By\_Comms()}}
+{\footnotesize\ttfamily void Send\+\_\+\+Test\+\_\+\+By\+\_\+\+Comms (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_d_b___t_e_s_t___r_e_s_u_l_t__t}{DB\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Result,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}}}]{auto\+\_\+test }\end{DoxyParamCaption})}
+
+
+
+Function to check the wireless comms. devices. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Result} & pointer to result parameters \\
+\hline
+{\em auto\+\_\+test} & if the test is automatic or forced by an user\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{sys_mon___r_f___comms_8c_a85880166a06c35e527a7d972684c1338_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sys_mon___r_f___comms_8c_a85880166a06c35e527a7d972684c1338_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{sys_mon___r_f___comms_8c_ad88a859306f62409eff276e10c03ee76}\label{sys_mon___r_f___comms_8c_ad88a859306f62409eff276e10c03ee76} 
+\index{sysMon\_RF\_Comms.c@{sysMon\_RF\_Comms.c}!Send\_Wifi\_Alert@{Send\_Wifi\_Alert}}
+\index{Send\_Wifi\_Alert@{Send\_Wifi\_Alert}!sysMon\_RF\_Comms.c@{sysMon\_RF\_Comms.c}}
+\doxysubsubsection{\texorpdfstring{Send\_Wifi\_Alert()}{Send\_Wifi\_Alert()}}
+{\footnotesize\ttfamily void Send\+\_\+\+Wifi\+\_\+\+Alert (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{thread__comm__hal_8h_a30bcce91a84082e55fabfd5098f0d7d7}{WIFI\+\_\+\+MSG\+\_\+\+ID\+\_\+e}}}]{alert\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Function to send alerts by Wifi. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em alert\+\_\+id} & alert identifier\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sys_mon___r_f___comms_8c_ad88a859306f62409eff276e10c03ee76_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sys_mon___r_f___comms_8c_ad88a859306f62409eff276e10c03ee76_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{sys_mon___r_f___comms_8c_a16faf3c767c0ebb480dac2fab85f0b14}\label{sys_mon___r_f___comms_8c_a16faf3c767c0ebb480dac2fab85f0b14} 
+\index{sysMon\_RF\_Comms.c@{sysMon\_RF\_Comms.c}!Send\_Wifi\_Position@{Send\_Wifi\_Position}}
+\index{Send\_Wifi\_Position@{Send\_Wifi\_Position}!sysMon\_RF\_Comms.c@{sysMon\_RF\_Comms.c}}
+\doxysubsubsection{\texorpdfstring{Send\_Wifi\_Position()}{Send\_Wifi\_Position()}}
+{\footnotesize\ttfamily void Send\+\_\+\+Wifi\+\_\+\+Position (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{thread__comm__hal_8h_a30bcce91a84082e55fabfd5098f0d7d7}{WIFI\+\_\+\+MSG\+\_\+\+ID\+\_\+e}}}]{alert\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Function to send position by Wifi. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em alert\+\_\+id} & gps identifier\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sys_mon___r_f___comms_8c_a16faf3c767c0ebb480dac2fab85f0b14_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sys_mon___r_f___comms_8c_a16faf3c767c0ebb480dac2fab85f0b14_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{sys_mon___r_f___comms_8c_a43b9cedf2ff4b0c5bb865aaf4b21bdc6}\label{sys_mon___r_f___comms_8c_a43b9cedf2ff4b0c5bb865aaf4b21bdc6} 
+\index{sysMon\_RF\_Comms.c@{sysMon\_RF\_Comms.c}!Send\_Wifi\_Test\_Frame@{Send\_Wifi\_Test\_Frame}}
+\index{Send\_Wifi\_Test\_Frame@{Send\_Wifi\_Test\_Frame}!sysMon\_RF\_Comms.c@{sysMon\_RF\_Comms.c}}
+\doxysubsubsection{\texorpdfstring{Send\_Wifi\_Test\_Frame()}{Send\_Wifi\_Test\_Frame()}}
+{\footnotesize\ttfamily void Send\+\_\+\+Wifi\+\_\+\+Test\+\_\+\+Frame (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_d_b___t_e_s_t___r_e_s_u_l_t__t}{DB\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Result }\end{DoxyParamCaption})}
+
+
+
+Function to send test results by Wifi. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Result} & test results\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sys_mon___r_f___comms_8c_a43b9cedf2ff4b0c5bb865aaf4b21bdc6_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sys_mon___r_f___comms_8c_a43b9cedf2ff4b0c5bb865aaf4b21bdc6_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{sys_mon___r_f___comms_8c_a0857bf50e8e9213076fe482a19a2e7bd}\label{sys_mon___r_f___comms_8c_a0857bf50e8e9213076fe482a19a2e7bd} 
+\index{sysMon\_RF\_Comms.c@{sysMon\_RF\_Comms.c}!Wifi\_Trans\_Days@{Wifi\_Trans\_Days}}
+\index{Wifi\_Trans\_Days@{Wifi\_Trans\_Days}!sysMon\_RF\_Comms.c@{sysMon\_RF\_Comms.c}}
+\doxysubsubsection{\texorpdfstring{Wifi\_Trans\_Days()}{Wifi\_Trans\_Days()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} Wifi\+\_\+\+Trans\+\_\+\+Days (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Check if the Wifi transmission enabled. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+TRUE if enabled, else FALSE 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{sys_mon___r_f___comms_8c_a0857bf50e8e9213076fe482a19a2e7bd_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sys_mon___r_f___comms_8c_a0857bf50e8e9213076fe482a19a2e7bd_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{sys_mon___r_f___comms_8c_a34db28df8d20239e4a1a9246b186b4df}\label{sys_mon___r_f___comms_8c_a34db28df8d20239e4a1a9246b186b4df} 
+\index{sysMon\_RF\_Comms.c@{sysMon\_RF\_Comms.c}!first\_time\_gps@{first\_time\_gps}}
+\index{first\_time\_gps@{first\_time\_gps}!sysMon\_RF\_Comms.c@{sysMon\_RF\_Comms.c}}
+\doxysubsubsection{\texorpdfstring{first\_time\_gps}{first\_time\_gps}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} first\+\_\+time\+\_\+gps\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Flag to transmit gps position only once. 
+
+\Hypertarget{sys_mon___r_f___comms_8c_af2189f9f55e3511c9cbe9c5b43f1dbfa}\label{sys_mon___r_f___comms_8c_af2189f9f55e3511c9cbe9c5b43f1dbfa} 
+\index{sysMon\_RF\_Comms.c@{sysMon\_RF\_Comms.c}!R100\_acc@{R100\_acc}}
+\index{R100\_acc@{R100\_acc}!sysMon\_RF\_Comms.c@{sysMon\_RF\_Comms.c}}
+\doxysubsubsection{\texorpdfstring{R100\_acc}{R100\_acc}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structacc__config__t}{acc\+\_\+config\+\_\+t}} R100\+\_\+acc\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+ACC data. 
+
+\Hypertarget{sys_mon___r_f___comms_8c_a30b1d67adb2fa0b8f99bfca1cc363d33}\label{sys_mon___r_f___comms_8c_a30b1d67adb2fa0b8f99bfca1cc363d33} 
+\index{sysMon\_RF\_Comms.c@{sysMon\_RF\_Comms.c}!R100\_gps@{R100\_gps}}
+\index{R100\_gps@{R100\_gps}!sysMon\_RF\_Comms.c@{sysMon\_RF\_Comms.c}}
+\doxysubsubsection{\texorpdfstring{R100\_gps}{R100\_gps}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structgps__config__t}{gps\+\_\+config\+\_\+t}} R100\+\_\+gps\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+GPS data. 
+

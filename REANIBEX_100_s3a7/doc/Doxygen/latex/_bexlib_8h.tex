@@ -1,0 +1,465 @@
+\doxysection{C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\+SCE/\+Bexlib.h File Reference}
+\hypertarget{_bexlib_8h}{}\label{_bexlib_8h}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/SCE/Bexlib.h@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/SCE/Bexlib.h}}
+{\ttfamily \#include "{}cryptoauthlib.\+h"{}}\newline
+{\ttfamily \#include "{}atca\+\_\+status.\+h"{}}\newline
+{\ttfamily \#include "{}atca\+\_\+debug.\+h"{}}\newline
+{\ttfamily \#include "{}atca\+\_\+iface.\+h"{}}\newline
+{\ttfamily \#include "{}atca\+\_\+devtypes.\+h"{}}\newline
+{\ttfamily \#include "{}atca\+\_\+helpers.\+h"{}}\newline
+{\ttfamily \#include "{}atca\+\_\+cfgs.\+h"{}}\newline
+{\ttfamily \#include "{}atca\+\_\+device.\+h"{}}\newline
+{\ttfamily \#include "{}atca\+\_\+basic.\+h"{}}\newline
+{\ttfamily \#include "{}atca\+\_\+hal.\+h"{}}\newline
+{\ttfamily \#include "{}calib\+\_\+basic.\+h"{}}\newline
+{\ttfamily \#include "{}calib\+\_\+command.\+h"{}}\newline
+{\ttfamily \#include "{}calib\+\_\+execution.\+h"{}}\newline
+{\ttfamily \#include "{}calib\+\_\+aes\+\_\+gcm.\+h"{}}\newline
+{\ttfamily \#include "{}atca\+\_\+crypto\+\_\+sw.\+h"{}}\newline
+{\ttfamily \#include "{}atca\+\_\+crypto\+\_\+sw\+\_\+sha2.\+h"{}}\newline
+{\ttfamily \#include "{}atca\+\_\+crypto\+\_\+hw\+\_\+aes.\+h"{}}\newline
+{\ttfamily \#include "{}types\+\_\+basic.\+h"{}}\newline
+Include dependency graph for Bexlib.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_bexlib_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_bexlib_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structdevice__object__meta__t}{device\+\_\+object\+\_\+meta\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_bexlib_8h_ac807d70ba04dd046bf08717ad338ff6b}{MYLIB\+\_\+\+H\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{_bexlib_8h_a6d5e90cd36581323f48a3aebcf70b584}{test\+\_\+assert\+\_\+config\+\_\+is\+\_\+locked}}()~atca\+\_\+test\+\_\+assert\+\_\+config\+\_\+is\+\_\+locked(\+\_\+\+\_\+\+LINE\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{_bexlib_8h_ae49922c6cfaea96dd0f9aa40c2fb48b7}{test\+\_\+assert\+\_\+data\+\_\+is\+\_\+locked}}()~atca\+\_\+test\+\_\+assert\+\_\+data\+\_\+is\+\_\+locked(\+\_\+\+\_\+\+LINE\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{_bexlib_8h_a2b5b310f91726b77b891c1ffd9cc8348}{check\+\_\+config\+\_\+aes\+\_\+enable}}()~atca\+\_\+test\+\_\+assert\+\_\+aes\+\_\+enabled(\+\_\+\+\_\+\+LINE\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{_bexlib_8h_a582623567fbcf25c9494ce8733b838a4}{test\+\_\+assert\+\_\+data\+\_\+is\+\_\+unlocked}}()~atca\+\_\+test\+\_\+assert\+\_\+data\+\_\+is\+\_\+unlocked(\+\_\+\+\_\+\+LINE\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{_bexlib_8h_a57c51dd2cd975a5fe64e2e88391d3248}{TEST\+\_\+\+TYPE\+\_\+\+ECC\+\_\+\+SIGN}}~(1)
+\item 
+\#define \mbox{\hyperlink{_bexlib_8h_a6b43c5157b9f8dbaedf1262d6b415764}{TEST\+\_\+\+TYPE\+\_\+\+ECC\+\_\+\+VERIFY}}~(2)
+\item 
+\#define \mbox{\hyperlink{_bexlib_8h_acf0c18230b167f6f03ebf6d125728e20}{TEST\+\_\+\+TYPE\+\_\+\+ECC\+\_\+\+GENKEY}}~(3)
+\item 
+\#define \mbox{\hyperlink{_bexlib_8h_a7f2528f2c20730a9f908e83937cc3339}{TEST\+\_\+\+TYPE\+\_\+\+AES}}~(4)
+\item 
+\#define \mbox{\hyperlink{_bexlib_8h_ae9b1756f4a1d0888341f1b6ce88468ed}{TEST\+\_\+\+TYPE\+\_\+\+DATA}}~(5)
+\item 
+\#define \mbox{\hyperlink{_bexlib_8h_addc8e7fce683e7fe59030bd088c4440a}{TEST\+\_\+\+TYPE\+\_\+\+HMAC}}~(6)
+\item 
+\#define \mbox{\hyperlink{_bexlib_8h_a34a93fbb6f1b7e6d52fc737cce1af986}{TEST\+\_\+\+TYPE\+\_\+\+ECDH}}~(7)
+\item 
+\#define \mbox{\hyperlink{_bexlib_8h_adf10a8936be1b9dafab3d08235611c37}{TEST\+\_\+\+TYPE\+\_\+\+AUTH\+\_\+\+HMAC}}~(8)
+\item 
+\#define \mbox{\hyperlink{_bexlib_8h_aad0d3b283fb8b5f232691efafbcdc7dc}{TEST\+\_\+\+TYPE\+\_\+\+AUTH\+\_\+\+CMAC}}~(9)
+\item 
+\#define \mbox{\hyperlink{_bexlib_8h_a7fa9e54f02a4b6a1cf4c04f9d36bf3bd}{TEST\+\_\+\+TYPE\+\_\+\+AUTH\+\_\+\+GCM}}~(10)
+\item 
+\#define \mbox{\hyperlink{_bexlib_8h_a49faa53c1bc41f17f548ea74f57bdca7}{TEST\+\_\+\+TYPE\+\_\+\+ECC\+\_\+\+ROOT\+\_\+\+KEY}}~(11)
+\item 
+\#define \mbox{\hyperlink{_bexlib_8h_a30d8fe674f96279787cbcd14d81dba07}{TEST\+\_\+\+TYPE\+\_\+\+TEMPLATE\+\_\+\+DATA}}~(12)
+\item 
+\#define \mbox{\hyperlink{_bexlib_8h_ae2b8b83a391064fdc328868dbfaf23eb}{AES\+\_\+\+CONFIG\+\_\+\+ENABLE\+\_\+\+BIT\+\_\+\+MASK}}~(\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}})0x01
+\item 
+\#define \mbox{\hyperlink{_bexlib_8h_a5c76dbcaafb6db2a52336cf5d4835290}{UNITY\+\_\+\+LINE\+\_\+\+TYPE}}~\mbox{\hyperlink{_bexlib_8h_abb5d2d06855829696244db2ff89290bd}{UNITY\+\_\+\+UINT}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef unsigned int \mbox{\hyperlink{_bexlib_8h_a711b62bcec9cafcd46479a4832adfa55}{UNITY\+\_\+\+UINT32}}
+\item 
+typedef \mbox{\hyperlink{_bexlib_8h_a711b62bcec9cafcd46479a4832adfa55}{UNITY\+\_\+\+UINT32}} \mbox{\hyperlink{_bexlib_8h_abb5d2d06855829696244db2ff89290bd}{UNITY\+\_\+\+UINT}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{_bexlib_8h_ac120fd4689996553dd52f8d684223bed}{factorial}} (int input)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{_bexlib_8h_ad16d15bef3008d9e9fdba6c129c6b02a}{test\+\_\+ecdh\+\_\+protection\+\_\+key}} (\mbox{\hyperlink{struct_a_t_c_a_iface_cfg}{ATCAIface\+Cfg}} \texorpdfstring{$\ast$}{*}cfg)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{_bexlib_8h_a433bcde2b0560ab9329168a19bb97f5a}{test\+\_\+ecdh}} (\mbox{\hyperlink{struct_a_t_c_a_iface_cfg}{ATCAIface\+Cfg}} \texorpdfstring{$\ast$}{*}cfg)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{_bexlib_8h_a18bd64bd1773335d0a991846178e9531}{inject\+\_\+cert}} (int CERTIFICATE\+\_\+\+KEYID, const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}cert, int cert\+\_\+size)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{_bexlib_8h_a13bca9979a4d72c1347716ab97640768}{read\+\_\+cert}} (int CERTIFICATE\+\_\+\+KEYID, const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}cert, int \texorpdfstring{$\ast$}{*}cert\+\_\+size)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{_bexlib_8h_aa2e18d5e36e2a3d1fdde9e9d8f956b63}{get\+\_\+random}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}rnd\+Data)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{_bexlib_8h_a714e82a6406162ea52c4bd4f57e3e716}{gen\+\_\+key}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}pub\+Key, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}key\+ID)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{_bexlib_8h_ab7ea9edc70de0cc478c641bd7015af01}{get\+\_\+key}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}pub\+Key, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}key\+ID)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{_bexlib_8h_ac08fcf05b9b1c0d7405ba1bc3e5deb07}{asymmetric\+\_\+sign}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \texorpdfstring{$\ast$}{*}private\+\_\+key\+\_\+id, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}msg, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}signature)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{_bexlib_8h_a5e91ba4a563a33d012ca575fc0424025}{asymmetric\+\_\+verify}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \texorpdfstring{$\ast$}{*}key\+\_\+id, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}msg, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}signature, bool \texorpdfstring{$\ast$}{*}is\+\_\+verified)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{_bexlib_8h_ae93687b8fa5f12b399d5120213b87c22}{sha\+\_\+digest}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}msg, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}digest, \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \texorpdfstring{$\ast$}{*}msg\+\_\+size)
+\item 
+void \mbox{\hyperlink{_bexlib_8h_a46639b457784501fa39bebd30da980e2}{sha\+\_\+s\+\_\+digest}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}msg, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}digest, \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \texorpdfstring{$\ast$}{*}msg\+\_\+size)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{_bexlib_8h_a810fa7098125552c4f323d81ff9effee}{gen\+\_\+aes\+\_\+key}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}key\+ID)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{_bexlib_8h_a10aba16e02150145d2410accc6bdf10f}{get\+\_\+aes\+\_\+key}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}aes\+Key, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}key\+ID, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}key\+\_\+block)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{_bexlib_8h_aa262635e35b6b414ae9bc62730b7dec0}{aes\+\_\+encrypt\+\_\+slot}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}key\+\_\+slot, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}key\+\_\+block, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}msg, size\+\_\+t \texorpdfstring{$\ast$}{*}msg\+\_\+size, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}encrypted\+\_\+data\+\_\+out)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{_bexlib_8h_ac884a84e207cf1d1b5f3d66d5a8ad8fb}{aes\+\_\+decrypt\+\_\+slot}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}key\+\_\+slot, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}key\+\_\+block, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}ciphertext, size\+\_\+t \texorpdfstring{$\ast$}{*}ciphertext\+\_\+size, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}decrypted\+\_\+data\+\_\+out)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{_bexlib_8h_aa29bf6afa7068025ca8d93fc512f41f1}{check\+\_\+config\+\_\+is\+\_\+locked}} (void)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{_bexlib_8h_ad30c98d7226f1b473c74757a7bf7828c}{check\+\_\+data\+\_\+is\+\_\+locked}} (void)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{_bexlib_8h_afd3a1b37083b1c1901f6ec6324c1b2d6}{check\+\_\+aes\+\_\+enabled}} (void)
+\item 
+void \mbox{\hyperlink{_bexlib_8h_a303154c70ed1538bd946df8696a78bce}{init\+\_\+\+Device}} (\mbox{\hyperlink{group__interface_ga75c11126f3fe81df3d6c27f5bb393303}{ATCAIface}} atecc, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} address, int retries)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{_bexlib_8h_ad4df1b6755e2d5b5d9e810371e45ca8c}{hal\+\_\+i2c\+\_\+wake}} (\mbox{\hyperlink{group__interface_ga75c11126f3fe81df3d6c27f5bb393303}{ATCAIface}} iface)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{_bexlib_8h_a2a28504f206155a1785520963434e317}{calib\+\_\+config\+\_\+get\+\_\+slot\+\_\+by\+\_\+test}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} test\+\_\+type, \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \texorpdfstring{$\ast$}{*}handle)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{_bexlib_8h_a9f22564947cecda2675b540fd06ae358}{g\+\_\+slot4\+\_\+key}} \mbox{[}$\,$\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{_bexlib_8h_ae2b8b83a391064fdc328868dbfaf23eb}\label{_bexlib_8h_ae2b8b83a391064fdc328868dbfaf23eb} 
+\index{Bexlib.h@{Bexlib.h}!AES\_CONFIG\_ENABLE\_BIT\_MASK@{AES\_CONFIG\_ENABLE\_BIT\_MASK}}
+\index{AES\_CONFIG\_ENABLE\_BIT\_MASK@{AES\_CONFIG\_ENABLE\_BIT\_MASK}!Bexlib.h@{Bexlib.h}}
+\doxysubsubsection{\texorpdfstring{AES\_CONFIG\_ENABLE\_BIT\_MASK}{AES\_CONFIG\_ENABLE\_BIT\_MASK}}
+{\footnotesize\ttfamily \#define AES\+\_\+\+CONFIG\+\_\+\+ENABLE\+\_\+\+BIT\+\_\+\+MASK~(\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}})0x01}
+
+\Hypertarget{_bexlib_8h_a2b5b310f91726b77b891c1ffd9cc8348}\label{_bexlib_8h_a2b5b310f91726b77b891c1ffd9cc8348} 
+\index{Bexlib.h@{Bexlib.h}!check\_config\_aes\_enable@{check\_config\_aes\_enable}}
+\index{check\_config\_aes\_enable@{check\_config\_aes\_enable}!Bexlib.h@{Bexlib.h}}
+\doxysubsubsection{\texorpdfstring{check\_config\_aes\_enable}{check\_config\_aes\_enable}}
+{\footnotesize\ttfamily \#define check\+\_\+config\+\_\+aes\+\_\+enable(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~atca\+\_\+test\+\_\+assert\+\_\+aes\+\_\+enabled(\+\_\+\+\_\+\+LINE\+\_\+\+\_\+)}
+
+\Hypertarget{_bexlib_8h_ac807d70ba04dd046bf08717ad338ff6b}\label{_bexlib_8h_ac807d70ba04dd046bf08717ad338ff6b} 
+\index{Bexlib.h@{Bexlib.h}!MYLIB\_H\_@{MYLIB\_H\_}}
+\index{MYLIB\_H\_@{MYLIB\_H\_}!Bexlib.h@{Bexlib.h}}
+\doxysubsubsection{\texorpdfstring{MYLIB\_H\_}{MYLIB\_H\_}}
+{\footnotesize\ttfamily \#define MYLIB\+\_\+\+H\+\_\+}
+
+\Hypertarget{_bexlib_8h_a6d5e90cd36581323f48a3aebcf70b584}\label{_bexlib_8h_a6d5e90cd36581323f48a3aebcf70b584} 
+\index{Bexlib.h@{Bexlib.h}!test\_assert\_config\_is\_locked@{test\_assert\_config\_is\_locked}}
+\index{test\_assert\_config\_is\_locked@{test\_assert\_config\_is\_locked}!Bexlib.h@{Bexlib.h}}
+\doxysubsubsection{\texorpdfstring{test\_assert\_config\_is\_locked}{test\_assert\_config\_is\_locked}}
+{\footnotesize\ttfamily \#define test\+\_\+assert\+\_\+config\+\_\+is\+\_\+locked(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~atca\+\_\+test\+\_\+assert\+\_\+config\+\_\+is\+\_\+locked(\+\_\+\+\_\+\+LINE\+\_\+\+\_\+)}
+
+\Hypertarget{_bexlib_8h_ae49922c6cfaea96dd0f9aa40c2fb48b7}\label{_bexlib_8h_ae49922c6cfaea96dd0f9aa40c2fb48b7} 
+\index{Bexlib.h@{Bexlib.h}!test\_assert\_data\_is\_locked@{test\_assert\_data\_is\_locked}}
+\index{test\_assert\_data\_is\_locked@{test\_assert\_data\_is\_locked}!Bexlib.h@{Bexlib.h}}
+\doxysubsubsection{\texorpdfstring{test\_assert\_data\_is\_locked}{test\_assert\_data\_is\_locked}}
+{\footnotesize\ttfamily \#define test\+\_\+assert\+\_\+data\+\_\+is\+\_\+locked(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~atca\+\_\+test\+\_\+assert\+\_\+data\+\_\+is\+\_\+locked(\+\_\+\+\_\+\+LINE\+\_\+\+\_\+)}
+
+\Hypertarget{_bexlib_8h_a582623567fbcf25c9494ce8733b838a4}\label{_bexlib_8h_a582623567fbcf25c9494ce8733b838a4} 
+\index{Bexlib.h@{Bexlib.h}!test\_assert\_data\_is\_unlocked@{test\_assert\_data\_is\_unlocked}}
+\index{test\_assert\_data\_is\_unlocked@{test\_assert\_data\_is\_unlocked}!Bexlib.h@{Bexlib.h}}
+\doxysubsubsection{\texorpdfstring{test\_assert\_data\_is\_unlocked}{test\_assert\_data\_is\_unlocked}}
+{\footnotesize\ttfamily \#define test\+\_\+assert\+\_\+data\+\_\+is\+\_\+unlocked(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~atca\+\_\+test\+\_\+assert\+\_\+data\+\_\+is\+\_\+unlocked(\+\_\+\+\_\+\+LINE\+\_\+\+\_\+)}
+
+\Hypertarget{_bexlib_8h_a7f2528f2c20730a9f908e83937cc3339}\label{_bexlib_8h_a7f2528f2c20730a9f908e83937cc3339} 
+\index{Bexlib.h@{Bexlib.h}!TEST\_TYPE\_AES@{TEST\_TYPE\_AES}}
+\index{TEST\_TYPE\_AES@{TEST\_TYPE\_AES}!Bexlib.h@{Bexlib.h}}
+\doxysubsubsection{\texorpdfstring{TEST\_TYPE\_AES}{TEST\_TYPE\_AES}}
+{\footnotesize\ttfamily \#define TEST\+\_\+\+TYPE\+\_\+\+AES~(4)}
+
+\Hypertarget{_bexlib_8h_aad0d3b283fb8b5f232691efafbcdc7dc}\label{_bexlib_8h_aad0d3b283fb8b5f232691efafbcdc7dc} 
+\index{Bexlib.h@{Bexlib.h}!TEST\_TYPE\_AUTH\_CMAC@{TEST\_TYPE\_AUTH\_CMAC}}
+\index{TEST\_TYPE\_AUTH\_CMAC@{TEST\_TYPE\_AUTH\_CMAC}!Bexlib.h@{Bexlib.h}}
+\doxysubsubsection{\texorpdfstring{TEST\_TYPE\_AUTH\_CMAC}{TEST\_TYPE\_AUTH\_CMAC}}
+{\footnotesize\ttfamily \#define TEST\+\_\+\+TYPE\+\_\+\+AUTH\+\_\+\+CMAC~(9)}
+
+\Hypertarget{_bexlib_8h_a7fa9e54f02a4b6a1cf4c04f9d36bf3bd}\label{_bexlib_8h_a7fa9e54f02a4b6a1cf4c04f9d36bf3bd} 
+\index{Bexlib.h@{Bexlib.h}!TEST\_TYPE\_AUTH\_GCM@{TEST\_TYPE\_AUTH\_GCM}}
+\index{TEST\_TYPE\_AUTH\_GCM@{TEST\_TYPE\_AUTH\_GCM}!Bexlib.h@{Bexlib.h}}
+\doxysubsubsection{\texorpdfstring{TEST\_TYPE\_AUTH\_GCM}{TEST\_TYPE\_AUTH\_GCM}}
+{\footnotesize\ttfamily \#define TEST\+\_\+\+TYPE\+\_\+\+AUTH\+\_\+\+GCM~(10)}
+
+\Hypertarget{_bexlib_8h_adf10a8936be1b9dafab3d08235611c37}\label{_bexlib_8h_adf10a8936be1b9dafab3d08235611c37} 
+\index{Bexlib.h@{Bexlib.h}!TEST\_TYPE\_AUTH\_HMAC@{TEST\_TYPE\_AUTH\_HMAC}}
+\index{TEST\_TYPE\_AUTH\_HMAC@{TEST\_TYPE\_AUTH\_HMAC}!Bexlib.h@{Bexlib.h}}
+\doxysubsubsection{\texorpdfstring{TEST\_TYPE\_AUTH\_HMAC}{TEST\_TYPE\_AUTH\_HMAC}}
+{\footnotesize\ttfamily \#define TEST\+\_\+\+TYPE\+\_\+\+AUTH\+\_\+\+HMAC~(8)}
+
+\Hypertarget{_bexlib_8h_ae9b1756f4a1d0888341f1b6ce88468ed}\label{_bexlib_8h_ae9b1756f4a1d0888341f1b6ce88468ed} 
+\index{Bexlib.h@{Bexlib.h}!TEST\_TYPE\_DATA@{TEST\_TYPE\_DATA}}
+\index{TEST\_TYPE\_DATA@{TEST\_TYPE\_DATA}!Bexlib.h@{Bexlib.h}}
+\doxysubsubsection{\texorpdfstring{TEST\_TYPE\_DATA}{TEST\_TYPE\_DATA}}
+{\footnotesize\ttfamily \#define TEST\+\_\+\+TYPE\+\_\+\+DATA~(5)}
+
+\Hypertarget{_bexlib_8h_acf0c18230b167f6f03ebf6d125728e20}\label{_bexlib_8h_acf0c18230b167f6f03ebf6d125728e20} 
+\index{Bexlib.h@{Bexlib.h}!TEST\_TYPE\_ECC\_GENKEY@{TEST\_TYPE\_ECC\_GENKEY}}
+\index{TEST\_TYPE\_ECC\_GENKEY@{TEST\_TYPE\_ECC\_GENKEY}!Bexlib.h@{Bexlib.h}}
+\doxysubsubsection{\texorpdfstring{TEST\_TYPE\_ECC\_GENKEY}{TEST\_TYPE\_ECC\_GENKEY}}
+{\footnotesize\ttfamily \#define TEST\+\_\+\+TYPE\+\_\+\+ECC\+\_\+\+GENKEY~(3)}
+
+\Hypertarget{_bexlib_8h_a49faa53c1bc41f17f548ea74f57bdca7}\label{_bexlib_8h_a49faa53c1bc41f17f548ea74f57bdca7} 
+\index{Bexlib.h@{Bexlib.h}!TEST\_TYPE\_ECC\_ROOT\_KEY@{TEST\_TYPE\_ECC\_ROOT\_KEY}}
+\index{TEST\_TYPE\_ECC\_ROOT\_KEY@{TEST\_TYPE\_ECC\_ROOT\_KEY}!Bexlib.h@{Bexlib.h}}
+\doxysubsubsection{\texorpdfstring{TEST\_TYPE\_ECC\_ROOT\_KEY}{TEST\_TYPE\_ECC\_ROOT\_KEY}}
+{\footnotesize\ttfamily \#define TEST\+\_\+\+TYPE\+\_\+\+ECC\+\_\+\+ROOT\+\_\+\+KEY~(11)}
+
+\Hypertarget{_bexlib_8h_a57c51dd2cd975a5fe64e2e88391d3248}\label{_bexlib_8h_a57c51dd2cd975a5fe64e2e88391d3248} 
+\index{Bexlib.h@{Bexlib.h}!TEST\_TYPE\_ECC\_SIGN@{TEST\_TYPE\_ECC\_SIGN}}
+\index{TEST\_TYPE\_ECC\_SIGN@{TEST\_TYPE\_ECC\_SIGN}!Bexlib.h@{Bexlib.h}}
+\doxysubsubsection{\texorpdfstring{TEST\_TYPE\_ECC\_SIGN}{TEST\_TYPE\_ECC\_SIGN}}
+{\footnotesize\ttfamily \#define TEST\+\_\+\+TYPE\+\_\+\+ECC\+\_\+\+SIGN~(1)}
+
+\Hypertarget{_bexlib_8h_a6b43c5157b9f8dbaedf1262d6b415764}\label{_bexlib_8h_a6b43c5157b9f8dbaedf1262d6b415764} 
+\index{Bexlib.h@{Bexlib.h}!TEST\_TYPE\_ECC\_VERIFY@{TEST\_TYPE\_ECC\_VERIFY}}
+\index{TEST\_TYPE\_ECC\_VERIFY@{TEST\_TYPE\_ECC\_VERIFY}!Bexlib.h@{Bexlib.h}}
+\doxysubsubsection{\texorpdfstring{TEST\_TYPE\_ECC\_VERIFY}{TEST\_TYPE\_ECC\_VERIFY}}
+{\footnotesize\ttfamily \#define TEST\+\_\+\+TYPE\+\_\+\+ECC\+\_\+\+VERIFY~(2)}
+
+\Hypertarget{_bexlib_8h_a34a93fbb6f1b7e6d52fc737cce1af986}\label{_bexlib_8h_a34a93fbb6f1b7e6d52fc737cce1af986} 
+\index{Bexlib.h@{Bexlib.h}!TEST\_TYPE\_ECDH@{TEST\_TYPE\_ECDH}}
+\index{TEST\_TYPE\_ECDH@{TEST\_TYPE\_ECDH}!Bexlib.h@{Bexlib.h}}
+\doxysubsubsection{\texorpdfstring{TEST\_TYPE\_ECDH}{TEST\_TYPE\_ECDH}}
+{\footnotesize\ttfamily \#define TEST\+\_\+\+TYPE\+\_\+\+ECDH~(7)}
+
+\Hypertarget{_bexlib_8h_addc8e7fce683e7fe59030bd088c4440a}\label{_bexlib_8h_addc8e7fce683e7fe59030bd088c4440a} 
+\index{Bexlib.h@{Bexlib.h}!TEST\_TYPE\_HMAC@{TEST\_TYPE\_HMAC}}
+\index{TEST\_TYPE\_HMAC@{TEST\_TYPE\_HMAC}!Bexlib.h@{Bexlib.h}}
+\doxysubsubsection{\texorpdfstring{TEST\_TYPE\_HMAC}{TEST\_TYPE\_HMAC}}
+{\footnotesize\ttfamily \#define TEST\+\_\+\+TYPE\+\_\+\+HMAC~(6)}
+
+\Hypertarget{_bexlib_8h_a30d8fe674f96279787cbcd14d81dba07}\label{_bexlib_8h_a30d8fe674f96279787cbcd14d81dba07} 
+\index{Bexlib.h@{Bexlib.h}!TEST\_TYPE\_TEMPLATE\_DATA@{TEST\_TYPE\_TEMPLATE\_DATA}}
+\index{TEST\_TYPE\_TEMPLATE\_DATA@{TEST\_TYPE\_TEMPLATE\_DATA}!Bexlib.h@{Bexlib.h}}
+\doxysubsubsection{\texorpdfstring{TEST\_TYPE\_TEMPLATE\_DATA}{TEST\_TYPE\_TEMPLATE\_DATA}}
+{\footnotesize\ttfamily \#define TEST\+\_\+\+TYPE\+\_\+\+TEMPLATE\+\_\+\+DATA~(12)}
+
+\Hypertarget{_bexlib_8h_a5c76dbcaafb6db2a52336cf5d4835290}\label{_bexlib_8h_a5c76dbcaafb6db2a52336cf5d4835290} 
+\index{Bexlib.h@{Bexlib.h}!UNITY\_LINE\_TYPE@{UNITY\_LINE\_TYPE}}
+\index{UNITY\_LINE\_TYPE@{UNITY\_LINE\_TYPE}!Bexlib.h@{Bexlib.h}}
+\doxysubsubsection{\texorpdfstring{UNITY\_LINE\_TYPE}{UNITY\_LINE\_TYPE}}
+{\footnotesize\ttfamily \#define UNITY\+\_\+\+LINE\+\_\+\+TYPE~\mbox{\hyperlink{_bexlib_8h_abb5d2d06855829696244db2ff89290bd}{UNITY\+\_\+\+UINT}}}
+
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{_bexlib_8h_abb5d2d06855829696244db2ff89290bd}\label{_bexlib_8h_abb5d2d06855829696244db2ff89290bd} 
+\index{Bexlib.h@{Bexlib.h}!UNITY\_UINT@{UNITY\_UINT}}
+\index{UNITY\_UINT@{UNITY\_UINT}!Bexlib.h@{Bexlib.h}}
+\doxysubsubsection{\texorpdfstring{UNITY\_UINT}{UNITY\_UINT}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{_bexlib_8h_a711b62bcec9cafcd46479a4832adfa55}{UNITY\+\_\+\+UINT32}} \mbox{\hyperlink{_bexlib_8h_abb5d2d06855829696244db2ff89290bd}{UNITY\+\_\+\+UINT}}}
+
+\Hypertarget{_bexlib_8h_a711b62bcec9cafcd46479a4832adfa55}\label{_bexlib_8h_a711b62bcec9cafcd46479a4832adfa55} 
+\index{Bexlib.h@{Bexlib.h}!UNITY\_UINT32@{UNITY\_UINT32}}
+\index{UNITY\_UINT32@{UNITY\_UINT32}!Bexlib.h@{Bexlib.h}}
+\doxysubsubsection{\texorpdfstring{UNITY\_UINT32}{UNITY\_UINT32}}
+{\footnotesize\ttfamily typedef unsigned int \mbox{\hyperlink{_bexlib_8h_a711b62bcec9cafcd46479a4832adfa55}{UNITY\+\_\+\+UINT32}}}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_bexlib_8h_ac884a84e207cf1d1b5f3d66d5a8ad8fb}\label{_bexlib_8h_ac884a84e207cf1d1b5f3d66d5a8ad8fb} 
+\index{Bexlib.h@{Bexlib.h}!aes\_decrypt\_slot@{aes\_decrypt\_slot}}
+\index{aes\_decrypt\_slot@{aes\_decrypt\_slot}!Bexlib.h@{Bexlib.h}}
+\doxysubsubsection{\texorpdfstring{aes\_decrypt\_slot()}{aes\_decrypt\_slot()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} aes\+\_\+decrypt\+\_\+slot (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{key\+\_\+slot,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{key\+\_\+block,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{ciphertext,  }\item[{size\+\_\+t \texorpdfstring{$\ast$}{*}}]{ciphertext\+\_\+size,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{decrypted\+\_\+data\+\_\+out }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_bexlib_8h_ac884a84e207cf1d1b5f3d66d5a8ad8fb_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_bexlib_8h_aa262635e35b6b414ae9bc62730b7dec0}\label{_bexlib_8h_aa262635e35b6b414ae9bc62730b7dec0} 
+\index{Bexlib.h@{Bexlib.h}!aes\_encrypt\_slot@{aes\_encrypt\_slot}}
+\index{aes\_encrypt\_slot@{aes\_encrypt\_slot}!Bexlib.h@{Bexlib.h}}
+\doxysubsubsection{\texorpdfstring{aes\_encrypt\_slot()}{aes\_encrypt\_slot()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} aes\+\_\+encrypt\+\_\+slot (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{key\+\_\+slot,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{key\+\_\+block,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{msg,  }\item[{size\+\_\+t \texorpdfstring{$\ast$}{*}}]{msg\+\_\+size,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{encrypted\+\_\+data\+\_\+out }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_bexlib_8h_aa262635e35b6b414ae9bc62730b7dec0_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_bexlib_8h_ac08fcf05b9b1c0d7405ba1bc3e5deb07}\label{_bexlib_8h_ac08fcf05b9b1c0d7405ba1bc3e5deb07} 
+\index{Bexlib.h@{Bexlib.h}!asymmetric\_sign@{asymmetric\_sign}}
+\index{asymmetric\_sign@{asymmetric\_sign}!Bexlib.h@{Bexlib.h}}
+\doxysubsubsection{\texorpdfstring{asymmetric\_sign()}{asymmetric\_sign()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} asymmetric\+\_\+sign (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{private\+\_\+key\+\_\+id,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{msg,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{signature }\end{DoxyParamCaption})}
+
+\Hypertarget{_bexlib_8h_a5e91ba4a563a33d012ca575fc0424025}\label{_bexlib_8h_a5e91ba4a563a33d012ca575fc0424025} 
+\index{Bexlib.h@{Bexlib.h}!asymmetric\_verify@{asymmetric\_verify}}
+\index{asymmetric\_verify@{asymmetric\_verify}!Bexlib.h@{Bexlib.h}}
+\doxysubsubsection{\texorpdfstring{asymmetric\_verify()}{asymmetric\_verify()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} asymmetric\+\_\+verify (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{key\+\_\+id,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{msg,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{signature,  }\item[{bool \texorpdfstring{$\ast$}{*}}]{is\+\_\+verified }\end{DoxyParamCaption})}
+
+\Hypertarget{_bexlib_8h_a2a28504f206155a1785520963434e317}\label{_bexlib_8h_a2a28504f206155a1785520963434e317} 
+\index{Bexlib.h@{Bexlib.h}!calib\_config\_get\_slot\_by\_test@{calib\_config\_get\_slot\_by\_test}}
+\index{calib\_config\_get\_slot\_by\_test@{calib\_config\_get\_slot\_by\_test}!Bexlib.h@{Bexlib.h}}
+\doxysubsubsection{\texorpdfstring{calib\_config\_get\_slot\_by\_test()}{calib\_config\_get\_slot\_by\_test()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} calib\+\_\+config\+\_\+get\+\_\+slot\+\_\+by\+\_\+test (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{test\+\_\+type,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{handle }\end{DoxyParamCaption})}
+
+\Hypertarget{_bexlib_8h_afd3a1b37083b1c1901f6ec6324c1b2d6}\label{_bexlib_8h_afd3a1b37083b1c1901f6ec6324c1b2d6} 
+\index{Bexlib.h@{Bexlib.h}!check\_aes\_enabled@{check\_aes\_enabled}}
+\index{check\_aes\_enabled@{check\_aes\_enabled}!Bexlib.h@{Bexlib.h}}
+\doxysubsubsection{\texorpdfstring{check\_aes\_enabled()}{check\_aes\_enabled()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} check\+\_\+aes\+\_\+enabled (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{_bexlib_8h_aa29bf6afa7068025ca8d93fc512f41f1}\label{_bexlib_8h_aa29bf6afa7068025ca8d93fc512f41f1} 
+\index{Bexlib.h@{Bexlib.h}!check\_config\_is\_locked@{check\_config\_is\_locked}}
+\index{check\_config\_is\_locked@{check\_config\_is\_locked}!Bexlib.h@{Bexlib.h}}
+\doxysubsubsection{\texorpdfstring{check\_config\_is\_locked()}{check\_config\_is\_locked()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} check\+\_\+config\+\_\+is\+\_\+locked (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{_bexlib_8h_ad30c98d7226f1b473c74757a7bf7828c}\label{_bexlib_8h_ad30c98d7226f1b473c74757a7bf7828c} 
+\index{Bexlib.h@{Bexlib.h}!check\_data\_is\_locked@{check\_data\_is\_locked}}
+\index{check\_data\_is\_locked@{check\_data\_is\_locked}!Bexlib.h@{Bexlib.h}}
+\doxysubsubsection{\texorpdfstring{check\_data\_is\_locked()}{check\_data\_is\_locked()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} check\+\_\+data\+\_\+is\+\_\+locked (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{_bexlib_8h_ac120fd4689996553dd52f8d684223bed}\label{_bexlib_8h_ac120fd4689996553dd52f8d684223bed} 
+\index{Bexlib.h@{Bexlib.h}!factorial@{factorial}}
+\index{factorial@{factorial}!Bexlib.h@{Bexlib.h}}
+\doxysubsubsection{\texorpdfstring{factorial()}{factorial()}}
+{\footnotesize\ttfamily int factorial (\begin{DoxyParamCaption}\item[{int}]{input }\end{DoxyParamCaption})}
+
+\Hypertarget{_bexlib_8h_a810fa7098125552c4f323d81ff9effee}\label{_bexlib_8h_a810fa7098125552c4f323d81ff9effee} 
+\index{Bexlib.h@{Bexlib.h}!gen\_aes\_key@{gen\_aes\_key}}
+\index{gen\_aes\_key@{gen\_aes\_key}!Bexlib.h@{Bexlib.h}}
+\doxysubsubsection{\texorpdfstring{gen\_aes\_key()}{gen\_aes\_key()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} gen\+\_\+aes\+\_\+key (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{key\+ID }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_bexlib_8h_a810fa7098125552c4f323d81ff9effee_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_bexlib_8h_a714e82a6406162ea52c4bd4f57e3e716}\label{_bexlib_8h_a714e82a6406162ea52c4bd4f57e3e716} 
+\index{Bexlib.h@{Bexlib.h}!gen\_key@{gen\_key}}
+\index{gen\_key@{gen\_key}!Bexlib.h@{Bexlib.h}}
+\doxysubsubsection{\texorpdfstring{gen\_key()}{gen\_key()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} gen\+\_\+key (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{pub\+Key,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{key\+ID }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_bexlib_8h_a714e82a6406162ea52c4bd4f57e3e716_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_bexlib_8h_a10aba16e02150145d2410accc6bdf10f}\label{_bexlib_8h_a10aba16e02150145d2410accc6bdf10f} 
+\index{Bexlib.h@{Bexlib.h}!get\_aes\_key@{get\_aes\_key}}
+\index{get\_aes\_key@{get\_aes\_key}!Bexlib.h@{Bexlib.h}}
+\doxysubsubsection{\texorpdfstring{get\_aes\_key()}{get\_aes\_key()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} get\+\_\+aes\+\_\+key (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{aes\+Key,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{key\+ID,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{key\+\_\+block }\end{DoxyParamCaption})}
+
+\Hypertarget{_bexlib_8h_ab7ea9edc70de0cc478c641bd7015af01}\label{_bexlib_8h_ab7ea9edc70de0cc478c641bd7015af01} 
+\index{Bexlib.h@{Bexlib.h}!get\_key@{get\_key}}
+\index{get\_key@{get\_key}!Bexlib.h@{Bexlib.h}}
+\doxysubsubsection{\texorpdfstring{get\_key()}{get\_key()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} get\+\_\+key (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{pub\+Key,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{key\+ID }\end{DoxyParamCaption})}
+
+\Hypertarget{_bexlib_8h_aa2e18d5e36e2a3d1fdde9e9d8f956b63}\label{_bexlib_8h_aa2e18d5e36e2a3d1fdde9e9d8f956b63} 
+\index{Bexlib.h@{Bexlib.h}!get\_random@{get\_random}}
+\index{get\_random@{get\_random}!Bexlib.h@{Bexlib.h}}
+\doxysubsubsection{\texorpdfstring{get\_random()}{get\_random()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} get\+\_\+random (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{rnd\+Data }\end{DoxyParamCaption})}
+
+\Hypertarget{_bexlib_8h_ad4df1b6755e2d5b5d9e810371e45ca8c}\label{_bexlib_8h_ad4df1b6755e2d5b5d9e810371e45ca8c} 
+\index{Bexlib.h@{Bexlib.h}!hal\_i2c\_wake@{hal\_i2c\_wake}}
+\index{hal\_i2c\_wake@{hal\_i2c\_wake}!Bexlib.h@{Bexlib.h}}
+\doxysubsubsection{\texorpdfstring{hal\_i2c\_wake()}{hal\_i2c\_wake()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} hal\+\_\+i2c\+\_\+wake (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__interface_ga75c11126f3fe81df3d6c27f5bb393303}{ATCAIface}}}]{iface }\end{DoxyParamCaption})}
+
+\Hypertarget{_bexlib_8h_a303154c70ed1538bd946df8696a78bce}\label{_bexlib_8h_a303154c70ed1538bd946df8696a78bce} 
+\index{Bexlib.h@{Bexlib.h}!init\_Device@{init\_Device}}
+\index{init\_Device@{init\_Device}!Bexlib.h@{Bexlib.h}}
+\doxysubsubsection{\texorpdfstring{init\_Device()}{init\_Device()}}
+{\footnotesize\ttfamily void init\+\_\+\+Device (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__interface_ga75c11126f3fe81df3d6c27f5bb393303}{ATCAIface}}}]{atecc,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{address,  }\item[{int}]{retries }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_bexlib_8h_a303154c70ed1538bd946df8696a78bce_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_bexlib_8h_a18bd64bd1773335d0a991846178e9531}\label{_bexlib_8h_a18bd64bd1773335d0a991846178e9531} 
+\index{Bexlib.h@{Bexlib.h}!inject\_cert@{inject\_cert}}
+\index{inject\_cert@{inject\_cert}!Bexlib.h@{Bexlib.h}}
+\doxysubsubsection{\texorpdfstring{inject\_cert()}{inject\_cert()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} inject\+\_\+cert (\begin{DoxyParamCaption}\item[{int}]{CERTIFICATE\+\_\+\+KEYID,  }\item[{const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{cert,  }\item[{int}]{cert\+\_\+size }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_bexlib_8h_a18bd64bd1773335d0a991846178e9531_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_bexlib_8h_a13bca9979a4d72c1347716ab97640768}\label{_bexlib_8h_a13bca9979a4d72c1347716ab97640768} 
+\index{Bexlib.h@{Bexlib.h}!read\_cert@{read\_cert}}
+\index{read\_cert@{read\_cert}!Bexlib.h@{Bexlib.h}}
+\doxysubsubsection{\texorpdfstring{read\_cert()}{read\_cert()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} read\+\_\+cert (\begin{DoxyParamCaption}\item[{int}]{CERTIFICATE\+\_\+\+KEYID,  }\item[{const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{cert,  }\item[{int \texorpdfstring{$\ast$}{*}}]{cert\+\_\+size }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_bexlib_8h_a13bca9979a4d72c1347716ab97640768_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_bexlib_8h_ae93687b8fa5f12b399d5120213b87c22}\label{_bexlib_8h_ae93687b8fa5f12b399d5120213b87c22} 
+\index{Bexlib.h@{Bexlib.h}!sha\_digest@{sha\_digest}}
+\index{sha\_digest@{sha\_digest}!Bexlib.h@{Bexlib.h}}
+\doxysubsubsection{\texorpdfstring{sha\_digest()}{sha\_digest()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} sha\+\_\+digest (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{msg,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{digest,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{msg\+\_\+size }\end{DoxyParamCaption})}
+
+\Hypertarget{_bexlib_8h_a46639b457784501fa39bebd30da980e2}\label{_bexlib_8h_a46639b457784501fa39bebd30da980e2} 
+\index{Bexlib.h@{Bexlib.h}!sha\_s\_digest@{sha\_s\_digest}}
+\index{sha\_s\_digest@{sha\_s\_digest}!Bexlib.h@{Bexlib.h}}
+\doxysubsubsection{\texorpdfstring{sha\_s\_digest()}{sha\_s\_digest()}}
+{\footnotesize\ttfamily void sha\+\_\+s\+\_\+digest (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{msg,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{digest,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{msg\+\_\+size }\end{DoxyParamCaption})}
+
+\Hypertarget{_bexlib_8h_a433bcde2b0560ab9329168a19bb97f5a}\label{_bexlib_8h_a433bcde2b0560ab9329168a19bb97f5a} 
+\index{Bexlib.h@{Bexlib.h}!test\_ecdh@{test\_ecdh}}
+\index{test\_ecdh@{test\_ecdh}!Bexlib.h@{Bexlib.h}}
+\doxysubsubsection{\texorpdfstring{test\_ecdh()}{test\_ecdh()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} test\+\_\+ecdh (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_a_t_c_a_iface_cfg}{ATCAIface\+Cfg}} \texorpdfstring{$\ast$}{*}}]{cfg }\end{DoxyParamCaption})}
+
+\Hypertarget{_bexlib_8h_ad16d15bef3008d9e9fdba6c129c6b02a}\label{_bexlib_8h_ad16d15bef3008d9e9fdba6c129c6b02a} 
+\index{Bexlib.h@{Bexlib.h}!test\_ecdh\_protection\_key@{test\_ecdh\_protection\_key}}
+\index{test\_ecdh\_protection\_key@{test\_ecdh\_protection\_key}!Bexlib.h@{Bexlib.h}}
+\doxysubsubsection{\texorpdfstring{test\_ecdh\_protection\_key()}{test\_ecdh\_protection\_key()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} test\+\_\+ecdh\+\_\+protection\+\_\+key (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_a_t_c_a_iface_cfg}{ATCAIface\+Cfg}} \texorpdfstring{$\ast$}{*}}]{cfg }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{_bexlib_8h_a9f22564947cecda2675b540fd06ae358}\label{_bexlib_8h_a9f22564947cecda2675b540fd06ae358} 
+\index{Bexlib.h@{Bexlib.h}!g\_slot4\_key@{g\_slot4\_key}}
+\index{g\_slot4\_key@{g\_slot4\_key}!Bexlib.h@{Bexlib.h}}
+\doxysubsubsection{\texorpdfstring{g\_slot4\_key}{g\_slot4\_key}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} g\+\_\+slot4\+\_\+key\mbox{[}$\,$\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
+

@@ -1,0 +1,134 @@
+\doxysection{C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\+SCE/calib\+\_\+execution.h File Reference}
+\hypertarget{calib__execution_8h}{}\label{calib__execution_8h}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/SCE/calib\_execution.h@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/SCE/calib\_execution.h}}
+
+
+Defines an execution handler that executes a given command on a device and returns the results.  
+
+
+{\ttfamily \#include "{}atca\+\_\+status.\+h"{}}\newline
+{\ttfamily \#include "{}calib\+\_\+command.\+h"{}}\newline
+{\ttfamily \#include "{}atca\+\_\+device.\+h"{}}\newline
+{\ttfamily \#include "{}atca\+\_\+config.\+h"{}}\newline
+Include dependency graph for calib\+\_\+execution.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{calib__execution_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{calib__execution_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{calib__execution_8h_aa025be8149d8f6e4d07aaa436b026db2}{ATCA\+\_\+\+UNSUPPORTED\+\_\+\+CMD}}~((\mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}})0x\+FFFF)
+\item 
+\#define \mbox{\hyperlink{calib__execution_8h_a55c5fe347b23c42f6359e97ae82b4729}{CALIB\+\_\+\+SWI\+\_\+\+FLAG\+\_\+\+WAKE}}~0x00
+\begin{DoxyCompactList}\small\item\em flag preceding a command \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{calib__execution_8h_ac7946c257bcbaf0e1589e960b83d23df}{CALIB\+\_\+\+SWI\+\_\+\+FLAG\+\_\+\+CMD}}~0x77
+\begin{DoxyCompactList}\small\item\em flag preceding a command \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{calib__execution_8h_a1c46cc5ed5e30945d62e9ea369c94cdb}{CALIB\+\_\+\+SWI\+\_\+\+FLAG\+\_\+\+TX}}~0x88
+\begin{DoxyCompactList}\small\item\em flag requesting a response \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{calib__execution_8h_a525ae62bb76a8ba01d4d85264f832c8e}{CALIB\+\_\+\+SWI\+\_\+\+FLAG\+\_\+\+IDLE}}~0x\+BB
+\begin{DoxyCompactList}\small\item\em flag requesting to go into Idle mode \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{calib__execution_8h_a8dd3e14e93cec4aea30e27104935d51b}{CALIB\+\_\+\+SWI\+\_\+\+FLAG\+\_\+\+SLEEP}}~0x\+CC
+\begin{DoxyCompactList}\small\item\em flag requesting to go into Sleep mode \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{calib__execution_8h_a345bde60ef4556a595cdad71141c4afe}{calib\+\_\+execute\+\_\+receive}} (\mbox{\hyperlink{group__device_gaa94f7bb4af0a3d6735225cc85d92cb50}{ATCADevice}} device, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} device\+\_\+address, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}rxdata, \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \texorpdfstring{$\ast$}{*}rxlength)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{calib__execution_8h_a19fc558e09f03a2f8f5ee89b1e396b2e}{calib\+\_\+execute\+\_\+command}} (\mbox{\hyperlink{struct_a_t_c_a_packet}{ATCAPacket}} \texorpdfstring{$\ast$}{*}packet, \mbox{\hyperlink{group__device_gaa94f7bb4af0a3d6735225cc85d92cb50}{ATCADevice}} device)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Defines an execution handler that executes a given command on a device and returns the results. 
+
+The basic flow is to wake the device, send the command, wait/poll for completion, and finally receives the response from the device and does basic checks before returning to caller.
+
+This handler supports the ATSHA and ATECC device family.
+
+\begin{DoxyCopyright}{Copyright}
+(c) 2015-\/2020 Microchip Technology Inc. and its subsidiaries. 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{calib__execution_8h_aa025be8149d8f6e4d07aaa436b026db2}\label{calib__execution_8h_aa025be8149d8f6e4d07aaa436b026db2} 
+\index{calib\_execution.h@{calib\_execution.h}!ATCA\_UNSUPPORTED\_CMD@{ATCA\_UNSUPPORTED\_CMD}}
+\index{ATCA\_UNSUPPORTED\_CMD@{ATCA\_UNSUPPORTED\_CMD}!calib\_execution.h@{calib\_execution.h}}
+\doxysubsubsection{\texorpdfstring{ATCA\_UNSUPPORTED\_CMD}{ATCA\_UNSUPPORTED\_CMD}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+UNSUPPORTED\+\_\+\+CMD~((\mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}})0x\+FFFF)}
+
+\Hypertarget{calib__execution_8h_ac7946c257bcbaf0e1589e960b83d23df}\label{calib__execution_8h_ac7946c257bcbaf0e1589e960b83d23df} 
+\index{calib\_execution.h@{calib\_execution.h}!CALIB\_SWI\_FLAG\_CMD@{CALIB\_SWI\_FLAG\_CMD}}
+\index{CALIB\_SWI\_FLAG\_CMD@{CALIB\_SWI\_FLAG\_CMD}!calib\_execution.h@{calib\_execution.h}}
+\doxysubsubsection{\texorpdfstring{CALIB\_SWI\_FLAG\_CMD}{CALIB\_SWI\_FLAG\_CMD}}
+{\footnotesize\ttfamily \#define CALIB\+\_\+\+SWI\+\_\+\+FLAG\+\_\+\+CMD~0x77}
+
+
+
+flag preceding a command 
+
+\Hypertarget{calib__execution_8h_a525ae62bb76a8ba01d4d85264f832c8e}\label{calib__execution_8h_a525ae62bb76a8ba01d4d85264f832c8e} 
+\index{calib\_execution.h@{calib\_execution.h}!CALIB\_SWI\_FLAG\_IDLE@{CALIB\_SWI\_FLAG\_IDLE}}
+\index{CALIB\_SWI\_FLAG\_IDLE@{CALIB\_SWI\_FLAG\_IDLE}!calib\_execution.h@{calib\_execution.h}}
+\doxysubsubsection{\texorpdfstring{CALIB\_SWI\_FLAG\_IDLE}{CALIB\_SWI\_FLAG\_IDLE}}
+{\footnotesize\ttfamily \#define CALIB\+\_\+\+SWI\+\_\+\+FLAG\+\_\+\+IDLE~0x\+BB}
+
+
+
+flag requesting to go into Idle mode 
+
+\Hypertarget{calib__execution_8h_a8dd3e14e93cec4aea30e27104935d51b}\label{calib__execution_8h_a8dd3e14e93cec4aea30e27104935d51b} 
+\index{calib\_execution.h@{calib\_execution.h}!CALIB\_SWI\_FLAG\_SLEEP@{CALIB\_SWI\_FLAG\_SLEEP}}
+\index{CALIB\_SWI\_FLAG\_SLEEP@{CALIB\_SWI\_FLAG\_SLEEP}!calib\_execution.h@{calib\_execution.h}}
+\doxysubsubsection{\texorpdfstring{CALIB\_SWI\_FLAG\_SLEEP}{CALIB\_SWI\_FLAG\_SLEEP}}
+{\footnotesize\ttfamily \#define CALIB\+\_\+\+SWI\+\_\+\+FLAG\+\_\+\+SLEEP~0x\+CC}
+
+
+
+flag requesting to go into Sleep mode 
+
+\Hypertarget{calib__execution_8h_a1c46cc5ed5e30945d62e9ea369c94cdb}\label{calib__execution_8h_a1c46cc5ed5e30945d62e9ea369c94cdb} 
+\index{calib\_execution.h@{calib\_execution.h}!CALIB\_SWI\_FLAG\_TX@{CALIB\_SWI\_FLAG\_TX}}
+\index{CALIB\_SWI\_FLAG\_TX@{CALIB\_SWI\_FLAG\_TX}!calib\_execution.h@{calib\_execution.h}}
+\doxysubsubsection{\texorpdfstring{CALIB\_SWI\_FLAG\_TX}{CALIB\_SWI\_FLAG\_TX}}
+{\footnotesize\ttfamily \#define CALIB\+\_\+\+SWI\+\_\+\+FLAG\+\_\+\+TX~0x88}
+
+
+
+flag requesting a response 
+
+\Hypertarget{calib__execution_8h_a55c5fe347b23c42f6359e97ae82b4729}\label{calib__execution_8h_a55c5fe347b23c42f6359e97ae82b4729} 
+\index{calib\_execution.h@{calib\_execution.h}!CALIB\_SWI\_FLAG\_WAKE@{CALIB\_SWI\_FLAG\_WAKE}}
+\index{CALIB\_SWI\_FLAG\_WAKE@{CALIB\_SWI\_FLAG\_WAKE}!calib\_execution.h@{calib\_execution.h}}
+\doxysubsubsection{\texorpdfstring{CALIB\_SWI\_FLAG\_WAKE}{CALIB\_SWI\_FLAG\_WAKE}}
+{\footnotesize\ttfamily \#define CALIB\+\_\+\+SWI\+\_\+\+FLAG\+\_\+\+WAKE~0x00}
+
+
+
+flag preceding a command 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{calib__execution_8h_a19fc558e09f03a2f8f5ee89b1e396b2e}\label{calib__execution_8h_a19fc558e09f03a2f8f5ee89b1e396b2e} 
+\index{calib\_execution.h@{calib\_execution.h}!calib\_execute\_command@{calib\_execute\_command}}
+\index{calib\_execute\_command@{calib\_execute\_command}!calib\_execution.h@{calib\_execution.h}}
+\doxysubsubsection{\texorpdfstring{calib\_execute\_command()}{calib\_execute\_command()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} calib\+\_\+execute\+\_\+command (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_a_t_c_a_packet}{ATCAPacket}} \texorpdfstring{$\ast$}{*}}]{packet,  }\item[{\mbox{\hyperlink{group__device_gaa94f7bb4af0a3d6735225cc85d92cb50}{ATCADevice}}}]{device }\end{DoxyParamCaption})}
+
+\Hypertarget{calib__execution_8h_a345bde60ef4556a595cdad71141c4afe}\label{calib__execution_8h_a345bde60ef4556a595cdad71141c4afe} 
+\index{calib\_execution.h@{calib\_execution.h}!calib\_execute\_receive@{calib\_execute\_receive}}
+\index{calib\_execute\_receive@{calib\_execute\_receive}!calib\_execution.h@{calib\_execution.h}}
+\doxysubsubsection{\texorpdfstring{calib\_execute\_receive()}{calib\_execute\_receive()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} calib\+\_\+execute\+\_\+receive (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__device_gaa94f7bb4af0a3d6735225cc85d92cb50}{ATCADevice}}}]{device,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{device\+\_\+address,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{rxdata,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{rxlength }\end{DoxyParamCaption})}
+

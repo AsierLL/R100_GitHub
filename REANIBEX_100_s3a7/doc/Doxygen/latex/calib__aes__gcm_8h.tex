@@ -1,0 +1,50 @@
+\doxysection{C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\+SCE/calib\+\_\+aes\+\_\+gcm.h File Reference}
+\hypertarget{calib__aes__gcm_8h}{}\label{calib__aes__gcm_8h}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/SCE/calib\_aes\_gcm.h@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/SCE/calib\_aes\_gcm.h}}
+
+
+Unity tests for the cryptoauthlib AES GCM functions.  
+
+
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{calib__aes__gcm_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structatca__aes__gcm__ctx}{atca\+\_\+aes\+\_\+gcm\+\_\+ctx}}
+\end{DoxyCompactItemize}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__atcab___gad4d0b05dd9b5d0987e24eef9674922ce}{ATCA\+\_\+\+AES\+\_\+\+GCM\+\_\+\+IV\+\_\+\+STD\+\_\+\+LENGTH}}~12
+\item 
+typedef struct \mbox{\hyperlink{structatca__aes__gcm__ctx}{atca\+\_\+aes\+\_\+gcm\+\_\+ctx}} \mbox{\hyperlink{group__atcab___ga6105ecbb8ccbbbc50a0bca14d2d51718}{atca\+\_\+aes\+\_\+gcm\+\_\+ctx\+\_\+t}}
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group__atcab___gaa5990c6c2a55759960d25a1f8ad1973d}{atca\+\_\+basic\+\_\+aes\+\_\+gcm\+\_\+version}}
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{group__atcab___ga049b1d6c0e21e011a90c783fbc2932be}{calib\+\_\+aes\+\_\+gcm\+\_\+init}} (\mbox{\hyperlink{group__device_gaa94f7bb4af0a3d6735225cc85d92cb50}{ATCADevice}} device, \mbox{\hyperlink{calib_2calib__aes__gcm_8h_a6105ecbb8ccbbbc50a0bca14d2d51718}{atca\+\_\+aes\+\_\+gcm\+\_\+ctx\+\_\+t}} \texorpdfstring{$\ast$}{*}ctx, \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} key\+\_\+id, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} key\+\_\+block, const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}iv, size\+\_\+t iv\+\_\+size)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{group__atcab___ga6f2bb3db5006b0b7fd1f4c48a167f6af}{calib\+\_\+aes\+\_\+gcm\+\_\+init\+\_\+rand}} (\mbox{\hyperlink{group__device_gaa94f7bb4af0a3d6735225cc85d92cb50}{ATCADevice}} device, \mbox{\hyperlink{calib_2calib__aes__gcm_8h_a6105ecbb8ccbbbc50a0bca14d2d51718}{atca\+\_\+aes\+\_\+gcm\+\_\+ctx\+\_\+t}} \texorpdfstring{$\ast$}{*}ctx, \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} key\+\_\+id, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} key\+\_\+block, size\+\_\+t rand\+\_\+size, const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}free\+\_\+field, size\+\_\+t free\+\_\+field\+\_\+size, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}iv)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{group__atcab___ga465c622e2dc00fa7d6b12e72b5e18163}{calib\+\_\+aes\+\_\+gcm\+\_\+aad\+\_\+update}} (\mbox{\hyperlink{group__device_gaa94f7bb4af0a3d6735225cc85d92cb50}{ATCADevice}} device, \mbox{\hyperlink{calib_2calib__aes__gcm_8h_a6105ecbb8ccbbbc50a0bca14d2d51718}{atca\+\_\+aes\+\_\+gcm\+\_\+ctx\+\_\+t}} \texorpdfstring{$\ast$}{*}ctx, const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}aad, \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} aad\+\_\+size)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{group__atcab___ga5403947bb6b0caa35d77a555493a10d9}{calib\+\_\+aes\+\_\+gcm\+\_\+encrypt\+\_\+update}} (\mbox{\hyperlink{group__device_gaa94f7bb4af0a3d6735225cc85d92cb50}{ATCADevice}} device, \mbox{\hyperlink{calib_2calib__aes__gcm_8h_a6105ecbb8ccbbbc50a0bca14d2d51718}{atca\+\_\+aes\+\_\+gcm\+\_\+ctx\+\_\+t}} \texorpdfstring{$\ast$}{*}ctx, const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}plaintext, \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} plaintext\+\_\+size, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}ciphertext)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{group__atcab___ga405cedf561a767000251a76088f2d63f}{calib\+\_\+aes\+\_\+gcm\+\_\+encrypt\+\_\+finish}} (\mbox{\hyperlink{group__device_gaa94f7bb4af0a3d6735225cc85d92cb50}{ATCADevice}} device, \mbox{\hyperlink{calib_2calib__aes__gcm_8h_a6105ecbb8ccbbbc50a0bca14d2d51718}{atca\+\_\+aes\+\_\+gcm\+\_\+ctx\+\_\+t}} \texorpdfstring{$\ast$}{*}ctx, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}tag, size\+\_\+t tag\+\_\+size)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{group__atcab___ga689c84bd0d7b914a551763d2e9bf8995}{calib\+\_\+aes\+\_\+gcm\+\_\+decrypt\+\_\+update}} (\mbox{\hyperlink{group__device_gaa94f7bb4af0a3d6735225cc85d92cb50}{ATCADevice}} device, \mbox{\hyperlink{calib_2calib__aes__gcm_8h_a6105ecbb8ccbbbc50a0bca14d2d51718}{atca\+\_\+aes\+\_\+gcm\+\_\+ctx\+\_\+t}} \texorpdfstring{$\ast$}{*}ctx, const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}ciphertext, \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} ciphertext\+\_\+size, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}plaintext)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{group__atcab___ga503c84eaf2b95e3524477e366ad31fb7}{calib\+\_\+aes\+\_\+gcm\+\_\+decrypt\+\_\+finish}} (\mbox{\hyperlink{group__device_gaa94f7bb4af0a3d6735225cc85d92cb50}{ATCADevice}} device, \mbox{\hyperlink{calib_2calib__aes__gcm_8h_a6105ecbb8ccbbbc50a0bca14d2d51718}{atca\+\_\+aes\+\_\+gcm\+\_\+ctx\+\_\+t}} \texorpdfstring{$\ast$}{*}ctx, const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}tag, size\+\_\+t tag\+\_\+size, bool \texorpdfstring{$\ast$}{*}is\+\_\+verified)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Unity tests for the cryptoauthlib AES GCM functions. 
+
+\begin{DoxyCopyright}{Copyright}
+(c) 2015-\/2020 Microchip Technology Inc. and its subsidiaries. 
+\end{DoxyCopyright}

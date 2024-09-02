@@ -1,0 +1,48 @@
+\doxysection{atca\+\_\+mac\+\_\+in\+\_\+out Struct Reference}
+\hypertarget{structatca__mac__in__out}{}\label{structatca__mac__in__out}\index{atca\_mac\_in\_out@{atca\_mac\_in\_out}}
+
+
+Input/output parameters for function atca\+\_\+mac().  
+
+
+
+
+{\ttfamily \#include $<$atca\+\_\+host.\+h$>$}
+
+
+
+Collaboration diagram for atca\+\_\+mac\+\_\+in\+\_\+out\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=171pt]{structatca__mac__in__out__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{group__atcah_ga2d95152f18d2154046060210791806cd}{mode}}
+\begin{DoxyCompactList}\small\item\em \mbox{[}in\mbox{]} Mode parameter used in MAC command (Param1). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{group__atcah_ga560e515951e93071c1ee17c1c9d5136a}{key\+\_\+id}}
+\begin{DoxyCompactList}\small\item\em \mbox{[}in\mbox{]} Key\+ID parameter used in MAC command (Param2). \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group__atcah_ga674d5ad3408da73c4fe9dc6c1818bb33}{challenge}}
+\begin{DoxyCompactList}\small\item\em \mbox{[}in\mbox{]} Pointer to 32-\/byte Challenge data used in MAC command, depending on mode. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group__atcah_ga9009dbc8d2ef20b94c4878d2666f03ea}{key}}
+\begin{DoxyCompactList}\small\item\em \mbox{[}in\mbox{]} Pointer to 32-\/byte key used to generate MAC digest. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group__atcah_ga6ad8bbb887661d27db1470c9213e8d8a}{otp}}
+\begin{DoxyCompactList}\small\item\em \mbox{[}in\mbox{]} Pointer to 11-\/byte OTP, optionally included in MAC digest, depending on mode. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group__atcah_ga05b4a7cdbec2cb5080658fc3e96a5cce}{sn}}
+\begin{DoxyCompactList}\small\item\em \mbox{[}in\mbox{]} Pointer to 9-\/byte SN, optionally included in MAC digest, depending on mode. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group__atcah_gafc23e7855abfc10fd2068cebe0a2b901}{response}}
+\begin{DoxyCompactList}\small\item\em \mbox{[}out\mbox{]} Pointer to 32-\/byte SHA-\/256 digest (MAC). \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structatca__temp__key}{atca\+\_\+temp\+\_\+key}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group__atcah_ga26287c5de54fcdfea9f7436c7ae1ebe6}{temp\+\_\+key}}
+\begin{DoxyCompactList}\small\item\em \mbox{[}in,out\mbox{]} Pointer to Temp\+Key structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Input/output parameters for function atca\+\_\+mac(). 
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\+SCE/\mbox{\hyperlink{atca__host_8h}{atca\+\_\+host.\+h}}\item 
+C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\+SCE/host/\mbox{\hyperlink{host_2atca__host_8h}{atca\+\_\+host.\+h}}\end{DoxyCompactItemize}

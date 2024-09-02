@@ -1,0 +1,191 @@
+\doxysection{atca\+\_\+sign\+\_\+internal\+\_\+in\+\_\+out Struct Reference}
+\hypertarget{structatca__sign__internal__in__out}{}\label{structatca__sign__internal__in__out}\index{atca\_sign\_internal\_in\_out@{atca\_sign\_internal\_in\_out}}
+
+
+Input/output parameters for calculating the message and digest used by the Sign(internal) command. Used with the \doxylink{group__atcah_ga680045caed6e8f6e136e1a2dc3fe1c9e}{atcah\+\_\+sign\+\_\+internal\+\_\+msg()} function.  
+
+
+
+
+{\ttfamily \#include $<$atca\+\_\+host.\+h$>$}
+
+
+
+Collaboration diagram for atca\+\_\+sign\+\_\+internal\+\_\+in\+\_\+out\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=175pt]{structatca__sign__internal__in__out__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{structatca__sign__internal__in__out_a2145615f3148fb8a428657fa8020aad1}{mode}}
+\begin{DoxyCompactList}\small\item\em \mbox{[}in\mbox{]} Sign Mode \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{structatca__sign__internal__in__out_a426f70e97a2f191f021227175699185c}{key\+\_\+id}}
+\begin{DoxyCompactList}\small\item\em \mbox{[}in\mbox{]} Sign Key\+ID \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{structatca__sign__internal__in__out_a2d4bcfad9f46cf09e3fc2e2d5e67c154}{slot\+\_\+config}}
+\begin{DoxyCompactList}\small\item\em \mbox{[}in\mbox{]} Slot\+Config\mbox{[}Temp\+Key\+Flags.\+key\+Id\mbox{]} \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{structatca__sign__internal__in__out_a534292cebeb2a65e3198e30061b2c35b}{key\+\_\+config}}
+\begin{DoxyCompactList}\small\item\em \mbox{[}in\mbox{]} Key\+Config\mbox{[}Temp\+Key\+Flags.\+key\+Id\mbox{]} \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{structatca__sign__internal__in__out_a4d03aca0b8dd153e5b939a684f7c2955}{use\+\_\+flag}}
+\begin{DoxyCompactList}\small\item\em \mbox{[}in\mbox{]} Use\+Flag\mbox{[}Temp\+Key\+Flags.\+key\+Id\mbox{]}, 0x00 for slots 8 and above and for ATECC508A \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{structatca__sign__internal__in__out_afd69516235ce1a7bee9c04146beb93d8}{update\+\_\+count}}
+\begin{DoxyCompactList}\small\item\em \mbox{[}in\mbox{]} Update\+Count\mbox{[}Temp\+Key\+Flags.\+key\+Id\mbox{]}, 0x00 for slots 8 and above and for ATECC508A \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{structatca__sign__internal__in__out_a1d994ea91e9234808e6f0320897ab434}{is\+\_\+slot\+\_\+locked}}
+\begin{DoxyCompactList}\small\item\em \mbox{[}in\mbox{]} Is Temp\+Key\+Flags.\+key\+Id slot locked. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{structatca__sign__internal__in__out_a64fcd7cc6f939f51fa2a0dfa9156d4d7}{for\+\_\+invalidate}}
+\begin{DoxyCompactList}\small\item\em \mbox{[}in\mbox{]} Set to true if this will be used for the Verify(\+Invalidate) command. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structatca__sign__internal__in__out_a25160c05bd4a7fb03a831f08b3480d71}{sn}}
+\begin{DoxyCompactList}\small\item\em \mbox{[}in\mbox{]} Device serial number SN\mbox{[}0\+:8\mbox{]} (9 bytes) \end{DoxyCompactList}\item 
+const struct \mbox{\hyperlink{structatca__temp__key}{atca\+\_\+temp\+\_\+key}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structatca__sign__internal__in__out_a55d6f64dad2ed454c479118fb4af1f8a}{temp\+\_\+key}}
+\begin{DoxyCompactList}\small\item\em \mbox{[}in\mbox{]} The current state of Temp\+Key. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structatca__sign__internal__in__out_a267e148e7b7fe9c6abcbdcb21d12502d}{message}}
+\begin{DoxyCompactList}\small\item\em \mbox{[}out\mbox{]} Full 55 byte message the Sign(internal) command will build. Can be NULL if not required. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structatca__sign__internal__in__out_a62df3651ec6a609f01b1ee6fa144640b}{verify\+\_\+other\+\_\+data}}
+\begin{DoxyCompactList}\small\item\em \mbox{[}out\mbox{]} The 19 byte Other\+Data bytes to be used with the Verify(In/\+Validate) command. Can be NULL if not required. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structatca__sign__internal__in__out_ab940da3d8e4763770a02040374d1a96a}{digest}}
+\begin{DoxyCompactList}\small\item\em \mbox{[}out\mbox{]} SHA256 digest of the full 55 byte message. Can be NULL if not required. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Input/output parameters for calculating the message and digest used by the Sign(internal) command. Used with the \doxylink{group__atcah_ga680045caed6e8f6e136e1a2dc3fe1c9e}{atcah\+\_\+sign\+\_\+internal\+\_\+msg()} function. 
+
+\doxysubsection{Field Documentation}
+\Hypertarget{structatca__sign__internal__in__out_ab940da3d8e4763770a02040374d1a96a}\label{structatca__sign__internal__in__out_ab940da3d8e4763770a02040374d1a96a} 
+\index{atca\_sign\_internal\_in\_out@{atca\_sign\_internal\_in\_out}!digest@{digest}}
+\index{digest@{digest}!atca\_sign\_internal\_in\_out@{atca\_sign\_internal\_in\_out}}
+\doxysubsubsection{\texorpdfstring{digest}{digest}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} atca\+\_\+sign\+\_\+internal\+\_\+in\+\_\+out\+::digest}
+
+
+
+\mbox{[}out\mbox{]} SHA256 digest of the full 55 byte message. Can be NULL if not required. 
+
+\Hypertarget{structatca__sign__internal__in__out_a64fcd7cc6f939f51fa2a0dfa9156d4d7}\label{structatca__sign__internal__in__out_a64fcd7cc6f939f51fa2a0dfa9156d4d7} 
+\index{atca\_sign\_internal\_in\_out@{atca\_sign\_internal\_in\_out}!for\_invalidate@{for\_invalidate}}
+\index{for\_invalidate@{for\_invalidate}!atca\_sign\_internal\_in\_out@{atca\_sign\_internal\_in\_out}}
+\doxysubsubsection{\texorpdfstring{for\_invalidate}{for\_invalidate}}
+{\footnotesize\ttfamily bool atca\+\_\+sign\+\_\+internal\+\_\+in\+\_\+out\+::for\+\_\+invalidate}
+
+
+
+\mbox{[}in\mbox{]} Set to true if this will be used for the Verify(\+Invalidate) command. 
+
+\Hypertarget{structatca__sign__internal__in__out_a1d994ea91e9234808e6f0320897ab434}\label{structatca__sign__internal__in__out_a1d994ea91e9234808e6f0320897ab434} 
+\index{atca\_sign\_internal\_in\_out@{atca\_sign\_internal\_in\_out}!is\_slot\_locked@{is\_slot\_locked}}
+\index{is\_slot\_locked@{is\_slot\_locked}!atca\_sign\_internal\_in\_out@{atca\_sign\_internal\_in\_out}}
+\doxysubsubsection{\texorpdfstring{is\_slot\_locked}{is\_slot\_locked}}
+{\footnotesize\ttfamily bool atca\+\_\+sign\+\_\+internal\+\_\+in\+\_\+out\+::is\+\_\+slot\+\_\+locked}
+
+
+
+\mbox{[}in\mbox{]} Is Temp\+Key\+Flags.\+key\+Id slot locked. 
+
+\Hypertarget{structatca__sign__internal__in__out_a534292cebeb2a65e3198e30061b2c35b}\label{structatca__sign__internal__in__out_a534292cebeb2a65e3198e30061b2c35b} 
+\index{atca\_sign\_internal\_in\_out@{atca\_sign\_internal\_in\_out}!key\_config@{key\_config}}
+\index{key\_config@{key\_config}!atca\_sign\_internal\_in\_out@{atca\_sign\_internal\_in\_out}}
+\doxysubsubsection{\texorpdfstring{key\_config}{key\_config}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} atca\+\_\+sign\+\_\+internal\+\_\+in\+\_\+out\+::key\+\_\+config}
+
+
+
+\mbox{[}in\mbox{]} Key\+Config\mbox{[}Temp\+Key\+Flags.\+key\+Id\mbox{]} 
+
+\Hypertarget{structatca__sign__internal__in__out_a426f70e97a2f191f021227175699185c}\label{structatca__sign__internal__in__out_a426f70e97a2f191f021227175699185c} 
+\index{atca\_sign\_internal\_in\_out@{atca\_sign\_internal\_in\_out}!key\_id@{key\_id}}
+\index{key\_id@{key\_id}!atca\_sign\_internal\_in\_out@{atca\_sign\_internal\_in\_out}}
+\doxysubsubsection{\texorpdfstring{key\_id}{key\_id}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} atca\+\_\+sign\+\_\+internal\+\_\+in\+\_\+out\+::key\+\_\+id}
+
+
+
+\mbox{[}in\mbox{]} Sign Key\+ID 
+
+\Hypertarget{structatca__sign__internal__in__out_a267e148e7b7fe9c6abcbdcb21d12502d}\label{structatca__sign__internal__in__out_a267e148e7b7fe9c6abcbdcb21d12502d} 
+\index{atca\_sign\_internal\_in\_out@{atca\_sign\_internal\_in\_out}!message@{message}}
+\index{message@{message}!atca\_sign\_internal\_in\_out@{atca\_sign\_internal\_in\_out}}
+\doxysubsubsection{\texorpdfstring{message}{message}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} atca\+\_\+sign\+\_\+internal\+\_\+in\+\_\+out\+::message}
+
+
+
+\mbox{[}out\mbox{]} Full 55 byte message the Sign(internal) command will build. Can be NULL if not required. 
+
+\Hypertarget{structatca__sign__internal__in__out_a2145615f3148fb8a428657fa8020aad1}\label{structatca__sign__internal__in__out_a2145615f3148fb8a428657fa8020aad1} 
+\index{atca\_sign\_internal\_in\_out@{atca\_sign\_internal\_in\_out}!mode@{mode}}
+\index{mode@{mode}!atca\_sign\_internal\_in\_out@{atca\_sign\_internal\_in\_out}}
+\doxysubsubsection{\texorpdfstring{mode}{mode}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} atca\+\_\+sign\+\_\+internal\+\_\+in\+\_\+out\+::mode}
+
+
+
+\mbox{[}in\mbox{]} Sign Mode 
+
+\Hypertarget{structatca__sign__internal__in__out_a2d4bcfad9f46cf09e3fc2e2d5e67c154}\label{structatca__sign__internal__in__out_a2d4bcfad9f46cf09e3fc2e2d5e67c154} 
+\index{atca\_sign\_internal\_in\_out@{atca\_sign\_internal\_in\_out}!slot\_config@{slot\_config}}
+\index{slot\_config@{slot\_config}!atca\_sign\_internal\_in\_out@{atca\_sign\_internal\_in\_out}}
+\doxysubsubsection{\texorpdfstring{slot\_config}{slot\_config}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} atca\+\_\+sign\+\_\+internal\+\_\+in\+\_\+out\+::slot\+\_\+config}
+
+
+
+\mbox{[}in\mbox{]} Slot\+Config\mbox{[}Temp\+Key\+Flags.\+key\+Id\mbox{]} 
+
+\Hypertarget{structatca__sign__internal__in__out_a25160c05bd4a7fb03a831f08b3480d71}\label{structatca__sign__internal__in__out_a25160c05bd4a7fb03a831f08b3480d71} 
+\index{atca\_sign\_internal\_in\_out@{atca\_sign\_internal\_in\_out}!sn@{sn}}
+\index{sn@{sn}!atca\_sign\_internal\_in\_out@{atca\_sign\_internal\_in\_out}}
+\doxysubsubsection{\texorpdfstring{sn}{sn}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} atca\+\_\+sign\+\_\+internal\+\_\+in\+\_\+out\+::sn}
+
+
+
+\mbox{[}in\mbox{]} Device serial number SN\mbox{[}0\+:8\mbox{]} (9 bytes) 
+
+\Hypertarget{structatca__sign__internal__in__out_a55d6f64dad2ed454c479118fb4af1f8a}\label{structatca__sign__internal__in__out_a55d6f64dad2ed454c479118fb4af1f8a} 
+\index{atca\_sign\_internal\_in\_out@{atca\_sign\_internal\_in\_out}!temp\_key@{temp\_key}}
+\index{temp\_key@{temp\_key}!atca\_sign\_internal\_in\_out@{atca\_sign\_internal\_in\_out}}
+\doxysubsubsection{\texorpdfstring{temp\_key}{temp\_key}}
+{\footnotesize\ttfamily const struct \mbox{\hyperlink{structatca__temp__key}{atca\+\_\+temp\+\_\+key}} \texorpdfstring{$\ast$}{*} atca\+\_\+sign\+\_\+internal\+\_\+in\+\_\+out\+::temp\+\_\+key}
+
+
+
+\mbox{[}in\mbox{]} The current state of Temp\+Key. 
+
+\Hypertarget{structatca__sign__internal__in__out_afd69516235ce1a7bee9c04146beb93d8}\label{structatca__sign__internal__in__out_afd69516235ce1a7bee9c04146beb93d8} 
+\index{atca\_sign\_internal\_in\_out@{atca\_sign\_internal\_in\_out}!update\_count@{update\_count}}
+\index{update\_count@{update\_count}!atca\_sign\_internal\_in\_out@{atca\_sign\_internal\_in\_out}}
+\doxysubsubsection{\texorpdfstring{update\_count}{update\_count}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} atca\+\_\+sign\+\_\+internal\+\_\+in\+\_\+out\+::update\+\_\+count}
+
+
+
+\mbox{[}in\mbox{]} Update\+Count\mbox{[}Temp\+Key\+Flags.\+key\+Id\mbox{]}, 0x00 for slots 8 and above and for ATECC508A 
+
+\Hypertarget{structatca__sign__internal__in__out_a4d03aca0b8dd153e5b939a684f7c2955}\label{structatca__sign__internal__in__out_a4d03aca0b8dd153e5b939a684f7c2955} 
+\index{atca\_sign\_internal\_in\_out@{atca\_sign\_internal\_in\_out}!use\_flag@{use\_flag}}
+\index{use\_flag@{use\_flag}!atca\_sign\_internal\_in\_out@{atca\_sign\_internal\_in\_out}}
+\doxysubsubsection{\texorpdfstring{use\_flag}{use\_flag}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} atca\+\_\+sign\+\_\+internal\+\_\+in\+\_\+out\+::use\+\_\+flag}
+
+
+
+\mbox{[}in\mbox{]} Use\+Flag\mbox{[}Temp\+Key\+Flags.\+key\+Id\mbox{]}, 0x00 for slots 8 and above and for ATECC508A 
+
+\Hypertarget{structatca__sign__internal__in__out_a62df3651ec6a609f01b1ee6fa144640b}\label{structatca__sign__internal__in__out_a62df3651ec6a609f01b1ee6fa144640b} 
+\index{atca\_sign\_internal\_in\_out@{atca\_sign\_internal\_in\_out}!verify\_other\_data@{verify\_other\_data}}
+\index{verify\_other\_data@{verify\_other\_data}!atca\_sign\_internal\_in\_out@{atca\_sign\_internal\_in\_out}}
+\doxysubsubsection{\texorpdfstring{verify\_other\_data}{verify\_other\_data}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} atca\+\_\+sign\+\_\+internal\+\_\+in\+\_\+out\+::verify\+\_\+other\+\_\+data}
+
+
+
+\mbox{[}out\mbox{]} The 19 byte Other\+Data bytes to be used with the Verify(In/\+Validate) command. Can be NULL if not required. 
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\+SCE/\mbox{\hyperlink{atca__host_8h}{atca\+\_\+host.\+h}}\item 
+C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\+SCE/host/\mbox{\hyperlink{host_2atca__host_8h}{atca\+\_\+host.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,100 @@
+<map id="Execute_Send_Wifi_Test_Frame" name="Execute_Send_Wifi_Test_Frame">
+<area shape="rect" id="Node000001" title="Function that executes the sending of the last performed test frame." alt="" coords="5,685,173,728"/>
+<area shape="rect" id="Node000002" href="$thread__audio__entry_8c.html#a7bc63559c8d1198f7036bf7d08def712" title="Function that performs an operation with the message player." alt="" coords="486,693,600,720"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="173,704,471,704,471,709,173,709"/>
+<area shape="rect" id="Node000007" href="$thread__sys_mon__entry_8c.html#a86d6de0ddbdd8704798336aa29003fb5" title="Check if user abort running test." alt="" coords="462,795,624,821"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="124,726,169,752,221,773,278,787,337,797,446,805,446,811,336,802,277,793,220,779,167,757,121,731"/>
+<area shape="rect" id="Node000009" href="$thread__comm__hal_8c.html#a14b282886d75e45f70a7ffe548732dba" title="Returns the selected Comms UART." alt="" coords="455,205,631,232"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="89,684,98,619,120,529,136,479,158,431,185,385,219,343,268,303,325,272,383,249,439,233,441,239,385,254,327,277,271,307,223,347,190,388,163,433,141,481,125,530,104,620,95,685"/>
+<area shape="rect" id="Node000010" href="$thread__comm__entry_8c.html#a8198be61adcf8789af5d987d57b6a23b" title="Checks if sigfox exp sended process completed." alt="" coords="468,72,617,115"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="89,684,98,611,119,505,136,447,157,387,185,330,219,277,243,248,270,222,332,178,396,144,456,118,458,123,398,148,335,183,274,227,247,252,223,280,189,333,162,389,141,448,124,507,103,612,94,685"/>
+<area shape="rect" id="Node000011" href="$thread__comm__entry_8c.html#a4d6d68ab709b7b37c105e939f67da143" title="Checks if wifi initialization process completed." alt="" coords="460,997,626,1024"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="103,727,149,802,183,845,222,882,281,920,344,950,407,973,464,990,462,995,405,978,342,955,278,924,219,886,179,848,144,805,99,730"/>
+<area shape="rect" id="Node000012" href="$thread__comm__entry_8c.html#a2dadd372b36fe4568ab80abac99c16f7" title="Checks if wifi test frame sended process completed." alt="" coords="221,576,402,619"/>
+<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="129,682,219,635,245,623,247,628,222,640,131,687"/>
+<area shape="rect" id="Node000013" href="$thread__comm__entry_8c.html#ac00c8f1a401cbbc02b2e3ce72b020878" title="Function to send the test result using wifi connection." alt="" coords="469,5,617,48"/>
+<area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="87,685,91,599,108,470,124,398,147,326,178,256,219,192,242,164,269,140,330,99,393,69,453,47,455,52,395,73,332,104,273,144,246,168,223,195,183,258,152,328,129,400,113,471,96,599,93,685"/>
+<area shape="rect" id="Node000018" href="$sys_mon___r_f___comms_8c.html#a7d936e077834e45d4736ce0a1d37245f" title="Function that sends battery and electrodes expiration dates." alt="" coords="222,357,401,384"/>
+<area shape="poly" id="edge17_Node000001_Node000018" title=" " alt="" coords="102,684,291,396,295,398,107,687"/>
+<area shape="rect" id="Node000023" href="$thread__sys_mon__entry_8c.html#ae266dd5355d4644da21295b8a95ca1af" title="Pass time doing nothing while is listening an audio message and refreshing the watchdog !..." alt="" coords="465,592,621,619"/>
+<area shape="poly" id="edge60_Node000001_Node000023" title=" " alt="" coords="172,685,464,620,465,625,174,691"/>
+<area shape="rect" id="Node000025" href="$thread__sys_mon__entry_8c.html#aab815986ee52dfb7489873f856e3ecb9" title="Refresh the watchdog timer." alt="" coords="714,643,813,669"/>
+<area shape="poly" id="edge61_Node000001_Node000025" title=" " alt="" coords="161,726,258,749,316,758,378,764,443,766,509,762,573,750,634,730,649,719,658,707,667,693,682,679,698,671,701,675,685,684,671,696,662,710,653,723,637,734,574,755,509,767,443,771,378,770,315,763,257,754,159,731"/>
+<area shape="rect" id="Node000026" href="$sys_mon___r_f___comms_8c.html#a52792279d23bf557b0a177590981b506" title="Function that executes the sending of the Sigfox Test." alt="" coords="221,525,402,552"/>
+<area shape="poly" id="edge33_Node000001_Node000026" title=" " alt="" coords="102,683,149,623,182,590,219,562,230,556,232,561,222,566,186,594,153,626,106,686"/>
+<area shape="rect" id="Node000029" href="$sys_mon___r_f___comms_8c.html#ac150a03431ba1cd0299f7f7c03866720" title="Function that executes the wifi initialization." alt="" coords="243,845,380,872"/>
+<area shape="poly" id="edge46_Node000001_Node000029" title=" " alt="" coords="111,727,159,775,189,801,222,824,247,837,245,842,219,829,186,806,155,779,107,730"/>
+<area shape="rect" id="Node000032" href="$sys_mon___r_f___comms_8c.html#a59a54b635fba8538cb0ca3e32b0358b5" title="Check if the GPS transmission is enabled." alt="" coords="241,997,382,1024"/>
+<area shape="poly" id="edge54_Node000001_Node000032" title=" " alt="" coords="100,727,117,772,143,830,179,893,223,952,245,971,269,987,266,992,241,975,219,955,174,896,138,833,112,774,95,729"/>
+<area shape="rect" id="Node000035" href="$sys_mon___r_f___comms_8c.html#ad41447b535ece715d734f79bc8c54801" title="Check if the Wifi transmission enabled." alt="" coords="244,1048,379,1075"/>
+<area shape="poly" id="edge57_Node000001_Node000035" title=" " alt="" coords="95,728,105,789,126,871,143,916,164,959,190,999,222,1034,232,1041,228,1045,219,1038,186,1002,159,961,138,918,121,873,99,790,90,729"/>
+<area shape="rect" id="Node000036" href="$thread__sys_mon__entry_8c.html#a99fe1a42e34a2be16886a951d9712fd7" title="Save Communication error." alt="" coords="243,1099,380,1125"/>
+<area shape="poly" id="edge62_Node000001_Node000036" title=" " alt="" coords="94,728,100,797,120,893,136,945,158,996,187,1043,223,1085,231,1091,228,1096,219,1089,182,1046,153,998,131,947,115,894,95,798,88,729"/>
+<area shape="rect" id="Node000003" href="$thread__audio__entry_8c.html#a05b96411bbd2b24e86ae0cc21146b4cb" title="Function that loads and plays a message." alt="" coords="690,693,837,720"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="600,704,674,704,674,709,600,709"/>
+<area shape="rect" id="Node000005" href="$thread__audio__entry_8c.html#a2c1714b5b8e79621e3a35b0624309f63" title="Stops the audio engine in a predefined sequence." alt="" coords="696,744,831,771"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="601,717,688,737,687,743,600,722"/>
+<area shape="rect" id="Node000004" href="$thread__audio__entry_8c.html#a29f40d7e3dc151283bfb0e69dbd8b132" title="Get an audio frame from the audio file." alt="" coords="892,693,1066,720"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="837,704,876,704,876,709,837,709"/>
+<area shape="rect" id="Node000006" href="$thread__audio__hal_8c.html#a5afdd4d24f2faf92baea80c7b0cedfdc" title="stops the audio reproduction" alt="" coords="935,744,1023,771"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="832,755,919,755,919,760,832,760"/>
+<area shape="rect" id="Node000008" href="$_keypad_8c.html#a65899dc7cce4138cd4488d27daff459d" title="Read from Key&#45;board." alt="" coords="723,795,804,821"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="624,805,707,805,707,811,624,811"/>
+<area shape="rect" id="Node000014" href="$thread__defibrillator__hal_8c.html#a3e86b71d391996bf2ffc968da01e5326" title="Read the Vbatt value from the main supply voltage." alt="" coords="705,227,822,253"/>
+<area shape="poly" id="edge13_Node000013_Node000014" title=" " alt="" coords="618,46,637,58,686,122,747,213,743,215,682,125,634,62,616,51"/>
+<area shape="rect" id="Node000016" href="$sys_mon___battery_8c.html#ae8f3f32f49df7702f6405467130ce8fd" title="Function that report if the battery is DEMO or not." alt="" coords="683,80,844,107"/>
+<area shape="poly" id="edge15_Node000013_Node000016" title=" " alt="" coords="616,46,703,72,702,78,615,51"/>
+<area shape="rect" id="Node000017" href="$thread__comm__entry_8c.html#af7921d111a91795221d7b493716d54c3" title="Process events related to All COMM modules." alt="" coords="693,307,834,333"/>
+<area shape="poly" id="edge16_Node000013_Node000017" title=" " alt="" coords="619,43,637,58,655,85,664,110,667,135,666,160,665,210,671,236,686,264,701,282,721,296,718,300,698,286,681,267,666,238,660,211,660,160,661,135,659,111,651,87,633,62,615,48"/>
+<area shape="rect" id="Node000015" href="$thread__defibrillator__hal_8c.html#a1732c6fa09148497f9b79f530fb94a8a" title="report the current state of the defibrillator" alt="" coords="921,227,1037,253"/>
+<area shape="poly" id="edge14_Node000014_Node000015" title=" " alt="" coords="822,237,905,237,905,243,822,243"/>
+<area shape="poly" id="edge18_Node000018_Node000002" title=" " alt="" coords="325,383,361,438,404,512,418,546,426,573,434,599,452,629,479,658,508,682,505,686,475,662,448,632,430,601,421,575,413,547,400,515,357,441,320,386"/>
+<area shape="poly" id="edge19_Node000018_Node000007" title=" " alt="" coords="326,383,364,437,386,474,404,512,415,545,421,574,423,625,429,674,437,701,452,731,477,760,506,784,503,788,473,764,448,733,432,703,423,675,418,626,415,575,410,546,400,514,381,476,360,440,321,386"/>
+<area shape="poly" id="edge20_Node000018_Node000009" title=" " alt="" coords="325,355,388,297,449,248,475,236,477,240,451,253,391,301,329,359"/>
+<area shape="poly" id="edge22_Node000018_Node000010" title=" " alt="" coords="314,356,329,312,356,250,396,183,420,152,448,125,453,121,456,125,452,129,424,156,400,186,361,252,334,314,319,358"/>
+<area shape="rect" id="Node000019" href="$thread__comm__entry_8c.html#aef540835b519754957f251e42bdfc435" title="Get sigfox status." alt="" coords="460,357,625,384"/>
+<area shape="poly" id="edge21_Node000018_Node000019" title=" " alt="" coords="401,368,444,368,444,373,401,373"/>
+<area shape="rect" id="Node000020" href="$thread__comm__entry_8c.html#a6f2ca4d1ab63af942461484f1451146c" title="Checks if sigfox initialization process completed." alt="" coords="453,408,633,435"/>
+<area shape="poly" id="edge23_Node000018_Node000020" title=" " alt="" coords="376,382,464,402,463,407,375,387"/>
+<area shape="rect" id="Node000021" href="$thread__comm__entry_8c.html#a9794cf5219f147950deb93abcab25b78" title="Generate and send electrodes and battery expiration dates." alt="" coords="462,139,624,181"/>
+<area shape="poly" id="edge24_Node000018_Node000021" title=" " alt="" coords="317,356,365,279,403,232,448,191,454,187,457,192,452,195,407,236,370,282,322,358"/>
+<area shape="rect" id="Node000022" href="$thread__comm__entry_8c.html#aae63ed01fe3ee64c1d194e97ca3877b3" title="Open Sigfox Communication." alt="" coords="473,307,613,333"/>
+<area shape="poly" id="edge27_Node000018_Node000022" title=" " alt="" coords="375,354,463,335,464,340,376,359"/>
+<area shape="poly" id="edge29_Node000018_Node000023" title=" " alt="" coords="324,383,395,495,452,578,459,583,456,587,448,582,391,498,319,386"/>
+<area shape="poly" id="edge32_Node000018_Node000025" title=" " alt="" coords="329,355,387,317,426,297,468,279,512,267,557,263,599,270,619,280,637,293,656,312,668,332,676,352,680,372,678,414,668,457,658,500,653,543,661,586,670,608,685,629,701,641,698,646,681,632,666,610,655,588,648,544,653,499,663,456,672,414,675,373,671,353,664,334,651,315,634,297,616,284,597,275,557,268,513,272,470,284,428,301,390,322,332,359"/>
+<area shape="poly" id="edge25_Node000021_Node000016" title=" " alt="" coords="615,136,702,109,703,114,616,141"/>
+<area shape="poly" id="edge26_Node000021_Node000017" title=" " alt="" coords="619,180,637,191,654,209,663,227,671,244,685,263,726,296,723,300,681,267,666,247,658,229,650,212,634,195,616,184"/>
+<area shape="poly" id="edge28_Node000022_Node000017" title=" " alt="" coords="613,317,677,317,677,323,613,323"/>
+<area shape="rect" id="Node000024" href="$thread__audio__entry_8c.html#aacd507f5759e6725a70d4b30dc65bbf6" title="ask if the audio player is running" alt="" coords="703,592,824,619"/>
+<area shape="poly" id="edge30_Node000023_Node000024" title=" " alt="" coords="621,603,687,603,687,608,621,608"/>
+<area shape="poly" id="edge31_Node000023_Node000025" title=" " alt="" coords="605,617,699,639,698,644,604,622"/>
+<area shape="poly" id="edge34_Node000026_Node000002" title=" " alt="" coords="386,550,404,562,416,576,424,590,429,618,434,646,441,659,452,673,473,687,470,691,448,677,436,662,429,648,424,619,418,592,412,579,400,566,383,555"/>
+<area shape="poly" id="edge35_Node000026_Node000007" title=" " alt="" coords="388,550,404,562,420,583,429,604,433,644,435,686,441,707,452,731,478,760,507,784,504,788,474,764,448,733,436,709,430,686,428,644,424,605,416,586,400,566,385,555"/>
+<area shape="poly" id="edge36_Node000026_Node000009" title=" " alt="" coords="320,523,356,468,400,395,413,366,421,343,431,320,448,293,476,263,506,239,509,243,480,267,452,296,435,322,426,345,418,368,404,397,361,471,324,526"/>
+<area shape="poly" id="edge37_Node000026_Node000019" title=" " alt="" coords="320,523,370,461,407,425,449,394,460,388,462,393,451,398,410,429,374,465,324,527"/>
+<area shape="poly" id="edge38_Node000026_Node000020" title=" " alt="" coords="328,523,380,484,449,444,465,438,467,443,451,449,383,489,331,527"/>
+<area shape="poly" id="edge43_Node000026_Node000022" title=" " alt="" coords="318,524,379,428,416,377,448,343,457,338,460,342,452,347,420,380,383,431,323,527"/>
+<area shape="poly" id="edge44_Node000026_Node000023" title=" " alt="" coords="364,550,403,561,451,577,476,585,475,590,449,583,401,567,363,555"/>
+<area shape="poly" id="edge45_Node000026_Node000025" title=" " alt="" coords="382,550,404,562,420,579,428,597,435,614,451,628,481,642,513,653,578,664,642,667,698,663,699,668,642,672,578,670,511,658,479,647,449,633,431,617,423,600,415,582,400,566,379,555"/>
+<area shape="rect" id="Node000027" href="$thread__comm__entry_8c.html#a605152440b38d4693184802ca9b64c8b" title="Checks if sigfox test sended process completed." alt="" coords="467,459,618,501"/>
+<area shape="poly" id="edge39_Node000026_Node000027" title=" " alt="" coords="366,522,451,500,452,506,368,527"/>
+<area shape="rect" id="Node000028" href="$thread__comm__entry_8c.html#a2b830ebc982c1f3df32402823b6bb3c0" title="Function to send the test result to Sigfox cloud." alt="" coords="462,525,624,568"/>
+<area shape="poly" id="edge40_Node000026_Node000028" title=" " alt="" coords="402,539,446,541,446,546,402,544"/>
+<area shape="poly" id="edge41_Node000028_Node000014" title=" " alt="" coords="621,523,633,512,652,485,660,459,662,433,660,407,659,353,666,324,681,293,698,274,717,259,721,264,701,278,686,296,671,326,664,353,666,407,667,433,665,460,656,487,637,515,624,527"/>
+<area shape="poly" id="edge42_Node000028_Node000017" title=" " alt="" coords="616,522,634,511,673,472,705,428,731,384,748,347,753,349,735,386,710,431,677,476,637,515,619,527"/>
+<area shape="poly" id="edge47_Node000029_Node000002" title=" " alt="" coords="332,843,507,726,510,731,335,847"/>
+<area shape="poly" id="edge48_Node000029_Node000007" title=" " alt="" coords="375,842,463,823,464,828,376,847"/>
+<area shape="poly" id="edge50_Node000029_Node000011" title=" " alt="" coords="341,870,372,889,404,914,419,931,427,947,436,962,452,977,473,989,470,993,448,981,432,965,423,950,414,934,400,918,369,894,338,875"/>
+<area shape="poly" id="edge53_Node000029_Node000025" title=" " alt="" coords="336,870,397,906,451,932,504,948,549,959,570,961,590,957,611,948,634,933,657,905,667,876,667,845,661,813,655,780,654,747,661,713,681,680,698,667,701,671,685,683,666,715,659,747,661,780,667,812,672,845,672,877,662,908,637,937,614,953,592,962,570,966,548,965,503,953,449,937,394,911,333,875"/>
+<area shape="rect" id="Node000030" href="$thread__comm__entry_8c.html#ac245c1a9c58d72709c404deef8e2487d" title="Checks if wifi initialization process finished." alt="" coords="450,896,635,923"/>
+<area shape="poly" id="edge49_Node000029_Node000030" title=" " alt="" coords="376,870,464,890,463,895,375,875"/>
+<area shape="rect" id="Node000031" href="$thread__comm__entry_8c.html#afb12aa7cd963bcac96e29ea89c9e51a1" title="Open Wifi Communication." alt="" coords="480,845,606,872"/>
+<area shape="poly" id="edge51_Node000029_Node000031" title=" " alt="" coords="380,856,464,856,464,861,380,861"/>
+<area shape="poly" id="edge52_Node000031_Node000017" title=" " alt="" coords="605,849,621,842,633,831,656,801,669,773,675,745,676,717,673,655,674,619,681,579,717,449,750,347,755,349,722,450,686,581,679,620,678,655,681,717,680,746,674,775,661,804,637,835,623,846,607,854"/>
+<area shape="rect" id="Node000033" href="$device__init_8c.html#a2f7047dc1ce0a3687c48872ed81aff5f" title="Function for accessing device info variable." alt="" coords="486,1099,600,1125"/>
+<area shape="poly" id="edge55_Node000032_Node000033" title=" " alt="" coords="379,1022,403,1034,419,1047,428,1060,437,1072,451,1084,472,1094,470,1099,449,1089,433,1076,424,1063,415,1050,401,1038,376,1027"/>
+<area shape="rect" id="Node000034" href="$device__init_8c.html#a8f21d9db8b7a1530e06a4ade480d91bc" title="Return Device Settings." alt="" coords="472,1048,614,1075"/>
+<area shape="poly" id="edge56_Node000032_Node000034" title=" " alt="" coords="376,1022,464,1042,463,1047,375,1027"/>
+<area shape="poly" id="edge58_Node000035_Node000033" title=" " alt="" coords="376,1073,471,1094,470,1099,375,1078"/>
+<area shape="poly" id="edge59_Node000035_Node000034" title=" " alt="" coords="379,1059,456,1059,456,1064,379,1064"/>
+</map>

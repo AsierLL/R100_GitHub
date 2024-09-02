@@ -1,0 +1,202 @@
+\doxysection{C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\+Drivers/\+RTC.h File Reference}
+\hypertarget{a00173}{}\label{a00173}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/Drivers/RTC.h@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/Drivers/RTC.h}}
+
+
+Header with functions related to the RTC.  
+
+
+This graph shows which files directly or indirectly include this file\+:
+% FIG 0
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{a00173_ab4acc54d15ec12752888593eb45ee88e}{START\+\_\+\+TIME\+\_\+\+HR}}~(0)
+\item 
+\#define \mbox{\hyperlink{a00173_a9396224e0b729eb4bf80b9e0a1dd316c}{START\+\_\+\+TIME\+\_\+\+MIN}}~(0)
+\item 
+\#define \mbox{\hyperlink{a00173_a4573b2c40d956dd032a0815475288f73}{START\+\_\+\+TIME\+\_\+\+SEC}}~(0)
+\item 
+\#define \mbox{\hyperlink{a00173_a59271e28a366bebf9d2c4337f53fd07e}{START\+\_\+\+TIME\+\_\+\+ISDST}}~(0)
+\item 
+\#define \mbox{\hyperlink{a00173_a42935ee296f570cc48a294ea4f6fb87a}{START\+\_\+\+TIME\+\_\+\+MDAY}}~(1)
+\item 
+\#define \mbox{\hyperlink{a00173_a82d5240a5e36ada0ccb68d5ae6df4c2f}{START\+\_\+\+TIME\+\_\+\+MON}}~(0)
+\item 
+\#define \mbox{\hyperlink{a00173_a9f76762905a0a765ee4edc44acec15db}{START\+\_\+\+TIME\+\_\+\+WDAY}}~(0)
+\item 
+\#define \mbox{\hyperlink{a00173_a0fab27d874d811f1721ae2335d883959}{START\+\_\+\+TIME\+\_\+\+YDAY}}~(0)
+\item 
+\#define \mbox{\hyperlink{a00173_a922aeb8056cd6c8d45d3e1ade7d055f0}{START\+\_\+\+TIME\+\_\+\+YEAR}}~(100)
+\item 
+\#define \mbox{\hyperlink{a00173_ab2ffc3129e336c54f8b98ae2fc749019}{RTCIO\+\_\+\+PIN}}~IOPORT\+\_\+\+PORT\+\_\+04\+\_\+\+PIN\+\_\+02
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{a00173_a5da1cb9df8470d4a7649f8179c7a6992}{Rtc\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Entry point to use RTC timer. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{a00173_a3dad6d4770e388d28c3048b2c563fdb6}{Rtc\+\_\+\+Test\+\_\+\+Trigger}} (void)
+\begin{DoxyCompactList}\small\item\em Trigger or validate the automatic test The "{}\+Test\+Counter"{} is used to accelerate the automatic test in order to check the test functionality. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a00173_af23a4452d2aaea1454fc08b86510c575}{Rtc\+\_\+\+Program\+\_\+\+Wakeup}} (\mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} msec)
+\begin{DoxyCompactList}\small\item\em program the wakeup time in the internal RTC (use the alarm to activate the RTCIC0) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a00173_a4b5714f714efa3b70be5422bdb55c4b7}{Rtc\+\_\+\+Program\+\_\+\+Kill}} (\mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} msec)
+\begin{DoxyCompactList}\small\item\em program the wakeup time in the internal RTC and kill the processor \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header with functions related to the RTC. 
+
+\begin{DoxyVersion}{Version}
+v1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+16/01/2018 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+ltorres 
+\end{DoxyAuthor}
+\begin{DoxyWarning}{Warning}
+author date version .-\/ Edition 
+\end{DoxyWarning}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{a00257__bug000047}{Bug}}]\end{DoxyRefDesc}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{a00173_ab2ffc3129e336c54f8b98ae2fc749019}\label{a00173_ab2ffc3129e336c54f8b98ae2fc749019} 
+\index{RTC.h@{RTC.h}!RTCIO\_PIN@{RTCIO\_PIN}}
+\index{RTCIO\_PIN@{RTCIO\_PIN}!RTC.h@{RTC.h}}
+\doxysubsubsection{\texorpdfstring{RTCIO\_PIN}{RTCIO\_PIN}}
+{\footnotesize\ttfamily \#define RTCIO\+\_\+\+PIN~IOPORT\+\_\+\+PORT\+\_\+04\+\_\+\+PIN\+\_\+02}
+
+\Hypertarget{a00173_ab4acc54d15ec12752888593eb45ee88e}\label{a00173_ab4acc54d15ec12752888593eb45ee88e} 
+\index{RTC.h@{RTC.h}!START\_TIME\_HR@{START\_TIME\_HR}}
+\index{START\_TIME\_HR@{START\_TIME\_HR}!RTC.h@{RTC.h}}
+\doxysubsubsection{\texorpdfstring{START\_TIME\_HR}{START\_TIME\_HR}}
+{\footnotesize\ttfamily \#define START\+\_\+\+TIME\+\_\+\+HR~(0)}
+
+\Hypertarget{a00173_a59271e28a366bebf9d2c4337f53fd07e}\label{a00173_a59271e28a366bebf9d2c4337f53fd07e} 
+\index{RTC.h@{RTC.h}!START\_TIME\_ISDST@{START\_TIME\_ISDST}}
+\index{START\_TIME\_ISDST@{START\_TIME\_ISDST}!RTC.h@{RTC.h}}
+\doxysubsubsection{\texorpdfstring{START\_TIME\_ISDST}{START\_TIME\_ISDST}}
+{\footnotesize\ttfamily \#define START\+\_\+\+TIME\+\_\+\+ISDST~(0)}
+
+\Hypertarget{a00173_a42935ee296f570cc48a294ea4f6fb87a}\label{a00173_a42935ee296f570cc48a294ea4f6fb87a} 
+\index{RTC.h@{RTC.h}!START\_TIME\_MDAY@{START\_TIME\_MDAY}}
+\index{START\_TIME\_MDAY@{START\_TIME\_MDAY}!RTC.h@{RTC.h}}
+\doxysubsubsection{\texorpdfstring{START\_TIME\_MDAY}{START\_TIME\_MDAY}}
+{\footnotesize\ttfamily \#define START\+\_\+\+TIME\+\_\+\+MDAY~(1)}
+
+\Hypertarget{a00173_a9396224e0b729eb4bf80b9e0a1dd316c}\label{a00173_a9396224e0b729eb4bf80b9e0a1dd316c} 
+\index{RTC.h@{RTC.h}!START\_TIME\_MIN@{START\_TIME\_MIN}}
+\index{START\_TIME\_MIN@{START\_TIME\_MIN}!RTC.h@{RTC.h}}
+\doxysubsubsection{\texorpdfstring{START\_TIME\_MIN}{START\_TIME\_MIN}}
+{\footnotesize\ttfamily \#define START\+\_\+\+TIME\+\_\+\+MIN~(0)}
+
+\Hypertarget{a00173_a82d5240a5e36ada0ccb68d5ae6df4c2f}\label{a00173_a82d5240a5e36ada0ccb68d5ae6df4c2f} 
+\index{RTC.h@{RTC.h}!START\_TIME\_MON@{START\_TIME\_MON}}
+\index{START\_TIME\_MON@{START\_TIME\_MON}!RTC.h@{RTC.h}}
+\doxysubsubsection{\texorpdfstring{START\_TIME\_MON}{START\_TIME\_MON}}
+{\footnotesize\ttfamily \#define START\+\_\+\+TIME\+\_\+\+MON~(0)}
+
+\Hypertarget{a00173_a4573b2c40d956dd032a0815475288f73}\label{a00173_a4573b2c40d956dd032a0815475288f73} 
+\index{RTC.h@{RTC.h}!START\_TIME\_SEC@{START\_TIME\_SEC}}
+\index{START\_TIME\_SEC@{START\_TIME\_SEC}!RTC.h@{RTC.h}}
+\doxysubsubsection{\texorpdfstring{START\_TIME\_SEC}{START\_TIME\_SEC}}
+{\footnotesize\ttfamily \#define START\+\_\+\+TIME\+\_\+\+SEC~(0)}
+
+\Hypertarget{a00173_a9f76762905a0a765ee4edc44acec15db}\label{a00173_a9f76762905a0a765ee4edc44acec15db} 
+\index{RTC.h@{RTC.h}!START\_TIME\_WDAY@{START\_TIME\_WDAY}}
+\index{START\_TIME\_WDAY@{START\_TIME\_WDAY}!RTC.h@{RTC.h}}
+\doxysubsubsection{\texorpdfstring{START\_TIME\_WDAY}{START\_TIME\_WDAY}}
+{\footnotesize\ttfamily \#define START\+\_\+\+TIME\+\_\+\+WDAY~(0)}
+
+\Hypertarget{a00173_a0fab27d874d811f1721ae2335d883959}\label{a00173_a0fab27d874d811f1721ae2335d883959} 
+\index{RTC.h@{RTC.h}!START\_TIME\_YDAY@{START\_TIME\_YDAY}}
+\index{START\_TIME\_YDAY@{START\_TIME\_YDAY}!RTC.h@{RTC.h}}
+\doxysubsubsection{\texorpdfstring{START\_TIME\_YDAY}{START\_TIME\_YDAY}}
+{\footnotesize\ttfamily \#define START\+\_\+\+TIME\+\_\+\+YDAY~(0)}
+
+\Hypertarget{a00173_a922aeb8056cd6c8d45d3e1ade7d055f0}\label{a00173_a922aeb8056cd6c8d45d3e1ade7d055f0} 
+\index{RTC.h@{RTC.h}!START\_TIME\_YEAR@{START\_TIME\_YEAR}}
+\index{START\_TIME\_YEAR@{START\_TIME\_YEAR}!RTC.h@{RTC.h}}
+\doxysubsubsection{\texorpdfstring{START\_TIME\_YEAR}{START\_TIME\_YEAR}}
+{\footnotesize\ttfamily \#define START\+\_\+\+TIME\+\_\+\+YEAR~(100)}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{a00173_a5da1cb9df8470d4a7649f8179c7a6992}\label{a00173_a5da1cb9df8470d4a7649f8179c7a6992} 
+\index{RTC.h@{RTC.h}!Rtc\_Init@{Rtc\_Init}}
+\index{Rtc\_Init@{Rtc\_Init}!RTC.h@{RTC.h}}
+\doxysubsubsection{\texorpdfstring{Rtc\_Init()}{Rtc\_Init()}}
+{\footnotesize\ttfamily void Rtc\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Entry point to use RTC timer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{a00258__todo000009}{Todo}}]pending things to be done\end{DoxyRefDesc}
+\Hypertarget{a00173_a4b5714f714efa3b70be5422bdb55c4b7}\label{a00173_a4b5714f714efa3b70be5422bdb55c4b7} 
+\index{RTC.h@{RTC.h}!Rtc\_Program\_Kill@{Rtc\_Program\_Kill}}
+\index{Rtc\_Program\_Kill@{Rtc\_Program\_Kill}!RTC.h@{RTC.h}}
+\doxysubsubsection{\texorpdfstring{Rtc\_Program\_Kill()}{Rtc\_Program\_Kill()}}
+{\footnotesize\ttfamily void Rtc\+\_\+\+Program\+\_\+\+Kill (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}}}]{msec }\end{DoxyParamCaption})}
+
+
+
+program the wakeup time in the internal RTC and kill the processor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em msec} & --- wakeup time in milliseconds\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\Hypertarget{a00173_af23a4452d2aaea1454fc08b86510c575}\label{a00173_af23a4452d2aaea1454fc08b86510c575} 
+\index{RTC.h@{RTC.h}!Rtc\_Program\_Wakeup@{Rtc\_Program\_Wakeup}}
+\index{Rtc\_Program\_Wakeup@{Rtc\_Program\_Wakeup}!RTC.h@{RTC.h}}
+\doxysubsubsection{\texorpdfstring{Rtc\_Program\_Wakeup()}{Rtc\_Program\_Wakeup()}}
+{\footnotesize\ttfamily void Rtc\+\_\+\+Program\+\_\+\+Wakeup (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}}}]{msec }\end{DoxyParamCaption})}
+
+
+
+program the wakeup time in the internal RTC (use the alarm to activate the RTCIC0) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em msec} & --- wakeup time in milliseconds\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\Hypertarget{a00173_a3dad6d4770e388d28c3048b2c563fdb6}\label{a00173_a3dad6d4770e388d28c3048b2c563fdb6} 
+\index{RTC.h@{RTC.h}!Rtc\_Test\_Trigger@{Rtc\_Test\_Trigger}}
+\index{Rtc\_Test\_Trigger@{Rtc\_Test\_Trigger}!RTC.h@{RTC.h}}
+\doxysubsubsection{\texorpdfstring{Rtc\_Test\_Trigger()}{Rtc\_Test\_Trigger()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} Rtc\+\_\+\+Test\+\_\+\+Trigger (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Trigger or validate the automatic test The "{}\+Test\+Counter"{} is used to accelerate the automatic test in order to check the test functionality. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if must proceed to test (Test\+Counter = 1) condition 
+\end{DoxyReturn}

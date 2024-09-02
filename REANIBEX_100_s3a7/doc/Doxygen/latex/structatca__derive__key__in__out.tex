@@ -1,0 +1,107 @@
+\doxysection{atca\+\_\+derive\+\_\+key\+\_\+in\+\_\+out Struct Reference}
+\hypertarget{structatca__derive__key__in__out}{}\label{structatca__derive__key__in__out}\index{atca\_derive\_key\_in\_out@{atca\_derive\_key\_in\_out}}
+
+
+Input/output parameters for function \doxylink{group__atcah_ga02b3479eaee1bd1741675c2a1249ffda}{atcah\+\_\+derive\+\_\+key()}.  
+
+
+
+
+{\ttfamily \#include $<$atca\+\_\+host.\+h$>$}
+
+
+
+Collaboration diagram for atca\+\_\+derive\+\_\+key\+\_\+in\+\_\+out\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=197pt]{structatca__derive__key__in__out__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{structatca__derive__key__in__out_a81da1f6ee5cdd6f3270f68b4df7ee8d9}{mode}}
+\begin{DoxyCompactList}\small\item\em Mode (param 1) of the derive key command. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{structatca__derive__key__in__out_a5b623ae9fa4501c996e4c54842eaa548}{target\+\_\+key\+\_\+id}}
+\begin{DoxyCompactList}\small\item\em Key ID (param 2) of the target slot to run the command on. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structatca__derive__key__in__out_a5359bc7f51f7b04ad5a019995659a80e}{sn}}
+\begin{DoxyCompactList}\small\item\em Device serial number SN\mbox{[}0\+:8\mbox{]}. Only SN\mbox{[}0\+:1\mbox{]} and SN\mbox{[}8\mbox{]} are required though. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structatca__derive__key__in__out_aaa380f7f80af08e2c85009d8d4a2d391}{parent\+\_\+key}}
+\begin{DoxyCompactList}\small\item\em Parent key to be used in the derive key calculation (32 bytes). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structatca__derive__key__in__out_a386bb907789870fb2202a6326a20336d}{target\+\_\+key}}
+\begin{DoxyCompactList}\small\item\em Derived key will be returned here (32 bytes). \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structatca__temp__key}{atca\+\_\+temp\+\_\+key}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structatca__derive__key__in__out_a601eea7c6783132c5afc9d4326c7b133}{temp\+\_\+key}}
+\begin{DoxyCompactList}\small\item\em Current state of Temp\+Key. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Input/output parameters for function \doxylink{group__atcah_ga02b3479eaee1bd1741675c2a1249ffda}{atcah\+\_\+derive\+\_\+key()}. 
+
+\doxysubsection{Field Documentation}
+\Hypertarget{structatca__derive__key__in__out_a81da1f6ee5cdd6f3270f68b4df7ee8d9}\label{structatca__derive__key__in__out_a81da1f6ee5cdd6f3270f68b4df7ee8d9} 
+\index{atca\_derive\_key\_in\_out@{atca\_derive\_key\_in\_out}!mode@{mode}}
+\index{mode@{mode}!atca\_derive\_key\_in\_out@{atca\_derive\_key\_in\_out}}
+\doxysubsubsection{\texorpdfstring{mode}{mode}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} atca\+\_\+derive\+\_\+key\+\_\+in\+\_\+out\+::mode}
+
+
+
+Mode (param 1) of the derive key command. 
+
+\Hypertarget{structatca__derive__key__in__out_aaa380f7f80af08e2c85009d8d4a2d391}\label{structatca__derive__key__in__out_aaa380f7f80af08e2c85009d8d4a2d391} 
+\index{atca\_derive\_key\_in\_out@{atca\_derive\_key\_in\_out}!parent\_key@{parent\_key}}
+\index{parent\_key@{parent\_key}!atca\_derive\_key\_in\_out@{atca\_derive\_key\_in\_out}}
+\doxysubsubsection{\texorpdfstring{parent\_key}{parent\_key}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} atca\+\_\+derive\+\_\+key\+\_\+in\+\_\+out\+::parent\+\_\+key}
+
+
+
+Parent key to be used in the derive key calculation (32 bytes). 
+
+\Hypertarget{structatca__derive__key__in__out_a5359bc7f51f7b04ad5a019995659a80e}\label{structatca__derive__key__in__out_a5359bc7f51f7b04ad5a019995659a80e} 
+\index{atca\_derive\_key\_in\_out@{atca\_derive\_key\_in\_out}!sn@{sn}}
+\index{sn@{sn}!atca\_derive\_key\_in\_out@{atca\_derive\_key\_in\_out}}
+\doxysubsubsection{\texorpdfstring{sn}{sn}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} atca\+\_\+derive\+\_\+key\+\_\+in\+\_\+out\+::sn}
+
+
+
+Device serial number SN\mbox{[}0\+:8\mbox{]}. Only SN\mbox{[}0\+:1\mbox{]} and SN\mbox{[}8\mbox{]} are required though. 
+
+\Hypertarget{structatca__derive__key__in__out_a386bb907789870fb2202a6326a20336d}\label{structatca__derive__key__in__out_a386bb907789870fb2202a6326a20336d} 
+\index{atca\_derive\_key\_in\_out@{atca\_derive\_key\_in\_out}!target\_key@{target\_key}}
+\index{target\_key@{target\_key}!atca\_derive\_key\_in\_out@{atca\_derive\_key\_in\_out}}
+\doxysubsubsection{\texorpdfstring{target\_key}{target\_key}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} atca\+\_\+derive\+\_\+key\+\_\+in\+\_\+out\+::target\+\_\+key}
+
+
+
+Derived key will be returned here (32 bytes). 
+
+\Hypertarget{structatca__derive__key__in__out_a5b623ae9fa4501c996e4c54842eaa548}\label{structatca__derive__key__in__out_a5b623ae9fa4501c996e4c54842eaa548} 
+\index{atca\_derive\_key\_in\_out@{atca\_derive\_key\_in\_out}!target\_key\_id@{target\_key\_id}}
+\index{target\_key\_id@{target\_key\_id}!atca\_derive\_key\_in\_out@{atca\_derive\_key\_in\_out}}
+\doxysubsubsection{\texorpdfstring{target\_key\_id}{target\_key\_id}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} atca\+\_\+derive\+\_\+key\+\_\+in\+\_\+out\+::target\+\_\+key\+\_\+id}
+
+
+
+Key ID (param 2) of the target slot to run the command on. 
+
+\Hypertarget{structatca__derive__key__in__out_a601eea7c6783132c5afc9d4326c7b133}\label{structatca__derive__key__in__out_a601eea7c6783132c5afc9d4326c7b133} 
+\index{atca\_derive\_key\_in\_out@{atca\_derive\_key\_in\_out}!temp\_key@{temp\_key}}
+\index{temp\_key@{temp\_key}!atca\_derive\_key\_in\_out@{atca\_derive\_key\_in\_out}}
+\doxysubsubsection{\texorpdfstring{temp\_key}{temp\_key}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structatca__temp__key}{atca\+\_\+temp\+\_\+key}} \texorpdfstring{$\ast$}{*} atca\+\_\+derive\+\_\+key\+\_\+in\+\_\+out\+::temp\+\_\+key}
+
+
+
+Current state of Temp\+Key. 
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\+SCE/\mbox{\hyperlink{atca__host_8h}{atca\+\_\+host.\+h}}\item 
+C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\+SCE/host/\mbox{\hyperlink{host_2atca__host_8h}{atca\+\_\+host.\+h}}\end{DoxyCompactItemize}

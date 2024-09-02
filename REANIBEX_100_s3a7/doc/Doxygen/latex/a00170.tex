@@ -1,0 +1,178 @@
+\doxysection{C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\+Drivers/\+RTC.c File Reference}
+\hypertarget{a00170}{}\label{a00170}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/Drivers/RTC.c@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/Drivers/RTC.c}}
+
+
+All functions related to the RTC.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include "{}hal\+\_\+data.\+h"{}}\newline
+{\ttfamily \#include "{}types\+\_\+basic.\+h"{}}\newline
+{\ttfamily \#include "{}RTC.\+h"{}}\newline
+{\ttfamily \#include "{}Keypad.\+h"{}}\newline
+Include dependency graph for RTC.\+c\+:
+% FIG 0
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{a00466}{R\+\_\+\+VBATT\+\_\+\+Type}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{a00170_a863f297f7a7936507e7f0476ce6de7e4}{R\+\_\+\+VBATT\+\_\+\+BASE}}~0x4001\+E0\+C6\+UL
+\item 
+\#define \mbox{\hyperlink{a00170_ad439021680c810220f2dc51745bc7722}{R\+\_\+\+VBATT}}~((\mbox{\hyperlink{a00466}{R\+\_\+\+VBATT\+\_\+\+Type}} \texorpdfstring{$\ast$}{*}) \mbox{\hyperlink{a00170_a863f297f7a7936507e7f0476ce6de7e4}{R\+\_\+\+VBATT\+\_\+\+BASE}})
+\item 
+\#define \mbox{\hyperlink{a00170_a28ff2918adc780d4d6afb1c40fb2f5b8}{ACCELERATOR\+\_\+\+TEST}}~(\mbox{\hyperlink{a00173_a922aeb8056cd6c8d45d3e1ade7d055f0}{START\+\_\+\+TIME\+\_\+\+YEAR}} +  5)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{a00170_a5da1cb9df8470d4a7649f8179c7a6992}{Rtc\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Entry point to use RTC timer. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{a00170_a3dad6d4770e388d28c3048b2c563fdb6}{Rtc\+\_\+\+Test\+\_\+\+Trigger}} (void)
+\begin{DoxyCompactList}\small\item\em Trigger or validate the automatic test The "{}\+Test\+Counter"{} is used to accelerate the automatic test in order to check the test functionality. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a00170_af23a4452d2aaea1454fc08b86510c575}{Rtc\+\_\+\+Program\+\_\+\+Wakeup}} (\mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} msec)
+\begin{DoxyCompactList}\small\item\em program the wakeup time in the internal RTC (use the alarm to activate the RTCIC0) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a00170_a4b5714f714efa3b70be5422bdb55c4b7}{Rtc\+\_\+\+Program\+\_\+\+Kill}} (\mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} msec)
+\begin{DoxyCompactList}\small\item\em program the wakeup time in the internal RTC and kill the processor \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \mbox{\hyperlink{a00170_aa2aeb58c7bd567e1b9e74869db2b05c1}{rtc\+\_\+test\+\_\+counter}}
+\item 
+static rtc\+\_\+time\+\_\+t \mbox{\hyperlink{a00170_a480df32b2e245be5283fed16fc53f845}{rtc\+\_\+time}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+All functions related to the RTC. 
+
+\begin{DoxyVersion}{Version}
+v1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+16/01/2018 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+ltorres 
+\end{DoxyAuthor}
+\begin{DoxyWarning}{Warning}
+author date version .-\/ Edition 
+\end{DoxyWarning}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{a00257__bug000046}{Bug}}]\end{DoxyRefDesc}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{a00170_a28ff2918adc780d4d6afb1c40fb2f5b8}\label{a00170_a28ff2918adc780d4d6afb1c40fb2f5b8} 
+\index{RTC.c@{RTC.c}!ACCELERATOR\_TEST@{ACCELERATOR\_TEST}}
+\index{ACCELERATOR\_TEST@{ACCELERATOR\_TEST}!RTC.c@{RTC.c}}
+\doxysubsubsection{\texorpdfstring{ACCELERATOR\_TEST}{ACCELERATOR\_TEST}}
+{\footnotesize\ttfamily \#define ACCELERATOR\+\_\+\+TEST~(\mbox{\hyperlink{a00173_a922aeb8056cd6c8d45d3e1ade7d055f0}{START\+\_\+\+TIME\+\_\+\+YEAR}} +  5)}
+
+\Hypertarget{a00170_ad439021680c810220f2dc51745bc7722}\label{a00170_ad439021680c810220f2dc51745bc7722} 
+\index{RTC.c@{RTC.c}!R\_VBATT@{R\_VBATT}}
+\index{R\_VBATT@{R\_VBATT}!RTC.c@{RTC.c}}
+\doxysubsubsection{\texorpdfstring{R\_VBATT}{R\_VBATT}}
+{\footnotesize\ttfamily \#define R\+\_\+\+VBATT~((\mbox{\hyperlink{a00466}{R\+\_\+\+VBATT\+\_\+\+Type}} \texorpdfstring{$\ast$}{*}) \mbox{\hyperlink{a00170_a863f297f7a7936507e7f0476ce6de7e4}{R\+\_\+\+VBATT\+\_\+\+BASE}})}
+
+\Hypertarget{a00170_a863f297f7a7936507e7f0476ce6de7e4}\label{a00170_a863f297f7a7936507e7f0476ce6de7e4} 
+\index{RTC.c@{RTC.c}!R\_VBATT\_BASE@{R\_VBATT\_BASE}}
+\index{R\_VBATT\_BASE@{R\_VBATT\_BASE}!RTC.c@{RTC.c}}
+\doxysubsubsection{\texorpdfstring{R\_VBATT\_BASE}{R\_VBATT\_BASE}}
+{\footnotesize\ttfamily \#define R\+\_\+\+VBATT\+\_\+\+BASE~0x4001\+E0\+C6\+UL}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{a00170_a5da1cb9df8470d4a7649f8179c7a6992}\label{a00170_a5da1cb9df8470d4a7649f8179c7a6992} 
+\index{RTC.c@{RTC.c}!Rtc\_Init@{Rtc\_Init}}
+\index{Rtc\_Init@{Rtc\_Init}!RTC.c@{RTC.c}}
+\doxysubsubsection{\texorpdfstring{Rtc\_Init()}{Rtc\_Init()}}
+{\footnotesize\ttfamily void Rtc\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Entry point to use RTC timer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{a00258__todo000009}{Todo}}]pending things to be done\end{DoxyRefDesc}
+\Hypertarget{a00170_a4b5714f714efa3b70be5422bdb55c4b7}\label{a00170_a4b5714f714efa3b70be5422bdb55c4b7} 
+\index{RTC.c@{RTC.c}!Rtc\_Program\_Kill@{Rtc\_Program\_Kill}}
+\index{Rtc\_Program\_Kill@{Rtc\_Program\_Kill}!RTC.c@{RTC.c}}
+\doxysubsubsection{\texorpdfstring{Rtc\_Program\_Kill()}{Rtc\_Program\_Kill()}}
+{\footnotesize\ttfamily void Rtc\+\_\+\+Program\+\_\+\+Kill (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}}}]{msec }\end{DoxyParamCaption})}
+
+
+
+program the wakeup time in the internal RTC and kill the processor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em msec} & --- wakeup time in milliseconds\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\Hypertarget{a00170_af23a4452d2aaea1454fc08b86510c575}\label{a00170_af23a4452d2aaea1454fc08b86510c575} 
+\index{RTC.c@{RTC.c}!Rtc\_Program\_Wakeup@{Rtc\_Program\_Wakeup}}
+\index{Rtc\_Program\_Wakeup@{Rtc\_Program\_Wakeup}!RTC.c@{RTC.c}}
+\doxysubsubsection{\texorpdfstring{Rtc\_Program\_Wakeup()}{Rtc\_Program\_Wakeup()}}
+{\footnotesize\ttfamily void Rtc\+\_\+\+Program\+\_\+\+Wakeup (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}}}]{msec }\end{DoxyParamCaption})}
+
+
+
+program the wakeup time in the internal RTC (use the alarm to activate the RTCIC0) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em msec} & --- wakeup time in milliseconds\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\Hypertarget{a00170_a3dad6d4770e388d28c3048b2c563fdb6}\label{a00170_a3dad6d4770e388d28c3048b2c563fdb6} 
+\index{RTC.c@{RTC.c}!Rtc\_Test\_Trigger@{Rtc\_Test\_Trigger}}
+\index{Rtc\_Test\_Trigger@{Rtc\_Test\_Trigger}!RTC.c@{RTC.c}}
+\doxysubsubsection{\texorpdfstring{Rtc\_Test\_Trigger()}{Rtc\_Test\_Trigger()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} Rtc\+\_\+\+Test\+\_\+\+Trigger (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Trigger or validate the automatic test The "{}\+Test\+Counter"{} is used to accelerate the automatic test in order to check the test functionality. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if must proceed to test (Test\+Counter = 1) condition 
+\end{DoxyReturn}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{a00170_aa2aeb58c7bd567e1b9e74869db2b05c1}\label{a00170_aa2aeb58c7bd567e1b9e74869db2b05c1} 
+\index{RTC.c@{RTC.c}!rtc\_test\_counter@{rtc\_test\_counter}}
+\index{rtc\_test\_counter@{rtc\_test\_counter}!RTC.c@{RTC.c}}
+\doxysubsubsection{\texorpdfstring{rtc\_test\_counter}{rtc\_test\_counter}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} rtc\+\_\+test\+\_\+counter\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{a00170_a480df32b2e245be5283fed16fc53f845}\label{a00170_a480df32b2e245be5283fed16fc53f845} 
+\index{RTC.c@{RTC.c}!rtc\_time@{rtc\_time}}
+\index{rtc\_time@{rtc\_time}!RTC.c@{RTC.c}}
+\doxysubsubsection{\texorpdfstring{rtc\_time}{rtc\_time}}
+{\footnotesize\ttfamily rtc\+\_\+time\+\_\+t rtc\+\_\+time\hspace{0.3cm}{\ttfamily [static]}}
+

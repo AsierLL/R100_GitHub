@@ -1,0 +1,121 @@
+\doxysection{SIGFOX\+\_\+\+FUNC\+\_\+\+ALERT\+\_\+t Struct Reference}
+\hypertarget{struct_s_i_g_f_o_x___f_u_n_c___a_l_e_r_t__t}{}\label{struct_s_i_g_f_o_x___f_u_n_c___a_l_e_r_t__t}\index{SIGFOX\_FUNC\_ALERT\_t@{SIGFOX\_FUNC\_ALERT\_t}}
+
+
+Sigfox structure to report the functional alert.  
+
+
+
+
+{\ttfamily \#include $<$thread\+\_\+comm\+\_\+hal.\+h$>$}
+
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{thread__comm__hal_8h_a5aa347e2a685a85a377a26337e9c5cc3}{SIGFOX\+\_\+\+MSG\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{struct_s_i_g_f_o_x___f_u_n_c___a_l_e_r_t__t_afb02445b6fbc46b6ac276ba34a768b90}{info\+\_\+type}}
+\begin{DoxyCompactList}\small\item\em identifies the information to report \end{DoxyCompactList}\item 
+\mbox{\hyperlink{thread__pat_mon__hal_8h_ab5a454b85186a6663fc81c4685af3281}{EL\+\_\+\+SIGN\+\_\+e}} \mbox{\hyperlink{struct_s_i_g_f_o_x___f_u_n_c___a_l_e_r_t__t_adf2fd4a815764d1744bccae328ae9e9c}{electrodes\+\_\+sign}}
+\begin{DoxyCompactList}\small\item\em electrodes signature \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{struct_s_i_g_f_o_x___f_u_n_c___a_l_e_r_t__t_a16d720581cbe295e513a5a14bf5e4777}{battery\+\_\+soc}}
+\begin{DoxyCompactList}\small\item\em State of charge (\%) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{struct_s_i_g_f_o_x___f_u_n_c___a_l_e_r_t__t_a94692b3a5d105f5ed7d7b7dc6985ecf2}{patient\+\_\+type}}
+\begin{DoxyCompactList}\small\item\em patient selected on shock \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \mbox{\hyperlink{struct_s_i_g_f_o_x___f_u_n_c___a_l_e_r_t__t_a106d2295e6774227af116e73790af04a}{zp}}
+\begin{DoxyCompactList}\small\item\em impedance on shock (ohms) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{struct_s_i_g_f_o_x___f_u_n_c___a_l_e_r_t__t_a9109943bb6f01e8354e08d768f439c91}{shock\+\_\+energy}}
+\begin{DoxyCompactList}\small\item\em energy on shock \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{struct_s_i_g_f_o_x___f_u_n_c___a_l_e_r_t__t_a47f470f86bb4eae278328aae37af621c}{drd\+\_\+diag}}
+\begin{DoxyCompactList}\small\item\em analisys diagnosis \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{struct_s_i_g_f_o_x___f_u_n_c___a_l_e_r_t__t_ac06d66803f6b324eeffbce59efead2a1}{must\+\_\+be\+\_\+0x55}}
+\begin{DoxyCompactList}\small\item\em Fixed value = 0x55. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Sigfox structure to report the functional alert. 
+
+\doxysubsection{Field Documentation}
+\Hypertarget{struct_s_i_g_f_o_x___f_u_n_c___a_l_e_r_t__t_a16d720581cbe295e513a5a14bf5e4777}\label{struct_s_i_g_f_o_x___f_u_n_c___a_l_e_r_t__t_a16d720581cbe295e513a5a14bf5e4777} 
+\index{SIGFOX\_FUNC\_ALERT\_t@{SIGFOX\_FUNC\_ALERT\_t}!battery\_soc@{battery\_soc}}
+\index{battery\_soc@{battery\_soc}!SIGFOX\_FUNC\_ALERT\_t@{SIGFOX\_FUNC\_ALERT\_t}}
+\doxysubsubsection{\texorpdfstring{battery\_soc}{battery\_soc}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} SIGFOX\+\_\+\+FUNC\+\_\+\+ALERT\+\_\+t\+::battery\+\_\+soc}
+
+
+
+State of charge (\%) 
+
+\Hypertarget{struct_s_i_g_f_o_x___f_u_n_c___a_l_e_r_t__t_a47f470f86bb4eae278328aae37af621c}\label{struct_s_i_g_f_o_x___f_u_n_c___a_l_e_r_t__t_a47f470f86bb4eae278328aae37af621c} 
+\index{SIGFOX\_FUNC\_ALERT\_t@{SIGFOX\_FUNC\_ALERT\_t}!drd\_diag@{drd\_diag}}
+\index{drd\_diag@{drd\_diag}!SIGFOX\_FUNC\_ALERT\_t@{SIGFOX\_FUNC\_ALERT\_t}}
+\doxysubsubsection{\texorpdfstring{drd\_diag}{drd\_diag}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} SIGFOX\+\_\+\+FUNC\+\_\+\+ALERT\+\_\+t\+::drd\+\_\+diag}
+
+
+
+analisys diagnosis 
+
+\Hypertarget{struct_s_i_g_f_o_x___f_u_n_c___a_l_e_r_t__t_adf2fd4a815764d1744bccae328ae9e9c}\label{struct_s_i_g_f_o_x___f_u_n_c___a_l_e_r_t__t_adf2fd4a815764d1744bccae328ae9e9c} 
+\index{SIGFOX\_FUNC\_ALERT\_t@{SIGFOX\_FUNC\_ALERT\_t}!electrodes\_sign@{electrodes\_sign}}
+\index{electrodes\_sign@{electrodes\_sign}!SIGFOX\_FUNC\_ALERT\_t@{SIGFOX\_FUNC\_ALERT\_t}}
+\doxysubsubsection{\texorpdfstring{electrodes\_sign}{electrodes\_sign}}
+{\footnotesize\ttfamily \mbox{\hyperlink{thread__pat_mon__hal_8h_ab5a454b85186a6663fc81c4685af3281}{EL\+\_\+\+SIGN\+\_\+e}} SIGFOX\+\_\+\+FUNC\+\_\+\+ALERT\+\_\+t\+::electrodes\+\_\+sign}
+
+
+
+electrodes signature 
+
+\Hypertarget{struct_s_i_g_f_o_x___f_u_n_c___a_l_e_r_t__t_afb02445b6fbc46b6ac276ba34a768b90}\label{struct_s_i_g_f_o_x___f_u_n_c___a_l_e_r_t__t_afb02445b6fbc46b6ac276ba34a768b90} 
+\index{SIGFOX\_FUNC\_ALERT\_t@{SIGFOX\_FUNC\_ALERT\_t}!info\_type@{info\_type}}
+\index{info\_type@{info\_type}!SIGFOX\_FUNC\_ALERT\_t@{SIGFOX\_FUNC\_ALERT\_t}}
+\doxysubsubsection{\texorpdfstring{info\_type}{info\_type}}
+{\footnotesize\ttfamily \mbox{\hyperlink{thread__comm__hal_8h_a5aa347e2a685a85a377a26337e9c5cc3}{SIGFOX\+\_\+\+MSG\+\_\+\+ID\+\_\+e}} SIGFOX\+\_\+\+FUNC\+\_\+\+ALERT\+\_\+t\+::info\+\_\+type}
+
+
+
+identifies the information to report 
+
+\Hypertarget{struct_s_i_g_f_o_x___f_u_n_c___a_l_e_r_t__t_ac06d66803f6b324eeffbce59efead2a1}\label{struct_s_i_g_f_o_x___f_u_n_c___a_l_e_r_t__t_ac06d66803f6b324eeffbce59efead2a1} 
+\index{SIGFOX\_FUNC\_ALERT\_t@{SIGFOX\_FUNC\_ALERT\_t}!must\_be\_0x55@{must\_be\_0x55}}
+\index{must\_be\_0x55@{must\_be\_0x55}!SIGFOX\_FUNC\_ALERT\_t@{SIGFOX\_FUNC\_ALERT\_t}}
+\doxysubsubsection{\texorpdfstring{must\_be\_0x55}{must\_be\_0x55}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} SIGFOX\+\_\+\+FUNC\+\_\+\+ALERT\+\_\+t\+::must\+\_\+be\+\_\+0x55}
+
+
+
+Fixed value = 0x55. 
+
+\Hypertarget{struct_s_i_g_f_o_x___f_u_n_c___a_l_e_r_t__t_a94692b3a5d105f5ed7d7b7dc6985ecf2}\label{struct_s_i_g_f_o_x___f_u_n_c___a_l_e_r_t__t_a94692b3a5d105f5ed7d7b7dc6985ecf2} 
+\index{SIGFOX\_FUNC\_ALERT\_t@{SIGFOX\_FUNC\_ALERT\_t}!patient\_type@{patient\_type}}
+\index{patient\_type@{patient\_type}!SIGFOX\_FUNC\_ALERT\_t@{SIGFOX\_FUNC\_ALERT\_t}}
+\doxysubsubsection{\texorpdfstring{patient\_type}{patient\_type}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} SIGFOX\+\_\+\+FUNC\+\_\+\+ALERT\+\_\+t\+::patient\+\_\+type}
+
+
+
+patient selected on shock 
+
+\Hypertarget{struct_s_i_g_f_o_x___f_u_n_c___a_l_e_r_t__t_a9109943bb6f01e8354e08d768f439c91}\label{struct_s_i_g_f_o_x___f_u_n_c___a_l_e_r_t__t_a9109943bb6f01e8354e08d768f439c91} 
+\index{SIGFOX\_FUNC\_ALERT\_t@{SIGFOX\_FUNC\_ALERT\_t}!shock\_energy@{shock\_energy}}
+\index{shock\_energy@{shock\_energy}!SIGFOX\_FUNC\_ALERT\_t@{SIGFOX\_FUNC\_ALERT\_t}}
+\doxysubsubsection{\texorpdfstring{shock\_energy}{shock\_energy}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} SIGFOX\+\_\+\+FUNC\+\_\+\+ALERT\+\_\+t\+::shock\+\_\+energy}
+
+
+
+energy on shock 
+
+\Hypertarget{struct_s_i_g_f_o_x___f_u_n_c___a_l_e_r_t__t_a106d2295e6774227af116e73790af04a}\label{struct_s_i_g_f_o_x___f_u_n_c___a_l_e_r_t__t_a106d2295e6774227af116e73790af04a} 
+\index{SIGFOX\_FUNC\_ALERT\_t@{SIGFOX\_FUNC\_ALERT\_t}!zp@{zp}}
+\index{zp@{zp}!SIGFOX\_FUNC\_ALERT\_t@{SIGFOX\_FUNC\_ALERT\_t}}
+\doxysubsubsection{\texorpdfstring{zp}{zp}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} SIGFOX\+\_\+\+FUNC\+\_\+\+ALERT\+\_\+t\+::zp}
+
+
+
+impedance on shock (ohms) 
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\+HAL/\mbox{\hyperlink{thread__comm__hal_8h}{thread\+\_\+comm\+\_\+hal.\+h}}\end{DoxyCompactItemize}

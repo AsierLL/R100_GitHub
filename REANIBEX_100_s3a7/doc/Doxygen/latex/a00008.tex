@@ -1,0 +1,513 @@
+\doxysection{C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\+DB\+\_\+\+Test.c File Reference}
+\hypertarget{a00008}{}\label{a00008}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/DB\_Test.c@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/DB\_Test.c}}
+{\ttfamily \#include "{}event\+\_\+ids.\+h"{}}\newline
+{\ttfamily \#include "{}thread\+\_\+recorder.\+h"{}}\newline
+{\ttfamily \#include "{}thread\+\_\+pat\+Mon\+\_\+hal.\+h"{}}\newline
+{\ttfamily \#include "{}DB\+\_\+\+Test.\+h"{}}\newline
+{\ttfamily \#include "{}thread\+\_\+drd\+\_\+entry.\+h"{}}\newline
+{\ttfamily \#include "{}R100\+\_\+\+Errors.\+h"{}}\newline
+{\ttfamily \#include "{}Trace.\+h"{}}\newline
+{\ttfamily \#include "{}thread\+\_\+sys\+Mon\+\_\+entry.\+h"{}}\newline
+{\ttfamily \#include "{}sys\+Mon\+\_\+\+Battery.\+h"{}}\newline
+Include dependency graph for DB\+\_\+\+Test.\+c\+:
+% FIG 0
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{a00008_af27a4e25e64967a9e156ce72c887cf7b}{TEST\+\_\+\+FOLDER\+\_\+\+NAME}}~"{}TEST"{}
+\begin{DoxyCompactList}\small\item\em folder name for Test \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{a00008_af3234817b620c9a862b19fc2fbba9f19}{TEST\+\_\+\+BLOCK\+\_\+\+SZ}}~(1024)
+\begin{DoxyCompactList}\small\item\em test block total size \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{a00008_a47db1778dcca91a0d9d85c2b4baa415e}{NUM\+\_\+\+TEST\+\_\+\+FILES}}~(12)
+\begin{DoxyCompactList}\small\item\em maximum number of test files in a single u\+SD card \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{a00008_a01bcf63f79825b25743f71a17d34ab07}{NUM\+\_\+\+BLOCKS\+\_\+\+TEST}}~(30)
+\begin{DoxyCompactList}\small\item\em maximum number of blocks in a single file \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{a00008_ac7c7bf99749c6efe31d52a445185d0a7}{SIGFOX\+\_\+\+FILENAME}}~"{}SIGFOX.\+dat"{}
+\begin{DoxyCompactList}\small\item\em sigfox filename \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{a00008_abdda5e881df17cf99513c39a4903273c}{Assign\+\_\+\+Test\+File\+\_\+\+Number}} (\mbox{\hyperlink{a00310}{DB\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Result, \mbox{\hyperlink{a00137_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Name, \mbox{\hyperlink{a00137_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \texorpdfstring{$\ast$}{*}year\+\_\+folder)
+\begin{DoxyCompactList}\small\item\em Fill the filename with the test file number. The test result identifier determines if a new file must be created or the last one must be used Each test file must register the test result of 30 days (IDs 0 to 29) \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{a00008_a16606de5fb417cc3de70a2e95f5780ec}{DB\+\_\+\+Test\+\_\+\+Create}} (\mbox{\hyperlink{a00310}{DB\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Result, FX\+\_\+\+FILE \texorpdfstring{$\ast$}{*}p\+File)
+\begin{DoxyCompactList}\small\item\em Creates a new test file. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{a00008_ad64eda05c1c2ef1238c8d43a8995835d}{Fill\+\_\+\+JSON\+\_\+\+Header}} (\mbox{\hyperlink{a00137_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+JSON, \mbox{\hyperlink{a00137_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Name)
+\begin{DoxyCompactList}\small\item\em Fill the string number to create a Json entry (using 3 tabs) \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{a00008_a121e39406fe7a111a315ee29c5aa822a}{Fill\+\_\+\+JSON\+\_\+\+Number}} (\mbox{\hyperlink{a00137_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+JSON, \mbox{\hyperlink{a00137_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Name, \mbox{\hyperlink{a00137_a2ba621978a511250f7250fb10e05ffbe}{int32\+\_\+t}} number, bool colon)
+\begin{DoxyCompactList}\small\item\em Fill the string number to create a Json entry (using 3 tabs) \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{a00008_a3771da54aaa27e44ade7955f1042a35e}{Fill\+\_\+\+JSON\+\_\+\+String}} (\mbox{\hyperlink{a00137_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+JSON, \mbox{\hyperlink{a00137_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Name, \mbox{\hyperlink{a00137_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Str, bool colon)
+\begin{DoxyCompactList}\small\item\em Fill the string to create a Json entry (using 3 tabs) \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{a00008_a9f481a0e2ddba34b1746ba8181a84c98}{Fill\+\_\+\+Bitset\+\_\+8}} (\mbox{\hyperlink{a00137_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Str, \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} bitset)
+\begin{DoxyCompactList}\small\item\em fill a binary bitset in a string \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{a00008_a40efbf4874eeca09f3db8fccd43f4b97}{Fill\+\_\+\+HEX\+\_\+64}} (\mbox{\hyperlink{a00137_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Str, \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Num64)
+\begin{DoxyCompactList}\small\item\em fill an hexadecimal number of 64 bits in a string \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{a00008_a6a1cb614eed193d35a2daa16da68b71e}{Fill\+\_\+\+Test\+\_\+\+Date}} (\mbox{\hyperlink{a00137_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Str)
+\begin{DoxyCompactList}\small\item\em Initializes the test date string. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{a00008_abee6bba585a0da2f3a255a0bc32d29ea}{Fill\+\_\+\+Test\+\_\+\+Time}} (\mbox{\hyperlink{a00137_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Str)
+\begin{DoxyCompactList}\small\item\em Initializes the test time string. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a00008_a7ec87003cf7b1f13d7f71af99cbfe1f6}{Fill\+\_\+\+Generic\+\_\+\+Date}} (\mbox{\hyperlink{a00137_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Str, \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} my\+\_\+date)
+\begin{DoxyCompactList}\small\item\em Fill a string with a generic date. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a00008_ab7a2e6fc6e6d920610d4939bd63e4300}{Fill\+\_\+\+Generic\+\_\+\+Time}} (\mbox{\hyperlink{a00137_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Str, \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} my\+\_\+time)
+\begin{DoxyCompactList}\small\item\em Fill a string with a generic Time. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{a00008_a28c194074e0e25670733cbb5a16e3a28}{Write\+\_\+\+Test\+\_\+\+File}} (\mbox{\hyperlink{a00310}{DB\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Result, FX\+\_\+\+FILE \texorpdfstring{$\ast$}{*}p\+File)
+\begin{DoxyCompactList}\small\item\em Writes the test result in the test file This way, the write sizes are multiple of cluster sizes, thus achieving max performance. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{a00008_a3c8767e0ac18450db5c82a07120864ae}{DB\+\_\+\+Test\+\_\+\+Generate\+\_\+\+Report}} (\mbox{\hyperlink{a00310}{DB\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Result, \mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} file\+\_\+report)
+\begin{DoxyCompactList}\small\item\em Collects the test results and generates the report in a JSON file. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a00008_a5eb6a87ab980707d7c463c294699868c}{DB\+\_\+\+Test\+\_\+\+Get\+\_\+\+Filename}} (void)
+\begin{DoxyCompactList}\small\item\em Returns the. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a00008_a5fe6c18c1c2f842b420d557b7ab42887}{Power\+Off\+\_\+\+Write\+\_\+\+Batt\+\_\+\+Elec}} (void)
+\begin{DoxyCompactList}\small\item\em Before power off the device, write the last time the decive has been used in the test. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a00008_a29b3330272af11e7475fe7645d1256ce}{DB\+\_\+\+Sigfox\+\_\+\+Store\+\_\+\+Info}} (\mbox{\hyperlink{a00137_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \texorpdfstring{$\ast$}{*}device\+\_\+id, \mbox{\hyperlink{a00137_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \texorpdfstring{$\ast$}{*}pac\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Stores Sigfox module info in a file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a00310}{DB\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t}} \mbox{\hyperlink{a00008_a27c2ed3e3011c92dce2bde0851728c0e}{R100\+\_\+test\+\_\+result}}
+\item 
+static FX\+\_\+\+MEDIA \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a00008_aca72fda2b1efebc18972c8df610ff63b}{sd\+\_\+media}} = (FX\+\_\+\+MEDIA \texorpdfstring{$\ast$}{*})\mbox{\hyperlink{a00137_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}}
+\begin{DoxyCompactList}\small\item\em handler of the SD media card \end{DoxyCompactList}\item 
+static FX\+\_\+\+FILE \mbox{\hyperlink{a00008_a2357374ae566da776267428c771c44ba}{test\+\_\+file}}
+\begin{DoxyCompactList}\small\item\em Test file handler. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{a00008_a160b5effa56d56cb21011bbe3775509f}{test\+\_\+str}} \mbox{[}\mbox{\hyperlink{a00008_af3234817b620c9a862b19fc2fbba9f19}{TEST\+\_\+\+BLOCK\+\_\+\+SZ}}\mbox{]}
+\item 
+static \mbox{\hyperlink{a00137_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \mbox{\hyperlink{a00008_a2d309e3caa82003fe75b8f890db7bd7c}{last\+\_\+test\+\_\+fullname}} \mbox{[}32\mbox{]}
+\item 
+static \mbox{\hyperlink{a00314}{DEVICE\+\_\+\+DATE\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a00008_a2e103a2447fead44e4331b13d3f2bdd8}{p\+Date}}
+\item 
+static \mbox{\hyperlink{a00318}{DEVICE\+\_\+\+TIME\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a00008_a0ea21360d95640023da09cc1306fe29d}{p\+Time}}
+\item 
+static \mbox{\hyperlink{a00137_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \mbox{\hyperlink{a00008_a660e8f0e81e902141fd984ac47913c32}{fullname}} \mbox{[}32\mbox{]}
+\item 
+static \mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{a00008_a8a45c0fdb290ce6bbae1feb4581634c9}{first\+\_\+test\+\_\+write}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVersion}{Version}
+v1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+20/07/2020 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+lsanz 
+\end{DoxyAuthor}
+\begin{DoxyWarning}{Warning}
+author date version .-\/ Edition 
+\end{DoxyWarning}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{a00257__bug000003}{Bug}}]\end{DoxyRefDesc}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{a00008_a01bcf63f79825b25743f71a17d34ab07}\label{a00008_a01bcf63f79825b25743f71a17d34ab07} 
+\index{DB\_Test.c@{DB\_Test.c}!NUM\_BLOCKS\_TEST@{NUM\_BLOCKS\_TEST}}
+\index{NUM\_BLOCKS\_TEST@{NUM\_BLOCKS\_TEST}!DB\_Test.c@{DB\_Test.c}}
+\doxysubsubsection{\texorpdfstring{NUM\_BLOCKS\_TEST}{NUM\_BLOCKS\_TEST}}
+{\footnotesize\ttfamily \#define NUM\+\_\+\+BLOCKS\+\_\+\+TEST~(30)}
+
+
+
+maximum number of blocks in a single file 
+
+\Hypertarget{a00008_a47db1778dcca91a0d9d85c2b4baa415e}\label{a00008_a47db1778dcca91a0d9d85c2b4baa415e} 
+\index{DB\_Test.c@{DB\_Test.c}!NUM\_TEST\_FILES@{NUM\_TEST\_FILES}}
+\index{NUM\_TEST\_FILES@{NUM\_TEST\_FILES}!DB\_Test.c@{DB\_Test.c}}
+\doxysubsubsection{\texorpdfstring{NUM\_TEST\_FILES}{NUM\_TEST\_FILES}}
+{\footnotesize\ttfamily \#define NUM\+\_\+\+TEST\+\_\+\+FILES~(12)}
+
+
+
+maximum number of test files in a single u\+SD card 
+
+\Hypertarget{a00008_ac7c7bf99749c6efe31d52a445185d0a7}\label{a00008_ac7c7bf99749c6efe31d52a445185d0a7} 
+\index{DB\_Test.c@{DB\_Test.c}!SIGFOX\_FILENAME@{SIGFOX\_FILENAME}}
+\index{SIGFOX\_FILENAME@{SIGFOX\_FILENAME}!DB\_Test.c@{DB\_Test.c}}
+\doxysubsubsection{\texorpdfstring{SIGFOX\_FILENAME}{SIGFOX\_FILENAME}}
+{\footnotesize\ttfamily \#define SIGFOX\+\_\+\+FILENAME~"{}SIGFOX.\+dat"{}}
+
+
+
+sigfox filename 
+
+\Hypertarget{a00008_af3234817b620c9a862b19fc2fbba9f19}\label{a00008_af3234817b620c9a862b19fc2fbba9f19} 
+\index{DB\_Test.c@{DB\_Test.c}!TEST\_BLOCK\_SZ@{TEST\_BLOCK\_SZ}}
+\index{TEST\_BLOCK\_SZ@{TEST\_BLOCK\_SZ}!DB\_Test.c@{DB\_Test.c}}
+\doxysubsubsection{\texorpdfstring{TEST\_BLOCK\_SZ}{TEST\_BLOCK\_SZ}}
+{\footnotesize\ttfamily \#define TEST\+\_\+\+BLOCK\+\_\+\+SZ~(1024)}
+
+
+
+test block total size 
+
+\Hypertarget{a00008_af27a4e25e64967a9e156ce72c887cf7b}\label{a00008_af27a4e25e64967a9e156ce72c887cf7b} 
+\index{DB\_Test.c@{DB\_Test.c}!TEST\_FOLDER\_NAME@{TEST\_FOLDER\_NAME}}
+\index{TEST\_FOLDER\_NAME@{TEST\_FOLDER\_NAME}!DB\_Test.c@{DB\_Test.c}}
+\doxysubsubsection{\texorpdfstring{TEST\_FOLDER\_NAME}{TEST\_FOLDER\_NAME}}
+{\footnotesize\ttfamily \#define TEST\+\_\+\+FOLDER\+\_\+\+NAME~"{}TEST"{}}
+
+
+
+folder name for Test 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{a00008_abdda5e881df17cf99513c39a4903273c}\label{a00008_abdda5e881df17cf99513c39a4903273c} 
+\index{DB\_Test.c@{DB\_Test.c}!Assign\_TestFile\_Number@{Assign\_TestFile\_Number}}
+\index{Assign\_TestFile\_Number@{Assign\_TestFile\_Number}!DB\_Test.c@{DB\_Test.c}}
+\doxysubsubsection{\texorpdfstring{Assign\_TestFile\_Number()}{Assign\_TestFile\_Number()}}
+{\footnotesize\ttfamily static void Assign\+\_\+\+Test\+File\+\_\+\+Number (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00310}{DB\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Result,  }\item[{\mbox{\hyperlink{a00137_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Name,  }\item[{\mbox{\hyperlink{a00137_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{year\+\_\+folder }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Fill the filename with the test file number. The test result identifier determines if a new file must be created or the last one must be used Each test file must register the test result of 30 days (IDs 0 to 29) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Result} & \+: pointer to a test result structure \\
+\hline
+{\em p\+Name} & \+: pointer to a filename to raster\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\Hypertarget{a00008_a29b3330272af11e7475fe7645d1256ce}\label{a00008_a29b3330272af11e7475fe7645d1256ce} 
+\index{DB\_Test.c@{DB\_Test.c}!DB\_Sigfox\_Store\_Info@{DB\_Sigfox\_Store\_Info}}
+\index{DB\_Sigfox\_Store\_Info@{DB\_Sigfox\_Store\_Info}!DB\_Test.c@{DB\_Test.c}}
+\doxysubsubsection{\texorpdfstring{DB\_Sigfox\_Store\_Info()}{DB\_Sigfox\_Store\_Info()}}
+{\footnotesize\ttfamily void DB\+\_\+\+Sigfox\+\_\+\+Store\+\_\+\+Info (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00137_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{device\+\_\+id,  }\item[{\mbox{\hyperlink{a00137_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{pac\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Stores Sigfox module info in a file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em device\+\_\+id} & \+: sigfox device id \\
+\hline
+{\em pac\+\_\+id} & \+: sigfox pac id\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+operation result 
+\end{DoxyReturn}
+\Hypertarget{a00008_a16606de5fb417cc3de70a2e95f5780ec}\label{a00008_a16606de5fb417cc3de70a2e95f5780ec} 
+\index{DB\_Test.c@{DB\_Test.c}!DB\_Test\_Create@{DB\_Test\_Create}}
+\index{DB\_Test\_Create@{DB\_Test\_Create}!DB\_Test.c@{DB\_Test.c}}
+\doxysubsubsection{\texorpdfstring{DB\_Test\_Create()}{DB\_Test\_Create()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} DB\+\_\+\+Test\+\_\+\+Create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00310}{DB\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Result,  }\item[{FX\+\_\+\+FILE \texorpdfstring{$\ast$}{*}}]{p\+File }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Creates a new test file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Result} & \+: pointer to a test result structure \\
+\hline
+{\em p\+File} & \+: pointer to a test file\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+operation result (true or false) 
+\end{DoxyReturn}
+\Hypertarget{a00008_a3c8767e0ac18450db5c82a07120864ae}\label{a00008_a3c8767e0ac18450db5c82a07120864ae} 
+\index{DB\_Test.c@{DB\_Test.c}!DB\_Test\_Generate\_Report@{DB\_Test\_Generate\_Report}}
+\index{DB\_Test\_Generate\_Report@{DB\_Test\_Generate\_Report}!DB\_Test.c@{DB\_Test.c}}
+\doxysubsubsection{\texorpdfstring{DB\_Test\_Generate\_Report()}{DB\_Test\_Generate\_Report()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} DB\+\_\+\+Test\+\_\+\+Generate\+\_\+\+Report (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00310}{DB\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Result,  }\item[{\mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}}}]{file\+\_\+report }\end{DoxyParamCaption})}
+
+
+
+Collects the test results and generates the report in a JSON file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Result} & \+: pointer to a test result structure \\
+\hline
+{\em file\+\_\+report} & \+: if must generate a file report or not\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+operation result 
+\end{DoxyReturn}
+\Hypertarget{a00008_a5eb6a87ab980707d7c463c294699868c}\label{a00008_a5eb6a87ab980707d7c463c294699868c} 
+\index{DB\_Test.c@{DB\_Test.c}!DB\_Test\_Get\_Filename@{DB\_Test\_Get\_Filename}}
+\index{DB\_Test\_Get\_Filename@{DB\_Test\_Get\_Filename}!DB\_Test.c@{DB\_Test.c}}
+\doxysubsubsection{\texorpdfstring{DB\_Test\_Get\_Filename()}{DB\_Test\_Get\_Filename()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \texorpdfstring{$\ast$}{*} DB\+\_\+\+Test\+\_\+\+Get\+\_\+\+Filename (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Returns the. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to a test filename 
+\end{DoxyReturn}
+\Hypertarget{a00008_a9f481a0e2ddba34b1746ba8181a84c98}\label{a00008_a9f481a0e2ddba34b1746ba8181a84c98} 
+\index{DB\_Test.c@{DB\_Test.c}!Fill\_Bitset\_8@{Fill\_Bitset\_8}}
+\index{Fill\_Bitset\_8@{Fill\_Bitset\_8}!DB\_Test.c@{DB\_Test.c}}
+\doxysubsubsection{\texorpdfstring{Fill\_Bitset\_8()}{Fill\_Bitset\_8()}}
+{\footnotesize\ttfamily static void Fill\+\_\+\+Bitset\+\_\+8 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00137_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Str,  }\item[{\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{bitset }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+fill a binary bitset in a string 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Str} & \+: pointer to a string \\
+\hline
+{\em bitset} & \+: number to convert \\
+\hline
+\end{DoxyParams}
+\Hypertarget{a00008_a7ec87003cf7b1f13d7f71af99cbfe1f6}\label{a00008_a7ec87003cf7b1f13d7f71af99cbfe1f6} 
+\index{DB\_Test.c@{DB\_Test.c}!Fill\_Generic\_Date@{Fill\_Generic\_Date}}
+\index{Fill\_Generic\_Date@{Fill\_Generic\_Date}!DB\_Test.c@{DB\_Test.c}}
+\doxysubsubsection{\texorpdfstring{Fill\_Generic\_Date()}{Fill\_Generic\_Date()}}
+{\footnotesize\ttfamily void Fill\+\_\+\+Generic\+\_\+\+Date (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00137_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Str,  }\item[{\mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}}}]{my\+\_\+date }\end{DoxyParamCaption})}
+
+
+
+Fill a string with a generic date. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Str} & \+: pointer to a generic string \\
+\hline
+{\em p\+Date} & \+: Date to convert \\
+\hline
+\end{DoxyParams}
+\Hypertarget{a00008_ab7a2e6fc6e6d920610d4939bd63e4300}\label{a00008_ab7a2e6fc6e6d920610d4939bd63e4300} 
+\index{DB\_Test.c@{DB\_Test.c}!Fill\_Generic\_Time@{Fill\_Generic\_Time}}
+\index{Fill\_Generic\_Time@{Fill\_Generic\_Time}!DB\_Test.c@{DB\_Test.c}}
+\doxysubsubsection{\texorpdfstring{Fill\_Generic\_Time()}{Fill\_Generic\_Time()}}
+{\footnotesize\ttfamily void Fill\+\_\+\+Generic\+\_\+\+Time (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00137_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Str,  }\item[{\mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}}}]{my\+\_\+time }\end{DoxyParamCaption})}
+
+
+
+Fill a string with a generic Time. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Str} & \+: pointer to a generic string \\
+\hline
+{\em p\+Time} & \+: Time to convert \\
+\hline
+\end{DoxyParams}
+\Hypertarget{a00008_a40efbf4874eeca09f3db8fccd43f4b97}\label{a00008_a40efbf4874eeca09f3db8fccd43f4b97} 
+\index{DB\_Test.c@{DB\_Test.c}!Fill\_HEX\_64@{Fill\_HEX\_64}}
+\index{Fill\_HEX\_64@{Fill\_HEX\_64}!DB\_Test.c@{DB\_Test.c}}
+\doxysubsubsection{\texorpdfstring{Fill\_HEX\_64()}{Fill\_HEX\_64()}}
+{\footnotesize\ttfamily static void Fill\+\_\+\+HEX\+\_\+64 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00137_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Str,  }\item[{\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Num64 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+fill an hexadecimal number of 64 bits in a string 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Str} & \+: pointer to a string \\
+\hline
+{\em num\+\_\+64} & \+: number to convert \\
+\hline
+\end{DoxyParams}
+\Hypertarget{a00008_ad64eda05c1c2ef1238c8d43a8995835d}\label{a00008_ad64eda05c1c2ef1238c8d43a8995835d} 
+\index{DB\_Test.c@{DB\_Test.c}!Fill\_JSON\_Header@{Fill\_JSON\_Header}}
+\index{Fill\_JSON\_Header@{Fill\_JSON\_Header}!DB\_Test.c@{DB\_Test.c}}
+\doxysubsubsection{\texorpdfstring{Fill\_JSON\_Header()}{Fill\_JSON\_Header()}}
+{\footnotesize\ttfamily static void Fill\+\_\+\+JSON\+\_\+\+Header (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00137_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+JSON,  }\item[{\mbox{\hyperlink{a00137_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Fill the string number to create a Json entry (using 3 tabs) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+JSON} & \+: pointer to string to fill \\
+\hline
+{\em p\+Name} & \+: pointer to entry name \\
+\hline
+\end{DoxyParams}
+\Hypertarget{a00008_a121e39406fe7a111a315ee29c5aa822a}\label{a00008_a121e39406fe7a111a315ee29c5aa822a} 
+\index{DB\_Test.c@{DB\_Test.c}!Fill\_JSON\_Number@{Fill\_JSON\_Number}}
+\index{Fill\_JSON\_Number@{Fill\_JSON\_Number}!DB\_Test.c@{DB\_Test.c}}
+\doxysubsubsection{\texorpdfstring{Fill\_JSON\_Number()}{Fill\_JSON\_Number()}}
+{\footnotesize\ttfamily static void Fill\+\_\+\+JSON\+\_\+\+Number (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00137_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+JSON,  }\item[{\mbox{\hyperlink{a00137_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Name,  }\item[{\mbox{\hyperlink{a00137_a2ba621978a511250f7250fb10e05ffbe}{int32\+\_\+t}}}]{number,  }\item[{bool}]{colon }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Fill the string number to create a Json entry (using 3 tabs) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+JSON} & \+: pointer to string to fill \\
+\hline
+{\em p\+Name} & \+: pointer to entry name \\
+\hline
+{\em number} & \+: number to fill \\
+\hline
+{\em colon} & \+: includes an entry separator or not \\
+\hline
+\end{DoxyParams}
+\Hypertarget{a00008_a3771da54aaa27e44ade7955f1042a35e}\label{a00008_a3771da54aaa27e44ade7955f1042a35e} 
+\index{DB\_Test.c@{DB\_Test.c}!Fill\_JSON\_String@{Fill\_JSON\_String}}
+\index{Fill\_JSON\_String@{Fill\_JSON\_String}!DB\_Test.c@{DB\_Test.c}}
+\doxysubsubsection{\texorpdfstring{Fill\_JSON\_String()}{Fill\_JSON\_String()}}
+{\footnotesize\ttfamily static void Fill\+\_\+\+JSON\+\_\+\+String (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00137_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+JSON,  }\item[{\mbox{\hyperlink{a00137_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Name,  }\item[{\mbox{\hyperlink{a00137_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Str,  }\item[{bool}]{colon }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Fill the string to create a Json entry (using 3 tabs) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+JSON} & \+: pointer to string to fill \\
+\hline
+{\em p\+Name} & \+: pointer to entry name \\
+\hline
+{\em p\+Str} & \+: string to copy on the JSON string \\
+\hline
+{\em colon} & \+: includes an entry separator or not \\
+\hline
+\end{DoxyParams}
+\Hypertarget{a00008_a6a1cb614eed193d35a2daa16da68b71e}\label{a00008_a6a1cb614eed193d35a2daa16da68b71e} 
+\index{DB\_Test.c@{DB\_Test.c}!Fill\_Test\_Date@{Fill\_Test\_Date}}
+\index{Fill\_Test\_Date@{Fill\_Test\_Date}!DB\_Test.c@{DB\_Test.c}}
+\doxysubsubsection{\texorpdfstring{Fill\_Test\_Date()}{Fill\_Test\_Date()}}
+{\footnotesize\ttfamily static void Fill\+\_\+\+Test\+\_\+\+Date (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00137_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Initializes the test date string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Str} & \+: pointer to a Date string \\
+\hline
+\end{DoxyParams}
+\Hypertarget{a00008_abee6bba585a0da2f3a255a0bc32d29ea}\label{a00008_abee6bba585a0da2f3a255a0bc32d29ea} 
+\index{DB\_Test.c@{DB\_Test.c}!Fill\_Test\_Time@{Fill\_Test\_Time}}
+\index{Fill\_Test\_Time@{Fill\_Test\_Time}!DB\_Test.c@{DB\_Test.c}}
+\doxysubsubsection{\texorpdfstring{Fill\_Test\_Time()}{Fill\_Test\_Time()}}
+{\footnotesize\ttfamily static void Fill\+\_\+\+Test\+\_\+\+Time (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00137_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Initializes the test time string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Str} & \+: pointer to a Time string \\
+\hline
+\end{DoxyParams}
+\Hypertarget{a00008_a5fe6c18c1c2f842b420d557b7ab42887}\label{a00008_a5fe6c18c1c2f842b420d557b7ab42887} 
+\index{DB\_Test.c@{DB\_Test.c}!PowerOff\_Write\_Batt\_Elec@{PowerOff\_Write\_Batt\_Elec}}
+\index{PowerOff\_Write\_Batt\_Elec@{PowerOff\_Write\_Batt\_Elec}!DB\_Test.c@{DB\_Test.c}}
+\doxysubsubsection{\texorpdfstring{PowerOff\_Write\_Batt\_Elec()}{PowerOff\_Write\_Batt\_Elec()}}
+{\footnotesize\ttfamily void Power\+Off\+\_\+\+Write\+\_\+\+Batt\+\_\+\+Elec (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Before power off the device, write the last time the decive has been used in the test. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\Hypertarget{a00008_a28c194074e0e25670733cbb5a16e3a28}\label{a00008_a28c194074e0e25670733cbb5a16e3a28} 
+\index{DB\_Test.c@{DB\_Test.c}!Write\_Test\_File@{Write\_Test\_File}}
+\index{Write\_Test\_File@{Write\_Test\_File}!DB\_Test.c@{DB\_Test.c}}
+\doxysubsubsection{\texorpdfstring{Write\_Test\_File()}{Write\_Test\_File()}}
+{\footnotesize\ttfamily static void Write\+\_\+\+Test\+\_\+\+File (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00310}{DB\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Result,  }\item[{FX\+\_\+\+FILE \texorpdfstring{$\ast$}{*}}]{p\+File }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Writes the test result in the test file This way, the write sizes are multiple of cluster sizes, thus achieving max performance. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Result} & \+: pointer to a test result structure \\
+\hline
+{\em p\+File} & \+: pointer to a test file\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{a00008_a8a45c0fdb290ce6bbae1feb4581634c9}\label{a00008_a8a45c0fdb290ce6bbae1feb4581634c9} 
+\index{DB\_Test.c@{DB\_Test.c}!first\_test\_write@{first\_test\_write}}
+\index{first\_test\_write@{first\_test\_write}!DB\_Test.c@{DB\_Test.c}}
+\doxysubsubsection{\texorpdfstring{first\_test\_write}{first\_test\_write}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} first\+\_\+test\+\_\+write\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{a00008_a660e8f0e81e902141fd984ac47913c32}\label{a00008_a660e8f0e81e902141fd984ac47913c32} 
+\index{DB\_Test.c@{DB\_Test.c}!fullname@{fullname}}
+\index{fullname@{fullname}!DB\_Test.c@{DB\_Test.c}}
+\doxysubsubsection{\texorpdfstring{fullname}{fullname}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} fullname\mbox{[}32\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{a00008_a2d309e3caa82003fe75b8f890db7bd7c}\label{a00008_a2d309e3caa82003fe75b8f890db7bd7c} 
+\index{DB\_Test.c@{DB\_Test.c}!last\_test\_fullname@{last\_test\_fullname}}
+\index{last\_test\_fullname@{last\_test\_fullname}!DB\_Test.c@{DB\_Test.c}}
+\doxysubsubsection{\texorpdfstring{last\_test\_fullname}{last\_test\_fullname}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} last\+\_\+test\+\_\+fullname\mbox{[}32\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{a00008_a2e103a2447fead44e4331b13d3f2bdd8}\label{a00008_a2e103a2447fead44e4331b13d3f2bdd8} 
+\index{DB\_Test.c@{DB\_Test.c}!pDate@{pDate}}
+\index{pDate@{pDate}!DB\_Test.c@{DB\_Test.c}}
+\doxysubsubsection{\texorpdfstring{pDate}{pDate}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00314}{DEVICE\+\_\+\+DATE\+\_\+t}}\texorpdfstring{$\ast$}{*} p\+Date\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{a00008_a0ea21360d95640023da09cc1306fe29d}\label{a00008_a0ea21360d95640023da09cc1306fe29d} 
+\index{DB\_Test.c@{DB\_Test.c}!pTime@{pTime}}
+\index{pTime@{pTime}!DB\_Test.c@{DB\_Test.c}}
+\doxysubsubsection{\texorpdfstring{pTime}{pTime}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00318}{DEVICE\+\_\+\+TIME\+\_\+t}}\texorpdfstring{$\ast$}{*} p\+Time\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{a00008_a27c2ed3e3011c92dce2bde0851728c0e}\label{a00008_a27c2ed3e3011c92dce2bde0851728c0e} 
+\index{DB\_Test.c@{DB\_Test.c}!R100\_test\_result@{R100\_test\_result}}
+\index{R100\_test\_result@{R100\_test\_result}!DB\_Test.c@{DB\_Test.c}}
+\doxysubsubsection{\texorpdfstring{R100\_test\_result}{R100\_test\_result}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00310}{DB\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t}} R100\+\_\+test\+\_\+result}
+
+\Hypertarget{a00008_aca72fda2b1efebc18972c8df610ff63b}\label{a00008_aca72fda2b1efebc18972c8df610ff63b} 
+\index{DB\_Test.c@{DB\_Test.c}!sd\_media@{sd\_media}}
+\index{sd\_media@{sd\_media}!DB\_Test.c@{DB\_Test.c}}
+\doxysubsubsection{\texorpdfstring{sd\_media}{sd\_media}}
+{\footnotesize\ttfamily FX\+\_\+\+MEDIA\texorpdfstring{$\ast$}{*} sd\+\_\+media = (FX\+\_\+\+MEDIA \texorpdfstring{$\ast$}{*})\mbox{\hyperlink{a00137_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+handler of the SD media card 
+
+\Hypertarget{a00008_a2357374ae566da776267428c771c44ba}\label{a00008_a2357374ae566da776267428c771c44ba} 
+\index{DB\_Test.c@{DB\_Test.c}!test\_file@{test\_file}}
+\index{test\_file@{test\_file}!DB\_Test.c@{DB\_Test.c}}
+\doxysubsubsection{\texorpdfstring{test\_file}{test\_file}}
+{\footnotesize\ttfamily FX\+\_\+\+FILE test\+\_\+file\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Test file handler. 
+
+\Hypertarget{a00008_a160b5effa56d56cb21011bbe3775509f}\label{a00008_a160b5effa56d56cb21011bbe3775509f} 
+\index{DB\_Test.c@{DB\_Test.c}!test\_str@{test\_str}}
+\index{test\_str@{test\_str}!DB\_Test.c@{DB\_Test.c}}
+\doxysubsubsection{\texorpdfstring{test\_str}{test\_str}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} test\+\_\+str\mbox{[}\mbox{\hyperlink{a00008_af3234817b620c9a862b19fc2fbba9f19}{TEST\+\_\+\+BLOCK\+\_\+\+SZ}}\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+

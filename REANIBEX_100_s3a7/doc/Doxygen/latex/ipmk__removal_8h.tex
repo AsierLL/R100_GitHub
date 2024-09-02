@@ -1,0 +1,105 @@
+\doxysection{C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\+IPMK/ipmk\+\_\+removal.h File Reference}
+\hypertarget{ipmk__removal_8h}{}\label{ipmk__removal_8h}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/IPMK/ipmk\_removal.h@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/IPMK/ipmk\_removal.h}}
+
+
+Test File header file.  
+
+
+{\ttfamily \#include "{}types\+\_\+basic.\+h"{}}\newline
+Include dependency graph for ipmk\+\_\+removal.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=234pt]{ipmk__removal_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ipmk__removal_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{ipmk__removal_8h_a9dc3aafc83813c325c5a972d9c07c5db}{fsm\+\_\+ipmk\+\_\+st\+\_\+t}} \{ \newline
+\mbox{\hyperlink{ipmk__removal_8h_a9dc3aafc83813c325c5a972d9c07c5dba350bd0942eccd987e8b8e5396a69b1d2}{st\+\_\+searching}} = 0
+, \mbox{\hyperlink{ipmk__removal_8h_a9dc3aafc83813c325c5a972d9c07c5dbaec861b84897049b9e72d26fe4ccf8b54}{st\+\_\+onset\+\_\+neg\+\_\+detected}}
+, \mbox{\hyperlink{ipmk__removal_8h_a9dc3aafc83813c325c5a972d9c07c5dbac829249c99963600b7e4a3d42ab72947}{st\+\_\+onset\+\_\+pos\+\_\+detected}}
+, \mbox{\hyperlink{ipmk__removal_8h_a9dc3aafc83813c325c5a972d9c07c5dba462a95a528a2dcc86380439036b851a8}{st\+\_\+hold\+\_\+sample}}
+, \newline
+\mbox{\hyperlink{ipmk__removal_8h_a9dc3aafc83813c325c5a972d9c07c5dbacd030a0a4add9dbedd5673354bc89e7a}{st\+\_\+refractary\+\_\+period}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{ipmk__removal_8h_a8e4edae281a93e76c81a61fe87984fee}{ipmk\+\_\+removal}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a269259c924dce846340ddbb810db2e3c}{int16\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Samples, \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} front\+\_\+porch\+\_\+size, \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} win\+\_\+size)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Test File header file. 
+
+\begin{DoxyVersion}{Version}
+v1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+18/02/2021 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Iaurrekoetxea 
+\end{DoxyAuthor}
+\begin{DoxyWarning}{Warning}
+author date version .-\/ Edition 
+\end{DoxyWarning}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000056}{Bug}}]\end{DoxyRefDesc}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{ipmk__removal_8h_a9dc3aafc83813c325c5a972d9c07c5db}\label{ipmk__removal_8h_a9dc3aafc83813c325c5a972d9c07c5db} 
+\index{ipmk\_removal.h@{ipmk\_removal.h}!fsm\_ipmk\_st\_t@{fsm\_ipmk\_st\_t}}
+\index{fsm\_ipmk\_st\_t@{fsm\_ipmk\_st\_t}!ipmk\_removal.h@{ipmk\_removal.h}}
+\doxysubsubsection{\texorpdfstring{fsm\_ipmk\_st\_t}{fsm\_ipmk\_st\_t}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{ipmk__removal_8h_a9dc3aafc83813c325c5a972d9c07c5db}{fsm\+\_\+ipmk\+\_\+st\+\_\+t}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{st\_searching@{st\_searching}!ipmk\_removal.h@{ipmk\_removal.h}}\index{ipmk\_removal.h@{ipmk\_removal.h}!st\_searching@{st\_searching}}}\Hypertarget{ipmk__removal_8h_a9dc3aafc83813c325c5a972d9c07c5dba350bd0942eccd987e8b8e5396a69b1d2}\label{ipmk__removal_8h_a9dc3aafc83813c325c5a972d9c07c5dba350bd0942eccd987e8b8e5396a69b1d2} 
+st\+\_\+searching&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{st\_onset\_neg\_detected@{st\_onset\_neg\_detected}!ipmk\_removal.h@{ipmk\_removal.h}}\index{ipmk\_removal.h@{ipmk\_removal.h}!st\_onset\_neg\_detected@{st\_onset\_neg\_detected}}}\Hypertarget{ipmk__removal_8h_a9dc3aafc83813c325c5a972d9c07c5dbaec861b84897049b9e72d26fe4ccf8b54}\label{ipmk__removal_8h_a9dc3aafc83813c325c5a972d9c07c5dbaec861b84897049b9e72d26fe4ccf8b54} 
+st\+\_\+onset\+\_\+neg\+\_\+detected&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{st\_onset\_pos\_detected@{st\_onset\_pos\_detected}!ipmk\_removal.h@{ipmk\_removal.h}}\index{ipmk\_removal.h@{ipmk\_removal.h}!st\_onset\_pos\_detected@{st\_onset\_pos\_detected}}}\Hypertarget{ipmk__removal_8h_a9dc3aafc83813c325c5a972d9c07c5dbac829249c99963600b7e4a3d42ab72947}\label{ipmk__removal_8h_a9dc3aafc83813c325c5a972d9c07c5dbac829249c99963600b7e4a3d42ab72947} 
+st\+\_\+onset\+\_\+pos\+\_\+detected&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{st\_hold\_sample@{st\_hold\_sample}!ipmk\_removal.h@{ipmk\_removal.h}}\index{ipmk\_removal.h@{ipmk\_removal.h}!st\_hold\_sample@{st\_hold\_sample}}}\Hypertarget{ipmk__removal_8h_a9dc3aafc83813c325c5a972d9c07c5dba462a95a528a2dcc86380439036b851a8}\label{ipmk__removal_8h_a9dc3aafc83813c325c5a972d9c07c5dba462a95a528a2dcc86380439036b851a8} 
+st\+\_\+hold\+\_\+sample&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{st\_refractary\_period@{st\_refractary\_period}!ipmk\_removal.h@{ipmk\_removal.h}}\index{ipmk\_removal.h@{ipmk\_removal.h}!st\_refractary\_period@{st\_refractary\_period}}}\Hypertarget{ipmk__removal_8h_a9dc3aafc83813c325c5a972d9c07c5dbacd030a0a4add9dbedd5673354bc89e7a}\label{ipmk__removal_8h_a9dc3aafc83813c325c5a972d9c07c5dbacd030a0a4add9dbedd5673354bc89e7a} 
+st\+\_\+refractary\+\_\+period&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{ipmk__removal_8h_a8e4edae281a93e76c81a61fe87984fee}\label{ipmk__removal_8h_a8e4edae281a93e76c81a61fe87984fee} 
+\index{ipmk\_removal.h@{ipmk\_removal.h}!ipmk\_removal@{ipmk\_removal}}
+\index{ipmk\_removal@{ipmk\_removal}!ipmk\_removal.h@{ipmk\_removal.h}}
+\doxysubsubsection{\texorpdfstring{ipmk\_removal()}{ipmk\_removal()}}
+{\footnotesize\ttfamily void ipmk\+\_\+removal (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a269259c924dce846340ddbb810db2e3c}{int16\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Samples,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}}}]{front\+\_\+porch\+\_\+size,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}}}]{win\+\_\+size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ipmk__removal_8h_a8e4edae281a93e76c81a61fe87984fee_icgraph}
+\end{center}
+\end{figure}

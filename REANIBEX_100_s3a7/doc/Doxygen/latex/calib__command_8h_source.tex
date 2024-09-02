@@ -1,0 +1,590 @@
+\doxysection{calib\+\_\+command.\+h}
+\hypertarget{calib__command_8h_source}{}\label{calib__command_8h_source}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/SCE/calib\_command.h@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/SCE/calib\_command.h}}
+\mbox{\hyperlink{calib__command_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00033\ \textcolor{comment}{/*\ lint\ -\/-\/e\{755\}\ */}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#ifndef\ CALIB\_COMMAND\_H}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#define\ CALIB\_COMMAND\_H}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#include\ <stddef.h>}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00040\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{comment}{/*\ add\ ATCACommand\ declarations\ here}}
+\DoxyCodeLine{00046\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00047\ \textcolor{comment}{\ *\ since\ these\ are\ still\ C\ functions,\ not\ classes,\ naming\ is\ an\ important}}
+\DoxyCodeLine{00048\ \textcolor{comment}{\ *\ consideration\ to\ keep\ the\ namespace\ from\ colliding\ with\ other\ 3rd\ party}}
+\DoxyCodeLine{00049\ \textcolor{comment}{\ *\ libraries\ or\ even\ ourselves/ASF.}}
+\DoxyCodeLine{00050\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00051\ \textcolor{comment}{\ *\ Basic\ conventions:}}
+\DoxyCodeLine{00052\ \textcolor{comment}{\ *\ all\ methods\ start\ with\ the\ prefix\ 'at'}}
+\DoxyCodeLine{00053\ \textcolor{comment}{\ *\ all\ method\ names\ must\ be\ unique,\ obviously}}
+\DoxyCodeLine{00054\ \textcolor{comment}{\ *\ all\ method\ implementations\ should\ be\ proceeded\ by\ their\ Doxygen\ comment\ header}}
+\DoxyCodeLine{00055\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00056\ \textcolor{comment}{\ **/}}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{comment}{//\ this\ is\ the\ ATCACommand\ parameter\ structure.\ \ The\ caller\ to\ the\ command\ method\ must}}
+\DoxyCodeLine{00060\ \textcolor{comment}{//\ initialize\ param1,\ param2\ and\ data\ if\ appropriate.\ \ The\ command\ method\ will\ fill\ in\ the\ rest}}
+\DoxyCodeLine{00061\ \textcolor{comment}{//\ and\ initialize\ the\ packet\ so\ it's\ ready\ to\ send\ via\ the\ ATCAIFace.}}
+\DoxyCodeLine{00062\ \textcolor{comment}{//\ this\ particular\ structure\ mimics\ the\ ATSHA\ and\ ATECC\ family\ device's\ command\ structures}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \textcolor{comment}{//\ Note:\ pack\ @\ 2\ is\ required,\ @\ 1\ causes\ word\ alignment\ crash\ (though\ it\ should\ not),\ a\ known\ bug\ in\ GCC.}}
+\DoxyCodeLine{00065\ \textcolor{comment}{//\ @2,\ the\ wire\ still\ has\ the\ intended\ byte\ alignment\ with\ arm-\/eabi.\ \ this\ is\ likely\ the\ least\ portable\ part\ of\ atca}}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#ifdef\ ATCA\_NO\_PRAGMA\_PACK}}
+\DoxyCodeLine{00069\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{thread__sys_mon__entry_8c_a24201038745365a3b1883d840a8ca0e8}{\_\_attribute\_\_}}\ ((packed))}
+\DoxyCodeLine{00070\ \#else}
+\DoxyCodeLine{00071\ \#pragma\ pack(\ push,\ \mbox{\hyperlink{struct_a_t_c_a_packet}{ATCAPacket}},\ 2\ )}
+\DoxyCodeLine{00072\ typedef\ struct}
+\DoxyCodeLine{00073\ \#endif}
+\DoxyCodeLine{00077\ \{}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{comment}{//\ used\ for\ transmit/send}}
+\DoxyCodeLine{00080\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \_reserved;\ \ \textcolor{comment}{//\ used\ by\ HAL\ layer\ as\ needed\ (I/O\ tokens,\ Word\ address\ values)}}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{comment}{//-\/-\/-\/\ start\ of\ packet\ i/o\ frame-\/-\/-\/-\/}}
+\DoxyCodeLine{00083\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ txsize;}
+\DoxyCodeLine{00084\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ opcode;}
+\DoxyCodeLine{00085\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ param1;\ \ \ \ \textcolor{comment}{//\ often\ same\ as\ mode}}
+\DoxyCodeLine{00086\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ param2;}
+\DoxyCodeLine{00087\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \ data[192];\ \textcolor{comment}{//\ includes\ 2-\/byte\ CRC.\ \ data\ size\ is\ determined\ by\ largest\ possible\ data\ section\ of\ any}}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ command\ +\ crc\ (see:\ x08\ verify\ data1\ +\ data2\ +\ data3\ +\ data4)}}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ this\ is\ an\ explicit\ design\ trade-\/off\ (space)\ resulting\ in\ simplicity\ in\ use}}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ and\ implementation}}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{comment}{//-\/-\/-\/\ end\ of\ packet\ i/o\ frame}}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{comment}{//\ used\ for\ receive}}
+\DoxyCodeLine{00094\ \ \ \ \ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ execTime;\ \ \ \ \ \ \ \textcolor{comment}{//\ execution\ time\ of\ command\ by\ opcode}}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{comment}{//\ structure\ should\ be\ packed\ since\ it\ will\ be\ transmitted\ over\ the\ wire}}
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{comment}{//\ this\ method\ varies\ by\ compiler.\ \ As\ new\ compilers\ are\ supported,\ add\ their\ structure\ packing\ method\ here}}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \}\ \mbox{\hyperlink{struct_a_t_c_a_packet}{ATCAPacket}};}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \textcolor{preprocessor}{\#ifndef\ ATCA\_NO\_PRAGMA\_PACK}}
+\DoxyCodeLine{00102\ \textcolor{preprocessor}{\#pragma\ pack(\ pop,\ ATCAPacket)}}
+\DoxyCodeLine{00103\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ \mbox{\hyperlink{calib_2calib__command_8h_a0a6cea9f4c9fa172be0880804f507668}{atCheckMAC}}(\mbox{\hyperlink{group__device_gafb234ccd6a80d09c0efbe336c2354267}{ATCADeviceType}}\ device\_type,\ \mbox{\hyperlink{struct_a_t_c_a_packet}{ATCAPacket}}\ *packet);}
+\DoxyCodeLine{00107\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ \mbox{\hyperlink{calib_2calib__command_8h_a2178dc3bd2567fb91bd6bf0b5c80e2a2}{atCounter}}(\mbox{\hyperlink{group__device_gafb234ccd6a80d09c0efbe336c2354267}{ATCADeviceType}}\ device\_type,\ \mbox{\hyperlink{struct_a_t_c_a_packet}{ATCAPacket}}\ *packet);}
+\DoxyCodeLine{00108\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ \mbox{\hyperlink{calib_2calib__command_8h_a7f24a17903c00fdfa508969638a15e1f}{atDeriveKey}}(\mbox{\hyperlink{group__device_gafb234ccd6a80d09c0efbe336c2354267}{ATCADeviceType}}\ device\_type,\ \mbox{\hyperlink{struct_a_t_c_a_packet}{ATCAPacket}}\ *packet,\ \textcolor{keywordtype}{bool}\ has\_mac);}
+\DoxyCodeLine{00109\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ \mbox{\hyperlink{calib_2calib__command_8h_a7256be159677c7dd7529e9f05c3047cc}{atECDH}}(\mbox{\hyperlink{group__device_gafb234ccd6a80d09c0efbe336c2354267}{ATCADeviceType}}\ device\_type,\ \mbox{\hyperlink{struct_a_t_c_a_packet}{ATCAPacket}}\ *packet);}
+\DoxyCodeLine{00110\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ \mbox{\hyperlink{calib_2calib__command_8h_a162e3aee72aae5e157d56e432cb060b3}{atGenDig}}(\mbox{\hyperlink{group__device_gafb234ccd6a80d09c0efbe336c2354267}{ATCADeviceType}}\ device\_type,\ \mbox{\hyperlink{struct_a_t_c_a_packet}{ATCAPacket}}\ *packet,\ \textcolor{keywordtype}{bool}\ is\_no\_mac\_key);}
+\DoxyCodeLine{00111\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ \mbox{\hyperlink{calib_2calib__command_8h_accef557ffb30eb230c468bae66c460e8}{atGenKey}}(\mbox{\hyperlink{group__device_gafb234ccd6a80d09c0efbe336c2354267}{ATCADeviceType}}\ device\_type,\ \mbox{\hyperlink{struct_a_t_c_a_packet}{ATCAPacket}}\ *packet);}
+\DoxyCodeLine{00112\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ \mbox{\hyperlink{calib_2calib__command_8h_a6f8b9c606699a75bb66d86dbf0d599ad}{atHMAC}}(\mbox{\hyperlink{group__device_gafb234ccd6a80d09c0efbe336c2354267}{ATCADeviceType}}\ device\_type,\ \mbox{\hyperlink{struct_a_t_c_a_packet}{ATCAPacket}}\ *packet);}
+\DoxyCodeLine{00113\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ \mbox{\hyperlink{calib_2calib__command_8h_a640d3cfd0f5b41f50cea0b987094d8a1}{atInfo}}(\mbox{\hyperlink{group__device_gafb234ccd6a80d09c0efbe336c2354267}{ATCADeviceType}}\ device\_type,\ \mbox{\hyperlink{struct_a_t_c_a_packet}{ATCAPacket}}\ *packet);}
+\DoxyCodeLine{00114\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ \mbox{\hyperlink{calib_2calib__command_8h_a4de6475ec5d92cb2164860735515786a}{atLock}}(\mbox{\hyperlink{group__device_gafb234ccd6a80d09c0efbe336c2354267}{ATCADeviceType}}\ device\_type,\ \mbox{\hyperlink{struct_a_t_c_a_packet}{ATCAPacket}}\ *packet);}
+\DoxyCodeLine{00115\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ \mbox{\hyperlink{calib_2calib__command_8h_ad560b8a198015b54cd2b203c7d9e3235}{atMAC}}(\mbox{\hyperlink{group__device_gafb234ccd6a80d09c0efbe336c2354267}{ATCADeviceType}}\ device\_type,\ \mbox{\hyperlink{struct_a_t_c_a_packet}{ATCAPacket}}\ *packet);}
+\DoxyCodeLine{00116\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ \mbox{\hyperlink{calib_2calib__command_8h_a719ebf6c48605b6e1f6b4503f68c91d8}{atNonce}}(\mbox{\hyperlink{group__device_gafb234ccd6a80d09c0efbe336c2354267}{ATCADeviceType}}\ device\_type,\ \mbox{\hyperlink{struct_a_t_c_a_packet}{ATCAPacket}}\ *packet);}
+\DoxyCodeLine{00117\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ \mbox{\hyperlink{calib_2calib__command_8h_afaf2ec3ff6b7feba0ca50a9b4f8d3ad8}{atPause}}(\mbox{\hyperlink{group__device_gafb234ccd6a80d09c0efbe336c2354267}{ATCADeviceType}}\ device\_type,\ \mbox{\hyperlink{struct_a_t_c_a_packet}{ATCAPacket}}\ *packet);}
+\DoxyCodeLine{00118\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ \mbox{\hyperlink{calib_2calib__command_8h_ae375436dd76e3560190ee989d1e6ca3f}{atPrivWrite}}(\mbox{\hyperlink{group__device_gafb234ccd6a80d09c0efbe336c2354267}{ATCADeviceType}}\ device\_type,\ \mbox{\hyperlink{struct_a_t_c_a_packet}{ATCAPacket}}\ *packet);}
+\DoxyCodeLine{00119\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ \mbox{\hyperlink{calib_2calib__command_8h_adb3ff53d3082ac5171aab5215c444f93}{atRandom}}(\mbox{\hyperlink{group__device_gafb234ccd6a80d09c0efbe336c2354267}{ATCADeviceType}}\ device\_type,\ \mbox{\hyperlink{struct_a_t_c_a_packet}{ATCAPacket}}\ *packet);}
+\DoxyCodeLine{00120\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ \mbox{\hyperlink{calib_2calib__command_8h_a2649bf4fbd5127c72bd8e6217f3e0569}{atRead}}(\mbox{\hyperlink{group__device_gafb234ccd6a80d09c0efbe336c2354267}{ATCADeviceType}}\ device\_type,\ \mbox{\hyperlink{struct_a_t_c_a_packet}{ATCAPacket}}\ *packet);}
+\DoxyCodeLine{00121\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ \mbox{\hyperlink{calib_2calib__command_8h_a36c5a2fa4f9496836363498aacdad690}{atSecureBoot}}(\mbox{\hyperlink{group__device_gafb234ccd6a80d09c0efbe336c2354267}{ATCADeviceType}}\ device\_type,\ \mbox{\hyperlink{struct_a_t_c_a_packet}{ATCAPacket}}\ *packet);}
+\DoxyCodeLine{00122\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ \mbox{\hyperlink{calib_2calib__command_8h_a82b629aa1f4e63fe38b994ad02298c2e}{atSHA}}(\mbox{\hyperlink{group__device_gafb234ccd6a80d09c0efbe336c2354267}{ATCADeviceType}}\ device\_type,\ \mbox{\hyperlink{struct_a_t_c_a_packet}{ATCAPacket}}\ *packet,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ write\_context\_size);}
+\DoxyCodeLine{00123\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ \mbox{\hyperlink{calib_2calib__command_8h_ac49cfa3f1086cf39c98f5d39d7a1ceb6}{atSign}}(\mbox{\hyperlink{group__device_gafb234ccd6a80d09c0efbe336c2354267}{ATCADeviceType}}\ device\_type,\ \mbox{\hyperlink{struct_a_t_c_a_packet}{ATCAPacket}}\ *packet);}
+\DoxyCodeLine{00124\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ \mbox{\hyperlink{calib_2calib__command_8h_a626c5623d718edfbfb0ab449aeeaf5be}{atUpdateExtra}}(\mbox{\hyperlink{group__device_gafb234ccd6a80d09c0efbe336c2354267}{ATCADeviceType}}\ device\_type,\ \mbox{\hyperlink{struct_a_t_c_a_packet}{ATCAPacket}}\ *packet);}
+\DoxyCodeLine{00125\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ \mbox{\hyperlink{calib_2calib__command_8h_a9dceb22933b7ffe9a13f2b6a60dddc81}{atVerify}}(\mbox{\hyperlink{group__device_gafb234ccd6a80d09c0efbe336c2354267}{ATCADeviceType}}\ device\_type,\ \mbox{\hyperlink{struct_a_t_c_a_packet}{ATCAPacket}}\ *packet);}
+\DoxyCodeLine{00126\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ \mbox{\hyperlink{calib_2calib__command_8h_a36e40ed6fd6b7b9b68c33de91254eac3}{atWrite}}(\mbox{\hyperlink{group__device_gafb234ccd6a80d09c0efbe336c2354267}{ATCADeviceType}}\ device\_type,\ \mbox{\hyperlink{struct_a_t_c_a_packet}{ATCAPacket}}\ *packet,\ \textcolor{keywordtype}{bool}\ has\_mac);}
+\DoxyCodeLine{00127\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ \mbox{\hyperlink{calib_2calib__command_8h_a4686a88304475a709b62f4ecc8b7e543}{atAES}}(\mbox{\hyperlink{group__device_gafb234ccd6a80d09c0efbe336c2354267}{ATCADeviceType}}\ device\_type,\ \mbox{\hyperlink{struct_a_t_c_a_packet}{ATCAPacket}}\ *packet);}
+\DoxyCodeLine{00128\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ \mbox{\hyperlink{calib_2calib__command_8h_ab477429a614a0aa220038702ba681841}{atSelfTest}}(\mbox{\hyperlink{group__device_gafb234ccd6a80d09c0efbe336c2354267}{ATCADeviceType}}\ device\_type,\ \mbox{\hyperlink{struct_a_t_c_a_packet}{ATCAPacket}}\ *packet);}
+\DoxyCodeLine{00129\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ \mbox{\hyperlink{calib_2calib__command_8h_ac70cadb669c6ff5dc2dd43f3465553c3}{atKDF}}(\mbox{\hyperlink{group__device_gafb234ccd6a80d09c0efbe336c2354267}{ATCADeviceType}}\ device\_type,\ \mbox{\hyperlink{struct_a_t_c_a_packet}{ATCAPacket}}\ *packet);}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{calib_2calib__command_8h_aae5866a78d2f0464b04eee9ef1f97030}{atIsSHAFamily}}(\mbox{\hyperlink{group__device_gafb234ccd6a80d09c0efbe336c2354267}{ATCADeviceType}}\ device\_type);}
+\DoxyCodeLine{00132\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{calib_2calib__command_8h_ae82dca54cc3fd1cc2f1671e98d64df07}{atIsECCFamily}}(\mbox{\hyperlink{group__device_gafb234ccd6a80d09c0efbe336c2354267}{ATCADeviceType}}\ device\_type);}
+\DoxyCodeLine{00133\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ \mbox{\hyperlink{calib_2calib__command_8h_ae41108996848638519849163e51cd10a}{isATCAError}}(\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ *data);}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00136\ \textcolor{comment}{//\ command\ helpers}}
+\DoxyCodeLine{00137\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{calib_2calib__command_8h_a53ded4ed630b6ef4d292056c2e6b34f6}{atCRC}}(\textcolor{keywordtype}{size\_t}\ length,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ *data,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ *crc\_le);}
+\DoxyCodeLine{00138\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{calib_2calib__command_8h_a54460acd927854db5d39d6d5c3e8ed7c}{atCalcCrc}}(\mbox{\hyperlink{struct_a_t_c_a_packet}{ATCAPacket}}\ *pkt);}
+\DoxyCodeLine{00139\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ \mbox{\hyperlink{calib_2calib__command_8h_a7723a58d1781b3ba54e8f45d5729b33a}{atCheckCrc}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ *response);}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00142\ \textcolor{comment}{/*\ command\ definitions\ */}}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00145\ \textcolor{preprocessor}{\#define\ ATCA\_CMD\_SIZE\_MIN\ \ \ \ \ \ \ ((uint8\_t)7)}}
+\DoxyCodeLine{00147\ \textcolor{preprocessor}{\#define\ ATCA\_CMD\_SIZE\_MAX\ \ \ \ \ \ \ ((uint8\_t)4\ *\ 36\ +\ 7)}}
+\DoxyCodeLine{00149\ \textcolor{preprocessor}{\#define\ CMD\_STATUS\_SUCCESS\ \ \ \ \ \ ((uint8\_t)0x00)}}
+\DoxyCodeLine{00151\ \textcolor{preprocessor}{\#define\ CMD\_STATUS\_WAKEUP\ \ \ \ \ \ \ ((uint8\_t)0x11)}}
+\DoxyCodeLine{00153\ \textcolor{preprocessor}{\#define\ CMD\_STATUS\_BYTE\_PARSE\ \ \ ((uint8\_t)0x03)}}
+\DoxyCodeLine{00155\ \textcolor{preprocessor}{\#define\ CMD\_STATUS\_BYTE\_ECC\ \ \ \ \ ((uint8\_t)0x05)}}
+\DoxyCodeLine{00157\ \textcolor{preprocessor}{\#define\ CMD\_STATUS\_BYTE\_EXEC\ \ \ \ ((uint8\_t)0x0F)}}
+\DoxyCodeLine{00159\ \textcolor{preprocessor}{\#define\ CMD\_STATUS\_BYTE\_COMM\ \ \ \ ((uint8\_t)0xFF)}}
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00163\ \textcolor{preprocessor}{\#define\ ATCA\_CHECKMAC\ \ \ \ \ ((uint8\_t)0x28)\ \ }}
+\DoxyCodeLine{00164\ \textcolor{preprocessor}{\#define\ ATCA\_DERIVE\_KEY\ \ \ ((uint8\_t)0x1C)\ \ }}
+\DoxyCodeLine{00165\ \textcolor{preprocessor}{\#define\ ATCA\_INFO\ \ \ \ \ \ \ \ \ ((uint8\_t)0x30)\ \ }}
+\DoxyCodeLine{00166\ \textcolor{preprocessor}{\#define\ ATCA\_GENDIG\ \ \ \ \ \ \ ((uint8\_t)0x15)\ \ }}
+\DoxyCodeLine{00167\ \textcolor{preprocessor}{\#define\ ATCA\_GENKEY\ \ \ \ \ \ \ ((uint8\_t)0x40)\ \ }}
+\DoxyCodeLine{00168\ \textcolor{preprocessor}{\#define\ ATCA\_HMAC\ \ \ \ \ \ \ \ \ ((uint8\_t)0x11)\ \ }}
+\DoxyCodeLine{00169\ \textcolor{preprocessor}{\#define\ ATCA\_LOCK\ \ \ \ \ \ \ \ \ ((uint8\_t)0x17)\ \ }}
+\DoxyCodeLine{00170\ \textcolor{preprocessor}{\#define\ ATCA\_MAC\ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x08)\ \ }}
+\DoxyCodeLine{00171\ \textcolor{preprocessor}{\#define\ ATCA\_NONCE\ \ \ \ \ \ \ \ ((uint8\_t)0x16)\ \ }}
+\DoxyCodeLine{00172\ \textcolor{preprocessor}{\#define\ ATCA\_PAUSE\ \ \ \ \ \ \ \ ((uint8\_t)0x01)\ \ }}
+\DoxyCodeLine{00173\ \textcolor{preprocessor}{\#define\ ATCA\_PRIVWRITE\ \ \ \ ((uint8\_t)0x46)\ \ }}
+\DoxyCodeLine{00174\ \textcolor{preprocessor}{\#define\ ATCA\_RANDOM\ \ \ \ \ \ \ ((uint8\_t)0x1B)\ \ }}
+\DoxyCodeLine{00175\ \textcolor{preprocessor}{\#define\ ATCA\_READ\ \ \ \ \ \ \ \ \ ((uint8\_t)0x02)\ \ }}
+\DoxyCodeLine{00176\ \textcolor{preprocessor}{\#define\ ATCA\_SIGN\ \ \ \ \ \ \ \ \ ((uint8\_t)0x41)\ \ }}
+\DoxyCodeLine{00177\ \textcolor{preprocessor}{\#define\ ATCA\_UPDATE\_EXTRA\ ((uint8\_t)0x20)\ \ }}
+\DoxyCodeLine{00178\ \textcolor{preprocessor}{\#define\ ATCA\_VERIFY\ \ \ \ \ \ \ ((uint8\_t)0x45)\ \ }}
+\DoxyCodeLine{00179\ \textcolor{preprocessor}{\#define\ ATCA\_WRITE\ \ \ \ \ \ \ \ ((uint8\_t)0x12)\ \ }}
+\DoxyCodeLine{00180\ \textcolor{preprocessor}{\#define\ ATCA\_ECDH\ \ \ \ \ \ \ \ \ ((uint8\_t)0x43)\ \ }}
+\DoxyCodeLine{00181\ \textcolor{preprocessor}{\#define\ ATCA\_COUNTER\ \ \ \ \ \ ((uint8\_t)0x24)\ \ }}
+\DoxyCodeLine{00182\ \textcolor{preprocessor}{\#define\ ATCA\_SHA\ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x47)\ \ }}
+\DoxyCodeLine{00183\ \textcolor{preprocessor}{\#define\ ATCA\_AES\ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x51)\ \ }}
+\DoxyCodeLine{00184\ \textcolor{preprocessor}{\#define\ ATCA\_KDF\ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x56)\ \ }}
+\DoxyCodeLine{00185\ \textcolor{preprocessor}{\#define\ ATCA\_SECUREBOOT\ \ \ ((uint8\_t)0x80)\ \ }}
+\DoxyCodeLine{00186\ \textcolor{preprocessor}{\#define\ ATCA\_SELFTEST\ \ \ \ \ ((uint8\_t)0x77)\ \ }}
+\DoxyCodeLine{00187\ }
+\DoxyCodeLine{00188\ }
+\DoxyCodeLine{00189\ }
+\DoxyCodeLine{00190\ }
+\DoxyCodeLine{00196\ \textcolor{preprocessor}{\#define\ ATCA\_BLOCK\_SIZE\ \ \ \ \ \ \ \ \ \ \ \ \ (32)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00197\ \textcolor{preprocessor}{\#define\ ATCA\_WORD\_SIZE\ \ \ \ \ \ \ \ \ \ \ \ \ \ (4)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00198\ \textcolor{preprocessor}{\#define\ ATCA\_PUB\_KEY\_PAD\ \ \ \ \ \ \ \ \ \ \ \ (4)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00199\ \textcolor{preprocessor}{\#define\ ATCA\_SERIAL\_NUM\_SIZE\ \ \ \ \ \ \ \ (9)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00200\ \textcolor{preprocessor}{\#define\ ATCA\_RSP\_SIZE\_VAL\ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)7)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00201\ \textcolor{preprocessor}{\#define\ ATCA\_KEY\_COUNT\ \ \ \ \ \ \ \ \ \ \ \ \ \ (16)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00202\ \textcolor{preprocessor}{\#define\ ATCA\_ECC\_CONFIG\_SIZE\ \ \ \ \ \ \ \ (128)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00203\ \textcolor{preprocessor}{\#define\ ATCA\_SHA\_CONFIG\_SIZE\ \ \ \ \ \ \ \ (88)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00204\ \textcolor{preprocessor}{\#define\ ATCA\_ECC204\_CONFIG\_SIZE\ \ \ \ \ (64)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00205\ \textcolor{preprocessor}{\#define\ ATCA\_ECC204\_CONFIG\_SLOT\_SIZE\ (16)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00206\ \textcolor{preprocessor}{\#define\ ATCA\_OTP\_SIZE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (64)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00207\ \textcolor{preprocessor}{\#define\ ATCA\_DATA\_SIZE\ \ \ \ \ \ \ \ \ \ \ \ \ \ (ATCA\_KEY\_COUNT\ *\ ATCA\_KEY\_SIZE)\ \ \ }}
+\DoxyCodeLine{00208\ \textcolor{preprocessor}{\#define\ ATCA\_AES\_GFM\_SIZE\ \ \ \ \ \ \ \ \ \ \ \ ATCA\_BLOCK\_SIZE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00209\ }
+\DoxyCodeLine{00210\ \textcolor{preprocessor}{\#define\ ATCA\_CHIPMODE\_OFFSET\ \ \ \ \ \ \ \ \ \ \ (19)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00211\ \textcolor{preprocessor}{\#define\ ATCA\_CHIPMODE\_I2C\_ADDRESS\_FLAG\ ((uint8\_t)0x01)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00212\ \textcolor{preprocessor}{\#define\ ATCA\_CHIPMODE\_TTL\_ENABLE\_FLAG\ \ ((uint8\_t)0x02)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00213\ \textcolor{preprocessor}{\#define\ ATCA\_CHIPMODE\_WATCHDOG\_MASK\ \ \ \ ((uint8\_t)0x04)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00214\ \textcolor{preprocessor}{\#define\ ATCA\_CHIPMODE\_WATCHDOG\_SHORT\ \ \ ((uint8\_t)0x00)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00215\ \textcolor{preprocessor}{\#define\ ATCA\_CHIPMODE\_WATCHDOG\_LONG\ \ \ \ ((uint8\_t)0x04)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00216\ \textcolor{preprocessor}{\#define\ ATCA\_CHIPMODE\_CLOCK\_DIV\_MASK\ \ \ ((uint8\_t)0xF8)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00217\ \textcolor{preprocessor}{\#define\ ATCA\_CHIPMODE\_CLOCK\_DIV\_M0\ \ \ \ \ ((uint8\_t)0x00)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00218\ \textcolor{preprocessor}{\#define\ ATCA\_CHIPMODE\_CLOCK\_DIV\_M1\ \ \ \ \ ((uint8\_t)0x28)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00219\ \textcolor{preprocessor}{\#define\ ATCA\_CHIPMODE\_CLOCK\_DIV\_M2\ \ \ \ \ ((uint8\_t)0x68)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00220\ }
+\DoxyCodeLine{00221\ \textcolor{preprocessor}{\#define\ ATCA\_COUNT\_SIZE\ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)1)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00222\ \textcolor{preprocessor}{\#define\ ATCA\_CRC\_SIZE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)2)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00223\ \textcolor{preprocessor}{\#define\ ATCA\_PACKET\_OVERHEAD\ \ \ \ \ \ \ \ (ATCA\_COUNT\_SIZE\ +\ ATCA\_CRC\_SIZE)\ \ }}
+\DoxyCodeLine{00224\ }
+\DoxyCodeLine{00225\ \textcolor{preprocessor}{\#define\ ATCA\_PUB\_KEY\_SIZE\ \ \ \ \ \ \ \ \ \ \ (64)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00226\ \textcolor{preprocessor}{\#define\ ATCA\_PRIV\_KEY\_SIZE\ \ \ \ \ \ \ \ \ \ (32)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00227\ \textcolor{preprocessor}{\#define\ ATCA\_SIG\_SIZE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (64)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00228\ \textcolor{preprocessor}{\#define\ ATCA\_KEY\_SIZE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (32)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00229\ \textcolor{preprocessor}{\#define\ RSA2048\_KEY\_SIZE\ \ \ \ \ \ \ \ \ \ \ \ (256)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00230\ }
+\DoxyCodeLine{00231\ \textcolor{preprocessor}{\#define\ ATCA\_RSP\_SIZE\_MIN\ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)4)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00232\ \textcolor{preprocessor}{\#define\ ATCA\_RSP\_SIZE\_4\ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)7)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00233\ \textcolor{preprocessor}{\#define\ ATCA\_RSP\_SIZE\_72\ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)75)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00234\ \textcolor{preprocessor}{\#define\ ATCA\_RSP\_SIZE\_64\ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)67)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00235\ \textcolor{preprocessor}{\#define\ ATCA\_RSP\_SIZE\_32\ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)35)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00236\ \textcolor{preprocessor}{\#define\ ATCA\_RSP\_SIZE\_16\ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)19)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00237\ \textcolor{preprocessor}{\#define\ ATCA\_RSP\_SIZE\_MAX\ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)75)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00238\ }
+\DoxyCodeLine{00239\ \textcolor{preprocessor}{\#define\ OUTNONCE\_SIZE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (32)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00240\ }
+\DoxyCodeLine{00243\ \textcolor{preprocessor}{\#define\ ATCA\_KEY\_ID\_MAX\ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)15)\ \ \ \ \ \ \ }}
+\DoxyCodeLine{00244\ \textcolor{preprocessor}{\#define\ ATCA\_OTP\_BLOCK\_MAX\ \ \ \ \ \ \ \ \ \ ((uint8\_t)1)\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00249\ \textcolor{preprocessor}{\#define\ ATCA\_COUNT\_IDX\ \ \ \ \ \ \ \ \ \ \ \ \ \ (0)\ \ \ \ \ }}
+\DoxyCodeLine{00250\ \textcolor{preprocessor}{\#define\ ATCA\_OPCODE\_IDX\ \ \ \ \ \ \ \ \ \ \ \ \ (1)\ \ \ \ \ }}
+\DoxyCodeLine{00251\ \textcolor{preprocessor}{\#define\ ATCA\_PARAM1\_IDX\ \ \ \ \ \ \ \ \ \ \ \ \ (2)\ \ \ \ \ }}
+\DoxyCodeLine{00252\ \textcolor{preprocessor}{\#define\ ATCA\_PARAM2\_IDX\ \ \ \ \ \ \ \ \ \ \ \ \ (3)\ \ \ \ \ }}
+\DoxyCodeLine{00253\ \textcolor{preprocessor}{\#define\ ATCA\_DATA\_IDX\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (5)\ \ \ \ \ }}
+\DoxyCodeLine{00254\ \textcolor{preprocessor}{\#define\ ATCA\_RSP\_DATA\_IDX\ \ \ \ \ \ \ \ \ \ \ (1)\ \ \ \ \ }}
+\DoxyCodeLine{00259\ \textcolor{preprocessor}{\#define\ ATCA\_ZONE\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x03)\ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00260\ \textcolor{preprocessor}{\#define\ ATCA\_ZONE\_ENCRYPTED\ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x40)\ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00261\ \textcolor{preprocessor}{\#define\ ATCA\_ZONE\_READWRITE\_32\ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x80)\ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00262\ \textcolor{preprocessor}{\#define\ ATCA\_ADDRESS\_MASK\_CONFIG\ \ \ \ \ \ \ \ (0x001F)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00263\ \textcolor{preprocessor}{\#define\ ATCA\_ADDRESS\_MASK\_OTP\ \ \ \ \ \ \ \ \ \ \ (0x000F)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00264\ \textcolor{preprocessor}{\#define\ ATCA\_ADDRESS\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x007F)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00265\ \textcolor{preprocessor}{\#define\ ATCA\_TEMPKEY\_KEYID\ \ \ \ \ \ \ \ \ \ \ \ \ \ (0xFFFF)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00270\ \textcolor{preprocessor}{\#define\ ATCA\_B283\_KEY\_TYPE\ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ }}
+\DoxyCodeLine{00271\ \textcolor{preprocessor}{\#define\ ATCA\_K283\_KEY\_TYPE\ \ \ \ \ \ \ \ \ \ 1\ \ \ \ \ \ \ }}
+\DoxyCodeLine{00272\ \textcolor{preprocessor}{\#define\ ATCA\_P256\_KEY\_TYPE\ \ \ \ \ \ \ \ \ \ 4\ \ \ \ \ \ \ }}
+\DoxyCodeLine{00273\ \textcolor{preprocessor}{\#define\ ATCA\_AES\_KEY\_TYPE\ \ \ \ \ \ \ \ \ \ \ 6\ \ \ \ \ \ \ }}
+\DoxyCodeLine{00274\ \textcolor{preprocessor}{\#define\ ATCA\_SHA\_KEY\_TYPE\ \ \ \ \ \ \ \ \ \ \ 7\ \ \ \ \ \ \ }}
+\DoxyCodeLine{00279\ \textcolor{preprocessor}{\#define\ AES\_MODE\_IDX\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ATCA\_PARAM1\_IDX\ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00280\ \textcolor{preprocessor}{\#define\ AES\_KEYID\_IDX\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ATCA\_PARAM2\_IDX\ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00281\ \textcolor{preprocessor}{\#define\ AES\_INPUT\_IDX\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ATCA\_DATA\_IDX\ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00282\ \textcolor{preprocessor}{\#define\ AES\_COUNT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (23)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00283\ \textcolor{preprocessor}{\#define\ AES\_MODE\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0xC7)\ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00284\ \textcolor{preprocessor}{\#define\ AES\_MODE\_KEY\_BLOCK\_MASK\ \ \ \ \ ((uint8\_t)0xC0)\ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00285\ \textcolor{preprocessor}{\#define\ AES\_MODE\_OP\_MASK\ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x07)\ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00286\ \textcolor{preprocessor}{\#define\ AES\_MODE\_ENCRYPT\ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x00)\ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00287\ \textcolor{preprocessor}{\#define\ AES\_MODE\_DECRYPT\ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x01)\ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00288\ \textcolor{preprocessor}{\#define\ AES\_MODE\_GFM\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x03)\ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00289\ \textcolor{preprocessor}{\#define\ AES\_MODE\_KEY\_BLOCK\_POS\ \ \ \ \ \ (6)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00290\ \textcolor{preprocessor}{\#define\ AES\_DATA\_SIZE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (16)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00291\ \textcolor{preprocessor}{\#define\ AES\_RSP\_SIZE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ATCA\_RSP\_SIZE\_16\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00296\ \textcolor{preprocessor}{\#define\ CHECKMAC\_MODE\_IDX\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ATCA\_PARAM1\_IDX\ \ \ \ \ }}
+\DoxyCodeLine{00297\ \textcolor{preprocessor}{\#define\ CHECKMAC\_KEYID\_IDX\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ATCA\_PARAM2\_IDX\ \ \ \ \ }}
+\DoxyCodeLine{00298\ \textcolor{preprocessor}{\#define\ CHECKMAC\_CLIENT\_CHALLENGE\_IDX\ \ \ \ \ \ \ ATCA\_DATA\_IDX\ \ \ \ \ \ \ }}
+\DoxyCodeLine{00299\ \textcolor{preprocessor}{\#define\ CHECKMAC\_CLIENT\_RESPONSE\_IDX\ \ \ \ \ \ \ \ (37)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00300\ \textcolor{preprocessor}{\#define\ CHECKMAC\_DATA\_IDX\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (69)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00301\ \textcolor{preprocessor}{\#define\ CHECKMAC\_COUNT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (84)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00302\ \textcolor{preprocessor}{\#define\ CHECKMAC\_MODE\_CHALLENGE\ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x00)\ \ \ \ \ }}
+\DoxyCodeLine{00303\ \textcolor{preprocessor}{\#define\ CHECKMAC\_MODE\_BLOCK2\_TEMPKEY\ \ \ \ \ \ \ \ ((uint8\_t)0x01)\ \ \ \ \ }}
+\DoxyCodeLine{00304\ \textcolor{preprocessor}{\#define\ CHECKMAC\_MODE\_BLOCK1\_TEMPKEY\ \ \ \ \ \ \ \ ((uint8\_t)0x02)\ \ \ \ \ }}
+\DoxyCodeLine{00305\ \textcolor{preprocessor}{\#define\ CHECKMAC\_MODE\_SOURCE\_FLAG\_MATCH\ \ \ \ \ ((uint8\_t)0x04)\ \ \ \ \ }}
+\DoxyCodeLine{00306\ \textcolor{preprocessor}{\#define\ CHECKMAC\_MODE\_INCLUDE\_OTP\_64\ \ \ \ \ \ \ \ ((uint8\_t)0x20)\ \ \ \ \ }}
+\DoxyCodeLine{00307\ \textcolor{preprocessor}{\#define\ CHECKMAC\_MODE\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x27)\ \ \ \ \ }}
+\DoxyCodeLine{00308\ \textcolor{preprocessor}{\#define\ CHECKMAC\_CLIENT\_CHALLENGE\_SIZE\ \ \ \ \ \ (32)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00309\ \textcolor{preprocessor}{\#define\ CHECKMAC\_CLIENT\_RESPONSE\_SIZE\ \ \ \ \ \ \ (32)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00310\ \textcolor{preprocessor}{\#define\ CHECKMAC\_OTHER\_DATA\_SIZE\ \ \ \ \ \ \ \ \ \ \ \ (13)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00311\ \textcolor{preprocessor}{\#define\ CHECKMAC\_CLIENT\_COMMAND\_SIZE\ \ \ \ \ \ \ \ (4)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00312\ \textcolor{preprocessor}{\#define\ CHECKMAC\_CMD\_MATCH\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00313\ \textcolor{preprocessor}{\#define\ CHECKMAC\_CMD\_MISMATCH\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (1)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00314\ \textcolor{preprocessor}{\#define\ CHECKMAC\_RSP\_SIZE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ATCA\_RSP\_SIZE\_MIN\ \ \ }}
+\DoxyCodeLine{00319\ \textcolor{preprocessor}{\#define\ COUNTER\_COUNT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ATCA\_CMD\_SIZE\_MIN}}
+\DoxyCodeLine{00320\ \textcolor{preprocessor}{\#define\ COUNTER\_MODE\_IDX\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ATCA\_PARAM1\_IDX\ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00321\ \textcolor{preprocessor}{\#define\ COUNTER\_KEYID\_IDX\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ATCA\_PARAM2\_IDX\ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00322\ \textcolor{preprocessor}{\#define\ COUNTER\_MODE\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x01)\ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00323\ \textcolor{preprocessor}{\#define\ COUNTER\_MAX\_VALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint32\_t)2097151)\ \ \ \ \ }}
+\DoxyCodeLine{00324\ \textcolor{preprocessor}{\#define\ COUNTER\_MODE\_READ\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x00)\ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00325\ \textcolor{preprocessor}{\#define\ COUNTER\_MODE\_INCREMENT\ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x01)\ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00326\ \textcolor{preprocessor}{\#define\ COUNTER\_RSP\_SIZE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ATCA\_RSP\_SIZE\_4\ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00327\ \textcolor{preprocessor}{\#define\ COUNTER\_SIZE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ATCA\_RSP\_SIZE\_MIN\ \ \ \ \ \ \ }}
+\DoxyCodeLine{00332\ \textcolor{preprocessor}{\#define\ DERIVE\_KEY\_RANDOM\_IDX\ \ \ \ \ \ \ \ \ \ \ ATCA\_PARAM1\_IDX\ \ \ \ \ }}
+\DoxyCodeLine{00333\ \textcolor{preprocessor}{\#define\ DERIVE\_KEY\_TARGETKEY\_IDX\ \ \ \ \ \ \ \ ATCA\_PARAM2\_IDX\ \ \ \ \ }}
+\DoxyCodeLine{00334\ \textcolor{preprocessor}{\#define\ DERIVE\_KEY\_MAC\_IDX\ \ \ \ \ \ \ \ \ \ \ \ \ \ ATCA\_DATA\_IDX\ \ \ \ \ \ \ }}
+\DoxyCodeLine{00335\ \textcolor{preprocessor}{\#define\ DERIVE\_KEY\_COUNT\_SMALL\ \ \ \ \ \ \ \ \ \ ATCA\_CMD\_SIZE\_MIN\ \ \ }}
+\DoxyCodeLine{00336\ \textcolor{preprocessor}{\#define\ DERIVE\_KEY\_MODE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x04)\ \ \ \ \ }}
+\DoxyCodeLine{00337\ \textcolor{preprocessor}{\#define\ DERIVE\_KEY\_COUNT\_LARGE\ \ \ \ \ \ \ \ \ \ (39)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00338\ \textcolor{preprocessor}{\#define\ DERIVE\_KEY\_RANDOM\_FLAG\ \ \ \ \ \ \ \ \ \ ((uint8\_t)4)\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00339\ \textcolor{preprocessor}{\#define\ DERIVE\_KEY\_MAC\_SIZE\ \ \ \ \ \ \ \ \ \ \ \ \ (32)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00340\ \textcolor{preprocessor}{\#define\ DERIVE\_KEY\_RSP\_SIZE\ \ \ \ \ \ \ \ \ \ \ \ \ ATCA\_RSP\_SIZE\_MIN\ \ \ }}
+\DoxyCodeLine{00345\ \textcolor{preprocessor}{\#define\ ECDH\_PREFIX\_MODE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x00)}}
+\DoxyCodeLine{00346\ \textcolor{preprocessor}{\#define\ ECDH\_COUNT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (ATCA\_CMD\_SIZE\_MIN\ +\ ATCA\_PUB\_KEY\_SIZE)}}
+\DoxyCodeLine{00347\ \textcolor{preprocessor}{\#define\ ECDH\_MODE\_SOURCE\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x01)}}
+\DoxyCodeLine{00348\ \textcolor{preprocessor}{\#define\ ECDH\_MODE\_SOURCE\_EEPROM\_SLOT\ \ \ \ \ \ \ \ ((uint8\_t)0x00)}}
+\DoxyCodeLine{00349\ \textcolor{preprocessor}{\#define\ ECDH\_MODE\_SOURCE\_TEMPKEY\ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x01)}}
+\DoxyCodeLine{00350\ \textcolor{preprocessor}{\#define\ ECDH\_MODE\_OUTPUT\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x02)}}
+\DoxyCodeLine{00351\ \textcolor{preprocessor}{\#define\ ECDH\_MODE\_OUTPUT\_CLEAR\ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x00)}}
+\DoxyCodeLine{00352\ \textcolor{preprocessor}{\#define\ ECDH\_MODE\_OUTPUT\_ENC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x02)}}
+\DoxyCodeLine{00353\ \textcolor{preprocessor}{\#define\ ECDH\_MODE\_COPY\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x0C)}}
+\DoxyCodeLine{00354\ \textcolor{preprocessor}{\#define\ ECDH\_MODE\_COPY\_COMPATIBLE\ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x00)}}
+\DoxyCodeLine{00355\ \textcolor{preprocessor}{\#define\ ECDH\_MODE\_COPY\_EEPROM\_SLOT\ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x04)}}
+\DoxyCodeLine{00356\ \textcolor{preprocessor}{\#define\ ECDH\_MODE\_COPY\_TEMP\_KEY\ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x08)}}
+\DoxyCodeLine{00357\ \textcolor{preprocessor}{\#define\ ECDH\_MODE\_COPY\_OUTPUT\_BUFFER\ \ \ \ \ \ \ \ ((uint8\_t)0x0C)}}
+\DoxyCodeLine{00358\ \textcolor{preprocessor}{\#define\ ECDH\_KEY\_SIZE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ATCA\_BLOCK\_SIZE\ \ \ \ \ }}
+\DoxyCodeLine{00359\ \textcolor{preprocessor}{\#define\ ECDH\_RSP\_SIZE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ATCA\_RSP\_SIZE\_64\ \ \ \ }}
+\DoxyCodeLine{00364\ \textcolor{preprocessor}{\#define\ GENDIG\_ZONE\_IDX\ \ \ \ \ \ \ \ \ \ \ \ \ ATCA\_PARAM1\_IDX\ \ \ \ \ }}
+\DoxyCodeLine{00365\ \textcolor{preprocessor}{\#define\ GENDIG\_KEYID\_IDX\ \ \ \ \ \ \ \ \ \ \ \ ATCA\_PARAM2\_IDX\ \ \ \ \ }}
+\DoxyCodeLine{00366\ \textcolor{preprocessor}{\#define\ GENDIG\_DATA\_IDX\ \ \ \ \ \ \ \ \ \ \ \ \ ATCA\_DATA\_IDX\ \ \ \ \ \ \ }}
+\DoxyCodeLine{00367\ \textcolor{preprocessor}{\#define\ GENDIG\_COUNT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ATCA\_CMD\_SIZE\_MIN\ \ \ }}
+\DoxyCodeLine{00368\ \textcolor{preprocessor}{\#define\ GENDIG\_ZONE\_CONFIG\ \ \ \ \ \ \ \ \ \ ((uint8\_t)0)\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00369\ \textcolor{preprocessor}{\#define\ GENDIG\_ZONE\_OTP\ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)1)\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00370\ \textcolor{preprocessor}{\#define\ GENDIG\_ZONE\_DATA\ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)2)\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00371\ \textcolor{preprocessor}{\#define\ GENDIG\_ZONE\_SHARED\_NONCE\ \ \ \ ((uint8\_t)3)\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00372\ \textcolor{preprocessor}{\#define\ GENDIG\_ZONE\_COUNTER\ \ \ \ \ \ \ \ \ ((uint8\_t)4)\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00373\ \textcolor{preprocessor}{\#define\ GENDIG\_ZONE\_KEY\_CONFIG\ \ \ \ \ \ ((uint8\_t)5)\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00374\ \textcolor{preprocessor}{\#define\ GENDIG\_RSP\_SIZE\ \ \ \ \ \ \ \ \ \ \ \ \ ATCA\_RSP\_SIZE\_MIN\ \ \ }}
+\DoxyCodeLine{00379\ \textcolor{preprocessor}{\#define\ GENKEY\_MODE\_IDX\ \ \ \ \ \ \ \ \ \ \ \ \ ATCA\_PARAM1\_IDX\ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00380\ \textcolor{preprocessor}{\#define\ GENKEY\_KEYID\_IDX\ \ \ \ \ \ \ \ \ \ \ \ ATCA\_PARAM2\_IDX\ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00381\ \textcolor{preprocessor}{\#define\ GENKEY\_DATA\_IDX\ \ \ \ \ \ \ \ \ \ \ \ \ (5)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00382\ \textcolor{preprocessor}{\#define\ GENKEY\_COUNT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ATCA\_CMD\_SIZE\_MIN\ \ \ \ \ \ \ }}
+\DoxyCodeLine{00383\ \textcolor{preprocessor}{\#define\ GENKEY\_COUNT\_DATA\ \ \ \ \ \ \ \ \ \ \ (10)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00384\ \textcolor{preprocessor}{\#define\ GENKEY\_OTHER\_DATA\_SIZE\ \ \ \ \ \ (3)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00385\ \textcolor{preprocessor}{\#define\ GENKEY\_MODE\_MASK\ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x1C)\ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00386\ \textcolor{preprocessor}{\#define\ GENKEY\_MODE\_PRIVATE\ \ \ \ \ \ \ \ \ ((uint8\_t)0x04)\ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00387\ \textcolor{preprocessor}{\#define\ GENKEY\_MODE\_PUBLIC\ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x00)\ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00388\ \textcolor{preprocessor}{\#define\ GENKEY\_MODE\_DIGEST\ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x08)\ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00389\ \textcolor{preprocessor}{\#define\ GENKEY\_MODE\_PUBKEY\_DIGEST\ \ \ ((uint8\_t)0x10)\ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00390\ \textcolor{preprocessor}{\#define\ GENKEY\_MODE\_MAC\ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x20)\ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00391\ \textcolor{preprocessor}{\#define\ GENKEY\_PRIVATE\_TO\_TEMPKEY\ \ \ ((uint16\_t)0xFFFF)\ \ \ \ \ \ }}
+\DoxyCodeLine{00392\ \textcolor{preprocessor}{\#define\ GENKEY\_RSP\_SIZE\_SHORT\ \ \ \ \ \ \ ATCA\_RSP\_SIZE\_MIN\ \ \ \ \ \ \ }}
+\DoxyCodeLine{00393\ \textcolor{preprocessor}{\#define\ GENKEY\_RSP\_SIZE\_LONG\ \ \ \ \ \ \ \ ATCA\_RSP\_SIZE\_64\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00398\ \textcolor{preprocessor}{\#define\ HMAC\_MODE\_IDX\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ATCA\_PARAM1\_IDX\ \ \ \ \ }}
+\DoxyCodeLine{00399\ \textcolor{preprocessor}{\#define\ HMAC\_KEYID\_IDX\ \ \ \ \ \ \ \ \ \ \ \ \ \ ATCA\_PARAM2\_IDX\ \ \ \ \ }}
+\DoxyCodeLine{00400\ \textcolor{preprocessor}{\#define\ HMAC\_COUNT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ATCA\_CMD\_SIZE\_MIN\ \ \ }}
+\DoxyCodeLine{00401\ \textcolor{preprocessor}{\#define\ HMAC\_MODE\_FLAG\_TK\_RAND\ \ \ \ \ \ ((uint8\_t)0x00)\ \ \ \ \ }}
+\DoxyCodeLine{00402\ \textcolor{preprocessor}{\#define\ HMAC\_MODE\_FLAG\_TK\_NORAND\ \ \ \ ((uint8\_t)0x04)\ \ \ \ \ }}
+\DoxyCodeLine{00403\ \textcolor{preprocessor}{\#define\ HMAC\_MODE\_FLAG\_OTP88\ \ \ \ \ \ \ \ ((uint8\_t)0x10)\ \ \ \ \ }}
+\DoxyCodeLine{00404\ \textcolor{preprocessor}{\#define\ HMAC\_MODE\_FLAG\_OTP64\ \ \ \ \ \ \ \ ((uint8\_t)0x20)\ \ \ \ \ }}
+\DoxyCodeLine{00405\ \textcolor{preprocessor}{\#define\ HMAC\_MODE\_FLAG\_FULLSN\ \ \ \ \ \ \ ((uint8\_t)0x40)\ \ \ \ \ }}
+\DoxyCodeLine{00406\ \textcolor{preprocessor}{\#define\ HMAC\_MODE\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x74)\ \ \ \ \ }}
+\DoxyCodeLine{00407\ \textcolor{preprocessor}{\#define\ HMAC\_DIGEST\_SIZE\ \ \ \ \ \ \ \ \ \ \ \ (32)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00408\ \textcolor{preprocessor}{\#define\ HMAC\_RSP\_SIZE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ATCA\_RSP\_SIZE\_32\ \ \ \ }}
+\DoxyCodeLine{00413\ \textcolor{preprocessor}{\#define\ INFO\_PARAM1\_IDX\ \ \ \ \ \ \ \ \ \ \ \ \ ATCA\_PARAM1\_IDX\ \ \ \ \ }}
+\DoxyCodeLine{00414\ \textcolor{preprocessor}{\#define\ INFO\_PARAM2\_IDX\ \ \ \ \ \ \ \ \ \ \ \ \ ATCA\_PARAM2\_IDX\ \ \ \ \ }}
+\DoxyCodeLine{00415\ \textcolor{preprocessor}{\#define\ INFO\_COUNT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ATCA\_CMD\_SIZE\_MIN\ \ \ }}
+\DoxyCodeLine{00416\ \textcolor{preprocessor}{\#define\ INFO\_MODE\_REVISION\ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x00)\ \ \ \ \ }}
+\DoxyCodeLine{00417\ \textcolor{preprocessor}{\#define\ INFO\_MODE\_KEY\_VALID\ \ \ \ \ \ \ \ \ ((uint8\_t)0x01)\ \ \ \ \ }}
+\DoxyCodeLine{00418\ \textcolor{preprocessor}{\#define\ INFO\_MODE\_STATE\ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x02)\ \ \ \ \ }}
+\DoxyCodeLine{00419\ \textcolor{preprocessor}{\#define\ INFO\_MODE\_LOCK\_STATUS\ \ \ \ \ \ \ ((uint8\_t)0x02)\ \ \ \ \ }}
+\DoxyCodeLine{00420\ \textcolor{preprocessor}{\#define\ INFO\_MODE\_GPIO\ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x03)\ \ \ \ \ }}
+\DoxyCodeLine{00421\ \textcolor{preprocessor}{\#define\ INFO\_MODE\_VOL\_KEY\_PERMIT\ \ \ \ ((uint8\_t)0x04)\ \ \ \ \ }}
+\DoxyCodeLine{00422\ \textcolor{preprocessor}{\#define\ INFO\_MODE\_MAX\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x03)\ \ \ \ \ }}
+\DoxyCodeLine{00423\ \textcolor{preprocessor}{\#define\ INFO\_NO\_STATE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x00)\ \ \ \ \ }}
+\DoxyCodeLine{00424\ \textcolor{preprocessor}{\#define\ INFO\_OUTPUT\_STATE\_MASK\ \ \ \ \ \ ((uint8\_t)0x01)\ \ \ \ \ }}
+\DoxyCodeLine{00425\ \textcolor{preprocessor}{\#define\ INFO\_DRIVER\_STATE\_MASK\ \ \ \ \ \ ((uint8\_t)0x02)\ \ \ \ \ }}
+\DoxyCodeLine{00426\ \textcolor{preprocessor}{\#define\ INFO\_PARAM2\_SET\_LATCH\_STATE\ ((uint16\_t)0x0002)\ \ }}
+\DoxyCodeLine{00427\ \textcolor{preprocessor}{\#define\ INFO\_PARAM2\_LATCH\_SET\ \ \ \ \ \ \ ((uint16\_t)0x0001)\ \ }}
+\DoxyCodeLine{00428\ \textcolor{preprocessor}{\#define\ INFO\_PARAM2\_LATCH\_CLEAR\ \ \ \ \ ((uint16\_t)0x0000)\ \ }}
+\DoxyCodeLine{00429\ \textcolor{preprocessor}{\#define\ INFO\_SIZE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x04)\ \ \ \ \ }}
+\DoxyCodeLine{00430\ \textcolor{preprocessor}{\#define\ INFO\_RSP\_SIZE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ATCA\_RSP\_SIZE\_VAL\ \ \ }}
+\DoxyCodeLine{00435\ \textcolor{preprocessor}{\#define\ KDF\_MODE\_IDX\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ATCA\_PARAM1\_IDX\ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00436\ \textcolor{preprocessor}{\#define\ KDF\_KEYID\_IDX\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ATCA\_PARAM2\_IDX\ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00437\ \textcolor{preprocessor}{\#define\ KDF\_DETAILS\_IDX\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ATCA\_DATA\_IDX\ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00438\ \textcolor{preprocessor}{\#define\ KDF\_DETAILS\_SIZE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 4\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00439\ \textcolor{preprocessor}{\#define\ KDF\_MESSAGE\_IDX\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (ATCA\_DATA\_IDX\ +\ KDF\_DETAILS\_SIZE)}}
+\DoxyCodeLine{00440\ }
+\DoxyCodeLine{00441\ \textcolor{preprocessor}{\#define\ KDF\_MODE\_SOURCE\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x03)\ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00442\ \textcolor{preprocessor}{\#define\ KDF\_MODE\_SOURCE\_TEMPKEY\ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x00)\ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00443\ \textcolor{preprocessor}{\#define\ KDF\_MODE\_SOURCE\_TEMPKEY\_UP\ \ \ \ \ \ \ ((uint8\_t)0x01)\ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00444\ \textcolor{preprocessor}{\#define\ KDF\_MODE\_SOURCE\_SLOT\ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x02)\ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00445\ \textcolor{preprocessor}{\#define\ KDF\_MODE\_SOURCE\_ALTKEYBUF\ \ \ \ \ \ \ \ ((uint8\_t)0x03)\ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00446\ }
+\DoxyCodeLine{00447\ \textcolor{preprocessor}{\#define\ KDF\_MODE\_TARGET\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x1C)\ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00448\ \textcolor{preprocessor}{\#define\ KDF\_MODE\_TARGET\_TEMPKEY\ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x00)\ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00449\ \textcolor{preprocessor}{\#define\ KDF\_MODE\_TARGET\_TEMPKEY\_UP\ \ \ \ \ \ \ ((uint8\_t)0x04)\ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00450\ \textcolor{preprocessor}{\#define\ KDF\_MODE\_TARGET\_SLOT\ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x08)\ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00451\ \textcolor{preprocessor}{\#define\ KDF\_MODE\_TARGET\_ALTKEYBUF\ \ \ \ \ \ \ \ ((uint8\_t)0x0C)\ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00452\ \textcolor{preprocessor}{\#define\ KDF\_MODE\_TARGET\_OUTPUT\ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x10)\ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00453\ \textcolor{preprocessor}{\#define\ KDF\_MODE\_TARGET\_OUTPUT\_ENC\ \ \ \ \ \ \ ((uint8\_t)0x14)\ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00454\ }
+\DoxyCodeLine{00455\ \textcolor{preprocessor}{\#define\ KDF\_MODE\_ALG\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x60)\ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00456\ \textcolor{preprocessor}{\#define\ KDF\_MODE\_ALG\_PRF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x00)\ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00457\ \textcolor{preprocessor}{\#define\ KDF\_MODE\_ALG\_AES\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x20)\ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00458\ \textcolor{preprocessor}{\#define\ KDF\_MODE\_ALG\_HKDF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x40)\ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00459\ }
+\DoxyCodeLine{00460\ \textcolor{preprocessor}{\#define\ KDF\_DETAILS\_PRF\_KEY\_LEN\_MASK\ \ \ \ \ ((uint32\_t)0x00000003)\ \ \ \ }}
+\DoxyCodeLine{00461\ \textcolor{preprocessor}{\#define\ KDF\_DETAILS\_PRF\_KEY\_LEN\_16\ \ \ \ \ \ \ ((uint32\_t)0x00000000)\ \ \ \ }}
+\DoxyCodeLine{00462\ \textcolor{preprocessor}{\#define\ KDF\_DETAILS\_PRF\_KEY\_LEN\_32\ \ \ \ \ \ \ ((uint32\_t)0x00000001)\ \ \ \ }}
+\DoxyCodeLine{00463\ \textcolor{preprocessor}{\#define\ KDF\_DETAILS\_PRF\_KEY\_LEN\_48\ \ \ \ \ \ \ ((uint32\_t)0x00000002)\ \ \ \ }}
+\DoxyCodeLine{00464\ \textcolor{preprocessor}{\#define\ KDF\_DETAILS\_PRF\_KEY\_LEN\_64\ \ \ \ \ \ \ ((uint32\_t)0x00000003)\ \ \ \ }}
+\DoxyCodeLine{00465\ }
+\DoxyCodeLine{00466\ \textcolor{preprocessor}{\#define\ KDF\_DETAILS\_PRF\_TARGET\_LEN\_MASK\ \ ((uint32\_t)0x00000100)\ \ \ \ }}
+\DoxyCodeLine{00467\ \textcolor{preprocessor}{\#define\ KDF\_DETAILS\_PRF\_TARGET\_LEN\_32\ \ \ \ ((uint32\_t)0x00000000)\ \ \ \ }}
+\DoxyCodeLine{00468\ \textcolor{preprocessor}{\#define\ KDF\_DETAILS\_PRF\_TARGET\_LEN\_64\ \ \ \ ((uint32\_t)0x00000100)\ \ \ \ }}
+\DoxyCodeLine{00469\ }
+\DoxyCodeLine{00470\ \textcolor{preprocessor}{\#define\ KDF\_DETAILS\_PRF\_AEAD\_MASK\ \ \ \ \ \ \ \ ((uint32\_t)0x00000600)\ \ \ \ }}
+\DoxyCodeLine{00471\ \textcolor{preprocessor}{\#define\ KDF\_DETAILS\_PRF\_AEAD\_MODE0\ \ \ \ \ \ \ ((uint32\_t)0x00000000)\ \ \ \ }}
+\DoxyCodeLine{00472\ \textcolor{preprocessor}{\#define\ KDF\_DETAILS\_PRF\_AEAD\_MODE1\ \ \ \ \ \ \ ((uint32\_t)0x00000200)\ \ \ \ }}
+\DoxyCodeLine{00473\ }
+\DoxyCodeLine{00474\ \textcolor{preprocessor}{\#define\ KDF\_DETAILS\_AES\_KEY\_LOC\_MASK\ \ \ \ \ ((uint32\_t)0x00000003)\ \ \ \ }}
+\DoxyCodeLine{00475\ }
+\DoxyCodeLine{00476\ \textcolor{preprocessor}{\#define\ KDF\_DETAILS\_HKDF\_MSG\_LOC\_MASK\ \ \ \ ((uint32\_t)0x00000003)\ \ \ \ }}
+\DoxyCodeLine{00477\ \textcolor{preprocessor}{\#define\ KDF\_DETAILS\_HKDF\_MSG\_LOC\_SLOT\ \ \ \ ((uint32\_t)0x00000000)\ \ \ \ }}
+\DoxyCodeLine{00478\ \textcolor{preprocessor}{\#define\ KDF\_DETAILS\_HKDF\_MSG\_LOC\_TEMPKEY\ ((uint32\_t)0x00000001)\ \ \ \ }}
+\DoxyCodeLine{00479\ \textcolor{preprocessor}{\#define\ KDF\_DETAILS\_HKDF\_MSG\_LOC\_INPUT\ \ \ ((uint32\_t)0x00000002)\ \ \ \ }}
+\DoxyCodeLine{00480\ \textcolor{preprocessor}{\#define\ KDF\_DETAILS\_HKDF\_MSG\_LOC\_IV\ \ \ \ \ \ ((uint32\_t)0x00000003)\ \ \ \ }}
+\DoxyCodeLine{00481\ \textcolor{preprocessor}{\#define\ KDF\_DETAILS\_HKDF\_ZERO\_KEY\ \ \ \ \ \ \ \ ((uint32\_t)0x00000004)\ \ \ \ }}
+\DoxyCodeLine{00486\ \textcolor{preprocessor}{\#define\ LOCK\_ZONE\_IDX\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ATCA\_PARAM1\_IDX\ \ \ \ \ }}
+\DoxyCodeLine{00487\ \textcolor{preprocessor}{\#define\ LOCK\_SUMMARY\_IDX\ \ \ \ \ \ \ \ \ \ \ \ ATCA\_PARAM2\_IDX\ \ \ \ \ }}
+\DoxyCodeLine{00488\ \textcolor{preprocessor}{\#define\ LOCK\_COUNT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ATCA\_CMD\_SIZE\_MIN\ \ \ }}
+\DoxyCodeLine{00489\ \textcolor{preprocessor}{\#define\ LOCK\_ZONE\_CONFIG\ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x00)\ \ \ \ \ }}
+\DoxyCodeLine{00490\ \textcolor{preprocessor}{\#define\ LOCK\_ZONE\_DATA\ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x01)\ \ \ \ \ }}
+\DoxyCodeLine{00491\ \textcolor{preprocessor}{\#define\ LOCK\_ZONE\_DATA\_SLOT\ \ \ \ \ \ \ \ \ ((uint8\_t)0x02)\ \ \ \ \ }}
+\DoxyCodeLine{00492\ \textcolor{preprocessor}{\#define\ LOCK\_ECC204\_ZONE\_DATA\ \ \ \ \ \ \ ((uint8\_t)0x00)\ \ \ \ \ }}
+\DoxyCodeLine{00493\ \textcolor{preprocessor}{\#define\ LOCK\_ECC204\_ZONE\_CONFIG\ \ \ \ \ ((uint8\_t)0x01)\ \ \ \ \ }}
+\DoxyCodeLine{00494\ \textcolor{preprocessor}{\#define\ LOCK\_ZONE\_NO\_CRC\ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x80)\ \ \ \ \ }}
+\DoxyCodeLine{00495\ \textcolor{preprocessor}{\#define\ LOCK\_ZONE\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ (0xBF)\ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00496\ \textcolor{preprocessor}{\#define\ ATCA\_UNLOCKED\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x55)\ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00497\ \textcolor{preprocessor}{\#define\ ATCA\_LOCKED\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x00)\ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00498\ \textcolor{preprocessor}{\#define\ LOCK\_RSP\_SIZE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ATCA\_RSP\_SIZE\_MIN\ \ \ }}
+\DoxyCodeLine{00503\ \textcolor{preprocessor}{\#define\ MAC\_MODE\_IDX\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ATCA\_PARAM1\_IDX\ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00504\ \textcolor{preprocessor}{\#define\ MAC\_KEYID\_IDX\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ATCA\_PARAM2\_IDX\ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00505\ \textcolor{preprocessor}{\#define\ MAC\_CHALLENGE\_IDX\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ATCA\_DATA\_IDX\ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00506\ \textcolor{preprocessor}{\#define\ MAC\_COUNT\_SHORT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ATCA\_CMD\_SIZE\_MIN\ \ \ \ \ \ \ }}
+\DoxyCodeLine{00507\ \textcolor{preprocessor}{\#define\ MAC\_COUNT\_LONG\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (39)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00508\ \textcolor{preprocessor}{\#define\ MAC\_MODE\_CHALLENGE\ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x00)\ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00509\ \textcolor{preprocessor}{\#define\ MAC\_MODE\_BLOCK2\_TEMPKEY\ \ \ \ \ \ \ \ \ ((uint8\_t)0x01)\ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00510\ \textcolor{preprocessor}{\#define\ MAC\_MODE\_BLOCK1\_TEMPKEY\ \ \ \ \ \ \ \ \ ((uint8\_t)0x02)\ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00511\ \textcolor{preprocessor}{\#define\ MAC\_MODE\_SOURCE\_FLAG\_MATCH\ \ \ \ \ \ ((uint8\_t)0x04)\ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00512\ \textcolor{preprocessor}{\#define\ MAC\_MODE\_PTNONCE\_TEMPKEY\ \ \ \ \ \ \ \ ((uint8\_t)0x06)\ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00513\ \textcolor{preprocessor}{\#define\ MAC\_MODE\_PASSTHROUGH\ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x07)\ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00514\ \textcolor{preprocessor}{\#define\ MAC\_MODE\_INCLUDE\_OTP\_88\ \ \ \ \ \ \ \ \ ((uint8\_t)0x10)\ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00515\ \textcolor{preprocessor}{\#define\ MAC\_MODE\_INCLUDE\_OTP\_64\ \ \ \ \ \ \ \ \ ((uint8\_t)0x20)\ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00516\ \textcolor{preprocessor}{\#define\ MAC\_MODE\_INCLUDE\_SN\ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x40)\ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00517\ \textcolor{preprocessor}{\#define\ MAC\_CHALLENGE\_SIZE\ \ \ \ \ \ \ \ \ \ \ \ \ \ (32)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00518\ \textcolor{preprocessor}{\#define\ MAC\_SIZE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (32)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00519\ \textcolor{preprocessor}{\#define\ MAC\_MODE\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x77)\ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00520\ \textcolor{preprocessor}{\#define\ MAC\_RSP\_SIZE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ATCA\_RSP\_SIZE\_32\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00525\ \textcolor{preprocessor}{\#define\ NONCE\_MODE\_IDX\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ATCA\_PARAM1\_IDX\ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00526\ \textcolor{preprocessor}{\#define\ NONCE\_PARAM2\_IDX\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ATCA\_PARAM2\_IDX\ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00527\ \textcolor{preprocessor}{\#define\ NONCE\_INPUT\_IDX\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ATCA\_DATA\_IDX\ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00528\ \textcolor{preprocessor}{\#define\ NONCE\_COUNT\_SHORT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (ATCA\_CMD\_SIZE\_MIN\ +\ 20)\ }}
+\DoxyCodeLine{00529\ \textcolor{preprocessor}{\#define\ NONCE\_COUNT\_LONG\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (ATCA\_CMD\_SIZE\_MIN\ +\ 32)\ }}
+\DoxyCodeLine{00530\ \textcolor{preprocessor}{\#define\ NONCE\_COUNT\_LONG\_64\ \ \ \ \ \ \ \ \ \ \ \ \ (ATCA\_CMD\_SIZE\_MIN\ +\ 64)\ }}
+\DoxyCodeLine{00531\ \textcolor{preprocessor}{\#define\ NONCE\_MODE\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x03)\ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00532\ \textcolor{preprocessor}{\#define\ NONCE\_MODE\_SEED\_UPDATE\ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x00)\ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00533\ \textcolor{preprocessor}{\#define\ NONCE\_MODE\_NO\_SEED\_UPDATE\ \ \ \ \ \ \ ((uint8\_t)0x01)\ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00534\ \textcolor{preprocessor}{\#define\ NONCE\_MODE\_INVALID\ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x02)\ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00535\ \textcolor{preprocessor}{\#define\ NONCE\_MODE\_PASSTHROUGH\ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x03)\ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00536\ \textcolor{preprocessor}{\#define\ NONCE\_MODE\_GEN\_SESSION\_KEY\ \ \ \ \ \ ((uint8\_t)0x02)\ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00537\ }
+\DoxyCodeLine{00538\ \textcolor{preprocessor}{\#define\ NONCE\_MODE\_INPUT\_LEN\_MASK\ \ \ \ \ \ \ ((uint8\_t)0x20)\ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00539\ \textcolor{preprocessor}{\#define\ NONCE\_MODE\_INPUT\_LEN\_32\ \ \ \ \ \ \ \ \ ((uint8\_t)0x00)\ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00540\ \textcolor{preprocessor}{\#define\ NONCE\_MODE\_INPUT\_LEN\_64\ \ \ \ \ \ \ \ \ ((uint8\_t)0x20)\ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00541\ }
+\DoxyCodeLine{00542\ \textcolor{preprocessor}{\#define\ NONCE\_MODE\_TARGET\_MASK\ \ \ \ \ \ \ \ \ \ ((uint8\_t)0xC0)\ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00543\ \textcolor{preprocessor}{\#define\ NONCE\_MODE\_TARGET\_TEMPKEY\ \ \ \ \ \ \ ((uint8\_t)0x00)\ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00544\ \textcolor{preprocessor}{\#define\ NONCE\_MODE\_TARGET\_MSGDIGBUF\ \ \ \ \ ((uint8\_t)0x40)\ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00545\ \textcolor{preprocessor}{\#define\ NONCE\_MODE\_TARGET\_ALTKEYBUF\ \ \ \ \ ((uint8\_t)0x80)\ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00546\ }
+\DoxyCodeLine{00547\ \textcolor{preprocessor}{\#define\ NONCE\_ZERO\_CALC\_MASK\ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x8000)\ \ \ \ \ \ \ }}
+\DoxyCodeLine{00548\ \textcolor{preprocessor}{\#define\ NONCE\_ZERO\_CALC\_RANDOM\ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x0000)\ \ \ \ \ \ \ }}
+\DoxyCodeLine{00549\ \textcolor{preprocessor}{\#define\ NONCE\_ZERO\_CALC\_TEMPKEY\ \ \ \ \ \ \ \ \ ((uint16\_t)0x8000)\ \ \ \ \ \ \ }}
+\DoxyCodeLine{00550\ }
+\DoxyCodeLine{00551\ \textcolor{preprocessor}{\#define\ NONCE\_NUMIN\_SIZE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (20)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00552\ \textcolor{preprocessor}{\#define\ NONCE\_NUMIN\_SIZE\_PASSTHROUGH\ \ \ \ (32)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00553\ }
+\DoxyCodeLine{00554\ \textcolor{preprocessor}{\#define\ NONCE\_RSP\_SIZE\_SHORT\ \ \ \ \ \ \ \ \ \ \ \ ATCA\_RSP\_SIZE\_MIN\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00555\ \textcolor{preprocessor}{\#define\ NONCE\_RSP\_SIZE\_LONG\ \ \ \ \ \ \ \ \ \ \ \ \ ATCA\_RSP\_SIZE\_32\ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00560\ \textcolor{preprocessor}{\#define\ PAUSE\_SELECT\_IDX\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ATCA\_PARAM1\_IDX\ \ \ \ \ }}
+\DoxyCodeLine{00561\ \textcolor{preprocessor}{\#define\ PAUSE\_PARAM2\_IDX\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ATCA\_PARAM2\_IDX\ \ \ \ \ }}
+\DoxyCodeLine{00562\ \textcolor{preprocessor}{\#define\ PAUSE\_COUNT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ATCA\_CMD\_SIZE\_MIN\ \ \ }}
+\DoxyCodeLine{00563\ \textcolor{preprocessor}{\#define\ PAUSE\_RSP\_SIZE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ATCA\_RSP\_SIZE\_MIN\ \ \ }}
+\DoxyCodeLine{00568\ \textcolor{preprocessor}{\#define\ PRIVWRITE\_ZONE\_IDX\ \ \ \ \ \ \ \ \ \ ATCA\_PARAM1\_IDX\ \ \ \ \ }}
+\DoxyCodeLine{00569\ \textcolor{preprocessor}{\#define\ PRIVWRITE\_KEYID\_IDX\ \ \ \ \ \ \ \ \ ATCA\_PARAM2\_IDX\ \ \ \ \ }}
+\DoxyCodeLine{00570\ \textcolor{preprocessor}{\#define\ PRIVWRITE\_VALUE\_IDX\ \ \ \ \ \ \ \ \ (\ 5)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00571\ \textcolor{preprocessor}{\#define\ PRIVWRITE\_MAC\_IDX\ \ \ \ \ \ \ \ \ \ \ (41)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00572\ \textcolor{preprocessor}{\#define\ PRIVWRITE\_COUNT\ \ \ \ \ \ \ \ \ \ \ \ \ (75)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00573\ \textcolor{preprocessor}{\#define\ PRIVWRITE\_ZONE\_MASK\ \ \ \ \ \ \ \ \ ((uint8\_t)0x40)\ \ \ \ \ }}
+\DoxyCodeLine{00574\ \textcolor{preprocessor}{\#define\ PRIVWRITE\_MODE\_ENCRYPT\ \ \ \ \ \ ((uint8\_t)0x40)\ \ \ \ \ }}
+\DoxyCodeLine{00575\ \textcolor{preprocessor}{\#define\ PRIVWRITE\_RSP\_SIZE\ \ \ \ \ \ \ \ \ \ ATCA\_RSP\_SIZE\_MIN\ \ \ }}
+\DoxyCodeLine{00580\ \textcolor{preprocessor}{\#define\ RANDOM\_MODE\_IDX\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ATCA\_PARAM1\_IDX\ \ \ \ \ }}
+\DoxyCodeLine{00581\ \textcolor{preprocessor}{\#define\ RANDOM\_PARAM2\_IDX\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ATCA\_PARAM2\_IDX\ \ \ \ \ }}
+\DoxyCodeLine{00582\ \textcolor{preprocessor}{\#define\ RANDOM\_COUNT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ATCA\_CMD\_SIZE\_MIN\ \ \ }}
+\DoxyCodeLine{00583\ \textcolor{preprocessor}{\#define\ RANDOM\_SEED\_UPDATE\ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x00)\ \ \ \ \ }}
+\DoxyCodeLine{00584\ \textcolor{preprocessor}{\#define\ RANDOM\_NO\_SEED\_UPDATE\ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x01)\ \ \ \ \ }}
+\DoxyCodeLine{00585\ \textcolor{preprocessor}{\#define\ RANDOM\_NUM\_SIZE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)32)\ \ \ \ \ \ \ }}
+\DoxyCodeLine{00586\ \textcolor{preprocessor}{\#define\ RANDOM\_RSP\_SIZE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ATCA\_RSP\_SIZE\_32\ \ \ \ }}
+\DoxyCodeLine{00591\ \textcolor{preprocessor}{\#define\ READ\_ZONE\_IDX\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ATCA\_PARAM1\_IDX\ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00592\ \textcolor{preprocessor}{\#define\ READ\_ADDR\_IDX\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ATCA\_PARAM2\_IDX\ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00593\ \textcolor{preprocessor}{\#define\ READ\_COUNT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ATCA\_CMD\_SIZE\_MIN\ \ \ \ \ \ \ }}
+\DoxyCodeLine{00594\ \textcolor{preprocessor}{\#define\ READ\_ZONE\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x83)\ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00595\ \textcolor{preprocessor}{\#define\ READ\_4\_RSP\_SIZE\ \ \ \ \ \ \ \ \ \ \ \ \ ATCA\_RSP\_SIZE\_VAL\ \ \ \ \ \ \ }}
+\DoxyCodeLine{00596\ \textcolor{preprocessor}{\#define\ READ\_32\_RSP\_SIZE\ \ \ \ \ \ \ \ \ \ \ \ ATCA\_RSP\_SIZE\_32\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00601\ \textcolor{preprocessor}{\#define\ SECUREBOOT\_MODE\_IDX\ \ \ \ \ \ \ \ \ \ \ ATCA\_PARAM1\_IDX\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00602\ \textcolor{preprocessor}{\#define\ SECUREBOOT\_DIGEST\_SIZE\ \ \ \ \ \ \ \ (32)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00603\ \textcolor{preprocessor}{\#define\ SECUREBOOT\_SIGNATURE\_SIZE\ \ \ \ \ (64)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00604\ \textcolor{preprocessor}{\#define\ SECUREBOOT\_COUNT\_DIG\ \ \ \ \ \ \ \ \ \ (ATCA\_CMD\_SIZE\_MIN\ +\ SECUREBOOT\_DIGEST\_SIZE)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00605\ \textcolor{preprocessor}{\#define\ SECUREBOOT\_COUNT\_DIG\_SIG\ \ \ \ \ \ (ATCA\_CMD\_SIZE\_MIN\ +\ SECUREBOOT\_DIGEST\_SIZE\ +\ SECUREBOOT\_SIGNATURE\_SIZE)\ }}
+\DoxyCodeLine{00606\ \textcolor{preprocessor}{\#define\ SECUREBOOT\_MAC\_SIZE\ \ \ \ \ \ \ \ \ \ \ (32)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00607\ \textcolor{preprocessor}{\#define\ SECUREBOOT\_RSP\_SIZE\_NO\_MAC\ \ \ \ ATCA\_RSP\_SIZE\_MIN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00608\ \textcolor{preprocessor}{\#define\ SECUREBOOT\_RSP\_SIZE\_MAC\ \ \ \ \ \ \ (ATCA\_PACKET\_OVERHEAD\ +\ SECUREBOOT\_MAC\_SIZE)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00609\ }
+\DoxyCodeLine{00610\ \textcolor{preprocessor}{\#define\ SECUREBOOT\_MODE\_MASK\ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x07)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00611\ \textcolor{preprocessor}{\#define\ SECUREBOOT\_MODE\_FULL\ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x05)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00612\ \textcolor{preprocessor}{\#define\ SECUREBOOT\_MODE\_FULL\_STORE\ \ \ \ ((uint8\_t)0x06)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00613\ \textcolor{preprocessor}{\#define\ SECUREBOOT\_MODE\_FULL\_COPY\ \ \ \ \ ((uint8\_t)0x07)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00614\ \textcolor{preprocessor}{\#define\ SECUREBOOT\_MODE\_PROHIBIT\_FLAG\ ((uint8\_t)0x40)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00615\ \textcolor{preprocessor}{\#define\ SECUREBOOT\_MODE\_ENC\_MAC\_FLAG\ \ ((uint8\_t)0x80)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00616\ }
+\DoxyCodeLine{00617\ \textcolor{preprocessor}{\#define\ SECUREBOOTCONFIG\_OFFSET\ \ \ \ \ \ \ \ \ (70)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00618\ \textcolor{preprocessor}{\#define\ SECUREBOOTCONFIG\_MODE\_MASK\ \ \ \ \ \ ((uint16\_t)0x0003)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00619\ \textcolor{preprocessor}{\#define\ SECUREBOOTCONFIG\_MODE\_DISABLED\ \ ((uint16\_t)0x0000)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00620\ \textcolor{preprocessor}{\#define\ SECUREBOOTCONFIG\_MODE\_FULL\_BOTH\ ((uint16\_t)0x0001)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00621\ \textcolor{preprocessor}{\#define\ SECUREBOOTCONFIG\_MODE\_FULL\_SIG\ \ ((uint16\_t)0x0002)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00622\ \textcolor{preprocessor}{\#define\ SECUREBOOTCONFIG\_MODE\_FULL\_DIG\ \ ((uint16\_t)0x0003)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00627\ \textcolor{preprocessor}{\#define\ SELFTEST\_MODE\_IDX\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ATCA\_PARAM1\_IDX\ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00628\ \textcolor{preprocessor}{\#define\ SELFTEST\_COUNT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ATCA\_CMD\_SIZE\_MIN\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00629\ \textcolor{preprocessor}{\#define\ SELFTEST\_MODE\_RNG\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x01)\ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00630\ \textcolor{preprocessor}{\#define\ SELFTEST\_MODE\_ECDSA\_SIGN\_VERIFY\ \ \ \ \ ((uint8\_t)0x02)\ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00631\ \textcolor{preprocessor}{\#define\ SELFTEST\_MODE\_ECDH\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x08)\ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00632\ \textcolor{preprocessor}{\#define\ SELFTEST\_MODE\_AES\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x10)\ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00633\ \textcolor{preprocessor}{\#define\ SELFTEST\_MODE\_SHA\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x20)\ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00634\ \textcolor{preprocessor}{\#define\ SELFTEST\_MODE\_ALL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x3B)\ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00635\ \textcolor{preprocessor}{\#define\ SELFTEST\_RSP\_SIZE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ATCA\_RSP\_SIZE\_MIN\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00640\ \textcolor{preprocessor}{\#define\ SHA\_COUNT\_SHORT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ATCA\_CMD\_SIZE\_MIN}}
+\DoxyCodeLine{00641\ \textcolor{preprocessor}{\#define\ SHA\_COUNT\_LONG\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ATCA\_CMD\_SIZE\_MIN\ \ }}
+\DoxyCodeLine{00642\ \textcolor{preprocessor}{\#define\ ATCA\_SHA\_DIGEST\_SIZE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (32)}}
+\DoxyCodeLine{00643\ \textcolor{preprocessor}{\#define\ SHA\_DATA\_MAX\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (64)}}
+\DoxyCodeLine{00644\ }
+\DoxyCodeLine{00645\ \textcolor{preprocessor}{\#define\ SHA\_MODE\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x07)\ \ \ }}
+\DoxyCodeLine{00646\ \textcolor{preprocessor}{\#define\ SHA\_MODE\_SHA256\_START\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x00)\ \ \ }}
+\DoxyCodeLine{00647\ \textcolor{preprocessor}{\#define\ SHA\_MODE\_SHA256\_UPDATE\ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x01)\ \ \ }}
+\DoxyCodeLine{00648\ \textcolor{preprocessor}{\#define\ SHA\_MODE\_SHA256\_END\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x02)\ \ \ }}
+\DoxyCodeLine{00649\ \textcolor{preprocessor}{\#define\ SHA\_MODE\_SHA256\_PUBLIC\ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x03)\ \ \ }}
+\DoxyCodeLine{00650\ \textcolor{preprocessor}{\#define\ SHA\_MODE\_HMAC\_START\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x04)\ \ \ }}
+\DoxyCodeLine{00651\ \textcolor{preprocessor}{\#define\ SHA\_MODE\_ECC204\_HMAC\_START\ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x03)\ \ \ }}
+\DoxyCodeLine{00652\ \textcolor{preprocessor}{\#define\ SHA\_MODE\_HMAC\_UPDATE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x01)\ \ \ }}
+\DoxyCodeLine{00653\ \textcolor{preprocessor}{\#define\ SHA\_MODE\_HMAC\_END\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x05)\ \ \ }}
+\DoxyCodeLine{00654\ \textcolor{preprocessor}{\#define\ SHA\_MODE\_608\_HMAC\_END\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x02)\ \ \ }}
+\DoxyCodeLine{00655\ \textcolor{preprocessor}{\#define\ SHA\_MODE\_ECC204\_HMAC\_END\ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x02)\ \ \ }}
+\DoxyCodeLine{00656\ \textcolor{preprocessor}{\#define\ SHA\_MODE\_READ\_CONTEXT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x06)\ \ \ }}
+\DoxyCodeLine{00657\ \textcolor{preprocessor}{\#define\ SHA\_MODE\_WRITE\_CONTEXT\ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x07)\ \ \ }}
+\DoxyCodeLine{00658\ \textcolor{preprocessor}{\#define\ SHA\_MODE\_TARGET\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0xC0)\ \ \ }}
+\DoxyCodeLine{00659\ }
+\DoxyCodeLine{00660\ \textcolor{preprocessor}{\#define\ SHA\_RSP\_SIZE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ATCA\_RSP\_SIZE\_32\ \ }}
+\DoxyCodeLine{00661\ \textcolor{preprocessor}{\#define\ SHA\_RSP\_SIZE\_SHORT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ATCA\_RSP\_SIZE\_MIN\ }}
+\DoxyCodeLine{00662\ \textcolor{preprocessor}{\#define\ SHA\_RSP\_SIZE\_LONG\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ATCA\_RSP\_SIZE\_32\ \ }}
+\DoxyCodeLine{00665\ }
+\DoxyCodeLine{00667\ \textcolor{preprocessor}{\#define\ SIGN\_MODE\_IDX\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ATCA\_PARAM1\_IDX\ \ \ \ \ }}
+\DoxyCodeLine{00668\ \textcolor{preprocessor}{\#define\ SIGN\_KEYID\_IDX\ \ \ \ \ \ \ \ \ \ \ \ \ \ ATCA\_PARAM2\_IDX\ \ \ \ \ }}
+\DoxyCodeLine{00669\ \textcolor{preprocessor}{\#define\ SIGN\_COUNT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ATCA\_CMD\_SIZE\_MIN\ \ \ }}
+\DoxyCodeLine{00670\ \textcolor{preprocessor}{\#define\ SIGN\_MODE\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0xE1)\ \ \ \ \ }}
+\DoxyCodeLine{00671\ \textcolor{preprocessor}{\#define\ SIGN\_MODE\_INTERNAL\ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x00)\ \ \ \ \ }}
+\DoxyCodeLine{00672\ \textcolor{preprocessor}{\#define\ SIGN\_MODE\_INVALIDATE\ \ \ \ \ \ \ \ ((uint8\_t)0x01)\ \ \ \ \ }}
+\DoxyCodeLine{00673\ \textcolor{preprocessor}{\#define\ SIGN\_MODE\_INCLUDE\_SN\ \ \ \ \ \ \ \ ((uint8\_t)0x40)\ \ \ \ \ }}
+\DoxyCodeLine{00674\ \textcolor{preprocessor}{\#define\ SIGN\_MODE\_EXTERNAL\ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x80)\ \ \ \ \ }}
+\DoxyCodeLine{00675\ \textcolor{preprocessor}{\#define\ SIGN\_MODE\_SOURCE\_MASK\ \ \ \ \ \ \ ((uint8\_t)0x20)\ \ \ \ \ }}
+\DoxyCodeLine{00676\ \textcolor{preprocessor}{\#define\ SIGN\_MODE\_SOURCE\_TEMPKEY\ \ \ \ ((uint8\_t)0x00)\ \ \ \ \ }}
+\DoxyCodeLine{00677\ \textcolor{preprocessor}{\#define\ SIGN\_MODE\_SOURCE\_MSGDIGBUF\ \ ((uint8\_t)0x20)\ \ \ \ \ }}
+\DoxyCodeLine{00678\ \textcolor{preprocessor}{\#define\ SIGN\_RSP\_SIZE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ATCA\_RSP\_SIZE\_MAX\ \ \ }}
+\DoxyCodeLine{00683\ \textcolor{preprocessor}{\#define\ UPDATE\_MODE\_IDX\ \ \ \ \ \ \ \ \ \ \ \ \ ATCA\_PARAM1\_IDX\ \ \ \ \ \ \ }}
+\DoxyCodeLine{00684\ \textcolor{preprocessor}{\#define\ UPDATE\_VALUE\_IDX\ \ \ \ \ \ \ \ \ \ \ \ ATCA\_PARAM2\_IDX\ \ \ \ \ \ \ }}
+\DoxyCodeLine{00685\ \textcolor{preprocessor}{\#define\ UPDATE\_COUNT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ATCA\_CMD\_SIZE\_MIN\ \ \ \ \ }}
+\DoxyCodeLine{00686\ \textcolor{preprocessor}{\#define\ UPDATE\_MODE\_USER\_EXTRA\ \ \ \ \ \ ((uint8\_t)0x00)\ \ \ \ \ \ \ }}
+\DoxyCodeLine{00687\ \textcolor{preprocessor}{\#define\ UPDATE\_MODE\_SELECTOR\ \ \ \ \ \ \ \ ((uint8\_t)0x01)\ \ \ \ \ \ \ }}
+\DoxyCodeLine{00688\ \textcolor{preprocessor}{\#define\ UPDATE\_MODE\_USER\_EXTRA\_ADD\ \ UPDATE\_MODE\_SELECTOR\ \ }}
+\DoxyCodeLine{00689\ \textcolor{preprocessor}{\#define\ UPDATE\_MODE\_DEC\_COUNTER\ \ \ \ \ ((uint8\_t)0x02)\ \ \ \ \ \ \ }}
+\DoxyCodeLine{00690\ \textcolor{preprocessor}{\#define\ UPDATE\_RSP\_SIZE\ \ \ \ \ \ \ \ \ \ \ \ \ ATCA\_RSP\_SIZE\_MIN\ \ \ \ \ }}
+\DoxyCodeLine{00695\ \textcolor{preprocessor}{\#define\ VERIFY\_MODE\_IDX\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ATCA\_PARAM1\_IDX\ \ \ \ \ \ }}
+\DoxyCodeLine{00696\ \textcolor{preprocessor}{\#define\ VERIFY\_KEYID\_IDX\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ATCA\_PARAM2\_IDX\ \ \ \ \ \ }}
+\DoxyCodeLine{00697\ \textcolor{preprocessor}{\#define\ VERIFY\_DATA\_IDX\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\ \ 5)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00698\ \textcolor{preprocessor}{\#define\ VERIFY\_256\_STORED\_COUNT\ \ \ \ \ \ \ \ (\ 71)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00699\ \textcolor{preprocessor}{\#define\ VERIFY\_283\_STORED\_COUNT\ \ \ \ \ \ \ \ (\ 79)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00700\ \textcolor{preprocessor}{\#define\ VERIFY\_256\_VALIDATE\_COUNT\ \ \ \ \ \ (\ 90)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00701\ \textcolor{preprocessor}{\#define\ VERIFY\_283\_VALIDATE\_COUNT\ \ \ \ \ \ (\ 98)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00702\ \textcolor{preprocessor}{\#define\ VERIFY\_256\_EXTERNAL\_COUNT\ \ \ \ \ \ (135)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00703\ \textcolor{preprocessor}{\#define\ VERIFY\_283\_EXTERNAL\_COUNT\ \ \ \ \ \ (151)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00704\ \textcolor{preprocessor}{\#define\ VERIFY\_256\_KEY\_SIZE\ \ \ \ \ \ \ \ \ \ \ \ (\ 64)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00705\ \textcolor{preprocessor}{\#define\ VERIFY\_283\_KEY\_SIZE\ \ \ \ \ \ \ \ \ \ \ \ (\ 72)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00706\ \textcolor{preprocessor}{\#define\ VERIFY\_256\_SIGNATURE\_SIZE\ \ \ \ \ \ (\ 64)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00707\ \textcolor{preprocessor}{\#define\ VERIFY\_283\_SIGNATURE\_SIZE\ \ \ \ \ \ (\ 72)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00708\ \textcolor{preprocessor}{\#define\ VERIFY\_OTHER\_DATA\_SIZE\ \ \ \ \ \ \ \ \ (\ 19)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00709\ \textcolor{preprocessor}{\#define\ VERIFY\_MODE\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x07)\ \ \ \ \ \ }}
+\DoxyCodeLine{00710\ \textcolor{preprocessor}{\#define\ VERIFY\_MODE\_STORED\ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x00)\ \ \ \ \ \ }}
+\DoxyCodeLine{00711\ \textcolor{preprocessor}{\#define\ VERIFY\_MODE\_VALIDATE\_EXTERNAL\ \ ((uint8\_t)0x01)\ \ \ \ \ \ }}
+\DoxyCodeLine{00712\ \textcolor{preprocessor}{\#define\ VERIFY\_MODE\_EXTERNAL\ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x02)\ \ \ \ \ \ }}
+\DoxyCodeLine{00713\ \textcolor{preprocessor}{\#define\ VERIFY\_MODE\_VALIDATE\ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x03)\ \ \ \ \ \ }}
+\DoxyCodeLine{00714\ \textcolor{preprocessor}{\#define\ VERIFY\_MODE\_INVALIDATE\ \ \ \ \ \ \ \ \ ((uint8\_t)0x07)\ \ \ \ \ \ }}
+\DoxyCodeLine{00715\ \textcolor{preprocessor}{\#define\ VERIFY\_MODE\_SOURCE\_MASK\ \ \ \ \ \ \ \ ((uint8\_t)0x20)\ \ \ \ \ \ }}
+\DoxyCodeLine{00716\ \textcolor{preprocessor}{\#define\ VERIFY\_MODE\_SOURCE\_TEMPKEY\ \ \ \ \ ((uint8\_t)0x00)\ \ \ \ \ \ }}
+\DoxyCodeLine{00717\ \textcolor{preprocessor}{\#define\ VERIFY\_MODE\_SOURCE\_MSGDIGBUF\ \ \ ((uint8\_t)0x20)\ \ \ \ \ \ }}
+\DoxyCodeLine{00718\ \textcolor{preprocessor}{\#define\ VERIFY\_MODE\_MAC\_FLAG\ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x80)\ \ \ \ \ \ }}
+\DoxyCodeLine{00719\ \textcolor{preprocessor}{\#define\ VERIFY\_KEY\_B283\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x0000)\ \ \ }}
+\DoxyCodeLine{00720\ \textcolor{preprocessor}{\#define\ VERIFY\_KEY\_K283\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x0001)\ \ \ }}
+\DoxyCodeLine{00721\ \textcolor{preprocessor}{\#define\ VERIFY\_KEY\_P256\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint16\_t)0x0004)\ \ \ }}
+\DoxyCodeLine{00722\ \textcolor{preprocessor}{\#define\ VERIFY\_RSP\_SIZE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ATCA\_RSP\_SIZE\_MIN\ \ \ \ }}
+\DoxyCodeLine{00723\ \textcolor{preprocessor}{\#define\ VERIFY\_RSP\_SIZE\_MAC\ \ \ \ \ \ \ \ \ \ \ \ ATCA\_RSP\_SIZE\_32\ \ \ \ \ }}
+\DoxyCodeLine{00728\ \textcolor{preprocessor}{\#define\ WRITE\_ZONE\_IDX\ \ \ \ \ \ \ \ \ \ \ \ \ \ ATCA\_PARAM1\_IDX\ \ \ \ \ }}
+\DoxyCodeLine{00729\ \textcolor{preprocessor}{\#define\ WRITE\_ADDR\_IDX\ \ \ \ \ \ \ \ \ \ \ \ \ \ ATCA\_PARAM2\_IDX\ \ \ \ \ }}
+\DoxyCodeLine{00730\ \textcolor{preprocessor}{\#define\ WRITE\_VALUE\_IDX\ \ \ \ \ \ \ \ \ \ \ \ \ ATCA\_DATA\_IDX\ \ \ \ \ \ \ }}
+\DoxyCodeLine{00731\ \textcolor{preprocessor}{\#define\ WRITE\_MAC\_VS\_IDX\ \ \ \ \ \ \ \ \ \ \ \ (\ 9)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00732\ \textcolor{preprocessor}{\#define\ WRITE\_MAC\_VL\_IDX\ \ \ \ \ \ \ \ \ \ \ \ (37)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00733\ \textcolor{preprocessor}{\#define\ WRITE\_MAC\_SIZE\ \ \ \ \ \ \ \ \ \ \ \ \ \ (32)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00734\ \textcolor{preprocessor}{\#define\ WRITE\_ZONE\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0xC3)\ \ \ \ \ }}
+\DoxyCodeLine{00735\ \textcolor{preprocessor}{\#define\ WRITE\_ZONE\_WITH\_MAC\ \ \ \ \ \ \ \ \ ((uint8\_t)0x40)\ \ \ \ \ }}
+\DoxyCodeLine{00736\ \textcolor{preprocessor}{\#define\ WRITE\_ZONE\_OTP\ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)1)\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00737\ \textcolor{preprocessor}{\#define\ WRITE\_ZONE\_DATA\ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)2)\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00738\ \textcolor{preprocessor}{\#define\ WRITE\_RSP\_SIZE\ \ \ \ \ \ \ \ \ \ \ \ \ \ ATCA\_RSP\_SIZE\_MIN\ \ \ }}
+\DoxyCodeLine{00741\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00742\ \}}
+\DoxyCodeLine{00743\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00744\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

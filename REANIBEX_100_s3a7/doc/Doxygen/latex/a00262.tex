@@ -1,0 +1,201 @@
+\doxysection{DB\+\_\+\+EPISODE\+\_\+\+HEADER\+\_\+t Struct Reference}
+\hypertarget{a00262}{}\label{a00262}\index{DB\_EPISODE\_HEADER\_t@{DB\_EPISODE\_HEADER\_t}}
+
+
+Episode file header (stored in a single episode block)  
+
+
+
+
+{\ttfamily \#include $<$DB\+\_\+\+Episode.\+h$>$}
+
+
+
+Collaboration diagram for DB\+\_\+\+EPISODE\+\_\+\+HEADER\+\_\+t\+:
+% FIG 0
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{a00262_a946ede95dd0e6ed88073ccd47b13500b}{reserved}} \mbox{[}16\mbox{]}
+\item 
+\mbox{\hyperlink{a00322}{DEVICE\+\_\+\+INFO\+\_\+t}} \mbox{\hyperlink{a00262_a81a0f168b17045bdedefe9b4b4fb14c0}{device\+\_\+info}}
+\begin{DoxyCompactList}\small\item\em Device info. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \mbox{\hyperlink{a00262_a1ad92df2f2c96312a4ad8fc62814772a}{major\+\_\+version}}
+\begin{DoxyCompactList}\small\item\em Episode file format major version. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \mbox{\hyperlink{a00262_a4603600c6ad16b9f55a9155b9c232c02}{minor\+\_\+version}}
+\begin{DoxyCompactList}\small\item\em Episode file format minor version. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00450}{DATE\+\_\+t}} \mbox{\hyperlink{a00262_ae24115044d22ce919aa563622479a2e4}{power\+\_\+on\+\_\+date}}
+\begin{DoxyCompactList}\small\item\em Power-\/on date. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00446}{TIME\+\_\+t}} \mbox{\hyperlink{a00262_a1c2958d9e636dd386d4b8615c1c90e51}{power\+\_\+on\+\_\+time}}
+\begin{DoxyCompactList}\small\item\em Power-\/on time. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \mbox{\hyperlink{a00262_aa981c04712f5c9d25228e3f764f512e3}{duration}}
+\begin{DoxyCompactList}\small\item\em Episode duration in ecg samples. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00005_aa7df144d6752524dc1d8e2603a26b414}{ECG\+\_\+\+FORMAT\+\_\+e}} \mbox{\hyperlink{a00262_aeb6b712ab4057bc8a844449be4bb6f42}{ecg\+\_\+format}}
+\begin{DoxyCompactList}\small\item\em Ecg format. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{a00262_ac6647ac64f42004fd6af691c85b5bfc3}{align\+\_\+1}} \mbox{[}3\mbox{]}
+\item 
+\mbox{\hyperlink{a00354}{DEVICE\+\_\+\+SETTINGS\+\_\+t}} \mbox{\hyperlink{a00262_af4c439a055fd24a98511bf4803cf8856}{device\+\_\+settings}}
+\begin{DoxyCompactList}\small\item\em Device settings. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00394}{BATTERY\+\_\+\+INFO\+\_\+t}} \mbox{\hyperlink{a00262_ac19c2cebcb5a53ec8fb3bc573a66d2ce}{battery\+\_\+info}}
+\begin{DoxyCompactList}\small\item\em Battery information. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00398}{BATTERY\+\_\+\+STATISTICS\+\_\+t}} \mbox{\hyperlink{a00262_afb9fbee656d2ee58cd93093438b1cc6e}{battery\+\_\+statistics}}
+\begin{DoxyCompactList}\small\item\em Battery statistics. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{a00262_aaae51c4f591bb91ac97939e840fddc86}{align\+\_\+2}} \mbox{[}8\mbox{]}
+\item 
+\mbox{\hyperlink{a00434}{ELECTRODES\+\_\+\+DATA\+\_\+t}} \mbox{\hyperlink{a00262_a0cee19391e9961a774a40d706669be77}{electrodes\+\_\+data}}
+\begin{DoxyCompactList}\small\item\em Electrodes information and event data. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{a00262_a5a77661d73f9bcd4a717788ab8fb33b0}{align\+\_\+3}} \mbox{[}4\mbox{]}
+\item 
+\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{a00262_aecbecd8f65288f7d1943dd42bd501235}{dummy}} \mbox{[}\mbox{\hyperlink{a00005_a617e579d27d22e2133bc6f0a5f7ed4e8}{EPISODE\+\_\+\+BLOCK\+\_\+\+SZ}} -\/ 372 -\/ 64 -\/ 112\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Episode file header (stored in a single episode block) 
+
+\doxysubsection{Field Documentation}
+\Hypertarget{a00262_ac6647ac64f42004fd6af691c85b5bfc3}\label{a00262_ac6647ac64f42004fd6af691c85b5bfc3} 
+\index{DB\_EPISODE\_HEADER\_t@{DB\_EPISODE\_HEADER\_t}!align\_1@{align\_1}}
+\index{align\_1@{align\_1}!DB\_EPISODE\_HEADER\_t@{DB\_EPISODE\_HEADER\_t}}
+\doxysubsubsection{\texorpdfstring{align\_1}{align\_1}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} DB\+\_\+\+EPISODE\+\_\+\+HEADER\+\_\+t\+::align\+\_\+1\mbox{[}3\mbox{]}}
+
+\Hypertarget{a00262_aaae51c4f591bb91ac97939e840fddc86}\label{a00262_aaae51c4f591bb91ac97939e840fddc86} 
+\index{DB\_EPISODE\_HEADER\_t@{DB\_EPISODE\_HEADER\_t}!align\_2@{align\_2}}
+\index{align\_2@{align\_2}!DB\_EPISODE\_HEADER\_t@{DB\_EPISODE\_HEADER\_t}}
+\doxysubsubsection{\texorpdfstring{align\_2}{align\_2}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} DB\+\_\+\+EPISODE\+\_\+\+HEADER\+\_\+t\+::align\+\_\+2\mbox{[}8\mbox{]}}
+
+\Hypertarget{a00262_a5a77661d73f9bcd4a717788ab8fb33b0}\label{a00262_a5a77661d73f9bcd4a717788ab8fb33b0} 
+\index{DB\_EPISODE\_HEADER\_t@{DB\_EPISODE\_HEADER\_t}!align\_3@{align\_3}}
+\index{align\_3@{align\_3}!DB\_EPISODE\_HEADER\_t@{DB\_EPISODE\_HEADER\_t}}
+\doxysubsubsection{\texorpdfstring{align\_3}{align\_3}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} DB\+\_\+\+EPISODE\+\_\+\+HEADER\+\_\+t\+::align\+\_\+3\mbox{[}4\mbox{]}}
+
+\Hypertarget{a00262_ac19c2cebcb5a53ec8fb3bc573a66d2ce}\label{a00262_ac19c2cebcb5a53ec8fb3bc573a66d2ce} 
+\index{DB\_EPISODE\_HEADER\_t@{DB\_EPISODE\_HEADER\_t}!battery\_info@{battery\_info}}
+\index{battery\_info@{battery\_info}!DB\_EPISODE\_HEADER\_t@{DB\_EPISODE\_HEADER\_t}}
+\doxysubsubsection{\texorpdfstring{battery\_info}{battery\_info}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00394}{BATTERY\+\_\+\+INFO\+\_\+t}} DB\+\_\+\+EPISODE\+\_\+\+HEADER\+\_\+t\+::battery\+\_\+info}
+
+
+
+Battery information. 
+
+\Hypertarget{a00262_afb9fbee656d2ee58cd93093438b1cc6e}\label{a00262_afb9fbee656d2ee58cd93093438b1cc6e} 
+\index{DB\_EPISODE\_HEADER\_t@{DB\_EPISODE\_HEADER\_t}!battery\_statistics@{battery\_statistics}}
+\index{battery\_statistics@{battery\_statistics}!DB\_EPISODE\_HEADER\_t@{DB\_EPISODE\_HEADER\_t}}
+\doxysubsubsection{\texorpdfstring{battery\_statistics}{battery\_statistics}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00398}{BATTERY\+\_\+\+STATISTICS\+\_\+t}} DB\+\_\+\+EPISODE\+\_\+\+HEADER\+\_\+t\+::battery\+\_\+statistics}
+
+
+
+Battery statistics. 
+
+\Hypertarget{a00262_a81a0f168b17045bdedefe9b4b4fb14c0}\label{a00262_a81a0f168b17045bdedefe9b4b4fb14c0} 
+\index{DB\_EPISODE\_HEADER\_t@{DB\_EPISODE\_HEADER\_t}!device\_info@{device\_info}}
+\index{device\_info@{device\_info}!DB\_EPISODE\_HEADER\_t@{DB\_EPISODE\_HEADER\_t}}
+\doxysubsubsection{\texorpdfstring{device\_info}{device\_info}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00322}{DEVICE\+\_\+\+INFO\+\_\+t}} DB\+\_\+\+EPISODE\+\_\+\+HEADER\+\_\+t\+::device\+\_\+info}
+
+
+
+Device info. 
+
+\Hypertarget{a00262_af4c439a055fd24a98511bf4803cf8856}\label{a00262_af4c439a055fd24a98511bf4803cf8856} 
+\index{DB\_EPISODE\_HEADER\_t@{DB\_EPISODE\_HEADER\_t}!device\_settings@{device\_settings}}
+\index{device\_settings@{device\_settings}!DB\_EPISODE\_HEADER\_t@{DB\_EPISODE\_HEADER\_t}}
+\doxysubsubsection{\texorpdfstring{device\_settings}{device\_settings}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00354}{DEVICE\+\_\+\+SETTINGS\+\_\+t}} DB\+\_\+\+EPISODE\+\_\+\+HEADER\+\_\+t\+::device\+\_\+settings}
+
+
+
+Device settings. 
+
+\Hypertarget{a00262_aecbecd8f65288f7d1943dd42bd501235}\label{a00262_aecbecd8f65288f7d1943dd42bd501235} 
+\index{DB\_EPISODE\_HEADER\_t@{DB\_EPISODE\_HEADER\_t}!dummy@{dummy}}
+\index{dummy@{dummy}!DB\_EPISODE\_HEADER\_t@{DB\_EPISODE\_HEADER\_t}}
+\doxysubsubsection{\texorpdfstring{dummy}{dummy}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} DB\+\_\+\+EPISODE\+\_\+\+HEADER\+\_\+t\+::dummy\mbox{[}\mbox{\hyperlink{a00005_a617e579d27d22e2133bc6f0a5f7ed4e8}{EPISODE\+\_\+\+BLOCK\+\_\+\+SZ}} -\/ 372 -\/ 64 -\/ 112\mbox{]}}
+
+\Hypertarget{a00262_aa981c04712f5c9d25228e3f764f512e3}\label{a00262_aa981c04712f5c9d25228e3f764f512e3} 
+\index{DB\_EPISODE\_HEADER\_t@{DB\_EPISODE\_HEADER\_t}!duration@{duration}}
+\index{duration@{duration}!DB\_EPISODE\_HEADER\_t@{DB\_EPISODE\_HEADER\_t}}
+\doxysubsubsection{\texorpdfstring{duration}{duration}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} DB\+\_\+\+EPISODE\+\_\+\+HEADER\+\_\+t\+::duration}
+
+
+
+Episode duration in ecg samples. 
+
+\Hypertarget{a00262_aeb6b712ab4057bc8a844449be4bb6f42}\label{a00262_aeb6b712ab4057bc8a844449be4bb6f42} 
+\index{DB\_EPISODE\_HEADER\_t@{DB\_EPISODE\_HEADER\_t}!ecg\_format@{ecg\_format}}
+\index{ecg\_format@{ecg\_format}!DB\_EPISODE\_HEADER\_t@{DB\_EPISODE\_HEADER\_t}}
+\doxysubsubsection{\texorpdfstring{ecg\_format}{ecg\_format}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00005_aa7df144d6752524dc1d8e2603a26b414}{ECG\+\_\+\+FORMAT\+\_\+e}} DB\+\_\+\+EPISODE\+\_\+\+HEADER\+\_\+t\+::ecg\+\_\+format}
+
+
+
+Ecg format. 
+
+\Hypertarget{a00262_a0cee19391e9961a774a40d706669be77}\label{a00262_a0cee19391e9961a774a40d706669be77} 
+\index{DB\_EPISODE\_HEADER\_t@{DB\_EPISODE\_HEADER\_t}!electrodes\_data@{electrodes\_data}}
+\index{electrodes\_data@{electrodes\_data}!DB\_EPISODE\_HEADER\_t@{DB\_EPISODE\_HEADER\_t}}
+\doxysubsubsection{\texorpdfstring{electrodes\_data}{electrodes\_data}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00434}{ELECTRODES\+\_\+\+DATA\+\_\+t}} DB\+\_\+\+EPISODE\+\_\+\+HEADER\+\_\+t\+::electrodes\+\_\+data}
+
+
+
+Electrodes information and event data. 
+
+\Hypertarget{a00262_a1ad92df2f2c96312a4ad8fc62814772a}\label{a00262_a1ad92df2f2c96312a4ad8fc62814772a} 
+\index{DB\_EPISODE\_HEADER\_t@{DB\_EPISODE\_HEADER\_t}!major\_version@{major\_version}}
+\index{major\_version@{major\_version}!DB\_EPISODE\_HEADER\_t@{DB\_EPISODE\_HEADER\_t}}
+\doxysubsubsection{\texorpdfstring{major\_version}{major\_version}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} DB\+\_\+\+EPISODE\+\_\+\+HEADER\+\_\+t\+::major\+\_\+version}
+
+
+
+Episode file format major version. 
+
+\Hypertarget{a00262_a4603600c6ad16b9f55a9155b9c232c02}\label{a00262_a4603600c6ad16b9f55a9155b9c232c02} 
+\index{DB\_EPISODE\_HEADER\_t@{DB\_EPISODE\_HEADER\_t}!minor\_version@{minor\_version}}
+\index{minor\_version@{minor\_version}!DB\_EPISODE\_HEADER\_t@{DB\_EPISODE\_HEADER\_t}}
+\doxysubsubsection{\texorpdfstring{minor\_version}{minor\_version}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} DB\+\_\+\+EPISODE\+\_\+\+HEADER\+\_\+t\+::minor\+\_\+version}
+
+
+
+Episode file format minor version. 
+
+\Hypertarget{a00262_ae24115044d22ce919aa563622479a2e4}\label{a00262_ae24115044d22ce919aa563622479a2e4} 
+\index{DB\_EPISODE\_HEADER\_t@{DB\_EPISODE\_HEADER\_t}!power\_on\_date@{power\_on\_date}}
+\index{power\_on\_date@{power\_on\_date}!DB\_EPISODE\_HEADER\_t@{DB\_EPISODE\_HEADER\_t}}
+\doxysubsubsection{\texorpdfstring{power\_on\_date}{power\_on\_date}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00450}{DATE\+\_\+t}} DB\+\_\+\+EPISODE\+\_\+\+HEADER\+\_\+t\+::power\+\_\+on\+\_\+date}
+
+
+
+Power-\/on date. 
+
+\Hypertarget{a00262_a1c2958d9e636dd386d4b8615c1c90e51}\label{a00262_a1c2958d9e636dd386d4b8615c1c90e51} 
+\index{DB\_EPISODE\_HEADER\_t@{DB\_EPISODE\_HEADER\_t}!power\_on\_time@{power\_on\_time}}
+\index{power\_on\_time@{power\_on\_time}!DB\_EPISODE\_HEADER\_t@{DB\_EPISODE\_HEADER\_t}}
+\doxysubsubsection{\texorpdfstring{power\_on\_time}{power\_on\_time}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00446}{TIME\+\_\+t}} DB\+\_\+\+EPISODE\+\_\+\+HEADER\+\_\+t\+::power\+\_\+on\+\_\+time}
+
+
+
+Power-\/on time. 
+
+\Hypertarget{a00262_a946ede95dd0e6ed88073ccd47b13500b}\label{a00262_a946ede95dd0e6ed88073ccd47b13500b} 
+\index{DB\_EPISODE\_HEADER\_t@{DB\_EPISODE\_HEADER\_t}!reserved@{reserved}}
+\index{reserved@{reserved}!DB\_EPISODE\_HEADER\_t@{DB\_EPISODE\_HEADER\_t}}
+\doxysubsubsection{\texorpdfstring{reserved}{reserved}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} DB\+\_\+\+EPISODE\+\_\+\+HEADER\+\_\+t\+::reserved\mbox{[}16\mbox{]}}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\mbox{\hyperlink{a00005}{DB\+\_\+\+Episode.\+h}}\end{DoxyCompactItemize}

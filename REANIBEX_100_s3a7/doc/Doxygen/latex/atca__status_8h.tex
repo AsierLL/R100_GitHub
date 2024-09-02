@@ -1,0 +1,272 @@
+\doxysection{C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\+SCE/atca\+\_\+status.h File Reference}
+\hypertarget{atca__status_8h}{}\label{atca__status_8h}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/SCE/atca\_status.h@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/SCE/atca\_status.h}}
+
+
+Microchip Crypto Auth status codes.  
+
+
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include "{}atca\+\_\+bool.\+h"{}}\newline
+Include dependency graph for atca\+\_\+status.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=230pt]{atca__status_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{atca__status_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{atca__status_8h_a42137e921dec18d18737aaf68196191f}{ATCA\+\_\+\+STATUS\+\_\+\+AUTH\+\_\+\+BIT}}~0x40
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \{ \newline
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda90f078b947261727ad1757447898afe7}{ATCA\+\_\+\+SUCCESS}} = 0x00
+, \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cdaf54a8014ca61abe303627b25c4e7a4a0}{ATCA\+\_\+\+CONFIG\+\_\+\+ZONE\+\_\+\+LOCKED}} = 0x01
+, \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cdaebbcd7a74d20b8314f670cfff4f1ea7f}{ATCA\+\_\+\+DATA\+\_\+\+ZONE\+\_\+\+LOCKED}} = 0x02
+, \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda3549d736fbaa29b8ed8a8067477f62af}{ATCA\+\_\+\+INVALID\+\_\+\+POINTER}}
+, \newline
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cdaeddf67f91345e5adc318edec02915c3e}{ATCA\+\_\+\+INVALID\+\_\+\+LENGTH}}
+, \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda5d16ae933fc359fd2fd58ea743d95b42}{ATCA\+\_\+\+WAKE\+\_\+\+FAILED}} = 0x\+D0
+, \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda4516d5c9a8fafb8611a0e1f65da690d2}{ATCA\+\_\+\+CHECKMAC\+\_\+\+VERIFY\+\_\+\+FAILED}} = 0x\+D1
+, \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda2d4ca6eadbad97c04c4dee878a579f95}{ATCA\+\_\+\+PARSE\+\_\+\+ERROR}} = 0x\+D2
+, \newline
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda4ccbb9f75fbf5cad8f0de6e07efe4228}{ATCA\+\_\+\+STATUS\+\_\+\+CRC}} = 0x\+D4
+, \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda86e098be693e09a11652418c77f5d55f}{ATCA\+\_\+\+STATUS\+\_\+\+UNKNOWN}} = 0x\+D5
+, \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda460a9516a4da1c7fc747208b2b9b2c77}{ATCA\+\_\+\+STATUS\+\_\+\+ECC}} = 0x\+D6
+, \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cdaace56e3f04ee46a82fbceef8655dec2f}{ATCA\+\_\+\+STATUS\+\_\+\+SELFTEST\+\_\+\+ERROR}} = 0x\+D7
+, \newline
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda255cf588a99696239289c2af088d91db}{ATCA\+\_\+\+FUNC\+\_\+\+FAIL}} = 0x\+E0
+, \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cdaf910a3a4d6553e2630db57c678ee3ed4}{ATCA\+\_\+\+GEN\+\_\+\+FAIL}} = 0x\+E1
+, \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda62c3bf678bec6c76a516c24803786200}{ATCA\+\_\+\+BAD\+\_\+\+PARAM}} = 0x\+E2
+, \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda463fbd86bef717279ef8190432488816}{ATCA\+\_\+\+INVALID\+\_\+\+ID}} = 0x\+E3
+, \newline
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda87c2eb3e423be47222aab4fe42e615d5}{ATCA\+\_\+\+INVALID\+\_\+\+SIZE}} = 0x\+E4
+, \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda0f0a7283079048d1c924aafffb4485b9}{ATCA\+\_\+\+RX\+\_\+\+CRC\+\_\+\+ERROR}} = 0x\+E5
+, \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda84104123e4dee21b14f08b301aaa69e4}{ATCA\+\_\+\+RX\+\_\+\+FAIL}} = 0x\+E6
+, \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cdae72eb9733119411a45f2b16d9afdf276}{ATCA\+\_\+\+RX\+\_\+\+NO\+\_\+\+RESPONSE}} = 0x\+E7
+, \newline
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda65ec21c2404b0325721c3d468a1162be}{ATCA\+\_\+\+RESYNC\+\_\+\+WITH\+\_\+\+WAKEUP}} = 0x\+E8
+, \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda4e5e63313a42c77753edf15c2f4432c3}{ATCA\+\_\+\+PARITY\+\_\+\+ERROR}} = 0x\+E9
+, \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda3454fb56851ff7bf93c7ceb8ba8058ae}{ATCA\+\_\+\+TX\+\_\+\+TIMEOUT}} = 0x\+EA
+, \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda66744f63f44d844af8575d81a4a9198d}{ATCA\+\_\+\+RX\+\_\+\+TIMEOUT}} = 0x\+EB
+, \newline
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda3f3a46632bae84ce7cd167cc3112f8e7}{ATCA\+\_\+\+TOO\+\_\+\+MANY\+\_\+\+COMM\+\_\+\+RETRIES}} = 0x\+EC
+, \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cdafb5e6ce1eef61f07757349f1c59fb743}{ATCA\+\_\+\+SMALL\+\_\+\+BUFFER}} = 0x\+ED
+, \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cdaac27ddd7be6ceb9266f9b4bb68ee9240}{ATCA\+\_\+\+COMM\+\_\+\+FAIL}} = 0x\+F0
+, \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda21aad8f6ba69867aca39a5ef12336d31}{ATCA\+\_\+\+TIMEOUT}} = 0x\+F1
+, \newline
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cdac631bde2407acd3f08f133e24fdd3c15}{ATCA\+\_\+\+BAD\+\_\+\+OPCODE}} = 0x\+F2
+, \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda6475b27da302e0fc614a6d28b9ecf83a}{ATCA\+\_\+\+WAKE\+\_\+\+SUCCESS}} = 0x\+F3
+, \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda6f9dffadd0c7650308ae015aaafb031b}{ATCA\+\_\+\+EXECUTION\+\_\+\+ERROR}} = 0x\+F4
+, \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda7c8dbba1062b6b1ddbf5a0d811b90450}{ATCA\+\_\+\+UNIMPLEMENTED}} = 0x\+F5
+, \newline
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda2947392fc8a0455a9509335d3f64cb09}{ATCA\+\_\+\+ASSERT\+\_\+\+FAILURE}} = 0x\+F6
+, \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cdaf09e5ac50687bb7ebd4ae8c2ea6e00bb}{ATCA\+\_\+\+TX\+\_\+\+FAIL}} = 0x\+F7
+, \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cdaaecfbe2627d615c7daaece08ccce2ce8}{ATCA\+\_\+\+NOT\+\_\+\+LOCKED}} = 0x\+F8
+, \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda19e30a952ff321d7d08ba3f2350ca822}{ATCA\+\_\+\+NO\+\_\+\+DEVICES}} = 0x\+F9
+, \newline
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda269497d1618eb45c717e62d7bf583b2d}{ATCA\+\_\+\+HEALTH\+\_\+\+TEST\+\_\+\+ERROR}} = 0x\+FA
+, \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cdaad5884e38c8b63abe918948d3c26daa1}{ATCA\+\_\+\+ALLOC\+\_\+\+FAILURE}} = 0x\+FB
+, \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda39c6ce98eae32106b53de8b2c35b45b9}{ATCA\+\_\+\+USE\+\_\+\+FLAGS\+\_\+\+CONSUMED}} = 0x\+FC
+, \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cdaaa73d735ea11478a62ea04bbd492251f}{ATCA\+\_\+\+NOT\+\_\+\+INITIALIZED}} = 0x\+FD
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Microchip Crypto Auth status codes. 
+
+\begin{DoxyCopyright}{Copyright}
+(c) 2015-\/2020 Microchip Technology Inc. and its subsidiaries. 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{atca__status_8h_a42137e921dec18d18737aaf68196191f}\label{atca__status_8h_a42137e921dec18d18737aaf68196191f} 
+\index{atca\_status.h@{atca\_status.h}!ATCA\_STATUS\_AUTH\_BIT@{ATCA\_STATUS\_AUTH\_BIT}}
+\index{ATCA\_STATUS\_AUTH\_BIT@{ATCA\_STATUS\_AUTH\_BIT}!atca\_status.h@{atca\_status.h}}
+\doxysubsubsection{\texorpdfstring{ATCA\_STATUS\_AUTH\_BIT}{ATCA\_STATUS\_AUTH\_BIT}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+STATUS\+\_\+\+AUTH\+\_\+\+BIT~0x40}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}\label{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd} 
+\index{atca\_status.h@{atca\_status.h}!ATCA\_STATUS@{ATCA\_STATUS}}
+\index{ATCA\_STATUS@{ATCA\_STATUS}!atca\_status.h@{atca\_status.h}}
+\doxysubsubsection{\texorpdfstring{ATCA\_STATUS}{ATCA\_STATUS}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ATCA\_SUCCESS@{ATCA\_SUCCESS}!atca\_status.h@{atca\_status.h}}\index{atca\_status.h@{atca\_status.h}!ATCA\_SUCCESS@{ATCA\_SUCCESS}}}\Hypertarget{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda90f078b947261727ad1757447898afe7}\label{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda90f078b947261727ad1757447898afe7} 
+ATCA\+\_\+\+SUCCESS&Function succeeded. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ATCA\_CONFIG\_ZONE\_LOCKED@{ATCA\_CONFIG\_ZONE\_LOCKED}!atca\_status.h@{atca\_status.h}}\index{atca\_status.h@{atca\_status.h}!ATCA\_CONFIG\_ZONE\_LOCKED@{ATCA\_CONFIG\_ZONE\_LOCKED}}}\Hypertarget{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cdaf54a8014ca61abe303627b25c4e7a4a0}\label{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cdaf54a8014ca61abe303627b25c4e7a4a0} 
+ATCA\+\_\+\+CONFIG\+\_\+\+ZONE\+\_\+\+LOCKED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ATCA\_DATA\_ZONE\_LOCKED@{ATCA\_DATA\_ZONE\_LOCKED}!atca\_status.h@{atca\_status.h}}\index{atca\_status.h@{atca\_status.h}!ATCA\_DATA\_ZONE\_LOCKED@{ATCA\_DATA\_ZONE\_LOCKED}}}\Hypertarget{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cdaebbcd7a74d20b8314f670cfff4f1ea7f}\label{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cdaebbcd7a74d20b8314f670cfff4f1ea7f} 
+ATCA\+\_\+\+DATA\+\_\+\+ZONE\+\_\+\+LOCKED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ATCA\_INVALID\_POINTER@{ATCA\_INVALID\_POINTER}!atca\_status.h@{atca\_status.h}}\index{atca\_status.h@{atca\_status.h}!ATCA\_INVALID\_POINTER@{ATCA\_INVALID\_POINTER}}}\Hypertarget{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda3549d736fbaa29b8ed8a8067477f62af}\label{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda3549d736fbaa29b8ed8a8067477f62af} 
+ATCA\+\_\+\+INVALID\+\_\+\+POINTER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ATCA\_INVALID\_LENGTH@{ATCA\_INVALID\_LENGTH}!atca\_status.h@{atca\_status.h}}\index{atca\_status.h@{atca\_status.h}!ATCA\_INVALID\_LENGTH@{ATCA\_INVALID\_LENGTH}}}\Hypertarget{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cdaeddf67f91345e5adc318edec02915c3e}\label{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cdaeddf67f91345e5adc318edec02915c3e} 
+ATCA\+\_\+\+INVALID\+\_\+\+LENGTH&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ATCA\_WAKE\_FAILED@{ATCA\_WAKE\_FAILED}!atca\_status.h@{atca\_status.h}}\index{atca\_status.h@{atca\_status.h}!ATCA\_WAKE\_FAILED@{ATCA\_WAKE\_FAILED}}}\Hypertarget{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda5d16ae933fc359fd2fd58ea743d95b42}\label{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda5d16ae933fc359fd2fd58ea743d95b42} 
+ATCA\+\_\+\+WAKE\+\_\+\+FAILED&response status byte indicates Check\+Mac failure (status byte = 0x01) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ATCA\_CHECKMAC\_VERIFY\_FAILED@{ATCA\_CHECKMAC\_VERIFY\_FAILED}!atca\_status.h@{atca\_status.h}}\index{atca\_status.h@{atca\_status.h}!ATCA\_CHECKMAC\_VERIFY\_FAILED@{ATCA\_CHECKMAC\_VERIFY\_FAILED}}}\Hypertarget{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda4516d5c9a8fafb8611a0e1f65da690d2}\label{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda4516d5c9a8fafb8611a0e1f65da690d2} 
+ATCA\+\_\+\+CHECKMAC\+\_\+\+VERIFY\+\_\+\+FAILED&response status byte indicates Check\+Mac failure (status byte = 0x01) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ATCA\_PARSE\_ERROR@{ATCA\_PARSE\_ERROR}!atca\_status.h@{atca\_status.h}}\index{atca\_status.h@{atca\_status.h}!ATCA\_PARSE\_ERROR@{ATCA\_PARSE\_ERROR}}}\Hypertarget{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda2d4ca6eadbad97c04c4dee878a579f95}\label{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda2d4ca6eadbad97c04c4dee878a579f95} 
+ATCA\+\_\+\+PARSE\+\_\+\+ERROR&response status byte indicates parsing error (status byte = 0x03) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ATCA\_STATUS\_CRC@{ATCA\_STATUS\_CRC}!atca\_status.h@{atca\_status.h}}\index{atca\_status.h@{atca\_status.h}!ATCA\_STATUS\_CRC@{ATCA\_STATUS\_CRC}}}\Hypertarget{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda4ccbb9f75fbf5cad8f0de6e07efe4228}\label{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda4ccbb9f75fbf5cad8f0de6e07efe4228} 
+ATCA\+\_\+\+STATUS\+\_\+\+CRC&response status byte indicates DEVICE did not receive data properly (status byte = 0x\+FF) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ATCA\_STATUS\_UNKNOWN@{ATCA\_STATUS\_UNKNOWN}!atca\_status.h@{atca\_status.h}}\index{atca\_status.h@{atca\_status.h}!ATCA\_STATUS\_UNKNOWN@{ATCA\_STATUS\_UNKNOWN}}}\Hypertarget{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda86e098be693e09a11652418c77f5d55f}\label{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda86e098be693e09a11652418c77f5d55f} 
+ATCA\+\_\+\+STATUS\+\_\+\+UNKNOWN&response status byte is unknown \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ATCA\_STATUS\_ECC@{ATCA\_STATUS\_ECC}!atca\_status.h@{atca\_status.h}}\index{atca\_status.h@{atca\_status.h}!ATCA\_STATUS\_ECC@{ATCA\_STATUS\_ECC}}}\Hypertarget{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda460a9516a4da1c7fc747208b2b9b2c77}\label{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda460a9516a4da1c7fc747208b2b9b2c77} 
+ATCA\+\_\+\+STATUS\+\_\+\+ECC&response status byte is ECC fault (status byte = 0x05) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ATCA\_STATUS\_SELFTEST\_ERROR@{ATCA\_STATUS\_SELFTEST\_ERROR}!atca\_status.h@{atca\_status.h}}\index{atca\_status.h@{atca\_status.h}!ATCA\_STATUS\_SELFTEST\_ERROR@{ATCA\_STATUS\_SELFTEST\_ERROR}}}\Hypertarget{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cdaace56e3f04ee46a82fbceef8655dec2f}\label{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cdaace56e3f04ee46a82fbceef8655dec2f} 
+ATCA\+\_\+\+STATUS\+\_\+\+SELFTEST\+\_\+\+ERROR&response status byte is Self Test Error, chip in failure mode (status byte = 0x07) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ATCA\_FUNC\_FAIL@{ATCA\_FUNC\_FAIL}!atca\_status.h@{atca\_status.h}}\index{atca\_status.h@{atca\_status.h}!ATCA\_FUNC\_FAIL@{ATCA\_FUNC\_FAIL}}}\Hypertarget{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda255cf588a99696239289c2af088d91db}\label{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda255cf588a99696239289c2af088d91db} 
+ATCA\+\_\+\+FUNC\+\_\+\+FAIL&Function could not execute due to incorrect condition / state. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ATCA\_GEN\_FAIL@{ATCA\_GEN\_FAIL}!atca\_status.h@{atca\_status.h}}\index{atca\_status.h@{atca\_status.h}!ATCA\_GEN\_FAIL@{ATCA\_GEN\_FAIL}}}\Hypertarget{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cdaf910a3a4d6553e2630db57c678ee3ed4}\label{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cdaf910a3a4d6553e2630db57c678ee3ed4} 
+ATCA\+\_\+\+GEN\+\_\+\+FAIL&unspecified error \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ATCA\_BAD\_PARAM@{ATCA\_BAD\_PARAM}!atca\_status.h@{atca\_status.h}}\index{atca\_status.h@{atca\_status.h}!ATCA\_BAD\_PARAM@{ATCA\_BAD\_PARAM}}}\Hypertarget{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda62c3bf678bec6c76a516c24803786200}\label{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda62c3bf678bec6c76a516c24803786200} 
+ATCA\+\_\+\+BAD\+\_\+\+PARAM&bad argument (out of range, null pointer, etc.) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ATCA\_INVALID\_ID@{ATCA\_INVALID\_ID}!atca\_status.h@{atca\_status.h}}\index{atca\_status.h@{atca\_status.h}!ATCA\_INVALID\_ID@{ATCA\_INVALID\_ID}}}\Hypertarget{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda463fbd86bef717279ef8190432488816}\label{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda463fbd86bef717279ef8190432488816} 
+ATCA\+\_\+\+INVALID\+\_\+\+ID&invalid device id, id not set \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ATCA\_INVALID\_SIZE@{ATCA\_INVALID\_SIZE}!atca\_status.h@{atca\_status.h}}\index{atca\_status.h@{atca\_status.h}!ATCA\_INVALID\_SIZE@{ATCA\_INVALID\_SIZE}}}\Hypertarget{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda87c2eb3e423be47222aab4fe42e615d5}\label{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda87c2eb3e423be47222aab4fe42e615d5} 
+ATCA\+\_\+\+INVALID\+\_\+\+SIZE&Count value is out of range or greater than buffer size. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ATCA\_RX\_CRC\_ERROR@{ATCA\_RX\_CRC\_ERROR}!atca\_status.h@{atca\_status.h}}\index{atca\_status.h@{atca\_status.h}!ATCA\_RX\_CRC\_ERROR@{ATCA\_RX\_CRC\_ERROR}}}\Hypertarget{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda0f0a7283079048d1c924aafffb4485b9}\label{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda0f0a7283079048d1c924aafffb4485b9} 
+ATCA\+\_\+\+RX\+\_\+\+CRC\+\_\+\+ERROR&CRC error in data received from device. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ATCA\_RX\_FAIL@{ATCA\_RX\_FAIL}!atca\_status.h@{atca\_status.h}}\index{atca\_status.h@{atca\_status.h}!ATCA\_RX\_FAIL@{ATCA\_RX\_FAIL}}}\Hypertarget{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda84104123e4dee21b14f08b301aaa69e4}\label{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda84104123e4dee21b14f08b301aaa69e4} 
+ATCA\+\_\+\+RX\+\_\+\+FAIL&Timed out while waiting for response. Number of bytes received is \texorpdfstring{$>$}{>} 0. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ATCA\_RX\_NO\_RESPONSE@{ATCA\_RX\_NO\_RESPONSE}!atca\_status.h@{atca\_status.h}}\index{atca\_status.h@{atca\_status.h}!ATCA\_RX\_NO\_RESPONSE@{ATCA\_RX\_NO\_RESPONSE}}}\Hypertarget{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cdae72eb9733119411a45f2b16d9afdf276}\label{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cdae72eb9733119411a45f2b16d9afdf276} 
+ATCA\+\_\+\+RX\+\_\+\+NO\+\_\+\+RESPONSE&Not an error while the Command layer is polling for a command response. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ATCA\_RESYNC\_WITH\_WAKEUP@{ATCA\_RESYNC\_WITH\_WAKEUP}!atca\_status.h@{atca\_status.h}}\index{atca\_status.h@{atca\_status.h}!ATCA\_RESYNC\_WITH\_WAKEUP@{ATCA\_RESYNC\_WITH\_WAKEUP}}}\Hypertarget{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda65ec21c2404b0325721c3d468a1162be}\label{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda65ec21c2404b0325721c3d468a1162be} 
+ATCA\+\_\+\+RESYNC\+\_\+\+WITH\+\_\+\+WAKEUP&Re-\/synchronization succeeded, but only after generating a Wake-\/up. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ATCA\_PARITY\_ERROR@{ATCA\_PARITY\_ERROR}!atca\_status.h@{atca\_status.h}}\index{atca\_status.h@{atca\_status.h}!ATCA\_PARITY\_ERROR@{ATCA\_PARITY\_ERROR}}}\Hypertarget{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda4e5e63313a42c77753edf15c2f4432c3}\label{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda4e5e63313a42c77753edf15c2f4432c3} 
+ATCA\+\_\+\+PARITY\+\_\+\+ERROR&for protocols needing parity \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ATCA\_TX\_TIMEOUT@{ATCA\_TX\_TIMEOUT}!atca\_status.h@{atca\_status.h}}\index{atca\_status.h@{atca\_status.h}!ATCA\_TX\_TIMEOUT@{ATCA\_TX\_TIMEOUT}}}\Hypertarget{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda3454fb56851ff7bf93c7ceb8ba8058ae}\label{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda3454fb56851ff7bf93c7ceb8ba8058ae} 
+ATCA\+\_\+\+TX\+\_\+\+TIMEOUT&for Microchip PHY protocol, timeout on transmission waiting for master \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ATCA\_RX\_TIMEOUT@{ATCA\_RX\_TIMEOUT}!atca\_status.h@{atca\_status.h}}\index{atca\_status.h@{atca\_status.h}!ATCA\_RX\_TIMEOUT@{ATCA\_RX\_TIMEOUT}}}\Hypertarget{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda66744f63f44d844af8575d81a4a9198d}\label{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda66744f63f44d844af8575d81a4a9198d} 
+ATCA\+\_\+\+RX\+\_\+\+TIMEOUT&for Microchip PHY protocol, timeout on receipt waiting for master \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ATCA\_TOO\_MANY\_COMM\_RETRIES@{ATCA\_TOO\_MANY\_COMM\_RETRIES}!atca\_status.h@{atca\_status.h}}\index{atca\_status.h@{atca\_status.h}!ATCA\_TOO\_MANY\_COMM\_RETRIES@{ATCA\_TOO\_MANY\_COMM\_RETRIES}}}\Hypertarget{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda3f3a46632bae84ce7cd167cc3112f8e7}\label{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda3f3a46632bae84ce7cd167cc3112f8e7} 
+ATCA\+\_\+\+TOO\+\_\+\+MANY\+\_\+\+COMM\+\_\+\+RETRIES&Device did not respond too many times during a transmission. Could indicate no device present. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ATCA\_SMALL\_BUFFER@{ATCA\_SMALL\_BUFFER}!atca\_status.h@{atca\_status.h}}\index{atca\_status.h@{atca\_status.h}!ATCA\_SMALL\_BUFFER@{ATCA\_SMALL\_BUFFER}}}\Hypertarget{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cdafb5e6ce1eef61f07757349f1c59fb743}\label{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cdafb5e6ce1eef61f07757349f1c59fb743} 
+ATCA\+\_\+\+SMALL\+\_\+\+BUFFER&Supplied buffer is too small for data required. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ATCA\_COMM\_FAIL@{ATCA\_COMM\_FAIL}!atca\_status.h@{atca\_status.h}}\index{atca\_status.h@{atca\_status.h}!ATCA\_COMM\_FAIL@{ATCA\_COMM\_FAIL}}}\Hypertarget{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cdaac27ddd7be6ceb9266f9b4bb68ee9240}\label{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cdaac27ddd7be6ceb9266f9b4bb68ee9240} 
+ATCA\+\_\+\+COMM\+\_\+\+FAIL&Communication with device failed. Same as in hardware dependent modules. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ATCA\_TIMEOUT@{ATCA\_TIMEOUT}!atca\_status.h@{atca\_status.h}}\index{atca\_status.h@{atca\_status.h}!ATCA\_TIMEOUT@{ATCA\_TIMEOUT}}}\Hypertarget{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda21aad8f6ba69867aca39a5ef12336d31}\label{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda21aad8f6ba69867aca39a5ef12336d31} 
+ATCA\+\_\+\+TIMEOUT&Timed out while waiting for response. Number of bytes received is 0. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ATCA\_BAD\_OPCODE@{ATCA\_BAD\_OPCODE}!atca\_status.h@{atca\_status.h}}\index{atca\_status.h@{atca\_status.h}!ATCA\_BAD\_OPCODE@{ATCA\_BAD\_OPCODE}}}\Hypertarget{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cdac631bde2407acd3f08f133e24fdd3c15}\label{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cdac631bde2407acd3f08f133e24fdd3c15} 
+ATCA\+\_\+\+BAD\+\_\+\+OPCODE&opcode is not supported by the device \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ATCA\_WAKE\_SUCCESS@{ATCA\_WAKE\_SUCCESS}!atca\_status.h@{atca\_status.h}}\index{atca\_status.h@{atca\_status.h}!ATCA\_WAKE\_SUCCESS@{ATCA\_WAKE\_SUCCESS}}}\Hypertarget{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda6475b27da302e0fc614a6d28b9ecf83a}\label{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda6475b27da302e0fc614a6d28b9ecf83a} 
+ATCA\+\_\+\+WAKE\+\_\+\+SUCCESS&received proper wake token \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ATCA\_EXECUTION\_ERROR@{ATCA\_EXECUTION\_ERROR}!atca\_status.h@{atca\_status.h}}\index{atca\_status.h@{atca\_status.h}!ATCA\_EXECUTION\_ERROR@{ATCA\_EXECUTION\_ERROR}}}\Hypertarget{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda6f9dffadd0c7650308ae015aaafb031b}\label{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda6f9dffadd0c7650308ae015aaafb031b} 
+ATCA\+\_\+\+EXECUTION\+\_\+\+ERROR&chip was in a state where it could not execute the command, response status byte indicates command execution error (status byte = 0x0F) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ATCA\_UNIMPLEMENTED@{ATCA\_UNIMPLEMENTED}!atca\_status.h@{atca\_status.h}}\index{atca\_status.h@{atca\_status.h}!ATCA\_UNIMPLEMENTED@{ATCA\_UNIMPLEMENTED}}}\Hypertarget{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda7c8dbba1062b6b1ddbf5a0d811b90450}\label{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda7c8dbba1062b6b1ddbf5a0d811b90450} 
+ATCA\+\_\+\+UNIMPLEMENTED&Function or some element of it hasn\textquotesingle{}t been implemented yet. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ATCA\_ASSERT\_FAILURE@{ATCA\_ASSERT\_FAILURE}!atca\_status.h@{atca\_status.h}}\index{atca\_status.h@{atca\_status.h}!ATCA\_ASSERT\_FAILURE@{ATCA\_ASSERT\_FAILURE}}}\Hypertarget{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda2947392fc8a0455a9509335d3f64cb09}\label{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda2947392fc8a0455a9509335d3f64cb09} 
+ATCA\+\_\+\+ASSERT\+\_\+\+FAILURE&Code failed run-\/time consistency check. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ATCA\_TX\_FAIL@{ATCA\_TX\_FAIL}!atca\_status.h@{atca\_status.h}}\index{atca\_status.h@{atca\_status.h}!ATCA\_TX\_FAIL@{ATCA\_TX\_FAIL}}}\Hypertarget{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cdaf09e5ac50687bb7ebd4ae8c2ea6e00bb}\label{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cdaf09e5ac50687bb7ebd4ae8c2ea6e00bb} 
+ATCA\+\_\+\+TX\+\_\+\+FAIL&Failed to write. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ATCA\_NOT\_LOCKED@{ATCA\_NOT\_LOCKED}!atca\_status.h@{atca\_status.h}}\index{atca\_status.h@{atca\_status.h}!ATCA\_NOT\_LOCKED@{ATCA\_NOT\_LOCKED}}}\Hypertarget{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cdaaecfbe2627d615c7daaece08ccce2ce8}\label{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cdaaecfbe2627d615c7daaece08ccce2ce8} 
+ATCA\+\_\+\+NOT\+\_\+\+LOCKED&required zone was not locked \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ATCA\_NO\_DEVICES@{ATCA\_NO\_DEVICES}!atca\_status.h@{atca\_status.h}}\index{atca\_status.h@{atca\_status.h}!ATCA\_NO\_DEVICES@{ATCA\_NO\_DEVICES}}}\Hypertarget{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda19e30a952ff321d7d08ba3f2350ca822}\label{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda19e30a952ff321d7d08ba3f2350ca822} 
+ATCA\+\_\+\+NO\+\_\+\+DEVICES&For protocols that support device discovery (kit protocol), no devices were found. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ATCA\_HEALTH\_TEST\_ERROR@{ATCA\_HEALTH\_TEST\_ERROR}!atca\_status.h@{atca\_status.h}}\index{atca\_status.h@{atca\_status.h}!ATCA\_HEALTH\_TEST\_ERROR@{ATCA\_HEALTH\_TEST\_ERROR}}}\Hypertarget{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda269497d1618eb45c717e62d7bf583b2d}\label{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda269497d1618eb45c717e62d7bf583b2d} 
+ATCA\+\_\+\+HEALTH\+\_\+\+TEST\+\_\+\+ERROR&random number generator health test error \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ATCA\_ALLOC\_FAILURE@{ATCA\_ALLOC\_FAILURE}!atca\_status.h@{atca\_status.h}}\index{atca\_status.h@{atca\_status.h}!ATCA\_ALLOC\_FAILURE@{ATCA\_ALLOC\_FAILURE}}}\Hypertarget{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cdaad5884e38c8b63abe918948d3c26daa1}\label{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cdaad5884e38c8b63abe918948d3c26daa1} 
+ATCA\+\_\+\+ALLOC\+\_\+\+FAILURE&Couldn\textquotesingle{}t allocate required memory. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ATCA\_USE\_FLAGS\_CONSUMED@{ATCA\_USE\_FLAGS\_CONSUMED}!atca\_status.h@{atca\_status.h}}\index{atca\_status.h@{atca\_status.h}!ATCA\_USE\_FLAGS\_CONSUMED@{ATCA\_USE\_FLAGS\_CONSUMED}}}\Hypertarget{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda39c6ce98eae32106b53de8b2c35b45b9}\label{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cda39c6ce98eae32106b53de8b2c35b45b9} 
+ATCA\+\_\+\+USE\+\_\+\+FLAGS\+\_\+\+CONSUMED&Use flags on the device indicates its consumed fully. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ATCA\_NOT\_INITIALIZED@{ATCA\_NOT\_INITIALIZED}!atca\_status.h@{atca\_status.h}}\index{atca\_status.h@{atca\_status.h}!ATCA\_NOT\_INITIALIZED@{ATCA\_NOT\_INITIALIZED}}}\Hypertarget{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cdaaa73d735ea11478a62ea04bbd492251f}\label{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cdaaa73d735ea11478a62ea04bbd492251f} 
+ATCA\+\_\+\+NOT\+\_\+\+INITIALIZED&The library has not been initialized so the command could not be executed. \\
+\hline
+
+\end{DoxyEnumFields}

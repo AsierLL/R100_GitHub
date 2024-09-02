@@ -1,0 +1,23 @@
+<map id="Comm_ACC_Initialize" name="Comm_ACC_Initialize">
+<area shape="rect" id="Node000001" title="If accelerometer presence is OK, then initialize Accelerometer setup." alt="" coords="5,81,153,108"/>
+<area shape="rect" id="Node000002" href="$bsp__acc___l_i_s3_d_h_8c.html#afcbc051f96e6f31f234a07674c2027f3" title="Checks for presence of accelerometer by checking who_am_i register." alt="" coords="201,56,368,83"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="153,83,185,79,185,84,153,88"/>
+<area shape="rect" id="Node000008" href="$bsp__acc___l_i_s3_d_h_8c.html#aea5b1f8a01e5ae4f2805aa689711694e" title="Setup basic configuration of accelerometer." alt="" coords="211,107,358,133"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="153,101,196,106,195,112,153,106"/>
+<area shape="rect" id="Node000003" href="$_i2_c__1_8c.html#ace04072c3cee76dcb968024ef77224f6" title="Function to read data byte at specific register address." alt="" coords="417,56,583,83"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="368,67,401,67,401,72,368,72"/>
+<area shape="rect" id="Node000004" href="$_i2_c__1_8c.html#a8721bef7537e00756c8c6e8ec8b4c3b4" title="Function to get a data byte from the i2C device." alt="" coords="647,5,752,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="555,53,632,33,633,38,556,58"/>
+<area shape="rect" id="Node000005" href="$_i2_c__1_8c.html#a58c06ede2d56b3068be6703981e4030a" title="Generate the START condition in the i2C line." alt="" coords="631,56,768,83"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="583,67,616,67,616,72,583,72"/>
+<area shape="rect" id="Node000006" href="$_i2_c__1_8c.html#abe5880e856c1c213a8e0074d876f9b70" title="Generate the STOP condition in the i2C line." alt="" coords="632,107,767,133"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="556,81,630,100,629,105,555,86"/>
+<area shape="rect" id="Node000007" href="$_i2_c__1_8c.html#a3be7740fdada1288f4bf53c6f8a4c84a" title="Function to send a data byte to the i2C device." alt="" coords="648,157,751,184"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="561,81,585,92,600,105,610,118,619,131,633,143,641,148,638,152,630,147,615,134,605,121,596,109,582,97,559,86"/>
+<area shape="poly" id="edge8_Node000008_Node000003" title=" " alt="" coords="344,103,425,84,426,89,345,109"/>
+<area shape="rect" id="Node000009" href="$_i2_c__1_8c.html#abccb91036dc573b48c9b3733eac02efa" title="Function to write data byte at specific register address." alt="" coords="416,107,583,133"/>
+<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="358,117,400,117,400,123,358,123"/>
+<area shape="poly" id="edge10_Node000009_Node000005" title=" " alt="" coords="555,103,629,84,630,90,556,109"/>
+<area shape="poly" id="edge11_Node000009_Node000006" title=" " alt="" coords="583,117,616,117,616,123,583,123"/>
+<area shape="poly" id="edge12_Node000009_Node000007" title=" " alt="" coords="556,131,634,151,633,157,555,137"/>
+</map>

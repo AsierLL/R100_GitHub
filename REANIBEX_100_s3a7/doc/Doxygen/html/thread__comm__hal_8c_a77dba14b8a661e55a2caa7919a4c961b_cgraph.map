@@ -1,0 +1,34 @@
+<map id="Comm_GPS_Get_Position_Data" name="Comm_GPS_Get_Position_Data">
+<area shape="rect" id="Node000001" title="Get GPS Data." alt="" coords="5,241,216,268"/>
+<area shape="rect" id="Node000002" href="$thread__comm__hal_8c.html#a63b3e38ecaf443421eb673e2342e2f08" title="Select Uart to send and receive data. This function sets the SN74CBT Multiplexer/Demultiplexer via th..." alt="" coords="291,81,425,108"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="121,239,178,181,218,147,262,118,275,112,278,116,265,122,221,151,181,184,125,243"/>
+<area shape="rect" id="Node000009" href="$_comm_8c.html#ae40e9c681ca7b454e790d494b96c2284" title="Change SCI3 (UART) baud rate." alt="" coords="264,132,452,159"/>
+<area shape="poly" id="edge11_Node000001_Node000009" title=" " alt="" coords="132,238,190,204,263,168,282,161,284,166,265,173,192,209,135,243"/>
+<area shape="rect" id="Node000010" href="$bsp__gps__quectel-_l96_8c.html#ae7b3317093f35f213fbf5d9464ecbd5c" title="Get GPS NMEA Protocol latitude and longitude." alt="" coords="274,183,442,209"/>
+<area shape="poly" id="edge12_Node000001_Node000010" title=" " alt="" coords="169,238,283,211,285,216,170,243"/>
+<area shape="rect" id="Node000012" href="$bsp__gps__quectel-_l96_8c.html#a97d6f440f6712eda46180dd0dbba395c" title="Check if a new GPS NMEA Protocol latitude and longitude available." alt="" coords="284,233,432,276"/>
+<area shape="poly" id="edge14_Node000001_Node000012" title=" " alt="" coords="216,252,268,252,268,257,216,257"/>
+<area shape="rect" id="Node000013" href="$bsp__gps__quectel-_l96_8c.html#a923dd2f2b1a38fa3f9c54b1516d246fc" title="Sets TRUE if a new GPS NMEA Protocol latitude and longitude is available." alt="" coords="279,300,437,343"/>
+<area shape="poly" id="edge15_Node000001_Node000013" title=" " alt="" coords="164,266,265,294,263,299,162,271"/>
+<area shape="rect" id="Node000014" href="$_trace_8c.html#a8947b81ae09bdb57459cd1c81c78ab37" title="Print a trace string inserting the time stamp." alt="" coords="331,367,385,393"/>
+<area shape="poly" id="edge16_Node000001_Node000014" title=" " alt="" coords="131,266,188,309,226,332,265,352,316,369,315,374,263,357,223,337,185,313,127,271"/>
+<area shape="rect" id="Node000015" href="$_trace_8c.html#abbe04e9d8a6f964c5a4f18901a95b0de" title="Print a trace string inserting the time stamp." alt="" coords="318,417,398,444"/>
+<area shape="poly" id="edge17_Node000001_Node000015" title=" " alt="" coords="124,267,179,332,219,370,265,403,304,419,302,423,262,408,216,375,175,336,120,270"/>
+<area shape="rect" id="Node000003" href="$_i2_c__2_8c.html#aba3d08d9b33082a1c0aa61ae3e6b5e23" title="Function to read a byte data from a specific address." alt="" coords="546,107,657,133"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="425,99,531,110,530,115,425,104"/>
+<area shape="rect" id="Node000008" href="$_i2_c__2_8c.html#abb5323ebe9e05f1fe983ee0c53fa732e" title="Function to write a data byte at specific address." alt="" coords="546,56,658,83"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="425,85,530,74,530,79,425,90"/>
+<area shape="rect" id="Node000004" href="$_i2_c__2_8c.html#aa504ef0b681fc32e47f923cc52b93067" title="Function to get a data byte from the i2C device." alt="" coords="767,157,872,184"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="658,130,753,152,751,158,657,136"/>
+<area shape="rect" id="Node000005" href="$_i2_c__2_8c.html#afb25d38eef88c072ab6ce216e1965501" title="Generate the START condition in the i2C line." alt="" coords="751,107,888,133"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="658,117,736,117,736,123,658,123"/>
+<area shape="rect" id="Node000006" href="$_i2_c__2_8c.html#a24d35a4dc09bc8d6c5be604be9a2102b" title="Generate the STOP condition in the i2C line." alt="" coords="752,5,887,32"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="657,110,702,92,717,81,726,68,735,55,750,42,758,37,761,41,753,46,739,59,730,71,720,84,705,97,659,115"/>
+<area shape="rect" id="Node000007" href="$_i2_c__2_8c.html#a5a45bd2c0aa3fd6619ad4e682466200c" title="Function to send a data byte to the i2C device." alt="" coords="768,56,871,83"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="657,104,752,82,754,87,658,110"/>
+<area shape="poly" id="edge8_Node000008_Node000005" title=" " alt="" coords="659,80,745,100,743,105,658,85"/>
+<area shape="poly" id="edge9_Node000008_Node000006" title=" " alt="" coords="658,54,743,34,745,39,659,59"/>
+<area shape="poly" id="edge10_Node000008_Node000007" title=" " alt="" coords="658,67,753,67,753,72,658,72"/>
+<area shape="rect" id="Node000011" href="$_comm_8c.html#aec5ef2359cd4e785b63d0390462a213b" title="Get a received module response." alt="" coords="500,183,703,209"/>
+<area shape="poly" id="edge13_Node000010_Node000011" title=" " alt="" coords="442,193,485,193,485,199,442,199"/>
+</map>

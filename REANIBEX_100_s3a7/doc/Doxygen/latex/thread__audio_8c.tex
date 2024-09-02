@@ -1,0 +1,281 @@
+\doxysection{C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/synergy\+\_\+gen/thread\+\_\+audio.c File Reference}
+\hypertarget{thread__audio_8c}{}\label{thread__audio_8c}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/synergy\_gen/thread\_audio.c@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/synergy\_gen/thread\_audio.c}}
+{\ttfamily \#include "{}thread\+\_\+audio.\+h"{}}\newline
+Include dependency graph for thread\+\_\+audio.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__audio_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{thread__audio_8c_a6e05f6e006d20b6beea28d8be8b29b95}{thread\+\_\+audio\+\_\+create}} (void)
+\item 
+static void \mbox{\hyperlink{thread__audio_8c_a2cb8fdec1e71211749f48a64d9c342ba}{thread\+\_\+audio\+\_\+func}} (ULONG thread\+\_\+input)
+\item 
+static \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} thread\+\_\+audio\+\_\+stack\mbox{[}2048\mbox{]} \mbox{\hyperlink{thread__audio_8c_aa9cfb7db9606dbab00decffb9135d2ed}{BSP\+\_\+\+PLACE\+\_\+\+IN\+\_\+\+SECTION\+\_\+\+V2}} ("{}.stack.\+thread\+\_\+audio"{})
+\item 
+\mbox{\hyperlink{thread__audio_8c_a8f342eb4c779a916284b8a5a9988f1cb}{SSP\+\_\+\+VECTOR\+\_\+\+DEFINE\+\_\+\+CHAN}} (gpt\+\_\+counter\+\_\+overflow\+\_\+isr, GPT, COUNTER\+\_\+\+OVERFLOW, 0)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+TX\+\_\+\+THREAD \mbox{\hyperlink{thread__audio_8c_a98455f100e085e5921ea306fb2d00de7}{thread\+\_\+audio}}
+\begin{DoxyCompactList}\small\item\em Thread descriptor. \end{DoxyCompactList}\item 
+const transfer\+\_\+on\+\_\+dmac\+\_\+cfg\+\_\+t \mbox{\hyperlink{thread__audio_8c_a31e2b17ccf0073e40a2d0ab60ffb0f10}{dma\+\_\+audio\+\_\+extend}}
+\item 
+const transfer\+\_\+cfg\+\_\+t \mbox{\hyperlink{thread__audio_8c_ad77b62b23daad7a9070f924f311b690f}{dma\+\_\+audio\+\_\+cfg}}
+\item 
+const transfer\+\_\+instance\+\_\+t \mbox{\hyperlink{thread__audio_8c_a356877d0e2bdfa02e44d838a57901499}{dma\+\_\+audio}}
+\item 
+static gpt\+\_\+instance\+\_\+ctrl\+\_\+t \mbox{\hyperlink{thread__audio_8c_a3182149f28acddd1f42386bc1485c1e6}{timer\+\_\+audio\+\_\+ctrl}}
+\item 
+static const timer\+\_\+on\+\_\+gpt\+\_\+cfg\+\_\+t \mbox{\hyperlink{thread__audio_8c_a161a8eb95cf792d828ae0ff5d2fa5280}{timer\+\_\+audio\+\_\+extend}}
+\item 
+static const timer\+\_\+cfg\+\_\+t \mbox{\hyperlink{thread__audio_8c_a36b9683981106c6978399821ef8b8362}{timer\+\_\+audio\+\_\+cfg}}
+\item 
+const timer\+\_\+instance\+\_\+t \mbox{\hyperlink{thread__audio_8c_ac2784fac2d207672ab5d9ada4aab047d}{timer\+\_\+audio}}
+\item 
+dac\+\_\+instance\+\_\+ctrl\+\_\+t \mbox{\hyperlink{thread__audio_8c_ae81de5f29b86e2366d89332a4637dc70}{dac\+\_\+audio\+\_\+ctrl}}
+\item 
+const dac\+\_\+cfg\+\_\+t \mbox{\hyperlink{thread__audio_8c_a0a781a18f584062a621193ccf9a4c33b}{dac\+\_\+audio\+\_\+cfg}}
+\item 
+const dac\+\_\+instance\+\_\+t \mbox{\hyperlink{thread__audio_8c_afea62d4b4a366d2ec66ba09822d9d256}{dac\+\_\+audio}}
+\item 
+TX\+\_\+\+SEMAPHORE \mbox{\hyperlink{thread__audio_8c_a6656c1816dc6517bb1758c709c3611b3}{audio\+\_\+semaphore}}
+\item 
+TX\+\_\+\+EVENT\+\_\+\+FLAGS\+\_\+\+GROUP \mbox{\hyperlink{thread__audio_8c_a211294516ea6f9a5a83dd8452a6c4930}{g\+\_\+events\+\_\+\+Audio}}
+\item 
+TX\+\_\+\+MUTEX \mbox{\hyperlink{thread__audio_8c_ad30d11ea8fed4fa1de65360a1cddc7d1}{usd\+\_\+mutex}}
+\item 
+bool \mbox{\hyperlink{thread__audio_8c_aaef7f0cb4b99eeac7cee1b472e370b7b}{g\+\_\+ssp\+\_\+common\+\_\+initialized}}
+\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \mbox{\hyperlink{thread__audio_8c_a00a0c803cac86fb4d0f23cdc5524b5ed}{g\+\_\+ssp\+\_\+common\+\_\+thread\+\_\+count}}
+\item 
+TX\+\_\+\+SEMAPHORE \mbox{\hyperlink{thread__audio_8c_a1846945310283a1dc8b0adefd0e6be71}{g\+\_\+ssp\+\_\+common\+\_\+initialized\+\_\+semaphore}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{thread__audio_8c_aa9cfb7db9606dbab00decffb9135d2ed}\label{thread__audio_8c_aa9cfb7db9606dbab00decffb9135d2ed} 
+\index{thread\_audio.c@{thread\_audio.c}!BSP\_PLACE\_IN\_SECTION\_V2@{BSP\_PLACE\_IN\_SECTION\_V2}}
+\index{BSP\_PLACE\_IN\_SECTION\_V2@{BSP\_PLACE\_IN\_SECTION\_V2}!thread\_audio.c@{thread\_audio.c}}
+\doxysubsubsection{\texorpdfstring{BSP\_PLACE\_IN\_SECTION\_V2()}{BSP\_PLACE\_IN\_SECTION\_V2()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} thread\+\_\+audio\+\_\+stack\mbox{[}2048\mbox{]} BSP\+\_\+\+PLACE\+\_\+\+IN\+\_\+\+SECTION\+\_\+\+V2 (\begin{DoxyParamCaption}\item[{"{}.stack.\+thread\+\_\+audio"{}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{thread__audio_8c_a8f342eb4c779a916284b8a5a9988f1cb}\label{thread__audio_8c_a8f342eb4c779a916284b8a5a9988f1cb} 
+\index{thread\_audio.c@{thread\_audio.c}!SSP\_VECTOR\_DEFINE\_CHAN@{SSP\_VECTOR\_DEFINE\_CHAN}}
+\index{SSP\_VECTOR\_DEFINE\_CHAN@{SSP\_VECTOR\_DEFINE\_CHAN}!thread\_audio.c@{thread\_audio.c}}
+\doxysubsubsection{\texorpdfstring{SSP\_VECTOR\_DEFINE\_CHAN()}{SSP\_VECTOR\_DEFINE\_CHAN()}}
+{\footnotesize\ttfamily SSP\+\_\+\+VECTOR\+\_\+\+DEFINE\+\_\+\+CHAN (\begin{DoxyParamCaption}\item[{gpt\+\_\+counter\+\_\+overflow\+\_\+isr}]{,  }\item[{GPT}]{,  }\item[{COUNTER\+\_\+\+OVERFLOW}]{,  }\item[{0}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{thread__audio_8c_a6e05f6e006d20b6beea28d8be8b29b95}\label{thread__audio_8c_a6e05f6e006d20b6beea28d8be8b29b95} 
+\index{thread\_audio.c@{thread\_audio.c}!thread\_audio\_create@{thread\_audio\_create}}
+\index{thread\_audio\_create@{thread\_audio\_create}!thread\_audio.c@{thread\_audio.c}}
+\doxysubsubsection{\texorpdfstring{thread\_audio\_create()}{thread\_audio\_create()}}
+{\footnotesize\ttfamily void thread\+\_\+audio\+\_\+create (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__audio_8c_a6e05f6e006d20b6beea28d8be8b29b95_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=327pt]{thread__audio_8c_a6e05f6e006d20b6beea28d8be8b29b95_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__audio_8c_a2cb8fdec1e71211749f48a64d9c342ba}\label{thread__audio_8c_a2cb8fdec1e71211749f48a64d9c342ba} 
+\index{thread\_audio.c@{thread\_audio.c}!thread\_audio\_func@{thread\_audio\_func}}
+\index{thread\_audio\_func@{thread\_audio\_func}!thread\_audio.c@{thread\_audio.c}}
+\doxysubsubsection{\texorpdfstring{thread\_audio\_func()}{thread\_audio\_func()}}
+{\footnotesize\ttfamily static void thread\+\_\+audio\+\_\+func (\begin{DoxyParamCaption}\item[{ULONG}]{thread\+\_\+input }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__audio_8c_a2cb8fdec1e71211749f48a64d9c342ba_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__audio_8c_a2cb8fdec1e71211749f48a64d9c342ba_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{thread__audio_8c_a6656c1816dc6517bb1758c709c3611b3}\label{thread__audio_8c_a6656c1816dc6517bb1758c709c3611b3} 
+\index{thread\_audio.c@{thread\_audio.c}!audio\_semaphore@{audio\_semaphore}}
+\index{audio\_semaphore@{audio\_semaphore}!thread\_audio.c@{thread\_audio.c}}
+\doxysubsubsection{\texorpdfstring{audio\_semaphore}{audio\_semaphore}}
+{\footnotesize\ttfamily TX\+\_\+\+SEMAPHORE audio\+\_\+semaphore}
+
+\Hypertarget{thread__audio_8c_afea62d4b4a366d2ec66ba09822d9d256}\label{thread__audio_8c_afea62d4b4a366d2ec66ba09822d9d256} 
+\index{thread\_audio.c@{thread\_audio.c}!dac\_audio@{dac\_audio}}
+\index{dac\_audio@{dac\_audio}!thread\_audio.c@{thread\_audio.c}}
+\doxysubsubsection{\texorpdfstring{dac\_audio}{dac\_audio}}
+{\footnotesize\ttfamily const dac\+\_\+instance\+\_\+t dac\+\_\+audio}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{\ .p\_ctrl\ =\ \&\mbox{\hyperlink{thread__audio_8c_ae81de5f29b86e2366d89332a4637dc70}{dac\_audio\_ctrl}},\ .p\_cfg\ =\ \&\mbox{\hyperlink{thread__audio_8c_a0a781a18f584062a621193ccf9a4c33b}{dac\_audio\_cfg}},\ .p\_api\ =\ \&g\_dac\_on\_dac\ \}}
+
+\end{DoxyCode}
+DAC on DAC Instance. \Hypertarget{thread__audio_8c_a0a781a18f584062a621193ccf9a4c33b}\label{thread__audio_8c_a0a781a18f584062a621193ccf9a4c33b} 
+\index{thread\_audio.c@{thread\_audio.c}!dac\_audio\_cfg@{dac\_audio\_cfg}}
+\index{dac\_audio\_cfg@{dac\_audio\_cfg}!thread\_audio.c@{thread\_audio.c}}
+\doxysubsubsection{\texorpdfstring{dac\_audio\_cfg}{dac\_audio\_cfg}}
+{\footnotesize\ttfamily const dac\+\_\+cfg\+\_\+t dac\+\_\+audio\+\_\+cfg}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{\ .channel\ =\ 0,\ .ad\_da\_synchronized\ =\ \textcolor{keyword}{false},\ .data\_format\ =\ DAC\_DATA\_FORMAT\_FLUSH\_LEFT,\ .output\_amplifier\_enabled\ =}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{false},}
+\DoxyCodeLine{\ \ .p\_extend\ =\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}}\ \}}
+
+\end{DoxyCode}
+\Hypertarget{thread__audio_8c_ae81de5f29b86e2366d89332a4637dc70}\label{thread__audio_8c_ae81de5f29b86e2366d89332a4637dc70} 
+\index{thread\_audio.c@{thread\_audio.c}!dac\_audio\_ctrl@{dac\_audio\_ctrl}}
+\index{dac\_audio\_ctrl@{dac\_audio\_ctrl}!thread\_audio.c@{thread\_audio.c}}
+\doxysubsubsection{\texorpdfstring{dac\_audio\_ctrl}{dac\_audio\_ctrl}}
+{\footnotesize\ttfamily dac\+\_\+instance\+\_\+ctrl\+\_\+t dac\+\_\+audio\+\_\+ctrl}
+
+\Hypertarget{thread__audio_8c_a356877d0e2bdfa02e44d838a57901499}\label{thread__audio_8c_a356877d0e2bdfa02e44d838a57901499} 
+\index{thread\_audio.c@{thread\_audio.c}!dma\_audio@{dma\_audio}}
+\index{dma\_audio@{dma\_audio}!thread\_audio.c@{thread\_audio.c}}
+\doxysubsubsection{\texorpdfstring{dma\_audio}{dma\_audio}}
+{\footnotesize\ttfamily const transfer\+\_\+instance\+\_\+t dma\+\_\+audio}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{\ .p\_ctrl\ =\ \&dma\_audio\_ctrl,\ .p\_cfg\ =\ \&\mbox{\hyperlink{thread__audio_8c_ad77b62b23daad7a9070f924f311b690f}{dma\_audio\_cfg}},\ .p\_api\ =\ \&g\_transfer\_on\_dmac\ \}}
+
+\end{DoxyCode}
+\Hypertarget{thread__audio_8c_ad77b62b23daad7a9070f924f311b690f}\label{thread__audio_8c_ad77b62b23daad7a9070f924f311b690f} 
+\index{thread\_audio.c@{thread\_audio.c}!dma\_audio\_cfg@{dma\_audio\_cfg}}
+\index{dma\_audio\_cfg@{dma\_audio\_cfg}!thread\_audio.c@{thread\_audio.c}}
+\doxysubsubsection{\texorpdfstring{dma\_audio\_cfg}{dma\_audio\_cfg}}
+{\footnotesize\ttfamily const transfer\+\_\+cfg\+\_\+t dma\+\_\+audio\+\_\+cfg}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{\ .p\_info\ =\ \&dma\_audio\_info,\ .activation\_source\ =\ ELC\_EVENT\_GPT0\_COUNTER\_OVERFLOW,\ .auto\_enable\ =\ \textcolor{keyword}{false},\ .p\_callback\ =}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{thread__audio_8h_a4086327d11734eb747b46eecabe53e81}{dma\_audio\_callback}},}
+\DoxyCodeLine{\ \ .p\_context\ =\ \&\mbox{\hyperlink{thread__audio_8c_a356877d0e2bdfa02e44d838a57901499}{dma\_audio}},\ .irq\_ipl\ =\ (14),\ .p\_extend\ =\ \&\mbox{\hyperlink{thread__audio_8c_a31e2b17ccf0073e40a2d0ab60ffb0f10}{dma\_audio\_extend}},\ \}}
+
+\end{DoxyCode}
+\Hypertarget{thread__audio_8c_a31e2b17ccf0073e40a2d0ab60ffb0f10}\label{thread__audio_8c_a31e2b17ccf0073e40a2d0ab60ffb0f10} 
+\index{thread\_audio.c@{thread\_audio.c}!dma\_audio\_extend@{dma\_audio\_extend}}
+\index{dma\_audio\_extend@{dma\_audio\_extend}!thread\_audio.c@{thread\_audio.c}}
+\doxysubsubsection{\texorpdfstring{dma\_audio\_extend}{dma\_audio\_extend}}
+{\footnotesize\ttfamily const transfer\+\_\+on\+\_\+dmac\+\_\+cfg\+\_\+t dma\+\_\+audio\+\_\+extend}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{\ .channel\ =\ 1,\ \}}
+
+\end{DoxyCode}
+\Hypertarget{thread__audio_8c_a211294516ea6f9a5a83dd8452a6c4930}\label{thread__audio_8c_a211294516ea6f9a5a83dd8452a6c4930} 
+\index{thread\_audio.c@{thread\_audio.c}!g\_events\_Audio@{g\_events\_Audio}}
+\index{g\_events\_Audio@{g\_events\_Audio}!thread\_audio.c@{thread\_audio.c}}
+\doxysubsubsection{\texorpdfstring{g\_events\_Audio}{g\_events\_Audio}}
+{\footnotesize\ttfamily TX\+\_\+\+EVENT\+\_\+\+FLAGS\+\_\+\+GROUP g\+\_\+events\+\_\+\+Audio}
+
+\Hypertarget{thread__audio_8c_aaef7f0cb4b99eeac7cee1b472e370b7b}\label{thread__audio_8c_aaef7f0cb4b99eeac7cee1b472e370b7b} 
+\index{thread\_audio.c@{thread\_audio.c}!g\_ssp\_common\_initialized@{g\_ssp\_common\_initialized}}
+\index{g\_ssp\_common\_initialized@{g\_ssp\_common\_initialized}!thread\_audio.c@{thread\_audio.c}}
+\doxysubsubsection{\texorpdfstring{g\_ssp\_common\_initialized}{g\_ssp\_common\_initialized}}
+{\footnotesize\ttfamily bool g\+\_\+ssp\+\_\+common\+\_\+initialized\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{thread__audio_8c_a1846945310283a1dc8b0adefd0e6be71}\label{thread__audio_8c_a1846945310283a1dc8b0adefd0e6be71} 
+\index{thread\_audio.c@{thread\_audio.c}!g\_ssp\_common\_initialized\_semaphore@{g\_ssp\_common\_initialized\_semaphore}}
+\index{g\_ssp\_common\_initialized\_semaphore@{g\_ssp\_common\_initialized\_semaphore}!thread\_audio.c@{thread\_audio.c}}
+\doxysubsubsection{\texorpdfstring{g\_ssp\_common\_initialized\_semaphore}{g\_ssp\_common\_initialized\_semaphore}}
+{\footnotesize\ttfamily TX\+\_\+\+SEMAPHORE g\+\_\+ssp\+\_\+common\+\_\+initialized\+\_\+semaphore\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{thread__audio_8c_a00a0c803cac86fb4d0f23cdc5524b5ed}\label{thread__audio_8c_a00a0c803cac86fb4d0f23cdc5524b5ed} 
+\index{thread\_audio.c@{thread\_audio.c}!g\_ssp\_common\_thread\_count@{g\_ssp\_common\_thread\_count}}
+\index{g\_ssp\_common\_thread\_count@{g\_ssp\_common\_thread\_count}!thread\_audio.c@{thread\_audio.c}}
+\doxysubsubsection{\texorpdfstring{g\_ssp\_common\_thread\_count}{g\_ssp\_common\_thread\_count}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} g\+\_\+ssp\+\_\+common\+\_\+thread\+\_\+count\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{thread__audio_8c_a98455f100e085e5921ea306fb2d00de7}\label{thread__audio_8c_a98455f100e085e5921ea306fb2d00de7} 
+\index{thread\_audio.c@{thread\_audio.c}!thread\_audio@{thread\_audio}}
+\index{thread\_audio@{thread\_audio}!thread\_audio.c@{thread\_audio.c}}
+\doxysubsubsection{\texorpdfstring{thread\_audio}{thread\_audio}}
+{\footnotesize\ttfamily TX\+\_\+\+THREAD thread\+\_\+audio}
+
+
+
+Thread descriptor. 
+
+\Hypertarget{thread__audio_8c_ac2784fac2d207672ab5d9ada4aab047d}\label{thread__audio_8c_ac2784fac2d207672ab5d9ada4aab047d} 
+\index{thread\_audio.c@{thread\_audio.c}!timer\_audio@{timer\_audio}}
+\index{timer\_audio@{timer\_audio}!thread\_audio.c@{thread\_audio.c}}
+\doxysubsubsection{\texorpdfstring{timer\_audio}{timer\_audio}}
+{\footnotesize\ttfamily const timer\+\_\+instance\+\_\+t timer\+\_\+audio}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{\ .p\_ctrl\ =\ \&\mbox{\hyperlink{thread__audio_8c_a3182149f28acddd1f42386bc1485c1e6}{timer\_audio\_ctrl}},\ .p\_cfg\ =\ \&\mbox{\hyperlink{thread__audio_8c_a36b9683981106c6978399821ef8b8362}{timer\_audio\_cfg}},\ .p\_api\ =\ \&g\_timer\_on\_gpt\ \}}
+
+\end{DoxyCode}
+Timer on GPT Instance. \Hypertarget{thread__audio_8c_a36b9683981106c6978399821ef8b8362}\label{thread__audio_8c_a36b9683981106c6978399821ef8b8362} 
+\index{thread\_audio.c@{thread\_audio.c}!timer\_audio\_cfg@{timer\_audio\_cfg}}
+\index{timer\_audio\_cfg@{timer\_audio\_cfg}!thread\_audio.c@{thread\_audio.c}}
+\doxysubsubsection{\texorpdfstring{timer\_audio\_cfg}{timer\_audio\_cfg}}
+{\footnotesize\ttfamily const timer\+\_\+cfg\+\_\+t timer\+\_\+audio\+\_\+cfg\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{\ .mode\ =\ TIMER\_MODE\_PERIODIC,\ .period\ =\ 11025,\ .unit\ =\ TIMER\_UNIT\_FREQUENCY\_HZ,\ .duty\_cycle\ =\ 50,\ .duty\_cycle\_unit\ =}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ TIMER\_PWM\_UNIT\_RAW\_COUNTS,}
+\DoxyCodeLine{\ \ .channel\ =\ 0,\ .autostart\ =\ \textcolor{keyword}{true},\ .p\_callback\ =\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}},\ .p\_context\ =\ \&\mbox{\hyperlink{thread__audio_8c_ac2784fac2d207672ab5d9ada4aab047d}{timer\_audio}},\ .p\_extend\ =\ \&\mbox{\hyperlink{thread__audio_8c_a161a8eb95cf792d828ae0ff5d2fa5280}{timer\_audio\_extend}},}
+\DoxyCodeLine{\ \ .irq\_ipl\ =\ (14),\ \}}
+
+\end{DoxyCode}
+\Hypertarget{thread__audio_8c_a3182149f28acddd1f42386bc1485c1e6}\label{thread__audio_8c_a3182149f28acddd1f42386bc1485c1e6} 
+\index{thread\_audio.c@{thread\_audio.c}!timer\_audio\_ctrl@{timer\_audio\_ctrl}}
+\index{timer\_audio\_ctrl@{timer\_audio\_ctrl}!thread\_audio.c@{thread\_audio.c}}
+\doxysubsubsection{\texorpdfstring{timer\_audio\_ctrl}{timer\_audio\_ctrl}}
+{\footnotesize\ttfamily gpt\+\_\+instance\+\_\+ctrl\+\_\+t timer\+\_\+audio\+\_\+ctrl\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{thread__audio_8c_a161a8eb95cf792d828ae0ff5d2fa5280}\label{thread__audio_8c_a161a8eb95cf792d828ae0ff5d2fa5280} 
+\index{thread\_audio.c@{thread\_audio.c}!timer\_audio\_extend@{timer\_audio\_extend}}
+\index{timer\_audio\_extend@{timer\_audio\_extend}!thread\_audio.c@{thread\_audio.c}}
+\doxysubsubsection{\texorpdfstring{timer\_audio\_extend}{timer\_audio\_extend}}
+{\footnotesize\ttfamily const timer\+\_\+on\+\_\+gpt\+\_\+cfg\+\_\+t timer\+\_\+audio\+\_\+extend\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{\ .gtioca\ =}
+\DoxyCodeLine{\{\ .output\_enabled\ =\ \textcolor{keyword}{false},\ .stop\_level\ =\ GPT\_PIN\_LEVEL\_LOW\ \},}
+\DoxyCodeLine{\ \ .gtiocb\ =}
+\DoxyCodeLine{\ \ \{\ .output\_enabled\ =\ \textcolor{keyword}{false},\ .stop\_level\ =\ GPT\_PIN\_LEVEL\_LOW\ \},}
+\DoxyCodeLine{\ \ .shortest\_pwm\_signal\ =\ GPT\_SHORTEST\_LEVEL\_OFF,\ \}}
+
+\end{DoxyCode}
+\Hypertarget{thread__audio_8c_ad30d11ea8fed4fa1de65360a1cddc7d1}\label{thread__audio_8c_ad30d11ea8fed4fa1de65360a1cddc7d1} 
+\index{thread\_audio.c@{thread\_audio.c}!usd\_mutex@{usd\_mutex}}
+\index{usd\_mutex@{usd\_mutex}!thread\_audio.c@{thread\_audio.c}}
+\doxysubsubsection{\texorpdfstring{usd\_mutex}{usd\_mutex}}
+{\footnotesize\ttfamily TX\+\_\+\+MUTEX usd\+\_\+mutex}
+

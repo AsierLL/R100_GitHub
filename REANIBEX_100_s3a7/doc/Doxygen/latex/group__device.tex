@@ -1,0 +1,1093 @@
+\doxysection{ATCADevice (atca\+\_\+)}
+\hypertarget{group__device}{}\label{group__device}\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct__atsha204a__config}{\+\_\+atsha204a\+\_\+config}}
+\item 
+struct \mbox{\hyperlink{struct__atecc508a__config}{\+\_\+atecc508a\+\_\+config}}
+\item 
+struct \mbox{\hyperlink{struct__atecc608__config}{\+\_\+atecc608\+\_\+config}}
+\item 
+struct \mbox{\hyperlink{structatca__device}{atca\+\_\+device}}
+\begin{DoxyCompactList}\small\item\em \doxylink{structatca__device}{atca\+\_\+device} is the C object backing ATCADevice. See the \doxylink{atca__device_8h}{atca\+\_\+device.\+h} file for details on the ATCADevice methods \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__device_gae081a49acc1fca72a8245249dfded8ef}{ATCA\+\_\+\+PACKED}}
+\item 
+\#define \mbox{\hyperlink{group__device_ga6a66d397e0b4e8c8ff089f252cf1332a}{ATCA\+\_\+\+AES\+\_\+\+ENABLE\+\_\+\+EN\+\_\+\+SHIFT}}~(0)
+\item 
+\#define \mbox{\hyperlink{group__device_gaaf352f7f804cefed07606d4b0acd2377}{ATCA\+\_\+\+AES\+\_\+\+ENABLE\+\_\+\+EN\+\_\+\+MASK}}~(0x01u $<$$<$ \mbox{\hyperlink{group__device_ga6a66d397e0b4e8c8ff089f252cf1332a}{ATCA\+\_\+\+AES\+\_\+\+ENABLE\+\_\+\+EN\+\_\+\+SHIFT}})
+\item 
+\#define \mbox{\hyperlink{group__device_gaf4f8afaa94b694a450ae376f73179142}{ATCA\+\_\+\+I2\+C\+\_\+\+ENABLE\+\_\+\+EN\+\_\+\+SHIFT}}~(0)
+\item 
+\#define \mbox{\hyperlink{group__device_gad2a3b528d5e9d6ce323573d6e733f558}{ATCA\+\_\+\+I2\+C\+\_\+\+ENABLE\+\_\+\+EN\+\_\+\+MASK}}~(0x01u $<$$<$ \mbox{\hyperlink{group__device_gaf4f8afaa94b694a450ae376f73179142}{ATCA\+\_\+\+I2\+C\+\_\+\+ENABLE\+\_\+\+EN\+\_\+\+SHIFT}})
+\item 
+\#define \mbox{\hyperlink{group__device_ga5449a99dea2b9205435b901999d5c567}{ATCA\+\_\+\+COUNTER\+\_\+\+MATCH\+\_\+\+EN\+\_\+\+SHIFT}}~(0)
+\item 
+\#define \mbox{\hyperlink{group__device_ga77998724064dcb37f85efa0766276387}{ATCA\+\_\+\+COUNTER\+\_\+\+MATCH\+\_\+\+EN\+\_\+\+MASK}}~(0x01u $<$$<$ \mbox{\hyperlink{group__device_ga5449a99dea2b9205435b901999d5c567}{ATCA\+\_\+\+COUNTER\+\_\+\+MATCH\+\_\+\+EN\+\_\+\+SHIFT}})
+\item 
+\#define \mbox{\hyperlink{group__device_gaada85a3f27552ba108b061e1da093a7a}{ATCA\+\_\+\+COUNTER\+\_\+\+MATCH\+\_\+\+KEY\+\_\+\+SHIFT}}~(4)
+\item 
+\#define \mbox{\hyperlink{group__device_ga5b3ba4ddf5c536deb710e523e47eb8a5}{ATCA\+\_\+\+COUNTER\+\_\+\+MATCH\+\_\+\+KEY\+\_\+\+MASK}}~(0x0\+Fu $<$$<$ \mbox{\hyperlink{group__device_gaada85a3f27552ba108b061e1da093a7a}{ATCA\+\_\+\+COUNTER\+\_\+\+MATCH\+\_\+\+KEY\+\_\+\+SHIFT}})
+\item 
+\#define \mbox{\hyperlink{group__device_ga4ad0667bb5b1fb734479cfa222cfccf0}{ATCA\+\_\+\+COUNTER\+\_\+\+MATCH\+\_\+\+KEY}}(v)~(\mbox{\hyperlink{group__device_ga5b3ba4ddf5c536deb710e523e47eb8a5}{ATCA\+\_\+\+COUNTER\+\_\+\+MATCH\+\_\+\+KEY\+\_\+\+MASK}} \& (v $<$$<$ \mbox{\hyperlink{group__device_gaada85a3f27552ba108b061e1da093a7a}{ATCA\+\_\+\+COUNTER\+\_\+\+MATCH\+\_\+\+KEY\+\_\+\+SHIFT}}))
+\item 
+\#define \mbox{\hyperlink{group__device_gaeebe505df4c5456fd970e4d4f2954ba5}{ATCA\+\_\+\+CHIP\+\_\+\+MODE\+\_\+\+I2\+C\+\_\+\+EXTRA\+\_\+\+SHIFT}}~(0)
+\item 
+\#define \mbox{\hyperlink{group__device_ga7c9b4bf34034eb087fd59c9d61001de1}{ATCA\+\_\+\+CHIP\+\_\+\+MODE\+\_\+\+I2\+C\+\_\+\+EXTRA\+\_\+\+MASK}}~(0x01u $<$$<$ \mbox{\hyperlink{group__device_gaeebe505df4c5456fd970e4d4f2954ba5}{ATCA\+\_\+\+CHIP\+\_\+\+MODE\+\_\+\+I2\+C\+\_\+\+EXTRA\+\_\+\+SHIFT}})
+\item 
+\#define \mbox{\hyperlink{group__device_ga0bbebd66468ae4305057b92bd222a1e5}{ATCA\+\_\+\+CHIP\+\_\+\+MODE\+\_\+\+TTL\+\_\+\+EN\+\_\+\+SHIFT}}~(1)
+\item 
+\#define \mbox{\hyperlink{group__device_ga4cc5466fa93ebbd2c532ac02a394b3c5}{ATCA\+\_\+\+CHIP\+\_\+\+MODE\+\_\+\+TTL\+\_\+\+EN\+\_\+\+MASK}}~(0x01u $<$$<$ \mbox{\hyperlink{group__device_ga0bbebd66468ae4305057b92bd222a1e5}{ATCA\+\_\+\+CHIP\+\_\+\+MODE\+\_\+\+TTL\+\_\+\+EN\+\_\+\+SHIFT}})
+\item 
+\#define \mbox{\hyperlink{group__device_ga593e8ea3f7dab06a364563ae680c896a}{ATCA\+\_\+\+CHIP\+\_\+\+MODE\+\_\+\+WDG\+\_\+\+LONG\+\_\+\+SHIFT}}~(2)
+\item 
+\#define \mbox{\hyperlink{group__device_gacd3182785479e448ea5192050c5e14a3}{ATCA\+\_\+\+CHIP\+\_\+\+MODE\+\_\+\+WDG\+\_\+\+LONG\+\_\+\+MASK}}~(0x01u $<$$<$ \mbox{\hyperlink{group__device_ga593e8ea3f7dab06a364563ae680c896a}{ATCA\+\_\+\+CHIP\+\_\+\+MODE\+\_\+\+WDG\+\_\+\+LONG\+\_\+\+SHIFT}})
+\item 
+\#define \mbox{\hyperlink{group__device_gaaf87fd24438b353507e0c8088b41fb23}{ATCA\+\_\+\+CHIP\+\_\+\+MODE\+\_\+\+CLK\+\_\+\+DIV\+\_\+\+SHIFT}}~(3)
+\item 
+\#define \mbox{\hyperlink{group__device_ga9494cdf1e2f28d501d2dc49fe6e88d7c}{ATCA\+\_\+\+CHIP\+\_\+\+MODE\+\_\+\+CLK\+\_\+\+DIV\+\_\+\+MASK}}~(0x1\+Fu $<$$<$ \mbox{\hyperlink{group__device_gaaf87fd24438b353507e0c8088b41fb23}{ATCA\+\_\+\+CHIP\+\_\+\+MODE\+\_\+\+CLK\+\_\+\+DIV\+\_\+\+SHIFT}})
+\item 
+\#define \mbox{\hyperlink{group__device_ga6a4f23a403fadbcf5d61810d2a626da1}{ATCA\+\_\+\+CHIP\+\_\+\+MODE\+\_\+\+CLK\+\_\+\+DIV}}(v)~(\mbox{\hyperlink{group__device_ga9494cdf1e2f28d501d2dc49fe6e88d7c}{ATCA\+\_\+\+CHIP\+\_\+\+MODE\+\_\+\+CLK\+\_\+\+DIV\+\_\+\+MASK}} \& (v $<$$<$ \mbox{\hyperlink{group__device_gaaf87fd24438b353507e0c8088b41fb23}{ATCA\+\_\+\+CHIP\+\_\+\+MODE\+\_\+\+CLK\+\_\+\+DIV\+\_\+\+SHIFT}}))
+\item 
+\#define \mbox{\hyperlink{group__device_ga63eb08b098edcad508d09d51a42b1ccd}{ATCA\+\_\+\+SLOT\+\_\+\+CONFIG\+\_\+\+READKEY\+\_\+\+SHIFT}}~(0)
+\item 
+\#define \mbox{\hyperlink{group__device_ga6e3ce97d8fa7ba3b9f88a6f63f80639e}{ATCA\+\_\+\+SLOT\+\_\+\+CONFIG\+\_\+\+READKEY\+\_\+\+MASK}}~(0x0\+Fu $<$$<$ \mbox{\hyperlink{group__device_ga63eb08b098edcad508d09d51a42b1ccd}{ATCA\+\_\+\+SLOT\+\_\+\+CONFIG\+\_\+\+READKEY\+\_\+\+SHIFT}})
+\item 
+\#define \mbox{\hyperlink{group__device_ga057fe1c75beb5acaa41a358377b5ca38}{ATCA\+\_\+\+SLOT\+\_\+\+CONFIG\+\_\+\+READKEY}}(v)~(\mbox{\hyperlink{group__device_ga6e3ce97d8fa7ba3b9f88a6f63f80639e}{ATCA\+\_\+\+SLOT\+\_\+\+CONFIG\+\_\+\+READKEY\+\_\+\+MASK}} \& (v $<$$<$ \mbox{\hyperlink{group__device_ga63eb08b098edcad508d09d51a42b1ccd}{ATCA\+\_\+\+SLOT\+\_\+\+CONFIG\+\_\+\+READKEY\+\_\+\+SHIFT}}))
+\item 
+\#define \mbox{\hyperlink{group__device_ga2a887c52723d5d0ac39ee8f9f5b6c1c6}{ATCA\+\_\+\+SLOT\+\_\+\+CONFIG\+\_\+\+NOMAC\+\_\+\+SHIFT}}~(4)
+\item 
+\#define \mbox{\hyperlink{group__device_ga5403afa69d2b937625cd8656e0dd2dac}{ATCA\+\_\+\+SLOT\+\_\+\+CONFIG\+\_\+\+NOMAC\+\_\+\+MASK}}~(0x01u $<$$<$ \mbox{\hyperlink{group__device_ga2a887c52723d5d0ac39ee8f9f5b6c1c6}{ATCA\+\_\+\+SLOT\+\_\+\+CONFIG\+\_\+\+NOMAC\+\_\+\+SHIFT}})
+\item 
+\#define \mbox{\hyperlink{group__device_gaad3185c4b36c1b414ef0539a75298633}{ATCA\+\_\+\+SLOT\+\_\+\+CONFIG\+\_\+\+LIMITED\+\_\+\+USE\+\_\+\+SHIFT}}~(5)
+\item 
+\#define \mbox{\hyperlink{group__device_ga34810634dafb33eb905324315ab7f9cf}{ATCA\+\_\+\+SLOT\+\_\+\+CONFIG\+\_\+\+LIMITED\+\_\+\+USE\+\_\+\+MASK}}~(0x01u $<$$<$ \mbox{\hyperlink{group__device_gaad3185c4b36c1b414ef0539a75298633}{ATCA\+\_\+\+SLOT\+\_\+\+CONFIG\+\_\+\+LIMITED\+\_\+\+USE\+\_\+\+SHIFT}})
+\item 
+\#define \mbox{\hyperlink{group__device_gad777d07df897489f20ca8308f5ccf5f0}{ATCA\+\_\+\+SLOT\+\_\+\+CONFIG\+\_\+\+ENCRYPTED\+\_\+\+READ\+\_\+\+SHIFT}}~(6)
+\item 
+\#define \mbox{\hyperlink{group__device_ga84f55516a56f0c7751a6145f1c365a6a}{ATCA\+\_\+\+SLOT\+\_\+\+CONFIG\+\_\+\+ENCRYPTED\+\_\+\+READ\+\_\+\+MASK}}~(0x01u $<$$<$ \mbox{\hyperlink{group__device_gad777d07df897489f20ca8308f5ccf5f0}{ATCA\+\_\+\+SLOT\+\_\+\+CONFIG\+\_\+\+ENCRYPTED\+\_\+\+READ\+\_\+\+SHIFT}})
+\item 
+\#define \mbox{\hyperlink{group__device_gafdde7d0e789df51ab9dbd625ba760dc7}{ATCA\+\_\+\+SLOT\+\_\+\+CONFIG\+\_\+\+IS\+\_\+\+SECRET\+\_\+\+SHIFT}}~(7)
+\item 
+\#define \mbox{\hyperlink{group__device_ga736bf89e0ff1c8da62a7a935d72ea13b}{ATCA\+\_\+\+SLOT\+\_\+\+CONFIG\+\_\+\+IS\+\_\+\+SECRET\+\_\+\+MASK}}~(0x01u $<$$<$ \mbox{\hyperlink{group__device_gafdde7d0e789df51ab9dbd625ba760dc7}{ATCA\+\_\+\+SLOT\+\_\+\+CONFIG\+\_\+\+IS\+\_\+\+SECRET\+\_\+\+SHIFT}})
+\item 
+\#define \mbox{\hyperlink{group__device_ga26271d114bd3bc8e91a6ebe5706c24cf}{ATCA\+\_\+\+SLOT\+\_\+\+CONFIG\+\_\+\+WRITE\+\_\+\+KEY\+\_\+\+SHIFT}}~(8)
+\item 
+\#define \mbox{\hyperlink{group__device_ga0c43c204f5b80620bc3f3320c2ab770e}{ATCA\+\_\+\+SLOT\+\_\+\+CONFIG\+\_\+\+WRITE\+\_\+\+KEY\+\_\+\+MASK}}~(0x0\+Fu $<$$<$ \mbox{\hyperlink{group__device_ga26271d114bd3bc8e91a6ebe5706c24cf}{ATCA\+\_\+\+SLOT\+\_\+\+CONFIG\+\_\+\+WRITE\+\_\+\+KEY\+\_\+\+SHIFT}})
+\item 
+\#define \mbox{\hyperlink{group__device_ga8b97601b2dfd14dc31e52cad1a1932b0}{ATCA\+\_\+\+SLOT\+\_\+\+CONFIG\+\_\+\+WRITE\+\_\+\+KEY}}(v)~(\mbox{\hyperlink{group__device_ga0c43c204f5b80620bc3f3320c2ab770e}{ATCA\+\_\+\+SLOT\+\_\+\+CONFIG\+\_\+\+WRITE\+\_\+\+KEY\+\_\+\+MASK}} \& (v $<$$<$ \mbox{\hyperlink{group__device_ga26271d114bd3bc8e91a6ebe5706c24cf}{ATCA\+\_\+\+SLOT\+\_\+\+CONFIG\+\_\+\+WRITE\+\_\+\+KEY\+\_\+\+SHIFT}}))
+\item 
+\#define \mbox{\hyperlink{group__device_ga09e263b522beb4e8609eca49556b5bd8}{ATCA\+\_\+\+SLOT\+\_\+\+CONFIG\+\_\+\+WRITE\+\_\+\+CONFIG\+\_\+\+SHIFT}}~(12)
+\item 
+\#define \mbox{\hyperlink{group__device_gad417a8b8a70ef2936f6e1f4db26c0682}{ATCA\+\_\+\+SLOT\+\_\+\+CONFIG\+\_\+\+WRITE\+\_\+\+CONFIG\+\_\+\+MASK}}~(0x0\+Fu $<$$<$ \mbox{\hyperlink{group__device_ga09e263b522beb4e8609eca49556b5bd8}{ATCA\+\_\+\+SLOT\+\_\+\+CONFIG\+\_\+\+WRITE\+\_\+\+CONFIG\+\_\+\+SHIFT}})
+\item 
+\#define \mbox{\hyperlink{group__device_ga7232c314df67e9865ef14488590d4266}{ATCA\+\_\+\+SLOT\+\_\+\+CONFIG\+\_\+\+WRITE\+\_\+\+CONFIG}}(v)~(\mbox{\hyperlink{group__device_gad417a8b8a70ef2936f6e1f4db26c0682}{ATCA\+\_\+\+SLOT\+\_\+\+CONFIG\+\_\+\+WRITE\+\_\+\+CONFIG\+\_\+\+MASK}} \& (v $<$$<$ \mbox{\hyperlink{group__device_ga09e263b522beb4e8609eca49556b5bd8}{ATCA\+\_\+\+SLOT\+\_\+\+CONFIG\+\_\+\+WRITE\+\_\+\+CONFIG\+\_\+\+SHIFT}}))
+\item 
+\#define \mbox{\hyperlink{group__device_ga6c297f5d7d6c484d0aef64ab6f8d80e5}{ATCA\+\_\+\+SLOT\+\_\+\+CONFIG\+\_\+\+EXT\+\_\+\+SIG\+\_\+\+SHIFT}}~(0)
+\item 
+\#define \mbox{\hyperlink{group__device_gaf8ec26f2e18795a196663588436586bc}{ATCA\+\_\+\+SLOT\+\_\+\+CONFIG\+\_\+\+EXT\+\_\+\+SIG\+\_\+\+MASK}}~(0x01u $<$$<$ \mbox{\hyperlink{group__device_ga6c297f5d7d6c484d0aef64ab6f8d80e5}{ATCA\+\_\+\+SLOT\+\_\+\+CONFIG\+\_\+\+EXT\+\_\+\+SIG\+\_\+\+SHIFT}})
+\item 
+\#define \mbox{\hyperlink{group__device_ga2511b55f617499a7b94780aa6d83283e}{ATCA\+\_\+\+SLOT\+\_\+\+CONFIG\+\_\+\+INT\+\_\+\+SIG\+\_\+\+SHIFT}}~(1)
+\item 
+\#define \mbox{\hyperlink{group__device_ga53b96970d88a1b078e0ef5397edc7c0a}{ATCA\+\_\+\+SLOT\+\_\+\+CONFIG\+\_\+\+INT\+\_\+\+SIG\+\_\+\+MASK}}~(0x01u $<$$<$ \mbox{\hyperlink{group__device_ga2511b55f617499a7b94780aa6d83283e}{ATCA\+\_\+\+SLOT\+\_\+\+CONFIG\+\_\+\+INT\+\_\+\+SIG\+\_\+\+SHIFT}})
+\item 
+\#define \mbox{\hyperlink{group__device_ga954a51b6d035de6920800a7adcbc462b}{ATCA\+\_\+\+SLOT\+\_\+\+CONFIG\+\_\+\+ECDH\+\_\+\+SHIFT}}~(2)
+\item 
+\#define \mbox{\hyperlink{group__device_ga98938abecd836a071f79095b5d059176}{ATCA\+\_\+\+SLOT\+\_\+\+CONFIG\+\_\+\+ECDH\+\_\+\+MASK}}~(0x01u $<$$<$ \mbox{\hyperlink{group__device_ga954a51b6d035de6920800a7adcbc462b}{ATCA\+\_\+\+SLOT\+\_\+\+CONFIG\+\_\+\+ECDH\+\_\+\+SHIFT}})
+\item 
+\#define \mbox{\hyperlink{group__device_gac4129920b9b9b985289cd0d5860ab621}{ATCA\+\_\+\+SLOT\+\_\+\+CONFIG\+\_\+\+WRITE\+\_\+\+ECDH\+\_\+\+SHIFT}}~(3)
+\item 
+\#define \mbox{\hyperlink{group__device_gaacb707bd4ec4d810c5faf4749aa07d6f}{ATCA\+\_\+\+SLOT\+\_\+\+CONFIG\+\_\+\+WRITE\+\_\+\+ECDH\+\_\+\+MASK}}~(0x01u $<$$<$ \mbox{\hyperlink{group__device_gac4129920b9b9b985289cd0d5860ab621}{ATCA\+\_\+\+SLOT\+\_\+\+CONFIG\+\_\+\+WRITE\+\_\+\+ECDH\+\_\+\+SHIFT}})
+\item 
+\#define \mbox{\hyperlink{group__device_ga7b817e88954f9d195af4d0836bd6e0fd}{ATCA\+\_\+\+SLOT\+\_\+\+CONFIG\+\_\+\+GEN\+\_\+\+KEY\+\_\+\+SHIFT}}~(8)
+\item 
+\#define \mbox{\hyperlink{group__device_ga52b75ddfe96678b27116f7296c76188a}{ATCA\+\_\+\+SLOT\+\_\+\+CONFIG\+\_\+\+GEN\+\_\+\+KEY\+\_\+\+MASK}}~(0x01u $<$$<$ \mbox{\hyperlink{group__device_ga7b817e88954f9d195af4d0836bd6e0fd}{ATCA\+\_\+\+SLOT\+\_\+\+CONFIG\+\_\+\+GEN\+\_\+\+KEY\+\_\+\+SHIFT}})
+\item 
+\#define \mbox{\hyperlink{group__device_ga317b17bd97e6db7c1144bd40750baa76}{ATCA\+\_\+\+SLOT\+\_\+\+CONFIG\+\_\+\+PRIV\+\_\+\+WRITE\+\_\+\+SHIFT}}~(9)
+\item 
+\#define \mbox{\hyperlink{group__device_ga3ac7b6f5c2b1fb54ebae99688fa3bf70}{ATCA\+\_\+\+SLOT\+\_\+\+CONFIG\+\_\+\+PRIV\+\_\+\+WRITE\+\_\+\+MASK}}~(0x01u $<$$<$ \mbox{\hyperlink{group__device_ga317b17bd97e6db7c1144bd40750baa76}{ATCA\+\_\+\+SLOT\+\_\+\+CONFIG\+\_\+\+PRIV\+\_\+\+WRITE\+\_\+\+SHIFT}})
+\item 
+\#define \mbox{\hyperlink{group__device_ga75fa72594c66cb5c42fd8f99a2656f67}{ATCA\+\_\+\+USE\+\_\+\+LOCK\+\_\+\+ENABLE\+\_\+\+SHIFT}}~(0)
+\item 
+\#define \mbox{\hyperlink{group__device_ga35a702ca660fd0acbc308fdaf100c938}{ATCA\+\_\+\+USE\+\_\+\+LOCK\+\_\+\+ENABLE\+\_\+\+MASK}}~(0x0\+Fu $<$$<$ \mbox{\hyperlink{group__device_ga75fa72594c66cb5c42fd8f99a2656f67}{ATCA\+\_\+\+USE\+\_\+\+LOCK\+\_\+\+ENABLE\+\_\+\+SHIFT}})
+\item 
+\#define \mbox{\hyperlink{group__device_ga1ecfe299a27bceb02c0f5e82e6785a34}{ATCA\+\_\+\+USE\+\_\+\+LOCK\+\_\+\+KEY\+\_\+\+SHIFT}}~(4)
+\item 
+\#define \mbox{\hyperlink{group__device_ga469bc73b6509066ac35960b3c059eba4}{ATCA\+\_\+\+USE\+\_\+\+LOCK\+\_\+\+KEY\+\_\+\+MASK}}~(0x0\+Fu $<$$<$ \mbox{\hyperlink{group__device_ga1ecfe299a27bceb02c0f5e82e6785a34}{ATCA\+\_\+\+USE\+\_\+\+LOCK\+\_\+\+KEY\+\_\+\+SHIFT}})
+\item 
+\#define \mbox{\hyperlink{group__device_ga4b63bed61bff098f623e72d58b0990ff}{ATCA\+\_\+\+VOL\+\_\+\+KEY\+\_\+\+PERM\+\_\+\+SLOT\+\_\+\+SHIFT}}~(0)
+\item 
+\#define \mbox{\hyperlink{group__device_ga494e390028c57397390ca0abf17a3410}{ATCA\+\_\+\+VOL\+\_\+\+KEY\+\_\+\+PERM\+\_\+\+SLOT\+\_\+\+MASK}}~(0x0\+Fu $<$$<$ \mbox{\hyperlink{group__device_ga4b63bed61bff098f623e72d58b0990ff}{ATCA\+\_\+\+VOL\+\_\+\+KEY\+\_\+\+PERM\+\_\+\+SLOT\+\_\+\+SHIFT}})
+\item 
+\#define \mbox{\hyperlink{group__device_ga5458a24ab74394eedb500fde6fd01ce6}{ATCA\+\_\+\+VOL\+\_\+\+KEY\+\_\+\+PERM\+\_\+\+SLOT}}(v)~(\mbox{\hyperlink{group__device_ga494e390028c57397390ca0abf17a3410}{ATCA\+\_\+\+VOL\+\_\+\+KEY\+\_\+\+PERM\+\_\+\+SLOT\+\_\+\+MASK}} \& (v $<$$<$ \mbox{\hyperlink{group__device_ga4b63bed61bff098f623e72d58b0990ff}{ATCA\+\_\+\+VOL\+\_\+\+KEY\+\_\+\+PERM\+\_\+\+SLOT\+\_\+\+SHIFT}}))
+\item 
+\#define \mbox{\hyperlink{group__device_ga72b97a330267d7f5952bab726c6f8feb}{ATCA\+\_\+\+VOL\+\_\+\+KEY\+\_\+\+PERM\+\_\+\+EN\+\_\+\+SHIFT}}~(7)
+\item 
+\#define \mbox{\hyperlink{group__device_gafa14f010fd93b6e32984f973b013019c}{ATCA\+\_\+\+VOL\+\_\+\+KEY\+\_\+\+PERM\+\_\+\+EN\+\_\+\+MASK}}~(0x01u $<$$<$ \mbox{\hyperlink{group__device_ga72b97a330267d7f5952bab726c6f8feb}{ATCA\+\_\+\+VOL\+\_\+\+KEY\+\_\+\+PERM\+\_\+\+EN\+\_\+\+SHIFT}})
+\item 
+\#define \mbox{\hyperlink{group__device_ga5c90a309e4d9c61aef4fb56cb6a8c18d}{ATCA\+\_\+\+SECURE\+\_\+\+BOOT\+\_\+\+MODE\+\_\+\+SHIFT}}~(0)
+\item 
+\#define \mbox{\hyperlink{group__device_ga8447469d9b89b8ab56918d3752c9227e}{ATCA\+\_\+\+SECURE\+\_\+\+BOOT\+\_\+\+MODE\+\_\+\+MASK}}~(0x03u $<$$<$ \mbox{\hyperlink{group__device_ga5c90a309e4d9c61aef4fb56cb6a8c18d}{ATCA\+\_\+\+SECURE\+\_\+\+BOOT\+\_\+\+MODE\+\_\+\+SHIFT}})
+\item 
+\#define \mbox{\hyperlink{group__device_ga51272740e5edfcf1660029b796e4a962}{ATCA\+\_\+\+SECURE\+\_\+\+BOOT\+\_\+\+MODE}}(v)~(\mbox{\hyperlink{group__device_ga8447469d9b89b8ab56918d3752c9227e}{ATCA\+\_\+\+SECURE\+\_\+\+BOOT\+\_\+\+MODE\+\_\+\+MASK}} \& (v $<$$<$ \mbox{\hyperlink{group__device_ga5c90a309e4d9c61aef4fb56cb6a8c18d}{ATCA\+\_\+\+SECURE\+\_\+\+BOOT\+\_\+\+MODE\+\_\+\+SHIFT}}))
+\item 
+\#define \mbox{\hyperlink{group__device_gae42387d57052faac40a28786930ad50f}{ATCA\+\_\+\+SECURE\+\_\+\+BOOT\+\_\+\+PERSIST\+\_\+\+EN\+\_\+\+SHIFT}}~(3)
+\item 
+\#define \mbox{\hyperlink{group__device_ga1b3fc7dfd03be91b272e2e50789b99c5}{ATCA\+\_\+\+SECURE\+\_\+\+BOOT\+\_\+\+PERSIST\+\_\+\+EN\+\_\+\+MASK}}~(0x01u $<$$<$ \mbox{\hyperlink{group__device_gae42387d57052faac40a28786930ad50f}{ATCA\+\_\+\+SECURE\+\_\+\+BOOT\+\_\+\+PERSIST\+\_\+\+EN\+\_\+\+SHIFT}})
+\item 
+\#define \mbox{\hyperlink{group__device_ga37b28c2ad75b960126ce4e4c0bbc7a56}{ATCA\+\_\+\+SECURE\+\_\+\+BOOT\+\_\+\+RAND\+\_\+\+NONCE\+\_\+\+SHIFT}}~(4)
+\item 
+\#define \mbox{\hyperlink{group__device_gafd5ebaced4fc854b973ef7f7d9fe0bff}{ATCA\+\_\+\+SECURE\+\_\+\+BOOT\+\_\+\+RAND\+\_\+\+NONCE\+\_\+\+MASK}}~(0x01u $<$$<$ \mbox{\hyperlink{group__device_ga37b28c2ad75b960126ce4e4c0bbc7a56}{ATCA\+\_\+\+SECURE\+\_\+\+BOOT\+\_\+\+RAND\+\_\+\+NONCE\+\_\+\+SHIFT}})
+\item 
+\#define \mbox{\hyperlink{group__device_ga4e273d24b7496b2713b2bb39e998eec6}{ATCA\+\_\+\+SECURE\+\_\+\+BOOT\+\_\+\+DIGEST\+\_\+\+SHIFT}}~(8)
+\item 
+\#define \mbox{\hyperlink{group__device_ga8a6a2eeb662d80243e6d7347fc9f1417}{ATCA\+\_\+\+SECURE\+\_\+\+BOOT\+\_\+\+DIGEST\+\_\+\+MASK}}~(0x0\+Fu $<$$<$ \mbox{\hyperlink{group__device_ga4e273d24b7496b2713b2bb39e998eec6}{ATCA\+\_\+\+SECURE\+\_\+\+BOOT\+\_\+\+DIGEST\+\_\+\+SHIFT}})
+\item 
+\#define \mbox{\hyperlink{group__device_gac34d5e008ae3175f494fbdea15f2baa4}{ATCA\+\_\+\+SECURE\+\_\+\+BOOT\+\_\+\+DIGEST}}(v)~(\mbox{\hyperlink{group__device_ga8a6a2eeb662d80243e6d7347fc9f1417}{ATCA\+\_\+\+SECURE\+\_\+\+BOOT\+\_\+\+DIGEST\+\_\+\+MASK}} \& (v $<$$<$ \mbox{\hyperlink{group__device_ga4e273d24b7496b2713b2bb39e998eec6}{ATCA\+\_\+\+SECURE\+\_\+\+BOOT\+\_\+\+DIGEST\+\_\+\+SHIFT}}))
+\item 
+\#define \mbox{\hyperlink{group__device_ga782b2598a672916700022b111df66762}{ATCA\+\_\+\+SECURE\+\_\+\+BOOT\+\_\+\+PUB\+\_\+\+KEY\+\_\+\+SHIFT}}~(12)
+\item 
+\#define \mbox{\hyperlink{group__device_ga4f283d8965b207a3b570d989ce558ff2}{ATCA\+\_\+\+SECURE\+\_\+\+BOOT\+\_\+\+PUB\+\_\+\+KEY\+\_\+\+MASK}}~(0x0\+Fu $<$$<$ \mbox{\hyperlink{group__device_ga782b2598a672916700022b111df66762}{ATCA\+\_\+\+SECURE\+\_\+\+BOOT\+\_\+\+PUB\+\_\+\+KEY\+\_\+\+SHIFT}})
+\item 
+\#define \mbox{\hyperlink{group__device_gad7d433d50bb3ab8be8f4c298f9f55bdb}{ATCA\+\_\+\+SECURE\+\_\+\+BOOT\+\_\+\+PUB\+\_\+\+KEY}}(v)~(\mbox{\hyperlink{group__device_ga4f283d8965b207a3b570d989ce558ff2}{ATCA\+\_\+\+SECURE\+\_\+\+BOOT\+\_\+\+PUB\+\_\+\+KEY\+\_\+\+MASK}} \& (v $<$$<$ \mbox{\hyperlink{group__device_ga782b2598a672916700022b111df66762}{ATCA\+\_\+\+SECURE\+\_\+\+BOOT\+\_\+\+PUB\+\_\+\+KEY\+\_\+\+SHIFT}}))
+\item 
+\#define \mbox{\hyperlink{group__device_gaeb9e077ccd1a2c177a06e6ce4c5ecca8}{ATCA\+\_\+\+SLOT\+\_\+\+LOCKED}}(v)~((0x01 $<$$<$ v) \& 0x\+FFFFu)
+\item 
+\#define \mbox{\hyperlink{group__device_ga1931d41847c2e9087638fc74f3a3b5f8}{ATCA\+\_\+\+CHIP\+\_\+\+OPT\+\_\+\+POST\+\_\+\+EN\+\_\+\+SHIFT}}~(0)
+\item 
+\#define \mbox{\hyperlink{group__device_ga1e5e8fe0945931c3d36db063ca2a951e}{ATCA\+\_\+\+CHIP\+\_\+\+OPT\+\_\+\+POST\+\_\+\+EN\+\_\+\+MASK}}~(0x01u $<$$<$ \mbox{\hyperlink{group__device_ga1931d41847c2e9087638fc74f3a3b5f8}{ATCA\+\_\+\+CHIP\+\_\+\+OPT\+\_\+\+POST\+\_\+\+EN\+\_\+\+SHIFT}})
+\item 
+\#define \mbox{\hyperlink{group__device_gaf8d603463a6b7ef76dd838774b680a96}{ATCA\+\_\+\+CHIP\+\_\+\+OPT\+\_\+\+IO\+\_\+\+PROT\+\_\+\+EN\+\_\+\+SHIFT}}~(1)
+\item 
+\#define \mbox{\hyperlink{group__device_gac2d0def7ede457d392f7e88181793c9a}{ATCA\+\_\+\+CHIP\+\_\+\+OPT\+\_\+\+IO\+\_\+\+PROT\+\_\+\+EN\+\_\+\+MASK}}~(0x01u $<$$<$ \mbox{\hyperlink{group__device_gaf8d603463a6b7ef76dd838774b680a96}{ATCA\+\_\+\+CHIP\+\_\+\+OPT\+\_\+\+IO\+\_\+\+PROT\+\_\+\+EN\+\_\+\+SHIFT}})
+\item 
+\#define \mbox{\hyperlink{group__device_ga2c12394438876d0b40206edabf0ad474}{ATCA\+\_\+\+CHIP\+\_\+\+OPT\+\_\+\+KDF\+\_\+\+AES\+\_\+\+EN\+\_\+\+SHIFT}}~(2)
+\item 
+\#define \mbox{\hyperlink{group__device_gad4deaf23bd8229184a278773d7ec23c4}{ATCA\+\_\+\+CHIP\+\_\+\+OPT\+\_\+\+KDF\+\_\+\+AES\+\_\+\+EN\+\_\+\+MASK}}~(0x01u $<$$<$ \mbox{\hyperlink{group__device_ga2c12394438876d0b40206edabf0ad474}{ATCA\+\_\+\+CHIP\+\_\+\+OPT\+\_\+\+KDF\+\_\+\+AES\+\_\+\+EN\+\_\+\+SHIFT}})
+\item 
+\#define \mbox{\hyperlink{group__device_gaee59edf5a3aec038528abad910b2c75c}{ATCA\+\_\+\+CHIP\+\_\+\+OPT\+\_\+\+ECDH\+\_\+\+PROT\+\_\+\+SHIFT}}~(8)
+\item 
+\#define \mbox{\hyperlink{group__device_ga2ced94e9b9d82ed884fa40772ebf978b}{ATCA\+\_\+\+CHIP\+\_\+\+OPT\+\_\+\+ECDH\+\_\+\+PROT\+\_\+\+MASK}}~(0x03u $<$$<$ \mbox{\hyperlink{group__device_gaee59edf5a3aec038528abad910b2c75c}{ATCA\+\_\+\+CHIP\+\_\+\+OPT\+\_\+\+ECDH\+\_\+\+PROT\+\_\+\+SHIFT}})
+\item 
+\#define \mbox{\hyperlink{group__device_ga12e79ece7b7725de39764cf8d42c9855}{ATCA\+\_\+\+CHIP\+\_\+\+OPT\+\_\+\+ECDH\+\_\+\+PROT}}(v)~(\mbox{\hyperlink{group__device_ga2ced94e9b9d82ed884fa40772ebf978b}{ATCA\+\_\+\+CHIP\+\_\+\+OPT\+\_\+\+ECDH\+\_\+\+PROT\+\_\+\+MASK}} \& (v $<$$<$ \mbox{\hyperlink{group__device_gaee59edf5a3aec038528abad910b2c75c}{ATCA\+\_\+\+CHIP\+\_\+\+OPT\+\_\+\+ECDH\+\_\+\+PROT\+\_\+\+SHIFT}}))
+\item 
+\#define \mbox{\hyperlink{group__device_ga6142d09e053e279a359a0295feb1ed24}{ATCA\+\_\+\+CHIP\+\_\+\+OPT\+\_\+\+KDF\+\_\+\+PROT\+\_\+\+SHIFT}}~(10)
+\item 
+\#define \mbox{\hyperlink{group__device_ga0c7b0fcd0d67ad67c556a1e0dcdac279}{ATCA\+\_\+\+CHIP\+\_\+\+OPT\+\_\+\+KDF\+\_\+\+PROT\+\_\+\+MASK}}~(0x03u $<$$<$ \mbox{\hyperlink{group__device_ga6142d09e053e279a359a0295feb1ed24}{ATCA\+\_\+\+CHIP\+\_\+\+OPT\+\_\+\+KDF\+\_\+\+PROT\+\_\+\+SHIFT}})
+\item 
+\#define \mbox{\hyperlink{group__device_gabe0d41de3dca6d41405f0cd00df95966}{ATCA\+\_\+\+CHIP\+\_\+\+OPT\+\_\+\+KDF\+\_\+\+PROT}}(v)~(\mbox{\hyperlink{group__device_ga0c7b0fcd0d67ad67c556a1e0dcdac279}{ATCA\+\_\+\+CHIP\+\_\+\+OPT\+\_\+\+KDF\+\_\+\+PROT\+\_\+\+MASK}} \& (v $<$$<$ \mbox{\hyperlink{group__device_ga6142d09e053e279a359a0295feb1ed24}{ATCA\+\_\+\+CHIP\+\_\+\+OPT\+\_\+\+KDF\+\_\+\+PROT\+\_\+\+SHIFT}}))
+\item 
+\#define \mbox{\hyperlink{group__device_ga988f077881b8952efdde28de1a724e8a}{ATCA\+\_\+\+CHIP\+\_\+\+OPT\+\_\+\+IO\+\_\+\+PROT\+\_\+\+KEY\+\_\+\+SHIFT}}~(12)
+\item 
+\#define \mbox{\hyperlink{group__device_ga2614b8a2b70a853d689a08308490e865}{ATCA\+\_\+\+CHIP\+\_\+\+OPT\+\_\+\+IO\+\_\+\+PROT\+\_\+\+KEY\+\_\+\+MASK}}~(0x0\+Fu $<$$<$ \mbox{\hyperlink{group__device_ga988f077881b8952efdde28de1a724e8a}{ATCA\+\_\+\+CHIP\+\_\+\+OPT\+\_\+\+IO\+\_\+\+PROT\+\_\+\+KEY\+\_\+\+SHIFT}})
+\item 
+\#define \mbox{\hyperlink{group__device_ga7a5050e95c9d17c2af8311f6514428be}{ATCA\+\_\+\+CHIP\+\_\+\+OPT\+\_\+\+IO\+\_\+\+PROT\+\_\+\+KEY}}(v)~(\mbox{\hyperlink{group__device_ga2614b8a2b70a853d689a08308490e865}{ATCA\+\_\+\+CHIP\+\_\+\+OPT\+\_\+\+IO\+\_\+\+PROT\+\_\+\+KEY\+\_\+\+MASK}} \& (v $<$$<$ \mbox{\hyperlink{group__device_ga988f077881b8952efdde28de1a724e8a}{ATCA\+\_\+\+CHIP\+\_\+\+OPT\+\_\+\+IO\+\_\+\+PROT\+\_\+\+KEY\+\_\+\+SHIFT}}))
+\item 
+\#define \mbox{\hyperlink{group__device_ga768d74dcd8ac420a92da6a5554c25ada}{ATCA\+\_\+\+KEY\+\_\+\+CONFIG\+\_\+\+OFFSET}}(x)~(96UL + (x) \texorpdfstring{$\ast$}{*} 2)
+\item 
+\#define \mbox{\hyperlink{group__device_gab6e242074e10c6cf080d29325e9bca65}{ATCA\+\_\+\+KEY\+\_\+\+CONFIG\+\_\+\+PRIVATE\+\_\+\+SHIFT}}~(0)
+\item 
+\#define \mbox{\hyperlink{group__device_ga9a707b6ebe784cd7fc3d56ed39a7c129}{ATCA\+\_\+\+KEY\+\_\+\+CONFIG\+\_\+\+PRIVATE\+\_\+\+MASK}}~(0x01u $<$$<$ \mbox{\hyperlink{group__device_gab6e242074e10c6cf080d29325e9bca65}{ATCA\+\_\+\+KEY\+\_\+\+CONFIG\+\_\+\+PRIVATE\+\_\+\+SHIFT}})
+\item 
+\#define \mbox{\hyperlink{group__device_ga02f7a20603a1ed76348e9e7d6292ebcc}{ATCA\+\_\+\+KEY\+\_\+\+CONFIG\+\_\+\+PUB\+\_\+\+INFO\+\_\+\+SHIFT}}~(1)
+\item 
+\#define \mbox{\hyperlink{group__device_ga8ea1091991167634115392e82d7970fa}{ATCA\+\_\+\+KEY\+\_\+\+CONFIG\+\_\+\+PUB\+\_\+\+INFO\+\_\+\+MASK}}~(0x01u $<$$<$ \mbox{\hyperlink{group__device_ga02f7a20603a1ed76348e9e7d6292ebcc}{ATCA\+\_\+\+KEY\+\_\+\+CONFIG\+\_\+\+PUB\+\_\+\+INFO\+\_\+\+SHIFT}})
+\item 
+\#define \mbox{\hyperlink{group__device_ga08ad8ab3a2fd98e81496eebb24ed70f7}{ATCA\+\_\+\+KEY\+\_\+\+CONFIG\+\_\+\+KEY\+\_\+\+TYPE\+\_\+\+SHIFT}}~(2)
+\item 
+\#define \mbox{\hyperlink{group__device_ga791218b8f59ceb6a3340eeeafdacdaa7}{ATCA\+\_\+\+KEY\+\_\+\+CONFIG\+\_\+\+KEY\+\_\+\+TYPE\+\_\+\+MASK}}~(0x07u $<$$<$ \mbox{\hyperlink{group__device_ga08ad8ab3a2fd98e81496eebb24ed70f7}{ATCA\+\_\+\+KEY\+\_\+\+CONFIG\+\_\+\+KEY\+\_\+\+TYPE\+\_\+\+SHIFT}})
+\item 
+\#define \mbox{\hyperlink{group__device_ga58771cfdfafa3aedc32366da4ec9a91d}{ATCA\+\_\+\+KEY\+\_\+\+CONFIG\+\_\+\+KEY\+\_\+\+TYPE}}(v)~(\mbox{\hyperlink{group__device_ga791218b8f59ceb6a3340eeeafdacdaa7}{ATCA\+\_\+\+KEY\+\_\+\+CONFIG\+\_\+\+KEY\+\_\+\+TYPE\+\_\+\+MASK}} \& (v $<$$<$ \mbox{\hyperlink{group__device_ga08ad8ab3a2fd98e81496eebb24ed70f7}{ATCA\+\_\+\+KEY\+\_\+\+CONFIG\+\_\+\+KEY\+\_\+\+TYPE\+\_\+\+SHIFT}}))
+\item 
+\#define \mbox{\hyperlink{group__device_ga0d7ae07eb6ec5455fe440ad0f231a53f}{ATCA\+\_\+\+KEY\+\_\+\+CONFIG\+\_\+\+LOCKABLE\+\_\+\+SHIFT}}~(5)
+\item 
+\#define \mbox{\hyperlink{group__device_ga72804cb302dbdfd589ee558cf6efc1c5}{ATCA\+\_\+\+KEY\+\_\+\+CONFIG\+\_\+\+LOCKABLE\+\_\+\+MASK}}~(0x01u $<$$<$ \mbox{\hyperlink{group__device_ga0d7ae07eb6ec5455fe440ad0f231a53f}{ATCA\+\_\+\+KEY\+\_\+\+CONFIG\+\_\+\+LOCKABLE\+\_\+\+SHIFT}})
+\item 
+\#define \mbox{\hyperlink{group__device_ga110b226699a9fca6d6ff262b726369fe}{ATCA\+\_\+\+KEY\+\_\+\+CONFIG\+\_\+\+REQ\+\_\+\+RANDOM\+\_\+\+SHIFT}}~(6)
+\item 
+\#define \mbox{\hyperlink{group__device_gadf1439bdd718df2e3c80f3ed28a514a4}{ATCA\+\_\+\+KEY\+\_\+\+CONFIG\+\_\+\+REQ\+\_\+\+RANDOM\+\_\+\+MASK}}~(0x01u $<$$<$ \mbox{\hyperlink{group__device_ga110b226699a9fca6d6ff262b726369fe}{ATCA\+\_\+\+KEY\+\_\+\+CONFIG\+\_\+\+REQ\+\_\+\+RANDOM\+\_\+\+SHIFT}})
+\item 
+\#define \mbox{\hyperlink{group__device_gaef49b712716bcf998587e49a54f5da57}{ATCA\+\_\+\+KEY\+\_\+\+CONFIG\+\_\+\+REQ\+\_\+\+AUTH\+\_\+\+SHIFT}}~(7)
+\item 
+\#define \mbox{\hyperlink{group__device_gab72f34114b861e6f33a6fbcc8d67e2d8}{ATCA\+\_\+\+KEY\+\_\+\+CONFIG\+\_\+\+REQ\+\_\+\+AUTH\+\_\+\+MASK}}~(0x01u $<$$<$ \mbox{\hyperlink{group__device_gaef49b712716bcf998587e49a54f5da57}{ATCA\+\_\+\+KEY\+\_\+\+CONFIG\+\_\+\+REQ\+\_\+\+AUTH\+\_\+\+SHIFT}})
+\item 
+\#define \mbox{\hyperlink{group__device_ga57d8b6a85e5fc5a49682858f3bbc7aac}{ATCA\+\_\+\+KEY\+\_\+\+CONFIG\+\_\+\+AUTH\+\_\+\+KEY\+\_\+\+SHIFT}}~(8)
+\item 
+\#define \mbox{\hyperlink{group__device_ga7bdcaa7bad5f472dff412a75c752f338}{ATCA\+\_\+\+KEY\+\_\+\+CONFIG\+\_\+\+AUTH\+\_\+\+KEY\+\_\+\+MASK}}~(0x0\+Fu $<$$<$ \mbox{\hyperlink{group__device_ga57d8b6a85e5fc5a49682858f3bbc7aac}{ATCA\+\_\+\+KEY\+\_\+\+CONFIG\+\_\+\+AUTH\+\_\+\+KEY\+\_\+\+SHIFT}})
+\item 
+\#define \mbox{\hyperlink{group__device_gac9f5a7d5a09d8596d192666d6a0f7eea}{ATCA\+\_\+\+KEY\+\_\+\+CONFIG\+\_\+\+AUTH\+\_\+\+KEY}}(v)~(\mbox{\hyperlink{group__device_ga7bdcaa7bad5f472dff412a75c752f338}{ATCA\+\_\+\+KEY\+\_\+\+CONFIG\+\_\+\+AUTH\+\_\+\+KEY\+\_\+\+MASK}} \& (v $<$$<$ \mbox{\hyperlink{group__device_ga57d8b6a85e5fc5a49682858f3bbc7aac}{ATCA\+\_\+\+KEY\+\_\+\+CONFIG\+\_\+\+AUTH\+\_\+\+KEY\+\_\+\+SHIFT}}))
+\item 
+\#define \mbox{\hyperlink{group__device_gae282dbe83f5bad968247222351a3c15f}{ATCA\+\_\+\+KEY\+\_\+\+CONFIG\+\_\+\+PERSIST\+\_\+\+DISABLE\+\_\+\+SHIFT}}~(12)
+\item 
+\#define \mbox{\hyperlink{group__device_gae4486a3723f24417be62874cf03356ce}{ATCA\+\_\+\+KEY\+\_\+\+CONFIG\+\_\+\+PERSIST\+\_\+\+DISABLE\+\_\+\+MASK}}~(0x01u $<$$<$ \mbox{\hyperlink{group__device_gae282dbe83f5bad968247222351a3c15f}{ATCA\+\_\+\+KEY\+\_\+\+CONFIG\+\_\+\+PERSIST\+\_\+\+DISABLE\+\_\+\+SHIFT}})
+\item 
+\#define \mbox{\hyperlink{group__device_gad7e32c010d24118b2f8e09ec71d34ae6}{ATCA\+\_\+\+KEY\+\_\+\+CONFIG\+\_\+\+RFU\+\_\+\+SHIFT}}~(13)
+\item 
+\#define \mbox{\hyperlink{group__device_ga214e2932ee0ef02d0f4f4486434b5856}{ATCA\+\_\+\+KEY\+\_\+\+CONFIG\+\_\+\+RFU\+\_\+\+MASK}}~(0x01u $<$$<$ \mbox{\hyperlink{group__device_gad7e32c010d24118b2f8e09ec71d34ae6}{ATCA\+\_\+\+KEY\+\_\+\+CONFIG\+\_\+\+RFU\+\_\+\+SHIFT}})
+\item 
+\#define \mbox{\hyperlink{group__device_ga1f7be00746c8b6679c860a68418eb638}{ATCA\+\_\+\+KEY\+\_\+\+CONFIG\+\_\+\+X509\+\_\+\+ID\+\_\+\+SHIFT}}~(14)
+\item 
+\#define \mbox{\hyperlink{group__device_ga0d5a5a59003ab766e8d266f336922582}{ATCA\+\_\+\+KEY\+\_\+\+CONFIG\+\_\+\+X509\+\_\+\+ID\+\_\+\+MASK}}~(0x03u $<$$<$ \mbox{\hyperlink{group__device_ga1f7be00746c8b6679c860a68418eb638}{ATCA\+\_\+\+KEY\+\_\+\+CONFIG\+\_\+\+X509\+\_\+\+ID\+\_\+\+SHIFT}})
+\item 
+\#define \mbox{\hyperlink{group__device_ga904dd51134dc1a0d746be45c42806dc7}{ATCA\+\_\+\+KEY\+\_\+\+CONFIG\+\_\+\+X509\+\_\+\+ID}}(v)~(\mbox{\hyperlink{group__device_ga0d5a5a59003ab766e8d266f336922582}{ATCA\+\_\+\+KEY\+\_\+\+CONFIG\+\_\+\+X509\+\_\+\+ID\+\_\+\+MASK}} \& (v $<$$<$ \mbox{\hyperlink{group__device_ga1f7be00746c8b6679c860a68418eb638}{ATCA\+\_\+\+KEY\+\_\+\+CONFIG\+\_\+\+X509\+\_\+\+ID\+\_\+\+SHIFT}}))
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{group__device_gae081a49acc1fca72a8245249dfded8ef}{ATCA\+\_\+\+PACKED}} \mbox{\hyperlink{struct__atsha204a__config}{\+\_\+atsha204a\+\_\+config}} \mbox{\hyperlink{group__device_gaa0d57d5665793fa89fdab47726134824}{atsha204a\+\_\+config\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{group__device_gae081a49acc1fca72a8245249dfded8ef}{ATCA\+\_\+\+PACKED}} \mbox{\hyperlink{struct__atecc508a__config}{\+\_\+atecc508a\+\_\+config}} \mbox{\hyperlink{group__device_ga18d23fcfb15908fc3e285bee9e3ef697}{atecc508a\+\_\+config\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{group__device_gae081a49acc1fca72a8245249dfded8ef}{ATCA\+\_\+\+PACKED}} \mbox{\hyperlink{struct__atecc608__config}{\+\_\+atecc608\+\_\+config}} \mbox{\hyperlink{group__device_gabaf6170e59bd2ccdda5b53789e012505}{atecc608\+\_\+config\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{structatca__device}{atca\+\_\+device}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group__device_gaa94f7bb4af0a3d6735225cc85d92cb50}{ATCADevice}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group__device_ga765308123cf522f5ec8b528bf4ea1243}{ATCADevice\+State}} \{ \mbox{\hyperlink{group__device_gga765308123cf522f5ec8b528bf4ea1243a63b66c34fbe9ae97d123487be138ad49}{ATCA\+\_\+\+DEVICE\+\_\+\+STATE\+\_\+\+UNKNOWN}} = 0
+, \mbox{\hyperlink{group__device_gga765308123cf522f5ec8b528bf4ea1243a94ff4a4e6aecf9bce31e3395eb13d080}{ATCA\+\_\+\+DEVICE\+\_\+\+STATE\+\_\+\+SLEEP}}
+, \mbox{\hyperlink{group__device_gga765308123cf522f5ec8b528bf4ea1243a6387319b28607ca0b70a0e1f4b5d64fc}{ATCA\+\_\+\+DEVICE\+\_\+\+STATE\+\_\+\+IDLE}}
+, \mbox{\hyperlink{group__device_gga765308123cf522f5ec8b528bf4ea1243ae56ae390858b5c3adda40857974f2269}{ATCA\+\_\+\+DEVICE\+\_\+\+STATE\+\_\+\+ACTIVE}}
+ \}
+\begin{DoxyCompactList}\small\item\em ATCADevice\+State says about device state. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__device_gafb234ccd6a80d09c0efbe336c2354267}{ATCADevice\+Type}} \{ \newline
+\mbox{\hyperlink{group__device_ggafb234ccd6a80d09c0efbe336c2354267a91729743caf308351a2b47c58536d268}{ATSHA204A}} = 0
+, \mbox{\hyperlink{group__device_ggafb234ccd6a80d09c0efbe336c2354267a20efd97b5b1001eec4a52e0ed5bf594c}{ATECC108A}} = 1
+, \mbox{\hyperlink{group__device_ggafb234ccd6a80d09c0efbe336c2354267af463439df0f95803fc57cc58bbff2dae}{ATECC508A}} = 2
+, \mbox{\hyperlink{group__device_ggafb234ccd6a80d09c0efbe336c2354267a183a6224a93e6c2b82c6dc0e132398bf}{ATECC608A}} = 3
+, \newline
+\mbox{\hyperlink{group__device_ggafb234ccd6a80d09c0efbe336c2354267a6139512f9df589306dfc579a4e670d5a}{ATECC608B}} = 3
+, \mbox{\hyperlink{group__device_ggafb234ccd6a80d09c0efbe336c2354267af2f230354639df34317e81b1d9fb3dfe}{ATECC608}} = 3
+, \mbox{\hyperlink{group__device_ggafb234ccd6a80d09c0efbe336c2354267a6816489510886c97abe08d80c7207f3f}{ATSHA206A}} = 4
+, \mbox{\hyperlink{group__device_ggafb234ccd6a80d09c0efbe336c2354267a1a8bdd24116c11dbe5e8d7fa350315de}{ECC204}} = 5
+, \newline
+\mbox{\hyperlink{group__device_ggafb234ccd6a80d09c0efbe336c2354267a4af1fa9171e503676c56f45144d3b2f0}{TA100}} = 0x10
+, \mbox{\hyperlink{group__device_ggafb234ccd6a80d09c0efbe336c2354267a3488f672341dda0ad20508ad888280ad}{ATCA\+\_\+\+DEV\+\_\+\+UNKNOWN}} = 0x20
+ \}
+\begin{DoxyCompactList}\small\item\em The supported Device type in Cryptoauthlib library. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{group__device_ga2384229af05af1746b431772c815caf9}{init\+ATCADevice}} (\mbox{\hyperlink{struct_a_t_c_a_iface_cfg}{ATCAIface\+Cfg}} \texorpdfstring{$\ast$}{*}cfg, \mbox{\hyperlink{group__device_gaa94f7bb4af0a3d6735225cc85d92cb50}{ATCADevice}} cadev)
+\item 
+\mbox{\hyperlink{group__device_gaa94f7bb4af0a3d6735225cc85d92cb50}{ATCADevice}} \mbox{\hyperlink{group__device_gad5e12e12d3030e28d75164286df9e5e9}{new\+ATCADevice}} (\mbox{\hyperlink{struct_a_t_c_a_iface_cfg}{ATCAIface\+Cfg}} \texorpdfstring{$\ast$}{*}cfg)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{group__device_gab729e6c838c0a247d4f226fb92492d96}{release\+ATCADevice}} (\mbox{\hyperlink{group__device_gaa94f7bb4af0a3d6735225cc85d92cb50}{ATCADevice}} ca\+\_\+dev)
+\item 
+void \mbox{\hyperlink{group__device_gac087cf04cd5bd6ff2e026d89bfbf5e12}{delete\+ATCADevice}} (\mbox{\hyperlink{group__device_gaa94f7bb4af0a3d6735225cc85d92cb50}{ATCADevice}} \texorpdfstring{$\ast$}{*}ca\+\_\+dev)
+\item 
+\mbox{\hyperlink{group__interface_ga75c11126f3fe81df3d6c27f5bb393303}{ATCAIface}} \mbox{\hyperlink{group__device_ga3f98e29cffa06446fc91b329703606af}{at\+Get\+IFace}} (\mbox{\hyperlink{group__device_gaa94f7bb4af0a3d6735225cc85d92cb50}{ATCADevice}} dev)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{group__device_gaaf352f7f804cefed07606d4b0acd2377}\label{group__device_gaaf352f7f804cefed07606d4b0acd2377} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_AES\_ENABLE\_EN\_MASK@{ATCA\_AES\_ENABLE\_EN\_MASK}}
+\index{ATCA\_AES\_ENABLE\_EN\_MASK@{ATCA\_AES\_ENABLE\_EN\_MASK}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_AES\_ENABLE\_EN\_MASK}{ATCA\_AES\_ENABLE\_EN\_MASK}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+AES\+\_\+\+ENABLE\+\_\+\+EN\+\_\+\+MASK~(0x01u $<$$<$ \mbox{\hyperlink{group__device_ga6a66d397e0b4e8c8ff089f252cf1332a}{ATCA\+\_\+\+AES\+\_\+\+ENABLE\+\_\+\+EN\+\_\+\+SHIFT}})}
+
+\Hypertarget{group__device_ga6a66d397e0b4e8c8ff089f252cf1332a}\label{group__device_ga6a66d397e0b4e8c8ff089f252cf1332a} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_AES\_ENABLE\_EN\_SHIFT@{ATCA\_AES\_ENABLE\_EN\_SHIFT}}
+\index{ATCA\_AES\_ENABLE\_EN\_SHIFT@{ATCA\_AES\_ENABLE\_EN\_SHIFT}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_AES\_ENABLE\_EN\_SHIFT}{ATCA\_AES\_ENABLE\_EN\_SHIFT}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+AES\+\_\+\+ENABLE\+\_\+\+EN\+\_\+\+SHIFT~(0)}
+
+\Hypertarget{group__device_ga6a4f23a403fadbcf5d61810d2a626da1}\label{group__device_ga6a4f23a403fadbcf5d61810d2a626da1} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_CHIP\_MODE\_CLK\_DIV@{ATCA\_CHIP\_MODE\_CLK\_DIV}}
+\index{ATCA\_CHIP\_MODE\_CLK\_DIV@{ATCA\_CHIP\_MODE\_CLK\_DIV}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_CHIP\_MODE\_CLK\_DIV}{ATCA\_CHIP\_MODE\_CLK\_DIV}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+CHIP\+\_\+\+MODE\+\_\+\+CLK\+\_\+\+DIV(\begin{DoxyParamCaption}\item[{}]{v }\end{DoxyParamCaption})~(\mbox{\hyperlink{group__device_ga9494cdf1e2f28d501d2dc49fe6e88d7c}{ATCA\+\_\+\+CHIP\+\_\+\+MODE\+\_\+\+CLK\+\_\+\+DIV\+\_\+\+MASK}} \& (v $<$$<$ \mbox{\hyperlink{group__device_gaaf87fd24438b353507e0c8088b41fb23}{ATCA\+\_\+\+CHIP\+\_\+\+MODE\+\_\+\+CLK\+\_\+\+DIV\+\_\+\+SHIFT}}))}
+
+\Hypertarget{group__device_ga9494cdf1e2f28d501d2dc49fe6e88d7c}\label{group__device_ga9494cdf1e2f28d501d2dc49fe6e88d7c} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_CHIP\_MODE\_CLK\_DIV\_MASK@{ATCA\_CHIP\_MODE\_CLK\_DIV\_MASK}}
+\index{ATCA\_CHIP\_MODE\_CLK\_DIV\_MASK@{ATCA\_CHIP\_MODE\_CLK\_DIV\_MASK}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_CHIP\_MODE\_CLK\_DIV\_MASK}{ATCA\_CHIP\_MODE\_CLK\_DIV\_MASK}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+CHIP\+\_\+\+MODE\+\_\+\+CLK\+\_\+\+DIV\+\_\+\+MASK~(0x1\+Fu $<$$<$ \mbox{\hyperlink{group__device_gaaf87fd24438b353507e0c8088b41fb23}{ATCA\+\_\+\+CHIP\+\_\+\+MODE\+\_\+\+CLK\+\_\+\+DIV\+\_\+\+SHIFT}})}
+
+\Hypertarget{group__device_gaaf87fd24438b353507e0c8088b41fb23}\label{group__device_gaaf87fd24438b353507e0c8088b41fb23} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_CHIP\_MODE\_CLK\_DIV\_SHIFT@{ATCA\_CHIP\_MODE\_CLK\_DIV\_SHIFT}}
+\index{ATCA\_CHIP\_MODE\_CLK\_DIV\_SHIFT@{ATCA\_CHIP\_MODE\_CLK\_DIV\_SHIFT}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_CHIP\_MODE\_CLK\_DIV\_SHIFT}{ATCA\_CHIP\_MODE\_CLK\_DIV\_SHIFT}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+CHIP\+\_\+\+MODE\+\_\+\+CLK\+\_\+\+DIV\+\_\+\+SHIFT~(3)}
+
+\Hypertarget{group__device_ga7c9b4bf34034eb087fd59c9d61001de1}\label{group__device_ga7c9b4bf34034eb087fd59c9d61001de1} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_CHIP\_MODE\_I2C\_EXTRA\_MASK@{ATCA\_CHIP\_MODE\_I2C\_EXTRA\_MASK}}
+\index{ATCA\_CHIP\_MODE\_I2C\_EXTRA\_MASK@{ATCA\_CHIP\_MODE\_I2C\_EXTRA\_MASK}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_CHIP\_MODE\_I2C\_EXTRA\_MASK}{ATCA\_CHIP\_MODE\_I2C\_EXTRA\_MASK}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+CHIP\+\_\+\+MODE\+\_\+\+I2\+C\+\_\+\+EXTRA\+\_\+\+MASK~(0x01u $<$$<$ \mbox{\hyperlink{group__device_gaeebe505df4c5456fd970e4d4f2954ba5}{ATCA\+\_\+\+CHIP\+\_\+\+MODE\+\_\+\+I2\+C\+\_\+\+EXTRA\+\_\+\+SHIFT}})}
+
+\Hypertarget{group__device_gaeebe505df4c5456fd970e4d4f2954ba5}\label{group__device_gaeebe505df4c5456fd970e4d4f2954ba5} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_CHIP\_MODE\_I2C\_EXTRA\_SHIFT@{ATCA\_CHIP\_MODE\_I2C\_EXTRA\_SHIFT}}
+\index{ATCA\_CHIP\_MODE\_I2C\_EXTRA\_SHIFT@{ATCA\_CHIP\_MODE\_I2C\_EXTRA\_SHIFT}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_CHIP\_MODE\_I2C\_EXTRA\_SHIFT}{ATCA\_CHIP\_MODE\_I2C\_EXTRA\_SHIFT}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+CHIP\+\_\+\+MODE\+\_\+\+I2\+C\+\_\+\+EXTRA\+\_\+\+SHIFT~(0)}
+
+\Hypertarget{group__device_ga4cc5466fa93ebbd2c532ac02a394b3c5}\label{group__device_ga4cc5466fa93ebbd2c532ac02a394b3c5} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_CHIP\_MODE\_TTL\_EN\_MASK@{ATCA\_CHIP\_MODE\_TTL\_EN\_MASK}}
+\index{ATCA\_CHIP\_MODE\_TTL\_EN\_MASK@{ATCA\_CHIP\_MODE\_TTL\_EN\_MASK}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_CHIP\_MODE\_TTL\_EN\_MASK}{ATCA\_CHIP\_MODE\_TTL\_EN\_MASK}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+CHIP\+\_\+\+MODE\+\_\+\+TTL\+\_\+\+EN\+\_\+\+MASK~(0x01u $<$$<$ \mbox{\hyperlink{group__device_ga0bbebd66468ae4305057b92bd222a1e5}{ATCA\+\_\+\+CHIP\+\_\+\+MODE\+\_\+\+TTL\+\_\+\+EN\+\_\+\+SHIFT}})}
+
+\Hypertarget{group__device_ga0bbebd66468ae4305057b92bd222a1e5}\label{group__device_ga0bbebd66468ae4305057b92bd222a1e5} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_CHIP\_MODE\_TTL\_EN\_SHIFT@{ATCA\_CHIP\_MODE\_TTL\_EN\_SHIFT}}
+\index{ATCA\_CHIP\_MODE\_TTL\_EN\_SHIFT@{ATCA\_CHIP\_MODE\_TTL\_EN\_SHIFT}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_CHIP\_MODE\_TTL\_EN\_SHIFT}{ATCA\_CHIP\_MODE\_TTL\_EN\_SHIFT}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+CHIP\+\_\+\+MODE\+\_\+\+TTL\+\_\+\+EN\+\_\+\+SHIFT~(1)}
+
+\Hypertarget{group__device_gacd3182785479e448ea5192050c5e14a3}\label{group__device_gacd3182785479e448ea5192050c5e14a3} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_CHIP\_MODE\_WDG\_LONG\_MASK@{ATCA\_CHIP\_MODE\_WDG\_LONG\_MASK}}
+\index{ATCA\_CHIP\_MODE\_WDG\_LONG\_MASK@{ATCA\_CHIP\_MODE\_WDG\_LONG\_MASK}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_CHIP\_MODE\_WDG\_LONG\_MASK}{ATCA\_CHIP\_MODE\_WDG\_LONG\_MASK}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+CHIP\+\_\+\+MODE\+\_\+\+WDG\+\_\+\+LONG\+\_\+\+MASK~(0x01u $<$$<$ \mbox{\hyperlink{group__device_ga593e8ea3f7dab06a364563ae680c896a}{ATCA\+\_\+\+CHIP\+\_\+\+MODE\+\_\+\+WDG\+\_\+\+LONG\+\_\+\+SHIFT}})}
+
+\Hypertarget{group__device_ga593e8ea3f7dab06a364563ae680c896a}\label{group__device_ga593e8ea3f7dab06a364563ae680c896a} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_CHIP\_MODE\_WDG\_LONG\_SHIFT@{ATCA\_CHIP\_MODE\_WDG\_LONG\_SHIFT}}
+\index{ATCA\_CHIP\_MODE\_WDG\_LONG\_SHIFT@{ATCA\_CHIP\_MODE\_WDG\_LONG\_SHIFT}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_CHIP\_MODE\_WDG\_LONG\_SHIFT}{ATCA\_CHIP\_MODE\_WDG\_LONG\_SHIFT}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+CHIP\+\_\+\+MODE\+\_\+\+WDG\+\_\+\+LONG\+\_\+\+SHIFT~(2)}
+
+\Hypertarget{group__device_ga12e79ece7b7725de39764cf8d42c9855}\label{group__device_ga12e79ece7b7725de39764cf8d42c9855} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_CHIP\_OPT\_ECDH\_PROT@{ATCA\_CHIP\_OPT\_ECDH\_PROT}}
+\index{ATCA\_CHIP\_OPT\_ECDH\_PROT@{ATCA\_CHIP\_OPT\_ECDH\_PROT}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_CHIP\_OPT\_ECDH\_PROT}{ATCA\_CHIP\_OPT\_ECDH\_PROT}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+CHIP\+\_\+\+OPT\+\_\+\+ECDH\+\_\+\+PROT(\begin{DoxyParamCaption}\item[{}]{v }\end{DoxyParamCaption})~(\mbox{\hyperlink{group__device_ga2ced94e9b9d82ed884fa40772ebf978b}{ATCA\+\_\+\+CHIP\+\_\+\+OPT\+\_\+\+ECDH\+\_\+\+PROT\+\_\+\+MASK}} \& (v $<$$<$ \mbox{\hyperlink{group__device_gaee59edf5a3aec038528abad910b2c75c}{ATCA\+\_\+\+CHIP\+\_\+\+OPT\+\_\+\+ECDH\+\_\+\+PROT\+\_\+\+SHIFT}}))}
+
+\Hypertarget{group__device_ga2ced94e9b9d82ed884fa40772ebf978b}\label{group__device_ga2ced94e9b9d82ed884fa40772ebf978b} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_CHIP\_OPT\_ECDH\_PROT\_MASK@{ATCA\_CHIP\_OPT\_ECDH\_PROT\_MASK}}
+\index{ATCA\_CHIP\_OPT\_ECDH\_PROT\_MASK@{ATCA\_CHIP\_OPT\_ECDH\_PROT\_MASK}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_CHIP\_OPT\_ECDH\_PROT\_MASK}{ATCA\_CHIP\_OPT\_ECDH\_PROT\_MASK}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+CHIP\+\_\+\+OPT\+\_\+\+ECDH\+\_\+\+PROT\+\_\+\+MASK~(0x03u $<$$<$ \mbox{\hyperlink{group__device_gaee59edf5a3aec038528abad910b2c75c}{ATCA\+\_\+\+CHIP\+\_\+\+OPT\+\_\+\+ECDH\+\_\+\+PROT\+\_\+\+SHIFT}})}
+
+\Hypertarget{group__device_gaee59edf5a3aec038528abad910b2c75c}\label{group__device_gaee59edf5a3aec038528abad910b2c75c} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_CHIP\_OPT\_ECDH\_PROT\_SHIFT@{ATCA\_CHIP\_OPT\_ECDH\_PROT\_SHIFT}}
+\index{ATCA\_CHIP\_OPT\_ECDH\_PROT\_SHIFT@{ATCA\_CHIP\_OPT\_ECDH\_PROT\_SHIFT}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_CHIP\_OPT\_ECDH\_PROT\_SHIFT}{ATCA\_CHIP\_OPT\_ECDH\_PROT\_SHIFT}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+CHIP\+\_\+\+OPT\+\_\+\+ECDH\+\_\+\+PROT\+\_\+\+SHIFT~(8)}
+
+\Hypertarget{group__device_gac2d0def7ede457d392f7e88181793c9a}\label{group__device_gac2d0def7ede457d392f7e88181793c9a} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_CHIP\_OPT\_IO\_PROT\_EN\_MASK@{ATCA\_CHIP\_OPT\_IO\_PROT\_EN\_MASK}}
+\index{ATCA\_CHIP\_OPT\_IO\_PROT\_EN\_MASK@{ATCA\_CHIP\_OPT\_IO\_PROT\_EN\_MASK}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_CHIP\_OPT\_IO\_PROT\_EN\_MASK}{ATCA\_CHIP\_OPT\_IO\_PROT\_EN\_MASK}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+CHIP\+\_\+\+OPT\+\_\+\+IO\+\_\+\+PROT\+\_\+\+EN\+\_\+\+MASK~(0x01u $<$$<$ \mbox{\hyperlink{group__device_gaf8d603463a6b7ef76dd838774b680a96}{ATCA\+\_\+\+CHIP\+\_\+\+OPT\+\_\+\+IO\+\_\+\+PROT\+\_\+\+EN\+\_\+\+SHIFT}})}
+
+\Hypertarget{group__device_gaf8d603463a6b7ef76dd838774b680a96}\label{group__device_gaf8d603463a6b7ef76dd838774b680a96} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_CHIP\_OPT\_IO\_PROT\_EN\_SHIFT@{ATCA\_CHIP\_OPT\_IO\_PROT\_EN\_SHIFT}}
+\index{ATCA\_CHIP\_OPT\_IO\_PROT\_EN\_SHIFT@{ATCA\_CHIP\_OPT\_IO\_PROT\_EN\_SHIFT}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_CHIP\_OPT\_IO\_PROT\_EN\_SHIFT}{ATCA\_CHIP\_OPT\_IO\_PROT\_EN\_SHIFT}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+CHIP\+\_\+\+OPT\+\_\+\+IO\+\_\+\+PROT\+\_\+\+EN\+\_\+\+SHIFT~(1)}
+
+\Hypertarget{group__device_ga7a5050e95c9d17c2af8311f6514428be}\label{group__device_ga7a5050e95c9d17c2af8311f6514428be} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_CHIP\_OPT\_IO\_PROT\_KEY@{ATCA\_CHIP\_OPT\_IO\_PROT\_KEY}}
+\index{ATCA\_CHIP\_OPT\_IO\_PROT\_KEY@{ATCA\_CHIP\_OPT\_IO\_PROT\_KEY}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_CHIP\_OPT\_IO\_PROT\_KEY}{ATCA\_CHIP\_OPT\_IO\_PROT\_KEY}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+CHIP\+\_\+\+OPT\+\_\+\+IO\+\_\+\+PROT\+\_\+\+KEY(\begin{DoxyParamCaption}\item[{}]{v }\end{DoxyParamCaption})~(\mbox{\hyperlink{group__device_ga2614b8a2b70a853d689a08308490e865}{ATCA\+\_\+\+CHIP\+\_\+\+OPT\+\_\+\+IO\+\_\+\+PROT\+\_\+\+KEY\+\_\+\+MASK}} \& (v $<$$<$ \mbox{\hyperlink{group__device_ga988f077881b8952efdde28de1a724e8a}{ATCA\+\_\+\+CHIP\+\_\+\+OPT\+\_\+\+IO\+\_\+\+PROT\+\_\+\+KEY\+\_\+\+SHIFT}}))}
+
+\Hypertarget{group__device_ga2614b8a2b70a853d689a08308490e865}\label{group__device_ga2614b8a2b70a853d689a08308490e865} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_CHIP\_OPT\_IO\_PROT\_KEY\_MASK@{ATCA\_CHIP\_OPT\_IO\_PROT\_KEY\_MASK}}
+\index{ATCA\_CHIP\_OPT\_IO\_PROT\_KEY\_MASK@{ATCA\_CHIP\_OPT\_IO\_PROT\_KEY\_MASK}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_CHIP\_OPT\_IO\_PROT\_KEY\_MASK}{ATCA\_CHIP\_OPT\_IO\_PROT\_KEY\_MASK}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+CHIP\+\_\+\+OPT\+\_\+\+IO\+\_\+\+PROT\+\_\+\+KEY\+\_\+\+MASK~(0x0\+Fu $<$$<$ \mbox{\hyperlink{group__device_ga988f077881b8952efdde28de1a724e8a}{ATCA\+\_\+\+CHIP\+\_\+\+OPT\+\_\+\+IO\+\_\+\+PROT\+\_\+\+KEY\+\_\+\+SHIFT}})}
+
+\Hypertarget{group__device_ga988f077881b8952efdde28de1a724e8a}\label{group__device_ga988f077881b8952efdde28de1a724e8a} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_CHIP\_OPT\_IO\_PROT\_KEY\_SHIFT@{ATCA\_CHIP\_OPT\_IO\_PROT\_KEY\_SHIFT}}
+\index{ATCA\_CHIP\_OPT\_IO\_PROT\_KEY\_SHIFT@{ATCA\_CHIP\_OPT\_IO\_PROT\_KEY\_SHIFT}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_CHIP\_OPT\_IO\_PROT\_KEY\_SHIFT}{ATCA\_CHIP\_OPT\_IO\_PROT\_KEY\_SHIFT}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+CHIP\+\_\+\+OPT\+\_\+\+IO\+\_\+\+PROT\+\_\+\+KEY\+\_\+\+SHIFT~(12)}
+
+\Hypertarget{group__device_gad4deaf23bd8229184a278773d7ec23c4}\label{group__device_gad4deaf23bd8229184a278773d7ec23c4} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_CHIP\_OPT\_KDF\_AES\_EN\_MASK@{ATCA\_CHIP\_OPT\_KDF\_AES\_EN\_MASK}}
+\index{ATCA\_CHIP\_OPT\_KDF\_AES\_EN\_MASK@{ATCA\_CHIP\_OPT\_KDF\_AES\_EN\_MASK}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_CHIP\_OPT\_KDF\_AES\_EN\_MASK}{ATCA\_CHIP\_OPT\_KDF\_AES\_EN\_MASK}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+CHIP\+\_\+\+OPT\+\_\+\+KDF\+\_\+\+AES\+\_\+\+EN\+\_\+\+MASK~(0x01u $<$$<$ \mbox{\hyperlink{group__device_ga2c12394438876d0b40206edabf0ad474}{ATCA\+\_\+\+CHIP\+\_\+\+OPT\+\_\+\+KDF\+\_\+\+AES\+\_\+\+EN\+\_\+\+SHIFT}})}
+
+\Hypertarget{group__device_ga2c12394438876d0b40206edabf0ad474}\label{group__device_ga2c12394438876d0b40206edabf0ad474} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_CHIP\_OPT\_KDF\_AES\_EN\_SHIFT@{ATCA\_CHIP\_OPT\_KDF\_AES\_EN\_SHIFT}}
+\index{ATCA\_CHIP\_OPT\_KDF\_AES\_EN\_SHIFT@{ATCA\_CHIP\_OPT\_KDF\_AES\_EN\_SHIFT}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_CHIP\_OPT\_KDF\_AES\_EN\_SHIFT}{ATCA\_CHIP\_OPT\_KDF\_AES\_EN\_SHIFT}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+CHIP\+\_\+\+OPT\+\_\+\+KDF\+\_\+\+AES\+\_\+\+EN\+\_\+\+SHIFT~(2)}
+
+\Hypertarget{group__device_gabe0d41de3dca6d41405f0cd00df95966}\label{group__device_gabe0d41de3dca6d41405f0cd00df95966} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_CHIP\_OPT\_KDF\_PROT@{ATCA\_CHIP\_OPT\_KDF\_PROT}}
+\index{ATCA\_CHIP\_OPT\_KDF\_PROT@{ATCA\_CHIP\_OPT\_KDF\_PROT}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_CHIP\_OPT\_KDF\_PROT}{ATCA\_CHIP\_OPT\_KDF\_PROT}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+CHIP\+\_\+\+OPT\+\_\+\+KDF\+\_\+\+PROT(\begin{DoxyParamCaption}\item[{}]{v }\end{DoxyParamCaption})~(\mbox{\hyperlink{group__device_ga0c7b0fcd0d67ad67c556a1e0dcdac279}{ATCA\+\_\+\+CHIP\+\_\+\+OPT\+\_\+\+KDF\+\_\+\+PROT\+\_\+\+MASK}} \& (v $<$$<$ \mbox{\hyperlink{group__device_ga6142d09e053e279a359a0295feb1ed24}{ATCA\+\_\+\+CHIP\+\_\+\+OPT\+\_\+\+KDF\+\_\+\+PROT\+\_\+\+SHIFT}}))}
+
+\Hypertarget{group__device_ga0c7b0fcd0d67ad67c556a1e0dcdac279}\label{group__device_ga0c7b0fcd0d67ad67c556a1e0dcdac279} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_CHIP\_OPT\_KDF\_PROT\_MASK@{ATCA\_CHIP\_OPT\_KDF\_PROT\_MASK}}
+\index{ATCA\_CHIP\_OPT\_KDF\_PROT\_MASK@{ATCA\_CHIP\_OPT\_KDF\_PROT\_MASK}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_CHIP\_OPT\_KDF\_PROT\_MASK}{ATCA\_CHIP\_OPT\_KDF\_PROT\_MASK}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+CHIP\+\_\+\+OPT\+\_\+\+KDF\+\_\+\+PROT\+\_\+\+MASK~(0x03u $<$$<$ \mbox{\hyperlink{group__device_ga6142d09e053e279a359a0295feb1ed24}{ATCA\+\_\+\+CHIP\+\_\+\+OPT\+\_\+\+KDF\+\_\+\+PROT\+\_\+\+SHIFT}})}
+
+\Hypertarget{group__device_ga6142d09e053e279a359a0295feb1ed24}\label{group__device_ga6142d09e053e279a359a0295feb1ed24} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_CHIP\_OPT\_KDF\_PROT\_SHIFT@{ATCA\_CHIP\_OPT\_KDF\_PROT\_SHIFT}}
+\index{ATCA\_CHIP\_OPT\_KDF\_PROT\_SHIFT@{ATCA\_CHIP\_OPT\_KDF\_PROT\_SHIFT}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_CHIP\_OPT\_KDF\_PROT\_SHIFT}{ATCA\_CHIP\_OPT\_KDF\_PROT\_SHIFT}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+CHIP\+\_\+\+OPT\+\_\+\+KDF\+\_\+\+PROT\+\_\+\+SHIFT~(10)}
+
+\Hypertarget{group__device_ga1e5e8fe0945931c3d36db063ca2a951e}\label{group__device_ga1e5e8fe0945931c3d36db063ca2a951e} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_CHIP\_OPT\_POST\_EN\_MASK@{ATCA\_CHIP\_OPT\_POST\_EN\_MASK}}
+\index{ATCA\_CHIP\_OPT\_POST\_EN\_MASK@{ATCA\_CHIP\_OPT\_POST\_EN\_MASK}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_CHIP\_OPT\_POST\_EN\_MASK}{ATCA\_CHIP\_OPT\_POST\_EN\_MASK}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+CHIP\+\_\+\+OPT\+\_\+\+POST\+\_\+\+EN\+\_\+\+MASK~(0x01u $<$$<$ \mbox{\hyperlink{group__device_ga1931d41847c2e9087638fc74f3a3b5f8}{ATCA\+\_\+\+CHIP\+\_\+\+OPT\+\_\+\+POST\+\_\+\+EN\+\_\+\+SHIFT}})}
+
+\Hypertarget{group__device_ga1931d41847c2e9087638fc74f3a3b5f8}\label{group__device_ga1931d41847c2e9087638fc74f3a3b5f8} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_CHIP\_OPT\_POST\_EN\_SHIFT@{ATCA\_CHIP\_OPT\_POST\_EN\_SHIFT}}
+\index{ATCA\_CHIP\_OPT\_POST\_EN\_SHIFT@{ATCA\_CHIP\_OPT\_POST\_EN\_SHIFT}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_CHIP\_OPT\_POST\_EN\_SHIFT}{ATCA\_CHIP\_OPT\_POST\_EN\_SHIFT}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+CHIP\+\_\+\+OPT\+\_\+\+POST\+\_\+\+EN\+\_\+\+SHIFT~(0)}
+
+\Hypertarget{group__device_ga77998724064dcb37f85efa0766276387}\label{group__device_ga77998724064dcb37f85efa0766276387} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_COUNTER\_MATCH\_EN\_MASK@{ATCA\_COUNTER\_MATCH\_EN\_MASK}}
+\index{ATCA\_COUNTER\_MATCH\_EN\_MASK@{ATCA\_COUNTER\_MATCH\_EN\_MASK}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_COUNTER\_MATCH\_EN\_MASK}{ATCA\_COUNTER\_MATCH\_EN\_MASK}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+COUNTER\+\_\+\+MATCH\+\_\+\+EN\+\_\+\+MASK~(0x01u $<$$<$ \mbox{\hyperlink{group__device_ga5449a99dea2b9205435b901999d5c567}{ATCA\+\_\+\+COUNTER\+\_\+\+MATCH\+\_\+\+EN\+\_\+\+SHIFT}})}
+
+\Hypertarget{group__device_ga5449a99dea2b9205435b901999d5c567}\label{group__device_ga5449a99dea2b9205435b901999d5c567} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_COUNTER\_MATCH\_EN\_SHIFT@{ATCA\_COUNTER\_MATCH\_EN\_SHIFT}}
+\index{ATCA\_COUNTER\_MATCH\_EN\_SHIFT@{ATCA\_COUNTER\_MATCH\_EN\_SHIFT}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_COUNTER\_MATCH\_EN\_SHIFT}{ATCA\_COUNTER\_MATCH\_EN\_SHIFT}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+COUNTER\+\_\+\+MATCH\+\_\+\+EN\+\_\+\+SHIFT~(0)}
+
+\Hypertarget{group__device_ga4ad0667bb5b1fb734479cfa222cfccf0}\label{group__device_ga4ad0667bb5b1fb734479cfa222cfccf0} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_COUNTER\_MATCH\_KEY@{ATCA\_COUNTER\_MATCH\_KEY}}
+\index{ATCA\_COUNTER\_MATCH\_KEY@{ATCA\_COUNTER\_MATCH\_KEY}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_COUNTER\_MATCH\_KEY}{ATCA\_COUNTER\_MATCH\_KEY}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+COUNTER\+\_\+\+MATCH\+\_\+\+KEY(\begin{DoxyParamCaption}\item[{}]{v }\end{DoxyParamCaption})~(\mbox{\hyperlink{group__device_ga5b3ba4ddf5c536deb710e523e47eb8a5}{ATCA\+\_\+\+COUNTER\+\_\+\+MATCH\+\_\+\+KEY\+\_\+\+MASK}} \& (v $<$$<$ \mbox{\hyperlink{group__device_gaada85a3f27552ba108b061e1da093a7a}{ATCA\+\_\+\+COUNTER\+\_\+\+MATCH\+\_\+\+KEY\+\_\+\+SHIFT}}))}
+
+\Hypertarget{group__device_ga5b3ba4ddf5c536deb710e523e47eb8a5}\label{group__device_ga5b3ba4ddf5c536deb710e523e47eb8a5} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_COUNTER\_MATCH\_KEY\_MASK@{ATCA\_COUNTER\_MATCH\_KEY\_MASK}}
+\index{ATCA\_COUNTER\_MATCH\_KEY\_MASK@{ATCA\_COUNTER\_MATCH\_KEY\_MASK}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_COUNTER\_MATCH\_KEY\_MASK}{ATCA\_COUNTER\_MATCH\_KEY\_MASK}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+COUNTER\+\_\+\+MATCH\+\_\+\+KEY\+\_\+\+MASK~(0x0\+Fu $<$$<$ \mbox{\hyperlink{group__device_gaada85a3f27552ba108b061e1da093a7a}{ATCA\+\_\+\+COUNTER\+\_\+\+MATCH\+\_\+\+KEY\+\_\+\+SHIFT}})}
+
+\Hypertarget{group__device_gaada85a3f27552ba108b061e1da093a7a}\label{group__device_gaada85a3f27552ba108b061e1da093a7a} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_COUNTER\_MATCH\_KEY\_SHIFT@{ATCA\_COUNTER\_MATCH\_KEY\_SHIFT}}
+\index{ATCA\_COUNTER\_MATCH\_KEY\_SHIFT@{ATCA\_COUNTER\_MATCH\_KEY\_SHIFT}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_COUNTER\_MATCH\_KEY\_SHIFT}{ATCA\_COUNTER\_MATCH\_KEY\_SHIFT}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+COUNTER\+\_\+\+MATCH\+\_\+\+KEY\+\_\+\+SHIFT~(4)}
+
+\Hypertarget{group__device_gad2a3b528d5e9d6ce323573d6e733f558}\label{group__device_gad2a3b528d5e9d6ce323573d6e733f558} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_I2C\_ENABLE\_EN\_MASK@{ATCA\_I2C\_ENABLE\_EN\_MASK}}
+\index{ATCA\_I2C\_ENABLE\_EN\_MASK@{ATCA\_I2C\_ENABLE\_EN\_MASK}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_I2C\_ENABLE\_EN\_MASK}{ATCA\_I2C\_ENABLE\_EN\_MASK}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+I2\+C\+\_\+\+ENABLE\+\_\+\+EN\+\_\+\+MASK~(0x01u $<$$<$ \mbox{\hyperlink{group__device_gaf4f8afaa94b694a450ae376f73179142}{ATCA\+\_\+\+I2\+C\+\_\+\+ENABLE\+\_\+\+EN\+\_\+\+SHIFT}})}
+
+\Hypertarget{group__device_gaf4f8afaa94b694a450ae376f73179142}\label{group__device_gaf4f8afaa94b694a450ae376f73179142} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_I2C\_ENABLE\_EN\_SHIFT@{ATCA\_I2C\_ENABLE\_EN\_SHIFT}}
+\index{ATCA\_I2C\_ENABLE\_EN\_SHIFT@{ATCA\_I2C\_ENABLE\_EN\_SHIFT}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_I2C\_ENABLE\_EN\_SHIFT}{ATCA\_I2C\_ENABLE\_EN\_SHIFT}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+I2\+C\+\_\+\+ENABLE\+\_\+\+EN\+\_\+\+SHIFT~(0)}
+
+\Hypertarget{group__device_gac9f5a7d5a09d8596d192666d6a0f7eea}\label{group__device_gac9f5a7d5a09d8596d192666d6a0f7eea} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_KEY\_CONFIG\_AUTH\_KEY@{ATCA\_KEY\_CONFIG\_AUTH\_KEY}}
+\index{ATCA\_KEY\_CONFIG\_AUTH\_KEY@{ATCA\_KEY\_CONFIG\_AUTH\_KEY}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_KEY\_CONFIG\_AUTH\_KEY}{ATCA\_KEY\_CONFIG\_AUTH\_KEY}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+KEY\+\_\+\+CONFIG\+\_\+\+AUTH\+\_\+\+KEY(\begin{DoxyParamCaption}\item[{}]{v }\end{DoxyParamCaption})~(\mbox{\hyperlink{group__device_ga7bdcaa7bad5f472dff412a75c752f338}{ATCA\+\_\+\+KEY\+\_\+\+CONFIG\+\_\+\+AUTH\+\_\+\+KEY\+\_\+\+MASK}} \& (v $<$$<$ \mbox{\hyperlink{group__device_ga57d8b6a85e5fc5a49682858f3bbc7aac}{ATCA\+\_\+\+KEY\+\_\+\+CONFIG\+\_\+\+AUTH\+\_\+\+KEY\+\_\+\+SHIFT}}))}
+
+\Hypertarget{group__device_ga7bdcaa7bad5f472dff412a75c752f338}\label{group__device_ga7bdcaa7bad5f472dff412a75c752f338} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_KEY\_CONFIG\_AUTH\_KEY\_MASK@{ATCA\_KEY\_CONFIG\_AUTH\_KEY\_MASK}}
+\index{ATCA\_KEY\_CONFIG\_AUTH\_KEY\_MASK@{ATCA\_KEY\_CONFIG\_AUTH\_KEY\_MASK}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_KEY\_CONFIG\_AUTH\_KEY\_MASK}{ATCA\_KEY\_CONFIG\_AUTH\_KEY\_MASK}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+KEY\+\_\+\+CONFIG\+\_\+\+AUTH\+\_\+\+KEY\+\_\+\+MASK~(0x0\+Fu $<$$<$ \mbox{\hyperlink{group__device_ga57d8b6a85e5fc5a49682858f3bbc7aac}{ATCA\+\_\+\+KEY\+\_\+\+CONFIG\+\_\+\+AUTH\+\_\+\+KEY\+\_\+\+SHIFT}})}
+
+\Hypertarget{group__device_ga57d8b6a85e5fc5a49682858f3bbc7aac}\label{group__device_ga57d8b6a85e5fc5a49682858f3bbc7aac} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_KEY\_CONFIG\_AUTH\_KEY\_SHIFT@{ATCA\_KEY\_CONFIG\_AUTH\_KEY\_SHIFT}}
+\index{ATCA\_KEY\_CONFIG\_AUTH\_KEY\_SHIFT@{ATCA\_KEY\_CONFIG\_AUTH\_KEY\_SHIFT}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_KEY\_CONFIG\_AUTH\_KEY\_SHIFT}{ATCA\_KEY\_CONFIG\_AUTH\_KEY\_SHIFT}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+KEY\+\_\+\+CONFIG\+\_\+\+AUTH\+\_\+\+KEY\+\_\+\+SHIFT~(8)}
+
+\Hypertarget{group__device_ga58771cfdfafa3aedc32366da4ec9a91d}\label{group__device_ga58771cfdfafa3aedc32366da4ec9a91d} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_KEY\_CONFIG\_KEY\_TYPE@{ATCA\_KEY\_CONFIG\_KEY\_TYPE}}
+\index{ATCA\_KEY\_CONFIG\_KEY\_TYPE@{ATCA\_KEY\_CONFIG\_KEY\_TYPE}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_KEY\_CONFIG\_KEY\_TYPE}{ATCA\_KEY\_CONFIG\_KEY\_TYPE}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+KEY\+\_\+\+CONFIG\+\_\+\+KEY\+\_\+\+TYPE(\begin{DoxyParamCaption}\item[{}]{v }\end{DoxyParamCaption})~(\mbox{\hyperlink{group__device_ga791218b8f59ceb6a3340eeeafdacdaa7}{ATCA\+\_\+\+KEY\+\_\+\+CONFIG\+\_\+\+KEY\+\_\+\+TYPE\+\_\+\+MASK}} \& (v $<$$<$ \mbox{\hyperlink{group__device_ga08ad8ab3a2fd98e81496eebb24ed70f7}{ATCA\+\_\+\+KEY\+\_\+\+CONFIG\+\_\+\+KEY\+\_\+\+TYPE\+\_\+\+SHIFT}}))}
+
+\Hypertarget{group__device_ga791218b8f59ceb6a3340eeeafdacdaa7}\label{group__device_ga791218b8f59ceb6a3340eeeafdacdaa7} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_KEY\_CONFIG\_KEY\_TYPE\_MASK@{ATCA\_KEY\_CONFIG\_KEY\_TYPE\_MASK}}
+\index{ATCA\_KEY\_CONFIG\_KEY\_TYPE\_MASK@{ATCA\_KEY\_CONFIG\_KEY\_TYPE\_MASK}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_KEY\_CONFIG\_KEY\_TYPE\_MASK}{ATCA\_KEY\_CONFIG\_KEY\_TYPE\_MASK}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+KEY\+\_\+\+CONFIG\+\_\+\+KEY\+\_\+\+TYPE\+\_\+\+MASK~(0x07u $<$$<$ \mbox{\hyperlink{group__device_ga08ad8ab3a2fd98e81496eebb24ed70f7}{ATCA\+\_\+\+KEY\+\_\+\+CONFIG\+\_\+\+KEY\+\_\+\+TYPE\+\_\+\+SHIFT}})}
+
+\Hypertarget{group__device_ga08ad8ab3a2fd98e81496eebb24ed70f7}\label{group__device_ga08ad8ab3a2fd98e81496eebb24ed70f7} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_KEY\_CONFIG\_KEY\_TYPE\_SHIFT@{ATCA\_KEY\_CONFIG\_KEY\_TYPE\_SHIFT}}
+\index{ATCA\_KEY\_CONFIG\_KEY\_TYPE\_SHIFT@{ATCA\_KEY\_CONFIG\_KEY\_TYPE\_SHIFT}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_KEY\_CONFIG\_KEY\_TYPE\_SHIFT}{ATCA\_KEY\_CONFIG\_KEY\_TYPE\_SHIFT}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+KEY\+\_\+\+CONFIG\+\_\+\+KEY\+\_\+\+TYPE\+\_\+\+SHIFT~(2)}
+
+\Hypertarget{group__device_ga72804cb302dbdfd589ee558cf6efc1c5}\label{group__device_ga72804cb302dbdfd589ee558cf6efc1c5} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_KEY\_CONFIG\_LOCKABLE\_MASK@{ATCA\_KEY\_CONFIG\_LOCKABLE\_MASK}}
+\index{ATCA\_KEY\_CONFIG\_LOCKABLE\_MASK@{ATCA\_KEY\_CONFIG\_LOCKABLE\_MASK}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_KEY\_CONFIG\_LOCKABLE\_MASK}{ATCA\_KEY\_CONFIG\_LOCKABLE\_MASK}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+KEY\+\_\+\+CONFIG\+\_\+\+LOCKABLE\+\_\+\+MASK~(0x01u $<$$<$ \mbox{\hyperlink{group__device_ga0d7ae07eb6ec5455fe440ad0f231a53f}{ATCA\+\_\+\+KEY\+\_\+\+CONFIG\+\_\+\+LOCKABLE\+\_\+\+SHIFT}})}
+
+\Hypertarget{group__device_ga0d7ae07eb6ec5455fe440ad0f231a53f}\label{group__device_ga0d7ae07eb6ec5455fe440ad0f231a53f} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_KEY\_CONFIG\_LOCKABLE\_SHIFT@{ATCA\_KEY\_CONFIG\_LOCKABLE\_SHIFT}}
+\index{ATCA\_KEY\_CONFIG\_LOCKABLE\_SHIFT@{ATCA\_KEY\_CONFIG\_LOCKABLE\_SHIFT}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_KEY\_CONFIG\_LOCKABLE\_SHIFT}{ATCA\_KEY\_CONFIG\_LOCKABLE\_SHIFT}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+KEY\+\_\+\+CONFIG\+\_\+\+LOCKABLE\+\_\+\+SHIFT~(5)}
+
+\Hypertarget{group__device_ga768d74dcd8ac420a92da6a5554c25ada}\label{group__device_ga768d74dcd8ac420a92da6a5554c25ada} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_KEY\_CONFIG\_OFFSET@{ATCA\_KEY\_CONFIG\_OFFSET}}
+\index{ATCA\_KEY\_CONFIG\_OFFSET@{ATCA\_KEY\_CONFIG\_OFFSET}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_KEY\_CONFIG\_OFFSET}{ATCA\_KEY\_CONFIG\_OFFSET}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+KEY\+\_\+\+CONFIG\+\_\+\+OFFSET(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~(96UL + (x) \texorpdfstring{$\ast$}{*} 2)}
+
+\Hypertarget{group__device_gae4486a3723f24417be62874cf03356ce}\label{group__device_gae4486a3723f24417be62874cf03356ce} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_KEY\_CONFIG\_PERSIST\_DISABLE\_MASK@{ATCA\_KEY\_CONFIG\_PERSIST\_DISABLE\_MASK}}
+\index{ATCA\_KEY\_CONFIG\_PERSIST\_DISABLE\_MASK@{ATCA\_KEY\_CONFIG\_PERSIST\_DISABLE\_MASK}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_KEY\_CONFIG\_PERSIST\_DISABLE\_MASK}{ATCA\_KEY\_CONFIG\_PERSIST\_DISABLE\_MASK}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+KEY\+\_\+\+CONFIG\+\_\+\+PERSIST\+\_\+\+DISABLE\+\_\+\+MASK~(0x01u $<$$<$ \mbox{\hyperlink{group__device_gae282dbe83f5bad968247222351a3c15f}{ATCA\+\_\+\+KEY\+\_\+\+CONFIG\+\_\+\+PERSIST\+\_\+\+DISABLE\+\_\+\+SHIFT}})}
+
+\Hypertarget{group__device_gae282dbe83f5bad968247222351a3c15f}\label{group__device_gae282dbe83f5bad968247222351a3c15f} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_KEY\_CONFIG\_PERSIST\_DISABLE\_SHIFT@{ATCA\_KEY\_CONFIG\_PERSIST\_DISABLE\_SHIFT}}
+\index{ATCA\_KEY\_CONFIG\_PERSIST\_DISABLE\_SHIFT@{ATCA\_KEY\_CONFIG\_PERSIST\_DISABLE\_SHIFT}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_KEY\_CONFIG\_PERSIST\_DISABLE\_SHIFT}{ATCA\_KEY\_CONFIG\_PERSIST\_DISABLE\_SHIFT}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+KEY\+\_\+\+CONFIG\+\_\+\+PERSIST\+\_\+\+DISABLE\+\_\+\+SHIFT~(12)}
+
+\Hypertarget{group__device_ga9a707b6ebe784cd7fc3d56ed39a7c129}\label{group__device_ga9a707b6ebe784cd7fc3d56ed39a7c129} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_KEY\_CONFIG\_PRIVATE\_MASK@{ATCA\_KEY\_CONFIG\_PRIVATE\_MASK}}
+\index{ATCA\_KEY\_CONFIG\_PRIVATE\_MASK@{ATCA\_KEY\_CONFIG\_PRIVATE\_MASK}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_KEY\_CONFIG\_PRIVATE\_MASK}{ATCA\_KEY\_CONFIG\_PRIVATE\_MASK}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+KEY\+\_\+\+CONFIG\+\_\+\+PRIVATE\+\_\+\+MASK~(0x01u $<$$<$ \mbox{\hyperlink{group__device_gab6e242074e10c6cf080d29325e9bca65}{ATCA\+\_\+\+KEY\+\_\+\+CONFIG\+\_\+\+PRIVATE\+\_\+\+SHIFT}})}
+
+\Hypertarget{group__device_gab6e242074e10c6cf080d29325e9bca65}\label{group__device_gab6e242074e10c6cf080d29325e9bca65} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_KEY\_CONFIG\_PRIVATE\_SHIFT@{ATCA\_KEY\_CONFIG\_PRIVATE\_SHIFT}}
+\index{ATCA\_KEY\_CONFIG\_PRIVATE\_SHIFT@{ATCA\_KEY\_CONFIG\_PRIVATE\_SHIFT}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_KEY\_CONFIG\_PRIVATE\_SHIFT}{ATCA\_KEY\_CONFIG\_PRIVATE\_SHIFT}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+KEY\+\_\+\+CONFIG\+\_\+\+PRIVATE\+\_\+\+SHIFT~(0)}
+
+\Hypertarget{group__device_ga8ea1091991167634115392e82d7970fa}\label{group__device_ga8ea1091991167634115392e82d7970fa} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_KEY\_CONFIG\_PUB\_INFO\_MASK@{ATCA\_KEY\_CONFIG\_PUB\_INFO\_MASK}}
+\index{ATCA\_KEY\_CONFIG\_PUB\_INFO\_MASK@{ATCA\_KEY\_CONFIG\_PUB\_INFO\_MASK}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_KEY\_CONFIG\_PUB\_INFO\_MASK}{ATCA\_KEY\_CONFIG\_PUB\_INFO\_MASK}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+KEY\+\_\+\+CONFIG\+\_\+\+PUB\+\_\+\+INFO\+\_\+\+MASK~(0x01u $<$$<$ \mbox{\hyperlink{group__device_ga02f7a20603a1ed76348e9e7d6292ebcc}{ATCA\+\_\+\+KEY\+\_\+\+CONFIG\+\_\+\+PUB\+\_\+\+INFO\+\_\+\+SHIFT}})}
+
+\Hypertarget{group__device_ga02f7a20603a1ed76348e9e7d6292ebcc}\label{group__device_ga02f7a20603a1ed76348e9e7d6292ebcc} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_KEY\_CONFIG\_PUB\_INFO\_SHIFT@{ATCA\_KEY\_CONFIG\_PUB\_INFO\_SHIFT}}
+\index{ATCA\_KEY\_CONFIG\_PUB\_INFO\_SHIFT@{ATCA\_KEY\_CONFIG\_PUB\_INFO\_SHIFT}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_KEY\_CONFIG\_PUB\_INFO\_SHIFT}{ATCA\_KEY\_CONFIG\_PUB\_INFO\_SHIFT}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+KEY\+\_\+\+CONFIG\+\_\+\+PUB\+\_\+\+INFO\+\_\+\+SHIFT~(1)}
+
+\Hypertarget{group__device_gab72f34114b861e6f33a6fbcc8d67e2d8}\label{group__device_gab72f34114b861e6f33a6fbcc8d67e2d8} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_KEY\_CONFIG\_REQ\_AUTH\_MASK@{ATCA\_KEY\_CONFIG\_REQ\_AUTH\_MASK}}
+\index{ATCA\_KEY\_CONFIG\_REQ\_AUTH\_MASK@{ATCA\_KEY\_CONFIG\_REQ\_AUTH\_MASK}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_KEY\_CONFIG\_REQ\_AUTH\_MASK}{ATCA\_KEY\_CONFIG\_REQ\_AUTH\_MASK}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+KEY\+\_\+\+CONFIG\+\_\+\+REQ\+\_\+\+AUTH\+\_\+\+MASK~(0x01u $<$$<$ \mbox{\hyperlink{group__device_gaef49b712716bcf998587e49a54f5da57}{ATCA\+\_\+\+KEY\+\_\+\+CONFIG\+\_\+\+REQ\+\_\+\+AUTH\+\_\+\+SHIFT}})}
+
+\Hypertarget{group__device_gaef49b712716bcf998587e49a54f5da57}\label{group__device_gaef49b712716bcf998587e49a54f5da57} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_KEY\_CONFIG\_REQ\_AUTH\_SHIFT@{ATCA\_KEY\_CONFIG\_REQ\_AUTH\_SHIFT}}
+\index{ATCA\_KEY\_CONFIG\_REQ\_AUTH\_SHIFT@{ATCA\_KEY\_CONFIG\_REQ\_AUTH\_SHIFT}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_KEY\_CONFIG\_REQ\_AUTH\_SHIFT}{ATCA\_KEY\_CONFIG\_REQ\_AUTH\_SHIFT}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+KEY\+\_\+\+CONFIG\+\_\+\+REQ\+\_\+\+AUTH\+\_\+\+SHIFT~(7)}
+
+\Hypertarget{group__device_gadf1439bdd718df2e3c80f3ed28a514a4}\label{group__device_gadf1439bdd718df2e3c80f3ed28a514a4} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_KEY\_CONFIG\_REQ\_RANDOM\_MASK@{ATCA\_KEY\_CONFIG\_REQ\_RANDOM\_MASK}}
+\index{ATCA\_KEY\_CONFIG\_REQ\_RANDOM\_MASK@{ATCA\_KEY\_CONFIG\_REQ\_RANDOM\_MASK}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_KEY\_CONFIG\_REQ\_RANDOM\_MASK}{ATCA\_KEY\_CONFIG\_REQ\_RANDOM\_MASK}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+KEY\+\_\+\+CONFIG\+\_\+\+REQ\+\_\+\+RANDOM\+\_\+\+MASK~(0x01u $<$$<$ \mbox{\hyperlink{group__device_ga110b226699a9fca6d6ff262b726369fe}{ATCA\+\_\+\+KEY\+\_\+\+CONFIG\+\_\+\+REQ\+\_\+\+RANDOM\+\_\+\+SHIFT}})}
+
+\Hypertarget{group__device_ga110b226699a9fca6d6ff262b726369fe}\label{group__device_ga110b226699a9fca6d6ff262b726369fe} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_KEY\_CONFIG\_REQ\_RANDOM\_SHIFT@{ATCA\_KEY\_CONFIG\_REQ\_RANDOM\_SHIFT}}
+\index{ATCA\_KEY\_CONFIG\_REQ\_RANDOM\_SHIFT@{ATCA\_KEY\_CONFIG\_REQ\_RANDOM\_SHIFT}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_KEY\_CONFIG\_REQ\_RANDOM\_SHIFT}{ATCA\_KEY\_CONFIG\_REQ\_RANDOM\_SHIFT}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+KEY\+\_\+\+CONFIG\+\_\+\+REQ\+\_\+\+RANDOM\+\_\+\+SHIFT~(6)}
+
+\Hypertarget{group__device_ga214e2932ee0ef02d0f4f4486434b5856}\label{group__device_ga214e2932ee0ef02d0f4f4486434b5856} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_KEY\_CONFIG\_RFU\_MASK@{ATCA\_KEY\_CONFIG\_RFU\_MASK}}
+\index{ATCA\_KEY\_CONFIG\_RFU\_MASK@{ATCA\_KEY\_CONFIG\_RFU\_MASK}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_KEY\_CONFIG\_RFU\_MASK}{ATCA\_KEY\_CONFIG\_RFU\_MASK}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+KEY\+\_\+\+CONFIG\+\_\+\+RFU\+\_\+\+MASK~(0x01u $<$$<$ \mbox{\hyperlink{group__device_gad7e32c010d24118b2f8e09ec71d34ae6}{ATCA\+\_\+\+KEY\+\_\+\+CONFIG\+\_\+\+RFU\+\_\+\+SHIFT}})}
+
+\Hypertarget{group__device_gad7e32c010d24118b2f8e09ec71d34ae6}\label{group__device_gad7e32c010d24118b2f8e09ec71d34ae6} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_KEY\_CONFIG\_RFU\_SHIFT@{ATCA\_KEY\_CONFIG\_RFU\_SHIFT}}
+\index{ATCA\_KEY\_CONFIG\_RFU\_SHIFT@{ATCA\_KEY\_CONFIG\_RFU\_SHIFT}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_KEY\_CONFIG\_RFU\_SHIFT}{ATCA\_KEY\_CONFIG\_RFU\_SHIFT}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+KEY\+\_\+\+CONFIG\+\_\+\+RFU\+\_\+\+SHIFT~(13)}
+
+\Hypertarget{group__device_ga904dd51134dc1a0d746be45c42806dc7}\label{group__device_ga904dd51134dc1a0d746be45c42806dc7} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_KEY\_CONFIG\_X509\_ID@{ATCA\_KEY\_CONFIG\_X509\_ID}}
+\index{ATCA\_KEY\_CONFIG\_X509\_ID@{ATCA\_KEY\_CONFIG\_X509\_ID}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_KEY\_CONFIG\_X509\_ID}{ATCA\_KEY\_CONFIG\_X509\_ID}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+KEY\+\_\+\+CONFIG\+\_\+\+X509\+\_\+\+ID(\begin{DoxyParamCaption}\item[{}]{v }\end{DoxyParamCaption})~(\mbox{\hyperlink{group__device_ga0d5a5a59003ab766e8d266f336922582}{ATCA\+\_\+\+KEY\+\_\+\+CONFIG\+\_\+\+X509\+\_\+\+ID\+\_\+\+MASK}} \& (v $<$$<$ \mbox{\hyperlink{group__device_ga1f7be00746c8b6679c860a68418eb638}{ATCA\+\_\+\+KEY\+\_\+\+CONFIG\+\_\+\+X509\+\_\+\+ID\+\_\+\+SHIFT}}))}
+
+\Hypertarget{group__device_ga0d5a5a59003ab766e8d266f336922582}\label{group__device_ga0d5a5a59003ab766e8d266f336922582} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_KEY\_CONFIG\_X509\_ID\_MASK@{ATCA\_KEY\_CONFIG\_X509\_ID\_MASK}}
+\index{ATCA\_KEY\_CONFIG\_X509\_ID\_MASK@{ATCA\_KEY\_CONFIG\_X509\_ID\_MASK}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_KEY\_CONFIG\_X509\_ID\_MASK}{ATCA\_KEY\_CONFIG\_X509\_ID\_MASK}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+KEY\+\_\+\+CONFIG\+\_\+\+X509\+\_\+\+ID\+\_\+\+MASK~(0x03u $<$$<$ \mbox{\hyperlink{group__device_ga1f7be00746c8b6679c860a68418eb638}{ATCA\+\_\+\+KEY\+\_\+\+CONFIG\+\_\+\+X509\+\_\+\+ID\+\_\+\+SHIFT}})}
+
+\Hypertarget{group__device_ga1f7be00746c8b6679c860a68418eb638}\label{group__device_ga1f7be00746c8b6679c860a68418eb638} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_KEY\_CONFIG\_X509\_ID\_SHIFT@{ATCA\_KEY\_CONFIG\_X509\_ID\_SHIFT}}
+\index{ATCA\_KEY\_CONFIG\_X509\_ID\_SHIFT@{ATCA\_KEY\_CONFIG\_X509\_ID\_SHIFT}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_KEY\_CONFIG\_X509\_ID\_SHIFT}{ATCA\_KEY\_CONFIG\_X509\_ID\_SHIFT}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+KEY\+\_\+\+CONFIG\+\_\+\+X509\+\_\+\+ID\+\_\+\+SHIFT~(14)}
+
+\Hypertarget{group__device_gae081a49acc1fca72a8245249dfded8ef}\label{group__device_gae081a49acc1fca72a8245249dfded8ef} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_PACKED@{ATCA\_PACKED}}
+\index{ATCA\_PACKED@{ATCA\_PACKED}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_PACKED}{ATCA\_PACKED}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+PACKED}
+
+\Hypertarget{group__device_gac34d5e008ae3175f494fbdea15f2baa4}\label{group__device_gac34d5e008ae3175f494fbdea15f2baa4} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_SECURE\_BOOT\_DIGEST@{ATCA\_SECURE\_BOOT\_DIGEST}}
+\index{ATCA\_SECURE\_BOOT\_DIGEST@{ATCA\_SECURE\_BOOT\_DIGEST}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_SECURE\_BOOT\_DIGEST}{ATCA\_SECURE\_BOOT\_DIGEST}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+SECURE\+\_\+\+BOOT\+\_\+\+DIGEST(\begin{DoxyParamCaption}\item[{}]{v }\end{DoxyParamCaption})~(\mbox{\hyperlink{group__device_ga8a6a2eeb662d80243e6d7347fc9f1417}{ATCA\+\_\+\+SECURE\+\_\+\+BOOT\+\_\+\+DIGEST\+\_\+\+MASK}} \& (v $<$$<$ \mbox{\hyperlink{group__device_ga4e273d24b7496b2713b2bb39e998eec6}{ATCA\+\_\+\+SECURE\+\_\+\+BOOT\+\_\+\+DIGEST\+\_\+\+SHIFT}}))}
+
+\Hypertarget{group__device_ga8a6a2eeb662d80243e6d7347fc9f1417}\label{group__device_ga8a6a2eeb662d80243e6d7347fc9f1417} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_SECURE\_BOOT\_DIGEST\_MASK@{ATCA\_SECURE\_BOOT\_DIGEST\_MASK}}
+\index{ATCA\_SECURE\_BOOT\_DIGEST\_MASK@{ATCA\_SECURE\_BOOT\_DIGEST\_MASK}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_SECURE\_BOOT\_DIGEST\_MASK}{ATCA\_SECURE\_BOOT\_DIGEST\_MASK}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+SECURE\+\_\+\+BOOT\+\_\+\+DIGEST\+\_\+\+MASK~(0x0\+Fu $<$$<$ \mbox{\hyperlink{group__device_ga4e273d24b7496b2713b2bb39e998eec6}{ATCA\+\_\+\+SECURE\+\_\+\+BOOT\+\_\+\+DIGEST\+\_\+\+SHIFT}})}
+
+\Hypertarget{group__device_ga4e273d24b7496b2713b2bb39e998eec6}\label{group__device_ga4e273d24b7496b2713b2bb39e998eec6} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_SECURE\_BOOT\_DIGEST\_SHIFT@{ATCA\_SECURE\_BOOT\_DIGEST\_SHIFT}}
+\index{ATCA\_SECURE\_BOOT\_DIGEST\_SHIFT@{ATCA\_SECURE\_BOOT\_DIGEST\_SHIFT}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_SECURE\_BOOT\_DIGEST\_SHIFT}{ATCA\_SECURE\_BOOT\_DIGEST\_SHIFT}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+SECURE\+\_\+\+BOOT\+\_\+\+DIGEST\+\_\+\+SHIFT~(8)}
+
+\Hypertarget{group__device_ga51272740e5edfcf1660029b796e4a962}\label{group__device_ga51272740e5edfcf1660029b796e4a962} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_SECURE\_BOOT\_MODE@{ATCA\_SECURE\_BOOT\_MODE}}
+\index{ATCA\_SECURE\_BOOT\_MODE@{ATCA\_SECURE\_BOOT\_MODE}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_SECURE\_BOOT\_MODE}{ATCA\_SECURE\_BOOT\_MODE}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+SECURE\+\_\+\+BOOT\+\_\+\+MODE(\begin{DoxyParamCaption}\item[{}]{v }\end{DoxyParamCaption})~(\mbox{\hyperlink{group__device_ga8447469d9b89b8ab56918d3752c9227e}{ATCA\+\_\+\+SECURE\+\_\+\+BOOT\+\_\+\+MODE\+\_\+\+MASK}} \& (v $<$$<$ \mbox{\hyperlink{group__device_ga5c90a309e4d9c61aef4fb56cb6a8c18d}{ATCA\+\_\+\+SECURE\+\_\+\+BOOT\+\_\+\+MODE\+\_\+\+SHIFT}}))}
+
+\Hypertarget{group__device_ga8447469d9b89b8ab56918d3752c9227e}\label{group__device_ga8447469d9b89b8ab56918d3752c9227e} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_SECURE\_BOOT\_MODE\_MASK@{ATCA\_SECURE\_BOOT\_MODE\_MASK}}
+\index{ATCA\_SECURE\_BOOT\_MODE\_MASK@{ATCA\_SECURE\_BOOT\_MODE\_MASK}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_SECURE\_BOOT\_MODE\_MASK}{ATCA\_SECURE\_BOOT\_MODE\_MASK}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+SECURE\+\_\+\+BOOT\+\_\+\+MODE\+\_\+\+MASK~(0x03u $<$$<$ \mbox{\hyperlink{group__device_ga5c90a309e4d9c61aef4fb56cb6a8c18d}{ATCA\+\_\+\+SECURE\+\_\+\+BOOT\+\_\+\+MODE\+\_\+\+SHIFT}})}
+
+\Hypertarget{group__device_ga5c90a309e4d9c61aef4fb56cb6a8c18d}\label{group__device_ga5c90a309e4d9c61aef4fb56cb6a8c18d} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_SECURE\_BOOT\_MODE\_SHIFT@{ATCA\_SECURE\_BOOT\_MODE\_SHIFT}}
+\index{ATCA\_SECURE\_BOOT\_MODE\_SHIFT@{ATCA\_SECURE\_BOOT\_MODE\_SHIFT}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_SECURE\_BOOT\_MODE\_SHIFT}{ATCA\_SECURE\_BOOT\_MODE\_SHIFT}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+SECURE\+\_\+\+BOOT\+\_\+\+MODE\+\_\+\+SHIFT~(0)}
+
+\Hypertarget{group__device_ga1b3fc7dfd03be91b272e2e50789b99c5}\label{group__device_ga1b3fc7dfd03be91b272e2e50789b99c5} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_SECURE\_BOOT\_PERSIST\_EN\_MASK@{ATCA\_SECURE\_BOOT\_PERSIST\_EN\_MASK}}
+\index{ATCA\_SECURE\_BOOT\_PERSIST\_EN\_MASK@{ATCA\_SECURE\_BOOT\_PERSIST\_EN\_MASK}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_SECURE\_BOOT\_PERSIST\_EN\_MASK}{ATCA\_SECURE\_BOOT\_PERSIST\_EN\_MASK}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+SECURE\+\_\+\+BOOT\+\_\+\+PERSIST\+\_\+\+EN\+\_\+\+MASK~(0x01u $<$$<$ \mbox{\hyperlink{group__device_gae42387d57052faac40a28786930ad50f}{ATCA\+\_\+\+SECURE\+\_\+\+BOOT\+\_\+\+PERSIST\+\_\+\+EN\+\_\+\+SHIFT}})}
+
+\Hypertarget{group__device_gae42387d57052faac40a28786930ad50f}\label{group__device_gae42387d57052faac40a28786930ad50f} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_SECURE\_BOOT\_PERSIST\_EN\_SHIFT@{ATCA\_SECURE\_BOOT\_PERSIST\_EN\_SHIFT}}
+\index{ATCA\_SECURE\_BOOT\_PERSIST\_EN\_SHIFT@{ATCA\_SECURE\_BOOT\_PERSIST\_EN\_SHIFT}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_SECURE\_BOOT\_PERSIST\_EN\_SHIFT}{ATCA\_SECURE\_BOOT\_PERSIST\_EN\_SHIFT}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+SECURE\+\_\+\+BOOT\+\_\+\+PERSIST\+\_\+\+EN\+\_\+\+SHIFT~(3)}
+
+\Hypertarget{group__device_gad7d433d50bb3ab8be8f4c298f9f55bdb}\label{group__device_gad7d433d50bb3ab8be8f4c298f9f55bdb} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_SECURE\_BOOT\_PUB\_KEY@{ATCA\_SECURE\_BOOT\_PUB\_KEY}}
+\index{ATCA\_SECURE\_BOOT\_PUB\_KEY@{ATCA\_SECURE\_BOOT\_PUB\_KEY}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_SECURE\_BOOT\_PUB\_KEY}{ATCA\_SECURE\_BOOT\_PUB\_KEY}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+SECURE\+\_\+\+BOOT\+\_\+\+PUB\+\_\+\+KEY(\begin{DoxyParamCaption}\item[{}]{v }\end{DoxyParamCaption})~(\mbox{\hyperlink{group__device_ga4f283d8965b207a3b570d989ce558ff2}{ATCA\+\_\+\+SECURE\+\_\+\+BOOT\+\_\+\+PUB\+\_\+\+KEY\+\_\+\+MASK}} \& (v $<$$<$ \mbox{\hyperlink{group__device_ga782b2598a672916700022b111df66762}{ATCA\+\_\+\+SECURE\+\_\+\+BOOT\+\_\+\+PUB\+\_\+\+KEY\+\_\+\+SHIFT}}))}
+
+\Hypertarget{group__device_ga4f283d8965b207a3b570d989ce558ff2}\label{group__device_ga4f283d8965b207a3b570d989ce558ff2} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_SECURE\_BOOT\_PUB\_KEY\_MASK@{ATCA\_SECURE\_BOOT\_PUB\_KEY\_MASK}}
+\index{ATCA\_SECURE\_BOOT\_PUB\_KEY\_MASK@{ATCA\_SECURE\_BOOT\_PUB\_KEY\_MASK}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_SECURE\_BOOT\_PUB\_KEY\_MASK}{ATCA\_SECURE\_BOOT\_PUB\_KEY\_MASK}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+SECURE\+\_\+\+BOOT\+\_\+\+PUB\+\_\+\+KEY\+\_\+\+MASK~(0x0\+Fu $<$$<$ \mbox{\hyperlink{group__device_ga782b2598a672916700022b111df66762}{ATCA\+\_\+\+SECURE\+\_\+\+BOOT\+\_\+\+PUB\+\_\+\+KEY\+\_\+\+SHIFT}})}
+
+\Hypertarget{group__device_ga782b2598a672916700022b111df66762}\label{group__device_ga782b2598a672916700022b111df66762} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_SECURE\_BOOT\_PUB\_KEY\_SHIFT@{ATCA\_SECURE\_BOOT\_PUB\_KEY\_SHIFT}}
+\index{ATCA\_SECURE\_BOOT\_PUB\_KEY\_SHIFT@{ATCA\_SECURE\_BOOT\_PUB\_KEY\_SHIFT}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_SECURE\_BOOT\_PUB\_KEY\_SHIFT}{ATCA\_SECURE\_BOOT\_PUB\_KEY\_SHIFT}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+SECURE\+\_\+\+BOOT\+\_\+\+PUB\+\_\+\+KEY\+\_\+\+SHIFT~(12)}
+
+\Hypertarget{group__device_gafd5ebaced4fc854b973ef7f7d9fe0bff}\label{group__device_gafd5ebaced4fc854b973ef7f7d9fe0bff} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_SECURE\_BOOT\_RAND\_NONCE\_MASK@{ATCA\_SECURE\_BOOT\_RAND\_NONCE\_MASK}}
+\index{ATCA\_SECURE\_BOOT\_RAND\_NONCE\_MASK@{ATCA\_SECURE\_BOOT\_RAND\_NONCE\_MASK}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_SECURE\_BOOT\_RAND\_NONCE\_MASK}{ATCA\_SECURE\_BOOT\_RAND\_NONCE\_MASK}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+SECURE\+\_\+\+BOOT\+\_\+\+RAND\+\_\+\+NONCE\+\_\+\+MASK~(0x01u $<$$<$ \mbox{\hyperlink{group__device_ga37b28c2ad75b960126ce4e4c0bbc7a56}{ATCA\+\_\+\+SECURE\+\_\+\+BOOT\+\_\+\+RAND\+\_\+\+NONCE\+\_\+\+SHIFT}})}
+
+\Hypertarget{group__device_ga37b28c2ad75b960126ce4e4c0bbc7a56}\label{group__device_ga37b28c2ad75b960126ce4e4c0bbc7a56} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_SECURE\_BOOT\_RAND\_NONCE\_SHIFT@{ATCA\_SECURE\_BOOT\_RAND\_NONCE\_SHIFT}}
+\index{ATCA\_SECURE\_BOOT\_RAND\_NONCE\_SHIFT@{ATCA\_SECURE\_BOOT\_RAND\_NONCE\_SHIFT}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_SECURE\_BOOT\_RAND\_NONCE\_SHIFT}{ATCA\_SECURE\_BOOT\_RAND\_NONCE\_SHIFT}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+SECURE\+\_\+\+BOOT\+\_\+\+RAND\+\_\+\+NONCE\+\_\+\+SHIFT~(4)}
+
+\Hypertarget{group__device_ga98938abecd836a071f79095b5d059176}\label{group__device_ga98938abecd836a071f79095b5d059176} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_SLOT\_CONFIG\_ECDH\_MASK@{ATCA\_SLOT\_CONFIG\_ECDH\_MASK}}
+\index{ATCA\_SLOT\_CONFIG\_ECDH\_MASK@{ATCA\_SLOT\_CONFIG\_ECDH\_MASK}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_SLOT\_CONFIG\_ECDH\_MASK}{ATCA\_SLOT\_CONFIG\_ECDH\_MASK}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+SLOT\+\_\+\+CONFIG\+\_\+\+ECDH\+\_\+\+MASK~(0x01u $<$$<$ \mbox{\hyperlink{group__device_ga954a51b6d035de6920800a7adcbc462b}{ATCA\+\_\+\+SLOT\+\_\+\+CONFIG\+\_\+\+ECDH\+\_\+\+SHIFT}})}
+
+\Hypertarget{group__device_ga954a51b6d035de6920800a7adcbc462b}\label{group__device_ga954a51b6d035de6920800a7adcbc462b} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_SLOT\_CONFIG\_ECDH\_SHIFT@{ATCA\_SLOT\_CONFIG\_ECDH\_SHIFT}}
+\index{ATCA\_SLOT\_CONFIG\_ECDH\_SHIFT@{ATCA\_SLOT\_CONFIG\_ECDH\_SHIFT}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_SLOT\_CONFIG\_ECDH\_SHIFT}{ATCA\_SLOT\_CONFIG\_ECDH\_SHIFT}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+SLOT\+\_\+\+CONFIG\+\_\+\+ECDH\+\_\+\+SHIFT~(2)}
+
+\Hypertarget{group__device_ga84f55516a56f0c7751a6145f1c365a6a}\label{group__device_ga84f55516a56f0c7751a6145f1c365a6a} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_SLOT\_CONFIG\_ENCRYPTED\_READ\_MASK@{ATCA\_SLOT\_CONFIG\_ENCRYPTED\_READ\_MASK}}
+\index{ATCA\_SLOT\_CONFIG\_ENCRYPTED\_READ\_MASK@{ATCA\_SLOT\_CONFIG\_ENCRYPTED\_READ\_MASK}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_SLOT\_CONFIG\_ENCRYPTED\_READ\_MASK}{ATCA\_SLOT\_CONFIG\_ENCRYPTED\_READ\_MASK}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+SLOT\+\_\+\+CONFIG\+\_\+\+ENCRYPTED\+\_\+\+READ\+\_\+\+MASK~(0x01u $<$$<$ \mbox{\hyperlink{group__device_gad777d07df897489f20ca8308f5ccf5f0}{ATCA\+\_\+\+SLOT\+\_\+\+CONFIG\+\_\+\+ENCRYPTED\+\_\+\+READ\+\_\+\+SHIFT}})}
+
+\Hypertarget{group__device_gad777d07df897489f20ca8308f5ccf5f0}\label{group__device_gad777d07df897489f20ca8308f5ccf5f0} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_SLOT\_CONFIG\_ENCRYPTED\_READ\_SHIFT@{ATCA\_SLOT\_CONFIG\_ENCRYPTED\_READ\_SHIFT}}
+\index{ATCA\_SLOT\_CONFIG\_ENCRYPTED\_READ\_SHIFT@{ATCA\_SLOT\_CONFIG\_ENCRYPTED\_READ\_SHIFT}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_SLOT\_CONFIG\_ENCRYPTED\_READ\_SHIFT}{ATCA\_SLOT\_CONFIG\_ENCRYPTED\_READ\_SHIFT}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+SLOT\+\_\+\+CONFIG\+\_\+\+ENCRYPTED\+\_\+\+READ\+\_\+\+SHIFT~(6)}
+
+\Hypertarget{group__device_gaf8ec26f2e18795a196663588436586bc}\label{group__device_gaf8ec26f2e18795a196663588436586bc} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_SLOT\_CONFIG\_EXT\_SIG\_MASK@{ATCA\_SLOT\_CONFIG\_EXT\_SIG\_MASK}}
+\index{ATCA\_SLOT\_CONFIG\_EXT\_SIG\_MASK@{ATCA\_SLOT\_CONFIG\_EXT\_SIG\_MASK}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_SLOT\_CONFIG\_EXT\_SIG\_MASK}{ATCA\_SLOT\_CONFIG\_EXT\_SIG\_MASK}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+SLOT\+\_\+\+CONFIG\+\_\+\+EXT\+\_\+\+SIG\+\_\+\+MASK~(0x01u $<$$<$ \mbox{\hyperlink{group__device_ga6c297f5d7d6c484d0aef64ab6f8d80e5}{ATCA\+\_\+\+SLOT\+\_\+\+CONFIG\+\_\+\+EXT\+\_\+\+SIG\+\_\+\+SHIFT}})}
+
+\Hypertarget{group__device_ga6c297f5d7d6c484d0aef64ab6f8d80e5}\label{group__device_ga6c297f5d7d6c484d0aef64ab6f8d80e5} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_SLOT\_CONFIG\_EXT\_SIG\_SHIFT@{ATCA\_SLOT\_CONFIG\_EXT\_SIG\_SHIFT}}
+\index{ATCA\_SLOT\_CONFIG\_EXT\_SIG\_SHIFT@{ATCA\_SLOT\_CONFIG\_EXT\_SIG\_SHIFT}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_SLOT\_CONFIG\_EXT\_SIG\_SHIFT}{ATCA\_SLOT\_CONFIG\_EXT\_SIG\_SHIFT}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+SLOT\+\_\+\+CONFIG\+\_\+\+EXT\+\_\+\+SIG\+\_\+\+SHIFT~(0)}
+
+\Hypertarget{group__device_ga52b75ddfe96678b27116f7296c76188a}\label{group__device_ga52b75ddfe96678b27116f7296c76188a} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_SLOT\_CONFIG\_GEN\_KEY\_MASK@{ATCA\_SLOT\_CONFIG\_GEN\_KEY\_MASK}}
+\index{ATCA\_SLOT\_CONFIG\_GEN\_KEY\_MASK@{ATCA\_SLOT\_CONFIG\_GEN\_KEY\_MASK}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_SLOT\_CONFIG\_GEN\_KEY\_MASK}{ATCA\_SLOT\_CONFIG\_GEN\_KEY\_MASK}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+SLOT\+\_\+\+CONFIG\+\_\+\+GEN\+\_\+\+KEY\+\_\+\+MASK~(0x01u $<$$<$ \mbox{\hyperlink{group__device_ga7b817e88954f9d195af4d0836bd6e0fd}{ATCA\+\_\+\+SLOT\+\_\+\+CONFIG\+\_\+\+GEN\+\_\+\+KEY\+\_\+\+SHIFT}})}
+
+\Hypertarget{group__device_ga7b817e88954f9d195af4d0836bd6e0fd}\label{group__device_ga7b817e88954f9d195af4d0836bd6e0fd} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_SLOT\_CONFIG\_GEN\_KEY\_SHIFT@{ATCA\_SLOT\_CONFIG\_GEN\_KEY\_SHIFT}}
+\index{ATCA\_SLOT\_CONFIG\_GEN\_KEY\_SHIFT@{ATCA\_SLOT\_CONFIG\_GEN\_KEY\_SHIFT}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_SLOT\_CONFIG\_GEN\_KEY\_SHIFT}{ATCA\_SLOT\_CONFIG\_GEN\_KEY\_SHIFT}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+SLOT\+\_\+\+CONFIG\+\_\+\+GEN\+\_\+\+KEY\+\_\+\+SHIFT~(8)}
+
+\Hypertarget{group__device_ga53b96970d88a1b078e0ef5397edc7c0a}\label{group__device_ga53b96970d88a1b078e0ef5397edc7c0a} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_SLOT\_CONFIG\_INT\_SIG\_MASK@{ATCA\_SLOT\_CONFIG\_INT\_SIG\_MASK}}
+\index{ATCA\_SLOT\_CONFIG\_INT\_SIG\_MASK@{ATCA\_SLOT\_CONFIG\_INT\_SIG\_MASK}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_SLOT\_CONFIG\_INT\_SIG\_MASK}{ATCA\_SLOT\_CONFIG\_INT\_SIG\_MASK}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+SLOT\+\_\+\+CONFIG\+\_\+\+INT\+\_\+\+SIG\+\_\+\+MASK~(0x01u $<$$<$ \mbox{\hyperlink{group__device_ga2511b55f617499a7b94780aa6d83283e}{ATCA\+\_\+\+SLOT\+\_\+\+CONFIG\+\_\+\+INT\+\_\+\+SIG\+\_\+\+SHIFT}})}
+
+\Hypertarget{group__device_ga2511b55f617499a7b94780aa6d83283e}\label{group__device_ga2511b55f617499a7b94780aa6d83283e} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_SLOT\_CONFIG\_INT\_SIG\_SHIFT@{ATCA\_SLOT\_CONFIG\_INT\_SIG\_SHIFT}}
+\index{ATCA\_SLOT\_CONFIG\_INT\_SIG\_SHIFT@{ATCA\_SLOT\_CONFIG\_INT\_SIG\_SHIFT}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_SLOT\_CONFIG\_INT\_SIG\_SHIFT}{ATCA\_SLOT\_CONFIG\_INT\_SIG\_SHIFT}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+SLOT\+\_\+\+CONFIG\+\_\+\+INT\+\_\+\+SIG\+\_\+\+SHIFT~(1)}
+
+\Hypertarget{group__device_ga736bf89e0ff1c8da62a7a935d72ea13b}\label{group__device_ga736bf89e0ff1c8da62a7a935d72ea13b} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_SLOT\_CONFIG\_IS\_SECRET\_MASK@{ATCA\_SLOT\_CONFIG\_IS\_SECRET\_MASK}}
+\index{ATCA\_SLOT\_CONFIG\_IS\_SECRET\_MASK@{ATCA\_SLOT\_CONFIG\_IS\_SECRET\_MASK}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_SLOT\_CONFIG\_IS\_SECRET\_MASK}{ATCA\_SLOT\_CONFIG\_IS\_SECRET\_MASK}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+SLOT\+\_\+\+CONFIG\+\_\+\+IS\+\_\+\+SECRET\+\_\+\+MASK~(0x01u $<$$<$ \mbox{\hyperlink{group__device_gafdde7d0e789df51ab9dbd625ba760dc7}{ATCA\+\_\+\+SLOT\+\_\+\+CONFIG\+\_\+\+IS\+\_\+\+SECRET\+\_\+\+SHIFT}})}
+
+\Hypertarget{group__device_gafdde7d0e789df51ab9dbd625ba760dc7}\label{group__device_gafdde7d0e789df51ab9dbd625ba760dc7} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_SLOT\_CONFIG\_IS\_SECRET\_SHIFT@{ATCA\_SLOT\_CONFIG\_IS\_SECRET\_SHIFT}}
+\index{ATCA\_SLOT\_CONFIG\_IS\_SECRET\_SHIFT@{ATCA\_SLOT\_CONFIG\_IS\_SECRET\_SHIFT}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_SLOT\_CONFIG\_IS\_SECRET\_SHIFT}{ATCA\_SLOT\_CONFIG\_IS\_SECRET\_SHIFT}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+SLOT\+\_\+\+CONFIG\+\_\+\+IS\+\_\+\+SECRET\+\_\+\+SHIFT~(7)}
+
+\Hypertarget{group__device_ga34810634dafb33eb905324315ab7f9cf}\label{group__device_ga34810634dafb33eb905324315ab7f9cf} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_SLOT\_CONFIG\_LIMITED\_USE\_MASK@{ATCA\_SLOT\_CONFIG\_LIMITED\_USE\_MASK}}
+\index{ATCA\_SLOT\_CONFIG\_LIMITED\_USE\_MASK@{ATCA\_SLOT\_CONFIG\_LIMITED\_USE\_MASK}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_SLOT\_CONFIG\_LIMITED\_USE\_MASK}{ATCA\_SLOT\_CONFIG\_LIMITED\_USE\_MASK}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+SLOT\+\_\+\+CONFIG\+\_\+\+LIMITED\+\_\+\+USE\+\_\+\+MASK~(0x01u $<$$<$ \mbox{\hyperlink{group__device_gaad3185c4b36c1b414ef0539a75298633}{ATCA\+\_\+\+SLOT\+\_\+\+CONFIG\+\_\+\+LIMITED\+\_\+\+USE\+\_\+\+SHIFT}})}
+
+\Hypertarget{group__device_gaad3185c4b36c1b414ef0539a75298633}\label{group__device_gaad3185c4b36c1b414ef0539a75298633} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_SLOT\_CONFIG\_LIMITED\_USE\_SHIFT@{ATCA\_SLOT\_CONFIG\_LIMITED\_USE\_SHIFT}}
+\index{ATCA\_SLOT\_CONFIG\_LIMITED\_USE\_SHIFT@{ATCA\_SLOT\_CONFIG\_LIMITED\_USE\_SHIFT}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_SLOT\_CONFIG\_LIMITED\_USE\_SHIFT}{ATCA\_SLOT\_CONFIG\_LIMITED\_USE\_SHIFT}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+SLOT\+\_\+\+CONFIG\+\_\+\+LIMITED\+\_\+\+USE\+\_\+\+SHIFT~(5)}
+
+\Hypertarget{group__device_ga5403afa69d2b937625cd8656e0dd2dac}\label{group__device_ga5403afa69d2b937625cd8656e0dd2dac} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_SLOT\_CONFIG\_NOMAC\_MASK@{ATCA\_SLOT\_CONFIG\_NOMAC\_MASK}}
+\index{ATCA\_SLOT\_CONFIG\_NOMAC\_MASK@{ATCA\_SLOT\_CONFIG\_NOMAC\_MASK}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_SLOT\_CONFIG\_NOMAC\_MASK}{ATCA\_SLOT\_CONFIG\_NOMAC\_MASK}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+SLOT\+\_\+\+CONFIG\+\_\+\+NOMAC\+\_\+\+MASK~(0x01u $<$$<$ \mbox{\hyperlink{group__device_ga2a887c52723d5d0ac39ee8f9f5b6c1c6}{ATCA\+\_\+\+SLOT\+\_\+\+CONFIG\+\_\+\+NOMAC\+\_\+\+SHIFT}})}
+
+\Hypertarget{group__device_ga2a887c52723d5d0ac39ee8f9f5b6c1c6}\label{group__device_ga2a887c52723d5d0ac39ee8f9f5b6c1c6} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_SLOT\_CONFIG\_NOMAC\_SHIFT@{ATCA\_SLOT\_CONFIG\_NOMAC\_SHIFT}}
+\index{ATCA\_SLOT\_CONFIG\_NOMAC\_SHIFT@{ATCA\_SLOT\_CONFIG\_NOMAC\_SHIFT}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_SLOT\_CONFIG\_NOMAC\_SHIFT}{ATCA\_SLOT\_CONFIG\_NOMAC\_SHIFT}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+SLOT\+\_\+\+CONFIG\+\_\+\+NOMAC\+\_\+\+SHIFT~(4)}
+
+\Hypertarget{group__device_ga3ac7b6f5c2b1fb54ebae99688fa3bf70}\label{group__device_ga3ac7b6f5c2b1fb54ebae99688fa3bf70} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_SLOT\_CONFIG\_PRIV\_WRITE\_MASK@{ATCA\_SLOT\_CONFIG\_PRIV\_WRITE\_MASK}}
+\index{ATCA\_SLOT\_CONFIG\_PRIV\_WRITE\_MASK@{ATCA\_SLOT\_CONFIG\_PRIV\_WRITE\_MASK}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_SLOT\_CONFIG\_PRIV\_WRITE\_MASK}{ATCA\_SLOT\_CONFIG\_PRIV\_WRITE\_MASK}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+SLOT\+\_\+\+CONFIG\+\_\+\+PRIV\+\_\+\+WRITE\+\_\+\+MASK~(0x01u $<$$<$ \mbox{\hyperlink{group__device_ga317b17bd97e6db7c1144bd40750baa76}{ATCA\+\_\+\+SLOT\+\_\+\+CONFIG\+\_\+\+PRIV\+\_\+\+WRITE\+\_\+\+SHIFT}})}
+
+\Hypertarget{group__device_ga317b17bd97e6db7c1144bd40750baa76}\label{group__device_ga317b17bd97e6db7c1144bd40750baa76} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_SLOT\_CONFIG\_PRIV\_WRITE\_SHIFT@{ATCA\_SLOT\_CONFIG\_PRIV\_WRITE\_SHIFT}}
+\index{ATCA\_SLOT\_CONFIG\_PRIV\_WRITE\_SHIFT@{ATCA\_SLOT\_CONFIG\_PRIV\_WRITE\_SHIFT}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_SLOT\_CONFIG\_PRIV\_WRITE\_SHIFT}{ATCA\_SLOT\_CONFIG\_PRIV\_WRITE\_SHIFT}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+SLOT\+\_\+\+CONFIG\+\_\+\+PRIV\+\_\+\+WRITE\+\_\+\+SHIFT~(9)}
+
+\Hypertarget{group__device_ga057fe1c75beb5acaa41a358377b5ca38}\label{group__device_ga057fe1c75beb5acaa41a358377b5ca38} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_SLOT\_CONFIG\_READKEY@{ATCA\_SLOT\_CONFIG\_READKEY}}
+\index{ATCA\_SLOT\_CONFIG\_READKEY@{ATCA\_SLOT\_CONFIG\_READKEY}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_SLOT\_CONFIG\_READKEY}{ATCA\_SLOT\_CONFIG\_READKEY}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+SLOT\+\_\+\+CONFIG\+\_\+\+READKEY(\begin{DoxyParamCaption}\item[{}]{v }\end{DoxyParamCaption})~(\mbox{\hyperlink{group__device_ga6e3ce97d8fa7ba3b9f88a6f63f80639e}{ATCA\+\_\+\+SLOT\+\_\+\+CONFIG\+\_\+\+READKEY\+\_\+\+MASK}} \& (v $<$$<$ \mbox{\hyperlink{group__device_ga63eb08b098edcad508d09d51a42b1ccd}{ATCA\+\_\+\+SLOT\+\_\+\+CONFIG\+\_\+\+READKEY\+\_\+\+SHIFT}}))}
+
+\Hypertarget{group__device_ga6e3ce97d8fa7ba3b9f88a6f63f80639e}\label{group__device_ga6e3ce97d8fa7ba3b9f88a6f63f80639e} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_SLOT\_CONFIG\_READKEY\_MASK@{ATCA\_SLOT\_CONFIG\_READKEY\_MASK}}
+\index{ATCA\_SLOT\_CONFIG\_READKEY\_MASK@{ATCA\_SLOT\_CONFIG\_READKEY\_MASK}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_SLOT\_CONFIG\_READKEY\_MASK}{ATCA\_SLOT\_CONFIG\_READKEY\_MASK}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+SLOT\+\_\+\+CONFIG\+\_\+\+READKEY\+\_\+\+MASK~(0x0\+Fu $<$$<$ \mbox{\hyperlink{group__device_ga63eb08b098edcad508d09d51a42b1ccd}{ATCA\+\_\+\+SLOT\+\_\+\+CONFIG\+\_\+\+READKEY\+\_\+\+SHIFT}})}
+
+\Hypertarget{group__device_ga63eb08b098edcad508d09d51a42b1ccd}\label{group__device_ga63eb08b098edcad508d09d51a42b1ccd} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_SLOT\_CONFIG\_READKEY\_SHIFT@{ATCA\_SLOT\_CONFIG\_READKEY\_SHIFT}}
+\index{ATCA\_SLOT\_CONFIG\_READKEY\_SHIFT@{ATCA\_SLOT\_CONFIG\_READKEY\_SHIFT}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_SLOT\_CONFIG\_READKEY\_SHIFT}{ATCA\_SLOT\_CONFIG\_READKEY\_SHIFT}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+SLOT\+\_\+\+CONFIG\+\_\+\+READKEY\+\_\+\+SHIFT~(0)}
+
+\Hypertarget{group__device_ga7232c314df67e9865ef14488590d4266}\label{group__device_ga7232c314df67e9865ef14488590d4266} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_SLOT\_CONFIG\_WRITE\_CONFIG@{ATCA\_SLOT\_CONFIG\_WRITE\_CONFIG}}
+\index{ATCA\_SLOT\_CONFIG\_WRITE\_CONFIG@{ATCA\_SLOT\_CONFIG\_WRITE\_CONFIG}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_SLOT\_CONFIG\_WRITE\_CONFIG}{ATCA\_SLOT\_CONFIG\_WRITE\_CONFIG}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+SLOT\+\_\+\+CONFIG\+\_\+\+WRITE\+\_\+\+CONFIG(\begin{DoxyParamCaption}\item[{}]{v }\end{DoxyParamCaption})~(\mbox{\hyperlink{group__device_gad417a8b8a70ef2936f6e1f4db26c0682}{ATCA\+\_\+\+SLOT\+\_\+\+CONFIG\+\_\+\+WRITE\+\_\+\+CONFIG\+\_\+\+MASK}} \& (v $<$$<$ \mbox{\hyperlink{group__device_ga09e263b522beb4e8609eca49556b5bd8}{ATCA\+\_\+\+SLOT\+\_\+\+CONFIG\+\_\+\+WRITE\+\_\+\+CONFIG\+\_\+\+SHIFT}}))}
+
+\Hypertarget{group__device_gad417a8b8a70ef2936f6e1f4db26c0682}\label{group__device_gad417a8b8a70ef2936f6e1f4db26c0682} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_SLOT\_CONFIG\_WRITE\_CONFIG\_MASK@{ATCA\_SLOT\_CONFIG\_WRITE\_CONFIG\_MASK}}
+\index{ATCA\_SLOT\_CONFIG\_WRITE\_CONFIG\_MASK@{ATCA\_SLOT\_CONFIG\_WRITE\_CONFIG\_MASK}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_SLOT\_CONFIG\_WRITE\_CONFIG\_MASK}{ATCA\_SLOT\_CONFIG\_WRITE\_CONFIG\_MASK}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+SLOT\+\_\+\+CONFIG\+\_\+\+WRITE\+\_\+\+CONFIG\+\_\+\+MASK~(0x0\+Fu $<$$<$ \mbox{\hyperlink{group__device_ga09e263b522beb4e8609eca49556b5bd8}{ATCA\+\_\+\+SLOT\+\_\+\+CONFIG\+\_\+\+WRITE\+\_\+\+CONFIG\+\_\+\+SHIFT}})}
+
+\Hypertarget{group__device_ga09e263b522beb4e8609eca49556b5bd8}\label{group__device_ga09e263b522beb4e8609eca49556b5bd8} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_SLOT\_CONFIG\_WRITE\_CONFIG\_SHIFT@{ATCA\_SLOT\_CONFIG\_WRITE\_CONFIG\_SHIFT}}
+\index{ATCA\_SLOT\_CONFIG\_WRITE\_CONFIG\_SHIFT@{ATCA\_SLOT\_CONFIG\_WRITE\_CONFIG\_SHIFT}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_SLOT\_CONFIG\_WRITE\_CONFIG\_SHIFT}{ATCA\_SLOT\_CONFIG\_WRITE\_CONFIG\_SHIFT}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+SLOT\+\_\+\+CONFIG\+\_\+\+WRITE\+\_\+\+CONFIG\+\_\+\+SHIFT~(12)}
+
+\Hypertarget{group__device_gaacb707bd4ec4d810c5faf4749aa07d6f}\label{group__device_gaacb707bd4ec4d810c5faf4749aa07d6f} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_SLOT\_CONFIG\_WRITE\_ECDH\_MASK@{ATCA\_SLOT\_CONFIG\_WRITE\_ECDH\_MASK}}
+\index{ATCA\_SLOT\_CONFIG\_WRITE\_ECDH\_MASK@{ATCA\_SLOT\_CONFIG\_WRITE\_ECDH\_MASK}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_SLOT\_CONFIG\_WRITE\_ECDH\_MASK}{ATCA\_SLOT\_CONFIG\_WRITE\_ECDH\_MASK}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+SLOT\+\_\+\+CONFIG\+\_\+\+WRITE\+\_\+\+ECDH\+\_\+\+MASK~(0x01u $<$$<$ \mbox{\hyperlink{group__device_gac4129920b9b9b985289cd0d5860ab621}{ATCA\+\_\+\+SLOT\+\_\+\+CONFIG\+\_\+\+WRITE\+\_\+\+ECDH\+\_\+\+SHIFT}})}
+
+\Hypertarget{group__device_gac4129920b9b9b985289cd0d5860ab621}\label{group__device_gac4129920b9b9b985289cd0d5860ab621} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_SLOT\_CONFIG\_WRITE\_ECDH\_SHIFT@{ATCA\_SLOT\_CONFIG\_WRITE\_ECDH\_SHIFT}}
+\index{ATCA\_SLOT\_CONFIG\_WRITE\_ECDH\_SHIFT@{ATCA\_SLOT\_CONFIG\_WRITE\_ECDH\_SHIFT}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_SLOT\_CONFIG\_WRITE\_ECDH\_SHIFT}{ATCA\_SLOT\_CONFIG\_WRITE\_ECDH\_SHIFT}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+SLOT\+\_\+\+CONFIG\+\_\+\+WRITE\+\_\+\+ECDH\+\_\+\+SHIFT~(3)}
+
+\Hypertarget{group__device_ga8b97601b2dfd14dc31e52cad1a1932b0}\label{group__device_ga8b97601b2dfd14dc31e52cad1a1932b0} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_SLOT\_CONFIG\_WRITE\_KEY@{ATCA\_SLOT\_CONFIG\_WRITE\_KEY}}
+\index{ATCA\_SLOT\_CONFIG\_WRITE\_KEY@{ATCA\_SLOT\_CONFIG\_WRITE\_KEY}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_SLOT\_CONFIG\_WRITE\_KEY}{ATCA\_SLOT\_CONFIG\_WRITE\_KEY}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+SLOT\+\_\+\+CONFIG\+\_\+\+WRITE\+\_\+\+KEY(\begin{DoxyParamCaption}\item[{}]{v }\end{DoxyParamCaption})~(\mbox{\hyperlink{group__device_ga0c43c204f5b80620bc3f3320c2ab770e}{ATCA\+\_\+\+SLOT\+\_\+\+CONFIG\+\_\+\+WRITE\+\_\+\+KEY\+\_\+\+MASK}} \& (v $<$$<$ \mbox{\hyperlink{group__device_ga26271d114bd3bc8e91a6ebe5706c24cf}{ATCA\+\_\+\+SLOT\+\_\+\+CONFIG\+\_\+\+WRITE\+\_\+\+KEY\+\_\+\+SHIFT}}))}
+
+\Hypertarget{group__device_ga0c43c204f5b80620bc3f3320c2ab770e}\label{group__device_ga0c43c204f5b80620bc3f3320c2ab770e} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_SLOT\_CONFIG\_WRITE\_KEY\_MASK@{ATCA\_SLOT\_CONFIG\_WRITE\_KEY\_MASK}}
+\index{ATCA\_SLOT\_CONFIG\_WRITE\_KEY\_MASK@{ATCA\_SLOT\_CONFIG\_WRITE\_KEY\_MASK}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_SLOT\_CONFIG\_WRITE\_KEY\_MASK}{ATCA\_SLOT\_CONFIG\_WRITE\_KEY\_MASK}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+SLOT\+\_\+\+CONFIG\+\_\+\+WRITE\+\_\+\+KEY\+\_\+\+MASK~(0x0\+Fu $<$$<$ \mbox{\hyperlink{group__device_ga26271d114bd3bc8e91a6ebe5706c24cf}{ATCA\+\_\+\+SLOT\+\_\+\+CONFIG\+\_\+\+WRITE\+\_\+\+KEY\+\_\+\+SHIFT}})}
+
+\Hypertarget{group__device_ga26271d114bd3bc8e91a6ebe5706c24cf}\label{group__device_ga26271d114bd3bc8e91a6ebe5706c24cf} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_SLOT\_CONFIG\_WRITE\_KEY\_SHIFT@{ATCA\_SLOT\_CONFIG\_WRITE\_KEY\_SHIFT}}
+\index{ATCA\_SLOT\_CONFIG\_WRITE\_KEY\_SHIFT@{ATCA\_SLOT\_CONFIG\_WRITE\_KEY\_SHIFT}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_SLOT\_CONFIG\_WRITE\_KEY\_SHIFT}{ATCA\_SLOT\_CONFIG\_WRITE\_KEY\_SHIFT}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+SLOT\+\_\+\+CONFIG\+\_\+\+WRITE\+\_\+\+KEY\+\_\+\+SHIFT~(8)}
+
+\Hypertarget{group__device_gaeb9e077ccd1a2c177a06e6ce4c5ecca8}\label{group__device_gaeb9e077ccd1a2c177a06e6ce4c5ecca8} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_SLOT\_LOCKED@{ATCA\_SLOT\_LOCKED}}
+\index{ATCA\_SLOT\_LOCKED@{ATCA\_SLOT\_LOCKED}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_SLOT\_LOCKED}{ATCA\_SLOT\_LOCKED}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+SLOT\+\_\+\+LOCKED(\begin{DoxyParamCaption}\item[{}]{v }\end{DoxyParamCaption})~((0x01 $<$$<$ v) \& 0x\+FFFFu)}
+
+\Hypertarget{group__device_ga35a702ca660fd0acbc308fdaf100c938}\label{group__device_ga35a702ca660fd0acbc308fdaf100c938} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_USE\_LOCK\_ENABLE\_MASK@{ATCA\_USE\_LOCK\_ENABLE\_MASK}}
+\index{ATCA\_USE\_LOCK\_ENABLE\_MASK@{ATCA\_USE\_LOCK\_ENABLE\_MASK}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_USE\_LOCK\_ENABLE\_MASK}{ATCA\_USE\_LOCK\_ENABLE\_MASK}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+USE\+\_\+\+LOCK\+\_\+\+ENABLE\+\_\+\+MASK~(0x0\+Fu $<$$<$ \mbox{\hyperlink{group__device_ga75fa72594c66cb5c42fd8f99a2656f67}{ATCA\+\_\+\+USE\+\_\+\+LOCK\+\_\+\+ENABLE\+\_\+\+SHIFT}})}
+
+\Hypertarget{group__device_ga75fa72594c66cb5c42fd8f99a2656f67}\label{group__device_ga75fa72594c66cb5c42fd8f99a2656f67} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_USE\_LOCK\_ENABLE\_SHIFT@{ATCA\_USE\_LOCK\_ENABLE\_SHIFT}}
+\index{ATCA\_USE\_LOCK\_ENABLE\_SHIFT@{ATCA\_USE\_LOCK\_ENABLE\_SHIFT}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_USE\_LOCK\_ENABLE\_SHIFT}{ATCA\_USE\_LOCK\_ENABLE\_SHIFT}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+USE\+\_\+\+LOCK\+\_\+\+ENABLE\+\_\+\+SHIFT~(0)}
+
+\Hypertarget{group__device_ga469bc73b6509066ac35960b3c059eba4}\label{group__device_ga469bc73b6509066ac35960b3c059eba4} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_USE\_LOCK\_KEY\_MASK@{ATCA\_USE\_LOCK\_KEY\_MASK}}
+\index{ATCA\_USE\_LOCK\_KEY\_MASK@{ATCA\_USE\_LOCK\_KEY\_MASK}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_USE\_LOCK\_KEY\_MASK}{ATCA\_USE\_LOCK\_KEY\_MASK}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+USE\+\_\+\+LOCK\+\_\+\+KEY\+\_\+\+MASK~(0x0\+Fu $<$$<$ \mbox{\hyperlink{group__device_ga1ecfe299a27bceb02c0f5e82e6785a34}{ATCA\+\_\+\+USE\+\_\+\+LOCK\+\_\+\+KEY\+\_\+\+SHIFT}})}
+
+\Hypertarget{group__device_ga1ecfe299a27bceb02c0f5e82e6785a34}\label{group__device_ga1ecfe299a27bceb02c0f5e82e6785a34} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_USE\_LOCK\_KEY\_SHIFT@{ATCA\_USE\_LOCK\_KEY\_SHIFT}}
+\index{ATCA\_USE\_LOCK\_KEY\_SHIFT@{ATCA\_USE\_LOCK\_KEY\_SHIFT}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_USE\_LOCK\_KEY\_SHIFT}{ATCA\_USE\_LOCK\_KEY\_SHIFT}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+USE\+\_\+\+LOCK\+\_\+\+KEY\+\_\+\+SHIFT~(4)}
+
+\Hypertarget{group__device_gafa14f010fd93b6e32984f973b013019c}\label{group__device_gafa14f010fd93b6e32984f973b013019c} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_VOL\_KEY\_PERM\_EN\_MASK@{ATCA\_VOL\_KEY\_PERM\_EN\_MASK}}
+\index{ATCA\_VOL\_KEY\_PERM\_EN\_MASK@{ATCA\_VOL\_KEY\_PERM\_EN\_MASK}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_VOL\_KEY\_PERM\_EN\_MASK}{ATCA\_VOL\_KEY\_PERM\_EN\_MASK}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+VOL\+\_\+\+KEY\+\_\+\+PERM\+\_\+\+EN\+\_\+\+MASK~(0x01u $<$$<$ \mbox{\hyperlink{group__device_ga72b97a330267d7f5952bab726c6f8feb}{ATCA\+\_\+\+VOL\+\_\+\+KEY\+\_\+\+PERM\+\_\+\+EN\+\_\+\+SHIFT}})}
+
+\Hypertarget{group__device_ga72b97a330267d7f5952bab726c6f8feb}\label{group__device_ga72b97a330267d7f5952bab726c6f8feb} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_VOL\_KEY\_PERM\_EN\_SHIFT@{ATCA\_VOL\_KEY\_PERM\_EN\_SHIFT}}
+\index{ATCA\_VOL\_KEY\_PERM\_EN\_SHIFT@{ATCA\_VOL\_KEY\_PERM\_EN\_SHIFT}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_VOL\_KEY\_PERM\_EN\_SHIFT}{ATCA\_VOL\_KEY\_PERM\_EN\_SHIFT}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+VOL\+\_\+\+KEY\+\_\+\+PERM\+\_\+\+EN\+\_\+\+SHIFT~(7)}
+
+\Hypertarget{group__device_ga5458a24ab74394eedb500fde6fd01ce6}\label{group__device_ga5458a24ab74394eedb500fde6fd01ce6} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_VOL\_KEY\_PERM\_SLOT@{ATCA\_VOL\_KEY\_PERM\_SLOT}}
+\index{ATCA\_VOL\_KEY\_PERM\_SLOT@{ATCA\_VOL\_KEY\_PERM\_SLOT}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_VOL\_KEY\_PERM\_SLOT}{ATCA\_VOL\_KEY\_PERM\_SLOT}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+VOL\+\_\+\+KEY\+\_\+\+PERM\+\_\+\+SLOT(\begin{DoxyParamCaption}\item[{}]{v }\end{DoxyParamCaption})~(\mbox{\hyperlink{group__device_ga494e390028c57397390ca0abf17a3410}{ATCA\+\_\+\+VOL\+\_\+\+KEY\+\_\+\+PERM\+\_\+\+SLOT\+\_\+\+MASK}} \& (v $<$$<$ \mbox{\hyperlink{group__device_ga4b63bed61bff098f623e72d58b0990ff}{ATCA\+\_\+\+VOL\+\_\+\+KEY\+\_\+\+PERM\+\_\+\+SLOT\+\_\+\+SHIFT}}))}
+
+\Hypertarget{group__device_ga494e390028c57397390ca0abf17a3410}\label{group__device_ga494e390028c57397390ca0abf17a3410} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_VOL\_KEY\_PERM\_SLOT\_MASK@{ATCA\_VOL\_KEY\_PERM\_SLOT\_MASK}}
+\index{ATCA\_VOL\_KEY\_PERM\_SLOT\_MASK@{ATCA\_VOL\_KEY\_PERM\_SLOT\_MASK}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_VOL\_KEY\_PERM\_SLOT\_MASK}{ATCA\_VOL\_KEY\_PERM\_SLOT\_MASK}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+VOL\+\_\+\+KEY\+\_\+\+PERM\+\_\+\+SLOT\+\_\+\+MASK~(0x0\+Fu $<$$<$ \mbox{\hyperlink{group__device_ga4b63bed61bff098f623e72d58b0990ff}{ATCA\+\_\+\+VOL\+\_\+\+KEY\+\_\+\+PERM\+\_\+\+SLOT\+\_\+\+SHIFT}})}
+
+\Hypertarget{group__device_ga4b63bed61bff098f623e72d58b0990ff}\label{group__device_ga4b63bed61bff098f623e72d58b0990ff} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_VOL\_KEY\_PERM\_SLOT\_SHIFT@{ATCA\_VOL\_KEY\_PERM\_SLOT\_SHIFT}}
+\index{ATCA\_VOL\_KEY\_PERM\_SLOT\_SHIFT@{ATCA\_VOL\_KEY\_PERM\_SLOT\_SHIFT}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_VOL\_KEY\_PERM\_SLOT\_SHIFT}{ATCA\_VOL\_KEY\_PERM\_SLOT\_SHIFT}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+VOL\+\_\+\+KEY\+\_\+\+PERM\+\_\+\+SLOT\+\_\+\+SHIFT~(0)}
+
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{group__device_gaa94f7bb4af0a3d6735225cc85d92cb50}\label{group__device_gaa94f7bb4af0a3d6735225cc85d92cb50} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCADevice@{ATCADevice}}
+\index{ATCADevice@{ATCADevice}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCADevice}{ATCADevice}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structatca__device}{atca\+\_\+device}}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group__device_gaa94f7bb4af0a3d6735225cc85d92cb50}{ATCADevice}}}
+
+\Hypertarget{group__device_ga18d23fcfb15908fc3e285bee9e3ef697}\label{group__device_ga18d23fcfb15908fc3e285bee9e3ef697} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!atecc508a\_config\_t@{atecc508a\_config\_t}}
+\index{atecc508a\_config\_t@{atecc508a\_config\_t}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{atecc508a\_config\_t}{atecc508a\_config\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{group__device_gae081a49acc1fca72a8245249dfded8ef}{ATCA\+\_\+\+PACKED}} \mbox{\hyperlink{struct__atecc508a__config}{\+\_\+atecc508a\+\_\+config}} \mbox{\hyperlink{group__device_ga18d23fcfb15908fc3e285bee9e3ef697}{atecc508a\+\_\+config\+\_\+t}}}
+
+\Hypertarget{group__device_gabaf6170e59bd2ccdda5b53789e012505}\label{group__device_gabaf6170e59bd2ccdda5b53789e012505} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!atecc608\_config\_t@{atecc608\_config\_t}}
+\index{atecc608\_config\_t@{atecc608\_config\_t}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{atecc608\_config\_t}{atecc608\_config\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{group__device_gae081a49acc1fca72a8245249dfded8ef}{ATCA\+\_\+\+PACKED}} \mbox{\hyperlink{struct__atecc608__config}{\+\_\+atecc608\+\_\+config}} \mbox{\hyperlink{group__device_gabaf6170e59bd2ccdda5b53789e012505}{atecc608\+\_\+config\+\_\+t}}}
+
+\Hypertarget{group__device_gaa0d57d5665793fa89fdab47726134824}\label{group__device_gaa0d57d5665793fa89fdab47726134824} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!atsha204a\_config\_t@{atsha204a\_config\_t}}
+\index{atsha204a\_config\_t@{atsha204a\_config\_t}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{atsha204a\_config\_t}{atsha204a\_config\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{group__device_gae081a49acc1fca72a8245249dfded8ef}{ATCA\+\_\+\+PACKED}} \mbox{\hyperlink{struct__atsha204a__config}{\+\_\+atsha204a\+\_\+config}} \mbox{\hyperlink{group__device_gaa0d57d5665793fa89fdab47726134824}{atsha204a\+\_\+config\+\_\+t}}}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{group__device_ga765308123cf522f5ec8b528bf4ea1243}\label{group__device_ga765308123cf522f5ec8b528bf4ea1243} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCADeviceState@{ATCADeviceState}}
+\index{ATCADeviceState@{ATCADeviceState}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCADeviceState}{ATCADeviceState}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__device_ga765308123cf522f5ec8b528bf4ea1243}{ATCADevice\+State}}}
+
+
+
+ATCADevice\+State says about device state. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ATCA\_DEVICE\_STATE\_UNKNOWN@{ATCA\_DEVICE\_STATE\_UNKNOWN}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_DEVICE\_STATE\_UNKNOWN@{ATCA\_DEVICE\_STATE\_UNKNOWN}}}\Hypertarget{group__device_gga765308123cf522f5ec8b528bf4ea1243a63b66c34fbe9ae97d123487be138ad49}\label{group__device_gga765308123cf522f5ec8b528bf4ea1243a63b66c34fbe9ae97d123487be138ad49} 
+ATCA\+\_\+\+DEVICE\+\_\+\+STATE\+\_\+\+UNKNOWN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ATCA\_DEVICE\_STATE\_SLEEP@{ATCA\_DEVICE\_STATE\_SLEEP}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_DEVICE\_STATE\_SLEEP@{ATCA\_DEVICE\_STATE\_SLEEP}}}\Hypertarget{group__device_gga765308123cf522f5ec8b528bf4ea1243a94ff4a4e6aecf9bce31e3395eb13d080}\label{group__device_gga765308123cf522f5ec8b528bf4ea1243a94ff4a4e6aecf9bce31e3395eb13d080} 
+ATCA\+\_\+\+DEVICE\+\_\+\+STATE\+\_\+\+SLEEP&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ATCA\_DEVICE\_STATE\_IDLE@{ATCA\_DEVICE\_STATE\_IDLE}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_DEVICE\_STATE\_IDLE@{ATCA\_DEVICE\_STATE\_IDLE}}}\Hypertarget{group__device_gga765308123cf522f5ec8b528bf4ea1243a6387319b28607ca0b70a0e1f4b5d64fc}\label{group__device_gga765308123cf522f5ec8b528bf4ea1243a6387319b28607ca0b70a0e1f4b5d64fc} 
+ATCA\+\_\+\+DEVICE\+\_\+\+STATE\+\_\+\+IDLE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ATCA\_DEVICE\_STATE\_ACTIVE@{ATCA\_DEVICE\_STATE\_ACTIVE}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_DEVICE\_STATE\_ACTIVE@{ATCA\_DEVICE\_STATE\_ACTIVE}}}\Hypertarget{group__device_gga765308123cf522f5ec8b528bf4ea1243ae56ae390858b5c3adda40857974f2269}\label{group__device_gga765308123cf522f5ec8b528bf4ea1243ae56ae390858b5c3adda40857974f2269} 
+ATCA\+\_\+\+DEVICE\+\_\+\+STATE\+\_\+\+ACTIVE&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{group__device_gafb234ccd6a80d09c0efbe336c2354267}\label{group__device_gafb234ccd6a80d09c0efbe336c2354267} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCADeviceType@{ATCADeviceType}}
+\index{ATCADeviceType@{ATCADeviceType}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{ATCADeviceType}{ATCADeviceType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__device_gafb234ccd6a80d09c0efbe336c2354267}{ATCADevice\+Type}}}
+
+
+
+The supported Device type in Cryptoauthlib library. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ATSHA204A@{ATSHA204A}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATSHA204A@{ATSHA204A}}}\Hypertarget{group__device_ggafb234ccd6a80d09c0efbe336c2354267a91729743caf308351a2b47c58536d268}\label{group__device_ggafb234ccd6a80d09c0efbe336c2354267a91729743caf308351a2b47c58536d268} 
+ATSHA204A&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ATECC108A@{ATECC108A}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATECC108A@{ATECC108A}}}\Hypertarget{group__device_ggafb234ccd6a80d09c0efbe336c2354267a20efd97b5b1001eec4a52e0ed5bf594c}\label{group__device_ggafb234ccd6a80d09c0efbe336c2354267a20efd97b5b1001eec4a52e0ed5bf594c} 
+ATECC108A&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ATECC508A@{ATECC508A}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATECC508A@{ATECC508A}}}\Hypertarget{group__device_ggafb234ccd6a80d09c0efbe336c2354267af463439df0f95803fc57cc58bbff2dae}\label{group__device_ggafb234ccd6a80d09c0efbe336c2354267af463439df0f95803fc57cc58bbff2dae} 
+ATECC508A&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ATECC608A@{ATECC608A}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATECC608A@{ATECC608A}}}\Hypertarget{group__device_ggafb234ccd6a80d09c0efbe336c2354267a183a6224a93e6c2b82c6dc0e132398bf}\label{group__device_ggafb234ccd6a80d09c0efbe336c2354267a183a6224a93e6c2b82c6dc0e132398bf} 
+ATECC608A&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ATECC608B@{ATECC608B}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATECC608B@{ATECC608B}}}\Hypertarget{group__device_ggafb234ccd6a80d09c0efbe336c2354267a6139512f9df589306dfc579a4e670d5a}\label{group__device_ggafb234ccd6a80d09c0efbe336c2354267a6139512f9df589306dfc579a4e670d5a} 
+ATECC608B&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ATECC608@{ATECC608}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATECC608@{ATECC608}}}\Hypertarget{group__device_ggafb234ccd6a80d09c0efbe336c2354267af2f230354639df34317e81b1d9fb3dfe}\label{group__device_ggafb234ccd6a80d09c0efbe336c2354267af2f230354639df34317e81b1d9fb3dfe} 
+ATECC608&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ATSHA206A@{ATSHA206A}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATSHA206A@{ATSHA206A}}}\Hypertarget{group__device_ggafb234ccd6a80d09c0efbe336c2354267a6816489510886c97abe08d80c7207f3f}\label{group__device_ggafb234ccd6a80d09c0efbe336c2354267a6816489510886c97abe08d80c7207f3f} 
+ATSHA206A&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ECC204@{ECC204}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ECC204@{ECC204}}}\Hypertarget{group__device_ggafb234ccd6a80d09c0efbe336c2354267a1a8bdd24116c11dbe5e8d7fa350315de}\label{group__device_ggafb234ccd6a80d09c0efbe336c2354267a1a8bdd24116c11dbe5e8d7fa350315de} 
+ECC204&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TA100@{TA100}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!TA100@{TA100}}}\Hypertarget{group__device_ggafb234ccd6a80d09c0efbe336c2354267a4af1fa9171e503676c56f45144d3b2f0}\label{group__device_ggafb234ccd6a80d09c0efbe336c2354267a4af1fa9171e503676c56f45144d3b2f0} 
+TA100&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ATCA\_DEV\_UNKNOWN@{ATCA\_DEV\_UNKNOWN}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!ATCA\_DEV\_UNKNOWN@{ATCA\_DEV\_UNKNOWN}}}\Hypertarget{group__device_ggafb234ccd6a80d09c0efbe336c2354267a3488f672341dda0ad20508ad888280ad}\label{group__device_ggafb234ccd6a80d09c0efbe336c2354267a3488f672341dda0ad20508ad888280ad} 
+ATCA\+\_\+\+DEV\+\_\+\+UNKNOWN&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{group__device_ga3f98e29cffa06446fc91b329703606af}\label{group__device_ga3f98e29cffa06446fc91b329703606af} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!atGetIFace@{atGetIFace}}
+\index{atGetIFace@{atGetIFace}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{atGetIFace()}{atGetIFace()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__interface_ga75c11126f3fe81df3d6c27f5bb393303}{ATCAIface}} at\+Get\+IFace (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__device_gaa94f7bb4af0a3d6735225cc85d92cb50}{ATCADevice}}}]{dev }\end{DoxyParamCaption})}
+
+\Hypertarget{group__device_gac087cf04cd5bd6ff2e026d89bfbf5e12}\label{group__device_gac087cf04cd5bd6ff2e026d89bfbf5e12} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!deleteATCADevice@{deleteATCADevice}}
+\index{deleteATCADevice@{deleteATCADevice}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{deleteATCADevice()}{deleteATCADevice()}}
+{\footnotesize\ttfamily void delete\+ATCADevice (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__device_gaa94f7bb4af0a3d6735225cc85d92cb50}{ATCADevice}} \texorpdfstring{$\ast$}{*}}]{ca\+\_\+dev }\end{DoxyParamCaption})}
+
+\Hypertarget{group__device_ga2384229af05af1746b431772c815caf9}\label{group__device_ga2384229af05af1746b431772c815caf9} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!initATCADevice@{initATCADevice}}
+\index{initATCADevice@{initATCADevice}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{initATCADevice()}{initATCADevice()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} init\+ATCADevice (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_a_t_c_a_iface_cfg}{ATCAIface\+Cfg}} \texorpdfstring{$\ast$}{*}}]{cfg,  }\item[{\mbox{\hyperlink{group__device_gaa94f7bb4af0a3d6735225cc85d92cb50}{ATCADevice}}}]{cadev }\end{DoxyParamCaption})}
+
+\Hypertarget{group__device_gad5e12e12d3030e28d75164286df9e5e9}\label{group__device_gad5e12e12d3030e28d75164286df9e5e9} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!newATCADevice@{newATCADevice}}
+\index{newATCADevice@{newATCADevice}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{newATCADevice()}{newATCADevice()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__device_gaa94f7bb4af0a3d6735225cc85d92cb50}{ATCADevice}} new\+ATCADevice (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_a_t_c_a_iface_cfg}{ATCAIface\+Cfg}} \texorpdfstring{$\ast$}{*}}]{cfg }\end{DoxyParamCaption})}
+
+\Hypertarget{group__device_gab729e6c838c0a247d4f226fb92492d96}\label{group__device_gab729e6c838c0a247d4f226fb92492d96} 
+\index{ATCADevice (atca\_)@{ATCADevice (atca\_)}!releaseATCADevice@{releaseATCADevice}}
+\index{releaseATCADevice@{releaseATCADevice}!ATCADevice (atca\_)@{ATCADevice (atca\_)}}
+\doxysubsubsection{\texorpdfstring{releaseATCADevice()}{releaseATCADevice()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} release\+ATCADevice (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__device_gaa94f7bb4af0a3d6735225cc85d92cb50}{ATCADevice}}}]{ca\+\_\+dev }\end{DoxyParamCaption})}
+

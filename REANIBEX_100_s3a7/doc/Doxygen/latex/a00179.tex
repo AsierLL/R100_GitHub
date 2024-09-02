@@ -1,0 +1,146 @@
+\doxysection{C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\+HAL/\+R100\+\_\+\+Tables.h File Reference}
+\hypertarget{a00179}{}\label{a00179}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/HAL/R100\_Tables.h@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/HAL/R100\_Tables.h}}
+
+
+Header with ZP and Pulse tables definitions.  
+
+
+{\ttfamily \#include "{}types\+\_\+basic.\+h"{}}\newline
+Include dependency graph for R100\+\_\+\+Tables.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{a00598}{ZP\+\_\+\+TABLE\+\_\+\+STRUCT}}
+\begin{DoxyCompactList}\small\item\em \texorpdfstring{$<$}{<} Define the ZP Table structure \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{a00602}{ZP\+\_\+\+MATRIX\+\_\+\+STRUCT}}
+\item 
+struct \mbox{\hyperlink{a00606}{ENERGY\+\_\+\+TABLE\+\_\+\+STRUCT}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{a00179_a941efc1e5afecf27189dd5c34706d485}{MAX\+\_\+\+ZP\+\_\+\+ITEMS}}~35
+\item 
+\#define \mbox{\hyperlink{a00179_a9193e1db9fcda28c34ce37f8c43398f1}{MAX\+\_\+\+ZP\+\_\+\+MATRIX\+\_\+\+ITEMS}}~5
+\item 
+\#define \mbox{\hyperlink{a00179_acba102868ca0868394f89f76fdda493a}{MAX\+\_\+\+ZP\+\_\+\+ADCS}}~0x00\+FFFFFF
+\item 
+\#define \mbox{\hyperlink{a00179_a0984601e55dab4657a6572e22c681531}{MAX\+\_\+\+ZP\+\_\+\+OHMS}}~9999
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{a00598}{ZP\+\_\+\+TABLE\+\_\+\+STRUCT}} \mbox{\hyperlink{a00179_a28bbbf0042f0b060cab4002329e9cc24}{ZP\+\_\+\+TABLE\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em \texorpdfstring{$<$}{<} Define the ZP Table structure \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{a00602}{ZP\+\_\+\+MATRIX\+\_\+\+STRUCT}} \mbox{\hyperlink{a00179_a2d31b9db80cda3badfd9911a692968f3}{ZP\+\_\+\+MATRIX\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Define the Energy Table structure. \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{a00606}{ENERGY\+\_\+\+TABLE\+\_\+\+STRUCT}} \mbox{\hyperlink{a00179_a6f4ef3e20615789feb5d0dbb91ad0262}{ENERGY\+\_\+\+TABLE\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const \mbox{\hyperlink{a00179_a28bbbf0042f0b060cab4002329e9cc24}{ZP\+\_\+\+TABLE\+\_\+t}} \mbox{\hyperlink{a00179_a5aee5a9ca1781fec0379448d28330523}{golden\+\_\+zp\+\_\+table}} \mbox{[}$\,$\mbox{]}
+\item 
+const \mbox{\hyperlink{a00179_a2d31b9db80cda3badfd9911a692968f3}{ZP\+\_\+\+MATRIX\+\_\+t}} \mbox{\hyperlink{a00179_af253c3b818894e5fff650633d57a1bf7}{golden\+\_\+zp\+\_\+matrix}} \mbox{[}$\,$\mbox{]}
+\item 
+const \mbox{\hyperlink{a00179_a6f4ef3e20615789feb5d0dbb91ad0262}{ENERGY\+\_\+\+TABLE\+\_\+t}} \mbox{\hyperlink{a00179_a57b9c3b8c26ea1b7f0149208e9871d75}{energy\+\_\+table}} \mbox{[}$\,$\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header with ZP and Pulse tables definitions. 
+
+\begin{DoxyVersion}{Version}
+v1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+16/01/2018 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+ltorres 
+\end{DoxyAuthor}
+\begin{DoxyWarning}{Warning}
+author date version .-\/ Edition 
+\end{DoxyWarning}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{a00257__bug000049}{Bug}}]\end{DoxyRefDesc}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{a00179_acba102868ca0868394f89f76fdda493a}\label{a00179_acba102868ca0868394f89f76fdda493a} 
+\index{R100\_Tables.h@{R100\_Tables.h}!MAX\_ZP\_ADCS@{MAX\_ZP\_ADCS}}
+\index{MAX\_ZP\_ADCS@{MAX\_ZP\_ADCS}!R100\_Tables.h@{R100\_Tables.h}}
+\doxysubsubsection{\texorpdfstring{MAX\_ZP\_ADCS}{MAX\_ZP\_ADCS}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+ZP\+\_\+\+ADCS~0x00\+FFFFFF}
+
+\Hypertarget{a00179_a941efc1e5afecf27189dd5c34706d485}\label{a00179_a941efc1e5afecf27189dd5c34706d485} 
+\index{R100\_Tables.h@{R100\_Tables.h}!MAX\_ZP\_ITEMS@{MAX\_ZP\_ITEMS}}
+\index{MAX\_ZP\_ITEMS@{MAX\_ZP\_ITEMS}!R100\_Tables.h@{R100\_Tables.h}}
+\doxysubsubsection{\texorpdfstring{MAX\_ZP\_ITEMS}{MAX\_ZP\_ITEMS}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+ZP\+\_\+\+ITEMS~35}
+
+\Hypertarget{a00179_a9193e1db9fcda28c34ce37f8c43398f1}\label{a00179_a9193e1db9fcda28c34ce37f8c43398f1} 
+\index{R100\_Tables.h@{R100\_Tables.h}!MAX\_ZP\_MATRIX\_ITEMS@{MAX\_ZP\_MATRIX\_ITEMS}}
+\index{MAX\_ZP\_MATRIX\_ITEMS@{MAX\_ZP\_MATRIX\_ITEMS}!R100\_Tables.h@{R100\_Tables.h}}
+\doxysubsubsection{\texorpdfstring{MAX\_ZP\_MATRIX\_ITEMS}{MAX\_ZP\_MATRIX\_ITEMS}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+ZP\+\_\+\+MATRIX\+\_\+\+ITEMS~5}
+
+\Hypertarget{a00179_a0984601e55dab4657a6572e22c681531}\label{a00179_a0984601e55dab4657a6572e22c681531} 
+\index{R100\_Tables.h@{R100\_Tables.h}!MAX\_ZP\_OHMS@{MAX\_ZP\_OHMS}}
+\index{MAX\_ZP\_OHMS@{MAX\_ZP\_OHMS}!R100\_Tables.h@{R100\_Tables.h}}
+\doxysubsubsection{\texorpdfstring{MAX\_ZP\_OHMS}{MAX\_ZP\_OHMS}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+ZP\+\_\+\+OHMS~9999}
+
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{a00179_a6f4ef3e20615789feb5d0dbb91ad0262}\label{a00179_a6f4ef3e20615789feb5d0dbb91ad0262} 
+\index{R100\_Tables.h@{R100\_Tables.h}!ENERGY\_TABLE\_t@{ENERGY\_TABLE\_t}}
+\index{ENERGY\_TABLE\_t@{ENERGY\_TABLE\_t}!R100\_Tables.h@{R100\_Tables.h}}
+\doxysubsubsection{\texorpdfstring{ENERGY\_TABLE\_t}{ENERGY\_TABLE\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{a00606}{ENERGY\+\_\+\+TABLE\+\_\+\+STRUCT}} \mbox{\hyperlink{a00179_a6f4ef3e20615789feb5d0dbb91ad0262}{ENERGY\+\_\+\+TABLE\+\_\+t}}}
+
+\Hypertarget{a00179_a2d31b9db80cda3badfd9911a692968f3}\label{a00179_a2d31b9db80cda3badfd9911a692968f3} 
+\index{R100\_Tables.h@{R100\_Tables.h}!ZP\_MATRIX\_t@{ZP\_MATRIX\_t}}
+\index{ZP\_MATRIX\_t@{ZP\_MATRIX\_t}!R100\_Tables.h@{R100\_Tables.h}}
+\doxysubsubsection{\texorpdfstring{ZP\_MATRIX\_t}{ZP\_MATRIX\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{a00602}{ZP\+\_\+\+MATRIX\+\_\+\+STRUCT}} \mbox{\hyperlink{a00179_a2d31b9db80cda3badfd9911a692968f3}{ZP\+\_\+\+MATRIX\+\_\+t}}}
+
+
+
+Define the Energy Table structure. 
+
+\Hypertarget{a00179_a28bbbf0042f0b060cab4002329e9cc24}\label{a00179_a28bbbf0042f0b060cab4002329e9cc24} 
+\index{R100\_Tables.h@{R100\_Tables.h}!ZP\_TABLE\_t@{ZP\_TABLE\_t}}
+\index{ZP\_TABLE\_t@{ZP\_TABLE\_t}!R100\_Tables.h@{R100\_Tables.h}}
+\doxysubsubsection{\texorpdfstring{ZP\_TABLE\_t}{ZP\_TABLE\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{a00598}{ZP\+\_\+\+TABLE\+\_\+\+STRUCT}} \mbox{\hyperlink{a00179_a28bbbf0042f0b060cab4002329e9cc24}{ZP\+\_\+\+TABLE\+\_\+t}}}
+
+
+
+\texorpdfstring{$<$}{<} Define the ZP Table structure 
+
+Define the ZP Matrix structure 
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{a00179_a57b9c3b8c26ea1b7f0149208e9871d75}\label{a00179_a57b9c3b8c26ea1b7f0149208e9871d75} 
+\index{R100\_Tables.h@{R100\_Tables.h}!energy\_table@{energy\_table}}
+\index{energy\_table@{energy\_table}!R100\_Tables.h@{R100\_Tables.h}}
+\doxysubsubsection{\texorpdfstring{energy\_table}{energy\_table}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{a00179_a6f4ef3e20615789feb5d0dbb91ad0262}{ENERGY\+\_\+\+TABLE\+\_\+t}} energy\+\_\+table\mbox{[}$\,$\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{a00179_af253c3b818894e5fff650633d57a1bf7}\label{a00179_af253c3b818894e5fff650633d57a1bf7} 
+\index{R100\_Tables.h@{R100\_Tables.h}!golden\_zp\_matrix@{golden\_zp\_matrix}}
+\index{golden\_zp\_matrix@{golden\_zp\_matrix}!R100\_Tables.h@{R100\_Tables.h}}
+\doxysubsubsection{\texorpdfstring{golden\_zp\_matrix}{golden\_zp\_matrix}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{a00179_a2d31b9db80cda3badfd9911a692968f3}{ZP\+\_\+\+MATRIX\+\_\+t}} golden\+\_\+zp\+\_\+matrix\mbox{[}$\,$\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{a00179_a5aee5a9ca1781fec0379448d28330523}\label{a00179_a5aee5a9ca1781fec0379448d28330523} 
+\index{R100\_Tables.h@{R100\_Tables.h}!golden\_zp\_table@{golden\_zp\_table}}
+\index{golden\_zp\_table@{golden\_zp\_table}!R100\_Tables.h@{R100\_Tables.h}}
+\doxysubsubsection{\texorpdfstring{golden\_zp\_table}{golden\_zp\_table}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{a00179_a28bbbf0042f0b060cab4002329e9cc24}{ZP\+\_\+\+TABLE\+\_\+t}} golden\+\_\+zp\+\_\+table\mbox{[}$\,$\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
+

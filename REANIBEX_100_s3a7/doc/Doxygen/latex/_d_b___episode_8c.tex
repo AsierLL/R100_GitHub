@@ -1,0 +1,545 @@
+\doxysection{C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\+DB\+\_\+\+Episode.c File Reference}
+\hypertarget{_d_b___episode_8c}{}\label{_d_b___episode_8c}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/DB\_Episode.c@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/DB\_Episode.c}}
+{\ttfamily \#include "{}thread\+\_\+audio.\+h"{}}\newline
+{\ttfamily \#include "{}thread\+\_\+recorder.\+h"{}}\newline
+{\ttfamily \#include "{}thread\+\_\+pat\+Mon\+\_\+hal.\+h"{}}\newline
+{\ttfamily \#include "{}thread\+\_\+defibrillator\+\_\+hal.\+h"{}}\newline
+{\ttfamily \#include "{}DB\+\_\+\+Episode.\+h"{}}\newline
+{\ttfamily \#include "{}thread\+\_\+drd\+\_\+entry.\+h"{}}\newline
+{\ttfamily \#include "{}thread\+\_\+sys\+Mon\+\_\+entry.\+h"{}}\newline
+{\ttfamily \#include "{}thread\+\_\+comm\+\_\+entry.\+h"{}}\newline
+{\ttfamily \#include "{}R100\+\_\+\+Errors.\+h"{}}\newline
+Include dependency graph for DB\+\_\+\+Episode.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_d_b___episode_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_d_b___episode_8c_ae1ddef58314c51c455b37de940b1683f}{EPI\+\_\+\+FOLDER\+\_\+\+NAME}}~"{}EPISODES"{}
+\begin{DoxyCompactList}\small\item\em Folder name for episodes. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_d_b___episode_8c_a9c47d850e9073387b5ad9114323b8f01}{MAX\+\_\+\+EVENTS\+\_\+\+BLOCK}}~8
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{_d_b___episode_8c_a3b99dd00370ea9c667adfefaa16e2071}{Assign\+\_\+\+Episode\+\_\+\+Number}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Name)
+\begin{DoxyCompactList}\small\item\em Assign an episode number to a filename. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{_d_b___episode_8c_aa8e74911758e8e1f819ec7b072c8ea1b}{Episode\+\_\+\+Header\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Initializes the episode header values. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{_d_b___episode_8c_ae56ae470098d9e90ed6cb233c89e7d8d}{DB\+\_\+\+Episode\+\_\+\+Create}} (void)
+\begin{DoxyCompactList}\small\item\em Creates a new episode file. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{_d_b___episode_8c_a9c7992d33427de65e7c491a76d976754}{DB\+\_\+\+Episode\+\_\+\+Write}} (void)
+\begin{DoxyCompactList}\small\item\em Collects the episode block data and write to the episode file. This way, the write sizes are multiple of cluster sizes, thus achieving max performance. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_d_b___episode_8c_ad211c99edc4c2cf00a79de123ff7ad8e}{DB\+\_\+\+Episode\+\_\+\+Close}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} patient\+\_\+conn)
+\begin{DoxyCompactList}\small\item\em Close episode file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_d_b___episode_8c_ad9d862bce53be58f17e8d75fa3e8b15f}{DB\+\_\+\+Episode\+\_\+\+Set\+\_\+\+Event}} (\mbox{\hyperlink{event__ids_8h_a8a69d5479d2e704ca706ac22f660b3be}{REG\+\_\+\+EVENTS\+\_\+e}} \mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_aa2a57ae34e4f78ad4834b87e905bda7b}{event\+\_\+id}})
+\begin{DoxyCompactList}\small\item\em Writes an event in the episode block. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_d_b___episode_8c_ac9e8a02838035c248ba503b677bff241}{DB\+\_\+\+Episode\+\_\+\+Resample}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Name)
+\begin{DoxyCompactList}\small\item\em Resamples an episode from 5\+:1. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{_d_b___episode_8c_a65dd6d370a11890d74934543b3a33fb9}{DB\+\_\+\+Episode\+\_\+\+Get\+\_\+\+Current\+\_\+\+Filename}} (void)
+\begin{DoxyCompactList}\small\item\em Returns the last Episode name. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_d_b___episode_8c_a5d56dbd9be0eebd29dccd8fd8534f189}{DB\+\_\+\+Episode\+\_\+\+Set\+\_\+\+Current\+\_\+\+Filename}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Name)
+\begin{DoxyCompactList}\small\item\em Sets an episode filename (for sending WEE files from Test) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{_d_b___episode_8c_a30c87ad6d4062ea23617671673984c64}{DB\+\_\+\+Is\+\_\+\+Episode\+\_\+\+Sent}} (void)
+\begin{DoxyCompactList}\small\item\em checks if a episode has been send to the external server \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{_d_b___episode_8c_aae2ed6b9070e9d0d148ac200c57f58fa}{Check\+\_\+\+Episode\+\_\+\+Present}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Name)
+\begin{DoxyCompactList}\small\item\em checks if a episode is present in the folder \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_d_b___episode_8c_abfccf54135995b02c5adb82e5135925f}{DB\+\_\+\+Episode\+\_\+\+Delete}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Name)
+\begin{DoxyCompactList}\small\item\em deletes a episode \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{_d_b___episode_8c_a1493affeb36518440d16ff78a75cf52b}{FSM\+\_\+\+RCP\+\_\+time\+\_\+secs}}
+\begin{DoxyCompactList}\small\item\em Current RCP time in seconds. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{_d_b___episode_8c_a0b65f4036cdb5814f254d1584d21353b}{FSM\+\_\+shock\+\_\+energy}}
+\begin{DoxyCompactList}\small\item\em Energy to apply in the shock. \end{DoxyCompactList}\item 
+static FX\+\_\+\+MEDIA \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{_d_b___episode_8c_aca72fda2b1efebc18972c8df610ff63b}{sd\+\_\+media}} = (FX\+\_\+\+MEDIA \texorpdfstring{$\ast$}{*})\mbox{\hyperlink{_s_c_e_2types__basic_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}}
+\begin{DoxyCompactList}\small\item\em Handler of the SD media card. \end{DoxyCompactList}\item 
+static FX\+\_\+\+FILE \mbox{\hyperlink{_d_b___episode_8c_ac0b63b5f51740262edec1be30c891cf0}{epi\+\_\+file}}
+\begin{DoxyCompactList}\small\item\em Episode file handler. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \mbox{\hyperlink{_d_b___episode_8c_a2b5e82839994f29d5c7117bca479fe01}{epi\+\_\+filename}} \mbox{[}32\mbox{]}
+\begin{DoxyCompactList}\small\item\em File name. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \mbox{\hyperlink{_d_b___episode_8c_a660e8f0e81e902141fd984ac47913c32}{fullname}} \mbox{[}32\mbox{]}
+\begin{DoxyCompactList}\small\item\em Episode full name. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \mbox{\hyperlink{_d_b___episode_8c_a16831951693177596aa1d76cea048881}{episode\+\_\+time}}
+\begin{DoxyCompactList}\small\item\em Episode time counter. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{_d_b___episode_8c_aca050ab48c2c36d9d95a39e1e55c6962}{episode\+\_\+buffer}} \mbox{[}\mbox{\hyperlink{_d_b___episode_8h_a617e579d27d22e2133bc6f0a5f7ed4e8}{EPISODE\+\_\+\+BLOCK\+\_\+\+SZ}}\mbox{]}
+\begin{DoxyCompactList}\small\item\em Episode generic buffer. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{_d_b___episode_8c_a5063ceab6d56e6df3653072a43f1d5b9}{episode\+\_\+send\+\_\+finish}} = false
+\begin{DoxyCompactList}\small\item\em Episode send finish close up flag. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{struct_d_b___e_p_i_s_o_d_e___h_e_a_d_e_r__t}{DB\+\_\+\+EPISODE\+\_\+\+HEADER\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{_d_b___episode_8c_a63d4b681f56667632ee55a5ecad7c327}{p\+Epi\+\_\+\+Header}}
+\begin{DoxyCompactList}\small\item\em Pointer to episode header. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{struct_d_b___e_p_i_s_o_d_e___b_l_o_c_k__t}{DB\+\_\+\+EPISODE\+\_\+\+BLOCK\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{_d_b___episode_8c_aebe60be883ea1feda4fe6030cd551b65}{p\+Epi\+\_\+\+Block}}
+\begin{DoxyCompactList}\small\item\em Pointer to episode block data. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{struct_d_r_d___r_e_s_u_l_t__t}{DRD\+\_\+\+RESULT\+\_\+t}} \mbox{\hyperlink{_d_b___episode_8c_a66258276574da123595f57a04e79c698}{drd\+\_\+result}}
+\item 
+static \mbox{\hyperlink{struct_d_e_v_i_c_e___d_a_t_e__t}{DEVICE\+\_\+\+DATE\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{_d_b___episode_8c_a2e103a2447fead44e4331b13d3f2bdd8}{p\+Date}}
+\item 
+static \mbox{\hyperlink{struct_d_e_v_i_c_e___t_i_m_e__t}{DEVICE\+\_\+\+TIME\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{_d_b___episode_8c_a0ea21360d95640023da09cc1306fe29d}{p\+Time}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVersion}{Version}
+v1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+21/06/2018 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+ltorres 
+\end{DoxyAuthor}
+\begin{DoxyWarning}{Warning}
+author date version .-\/ Edition 
+\end{DoxyWarning}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000009}{Bug}}]\end{DoxyRefDesc}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{_d_b___episode_8c_ae1ddef58314c51c455b37de940b1683f}\label{_d_b___episode_8c_ae1ddef58314c51c455b37de940b1683f} 
+\index{DB\_Episode.c@{DB\_Episode.c}!EPI\_FOLDER\_NAME@{EPI\_FOLDER\_NAME}}
+\index{EPI\_FOLDER\_NAME@{EPI\_FOLDER\_NAME}!DB\_Episode.c@{DB\_Episode.c}}
+\doxysubsubsection{\texorpdfstring{EPI\_FOLDER\_NAME}{EPI\_FOLDER\_NAME}}
+{\footnotesize\ttfamily \#define EPI\+\_\+\+FOLDER\+\_\+\+NAME~"{}EPISODES"{}}
+
+
+
+Folder name for episodes. 
+
+\Hypertarget{_d_b___episode_8c_a9c47d850e9073387b5ad9114323b8f01}\label{_d_b___episode_8c_a9c47d850e9073387b5ad9114323b8f01} 
+\index{DB\_Episode.c@{DB\_Episode.c}!MAX\_EVENTS\_BLOCK@{MAX\_EVENTS\_BLOCK}}
+\index{MAX\_EVENTS\_BLOCK@{MAX\_EVENTS\_BLOCK}!DB\_Episode.c@{DB\_Episode.c}}
+\doxysubsubsection{\texorpdfstring{MAX\_EVENTS\_BLOCK}{MAX\_EVENTS\_BLOCK}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+EVENTS\+\_\+\+BLOCK~8}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_d_b___episode_8c_a3b99dd00370ea9c667adfefaa16e2071}\label{_d_b___episode_8c_a3b99dd00370ea9c667adfefaa16e2071} 
+\index{DB\_Episode.c@{DB\_Episode.c}!Assign\_Episode\_Number@{Assign\_Episode\_Number}}
+\index{Assign\_Episode\_Number@{Assign\_Episode\_Number}!DB\_Episode.c@{DB\_Episode.c}}
+\doxysubsubsection{\texorpdfstring{Assign\_Episode\_Number()}{Assign\_Episode\_Number()}}
+{\footnotesize\ttfamily static void Assign\+\_\+\+Episode\+\_\+\+Number (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Assign an episode number to a filename. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Name} & pointer to a filename to raster\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_d_b___episode_8c_a3b99dd00370ea9c667adfefaa16e2071_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_d_b___episode_8c_aae2ed6b9070e9d0d148ac200c57f58fa}\label{_d_b___episode_8c_aae2ed6b9070e9d0d148ac200c57f58fa} 
+\index{DB\_Episode.c@{DB\_Episode.c}!Check\_Episode\_Present@{Check\_Episode\_Present}}
+\index{Check\_Episode\_Present@{Check\_Episode\_Present}!DB\_Episode.c@{DB\_Episode.c}}
+\doxysubsubsection{\texorpdfstring{Check\_Episode\_Present()}{Check\_Episode\_Present()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} Check\+\_\+\+Episode\+\_\+\+Present (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Name }\end{DoxyParamCaption})}
+
+
+
+checks if a episode is present in the folder 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Name} & pointer to a filename to raster\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if present, FALSE if not 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_d_b___episode_8c_aae2ed6b9070e9d0d148ac200c57f58fa_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_d_b___episode_8c_ad211c99edc4c2cf00a79de123ff7ad8e}\label{_d_b___episode_8c_ad211c99edc4c2cf00a79de123ff7ad8e} 
+\index{DB\_Episode.c@{DB\_Episode.c}!DB\_Episode\_Close@{DB\_Episode\_Close}}
+\index{DB\_Episode\_Close@{DB\_Episode\_Close}!DB\_Episode.c@{DB\_Episode.c}}
+\doxysubsubsection{\texorpdfstring{DB\_Episode\_Close()}{DB\_Episode\_Close()}}
+{\footnotesize\ttfamily void DB\+\_\+\+Episode\+\_\+\+Close (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}}}]{patient\+\_\+conn }\end{DoxyParamCaption})}
+
+
+
+Close episode file. 
+
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=276pt]{_d_b___episode_8c_ad211c99edc4c2cf00a79de123ff7ad8e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_d_b___episode_8c_ad211c99edc4c2cf00a79de123ff7ad8e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_d_b___episode_8c_ae56ae470098d9e90ed6cb233c89e7d8d}\label{_d_b___episode_8c_ae56ae470098d9e90ed6cb233c89e7d8d} 
+\index{DB\_Episode.c@{DB\_Episode.c}!DB\_Episode\_Create@{DB\_Episode\_Create}}
+\index{DB\_Episode\_Create@{DB\_Episode\_Create}!DB\_Episode.c@{DB\_Episode.c}}
+\doxysubsubsection{\texorpdfstring{DB\_Episode\_Create()}{DB\_Episode\_Create()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} DB\+\_\+\+Episode\+\_\+\+Create (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Creates a new episode file. 
+
+\begin{DoxyReturn}{Returns}
+operation result (true or false) 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_d_b___episode_8c_ae56ae470098d9e90ed6cb233c89e7d8d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_d_b___episode_8c_ae56ae470098d9e90ed6cb233c89e7d8d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_d_b___episode_8c_abfccf54135995b02c5adb82e5135925f}\label{_d_b___episode_8c_abfccf54135995b02c5adb82e5135925f} 
+\index{DB\_Episode.c@{DB\_Episode.c}!DB\_Episode\_Delete@{DB\_Episode\_Delete}}
+\index{DB\_Episode\_Delete@{DB\_Episode\_Delete}!DB\_Episode.c@{DB\_Episode.c}}
+\doxysubsubsection{\texorpdfstring{DB\_Episode\_Delete()}{DB\_Episode\_Delete()}}
+{\footnotesize\ttfamily void DB\+\_\+\+Episode\+\_\+\+Delete (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Name }\end{DoxyParamCaption})}
+
+
+
+deletes a episode 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Name} & pointer to a filename\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\Hypertarget{_d_b___episode_8c_a65dd6d370a11890d74934543b3a33fb9}\label{_d_b___episode_8c_a65dd6d370a11890d74934543b3a33fb9} 
+\index{DB\_Episode.c@{DB\_Episode.c}!DB\_Episode\_Get\_Current\_Filename@{DB\_Episode\_Get\_Current\_Filename}}
+\index{DB\_Episode\_Get\_Current\_Filename@{DB\_Episode\_Get\_Current\_Filename}!DB\_Episode.c@{DB\_Episode.c}}
+\doxysubsubsection{\texorpdfstring{DB\_Episode\_Get\_Current\_Filename()}{DB\_Episode\_Get\_Current\_Filename()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \texorpdfstring{$\ast$}{*} DB\+\_\+\+Episode\+\_\+\+Get\+\_\+\+Current\+\_\+\+Filename (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Returns the last Episode name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to a test filename 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_d_b___episode_8c_a65dd6d370a11890d74934543b3a33fb9_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_d_b___episode_8c_ac9e8a02838035c248ba503b677bff241}\label{_d_b___episode_8c_ac9e8a02838035c248ba503b677bff241} 
+\index{DB\_Episode.c@{DB\_Episode.c}!DB\_Episode\_Resample@{DB\_Episode\_Resample}}
+\index{DB\_Episode\_Resample@{DB\_Episode\_Resample}!DB\_Episode.c@{DB\_Episode.c}}
+\doxysubsubsection{\texorpdfstring{DB\_Episode\_Resample()}{DB\_Episode\_Resample()}}
+{\footnotesize\ttfamily void DB\+\_\+\+Episode\+\_\+\+Resample (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Name }\end{DoxyParamCaption})}
+
+
+
+Resamples an episode from 5\+:1. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Name} & pointer to the name of the episode to resample\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\Hypertarget{_d_b___episode_8c_a5d56dbd9be0eebd29dccd8fd8534f189}\label{_d_b___episode_8c_a5d56dbd9be0eebd29dccd8fd8534f189} 
+\index{DB\_Episode.c@{DB\_Episode.c}!DB\_Episode\_Set\_Current\_Filename@{DB\_Episode\_Set\_Current\_Filename}}
+\index{DB\_Episode\_Set\_Current\_Filename@{DB\_Episode\_Set\_Current\_Filename}!DB\_Episode.c@{DB\_Episode.c}}
+\doxysubsubsection{\texorpdfstring{DB\_Episode\_Set\_Current\_Filename()}{DB\_Episode\_Set\_Current\_Filename()}}
+{\footnotesize\ttfamily void DB\+\_\+\+Episode\+\_\+\+Set\+\_\+\+Current\+\_\+\+Filename (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Name }\end{DoxyParamCaption})}
+
+
+
+Sets an episode filename (for sending WEE files from Test) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_d_b___episode_8c_a5d56dbd9be0eebd29dccd8fd8534f189_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_d_b___episode_8c_ad9d862bce53be58f17e8d75fa3e8b15f}\label{_d_b___episode_8c_ad9d862bce53be58f17e8d75fa3e8b15f} 
+\index{DB\_Episode.c@{DB\_Episode.c}!DB\_Episode\_Set\_Event@{DB\_Episode\_Set\_Event}}
+\index{DB\_Episode\_Set\_Event@{DB\_Episode\_Set\_Event}!DB\_Episode.c@{DB\_Episode.c}}
+\doxysubsubsection{\texorpdfstring{DB\_Episode\_Set\_Event()}{DB\_Episode\_Set\_Event()}}
+{\footnotesize\ttfamily void DB\+\_\+\+Episode\+\_\+\+Set\+\_\+\+Event (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{event__ids_8h_a8a69d5479d2e704ca706ac22f660b3be}{REG\+\_\+\+EVENTS\+\_\+e}}}]{event\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Writes an event in the episode block. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event\+\_\+id} & \mbox{[}in\mbox{]} event identifier to register\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_d_b___episode_8c_ad9d862bce53be58f17e8d75fa3e8b15f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_d_b___episode_8c_ad9d862bce53be58f17e8d75fa3e8b15f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_d_b___episode_8c_a9c7992d33427de65e7c491a76d976754}\label{_d_b___episode_8c_a9c7992d33427de65e7c491a76d976754} 
+\index{DB\_Episode.c@{DB\_Episode.c}!DB\_Episode\_Write@{DB\_Episode\_Write}}
+\index{DB\_Episode\_Write@{DB\_Episode\_Write}!DB\_Episode.c@{DB\_Episode.c}}
+\doxysubsubsection{\texorpdfstring{DB\_Episode\_Write()}{DB\_Episode\_Write()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} DB\+\_\+\+Episode\+\_\+\+Write (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Collects the episode block data and write to the episode file. This way, the write sizes are multiple of cluster sizes, thus achieving max performance. 
+
+\begin{DoxyReturn}{Returns}
+operation result 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_d_b___episode_8c_a9c7992d33427de65e7c491a76d976754_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_d_b___episode_8c_a9c7992d33427de65e7c491a76d976754_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_d_b___episode_8c_a30c87ad6d4062ea23617671673984c64}\label{_d_b___episode_8c_a30c87ad6d4062ea23617671673984c64} 
+\index{DB\_Episode.c@{DB\_Episode.c}!DB\_Is\_Episode\_Sent@{DB\_Is\_Episode\_Sent}}
+\index{DB\_Is\_Episode\_Sent@{DB\_Is\_Episode\_Sent}!DB\_Episode.c@{DB\_Episode.c}}
+\doxysubsubsection{\texorpdfstring{DB\_Is\_Episode\_Sent()}{DB\_Is\_Episode\_Sent()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} DB\+\_\+\+Is\+\_\+\+Episode\+\_\+\+Sent (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+checks if a episode has been send to the external server 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if sent, FALSE if not 
+\end{DoxyReturn}
+\Hypertarget{_d_b___episode_8c_aa8e74911758e8e1f819ec7b072c8ea1b}\label{_d_b___episode_8c_aa8e74911758e8e1f819ec7b072c8ea1b} 
+\index{DB\_Episode.c@{DB\_Episode.c}!Episode\_Header\_Init@{Episode\_Header\_Init}}
+\index{Episode\_Header\_Init@{Episode\_Header\_Init}!DB\_Episode.c@{DB\_Episode.c}}
+\doxysubsubsection{\texorpdfstring{Episode\_Header\_Init()}{Episode\_Header\_Init()}}
+{\footnotesize\ttfamily static void Episode\+\_\+\+Header\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Initializes the episode header values. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{_d_b___episode_8c_aa8e74911758e8e1f819ec7b072c8ea1b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_d_b___episode_8c_aa8e74911758e8e1f819ec7b072c8ea1b_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{_d_b___episode_8c_a66258276574da123595f57a04e79c698}\label{_d_b___episode_8c_a66258276574da123595f57a04e79c698} 
+\index{DB\_Episode.c@{DB\_Episode.c}!drd\_result@{drd\_result}}
+\index{drd\_result@{drd\_result}!DB\_Episode.c@{DB\_Episode.c}}
+\doxysubsubsection{\texorpdfstring{drd\_result}{drd\_result}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_d_r_d___r_e_s_u_l_t__t}{DRD\+\_\+\+RESULT\+\_\+t}} drd\+\_\+result\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{_d_b___episode_8c_ac0b63b5f51740262edec1be30c891cf0}\label{_d_b___episode_8c_ac0b63b5f51740262edec1be30c891cf0} 
+\index{DB\_Episode.c@{DB\_Episode.c}!epi\_file@{epi\_file}}
+\index{epi\_file@{epi\_file}!DB\_Episode.c@{DB\_Episode.c}}
+\doxysubsubsection{\texorpdfstring{epi\_file}{epi\_file}}
+{\footnotesize\ttfamily FX\+\_\+\+FILE epi\+\_\+file\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Episode file handler. 
+
+\Hypertarget{_d_b___episode_8c_a2b5e82839994f29d5c7117bca479fe01}\label{_d_b___episode_8c_a2b5e82839994f29d5c7117bca479fe01} 
+\index{DB\_Episode.c@{DB\_Episode.c}!epi\_filename@{epi\_filename}}
+\index{epi\_filename@{epi\_filename}!DB\_Episode.c@{DB\_Episode.c}}
+\doxysubsubsection{\texorpdfstring{epi\_filename}{epi\_filename}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} epi\+\_\+filename\mbox{[}32\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+File name. 
+
+\Hypertarget{_d_b___episode_8c_aca050ab48c2c36d9d95a39e1e55c6962}\label{_d_b___episode_8c_aca050ab48c2c36d9d95a39e1e55c6962} 
+\index{DB\_Episode.c@{DB\_Episode.c}!episode\_buffer@{episode\_buffer}}
+\index{episode\_buffer@{episode\_buffer}!DB\_Episode.c@{DB\_Episode.c}}
+\doxysubsubsection{\texorpdfstring{episode\_buffer}{episode\_buffer}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} episode\+\_\+buffer\mbox{[}\mbox{\hyperlink{_d_b___episode_8h_a617e579d27d22e2133bc6f0a5f7ed4e8}{EPISODE\+\_\+\+BLOCK\+\_\+\+SZ}}\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Episode generic buffer. 
+
+\Hypertarget{_d_b___episode_8c_a5063ceab6d56e6df3653072a43f1d5b9}\label{_d_b___episode_8c_a5063ceab6d56e6df3653072a43f1d5b9} 
+\index{DB\_Episode.c@{DB\_Episode.c}!episode\_send\_finish@{episode\_send\_finish}}
+\index{episode\_send\_finish@{episode\_send\_finish}!DB\_Episode.c@{DB\_Episode.c}}
+\doxysubsubsection{\texorpdfstring{episode\_send\_finish}{episode\_send\_finish}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} episode\+\_\+send\+\_\+finish = false\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Episode send finish close up flag. 
+
+\Hypertarget{_d_b___episode_8c_a16831951693177596aa1d76cea048881}\label{_d_b___episode_8c_a16831951693177596aa1d76cea048881} 
+\index{DB\_Episode.c@{DB\_Episode.c}!episode\_time@{episode\_time}}
+\index{episode\_time@{episode\_time}!DB\_Episode.c@{DB\_Episode.c}}
+\doxysubsubsection{\texorpdfstring{episode\_time}{episode\_time}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} episode\+\_\+time\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Episode time counter. 
+
+\Hypertarget{_d_b___episode_8c_a1493affeb36518440d16ff78a75cf52b}\label{_d_b___episode_8c_a1493affeb36518440d16ff78a75cf52b} 
+\index{DB\_Episode.c@{DB\_Episode.c}!FSM\_RCP\_time\_secs@{FSM\_RCP\_time\_secs}}
+\index{FSM\_RCP\_time\_secs@{FSM\_RCP\_time\_secs}!DB\_Episode.c@{DB\_Episode.c}}
+\doxysubsubsection{\texorpdfstring{FSM\_RCP\_time\_secs}{FSM\_RCP\_time\_secs}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} FSM\+\_\+\+RCP\+\_\+time\+\_\+secs\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Current RCP time in seconds. 
+
+\Hypertarget{_d_b___episode_8c_a0b65f4036cdb5814f254d1584d21353b}\label{_d_b___episode_8c_a0b65f4036cdb5814f254d1584d21353b} 
+\index{DB\_Episode.c@{DB\_Episode.c}!FSM\_shock\_energy@{FSM\_shock\_energy}}
+\index{FSM\_shock\_energy@{FSM\_shock\_energy}!DB\_Episode.c@{DB\_Episode.c}}
+\doxysubsubsection{\texorpdfstring{FSM\_shock\_energy}{FSM\_shock\_energy}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} FSM\+\_\+shock\+\_\+energy\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Energy to apply in the shock. 
+
+\Hypertarget{_d_b___episode_8c_a660e8f0e81e902141fd984ac47913c32}\label{_d_b___episode_8c_a660e8f0e81e902141fd984ac47913c32} 
+\index{DB\_Episode.c@{DB\_Episode.c}!fullname@{fullname}}
+\index{fullname@{fullname}!DB\_Episode.c@{DB\_Episode.c}}
+\doxysubsubsection{\texorpdfstring{fullname}{fullname}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} fullname\mbox{[}32\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Episode full name. 
+
+\Hypertarget{_d_b___episode_8c_a2e103a2447fead44e4331b13d3f2bdd8}\label{_d_b___episode_8c_a2e103a2447fead44e4331b13d3f2bdd8} 
+\index{DB\_Episode.c@{DB\_Episode.c}!pDate@{pDate}}
+\index{pDate@{pDate}!DB\_Episode.c@{DB\_Episode.c}}
+\doxysubsubsection{\texorpdfstring{pDate}{pDate}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_d_e_v_i_c_e___d_a_t_e__t}{DEVICE\+\_\+\+DATE\+\_\+t}}\texorpdfstring{$\ast$}{*} p\+Date\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{_d_b___episode_8c_aebe60be883ea1feda4fe6030cd551b65}\label{_d_b___episode_8c_aebe60be883ea1feda4fe6030cd551b65} 
+\index{DB\_Episode.c@{DB\_Episode.c}!pEpi\_Block@{pEpi\_Block}}
+\index{pEpi\_Block@{pEpi\_Block}!DB\_Episode.c@{DB\_Episode.c}}
+\doxysubsubsection{\texorpdfstring{pEpi\_Block}{pEpi\_Block}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_d_b___e_p_i_s_o_d_e___b_l_o_c_k__t}{DB\+\_\+\+EPISODE\+\_\+\+BLOCK\+\_\+t}}\texorpdfstring{$\ast$}{*} p\+Epi\+\_\+\+Block\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Pointer to episode block data. 
+
+\Hypertarget{_d_b___episode_8c_a63d4b681f56667632ee55a5ecad7c327}\label{_d_b___episode_8c_a63d4b681f56667632ee55a5ecad7c327} 
+\index{DB\_Episode.c@{DB\_Episode.c}!pEpi\_Header@{pEpi\_Header}}
+\index{pEpi\_Header@{pEpi\_Header}!DB\_Episode.c@{DB\_Episode.c}}
+\doxysubsubsection{\texorpdfstring{pEpi\_Header}{pEpi\_Header}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_d_b___e_p_i_s_o_d_e___h_e_a_d_e_r__t}{DB\+\_\+\+EPISODE\+\_\+\+HEADER\+\_\+t}}\texorpdfstring{$\ast$}{*} p\+Epi\+\_\+\+Header\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Pointer to episode header. 
+
+\Hypertarget{_d_b___episode_8c_a0ea21360d95640023da09cc1306fe29d}\label{_d_b___episode_8c_a0ea21360d95640023da09cc1306fe29d} 
+\index{DB\_Episode.c@{DB\_Episode.c}!pTime@{pTime}}
+\index{pTime@{pTime}!DB\_Episode.c@{DB\_Episode.c}}
+\doxysubsubsection{\texorpdfstring{pTime}{pTime}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_d_e_v_i_c_e___t_i_m_e__t}{DEVICE\+\_\+\+TIME\+\_\+t}}\texorpdfstring{$\ast$}{*} p\+Time\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{_d_b___episode_8c_aca72fda2b1efebc18972c8df610ff63b}\label{_d_b___episode_8c_aca72fda2b1efebc18972c8df610ff63b} 
+\index{DB\_Episode.c@{DB\_Episode.c}!sd\_media@{sd\_media}}
+\index{sd\_media@{sd\_media}!DB\_Episode.c@{DB\_Episode.c}}
+\doxysubsubsection{\texorpdfstring{sd\_media}{sd\_media}}
+{\footnotesize\ttfamily FX\+\_\+\+MEDIA\texorpdfstring{$\ast$}{*} sd\+\_\+media = (FX\+\_\+\+MEDIA \texorpdfstring{$\ast$}{*})\mbox{\hyperlink{_s_c_e_2types__basic_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Handler of the SD media card. 
+

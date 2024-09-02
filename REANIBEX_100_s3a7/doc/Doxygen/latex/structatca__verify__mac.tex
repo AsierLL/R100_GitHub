@@ -1,0 +1,135 @@
+\doxysection{atca\+\_\+verify\+\_\+mac Struct Reference}
+\hypertarget{structatca__verify__mac}{}\label{structatca__verify__mac}\index{atca\_verify\_mac@{atca\_verify\_mac}}
+
+
+{\ttfamily \#include $<$atca\+\_\+host.\+h$>$}
+
+
+
+Collaboration diagram for atca\+\_\+verify\+\_\+mac\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=169pt]{structatca__verify__mac__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{structatca__verify__mac_ac90559108804dc16ac1ac91a0212bff9}{mode}}
+\begin{DoxyCompactList}\small\item\em Mode (Param1) parameter used in Verify command. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{structatca__verify__mac_ad4c4854451abd367cf8a13aad5f6372b}{key\+\_\+id}}
+\begin{DoxyCompactList}\small\item\em Key\+ID (Param2) used in Verify command. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structatca__verify__mac_af9b5b2327c10e3733a21878d67493a13}{signature}}
+\begin{DoxyCompactList}\small\item\em Signature used in Verify command (64 bytes). \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structatca__verify__mac_ad9de49d6a9a6db6ae151cf88f3343334}{other\+\_\+data}}
+\begin{DoxyCompactList}\small\item\em Other\+Data used in Verify command (19 bytes). \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structatca__verify__mac_ac900f5d983caa9159e76f6398273028c}{msg\+\_\+dig\+\_\+buf}}
+\begin{DoxyCompactList}\small\item\em Message digest buffer (64 bytes). \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structatca__verify__mac_a47c34c6ee0393b086b366bce0392ef0c}{io\+\_\+key}}
+\begin{DoxyCompactList}\small\item\em IO protection key value (32 bytes). \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structatca__verify__mac_a48c7b67bae80c18a333c08c167bd6e93}{sn}}
+\begin{DoxyCompactList}\small\item\em Serial number (9 bytes). \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{group__atcah_ga2eb5b7f0471f9f14bd78c63104fb4cfe}{atca\+\_\+temp\+\_\+key\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structatca__verify__mac_aedd6d27ef8edca9c1f2c86f3d0113620}{temp\+\_\+key}}
+\begin{DoxyCompactList}\small\item\em Temp\+Key. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structatca__verify__mac_a2899da5abcf5fc313f123b943aecd6c2}{mac}}
+\begin{DoxyCompactList}\small\item\em Calculated verification MAC is returned here (32 bytes). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{structatca__verify__mac_a47c34c6ee0393b086b366bce0392ef0c}\label{structatca__verify__mac_a47c34c6ee0393b086b366bce0392ef0c} 
+\index{atca\_verify\_mac@{atca\_verify\_mac}!io\_key@{io\_key}}
+\index{io\_key@{io\_key}!atca\_verify\_mac@{atca\_verify\_mac}}
+\doxysubsubsection{\texorpdfstring{io\_key}{io\_key}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} atca\+\_\+verify\+\_\+mac\+::io\+\_\+key}
+
+
+
+IO protection key value (32 bytes). 
+
+\Hypertarget{structatca__verify__mac_ad4c4854451abd367cf8a13aad5f6372b}\label{structatca__verify__mac_ad4c4854451abd367cf8a13aad5f6372b} 
+\index{atca\_verify\_mac@{atca\_verify\_mac}!key\_id@{key\_id}}
+\index{key\_id@{key\_id}!atca\_verify\_mac@{atca\_verify\_mac}}
+\doxysubsubsection{\texorpdfstring{key\_id}{key\_id}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} atca\+\_\+verify\+\_\+mac\+::key\+\_\+id}
+
+
+
+Key\+ID (Param2) used in Verify command. 
+
+\Hypertarget{structatca__verify__mac_a2899da5abcf5fc313f123b943aecd6c2}\label{structatca__verify__mac_a2899da5abcf5fc313f123b943aecd6c2} 
+\index{atca\_verify\_mac@{atca\_verify\_mac}!mac@{mac}}
+\index{mac@{mac}!atca\_verify\_mac@{atca\_verify\_mac}}
+\doxysubsubsection{\texorpdfstring{mac}{mac}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} atca\+\_\+verify\+\_\+mac\+::mac}
+
+
+
+Calculated verification MAC is returned here (32 bytes). 
+
+\Hypertarget{structatca__verify__mac_ac90559108804dc16ac1ac91a0212bff9}\label{structatca__verify__mac_ac90559108804dc16ac1ac91a0212bff9} 
+\index{atca\_verify\_mac@{atca\_verify\_mac}!mode@{mode}}
+\index{mode@{mode}!atca\_verify\_mac@{atca\_verify\_mac}}
+\doxysubsubsection{\texorpdfstring{mode}{mode}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} atca\+\_\+verify\+\_\+mac\+::mode}
+
+
+
+Mode (Param1) parameter used in Verify command. 
+
+\Hypertarget{structatca__verify__mac_ac900f5d983caa9159e76f6398273028c}\label{structatca__verify__mac_ac900f5d983caa9159e76f6398273028c} 
+\index{atca\_verify\_mac@{atca\_verify\_mac}!msg\_dig\_buf@{msg\_dig\_buf}}
+\index{msg\_dig\_buf@{msg\_dig\_buf}!atca\_verify\_mac@{atca\_verify\_mac}}
+\doxysubsubsection{\texorpdfstring{msg\_dig\_buf}{msg\_dig\_buf}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} atca\+\_\+verify\+\_\+mac\+::msg\+\_\+dig\+\_\+buf}
+
+
+
+Message digest buffer (64 bytes). 
+
+\Hypertarget{structatca__verify__mac_ad9de49d6a9a6db6ae151cf88f3343334}\label{structatca__verify__mac_ad9de49d6a9a6db6ae151cf88f3343334} 
+\index{atca\_verify\_mac@{atca\_verify\_mac}!other\_data@{other\_data}}
+\index{other\_data@{other\_data}!atca\_verify\_mac@{atca\_verify\_mac}}
+\doxysubsubsection{\texorpdfstring{other\_data}{other\_data}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} atca\+\_\+verify\+\_\+mac\+::other\+\_\+data}
+
+
+
+Other\+Data used in Verify command (19 bytes). 
+
+\Hypertarget{structatca__verify__mac_af9b5b2327c10e3733a21878d67493a13}\label{structatca__verify__mac_af9b5b2327c10e3733a21878d67493a13} 
+\index{atca\_verify\_mac@{atca\_verify\_mac}!signature@{signature}}
+\index{signature@{signature}!atca\_verify\_mac@{atca\_verify\_mac}}
+\doxysubsubsection{\texorpdfstring{signature}{signature}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} atca\+\_\+verify\+\_\+mac\+::signature}
+
+
+
+Signature used in Verify command (64 bytes). 
+
+\Hypertarget{structatca__verify__mac_a48c7b67bae80c18a333c08c167bd6e93}\label{structatca__verify__mac_a48c7b67bae80c18a333c08c167bd6e93} 
+\index{atca\_verify\_mac@{atca\_verify\_mac}!sn@{sn}}
+\index{sn@{sn}!atca\_verify\_mac@{atca\_verify\_mac}}
+\doxysubsubsection{\texorpdfstring{sn}{sn}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} atca\+\_\+verify\+\_\+mac\+::sn}
+
+
+
+Serial number (9 bytes). 
+
+\Hypertarget{structatca__verify__mac_aedd6d27ef8edca9c1f2c86f3d0113620}\label{structatca__verify__mac_aedd6d27ef8edca9c1f2c86f3d0113620} 
+\index{atca\_verify\_mac@{atca\_verify\_mac}!temp\_key@{temp\_key}}
+\index{temp\_key@{temp\_key}!atca\_verify\_mac@{atca\_verify\_mac}}
+\doxysubsubsection{\texorpdfstring{temp\_key}{temp\_key}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{group__atcah_ga2eb5b7f0471f9f14bd78c63104fb4cfe}{atca\+\_\+temp\+\_\+key\+\_\+t}} \texorpdfstring{$\ast$}{*} atca\+\_\+verify\+\_\+mac\+::temp\+\_\+key}
+
+
+
+Temp\+Key. 
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\+SCE/\mbox{\hyperlink{atca__host_8h}{atca\+\_\+host.\+h}}\item 
+C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\+SCE/host/\mbox{\hyperlink{host_2atca__host_8h}{atca\+\_\+host.\+h}}\end{DoxyCompactItemize}

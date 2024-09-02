@@ -1,0 +1,35 @@
+<map id="DB_Episode_Write" name="DB_Episode_Write">
+<area shape="rect" id="Node000001" title="Collects the episode block data and write to the episode file. This way, the write sizes are multiple..." alt="" coords="5,309,137,336"/>
+<area shape="rect" id="Node000002" href="$sys_mon___battery_8c.html#aa6c128d869ee1d53d1902c4248f0c006" title="Get temperature value in battery." alt="" coords="193,5,363,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="71,309,79,259,97,187,112,148,130,109,154,73,183,42,188,38,191,42,186,46,158,77,135,112,117,150,102,189,84,260,76,310"/>
+<area shape="rect" id="Node000003" href="$_d_b___episode_8c.html#ad211c99edc4c2cf00a79de123ff7ad8e" title="Close episode file." alt="" coords="211,56,345,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="72,308,83,266,104,208,136,146,158,117,183,93,196,84,199,89,186,97,162,121,141,149,109,210,88,268,78,310"/>
+<area shape="rect" id="Node000005" href="$thread__defibrillator__hal_8c.html#a3e86b71d391996bf2ffc968da01e5326" title="Read the Vbatt value from the main supply voltage." alt="" coords="220,107,336,133"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="75,308,88,274,111,230,142,183,183,143,204,132,206,136,186,147,147,186,116,232,93,276,80,310"/>
+<area shape="rect" id="Node000007" href="$thread__defibrillator__hal_8c.html#a51d3d1bc2120f01ddcb0ed702a23e913" title="Read the Vc value from the main capacitor." alt="" coords="227,157,329,184"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="78,307,119,252,149,221,183,194,211,181,213,186,186,198,152,225,123,256,83,310"/>
+<area shape="rect" id="Node000008" href="$thread__drd__entry_8c.html#a919272f048aaf3454587b9c8dc4f3f2c" title="return the diagnosis" alt="" coords="208,208,348,235"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="88,307,130,275,183,244,200,237,202,242,186,249,133,280,91,311"/>
+<area shape="rect" id="Node000010" href="$thread__sys_mon__entry_8c.html#a5d710674bd8ab574159b5f0d01d1d67f" title="Function that gets the non volatile data." alt="" coords="227,259,329,285"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="128,306,211,285,212,291,129,311"/>
+<area shape="rect" id="Node000011" href="$sys_mon___battery_8c.html#ad263ec1e82c36014bf82be38f3b86eb0" title="Report the remaining battery charge." alt="" coords="216,309,340,336"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="137,320,200,320,200,325,137,325"/>
+<area shape="rect" id="Node000012" href="$sys_mon___battery_8c.html#ae8f3f32f49df7702f6405467130ce8fd" title="Function that report if the battery is DEMO or not." alt="" coords="198,360,358,387"/>
+<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="129,334,206,353,205,358,128,339"/>
+<area shape="rect" id="Node000013" href="$thread__pat_mon__hal_8c.html#a1978c4a195c3ce1aee541a55fece2e70" title="Report the current ECG identifier." alt="" coords="185,411,371,437"/>
+<area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="91,335,133,365,186,396,202,403,200,408,183,401,130,370,88,339"/>
+<area shape="rect" id="Node000014" href="$thread__pat_mon__hal_8c.html#a76fe3793dbe441d338e5ff2cf3225896" title="Read the last ECG samples from the ECG buffer." alt="" coords="188,461,368,488"/>
+<area shape="poly" id="edge13_Node000001_Node000014" title=" " alt="" coords="83,335,123,390,152,421,186,447,196,452,193,457,183,452,149,425,119,393,78,338"/>
+<area shape="rect" id="Node000015" href="$thread__pat_mon__hal_8c.html#ae98728fc9430398da8683e46653aac5b" title="report the calibration impedance value in ADCs" alt="" coords="185,512,371,539"/>
+<area shape="poly" id="edge14_Node000001_Node000015" title=" " alt="" coords="80,336,93,369,116,413,147,459,186,498,193,503,191,507,183,502,142,462,111,416,88,371,75,338"/>
+<area shape="rect" id="Node000016" href="$thread__pat_mon__hal_8c.html#a6b07f419fb5494de970c245ba09885a4" title="report the impedance value (in Ohms, ADCs or virtual)" alt="" coords="200,563,356,589"/>
+<area shape="poly" id="edge15_Node000001_Node000016" title=" " alt="" coords="78,336,88,378,109,435,141,496,162,524,186,549,192,553,189,557,183,553,158,528,136,499,104,437,83,379,72,337"/>
+<area shape="rect" id="Node000017" href="$thread__pat_mon__hal_8c.html#a1c27eef6f6abd7a968be54ab6a3de6f4" title="Read the last ZP samples from the ZP buffer." alt="" coords="194,613,362,640"/>
+<area shape="poly" id="edge16_Node000001_Node000017" title=" " alt="" coords="76,336,84,385,102,457,117,495,135,533,158,569,186,599,191,603,188,607,183,603,154,572,130,536,112,497,97,458,79,386,71,336"/>
+<area shape="rect" id="Node000004" href="$_trace_8c.html#abbe04e9d8a6f964c5a4f18901a95b0de" title="Print a trace string inserting the time stamp." alt="" coords="439,56,519,83"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="345,67,423,67,423,72,345,72"/>
+<area shape="rect" id="Node000006" href="$thread__defibrillator__hal_8c.html#a1732c6fa09148497f9b79f530fb94a8a" title="report the current state of the defibrillator" alt="" coords="421,107,537,133"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="337,117,405,117,405,123,337,123"/>
+<area shape="rect" id="Node000009" href="$drd_8h.html#a604473ae3a07455d5bd16bb301a29fbe" title=" " alt="" coords="419,208,539,235"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="349,219,404,219,404,224,349,224"/>
+</map>

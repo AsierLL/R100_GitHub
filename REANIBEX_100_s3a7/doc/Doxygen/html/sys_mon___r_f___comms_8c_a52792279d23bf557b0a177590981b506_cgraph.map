@@ -1,0 +1,43 @@
+<map id="Execute_Send_Sigfox_Test" name="Execute_Send_Sigfox_Test">
+<area shape="rect" id="Node000001" title="Function that executes the sending of the Sigfox Test." alt="" coords="5,288,187,315"/>
+<area shape="rect" id="Node000002" href="$thread__audio__entry_8c.html#a7bc63559c8d1198f7036bf7d08def712" title="Function that performs an operation with the message player." alt="" coords="268,56,382,83"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="100,287,117,248,145,196,183,140,207,115,233,92,252,82,255,86,236,97,211,119,188,144,149,199,121,251,105,289"/>
+<area shape="rect" id="Node000007" href="$thread__sys_mon__entry_8c.html#a86d6de0ddbdd8704798336aa29003fb5" title="Check if user abort running test." alt="" coords="244,107,406,133"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="103,286,152,218,190,178,233,143,243,138,245,142,236,148,193,182,156,221,108,289"/>
+<area shape="rect" id="Node000009" href="$thread__comm__hal_8c.html#a14b282886d75e45f70a7ffe548732dba" title="Returns the selected Comms UART." alt="" coords="237,157,413,184"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="110,286,161,241,196,216,233,194,248,187,250,192,236,198,199,220,165,245,113,290"/>
+<area shape="rect" id="Node000010" href="$thread__comm__entry_8c.html#aef540835b519754957f251e42bdfc435" title="Get sigfox status." alt="" coords="242,208,408,235"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="129,285,234,244,256,237,258,242,236,249,131,290"/>
+<area shape="rect" id="Node000011" href="$thread__comm__entry_8c.html#a6f2ca4d1ab63af942461484f1451146c" title="Checks if sigfox initialization process completed." alt="" coords="235,259,415,285"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="186,287,219,283,219,288,187,292"/>
+<area shape="rect" id="Node000012" href="$thread__comm__entry_8c.html#a605152440b38d4693184802ca9b64c8b" title="Checks if sigfox test sended process completed." alt="" coords="249,309,401,352"/>
+<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="187,310,234,316,233,322,186,316"/>
+<area shape="rect" id="Node000013" href="$thread__comm__entry_8c.html#a2b830ebc982c1f3df32402823b6bb3c0" title="Function to send the test result to Sigfox cloud." alt="" coords="244,376,406,419"/>
+<area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="127,313,236,362,250,367,248,372,234,366,125,318"/>
+<area shape="rect" id="Node000017" href="$thread__comm__entry_8c.html#aae63ed01fe3ee64c1d194e97ca3877b3" title="Open Sigfox Communication." alt="" coords="255,443,395,469"/>
+<area shape="poly" id="edge16_Node000001_Node000017" title=" " alt="" coords="110,314,161,369,196,401,236,428,248,434,245,439,233,433,193,405,157,373,106,317"/>
+<area shape="rect" id="Node000018" href="$thread__sys_mon__entry_8c.html#ae266dd5355d4644da21295b8a95ca1af" title="Pass time doing nothing while is listening an audio message and refreshing the watchdog !..." alt="" coords="247,493,403,520"/>
+<area shape="poly" id="edge18_Node000001_Node000018" title=" " alt="" coords="106,314,124,348,153,392,191,439,236,479,244,484,242,489,233,483,187,443,149,395,120,350,101,316"/>
+<area shape="rect" id="Node000020" href="$thread__sys_mon__entry_8c.html#aab815986ee52dfb7489873f856e3ecb9" title="Refresh the watchdog timer." alt="" coords="487,544,586,571"/>
+<area shape="poly" id="edge21_Node000001_Node000020" title=" " alt="" coords="103,314,117,358,143,418,161,450,182,480,207,507,236,530,264,544,293,555,356,567,417,569,471,565,472,571,417,574,355,572,292,560,262,549,233,534,204,511,178,483,156,452,138,420,112,360,98,316"/>
+<area shape="rect" id="Node000003" href="$thread__audio__entry_8c.html#a05b96411bbd2b24e86ae0cc21146b4cb" title="Function that loads and plays a message." alt="" coords="463,5,610,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="382,53,462,34,464,39,383,58"/>
+<area shape="rect" id="Node000005" href="$thread__audio__entry_8c.html#a2c1714b5b8e79621e3a35b0624309f63" title="Stops the audio engine in a predefined sequence." alt="" coords="469,56,604,83"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="382,67,454,67,454,72,382,72"/>
+<area shape="rect" id="Node000004" href="$thread__audio__entry_8c.html#a29f40d7e3dc151283bfb0e69dbd8b132" title="Get an audio frame from the audio file." alt="" coords="658,5,833,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="611,16,643,16,643,21,611,21"/>
+<area shape="rect" id="Node000006" href="$thread__audio__hal_8c.html#a5afdd4d24f2faf92baea80c7b0cedfdc" title="stops the audio reproduction" alt="" coords="701,56,790,83"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="605,67,686,67,686,72,605,72"/>
+<area shape="rect" id="Node000008" href="$_keypad_8c.html#a65899dc7cce4138cd4488d27daff459d" title="Read from Key&#45;board." alt="" coords="496,107,577,133"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="406,117,481,117,481,123,406,123"/>
+<area shape="rect" id="Node000014" href="$thread__defibrillator__hal_8c.html#a3e86b71d391996bf2ffc968da01e5326" title="Read the Vbatt value from the main supply voltage." alt="" coords="479,384,595,411"/>
+<area shape="poly" id="edge13_Node000013_Node000014" title=" " alt="" coords="406,395,463,395,463,400,406,400"/>
+<area shape="rect" id="Node000016" href="$thread__comm__entry_8c.html#af7921d111a91795221d7b493716d54c3" title="Process events related to All COMM modules." alt="" coords="466,439,607,465"/>
+<area shape="poly" id="edge15_Node000013_Node000016" title=" " alt="" coords="407,416,468,432,467,437,406,421"/>
+<area shape="rect" id="Node000015" href="$thread__defibrillator__hal_8c.html#a1732c6fa09148497f9b79f530fb94a8a" title="report the current state of the defibrillator" alt="" coords="687,384,804,411"/>
+<area shape="poly" id="edge14_Node000014_Node000015" title=" " alt="" coords="595,395,672,395,672,400,595,400"/>
+<area shape="poly" id="edge17_Node000017_Node000016" title=" " alt="" coords="395,452,450,451,451,456,395,457"/>
+<area shape="rect" id="Node000019" href="$thread__audio__entry_8c.html#aacd507f5759e6725a70d4b30dc65bbf6" title="ask if the audio player is running" alt="" coords="476,493,597,520"/>
+<area shape="poly" id="edge19_Node000018_Node000019" title=" " alt="" coords="403,504,460,504,460,509,403,509"/>
+<area shape="poly" id="edge20_Node000018_Node000020" title=" " alt="" coords="385,518,473,539,471,545,383,523"/>
+</map>

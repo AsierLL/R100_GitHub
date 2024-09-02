@@ -1,0 +1,40 @@
+\doxysection{atca\+\_\+verify\+\_\+in\+\_\+out Struct Reference}
+\hypertarget{structatca__verify__in__out}{}\label{structatca__verify__in__out}\index{atca\_verify\_in\_out@{atca\_verify\_in\_out}}
+
+
+Input/output parameters for function atcah\+\_\+verify().  
+
+
+
+
+{\ttfamily \#include $<$atca\+\_\+host.\+h$>$}
+
+
+
+Collaboration diagram for atca\+\_\+verify\+\_\+in\+\_\+out\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=173pt]{structatca__verify__in__out__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{group__atcah_ga87a530f5c3b7e340175bc1f0b618320f}{curve\+\_\+type}}
+\begin{DoxyCompactList}\small\item\em \mbox{[}in\mbox{]} Curve type used in Verify command (Param2). \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group__atcah_ga19eabf075a62edf66bb4a5e5306a2ec9}{signature}}
+\begin{DoxyCompactList}\small\item\em \mbox{[}in\mbox{]} Pointer to ECDSA signature to be verified \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group__atcah_ga3ad0a707a2d2a32ede1c838cb1e79d48}{public\+\_\+key}}
+\begin{DoxyCompactList}\small\item\em \mbox{[}in\mbox{]} Pointer to the public key to be used for verification \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structatca__temp__key}{atca\+\_\+temp\+\_\+key}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group__atcah_ga7db61655d216cb53d78de70b2b2dbf6c}{temp\+\_\+key}}
+\begin{DoxyCompactList}\small\item\em \mbox{[}in,out\mbox{]} Pointer to Temp\+Key structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Input/output parameters for function atcah\+\_\+verify(). 
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\+SCE/\mbox{\hyperlink{atca__host_8h}{atca\+\_\+host.\+h}}\item 
+C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\+SCE/host/\mbox{\hyperlink{host_2atca__host_8h}{atca\+\_\+host.\+h}}\end{DoxyCompactItemize}

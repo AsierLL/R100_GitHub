@@ -1,0 +1,185 @@
+\doxysection{C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\+HAL/\+R100\+\_\+\+Tables.h File Reference}
+\hypertarget{_r100___tables_8h}{}\label{_r100___tables_8h}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/HAL/R100\_Tables.h@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/HAL/R100\_Tables.h}}
+
+
+Header with ZP and Pulse tables definitions.  
+
+
+{\ttfamily \#include "{}types\+\_\+basic.\+h"{}}\newline
+Include dependency graph for R100\+\_\+\+Tables.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{_r100___tables_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_r100___tables_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_z_p___t_a_b_l_e___s_t_r_u_c_t}{ZP\+\_\+\+TABLE\+\_\+\+STRUCT}}
+\begin{DoxyCompactList}\small\item\em \texorpdfstring{$<$}{<} Define the ZP Table structure \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_z_p___m_a_t_r_i_x___s_t_r_u_c_t}{ZP\+\_\+\+MATRIX\+\_\+\+STRUCT}}
+\item 
+struct \mbox{\hyperlink{struct_e_n_e_r_g_y___t_a_b_l_e___s_t_r_u_c_t}{ENERGY\+\_\+\+TABLE\+\_\+\+STRUCT}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_r100___tables_8h_a941efc1e5afecf27189dd5c34706d485}{MAX\+\_\+\+ZP\+\_\+\+ITEMS}}~35
+\begin{DoxyCompactList}\small\item\em Number of entries in the ZP table. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_r100___tables_8h_a9193e1db9fcda28c34ce37f8c43398f1}{MAX\+\_\+\+ZP\+\_\+\+MATRIX\+\_\+\+ITEMS}}~5
+\begin{DoxyCompactList}\small\item\em Number of entries in the ZP matrix. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_r100___tables_8h_acba102868ca0868394f89f76fdda493a}{MAX\+\_\+\+ZP\+\_\+\+ADCS}}~0x00\+FFFFFF
+\begin{DoxyCompactList}\small\item\em Maximum value for ZP in ADCs. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_r100___tables_8h_a0984601e55dab4657a6572e22c681531}{MAX\+\_\+\+ZP\+\_\+\+OHMS}}~9999
+\begin{DoxyCompactList}\small\item\em Maximum value for ZP in Ohms. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{struct_z_p___t_a_b_l_e___s_t_r_u_c_t}{ZP\+\_\+\+TABLE\+\_\+\+STRUCT}} \mbox{\hyperlink{_r100___tables_8h_a28bbbf0042f0b060cab4002329e9cc24}{ZP\+\_\+\+TABLE\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em \texorpdfstring{$<$}{<} Define the ZP Table structure \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{struct_z_p___m_a_t_r_i_x___s_t_r_u_c_t}{ZP\+\_\+\+MATRIX\+\_\+\+STRUCT}} \mbox{\hyperlink{_r100___tables_8h_a2d31b9db80cda3badfd9911a692968f3}{ZP\+\_\+\+MATRIX\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Define the Energy Table structure. \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{struct_e_n_e_r_g_y___t_a_b_l_e___s_t_r_u_c_t}{ENERGY\+\_\+\+TABLE\+\_\+\+STRUCT}} \mbox{\hyperlink{_r100___tables_8h_a6f4ef3e20615789feb5d0dbb91ad0262}{ENERGY\+\_\+\+TABLE\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const \mbox{\hyperlink{_r100___tables_8h_a28bbbf0042f0b060cab4002329e9cc24}{ZP\+\_\+\+TABLE\+\_\+t}} \mbox{\hyperlink{_r100___tables_8h_a5aee5a9ca1781fec0379448d28330523}{golden\+\_\+zp\+\_\+table}} \mbox{[}$\,$\mbox{]}
+\begin{DoxyCompactList}\small\item\em Zp Table to convert ADCs to Ohms. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{_r100___tables_8h_a2d31b9db80cda3badfd9911a692968f3}{ZP\+\_\+\+MATRIX\+\_\+t}} \mbox{\hyperlink{_r100___tables_8h_af253c3b818894e5fff650633d57a1bf7}{golden\+\_\+zp\+\_\+matrix}} \mbox{[}$\,$\mbox{]}
+\begin{DoxyCompactList}\small\item\em Matrix to compensate ADC deviations. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{_r100___tables_8h_a6f4ef3e20615789feb5d0dbb91ad0262}{ENERGY\+\_\+\+TABLE\+\_\+t}} \mbox{\hyperlink{_r100___tables_8h_a57b9c3b8c26ea1b7f0149208e9871d75}{energy\+\_\+table}} \mbox{[}$\,$\mbox{]}
+\begin{DoxyCompactList}\small\item\em Energy table to assign times and voltages. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header with ZP and Pulse tables definitions. 
+
+\begin{DoxyVersion}{Version}
+v1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+16/01/2018 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+ltorres 
+\end{DoxyAuthor}
+\begin{DoxyWarning}{Warning}
+author date version .-\/ Edition 
+\end{DoxyWarning}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000033}{Bug}}]\end{DoxyRefDesc}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{_r100___tables_8h_acba102868ca0868394f89f76fdda493a}\label{_r100___tables_8h_acba102868ca0868394f89f76fdda493a} 
+\index{R100\_Tables.h@{R100\_Tables.h}!MAX\_ZP\_ADCS@{MAX\_ZP\_ADCS}}
+\index{MAX\_ZP\_ADCS@{MAX\_ZP\_ADCS}!R100\_Tables.h@{R100\_Tables.h}}
+\doxysubsubsection{\texorpdfstring{MAX\_ZP\_ADCS}{MAX\_ZP\_ADCS}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+ZP\+\_\+\+ADCS~0x00\+FFFFFF}
+
+
+
+Maximum value for ZP in ADCs. 
+
+\Hypertarget{_r100___tables_8h_a941efc1e5afecf27189dd5c34706d485}\label{_r100___tables_8h_a941efc1e5afecf27189dd5c34706d485} 
+\index{R100\_Tables.h@{R100\_Tables.h}!MAX\_ZP\_ITEMS@{MAX\_ZP\_ITEMS}}
+\index{MAX\_ZP\_ITEMS@{MAX\_ZP\_ITEMS}!R100\_Tables.h@{R100\_Tables.h}}
+\doxysubsubsection{\texorpdfstring{MAX\_ZP\_ITEMS}{MAX\_ZP\_ITEMS}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+ZP\+\_\+\+ITEMS~35}
+
+
+
+Number of entries in the ZP table. 
+
+\Hypertarget{_r100___tables_8h_a9193e1db9fcda28c34ce37f8c43398f1}\label{_r100___tables_8h_a9193e1db9fcda28c34ce37f8c43398f1} 
+\index{R100\_Tables.h@{R100\_Tables.h}!MAX\_ZP\_MATRIX\_ITEMS@{MAX\_ZP\_MATRIX\_ITEMS}}
+\index{MAX\_ZP\_MATRIX\_ITEMS@{MAX\_ZP\_MATRIX\_ITEMS}!R100\_Tables.h@{R100\_Tables.h}}
+\doxysubsubsection{\texorpdfstring{MAX\_ZP\_MATRIX\_ITEMS}{MAX\_ZP\_MATRIX\_ITEMS}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+ZP\+\_\+\+MATRIX\+\_\+\+ITEMS~5}
+
+
+
+Number of entries in the ZP matrix. 
+
+\Hypertarget{_r100___tables_8h_a0984601e55dab4657a6572e22c681531}\label{_r100___tables_8h_a0984601e55dab4657a6572e22c681531} 
+\index{R100\_Tables.h@{R100\_Tables.h}!MAX\_ZP\_OHMS@{MAX\_ZP\_OHMS}}
+\index{MAX\_ZP\_OHMS@{MAX\_ZP\_OHMS}!R100\_Tables.h@{R100\_Tables.h}}
+\doxysubsubsection{\texorpdfstring{MAX\_ZP\_OHMS}{MAX\_ZP\_OHMS}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+ZP\+\_\+\+OHMS~9999}
+
+
+
+Maximum value for ZP in Ohms. 
+
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{_r100___tables_8h_a6f4ef3e20615789feb5d0dbb91ad0262}\label{_r100___tables_8h_a6f4ef3e20615789feb5d0dbb91ad0262} 
+\index{R100\_Tables.h@{R100\_Tables.h}!ENERGY\_TABLE\_t@{ENERGY\_TABLE\_t}}
+\index{ENERGY\_TABLE\_t@{ENERGY\_TABLE\_t}!R100\_Tables.h@{R100\_Tables.h}}
+\doxysubsubsection{\texorpdfstring{ENERGY\_TABLE\_t}{ENERGY\_TABLE\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_e_n_e_r_g_y___t_a_b_l_e___s_t_r_u_c_t}{ENERGY\+\_\+\+TABLE\+\_\+\+STRUCT}} \mbox{\hyperlink{_r100___tables_8h_a6f4ef3e20615789feb5d0dbb91ad0262}{ENERGY\+\_\+\+TABLE\+\_\+t}}}
+
+\Hypertarget{_r100___tables_8h_a2d31b9db80cda3badfd9911a692968f3}\label{_r100___tables_8h_a2d31b9db80cda3badfd9911a692968f3} 
+\index{R100\_Tables.h@{R100\_Tables.h}!ZP\_MATRIX\_t@{ZP\_MATRIX\_t}}
+\index{ZP\_MATRIX\_t@{ZP\_MATRIX\_t}!R100\_Tables.h@{R100\_Tables.h}}
+\doxysubsubsection{\texorpdfstring{ZP\_MATRIX\_t}{ZP\_MATRIX\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_z_p___m_a_t_r_i_x___s_t_r_u_c_t}{ZP\+\_\+\+MATRIX\+\_\+\+STRUCT}} \mbox{\hyperlink{_r100___tables_8h_a2d31b9db80cda3badfd9911a692968f3}{ZP\+\_\+\+MATRIX\+\_\+t}}}
+
+
+
+Define the Energy Table structure. 
+
+\Hypertarget{_r100___tables_8h_a28bbbf0042f0b060cab4002329e9cc24}\label{_r100___tables_8h_a28bbbf0042f0b060cab4002329e9cc24} 
+\index{R100\_Tables.h@{R100\_Tables.h}!ZP\_TABLE\_t@{ZP\_TABLE\_t}}
+\index{ZP\_TABLE\_t@{ZP\_TABLE\_t}!R100\_Tables.h@{R100\_Tables.h}}
+\doxysubsubsection{\texorpdfstring{ZP\_TABLE\_t}{ZP\_TABLE\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_z_p___t_a_b_l_e___s_t_r_u_c_t}{ZP\+\_\+\+TABLE\+\_\+\+STRUCT}} \mbox{\hyperlink{_r100___tables_8h_a28bbbf0042f0b060cab4002329e9cc24}{ZP\+\_\+\+TABLE\+\_\+t}}}
+
+
+
+\texorpdfstring{$<$}{<} Define the ZP Table structure 
+
+Define the ZP Matrix structure 
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{_r100___tables_8h_a57b9c3b8c26ea1b7f0149208e9871d75}\label{_r100___tables_8h_a57b9c3b8c26ea1b7f0149208e9871d75} 
+\index{R100\_Tables.h@{R100\_Tables.h}!energy\_table@{energy\_table}}
+\index{energy\_table@{energy\_table}!R100\_Tables.h@{R100\_Tables.h}}
+\doxysubsubsection{\texorpdfstring{energy\_table}{energy\_table}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{_r100___tables_8h_a6f4ef3e20615789feb5d0dbb91ad0262}{ENERGY\+\_\+\+TABLE\+\_\+t}} energy\+\_\+table\mbox{[}$\,$\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Energy table to assign times and voltages. 
+
+\Hypertarget{_r100___tables_8h_af253c3b818894e5fff650633d57a1bf7}\label{_r100___tables_8h_af253c3b818894e5fff650633d57a1bf7} 
+\index{R100\_Tables.h@{R100\_Tables.h}!golden\_zp\_matrix@{golden\_zp\_matrix}}
+\index{golden\_zp\_matrix@{golden\_zp\_matrix}!R100\_Tables.h@{R100\_Tables.h}}
+\doxysubsubsection{\texorpdfstring{golden\_zp\_matrix}{golden\_zp\_matrix}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{_r100___tables_8h_a2d31b9db80cda3badfd9911a692968f3}{ZP\+\_\+\+MATRIX\+\_\+t}} golden\+\_\+zp\+\_\+matrix\mbox{[}$\,$\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Matrix to compensate ADC deviations. 
+
+\Hypertarget{_r100___tables_8h_a5aee5a9ca1781fec0379448d28330523}\label{_r100___tables_8h_a5aee5a9ca1781fec0379448d28330523} 
+\index{R100\_Tables.h@{R100\_Tables.h}!golden\_zp\_table@{golden\_zp\_table}}
+\index{golden\_zp\_table@{golden\_zp\_table}!R100\_Tables.h@{R100\_Tables.h}}
+\doxysubsubsection{\texorpdfstring{golden\_zp\_table}{golden\_zp\_table}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{_r100___tables_8h_a28bbbf0042f0b060cab4002329e9cc24}{ZP\+\_\+\+TABLE\+\_\+t}} golden\+\_\+zp\+\_\+table\mbox{[}$\,$\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Zp Table to convert ADCs to Ohms. 
+

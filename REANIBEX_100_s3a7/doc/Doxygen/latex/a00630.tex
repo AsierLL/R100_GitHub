@@ -1,0 +1,121 @@
+\doxysection{WIFI\+\_\+\+FUNC\+\_\+\+ALERT\+\_\+t Struct Reference}
+\hypertarget{a00630}{}\label{a00630}\index{WIFI\_FUNC\_ALERT\_t@{WIFI\_FUNC\_ALERT\_t}}
+
+
+Wifi structure to report the functional alert (same as \doxylink{a00654}{SIGFOX\+\_\+\+FUNC\+\_\+\+ALERT\+\_\+t})  
+
+
+
+
+{\ttfamily \#include $<$thread\+\_\+comm\+\_\+hal.\+h$>$}
+
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a00191_a30bcce91a84082e55fabfd5098f0d7d7}{WIFI\+\_\+\+MSG\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{a00630_af7f7a87e040b81705fd5b1f8ec4166bf}{info\+\_\+type}}
+\begin{DoxyCompactList}\small\item\em identifies the information to report \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00221_ab5a454b85186a6663fc81c4685af3281}{EL\+\_\+\+SIGN\+\_\+e}} \mbox{\hyperlink{a00630_a45b5764e0848ada6e9f6d62b32db5de6}{electrodes\+\_\+sign}}
+\begin{DoxyCompactList}\small\item\em electrodes signature \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{a00630_a5ea84cf7d94eb4ff8e9bf60d45de04f4}{battery\+\_\+soc}}
+\begin{DoxyCompactList}\small\item\em State of charge (\%) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{a00630_aef71a325d2a473233b9635f08af17667}{patient\+\_\+type}}
+\begin{DoxyCompactList}\small\item\em patient selected on shock \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \mbox{\hyperlink{a00630_a557c067840233638e69a3e4ec428bb4d}{zp}}
+\begin{DoxyCompactList}\small\item\em impedance on shock (ohms) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{a00630_a1fbaf1286c174a0c23d1663555119ad2}{shock\+\_\+energy}}
+\begin{DoxyCompactList}\small\item\em energy on shock \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{a00630_aaad7fb91eb3d628abc046b14aefb1e8b}{drd\+\_\+diag}}
+\begin{DoxyCompactList}\small\item\em analisys diagnosis \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{a00630_a5a94b07c85a8493927732ac7f288fd1a}{must\+\_\+be\+\_\+0x55}}
+\begin{DoxyCompactList}\small\item\em Fixed value = 0x55. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Wifi structure to report the functional alert (same as \doxylink{a00654}{SIGFOX\+\_\+\+FUNC\+\_\+\+ALERT\+\_\+t}) 
+
+\doxysubsection{Field Documentation}
+\Hypertarget{a00630_a5ea84cf7d94eb4ff8e9bf60d45de04f4}\label{a00630_a5ea84cf7d94eb4ff8e9bf60d45de04f4} 
+\index{WIFI\_FUNC\_ALERT\_t@{WIFI\_FUNC\_ALERT\_t}!battery\_soc@{battery\_soc}}
+\index{battery\_soc@{battery\_soc}!WIFI\_FUNC\_ALERT\_t@{WIFI\_FUNC\_ALERT\_t}}
+\doxysubsubsection{\texorpdfstring{battery\_soc}{battery\_soc}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} WIFI\+\_\+\+FUNC\+\_\+\+ALERT\+\_\+t\+::battery\+\_\+soc}
+
+
+
+State of charge (\%) 
+
+\Hypertarget{a00630_aaad7fb91eb3d628abc046b14aefb1e8b}\label{a00630_aaad7fb91eb3d628abc046b14aefb1e8b} 
+\index{WIFI\_FUNC\_ALERT\_t@{WIFI\_FUNC\_ALERT\_t}!drd\_diag@{drd\_diag}}
+\index{drd\_diag@{drd\_diag}!WIFI\_FUNC\_ALERT\_t@{WIFI\_FUNC\_ALERT\_t}}
+\doxysubsubsection{\texorpdfstring{drd\_diag}{drd\_diag}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} WIFI\+\_\+\+FUNC\+\_\+\+ALERT\+\_\+t\+::drd\+\_\+diag}
+
+
+
+analisys diagnosis 
+
+\Hypertarget{a00630_a45b5764e0848ada6e9f6d62b32db5de6}\label{a00630_a45b5764e0848ada6e9f6d62b32db5de6} 
+\index{WIFI\_FUNC\_ALERT\_t@{WIFI\_FUNC\_ALERT\_t}!electrodes\_sign@{electrodes\_sign}}
+\index{electrodes\_sign@{electrodes\_sign}!WIFI\_FUNC\_ALERT\_t@{WIFI\_FUNC\_ALERT\_t}}
+\doxysubsubsection{\texorpdfstring{electrodes\_sign}{electrodes\_sign}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00221_ab5a454b85186a6663fc81c4685af3281}{EL\+\_\+\+SIGN\+\_\+e}} WIFI\+\_\+\+FUNC\+\_\+\+ALERT\+\_\+t\+::electrodes\+\_\+sign}
+
+
+
+electrodes signature 
+
+\Hypertarget{a00630_af7f7a87e040b81705fd5b1f8ec4166bf}\label{a00630_af7f7a87e040b81705fd5b1f8ec4166bf} 
+\index{WIFI\_FUNC\_ALERT\_t@{WIFI\_FUNC\_ALERT\_t}!info\_type@{info\_type}}
+\index{info\_type@{info\_type}!WIFI\_FUNC\_ALERT\_t@{WIFI\_FUNC\_ALERT\_t}}
+\doxysubsubsection{\texorpdfstring{info\_type}{info\_type}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00191_a30bcce91a84082e55fabfd5098f0d7d7}{WIFI\+\_\+\+MSG\+\_\+\+ID\+\_\+e}} WIFI\+\_\+\+FUNC\+\_\+\+ALERT\+\_\+t\+::info\+\_\+type}
+
+
+
+identifies the information to report 
+
+\Hypertarget{a00630_a5a94b07c85a8493927732ac7f288fd1a}\label{a00630_a5a94b07c85a8493927732ac7f288fd1a} 
+\index{WIFI\_FUNC\_ALERT\_t@{WIFI\_FUNC\_ALERT\_t}!must\_be\_0x55@{must\_be\_0x55}}
+\index{must\_be\_0x55@{must\_be\_0x55}!WIFI\_FUNC\_ALERT\_t@{WIFI\_FUNC\_ALERT\_t}}
+\doxysubsubsection{\texorpdfstring{must\_be\_0x55}{must\_be\_0x55}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} WIFI\+\_\+\+FUNC\+\_\+\+ALERT\+\_\+t\+::must\+\_\+be\+\_\+0x55}
+
+
+
+Fixed value = 0x55. 
+
+\Hypertarget{a00630_aef71a325d2a473233b9635f08af17667}\label{a00630_aef71a325d2a473233b9635f08af17667} 
+\index{WIFI\_FUNC\_ALERT\_t@{WIFI\_FUNC\_ALERT\_t}!patient\_type@{patient\_type}}
+\index{patient\_type@{patient\_type}!WIFI\_FUNC\_ALERT\_t@{WIFI\_FUNC\_ALERT\_t}}
+\doxysubsubsection{\texorpdfstring{patient\_type}{patient\_type}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} WIFI\+\_\+\+FUNC\+\_\+\+ALERT\+\_\+t\+::patient\+\_\+type}
+
+
+
+patient selected on shock 
+
+\Hypertarget{a00630_a1fbaf1286c174a0c23d1663555119ad2}\label{a00630_a1fbaf1286c174a0c23d1663555119ad2} 
+\index{WIFI\_FUNC\_ALERT\_t@{WIFI\_FUNC\_ALERT\_t}!shock\_energy@{shock\_energy}}
+\index{shock\_energy@{shock\_energy}!WIFI\_FUNC\_ALERT\_t@{WIFI\_FUNC\_ALERT\_t}}
+\doxysubsubsection{\texorpdfstring{shock\_energy}{shock\_energy}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} WIFI\+\_\+\+FUNC\+\_\+\+ALERT\+\_\+t\+::shock\+\_\+energy}
+
+
+
+energy on shock 
+
+\Hypertarget{a00630_a557c067840233638e69a3e4ec428bb4d}\label{a00630_a557c067840233638e69a3e4ec428bb4d} 
+\index{WIFI\_FUNC\_ALERT\_t@{WIFI\_FUNC\_ALERT\_t}!zp@{zp}}
+\index{zp@{zp}!WIFI\_FUNC\_ALERT\_t@{WIFI\_FUNC\_ALERT\_t}}
+\doxysubsubsection{\texorpdfstring{zp}{zp}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} WIFI\+\_\+\+FUNC\+\_\+\+ALERT\+\_\+t\+::zp}
+
+
+
+impedance on shock (ohms) 
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\+HAL/\mbox{\hyperlink{a00191}{thread\+\_\+comm\+\_\+hal.\+h}}\end{DoxyCompactItemize}

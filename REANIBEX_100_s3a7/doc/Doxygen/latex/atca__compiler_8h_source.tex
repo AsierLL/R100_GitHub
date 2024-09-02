@@ -1,0 +1,199 @@
+\doxysection{atca\+\_\+compiler.\+h}
+\hypertarget{atca__compiler_8h_source}{}\label{atca__compiler_8h_source}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/SCE/atca\_compiler.h@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/SCE/atca\_compiler.h}}
+\mbox{\hyperlink{atca__compiler_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#ifndef\ ATCA\_COMPILER\_H\_}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#define\ ATCA\_COMPILER\_H\_}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#if\ defined(\_\_clang\_\_)}}
+\DoxyCodeLine{00035\ \textcolor{comment}{/*\ Clang/LLVM.\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#if\ \_\_BYTE\_ORDER\_\_\ ==\ \_\_ORDER\_BIG\_ENDIAN\_\_}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#define\ ATCA\_UINT16\_HOST\_TO\_LE(x)\ \ \_\_builtin\_bswap16(x)}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#define\ ATCA\_UINT16\_LE\_TO\_HOST(x)\ \ \_\_builtin\_bswap16(x)}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#define\ ATCA\_UINT32\_HOST\_TO\_LE(x)\ \ \_\_builtin\_bswap32(x)}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#define\ ATCA\_UINT16\_HOST\_TO\_BE(x)\ \ (x)}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#define\ ATCA\_UINT16\_BE\_TO\_HOST(x)\ \ (x)}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#define\ ATCA\_UINT32\_HOST\_TO\_BE(x)\ \ (x)}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#define\ ATCA\_UINT32\_BE\_TO\_HOST(x)\ \ (x)}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#define\ ATCA\_UINT64\_HOST\_TO\_BE(x)\ \ (x)}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#define\ ATCA\_UINT64\_BE\_TO\_HOST(x)\ \ (x)}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#define\ ATCA\_UINT16\_HOST\_TO\_LE(x)\ \ (x)}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#define\ ATCA\_UINT16\_LE\_TO\_HOST(x)\ \ (x)}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#define\ ATCA\_UINT32\_HOST\_TO\_LE(x)\ \ (x)}}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#define\ ATCA\_UINT16\_HOST\_TO\_BE(x)\ \ \_\_builtin\_bswap16(x)}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#define\ ATCA\_UINT16\_BE\_TO\_HOST(x)\ \ \_\_builtin\_bswap16(x)}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#define\ ATCA\_UINT32\_HOST\_TO\_BE(x)\ \ \_\_builtin\_bswap32(x)}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ ATCA\_UINT32\_BE\_TO\_HOST(x)\ \ \_\_builtin\_bswap32(x)}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#define\ ATCA\_UINT64\_HOST\_TO\_BE(x)\ \ \_\_builtin\_bswap64(x)}}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#define\ ATCA\_UINT64\_BE\_TO\_HOST(x)\ \ \_\_builtin\_bswap64(x)}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#ifdef\ WIN32}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#define\ SHARED\_LIB\_EXPORT\ \ \ \ \ \ \ \_\_declspec(dllexport)}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#define\ SHARED\_LIB\_IMPORT\ \ \ \ \ \ \ \_\_declspec(dllimport)}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#define\ SHARED\_LIB\_EXPORT}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#define\ SHARED\_LIB\_IMPORT\ \ \ \ \ \ \ extern}}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#elif\ defined(\_\_XC8)\ ||\ defined(\_\_XC16)}}
+\DoxyCodeLine{00067\ \textcolor{comment}{/*\ Microchip\ XC8\ and\ XC16\ Compilers\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#ifndef\ SIZE\_MAX}}
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#define\ SIZE\_MAX\ 65535}}
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#define\ ATCA\_UINT16\_HOST\_TO\_LE(x)\ \ (x)}}
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#define\ ATCA\_UINT16\_LE\_TO\_HOST(x)\ \ (x)}}
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\#define\ ATCA\_UINT32\_HOST\_TO\_LE(x)\ \ (x)}}
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#define\ ATCA\_UINT16\_HOST\_TO\_BE(x)\ \ ((((x)\ \&\ 0x00FF)\ <<\ 8)\ |\ (((x)\ \&\ 0xFF00)\ >>\ 8))}}
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#define\ ATCA\_UINT16\_BE\_TO\_HOST(x)\ \ ((((x)\ \&\ 0x00FF)\ <<\ 8)\ |\ (((x)\ \&\ 0xFF00)\ >>\ 8))}}
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#define\ ATCA\_UINT32\_HOST\_TO\_BE(x)\ \ ((((x)\ \&\ 0x000000FF)\ <<\ 24)\ |\ (((x)\ \&\ 0x0000FF00)\ <<\ 8)\ |\ (((x)\ \&\ 0x00FF0000)\ >>\ 8)\ |\ (((x)\ \&\ 0xFF000000)\ >>\ 24))}}
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\#define\ ATCA\_UINT32\_BE\_TO\_HOST(x)\ \ ((((x)\ \&\ 0x000000FF)\ <<\ 24)\ |\ (((x)\ \&\ 0x0000FF00)\ <<\ 8)\ |\ (((x)\ \&\ 0x00FF0000)\ >>\ 8)\ |\ (((x)\ \&\ 0xFF000000)\ >>\ 24))}}
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#define\ ATCA\_UINT64\_HOST\_TO\_BE(x)\ \ ((uint64\_t)ATCA\_UINT32\_HOST\_TO\_BE((uint32\_t)(x))\ <<\ 32\ +\ (uint64\_t)ATCA\_UINT32\_HOST\_TO\_BE((uint32\_t)((x)\ >>\ 32)))}}
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#define\ ATCA\_UINT64\_BE\_TO\_HOST(x)\ \ ((uint64\_t)ATCA\_UINT32\_BE\_TO\_HOST((uint32\_t)(x))\ <<\ 32\ +\ (uint64\_t)ATCA\_UINT32\_BE\_TO\_HOST((uint32\_t)((x)\ >>\ 32)))}}
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\#define\ SHARED\_LIB\_EXPORT}}
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#define\ SHARED\_LIB\_IMPORT\ \ \ \ \ \ \ extern}}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \textcolor{comment}{//\#elif\ defined(\_\_ICC)\ ||\ defined(\_\_INTEL\_COMPILER)}}
+\DoxyCodeLine{00085\ \textcolor{comment}{/*\ Intel\ ICC/ICPC.\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \textcolor{preprocessor}{\#elif\ defined(\_\_GNUC\_\_)\ ||\ defined(\_\_GNUG\_\_)}}
+\DoxyCodeLine{00088\ \textcolor{comment}{/*\ GNU\ GCC/G++.\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00089\ \textcolor{preprocessor}{\#if\ defined(\_\_AVR32\_\_)}}
+\DoxyCodeLine{00090\ \textcolor{preprocessor}{\#define\ ATCA\_UINT16\_HOST\_TO\_LE(x)\ \ \_\_builtin\_bswap\_16(x)}}
+\DoxyCodeLine{00091\ \textcolor{preprocessor}{\#define\ ATCA\_UINT16\_LE\_TO\_HOST(x)\ \ \_\_builtin\_bswap\_16(x)}}
+\DoxyCodeLine{00092\ \textcolor{preprocessor}{\#define\ ATCA\_UINT32\_HOST\_TO\_LE(x)\ \ \_\_builtin\_bswap\_32(x)}}
+\DoxyCodeLine{00093\ \textcolor{preprocessor}{\#define\ ATCA\_UINT16\_HOST\_TO\_BE(x)\ \ (x)}}
+\DoxyCodeLine{00094\ \textcolor{preprocessor}{\#define\ ATCA\_UINT16\_BE\_TO\_HOST(x)\ \ (x)}}
+\DoxyCodeLine{00095\ \textcolor{preprocessor}{\#define\ ATCA\_UINT32\_HOST\_TO\_BE(x)\ \ (x)}}
+\DoxyCodeLine{00096\ \textcolor{preprocessor}{\#define\ ATCA\_UINT32\_BE\_TO\_HOST(x)\ \ (x)}}
+\DoxyCodeLine{00097\ \textcolor{preprocessor}{\#define\ ATCA\_UINT64\_HOST\_TO\_BE(x)\ \ (x)}}
+\DoxyCodeLine{00098\ \textcolor{preprocessor}{\#define\ ATCA\_UINT64\_BE\_TO\_HOST(x)\ \ (x)}}
+\DoxyCodeLine{00099\ \textcolor{preprocessor}{\#define\ ATCA\_NO\_PRAGMA\_PACK}}
+\DoxyCodeLine{00100\ \textcolor{preprocessor}{\#elif\ \_\_BYTE\_ORDER\_\_\ ==\ \_\_ORDER\_BIG\_ENDIAN\_\_}}
+\DoxyCodeLine{00101\ \textcolor{preprocessor}{\#define\ ATCA\_UINT16\_HOST\_TO\_LE(x)\ \ \_\_builtin\_bswap16(x)}}
+\DoxyCodeLine{00102\ \textcolor{preprocessor}{\#define\ ATCA\_UINT16\_LE\_TO\_HOST(x)\ \ \_\_builtin\_bswap16(x)}}
+\DoxyCodeLine{00103\ \textcolor{preprocessor}{\#define\ ATCA\_UINT16\_HOST\_TO\_BE(x)\ \ (x)}}
+\DoxyCodeLine{00104\ \textcolor{preprocessor}{\#define\ ATCA\_UINT16\_BE\_TO\_HOST(x)\ \ (x)}}
+\DoxyCodeLine{00105\ \textcolor{preprocessor}{\#define\ ATCA\_UINT32\_HOST\_TO\_LE(x)\ \ \_\_builtin\_bswap32(x)}}
+\DoxyCodeLine{00106\ \textcolor{preprocessor}{\#define\ ATCA\_UINT32\_HOST\_TO\_BE(x)\ \ (x)}}
+\DoxyCodeLine{00107\ \textcolor{preprocessor}{\#define\ ATCA\_UINT32\_BE\_TO\_HOST(x)\ \ (x)}}
+\DoxyCodeLine{00108\ \textcolor{preprocessor}{\#define\ ATCA\_UINT64\_HOST\_TO\_BE(x)\ \ (x)}}
+\DoxyCodeLine{00109\ \textcolor{preprocessor}{\#define\ ATCA\_UINT64\_BE\_TO\_HOST(x)\ \ (x)}}
+\DoxyCodeLine{00110\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00111\ \textcolor{preprocessor}{\#define\ ATCA\_UINT16\_HOST\_TO\_BE(x)\ \ \_\_builtin\_bswap16(x)}}
+\DoxyCodeLine{00112\ \textcolor{preprocessor}{\#define\ ATCA\_UINT16\_BE\_TO\_HOST(x)\ \ \_\_builtin\_bswap16(x)}}
+\DoxyCodeLine{00113\ \textcolor{preprocessor}{\#define\ ATCA\_UINT16\_HOST\_TO\_LE(x)\ \ (x)}}
+\DoxyCodeLine{00114\ \textcolor{preprocessor}{\#define\ ATCA\_UINT16\_LE\_TO\_HOST(x)\ \ (x)}}
+\DoxyCodeLine{00115\ \textcolor{preprocessor}{\#define\ ATCA\_UINT32\_HOST\_TO\_LE(x)\ \ (x)}}
+\DoxyCodeLine{00116\ \textcolor{preprocessor}{\#define\ ATCA\_UINT32\_HOST\_TO\_BE(x)\ \ \_\_builtin\_bswap32(x)}}
+\DoxyCodeLine{00117\ \textcolor{preprocessor}{\#define\ ATCA\_UINT32\_BE\_TO\_HOST(x)\ \ \_\_builtin\_bswap32(x)}}
+\DoxyCodeLine{00118\ \textcolor{preprocessor}{\#define\ ATCA\_UINT64\_HOST\_TO\_BE(x)\ \ \_\_builtin\_bswap64(x)}}
+\DoxyCodeLine{00119\ \textcolor{preprocessor}{\#define\ ATCA\_UINT64\_BE\_TO\_HOST(x)\ \ \_\_builtin\_bswap64(x)}}
+\DoxyCodeLine{00120\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \textcolor{preprocessor}{\#ifdef\ WIN32}}
+\DoxyCodeLine{00123\ \textcolor{preprocessor}{\#define\ SHARED\_LIB\_EXPORT\ \ \ \ \ \ \ \_\_declspec(dllexport)}}
+\DoxyCodeLine{00124\ \textcolor{preprocessor}{\#define\ SHARED\_LIB\_IMPORT\ \ \ \ \ \ \ \_\_declspec(dllimport)}}
+\DoxyCodeLine{00125\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00126\ \textcolor{preprocessor}{\#define\ SHARED\_LIB\_EXPORT}}
+\DoxyCodeLine{00127\ \textcolor{preprocessor}{\#define\ SHARED\_LIB\_IMPORT\ \ \ \ \ \ \ extern}}
+\DoxyCodeLine{00128\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ \textcolor{comment}{//\#elif\ defined(\_\_HP\_cc)\ ||\ defined(\_\_HP\_aCC)}}
+\DoxyCodeLine{00132\ \textcolor{comment}{/*\ Hewlett-\/Packard\ C/aC++.\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ \textcolor{comment}{//\#elif\ defined(\_\_IBMC\_\_)\ ||\ defined(\_\_IBMCPP\_\_)}}
+\DoxyCodeLine{00135\ \textcolor{comment}{/*\ IBM\ XL\ C/C++.\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00137\ \textcolor{preprocessor}{\#elif\ defined(\_MSC\_VER)}}
+\DoxyCodeLine{00138\ \textcolor{comment}{/*\ Microsoft\ Visual\ Studio.\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00139\ \textcolor{comment}{//\ MSVC\ is\ usually\ always\ little-\/endian\ architecture}}
+\DoxyCodeLine{00140\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{00141\ \textcolor{preprocessor}{\#define\ ATCA\_UINT16\_HOST\_TO\_BE(x)\ \ \_byteswap\_ushort(x)}}
+\DoxyCodeLine{00142\ \textcolor{preprocessor}{\#define\ ATCA\_UINT16\_BE\_TO\_HOST(x)\ \ \_byteswap\_ushort(x)}}
+\DoxyCodeLine{00143\ \textcolor{preprocessor}{\#define\ ATCA\_UINT16\_HOST\_TO\_LE(x)\ \ (x)}}
+\DoxyCodeLine{00144\ \textcolor{preprocessor}{\#define\ ATCA\_UINT16\_LE\_TO\_HOST(x)\ \ (x)}}
+\DoxyCodeLine{00145\ \textcolor{preprocessor}{\#define\ ATCA\_UINT32\_HOST\_TO\_LE(x)\ \ (x)}}
+\DoxyCodeLine{00146\ \textcolor{preprocessor}{\#define\ ATCA\_UINT32\_HOST\_TO\_BE(x)\ \ \_byteswap\_ulong(x)}}
+\DoxyCodeLine{00147\ \textcolor{preprocessor}{\#define\ ATCA\_UINT32\_BE\_TO\_HOST(x)\ \ \_byteswap\_ulong(x)}}
+\DoxyCodeLine{00148\ \textcolor{preprocessor}{\#define\ ATCA\_UINT64\_HOST\_TO\_BE(x)\ \ \_byteswap\_uint64(x)}}
+\DoxyCodeLine{00149\ \textcolor{preprocessor}{\#define\ ATCA\_UINT64\_BE\_TO\_HOST(x)\ \ \_byteswap\_uint64(x)}}
+\DoxyCodeLine{00150\ \textcolor{preprocessor}{\#define\ strtok\_r\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ strtok\_s}}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00152\ \textcolor{preprocessor}{\#define\ SHARED\_LIB\_EXPORT\ \ \ \ \ \ \ \_\_declspec(dllexport)}}
+\DoxyCodeLine{00153\ \textcolor{preprocessor}{\#define\ SHARED\_LIB\_IMPORT\ \ \ \ \ \ \ \_\_declspec(dllimport)}}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00155\ \textcolor{comment}{//\#elif\ defined(\_\_PGI)}}
+\DoxyCodeLine{00156\ \textcolor{comment}{/*\ Portland\ Group\ PGCC/PGCPP.\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ \textcolor{comment}{//\#elif\ defined(\_\_SUNPRO\_C)\ ||\ defined(\_\_SUNPRO\_CC)}}
+\DoxyCodeLine{00159\ \textcolor{comment}{/*\ Oracle\ Solaris\ Studio.\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00161\ \textcolor{preprocessor}{\#elif\ defined\ \_\_CC\_ARM}}
+\DoxyCodeLine{00162\ \textcolor{comment}{/*\ ARMCC/RealView\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00163\ \textcolor{preprocessor}{\#ifdef\ \_\_BIG\_ENDIAN}}
+\DoxyCodeLine{00164\ \textcolor{preprocessor}{\#define\ ATCA\_UINT16\_HOST\_TO\_LE(x)\ \ ((x\ >>\ 8)\ |\ ((x\ \&\ 0xFF)\ <<\ 8))}}
+\DoxyCodeLine{00165\ \textcolor{preprocessor}{\#define\ ATCA\_UINT16\_LE\_TO\_HOST(x)\ \ ((x\ >>\ 8)\ |\ ((x\ \&\ 0xFF)\ <<\ 8))}}
+\DoxyCodeLine{00166\ \textcolor{preprocessor}{\#define\ ATCA\_UINT32\_HOST\_TO\_LE(x)\ \ \_\_rev(x)}}
+\DoxyCodeLine{00167\ \textcolor{preprocessor}{\#define\ ATCA\_UINT32\_HOST\_TO\_BE(x)\ \ (x)}}
+\DoxyCodeLine{00168\ \textcolor{preprocessor}{\#define\ ATCA\_UINT32\_BE\_TO\_HOST(x)\ \ (x)}}
+\DoxyCodeLine{00169\ \textcolor{preprocessor}{\#define\ ATCA\_UINT64\_HOST\_TO\_BE(x)\ \ (x)}}
+\DoxyCodeLine{00170\ \textcolor{preprocessor}{\#define\ ATCA\_UINT64\_BE\_TO\_HOST(x)\ \ (x)}}
+\DoxyCodeLine{00171\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00172\ \textcolor{preprocessor}{\#define\ ATCA\_UINT16\_HOST\_TO\_LE(x)\ \ (x)}}
+\DoxyCodeLine{00173\ \textcolor{preprocessor}{\#define\ ATCA\_UINT16\_LE\_TO\_HOST(x)\ \ (x)}}
+\DoxyCodeLine{00174\ \textcolor{preprocessor}{\#define\ ATCA\_UINT32\_HOST\_TO\_LE(x)\ \ (x)}}
+\DoxyCodeLine{00175\ \textcolor{preprocessor}{\#define\ ATCA\_UINT32\_HOST\_TO\_BE(x)\ \ \_\_rev(x)}}
+\DoxyCodeLine{00176\ \textcolor{preprocessor}{\#define\ ATCA\_UINT32\_BE\_TO\_HOST(x)\ \ \_\_rev(x)}}
+\DoxyCodeLine{00177\ \textcolor{preprocessor}{\#define\ ATCA\_UINT64\_HOST\_TO\_BE(x)\ \ (((uint64\_t)\_\_rev((uint32\_t)x)\ <<\ 32)\ |\ (uint64\_t)\_\_rev((uint32\_t)(x\ >>\ 32)))}}
+\DoxyCodeLine{00178\ \textcolor{preprocessor}{\#define\ ATCA\_UINT64\_BE\_TO\_HOST(x)\ \ (((uint64\_t)\_\_rev((uint32\_t)x)\ <<\ 32)\ |\ (uint64\_t)\_\_rev((uint32\_t)(x\ >>\ 32)))}}
+\DoxyCodeLine{00179\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00180\ }
+\DoxyCodeLine{00181\ \textcolor{preprocessor}{\#define\ SHARED\_LIB\_EXPORT}}
+\DoxyCodeLine{00182\ \textcolor{preprocessor}{\#define\ SHARED\_LIB\_IMPORT\ \ \ \ \ \ \ extern}}
+\DoxyCodeLine{00183\ }
+\DoxyCodeLine{00184\ \textcolor{preprocessor}{\#elif\ defined\ \_\_ICCARM\_\_}}
+\DoxyCodeLine{00185\ \textcolor{comment}{/*\ IAR\ ARM\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00186\ \textcolor{preprocessor}{\#include\ <intrinsics.h>}}
+\DoxyCodeLine{00187\ \textcolor{preprocessor}{\#if\ \_\_LITTLE\_ENDIAN\_\_\ ==\ 0}}
+\DoxyCodeLine{00188\ \textcolor{preprocessor}{\#define\ ATCA\_UINT16\_HOST\_TO\_LE(x)\ \ \_\_REV16(x)}}
+\DoxyCodeLine{00189\ \textcolor{preprocessor}{\#define\ ATCA\_UINT16\_LE\_TO\_HOST(x)\ \ \_\_REV16(x)}}
+\DoxyCodeLine{00190\ \textcolor{preprocessor}{\#define\ ATCA\_UINT32\_HOST\_TO\_LE(x)\ \ \_\_REV(x)}}
+\DoxyCodeLine{00191\ \textcolor{preprocessor}{\#define\ ATCA\_UINT32\_HOST\_TO\_BE(x)\ \ (x)}}
+\DoxyCodeLine{00192\ \textcolor{preprocessor}{\#define\ ATCA\_UINT32\_BE\_TO\_HOST(x)\ \ (x)}}
+\DoxyCodeLine{00193\ \textcolor{preprocessor}{\#define\ ATCA\_UINT64\_HOST\_TO\_BE(x)\ \ (x)}}
+\DoxyCodeLine{00194\ \textcolor{preprocessor}{\#define\ ATCA\_UINT64\_BE\_TO\_HOST(x)\ \ (x)}}
+\DoxyCodeLine{00195\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00196\ \textcolor{preprocessor}{\#define\ ATCA\_UINT16\_HOST\_TO\_LE(x)\ \ (x)}}
+\DoxyCodeLine{00197\ \textcolor{preprocessor}{\#define\ ATCA\_UINT16\_LE\_TO\_HOST(x)\ \ (x)}}
+\DoxyCodeLine{00198\ \textcolor{preprocessor}{\#define\ ATCA\_UINT32\_HOST\_TO\_LE(x)\ \ (x)}}
+\DoxyCodeLine{00199\ \textcolor{preprocessor}{\#define\ ATCA\_UINT32\_HOST\_TO\_BE(x)\ \ \_\_REV(x)}}
+\DoxyCodeLine{00200\ \textcolor{preprocessor}{\#define\ ATCA\_UINT32\_BE\_TO\_HOST(x)\ \ \_\_REV(x)}}
+\DoxyCodeLine{00201\ \textcolor{preprocessor}{\#define\ ATCA\_UINT64\_HOST\_TO\_BE(x)\ \ (((uint64\_t)\_\_REV((uint32\_t)x)\ <<\ 32)\ |\ (uint64\_t)\_\_REV((uint32\_t)(x\ >>\ 32)))}}
+\DoxyCodeLine{00202\ \textcolor{preprocessor}{\#define\ ATCA\_UINT64\_BE\_TO\_HOST(x)\ \ (((uint64\_t)\_\_REV((uint32\_t)x)\ <<\ 32)\ |\ (uint64\_t)\_\_REV((uint32\_t)(x\ >>\ 32)))}}
+\DoxyCodeLine{00203\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00204\ }
+\DoxyCodeLine{00205\ \textcolor{preprocessor}{\#define\ SHARED\_LIB\_EXPORT}}
+\DoxyCodeLine{00206\ \textcolor{preprocessor}{\#define\ SHARED\_LIB\_IMPORT\ \ \ \ \ \ \ extern}}
+\DoxyCodeLine{00207\ }
+\DoxyCodeLine{00208\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00209\ }
+\DoxyCodeLine{00210\ \textcolor{preprocessor}{\#ifdef\ ATCA\_BUILD\_SHARED\_LIBS}}
+\DoxyCodeLine{00211\ \textcolor{preprocessor}{\#if\ defined(cryptoauth\_EXPORTS)\ \&\&\ defined(\_WIN32)}}
+\DoxyCodeLine{00212\ \textcolor{preprocessor}{\#define\ ATCA\_DLL\ \ \ \ SHARED\_LIB\_EXPORT}}
+\DoxyCodeLine{00213\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00214\ \textcolor{preprocessor}{\#define\ ATCA\_DLL\ \ \ \ SHARED\_LIB\_IMPORT}}
+\DoxyCodeLine{00215\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00216\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00217\ \textcolor{preprocessor}{\#undef\ SHARED\_LIB\_EXPORT}}
+\DoxyCodeLine{00218\ \textcolor{preprocessor}{\#define\ SHARED\_LIB\_EXPORT}}
+\DoxyCodeLine{00219\ \textcolor{preprocessor}{\#define\ ATCA\_DLL\ \ \ \ extern}}
+\DoxyCodeLine{00220\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00221\ }
+\DoxyCodeLine{00222\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ ATCA\_COMPILER\_H\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

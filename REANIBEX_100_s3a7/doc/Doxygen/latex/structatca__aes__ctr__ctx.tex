@@ -1,0 +1,87 @@
+\doxysection{atca\+\_\+aes\+\_\+ctr\+\_\+ctx Struct Reference}
+\hypertarget{structatca__aes__ctr__ctx}{}\label{structatca__aes__ctr__ctx}\index{atca\_aes\_ctr\_ctx@{atca\_aes\_ctr\_ctx}}
+
+
+{\ttfamily \#include $<$atca\+\_\+crypto\+\_\+hw\+\_\+aes.\+h$>$}
+
+
+
+Collaboration diagram for atca\+\_\+aes\+\_\+ctr\+\_\+ctx\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=242pt]{structatca__aes__ctr__ctx__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group__device_gaa94f7bb4af0a3d6735225cc85d92cb50}{ATCADevice}} \mbox{\hyperlink{structatca__aes__ctr__ctx_abb6d14ff135d1b4169684a90a29d6971}{device}}
+\begin{DoxyCompactList}\small\item\em Device Context Pointer. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{structatca__aes__ctr__ctx_adc650c5be609220bb35f5e1d131a1710}{key\+\_\+id}}
+\begin{DoxyCompactList}\small\item\em Key location. Can either be a slot number or ATCA\+\_\+\+TEMPKEY\+\_\+\+KEYID for Temp\+Key. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{structatca__aes__ctr__ctx_a6ca9b9a80591e65ea2ddf80e7bc7edb1}{key\+\_\+block}}
+\begin{DoxyCompactList}\small\item\em Index of the 16-\/byte block to use within the key location for the actual key. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{structatca__aes__ctr__ctx_a9a9750b38654d7c90ea1299b9246ceb8}{cb}} \mbox{[}\mbox{\hyperlink{cryptoauthlib_8h_a71e52612e6d56f7412a113fcc4fb57d4}{ATCA\+\_\+\+AES128\+\_\+\+BLOCK\+\_\+\+SIZE}}\mbox{]}
+\begin{DoxyCompactList}\small\item\em Counter block, comprises of nonce + count value (16 bytes). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{structatca__aes__ctr__ctx_a75db55a82ea2671d53dca47a3df3531c}{counter\+\_\+size}}
+\begin{DoxyCompactList}\small\item\em Size of counter in the initialization vector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{structatca__aes__ctr__ctx_a9a9750b38654d7c90ea1299b9246ceb8}\label{structatca__aes__ctr__ctx_a9a9750b38654d7c90ea1299b9246ceb8} 
+\index{atca\_aes\_ctr\_ctx@{atca\_aes\_ctr\_ctx}!cb@{cb}}
+\index{cb@{cb}!atca\_aes\_ctr\_ctx@{atca\_aes\_ctr\_ctx}}
+\doxysubsubsection{\texorpdfstring{cb}{cb}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} atca\+\_\+aes\+\_\+ctr\+\_\+ctx\+::cb}
+
+
+
+Counter block, comprises of nonce + count value (16 bytes). 
+
+\Hypertarget{structatca__aes__ctr__ctx_a75db55a82ea2671d53dca47a3df3531c}\label{structatca__aes__ctr__ctx_a75db55a82ea2671d53dca47a3df3531c} 
+\index{atca\_aes\_ctr\_ctx@{atca\_aes\_ctr\_ctx}!counter\_size@{counter\_size}}
+\index{counter\_size@{counter\_size}!atca\_aes\_ctr\_ctx@{atca\_aes\_ctr\_ctx}}
+\doxysubsubsection{\texorpdfstring{counter\_size}{counter\_size}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} atca\+\_\+aes\+\_\+ctr\+\_\+ctx\+::counter\+\_\+size}
+
+
+
+Size of counter in the initialization vector. 
+
+\Hypertarget{structatca__aes__ctr__ctx_abb6d14ff135d1b4169684a90a29d6971}\label{structatca__aes__ctr__ctx_abb6d14ff135d1b4169684a90a29d6971} 
+\index{atca\_aes\_ctr\_ctx@{atca\_aes\_ctr\_ctx}!device@{device}}
+\index{device@{device}!atca\_aes\_ctr\_ctx@{atca\_aes\_ctr\_ctx}}
+\doxysubsubsection{\texorpdfstring{device}{device}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group__device_gaa94f7bb4af0a3d6735225cc85d92cb50}{ATCADevice}} atca\+\_\+aes\+\_\+ctr\+\_\+ctx\+::device}
+
+
+
+Device Context Pointer. 
+
+\Hypertarget{structatca__aes__ctr__ctx_a6ca9b9a80591e65ea2ddf80e7bc7edb1}\label{structatca__aes__ctr__ctx_a6ca9b9a80591e65ea2ddf80e7bc7edb1} 
+\index{atca\_aes\_ctr\_ctx@{atca\_aes\_ctr\_ctx}!key\_block@{key\_block}}
+\index{key\_block@{key\_block}!atca\_aes\_ctr\_ctx@{atca\_aes\_ctr\_ctx}}
+\doxysubsubsection{\texorpdfstring{key\_block}{key\_block}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} atca\+\_\+aes\+\_\+ctr\+\_\+ctx\+::key\+\_\+block}
+
+
+
+Index of the 16-\/byte block to use within the key location for the actual key. 
+
+\Hypertarget{structatca__aes__ctr__ctx_adc650c5be609220bb35f5e1d131a1710}\label{structatca__aes__ctr__ctx_adc650c5be609220bb35f5e1d131a1710} 
+\index{atca\_aes\_ctr\_ctx@{atca\_aes\_ctr\_ctx}!key\_id@{key\_id}}
+\index{key\_id@{key\_id}!atca\_aes\_ctr\_ctx@{atca\_aes\_ctr\_ctx}}
+\doxysubsubsection{\texorpdfstring{key\_id}{key\_id}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} atca\+\_\+aes\+\_\+ctr\+\_\+ctx\+::key\+\_\+id}
+
+
+
+Key location. Can either be a slot number or ATCA\+\_\+\+TEMPKEY\+\_\+\+KEYID for Temp\+Key. 
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\+SCE/\mbox{\hyperlink{atca__crypto__hw__aes_8h}{atca\+\_\+crypto\+\_\+hw\+\_\+aes.\+h}}\item 
+C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\+SCE/crypto/\mbox{\hyperlink{crypto_2atca__crypto__hw__aes_8h}{atca\+\_\+crypto\+\_\+hw\+\_\+aes.\+h}}\end{DoxyCompactItemize}

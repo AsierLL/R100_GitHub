@@ -1,0 +1,44 @@
+<map id="Comm_Sigfox_Execute_Test" name="Comm_Sigfox_Execute_Test">
+<area shape="rect" id="Node000001" title="Test of Sigfox module." alt="" coords="5,155,195,181"/>
+<area shape="rect" id="Node000002" href="$thread__comm__hal_8c.html#acd0f72ce82a8c749fe1171bd48269e66" title="Reset Wifi, Sigfox or GPS module." alt="" coords="256,79,418,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="143,152,277,108,279,113,145,157"/>
+<area shape="rect" id="Node000011" href="$thread__comm__hal_8c.html#a63b3e38ecaf443421eb673e2342e2f08" title="Select Uart to send and receive data. This function sets the SN74CBT Multiplexer/Demultiplexer via th..." alt="" coords="506,129,640,156"/>
+<area shape="poly" id="edge15_Node000001_Node000011" title=" " alt="" coords="195,160,490,144,491,150,195,166"/>
+<area shape="rect" id="Node000012" href="$_comm_8c.html#ae40e9c681ca7b454e790d494b96c2284" title="Change SCI3 (UART) baud rate." alt="" coords="243,180,431,207"/>
+<area shape="poly" id="edge18_Node000001_Node000012" title=" " alt="" coords="196,176,228,179,227,184,195,181"/>
+<area shape="rect" id="Node000013" href="$bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8c.html#a0f4cec6f2f54d23e3ae8a70587ba9034" title="Configure Wifi module." alt="" coords="262,231,412,273"/>
+<area shape="poly" id="edge19_Node000001_Node000013" title=" " alt="" coords="141,179,261,222,259,227,139,184"/>
+<area shape="rect" id="Node000003" href="$thread__comm__hal_8c.html#aba10912e5156af563d72a637fe9b7a78" title="Reset Wifi, Sigfox or GPS module." alt="" coords="502,28,645,55"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="402,75,492,56,493,61,403,81"/>
+<area shape="rect" id="Node000010" href="$thread__comm__hal_8c.html#a4e3f9bfdd5df0ab92a1713930d545237" title="Reset Wifi, Sigfox or GPS module." alt="" coords="501,79,645,105"/>
+<area shape="poly" id="edge12_Node000002_Node000010" title=" " alt="" coords="418,89,486,89,486,95,418,95"/>
+<area shape="rect" id="Node000004" href="$_i2_c__2_8c.html#aba3d08d9b33082a1c0aa61ae3e6b5e23" title="Function to read a byte data from a specific address." alt="" coords="745,56,857,83"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="645,47,730,58,730,63,645,53"/>
+<area shape="rect" id="Node000009" href="$_i2_c__2_8c.html#abb5323ebe9e05f1fe983ee0c53fa732e" title="Function to write a data byte at specific address." alt="" coords="745,107,857,133"/>
+<area shape="poly" id="edge8_Node000003_Node000009" title=" " alt="" coords="636,53,668,64,693,78,717,92,733,99,731,104,714,97,690,83,666,69,634,58"/>
+<area shape="rect" id="Node000005" href="$_i2_c__2_8c.html#aa504ef0b681fc32e47f923cc52b93067" title="Function to get a data byte from the i2C device." alt="" coords="964,5,1069,32"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="856,54,948,32,949,37,858,59"/>
+<area shape="rect" id="Node000006" href="$_i2_c__2_8c.html#afb25d38eef88c072ab6ce216e1965501" title="Generate the START condition in the i2C line." alt="" coords="948,56,1085,83"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="857,67,933,67,933,72,857,72"/>
+<area shape="rect" id="Node000007" href="$_i2_c__2_8c.html#a24d35a4dc09bc8d6c5be604be9a2102b" title="Generate the STOP condition in the i2C line." alt="" coords="949,107,1084,133"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="858,80,942,100,941,105,856,85"/>
+<area shape="rect" id="Node000008" href="$_i2_c__2_8c.html#a5a45bd2c0aa3fd6619ad4e682466200c" title="Function to send a data byte to the i2C device." alt="" coords="965,157,1068,184"/>
+<area shape="poly" id="edge7_Node000004_Node000008" title=" " alt="" coords="858,79,888,92,904,105,913,118,922,131,936,143,952,151,949,156,933,148,918,135,909,121,900,109,885,97,856,84"/>
+<area shape="poly" id="edge9_Node000009_Node000006" title=" " alt="" coords="857,104,941,84,942,89,858,109"/>
+<area shape="poly" id="edge10_Node000009_Node000007" title=" " alt="" coords="858,117,933,117,933,123,858,123"/>
+<area shape="poly" id="edge11_Node000009_Node000008" title=" " alt="" coords="858,131,950,153,949,158,857,136"/>
+<area shape="poly" id="edge13_Node000010_Node000004" title=" " alt="" coords="645,82,729,74,730,79,646,87"/>
+<area shape="poly" id="edge14_Node000010_Node000009" title=" " alt="" coords="646,98,729,109,729,114,645,104"/>
+<area shape="poly" id="edge16_Node000011_Node000004" title=" " alt="" coords="631,126,666,115,714,92,734,85,735,90,716,97,668,120,633,131"/>
+<area shape="poly" id="edge17_Node000011_Node000009" title=" " alt="" coords="641,133,729,124,729,130,641,139"/>
+<area shape="rect" id="Node000014" href="$bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8c.html#a6a4751afa8f2a1eadbdd2e6a45a3bd70" title="Waits for a response to a given command." alt="" coords="479,263,667,289"/>
+<area shape="poly" id="edge20_Node000013_Node000014" title=" " alt="" coords="412,257,464,262,463,268,412,262"/>
+<area shape="rect" id="Node000016" href="$bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8c.html#a5ded076c0aca8daa8d70b37657a64656" title="Send a command to the Sigfox module through UART." alt="" coords="493,212,653,239"/>
+<area shape="poly" id="edge22_Node000013_Node000016" title=" " alt="" coords="412,241,477,233,478,239,412,246"/>
+<area shape="rect" id="Node000015" href="$_comm_8c.html#a612240bf37db565f46ad4dc6c7298898" title="Get a received module response." alt="" coords="715,263,887,289"/>
+<area shape="poly" id="edge21_Node000014_Node000015" title=" " alt="" coords="667,273,700,273,700,279,667,279"/>
+<area shape="rect" id="Node000017" href="$_comm_8c.html#aceced6fe6160f18c11e8d0ea46cfe881" title="Send a string through the UART." alt="" coords="737,212,865,239"/>
+<area shape="poly" id="edge23_Node000016_Node000017" title=" " alt="" coords="654,223,722,223,722,228,654,228"/>
+<area shape="rect" id="Node000018" href="$thread__sys_mon__entry_8c.html#a33ca5a33ab10af89dcb290e9d052b724" title="Function that report if the devioce is in test mode montador or not." alt="" coords="935,212,1098,239"/>
+<area shape="poly" id="edge24_Node000017_Node000018" title=" " alt="" coords="865,223,919,223,919,228,865,228"/>
+</map>

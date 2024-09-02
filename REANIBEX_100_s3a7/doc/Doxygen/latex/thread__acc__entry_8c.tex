@@ -1,0 +1,436 @@
+\doxysection{C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/thread\+\_\+acc\+\_\+entry.c File Reference}
+\hypertarget{thread__acc__entry_8c}{}\label{thread__acc__entry_8c}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/thread\_acc\_entry.c@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/thread\_acc\_entry.c}}
+{\ttfamily \#include "{}device\+\_\+init.\+h"{}}\newline
+{\ttfamily \#include "{}R100\+\_\+\+Errors.\+h"{}}\newline
+{\ttfamily \#include "{}types\+\_\+basic.\+h"{}}\newline
+{\ttfamily \#include "{}types\+\_\+app.\+h"{}}\newline
+{\ttfamily \#include "{}Trace.\+h"{}}\newline
+{\ttfamily \#include "{}Comm.\+h"{}}\newline
+{\ttfamily \#include "{}I2\+C\+\_\+1.\+h"{}}\newline
+{\ttfamily \#include "{}I2\+C\+\_\+2.\+h"{}}\newline
+{\ttfamily \#include "{}RTC.\+h"{}}\newline
+{\ttfamily \#include "{}Keypad.\+h"{}}\newline
+{\ttfamily \#include "{}DB\+\_\+\+Test.\+h"{}}\newline
+{\ttfamily \#include "{}DB\+\_\+\+Episode.\+h"{}}\newline
+{\ttfamily \#include "{}bsp\+\_\+acc\+\_\+\+LIS3\+DH.\+h"{}}\newline
+{\ttfamily \#include "{}HAL/thread\+\_\+defibrillator\+\_\+hal.\+h"{}}\newline
+{\ttfamily \#include "{}HAL/thread\+\_\+pat\+Mon\+\_\+hal.\+h"{}}\newline
+{\ttfamily \#include "{}HAL/thread\+\_\+audio\+\_\+hal.\+h"{}}\newline
+{\ttfamily \#include "{}HAL/thread\+\_\+comm\+\_\+hal.\+h"{}}\newline
+{\ttfamily \#include "{}thread\+\_\+comm\+\_\+entry.\+h"{}}\newline
+{\ttfamily \#include "{}thread\+\_\+pat\+Mon\+\_\+entry.\+h"{}}\newline
+{\ttfamily \#include "{}thread\+\_\+sys\+Mon\+\_\+entry.\+h"{}}\newline
+{\ttfamily \#include "{}thread\+\_\+sys\+Mon.\+h"{}}\newline
+{\ttfamily \#include "{}thread\+\_\+audio\+\_\+entry.\+h"{}}\newline
+{\ttfamily \#include "{}thread\+\_\+audio.\+h"{}}\newline
+{\ttfamily \#include "{}thread\+\_\+core\+\_\+entry.\+h"{}}\newline
+{\ttfamily \#include "{}thread\+\_\+core.\+h"{}}\newline
+{\ttfamily \#include "{}thread\+\_\+acc.\+h"{}}\newline
+{\ttfamily \#include "{}thread\+\_\+acc\+\_\+entry.\+h"{}}\newline
+{\ttfamily \#include "{}sys\+Mon\+\_\+\+RF\+\_\+\+Comms.\+h"{}}\newline
+{\ttfamily \#include "{}thread\+\_\+comm.\+h"{}}\newline
+{\ttfamily \#include "{}thread\+\_\+api.\+h"{}}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+Include dependency graph for thread\+\_\+acc\+\_\+entry.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__acc__entry_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{thread__acc__entry_8c_a6d7663d0029b1968d58ab8e00a9126d1}{GPS\+\_\+\+ZERO}}~"{}\textbackslash{}0\textbackslash{}0\textbackslash{}0\textbackslash{}0"{}
+\item 
+\#define \mbox{\hyperlink{thread__acc__entry_8c_a56055aa2309bbf7f77d6dcdb70aed0a9}{acc\+\_\+wait\+\_\+time}}(x)~(x==false ? (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a5d2abe9b9f6908c380c8f1908c86590e}{OSTIME\+\_\+60\+SEC}}\texorpdfstring{$\ast$}{*}2) \+: (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a5d2abe9b9f6908c380c8f1908c86590e}{OSTIME\+\_\+60\+SEC}}\texorpdfstring{$\ast$}{*}4))
+\begin{DoxyCompactList}\small\item\em If not send the first message when 1 minute passes and if it is still moving every 3 minutes. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{thread__acc__entry_8c_a9bf17653bdbf34d448cd051a41f95905}{acc\+\_\+send\+\_\+time}}(x)~(x==false ? (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a5d2abe9b9f6908c380c8f1908c86590e}{OSTIME\+\_\+60\+SEC}}) \+: (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a5d2abe9b9f6908c380c8f1908c86590e}{OSTIME\+\_\+60\+SEC}}\texorpdfstring{$\ast$}{*}3))
+\begin{DoxyCompactList}\small\item\em Send the first message when 1 minute passes and if it is still moving every 3 minutes. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{thread__acc__entry_8c_a06e5ab1435db14e916bf76824fafeeaa}{acc\+\_\+send\+\_\+counter}}~\mbox{\hyperlink{thread__acc__entry_8h_a90d2df4da7774c054e9eea91a3fda743}{ACC\+\_\+\+INT\+\_\+\+COUNT\+\_\+\+MAX}}
+\begin{DoxyCompactList}\small\item\em Counter to send message. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{thread__acc__entry_8c_a996f7be338ccb40d1a2a5abc1ad61759}{ABS}}(x)~(((x) $<$ 0) ? -\/(x) \+: (x))
+\begin{DoxyCompactList}\small\item\em Convert to asolute value. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{thread__acc__entry_8c_abf940742e1b38f8100a344f9275d4086}{BUF\+\_\+\+MAX}}~11
+\begin{DoxyCompactList}\small\item\em Buffer max. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{thread__acc__entry_8c_ae1cfc33fdc49b0c43e892e8e7842ba53}{BUF\+\_\+\+FIL\+\_\+\+MAX}}~10
+\begin{DoxyCompactList}\small\item\em Filter buffer max. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{thread__acc__entry_8c_aec4282c662eabb196c392cabf125fa47}{Capture\+\_\+\+Axis\+\_\+\+Data\+\_\+\+SQRT}} (void)
+\begin{DoxyCompactList}\small\item\em Increment counter. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{thread__acc__entry_8c_aa98126332a2b636efcbe5711b5007ad0}{ACC\+\_\+\+Kill}} (void)
+\begin{DoxyCompactList}\small\item\em This function kill the devide. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{thread__acc__entry_8c_ab6b357f9bb0bcdbf7a472663b7387252}{ACC\+\_\+\+Send\+\_\+\+Comms}} (void)
+\begin{DoxyCompactList}\small\item\em This function will be used to send message through comms. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{thread__acc__entry_8c_a69f0d150ddd9259af14040615b58607c}{Led\+\_\+\+Blink\+\_\+\+ACC}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} force)
+\begin{DoxyCompactList}\small\item\em This function led blink each 10 seconds as RTC. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{thread__acc__entry_8c_ac4851b82463d39763ebfcd65a3e0c5a6}{ACC\+\_\+\+Cal\+\_\+\+Mov}} (void)
+\begin{DoxyCompactList}\small\item\em This function capture axis data and determines if the device is moving to send by communications, otherwise it kills the thread. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{thread__acc__entry_8c_a0cae9308c49e596d1ca77cf8bd7f7b7e}{thread\+\_\+acc\+\_\+entry}} (void)
+\begin{DoxyCompactList}\small\item\em This function will be executed when the cover has not been opened and if accelerometer interrupt is enabled. Also, will send an alert and the gps position with Sigfox. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structgps__config__t}{gps\+\_\+config\+\_\+t}} \mbox{\hyperlink{thread__acc__entry_8c_a30b1d67adb2fa0b8f99bfca1cc363d33}{R100\+\_\+gps}}
+\begin{DoxyCompactList}\small\item\em GPS data. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structacc__config__t}{acc\+\_\+config\+\_\+t}} \mbox{\hyperlink{thread__acc__entry_8c_af2189f9f55e3511c9cbe9c5b43f1dbfa}{R100\+\_\+acc}}
+\begin{DoxyCompactList}\small\item\em ACC data. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{struct_n_v___d_a_t_a__t}{NV\+\_\+\+DATA\+\_\+t}} \mbox{\hyperlink{thread__acc__entry_8c_afd7aabf1f95ea86068526ceaa030ad38}{nv\+\_\+data}}
+\begin{DoxyCompactList}\small\item\em Non volatile data. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{struct_n_v___d_a_t_a___b_l_o_c_k__t}{NV\+\_\+\+DATA\+\_\+\+BLOCK\+\_\+t}} \mbox{\hyperlink{thread__acc__entry_8c_a8d2c566909bc43ec9cf207e739bc98b9}{nv\+\_\+data\+\_\+block}}
+\begin{DoxyCompactList}\small\item\em Non volatile data. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{thread__acc__entry_8c_a4ba97d2eeea91cd127013efa77f89359}{thread\+\_\+acc\+\_\+intp\+\_\+counter}}
+\begin{DoxyCompactList}\small\item\em Movement counter. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{thread__acc__entry_8c_a20edc0d3f2010039d15f3e40b1586497}{acc\+\_\+send\+\_\+first\+\_\+time}}
+\begin{DoxyCompactList}\small\item\em Determine if send message. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \mbox{\hyperlink{thread__acc__entry_8c_afe958533b0d38b0c6f70228c908858c2}{time\+\_\+led}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVersion}{Version}
+v1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+15/07/2021 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+ivicente 
+\end{DoxyAuthor}
+\begin{DoxyWarning}{Warning}
+author date version .-\/ Edition 
+\end{DoxyWarning}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000070}{Bug}}]\end{DoxyRefDesc}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{thread__acc__entry_8c_a996f7be338ccb40d1a2a5abc1ad61759}\label{thread__acc__entry_8c_a996f7be338ccb40d1a2a5abc1ad61759} 
+\index{thread\_acc\_entry.c@{thread\_acc\_entry.c}!ABS@{ABS}}
+\index{ABS@{ABS}!thread\_acc\_entry.c@{thread\_acc\_entry.c}}
+\doxysubsubsection{\texorpdfstring{ABS}{ABS}}
+{\footnotesize\ttfamily \#define ABS(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~(((x) $<$ 0) ? -\/(x) \+: (x))}
+
+
+
+Convert to asolute value. 
+
+\Hypertarget{thread__acc__entry_8c_a06e5ab1435db14e916bf76824fafeeaa}\label{thread__acc__entry_8c_a06e5ab1435db14e916bf76824fafeeaa} 
+\index{thread\_acc\_entry.c@{thread\_acc\_entry.c}!acc\_send\_counter@{acc\_send\_counter}}
+\index{acc\_send\_counter@{acc\_send\_counter}!thread\_acc\_entry.c@{thread\_acc\_entry.c}}
+\doxysubsubsection{\texorpdfstring{acc\_send\_counter}{acc\_send\_counter}}
+{\footnotesize\ttfamily \#define acc\+\_\+send\+\_\+counter~\mbox{\hyperlink{thread__acc__entry_8h_a90d2df4da7774c054e9eea91a3fda743}{ACC\+\_\+\+INT\+\_\+\+COUNT\+\_\+\+MAX}}}
+
+
+
+Counter to send message. 
+
+\Hypertarget{thread__acc__entry_8c_a9bf17653bdbf34d448cd051a41f95905}\label{thread__acc__entry_8c_a9bf17653bdbf34d448cd051a41f95905} 
+\index{thread\_acc\_entry.c@{thread\_acc\_entry.c}!acc\_send\_time@{acc\_send\_time}}
+\index{acc\_send\_time@{acc\_send\_time}!thread\_acc\_entry.c@{thread\_acc\_entry.c}}
+\doxysubsubsection{\texorpdfstring{acc\_send\_time}{acc\_send\_time}}
+{\footnotesize\ttfamily \#define acc\+\_\+send\+\_\+time(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~(x==false ? (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a5d2abe9b9f6908c380c8f1908c86590e}{OSTIME\+\_\+60\+SEC}}) \+: (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a5d2abe9b9f6908c380c8f1908c86590e}{OSTIME\+\_\+60\+SEC}}\texorpdfstring{$\ast$}{*}3))}
+
+
+
+Send the first message when 1 minute passes and if it is still moving every 3 minutes. 
+
+\Hypertarget{thread__acc__entry_8c_a56055aa2309bbf7f77d6dcdb70aed0a9}\label{thread__acc__entry_8c_a56055aa2309bbf7f77d6dcdb70aed0a9} 
+\index{thread\_acc\_entry.c@{thread\_acc\_entry.c}!acc\_wait\_time@{acc\_wait\_time}}
+\index{acc\_wait\_time@{acc\_wait\_time}!thread\_acc\_entry.c@{thread\_acc\_entry.c}}
+\doxysubsubsection{\texorpdfstring{acc\_wait\_time}{acc\_wait\_time}}
+{\footnotesize\ttfamily \#define acc\+\_\+wait\+\_\+time(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~(x==false ? (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a5d2abe9b9f6908c380c8f1908c86590e}{OSTIME\+\_\+60\+SEC}}\texorpdfstring{$\ast$}{*}2) \+: (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a5d2abe9b9f6908c380c8f1908c86590e}{OSTIME\+\_\+60\+SEC}}\texorpdfstring{$\ast$}{*}4))}
+
+
+
+If not send the first message when 1 minute passes and if it is still moving every 3 minutes. 
+
+\Hypertarget{thread__acc__entry_8c_ae1cfc33fdc49b0c43e892e8e7842ba53}\label{thread__acc__entry_8c_ae1cfc33fdc49b0c43e892e8e7842ba53} 
+\index{thread\_acc\_entry.c@{thread\_acc\_entry.c}!BUF\_FIL\_MAX@{BUF\_FIL\_MAX}}
+\index{BUF\_FIL\_MAX@{BUF\_FIL\_MAX}!thread\_acc\_entry.c@{thread\_acc\_entry.c}}
+\doxysubsubsection{\texorpdfstring{BUF\_FIL\_MAX}{BUF\_FIL\_MAX}}
+{\footnotesize\ttfamily \#define BUF\+\_\+\+FIL\+\_\+\+MAX~10}
+
+
+
+Filter buffer max. 
+
+\Hypertarget{thread__acc__entry_8c_abf940742e1b38f8100a344f9275d4086}\label{thread__acc__entry_8c_abf940742e1b38f8100a344f9275d4086} 
+\index{thread\_acc\_entry.c@{thread\_acc\_entry.c}!BUF\_MAX@{BUF\_MAX}}
+\index{BUF\_MAX@{BUF\_MAX}!thread\_acc\_entry.c@{thread\_acc\_entry.c}}
+\doxysubsubsection{\texorpdfstring{BUF\_MAX}{BUF\_MAX}}
+{\footnotesize\ttfamily \#define BUF\+\_\+\+MAX~11}
+
+
+
+Buffer max. 
+
+\Hypertarget{thread__acc__entry_8c_a6d7663d0029b1968d58ab8e00a9126d1}\label{thread__acc__entry_8c_a6d7663d0029b1968d58ab8e00a9126d1} 
+\index{thread\_acc\_entry.c@{thread\_acc\_entry.c}!GPS\_ZERO@{GPS\_ZERO}}
+\index{GPS\_ZERO@{GPS\_ZERO}!thread\_acc\_entry.c@{thread\_acc\_entry.c}}
+\doxysubsubsection{\texorpdfstring{GPS\_ZERO}{GPS\_ZERO}}
+{\footnotesize\ttfamily \#define GPS\+\_\+\+ZERO~"{}\textbackslash{}0\textbackslash{}0\textbackslash{}0\textbackslash{}0"{}}
+
+INCLUDES 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{thread__acc__entry_8c_ac4851b82463d39763ebfcd65a3e0c5a6}\label{thread__acc__entry_8c_ac4851b82463d39763ebfcd65a3e0c5a6} 
+\index{thread\_acc\_entry.c@{thread\_acc\_entry.c}!ACC\_Cal\_Mov@{ACC\_Cal\_Mov}}
+\index{ACC\_Cal\_Mov@{ACC\_Cal\_Mov}!thread\_acc\_entry.c@{thread\_acc\_entry.c}}
+\doxysubsubsection{\texorpdfstring{ACC\_Cal\_Mov()}{ACC\_Cal\_Mov()}}
+{\footnotesize\ttfamily void ACC\+\_\+\+Cal\+\_\+\+Mov (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+This function capture axis data and determines if the device is moving to send by communications, otherwise it kills the thread. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__acc__entry_8c_ac4851b82463d39763ebfcd65a3e0c5a6_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__acc__entry_8c_ac4851b82463d39763ebfcd65a3e0c5a6_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__acc__entry_8c_aa98126332a2b636efcbe5711b5007ad0}\label{thread__acc__entry_8c_aa98126332a2b636efcbe5711b5007ad0} 
+\index{thread\_acc\_entry.c@{thread\_acc\_entry.c}!ACC\_Kill@{ACC\_Kill}}
+\index{ACC\_Kill@{ACC\_Kill}!thread\_acc\_entry.c@{thread\_acc\_entry.c}}
+\doxysubsubsection{\texorpdfstring{ACC\_Kill()}{ACC\_Kill()}}
+{\footnotesize\ttfamily void ACC\+\_\+\+Kill (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+This function kill the devide. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__acc__entry_8c_aa98126332a2b636efcbe5711b5007ad0_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__acc__entry_8c_aa98126332a2b636efcbe5711b5007ad0_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__acc__entry_8c_ab6b357f9bb0bcdbf7a472663b7387252}\label{thread__acc__entry_8c_ab6b357f9bb0bcdbf7a472663b7387252} 
+\index{thread\_acc\_entry.c@{thread\_acc\_entry.c}!ACC\_Send\_Comms@{ACC\_Send\_Comms}}
+\index{ACC\_Send\_Comms@{ACC\_Send\_Comms}!thread\_acc\_entry.c@{thread\_acc\_entry.c}}
+\doxysubsubsection{\texorpdfstring{ACC\_Send\_Comms()}{ACC\_Send\_Comms()}}
+{\footnotesize\ttfamily void ACC\+\_\+\+Send\+\_\+\+Comms (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+This function will be used to send message through comms. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{thread__acc__entry_8c_ab6b357f9bb0bcdbf7a472663b7387252_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__acc__entry_8c_ab6b357f9bb0bcdbf7a472663b7387252_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__acc__entry_8c_aec4282c662eabb196c392cabf125fa47}\label{thread__acc__entry_8c_aec4282c662eabb196c392cabf125fa47} 
+\index{thread\_acc\_entry.c@{thread\_acc\_entry.c}!Capture\_Axis\_Data\_SQRT@{Capture\_Axis\_Data\_SQRT}}
+\index{Capture\_Axis\_Data\_SQRT@{Capture\_Axis\_Data\_SQRT}!thread\_acc\_entry.c@{thread\_acc\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Capture\_Axis\_Data\_SQRT()}{Capture\_Axis\_Data\_SQRT()}}
+{\footnotesize\ttfamily static void Capture\+\_\+\+Axis\+\_\+\+Data\+\_\+\+SQRT (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Increment counter. 
+
+Method 1\+: Depending on the configured interrupt increments the counter.
+
+Method 2\+: Increments the counter by calculating if there is movement by doing a simple subtraction.
+
+Method 3\+: Increment the counter if there is movement depending on the result of the axes using the math.\+h library. La funcion sqrt da warning y se añade FLT\+\_\+\+EVAL\+\_\+\+METHOD=3 porque se añade la libreria math.\+h Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__acc__entry_8c_aec4282c662eabb196c392cabf125fa47_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__acc__entry_8c_aec4282c662eabb196c392cabf125fa47_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__acc__entry_8c_a69f0d150ddd9259af14040615b58607c}\label{thread__acc__entry_8c_a69f0d150ddd9259af14040615b58607c} 
+\index{thread\_acc\_entry.c@{thread\_acc\_entry.c}!Led\_Blink\_ACC@{Led\_Blink\_ACC}}
+\index{Led\_Blink\_ACC@{Led\_Blink\_ACC}!thread\_acc\_entry.c@{thread\_acc\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Led\_Blink\_ACC()}{Led\_Blink\_ACC()}}
+{\footnotesize\ttfamily void Led\+\_\+\+Blink\+\_\+\+ACC (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}}}]{force }\end{DoxyParamCaption})}
+
+
+
+This function led blink each 10 seconds as RTC. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em force} & Force to blink led\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=276pt]{thread__acc__entry_8c_a69f0d150ddd9259af14040615b58607c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__acc__entry_8c_a69f0d150ddd9259af14040615b58607c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__acc__entry_8c_a0cae9308c49e596d1ca77cf8bd7f7b7e}\label{thread__acc__entry_8c_a0cae9308c49e596d1ca77cf8bd7f7b7e} 
+\index{thread\_acc\_entry.c@{thread\_acc\_entry.c}!thread\_acc\_entry@{thread\_acc\_entry}}
+\index{thread\_acc\_entry@{thread\_acc\_entry}!thread\_acc\_entry.c@{thread\_acc\_entry.c}}
+\doxysubsubsection{\texorpdfstring{thread\_acc\_entry()}{thread\_acc\_entry()}}
+{\footnotesize\ttfamily void thread\+\_\+acc\+\_\+entry (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+This function will be executed when the cover has not been opened and if accelerometer interrupt is enabled. Also, will send an alert and the gps position with Sigfox. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__acc__entry_8c_a0cae9308c49e596d1ca77cf8bd7f7b7e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__acc__entry_8c_a0cae9308c49e596d1ca77cf8bd7f7b7e_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{thread__acc__entry_8c_a20edc0d3f2010039d15f3e40b1586497}\label{thread__acc__entry_8c_a20edc0d3f2010039d15f3e40b1586497} 
+\index{thread\_acc\_entry.c@{thread\_acc\_entry.c}!acc\_send\_first\_time@{acc\_send\_first\_time}}
+\index{acc\_send\_first\_time@{acc\_send\_first\_time}!thread\_acc\_entry.c@{thread\_acc\_entry.c}}
+\doxysubsubsection{\texorpdfstring{acc\_send\_first\_time}{acc\_send\_first\_time}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} acc\+\_\+send\+\_\+first\+\_\+time\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Determine if send message. 
+
+\Hypertarget{thread__acc__entry_8c_afd7aabf1f95ea86068526ceaa030ad38}\label{thread__acc__entry_8c_afd7aabf1f95ea86068526ceaa030ad38} 
+\index{thread\_acc\_entry.c@{thread\_acc\_entry.c}!nv\_data@{nv\_data}}
+\index{nv\_data@{nv\_data}!thread\_acc\_entry.c@{thread\_acc\_entry.c}}
+\doxysubsubsection{\texorpdfstring{nv\_data}{nv\_data}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_n_v___d_a_t_a__t}{NV\+\_\+\+DATA\+\_\+t}} nv\+\_\+data\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Non volatile data. 
+
+LOCALS \Hypertarget{thread__acc__entry_8c_a8d2c566909bc43ec9cf207e739bc98b9}\label{thread__acc__entry_8c_a8d2c566909bc43ec9cf207e739bc98b9} 
+\index{thread\_acc\_entry.c@{thread\_acc\_entry.c}!nv\_data\_block@{nv\_data\_block}}
+\index{nv\_data\_block@{nv\_data\_block}!thread\_acc\_entry.c@{thread\_acc\_entry.c}}
+\doxysubsubsection{\texorpdfstring{nv\_data\_block}{nv\_data\_block}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_n_v___d_a_t_a___b_l_o_c_k__t}{NV\+\_\+\+DATA\+\_\+\+BLOCK\+\_\+t}} nv\+\_\+data\+\_\+block\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Non volatile data. 
+
+\Hypertarget{thread__acc__entry_8c_af2189f9f55e3511c9cbe9c5b43f1dbfa}\label{thread__acc__entry_8c_af2189f9f55e3511c9cbe9c5b43f1dbfa} 
+\index{thread\_acc\_entry.c@{thread\_acc\_entry.c}!R100\_acc@{R100\_acc}}
+\index{R100\_acc@{R100\_acc}!thread\_acc\_entry.c@{thread\_acc\_entry.c}}
+\doxysubsubsection{\texorpdfstring{R100\_acc}{R100\_acc}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structacc__config__t}{acc\+\_\+config\+\_\+t}} R100\+\_\+acc\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+ACC data. 
+
+\Hypertarget{thread__acc__entry_8c_a30b1d67adb2fa0b8f99bfca1cc363d33}\label{thread__acc__entry_8c_a30b1d67adb2fa0b8f99bfca1cc363d33} 
+\index{thread\_acc\_entry.c@{thread\_acc\_entry.c}!R100\_gps@{R100\_gps}}
+\index{R100\_gps@{R100\_gps}!thread\_acc\_entry.c@{thread\_acc\_entry.c}}
+\doxysubsubsection{\texorpdfstring{R100\_gps}{R100\_gps}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structgps__config__t}{gps\+\_\+config\+\_\+t}} R100\+\_\+gps\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+GPS data. 
+
+EXTERNS \Hypertarget{thread__acc__entry_8c_a4ba97d2eeea91cd127013efa77f89359}\label{thread__acc__entry_8c_a4ba97d2eeea91cd127013efa77f89359} 
+\index{thread\_acc\_entry.c@{thread\_acc\_entry.c}!thread\_acc\_intp\_counter@{thread\_acc\_intp\_counter}}
+\index{thread\_acc\_intp\_counter@{thread\_acc\_intp\_counter}!thread\_acc\_entry.c@{thread\_acc\_entry.c}}
+\doxysubsubsection{\texorpdfstring{thread\_acc\_intp\_counter}{thread\_acc\_intp\_counter}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} thread\+\_\+acc\+\_\+intp\+\_\+counter\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Movement counter. 
+
+\Hypertarget{thread__acc__entry_8c_afe958533b0d38b0c6f70228c908858c2}\label{thread__acc__entry_8c_afe958533b0d38b0c6f70228c908858c2} 
+\index{thread\_acc\_entry.c@{thread\_acc\_entry.c}!time\_led@{time\_led}}
+\index{time\_led@{time\_led}!thread\_acc\_entry.c@{thread\_acc\_entry.c}}
+\doxysubsubsection{\texorpdfstring{time\_led}{time\_led}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} time\+\_\+led\hspace{0.3cm}{\ttfamily [static]}}
+

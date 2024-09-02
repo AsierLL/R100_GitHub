@@ -1,0 +1,109 @@
+\doxysection{NFC\+\_\+\+DEVICE\+\_\+\+ID\+\_\+t Struct Reference}
+\hypertarget{struct_n_f_c___d_e_v_i_c_e___i_d__t}{}\label{struct_n_f_c___d_e_v_i_c_e___i_d__t}\index{NFC\_DEVICE\_ID\_t@{NFC\_DEVICE\_ID\_t}}
+
+
+Device info.  
+
+
+
+
+{\ttfamily \#include $<$device\+\_\+init.\+h$>$}
+
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \mbox{\hyperlink{struct_n_f_c___d_e_v_i_c_e___i_d__t_abdc517ae53beaf33cc157d4d82e33989}{structure\+\_\+version}}
+\begin{DoxyCompactList}\small\item\em Structure version code. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{struct_n_f_c___d_e_v_i_c_e___i_d__t_a96e080e8e17a3757e92669c94208801e}{develop\+\_\+mode}}
+\begin{DoxyCompactList}\small\item\em Develop mode (0 -\/ Max Uint16\+\_\+t) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{struct_n_f_c___d_e_v_i_c_e___i_d__t_ae62aab65be06ba82ef23ddd71f0266ae}{device\+\_\+options}}
+\begin{DoxyCompactList}\small\item\em Bitset for device options (b7\+: full\+\_\+auto b2\+:Wifi; b1\+:SIGFOX; b0\+:GPS) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \mbox{\hyperlink{struct_n_f_c___d_e_v_i_c_e___i_d__t_af270a6c0d3a0ea2e753cc84a76bd0f0c}{zp\+\_\+adcs\+\_\+short}}
+\begin{DoxyCompactList}\small\item\em Zp with electrodes in short-\/circuit (in ADCs) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \mbox{\hyperlink{struct_n_f_c___d_e_v_i_c_e___i_d__t_a6abdae63695697a2e15cdaa9cc84f118}{zp\+\_\+adcs\+\_\+calibration}}
+\begin{DoxyCompactList}\small\item\em Zp input connected to calibration (in ADCs) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{struct_n_f_c___d_e_v_i_c_e___i_d__t_a4586a619efdeb557df5a30b8ba7c00b6}{device\+\_\+sn}} \mbox{[}\mbox{\hyperlink{device__init_8h_a633ded5bcc6018dd045e1ef28d7ad7c9}{RSC\+\_\+\+NAME\+\_\+\+SZ}}\mbox{]}
+\begin{DoxyCompactList}\small\item\em Device serial number. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{struct_n_f_c___d_e_v_i_c_e___i_d__t_a63b90be7c57ae2509e45aeaf17f13cf3}{device\+\_\+manufacture\+\_\+date}} \mbox{[}\mbox{\hyperlink{device__init_8h_a633ded5bcc6018dd045e1ef28d7ad7c9}{RSC\+\_\+\+NAME\+\_\+\+SZ}}\mbox{]}
+\begin{DoxyCompactList}\small\item\em Device manufacture date. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Device info. 
+
+\doxysubsection{Field Documentation}
+\Hypertarget{struct_n_f_c___d_e_v_i_c_e___i_d__t_a96e080e8e17a3757e92669c94208801e}\label{struct_n_f_c___d_e_v_i_c_e___i_d__t_a96e080e8e17a3757e92669c94208801e} 
+\index{NFC\_DEVICE\_ID\_t@{NFC\_DEVICE\_ID\_t}!develop\_mode@{develop\_mode}}
+\index{develop\_mode@{develop\_mode}!NFC\_DEVICE\_ID\_t@{NFC\_DEVICE\_ID\_t}}
+\doxysubsubsection{\texorpdfstring{develop\_mode}{develop\_mode}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} NFC\+\_\+\+DEVICE\+\_\+\+ID\+\_\+t\+::develop\+\_\+mode}
+
+
+
+Develop mode (0 -\/ Max Uint16\+\_\+t) 
+
+\Hypertarget{struct_n_f_c___d_e_v_i_c_e___i_d__t_a63b90be7c57ae2509e45aeaf17f13cf3}\label{struct_n_f_c___d_e_v_i_c_e___i_d__t_a63b90be7c57ae2509e45aeaf17f13cf3} 
+\index{NFC\_DEVICE\_ID\_t@{NFC\_DEVICE\_ID\_t}!device\_manufacture\_date@{device\_manufacture\_date}}
+\index{device\_manufacture\_date@{device\_manufacture\_date}!NFC\_DEVICE\_ID\_t@{NFC\_DEVICE\_ID\_t}}
+\doxysubsubsection{\texorpdfstring{device\_manufacture\_date}{device\_manufacture\_date}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} NFC\+\_\+\+DEVICE\+\_\+\+ID\+\_\+t\+::device\+\_\+manufacture\+\_\+date\mbox{[}\mbox{\hyperlink{device__init_8h_a633ded5bcc6018dd045e1ef28d7ad7c9}{RSC\+\_\+\+NAME\+\_\+\+SZ}}\mbox{]}}
+
+
+
+Device manufacture date. 
+
+\Hypertarget{struct_n_f_c___d_e_v_i_c_e___i_d__t_ae62aab65be06ba82ef23ddd71f0266ae}\label{struct_n_f_c___d_e_v_i_c_e___i_d__t_ae62aab65be06ba82ef23ddd71f0266ae} 
+\index{NFC\_DEVICE\_ID\_t@{NFC\_DEVICE\_ID\_t}!device\_options@{device\_options}}
+\index{device\_options@{device\_options}!NFC\_DEVICE\_ID\_t@{NFC\_DEVICE\_ID\_t}}
+\doxysubsubsection{\texorpdfstring{device\_options}{device\_options}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} NFC\+\_\+\+DEVICE\+\_\+\+ID\+\_\+t\+::device\+\_\+options}
+
+
+
+Bitset for device options (b7\+: full\+\_\+auto b2\+:Wifi; b1\+:SIGFOX; b0\+:GPS) 
+
+\Hypertarget{struct_n_f_c___d_e_v_i_c_e___i_d__t_a4586a619efdeb557df5a30b8ba7c00b6}\label{struct_n_f_c___d_e_v_i_c_e___i_d__t_a4586a619efdeb557df5a30b8ba7c00b6} 
+\index{NFC\_DEVICE\_ID\_t@{NFC\_DEVICE\_ID\_t}!device\_sn@{device\_sn}}
+\index{device\_sn@{device\_sn}!NFC\_DEVICE\_ID\_t@{NFC\_DEVICE\_ID\_t}}
+\doxysubsubsection{\texorpdfstring{device\_sn}{device\_sn}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} NFC\+\_\+\+DEVICE\+\_\+\+ID\+\_\+t\+::device\+\_\+sn\mbox{[}\mbox{\hyperlink{device__init_8h_a633ded5bcc6018dd045e1ef28d7ad7c9}{RSC\+\_\+\+NAME\+\_\+\+SZ}}\mbox{]}}
+
+
+
+Device serial number. 
+
+\Hypertarget{struct_n_f_c___d_e_v_i_c_e___i_d__t_abdc517ae53beaf33cc157d4d82e33989}\label{struct_n_f_c___d_e_v_i_c_e___i_d__t_abdc517ae53beaf33cc157d4d82e33989} 
+\index{NFC\_DEVICE\_ID\_t@{NFC\_DEVICE\_ID\_t}!structure\_version@{structure\_version}}
+\index{structure\_version@{structure\_version}!NFC\_DEVICE\_ID\_t@{NFC\_DEVICE\_ID\_t}}
+\doxysubsubsection{\texorpdfstring{structure\_version}{structure\_version}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} NFC\+\_\+\+DEVICE\+\_\+\+ID\+\_\+t\+::structure\+\_\+version}
+
+
+
+Structure version code. 
+
+\Hypertarget{struct_n_f_c___d_e_v_i_c_e___i_d__t_a6abdae63695697a2e15cdaa9cc84f118}\label{struct_n_f_c___d_e_v_i_c_e___i_d__t_a6abdae63695697a2e15cdaa9cc84f118} 
+\index{NFC\_DEVICE\_ID\_t@{NFC\_DEVICE\_ID\_t}!zp\_adcs\_calibration@{zp\_adcs\_calibration}}
+\index{zp\_adcs\_calibration@{zp\_adcs\_calibration}!NFC\_DEVICE\_ID\_t@{NFC\_DEVICE\_ID\_t}}
+\doxysubsubsection{\texorpdfstring{zp\_adcs\_calibration}{zp\_adcs\_calibration}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} NFC\+\_\+\+DEVICE\+\_\+\+ID\+\_\+t\+::zp\+\_\+adcs\+\_\+calibration}
+
+
+
+Zp input connected to calibration (in ADCs) 
+
+\Hypertarget{struct_n_f_c___d_e_v_i_c_e___i_d__t_af270a6c0d3a0ea2e753cc84a76bd0f0c}\label{struct_n_f_c___d_e_v_i_c_e___i_d__t_af270a6c0d3a0ea2e753cc84a76bd0f0c} 
+\index{NFC\_DEVICE\_ID\_t@{NFC\_DEVICE\_ID\_t}!zp\_adcs\_short@{zp\_adcs\_short}}
+\index{zp\_adcs\_short@{zp\_adcs\_short}!NFC\_DEVICE\_ID\_t@{NFC\_DEVICE\_ID\_t}}
+\doxysubsubsection{\texorpdfstring{zp\_adcs\_short}{zp\_adcs\_short}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} NFC\+\_\+\+DEVICE\+\_\+\+ID\+\_\+t\+::zp\+\_\+adcs\+\_\+short}
+
+
+
+Zp with electrodes in short-\/circuit (in ADCs) 
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\mbox{\hyperlink{device__init_8h}{device\+\_\+init.\+h}}\end{DoxyCompactItemize}

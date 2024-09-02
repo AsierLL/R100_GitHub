@@ -1,0 +1,11 @@
+<map id="Defib_Cmd_Charge" name="Defib_Cmd_Charge">
+<area shape="rect" id="Node000001" title="Command a capacitor charge." alt="" coords="5,81,138,108"/>
+<area shape="rect" id="Node000002" href="$thread__defibrillator__hal_8c.html#a51d3d1bc2120f01ddcb0ed702a23e913" title="Read the Vc value from the main capacitor." alt="" coords="213,5,314,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="101,78,185,42,202,35,204,40,187,46,103,83"/>
+<area shape="rect" id="Node000003" href="$sys_mon___battery_8c.html#a0dadad284c2d7442cdf78c1bd2bd4b25" title="Increment the number of Vc full charges." alt="" coords="206,56,321,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="138,83,190,76,191,82,138,89"/>
+<area shape="rect" id="Node000004" href="$thread__pat_mon__hal_8c.html#a6b07f419fb5494de970c245ba09885a4" title="report the impedance value (in Ohms, ADCs or virtual)" alt="" coords="186,107,341,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="138,101,170,105,170,110,138,106"/>
+<area shape="rect" id="Node000005" href="$thread__defibrillator__entry_8c.html#a0a9c47f9e29c41b8847eed50d98b4468" title="Process events related to defib." alt="" coords="197,157,330,184"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="103,106,187,143,204,149,202,154,185,148,101,111"/>
+</map>

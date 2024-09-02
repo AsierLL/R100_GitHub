@@ -1,0 +1,50 @@
+<map id="Sigfox_Command_Response" name="Sigfox_Command_Response">
+<area shape="rect" id="Node000001" title="Waits for a response to a given command." alt="" coords="1601,221,1789,248"/>
+<area shape="rect" id="Node000002" href="$bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8c.html#a0f4cec6f2f54d23e3ae8a70587ba9034" title="Configure Wifi module." alt="" coords="1382,133,1533,176"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1638,218,1522,179,1524,174,1639,213"/>
+<area shape="rect" id="Node000011" href="$bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8c.html#afa38aea6b87f9d40759ebff441976f80" title="Send data frame through Sigfox." alt="" coords="1114,221,1286,248"/>
+<area shape="poly" id="edge12_Node000001_Node000011" title=" " alt="" coords="1585,237,1287,237,1287,232,1585,232"/>
+<area shape="rect" id="Node000016" href="$bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8c.html#a2c472548c48e6c4276ac3da4a59613ee" title="Start Continuous Wave Test." alt="" coords="1381,32,1534,59"/>
+<area shape="poly" id="edge21_Node000001_Node000016" title=" " alt="" coords="1663,214,1474,61,1478,57,1667,209"/>
+<area shape="rect" id="Node000017" href="$bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8c.html#a2a01b0e42f04c530d197f0a07dd649ec" title="Start RX GFSK test mode." alt="" coords="1362,272,1553,299"/>
+<area shape="poly" id="edge23_Node000001_Node000017" title=" " alt="" coords="1615,254,1524,274,1523,269,1614,249"/>
+<area shape="rect" id="Node000019" href="$bsp__sigfox__wisol-_e_v_b_s_f_m10_r_8c.html#a8849a2415e3742133557b698a64d986d" title="Stop Continuous Wave Test." alt="" coords="1381,365,1534,392"/>
+<area shape="poly" id="edge26_Node000001_Node000019" title=" " alt="" coords="1660,259,1483,367,1480,362,1657,254"/>
+<area shape="rect" id="Node000003" href="$thread__comm__hal_8c.html#a3966732dacf626b4fef99504eae11fd4" title="Device information Check." alt="" coords="1127,43,1274,85"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="1390,129,1313,100,1273,87,1275,82,1315,95,1392,124"/>
+<area shape="rect" id="Node000009" href="$thread__comm__hal_8c.html#aad8ef9e81af60f170ee4d4e5bfb580d0" title="Test of Sigfox module." alt="" coords="1106,109,1295,136"/>
+<area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="1367,146,1295,137,1296,132,1367,141"/>
+<area shape="rect" id="Node000010" href="$thread__comm__hal_8c.html#a8940317343835bfd6ab8aeb253689893" title="Initialization of Sigfox module." alt="" coords="1122,160,1278,187"/>
+<area shape="poly" id="edge10_Node000002_Node000010" title=" " alt="" coords="1367,164,1279,170,1278,165,1366,159"/>
+<area shape="rect" id="Node000004" href="$thread__comm__hal_8c.html#a41272f2468c23dfaf459579637d8c295" title="Perform sigfox module Uplink Test." alt="" coords="826,5,1038,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="1111,52,1014,35,1015,30,1111,46"/>
+<area shape="rect" id="Node000005" href="$thread__comm__entry_8c.html#a9dbb28ae3719b97e8cd74d43327403ce" title="Process events related to SIGFOX COMM module." alt="" coords="620,208,778,235"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="850,40,827,53,786,91,751,135,726,177,709,209,704,206,721,174,747,132,782,87,824,49,847,36"/>
+<area shape="rect" id="Node000006" href="$thread__comm__entry_8c.html#a88587ace521f9dcb7e701367eeec5824" title="Thread COMM entry function." alt="" coords="436,208,572,235"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="605,224,573,224,573,219,605,219"/>
+<area shape="rect" id="Node000007" href="$thread__comm_8c.html#a4d0497fd082ea6ad8cce7e8437cfc816" title=" " alt="" coords="257,208,388,235"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="420,224,388,224,388,219,420,219"/>
+<area shape="rect" id="Node000008" href="$thread__comm_8c.html#a01a6aa5f9adb99b48c6e175a2cab1316" title=" " alt="" coords="5,208,209,235"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="241,224,209,224,209,219,241,219"/>
+<area shape="poly" id="edge9_Node000009_Node000005" title=" " alt="" coords="1113,109,1048,102,976,100,900,106,827,124,791,141,759,164,714,209,710,206,756,160,788,137,825,119,899,101,975,95,1049,97,1113,104"/>
+<area shape="poly" id="edge11_Node000010_Node000005" title=" " alt="" coords="1119,159,1038,148,931,135,884,136,826,148,795,160,765,176,718,210,715,205,762,172,792,155,825,143,884,131,931,130,1038,143,1119,154"/>
+<area shape="rect" id="Node000012" href="$thread__comm__hal_8c.html#ac81db4e65de502201f2c1fe434d67100" title="Send R100 Functional Alert." alt="" coords="845,157,1019,184"/>
+<area shape="poly" id="edge13_Node000011_Node000012" title=" " alt="" coords="1126,220,991,187,992,182,1127,215"/>
+<area shape="rect" id="Node000013" href="$thread__comm__hal_8c.html#abf01cd774e17dbff3e24ff692eabbf86" title="Send battery and electrodes expiration date." alt="" coords="847,208,1017,235"/>
+<area shape="poly" id="edge15_Node000011_Node000013" title=" " alt="" coords="1098,232,1017,228,1017,223,1099,227"/>
+<area shape="rect" id="Node000014" href="$thread__comm__hal_8c.html#adb15e35af3b08b9c4273b9bdb8909f1c" title="Send R100 GPS Position." alt="" coords="835,259,1029,285"/>
+<area shape="poly" id="edge17_Node000011_Node000014" title=" " alt="" coords="1099,251,1029,261,1029,256,1098,246"/>
+<area shape="rect" id="Node000015" href="$thread__comm__hal_8c.html#adf42691907cbb4718b35c6b1646abfd7" title="Send R100 Test." alt="" coords="846,309,1018,336"/>
+<area shape="poly" id="edge19_Node000011_Node000015" title=" " alt="" coords="1154,257,1039,300,997,311,996,306,1037,295,1153,252"/>
+<area shape="poly" id="edge14_Node000012_Node000005" title=" " alt="" coords="853,190,764,210,763,205,852,185"/>
+<area shape="poly" id="edge16_Node000013_Node000005" title=" " alt="" coords="832,224,778,224,778,219,832,219"/>
+<area shape="poly" id="edge18_Node000014_Node000005" title=" " alt="" coords="852,257,763,238,764,233,853,252"/>
+<area shape="poly" id="edge20_Node000015_Node000005" title=" " alt="" coords="844,307,825,300,765,269,717,237,720,233,767,264,827,295,846,302"/>
+<area shape="poly" id="edge22_Node000016_Node000004" title=" " alt="" coords="1365,38,1314,33,1038,23,1039,17,1314,28,1366,32"/>
+<area shape="rect" id="Node000018" href="$thread__comm__hal_8c.html#a6170b241b51001fcd5c60c83b80704f2" title="Start sigfox module Downlink Test (with RX GFSK test mode)" alt="" coords="1086,304,1314,331"/>
+<area shape="poly" id="edge24_Node000017_Node000018" title=" " alt="" coords="1347,302,1313,306,1312,301,1346,296"/>
+<area shape="poly" id="edge25_Node000018_Node000005" title=" " alt="" coords="1148,339,1081,357,999,370,955,373,911,371,867,364,825,350,785,327,751,295,724,263,706,237,711,234,728,260,755,291,788,322,827,346,868,359,911,366,955,368,999,365,1080,352,1146,334"/>
+<area shape="rect" id="Node000020" href="$thread__comm__hal_8c.html#aec4d46d0b02d71bce4b5f7a033c3635e" title="Stop sigfox module Uplink Test." alt="" coords="826,411,1038,437"/>
+<area shape="poly" id="edge27_Node000019_Node000020" title=" " alt="" coords="1366,389,1038,418,1038,412,1366,384"/>
+<area shape="poly" id="edge28_Node000020_Node000005" title=" " alt="" coords="847,407,824,394,782,356,747,311,721,269,704,236,709,234,726,266,751,308,786,352,827,390,850,402"/>
+</map>

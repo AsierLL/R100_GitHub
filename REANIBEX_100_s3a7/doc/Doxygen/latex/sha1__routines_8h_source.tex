@@ -1,0 +1,73 @@
+\doxysection{sha1\+\_\+routines.\+h}
+\hypertarget{sha1__routines_8h_source}{}\label{sha1__routines_8h_source}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/SCE/crypto/hashes/sha1\_routines.h@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/SCE/crypto/hashes/sha1\_routines.h}}
+\mbox{\hyperlink{sha1__routines_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#ifndef\ \_\_SHA1\_ROUTINES\_DOT\_H\_\_}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#define\ \_\_SHA1\_ROUTINES\_DOT\_H\_\_}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ <stddef.h>}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#ifdef\ WIN32}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#include\ <windows.h>}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#include\ <assert.h>}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#ifndef\ U8}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#define\ U8\ uint8\_t}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#ifndef\ U16}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#define\ U16\ uint16\_t}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#ifndef\ U32}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#define\ U32\ uint32\_t}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#ifndef\ memcpy\_P}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#define\ memcpy\_P\ memmove}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#ifndef\ strcpy\_P}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#define\ strcpy\_P\ strcpy}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#ifndef\ \_WDRESET}}
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#define\ \_WDRESET()}}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#define\ \_NOP()}}
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00070\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00074\ \{}
+\DoxyCodeLine{00075\ \ \ \ \ \mbox{\hyperlink{sha1__routines_8h_a8f953f379d243081b950adb7f194b2e8}{U32}}\ h[20\ /\ 4];\ \ \ \ \ \ \textcolor{comment}{//\ Ensure\ it's\ word\ aligned}}
+\DoxyCodeLine{00076\ \ \ \ \ \mbox{\hyperlink{sha1__routines_8h_a8f953f379d243081b950adb7f194b2e8}{U32}}\ buf[64\ /\ 4];\ \ \ \ \textcolor{comment}{//\ Ensure\ it's\ word\ aligned}}
+\DoxyCodeLine{00077\ \ \ \ \ \mbox{\hyperlink{sha1__routines_8h_a8f953f379d243081b950adb7f194b2e8}{U32}}\ \mbox{\hyperlink{struct_c_l___hash_context_a2b1130c3f0d3664e44f115fc4aa9be0a}{byteCount}};}
+\DoxyCodeLine{00078\ \ \ \ \ \mbox{\hyperlink{sha1__routines_8h_a8f953f379d243081b950adb7f194b2e8}{U32}}\ \mbox{\hyperlink{struct_c_l___hash_context_adb26cfe6a63177571aa44953ead4e3b4}{byteCountHi}};}
+\DoxyCodeLine{00079\ \}\ \mbox{\hyperlink{struct_c_l___hash_context}{CL\_HashContext}};}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\#define\ leftRotate(x,\ n)\ (x)\ =\ (((x)\ <<\ (n))\ |\ ((x)\ >>\ (32\ -\/\ (n))))}}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{sha1__routines_8h_a6f06fe48f7cacc212305b862b46fd9aa}{shaEngine}}(\mbox{\hyperlink{sha1__routines_8h_a8f953f379d243081b950adb7f194b2e8}{U32}}\ *buf,\ \mbox{\hyperlink{sha1__routines_8h_a8f953f379d243081b950adb7f194b2e8}{U32}}\ *h);}
+\DoxyCodeLine{00084\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{sha1__routines_8h_affa9482d686cc435d640d67d7fa79772}{CL\_hashInit}}(\mbox{\hyperlink{struct_c_l___hash_context}{CL\_HashContext}}\ *ctx);}
+\DoxyCodeLine{00085\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{sha1__routines_8h_a55a33e7a22aff4aca4bccf39897bc5f1}{CL\_hashUpdate}}(\mbox{\hyperlink{struct_c_l___hash_context}{CL\_HashContext}}\ *ctx,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{sha1__routines_8h_a2c0958af86f0590374e4324757c537f2}{U8}}\ *src,\ \textcolor{keywordtype}{int}\ nbytes);}
+\DoxyCodeLine{00086\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{sha1__routines_8h_a672902e6406b4e4e2af33c70ec7a001c}{CL\_hashFinal}}(\mbox{\hyperlink{struct_c_l___hash_context}{CL\_HashContext}}\ *ctx,\ \mbox{\hyperlink{sha1__routines_8h_a2c0958af86f0590374e4324757c537f2}{U8}}\ *dest);}
+\DoxyCodeLine{00087\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{sha1__routines_8h_a955169bbbce9b4712cafb9b7372b5ffa}{CL\_hash}}(\mbox{\hyperlink{sha1__routines_8h_a2c0958af86f0590374e4324757c537f2}{U8}}\ *msg,\ \textcolor{keywordtype}{int}\ msgBytes,\ \mbox{\hyperlink{sha1__routines_8h_a2c0958af86f0590374e4324757c537f2}{U8}}\ *dest);}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00090\ \}}
+\DoxyCodeLine{00091\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ \_\_SHA1\_ROUTINES\_DOT\_H\_\_}}
+
+\end{DoxyCode}

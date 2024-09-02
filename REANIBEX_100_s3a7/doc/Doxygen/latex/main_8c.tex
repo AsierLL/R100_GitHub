@@ -1,0 +1,348 @@
+\doxysection{C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/synergy\+\_\+gen/main.c File Reference}
+\hypertarget{main_8c}{}\label{main_8c}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/synergy\_gen/main.c@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/synergy\_gen/main.c}}
+{\ttfamily \#include "{}bsp\+\_\+api.\+h"{}}\newline
+{\ttfamily \#include "{}tx\+\_\+api.\+h"{}}\newline
+Include dependency graph for main.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=245pt]{main_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{main_8c_a8c4c94a652edac76255c42ce153d51e2}{thread\+\_\+core\+\_\+create}} (void)
+\item 
+void \mbox{\hyperlink{main_8c_a27a3ae8ab19e700ee589841a6a7b4f72}{thread\+\_\+drd\+\_\+create}} (void)
+\item 
+void \mbox{\hyperlink{main_8c_ab6734fa1c448b8736507139f71493b67}{thread\+\_\+pat\+Mon\+\_\+create}} (void)
+\item 
+void \mbox{\hyperlink{main_8c_a2fd92d9d6405c2663c0ee579a32875a4}{thread\+\_\+hmi\+\_\+create}} (void)
+\item 
+void \mbox{\hyperlink{main_8c_af02cb8d13ca3540ff7fb57e1bc7dc993}{thread\+\_\+sys\+Mon\+\_\+create}} (void)
+\item 
+void \mbox{\hyperlink{main_8c_ad6d6d3953bbe0dc0bb088900f803369a}{thread\+\_\+recorder\+\_\+create}} (void)
+\item 
+void \mbox{\hyperlink{main_8c_a6e05f6e006d20b6beea28d8be8b29b95}{thread\+\_\+audio\+\_\+create}} (void)
+\item 
+void \mbox{\hyperlink{main_8c_ac53134e0b01b26f788ab932e00360086}{thread\+\_\+defibrillator\+\_\+create}} (void)
+\item 
+void \mbox{\hyperlink{main_8c_a21581e731d1ef405168a0577fc4e9d36}{thread\+\_\+comm\+\_\+create}} (void)
+\item 
+void \mbox{\hyperlink{main_8c_a412e4dfd06e37fcb3f4604ee27b704de}{thread\+\_\+dummy\+\_\+create}} (void)
+\item 
+void \mbox{\hyperlink{main_8c_ae9c4e7188e9e054362f4310cbd153154}{thread\+\_\+acc\+\_\+create}} (void)
+\item 
+void \mbox{\hyperlink{main_8c_aef7df059039eab3db1578b79eb2f6d86}{g\+\_\+hal\+\_\+init}} (void)
+\item 
+void \mbox{\hyperlink{main_8c_a89b8357fb661e3c320a68f99727e0263}{tx\+\_\+startup\+\_\+err\+\_\+callback\+\_\+internal}} (void \texorpdfstring{$\ast$}{*}p\+\_\+instance, void \texorpdfstring{$\ast$}{*}p\+\_\+data)
+\item 
+void \mbox{\hyperlink{main_8c_a05e3df570f916cc84bab427dd525b622}{tx\+\_\+startup\+\_\+err\+\_\+callback}} (void \texorpdfstring{$\ast$}{*}p\+\_\+instance, void \texorpdfstring{$\ast$}{*}p\+\_\+data) tx\+\_\+startup\+\_\+err\+\_\+callback\+\_\+\+WEAK\+\_\+\+ATTRIBUTE
+\item 
+void \mbox{\hyperlink{main_8c_a8a79e2ba1730f968e781108c3be8d78b}{tx\+\_\+application\+\_\+define\+\_\+internal}} (void \texorpdfstring{$\ast$}{*}first\+\_\+unused\+\_\+memory)
+\item 
+void \mbox{\hyperlink{main_8c_abcbe9ce3ce3df946671a3b70f1d04e0f}{tx\+\_\+application\+\_\+define\+\_\+user}} (void \texorpdfstring{$\ast$}{*}first\+\_\+unused\+\_\+memory) WEAK\+\_\+\+REF\+\_\+\+ATTRIBUTE
+\item 
+void \mbox{\hyperlink{main_8c_af2e15798c128e90cab0c5d02b5bbf9a9}{tx\+\_\+application\+\_\+define}} (void \texorpdfstring{$\ast$}{*}first\+\_\+unused\+\_\+memory)
+\item 
+void \mbox{\hyperlink{main_8c_ac2aaf8330fc79831ac3fb3e3187ef89c}{tx\+\_\+startup\+\_\+common\+\_\+init}} (void)
+\item 
+int \mbox{\hyperlink{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (void)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \mbox{\hyperlink{main_8c_a00a0c803cac86fb4d0f23cdc5524b5ed}{g\+\_\+ssp\+\_\+common\+\_\+thread\+\_\+count}}
+\item 
+bool \mbox{\hyperlink{main_8c_aaef7f0cb4b99eeac7cee1b472e370b7b}{g\+\_\+ssp\+\_\+common\+\_\+initialized}}
+\item 
+TX\+\_\+\+SEMAPHORE \mbox{\hyperlink{main_8c_a1846945310283a1dc8b0adefd0e6be71}{g\+\_\+ssp\+\_\+common\+\_\+initialized\+\_\+semaphore}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{main_8c_aef7df059039eab3db1578b79eb2f6d86}\label{main_8c_aef7df059039eab3db1578b79eb2f6d86} 
+\index{main.c@{main.c}!g\_hal\_init@{g\_hal\_init}}
+\index{g\_hal\_init@{g\_hal\_init}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{g\_hal\_init()}{g\_hal\_init()}}
+{\footnotesize\ttfamily void g\+\_\+hal\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8c_aef7df059039eab3db1578b79eb2f6d86_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8c_aef7df059039eab3db1578b79eb2f6d86_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{main_8c_a840291bc02cba5474a4cb46a9b9566fe}\label{main_8c_a840291bc02cba5474a4cb46a9b9566fe} 
+\index{main.c@{main.c}!main@{main}}
+\index{main@{main}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\Hypertarget{main_8c_ae9c4e7188e9e054362f4310cbd153154}\label{main_8c_ae9c4e7188e9e054362f4310cbd153154} 
+\index{main.c@{main.c}!thread\_acc\_create@{thread\_acc\_create}}
+\index{thread\_acc\_create@{thread\_acc\_create}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{thread\_acc\_create()}{thread\_acc\_create()}}
+{\footnotesize\ttfamily void thread\+\_\+acc\+\_\+create (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=319pt]{main_8c_ae9c4e7188e9e054362f4310cbd153154_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{main_8c_a6e05f6e006d20b6beea28d8be8b29b95}\label{main_8c_a6e05f6e006d20b6beea28d8be8b29b95} 
+\index{main.c@{main.c}!thread\_audio\_create@{thread\_audio\_create}}
+\index{thread\_audio\_create@{thread\_audio\_create}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{thread\_audio\_create()}{thread\_audio\_create()}}
+{\footnotesize\ttfamily void thread\+\_\+audio\+\_\+create (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8c_a6e05f6e006d20b6beea28d8be8b29b95_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=327pt]{main_8c_a6e05f6e006d20b6beea28d8be8b29b95_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{main_8c_a21581e731d1ef405168a0577fc4e9d36}\label{main_8c_a21581e731d1ef405168a0577fc4e9d36} 
+\index{main.c@{main.c}!thread\_comm\_create@{thread\_comm\_create}}
+\index{thread\_comm\_create@{thread\_comm\_create}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{thread\_comm\_create()}{thread\_comm\_create()}}
+{\footnotesize\ttfamily void thread\+\_\+comm\+\_\+create (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{main_8c_a21581e731d1ef405168a0577fc4e9d36_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{main_8c_a8c4c94a652edac76255c42ce153d51e2}\label{main_8c_a8c4c94a652edac76255c42ce153d51e2} 
+\index{main.c@{main.c}!thread\_core\_create@{thread\_core\_create}}
+\index{thread\_core\_create@{thread\_core\_create}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{thread\_core\_create()}{thread\_core\_create()}}
+{\footnotesize\ttfamily void thread\+\_\+core\+\_\+create (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=322pt]{main_8c_a8c4c94a652edac76255c42ce153d51e2_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{main_8c_ac53134e0b01b26f788ab932e00360086}\label{main_8c_ac53134e0b01b26f788ab932e00360086} 
+\index{main.c@{main.c}!thread\_defibrillator\_create@{thread\_defibrillator\_create}}
+\index{thread\_defibrillator\_create@{thread\_defibrillator\_create}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{thread\_defibrillator\_create()}{thread\_defibrillator\_create()}}
+{\footnotesize\ttfamily void thread\+\_\+defibrillator\+\_\+create (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8c_ac53134e0b01b26f788ab932e00360086_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{main_8c_ac53134e0b01b26f788ab932e00360086_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{main_8c_a27a3ae8ab19e700ee589841a6a7b4f72}\label{main_8c_a27a3ae8ab19e700ee589841a6a7b4f72} 
+\index{main.c@{main.c}!thread\_drd\_create@{thread\_drd\_create}}
+\index{thread\_drd\_create@{thread\_drd\_create}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{thread\_drd\_create()}{thread\_drd\_create()}}
+{\footnotesize\ttfamily void thread\+\_\+drd\+\_\+create (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=317pt]{main_8c_a27a3ae8ab19e700ee589841a6a7b4f72_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{main_8c_a412e4dfd06e37fcb3f4604ee27b704de}\label{main_8c_a412e4dfd06e37fcb3f4604ee27b704de} 
+\index{main.c@{main.c}!thread\_dummy\_create@{thread\_dummy\_create}}
+\index{thread\_dummy\_create@{thread\_dummy\_create}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{thread\_dummy\_create()}{thread\_dummy\_create()}}
+{\footnotesize\ttfamily void thread\+\_\+dummy\+\_\+create (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{main_8c_a412e4dfd06e37fcb3f4604ee27b704de_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{main_8c_a2fd92d9d6405c2663c0ee579a32875a4}\label{main_8c_a2fd92d9d6405c2663c0ee579a32875a4} 
+\index{main.c@{main.c}!thread\_hmi\_create@{thread\_hmi\_create}}
+\index{thread\_hmi\_create@{thread\_hmi\_create}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{thread\_hmi\_create()}{thread\_hmi\_create()}}
+{\footnotesize\ttfamily void thread\+\_\+hmi\+\_\+create (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=319pt]{main_8c_a2fd92d9d6405c2663c0ee579a32875a4_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{main_8c_ab6734fa1c448b8736507139f71493b67}\label{main_8c_ab6734fa1c448b8736507139f71493b67} 
+\index{main.c@{main.c}!thread\_patMon\_create@{thread\_patMon\_create}}
+\index{thread\_patMon\_create@{thread\_patMon\_create}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{thread\_patMon\_create()}{thread\_patMon\_create()}}
+{\footnotesize\ttfamily void thread\+\_\+pat\+Mon\+\_\+create (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8c_ab6734fa1c448b8736507139f71493b67_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{main_8c_ab6734fa1c448b8736507139f71493b67_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{main_8c_ad6d6d3953bbe0dc0bb088900f803369a}\label{main_8c_ad6d6d3953bbe0dc0bb088900f803369a} 
+\index{main.c@{main.c}!thread\_recorder\_create@{thread\_recorder\_create}}
+\index{thread\_recorder\_create@{thread\_recorder\_create}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{thread\_recorder\_create()}{thread\_recorder\_create()}}
+{\footnotesize\ttfamily void thread\+\_\+recorder\+\_\+create (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{main_8c_ad6d6d3953bbe0dc0bb088900f803369a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{main_8c_af02cb8d13ca3540ff7fb57e1bc7dc993}\label{main_8c_af02cb8d13ca3540ff7fb57e1bc7dc993} 
+\index{main.c@{main.c}!thread\_sysMon\_create@{thread\_sysMon\_create}}
+\index{thread\_sysMon\_create@{thread\_sysMon\_create}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{thread\_sysMon\_create()}{thread\_sysMon\_create()}}
+{\footnotesize\ttfamily void thread\+\_\+sys\+Mon\+\_\+create (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=338pt]{main_8c_af02cb8d13ca3540ff7fb57e1bc7dc993_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{main_8c_af2e15798c128e90cab0c5d02b5bbf9a9}\label{main_8c_af2e15798c128e90cab0c5d02b5bbf9a9} 
+\index{main.c@{main.c}!tx\_application\_define@{tx\_application\_define}}
+\index{tx\_application\_define@{tx\_application\_define}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{tx\_application\_define()}{tx\_application\_define()}}
+{\footnotesize\ttfamily void tx\+\_\+application\+\_\+define (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{first\+\_\+unused\+\_\+memory }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8c_af2e15798c128e90cab0c5d02b5bbf9a9_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{main_8c_a8a79e2ba1730f968e781108c3be8d78b}\label{main_8c_a8a79e2ba1730f968e781108c3be8d78b} 
+\index{main.c@{main.c}!tx\_application\_define\_internal@{tx\_application\_define\_internal}}
+\index{tx\_application\_define\_internal@{tx\_application\_define\_internal}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{tx\_application\_define\_internal()}{tx\_application\_define\_internal()}}
+{\footnotesize\ttfamily void tx\+\_\+application\+\_\+define\+\_\+internal (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{first\+\_\+unused\+\_\+memory }\end{DoxyParamCaption})}
+
+\Hypertarget{main_8c_abcbe9ce3ce3df946671a3b70f1d04e0f}\label{main_8c_abcbe9ce3ce3df946671a3b70f1d04e0f} 
+\index{main.c@{main.c}!tx\_application\_define\_user@{tx\_application\_define\_user}}
+\index{tx\_application\_define\_user@{tx\_application\_define\_user}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{tx\_application\_define\_user()}{tx\_application\_define\_user()}}
+{\footnotesize\ttfamily void tx\+\_\+application\+\_\+define\+\_\+user (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{first\+\_\+unused\+\_\+memory }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8c_abcbe9ce3ce3df946671a3b70f1d04e0f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{main_8c_ac2aaf8330fc79831ac3fb3e3187ef89c}\label{main_8c_ac2aaf8330fc79831ac3fb3e3187ef89c} 
+\index{main.c@{main.c}!tx\_startup\_common\_init@{tx\_startup\_common\_init}}
+\index{tx\_startup\_common\_init@{tx\_startup\_common\_init}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{tx\_startup\_common\_init()}{tx\_startup\_common\_init()}}
+{\footnotesize\ttfamily void tx\+\_\+startup\+\_\+common\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8c_ac2aaf8330fc79831ac3fb3e3187ef89c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8c_ac2aaf8330fc79831ac3fb3e3187ef89c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{main_8c_a05e3df570f916cc84bab427dd525b622}\label{main_8c_a05e3df570f916cc84bab427dd525b622} 
+\index{main.c@{main.c}!tx\_startup\_err\_callback@{tx\_startup\_err\_callback}}
+\index{tx\_startup\_err\_callback@{tx\_startup\_err\_callback}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{tx\_startup\_err\_callback()}{tx\_startup\_err\_callback()}}
+{\footnotesize\ttfamily void tx\+\_\+startup\+\_\+err\+\_\+callback (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{p\+\_\+instance,  }\item[{void \texorpdfstring{$\ast$}{*}}]{p\+\_\+data }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8c_a05e3df570f916cc84bab427dd525b622_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{main_8c_a89b8357fb661e3c320a68f99727e0263}\label{main_8c_a89b8357fb661e3c320a68f99727e0263} 
+\index{main.c@{main.c}!tx\_startup\_err\_callback\_internal@{tx\_startup\_err\_callback\_internal}}
+\index{tx\_startup\_err\_callback\_internal@{tx\_startup\_err\_callback\_internal}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{tx\_startup\_err\_callback\_internal()}{tx\_startup\_err\_callback\_internal()}}
+{\footnotesize\ttfamily void tx\+\_\+startup\+\_\+err\+\_\+callback\+\_\+internal (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{p\+\_\+instance,  }\item[{void \texorpdfstring{$\ast$}{*}}]{p\+\_\+data }\end{DoxyParamCaption})}
+
+Weak reference for tx\+\_\+err\+\_\+callback Suppress compiler warning for not using parameters.
+
+An error has occurred. Please check function arguments for more information.
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{main_8c_aaef7f0cb4b99eeac7cee1b472e370b7b}\label{main_8c_aaef7f0cb4b99eeac7cee1b472e370b7b} 
+\index{main.c@{main.c}!g\_ssp\_common\_initialized@{g\_ssp\_common\_initialized}}
+\index{g\_ssp\_common\_initialized@{g\_ssp\_common\_initialized}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{g\_ssp\_common\_initialized}{g\_ssp\_common\_initialized}}
+{\footnotesize\ttfamily bool g\+\_\+ssp\+\_\+common\+\_\+initialized}
+
+\Hypertarget{main_8c_a1846945310283a1dc8b0adefd0e6be71}\label{main_8c_a1846945310283a1dc8b0adefd0e6be71} 
+\index{main.c@{main.c}!g\_ssp\_common\_initialized\_semaphore@{g\_ssp\_common\_initialized\_semaphore}}
+\index{g\_ssp\_common\_initialized\_semaphore@{g\_ssp\_common\_initialized\_semaphore}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{g\_ssp\_common\_initialized\_semaphore}{g\_ssp\_common\_initialized\_semaphore}}
+{\footnotesize\ttfamily TX\+\_\+\+SEMAPHORE g\+\_\+ssp\+\_\+common\+\_\+initialized\+\_\+semaphore}
+
+\Hypertarget{main_8c_a00a0c803cac86fb4d0f23cdc5524b5ed}\label{main_8c_a00a0c803cac86fb4d0f23cdc5524b5ed} 
+\index{main.c@{main.c}!g\_ssp\_common\_thread\_count@{g\_ssp\_common\_thread\_count}}
+\index{g\_ssp\_common\_thread\_count@{g\_ssp\_common\_thread\_count}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{g\_ssp\_common\_thread\_count}{g\_ssp\_common\_thread\_count}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} g\+\_\+ssp\+\_\+common\+\_\+thread\+\_\+count}
+

@@ -1,0 +1,825 @@
+\doxysection{C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\+FSM\+\_\+\+R100\+\_\+\+AED.c File Reference}
+\hypertarget{_f_s_m___r100___a_e_d_8c}{}\label{_f_s_m___r100___a_e_d_8c}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/FSM\_R100\_AED.c@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/FSM\_R100\_AED.c}}
+
+
+Header with functions related to the FSM service Automatic generated C-\/code by the application\+: HFSM Editor v1.\+4r3 Methodology\+: Hierarchical Switch-\/case state. \mbox{[}v1.\+5r1\mbox{]} Exported function\+: void \doxylink{_f_s_m___r100___a_e_d_8c_a45cfcc998186af39961ade62a140bc31}{FSM\+\_\+\+R100\+\_\+\+AED(\+EVENT\+\_\+\+ID\+\_\+e aed\+\_\+event)};.  
+
+
+{\ttfamily \#include "{}types\+\_\+basic.\+h"{}}\newline
+{\ttfamily \#include "{}types\+\_\+app.\+h"{}}\newline
+{\ttfamily \#include "{}event\+\_\+ids.\+h"{}}\newline
+{\ttfamily \#include "{}device\+\_\+init.\+h"{}}\newline
+{\ttfamily \#include "{}frcp.\+h"{}}\newline
+{\ttfamily \#include "{}drd.\+h"{}}\newline
+{\ttfamily \#include "{}thread\+\_\+drd.\+h"{}}\newline
+{\ttfamily \#include "{}thread\+\_\+drd\+\_\+entry.\+h"{}}\newline
+{\ttfamily \#include "{}thread\+\_\+audio\+\_\+entry.\+h"{}}\newline
+{\ttfamily \#include "{}thread\+\_\+comm\+\_\+entry.\+h"{}}\newline
+{\ttfamily \#include "{}thread\+\_\+core\+\_\+entry.\+h"{}}\newline
+{\ttfamily \#include "{}thread\+\_\+defibrillator\+\_\+entry.\+h"{}}\newline
+{\ttfamily \#include "{}DB\+\_\+\+Episode.\+h"{}}\newline
+{\ttfamily \#include "{}thread\+\_\+recorder.\+h"{}}\newline
+{\ttfamily \#include "{}thread\+\_\+defibrillator.\+h"{}}\newline
+{\ttfamily \#include "{}thread\+\_\+pat\+Mon\+\_\+hal.\+h"{}}\newline
+{\ttfamily \#include "{}thread\+\_\+pat\+Mon\+\_\+entry.\+h"{}}\newline
+{\ttfamily \#include "{}thread\+\_\+comm\+\_\+hal.\+h"{}}\newline
+{\ttfamily \#include "{}sys\+Mon\+\_\+\+RF\+\_\+\+Comms.\+h"{}}\newline
+{\ttfamily \#include "{}Trace.\+h"{}}\newline
+{\ttfamily \#include "{}Keypad.\+h"{}}\newline
+{\ttfamily \#include "{}thread\+\_\+defibrillator\+\_\+hal.\+h"{}}\newline
+Include dependency graph for FSM\+\_\+\+R100\+\_\+\+AED.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_f_s_m___r100___a_e_d_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_t___entry_fsm_flg}{T\+\_\+\+Entry\+Fsm\+Flg}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_a903d70686e5f49743d3e41e5f15f962a}{T\+\_\+bit}}~\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}}
+\item 
+\#define \mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_a654edb802081f0157f12c73b0f8957c9}{T\+\_\+u8}}~\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}
+\item 
+\#define \mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_afec244ea3dab1762e555f711f775c7de}{RCP\+\_\+\+WINSIZE}}~200
+\begin{DoxyCompactList}\small\item\em Defines the size of a ZP window used in the RCP. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_ae78b5e88362444a5c9b6f5953b687b34}{i\+\_\+\+FSM\+\_\+\+ZP\+\_\+\+GOOD}}~((\mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_a654edb802081f0157f12c73b0f8957c9}{T\+\_\+u8}})0)
+\item 
+\#define \mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_aa5c98884518e245639e0d877f98b72b5}{i\+\_\+\+FSM\+\_\+\+INSTRUCT\+\_\+\+USER}}~((\mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_a654edb802081f0157f12c73b0f8957c9}{T\+\_\+u8}})1)
+\item 
+\#define \mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_a294cf6c547ebcb758802cfbd99bc000b}{i\+\_\+\+AED\+\_\+\+MODE}}~((\mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_a654edb802081f0157f12c73b0f8957c9}{T\+\_\+u8}})2)
+\item 
+\#define \mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_a9416c387519dd691dfa759bd3f302e74}{i\+\_\+\+FSM\+\_\+\+CHANGE\+\_\+\+PATIENT\+\_\+\+TYPE}}~((\mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_a654edb802081f0157f12c73b0f8957c9}{T\+\_\+u8}})3)
+\item 
+\#define \mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_a89104ddec862c536d8d7a7036a7d2c3d}{FSM\+\_\+\+R100\+\_\+\+AED\+\_\+\+Init}}()~\{ \mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_a2c800d57d1bc95dd722bb104d022d66d}{ind\+\_\+\+FSM\+\_\+\+R100\+\_\+\+AED}} = \mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_a294cf6c547ebcb758802cfbd99bc000b}{i\+\_\+\+AED\+\_\+\+MODE}}; entry\+Fsm.\+flg = 0U; \}
+\item 
+\#define \mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_a9b6af73642b2ce6d43c4812ffface795}{\+\_\+\+FSM\+\_\+\+R100\+\_\+\+AED\+\_\+\+Init}}()~\{\mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_a89104ddec862c536d8d7a7036a7d2c3d}{FSM\+\_\+\+R100\+\_\+\+AED\+\_\+\+Init}}(); /\texorpdfstring{$\ast$}{*} Children\+: \texorpdfstring{$\ast$}{*}/ \mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_aa8c83e6f5de382feae5e2cdbe6f9adf6}{\+\_\+\+FSM\+\_\+\+Zp\+\_\+\+Good\+\_\+\+Init}}();\}
+\item 
+\#define \mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_a3754976793193ae8e45189d8a7bcc357}{i\+\_\+1\+\_\+\+FSM\+\_\+\+ANALYZING}}~((\mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_a654edb802081f0157f12c73b0f8957c9}{T\+\_\+u8}})0)
+\item 
+\#define \mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_a2be1812e9030771b1fe1583be1c1eec9}{i\+\_\+1\+\_\+\+FSM\+\_\+\+RCP}}~((\mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_a654edb802081f0157f12c73b0f8957c9}{T\+\_\+u8}})1)
+\item 
+\#define \mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_a9f2ba830c33b7d2da9ef4d50abe5ed01}{i\+\_\+1\+\_\+\+FSM\+\_\+\+PREPARE\+\_\+\+SHOCK}}~((\mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_a654edb802081f0157f12c73b0f8957c9}{T\+\_\+u8}})2)
+\item 
+\#define \mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_a24efbaaa3021435e29d0c167b5b6c131}{i\+\_\+1\+\_\+\+FSM\+\_\+\+DEMAND\+\_\+\+SHOCK}}~((\mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_a654edb802081f0157f12c73b0f8957c9}{T\+\_\+u8}})3)
+\item 
+\#define \mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_af3b1b3c25faf2ccc3d59cd35ed2c4ff3}{i\+\_\+1\+\_\+\+LOCK\+\_\+\+ON\+\_\+\+ERROR}}~((\mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_a654edb802081f0157f12c73b0f8957c9}{T\+\_\+u8}})4)
+\item 
+\#define \mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_ac90d6577bb37e89f5757276d9483bdba}{FSM\+\_\+\+Zp\+\_\+\+Good\+\_\+\+Init}}()~\{ \mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_af07af0273c5b68144699163c2345ab53}{ind\+\_\+1\+\_\+\+FSM\+\_\+\+Zp\+\_\+\+Good}} = \mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_a2be1812e9030771b1fe1583be1c1eec9}{i\+\_\+1\+\_\+\+FSM\+\_\+\+RCP}}; entry\+Fsm.\+flg\+\_\+1 = 0U; \}
+\item 
+\#define \mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_aa8c83e6f5de382feae5e2cdbe6f9adf6}{\+\_\+\+FSM\+\_\+\+Zp\+\_\+\+Good\+\_\+\+Init}}()~\{\mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_ac90d6577bb37e89f5757276d9483bdba}{FSM\+\_\+\+Zp\+\_\+\+Good\+\_\+\+Init}}(); /\texorpdfstring{$\ast$}{*} Children\+: \texorpdfstring{$\ast$}{*}/ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_aac59f519b3e4f0f08272649a6db3e583}{FSM\+\_\+\+Zp\+\_\+\+Good\+\_\+\+On\+Exit}} (void)
+\item 
+static void \mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_a5c6090c324a0adaa6723deb0f52b3b12}{FSM\+\_\+\+Analyzing\+\_\+\+On\+Exit}} (void)
+\item 
+static void \mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_aad14488fca944663cc4bf5107958c6e5}{FSM\+\_\+\+Demand\+\_\+\+Shock\+\_\+\+On\+Exit}} (void)
+\item 
+static void \mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_a66edf5039fb2a025f7fbcaa4ae27c0ee}{FSM\+\_\+\+Zp\+\_\+\+Good}} (\mbox{\hyperlink{event__ids_8h_a610cd7de90c58acf8dfb3345f1e53697}{EVENT\+\_\+\+ID\+\_\+e}} aed\+\_\+event)
+\item 
+void \mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_a45cfcc998186af39961ade62a140bc31}{FSM\+\_\+\+R100\+\_\+\+AED}} (\mbox{\hyperlink{event__ids_8h_a610cd7de90c58acf8dfb3345f1e53697}{EVENT\+\_\+\+ID\+\_\+e}} aed\+\_\+event)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_a71ed9970da0ab0cc11bbdc71998cb37e}{zp}}
+\begin{DoxyCompactList}\small\item\em ZP value in ohms. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_aa4df7ed848171219fc7135ed35cbc75e}{zp\+\_\+good}}
+\begin{DoxyCompactList}\small\item\em ZP good flag. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{thread__pat_mon__hal_8h_ad86d69a0b4d65ddf120f056f448beff3}{ZP\+\_\+\+SEGMENT\+\_\+e}} \mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_a5abd113ecbc22e33544987b3492eab2c}{zp\+\_\+segment}}
+\begin{DoxyCompactList}\small\item\em identifies the ZP segment \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_a48e3831c5f35c3b2be5dc89e515ca498}{FSM\+\_\+patient\+\_\+adult}}
+\begin{DoxyCompactList}\small\item\em local flag to identify the patient type \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_aca66453ae6aa4c9f4d829a62eaf8b893}{audio\+\_\+parrot\+\_\+counter}}
+\begin{DoxyCompactList}\small\item\em counter to parrot some messages \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_ad7582760c0bef949852b60a0e795f9b2}{first\+\_\+connection}} = \mbox{\hyperlink{_general_8h_aa8cecfc5c5c054d2875c03e77b7be15d}{TRUE}}
+\begin{DoxyCompactList}\small\item\em identifies the first connection of the patient \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_a9976141c44ca708174dac85df1f773fc}{metronome\+\_\+cnt\+\_\+max}}
+\begin{DoxyCompactList}\small\item\em metronome max count \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{thread__pat_mon__hal_8h_ab5a454b85186a6663fc81c4685af3281}{EL\+\_\+\+SIGN\+\_\+e}} \mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_a8fa292f50b4ff74f8fedbd7d2f3df468}{electrodes\+\_\+signature}}
+\begin{DoxyCompactList}\small\item\em electrodes signature \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{thread__pat_mon__hal_8h_a71de8cbe1b830973cbf1b3b2dd5b57ba}{RCP\+\_\+\+BREAK\+\_\+t}} \mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_a3cccdeacdaef0047e2522699d80c536c}{break\+\_\+condition}}
+\begin{DoxyCompactList}\small\item\em condition to break an audio sequence \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_a1493affeb36518440d16ff78a75cf52b}{FSM\+\_\+\+RCP\+\_\+time\+\_\+secs}}
+\begin{DoxyCompactList}\small\item\em Current RCP time in seconds. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_a0b65f4036cdb5814f254d1584d21353b}{FSM\+\_\+shock\+\_\+energy}}
+\begin{DoxyCompactList}\small\item\em Energy to apply in the shock. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_ac41e75dc2f750e834dc4d6c3885f6c94}{RCP\+\_\+running}}
+\item 
+static \mbox{\hyperlink{thread__drd__entry_8h_aba2ac2f93bdc718f73db80fd93578b45}{DRD\+\_\+\+DIAG\+\_\+e}} \mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_abbd234146cf273f3e4132b3c665fc1ab}{drd\+\_\+diagosis}}
+\begin{DoxyCompactList}\small\item\em DRD diagnosis result. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_a68fcbb0e7d95bff562a19dc4f797eead}{RCP\+\_\+number}}
+\begin{DoxyCompactList}\small\item\em Number of RCP in course. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_aaa07654e02d6ddf726efee63bc64c44c}{RCP\+\_\+timeout}}
+\begin{DoxyCompactList}\small\item\em Flag to indicate that the RCP has finished. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_a317fd0dc3c382df7ff4de0385fe57e06}{RCP\+\_\+new}}
+\begin{DoxyCompactList}\small\item\em Flag to indicate that a new RCP must be run. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_a82d6ade8319e1dbbad76f0339c697824}{RCP\+\_\+timeout\+\_\+counter}}
+\begin{DoxyCompactList}\small\item\em Counter for RCP timeout. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_acb36fa21d5279ebb2bc1b91fce1ddf9e}{RCP\+\_\+rate\+\_\+bpm}}
+\begin{DoxyCompactList}\small\item\em Rate to apply during the RCP. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_a4e79b49ae5de1badb73a933051fcc03f}{RCP\+\_\+rate\+\_\+bpm\+\_\+feedback}}
+\begin{DoxyCompactList}\small\item\em Compression frequency during RCP. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_ab5457ea1c6dea5211efaee6142603690}{RCP\+\_\+zp\+\_\+adcs}}
+\begin{DoxyCompactList}\small\item\em ZP value used to initialize the FRCP filters. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_a0724a11e5dbb4122ed14e6dce4e05fc3}{RCP\+\_\+zp\+\_\+idx}}
+\item 
+static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_acaf257d9293c40d09db27861b08ecf7c}{RCP\+\_\+zp\+\_\+signal}} \mbox{[}\mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_afec244ea3dab1762e555f711f775c7de}{RCP\+\_\+\+WINSIZE}}\mbox{]}
+\item 
+static \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_aca3350aae0764e53a2f755aa68648aa6}{n\+Compressions}}
+\begin{DoxyCompactList}\small\item\em Number of compressions to apply during the CPR. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_a1b2d7dc6e2fbae6287e9fe31f5e8d4d0}{n\+Compressions\+\_\+counter}}
+\begin{DoxyCompactList}\small\item\em Count the number of compressions during the CPR. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{thread__drd__entry_8h_adfbfcd79f8c1d114daaee816fd406b9f}{RYTHM\+\_\+\+TYPE\+\_\+e}} \mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_ac8569cc3da067d4877bcf4157b9b6396}{rythm\+\_\+type}}
+\begin{DoxyCompactList}\small\item\em Rythm type identifier. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_a8234deeb7752f155c78d4b5678c4520d}{asystole\+\_\+timeout\+\_\+counter}}
+\begin{DoxyCompactList}\small\item\em Counter for asystole detection. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_acfb2a5f39602dc32ebe2e8aad5a26c30}{unknown\+\_\+timeout\+\_\+counter}}
+\begin{DoxyCompactList}\small\item\em Counter for unknown rithms. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_adf8398201c6ae40ec57d73723a9c09d8}{autoshock\+\_\+timeout\+\_\+counter}}
+\begin{DoxyCompactList}\small\item\em Counter for automated shock. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_aeb7bb6b9bea26831ecbc15dcbde47f93}{shock\+\_\+timeout\+\_\+counter}}
+\begin{DoxyCompactList}\small\item\em Counter for shock timeout. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_aa88f0a50390ab82fee000dd22cf64099}{shock\+\_\+timeout}}
+\begin{DoxyCompactList}\small\item\em Flag for shock timeout. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_af74f9d4b9802b897c2ed1c57cdfdde7a}{shock\+\_\+done}}
+\begin{DoxyCompactList}\small\item\em Flag to identify shock done event. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_ad689b0430fa9ce3a974633e910b7ed41}{n\+Consecutive\+\_\+shocks}}
+\begin{DoxyCompactList}\small\item\em Count the number of consecutive shocks to force an RCP. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_a0cd855509f5fc9cb96f3a7c5ef0da214}{n\+Shocks}}
+\begin{DoxyCompactList}\small\item\em Count the number of current consecutive shocks. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_aa4b654d6de9f1514d06ca074573e5c7f}{n\+Shocks\+\_\+same\+\_\+patient}}
+\begin{DoxyCompactList}\small\item\em Count the number of shocks over the same patient. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{event__ids_8h_a8a69d5479d2e704ca706ac22f660b3be}{REG\+\_\+\+EVENTS\+\_\+e}} \mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_aa2a57ae34e4f78ad4834b87e905bda7b}{event\+\_\+id}}
+\begin{DoxyCompactList}\small\item\em Event identifier to register. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{thread__defibrillator__hal_8h_ac036bc3cb166129c3196cb82ee57d57c}{DEFIB\+\_\+\+STATE\+\_\+e}} \mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_a1f1b4eadb832433d611543a3c61d669f}{aedef\+\_\+state}}
+\begin{DoxyCompactList}\small\item\em Defibrillator state. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_ad130c9668c18bbb96914b389f1ef3914}{aedef\+\_\+in\+\_\+error}}
+\begin{DoxyCompactList}\small\item\em Flag to indicate that the defibrillator is in error. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_a2364dd694ab0d70aca8042970db434c1}{vc\+\_\+charged}}
+\begin{DoxyCompactList}\small\item\em Flag to determine if the capacitor is charged or not. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_a73c28579142582eeeb82953eafd3ef8e}{endurance\+\_\+number\+\_\+items}} = 0
+\begin{DoxyCompactList}\small\item\em Counter used in the endurance test. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{event__ids_8h_a8a69d5479d2e704ca706ac22f660b3be}{REG\+\_\+\+EVENTS\+\_\+e}} \mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_aa736518cb15031f0825cfcdde3f0fa81}{reg\+\_\+event}}
+\item 
+static \mbox{\hyperlink{thread__audio__entry_8h_a03d56294790e98587e2ed35dcb3d8115}{AUDIO\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_af6d930e11f070eec4a486c1ced9cc540}{prev\+\_\+audio\+\_\+msg}} = \mbox{\hyperlink{thread__audio__entry_8h_a03d56294790e98587e2ed35dcb3d8115afcb148cf6ea6e8220fe534eb05b3a6a4}{e\+AUDIO\+\_\+\+MAX\+\_\+\+ID}}
+\item 
+static \mbox{\hyperlink{thread__audio__entry_8h_a03d56294790e98587e2ed35dcb3d8115}{AUDIO\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_a2ff264aa1964fa8d811325d9d1f2e360}{audio\+\_\+msg}} = \mbox{\hyperlink{thread__audio__entry_8h_a03d56294790e98587e2ed35dcb3d8115afcb148cf6ea6e8220fe534eb05b3a6a4}{e\+AUDIO\+\_\+\+MAX\+\_\+\+ID}}
+\item 
+static \mbox{\hyperlink{struct_t___entry_fsm_flg}{T\+\_\+\+Entry\+Fsm\+Flg}} \mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_ab16e29d6739a7f0c95ee83b032f9a451}{entry\+Fsm}}
+\item 
+static \mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_a654edb802081f0157f12c73b0f8957c9}{T\+\_\+u8}} \mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_a2c800d57d1bc95dd722bb104d022d66d}{ind\+\_\+\+FSM\+\_\+\+R100\+\_\+\+AED}} = \mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_a294cf6c547ebcb758802cfbd99bc000b}{i\+\_\+\+AED\+\_\+\+MODE}}
+\item 
+static \mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_a654edb802081f0157f12c73b0f8957c9}{T\+\_\+u8}} \mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_af07af0273c5b68144699163c2345ab53}{ind\+\_\+1\+\_\+\+FSM\+\_\+\+Zp\+\_\+\+Good}} = \mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_a2be1812e9030771b1fe1583be1c1eec9}{i\+\_\+1\+\_\+\+FSM\+\_\+\+RCP}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header with functions related to the FSM service Automatic generated C-\/code by the application\+: HFSM Editor v1.\+4r3 Methodology\+: Hierarchical Switch-\/case state. \mbox{[}v1.\+5r1\mbox{]} Exported function\+: void \doxylink{_f_s_m___r100___a_e_d_8c_a45cfcc998186af39961ade62a140bc31}{FSM\+\_\+\+R100\+\_\+\+AED(\+EVENT\+\_\+\+ID\+\_\+e aed\+\_\+event)};. 
+
+\begin{DoxyVersion}{Version}
+v1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+23/05/2018 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+ilazkanoiturburu 
+\end{DoxyAuthor}
+\begin{DoxyWarning}{Warning}
+author date version .-\/ Edition 
+\end{DoxyWarning}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000030}{Bug}}]\end{DoxyRefDesc}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{_f_s_m___r100___a_e_d_8c_a9b6af73642b2ce6d43c4812ffface795}\label{_f_s_m___r100___a_e_d_8c_a9b6af73642b2ce6d43c4812ffface795} 
+\index{FSM\_R100\_AED.c@{FSM\_R100\_AED.c}!\_FSM\_R100\_AED\_Init@{\_FSM\_R100\_AED\_Init}}
+\index{\_FSM\_R100\_AED\_Init@{\_FSM\_R100\_AED\_Init}!FSM\_R100\_AED.c@{FSM\_R100\_AED.c}}
+\doxysubsubsection{\texorpdfstring{\_FSM\_R100\_AED\_Init}{\_FSM\_R100\_AED\_Init}}
+{\footnotesize\ttfamily \#define \+\_\+\+FSM\+\_\+\+R100\+\_\+\+AED\+\_\+\+Init(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~\{\mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_a89104ddec862c536d8d7a7036a7d2c3d}{FSM\+\_\+\+R100\+\_\+\+AED\+\_\+\+Init}}(); /\texorpdfstring{$\ast$}{*} Children\+: \texorpdfstring{$\ast$}{*}/ \mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_aa8c83e6f5de382feae5e2cdbe6f9adf6}{\+\_\+\+FSM\+\_\+\+Zp\+\_\+\+Good\+\_\+\+Init}}();\}}
+
+\Hypertarget{_f_s_m___r100___a_e_d_8c_aa8c83e6f5de382feae5e2cdbe6f9adf6}\label{_f_s_m___r100___a_e_d_8c_aa8c83e6f5de382feae5e2cdbe6f9adf6} 
+\index{FSM\_R100\_AED.c@{FSM\_R100\_AED.c}!\_FSM\_Zp\_Good\_Init@{\_FSM\_Zp\_Good\_Init}}
+\index{\_FSM\_Zp\_Good\_Init@{\_FSM\_Zp\_Good\_Init}!FSM\_R100\_AED.c@{FSM\_R100\_AED.c}}
+\doxysubsubsection{\texorpdfstring{\_FSM\_Zp\_Good\_Init}{\_FSM\_Zp\_Good\_Init}}
+{\footnotesize\ttfamily \#define \+\_\+\+FSM\+\_\+\+Zp\+\_\+\+Good\+\_\+\+Init(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~\{\mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_ac90d6577bb37e89f5757276d9483bdba}{FSM\+\_\+\+Zp\+\_\+\+Good\+\_\+\+Init}}(); /\texorpdfstring{$\ast$}{*} Children\+: \texorpdfstring{$\ast$}{*}/ \}}
+
+\Hypertarget{_f_s_m___r100___a_e_d_8c_a89104ddec862c536d8d7a7036a7d2c3d}\label{_f_s_m___r100___a_e_d_8c_a89104ddec862c536d8d7a7036a7d2c3d} 
+\index{FSM\_R100\_AED.c@{FSM\_R100\_AED.c}!FSM\_R100\_AED\_Init@{FSM\_R100\_AED\_Init}}
+\index{FSM\_R100\_AED\_Init@{FSM\_R100\_AED\_Init}!FSM\_R100\_AED.c@{FSM\_R100\_AED.c}}
+\doxysubsubsection{\texorpdfstring{FSM\_R100\_AED\_Init}{FSM\_R100\_AED\_Init}}
+{\footnotesize\ttfamily \#define FSM\+\_\+\+R100\+\_\+\+AED\+\_\+\+Init(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~\{ \mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_a2c800d57d1bc95dd722bb104d022d66d}{ind\+\_\+\+FSM\+\_\+\+R100\+\_\+\+AED}} = \mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_a294cf6c547ebcb758802cfbd99bc000b}{i\+\_\+\+AED\+\_\+\+MODE}}; entry\+Fsm.\+flg = 0U; \}}
+
+\Hypertarget{_f_s_m___r100___a_e_d_8c_ac90d6577bb37e89f5757276d9483bdba}\label{_f_s_m___r100___a_e_d_8c_ac90d6577bb37e89f5757276d9483bdba} 
+\index{FSM\_R100\_AED.c@{FSM\_R100\_AED.c}!FSM\_Zp\_Good\_Init@{FSM\_Zp\_Good\_Init}}
+\index{FSM\_Zp\_Good\_Init@{FSM\_Zp\_Good\_Init}!FSM\_R100\_AED.c@{FSM\_R100\_AED.c}}
+\doxysubsubsection{\texorpdfstring{FSM\_Zp\_Good\_Init}{FSM\_Zp\_Good\_Init}}
+{\footnotesize\ttfamily \#define FSM\+\_\+\+Zp\+\_\+\+Good\+\_\+\+Init(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~\{ \mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_af07af0273c5b68144699163c2345ab53}{ind\+\_\+1\+\_\+\+FSM\+\_\+\+Zp\+\_\+\+Good}} = \mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_a2be1812e9030771b1fe1583be1c1eec9}{i\+\_\+1\+\_\+\+FSM\+\_\+\+RCP}}; entry\+Fsm.\+flg\+\_\+1 = 0U; \}}
+
+\Hypertarget{_f_s_m___r100___a_e_d_8c_a3754976793193ae8e45189d8a7bcc357}\label{_f_s_m___r100___a_e_d_8c_a3754976793193ae8e45189d8a7bcc357} 
+\index{FSM\_R100\_AED.c@{FSM\_R100\_AED.c}!i\_1\_FSM\_ANALYZING@{i\_1\_FSM\_ANALYZING}}
+\index{i\_1\_FSM\_ANALYZING@{i\_1\_FSM\_ANALYZING}!FSM\_R100\_AED.c@{FSM\_R100\_AED.c}}
+\doxysubsubsection{\texorpdfstring{i\_1\_FSM\_ANALYZING}{i\_1\_FSM\_ANALYZING}}
+{\footnotesize\ttfamily \#define i\+\_\+1\+\_\+\+FSM\+\_\+\+ANALYZING~((\mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_a654edb802081f0157f12c73b0f8957c9}{T\+\_\+u8}})0)}
+
+\Hypertarget{_f_s_m___r100___a_e_d_8c_a24efbaaa3021435e29d0c167b5b6c131}\label{_f_s_m___r100___a_e_d_8c_a24efbaaa3021435e29d0c167b5b6c131} 
+\index{FSM\_R100\_AED.c@{FSM\_R100\_AED.c}!i\_1\_FSM\_DEMAND\_SHOCK@{i\_1\_FSM\_DEMAND\_SHOCK}}
+\index{i\_1\_FSM\_DEMAND\_SHOCK@{i\_1\_FSM\_DEMAND\_SHOCK}!FSM\_R100\_AED.c@{FSM\_R100\_AED.c}}
+\doxysubsubsection{\texorpdfstring{i\_1\_FSM\_DEMAND\_SHOCK}{i\_1\_FSM\_DEMAND\_SHOCK}}
+{\footnotesize\ttfamily \#define i\+\_\+1\+\_\+\+FSM\+\_\+\+DEMAND\+\_\+\+SHOCK~((\mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_a654edb802081f0157f12c73b0f8957c9}{T\+\_\+u8}})3)}
+
+\Hypertarget{_f_s_m___r100___a_e_d_8c_a9f2ba830c33b7d2da9ef4d50abe5ed01}\label{_f_s_m___r100___a_e_d_8c_a9f2ba830c33b7d2da9ef4d50abe5ed01} 
+\index{FSM\_R100\_AED.c@{FSM\_R100\_AED.c}!i\_1\_FSM\_PREPARE\_SHOCK@{i\_1\_FSM\_PREPARE\_SHOCK}}
+\index{i\_1\_FSM\_PREPARE\_SHOCK@{i\_1\_FSM\_PREPARE\_SHOCK}!FSM\_R100\_AED.c@{FSM\_R100\_AED.c}}
+\doxysubsubsection{\texorpdfstring{i\_1\_FSM\_PREPARE\_SHOCK}{i\_1\_FSM\_PREPARE\_SHOCK}}
+{\footnotesize\ttfamily \#define i\+\_\+1\+\_\+\+FSM\+\_\+\+PREPARE\+\_\+\+SHOCK~((\mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_a654edb802081f0157f12c73b0f8957c9}{T\+\_\+u8}})2)}
+
+\Hypertarget{_f_s_m___r100___a_e_d_8c_a2be1812e9030771b1fe1583be1c1eec9}\label{_f_s_m___r100___a_e_d_8c_a2be1812e9030771b1fe1583be1c1eec9} 
+\index{FSM\_R100\_AED.c@{FSM\_R100\_AED.c}!i\_1\_FSM\_RCP@{i\_1\_FSM\_RCP}}
+\index{i\_1\_FSM\_RCP@{i\_1\_FSM\_RCP}!FSM\_R100\_AED.c@{FSM\_R100\_AED.c}}
+\doxysubsubsection{\texorpdfstring{i\_1\_FSM\_RCP}{i\_1\_FSM\_RCP}}
+{\footnotesize\ttfamily \#define i\+\_\+1\+\_\+\+FSM\+\_\+\+RCP~((\mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_a654edb802081f0157f12c73b0f8957c9}{T\+\_\+u8}})1)}
+
+\Hypertarget{_f_s_m___r100___a_e_d_8c_af3b1b3c25faf2ccc3d59cd35ed2c4ff3}\label{_f_s_m___r100___a_e_d_8c_af3b1b3c25faf2ccc3d59cd35ed2c4ff3} 
+\index{FSM\_R100\_AED.c@{FSM\_R100\_AED.c}!i\_1\_LOCK\_ON\_ERROR@{i\_1\_LOCK\_ON\_ERROR}}
+\index{i\_1\_LOCK\_ON\_ERROR@{i\_1\_LOCK\_ON\_ERROR}!FSM\_R100\_AED.c@{FSM\_R100\_AED.c}}
+\doxysubsubsection{\texorpdfstring{i\_1\_LOCK\_ON\_ERROR}{i\_1\_LOCK\_ON\_ERROR}}
+{\footnotesize\ttfamily \#define i\+\_\+1\+\_\+\+LOCK\+\_\+\+ON\+\_\+\+ERROR~((\mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_a654edb802081f0157f12c73b0f8957c9}{T\+\_\+u8}})4)}
+
+\Hypertarget{_f_s_m___r100___a_e_d_8c_a294cf6c547ebcb758802cfbd99bc000b}\label{_f_s_m___r100___a_e_d_8c_a294cf6c547ebcb758802cfbd99bc000b} 
+\index{FSM\_R100\_AED.c@{FSM\_R100\_AED.c}!i\_AED\_MODE@{i\_AED\_MODE}}
+\index{i\_AED\_MODE@{i\_AED\_MODE}!FSM\_R100\_AED.c@{FSM\_R100\_AED.c}}
+\doxysubsubsection{\texorpdfstring{i\_AED\_MODE}{i\_AED\_MODE}}
+{\footnotesize\ttfamily \#define i\+\_\+\+AED\+\_\+\+MODE~((\mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_a654edb802081f0157f12c73b0f8957c9}{T\+\_\+u8}})2)}
+
+\Hypertarget{_f_s_m___r100___a_e_d_8c_a9416c387519dd691dfa759bd3f302e74}\label{_f_s_m___r100___a_e_d_8c_a9416c387519dd691dfa759bd3f302e74} 
+\index{FSM\_R100\_AED.c@{FSM\_R100\_AED.c}!i\_FSM\_CHANGE\_PATIENT\_TYPE@{i\_FSM\_CHANGE\_PATIENT\_TYPE}}
+\index{i\_FSM\_CHANGE\_PATIENT\_TYPE@{i\_FSM\_CHANGE\_PATIENT\_TYPE}!FSM\_R100\_AED.c@{FSM\_R100\_AED.c}}
+\doxysubsubsection{\texorpdfstring{i\_FSM\_CHANGE\_PATIENT\_TYPE}{i\_FSM\_CHANGE\_PATIENT\_TYPE}}
+{\footnotesize\ttfamily \#define i\+\_\+\+FSM\+\_\+\+CHANGE\+\_\+\+PATIENT\+\_\+\+TYPE~((\mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_a654edb802081f0157f12c73b0f8957c9}{T\+\_\+u8}})3)}
+
+\Hypertarget{_f_s_m___r100___a_e_d_8c_aa5c98884518e245639e0d877f98b72b5}\label{_f_s_m___r100___a_e_d_8c_aa5c98884518e245639e0d877f98b72b5} 
+\index{FSM\_R100\_AED.c@{FSM\_R100\_AED.c}!i\_FSM\_INSTRUCT\_USER@{i\_FSM\_INSTRUCT\_USER}}
+\index{i\_FSM\_INSTRUCT\_USER@{i\_FSM\_INSTRUCT\_USER}!FSM\_R100\_AED.c@{FSM\_R100\_AED.c}}
+\doxysubsubsection{\texorpdfstring{i\_FSM\_INSTRUCT\_USER}{i\_FSM\_INSTRUCT\_USER}}
+{\footnotesize\ttfamily \#define i\+\_\+\+FSM\+\_\+\+INSTRUCT\+\_\+\+USER~((\mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_a654edb802081f0157f12c73b0f8957c9}{T\+\_\+u8}})1)}
+
+\Hypertarget{_f_s_m___r100___a_e_d_8c_ae78b5e88362444a5c9b6f5953b687b34}\label{_f_s_m___r100___a_e_d_8c_ae78b5e88362444a5c9b6f5953b687b34} 
+\index{FSM\_R100\_AED.c@{FSM\_R100\_AED.c}!i\_FSM\_ZP\_GOOD@{i\_FSM\_ZP\_GOOD}}
+\index{i\_FSM\_ZP\_GOOD@{i\_FSM\_ZP\_GOOD}!FSM\_R100\_AED.c@{FSM\_R100\_AED.c}}
+\doxysubsubsection{\texorpdfstring{i\_FSM\_ZP\_GOOD}{i\_FSM\_ZP\_GOOD}}
+{\footnotesize\ttfamily \#define i\+\_\+\+FSM\+\_\+\+ZP\+\_\+\+GOOD~((\mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_a654edb802081f0157f12c73b0f8957c9}{T\+\_\+u8}})0)}
+
+\Hypertarget{_f_s_m___r100___a_e_d_8c_afec244ea3dab1762e555f711f775c7de}\label{_f_s_m___r100___a_e_d_8c_afec244ea3dab1762e555f711f775c7de} 
+\index{FSM\_R100\_AED.c@{FSM\_R100\_AED.c}!RCP\_WINSIZE@{RCP\_WINSIZE}}
+\index{RCP\_WINSIZE@{RCP\_WINSIZE}!FSM\_R100\_AED.c@{FSM\_R100\_AED.c}}
+\doxysubsubsection{\texorpdfstring{RCP\_WINSIZE}{RCP\_WINSIZE}}
+{\footnotesize\ttfamily \#define RCP\+\_\+\+WINSIZE~200}
+
+
+
+Defines the size of a ZP window used in the RCP. 
+
+\Hypertarget{_f_s_m___r100___a_e_d_8c_a903d70686e5f49743d3e41e5f15f962a}\label{_f_s_m___r100___a_e_d_8c_a903d70686e5f49743d3e41e5f15f962a} 
+\index{FSM\_R100\_AED.c@{FSM\_R100\_AED.c}!T\_bit@{T\_bit}}
+\index{T\_bit@{T\_bit}!FSM\_R100\_AED.c@{FSM\_R100\_AED.c}}
+\doxysubsubsection{\texorpdfstring{T\_bit}{T\_bit}}
+{\footnotesize\ttfamily \#define T\+\_\+bit~\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}}}
+
+\Hypertarget{_f_s_m___r100___a_e_d_8c_a654edb802081f0157f12c73b0f8957c9}\label{_f_s_m___r100___a_e_d_8c_a654edb802081f0157f12c73b0f8957c9} 
+\index{FSM\_R100\_AED.c@{FSM\_R100\_AED.c}!T\_u8@{T\_u8}}
+\index{T\_u8@{T\_u8}!FSM\_R100\_AED.c@{FSM\_R100\_AED.c}}
+\doxysubsubsection{\texorpdfstring{T\_u8}{T\_u8}}
+{\footnotesize\ttfamily \#define T\+\_\+u8~\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_f_s_m___r100___a_e_d_8c_a5c6090c324a0adaa6723deb0f52b3b12}\label{_f_s_m___r100___a_e_d_8c_a5c6090c324a0adaa6723deb0f52b3b12} 
+\index{FSM\_R100\_AED.c@{FSM\_R100\_AED.c}!FSM\_Analyzing\_OnExit@{FSM\_Analyzing\_OnExit}}
+\index{FSM\_Analyzing\_OnExit@{FSM\_Analyzing\_OnExit}!FSM\_R100\_AED.c@{FSM\_R100\_AED.c}}
+\doxysubsubsection{\texorpdfstring{FSM\_Analyzing\_OnExit()}{FSM\_Analyzing\_OnExit()}}
+{\footnotesize\ttfamily static void FSM\+\_\+\+Analyzing\+\_\+\+On\+Exit (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_f_s_m___r100___a_e_d_8c_a5c6090c324a0adaa6723deb0f52b3b12_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_f_s_m___r100___a_e_d_8c_a5c6090c324a0adaa6723deb0f52b3b12_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_f_s_m___r100___a_e_d_8c_aad14488fca944663cc4bf5107958c6e5}\label{_f_s_m___r100___a_e_d_8c_aad14488fca944663cc4bf5107958c6e5} 
+\index{FSM\_R100\_AED.c@{FSM\_R100\_AED.c}!FSM\_Demand\_Shock\_OnExit@{FSM\_Demand\_Shock\_OnExit}}
+\index{FSM\_Demand\_Shock\_OnExit@{FSM\_Demand\_Shock\_OnExit}!FSM\_R100\_AED.c@{FSM\_R100\_AED.c}}
+\doxysubsubsection{\texorpdfstring{FSM\_Demand\_Shock\_OnExit()}{FSM\_Demand\_Shock\_OnExit()}}
+{\footnotesize\ttfamily static void FSM\+\_\+\+Demand\+\_\+\+Shock\+\_\+\+On\+Exit (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_f_s_m___r100___a_e_d_8c_aad14488fca944663cc4bf5107958c6e5_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_f_s_m___r100___a_e_d_8c_aad14488fca944663cc4bf5107958c6e5_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_f_s_m___r100___a_e_d_8c_a45cfcc998186af39961ade62a140bc31}\label{_f_s_m___r100___a_e_d_8c_a45cfcc998186af39961ade62a140bc31} 
+\index{FSM\_R100\_AED.c@{FSM\_R100\_AED.c}!FSM\_R100\_AED@{FSM\_R100\_AED}}
+\index{FSM\_R100\_AED@{FSM\_R100\_AED}!FSM\_R100\_AED.c@{FSM\_R100\_AED.c}}
+\doxysubsubsection{\texorpdfstring{FSM\_R100\_AED()}{FSM\_R100\_AED()}}
+{\footnotesize\ttfamily void FSM\+\_\+\+R100\+\_\+\+AED (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{event__ids_8h_a610cd7de90c58acf8dfb3345f1e53697}{EVENT\+\_\+\+ID\+\_\+e}}}]{aed\+\_\+event }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{_f_s_m___r100___a_e_d_8c_a45cfcc998186af39961ade62a140bc31_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_f_s_m___r100___a_e_d_8c_a45cfcc998186af39961ade62a140bc31_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_f_s_m___r100___a_e_d_8c_a66edf5039fb2a025f7fbcaa4ae27c0ee}\label{_f_s_m___r100___a_e_d_8c_a66edf5039fb2a025f7fbcaa4ae27c0ee} 
+\index{FSM\_R100\_AED.c@{FSM\_R100\_AED.c}!FSM\_Zp\_Good@{FSM\_Zp\_Good}}
+\index{FSM\_Zp\_Good@{FSM\_Zp\_Good}!FSM\_R100\_AED.c@{FSM\_R100\_AED.c}}
+\doxysubsubsection{\texorpdfstring{FSM\_Zp\_Good()}{FSM\_Zp\_Good()}}
+{\footnotesize\ttfamily static void FSM\+\_\+\+Zp\+\_\+\+Good (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{event__ids_8h_a610cd7de90c58acf8dfb3345f1e53697}{EVENT\+\_\+\+ID\+\_\+e}}}]{aed\+\_\+event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\doxylink{thread__audio__entry_8c_aacd507f5759e6725a70d4b30dc65bbf6}{Is\+\_\+\+Audio\+\_\+\+Playing()} \texorpdfstring{$\vert$}{|}\texorpdfstring{$\vert$}{|}Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{_f_s_m___r100___a_e_d_8c_a66edf5039fb2a025f7fbcaa4ae27c0ee_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_f_s_m___r100___a_e_d_8c_a66edf5039fb2a025f7fbcaa4ae27c0ee_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_f_s_m___r100___a_e_d_8c_aac59f519b3e4f0f08272649a6db3e583}\label{_f_s_m___r100___a_e_d_8c_aac59f519b3e4f0f08272649a6db3e583} 
+\index{FSM\_R100\_AED.c@{FSM\_R100\_AED.c}!FSM\_Zp\_Good\_OnExit@{FSM\_Zp\_Good\_OnExit}}
+\index{FSM\_Zp\_Good\_OnExit@{FSM\_Zp\_Good\_OnExit}!FSM\_R100\_AED.c@{FSM\_R100\_AED.c}}
+\doxysubsubsection{\texorpdfstring{FSM\_Zp\_Good\_OnExit()}{FSM\_Zp\_Good\_OnExit()}}
+{\footnotesize\ttfamily static void FSM\+\_\+\+Zp\+\_\+\+Good\+\_\+\+On\+Exit (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_f_s_m___r100___a_e_d_8c_aac59f519b3e4f0f08272649a6db3e583_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_f_s_m___r100___a_e_d_8c_aac59f519b3e4f0f08272649a6db3e583_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{_f_s_m___r100___a_e_d_8c_ad130c9668c18bbb96914b389f1ef3914}\label{_f_s_m___r100___a_e_d_8c_ad130c9668c18bbb96914b389f1ef3914} 
+\index{FSM\_R100\_AED.c@{FSM\_R100\_AED.c}!aedef\_in\_error@{aedef\_in\_error}}
+\index{aedef\_in\_error@{aedef\_in\_error}!FSM\_R100\_AED.c@{FSM\_R100\_AED.c}}
+\doxysubsubsection{\texorpdfstring{aedef\_in\_error}{aedef\_in\_error}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} aedef\+\_\+in\+\_\+error\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Flag to indicate that the defibrillator is in error. 
+
+\Hypertarget{_f_s_m___r100___a_e_d_8c_a1f1b4eadb832433d611543a3c61d669f}\label{_f_s_m___r100___a_e_d_8c_a1f1b4eadb832433d611543a3c61d669f} 
+\index{FSM\_R100\_AED.c@{FSM\_R100\_AED.c}!aedef\_state@{aedef\_state}}
+\index{aedef\_state@{aedef\_state}!FSM\_R100\_AED.c@{FSM\_R100\_AED.c}}
+\doxysubsubsection{\texorpdfstring{aedef\_state}{aedef\_state}}
+{\footnotesize\ttfamily \mbox{\hyperlink{thread__defibrillator__hal_8h_ac036bc3cb166129c3196cb82ee57d57c}{DEFIB\+\_\+\+STATE\+\_\+e}} aedef\+\_\+state\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Defibrillator state. 
+
+\Hypertarget{_f_s_m___r100___a_e_d_8c_a8234deeb7752f155c78d4b5678c4520d}\label{_f_s_m___r100___a_e_d_8c_a8234deeb7752f155c78d4b5678c4520d} 
+\index{FSM\_R100\_AED.c@{FSM\_R100\_AED.c}!asystole\_timeout\_counter@{asystole\_timeout\_counter}}
+\index{asystole\_timeout\_counter@{asystole\_timeout\_counter}!FSM\_R100\_AED.c@{FSM\_R100\_AED.c}}
+\doxysubsubsection{\texorpdfstring{asystole\_timeout\_counter}{asystole\_timeout\_counter}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} asystole\+\_\+timeout\+\_\+counter\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Counter for asystole detection. 
+
+\Hypertarget{_f_s_m___r100___a_e_d_8c_a2ff264aa1964fa8d811325d9d1f2e360}\label{_f_s_m___r100___a_e_d_8c_a2ff264aa1964fa8d811325d9d1f2e360} 
+\index{FSM\_R100\_AED.c@{FSM\_R100\_AED.c}!audio\_msg@{audio\_msg}}
+\index{audio\_msg@{audio\_msg}!FSM\_R100\_AED.c@{FSM\_R100\_AED.c}}
+\doxysubsubsection{\texorpdfstring{audio\_msg}{audio\_msg}}
+{\footnotesize\ttfamily \mbox{\hyperlink{thread__audio__entry_8h_a03d56294790e98587e2ed35dcb3d8115}{AUDIO\+\_\+\+ID\+\_\+e}} audio\+\_\+msg = \mbox{\hyperlink{thread__audio__entry_8h_a03d56294790e98587e2ed35dcb3d8115afcb148cf6ea6e8220fe534eb05b3a6a4}{e\+AUDIO\+\_\+\+MAX\+\_\+\+ID}}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{_f_s_m___r100___a_e_d_8c_aca66453ae6aa4c9f4d829a62eaf8b893}\label{_f_s_m___r100___a_e_d_8c_aca66453ae6aa4c9f4d829a62eaf8b893} 
+\index{FSM\_R100\_AED.c@{FSM\_R100\_AED.c}!audio\_parrot\_counter@{audio\_parrot\_counter}}
+\index{audio\_parrot\_counter@{audio\_parrot\_counter}!FSM\_R100\_AED.c@{FSM\_R100\_AED.c}}
+\doxysubsubsection{\texorpdfstring{audio\_parrot\_counter}{audio\_parrot\_counter}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} audio\+\_\+parrot\+\_\+counter\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+counter to parrot some messages 
+
+\Hypertarget{_f_s_m___r100___a_e_d_8c_adf8398201c6ae40ec57d73723a9c09d8}\label{_f_s_m___r100___a_e_d_8c_adf8398201c6ae40ec57d73723a9c09d8} 
+\index{FSM\_R100\_AED.c@{FSM\_R100\_AED.c}!autoshock\_timeout\_counter@{autoshock\_timeout\_counter}}
+\index{autoshock\_timeout\_counter@{autoshock\_timeout\_counter}!FSM\_R100\_AED.c@{FSM\_R100\_AED.c}}
+\doxysubsubsection{\texorpdfstring{autoshock\_timeout\_counter}{autoshock\_timeout\_counter}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} autoshock\+\_\+timeout\+\_\+counter\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Counter for automated shock. 
+
+\Hypertarget{_f_s_m___r100___a_e_d_8c_a3cccdeacdaef0047e2522699d80c536c}\label{_f_s_m___r100___a_e_d_8c_a3cccdeacdaef0047e2522699d80c536c} 
+\index{FSM\_R100\_AED.c@{FSM\_R100\_AED.c}!break\_condition@{break\_condition}}
+\index{break\_condition@{break\_condition}!FSM\_R100\_AED.c@{FSM\_R100\_AED.c}}
+\doxysubsubsection{\texorpdfstring{break\_condition}{break\_condition}}
+{\footnotesize\ttfamily \mbox{\hyperlink{thread__pat_mon__hal_8h_a71de8cbe1b830973cbf1b3b2dd5b57ba}{RCP\+\_\+\+BREAK\+\_\+t}} break\+\_\+condition\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+condition to break an audio sequence 
+
+\Hypertarget{_f_s_m___r100___a_e_d_8c_abbd234146cf273f3e4132b3c665fc1ab}\label{_f_s_m___r100___a_e_d_8c_abbd234146cf273f3e4132b3c665fc1ab} 
+\index{FSM\_R100\_AED.c@{FSM\_R100\_AED.c}!drd\_diagosis@{drd\_diagosis}}
+\index{drd\_diagosis@{drd\_diagosis}!FSM\_R100\_AED.c@{FSM\_R100\_AED.c}}
+\doxysubsubsection{\texorpdfstring{drd\_diagosis}{drd\_diagosis}}
+{\footnotesize\ttfamily \mbox{\hyperlink{thread__drd__entry_8h_aba2ac2f93bdc718f73db80fd93578b45}{DRD\+\_\+\+DIAG\+\_\+e}} drd\+\_\+diagosis\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+DRD diagnosis result. 
+
+\Hypertarget{_f_s_m___r100___a_e_d_8c_a8fa292f50b4ff74f8fedbd7d2f3df468}\label{_f_s_m___r100___a_e_d_8c_a8fa292f50b4ff74f8fedbd7d2f3df468} 
+\index{FSM\_R100\_AED.c@{FSM\_R100\_AED.c}!electrodes\_signature@{electrodes\_signature}}
+\index{electrodes\_signature@{electrodes\_signature}!FSM\_R100\_AED.c@{FSM\_R100\_AED.c}}
+\doxysubsubsection{\texorpdfstring{electrodes\_signature}{electrodes\_signature}}
+{\footnotesize\ttfamily \mbox{\hyperlink{thread__pat_mon__hal_8h_ab5a454b85186a6663fc81c4685af3281}{EL\+\_\+\+SIGN\+\_\+e}} electrodes\+\_\+signature\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+electrodes signature 
+
+\Hypertarget{_f_s_m___r100___a_e_d_8c_a73c28579142582eeeb82953eafd3ef8e}\label{_f_s_m___r100___a_e_d_8c_a73c28579142582eeeb82953eafd3ef8e} 
+\index{FSM\_R100\_AED.c@{FSM\_R100\_AED.c}!endurance\_number\_items@{endurance\_number\_items}}
+\index{endurance\_number\_items@{endurance\_number\_items}!FSM\_R100\_AED.c@{FSM\_R100\_AED.c}}
+\doxysubsubsection{\texorpdfstring{endurance\_number\_items}{endurance\_number\_items}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} endurance\+\_\+number\+\_\+items = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Counter used in the endurance test. 
+
+\Hypertarget{_f_s_m___r100___a_e_d_8c_ab16e29d6739a7f0c95ee83b032f9a451}\label{_f_s_m___r100___a_e_d_8c_ab16e29d6739a7f0c95ee83b032f9a451} 
+\index{FSM\_R100\_AED.c@{FSM\_R100\_AED.c}!entryFsm@{entryFsm}}
+\index{entryFsm@{entryFsm}!FSM\_R100\_AED.c@{FSM\_R100\_AED.c}}
+\doxysubsubsection{\texorpdfstring{entryFsm}{entryFsm}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_t___entry_fsm_flg}{T\+\_\+\+Entry\+Fsm\+Flg}} entry\+Fsm\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{_f_s_m___r100___a_e_d_8c_aa2a57ae34e4f78ad4834b87e905bda7b}\label{_f_s_m___r100___a_e_d_8c_aa2a57ae34e4f78ad4834b87e905bda7b} 
+\index{FSM\_R100\_AED.c@{FSM\_R100\_AED.c}!event\_id@{event\_id}}
+\index{event\_id@{event\_id}!FSM\_R100\_AED.c@{FSM\_R100\_AED.c}}
+\doxysubsubsection{\texorpdfstring{event\_id}{event\_id}}
+{\footnotesize\ttfamily \mbox{\hyperlink{event__ids_8h_a8a69d5479d2e704ca706ac22f660b3be}{REG\+\_\+\+EVENTS\+\_\+e}} event\+\_\+id\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Event identifier to register. 
+
+\Hypertarget{_f_s_m___r100___a_e_d_8c_ad7582760c0bef949852b60a0e795f9b2}\label{_f_s_m___r100___a_e_d_8c_ad7582760c0bef949852b60a0e795f9b2} 
+\index{FSM\_R100\_AED.c@{FSM\_R100\_AED.c}!first\_connection@{first\_connection}}
+\index{first\_connection@{first\_connection}!FSM\_R100\_AED.c@{FSM\_R100\_AED.c}}
+\doxysubsubsection{\texorpdfstring{first\_connection}{first\_connection}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} first\+\_\+connection = \mbox{\hyperlink{_general_8h_aa8cecfc5c5c054d2875c03e77b7be15d}{TRUE}}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+identifies the first connection of the patient 
+
+\Hypertarget{_f_s_m___r100___a_e_d_8c_a48e3831c5f35c3b2be5dc89e515ca498}\label{_f_s_m___r100___a_e_d_8c_a48e3831c5f35c3b2be5dc89e515ca498} 
+\index{FSM\_R100\_AED.c@{FSM\_R100\_AED.c}!FSM\_patient\_adult@{FSM\_patient\_adult}}
+\index{FSM\_patient\_adult@{FSM\_patient\_adult}!FSM\_R100\_AED.c@{FSM\_R100\_AED.c}}
+\doxysubsubsection{\texorpdfstring{FSM\_patient\_adult}{FSM\_patient\_adult}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} FSM\+\_\+patient\+\_\+adult\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+local flag to identify the patient type 
+
+\Hypertarget{_f_s_m___r100___a_e_d_8c_a1493affeb36518440d16ff78a75cf52b}\label{_f_s_m___r100___a_e_d_8c_a1493affeb36518440d16ff78a75cf52b} 
+\index{FSM\_R100\_AED.c@{FSM\_R100\_AED.c}!FSM\_RCP\_time\_secs@{FSM\_RCP\_time\_secs}}
+\index{FSM\_RCP\_time\_secs@{FSM\_RCP\_time\_secs}!FSM\_R100\_AED.c@{FSM\_R100\_AED.c}}
+\doxysubsubsection{\texorpdfstring{FSM\_RCP\_time\_secs}{FSM\_RCP\_time\_secs}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} FSM\+\_\+\+RCP\+\_\+time\+\_\+secs}
+
+
+
+Current RCP time in seconds. 
+
+\Hypertarget{_f_s_m___r100___a_e_d_8c_a0b65f4036cdb5814f254d1584d21353b}\label{_f_s_m___r100___a_e_d_8c_a0b65f4036cdb5814f254d1584d21353b} 
+\index{FSM\_R100\_AED.c@{FSM\_R100\_AED.c}!FSM\_shock\_energy@{FSM\_shock\_energy}}
+\index{FSM\_shock\_energy@{FSM\_shock\_energy}!FSM\_R100\_AED.c@{FSM\_R100\_AED.c}}
+\doxysubsubsection{\texorpdfstring{FSM\_shock\_energy}{FSM\_shock\_energy}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} FSM\+\_\+shock\+\_\+energy}
+
+
+
+Energy to apply in the shock. 
+
+\Hypertarget{_f_s_m___r100___a_e_d_8c_af07af0273c5b68144699163c2345ab53}\label{_f_s_m___r100___a_e_d_8c_af07af0273c5b68144699163c2345ab53} 
+\index{FSM\_R100\_AED.c@{FSM\_R100\_AED.c}!ind\_1\_FSM\_Zp\_Good@{ind\_1\_FSM\_Zp\_Good}}
+\index{ind\_1\_FSM\_Zp\_Good@{ind\_1\_FSM\_Zp\_Good}!FSM\_R100\_AED.c@{FSM\_R100\_AED.c}}
+\doxysubsubsection{\texorpdfstring{ind\_1\_FSM\_Zp\_Good}{ind\_1\_FSM\_Zp\_Good}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_a654edb802081f0157f12c73b0f8957c9}{T\+\_\+u8}} ind\+\_\+1\+\_\+\+FSM\+\_\+\+Zp\+\_\+\+Good = \mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_a2be1812e9030771b1fe1583be1c1eec9}{i\+\_\+1\+\_\+\+FSM\+\_\+\+RCP}}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{_f_s_m___r100___a_e_d_8c_a2c800d57d1bc95dd722bb104d022d66d}\label{_f_s_m___r100___a_e_d_8c_a2c800d57d1bc95dd722bb104d022d66d} 
+\index{FSM\_R100\_AED.c@{FSM\_R100\_AED.c}!ind\_FSM\_R100\_AED@{ind\_FSM\_R100\_AED}}
+\index{ind\_FSM\_R100\_AED@{ind\_FSM\_R100\_AED}!FSM\_R100\_AED.c@{FSM\_R100\_AED.c}}
+\doxysubsubsection{\texorpdfstring{ind\_FSM\_R100\_AED}{ind\_FSM\_R100\_AED}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_a654edb802081f0157f12c73b0f8957c9}{T\+\_\+u8}} ind\+\_\+\+FSM\+\_\+\+R100\+\_\+\+AED = \mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_a294cf6c547ebcb758802cfbd99bc000b}{i\+\_\+\+AED\+\_\+\+MODE}}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{_f_s_m___r100___a_e_d_8c_a9976141c44ca708174dac85df1f773fc}\label{_f_s_m___r100___a_e_d_8c_a9976141c44ca708174dac85df1f773fc} 
+\index{FSM\_R100\_AED.c@{FSM\_R100\_AED.c}!metronome\_cnt\_max@{metronome\_cnt\_max}}
+\index{metronome\_cnt\_max@{metronome\_cnt\_max}!FSM\_R100\_AED.c@{FSM\_R100\_AED.c}}
+\doxysubsubsection{\texorpdfstring{metronome\_cnt\_max}{metronome\_cnt\_max}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} metronome\+\_\+cnt\+\_\+max\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+metronome max count 
+
+\Hypertarget{_f_s_m___r100___a_e_d_8c_aca3350aae0764e53a2f755aa68648aa6}\label{_f_s_m___r100___a_e_d_8c_aca3350aae0764e53a2f755aa68648aa6} 
+\index{FSM\_R100\_AED.c@{FSM\_R100\_AED.c}!nCompressions@{nCompressions}}
+\index{nCompressions@{nCompressions}!FSM\_R100\_AED.c@{FSM\_R100\_AED.c}}
+\doxysubsubsection{\texorpdfstring{nCompressions}{nCompressions}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} n\+Compressions\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Number of compressions to apply during the CPR. 
+
+\Hypertarget{_f_s_m___r100___a_e_d_8c_a1b2d7dc6e2fbae6287e9fe31f5e8d4d0}\label{_f_s_m___r100___a_e_d_8c_a1b2d7dc6e2fbae6287e9fe31f5e8d4d0} 
+\index{FSM\_R100\_AED.c@{FSM\_R100\_AED.c}!nCompressions\_counter@{nCompressions\_counter}}
+\index{nCompressions\_counter@{nCompressions\_counter}!FSM\_R100\_AED.c@{FSM\_R100\_AED.c}}
+\doxysubsubsection{\texorpdfstring{nCompressions\_counter}{nCompressions\_counter}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} n\+Compressions\+\_\+counter\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Count the number of compressions during the CPR. 
+
+\Hypertarget{_f_s_m___r100___a_e_d_8c_ad689b0430fa9ce3a974633e910b7ed41}\label{_f_s_m___r100___a_e_d_8c_ad689b0430fa9ce3a974633e910b7ed41} 
+\index{FSM\_R100\_AED.c@{FSM\_R100\_AED.c}!nConsecutive\_shocks@{nConsecutive\_shocks}}
+\index{nConsecutive\_shocks@{nConsecutive\_shocks}!FSM\_R100\_AED.c@{FSM\_R100\_AED.c}}
+\doxysubsubsection{\texorpdfstring{nConsecutive\_shocks}{nConsecutive\_shocks}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} n\+Consecutive\+\_\+shocks\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Count the number of consecutive shocks to force an RCP. 
+
+\Hypertarget{_f_s_m___r100___a_e_d_8c_a0cd855509f5fc9cb96f3a7c5ef0da214}\label{_f_s_m___r100___a_e_d_8c_a0cd855509f5fc9cb96f3a7c5ef0da214} 
+\index{FSM\_R100\_AED.c@{FSM\_R100\_AED.c}!nShocks@{nShocks}}
+\index{nShocks@{nShocks}!FSM\_R100\_AED.c@{FSM\_R100\_AED.c}}
+\doxysubsubsection{\texorpdfstring{nShocks}{nShocks}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} n\+Shocks\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Count the number of current consecutive shocks. 
+
+\Hypertarget{_f_s_m___r100___a_e_d_8c_aa4b654d6de9f1514d06ca074573e5c7f}\label{_f_s_m___r100___a_e_d_8c_aa4b654d6de9f1514d06ca074573e5c7f} 
+\index{FSM\_R100\_AED.c@{FSM\_R100\_AED.c}!nShocks\_same\_patient@{nShocks\_same\_patient}}
+\index{nShocks\_same\_patient@{nShocks\_same\_patient}!FSM\_R100\_AED.c@{FSM\_R100\_AED.c}}
+\doxysubsubsection{\texorpdfstring{nShocks\_same\_patient}{nShocks\_same\_patient}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} n\+Shocks\+\_\+same\+\_\+patient\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Count the number of shocks over the same patient. 
+
+\Hypertarget{_f_s_m___r100___a_e_d_8c_af6d930e11f070eec4a486c1ced9cc540}\label{_f_s_m___r100___a_e_d_8c_af6d930e11f070eec4a486c1ced9cc540} 
+\index{FSM\_R100\_AED.c@{FSM\_R100\_AED.c}!prev\_audio\_msg@{prev\_audio\_msg}}
+\index{prev\_audio\_msg@{prev\_audio\_msg}!FSM\_R100\_AED.c@{FSM\_R100\_AED.c}}
+\doxysubsubsection{\texorpdfstring{prev\_audio\_msg}{prev\_audio\_msg}}
+{\footnotesize\ttfamily \mbox{\hyperlink{thread__audio__entry_8h_a03d56294790e98587e2ed35dcb3d8115}{AUDIO\+\_\+\+ID\+\_\+e}} prev\+\_\+audio\+\_\+msg = \mbox{\hyperlink{thread__audio__entry_8h_a03d56294790e98587e2ed35dcb3d8115afcb148cf6ea6e8220fe534eb05b3a6a4}{e\+AUDIO\+\_\+\+MAX\+\_\+\+ID}}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{_f_s_m___r100___a_e_d_8c_a317fd0dc3c382df7ff4de0385fe57e06}\label{_f_s_m___r100___a_e_d_8c_a317fd0dc3c382df7ff4de0385fe57e06} 
+\index{FSM\_R100\_AED.c@{FSM\_R100\_AED.c}!RCP\_new@{RCP\_new}}
+\index{RCP\_new@{RCP\_new}!FSM\_R100\_AED.c@{FSM\_R100\_AED.c}}
+\doxysubsubsection{\texorpdfstring{RCP\_new}{RCP\_new}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} RCP\+\_\+new\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Flag to indicate that a new RCP must be run. 
+
+\Hypertarget{_f_s_m___r100___a_e_d_8c_a68fcbb0e7d95bff562a19dc4f797eead}\label{_f_s_m___r100___a_e_d_8c_a68fcbb0e7d95bff562a19dc4f797eead} 
+\index{FSM\_R100\_AED.c@{FSM\_R100\_AED.c}!RCP\_number@{RCP\_number}}
+\index{RCP\_number@{RCP\_number}!FSM\_R100\_AED.c@{FSM\_R100\_AED.c}}
+\doxysubsubsection{\texorpdfstring{RCP\_number}{RCP\_number}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} RCP\+\_\+number\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Number of RCP in course. 
+
+\Hypertarget{_f_s_m___r100___a_e_d_8c_acb36fa21d5279ebb2bc1b91fce1ddf9e}\label{_f_s_m___r100___a_e_d_8c_acb36fa21d5279ebb2bc1b91fce1ddf9e} 
+\index{FSM\_R100\_AED.c@{FSM\_R100\_AED.c}!RCP\_rate\_bpm@{RCP\_rate\_bpm}}
+\index{RCP\_rate\_bpm@{RCP\_rate\_bpm}!FSM\_R100\_AED.c@{FSM\_R100\_AED.c}}
+\doxysubsubsection{\texorpdfstring{RCP\_rate\_bpm}{RCP\_rate\_bpm}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} RCP\+\_\+rate\+\_\+bpm\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Rate to apply during the RCP. 
+
+\Hypertarget{_f_s_m___r100___a_e_d_8c_a4e79b49ae5de1badb73a933051fcc03f}\label{_f_s_m___r100___a_e_d_8c_a4e79b49ae5de1badb73a933051fcc03f} 
+\index{FSM\_R100\_AED.c@{FSM\_R100\_AED.c}!RCP\_rate\_bpm\_feedback@{RCP\_rate\_bpm\_feedback}}
+\index{RCP\_rate\_bpm\_feedback@{RCP\_rate\_bpm\_feedback}!FSM\_R100\_AED.c@{FSM\_R100\_AED.c}}
+\doxysubsubsection{\texorpdfstring{RCP\_rate\_bpm\_feedback}{RCP\_rate\_bpm\_feedback}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} RCP\+\_\+rate\+\_\+bpm\+\_\+feedback\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Compression frequency during RCP. 
+
+\Hypertarget{_f_s_m___r100___a_e_d_8c_ac41e75dc2f750e834dc4d6c3885f6c94}\label{_f_s_m___r100___a_e_d_8c_ac41e75dc2f750e834dc4d6c3885f6c94} 
+\index{FSM\_R100\_AED.c@{FSM\_R100\_AED.c}!RCP\_running@{RCP\_running}}
+\index{RCP\_running@{RCP\_running}!FSM\_R100\_AED.c@{FSM\_R100\_AED.c}}
+\doxysubsubsection{\texorpdfstring{RCP\_running}{RCP\_running}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} RCP\+\_\+running}
+
+\Hypertarget{_f_s_m___r100___a_e_d_8c_aaa07654e02d6ddf726efee63bc64c44c}\label{_f_s_m___r100___a_e_d_8c_aaa07654e02d6ddf726efee63bc64c44c} 
+\index{FSM\_R100\_AED.c@{FSM\_R100\_AED.c}!RCP\_timeout@{RCP\_timeout}}
+\index{RCP\_timeout@{RCP\_timeout}!FSM\_R100\_AED.c@{FSM\_R100\_AED.c}}
+\doxysubsubsection{\texorpdfstring{RCP\_timeout}{RCP\_timeout}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} RCP\+\_\+timeout\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Flag to indicate that the RCP has finished. 
+
+\Hypertarget{_f_s_m___r100___a_e_d_8c_a82d6ade8319e1dbbad76f0339c697824}\label{_f_s_m___r100___a_e_d_8c_a82d6ade8319e1dbbad76f0339c697824} 
+\index{FSM\_R100\_AED.c@{FSM\_R100\_AED.c}!RCP\_timeout\_counter@{RCP\_timeout\_counter}}
+\index{RCP\_timeout\_counter@{RCP\_timeout\_counter}!FSM\_R100\_AED.c@{FSM\_R100\_AED.c}}
+\doxysubsubsection{\texorpdfstring{RCP\_timeout\_counter}{RCP\_timeout\_counter}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} RCP\+\_\+timeout\+\_\+counter\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Counter for RCP timeout. 
+
+\Hypertarget{_f_s_m___r100___a_e_d_8c_ab5457ea1c6dea5211efaee6142603690}\label{_f_s_m___r100___a_e_d_8c_ab5457ea1c6dea5211efaee6142603690} 
+\index{FSM\_R100\_AED.c@{FSM\_R100\_AED.c}!RCP\_zp\_adcs@{RCP\_zp\_adcs}}
+\index{RCP\_zp\_adcs@{RCP\_zp\_adcs}!FSM\_R100\_AED.c@{FSM\_R100\_AED.c}}
+\doxysubsubsection{\texorpdfstring{RCP\_zp\_adcs}{RCP\_zp\_adcs}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} RCP\+\_\+zp\+\_\+adcs\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+ZP value used to initialize the FRCP filters. 
+
+\Hypertarget{_f_s_m___r100___a_e_d_8c_a0724a11e5dbb4122ed14e6dce4e05fc3}\label{_f_s_m___r100___a_e_d_8c_a0724a11e5dbb4122ed14e6dce4e05fc3} 
+\index{FSM\_R100\_AED.c@{FSM\_R100\_AED.c}!RCP\_zp\_idx@{RCP\_zp\_idx}}
+\index{RCP\_zp\_idx@{RCP\_zp\_idx}!FSM\_R100\_AED.c@{FSM\_R100\_AED.c}}
+\doxysubsubsection{\texorpdfstring{RCP\_zp\_idx}{RCP\_zp\_idx}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} RCP\+\_\+zp\+\_\+idx\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{_f_s_m___r100___a_e_d_8c_acaf257d9293c40d09db27861b08ecf7c}\label{_f_s_m___r100___a_e_d_8c_acaf257d9293c40d09db27861b08ecf7c} 
+\index{FSM\_R100\_AED.c@{FSM\_R100\_AED.c}!RCP\_zp\_signal@{RCP\_zp\_signal}}
+\index{RCP\_zp\_signal@{RCP\_zp\_signal}!FSM\_R100\_AED.c@{FSM\_R100\_AED.c}}
+\doxysubsubsection{\texorpdfstring{RCP\_zp\_signal}{RCP\_zp\_signal}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} RCP\+\_\+zp\+\_\+signal\mbox{[}\mbox{\hyperlink{_f_s_m___r100___a_e_d_8c_afec244ea3dab1762e555f711f775c7de}{RCP\+\_\+\+WINSIZE}}\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{_f_s_m___r100___a_e_d_8c_aa736518cb15031f0825cfcdde3f0fa81}\label{_f_s_m___r100___a_e_d_8c_aa736518cb15031f0825cfcdde3f0fa81} 
+\index{FSM\_R100\_AED.c@{FSM\_R100\_AED.c}!reg\_event@{reg\_event}}
+\index{reg\_event@{reg\_event}!FSM\_R100\_AED.c@{FSM\_R100\_AED.c}}
+\doxysubsubsection{\texorpdfstring{reg\_event}{reg\_event}}
+{\footnotesize\ttfamily \mbox{\hyperlink{event__ids_8h_a8a69d5479d2e704ca706ac22f660b3be}{REG\+\_\+\+EVENTS\+\_\+e}} reg\+\_\+event\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{_f_s_m___r100___a_e_d_8c_ac8569cc3da067d4877bcf4157b9b6396}\label{_f_s_m___r100___a_e_d_8c_ac8569cc3da067d4877bcf4157b9b6396} 
+\index{FSM\_R100\_AED.c@{FSM\_R100\_AED.c}!rythm\_type@{rythm\_type}}
+\index{rythm\_type@{rythm\_type}!FSM\_R100\_AED.c@{FSM\_R100\_AED.c}}
+\doxysubsubsection{\texorpdfstring{rythm\_type}{rythm\_type}}
+{\footnotesize\ttfamily \mbox{\hyperlink{thread__drd__entry_8h_adfbfcd79f8c1d114daaee816fd406b9f}{RYTHM\+\_\+\+TYPE\+\_\+e}} rythm\+\_\+type\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Rythm type identifier. 
+
+\Hypertarget{_f_s_m___r100___a_e_d_8c_af74f9d4b9802b897c2ed1c57cdfdde7a}\label{_f_s_m___r100___a_e_d_8c_af74f9d4b9802b897c2ed1c57cdfdde7a} 
+\index{FSM\_R100\_AED.c@{FSM\_R100\_AED.c}!shock\_done@{shock\_done}}
+\index{shock\_done@{shock\_done}!FSM\_R100\_AED.c@{FSM\_R100\_AED.c}}
+\doxysubsubsection{\texorpdfstring{shock\_done}{shock\_done}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} shock\+\_\+done\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Flag to identify shock done event. 
+
+\Hypertarget{_f_s_m___r100___a_e_d_8c_aa88f0a50390ab82fee000dd22cf64099}\label{_f_s_m___r100___a_e_d_8c_aa88f0a50390ab82fee000dd22cf64099} 
+\index{FSM\_R100\_AED.c@{FSM\_R100\_AED.c}!shock\_timeout@{shock\_timeout}}
+\index{shock\_timeout@{shock\_timeout}!FSM\_R100\_AED.c@{FSM\_R100\_AED.c}}
+\doxysubsubsection{\texorpdfstring{shock\_timeout}{shock\_timeout}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} shock\+\_\+timeout\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Flag for shock timeout. 
+
+\Hypertarget{_f_s_m___r100___a_e_d_8c_aeb7bb6b9bea26831ecbc15dcbde47f93}\label{_f_s_m___r100___a_e_d_8c_aeb7bb6b9bea26831ecbc15dcbde47f93} 
+\index{FSM\_R100\_AED.c@{FSM\_R100\_AED.c}!shock\_timeout\_counter@{shock\_timeout\_counter}}
+\index{shock\_timeout\_counter@{shock\_timeout\_counter}!FSM\_R100\_AED.c@{FSM\_R100\_AED.c}}
+\doxysubsubsection{\texorpdfstring{shock\_timeout\_counter}{shock\_timeout\_counter}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} shock\+\_\+timeout\+\_\+counter\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Counter for shock timeout. 
+
+\Hypertarget{_f_s_m___r100___a_e_d_8c_acfb2a5f39602dc32ebe2e8aad5a26c30}\label{_f_s_m___r100___a_e_d_8c_acfb2a5f39602dc32ebe2e8aad5a26c30} 
+\index{FSM\_R100\_AED.c@{FSM\_R100\_AED.c}!unknown\_timeout\_counter@{unknown\_timeout\_counter}}
+\index{unknown\_timeout\_counter@{unknown\_timeout\_counter}!FSM\_R100\_AED.c@{FSM\_R100\_AED.c}}
+\doxysubsubsection{\texorpdfstring{unknown\_timeout\_counter}{unknown\_timeout\_counter}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} unknown\+\_\+timeout\+\_\+counter\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Counter for unknown rithms. 
+
+\Hypertarget{_f_s_m___r100___a_e_d_8c_a2364dd694ab0d70aca8042970db434c1}\label{_f_s_m___r100___a_e_d_8c_a2364dd694ab0d70aca8042970db434c1} 
+\index{FSM\_R100\_AED.c@{FSM\_R100\_AED.c}!vc\_charged@{vc\_charged}}
+\index{vc\_charged@{vc\_charged}!FSM\_R100\_AED.c@{FSM\_R100\_AED.c}}
+\doxysubsubsection{\texorpdfstring{vc\_charged}{vc\_charged}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} vc\+\_\+charged\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Flag to determine if the capacitor is charged or not. 
+
+\Hypertarget{_f_s_m___r100___a_e_d_8c_a71ed9970da0ab0cc11bbdc71998cb37e}\label{_f_s_m___r100___a_e_d_8c_a71ed9970da0ab0cc11bbdc71998cb37e} 
+\index{FSM\_R100\_AED.c@{FSM\_R100\_AED.c}!zp@{zp}}
+\index{zp@{zp}!FSM\_R100\_AED.c@{FSM\_R100\_AED.c}}
+\doxysubsubsection{\texorpdfstring{zp}{zp}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} zp\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+ZP value in ohms. 
+
+\Hypertarget{_f_s_m___r100___a_e_d_8c_aa4df7ed848171219fc7135ed35cbc75e}\label{_f_s_m___r100___a_e_d_8c_aa4df7ed848171219fc7135ed35cbc75e} 
+\index{FSM\_R100\_AED.c@{FSM\_R100\_AED.c}!zp\_good@{zp\_good}}
+\index{zp\_good@{zp\_good}!FSM\_R100\_AED.c@{FSM\_R100\_AED.c}}
+\doxysubsubsection{\texorpdfstring{zp\_good}{zp\_good}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} zp\+\_\+good\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+ZP good flag. 
+
+\Hypertarget{_f_s_m___r100___a_e_d_8c_a5abd113ecbc22e33544987b3492eab2c}\label{_f_s_m___r100___a_e_d_8c_a5abd113ecbc22e33544987b3492eab2c} 
+\index{FSM\_R100\_AED.c@{FSM\_R100\_AED.c}!zp\_segment@{zp\_segment}}
+\index{zp\_segment@{zp\_segment}!FSM\_R100\_AED.c@{FSM\_R100\_AED.c}}
+\doxysubsubsection{\texorpdfstring{zp\_segment}{zp\_segment}}
+{\footnotesize\ttfamily \mbox{\hyperlink{thread__pat_mon__hal_8h_ad86d69a0b4d65ddf120f056f448beff3}{ZP\+\_\+\+SEGMENT\+\_\+e}} zp\+\_\+segment\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+identifies the ZP segment 
+

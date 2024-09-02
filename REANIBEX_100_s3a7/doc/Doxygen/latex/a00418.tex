@@ -1,0 +1,125 @@
+\doxysection{DEFIB\+\_\+\+PULSE\+\_\+\+BLACK\+\_\+\+BOX\+\_\+t Struct Reference}
+\hypertarget{a00418}{}\label{a00418}\index{DEFIB\_PULSE\_BLACK\_BOX\_t@{DEFIB\_PULSE\_BLACK\_BOX\_t}}
+
+
+Summary of defibrillation pulse data for the phase-\/1.  
+
+
+
+
+{\ttfamily \#include $<$thread\+\_\+sys\+Mon\+\_\+entry.\+h$>$}
+
+
+
+Collaboration diagram for DEFIB\+\_\+\+PULSE\+\_\+\+BLACK\+\_\+\+BOX\+\_\+t\+:
+% FIG 0
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \mbox{\hyperlink{a00418_a2a540d15664b221bb0cb85d30f62934f}{shock\+\_\+energy}}
+\begin{DoxyCompactList}\small\item\em energy to discharge on the patient (Jules) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \mbox{\hyperlink{a00418_a108fd50619aad23dd6eda8c1df7f32a1}{shock\+\_\+zp}}
+\begin{DoxyCompactList}\small\item\em patient impedance (ohms) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \mbox{\hyperlink{a00418_a91ea7e3036e92ff8bd90fc1df3a94920}{shock\+\_\+alarms}}
+\begin{DoxyCompactList}\small\item\em alarms detected during the shock \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00414}{DEFIB\+\_\+\+PULSE\+\_\+\+DATA\+\_\+t}} \mbox{\hyperlink{a00418_a112d96cc691757f7547414b8f79cd2f4}{start\+\_\+p0}}
+\begin{DoxyCompactList}\small\item\em data programed at p0 start (pulse start) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00414}{DEFIB\+\_\+\+PULSE\+\_\+\+DATA\+\_\+t}} \mbox{\hyperlink{a00418_acef899f4c4975b4f391eb47823a36517}{start\+\_\+p1}}
+\begin{DoxyCompactList}\small\item\em data programed at p1 start \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00414}{DEFIB\+\_\+\+PULSE\+\_\+\+DATA\+\_\+t}} \mbox{\hyperlink{a00418_a757572ab6d577655e828fb3d5822267a}{end\+\_\+p0}}
+\begin{DoxyCompactList}\small\item\em data collected at p0 end (4 msecs) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00414}{DEFIB\+\_\+\+PULSE\+\_\+\+DATA\+\_\+t}} \mbox{\hyperlink{a00418_a4ffe9ea5866f7589c25c94a04cedbc66}{end\+\_\+p1}}
+\begin{DoxyCompactList}\small\item\em data collected at p1 end (phase-\/1 end) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00414}{DEFIB\+\_\+\+PULSE\+\_\+\+DATA\+\_\+t}} \mbox{\hyperlink{a00418_a14d432dc384211b98739d43291135182}{end\+\_\+p2}}
+\begin{DoxyCompactList}\small\item\em data collected at p2 end (phase-\/2 end) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Summary of defibrillation pulse data for the phase-\/1. 
+
+\doxysubsection{Field Documentation}
+\Hypertarget{a00418_a757572ab6d577655e828fb3d5822267a}\label{a00418_a757572ab6d577655e828fb3d5822267a} 
+\index{DEFIB\_PULSE\_BLACK\_BOX\_t@{DEFIB\_PULSE\_BLACK\_BOX\_t}!end\_p0@{end\_p0}}
+\index{end\_p0@{end\_p0}!DEFIB\_PULSE\_BLACK\_BOX\_t@{DEFIB\_PULSE\_BLACK\_BOX\_t}}
+\doxysubsubsection{\texorpdfstring{end\_p0}{end\_p0}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00414}{DEFIB\+\_\+\+PULSE\+\_\+\+DATA\+\_\+t}} DEFIB\+\_\+\+PULSE\+\_\+\+BLACK\+\_\+\+BOX\+\_\+t\+::end\+\_\+p0}
+
+
+
+data collected at p0 end (4 msecs) 
+
+\Hypertarget{a00418_a4ffe9ea5866f7589c25c94a04cedbc66}\label{a00418_a4ffe9ea5866f7589c25c94a04cedbc66} 
+\index{DEFIB\_PULSE\_BLACK\_BOX\_t@{DEFIB\_PULSE\_BLACK\_BOX\_t}!end\_p1@{end\_p1}}
+\index{end\_p1@{end\_p1}!DEFIB\_PULSE\_BLACK\_BOX\_t@{DEFIB\_PULSE\_BLACK\_BOX\_t}}
+\doxysubsubsection{\texorpdfstring{end\_p1}{end\_p1}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00414}{DEFIB\+\_\+\+PULSE\+\_\+\+DATA\+\_\+t}} DEFIB\+\_\+\+PULSE\+\_\+\+BLACK\+\_\+\+BOX\+\_\+t\+::end\+\_\+p1}
+
+
+
+data collected at p1 end (phase-\/1 end) 
+
+\Hypertarget{a00418_a14d432dc384211b98739d43291135182}\label{a00418_a14d432dc384211b98739d43291135182} 
+\index{DEFIB\_PULSE\_BLACK\_BOX\_t@{DEFIB\_PULSE\_BLACK\_BOX\_t}!end\_p2@{end\_p2}}
+\index{end\_p2@{end\_p2}!DEFIB\_PULSE\_BLACK\_BOX\_t@{DEFIB\_PULSE\_BLACK\_BOX\_t}}
+\doxysubsubsection{\texorpdfstring{end\_p2}{end\_p2}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00414}{DEFIB\+\_\+\+PULSE\+\_\+\+DATA\+\_\+t}} DEFIB\+\_\+\+PULSE\+\_\+\+BLACK\+\_\+\+BOX\+\_\+t\+::end\+\_\+p2}
+
+
+
+data collected at p2 end (phase-\/2 end) 
+
+\Hypertarget{a00418_a91ea7e3036e92ff8bd90fc1df3a94920}\label{a00418_a91ea7e3036e92ff8bd90fc1df3a94920} 
+\index{DEFIB\_PULSE\_BLACK\_BOX\_t@{DEFIB\_PULSE\_BLACK\_BOX\_t}!shock\_alarms@{shock\_alarms}}
+\index{shock\_alarms@{shock\_alarms}!DEFIB\_PULSE\_BLACK\_BOX\_t@{DEFIB\_PULSE\_BLACK\_BOX\_t}}
+\doxysubsubsection{\texorpdfstring{shock\_alarms}{shock\_alarms}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} DEFIB\+\_\+\+PULSE\+\_\+\+BLACK\+\_\+\+BOX\+\_\+t\+::shock\+\_\+alarms}
+
+
+
+alarms detected during the shock 
+
+\Hypertarget{a00418_a2a540d15664b221bb0cb85d30f62934f}\label{a00418_a2a540d15664b221bb0cb85d30f62934f} 
+\index{DEFIB\_PULSE\_BLACK\_BOX\_t@{DEFIB\_PULSE\_BLACK\_BOX\_t}!shock\_energy@{shock\_energy}}
+\index{shock\_energy@{shock\_energy}!DEFIB\_PULSE\_BLACK\_BOX\_t@{DEFIB\_PULSE\_BLACK\_BOX\_t}}
+\doxysubsubsection{\texorpdfstring{shock\_energy}{shock\_energy}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} DEFIB\+\_\+\+PULSE\+\_\+\+BLACK\+\_\+\+BOX\+\_\+t\+::shock\+\_\+energy}
+
+
+
+energy to discharge on the patient (Jules) 
+
+\Hypertarget{a00418_a108fd50619aad23dd6eda8c1df7f32a1}\label{a00418_a108fd50619aad23dd6eda8c1df7f32a1} 
+\index{DEFIB\_PULSE\_BLACK\_BOX\_t@{DEFIB\_PULSE\_BLACK\_BOX\_t}!shock\_zp@{shock\_zp}}
+\index{shock\_zp@{shock\_zp}!DEFIB\_PULSE\_BLACK\_BOX\_t@{DEFIB\_PULSE\_BLACK\_BOX\_t}}
+\doxysubsubsection{\texorpdfstring{shock\_zp}{shock\_zp}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} DEFIB\+\_\+\+PULSE\+\_\+\+BLACK\+\_\+\+BOX\+\_\+t\+::shock\+\_\+zp}
+
+
+
+patient impedance (ohms) 
+
+\Hypertarget{a00418_a112d96cc691757f7547414b8f79cd2f4}\label{a00418_a112d96cc691757f7547414b8f79cd2f4} 
+\index{DEFIB\_PULSE\_BLACK\_BOX\_t@{DEFIB\_PULSE\_BLACK\_BOX\_t}!start\_p0@{start\_p0}}
+\index{start\_p0@{start\_p0}!DEFIB\_PULSE\_BLACK\_BOX\_t@{DEFIB\_PULSE\_BLACK\_BOX\_t}}
+\doxysubsubsection{\texorpdfstring{start\_p0}{start\_p0}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00414}{DEFIB\+\_\+\+PULSE\+\_\+\+DATA\+\_\+t}} DEFIB\+\_\+\+PULSE\+\_\+\+BLACK\+\_\+\+BOX\+\_\+t\+::start\+\_\+p0}
+
+
+
+data programed at p0 start (pulse start) 
+
+\Hypertarget{a00418_acef899f4c4975b4f391eb47823a36517}\label{a00418_acef899f4c4975b4f391eb47823a36517} 
+\index{DEFIB\_PULSE\_BLACK\_BOX\_t@{DEFIB\_PULSE\_BLACK\_BOX\_t}!start\_p1@{start\_p1}}
+\index{start\_p1@{start\_p1}!DEFIB\_PULSE\_BLACK\_BOX\_t@{DEFIB\_PULSE\_BLACK\_BOX\_t}}
+\doxysubsubsection{\texorpdfstring{start\_p1}{start\_p1}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00414}{DEFIB\+\_\+\+PULSE\+\_\+\+DATA\+\_\+t}} DEFIB\+\_\+\+PULSE\+\_\+\+BLACK\+\_\+\+BOX\+\_\+t\+::start\+\_\+p1}
+
+
+
+data programed at p1 start 
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\mbox{\hyperlink{a00131}{thread\+\_\+sys\+Mon\+\_\+entry.\+h}}\end{DoxyCompactItemize}

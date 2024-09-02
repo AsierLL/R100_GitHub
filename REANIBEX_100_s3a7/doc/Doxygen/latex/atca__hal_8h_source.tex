@@ -1,0 +1,205 @@
+\doxysection{atca\+\_\+hal.\+h}
+\hypertarget{atca__hal_8h_source}{}\label{atca__hal_8h_source}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/SCE/atca\_hal.h@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/SCE/atca\_hal.h}}
+\mbox{\hyperlink{atca__hal_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#ifndef\ ATCA\_HAL\_H\_}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ ATCA\_HAL\_H\_}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{atca__config_8h}{atca\_config.h}}"{}}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{atca__status_8h}{atca\_status.h}}"{}}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{atca__iface_8h}{atca\_iface.h}}"{}}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00047\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00048\ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ (*send)(\textcolor{keywordtype}{void}*\ ctx,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}*\ txdata,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ txlen);\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ (*recv)(\textcolor{keywordtype}{void}*\ ctx,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}*\ rxdata,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}*\ rxlen);\ \ \ \ \ \ \ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{void}*\ (*packet\_alloc)(\textcolor{keywordtype}{size\_t}\ bytes);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00052\ \ \ \ \ void\ (*packet\_free)(\textcolor{keywordtype}{void}*\ packet);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{void}*\ \mbox{\hyperlink{structatca__hal__kit__phy__t_afd90dea53ccfe0a8c15b12e5e1afaa35}{hal\_data}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00054\ \}\ \mbox{\hyperlink{structatca__hal__kit__phy__t}{atca\_hal\_kit\_phy\_t}};}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00057\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ \mbox{\hyperlink{group__hal___gaf17e547bf330b9b561fd34437f09e616}{hal\_iface\_init}}(\mbox{\hyperlink{struct_a_t_c_a_iface_cfg}{ATCAIfaceCfg}}\ *,\ \mbox{\hyperlink{struct_a_t_c_a_h_a_l__t}{ATCAHAL\_t}}**\ hal,\ \mbox{\hyperlink{struct_a_t_c_a_h_a_l__t}{ATCAHAL\_t}}**\ phy);}
+\DoxyCodeLine{00061\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ \mbox{\hyperlink{group__hal___ga4be1afccb41f28f6ce620b1d5197befc}{hal\_iface\_release}}(\mbox{\hyperlink{group__interface_gac7f674d4a0afb12d2f3c9c5e98cb1089}{ATCAIfaceType}},\ \textcolor{keywordtype}{void}*\ hal\_data);}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ \mbox{\hyperlink{group__hal___ga6ce92f1d10000eb6618fc74c2ca92d76}{hal\_check\_wake}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}*\ response,\ \textcolor{keywordtype}{int}\ response\_size);}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{comment}{//\#ifdef\ ATCA\_HAL\_I2C}}
+\DoxyCodeLine{00066\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ \mbox{\hyperlink{group__hal___ga17df8d983df73e2e8f62f1236f157909}{hal\_i2c\_init}}(\mbox{\hyperlink{structatca__iface}{ATCAIface}}\ iface,\ \mbox{\hyperlink{struct_a_t_c_a_iface_cfg}{ATCAIfaceCfg}}\ *cfg);}
+\DoxyCodeLine{00067\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ \mbox{\hyperlink{group__hal___gafbe53519362f18c2688d10da6f7c618f}{hal\_i2c\_post\_init}}(\mbox{\hyperlink{structatca__iface}{ATCAIface}}\ iface);}
+\DoxyCodeLine{00068\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ \mbox{\hyperlink{group__hal___gacc9a889e19d2f1a475a39391565b66dd}{hal\_i2c\_send}}(\mbox{\hyperlink{structatca__iface}{ATCAIface}}\ iface,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ word\_address,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ *txdata,\ \textcolor{keywordtype}{int}\ txlength);}
+\DoxyCodeLine{00069\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ \mbox{\hyperlink{group__hal___ga41a2b07d55558b9726abe28fd8431e90}{hal\_i2c\_receive}}(\mbox{\hyperlink{structatca__iface}{ATCAIface}}\ iface,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ word\_address,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ *rxdata,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ *rxlength);}
+\DoxyCodeLine{00070\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ \mbox{\hyperlink{group__hal___ga4f82572f05b8587d98bc38601453863e}{hal\_i2c\_control}}(\mbox{\hyperlink{structatca__iface}{ATCAIface}}\ iface,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ option,\ \textcolor{keywordtype}{void}*\ param,\ \textcolor{keywordtype}{size\_t}\ paramlen);}
+\DoxyCodeLine{00071\ \textcolor{comment}{//\#ifdef\ ATCA\_LEGACY\_HAL}}
+\DoxyCodeLine{00072\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ \mbox{\hyperlink{group__hal___gad4df1b6755e2d5b5d9e810371e45ca8c}{hal\_i2c\_wake}}(\mbox{\hyperlink{structatca__iface}{ATCAIface}}\ iface);}
+\DoxyCodeLine{00073\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ \mbox{\hyperlink{group__hal___ga9317303ada721ff3f97e7aad69437a30}{hal\_i2c\_idle}}(\mbox{\hyperlink{structatca__iface}{ATCAIface}}\ iface);}
+\DoxyCodeLine{00074\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ \mbox{\hyperlink{group__hal___ga3f89bae6a625d5f37abdcc99408def27}{hal\_i2c\_sleep}}(\mbox{\hyperlink{structatca__iface}{ATCAIface}}\ iface);}
+\DoxyCodeLine{00075\ \textcolor{comment}{//\#endif}}
+\DoxyCodeLine{00076\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ \mbox{\hyperlink{group__hal___gac382cc4431d2d1c721c21a453ba36c22}{hal\_i2c\_release}}(\textcolor{keywordtype}{void}\ *hal\_data);}
+\DoxyCodeLine{00077\ \textcolor{comment}{//\#endif}}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#ifdef\ ATCA\_HAL\_SWI\_UART}}
+\DoxyCodeLine{00080\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ hal\_swi\_init(\mbox{\hyperlink{structatca__iface}{ATCAIface}}\ iface,\ \mbox{\hyperlink{struct_a_t_c_a_iface_cfg}{ATCAIfaceCfg}}\ *cfg);}
+\DoxyCodeLine{00081\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ hal\_swi\_post\_init(\mbox{\hyperlink{structatca__iface}{ATCAIface}}\ iface);}
+\DoxyCodeLine{00082\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ hal\_swi\_send(\mbox{\hyperlink{structatca__iface}{ATCAIface}}\ iface,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ word\_address,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ *txdata,\ \textcolor{keywordtype}{int}\ txlength);}
+\DoxyCodeLine{00083\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ hal\_swi\_receive(\mbox{\hyperlink{structatca__iface}{ATCAIface}}\ iface,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ word\_address,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ *rxdata,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ *rxlength);}
+\DoxyCodeLine{00084\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ hal\_swi\_control(\mbox{\hyperlink{structatca__iface}{ATCAIface}}\ iface,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ option,\ \textcolor{keywordtype}{void}*\ param,\ \textcolor{keywordtype}{size\_t}\ paramlen);}
+\DoxyCodeLine{00085\ \textcolor{preprocessor}{\#ifdef\ ATCA\_LEGACY\_HAL}}
+\DoxyCodeLine{00086\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ hal\_swi\_wake(\mbox{\hyperlink{structatca__iface}{ATCAIface}}\ iface);}
+\DoxyCodeLine{00087\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ hal\_swi\_idle(\mbox{\hyperlink{structatca__iface}{ATCAIface}}\ iface);}
+\DoxyCodeLine{00088\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ hal\_swi\_sleep(\mbox{\hyperlink{structatca__iface}{ATCAIface}}\ iface);}
+\DoxyCodeLine{00089\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00090\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ hal\_swi\_release(\textcolor{keywordtype}{void}\ *hal\_data);}
+\DoxyCodeLine{00091\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \textcolor{preprocessor}{\#if\ defined(ATCA\_HAL\_SWI\_GPIO)\ ||\ defined(ATCA\_HAL\_SWI\_BB)}}
+\DoxyCodeLine{00094\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ hal\_swi\_gpio\_init(\mbox{\hyperlink{structatca__iface}{ATCAIface}}\ iface,\ \mbox{\hyperlink{struct_a_t_c_a_iface_cfg}{ATCAIfaceCfg}}\ *cfg);}
+\DoxyCodeLine{00095\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ hal\_swi\_gpio\_post\_init(\mbox{\hyperlink{structatca__iface}{ATCAIface}}\ iface);}
+\DoxyCodeLine{00096\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ hal\_swi\_gpio\_send(\mbox{\hyperlink{structatca__iface}{ATCAIface}}\ iface,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ word\_address,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ *txdata,\ \textcolor{keywordtype}{int}\ txlength);}
+\DoxyCodeLine{00097\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ hal\_swi\_gpio\_receive(\mbox{\hyperlink{structatca__iface}{ATCAIface}}\ iface,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ word\_address,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ *rxdata,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ *rxlength);}
+\DoxyCodeLine{00098\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ hal\_swi\_gpio\_release(\textcolor{keywordtype}{void}\ *hal\_data);}
+\DoxyCodeLine{00099\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ hal\_swi\_gpio\_control(\mbox{\hyperlink{structatca__iface}{ATCAIface}}\ iface,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ option,\ \textcolor{keywordtype}{void}*\ param,\ \textcolor{keywordtype}{size\_t}\ paramlen);}
+\DoxyCodeLine{00100\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \textcolor{preprocessor}{\#if\ defined(ATCA\_HAL\_GPIO)\ ||\ defined(ATCA\_HAL\_BB)}}
+\DoxyCodeLine{00103\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ hal\_gpio\_init(\mbox{\hyperlink{structatca__iface}{ATCAIface}}\ iface,\ \mbox{\hyperlink{struct_a_t_c_a_iface_cfg}{ATCAIfaceCfg}}\ *cfg);}
+\DoxyCodeLine{00104\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ hal\_gpio\_post\_init(\mbox{\hyperlink{structatca__iface}{ATCAIface}}\ iface);}
+\DoxyCodeLine{00105\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ hal\_gpio\_send(\mbox{\hyperlink{structatca__iface}{ATCAIface}}\ iface,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ word\_address,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}*\ pin\_state,\ \textcolor{keywordtype}{int}\ unused\_param);}
+\DoxyCodeLine{00106\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ hal\_gpio\_receive(\mbox{\hyperlink{structatca__iface}{ATCAIface}}\ iface,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ word\_address,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}*\ pin\_state,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}*\ unused\_param);}
+\DoxyCodeLine{00107\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ hal\_gpio\_release(\textcolor{keywordtype}{void}\ *hal\_data);}
+\DoxyCodeLine{00108\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ hal\_gpio\_control(\mbox{\hyperlink{structatca__iface}{ATCAIface}}\ iface,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ option,\ \textcolor{keywordtype}{void}*\ param,\ \textcolor{keywordtype}{size\_t}\ paramlen);}
+\DoxyCodeLine{00109\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \textcolor{preprocessor}{\#if\ defined(ATCA\_HAL\_SWI\_UART)\ ||\ defined(ATCA\_HAL\_KIT\_UART)\ ||\ defined(ATCA\_HAL\_UART)}}
+\DoxyCodeLine{00112\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ hal\_uart\_init(\mbox{\hyperlink{structatca__iface}{ATCAIface}}\ iface,\ \mbox{\hyperlink{struct_a_t_c_a_iface_cfg}{ATCAIfaceCfg}}\ *cfg);}
+\DoxyCodeLine{00113\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ hal\_uart\_post\_init(\mbox{\hyperlink{structatca__iface}{ATCAIface}}\ iface);}
+\DoxyCodeLine{00114\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ hal\_uart\_send(\mbox{\hyperlink{structatca__iface}{ATCAIface}}\ iface,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ word\_address,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ *txdata,\ \textcolor{keywordtype}{int}\ txlength);}
+\DoxyCodeLine{00115\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ hal\_uart\_receive(\mbox{\hyperlink{structatca__iface}{ATCAIface}}\ iface,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ word\_address,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ *rxdata,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ *rxlength);}
+\DoxyCodeLine{00116\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ hal\_uart\_control(\mbox{\hyperlink{structatca__iface}{ATCAIface}}\ iface,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ option,\ \textcolor{keywordtype}{void}*\ param,\ \textcolor{keywordtype}{size\_t}\ paramlen);}
+\DoxyCodeLine{00117\ \textcolor{preprocessor}{\#ifdef\ ATCA\_LEGACY\_HAL}}
+\DoxyCodeLine{00118\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ hal\_uart\_wake(\mbox{\hyperlink{structatca__iface}{ATCAIface}}\ iface);}
+\DoxyCodeLine{00119\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ hal\_uart\_idle(\mbox{\hyperlink{structatca__iface}{ATCAIface}}\ iface);}
+\DoxyCodeLine{00120\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ hal\_uart\_sleep(\mbox{\hyperlink{structatca__iface}{ATCAIface}}\ iface);}
+\DoxyCodeLine{00121\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00122\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ hal\_uart\_release(\textcolor{keywordtype}{void}\ *hal\_data);}
+\DoxyCodeLine{00123\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \textcolor{preprocessor}{\#ifdef\ ATCA\_HAL\_SPI}}
+\DoxyCodeLine{00126\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ hal\_spi\_init(\mbox{\hyperlink{structatca__iface}{ATCAIface}}\ iface,\ \mbox{\hyperlink{struct_a_t_c_a_iface_cfg}{ATCAIfaceCfg}}\ *cfg);}
+\DoxyCodeLine{00127\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ hal\_spi\_post\_init(\mbox{\hyperlink{structatca__iface}{ATCAIface}}\ iface);}
+\DoxyCodeLine{00128\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ hal\_spi\_send(\mbox{\hyperlink{structatca__iface}{ATCAIface}}\ iface,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ word\_address,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ *txdata,\ \textcolor{keywordtype}{int}\ txlength);}
+\DoxyCodeLine{00129\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ hal\_spi\_receive(\mbox{\hyperlink{structatca__iface}{ATCAIface}}\ iface,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ word\_address,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ *rxdata,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ *rxlength);}
+\DoxyCodeLine{00130\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ hal\_spi\_control(\mbox{\hyperlink{structatca__iface}{ATCAIface}}\ iface,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ option,\ \textcolor{keywordtype}{void}*\ param,\ \textcolor{keywordtype}{size\_t}\ paramlen);}
+\DoxyCodeLine{00131\ \textcolor{preprocessor}{\#ifdef\ ATCA\_LEGACY\_HAL}}
+\DoxyCodeLine{00132\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ hal\_spi\_wake(\mbox{\hyperlink{structatca__iface}{ATCAIface}}\ iface);}
+\DoxyCodeLine{00133\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ hal\_spi\_idle(\mbox{\hyperlink{structatca__iface}{ATCAIface}}\ iface);}
+\DoxyCodeLine{00134\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ hal\_spi\_sleep(\mbox{\hyperlink{structatca__iface}{ATCAIface}}\ iface);}
+\DoxyCodeLine{00135\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00136\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ hal\_spi\_release(\textcolor{keywordtype}{void}\ *hal\_data);}
+\DoxyCodeLine{00137\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00139\ \textcolor{preprocessor}{\#ifdef\ ATCA\_HAL\_KIT\_HID}}
+\DoxyCodeLine{00140\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ hal\_kit\_hid\_init(\mbox{\hyperlink{structatca__iface}{ATCAIface}}\ iface,\ \mbox{\hyperlink{struct_a_t_c_a_iface_cfg}{ATCAIfaceCfg}}\ *cfg);}
+\DoxyCodeLine{00141\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ hal\_kit\_hid\_post\_init(\mbox{\hyperlink{structatca__iface}{ATCAIface}}\ iface);}
+\DoxyCodeLine{00142\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ hal\_kit\_hid\_send(\mbox{\hyperlink{structatca__iface}{ATCAIface}}\ iface,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ word\_address,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ *txdata,\ \textcolor{keywordtype}{int}\ txlength);}
+\DoxyCodeLine{00143\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ hal\_kit\_hid\_receive(\mbox{\hyperlink{structatca__iface}{ATCAIface}}\ iface,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ word\_address,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ *rxdata,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}\ *rxlength);}
+\DoxyCodeLine{00144\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ hal\_kit\_hid\_control(\mbox{\hyperlink{structatca__iface}{ATCAIface}}\ iface,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ option,\ \textcolor{keywordtype}{void}*\ param,\ \textcolor{keywordtype}{size\_t}\ paramlen);}
+\DoxyCodeLine{00145\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ hal\_kit\_hid\_release(\textcolor{keywordtype}{void}\ *hal\_data);}
+\DoxyCodeLine{00146\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ \textcolor{preprocessor}{\#ifdef\ ATCA\_HAL\_KIT\_BRIDGE}}
+\DoxyCodeLine{00149\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ hal\_kit\_init(\mbox{\hyperlink{structatca__iface}{ATCAIface}}\ iface,\ \mbox{\hyperlink{struct_a_t_c_a_iface_cfg}{ATCAIfaceCfg}}*\ cfg);}
+\DoxyCodeLine{00150\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ hal\_kit\_post\_init(\mbox{\hyperlink{structatca__iface}{ATCAIface}}\ iface);}
+\DoxyCodeLine{00151\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ hal\_kit\_send(\mbox{\hyperlink{structatca__iface}{ATCAIface}}\ iface,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ word\_address,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}*\ txdata,\ \textcolor{keywordtype}{int}\ txlength);}
+\DoxyCodeLine{00152\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ hal\_kit\_receive(\mbox{\hyperlink{structatca__iface}{ATCAIface}}\ iface,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ word\_address,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}*\ rxdata,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\_t}}*\ rxlength);}
+\DoxyCodeLine{00153\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ hal\_kit\_control(\mbox{\hyperlink{structatca__iface}{ATCAIface}}\ iface,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ option,\ \textcolor{keywordtype}{void}*\ param,\ \textcolor{keywordtype}{size\_t}\ paramlen);}
+\DoxyCodeLine{00154\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ hal\_kit\_release(\textcolor{keywordtype}{void}*\ hal\_data);}
+\DoxyCodeLine{00155\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00156\ }
+\DoxyCodeLine{00157\ \textcolor{preprocessor}{\#ifdef\ ATCA\_HAL\_CUSTOM}}
+\DoxyCodeLine{00158\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ hal\_custom\_control(\mbox{\hyperlink{structatca__iface}{ATCAIface}}\ iface,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ option,\ \textcolor{keywordtype}{void}*\ param,\ \textcolor{keywordtype}{size\_t}\ paramlen);}
+\DoxyCodeLine{00159\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00161\ \textcolor{comment}{/*\ Polling\ defaults\ if\ not\ overwritten\ by\ the\ configuration\ */}}
+\DoxyCodeLine{00162\ \textcolor{preprocessor}{\#ifndef\ ATCA\_POLLING\_INIT\_TIME\_MSEC}}
+\DoxyCodeLine{00163\ \textcolor{preprocessor}{\#define\ ATCA\_POLLING\_INIT\_TIME\_MSEC\ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{00164\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00165\ }
+\DoxyCodeLine{00166\ \textcolor{preprocessor}{\#ifndef\ ATCA\_POLLING\_FREQUENCY\_TIME\_MSEC}}
+\DoxyCodeLine{00167\ \textcolor{preprocessor}{\#define\ ATCA\_POLLING\_FREQUENCY\_TIME\_MSEC\ \ 2}}
+\DoxyCodeLine{00168\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00170\ \textcolor{preprocessor}{\#ifndef\ ATCA\_POLLING\_MAX\_TIME\_MSEC}}
+\DoxyCodeLine{00171\ \textcolor{preprocessor}{\#define\ ATCA\_POLLING\_MAX\_TIME\_MSEC\ \ \ \ \ \ \ \ 2500}}
+\DoxyCodeLine{00172\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00173\ }
+\DoxyCodeLine{00174\ \textcolor{comment}{/*\ \ */}}
+\DoxyCodeLine{00175\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00176\ \{}
+\DoxyCodeLine{00177\ \ \ \ \ \mbox{\hyperlink{group__hal___gga63592210c9f6bba65e47bee41ba33aada67b7cb6d7acd443c7ce155f79e24e8a3}{ATCA\_HAL\_CONTROL\_WAKE}}\ =\ 0,}
+\DoxyCodeLine{00178\ \ \ \ \ \mbox{\hyperlink{group__hal___gga63592210c9f6bba65e47bee41ba33aada68f29ce1dae672fba4d0bd72a2520787}{ATCA\_HAL\_CONTROL\_IDLE}}\ =\ 1,}
+\DoxyCodeLine{00179\ \ \ \ \ \mbox{\hyperlink{group__hal___gga63592210c9f6bba65e47bee41ba33aada2d7aafbda814952834385918b0b71fb2}{ATCA\_HAL\_CONTROL\_SLEEP}}\ =\ 2,}
+\DoxyCodeLine{00180\ \ \ \ \ \mbox{\hyperlink{group__hal___gga63592210c9f6bba65e47bee41ba33aada707f9990e8082bd03fc6d3b57f4554dd}{ATCA\_HAL\_CONTROL\_RESET}}\ =\ 3,}
+\DoxyCodeLine{00181\ \ \ \ \ \mbox{\hyperlink{group__hal___gga63592210c9f6bba65e47bee41ba33aada353f3f565c16842ce1cd1353a9967e0f}{ATCA\_HAL\_CONTROL\_SELECT}}\ =\ 4,}
+\DoxyCodeLine{00182\ \ \ \ \ \mbox{\hyperlink{group__hal___gga63592210c9f6bba65e47bee41ba33aadae67d200e332beb287624f9e077718b7c}{ATCA\_HAL\_CONTROL\_DESELECT}}\ =\ 5,}
+\DoxyCodeLine{00183\ \ \ \ \ \mbox{\hyperlink{group__hal___gga63592210c9f6bba65e47bee41ba33aada0af7e182f6bfea47544cb3ec2fce26c9}{ATCA\_HAL\_CHANGE\_BAUD}}\ =\ 6,}
+\DoxyCodeLine{00184\ \ \ \ \ \mbox{\hyperlink{group__hal___gga63592210c9f6bba65e47bee41ba33aada9416d42f10d7aaa9affeaed33927d3b4}{ATCA\_HAL\_FLUSH\_BUFFER}}\ =\ 7,}
+\DoxyCodeLine{00185\ \ \ \ \ \mbox{\hyperlink{group__hal___gga63592210c9f6bba65e47bee41ba33aadaefe1d680f11ecfc9ed6a86eb80bac8ff}{ATCA\_HAL\_CONTROL\_DIRECTION}}\ =\ 8}
+\DoxyCodeLine{00186\ \}\ \mbox{\hyperlink{group__hal___ga63592210c9f6bba65e47bee41ba33aad}{ATCA\_HAL\_CONTROL}};}
+\DoxyCodeLine{00187\ }
+\DoxyCodeLine{00189\ \textcolor{preprocessor}{\#ifndef\ atca\_delay\_ms}}
+\DoxyCodeLine{00190\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__hal___ga0544f36422b5e9a8890fb9c90fc5eb55}{atca\_delay\_ms}}(\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ ms);}
+\DoxyCodeLine{00191\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00192\ }
+\DoxyCodeLine{00193\ \textcolor{preprocessor}{\#ifndef\ atca\_delay\_us}}
+\DoxyCodeLine{00194\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__hal___ga847db2fb4380f9365db262e4a41fa3e1}{atca\_delay\_us}}(\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ us);}
+\DoxyCodeLine{00195\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00196\ }
+\DoxyCodeLine{00198\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__hal___ga3df335e46c7e798a1d4b8949d00c13d3}{hal\_rtos\_delay\_ms}}(\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ ms);}
+\DoxyCodeLine{00199\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__hal___ga57165466685c07db56639eefa2c7762c}{hal\_delay\_ms}}(\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ ms);}
+\DoxyCodeLine{00200\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__hal___ga7430997881f872935a85edfd41d9df17}{hal\_delay\_us}}(\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ us);}
+\DoxyCodeLine{00201\ }
+\DoxyCodeLine{00203\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ \mbox{\hyperlink{group__hal___gab289a3949663589ac6be71d72fb18278}{hal\_create\_mutex}}(\textcolor{keywordtype}{void}\ **\ ppMutex,\ \textcolor{keywordtype}{char}*\ pName);}
+\DoxyCodeLine{00204\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ \mbox{\hyperlink{group__hal___ga4589d7b3e951f40b7928f1cf31f7ddf3}{hal\_destroy\_mutex}}(\textcolor{keywordtype}{void}\ *\ pMutex);}
+\DoxyCodeLine{00205\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ \mbox{\hyperlink{group__hal___gad4cd02ff7ae4e75844eab4e84eb61994}{hal\_lock\_mutex}}(\textcolor{keywordtype}{void}\ *\ pMutex);}
+\DoxyCodeLine{00206\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ \mbox{\hyperlink{group__hal___ga31fd8170a49623686543f6247b883bd1}{hal\_unlock\_mutex}}(\textcolor{keywordtype}{void}\ *\ pMutex);}
+\DoxyCodeLine{00207\ }
+\DoxyCodeLine{00208\ \textcolor{preprocessor}{\#ifndef\ ATCA\_NO\_HEAP}}
+\DoxyCodeLine{00209\ \textcolor{preprocessor}{\#ifdef\ ATCA\_TESTS\_ENABLED}}
+\DoxyCodeLine{00210\ \textcolor{keywordtype}{void}\ hal\_test\_set\_memory\_f(\textcolor{keywordtype}{void}*\ (*malloc\_func)(\textcolor{keywordtype}{size\_t}),\ \textcolor{keywordtype}{void}\ (*free\_func)(\textcolor{keywordtype}{void}*));}
+\DoxyCodeLine{00211\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00212\ }
+\DoxyCodeLine{00213\ \textcolor{preprocessor}{\#if\ defined(ATCA\_TESTS\_ENABLED)\ ||\ !defined(ATCA\_PLATFORM\_MALLOC)}}
+\DoxyCodeLine{00214\ \textcolor{keywordtype}{void}*\ \ \ \mbox{\hyperlink{group__hal___ga734f1a991d97db530d1d43657faa3e96}{hal\_malloc}}(\textcolor{keywordtype}{size\_t}\ size);}
+\DoxyCodeLine{00215\ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{group__hal___gab9288899d6d6b917030fa44329234944}{hal\_free}}(\textcolor{keywordtype}{void}*\ ptr);}
+\DoxyCodeLine{00216\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00217\ \textcolor{preprocessor}{\#define\ hal\_malloc\ \ \ \ \ \ ATCA\_PLATFORM\_MALLOC}}
+\DoxyCodeLine{00218\ \textcolor{preprocessor}{\#define\ hal\_free\ \ \ \ \ \ \ \ ATCA\_PLATFORM\_FREE}}
+\DoxyCodeLine{00219\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00220\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00221\ }
+\DoxyCodeLine{00222\ \textcolor{preprocessor}{\#ifdef\ memset\_s}}
+\DoxyCodeLine{00223\ \textcolor{preprocessor}{\#define\ hal\_memset\_s\ \ \ \ memset\_s}}
+\DoxyCodeLine{00224\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00225\ \textcolor{preprocessor}{\#define\ hal\_memset\_s\ \ \ \ atcab\_memset\_s}}
+\DoxyCodeLine{00226\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00227\ }
+\DoxyCodeLine{00228\ }
+\DoxyCodeLine{00229\ \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\_STATUS}}\ \mbox{\hyperlink{group__hal___ga43e975cd670652e6ae76f390b2e82218}{hal\_iface\_register\_hal}}(\mbox{\hyperlink{group__interface_gac7f674d4a0afb12d2f3c9c5e98cb1089}{ATCAIfaceType}}\ iface\_type,\ \mbox{\hyperlink{struct_a_t_c_a_h_a_l__t}{ATCAHAL\_t}}\ *hal,\ \mbox{\hyperlink{struct_a_t_c_a_h_a_l__t}{ATCAHAL\_t}}\ **old\_hal,\ \mbox{\hyperlink{struct_a_t_c_a_h_a_l__t}{ATCAHAL\_t}}*\ phy,\ \mbox{\hyperlink{struct_a_t_c_a_h_a_l__t}{ATCAHAL\_t}}**\ old\_phy);}
+\DoxyCodeLine{00230\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ \mbox{\hyperlink{group__hal___gac5acbcb3cee22506992d838cd8a3e8ae}{hal\_is\_command\_word}}(\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}}\ word\_address);}
+\DoxyCodeLine{00231\ }
+\DoxyCodeLine{00232\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00233\ \}}
+\DoxyCodeLine{00234\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00235\ }
+\DoxyCodeLine{00238\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ ATCA\_HAL\_H\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

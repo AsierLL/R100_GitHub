@@ -1,0 +1,225 @@
+\doxysection{C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\+SCE/cryptoauthlib.h File Reference}
+\hypertarget{cryptoauthlib_8h}{}\label{cryptoauthlib_8h}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/SCE/cryptoauthlib.h@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/SCE/cryptoauthlib.h}}
+
+
+Single aggregation point for all Crypto\+Auth\+Lib header files.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdarg.\+h$>$}\newline
+{\ttfamily \#include "{}atca\+\_\+config.\+h"{}}\newline
+{\ttfamily \#include "{}atca\+\_\+compiler.\+h"{}}\newline
+{\ttfamily \#include "{}atca\+\_\+version.\+h"{}}\newline
+{\ttfamily \#include "{}atca\+\_\+status.\+h"{}}\newline
+{\ttfamily \#include "{}atca\+\_\+debug.\+h"{}}\newline
+{\ttfamily \#include "{}atca\+\_\+iface.\+h"{}}\newline
+{\ttfamily \#include "{}atca\+\_\+helpers.\+h"{}}\newline
+{\ttfamily \#include "{}atca\+\_\+hal.\+h"{}}\newline
+{\ttfamily \#include "{}atca\+\_\+cfgs.\+h"{}}\newline
+{\ttfamily \#include "{}atca\+\_\+device.\+h"{}}\newline
+{\ttfamily \#include "{}calib\+\_\+basic.\+h"{}}\newline
+{\ttfamily \#include "{}calib\+\_\+command.\+h"{}}\newline
+{\ttfamily \#include "{}calib\+\_\+aes\+\_\+gcm.\+h"{}}\newline
+{\ttfamily \#include "{}atca\+\_\+basic.\+h"{}}\newline
+Include dependency graph for cryptoauthlib.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{cryptoauthlib_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{cryptoauthlib_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{cryptoauthlib_8h_a42c67508ff6b45d11b1349d8a7ad04d9}{ATCA\+\_\+\+ECC\+\_\+\+SUPPORT}}~1
+\item 
+\#define \mbox{\hyperlink{cryptoauthlib_8h_a2cffff3f4586ac856f67460d33f23770}{ATCA\+\_\+\+CA\+\_\+\+SUPPORT}}~1
+\item 
+\#define \mbox{\hyperlink{cryptoauthlib_8h_a9e26b17e186f53c03907fca83ca361eb}{ATCA\+\_\+\+TA\+\_\+\+SUPPORT}}~0
+\item 
+\#define \mbox{\hyperlink{cryptoauthlib_8h_a85e0a506bd6fdae6ce32d5df3a48ac1c}{ATCA\+\_\+\+SHA256\+\_\+\+BLOCK\+\_\+\+SIZE}}~(64)
+\item 
+\#define \mbox{\hyperlink{cryptoauthlib_8h_a4b683697977ad3af9a2c7d8fd6bfe8c8}{ATCA\+\_\+\+SHA256\+\_\+\+DIGEST\+\_\+\+SIZE}}~(32)
+\item 
+\#define \mbox{\hyperlink{cryptoauthlib_8h_a71e52612e6d56f7412a113fcc4fb57d4}{ATCA\+\_\+\+AES128\+\_\+\+BLOCK\+\_\+\+SIZE}}~(16)
+\item 
+\#define \mbox{\hyperlink{cryptoauthlib_8h_ad018c90564df3a461b8edcef27000f91}{ATCA\+\_\+\+AES128\+\_\+\+KEY\+\_\+\+SIZE}}~(16)
+\item 
+\#define \mbox{\hyperlink{cryptoauthlib_8h_a653e182874070e52d504892ad69d08a2}{ATCA\+\_\+\+ECCP256\+\_\+\+KEY\+\_\+\+SIZE}}~(32)
+\item 
+\#define \mbox{\hyperlink{cryptoauthlib_8h_ace31254e4882c34fd124218474a1b794}{ATCA\+\_\+\+ECCP256\+\_\+\+PUBKEY\+\_\+\+SIZE}}~(64)
+\item 
+\#define \mbox{\hyperlink{cryptoauthlib_8h_a0d420e6a05f2de7d8b55883de34328d6}{ATCA\+\_\+\+ECCP256\+\_\+\+SIG\+\_\+\+SIZE}}~(64)
+\item 
+\#define \mbox{\hyperlink{cryptoauthlib_8h_add3796a1d4de55604283aef5a70f7945}{ATCA\+\_\+\+ZONE\+\_\+\+CONFIG}}~((\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}})0x00)
+\item 
+\#define \mbox{\hyperlink{cryptoauthlib_8h_a547efc6fa3cb0501b2e53f80023dff7e}{ATCA\+\_\+\+ZONE\+\_\+\+OTP}}~((\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}})0x01)
+\item 
+\#define \mbox{\hyperlink{cryptoauthlib_8h_a4c65b241280290fae9fd4faa9d7a292b}{ATCA\+\_\+\+ZONE\+\_\+\+DATA}}~((\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}})0x02)
+\item 
+\#define \mbox{\hyperlink{cryptoauthlib_8h_a2c7a800fc16e187847b694b4e9f94231}{ATCA\+\_\+\+ECC204\+\_\+\+ZONE\+\_\+\+DATA}}~((\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}})0x00)
+\item 
+\#define \mbox{\hyperlink{cryptoauthlib_8h_a6c591535ae2fd4d8f0b2373e45e6e173}{ATCA\+\_\+\+ECC204\+\_\+\+ZONE\+\_\+\+CONFIG}}~((\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}})0x01)
+\item 
+\#define \mbox{\hyperlink{cryptoauthlib_8h_a850ec56b408fccccaea5826d452c3a64}{SHA\+\_\+\+MODE\+\_\+\+TARGET\+\_\+\+TEMPKEY}}~((\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}})0x00)
+\item 
+\#define \mbox{\hyperlink{cryptoauthlib_8h_ae559b402c678cc51f8252b927b8781e5}{SHA\+\_\+\+MODE\+\_\+\+TARGET\+\_\+\+MSGDIGBUF}}~((\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}})0x40)
+\item 
+\#define \mbox{\hyperlink{cryptoauthlib_8h_ae0df4b9151bb3d807bc1c532036c6d88}{SHA\+\_\+\+MODE\+\_\+\+TARGET\+\_\+\+OUT\+\_\+\+ONLY}}~((\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}})0x\+C0)
+\item 
+\#define \mbox{\hyperlink{cryptoauthlib_8h_a8a1c717bd7199cd60fe3f088b236d86f}{ATCA\+\_\+\+STRINGIFY}}(x)~\#x
+\item 
+\#define \mbox{\hyperlink{cryptoauthlib_8h_ac067271c1e02986c59cd444644c117ba}{ATCA\+\_\+\+TOSTRING}}(x)~\mbox{\hyperlink{cryptoauthlib_8h_a8a1c717bd7199cd60fe3f088b236d86f}{ATCA\+\_\+\+STRINGIFY}}(x)
+\item 
+\#define \mbox{\hyperlink{cryptoauthlib_8h_a0831fc28e099b0f18c3a3c23a7d41df1}{ATCA\+\_\+\+TRACE}}(s,  m)~\mbox{\hyperlink{atca__debug_8h_a60326372db8190ddb9f191fca5bdc38a}{atca\+\_\+trace}}(s)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Single aggregation point for all Crypto\+Auth\+Lib header files. 
+
+\begin{DoxyCopyright}{Copyright}
+(c) 2015-\/2020 Microchip Technology Inc. and its subsidiaries. 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{cryptoauthlib_8h_a71e52612e6d56f7412a113fcc4fb57d4}\label{cryptoauthlib_8h_a71e52612e6d56f7412a113fcc4fb57d4} 
+\index{cryptoauthlib.h@{cryptoauthlib.h}!ATCA\_AES128\_BLOCK\_SIZE@{ATCA\_AES128\_BLOCK\_SIZE}}
+\index{ATCA\_AES128\_BLOCK\_SIZE@{ATCA\_AES128\_BLOCK\_SIZE}!cryptoauthlib.h@{cryptoauthlib.h}}
+\doxysubsubsection{\texorpdfstring{ATCA\_AES128\_BLOCK\_SIZE}{ATCA\_AES128\_BLOCK\_SIZE}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+AES128\+\_\+\+BLOCK\+\_\+\+SIZE~(16)}
+
+\Hypertarget{cryptoauthlib_8h_ad018c90564df3a461b8edcef27000f91}\label{cryptoauthlib_8h_ad018c90564df3a461b8edcef27000f91} 
+\index{cryptoauthlib.h@{cryptoauthlib.h}!ATCA\_AES128\_KEY\_SIZE@{ATCA\_AES128\_KEY\_SIZE}}
+\index{ATCA\_AES128\_KEY\_SIZE@{ATCA\_AES128\_KEY\_SIZE}!cryptoauthlib.h@{cryptoauthlib.h}}
+\doxysubsubsection{\texorpdfstring{ATCA\_AES128\_KEY\_SIZE}{ATCA\_AES128\_KEY\_SIZE}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+AES128\+\_\+\+KEY\+\_\+\+SIZE~(16)}
+
+\Hypertarget{cryptoauthlib_8h_a2cffff3f4586ac856f67460d33f23770}\label{cryptoauthlib_8h_a2cffff3f4586ac856f67460d33f23770} 
+\index{cryptoauthlib.h@{cryptoauthlib.h}!ATCA\_CA\_SUPPORT@{ATCA\_CA\_SUPPORT}}
+\index{ATCA\_CA\_SUPPORT@{ATCA\_CA\_SUPPORT}!cryptoauthlib.h@{cryptoauthlib.h}}
+\doxysubsubsection{\texorpdfstring{ATCA\_CA\_SUPPORT}{ATCA\_CA\_SUPPORT}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+CA\+\_\+\+SUPPORT~1}
+
+\Hypertarget{cryptoauthlib_8h_a6c591535ae2fd4d8f0b2373e45e6e173}\label{cryptoauthlib_8h_a6c591535ae2fd4d8f0b2373e45e6e173} 
+\index{cryptoauthlib.h@{cryptoauthlib.h}!ATCA\_ECC204\_ZONE\_CONFIG@{ATCA\_ECC204\_ZONE\_CONFIG}}
+\index{ATCA\_ECC204\_ZONE\_CONFIG@{ATCA\_ECC204\_ZONE\_CONFIG}!cryptoauthlib.h@{cryptoauthlib.h}}
+\doxysubsubsection{\texorpdfstring{ATCA\_ECC204\_ZONE\_CONFIG}{ATCA\_ECC204\_ZONE\_CONFIG}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+ECC204\+\_\+\+ZONE\+\_\+\+CONFIG~((\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}})0x01)}
+
+\Hypertarget{cryptoauthlib_8h_a2c7a800fc16e187847b694b4e9f94231}\label{cryptoauthlib_8h_a2c7a800fc16e187847b694b4e9f94231} 
+\index{cryptoauthlib.h@{cryptoauthlib.h}!ATCA\_ECC204\_ZONE\_DATA@{ATCA\_ECC204\_ZONE\_DATA}}
+\index{ATCA\_ECC204\_ZONE\_DATA@{ATCA\_ECC204\_ZONE\_DATA}!cryptoauthlib.h@{cryptoauthlib.h}}
+\doxysubsubsection{\texorpdfstring{ATCA\_ECC204\_ZONE\_DATA}{ATCA\_ECC204\_ZONE\_DATA}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+ECC204\+\_\+\+ZONE\+\_\+\+DATA~((\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}})0x00)}
+
+\Hypertarget{cryptoauthlib_8h_a42c67508ff6b45d11b1349d8a7ad04d9}\label{cryptoauthlib_8h_a42c67508ff6b45d11b1349d8a7ad04d9} 
+\index{cryptoauthlib.h@{cryptoauthlib.h}!ATCA\_ECC\_SUPPORT@{ATCA\_ECC\_SUPPORT}}
+\index{ATCA\_ECC\_SUPPORT@{ATCA\_ECC\_SUPPORT}!cryptoauthlib.h@{cryptoauthlib.h}}
+\doxysubsubsection{\texorpdfstring{ATCA\_ECC\_SUPPORT}{ATCA\_ECC\_SUPPORT}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+ECC\+\_\+\+SUPPORT~1}
+
+Library Configuration File -\/ All build attributes should be included in \doxylink{atca__config_8h}{atca\+\_\+config.\+h} \Hypertarget{cryptoauthlib_8h_a653e182874070e52d504892ad69d08a2}\label{cryptoauthlib_8h_a653e182874070e52d504892ad69d08a2} 
+\index{cryptoauthlib.h@{cryptoauthlib.h}!ATCA\_ECCP256\_KEY\_SIZE@{ATCA\_ECCP256\_KEY\_SIZE}}
+\index{ATCA\_ECCP256\_KEY\_SIZE@{ATCA\_ECCP256\_KEY\_SIZE}!cryptoauthlib.h@{cryptoauthlib.h}}
+\doxysubsubsection{\texorpdfstring{ATCA\_ECCP256\_KEY\_SIZE}{ATCA\_ECCP256\_KEY\_SIZE}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+ECCP256\+\_\+\+KEY\+\_\+\+SIZE~(32)}
+
+\Hypertarget{cryptoauthlib_8h_ace31254e4882c34fd124218474a1b794}\label{cryptoauthlib_8h_ace31254e4882c34fd124218474a1b794} 
+\index{cryptoauthlib.h@{cryptoauthlib.h}!ATCA\_ECCP256\_PUBKEY\_SIZE@{ATCA\_ECCP256\_PUBKEY\_SIZE}}
+\index{ATCA\_ECCP256\_PUBKEY\_SIZE@{ATCA\_ECCP256\_PUBKEY\_SIZE}!cryptoauthlib.h@{cryptoauthlib.h}}
+\doxysubsubsection{\texorpdfstring{ATCA\_ECCP256\_PUBKEY\_SIZE}{ATCA\_ECCP256\_PUBKEY\_SIZE}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+ECCP256\+\_\+\+PUBKEY\+\_\+\+SIZE~(64)}
+
+\Hypertarget{cryptoauthlib_8h_a0d420e6a05f2de7d8b55883de34328d6}\label{cryptoauthlib_8h_a0d420e6a05f2de7d8b55883de34328d6} 
+\index{cryptoauthlib.h@{cryptoauthlib.h}!ATCA\_ECCP256\_SIG\_SIZE@{ATCA\_ECCP256\_SIG\_SIZE}}
+\index{ATCA\_ECCP256\_SIG\_SIZE@{ATCA\_ECCP256\_SIG\_SIZE}!cryptoauthlib.h@{cryptoauthlib.h}}
+\doxysubsubsection{\texorpdfstring{ATCA\_ECCP256\_SIG\_SIZE}{ATCA\_ECCP256\_SIG\_SIZE}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+ECCP256\+\_\+\+SIG\+\_\+\+SIZE~(64)}
+
+\Hypertarget{cryptoauthlib_8h_a85e0a506bd6fdae6ce32d5df3a48ac1c}\label{cryptoauthlib_8h_a85e0a506bd6fdae6ce32d5df3a48ac1c} 
+\index{cryptoauthlib.h@{cryptoauthlib.h}!ATCA\_SHA256\_BLOCK\_SIZE@{ATCA\_SHA256\_BLOCK\_SIZE}}
+\index{ATCA\_SHA256\_BLOCK\_SIZE@{ATCA\_SHA256\_BLOCK\_SIZE}!cryptoauthlib.h@{cryptoauthlib.h}}
+\doxysubsubsection{\texorpdfstring{ATCA\_SHA256\_BLOCK\_SIZE}{ATCA\_SHA256\_BLOCK\_SIZE}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+SHA256\+\_\+\+BLOCK\+\_\+\+SIZE~(64)}
+
+\Hypertarget{cryptoauthlib_8h_a4b683697977ad3af9a2c7d8fd6bfe8c8}\label{cryptoauthlib_8h_a4b683697977ad3af9a2c7d8fd6bfe8c8} 
+\index{cryptoauthlib.h@{cryptoauthlib.h}!ATCA\_SHA256\_DIGEST\_SIZE@{ATCA\_SHA256\_DIGEST\_SIZE}}
+\index{ATCA\_SHA256\_DIGEST\_SIZE@{ATCA\_SHA256\_DIGEST\_SIZE}!cryptoauthlib.h@{cryptoauthlib.h}}
+\doxysubsubsection{\texorpdfstring{ATCA\_SHA256\_DIGEST\_SIZE}{ATCA\_SHA256\_DIGEST\_SIZE}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+SHA256\+\_\+\+DIGEST\+\_\+\+SIZE~(32)}
+
+\Hypertarget{cryptoauthlib_8h_a8a1c717bd7199cd60fe3f088b236d86f}\label{cryptoauthlib_8h_a8a1c717bd7199cd60fe3f088b236d86f} 
+\index{cryptoauthlib.h@{cryptoauthlib.h}!ATCA\_STRINGIFY@{ATCA\_STRINGIFY}}
+\index{ATCA\_STRINGIFY@{ATCA\_STRINGIFY}!cryptoauthlib.h@{cryptoauthlib.h}}
+\doxysubsubsection{\texorpdfstring{ATCA\_STRINGIFY}{ATCA\_STRINGIFY}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+STRINGIFY(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~\#x}
+
+\Hypertarget{cryptoauthlib_8h_a9e26b17e186f53c03907fca83ca361eb}\label{cryptoauthlib_8h_a9e26b17e186f53c03907fca83ca361eb} 
+\index{cryptoauthlib.h@{cryptoauthlib.h}!ATCA\_TA\_SUPPORT@{ATCA\_TA\_SUPPORT}}
+\index{ATCA\_TA\_SUPPORT@{ATCA\_TA\_SUPPORT}!cryptoauthlib.h@{cryptoauthlib.h}}
+\doxysubsubsection{\texorpdfstring{ATCA\_TA\_SUPPORT}{ATCA\_TA\_SUPPORT}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+TA\+\_\+\+SUPPORT~0}
+
+\Hypertarget{cryptoauthlib_8h_ac067271c1e02986c59cd444644c117ba}\label{cryptoauthlib_8h_ac067271c1e02986c59cd444644c117ba} 
+\index{cryptoauthlib.h@{cryptoauthlib.h}!ATCA\_TOSTRING@{ATCA\_TOSTRING}}
+\index{ATCA\_TOSTRING@{ATCA\_TOSTRING}!cryptoauthlib.h@{cryptoauthlib.h}}
+\doxysubsubsection{\texorpdfstring{ATCA\_TOSTRING}{ATCA\_TOSTRING}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+TOSTRING(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~\mbox{\hyperlink{cryptoauthlib_8h_a8a1c717bd7199cd60fe3f088b236d86f}{ATCA\+\_\+\+STRINGIFY}}(x)}
+
+\Hypertarget{cryptoauthlib_8h_a0831fc28e099b0f18c3a3c23a7d41df1}\label{cryptoauthlib_8h_a0831fc28e099b0f18c3a3c23a7d41df1} 
+\index{cryptoauthlib.h@{cryptoauthlib.h}!ATCA\_TRACE@{ATCA\_TRACE}}
+\index{ATCA\_TRACE@{ATCA\_TRACE}!cryptoauthlib.h@{cryptoauthlib.h}}
+\doxysubsubsection{\texorpdfstring{ATCA\_TRACE}{ATCA\_TRACE}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+TRACE(\begin{DoxyParamCaption}\item[{}]{s,  }\item[{}]{m }\end{DoxyParamCaption})~\mbox{\hyperlink{atca__debug_8h_a60326372db8190ddb9f191fca5bdc38a}{atca\+\_\+trace}}(s)}
+
+\Hypertarget{cryptoauthlib_8h_add3796a1d4de55604283aef5a70f7945}\label{cryptoauthlib_8h_add3796a1d4de55604283aef5a70f7945} 
+\index{cryptoauthlib.h@{cryptoauthlib.h}!ATCA\_ZONE\_CONFIG@{ATCA\_ZONE\_CONFIG}}
+\index{ATCA\_ZONE\_CONFIG@{ATCA\_ZONE\_CONFIG}!cryptoauthlib.h@{cryptoauthlib.h}}
+\doxysubsubsection{\texorpdfstring{ATCA\_ZONE\_CONFIG}{ATCA\_ZONE\_CONFIG}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+ZONE\+\_\+\+CONFIG~((\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}})0x00)}
+
+\Hypertarget{cryptoauthlib_8h_a4c65b241280290fae9fd4faa9d7a292b}\label{cryptoauthlib_8h_a4c65b241280290fae9fd4faa9d7a292b} 
+\index{cryptoauthlib.h@{cryptoauthlib.h}!ATCA\_ZONE\_DATA@{ATCA\_ZONE\_DATA}}
+\index{ATCA\_ZONE\_DATA@{ATCA\_ZONE\_DATA}!cryptoauthlib.h@{cryptoauthlib.h}}
+\doxysubsubsection{\texorpdfstring{ATCA\_ZONE\_DATA}{ATCA\_ZONE\_DATA}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+ZONE\+\_\+\+DATA~((\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}})0x02)}
+
+\Hypertarget{cryptoauthlib_8h_a547efc6fa3cb0501b2e53f80023dff7e}\label{cryptoauthlib_8h_a547efc6fa3cb0501b2e53f80023dff7e} 
+\index{cryptoauthlib.h@{cryptoauthlib.h}!ATCA\_ZONE\_OTP@{ATCA\_ZONE\_OTP}}
+\index{ATCA\_ZONE\_OTP@{ATCA\_ZONE\_OTP}!cryptoauthlib.h@{cryptoauthlib.h}}
+\doxysubsubsection{\texorpdfstring{ATCA\_ZONE\_OTP}{ATCA\_ZONE\_OTP}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+ZONE\+\_\+\+OTP~((\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}})0x01)}
+
+\Hypertarget{cryptoauthlib_8h_ae559b402c678cc51f8252b927b8781e5}\label{cryptoauthlib_8h_ae559b402c678cc51f8252b927b8781e5} 
+\index{cryptoauthlib.h@{cryptoauthlib.h}!SHA\_MODE\_TARGET\_MSGDIGBUF@{SHA\_MODE\_TARGET\_MSGDIGBUF}}
+\index{SHA\_MODE\_TARGET\_MSGDIGBUF@{SHA\_MODE\_TARGET\_MSGDIGBUF}!cryptoauthlib.h@{cryptoauthlib.h}}
+\doxysubsubsection{\texorpdfstring{SHA\_MODE\_TARGET\_MSGDIGBUF}{SHA\_MODE\_TARGET\_MSGDIGBUF}}
+{\footnotesize\ttfamily \#define SHA\+\_\+\+MODE\+\_\+\+TARGET\+\_\+\+MSGDIGBUF~((\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}})0x40)}
+
+Place resulting digest both in Output buffer and Message Digest Buffer \Hypertarget{cryptoauthlib_8h_ae0df4b9151bb3d807bc1c532036c6d88}\label{cryptoauthlib_8h_ae0df4b9151bb3d807bc1c532036c6d88} 
+\index{cryptoauthlib.h@{cryptoauthlib.h}!SHA\_MODE\_TARGET\_OUT\_ONLY@{SHA\_MODE\_TARGET\_OUT\_ONLY}}
+\index{SHA\_MODE\_TARGET\_OUT\_ONLY@{SHA\_MODE\_TARGET\_OUT\_ONLY}!cryptoauthlib.h@{cryptoauthlib.h}}
+\doxysubsubsection{\texorpdfstring{SHA\_MODE\_TARGET\_OUT\_ONLY}{SHA\_MODE\_TARGET\_OUT\_ONLY}}
+{\footnotesize\ttfamily \#define SHA\+\_\+\+MODE\+\_\+\+TARGET\+\_\+\+OUT\+\_\+\+ONLY~((\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}})0x\+C0)}
+
+Place resulting digest both in Output buffer ONLY \Hypertarget{cryptoauthlib_8h_a850ec56b408fccccaea5826d452c3a64}\label{cryptoauthlib_8h_a850ec56b408fccccaea5826d452c3a64} 
+\index{cryptoauthlib.h@{cryptoauthlib.h}!SHA\_MODE\_TARGET\_TEMPKEY@{SHA\_MODE\_TARGET\_TEMPKEY}}
+\index{SHA\_MODE\_TARGET\_TEMPKEY@{SHA\_MODE\_TARGET\_TEMPKEY}!cryptoauthlib.h@{cryptoauthlib.h}}
+\doxysubsubsection{\texorpdfstring{SHA\_MODE\_TARGET\_TEMPKEY}{SHA\_MODE\_TARGET\_TEMPKEY}}
+{\footnotesize\ttfamily \#define SHA\+\_\+\+MODE\+\_\+\+TARGET\+\_\+\+TEMPKEY~((\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}})0x00)}
+
+Place resulting digest both in Output buffer and Temp\+Key 

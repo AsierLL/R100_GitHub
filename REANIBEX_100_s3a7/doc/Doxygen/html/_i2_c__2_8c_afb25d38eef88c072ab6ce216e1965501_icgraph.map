@@ -1,0 +1,145 @@
+<map id="I2C2_StartCondition" name="I2C2_StartCondition">
+<area shape="rect" id="Node000001" title="Generate the START condition in the i2C line." alt="" coords="1472,789,1608,816"/>
+<area shape="rect" id="Node000002" href="$_i2_c__2_8c.html#ab2d6470085f0f13033eca2373bcf4b41" title="Function to read data from a specific address." alt="" coords="1322,252,1407,279"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1529,775,1486,619,1421,411,1369,280,1374,278,1426,410,1491,618,1534,774"/>
+<area shape="rect" id="Node000021" href="$_i2_c__2_8c.html#aba3d08d9b33082a1c0aa61ae3e6b5e23" title="Function to read a byte data from a specific address." alt="" coords="1309,840,1420,867"/>
+<area shape="poly" id="edge17_Node000001_Node000021" title=" " alt="" coords="1477,823,1414,842,1413,837,1475,818"/>
+<area shape="rect" id="Node000084" href="$_i2_c__2_8c.html#a54092e1b35159f28a6fae808c1c909e0" title="Function to write data at specific address." alt="" coords="1322,967,1407,993"/>
+<area shape="poly" id="edge62_Node000001_Node000084" title=" " alt="" coords="1517,829,1381,968,1377,964,1513,825"/>
+<area shape="rect" id="Node000085" href="$_i2_c__2_8c.html#a75998894ee4aceb2f03ebc36a0000d3f" title="Function to write data at specific address in the NTag memory." alt="" coords="1305,423,1424,449"/>
+<area shape="poly" id="edge67_Node000001_Node000085" title=" " alt="" coords="1523,776,1370,451,1375,449,1528,774"/>
+<area shape="rect" id="Node000093" href="$_i2_c__2_8c.html#a48856cefb69c8a4371722c1ef5455ba0" title="Function to write a data byte at specific address." alt="" coords="1307,1017,1422,1044"/>
+<area shape="poly" id="edge78_Node000001_Node000093" title=" " alt="" coords="1532,832,1516,870,1493,917,1463,965,1425,1007,1408,1019,1405,1015,1422,1003,1459,962,1489,914,1511,868,1527,830"/>
+<area shape="rect" id="Node000094" href="$_i2_c__2_8c.html#abb5323ebe9e05f1fe983ee0c53fa732e" title="Function to write a data byte at specific address." alt="" coords="1308,713,1421,740"/>
+<area shape="poly" id="edge79_Node000001_Node000094" title=" " alt="" coords="1492,785,1396,743,1398,738,1494,780"/>
+<area shape="rect" id="Node000003" href="$device__init_8c.html#a182c93e57b9fff393b61642f2dd2d8a5" title="Read data from NFC memory." alt="" coords="1124,143,1208,169"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="1324,246,1190,172,1193,167,1327,242"/>
+<area shape="rect" id="Node000004" href="$device__init_8c.html#a25a3c802ebae4efe4c7ae416a597bb9e" title="Write device identifier into the NFC memory." alt="" coords="637,80,786,107"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="1108,151,786,106,787,101,1109,145"/>
+<area shape="rect" id="Node000017" href="$device__init_8c.html#a996f6e90cfa31a701808ea89e319a375" title="Gets settings from NFC." alt="" coords="373,47,550,73"/>
+<area shape="poly" id="edge10_Node000003_Node000017" title=" " alt="" coords="1125,137,1067,108,991,75,905,43,816,20,758,11,712,8,666,12,607,20,550,32,499,49,498,44,548,27,606,15,665,6,712,3,758,5,817,15,907,38,993,70,1069,103,1127,132"/>
+<area shape="rect" id="Node000005" href="$thread__sys_mon__entry_8c.html#a973e134ad9fa805bf48d53f009b5258b" title="Function that executes the ECG test." alt="" coords="167,109,303,136"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="622,101,303,121,303,116,622,96"/>
+<area shape="rect" id="Node000015" href="$device__init_8c.html#a2ca372a823df8236adbb87a8143be4fe" title="Gets settings from uSD." alt="" coords="373,215,549,241"/>
+<area shape="poly" id="edge6_Node000004_Node000015" title=" " alt="" coords="681,118,560,205,529,217,527,212,557,200,678,114"/>
+<area shape="rect" id="Node000012" href="$thread__sys_mon__entry_8c.html#a563202ab53d918f96e7470c54ed5d009" title="Execute some startup functions:" alt="" coords="5,185,106,212"/>
+<area shape="poly" id="edge5_Node000005_Node000012" title=" " alt="" coords="172,144,155,150,82,187,79,182,153,145,170,139"/>
+<area shape="poly" id="edge9_Node000015_Node000012" title=" " alt="" coords="357,223,106,205,106,200,357,218"/>
+<area shape="rect" id="Node000011" href="$thread__sys_mon__entry_8c.html#ad7a8a06d67cdd43cdd5bc7f5d4db0cd7" title="Function that executes the device test: .&#45; verify the resources memory (checksum) ...." alt="" coords="184,261,286,288"/>
+<area shape="poly" id="edge7_Node000015_Node000011" title=" " alt="" coords="379,247,287,267,286,262,378,242"/>
+<area shape="poly" id="edge8_Node000011_Node000012" title=" " alt="" coords="182,257,153,245,85,215,87,210,155,240,184,252"/>
+<area shape="poly" id="edge11_Node000017_Node000005" title=" " alt="" coords="396,80,287,111,285,106,395,75"/>
+<area shape="poly" id="edge16_Node000017_Node000012" title=" " alt="" coords="357,58,308,61,256,68,204,80,155,100,126,118,102,142,67,187,63,183,98,138,123,114,152,95,202,75,255,62,307,55,356,53"/>
+<area shape="poly" id="edge12_Node000017_Node000011" title=" " alt="" coords="429,84,366,138,342,168,318,200,254,263,250,259,314,197,337,165,362,134,426,80"/>
+<area shape="rect" id="Node000014" href="$thread__sys_mon__entry_8c.html#a45e8a3b71abc5aaf4a3de43e37b2c426" title="Function that executes the device test: .&#45; verify the resources memory (checksum) ...." alt="" coords="154,160,316,187"/>
+<area shape="poly" id="edge13_Node000017_Node000014" title=" " alt="" coords="430,84,378,118,317,150,288,162,286,157,315,145,375,113,427,80"/>
+<area shape="rect" id="Node000018" href="$thread__sys_mon__entry_8c.html#ac0c7edb2de59294bfcfbc443b6981cec" title="Check if cover has been opened during an extended period of time." alt="" coords="168,8,302,35"/>
+<area shape="poly" id="edge15_Node000017_Node000018" title=" " alt="" coords="364,46,302,35,303,30,365,41"/>
+<area shape="poly" id="edge14_Node000014_Node000012" title=" " alt="" coords="139,190,107,194,106,189,138,184"/>
+<area shape="rect" id="Node000022" href="$thread__comm__hal_8c.html#aba10912e5156af563d72a637fe9b7a78" title="Reset Wifi, Sigfox or GPS module." alt="" coords="1094,840,1237,867"/>
+<area shape="poly" id="edge18_Node000021_Node000022" title=" " alt="" coords="1294,856,1238,856,1238,851,1294,851"/>
+<area shape="rect" id="Node000036" href="$thread__comm__hal_8c.html#a4e3f9bfdd5df0ab92a1713930d545237" title="Reset Wifi, Sigfox or GPS module." alt="" coords="1094,688,1238,715"/>
+<area shape="poly" id="edge25_Node000021_Node000036" title=" " alt="" coords="1332,833,1183,717,1186,713,1335,828"/>
+<area shape="rect" id="Node000037" href="$thread__comm__hal_8c.html#a63b3e38ecaf443421eb673e2342e2f08" title="Select Uart to send and receive data. This function sets the SN74CBT Multiplexer/Demultiplexer via th..." alt="" coords="878,561,1013,588"/>
+<area shape="poly" id="edge27_Node000021_Node000037" title=" " alt="" coords="1346,828,1292,737,1255,678,1197,641,1133,614,1069,596,1013,585,1014,580,1070,591,1135,609,1200,636,1259,674,1297,734,1350,825"/>
+<area shape="rect" id="Node000043" href="$thread__sys_mon__entry_8c.html#a2746a250fe0f33c32b88fd7c86139d53" title="Try to detect the presence of electrodes." alt="" coords="873,739,1018,765"/>
+<area shape="poly" id="edge39_Node000021_Node000043" title=" " alt="" coords="1341,879,1304,908,1258,932,1207,948,1164,955,1122,951,1073,932,1048,916,1025,895,989,849,964,802,949,767,954,764,969,800,994,846,1029,892,1051,911,1075,927,1123,946,1164,950,1206,942,1256,927,1301,904,1338,875"/>
+<area shape="rect" id="Node000079" href="$_i2_c__2_8c.html#a7ba82d621147cdcae270e9926abb3736" title="Function to read data byte at specific address." alt="" coords="1095,891,1236,917"/>
+<area shape="poly" id="edge50_Node000021_Node000079" title=" " alt="" coords="1295,874,1222,893,1220,887,1294,868"/>
+<area shape="rect" id="Node000080" href="$thread__sys_mon__entry_8c.html#a2aec3599f75cd59a888333fe2a470ded" title="Write a single byte in the OneWire device (locking function)" alt="" coords="872,992,1019,1019"/>
+<area shape="poly" id="edge51_Node000021_Node000080" title=" " alt="" coords="1346,881,1309,923,1285,943,1259,960,1198,983,1135,998,1074,1006,1020,1009,1019,1004,1074,1001,1134,993,1197,978,1256,955,1282,939,1306,919,1342,878"/>
+<area shape="rect" id="Node000082" href="$thread__sys_mon__entry_8c.html#af4573aa4c984963e9ec343ee18f704fd" title="Wait until OneWire is free." alt="" coords="1074,1093,1257,1120"/>
+<area shape="poly" id="edge55_Node000021_Node000082" title=" " alt="" coords="1350,881,1303,960,1259,1026,1222,1064,1187,1095,1183,1091,1218,1061,1255,1022,1299,957,1345,879"/>
+<area shape="rect" id="Node000023" href="$thread__comm__hal_8c.html#acd0f72ce82a8c749fe1171bd48269e66" title="Reset Wifi, Sigfox or GPS module." alt="" coords="865,688,1026,715"/>
+<area shape="poly" id="edge19_Node000022_Node000023" title=" " alt="" coords="1141,830,1091,779,1059,752,1025,729,1000,718,1002,713,1027,724,1062,748,1094,775,1145,826"/>
+<area shape="rect" id="Node000024" href="$thread__comm__hal_8c.html#a48a2db3942cf973c7ffa74f6b4053b6b" title="Test of GPS module." alt="" coords="621,688,802,715"/>
+<area shape="poly" id="edge20_Node000023_Node000024" title=" " alt="" coords="849,704,802,704,802,699,849,699"/>
+<area shape="rect" id="Node000029" href="$thread__comm__hal_8c.html#aad8ef9e81af60f170ee4d4e5bfb580d0" title="Test of Sigfox module." alt="" coords="617,739,806,765"/>
+<area shape="poly" id="edge21_Node000023_Node000029" title=" " alt="" coords="866,721,777,741,776,735,865,716"/>
+<area shape="rect" id="Node000031" href="$thread__comm__hal_8c.html#a8940317343835bfd6ab8aeb253689893" title="Initialization of Sigfox module." alt="" coords="633,789,790,816"/>
+<area shape="poly" id="edge22_Node000023_Node000031" title=" " alt="" coords="876,724,866,729,852,741,843,754,834,767,818,780,791,791,789,787,815,775,830,763,839,751,848,737,863,724,873,719"/>
+<area shape="rect" id="Node000032" href="$thread__comm__hal_8c.html#ae40d6f27c400549f84857052bffcce61" title="Test of Wifi module." alt="" coords="624,587,799,613"/>
+<area shape="poly" id="edge23_Node000023_Node000032" title=" " alt="" coords="911,681,867,653,816,628,782,616,783,611,818,623,869,649,914,677"/>
+<area shape="rect" id="Node000034" href="$thread__comm__hal_8c.html#af6bf58158a9a7b9220ee08afcba32292" title="Initialization of Wifi module." alt="" coords="640,637,783,664"/>
+<area shape="poly" id="edge24_Node000023_Node000034" title=" " alt="" coords="865,687,776,667,777,662,866,681"/>
+<area shape="poly" id="edge26_Node000036_Node000023" title=" " alt="" coords="1078,704,1026,704,1026,699,1078,699"/>
+<area shape="poly" id="edge28_Node000037_Node000024" title=" " alt="" coords="922,601,876,641,818,678,788,690,786,685,815,674,873,636,919,597"/>
+<area shape="poly" id="edge32_Node000037_Node000029" title=" " alt="" coords="926,602,865,677,818,729,794,740,791,736,815,724,861,674,922,598"/>
+<area shape="poly" id="edge33_Node000037_Node000031" title=" " alt="" coords="924,601,896,636,867,677,854,706,848,731,839,755,818,779,792,794,789,790,815,775,834,753,843,730,849,704,862,675,891,633,920,598"/>
+<area shape="poly" id="edge34_Node000037_Node000032" title=" " alt="" coords="863,586,800,593,800,588,862,581"/>
+<area shape="poly" id="edge35_Node000037_Node000034" title=" " alt="" coords="899,597,817,628,777,639,775,634,816,623,897,592"/>
+<area shape="rect" id="Node000038" href="$thread__comm__hal_8c.html#a77dba14b8a661e55a2caa7919a4c961b" title="Get GPS Data." alt="" coords="606,485,817,512"/>
+<area shape="poly" id="edge29_Node000037_Node000038" title=" " alt="" coords="890,558,816,533,758,515,760,510,817,528,892,553"/>
+<area shape="rect" id="Node000039" href="$thread__comm__hal_8c.html#a1d081723eb366e271a59daa0289b3c8e" title="Initialization of GPS module." alt="" coords="637,333,786,360"/>
+<area shape="poly" id="edge30_Node000037_Node000039" title=" " alt="" coords="932,547,915,508,890,461,857,414,815,374,785,359,787,354,818,370,861,410,895,458,920,506,937,545"/>
+<area shape="rect" id="Node000040" href="$thread__comm__hal_8c.html#abf1450e8718658ca896cad96d4f6e361" title="Send GPS commands." alt="" coords="613,384,810,411"/>
+<area shape="poly" id="edge31_Node000037_Node000040" title=" " alt="" coords="927,549,882,486,851,453,815,425,791,414,794,409,818,420,855,449,886,482,931,546"/>
+<area shape="rect" id="Node000041" href="$thread__comm__hal_8c.html#a2fdd51c5b7216b4532cf95b942c069b6" title="Fast initialization of Wifi module." alt="" coords="624,435,799,461"/>
+<area shape="poly" id="edge36_Node000037_Node000041" title=" " alt="" coords="919,552,873,513,815,476,786,464,788,459,818,471,876,508,922,548"/>
+<area shape="rect" id="Node000042" href="$thread__sys_mon__entry_8c.html#ac9ecbba1f09db36499f7df86a646aac2" title="Function that executes the Comms test." alt="" coords="385,409,538,436"/>
+<area shape="poly" id="edge37_Node000037_Node000042" title=" " alt="" coords="862,576,804,571,739,562,671,548,605,526,566,507,530,483,475,438,479,434,533,479,569,502,607,521,672,543,740,557,805,566,863,570"/>
+<area shape="poly" id="edge38_Node000042_Node000011" title=" " alt="" coords="425,402,256,291,259,286,428,398"/>
+<area shape="poly" id="edge49_Node000043_Node000005" title=" " alt="" coords="883,775,867,788,853,809,847,829,847,870,848,890,845,910,836,930,818,947,777,966,721,977,655,980,585,976,515,965,451,949,398,927,362,900,344,872,332,836,325,794,322,747,325,641,335,525,345,410,349,303,347,256,340,213,330,178,314,150,301,138,305,134,318,146,335,176,346,212,352,255,354,303,350,410,340,526,330,641,327,747,330,794,337,835,349,870,366,897,401,923,452,944,516,960,585,970,655,974,721,971,776,961,815,943,832,927,840,909,842,890,842,870,842,828,849,806,863,785,880,771"/>
+<area shape="rect" id="Node000044" href="$thread__sys_mon__entry_8c.html#aa0eafd2018eb10797d790d6b8bf98b95" title="Read the electrodes all data." alt="" coords="634,1059,789,1085"/>
+<area shape="poly" id="edge40_Node000043_Node000044" title=" " alt="" coords="916,777,890,804,867,836,855,866,850,894,852,947,852,972,849,997,839,1023,818,1049,790,1066,788,1062,815,1045,834,1020,844,996,847,972,846,947,845,894,850,865,862,833,886,800,912,774"/>
+<area shape="rect" id="Node000076" href="$thread__sys_mon__entry_8c.html#adf630b74d86769125fbc7c5355695cdc" title="Command to register electrodes event." alt="" coords="642,891,781,933"/>
+<area shape="poly" id="edge47_Node000043_Node000076" title=" " alt="" coords="882,775,867,786,850,807,843,829,836,851,818,874,782,896,780,891,815,870,831,849,838,827,845,805,863,782,879,770"/>
+<area shape="rect" id="Node000077" href="$thread__sys_mon__entry_8c.html#a777bb99d33e0b631192d6b09ed44f016" title="Writes event into electrodes memory." alt="" coords="381,860,541,887"/>
+<area shape="poly" id="edge48_Node000043_Node000077" title=" " alt="" coords="889,774,866,786,852,797,843,809,834,820,818,830,748,855,675,870,604,877,542,879,542,874,604,872,674,865,746,850,815,826,830,816,839,805,849,794,863,782,886,769"/>
+<area shape="poly" id="edge46_Node000044_Node000012" title=" " alt="" coords="619,1072,547,1066,472,1057,407,1044,381,1034,362,1023,313,978,270,928,231,873,198,815,169,754,144,692,106,568,80,449,65,346,54,213,60,212,70,345,85,448,111,566,149,690,174,752,202,812,236,870,274,925,317,975,366,1019,383,1030,408,1038,473,1052,547,1061,619,1066"/>
+<area shape="rect" id="Node000045" href="$thread__sys_mon__entry_8c.html#a611ae76887c3da1252bb965073ed1032" title="Check electrodes type." alt="" coords="380,1084,542,1111"/>
+<area shape="poly" id="edge41_Node000044_Node000045" title=" " alt="" coords="619,1084,543,1092,543,1086,618,1079"/>
+<area shape="rect" id="Node000046" href="$thread__sys_mon__entry_8c.html#a09b3d44686a8345050669e3ae7c9e6c7" title="Check electrodes type." alt="" coords="364,1135,558,1161"/>
+<area shape="poly" id="edge42_Node000044_Node000046" title=" " alt="" coords="657,1093,559,1125,518,1137,517,1131,558,1120,656,1088"/>
+<area shape="rect" id="Node000074" href="$thread__sys_mon__entry_8c.html#a2fca41f496a3b6beea55a8ef0f38c850" title="Function that executes the electrode test." alt="" coords="376,983,546,1009"/>
+<area shape="poly" id="edge43_Node000044_Node000074" title=" " alt="" coords="632,1057,605,1049,557,1030,505,1012,506,1007,559,1025,607,1044,633,1052"/>
+<area shape="poly" id="edge44_Node000074_Node000011" title=" " alt="" coords="374,977,362,966,345,941,330,909,303,826,282,727,265,619,243,416,234,288,240,288,248,415,270,619,287,726,308,825,335,907,350,938,366,962,378,973"/>
+<area shape="poly" id="edge45_Node000074_Node000014" title=" " alt="" coords="372,976,362,966,346,938,334,904,327,864,322,820,321,720,326,613,333,505,336,404,331,316,324,280,314,250,302,232,288,215,256,189,260,185,291,211,307,229,318,248,329,279,336,316,341,404,338,506,332,614,327,720,328,819,332,863,339,902,351,936,366,962,376,972"/>
+<area shape="poly" id="edge52_Node000080_Node000044" title=" " alt="" coords="890,1027,817,1049,774,1061,773,1055,816,1044,889,1021"/>
+<area shape="rect" id="Node000081" href="$thread__sys_mon__entry_8c.html#a956237995bc7008095717ea307c33755" title="Writes a single scratchpad into electrodes memory." alt="" coords="614,1008,809,1035"/>
+<area shape="poly" id="edge53_Node000080_Node000081" title=" " alt="" coords="857,1014,809,1017,809,1012,856,1009"/>
+<area shape="poly" id="edge54_Node000081_Node000077" title=" " alt="" coords="673,1002,485,890,487,885,675,997"/>
+<area shape="poly" id="edge56_Node000082_Node000044" title=" " alt="" coords="1093,1126,1042,1134,985,1140,924,1141,864,1135,795,1114,738,1088,740,1083,796,1109,865,1129,924,1136,985,1135,1042,1129,1092,1121"/>
+<area shape="poly" id="edge58_Node000082_Node000080" title=" " alt="" coords="1101,1090,1073,1077,1048,1058,1025,1040,986,1022,988,1017,1027,1035,1052,1054,1075,1072,1103,1085"/>
+<area shape="poly" id="edge57_Node000082_Node000081" title=" " alt="" coords="1075,1092,786,1038,787,1033,1076,1087"/>
+<area shape="rect" id="Node000083" href="$thread__sys_mon__entry_8c.html#a1ff511824d4951cf7a02c97726ecaac5" title="Write a single byte in the OneWire device (locking function)" alt="" coords="873,1093,1018,1120"/>
+<area shape="poly" id="edge59_Node000082_Node000083" title=" " alt="" coords="1059,1109,1018,1109,1018,1104,1059,1104"/>
+<area shape="poly" id="edge60_Node000083_Node000044" title=" " alt="" coords="858,1096,789,1086,789,1081,859,1091"/>
+<area shape="poly" id="edge61_Node000083_Node000081" title=" " alt="" coords="892,1090,863,1077,840,1062,816,1049,781,1038,783,1033,818,1044,842,1058,866,1072,894,1085"/>
+<area shape="poly" id="edge63_Node000084_Node000079" title=" " alt="" coords="1312,963,1202,920,1204,915,1314,958"/>
+<area shape="poly" id="edge64_Node000084_Node000080" title=" " alt="" coords="1319,1002,1258,1026,1194,1034,1129,1034,1067,1029,1014,1022,1015,1017,1068,1024,1129,1029,1193,1029,1257,1021,1317,997"/>
+<area shape="poly" id="edge65_Node000084_Node000082" title=" " alt="" coords="1312,1003,1307,1007,1292,1024,1284,1041,1276,1059,1259,1077,1225,1095,1222,1090,1256,1072,1271,1056,1279,1039,1288,1021,1304,1003,1309,999"/>
+<area shape="poly" id="edge66_Node000084_Node000083" title=" " alt="" coords="1311,1004,1307,1007,1296,1023,1290,1039,1287,1072,1282,1105,1274,1120,1259,1134,1224,1152,1186,1162,1146,1164,1106,1161,1032,1144,975,1123,977,1118,1034,1139,1107,1156,1146,1159,1185,1156,1222,1147,1256,1130,1270,1117,1277,1103,1282,1072,1285,1038,1291,1021,1303,1003,1307,1000"/>
+<area shape="rect" id="Node000086" href="$device__init_8c.html#a20e74a2a8c6410c9013be9edd8a85408" title="Write device info in the NFC memory." alt="" coords="903,156,988,183"/>
+<area shape="poly" id="edge68_Node000085_Node000086" title=" " alt="" coords="1342,412,1304,368,1256,323,1185,277,1111,238,985,186,987,181,1113,234,1188,273,1259,319,1308,364,1346,408"/>
+<area shape="poly" id="edge69_Node000086_Node000004" title=" " alt="" coords="890,153,816,128,758,110,760,105,817,123,892,148"/>
+<area shape="rect" id="Node000087" href="$device__init_8c.html#a435ba18195f588c000fd0a5b0ecabb46" title="Write device and accessories (electrodes &amp; battery) info the NFC memory." alt="" coords="633,232,790,259"/>
+<area shape="poly" id="edge70_Node000086_Node000087" title=" " alt="" coords="899,192,817,222,777,234,775,229,816,217,897,187"/>
+<area shape="rect" id="Node000089" href="$device__init_8c.html#ad59af5cb88583ffa1dd4320db9aec759" title="Write device settings info the NFC memory. The NFC data structure is swapped." alt="" coords="641,181,782,208"/>
+<area shape="poly" id="edge72_Node000086_Node000089" title=" " alt="" coords="888,178,782,190,782,184,887,173"/>
+<area shape="rect" id="Node000091" href="$device__init_8c.html#a52d0b44655d86d60ecfb68817351601a" title="Write device settings info the NFC memory. The NFC data structure is swapped." alt="" coords="391,148,531,191"/>
+<area shape="poly" id="edge74_Node000086_Node000091" title=" " alt="" coords="887,172,532,172,532,167,887,167"/>
+<area shape="rect" id="Node000092" href="$device__init_8c.html#a38d58c1cef021fbc2be1db597a5e1fd8" title="Safe assignment of device wifi settings from the NFC structure." alt="" coords="651,29,772,56"/>
+<area shape="poly" id="edge76_Node000086_Node000092" title=" " alt="" coords="919,147,873,107,815,70,772,55,773,50,818,66,876,103,922,143"/>
+<area shape="poly" id="edge71_Node000087_Node000015" title=" " alt="" coords="617,241,550,237,550,231,618,236"/>
+<area shape="poly" id="edge73_Node000089_Node000015" title=" " alt="" coords="627,209,550,219,549,214,626,203"/>
+<area shape="poly" id="edge75_Node000091_Node000014" title=" " alt="" coords="376,173,317,174,317,169,376,168"/>
+<area shape="poly" id="edge77_Node000092_Node000017" title=" " alt="" coords="635,51,551,56,550,51,635,45"/>
+<area shape="poly" id="edge91_Node000094_Node000003" title=" " alt="" coords="1356,699,1321,536,1292,429,1255,322,1212,235,1174,171,1178,168,1217,232,1260,320,1297,427,1326,535,1361,698"/>
+<area shape="poly" id="edge84_Node000094_Node000022" title=" " alt="" coords="1343,753,1306,789,1259,824,1218,842,1216,837,1256,819,1302,785,1339,749"/>
+<area shape="poly" id="edge85_Node000094_Node000036" title=" " alt="" coords="1292,720,1238,713,1239,708,1293,715"/>
+<area shape="poly" id="edge86_Node000094_Node000037" title=" " alt="" coords="1347,701,1311,648,1286,623,1256,602,1195,580,1131,568,1068,566,1013,568,1013,563,1068,560,1131,563,1197,574,1259,598,1289,619,1315,645,1351,698"/>
+<area shape="poly" id="edge87_Node000094_Node000043" title=" " alt="" coords="1342,703,1305,665,1282,648,1256,634,1206,616,1163,608,1122,612,1075,634,1064,644,1057,654,1051,678,1046,703,1039,716,1028,729,1009,740,1006,736,1024,725,1035,713,1040,701,1046,676,1052,652,1060,640,1073,630,1121,607,1163,602,1207,611,1258,629,1285,643,1309,661,1346,699"/>
+<area shape="poly" id="edge88_Node000094_Node000044" title=" " alt="" coords="1293,729,1243,734,1186,743,1129,758,1075,782,1060,794,1050,806,1028,836,983,878,946,908,909,939,867,982,853,1000,845,1017,836,1033,818,1049,790,1062,788,1058,815,1044,831,1030,841,1015,849,998,863,978,906,935,942,904,980,874,1024,833,1046,803,1056,790,1073,778,1127,753,1185,737,1242,728,1293,724"/>
+<area shape="poly" id="edge90_Node000094_Node000079" title=" " alt="" coords="1350,755,1305,826,1280,859,1259,881,1237,892,1235,888,1256,876,1276,856,1301,823,1345,752"/>
+<area shape="poly" id="edge92_Node000094_Node000080" title=" " alt="" coords="1319,749,1258,773,1205,787,1162,794,1122,804,1076,830,1033,870,998,916,972,959,955,993,950,990,967,957,994,913,1029,866,1072,826,1120,799,1161,789,1204,782,1256,768,1317,744"/>
+<area shape="poly" id="edge89_Node000094_Node000081" title=" " alt="" coords="1326,708,1274,683,1208,663,1174,658,1139,658,1106,664,1075,678,1063,688,1056,699,1051,725,1046,752,1039,766,1028,779,1006,794,985,803,944,807,905,812,886,821,867,836,853,855,846,874,844,912,841,951,834,971,818,991,791,1010,788,1005,815,987,829,969,836,950,838,912,841,873,848,853,863,833,883,816,903,807,944,802,984,797,1004,790,1024,775,1035,763,1041,750,1045,724,1051,697,1059,685,1073,674,1105,659,1139,652,1174,652,1209,658,1276,678,1329,703"/>
+<area shape="poly" id="edge93_Node000094_Node000082" title=" " alt="" coords="1350,755,1308,829,1260,930,1177,1094,1172,1092,1255,928,1303,827,1345,752"/>
+<area shape="rect" id="Node000095" href="$thread__audio__hal_8c.html#ac3f240b782d8c9c8c5a9b13dc31d0fb0" title="set playing audio volume" alt="" coords="1100,333,1232,360"/>
+<area shape="poly" id="edge80_Node000094_Node000095" title=" " alt="" coords="1351,699,1312,601,1255,481,1213,413,1176,362,1180,359,1217,410,1260,479,1317,599,1356,697"/>
+<area shape="rect" id="Node000096" href="$thread__audio__entry_8c.html#a5f13b4cc717ee2c0fa1d28b1cb3c7189" title="Adaptive volume adjust in function of the ambient noise." alt="" coords="871,333,1020,360"/>
+<area shape="poly" id="edge81_Node000095_Node000096" title=" " alt="" coords="1084,349,1020,349,1020,344,1084,344"/>
+<area shape="rect" id="Node000097" href="$thread__audio__entry_8c.html#ad24f95a980eed687ebdb8379c3d01d38" title="A description of the function." alt="" coords="646,283,777,309"/>
+<area shape="poly" id="edge83_Node000095_Node000097" title=" " alt="" coords="1084,333,1026,324,893,310,778,302,778,297,894,305,1026,319,1085,328"/>
+<area shape="poly" id="edge82_Node000096_Node000097" title=" " alt="" coords="865,332,776,312,777,307,866,327"/>
+</map>

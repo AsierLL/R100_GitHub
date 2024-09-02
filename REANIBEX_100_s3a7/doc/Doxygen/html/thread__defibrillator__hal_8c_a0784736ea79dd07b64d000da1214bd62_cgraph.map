@@ -1,0 +1,26 @@
+<map id="Defib_Shock_Sync" name="Defib_Shock_Sync">
+<area shape="rect" id="Node000001" title="shock the patient over a known impedance synchronized with a QRS pulse" alt="" coords="5,132,137,159"/>
+<area shape="rect" id="Node000002" href="$thread__defibrillator__hal_8c.html#a76aae876778cb493d0754a6f3374b3ab" title="executes the defibrillator monitor step to read analog inputs and check that all processes are runnin..." alt="" coords="190,69,291,96"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="108,129,187,99,189,104,110,134"/>
+<area shape="rect" id="Node000007" href="$thread__defibrillator__hal_8c.html#a5c83cfd8a63ac9b016942a91160874ee" title="shock the patient over a known impedance" alt="" coords="193,132,288,159"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="137,143,178,143,178,148,137,148"/>
+<area shape="rect" id="Node000009" href="$thread__pat_mon__entry_8c.html#a3a5aefe249d158bad59ef4e7f4ea7dbd" title="waits for a QRS&#45;SYNC pulse. The ECG signal is downsampled to 500 Hz the maximum considered heart&#45;rate..." alt="" coords="185,233,296,260"/>
+<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="97,157,205,223,202,227,94,161"/>
+<area shape="rect" id="Node000003" href="$thread__defibrillator__hal_8c.html#a7e29bee81774c04a8f8ee6b99f50e1e9" title="stop the charge process and maintain the energy in the main cap" alt="" coords="371,5,503,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="275,66,343,41,367,34,368,39,345,47,277,71"/>
+<area shape="rect" id="Node000004" href="$thread__defibrillator__hal_8c.html#a026622923513afbb250094b61888fcda" title="stop the discharge process of the main cap" alt="" coords="362,56,511,83"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="291,77,346,73,347,78,291,82"/>
+<area shape="rect" id="Node000005" href="$thread__defibrillator__hal_8c.html#ae57fee576eb2206f531dd7ee69bc2218" title="scan all analog inputs" alt="" coords="388,107,486,133"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="292,90,373,105,372,110,291,95"/>
+<area shape="rect" id="Node000006" href="$device__init_8c.html#a2f7047dc1ce0a3687c48872ed81aff5f" title="Function for accessing device info variable." alt="" coords="577,107,692,133"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="486,117,562,117,562,123,486,123"/>
+<area shape="poly" id="edge8_Node000007_Node000005" title=" " alt="" coords="288,137,371,126,372,131,288,142"/>
+<area shape="rect" id="Node000008" href="$thread__defibrillator__hal_8c.html#a30b02e48578477bebad7e2c87742b427" title="get the phase 1 time for a predefined patient impedance Assume that the impedance table finishes with..." alt="" coords="373,157,501,184"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="288,149,357,158,357,163,288,154"/>
+<area shape="rect" id="Node000010" href="$thread__pat_mon__hal_8c.html#a1978c4a195c3ce1aee541a55fece2e70" title="Report the current ECG identifier." alt="" coords="344,208,529,235"/>
+<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="296,237,328,233,329,238,297,242"/>
+<area shape="rect" id="Node000011" href="$thread__pat_mon__hal_8c.html#a76fe3793dbe441d338e5ff2cf3225896" title="Read the last ECG samples from the ECG buffer." alt="" coords="347,259,527,285"/>
+<area shape="poly" id="edge11_Node000009_Node000011" title=" " alt="" coords="297,251,331,256,331,261,296,257"/>
+<area shape="rect" id="Node000012" href="$_trace_8c.html#a8947b81ae09bdb57459cd1c81c78ab37" title="Print a trace string inserting the time stamp." alt="" coords="410,309,463,336"/>
+<area shape="poly" id="edge12_Node000009_Node000012" title=" " alt="" coords="267,258,345,295,396,311,394,316,343,300,265,263"/>
+</map>

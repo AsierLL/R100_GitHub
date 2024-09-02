@@ -1,0 +1,159 @@
+\doxysection{atca\+\_\+aes\+\_\+ccm\+\_\+ctx Struct Reference}
+\hypertarget{structatca__aes__ccm__ctx}{}\label{structatca__aes__ccm__ctx}\index{atca\_aes\_ccm\_ctx@{atca\_aes\_ccm\_ctx}}
+
+
+{\ttfamily \#include $<$atca\+\_\+crypto\+\_\+hw\+\_\+aes.\+h$>$}
+
+
+
+Collaboration diagram for atca\+\_\+aes\+\_\+ccm\+\_\+ctx\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=274pt]{structatca__aes__ccm__ctx__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{crypto_2atca__crypto__hw__aes_8h_a66efe80a50daaa4b54840233d1b45b01}{atca\+\_\+aes\+\_\+cbcmac\+\_\+ctx\+\_\+t}} \mbox{\hyperlink{structatca__aes__ccm__ctx_a5b5505b1ac824fed728354abd7988fde}{cbc\+\_\+mac\+\_\+ctx}}
+\begin{DoxyCompactList}\small\item\em CBC\+\_\+\+MAC context. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{crypto_2atca__crypto__hw__aes_8h_a52b18f051752d214a2d5b485270f5b15}{atca\+\_\+aes\+\_\+ctr\+\_\+ctx\+\_\+t}} \mbox{\hyperlink{structatca__aes__ccm__ctx_aead7fa06964146cdb255c1231f671dc5}{ctr\+\_\+ctx}}
+\begin{DoxyCompactList}\small\item\em CTR context. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{structatca__aes__ccm__ctx_a25dcf590a4005c31d068f1c88486e898}{iv\+\_\+size}}
+\begin{DoxyCompactList}\small\item\em iv size \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{structatca__aes__ccm__ctx_a250b1ee7a9803c2953b530cfae359044}{M}}
+\begin{DoxyCompactList}\small\item\em Tag size. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{structatca__aes__ccm__ctx_ac54e1210d01dba00fd2901356ff7ae82}{counter}} \mbox{[}\mbox{\hyperlink{cryptoauthlib_8h_a71e52612e6d56f7412a113fcc4fb57d4}{ATCA\+\_\+\+AES128\+\_\+\+BLOCK\+\_\+\+SIZE}}\mbox{]}
+\begin{DoxyCompactList}\small\item\em Initial counter value. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{structatca__aes__ccm__ctx_a20332e05fee3a791038eb2ab750ddb48}{partial\+\_\+aad}} \mbox{[}\mbox{\hyperlink{cryptoauthlib_8h_a71e52612e6d56f7412a113fcc4fb57d4}{ATCA\+\_\+\+AES128\+\_\+\+BLOCK\+\_\+\+SIZE}}\mbox{]}
+\begin{DoxyCompactList}\small\item\em Partial blocks of data waiting to be processed. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{structatca__aes__ccm__ctx_a072a32c9fc877e96e41bc55b7964f92d}{partial\+\_\+aad\+\_\+size}}
+\begin{DoxyCompactList}\small\item\em Amount of data in the partial block buffer. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{structatca__aes__ccm__ctx_ac1131f962e3e11a01f221de4e20f2f06}{text\+\_\+size}}
+\begin{DoxyCompactList}\small\item\em Size of data to be processed. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{structatca__aes__ccm__ctx_adb529a6ba4ae7dc5da7aecb40ad02984}{enc\+\_\+cb}} \mbox{[}\mbox{\hyperlink{cryptoauthlib_8h_a71e52612e6d56f7412a113fcc4fb57d4}{ATCA\+\_\+\+AES128\+\_\+\+BLOCK\+\_\+\+SIZE}}\mbox{]}
+\begin{DoxyCompactList}\small\item\em Last encrypted counter block. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \mbox{\hyperlink{structatca__aes__ccm__ctx_a91db7fe40ea08f09d3b70b8ebce7c9d3}{data\+\_\+size}}
+\begin{DoxyCompactList}\small\item\em Size of the data being encrypted/decrypted in bytes. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{structatca__aes__ccm__ctx_a367692afc017a404d894cb9a690d5664}{ciphertext\+\_\+block}} \mbox{[}\mbox{\hyperlink{cryptoauthlib_8h_a71e52612e6d56f7412a113fcc4fb57d4}{ATCA\+\_\+\+AES128\+\_\+\+BLOCK\+\_\+\+SIZE}}\mbox{]}
+\begin{DoxyCompactList}\small\item\em Last ciphertext block. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{structatca__aes__ccm__ctx_a5b5505b1ac824fed728354abd7988fde}\label{structatca__aes__ccm__ctx_a5b5505b1ac824fed728354abd7988fde} 
+\index{atca\_aes\_ccm\_ctx@{atca\_aes\_ccm\_ctx}!cbc\_mac\_ctx@{cbc\_mac\_ctx}}
+\index{cbc\_mac\_ctx@{cbc\_mac\_ctx}!atca\_aes\_ccm\_ctx@{atca\_aes\_ccm\_ctx}}
+\doxysubsubsection{\texorpdfstring{cbc\_mac\_ctx}{cbc\_mac\_ctx}}
+{\footnotesize\ttfamily \mbox{\hyperlink{crypto_2atca__crypto__hw__aes_8h_a66efe80a50daaa4b54840233d1b45b01}{atca\+\_\+aes\+\_\+cbcmac\+\_\+ctx\+\_\+t}} atca\+\_\+aes\+\_\+ccm\+\_\+ctx\+::cbc\+\_\+mac\+\_\+ctx}
+
+
+
+CBC\+\_\+\+MAC context. 
+
+\Hypertarget{structatca__aes__ccm__ctx_a367692afc017a404d894cb9a690d5664}\label{structatca__aes__ccm__ctx_a367692afc017a404d894cb9a690d5664} 
+\index{atca\_aes\_ccm\_ctx@{atca\_aes\_ccm\_ctx}!ciphertext\_block@{ciphertext\_block}}
+\index{ciphertext\_block@{ciphertext\_block}!atca\_aes\_ccm\_ctx@{atca\_aes\_ccm\_ctx}}
+\doxysubsubsection{\texorpdfstring{ciphertext\_block}{ciphertext\_block}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} atca\+\_\+aes\+\_\+ccm\+\_\+ctx\+::ciphertext\+\_\+block}
+
+
+
+Last ciphertext block. 
+
+\Hypertarget{structatca__aes__ccm__ctx_ac54e1210d01dba00fd2901356ff7ae82}\label{structatca__aes__ccm__ctx_ac54e1210d01dba00fd2901356ff7ae82} 
+\index{atca\_aes\_ccm\_ctx@{atca\_aes\_ccm\_ctx}!counter@{counter}}
+\index{counter@{counter}!atca\_aes\_ccm\_ctx@{atca\_aes\_ccm\_ctx}}
+\doxysubsubsection{\texorpdfstring{counter}{counter}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} atca\+\_\+aes\+\_\+ccm\+\_\+ctx\+::counter}
+
+
+
+Initial counter value. 
+
+\Hypertarget{structatca__aes__ccm__ctx_aead7fa06964146cdb255c1231f671dc5}\label{structatca__aes__ccm__ctx_aead7fa06964146cdb255c1231f671dc5} 
+\index{atca\_aes\_ccm\_ctx@{atca\_aes\_ccm\_ctx}!ctr\_ctx@{ctr\_ctx}}
+\index{ctr\_ctx@{ctr\_ctx}!atca\_aes\_ccm\_ctx@{atca\_aes\_ccm\_ctx}}
+\doxysubsubsection{\texorpdfstring{ctr\_ctx}{ctr\_ctx}}
+{\footnotesize\ttfamily \mbox{\hyperlink{crypto_2atca__crypto__hw__aes_8h_a52b18f051752d214a2d5b485270f5b15}{atca\+\_\+aes\+\_\+ctr\+\_\+ctx\+\_\+t}} atca\+\_\+aes\+\_\+ccm\+\_\+ctx\+::ctr\+\_\+ctx}
+
+
+
+CTR context. 
+
+\Hypertarget{structatca__aes__ccm__ctx_a91db7fe40ea08f09d3b70b8ebce7c9d3}\label{structatca__aes__ccm__ctx_a91db7fe40ea08f09d3b70b8ebce7c9d3} 
+\index{atca\_aes\_ccm\_ctx@{atca\_aes\_ccm\_ctx}!data\_size@{data\_size}}
+\index{data\_size@{data\_size}!atca\_aes\_ccm\_ctx@{atca\_aes\_ccm\_ctx}}
+\doxysubsubsection{\texorpdfstring{data\_size}{data\_size}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} atca\+\_\+aes\+\_\+ccm\+\_\+ctx\+::data\+\_\+size}
+
+
+
+Size of the data being encrypted/decrypted in bytes. 
+
+\Hypertarget{structatca__aes__ccm__ctx_adb529a6ba4ae7dc5da7aecb40ad02984}\label{structatca__aes__ccm__ctx_adb529a6ba4ae7dc5da7aecb40ad02984} 
+\index{atca\_aes\_ccm\_ctx@{atca\_aes\_ccm\_ctx}!enc\_cb@{enc\_cb}}
+\index{enc\_cb@{enc\_cb}!atca\_aes\_ccm\_ctx@{atca\_aes\_ccm\_ctx}}
+\doxysubsubsection{\texorpdfstring{enc\_cb}{enc\_cb}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} atca\+\_\+aes\+\_\+ccm\+\_\+ctx\+::enc\+\_\+cb}
+
+
+
+Last encrypted counter block. 
+
+\Hypertarget{structatca__aes__ccm__ctx_a25dcf590a4005c31d068f1c88486e898}\label{structatca__aes__ccm__ctx_a25dcf590a4005c31d068f1c88486e898} 
+\index{atca\_aes\_ccm\_ctx@{atca\_aes\_ccm\_ctx}!iv\_size@{iv\_size}}
+\index{iv\_size@{iv\_size}!atca\_aes\_ccm\_ctx@{atca\_aes\_ccm\_ctx}}
+\doxysubsubsection{\texorpdfstring{iv\_size}{iv\_size}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} atca\+\_\+aes\+\_\+ccm\+\_\+ctx\+::iv\+\_\+size}
+
+
+
+iv size 
+
+\Hypertarget{structatca__aes__ccm__ctx_a250b1ee7a9803c2953b530cfae359044}\label{structatca__aes__ccm__ctx_a250b1ee7a9803c2953b530cfae359044} 
+\index{atca\_aes\_ccm\_ctx@{atca\_aes\_ccm\_ctx}!M@{M}}
+\index{M@{M}!atca\_aes\_ccm\_ctx@{atca\_aes\_ccm\_ctx}}
+\doxysubsubsection{\texorpdfstring{M}{M}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} atca\+\_\+aes\+\_\+ccm\+\_\+ctx\+::M}
+
+
+
+Tag size. 
+
+\Hypertarget{structatca__aes__ccm__ctx_a20332e05fee3a791038eb2ab750ddb48}\label{structatca__aes__ccm__ctx_a20332e05fee3a791038eb2ab750ddb48} 
+\index{atca\_aes\_ccm\_ctx@{atca\_aes\_ccm\_ctx}!partial\_aad@{partial\_aad}}
+\index{partial\_aad@{partial\_aad}!atca\_aes\_ccm\_ctx@{atca\_aes\_ccm\_ctx}}
+\doxysubsubsection{\texorpdfstring{partial\_aad}{partial\_aad}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} atca\+\_\+aes\+\_\+ccm\+\_\+ctx\+::partial\+\_\+aad}
+
+
+
+Partial blocks of data waiting to be processed. 
+
+\Hypertarget{structatca__aes__ccm__ctx_a072a32c9fc877e96e41bc55b7964f92d}\label{structatca__aes__ccm__ctx_a072a32c9fc877e96e41bc55b7964f92d} 
+\index{atca\_aes\_ccm\_ctx@{atca\_aes\_ccm\_ctx}!partial\_aad\_size@{partial\_aad\_size}}
+\index{partial\_aad\_size@{partial\_aad\_size}!atca\_aes\_ccm\_ctx@{atca\_aes\_ccm\_ctx}}
+\doxysubsubsection{\texorpdfstring{partial\_aad\_size}{partial\_aad\_size}}
+{\footnotesize\ttfamily size\+\_\+t atca\+\_\+aes\+\_\+ccm\+\_\+ctx\+::partial\+\_\+aad\+\_\+size}
+
+
+
+Amount of data in the partial block buffer. 
+
+\Hypertarget{structatca__aes__ccm__ctx_ac1131f962e3e11a01f221de4e20f2f06}\label{structatca__aes__ccm__ctx_ac1131f962e3e11a01f221de4e20f2f06} 
+\index{atca\_aes\_ccm\_ctx@{atca\_aes\_ccm\_ctx}!text\_size@{text\_size}}
+\index{text\_size@{text\_size}!atca\_aes\_ccm\_ctx@{atca\_aes\_ccm\_ctx}}
+\doxysubsubsection{\texorpdfstring{text\_size}{text\_size}}
+{\footnotesize\ttfamily size\+\_\+t atca\+\_\+aes\+\_\+ccm\+\_\+ctx\+::text\+\_\+size}
+
+
+
+Size of data to be processed. 
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\+SCE/\mbox{\hyperlink{atca__crypto__hw__aes_8h}{atca\+\_\+crypto\+\_\+hw\+\_\+aes.\+h}}\item 
+C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\+SCE/crypto/\mbox{\hyperlink{crypto_2atca__crypto__hw__aes_8h}{atca\+\_\+crypto\+\_\+hw\+\_\+aes.\+h}}\end{DoxyCompactItemize}

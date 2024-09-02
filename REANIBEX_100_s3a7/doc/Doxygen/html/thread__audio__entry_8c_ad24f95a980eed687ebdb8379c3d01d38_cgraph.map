@@ -1,0 +1,43 @@
+<map id="thread_audio_entry" name="thread_audio_entry">
+<area shape="rect" id="Node000001" title="A description of the function." alt="" coords="5,259,137,285"/>
+<area shape="rect" id="Node000002" href="$thread__audio__entry_8c.html#a5f13b4cc717ee2c0fa1d28b1cb3c7189" title="Adaptive volume adjust in function of the ambient noise." alt="" coords="192,107,341,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="79,257,119,202,149,170,183,143,192,138,195,142,186,148,152,174,123,205,83,260"/>
+<area shape="rect" id="Node000003" href="$thread__audio__hal_8c.html#ac3f240b782d8c9c8c5a9b13dc31d0fb0" title="set playing audio volume" alt="" coords="404,56,536,83"/>
+<area shape="poly" id="edge13_Node000001_Node000003" title=" " alt="" coords="74,257,86,223,108,177,140,130,160,109,183,92,233,70,286,58,339,54,388,56,388,61,339,60,287,64,234,75,186,97,164,113,144,133,113,179,91,225,79,259"/>
+<area shape="rect" id="Node000010" href="$thread__audio__hal_8c.html#a6679ee7be991ded9e6e1edd02fdbf9d8" title="initializes the audio engine. Assume that all messages are sampled at 11,025 Ksps with 12 bits resolu..." alt="" coords="227,157,306,184"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="88,256,130,225,183,194,211,182,213,187,186,198,133,230,91,260"/>
+<area shape="rect" id="Node000011" href="$thread__audio__hal_8c.html#a5860ff86766cdf6918ea51ba11a70ba6" title="plays a single audio message" alt="" coords="205,208,328,235"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="125,255,197,237,198,242,126,261"/>
+<area shape="rect" id="Node000014" href="$device__init_8c.html#a2f7047dc1ce0a3687c48872ed81aff5f" title="Function for accessing device info variable." alt="" coords="209,259,324,285"/>
+<area shape="poly" id="edge14_Node000001_Node000014" title=" " alt="" coords="137,269,193,269,193,275,137,275"/>
+<area shape="rect" id="Node000015" href="$device__init_8c.html#ab2b90e918e591ab7b2dfbfc2d6e3bb6a" title="Return Miscellaneous Settings." alt="" coords="200,309,333,336"/>
+<area shape="poly" id="edge15_Node000001_Node000015" title=" " alt="" coords="126,283,198,302,197,307,125,289"/>
+<area shape="rect" id="Node000016" href="$thread__audio__entry_8c.html#a29f40d7e3dc151283bfb0e69dbd8b132" title="Get an audio frame from the audio file." alt="" coords="591,385,766,412"/>
+<area shape="poly" id="edge16_Node000001_Node000016" title=" " alt="" coords="89,284,131,316,157,332,186,345,258,362,360,375,576,391,575,397,360,381,257,368,184,351,155,337,128,320,86,288"/>
+<area shape="rect" id="Node000017" href="$thread__sys_mon__entry_8c.html#a33ca5a33ab10af89dcb290e9d052b724" title="Function that report if the devioce is in test mode montador or not." alt="" coords="185,411,348,437"/>
+<area shape="poly" id="edge17_Node000001_Node000017" title=" " alt="" coords="84,284,125,335,154,364,186,390,208,402,205,406,183,394,150,368,121,338,80,287"/>
+<area shape="rect" id="Node000018" href="$thread__audio__entry_8c.html#a3043ebf2c881ce2e372f6d19d9cfbc4f" title="Manages the audio queue." alt="" coords="190,461,343,488"/>
+<area shape="poly" id="edge18_Node000001_Node000018" title=" " alt="" coords="80,285,93,318,116,362,147,408,186,447,193,452,190,456,183,451,143,411,111,365,89,320,75,287"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="322,103,398,84,399,90,324,109"/>
+<area shape="rect" id="Node000008" href="$thread__defibrillator__hal_8c.html#a25dc68351d66da2947740595a94ab2fc" title="return the audio energy measured in ADCs" alt="" coords="405,107,535,133"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="341,117,389,117,389,123,341,123"/>
+<area shape="rect" id="Node000009" href="$thread__audio__entry_8c.html#aacd507f5759e6725a70d4b30dc65bbf6" title="ask if the audio player is running" alt="" coords="409,157,530,184"/>
+<area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="324,131,399,150,398,156,322,137"/>
+<area shape="rect" id="Node000004" href="$_i2_c__2_8c.html#abb5323ebe9e05f1fe983ee0c53fa732e" title="Function to write a data byte at specific address." alt="" coords="622,56,735,83"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="536,67,606,67,606,72,536,72"/>
+<area shape="rect" id="Node000005" href="$_i2_c__2_8c.html#afb25d38eef88c072ab6ce216e1965501" title="Generate the START condition in the i2C line." alt="" coords="814,5,950,32"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="735,53,810,34,811,39,736,58"/>
+<area shape="rect" id="Node000006" href="$_i2_c__2_8c.html#a24d35a4dc09bc8d6c5be604be9a2102b" title="Generate the STOP condition in the i2C line." alt="" coords="814,56,950,83"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="735,67,798,67,798,72,735,72"/>
+<area shape="rect" id="Node000007" href="$_i2_c__2_8c.html#a5a45bd2c0aa3fd6619ad4e682466200c" title="Function to send a data byte to the i2C device." alt="" coords="831,107,933,133"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="736,81,816,101,815,106,735,86"/>
+<area shape="rect" id="Node000012" href="$thread__audio__hal_8c.html#a285beaccee275c7e54b53d5c0cb17fdd" title="un&#45;mute the audio engine" alt="" coords="413,208,526,235"/>
+<area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="328,219,397,219,397,224,328,224"/>
+<area shape="rect" id="Node000013" href="$thread__audio__hal_8c.html#a63caa5fecc35faf2d06dbc44b431f7dd" title="program the DMA to transfer audio data samples" alt="" coords="428,259,512,285"/>
+<area shape="poly" id="edge12_Node000011_Node000013" title=" " alt="" coords="324,233,413,255,412,260,322,238"/>
+<area shape="rect" id="Node000019" href="$thread__audio__entry_8c.html#a05b96411bbd2b24e86ae0cc21146b4cb" title="Function that loads and plays a message." alt="" coords="396,411,543,437"/>
+<area shape="poly" id="edge19_Node000018_Node000019" title=" " alt="" coords="322,458,398,439,399,444,324,463"/>
+<area shape="rect" id="Node000020" href="$thread__audio__hal_8c.html#a5afdd4d24f2faf92baea80c7b0cedfdc" title="stops the audio reproduction" alt="" coords="426,461,514,488"/>
+<area shape="poly" id="edge21_Node000018_Node000020" title=" " alt="" coords="343,472,410,472,410,477,343,477"/>
+<area shape="poly" id="edge20_Node000019_Node000016" title=" " alt="" coords="543,412,576,408,576,414,544,418"/>
+</map>

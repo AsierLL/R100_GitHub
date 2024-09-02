@@ -1,0 +1,82 @@
+<?xml version="1.0" ?>
+<synergyModuleDescription>
+    <config id="config.framework.sf_memory_sdmmc" path="ssp_cfg/framework/sf_memory_sdmmc_cfg.h" version="0">
+        <property default="configframework.sf_memory_api.param_checking_enable.bsp" display="Parameter Checking" id="configframework.sf_memory_api.param_checking_enable">
+            <option display="Default (BSP)" id="configframework.sf_memory_api.param_checking_enable.bsp" value="(BSP_CFG_PARAM_CHECKING_ENABLE)"/>
+            <option display="Enabled" id="configframework.sf_memory_api.param_checking_enable.enabled" value="(1)"/>
+            <option display="Disabled" id="configframework.sf_memory_api.param_checking_enable.disabled" value="(0)"/>
+        </property>
+        <content>
+            #if !defined(SF_MEMORY_SDMMC_CFG_PARAM_CHECKING_ENABLE)
+                #define SF_MEMORY_SDMMC_CFG_PARAM_CHECKING_ENABLE  ${configframework.sf_memory_api.param_checking_enable}
+            #endif
+        </content>
+    </config>
+    <module config="config.framework.sf_memory_sdmmc" display="Renesas|Flashloader|${module.framework.sf_memory_api.name} Memory SDMMC Framework on sf_memory_sdmmc" id="module.framework.sf_memory_sdmmc" version="1">
+	    <constraint display="Module instances must have unique names">
+            "${interface.framework.sf_memory_api.${module.framework.sf_memory_api.name}}" === "1"
+        </constraint>
+        <constraint display="Requires SDMMC Access Interrupt (ACCS) enabled">
+            "${module.framework.sf_memory_api.requires.sdmmc::module.driver.sdmmc.access_ipl}" != "board.icu.common.irq.disabled"
+        </constraint>
+        <constraint display="Requires SDMMC Card Interrupt enabled">
+            "${module.framework.sf_memory_api.requires.sdmmc::module.driver.sdmmc.card_ipl}" != "board.icu.common.irq.disabled"
+        </constraint>
+		<requires id="module.framework.sf_memory_api.requires.sdmmc" interface="interface.driver.sdmmc" display="Add sdmmc">
+			<override property="module.driver.sdmmc.p_callback" value="NULL"/>
+		</requires>
+        <provides interface="interface.framework.sf_memory_api" />
+        <provides interface="interface.framework.sf_memory_sdmmc" />
+		<provides interface="interface.framework.sf_memory_sdmmc_on_sf_memory_sdmmc" />
+        <provides interface="interface.framework.sf_memory_api.${module.framework.sf_memory_api.name}" />
+        <property id="module.framework.sf_memory_api.name" display="Name" default="g_sf_memory_sdmmc${_instance}">
+            <constraint display="Name must be a valid C symbol">testSymbol("${module.framework.sf_memory_api.name}")</constraint>
+        </property>
+        <property id="module.framework.sf_memory_api.region_info_array" display="Name of Flash Region Information Array" default="g_sf_memory_sdmmc_region_info${_instance}">
+            <constraint display="Name must be a valid C symbol">testSymbol("${module.framework.sf_memory_api.region_info_array}")</constraint>
+        </property>
+        <property id="module.framework.sf_memory_api.p_callback" display="Callback" default="NULL">
+            <constraint display="Name must be a valid C symbol">testSymbol("${module.framework.sf_memory_api.p_callback}")</constraint>
+        </property>
+        <header>
+            #ifdef ${module.framework.sf_memory_api.p_callback}
+                #define SF_MEMORY_SDMMC_CALLBACK_USED_${module.framework.sf_memory_api.name} (0)
+            #else
+                #define SF_MEMORY_SDMMC_CALLBACK_USED_${module.framework.sf_memory_api.name} (1)
+            #endif
+            #if SF_MEMORY_SDMMC_CALLBACK_USED_${module.framework.sf_memory_api.name}
+                void ${module.framework.sf_memory_api.p_callback}(sf_memory_callback_args_t * p_args);
+            #endif
+            extern const sf_memory_instance_t ${module.framework.sf_memory_api.name};
+        </header>
+        <includes>
+            #include &quot;sf_memory_sdmmc.h&quot;
+        </includes>
+        <declarations>
+            static sf_memory_sdmmc_ctrl_t ${module.framework.sf_memory_api.name}_sdmmc_ctrl;
+            static uint8_t ${module.framework.sf_memory_api.name}_flush_buffer[${module.framework.sf_memory_api.requires.sdmmc::module.driver.sdmmc.block_size}];
+            static uint8_t ${module.framework.sf_memory_api.name}_read_buffer[${module.framework.sf_memory_api.requires.sdmmc::module.driver.sdmmc.block_size}];
+            static const sf_memory_sdmmc_cfg_t  ${module.framework.sf_memory_api.name}_sdmmc_cfg =
+            {
+                .p_lower_lvl_sdmmc      = &amp;${module.framework.sf_memory_api.requires.sdmmc::module.driver.sdmmc.name},
+                .p_memory_sdmmc_ctrl    = &amp;${module.framework.sf_memory_api.name}_sdmmc_ctrl,
+                .p_flush_buffer         = (uint8_t *)&amp;${module.framework.sf_memory_api.name}_flush_buffer,
+                .flush_buffer_size      = ${module.framework.sf_memory_api.requires.sdmmc::module.driver.sdmmc.block_size},
+                .p_read_buffer          = (uint8_t *)&amp;${module.framework.sf_memory_api.name}_read_buffer,
+                .read_buffer_size       = ${module.framework.sf_memory_api.requires.sdmmc::module.driver.sdmmc.block_size},
+            };
+            static sf_memory_sdmmc_instance_ctrl_t ${module.framework.sf_memory_api.name}_ctrl;
+            static const sf_memory_cfg_t  ${module.framework.sf_memory_api.name}_cfg =
+            {
+                .p_callback         = ${module.framework.sf_memory_api.p_callback},
+                .p_context          = (void *)&amp;${module.framework.sf_memory_api.name},
+                .p_extend           = &amp;${module.framework.sf_memory_api.name}_sdmmc_cfg,
+            };
+            const sf_memory_instance_t ${module.framework.sf_memory_api.name} = {
+                .p_api  =  &amp;g_sf_memory_on_sdmmc,
+                .p_ctrl =  &amp;${module.framework.sf_memory_api.name}_ctrl,
+                .p_cfg  =  (sf_memory_cfg_t const *)&amp;${module.framework.sf_memory_api.name}_cfg
+            };
+        </declarations>
+    </module>
+</synergyModuleDescription>

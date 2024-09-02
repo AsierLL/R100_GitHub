@@ -1,0 +1,149 @@
+\doxysection{C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/synergy\+\_\+gen/thread\+\_\+audio.h File Reference}
+\hypertarget{thread__audio_8h}{}\label{thread__audio_8h}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/synergy\_gen/thread\_audio.h@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/synergy\_gen/thread\_audio.h}}
+{\ttfamily \#include "{}bsp\+\_\+api.\+h"{}}\newline
+{\ttfamily \#include "{}tx\+\_\+api.\+h"{}}\newline
+{\ttfamily \#include "{}hal\+\_\+data.\+h"{}}\newline
+{\ttfamily \#include "{}r\+\_\+dmac.\+h"{}}\newline
+{\ttfamily \#include "{}r\+\_\+transfer\+\_\+api.\+h"{}}\newline
+{\ttfamily \#include "{}r\+\_\+gpt.\+h"{}}\newline
+{\ttfamily \#include "{}r\+\_\+timer\+\_\+api.\+h"{}}\newline
+{\ttfamily \#include "{}r\+\_\+dac.\+h"{}}\newline
+{\ttfamily \#include "{}r\+\_\+dac\+\_\+api.\+h"{}}\newline
+Include dependency graph for thread\+\_\+audio.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__audio_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__audio_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{thread__audio_8h_ad24f95a980eed687ebdb8379c3d01d38}{thread\+\_\+audio\+\_\+entry}} (void)
+\begin{DoxyCompactList}\small\item\em A description of the function. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{thread__audio_8h_a4086327d11734eb747b46eecabe53e81}{dma\+\_\+audio\+\_\+callback}} (transfer\+\_\+callback\+\_\+args\+\_\+t \texorpdfstring{$\ast$}{*}p\+\_\+args)
+\begin{DoxyCompactList}\small\item\em DMA audio callback function. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{thread__audio_8h_a2f692484b28acb80135899db764144c7}{NULL}} (timer\+\_\+callback\+\_\+args\+\_\+t \texorpdfstring{$\ast$}{*}p\+\_\+args)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const transfer\+\_\+instance\+\_\+t \mbox{\hyperlink{thread__audio_8h_a356877d0e2bdfa02e44d838a57901499}{dma\+\_\+audio}}
+\item 
+const timer\+\_\+instance\+\_\+t \mbox{\hyperlink{thread__audio_8h_ac2784fac2d207672ab5d9ada4aab047d}{timer\+\_\+audio}}
+\item 
+const dac\+\_\+instance\+\_\+t \mbox{\hyperlink{thread__audio_8h_afea62d4b4a366d2ec66ba09822d9d256}{dac\+\_\+audio}}
+\item 
+TX\+\_\+\+SEMAPHORE \mbox{\hyperlink{thread__audio_8h_a6656c1816dc6517bb1758c709c3611b3}{audio\+\_\+semaphore}}
+\item 
+TX\+\_\+\+EVENT\+\_\+\+FLAGS\+\_\+\+GROUP \mbox{\hyperlink{thread__audio_8h_a211294516ea6f9a5a83dd8452a6c4930}{g\+\_\+events\+\_\+\+Audio}}
+\item 
+TX\+\_\+\+MUTEX \mbox{\hyperlink{thread__audio_8h_ad30d11ea8fed4fa1de65360a1cddc7d1}{usd\+\_\+mutex}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{thread__audio_8h_a4086327d11734eb747b46eecabe53e81}\label{thread__audio_8h_a4086327d11734eb747b46eecabe53e81} 
+\index{thread\_audio.h@{thread\_audio.h}!dma\_audio\_callback@{dma\_audio\_callback}}
+\index{dma\_audio\_callback@{dma\_audio\_callback}!thread\_audio.h@{thread\_audio.h}}
+\doxysubsubsection{\texorpdfstring{dma\_audio\_callback()}{dma\_audio\_callback()}}
+{\footnotesize\ttfamily void dma\+\_\+audio\+\_\+callback (\begin{DoxyParamCaption}\item[{transfer\+\_\+callback\+\_\+args\+\_\+t \texorpdfstring{$\ast$}{*}}]{p\+\_\+args }\end{DoxyParamCaption})}
+
+
+
+DMA audio callback function. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=288pt]{thread__audio_8h_a4086327d11734eb747b46eecabe53e81_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__audio_8h_a2f692484b28acb80135899db764144c7}\label{thread__audio_8h_a2f692484b28acb80135899db764144c7} 
+\index{thread\_audio.h@{thread\_audio.h}!NULL@{NULL}}
+\index{NULL@{NULL}!thread\_audio.h@{thread\_audio.h}}
+\doxysubsubsection{\texorpdfstring{NULL()}{NULL()}}
+{\footnotesize\ttfamily void NULL (\begin{DoxyParamCaption}\item[{timer\+\_\+callback\+\_\+args\+\_\+t \texorpdfstring{$\ast$}{*}}]{p\+\_\+args }\end{DoxyParamCaption})}
+
+\Hypertarget{thread__audio_8h_ad24f95a980eed687ebdb8379c3d01d38}\label{thread__audio_8h_ad24f95a980eed687ebdb8379c3d01d38} 
+\index{thread\_audio.h@{thread\_audio.h}!thread\_audio\_entry@{thread\_audio\_entry}}
+\index{thread\_audio\_entry@{thread\_audio\_entry}!thread\_audio.h@{thread\_audio.h}}
+\doxysubsubsection{\texorpdfstring{thread\_audio\_entry()}{thread\_audio\_entry()}}
+{\footnotesize\ttfamily void thread\+\_\+audio\+\_\+entry (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+A description of the function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000019}{Todo}}]pending things to be done\end{DoxyRefDesc}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__audio_8h_ad24f95a980eed687ebdb8379c3d01d38_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__audio_8h_ad24f95a980eed687ebdb8379c3d01d38_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{thread__audio_8h_a6656c1816dc6517bb1758c709c3611b3}\label{thread__audio_8h_a6656c1816dc6517bb1758c709c3611b3} 
+\index{thread\_audio.h@{thread\_audio.h}!audio\_semaphore@{audio\_semaphore}}
+\index{audio\_semaphore@{audio\_semaphore}!thread\_audio.h@{thread\_audio.h}}
+\doxysubsubsection{\texorpdfstring{audio\_semaphore}{audio\_semaphore}}
+{\footnotesize\ttfamily TX\+\_\+\+SEMAPHORE audio\+\_\+semaphore\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{thread__audio_8h_afea62d4b4a366d2ec66ba09822d9d256}\label{thread__audio_8h_afea62d4b4a366d2ec66ba09822d9d256} 
+\index{thread\_audio.h@{thread\_audio.h}!dac\_audio@{dac\_audio}}
+\index{dac\_audio@{dac\_audio}!thread\_audio.h@{thread\_audio.h}}
+\doxysubsubsection{\texorpdfstring{dac\_audio}{dac\_audio}}
+{\footnotesize\ttfamily const dac\+\_\+instance\+\_\+t dac\+\_\+audio\hspace{0.3cm}{\ttfamily [extern]}}
+
+DAC on DAC Instance. \Hypertarget{thread__audio_8h_a356877d0e2bdfa02e44d838a57901499}\label{thread__audio_8h_a356877d0e2bdfa02e44d838a57901499} 
+\index{thread\_audio.h@{thread\_audio.h}!dma\_audio@{dma\_audio}}
+\index{dma\_audio@{dma\_audio}!thread\_audio.h@{thread\_audio.h}}
+\doxysubsubsection{\texorpdfstring{dma\_audio}{dma\_audio}}
+{\footnotesize\ttfamily const transfer\+\_\+instance\+\_\+t dma\+\_\+audio\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{thread__audio_8h_a211294516ea6f9a5a83dd8452a6c4930}\label{thread__audio_8h_a211294516ea6f9a5a83dd8452a6c4930} 
+\index{thread\_audio.h@{thread\_audio.h}!g\_events\_Audio@{g\_events\_Audio}}
+\index{g\_events\_Audio@{g\_events\_Audio}!thread\_audio.h@{thread\_audio.h}}
+\doxysubsubsection{\texorpdfstring{g\_events\_Audio}{g\_events\_Audio}}
+{\footnotesize\ttfamily TX\+\_\+\+EVENT\+\_\+\+FLAGS\+\_\+\+GROUP g\+\_\+events\+\_\+\+Audio\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{thread__audio_8h_ac2784fac2d207672ab5d9ada4aab047d}\label{thread__audio_8h_ac2784fac2d207672ab5d9ada4aab047d} 
+\index{thread\_audio.h@{thread\_audio.h}!timer\_audio@{timer\_audio}}
+\index{timer\_audio@{timer\_audio}!thread\_audio.h@{thread\_audio.h}}
+\doxysubsubsection{\texorpdfstring{timer\_audio}{timer\_audio}}
+{\footnotesize\ttfamily const timer\+\_\+instance\+\_\+t timer\+\_\+audio\hspace{0.3cm}{\ttfamily [extern]}}
+
+Timer on GPT Instance. \Hypertarget{thread__audio_8h_ad30d11ea8fed4fa1de65360a1cddc7d1}\label{thread__audio_8h_ad30d11ea8fed4fa1de65360a1cddc7d1} 
+\index{thread\_audio.h@{thread\_audio.h}!usd\_mutex@{usd\_mutex}}
+\index{usd\_mutex@{usd\_mutex}!thread\_audio.h@{thread\_audio.h}}
+\doxysubsubsection{\texorpdfstring{usd\_mutex}{usd\_mutex}}
+{\footnotesize\ttfamily TX\+\_\+\+MUTEX usd\+\_\+mutex\hspace{0.3cm}{\ttfamily [extern]}}
+

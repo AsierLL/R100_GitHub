@@ -1,0 +1,165 @@
+\doxysection{common\+\_\+data.\+h}
+\hypertarget{common__data_8h_source}{}\label{common__data_8h_source}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/synergy\_gen/common\_data.h@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/synergy\_gen/common\_data.h}}
+\mbox{\hyperlink{common__data_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ generated\ common\ header\ file\ -\/\ do\ not\ edit\ */}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#ifndef\ COMMON\_DATA\_H\_}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#define\ COMMON\_DATA\_H\_}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}bsp\_api.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}fx\_api.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}r\_dmac.h"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}r\_transfer\_api.h"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}r\_sdmmc.h"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}r\_sdmmc\_api.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}sf\_block\_media\_sdmmc.h"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}sf\_block\_media\_api.h"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}sf\_el\_fx.h"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}fx\_api.h"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}r\_rspi.h"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}r\_spi\_api.h"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}r\_cgc\_api.h"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}r\_spi\_api.h"{}}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}sf\_spi.h"{}}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}sf\_spi\_api.h"{}}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}r\_elc.h"{}}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ "{}r\_elc\_api.h"{}}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ "{}r\_fmi.h"{}}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ "{}r\_fmi\_api.h"{}}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ "{}r\_ioport.h"{}}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ "{}r\_ioport\_api.h"{}}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ "{}r\_cgc.h"{}}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ "{}r\_cgc\_api.h"{}}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00030\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}}
+\DoxyCodeLine{00031\ \{}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00033\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{common__data_8h_a69c6482fc38b2d19b47d9916115ffc23}{fx\_common\_init0}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00034\ \textcolor{comment}{/*\ Transfer\ on\ DMAC\ Instance.\ */}}
+\DoxyCodeLine{00035\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ transfer\_instance\_t\ \mbox{\hyperlink{common__data_8h_aa1accc5bdb9159a9c85ff6e6c679efe4}{g\_transfer}};}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#ifndef\ NULL}}
+\DoxyCodeLine{00037\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}}(transfer\_callback\_args\_t\ *p\_args);}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00040\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ sdmmc\_instance\_t\ \mbox{\hyperlink{common__data_8h_acfce838e5493050983a7f3b836a9d042}{g\_sdmmc}};}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#ifndef\ NULL}}
+\DoxyCodeLine{00042\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}}(sdmmc\_callback\_args\_t\ *p\_args);}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00045\ \textcolor{keyword}{extern}\ sf\_block\_media\_instance\_t\ \mbox{\hyperlink{common__data_8h_adef9088a3d47d753ae2b99a5235ebbc6}{g\_sf\_block\_media\_sdmmc0}};}
+\DoxyCodeLine{00046\ \textcolor{keyword}{extern}\ sf\_el\_fx\_t\ \mbox{\hyperlink{common__data_8h_ae74a32fe94e7fb60095cf0da28c83379}{g\_sf\_el\_fx\_cfg}};}
+\DoxyCodeLine{00047\ \textcolor{keyword}{extern}\ FX\_MEDIA\ \mbox{\hyperlink{common__data_8h_a1c0e8dd57ba68387918cb46d55242ef3}{sd\_fx\_media}};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{common__data_8h_a7d4690dfb546302eac8e35a19257af33}{sd\_fx\_media\_err\_callback}}(\textcolor{keywordtype}{void}\ *p\_instance,\ \textcolor{keywordtype}{void}\ *p\_data);}
+\DoxyCodeLine{00050\ ssp\_err\_t\ \mbox{\hyperlink{common__data_8h_aeae032b14e2e74ed47d04de04233b599}{fx\_media\_init0\_format}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00051\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ \mbox{\hyperlink{common__data_8h_ad0f0e3fb1120fdd5a41790f89df49bb7}{fx\_media\_init0\_open}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00052\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{common__data_8h_a2dc986f32090c0fb53e90ad03de0598f}{fx\_media\_init0}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00054\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ spi\_cfg\_t\ \mbox{\hyperlink{common__data_8h_a8b8921936ccd5089f894e7369b332343}{g\_spi0\_cfg}};}
+\DoxyCodeLine{00056\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ spi\_on\_rspi\_cfg\_t\ \mbox{\hyperlink{common__data_8h_ae36c46d3c04f5b419fa6630400511190}{g\_spi0\_ext\_cfg}};}
+\DoxyCodeLine{00058\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ spi\_instance\_t\ \mbox{\hyperlink{common__data_8h_a30a3956710e13e6d2ccb9c3535be1e0c}{g\_spi0}};}
+\DoxyCodeLine{00060\ \textcolor{keyword}{extern}\ rspi\_instance\_ctrl\_t\ \mbox{\hyperlink{common__data_8h_a6ac7636c3b5001438376e3642316bad8}{g\_spi0\_ctrl}};}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#ifndef\ NULL}}
+\DoxyCodeLine{00062\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}}(spi\_callback\_args\_t\ *p\_args);}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ transfer\_instance\_t\ \mbox{\hyperlink{common__data_8h_ac1fe6dd75eb9a7779ca85943f0149c27}{g\_spi0\_transfer\_rx}};}
+\DoxyCodeLine{00066\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ transfer\_instance\_t\ \mbox{\hyperlink{common__data_8h_a2be79e67156e0d909b44a81b42393231}{g\_spi0\_transfer\_tx}};}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#define\ SYNERGY\_NOT\_DEFINED\ (1)}}
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#define\ RSPI\_TRANSFER\_SIZE\_1\_BYTE\ (0x52535049)}}
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#if\ (RSPI\_TRANSFER\_SIZE\_1\_BYTE\ ==\ RSPI\_SYNERGY\_NOT\_DEFINED)}}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#define\ g\_spi0\_P\_TRANSFER\_TX\ (\&g\_spi0\_transfer\_tx)}}
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#define\ g\_spi0\_P\_TRANSFER\_RX\ (\&g\_spi0\_transfer\_rx)}}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#if\ (SYNERGY\_NOT\_DEFINED\ ==\ SYNERGY\_NOT\_DEFINED)}}
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#define\ g\_spi0\_P\_TRANSFER\_TX\ (NULL)}}
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#define\ g\_spi0\_P\_TRANSFER\_TX\ (\&SYNERGY\_NOT\_DEFINED)}}
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\#if\ (SYNERGY\_NOT\_DEFINED\ ==\ SYNERGY\_NOT\_DEFINED)}}
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#define\ g\_spi0\_P\_TRANSFER\_RX\ (NULL)}}
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00084\ \textcolor{preprocessor}{\#define\ g\_spi0\_P\_TRANSFER\_RX\ (\&SYNERGY\_NOT\_DEFINED)}}
+\DoxyCodeLine{00085\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00087\ \textcolor{preprocessor}{\#undef\ RSPI\_TRANSFER\_SIZE\_1\_BYTE}}
+\DoxyCodeLine{00088\ \textcolor{preprocessor}{\#undef\ SYNERGY\_NOT\_DEFINED}}
+\DoxyCodeLine{00089\ \textcolor{preprocessor}{\#define\ g\_spi0\_P\_EXTEND\ (\&g\_spi0\_ext\_cfg)}}
+\DoxyCodeLine{00090\ \textcolor{keyword}{extern}\ sf\_spi\_bus\_t\ \mbox{\hyperlink{common__data_8h_a9c429bf9cd974c89feedc2f37f98939a}{spi\_bus0}};}
+\DoxyCodeLine{00091\ \textcolor{keyword}{extern}\ spi\_api\_t\ \textcolor{keyword}{const}\ \mbox{\hyperlink{common__data_8h_ac56a413c5512a6a50a7ce25ee20265fb}{g\_spi\_on\_rspi}};}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \textcolor{preprocessor}{\#define\ spi\_bus0\_CHANNEL\ \ \ \ \ \ \ \ (0)}}
+\DoxyCodeLine{00094\ \textcolor{preprocessor}{\#define\ spi\_bus0\_OPERATING\_MODE\ (SPI\_MODE\_MASTER)}}
+\DoxyCodeLine{00095\ \textcolor{preprocessor}{\#define\ spi\_bus0\_CLK\_PHASE\ \ \ \ \ \ (SPI\_CLK\_PHASE\_EDGE\_ODD)}}
+\DoxyCodeLine{00096\ \textcolor{preprocessor}{\#define\ spi\_bus0\_CLK\_POLARITY\ \ \ (SPI\_CLK\_POLARITY\_LOW)\ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00097\ \textcolor{preprocessor}{\#define\ spi\_bus0\_MODE\_FAULT\ \ \ \ \ (SPI\_MODE\_FAULT\_ERROR\_DISABLE)}}
+\DoxyCodeLine{00098\ \textcolor{preprocessor}{\#define\ spi\_bus0\_BIT\_ORDER\ \ \ \ \ \ (SPI\_BIT\_ORDER\_MSB\_FIRST)\ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00099\ \textcolor{preprocessor}{\#define\ spi\_bus0\_BIT\_RATE\ \ \ \ \ \ \ (800000)\ \ }}
+\DoxyCodeLine{00100\ \textcolor{preprocessor}{\#define\ spi\_bus0\_P\_CALLBACK\ \ \ \ \ (NULL)}}
+\DoxyCodeLine{00101\ \textcolor{preprocessor}{\#define\ spi\_bus0\_P\_CONTEXT\ \ \ \ \ \ (\&g\_spi0)}}
+\DoxyCodeLine{00102\ \textcolor{preprocessor}{\#define\ spi\_bus0\_RXI\_IPL\ \ \ \ \ \ \ \ ((4))}}
+\DoxyCodeLine{00103\ \textcolor{preprocessor}{\#define\ spi\_bus0\_TXI\_IPL\ \ \ \ \ \ \ \ ((4))}}
+\DoxyCodeLine{00104\ \textcolor{preprocessor}{\#define\ spi\_bus0\_TEI\_IPL\ \ \ \ \ \ \ \ ((4))\ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00105\ \textcolor{preprocessor}{\#define\ spi\_bus0\_ERI\_IPL\ \ \ \ \ \ \ \ ((4))}}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00108\ \textcolor{preprocessor}{\#define\ spi\_bus0\_P\_TRANSFER\_TX\ \ (g\_spi0\_P\_TRANSFER\_TX)}}
+\DoxyCodeLine{00109\ \textcolor{preprocessor}{\#define\ spi\_bus0\_P\_TRANSFER\_RX\ \ (g\_spi0\_P\_TRANSFER\_RX)\ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00110\ \textcolor{preprocessor}{\#define\ spi\_bus0\_P\_EXTEND\ \ \ \ \ \ \ (g\_spi0\_P\_EXTEND)}}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \textcolor{preprocessor}{\#include\ "{}ux\_api.h"{}}}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \textcolor{comment}{/*\ USBX\ Host\ Stack\ initialization\ error\ callback\ function.\ User\ can\ override\ the\ function\ if\ needed.\ */}}
+\DoxyCodeLine{00115\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{common__data_8h_a69ad1c3cbcd75fdf381b0d57b344129b}{ux\_v2\_err\_callback}}(\textcolor{keywordtype}{void}\ *p\_instance,\ \textcolor{keywordtype}{void}\ *p\_data);}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \textcolor{preprocessor}{\#if\ !defined(NULL)}}
+\DoxyCodeLine{00118\ \textcolor{comment}{/*\ User\ Callback\ for\ Host\ Event\ Notification\ (Only\ valid\ for\ USB\ Host).\ */}}
+\DoxyCodeLine{00119\ \textcolor{keyword}{extern}\ UINT\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}}(ULONG\ event,\ UX\_HOST\_CLASS\ *host\_class,\ VOID\ *instance);}
+\DoxyCodeLine{00120\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \textcolor{preprocessor}{\#ifdef\ UX\_HOST\_CLASS\_STORAGE\_H}}
+\DoxyCodeLine{00123\ \textcolor{comment}{/*\ Utility\ function\ to\ get\ the\ pointer\ to\ a\ FileX\ Media\ Control\ Block\ for\ a\ USB\ Mass\ Storage\ device.\ */}}
+\DoxyCodeLine{00124\ UINT\ ux\_system\_host\_storage\_fx\_media\_get(UX\_HOST\_CLASS\_STORAGE\ *\ instance,\ UX\_HOST\_CLASS\_STORAGE\_MEDIA\ **\ p\_storage\_media,\ FX\_MEDIA\ **\ p\_fx\_media);}
+\DoxyCodeLine{00125\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00126\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{common__data_8h_a0c4837de033f51ac10879cfd1b1fbd63}{ux\_common\_init0}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00127\ \textcolor{preprocessor}{\#include\ "{}ux\_api.h"{}}}
+\DoxyCodeLine{00128\ \textcolor{preprocessor}{\#include\ "{}ux\_dcd\_synergy.h"{}}}
+\DoxyCodeLine{00129\ \textcolor{preprocessor}{\#include\ "{}sf\_el\_ux\_dcd\_fs\_cfg.h"{}}}
+\DoxyCodeLine{00130\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{common__data_8h_aa10d661d2e534bf02a96d1505065ebac}{g\_sf\_el\_ux\_dcd\_fs\_0\_err\_callback}}(\textcolor{keywordtype}{void}\ *p\_instance,\ \textcolor{keywordtype}{void}\ *p\_data);}
+\DoxyCodeLine{00131\ \textcolor{preprocessor}{\#include\ "{}ux\_api.h"{}}}
+\DoxyCodeLine{00132\ \textcolor{preprocessor}{\#include\ "{}ux\_dcd\_synergy.h"{}}}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ \textcolor{comment}{/*\ USBX\ Device\ Stack\ initialization\ error\ callback\ function.\ User\ can\ override\ the\ function\ if\ needed.\ */}}
+\DoxyCodeLine{00135\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{common__data_8h_a3450a69c46a556b6968e606d93c0d367}{ux\_device\_err\_callback}}(\textcolor{keywordtype}{void}\ *p\_instance,\ \textcolor{keywordtype}{void}\ *p\_data);}
+\DoxyCodeLine{00136\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{common__data_8h_af626dbef572835e3f44d083263783d7c}{ux\_device\_init0}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00137\ \textcolor{preprocessor}{\#include\ "{}ux\_api.h"{}}}
+\DoxyCodeLine{00138\ \textcolor{preprocessor}{\#include\ "{}ux\_device\_class\_storage.h"{}}}
+\DoxyCodeLine{00139\ \textcolor{comment}{/*\ USBX\ Mass\ Storage\ Class\ User\ Media\ Setup\ Callback\ Function\ */}}
+\DoxyCodeLine{00140\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{common__data_8h_abddb7193e2ce6da005618537bc591b2b}{ux\_device\_class\_storage\_user\_setup}}(UX\_SLAVE\_CLASS\_STORAGE\_PARAMETER\ *param);}
+\DoxyCodeLine{00141\ \textcolor{comment}{/*\ USBX\ Mass\ Storage\ Class\ Media\ Read\ User\ Callback\ Function\ */}}
+\DoxyCodeLine{00142\ \textcolor{keyword}{extern}\ UINT\ \mbox{\hyperlink{common__data_8h_a9dbba7d6ee9deaefb1fe6517c1a94b9d}{ux\_device\_msc\_media\_read}}(VOID\ *storage,\ ULONG\ lun,\ UCHAR\ *data\_pointer,\ ULONG\ number\_blocks,\ ULONG\ lba,}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ ULONG\ *media\_status);}
+\DoxyCodeLine{00144\ \textcolor{comment}{/*\ USBX\ Mass\ Storage\ Class\ Media\ Write\ User\ Callback\ Function\ */}}
+\DoxyCodeLine{00145\ \textcolor{keyword}{extern}\ UINT\ \mbox{\hyperlink{common__data_8h_a10ce442cd5d69665eaac13abedc55745}{ux\_device\_msc\_media\_write}}(VOID\ *storage,\ ULONG\ lun,\ UCHAR\ *data\_pointer,\ ULONG\ number\_blocks,\ ULONG\ lba,}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ ULONG\ *media\_status);}
+\DoxyCodeLine{00147\ \textcolor{comment}{/*\ USBX\ Mass\ Storage\ Class\ Media\ Status\ User\ Callback\ Function\ */}}
+\DoxyCodeLine{00148\ \textcolor{keyword}{extern}\ UINT\ \mbox{\hyperlink{common__data_8h_a1e14afe8823a6736eca2487785391a75}{ux\_device\_msc\_media\_status}}(VOID\ *storage,\ ULONG\ lun,\ ULONG\ media\_id,\ ULONG\ *media\_status);}
+\DoxyCodeLine{00149\ \textcolor{comment}{/*\ USBX\ Mass\ Storage\ Class\ Media\ Activate/Deactivate\ Callback\ Function\ */}}
+\DoxyCodeLine{00150\ \textcolor{preprocessor}{\#ifndef\ NULL}}
+\DoxyCodeLine{00151\ \textcolor{keyword}{extern}\ VOID\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}}(VOID\ *storage);}
+\DoxyCodeLine{00152\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00153\ \textcolor{preprocessor}{\#ifndef\ NULL}}
+\DoxyCodeLine{00154\ \textcolor{keyword}{extern}\ VOID\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}}(VOID\ *storage);}
+\DoxyCodeLine{00155\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00156\ \textcolor{comment}{/*\ USBX\ Mass\ Storage\ Class\ Parameter\ Setup\ Function\ */}}
+\DoxyCodeLine{00157\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{common__data_8h_a86c182665e034d66cc94e9e1ed4a8bd0}{ux\_device\_class\_storage\_init0}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00159\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ elc\_instance\_t\ \mbox{\hyperlink{common__data_8h_a5ebf73650a002c734983e3e1efd5d23e}{g\_elc}};}
+\DoxyCodeLine{00161\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ fmi\_instance\_t\ \mbox{\hyperlink{common__data_8h_ac062274fd6f5092fb2836f2e3fe881f4}{g\_fmi}};}
+\DoxyCodeLine{00163\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ ioport\_instance\_t\ \mbox{\hyperlink{common__data_8h_a550bce613d93ced8a87da8051eb18314}{g\_ioport}};}
+\DoxyCodeLine{00165\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ cgc\_instance\_t\ \mbox{\hyperlink{common__data_8h_ad6d6f2eae7e4cabe30094d76c4e16ee4}{g\_cgc}};}
+\DoxyCodeLine{00166\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{common__data_8h_ad9cbc93ced342131f9cb13ef84da081d}{g\_common\_init}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00167\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00168\ \}\ \textcolor{comment}{/*\ extern\ "{}C"{}\ */}}
+\DoxyCodeLine{00169\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00170\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ COMMON\_DATA\_H\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

@@ -1,0 +1,105 @@
+\doxysection{cryptoauthlib.\+h}
+\hypertarget{cryptoauthlib_8h_source}{}\label{cryptoauthlib_8h_source}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/SCE/cryptoauthlib.h@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/SCE/cryptoauthlib.h}}
+\mbox{\hyperlink{cryptoauthlib_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#ifndef\ \_ATCA\_LIB\_H}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#define\ \_ATCA\_LIB\_H}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ <stddef.h>}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ <string.h>}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#include\ <stdarg.h>}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{atca__config_8h}{atca\_config.h}}"{}}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{atca__compiler_8h}{atca\_compiler.h}}"{}}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{atca__version_8h}{atca\_version.h}}"{}}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{comment}{/*\ Configuration\ Macros\ to\ detect\ device\ classes\ */}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#if\ defined(ATCA\_ATSHA204A\_SUPPORT)\ ||\ defined(ATCA\_ATSHA206A\_SUPPORT)}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#define\ ATCA\_SHA\_SUPPORT\ \ \ \ 1}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{comment}{/*\ Make\ sure\ all\ configuration\ options\ work\ */}}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#if\ defined(ATCA\_ATECC608A\_SUPPORT)\ \&\&\ !defined(ATCA\_ATECC608\_SUPPORT)}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#define\ ATCA\_ATECC608\_SUPPORT}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#if\ defined(ATCA\_ATECC108A\_SUPPORT)\ ||\ defined(ATCA\_ATECC508A\_SUPPORT)\ \(\backslash\)}}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\ \ \ \ ||\ defined(ATCA\_ATECC608\_SUPPORT)}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#define\ ATCA\_ECC\_SUPPORT\ \ \ \ 1}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{comment}{/*\ Classic\ Cryptoauth\ Devices\ */}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#if\ defined(ATCA\_SHA\_SUPPORT)\ ||\ defined(ATCA\_ECC\_SUPPORT)\ ||\ defined(ATCA\_ECC204\_SUPPORT)}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#define\ ATCA\_CA\_SUPPORT\ \ \ \ \ 1}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#define\ ATCA\_CA\_SUPPORT\ \ \ \ \ 0}}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \textcolor{comment}{/*\ New\ Trust\ Anchor\ Devices\ */}}
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#if\ defined(ATCA\_TA100\_SUPPORT)}}
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#define\ ATCA\_TA\_SUPPORT\ \ \ \ \ 1}}
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#define\ ATCA\_TA\_SUPPORT\ \ \ \ \ 0}}
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{atca__status_8h}{atca\_status.h}}"{}}}
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{atca__debug_8h}{atca\_debug.h}}"{}}}
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{atca__iface_8h}{atca\_iface.h}}"{}}}
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{atca__helpers_8h}{atca\_helpers.h}}"{}}}
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{atca__hal_8h}{atca\_hal.h}}"{}}}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \textcolor{comment}{/*\ Common\ Cryptographic\ Definitions\ */}}
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#define\ ATCA\_SHA256\_BLOCK\_SIZE\ \ \ \ \ \ \ \ \ \ \ \ \ \ (64)}}
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\#define\ ATCA\_SHA256\_DIGEST\_SIZE\ \ \ \ \ \ \ \ \ \ \ \ \ (32)}}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\#define\ ATCA\_AES128\_BLOCK\_SIZE\ \ \ \ \ \ \ \ \ \ \ \ \ \ (16)}}
+\DoxyCodeLine{00084\ \textcolor{preprocessor}{\#define\ ATCA\_AES128\_KEY\_SIZE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (16)}}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{\#define\ ATCA\_ECCP256\_KEY\_SIZE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (32)}}
+\DoxyCodeLine{00087\ \textcolor{preprocessor}{\#define\ ATCA\_ECCP256\_PUBKEY\_SIZE\ \ \ \ \ \ \ \ \ \ \ \ (64)}}
+\DoxyCodeLine{00088\ \textcolor{preprocessor}{\#define\ ATCA\_ECCP256\_SIG\_SIZE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (64)}}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \textcolor{preprocessor}{\#define\ ATCA\_ZONE\_CONFIG\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x00)}}
+\DoxyCodeLine{00091\ \textcolor{preprocessor}{\#define\ ATCA\_ZONE\_OTP\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x01)}}
+\DoxyCodeLine{00092\ \textcolor{preprocessor}{\#define\ ATCA\_ZONE\_DATA\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x02)}}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \textcolor{preprocessor}{\#if\ defined(ATCA\_ECC204\_SUPPORT)}}
+\DoxyCodeLine{00095\ \textcolor{preprocessor}{\#define\ ATCA\_ECC204\_ZONE\_DATA\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x00)}}
+\DoxyCodeLine{00096\ \textcolor{preprocessor}{\#define\ ATCA\_ECC204\_ZONE\_CONFIG\ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x01)}}
+\DoxyCodeLine{00097\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00100\ \textcolor{preprocessor}{\#define\ SHA\_MODE\_TARGET\_TEMPKEY\ \ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x00)}}
+\DoxyCodeLine{00102\ \textcolor{preprocessor}{\#define\ SHA\_MODE\_TARGET\_MSGDIGBUF\ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0x40)}}
+\DoxyCodeLine{00104\ \textcolor{preprocessor}{\#define\ SHA\_MODE\_TARGET\_OUT\_ONLY\ \ \ \ \ \ \ \ \ \ \ \ ((uint8\_t)0xC0)}}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \textcolor{preprocessor}{\#if\ ATCA\_CA\_SUPPORT\ ||\ defined(ATCA\_USE\_ATCAB\_FUNCTIONS)}}
+\DoxyCodeLine{00107\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{atca__cfgs_8h}{atca\_cfgs.h}}"{}}}
+\DoxyCodeLine{00108\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{atca__device_8h}{atca\_device.h}}"{}}}
+\DoxyCodeLine{00109\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{calib__basic_8h}{calib\_basic.h}}"{}}}
+\DoxyCodeLine{00110\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{calib__command_8h}{calib\_command.h}}"{}}}
+\DoxyCodeLine{00111\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{calib__aes__gcm_8h}{calib\_aes\_gcm.h}}"{}}}
+\DoxyCodeLine{00112\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \textcolor{preprocessor}{\#if\ ATCA\_TA\_SUPPORT}}
+\DoxyCodeLine{00115\ \textcolor{preprocessor}{\#include\ "{}talib/talib\_status.h"{}}}
+\DoxyCodeLine{00116\ \textcolor{preprocessor}{\#include\ "{}talib/talib\_basic.h"{}}}
+\DoxyCodeLine{00117\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{atca__basic_8h}{atca\_basic.h}}"{}}}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \textcolor{preprocessor}{\#define\ ATCA\_STRINGIFY(x)\ \#x}}
+\DoxyCodeLine{00122\ \textcolor{preprocessor}{\#define\ ATCA\_TOSTRING(x)\ ATCA\_STRINGIFY(x)}}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \textcolor{preprocessor}{\#ifdef\ ATCA\_PRINTF}}
+\DoxyCodeLine{00125\ \textcolor{preprocessor}{\ \ \ \ \#define\ ATCA\_TRACE(s,\ m)\ \ \ \ \ \ \ \ \ atca\_trace\_msg(s,\ \_\_FILE\_\_\ "{}:"{}\ ATCA\_TOSTRING(\_\_LINE\_\_)\ "{}:\%x:"{}\ m\ "{}\(\backslash\)n"{})}}
+\DoxyCodeLine{00126\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00127\ \textcolor{preprocessor}{\ \ \ \ \#define\ ATCA\_TRACE(s,\ m)\ \ \ \ \ \ \ \ \ atca\_trace(s)}}
+\DoxyCodeLine{00128\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

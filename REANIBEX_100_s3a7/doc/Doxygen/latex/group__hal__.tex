@@ -1,0 +1,344 @@
+\doxysection{Hardware abstraction layer (hal\+\_\+)}
+\hypertarget{group__hal__}{}\label{group__hal__}\index{Hardware abstraction layer (hal\_)@{Hardware abstraction layer (hal\_)}}
+
+
+These methods define the hardware abstraction layer for communicating with a Crypto\+Auth device.  
+
+
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structatca__hal__kit__phy__t}{atca\+\_\+hal\+\_\+kit\+\_\+phy\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__hal___ga8bec71e1581c804c34ee5239109e0aaf}{ATCA\+\_\+\+POLLING\+\_\+\+INIT\+\_\+\+TIME\+\_\+\+MSEC}}~1
+\item 
+\#define \mbox{\hyperlink{group__hal___ga608ef7949677dac87e1c76c826e6bf40}{ATCA\+\_\+\+POLLING\+\_\+\+FREQUENCY\+\_\+\+TIME\+\_\+\+MSEC}}~2
+\item 
+\#define \mbox{\hyperlink{group__hal___ga3fec2247165d648a94cea3d0cbfd662f}{ATCA\+\_\+\+POLLING\+\_\+\+MAX\+\_\+\+TIME\+\_\+\+MSEC}}~2500
+\item 
+\#define \mbox{\hyperlink{group__hal___ga734f1a991d97db530d1d43657faa3e96}{hal\+\_\+malloc}}~\mbox{\hyperlink{atca__config_8h_adbc2385fb7498f0b78384b2244a64328}{ATCA\+\_\+\+PLATFORM\+\_\+\+MALLOC}}
+\item 
+\#define \mbox{\hyperlink{group__hal___gab9288899d6d6b917030fa44329234944}{hal\+\_\+free}}~\mbox{\hyperlink{atca__config_8h_a659e8df188244eae9becc59a74c81ece}{ATCA\+\_\+\+PLATFORM\+\_\+\+FREE}}
+\item 
+\#define \mbox{\hyperlink{group__hal___ga4f60d6c21f0543b2187329461cffd466}{hal\+\_\+memset\+\_\+s}}~\mbox{\hyperlink{atca__helpers_8h_ac37b319dabc5b9492a422f6d3d4e118b}{atcab\+\_\+memset\+\_\+s}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group__hal___ga63592210c9f6bba65e47bee41ba33aad}{ATCA\+\_\+\+HAL\+\_\+\+CONTROL}} \{ \newline
+\mbox{\hyperlink{group__hal___gga63592210c9f6bba65e47bee41ba33aada67b7cb6d7acd443c7ce155f79e24e8a3}{ATCA\+\_\+\+HAL\+\_\+\+CONTROL\+\_\+\+WAKE}} = 0
+, \mbox{\hyperlink{group__hal___gga63592210c9f6bba65e47bee41ba33aada68f29ce1dae672fba4d0bd72a2520787}{ATCA\+\_\+\+HAL\+\_\+\+CONTROL\+\_\+\+IDLE}} = 1
+, \mbox{\hyperlink{group__hal___gga63592210c9f6bba65e47bee41ba33aada2d7aafbda814952834385918b0b71fb2}{ATCA\+\_\+\+HAL\+\_\+\+CONTROL\+\_\+\+SLEEP}} = 2
+, \mbox{\hyperlink{group__hal___gga63592210c9f6bba65e47bee41ba33aada707f9990e8082bd03fc6d3b57f4554dd}{ATCA\+\_\+\+HAL\+\_\+\+CONTROL\+\_\+\+RESET}} = 3
+, \newline
+\mbox{\hyperlink{group__hal___gga63592210c9f6bba65e47bee41ba33aada353f3f565c16842ce1cd1353a9967e0f}{ATCA\+\_\+\+HAL\+\_\+\+CONTROL\+\_\+\+SELECT}} = 4
+, \mbox{\hyperlink{group__hal___gga63592210c9f6bba65e47bee41ba33aadae67d200e332beb287624f9e077718b7c}{ATCA\+\_\+\+HAL\+\_\+\+CONTROL\+\_\+\+DESELECT}} = 5
+, \mbox{\hyperlink{group__hal___gga63592210c9f6bba65e47bee41ba33aada0af7e182f6bfea47544cb3ec2fce26c9}{ATCA\+\_\+\+HAL\+\_\+\+CHANGE\+\_\+\+BAUD}} = 6
+, \mbox{\hyperlink{group__hal___gga63592210c9f6bba65e47bee41ba33aada9416d42f10d7aaa9affeaed33927d3b4}{ATCA\+\_\+\+HAL\+\_\+\+FLUSH\+\_\+\+BUFFER}} = 7
+, \newline
+\mbox{\hyperlink{group__hal___gga63592210c9f6bba65e47bee41ba33aadaefe1d680f11ecfc9ed6a86eb80bac8ff}{ATCA\+\_\+\+HAL\+\_\+\+CONTROL\+\_\+\+DIRECTION}} = 8
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{group__hal___gaf17e547bf330b9b561fd34437f09e616}{hal\+\_\+iface\+\_\+init}} (\mbox{\hyperlink{struct_a_t_c_a_iface_cfg}{ATCAIface\+Cfg}} \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{struct_a_t_c_a_h_a_l__t}{ATCAHAL\+\_\+t}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}hal, \mbox{\hyperlink{struct_a_t_c_a_h_a_l__t}{ATCAHAL\+\_\+t}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}phy)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{group__hal___ga4be1afccb41f28f6ce620b1d5197befc}{hal\+\_\+iface\+\_\+release}} (\mbox{\hyperlink{group__interface_gac7f674d4a0afb12d2f3c9c5e98cb1089}{ATCAIface\+Type}}, void \texorpdfstring{$\ast$}{*}hal\+\_\+data)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{group__hal___ga6ce92f1d10000eb6618fc74c2ca92d76}{hal\+\_\+check\+\_\+wake}} (const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}response, int response\+\_\+size)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{group__hal___ga17df8d983df73e2e8f62f1236f157909}{hal\+\_\+i2c\+\_\+init}} (\mbox{\hyperlink{group__interface_ga75c11126f3fe81df3d6c27f5bb393303}{ATCAIface}} iface, \mbox{\hyperlink{struct_a_t_c_a_iface_cfg}{ATCAIface\+Cfg}} \texorpdfstring{$\ast$}{*}cfg)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{group__hal___gafbe53519362f18c2688d10da6f7c618f}{hal\+\_\+i2c\+\_\+post\+\_\+init}} (\mbox{\hyperlink{group__interface_ga75c11126f3fe81df3d6c27f5bb393303}{ATCAIface}} iface)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{group__hal___gacc9a889e19d2f1a475a39391565b66dd}{hal\+\_\+i2c\+\_\+send}} (\mbox{\hyperlink{group__interface_ga75c11126f3fe81df3d6c27f5bb393303}{ATCAIface}} iface, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} word\+\_\+address, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}txdata, int txlength)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{group__hal___ga41a2b07d55558b9726abe28fd8431e90}{hal\+\_\+i2c\+\_\+receive}} (\mbox{\hyperlink{group__interface_ga75c11126f3fe81df3d6c27f5bb393303}{ATCAIface}} iface, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} word\+\_\+address, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}rxdata, \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \texorpdfstring{$\ast$}{*}rxlength)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{group__hal___ga4f82572f05b8587d98bc38601453863e}{hal\+\_\+i2c\+\_\+control}} (\mbox{\hyperlink{group__interface_ga75c11126f3fe81df3d6c27f5bb393303}{ATCAIface}} iface, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} option, void \texorpdfstring{$\ast$}{*}param, size\+\_\+t paramlen)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{group__hal___gad4df1b6755e2d5b5d9e810371e45ca8c}{hal\+\_\+i2c\+\_\+wake}} (\mbox{\hyperlink{group__interface_ga75c11126f3fe81df3d6c27f5bb393303}{ATCAIface}} iface)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{group__hal___ga9317303ada721ff3f97e7aad69437a30}{hal\+\_\+i2c\+\_\+idle}} (\mbox{\hyperlink{group__interface_ga75c11126f3fe81df3d6c27f5bb393303}{ATCAIface}} iface)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{group__hal___ga3f89bae6a625d5f37abdcc99408def27}{hal\+\_\+i2c\+\_\+sleep}} (\mbox{\hyperlink{group__interface_ga75c11126f3fe81df3d6c27f5bb393303}{ATCAIface}} iface)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{group__hal___gac382cc4431d2d1c721c21a453ba36c22}{hal\+\_\+i2c\+\_\+release}} (void \texorpdfstring{$\ast$}{*}hal\+\_\+data)
+\item 
+void \mbox{\hyperlink{group__hal___ga0544f36422b5e9a8890fb9c90fc5eb55}{atca\+\_\+delay\+\_\+ms}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} ms)
+\begin{DoxyCompactList}\small\item\em Timer API for legacy implementations. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__hal___ga847db2fb4380f9365db262e4a41fa3e1}{atca\+\_\+delay\+\_\+us}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} us)
+\item 
+void \mbox{\hyperlink{group__hal___ga3df335e46c7e798a1d4b8949d00c13d3}{hal\+\_\+rtos\+\_\+delay\+\_\+ms}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} ms)
+\begin{DoxyCompactList}\small\item\em Timer API implemented at the HAL level. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__hal___ga57165466685c07db56639eefa2c7762c}{hal\+\_\+delay\+\_\+ms}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} ms)
+\item 
+void \mbox{\hyperlink{group__hal___ga7430997881f872935a85edfd41d9df17}{hal\+\_\+delay\+\_\+us}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} us)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{group__hal___gab289a3949663589ac6be71d72fb18278}{hal\+\_\+create\+\_\+mutex}} (void \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}pp\+Mutex, char \texorpdfstring{$\ast$}{*}p\+Name)
+\begin{DoxyCompactList}\small\item\em Optional hal interfaces. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{group__hal___ga4589d7b3e951f40b7928f1cf31f7ddf3}{hal\+\_\+destroy\+\_\+mutex}} (void \texorpdfstring{$\ast$}{*}p\+Mutex)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{group__hal___gad4cd02ff7ae4e75844eab4e84eb61994}{hal\+\_\+lock\+\_\+mutex}} (void \texorpdfstring{$\ast$}{*}p\+Mutex)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{group__hal___ga31fd8170a49623686543f6247b883bd1}{hal\+\_\+unlock\+\_\+mutex}} (void \texorpdfstring{$\ast$}{*}p\+Mutex)
+\item 
+\mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} \mbox{\hyperlink{group__hal___ga43e975cd670652e6ae76f390b2e82218}{hal\+\_\+iface\+\_\+register\+\_\+hal}} (\mbox{\hyperlink{group__interface_gac7f674d4a0afb12d2f3c9c5e98cb1089}{ATCAIface\+Type}} iface\+\_\+type, \mbox{\hyperlink{struct_a_t_c_a_h_a_l__t}{ATCAHAL\+\_\+t}} \texorpdfstring{$\ast$}{*}hal, \mbox{\hyperlink{struct_a_t_c_a_h_a_l__t}{ATCAHAL\+\_\+t}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}old\+\_\+hal, \mbox{\hyperlink{struct_a_t_c_a_h_a_l__t}{ATCAHAL\+\_\+t}} \texorpdfstring{$\ast$}{*}phy, \mbox{\hyperlink{struct_a_t_c_a_h_a_l__t}{ATCAHAL\+\_\+t}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}old\+\_\+phy)
+\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{group__hal___gac5acbcb3cee22506992d838cd8a3e8ae}{hal\+\_\+is\+\_\+command\+\_\+word}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} word\+\_\+address)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+These methods define the hardware abstraction layer for communicating with a Crypto\+Auth device. 
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{group__hal___ga608ef7949677dac87e1c76c826e6bf40}\label{group__hal___ga608ef7949677dac87e1c76c826e6bf40} 
+\index{Hardware abstraction layer (hal\_)@{Hardware abstraction layer (hal\_)}!ATCA\_POLLING\_FREQUENCY\_TIME\_MSEC@{ATCA\_POLLING\_FREQUENCY\_TIME\_MSEC}}
+\index{ATCA\_POLLING\_FREQUENCY\_TIME\_MSEC@{ATCA\_POLLING\_FREQUENCY\_TIME\_MSEC}!Hardware abstraction layer (hal\_)@{Hardware abstraction layer (hal\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_POLLING\_FREQUENCY\_TIME\_MSEC}{ATCA\_POLLING\_FREQUENCY\_TIME\_MSEC}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+POLLING\+\_\+\+FREQUENCY\+\_\+\+TIME\+\_\+\+MSEC~2}
+
+\Hypertarget{group__hal___ga8bec71e1581c804c34ee5239109e0aaf}\label{group__hal___ga8bec71e1581c804c34ee5239109e0aaf} 
+\index{Hardware abstraction layer (hal\_)@{Hardware abstraction layer (hal\_)}!ATCA\_POLLING\_INIT\_TIME\_MSEC@{ATCA\_POLLING\_INIT\_TIME\_MSEC}}
+\index{ATCA\_POLLING\_INIT\_TIME\_MSEC@{ATCA\_POLLING\_INIT\_TIME\_MSEC}!Hardware abstraction layer (hal\_)@{Hardware abstraction layer (hal\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_POLLING\_INIT\_TIME\_MSEC}{ATCA\_POLLING\_INIT\_TIME\_MSEC}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+POLLING\+\_\+\+INIT\+\_\+\+TIME\+\_\+\+MSEC~1}
+
+\Hypertarget{group__hal___ga3fec2247165d648a94cea3d0cbfd662f}\label{group__hal___ga3fec2247165d648a94cea3d0cbfd662f} 
+\index{Hardware abstraction layer (hal\_)@{Hardware abstraction layer (hal\_)}!ATCA\_POLLING\_MAX\_TIME\_MSEC@{ATCA\_POLLING\_MAX\_TIME\_MSEC}}
+\index{ATCA\_POLLING\_MAX\_TIME\_MSEC@{ATCA\_POLLING\_MAX\_TIME\_MSEC}!Hardware abstraction layer (hal\_)@{Hardware abstraction layer (hal\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_POLLING\_MAX\_TIME\_MSEC}{ATCA\_POLLING\_MAX\_TIME\_MSEC}}
+{\footnotesize\ttfamily \#define ATCA\+\_\+\+POLLING\+\_\+\+MAX\+\_\+\+TIME\+\_\+\+MSEC~2500}
+
+\Hypertarget{group__hal___gab9288899d6d6b917030fa44329234944}\label{group__hal___gab9288899d6d6b917030fa44329234944} 
+\index{Hardware abstraction layer (hal\_)@{Hardware abstraction layer (hal\_)}!hal\_free@{hal\_free}}
+\index{hal\_free@{hal\_free}!Hardware abstraction layer (hal\_)@{Hardware abstraction layer (hal\_)}}
+\doxysubsubsection{\texorpdfstring{hal\_free}{hal\_free}}
+{\footnotesize\ttfamily \#define hal\+\_\+free~\mbox{\hyperlink{atca__config_8h_a659e8df188244eae9becc59a74c81ece}{ATCA\+\_\+\+PLATFORM\+\_\+\+FREE}}}
+
+\Hypertarget{group__hal___ga734f1a991d97db530d1d43657faa3e96}\label{group__hal___ga734f1a991d97db530d1d43657faa3e96} 
+\index{Hardware abstraction layer (hal\_)@{Hardware abstraction layer (hal\_)}!hal\_malloc@{hal\_malloc}}
+\index{hal\_malloc@{hal\_malloc}!Hardware abstraction layer (hal\_)@{Hardware abstraction layer (hal\_)}}
+\doxysubsubsection{\texorpdfstring{hal\_malloc}{hal\_malloc}}
+{\footnotesize\ttfamily \#define hal\+\_\+malloc~\mbox{\hyperlink{atca__config_8h_adbc2385fb7498f0b78384b2244a64328}{ATCA\+\_\+\+PLATFORM\+\_\+\+MALLOC}}}
+
+\Hypertarget{group__hal___ga4f60d6c21f0543b2187329461cffd466}\label{group__hal___ga4f60d6c21f0543b2187329461cffd466} 
+\index{Hardware abstraction layer (hal\_)@{Hardware abstraction layer (hal\_)}!hal\_memset\_s@{hal\_memset\_s}}
+\index{hal\_memset\_s@{hal\_memset\_s}!Hardware abstraction layer (hal\_)@{Hardware abstraction layer (hal\_)}}
+\doxysubsubsection{\texorpdfstring{hal\_memset\_s}{hal\_memset\_s}}
+{\footnotesize\ttfamily \#define hal\+\_\+memset\+\_\+s~\mbox{\hyperlink{atca__helpers_8h_ac37b319dabc5b9492a422f6d3d4e118b}{atcab\+\_\+memset\+\_\+s}}}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{group__hal___ga63592210c9f6bba65e47bee41ba33aad}\label{group__hal___ga63592210c9f6bba65e47bee41ba33aad} 
+\index{Hardware abstraction layer (hal\_)@{Hardware abstraction layer (hal\_)}!ATCA\_HAL\_CONTROL@{ATCA\_HAL\_CONTROL}}
+\index{ATCA\_HAL\_CONTROL@{ATCA\_HAL\_CONTROL}!Hardware abstraction layer (hal\_)@{Hardware abstraction layer (hal\_)}}
+\doxysubsubsection{\texorpdfstring{ATCA\_HAL\_CONTROL}{ATCA\_HAL\_CONTROL}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__hal___ga63592210c9f6bba65e47bee41ba33aad}{ATCA\+\_\+\+HAL\+\_\+\+CONTROL}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ATCA\_HAL\_CONTROL\_WAKE@{ATCA\_HAL\_CONTROL\_WAKE}!Hardware abstraction layer (hal\_)@{Hardware abstraction layer (hal\_)}}\index{Hardware abstraction layer (hal\_)@{Hardware abstraction layer (hal\_)}!ATCA\_HAL\_CONTROL\_WAKE@{ATCA\_HAL\_CONTROL\_WAKE}}}\Hypertarget{group__hal___gga63592210c9f6bba65e47bee41ba33aada67b7cb6d7acd443c7ce155f79e24e8a3}\label{group__hal___gga63592210c9f6bba65e47bee41ba33aada67b7cb6d7acd443c7ce155f79e24e8a3} 
+ATCA\+\_\+\+HAL\+\_\+\+CONTROL\+\_\+\+WAKE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ATCA\_HAL\_CONTROL\_IDLE@{ATCA\_HAL\_CONTROL\_IDLE}!Hardware abstraction layer (hal\_)@{Hardware abstraction layer (hal\_)}}\index{Hardware abstraction layer (hal\_)@{Hardware abstraction layer (hal\_)}!ATCA\_HAL\_CONTROL\_IDLE@{ATCA\_HAL\_CONTROL\_IDLE}}}\Hypertarget{group__hal___gga63592210c9f6bba65e47bee41ba33aada68f29ce1dae672fba4d0bd72a2520787}\label{group__hal___gga63592210c9f6bba65e47bee41ba33aada68f29ce1dae672fba4d0bd72a2520787} 
+ATCA\+\_\+\+HAL\+\_\+\+CONTROL\+\_\+\+IDLE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ATCA\_HAL\_CONTROL\_SLEEP@{ATCA\_HAL\_CONTROL\_SLEEP}!Hardware abstraction layer (hal\_)@{Hardware abstraction layer (hal\_)}}\index{Hardware abstraction layer (hal\_)@{Hardware abstraction layer (hal\_)}!ATCA\_HAL\_CONTROL\_SLEEP@{ATCA\_HAL\_CONTROL\_SLEEP}}}\Hypertarget{group__hal___gga63592210c9f6bba65e47bee41ba33aada2d7aafbda814952834385918b0b71fb2}\label{group__hal___gga63592210c9f6bba65e47bee41ba33aada2d7aafbda814952834385918b0b71fb2} 
+ATCA\+\_\+\+HAL\+\_\+\+CONTROL\+\_\+\+SLEEP&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ATCA\_HAL\_CONTROL\_RESET@{ATCA\_HAL\_CONTROL\_RESET}!Hardware abstraction layer (hal\_)@{Hardware abstraction layer (hal\_)}}\index{Hardware abstraction layer (hal\_)@{Hardware abstraction layer (hal\_)}!ATCA\_HAL\_CONTROL\_RESET@{ATCA\_HAL\_CONTROL\_RESET}}}\Hypertarget{group__hal___gga63592210c9f6bba65e47bee41ba33aada707f9990e8082bd03fc6d3b57f4554dd}\label{group__hal___gga63592210c9f6bba65e47bee41ba33aada707f9990e8082bd03fc6d3b57f4554dd} 
+ATCA\+\_\+\+HAL\+\_\+\+CONTROL\+\_\+\+RESET&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ATCA\_HAL\_CONTROL\_SELECT@{ATCA\_HAL\_CONTROL\_SELECT}!Hardware abstraction layer (hal\_)@{Hardware abstraction layer (hal\_)}}\index{Hardware abstraction layer (hal\_)@{Hardware abstraction layer (hal\_)}!ATCA\_HAL\_CONTROL\_SELECT@{ATCA\_HAL\_CONTROL\_SELECT}}}\Hypertarget{group__hal___gga63592210c9f6bba65e47bee41ba33aada353f3f565c16842ce1cd1353a9967e0f}\label{group__hal___gga63592210c9f6bba65e47bee41ba33aada353f3f565c16842ce1cd1353a9967e0f} 
+ATCA\+\_\+\+HAL\+\_\+\+CONTROL\+\_\+\+SELECT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ATCA\_HAL\_CONTROL\_DESELECT@{ATCA\_HAL\_CONTROL\_DESELECT}!Hardware abstraction layer (hal\_)@{Hardware abstraction layer (hal\_)}}\index{Hardware abstraction layer (hal\_)@{Hardware abstraction layer (hal\_)}!ATCA\_HAL\_CONTROL\_DESELECT@{ATCA\_HAL\_CONTROL\_DESELECT}}}\Hypertarget{group__hal___gga63592210c9f6bba65e47bee41ba33aadae67d200e332beb287624f9e077718b7c}\label{group__hal___gga63592210c9f6bba65e47bee41ba33aadae67d200e332beb287624f9e077718b7c} 
+ATCA\+\_\+\+HAL\+\_\+\+CONTROL\+\_\+\+DESELECT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ATCA\_HAL\_CHANGE\_BAUD@{ATCA\_HAL\_CHANGE\_BAUD}!Hardware abstraction layer (hal\_)@{Hardware abstraction layer (hal\_)}}\index{Hardware abstraction layer (hal\_)@{Hardware abstraction layer (hal\_)}!ATCA\_HAL\_CHANGE\_BAUD@{ATCA\_HAL\_CHANGE\_BAUD}}}\Hypertarget{group__hal___gga63592210c9f6bba65e47bee41ba33aada0af7e182f6bfea47544cb3ec2fce26c9}\label{group__hal___gga63592210c9f6bba65e47bee41ba33aada0af7e182f6bfea47544cb3ec2fce26c9} 
+ATCA\+\_\+\+HAL\+\_\+\+CHANGE\+\_\+\+BAUD&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ATCA\_HAL\_FLUSH\_BUFFER@{ATCA\_HAL\_FLUSH\_BUFFER}!Hardware abstraction layer (hal\_)@{Hardware abstraction layer (hal\_)}}\index{Hardware abstraction layer (hal\_)@{Hardware abstraction layer (hal\_)}!ATCA\_HAL\_FLUSH\_BUFFER@{ATCA\_HAL\_FLUSH\_BUFFER}}}\Hypertarget{group__hal___gga63592210c9f6bba65e47bee41ba33aada9416d42f10d7aaa9affeaed33927d3b4}\label{group__hal___gga63592210c9f6bba65e47bee41ba33aada9416d42f10d7aaa9affeaed33927d3b4} 
+ATCA\+\_\+\+HAL\+\_\+\+FLUSH\+\_\+\+BUFFER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ATCA\_HAL\_CONTROL\_DIRECTION@{ATCA\_HAL\_CONTROL\_DIRECTION}!Hardware abstraction layer (hal\_)@{Hardware abstraction layer (hal\_)}}\index{Hardware abstraction layer (hal\_)@{Hardware abstraction layer (hal\_)}!ATCA\_HAL\_CONTROL\_DIRECTION@{ATCA\_HAL\_CONTROL\_DIRECTION}}}\Hypertarget{group__hal___gga63592210c9f6bba65e47bee41ba33aadaefe1d680f11ecfc9ed6a86eb80bac8ff}\label{group__hal___gga63592210c9f6bba65e47bee41ba33aadaefe1d680f11ecfc9ed6a86eb80bac8ff} 
+ATCA\+\_\+\+HAL\+\_\+\+CONTROL\+\_\+\+DIRECTION&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{group__hal___ga0544f36422b5e9a8890fb9c90fc5eb55}\label{group__hal___ga0544f36422b5e9a8890fb9c90fc5eb55} 
+\index{Hardware abstraction layer (hal\_)@{Hardware abstraction layer (hal\_)}!atca\_delay\_ms@{atca\_delay\_ms}}
+\index{atca\_delay\_ms@{atca\_delay\_ms}!Hardware abstraction layer (hal\_)@{Hardware abstraction layer (hal\_)}}
+\doxysubsubsection{\texorpdfstring{atca\_delay\_ms()}{atca\_delay\_ms()}}
+{\footnotesize\ttfamily void atca\+\_\+delay\+\_\+ms (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}}}]{ms }\end{DoxyParamCaption})}
+
+
+
+Timer API for legacy implementations. 
+
+\Hypertarget{group__hal___ga847db2fb4380f9365db262e4a41fa3e1}\label{group__hal___ga847db2fb4380f9365db262e4a41fa3e1} 
+\index{Hardware abstraction layer (hal\_)@{Hardware abstraction layer (hal\_)}!atca\_delay\_us@{atca\_delay\_us}}
+\index{atca\_delay\_us@{atca\_delay\_us}!Hardware abstraction layer (hal\_)@{Hardware abstraction layer (hal\_)}}
+\doxysubsubsection{\texorpdfstring{atca\_delay\_us()}{atca\_delay\_us()}}
+{\footnotesize\ttfamily void atca\+\_\+delay\+\_\+us (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}}}]{us }\end{DoxyParamCaption})}
+
+\Hypertarget{group__hal___ga6ce92f1d10000eb6618fc74c2ca92d76}\label{group__hal___ga6ce92f1d10000eb6618fc74c2ca92d76} 
+\index{Hardware abstraction layer (hal\_)@{Hardware abstraction layer (hal\_)}!hal\_check\_wake@{hal\_check\_wake}}
+\index{hal\_check\_wake@{hal\_check\_wake}!Hardware abstraction layer (hal\_)@{Hardware abstraction layer (hal\_)}}
+\doxysubsubsection{\texorpdfstring{hal\_check\_wake()}{hal\_check\_wake()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} hal\+\_\+check\+\_\+wake (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{response,  }\item[{int}]{response\+\_\+size }\end{DoxyParamCaption})}
+
+\Hypertarget{group__hal___gab289a3949663589ac6be71d72fb18278}\label{group__hal___gab289a3949663589ac6be71d72fb18278} 
+\index{Hardware abstraction layer (hal\_)@{Hardware abstraction layer (hal\_)}!hal\_create\_mutex@{hal\_create\_mutex}}
+\index{hal\_create\_mutex@{hal\_create\_mutex}!Hardware abstraction layer (hal\_)@{Hardware abstraction layer (hal\_)}}
+\doxysubsubsection{\texorpdfstring{hal\_create\_mutex()}{hal\_create\_mutex()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} hal\+\_\+create\+\_\+mutex (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{pp\+Mutex,  }\item[{char \texorpdfstring{$\ast$}{*}}]{p\+Name }\end{DoxyParamCaption})}
+
+
+
+Optional hal interfaces. 
+
+\Hypertarget{group__hal___ga57165466685c07db56639eefa2c7762c}\label{group__hal___ga57165466685c07db56639eefa2c7762c} 
+\index{Hardware abstraction layer (hal\_)@{Hardware abstraction layer (hal\_)}!hal\_delay\_ms@{hal\_delay\_ms}}
+\index{hal\_delay\_ms@{hal\_delay\_ms}!Hardware abstraction layer (hal\_)@{Hardware abstraction layer (hal\_)}}
+\doxysubsubsection{\texorpdfstring{hal\_delay\_ms()}{hal\_delay\_ms()}}
+{\footnotesize\ttfamily void hal\+\_\+delay\+\_\+ms (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}}}]{ms }\end{DoxyParamCaption})}
+
+\Hypertarget{group__hal___ga7430997881f872935a85edfd41d9df17}\label{group__hal___ga7430997881f872935a85edfd41d9df17} 
+\index{Hardware abstraction layer (hal\_)@{Hardware abstraction layer (hal\_)}!hal\_delay\_us@{hal\_delay\_us}}
+\index{hal\_delay\_us@{hal\_delay\_us}!Hardware abstraction layer (hal\_)@{Hardware abstraction layer (hal\_)}}
+\doxysubsubsection{\texorpdfstring{hal\_delay\_us()}{hal\_delay\_us()}}
+{\footnotesize\ttfamily void hal\+\_\+delay\+\_\+us (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}}}]{us }\end{DoxyParamCaption})}
+
+\Hypertarget{group__hal___ga4589d7b3e951f40b7928f1cf31f7ddf3}\label{group__hal___ga4589d7b3e951f40b7928f1cf31f7ddf3} 
+\index{Hardware abstraction layer (hal\_)@{Hardware abstraction layer (hal\_)}!hal\_destroy\_mutex@{hal\_destroy\_mutex}}
+\index{hal\_destroy\_mutex@{hal\_destroy\_mutex}!Hardware abstraction layer (hal\_)@{Hardware abstraction layer (hal\_)}}
+\doxysubsubsection{\texorpdfstring{hal\_destroy\_mutex()}{hal\_destroy\_mutex()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} hal\+\_\+destroy\+\_\+mutex (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{p\+Mutex }\end{DoxyParamCaption})}
+
+\Hypertarget{group__hal___ga4f82572f05b8587d98bc38601453863e}\label{group__hal___ga4f82572f05b8587d98bc38601453863e} 
+\index{Hardware abstraction layer (hal\_)@{Hardware abstraction layer (hal\_)}!hal\_i2c\_control@{hal\_i2c\_control}}
+\index{hal\_i2c\_control@{hal\_i2c\_control}!Hardware abstraction layer (hal\_)@{Hardware abstraction layer (hal\_)}}
+\doxysubsubsection{\texorpdfstring{hal\_i2c\_control()}{hal\_i2c\_control()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} hal\+\_\+i2c\+\_\+control (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__interface_ga75c11126f3fe81df3d6c27f5bb393303}{ATCAIface}}}]{iface,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{option,  }\item[{void \texorpdfstring{$\ast$}{*}}]{param,  }\item[{size\+\_\+t}]{paramlen }\end{DoxyParamCaption})}
+
+\Hypertarget{group__hal___ga9317303ada721ff3f97e7aad69437a30}\label{group__hal___ga9317303ada721ff3f97e7aad69437a30} 
+\index{Hardware abstraction layer (hal\_)@{Hardware abstraction layer (hal\_)}!hal\_i2c\_idle@{hal\_i2c\_idle}}
+\index{hal\_i2c\_idle@{hal\_i2c\_idle}!Hardware abstraction layer (hal\_)@{Hardware abstraction layer (hal\_)}}
+\doxysubsubsection{\texorpdfstring{hal\_i2c\_idle()}{hal\_i2c\_idle()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} hal\+\_\+i2c\+\_\+idle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__interface_ga75c11126f3fe81df3d6c27f5bb393303}{ATCAIface}}}]{iface }\end{DoxyParamCaption})}
+
+\Hypertarget{group__hal___ga17df8d983df73e2e8f62f1236f157909}\label{group__hal___ga17df8d983df73e2e8f62f1236f157909} 
+\index{Hardware abstraction layer (hal\_)@{Hardware abstraction layer (hal\_)}!hal\_i2c\_init@{hal\_i2c\_init}}
+\index{hal\_i2c\_init@{hal\_i2c\_init}!Hardware abstraction layer (hal\_)@{Hardware abstraction layer (hal\_)}}
+\doxysubsubsection{\texorpdfstring{hal\_i2c\_init()}{hal\_i2c\_init()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} hal\+\_\+i2c\+\_\+init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__interface_ga75c11126f3fe81df3d6c27f5bb393303}{ATCAIface}}}]{iface,  }\item[{\mbox{\hyperlink{struct_a_t_c_a_iface_cfg}{ATCAIface\+Cfg}} \texorpdfstring{$\ast$}{*}}]{cfg }\end{DoxyParamCaption})}
+
+\Hypertarget{group__hal___gafbe53519362f18c2688d10da6f7c618f}\label{group__hal___gafbe53519362f18c2688d10da6f7c618f} 
+\index{Hardware abstraction layer (hal\_)@{Hardware abstraction layer (hal\_)}!hal\_i2c\_post\_init@{hal\_i2c\_post\_init}}
+\index{hal\_i2c\_post\_init@{hal\_i2c\_post\_init}!Hardware abstraction layer (hal\_)@{Hardware abstraction layer (hal\_)}}
+\doxysubsubsection{\texorpdfstring{hal\_i2c\_post\_init()}{hal\_i2c\_post\_init()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} hal\+\_\+i2c\+\_\+post\+\_\+init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__interface_ga75c11126f3fe81df3d6c27f5bb393303}{ATCAIface}}}]{iface }\end{DoxyParamCaption})}
+
+\Hypertarget{group__hal___ga41a2b07d55558b9726abe28fd8431e90}\label{group__hal___ga41a2b07d55558b9726abe28fd8431e90} 
+\index{Hardware abstraction layer (hal\_)@{Hardware abstraction layer (hal\_)}!hal\_i2c\_receive@{hal\_i2c\_receive}}
+\index{hal\_i2c\_receive@{hal\_i2c\_receive}!Hardware abstraction layer (hal\_)@{Hardware abstraction layer (hal\_)}}
+\doxysubsubsection{\texorpdfstring{hal\_i2c\_receive()}{hal\_i2c\_receive()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} hal\+\_\+i2c\+\_\+receive (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__interface_ga75c11126f3fe81df3d6c27f5bb393303}{ATCAIface}}}]{iface,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{word\+\_\+address,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{rxdata,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{rxlength }\end{DoxyParamCaption})}
+
+\Hypertarget{group__hal___gac382cc4431d2d1c721c21a453ba36c22}\label{group__hal___gac382cc4431d2d1c721c21a453ba36c22} 
+\index{Hardware abstraction layer (hal\_)@{Hardware abstraction layer (hal\_)}!hal\_i2c\_release@{hal\_i2c\_release}}
+\index{hal\_i2c\_release@{hal\_i2c\_release}!Hardware abstraction layer (hal\_)@{Hardware abstraction layer (hal\_)}}
+\doxysubsubsection{\texorpdfstring{hal\_i2c\_release()}{hal\_i2c\_release()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} hal\+\_\+i2c\+\_\+release (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{hal\+\_\+data }\end{DoxyParamCaption})}
+
+\Hypertarget{group__hal___gacc9a889e19d2f1a475a39391565b66dd}\label{group__hal___gacc9a889e19d2f1a475a39391565b66dd} 
+\index{Hardware abstraction layer (hal\_)@{Hardware abstraction layer (hal\_)}!hal\_i2c\_send@{hal\_i2c\_send}}
+\index{hal\_i2c\_send@{hal\_i2c\_send}!Hardware abstraction layer (hal\_)@{Hardware abstraction layer (hal\_)}}
+\doxysubsubsection{\texorpdfstring{hal\_i2c\_send()}{hal\_i2c\_send()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} hal\+\_\+i2c\+\_\+send (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__interface_ga75c11126f3fe81df3d6c27f5bb393303}{ATCAIface}}}]{iface,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{word\+\_\+address,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{txdata,  }\item[{int}]{txlength }\end{DoxyParamCaption})}
+
+\Hypertarget{group__hal___ga3f89bae6a625d5f37abdcc99408def27}\label{group__hal___ga3f89bae6a625d5f37abdcc99408def27} 
+\index{Hardware abstraction layer (hal\_)@{Hardware abstraction layer (hal\_)}!hal\_i2c\_sleep@{hal\_i2c\_sleep}}
+\index{hal\_i2c\_sleep@{hal\_i2c\_sleep}!Hardware abstraction layer (hal\_)@{Hardware abstraction layer (hal\_)}}
+\doxysubsubsection{\texorpdfstring{hal\_i2c\_sleep()}{hal\_i2c\_sleep()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} hal\+\_\+i2c\+\_\+sleep (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__interface_ga75c11126f3fe81df3d6c27f5bb393303}{ATCAIface}}}]{iface }\end{DoxyParamCaption})}
+
+\Hypertarget{group__hal___gad4df1b6755e2d5b5d9e810371e45ca8c}\label{group__hal___gad4df1b6755e2d5b5d9e810371e45ca8c} 
+\index{Hardware abstraction layer (hal\_)@{Hardware abstraction layer (hal\_)}!hal\_i2c\_wake@{hal\_i2c\_wake}}
+\index{hal\_i2c\_wake@{hal\_i2c\_wake}!Hardware abstraction layer (hal\_)@{Hardware abstraction layer (hal\_)}}
+\doxysubsubsection{\texorpdfstring{hal\_i2c\_wake()}{hal\_i2c\_wake()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} hal\+\_\+i2c\+\_\+wake (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__interface_ga75c11126f3fe81df3d6c27f5bb393303}{ATCAIface}}}]{iface }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__hal___gad4df1b6755e2d5b5d9e810371e45ca8c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{group__hal___gaf17e547bf330b9b561fd34437f09e616}\label{group__hal___gaf17e547bf330b9b561fd34437f09e616} 
+\index{Hardware abstraction layer (hal\_)@{Hardware abstraction layer (hal\_)}!hal\_iface\_init@{hal\_iface\_init}}
+\index{hal\_iface\_init@{hal\_iface\_init}!Hardware abstraction layer (hal\_)@{Hardware abstraction layer (hal\_)}}
+\doxysubsubsection{\texorpdfstring{hal\_iface\_init()}{hal\_iface\_init()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} hal\+\_\+iface\+\_\+init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_a_t_c_a_iface_cfg}{ATCAIface\+Cfg}} \texorpdfstring{$\ast$}{*}}]{,  }\item[{\mbox{\hyperlink{struct_a_t_c_a_h_a_l__t}{ATCAHAL\+\_\+t}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{hal,  }\item[{\mbox{\hyperlink{struct_a_t_c_a_h_a_l__t}{ATCAHAL\+\_\+t}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{phy }\end{DoxyParamCaption})}
+
+\Hypertarget{group__hal___ga43e975cd670652e6ae76f390b2e82218}\label{group__hal___ga43e975cd670652e6ae76f390b2e82218} 
+\index{Hardware abstraction layer (hal\_)@{Hardware abstraction layer (hal\_)}!hal\_iface\_register\_hal@{hal\_iface\_register\_hal}}
+\index{hal\_iface\_register\_hal@{hal\_iface\_register\_hal}!Hardware abstraction layer (hal\_)@{Hardware abstraction layer (hal\_)}}
+\doxysubsubsection{\texorpdfstring{hal\_iface\_register\_hal()}{hal\_iface\_register\_hal()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} hal\+\_\+iface\+\_\+register\+\_\+hal (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__interface_gac7f674d4a0afb12d2f3c9c5e98cb1089}{ATCAIface\+Type}}}]{iface\+\_\+type,  }\item[{\mbox{\hyperlink{struct_a_t_c_a_h_a_l__t}{ATCAHAL\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{hal,  }\item[{\mbox{\hyperlink{struct_a_t_c_a_h_a_l__t}{ATCAHAL\+\_\+t}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{old\+\_\+hal,  }\item[{\mbox{\hyperlink{struct_a_t_c_a_h_a_l__t}{ATCAHAL\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{phy,  }\item[{\mbox{\hyperlink{struct_a_t_c_a_h_a_l__t}{ATCAHAL\+\_\+t}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{old\+\_\+phy }\end{DoxyParamCaption})}
+
+\Hypertarget{group__hal___ga4be1afccb41f28f6ce620b1d5197befc}\label{group__hal___ga4be1afccb41f28f6ce620b1d5197befc} 
+\index{Hardware abstraction layer (hal\_)@{Hardware abstraction layer (hal\_)}!hal\_iface\_release@{hal\_iface\_release}}
+\index{hal\_iface\_release@{hal\_iface\_release}!Hardware abstraction layer (hal\_)@{Hardware abstraction layer (hal\_)}}
+\doxysubsubsection{\texorpdfstring{hal\_iface\_release()}{hal\_iface\_release()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} hal\+\_\+iface\+\_\+release (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__interface_gac7f674d4a0afb12d2f3c9c5e98cb1089}{ATCAIface\+Type}}}]{,  }\item[{void \texorpdfstring{$\ast$}{*}}]{hal\+\_\+data }\end{DoxyParamCaption})}
+
+\Hypertarget{group__hal___gac5acbcb3cee22506992d838cd8a3e8ae}\label{group__hal___gac5acbcb3cee22506992d838cd8a3e8ae} 
+\index{Hardware abstraction layer (hal\_)@{Hardware abstraction layer (hal\_)}!hal\_is\_command\_word@{hal\_is\_command\_word}}
+\index{hal\_is\_command\_word@{hal\_is\_command\_word}!Hardware abstraction layer (hal\_)@{Hardware abstraction layer (hal\_)}}
+\doxysubsubsection{\texorpdfstring{hal\_is\_command\_word()}{hal\_is\_command\_word()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} hal\+\_\+is\+\_\+command\+\_\+word (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{word\+\_\+address }\end{DoxyParamCaption})}
+
+\Hypertarget{group__hal___gad4cd02ff7ae4e75844eab4e84eb61994}\label{group__hal___gad4cd02ff7ae4e75844eab4e84eb61994} 
+\index{Hardware abstraction layer (hal\_)@{Hardware abstraction layer (hal\_)}!hal\_lock\_mutex@{hal\_lock\_mutex}}
+\index{hal\_lock\_mutex@{hal\_lock\_mutex}!Hardware abstraction layer (hal\_)@{Hardware abstraction layer (hal\_)}}
+\doxysubsubsection{\texorpdfstring{hal\_lock\_mutex()}{hal\_lock\_mutex()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} hal\+\_\+lock\+\_\+mutex (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{p\+Mutex }\end{DoxyParamCaption})}
+
+\Hypertarget{group__hal___ga3df335e46c7e798a1d4b8949d00c13d3}\label{group__hal___ga3df335e46c7e798a1d4b8949d00c13d3} 
+\index{Hardware abstraction layer (hal\_)@{Hardware abstraction layer (hal\_)}!hal\_rtos\_delay\_ms@{hal\_rtos\_delay\_ms}}
+\index{hal\_rtos\_delay\_ms@{hal\_rtos\_delay\_ms}!Hardware abstraction layer (hal\_)@{Hardware abstraction layer (hal\_)}}
+\doxysubsubsection{\texorpdfstring{hal\_rtos\_delay\_ms()}{hal\_rtos\_delay\_ms()}}
+{\footnotesize\ttfamily void hal\+\_\+rtos\+\_\+delay\+\_\+ms (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}}}]{ms }\end{DoxyParamCaption})}
+
+
+
+Timer API implemented at the HAL level. 
+
+\Hypertarget{group__hal___ga31fd8170a49623686543f6247b883bd1}\label{group__hal___ga31fd8170a49623686543f6247b883bd1} 
+\index{Hardware abstraction layer (hal\_)@{Hardware abstraction layer (hal\_)}!hal\_unlock\_mutex@{hal\_unlock\_mutex}}
+\index{hal\_unlock\_mutex@{hal\_unlock\_mutex}!Hardware abstraction layer (hal\_)@{Hardware abstraction layer (hal\_)}}
+\doxysubsubsection{\texorpdfstring{hal\_unlock\_mutex()}{hal\_unlock\_mutex()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{atca__status_8h_a22bd6643f31f1d75dc3e7ea939f468cd}{ATCA\+\_\+\+STATUS}} hal\+\_\+unlock\+\_\+mutex (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{p\+Mutex }\end{DoxyParamCaption})}
+

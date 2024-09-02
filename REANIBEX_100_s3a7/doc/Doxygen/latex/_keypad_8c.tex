@@ -1,0 +1,247 @@
+\doxysection{C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\+Resources/\+Keypad.c File Reference}
+\hypertarget{_keypad_8c}{}\label{_keypad_8c}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/Resources/Keypad.c@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/Resources/Keypad.c}}
+
+
+All functions related to the keyboard and LEDs manage.  
+
+
+{\ttfamily \#include "{}Keypad.\+h"{}}\newline
+{\ttfamily \#include "{}types\+\_\+app.\+h"{}}\newline
+{\ttfamily \#include "{}types\+\_\+basic.\+h"{}}\newline
+{\ttfamily \#include "{}hal\+\_\+data.\+h"{}}\newline
+Include dependency graph for Keypad.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_keypad_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_keypad_8c_a85f68c324bcd7f33e11be74a6758ce9c}{Led\+\_\+\+On}} (\mbox{\hyperlink{_keypad_8h_acd3ee7b802ee0e1c62c12b822423625c}{LED\+\_\+\+IDENT\+\_\+e}} led\+\_\+idx)
+\begin{DoxyCompactList}\small\item\em Turn on the led indicated by index. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_keypad_8c_a0c22a53e2eb89f7fbdd6df32dcf94023}{Led\+\_\+\+Off}} (\mbox{\hyperlink{_keypad_8h_acd3ee7b802ee0e1c62c12b822423625c}{LED\+\_\+\+IDENT\+\_\+e}} led\+\_\+idx)
+\begin{DoxyCompactList}\small\item\em Turn off the led indicated by index. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_keypad_8c_acaa4b7886f52b86feeae6440612657ee}{Led\+\_\+\+Blink}} (\mbox{\hyperlink{_keypad_8h_acd3ee7b802ee0e1c62c12b822423625c}{LED\+\_\+\+IDENT\+\_\+e}} led\+\_\+idx)
+\begin{DoxyCompactList}\small\item\em Blink the led indicated by index. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_keypad_8c_ac2fd516e7322a1e1b213a5c0a2ac476d}{Led\+\_\+\+Toggle}} (\mbox{\hyperlink{_keypad_8h_acd3ee7b802ee0e1c62c12b822423625c}{LED\+\_\+\+IDENT\+\_\+e}} led\+\_\+idx)
+\begin{DoxyCompactList}\small\item\em Toggle the led indicated by index. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_keypad_8c_a645b08dd1d804a4be4086c371f5f96bc}{Led\+\_\+\+Ongoing\+\_\+\+Transmission}} (void)
+\begin{DoxyCompactList}\small\item\em LED animation for transmission. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_keypad_8c_a839fe2480871da309772427ea7a49cf5}{Blink\+\_\+\+Refresh}} (void)
+\begin{DoxyCompactList}\small\item\em Refresh the blinking leds. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_keypad_8h_aad7f10e79c2b7cac7fe25834e5fc1fa2}{KEY\+\_\+\+STATUS\+\_\+e}} \mbox{\hyperlink{_keypad_8c_a65899dc7cce4138cd4488d27daff459d}{Key\+\_\+\+Read}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} key\+\_\+idx)
+\begin{DoxyCompactList}\small\item\em Read from Key-\/board. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{_keypad_8c_ac8851dfbf7a0f54e45db43506b6e54ea}{led\+\_\+io\+\_\+port}} \mbox{[}$\,$\mbox{]}
+\item 
+static \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \mbox{\hyperlink{_keypad_8c_a907f3bd62c3cb8fac0a0163b730b905e}{blinker}} \mbox{[}\mbox{\hyperlink{_keypad_8h_acd3ee7b802ee0e1c62c12b822423625ca65302b648f723384a609693d44ab941d}{LED\+\_\+\+MAX}}\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+All functions related to the keyboard and LEDs manage. 
+
+\begin{DoxyVersion}{Version}
+v1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+16/01/2018 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+ltorres 
+\end{DoxyAuthor}
+\begin{DoxyWarning}{Warning}
+author date version .-\/ Edition 
+\end{DoxyWarning}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000059}{Bug}}]\end{DoxyRefDesc}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_keypad_8c_a839fe2480871da309772427ea7a49cf5}\label{_keypad_8c_a839fe2480871da309772427ea7a49cf5} 
+\index{Keypad.c@{Keypad.c}!Blink\_Refresh@{Blink\_Refresh}}
+\index{Blink\_Refresh@{Blink\_Refresh}!Keypad.c@{Keypad.c}}
+\doxysubsubsection{\texorpdfstring{Blink\_Refresh()}{Blink\_Refresh()}}
+{\footnotesize\ttfamily void Blink\+\_\+\+Refresh (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Refresh the blinking leds. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_keypad_8c_a839fe2480871da309772427ea7a49cf5_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_keypad_8c_a65899dc7cce4138cd4488d27daff459d}\label{_keypad_8c_a65899dc7cce4138cd4488d27daff459d} 
+\index{Keypad.c@{Keypad.c}!Key\_Read@{Key\_Read}}
+\index{Key\_Read@{Key\_Read}!Keypad.c@{Keypad.c}}
+\doxysubsubsection{\texorpdfstring{Key\_Read()}{Key\_Read()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_keypad_8h_aad7f10e79c2b7cac7fe25834e5fc1fa2}{KEY\+\_\+\+STATUS\+\_\+e}} Key\+\_\+\+Read (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}}}]{key\+\_\+idx }\end{DoxyParamCaption})}
+
+
+
+Read from Key-\/board. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key\+\_\+idx} & Key to check\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+KEY\+\_\+\+STATUS\+\_\+e 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_keypad_8c_a65899dc7cce4138cd4488d27daff459d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_keypad_8c_acaa4b7886f52b86feeae6440612657ee}\label{_keypad_8c_acaa4b7886f52b86feeae6440612657ee} 
+\index{Keypad.c@{Keypad.c}!Led\_Blink@{Led\_Blink}}
+\index{Led\_Blink@{Led\_Blink}!Keypad.c@{Keypad.c}}
+\doxysubsubsection{\texorpdfstring{Led\_Blink()}{Led\_Blink()}}
+{\footnotesize\ttfamily void Led\+\_\+\+Blink (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_keypad_8h_acd3ee7b802ee0e1c62c12b822423625c}{LED\+\_\+\+IDENT\+\_\+e}}}]{led\+\_\+idx }\end{DoxyParamCaption})}
+
+
+
+Blink the led indicated by index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em led\+\_\+idx} & Index of the led to blink \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_keypad_8c_acaa4b7886f52b86feeae6440612657ee_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_keypad_8c_a0c22a53e2eb89f7fbdd6df32dcf94023}\label{_keypad_8c_a0c22a53e2eb89f7fbdd6df32dcf94023} 
+\index{Keypad.c@{Keypad.c}!Led\_Off@{Led\_Off}}
+\index{Led\_Off@{Led\_Off}!Keypad.c@{Keypad.c}}
+\doxysubsubsection{\texorpdfstring{Led\_Off()}{Led\_Off()}}
+{\footnotesize\ttfamily void Led\+\_\+\+Off (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_keypad_8h_acd3ee7b802ee0e1c62c12b822423625c}{LED\+\_\+\+IDENT\+\_\+e}}}]{led\+\_\+idx }\end{DoxyParamCaption})}
+
+
+
+Turn off the led indicated by index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em led\+\_\+idx} & Index of the led to turn off \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_keypad_8c_a0c22a53e2eb89f7fbdd6df32dcf94023_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_keypad_8c_a85f68c324bcd7f33e11be74a6758ce9c}\label{_keypad_8c_a85f68c324bcd7f33e11be74a6758ce9c} 
+\index{Keypad.c@{Keypad.c}!Led\_On@{Led\_On}}
+\index{Led\_On@{Led\_On}!Keypad.c@{Keypad.c}}
+\doxysubsubsection{\texorpdfstring{Led\_On()}{Led\_On()}}
+{\footnotesize\ttfamily void Led\+\_\+\+On (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_keypad_8h_acd3ee7b802ee0e1c62c12b822423625c}{LED\+\_\+\+IDENT\+\_\+e}}}]{led\+\_\+idx }\end{DoxyParamCaption})}
+
+
+
+Turn on the led indicated by index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em led\+\_\+idx} & Index of the led to turn on \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_keypad_8c_a85f68c324bcd7f33e11be74a6758ce9c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_keypad_8c_a645b08dd1d804a4be4086c371f5f96bc}\label{_keypad_8c_a645b08dd1d804a4be4086c371f5f96bc} 
+\index{Keypad.c@{Keypad.c}!Led\_Ongoing\_Transmission@{Led\_Ongoing\_Transmission}}
+\index{Led\_Ongoing\_Transmission@{Led\_Ongoing\_Transmission}!Keypad.c@{Keypad.c}}
+\doxysubsubsection{\texorpdfstring{Led\_Ongoing\_Transmission()}{Led\_Ongoing\_Transmission()}}
+{\footnotesize\ttfamily void Led\+\_\+\+Ongoing\+\_\+\+Transmission (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+LED animation for transmission. 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{_keypad_8c_a645b08dd1d804a4be4086c371f5f96bc_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_keypad_8c_a645b08dd1d804a4be4086c371f5f96bc_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{_keypad_8c_ac2fd516e7322a1e1b213a5c0a2ac476d}\label{_keypad_8c_ac2fd516e7322a1e1b213a5c0a2ac476d} 
+\index{Keypad.c@{Keypad.c}!Led\_Toggle@{Led\_Toggle}}
+\index{Led\_Toggle@{Led\_Toggle}!Keypad.c@{Keypad.c}}
+\doxysubsubsection{\texorpdfstring{Led\_Toggle()}{Led\_Toggle()}}
+{\footnotesize\ttfamily void Led\+\_\+\+Toggle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_keypad_8h_acd3ee7b802ee0e1c62c12b822423625c}{LED\+\_\+\+IDENT\+\_\+e}}}]{led\+\_\+idx }\end{DoxyParamCaption})}
+
+
+
+Toggle the led indicated by index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em led\+\_\+idx} & Index of the led to toggle \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_keypad_8c_ac2fd516e7322a1e1b213a5c0a2ac476d_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{_keypad_8c_a907f3bd62c3cb8fac0a0163b730b905e}\label{_keypad_8c_a907f3bd62c3cb8fac0a0163b730b905e} 
+\index{Keypad.c@{Keypad.c}!blinker@{blinker}}
+\index{blinker@{blinker}!Keypad.c@{Keypad.c}}
+\doxysubsubsection{\texorpdfstring{blinker}{blinker}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} blinker\mbox{[}\mbox{\hyperlink{_keypad_8h_acd3ee7b802ee0e1c62c12b822423625ca65302b648f723384a609693d44ab941d}{LED\+\_\+\+MAX}}\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{_keypad_8c_ac8851dfbf7a0f54e45db43506b6e54ea}\label{_keypad_8c_ac8851dfbf7a0f54e45db43506b6e54ea} 
+\index{Keypad.c@{Keypad.c}!led\_io\_port@{led\_io\_port}}
+\index{led\_io\_port@{led\_io\_port}!Keypad.c@{Keypad.c}}
+\doxysubsubsection{\texorpdfstring{led\_io\_port}{led\_io\_port}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} led\+\_\+io\+\_\+port\mbox{[}$\,$\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ IOPORT\_PORT\_07\_PIN\_08,\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \ \ IOPORT\_PORT\_04\_PIN\_14,\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \ \ IOPORT\_PORT\_03\_PIN\_06\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}

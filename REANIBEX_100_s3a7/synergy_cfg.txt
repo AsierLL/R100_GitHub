@@ -1,0 +1,966 @@
+Synergy Configuration
+  Board "Custom User Board (Any Device)"
+  R7FS3A77C3A01CFP
+    part_number: R7FS3A77C3A01CFP
+    rom_size_bytes: 1048576
+    ram_size_bytes: 196608
+    data_flash_size_bytes: 16384
+    package_style: LQFP
+    package_pins: 100
+    
+  S3A7
+    series: 3
+    
+  S3A7 Family
+    OFS0 register settings: Select fields below
+         IWDT Start Mode: IWDT is automatically activated after a reset (Autostart mode)
+         IWDT Timeout Period: 1024 cycles
+         IWDT Dedicated Clock Frequency Divisor: 64
+         IWDT Window End Position:  0% (no window end position)
+         IWDT Window Start Position: 100% (no window start position)
+         IWDT Reset Interrupt Request Select: Reset is enabled
+         IWDT Stop Control: Counting continues
+         WDT Start Mode Select: Stop WDT after a reset (register-start mode)
+         WDT Timeout Period: 16384 cycles
+         WDT Clock Frequency Division Ratio: 512
+         WDT Window End Position:  0% (no window end position)
+         WDT Window Start Position: 100% (no window start position)
+         WDT Reset Interrupt Request: Reset
+         WDT Stop Control: Stop counting when entering Sleep mode
+    OFS1 register settings: Select fields below
+         Voltage Detection 0 Circuit Start: Voltage monitor 0 reset is disabled after reset
+         Voltage Detection 0 Level: 1.90 V
+         HOCO OScillation Enable: HOCO oscillation is disabled after reset
+    MPU - Enable or disable PC Region 0: Disabled
+    MPU - PC0 Start: 0x000FFFFC
+    MPU - PC0 End: 0x000FFFFF
+    MPU - Enable or disable PC Region 1: Disabled
+    MPU - PC1 Start: 0x000FFFFC
+    MPU - PC1 End: 0x000FFFFF
+    MPU - Enable or disable Memory Region 0: Disabled
+    MPU - Memory Region 0 Start: 0x000FFFFC
+    MPU - Memory Region 0 End: 0x000FFFFF
+    
+  Synergy Common
+    Main stack size (bytes): 0x1000
+    Process stack size (bytes): 0
+    Heap size (bytes) - A minimum of 4K (0x1000) is required if standard library functions are to be used.: 0x2000
+    MCU Vcc (mV): 3300
+    MCU Analog Power Supply AVCC0 (mV): 3300
+    Parameter checking: Disabled
+    Assert Failures: Return SSP_ERR_ASSERTION
+    Error Log: No Error Log
+    ID Code Mode: Unlocked (Ignore ID)
+    ID Code (32 Hex Characters): FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+    
+  Clocks
+    XTAL 12000000Hz
+    HOCO 48MHz
+    PLL Div /2
+    PLL Mul x8
+    Clock Src: HOCO
+    ICLK Div /1
+    PCLKA Div /4
+    PCLKB Div /4
+    PCLKC Div /32
+    PCLKD Div /4
+    BCLK Div /4
+    No output
+    FCLK Div /4
+    
+  Pin Configurations
+    R7FS3A77C3A01CFP.pincfg -> g_bsp_pin_cfg
+      AVCC0 88 ADC_AVCC0 - - - - - - - - 
+      AVSS0 89 ADC_AVSS0 - - - - - - - - 
+      P000 100 GPIO SENSE_IP - None "Input mode" - None "ADC0: AN00; CMP0: IVCMP0; CMP0: IVREF0; CTSU0: TS21; IRQ0: IRQ06; OPAMP0: AMP+" - 
+      P001 99 GPIO SENSE_OVCH - None "Input mode" - None "ADC0: AN01; CMP0: IVCMP1; CMP0: IVREF1; CTSU0: TS22; IRQ0: IRQ07; OPAMP0: AMP-" - 
+      P002 98 GPIO SENSE_VC - None "Input mode" - None "ADC0: AN02; CMP0: IVCMP2; CMP0: IVREF2; IRQ0: IRQ08; OPAMP0: AMPO" - 
+      P003 97 GPIO SENSE_DC_18V - - "Input mode" - None "ADC0: AN03; CMP0: IVCMP3; CMP0: IVREF3; OPAMP1: AMPO" - 
+      P004 96 GPIO SENSE_DC_MAIN - None "Input mode" - None "ADC0: AN04; CMP0: IVCMP0; IRQ0: IRQ09; OPAMP2: AMPO" - 
+      P005 95 GPIO AUDIO_IN - None "Input mode" - None "ADC0: AN05; CMP0: IVREF0; CTSU0: TS26; IRQ0: IRQ10; OPAMP3: AMP+" - 
+      P006 94 GPIO MIKROBUS_AN - None "Input mode" - None "ADC0: AN06; CMP0: IVREF4; CTSU0: TS27; IRQ0: IRQ11; OPAMP3: AMP-" - 
+      P007 93 - - - - Disabled - - "ADC0: AN07; CMP0: IVCMP4; OPAMP3: AMPO" - 
+      P008 92 GPIO MIKROBUS_INT - IRQ12 "Input mode" - None "ADC0: AN08; CTSU0: TS29; IRQ0: IRQ12" - 
+      P010 91 - - - - Disabled - - "ADC: VREFH0; ADC0: AN10; CTSU0: TS30; IRQ0: IRQ14; OPAMP2: AMP-" - 
+      P011 90 - - - - Disabled - - "ADC: VREFL0; ADC0: AN11; CTSU0: TS31; IRQ0: IRQ15; OPAMP2: AMP+" - 
+      P012 87 - - - - Disabled - - "ADC: VREFH; ADC0: AN12; OPAMP1: AMP-" - 
+      P013 86 - - - - Disabled - - "ADC: VREFL; ADC0: AN13; OPAMP1: AMP+" - 
+      P014 85 DAC0_DA AUDIO_OUT - - "Analog mode" - - "ADC0: AN14; CMP0: IVREF5; DAC120: DA" - 
+      P015 84 - - - - Disabled - - "ADC0: AN15; CMP0: IVCMP5; DAC121: DA; IRQ0: IRQ13" - 
+      P100 75 SPI0_MISO SPI-1_MISO Low None "Peripheral mode" CMOS None "ADC0: AN27; AGT0: AGTIO; BUS0: D0; CMP0: CMPIN0; IIC1: SCL; IRQ0: IRQ02; KINT0: KRM0; POEG0: GTETRG; SCI0: RXD_MISO; SCI0: SCL; SCI1: SCK; SLCDC0: VL1; SPI0: MISO" - 
+      P101 74 SPI0_MOSI "SPI-1 MOSI" Low None "Peripheral mode" CMOS None "ADC0: AN26; AGT0: AGTEE; BUS0: D1; CMP0: CMPREF0; IIC1: SDA; IRQ0: IRQ01; KINT0: KRM1; POEG1: GTETRG; SCI0: SDA; SCI0: TXD_MOSI; SCI1: CTS_RTS_SS; SLCDC0: VL2; SPI0: MOSI" - 
+      P102 73 SPI0_RSPCK SPI-1_SCK Low - "Peripheral mode" CMOS None "ADC0: ADTRG; ADC0: AN25; AGT0: AGTO; BUS0: D2; CMP0: CMPIN1; GPT2: GTIOCB; KINT0: KRM2; OPS0: GTOWLO; SCI0: SCK; SLCDC0: VL3; SPI0: RSPCK" - 
+      P103 72 SPI0_SSL0 PAT_CSn Low - "Peripheral mode" CMOS None "ADC0: AN24; BUS0: D3; CMP0: CMPREF1; GPT2: GTIOCA; KINT0: KRM3; OPS0: GTOWUP; SCI0: CTS_RTS_SS; SLCDC0: VL4; SPI0: SSL0" - 
+      P104 71 GPIO MIKROBUS_CSn Low None "Output mode (Initial High)" CMOS None "BUS0: D4; IRQ0: IRQ01; KINT0: KRM4; POEG1: GTETRG; SLCDC0: COM0; SPI0: SSL1" - 
+      P105 70 GPIO FLASH_CSn Low None "Output mode (Initial High)" CMOS None "BUS0: D5; IRQ0: IRQ00; KINT0: KRM5; POEG0: GTETRG; SLCDC0: COM1; SPI0: SSL2" - 
+      P106 69 GPT8_GTIOCB IGBT_4 Medium - "Peripheral mode" CMOS None "BUS0: D6; GPT8: GTIOCB; KINT0: KRM6; SLCDC0: COM2; SPI0: SSL3" - 
+      P107 68 GPT8_GTIOCA IGBT_3 Medium - "Peripheral mode" CMOS None "BUS0: D7; GPT8: GTIOCA; KINT0: KRM7; SLCDC0: COM3" - 
+      P108 51 DEBUG0_TMS JTAG_TMS Low - "Peripheral mode" CMOS None "DEBUG0: SWDIO; DEBUG0: TMS; GPT0: GTIOCB; SCI9: CTS_RTS_SS; SPI1: SSL0" - 
+      P109 52 DEBUG0_TDO JTAG_TDO Low - "Peripheral mode" CMOS None "CGC0: CLKOUT; DEBUG0: SWO; DEBUG0: TDO; GPT1: GTIOCA; OPS0: GTOVUP; SCI9: SDA; SCI9: TXD_MOSI; SPI1: MOSI" - 
+      P110 53 DEBUG0_TDI JTAG_TDI Low None "Peripheral mode" CMOS None "CMP0: VCOUT; DEBUG0: TDI; GPT1: GTIOCB; IRQ0: IRQ03; OPS0: GTOVLO; SCI2: CTS_RTS_SS; SCI9: RXD_MISO; SCI9: SCL; SPI1: MISO" - 
+      P111 54 GPT3_GTIOCA HV_OVCH_SP Medium None "Peripheral mode" CMOS None "BUS0: A05; GPT3: GTIOCA; IRQ0: IRQ04; SCI2: SCK; SCI9: SCK; SLCDC0: CAPH; SPI1: RSPCK" - 
+      P112 55 GPIO MIKROBUS_PWM - - "Input mode" - None "BUS0: A04; GPT3: GTIOCB; SCI2: SDA; SCI2: TXD_MOSI; SLCDC0: CAPL; SSI0: SSISCK" - 
+      P113 56 GPIO HV_OVCH_FLAG# - - "Input mode" - None "BUS0: A03; SCI2: RXD_MISO; SCI2: SCL; SLCDC0: COM4; SLCDC0: SEG00; SSI0: SSIWS" - 
+      P114 57 GPIO HV_OVC_FLAG# - - "Input mode" - None "BUS0: A02; SLCDC0: SEG24; SSI0: SSIRXD" - 
+      P115 58 GPIO RELAY_HV_SHOCK Medium - "Output mode (Initial Low)" CMOS None "BUS0: A01; SLCDC0: SEG25; SSI0: SSITXD" - 
+      P200 40 GPIO KEY_SHOCK - None "Input mode" - - "IRQ0: NMI" - 
+      P201 39 GPIO OP_MODE - - "Input mode" - None - - 
+      P202 35 GPIO I2C-2_SCLK Low None "Output mode (Initial High)" "n-ch open drain" None "BUS0: WR1_BC1; CAN0: CRX; GPT5: GTIOCB; IRQ0: IRQ03; SCI2: SCK; SCI9: RXD_MISO; SCI9: SCL; SDHI0: DAT6; SLCDC0: SEG21; SPI1: MISO" - 
+      P203 34 GPIO I2C-2_SDA Low None "Output mode (Initial High)" "n-ch open drain" None "BUS0: A19; CAN0: CTX; CTSU0: TSCAP; GPT5: GTIOCA; IRQ0: IRQ02; SCI2: CTS_RTS_SS; SCI9: SDA; SCI9: TXD_MOSI; SDHI0: DAT5; SLCDC0: SEG22; SPI1: MOSI" - 
+      P204 33 GPIO SDHI_CD# - - "Input mode" - None "AGT1: AGTIO; BUS0: A18; CAC0: CACREF; CTSU0: TS00; GPT4: GTIOCB; IIC0: SCL; OPS0: GTIW; SCI4: SCK; SCI9: SCK; SDHI0: DAT4; SLCDC0: SEG23; SPI1: RSPCK; SSI1: SSISCK; USBFS0: OVRCURB" - 
+      P205 32 SDHI0_DAT3 SDHI_DAT3 Medium None "Peripheral mode" CMOS None "AGT1: AGTO; BUS0: A16; CGC0: CLKOUT; CTSU0: TSCAP; GPT4: GTIOCA; IIC1: SCL; IRQ0: IRQ01; OPS0: GTIV; SCI4: SDA; SCI4: TXD_MOSI; SCI9: CTS_RTS_SS; SDHI0: DAT3; SPI1: SSL0; SSI1: SSIWS; USBFS0: OVRCURA" - 
+      P206 31 SDHI0_DAT2 SDHI_DAT2 Medium None "Peripheral mode" CMOS None "BUS0: WAIT; CTSU0: TS01; IIC1: SDA; IRQ0: IRQ00; OPS0: GTIU; SCI4: RXD_MISO; SCI4: SCL; SDHI0: DAT2; SPI1: SSL1; SSI1: SSIDATA; USBFS0: VBUSEN" - 
+      P212 14 CGC0_EXTAL EXTAL - None "Peripheral mode" CMOS None "AGT1: AGTEE; CGC0: EXTAL; IRQ0: IRQ03; POEG3: GTETRG; SCI1: RXD_MISO; SCI1: SCL" - 
+      P213 13 CGC0_XTAL XTAL - None "Peripheral mode" CMOS None "CGC0: XTAL; IRQ0: IRQ02; POEG2: GTETRG; SCI1: SDA; SCI1: TXD_MOSI" - 
+      P214 11 CGC0_XCOUT XCOUT - - "Peripheral mode" - - "CGC0: XCOUT" - 
+      P215 10 CGC0_XCIN XCIN - - "Peripheral mode" - - "CGC0: XCIN" - 
+      P300 50 DEBUG0_TCK JTAG_TCK Low - "Peripheral mode" CMOS None "DEBUG0: SWCLK; DEBUG0: TCK; GPT0: GTIOCA; SPI1: SSL1" - 
+      P301 49 SCI2_RXD_MISO UART-1_RX Low None "Peripheral mode" CMOS None "BUS0: A06; GPT4: GTIOCB; IRQ0: IRQ06; OPS0: GTOULO; SCI2: RXD_MISO; SCI2: SCL; SLCDC0: COM5; SLCDC0: SEG01; SPI1: SSL2" - 
+      P302 48 SCI2_TXD_MOSI UART-1_TX Low None "Peripheral mode" CMOS None "BUS0: A07; GPT4: GTIOCA; IRQ0: IRQ05; OPS0: GTOUUP; SCI2: SDA; SCI2: TXD_MOSI; SLCDC0: COM6; SLCDC0: SEG02; SPI1: SSL3" - 
+      P303 47 GPT7_GTIOCB CHRG_SYNC Low - "Peripheral mode" CMOS None "BUS0: A08; GPT7: GTIOCB; SLCDC0: COM7; SLCDC0: SEG03" - 
+      P304 44 GPT7_GTIOCA CHRG_SP Low None "Peripheral mode" CMOS None "BUS0: A09; GPT7: GTIOCA; IRQ0: IRQ09; SLCDC0: SEG17" - 
+      P305 43 IRQ0_IRQ08 PAT_DRDY# - IRQ8 "IRQ mode" - - "BUS0: A10; IRQ0: IRQ08; SLCDC0: SEG16" - 
+      P306 42 GPIO LED_PAT_TYPE Low - "Output mode (Initial Low)" CMOS None "BUS0: A11; SLCDC0: SEG15" - 
+      P307 41 GPIO KEY_PAT_TYPE - - "Input mode" - None "BUS0: A12; SLCDC0: SEG14" - 
+      P400 1 GPIO I2C1_SCL Medium None "Output mode (Initial High)" "n-ch open drain" "input pull-up" "CTSU0: TS20; GPT6: GTIOCA; IIC0: SCL; IRQ0: IRQ00; SCI4: SCK; SSI: AUDIO_CLK" - 
+      P401 2 GPIO I2C1_SDA Medium None "Output mode (Initial High)" "n-ch open drain" "input pull-up" "CAN0: CTX; CTSU0: TS19; GPT6: GTIOCB; IIC0: SDA; IRQ0: IRQ05; POEG0: GTETRG; SCI4: CTS_RTS_SS" - 
+      P402 3 RTC0_RTCIC0 RTCIO Low None "Peripheral mode" CMOS None "AGT0: AGTIO; AGT1: AGTIO; CAN0: CRX; CTSU0: TS18; IRQ0: IRQ04; RTC0: RTCIC0" - 
+      P403 4 GPIO PAT_RES# Low - "Output mode (Initial Low)" CMOS None "AGT0: AGTIO; AGT1: AGTIO; CTSU0: TS17; GPT3: GTIOCA; RTC0: RTCIC1; SSI0: SSISCK" - 
+      P404 5 GPIO KEY_COVER - - "Input mode" - None "CTSU0: TS16; GPT3: GTIOCB; RTC0: RTCIC2; SSI0: SSIWS" - 
+      P405 6 GPT1_GTIOCA IGBT_2 Low - "Peripheral mode" CMOS None "CTSU0: TS15; GPT1: GTIOCA; SSI0: SSITXD" - 
+      P406 7 GPT1_GTIOCB IGBT_1 Low - "Peripheral mode" CMOS None "CTSU0: TS14; GPT1: GTIOCB; SSI0: SSIRXD" - 
+      P407 25 USBFS0_VBUS VBUS_DET Low - "Peripheral mode" CMOS None "ADC0: ADTRG; CTSU0: TS03; IIC0: SDA; RTC0: RTCOUT; SCI4: CTS_RTS_SS; SPI1: SSL3; USBFS0: VBUS" - 
+      P408 24 SCI3_RXD_MISO UART-2_RX Low None "Peripheral mode" CMOS None "CTSU0: TS04; IRQ0: IRQ07; OPS0: GTOWLO; SCI3: RXD_MISO; SCI3: SCL; USBFS0: ID" - 
+      P409 23 SCI3_TXD_MOSI UART-2_TX Low None "Peripheral mode" CMOS None "CTSU0: TS05; IRQ0: IRQ06; OPS0: GTOWUP; SCI3: SDA; SCI3: TXD_MOSI; USBFS0: EXICEN" - 
+      P410 22 SDHI0_DAT1 SDHI_DAT1 Medium None "Peripheral mode" CMOS None "AGT1: AGTOB; CTSU0: TS06; GPT9: GTIOCB; IRQ0: IRQ05; OPS0: GTOVLO; SCI0: RXD_MISO; SCI0: SCL; SCI3: SCK; SDHI0: DAT1; SPI0: MISO" - 
+      P411 21 SDHI0_DAT0 SDHI_DAT0 Medium None "Peripheral mode" CMOS None "AGT1: AGTOA; CTSU0: TS07; GPT9: GTIOCA; IRQ0: IRQ04; OPS0: GTOVUP; SCI0: SDA; SCI0: TXD_MOSI; SCI3: CTS_RTS_SS; SDHI0: DAT0; SPI0: MOSI" - 
+      P412 20 SDHI0_CMD SDHI_CMD Medium - "Peripheral mode" CMOS None "CTSU0: TS08; OPS0: GTOULO; SCI0: SCK; SDHI0: CMD; SPI0: RSPCK" - 
+      P413 19 SDHI0_CLK SDHI_CLK Medium - "Peripheral mode" CMOS None "CTSU0: TS09; OPS0: GTOUUP; SCI0: CTS_RTS_SS; SDHI0: CLK; SPI0: SSL0" - 
+      P414 18 GPIO LED_SHOCK Low - "Output mode (Initial Low)" CMOS None "CTSU0: TS10; SDHI0: WP; SPI0: SSL1" - 
+      P415 17 GPIO KEY_ONOFF - - "Input mode" - None "CTSU0: TS11; SPI0: SSL2" - 
+      P500 76 GPIO PLAY_MUTE Low - "Output mode (Initial High)" CMOS None "ADC0: AN16; AGT0: AGTOA; OPS0: GTIU; QSPI0: QSPCLK; SLCDC0: SEG48; USBFS0: VBUSEN" - 
+      P501 77 GPIO PLAY_SHDN# Low None "Output mode (Initial Low)" CMOS None "ADC0: AN17; AGT0: AGTOB; IRQ0: IRQ11; OPS0: GTIV; QSPI0: QSSL; SLCDC0: SEG49; USBFS0: OVRCURA" - 
+      P502 78 GPIO NFC_FD - None "Input mode" - None "ADC0: AN18; IRQ0: IRQ12; OPS0: GTIW; QSPI0: QIO0; SLCDC0: SEG50; USBFS0: OVRCURB" - 
+      P503 79 GPIO CHRG_ONOFF Low - "Output mode (Initial High)" CMOS None "ADC0: AN19; POEG2: GTETRG; QSPI0: QIO1; SLCDC0: SEG51; USBFS0: EXICEN" - 
+      P504 80 GPIO ###_TP_23 Low - "Output mode (Initial High)" CMOS None "ADC0: AN20; POEG3: GTETRG; QSPI0: QIO2; USBFS0: ID" - 
+      P505 81 GPIO PAT_CAL Low None "Output mode (Initial High)" CMOS None "ADC0: AN21; IRQ0: IRQ14; QSPI0: QIO3" - 
+      P600 67 GPIO PAT_START Low - "Output mode (Initial Low)" CMOS None "BUS0: RD; SLCDC0: SEG41" \r\n 
+      P601 66 GPIO EXEC_TEST - - "Input mode" - "input pull-up" "BUS0: WR_WR0; SLCDC0: SEG40" - 
+      P602 65 GPIO RELAY_CAP_EN Medium - "Output mode (Initial Low)" CMOS None "BUS0: BCLK; SLCDC0: SEG39" - 
+      P603 64 GPIO HV_OVC_REARM Low - "Output mode (Initial Low)" CMOS None "BUS0: D13; SLCDC0: SEG38" - 
+      P608 59 GPIO ###_TP_21 - - "Input mode" - None "BUS0: A00_BC0; SLCDC0: SEG28" - 
+      P609 60 GPIO MIKROBUS_RST Low - "Output mode (Initial High)" CMOS None "BUS0: CS1; SLCDC0: SEG29" - 
+      P610 61 GPIO IO_PSU_EN Low - "Output mode (Initial Low)" CMOS None "BUS0: CS0; SLCDC0: SEG30" - 
+      P708 16 GPIO LED_ONOFF Low None "Output mode (Initial Low)" CMOS None "CAC0: CACREF; CTSU0: TS12; IRQ0: IRQ11; SCI1: RXD_MISO; SCI1: SCL; SPI0: SSL3" - 
+      P808 45 GPIO DEF_PSU_EN Medium - "Output mode (Initial Low)" CMOS None "SLCDC0: SEG18" - 
+      P809 46 GPIO CHRG_PSU_EN Medium - "Output mode (Initial Low)" CMOS None "SLCDC0: SEG19" - 
+      RES 38 - - - - - - - - - 
+      USBDM 27 USBFS0_USBDM - - - - - - - - 
+      USBDP 28 USBFS0_USBDP - - - - - - - - 
+      VBAT 8 - - - - - - - - - 
+      VCC 15 - - - - - - - - - 
+      VCC 37 - - - - - - - - - 
+      VCC 82 - - - - - - - - - 
+      VCC 62 - - - - - - - - - 
+      VCCUSB 29 USBFS0_VCCUSB - - - - - - - - 
+      VCCUSBLDO 30 USBFS0_VCCUSBLDO - - - - - - - - 
+      VCL 9 - - - - - - - - - 
+      VSS 12 - - - - - - - - - 
+      VSS 36 - - - - - - - - - 
+      VSS 83 - - - - - - - - - 
+      VSS 63 - - - - - - - - - 
+      VSSUSB 26 USBFS0_VSSUSB - - - - - - - - 
+      
+  Module "CGC Driver on r_cgc"
+    Parameter Checking: Default (BSP)
+    Main Oscillator Wait Time: 32768 us (262144 cycles)
+    Main Oscillator Clock Source: Crystal or Resonator
+    Subclock Drive: Standard (12.5pf)
+    Configure Subclock Drive On Reset: Enabled
+    Low Voltage Mode: Disable
+    
+  Module "ELC Driver on r_elc"
+    Parameter Checking: Default (BSP)
+    
+  Module "I/O Port Driver on r_ioport"
+    Parameter Checking: Default (BSP)
+    
+  Module "FMI Driver on r_fmi"
+    Parameter Checking: Default (BSP)
+    SSP MCU Information Symbol Name: g_fmi_data
+    Part Number Mask: 0xFE00
+    
+  Module "UART Driver on r_sci_uart"
+    External RTS Operation: Disable
+    Reception: Enable
+    Transmission: Enable
+    Parameter Checking: Default (BSP)
+    
+  Module "Transfer Driver on r_dtc"
+    Parameter Checking: Default (BSP)
+    Software Start: Enabled
+    Linker section to keep DTC vector table: .ssp_dtc_vector_table
+    
+  Module "RTC Driver on r_rtc"
+    Parameter Checking Enable: Default (BSP)
+    
+  Module "DAC Driver on r_dac"
+    Parameter Checking: Default (BSP)
+    
+  Module "Timer Driver on r_gpt"
+    Parameter Checking: Default (BSP)
+    
+  Module "Transfer Driver on r_dmac"
+    Parameter Checking: Default (BSP)
+    
+  Module "External IRQ Driver on r_icu"
+    Parameter Checking: Default (BSP)
+    
+  Module "FileX on Block Media"
+  Module "FileX Port Block Media Framework on sf_el_fx"
+    Parameter Checking: Default (BSP)
+    
+  Module "Block Media Framework on sf_block_media_sdmmc"
+    Parameter Checking: Default (BSP)
+    
+  Module "SD/MMC Driver on r_sdmmc"
+    Parameter Checking Enable: Default (BSP)
+    
+  Module "FileX Common on fx"
+  Module "SPI Framework Device on sf_spi"
+    Parameter Checking: Default (BSP)
+    
+  Module "SPI Framework Shared Bus on sf_spi"
+  Module "SPI Driver on r_rspi"
+    Parameter Checking: Disabled
+    
+  Module "ADC Driver on r_adc"
+    Parameter Checking: Disabled
+    
+  Module "Watchdog Driver on r_iwdt"
+    Parameter Checking: Default (BSP)
+    
+  Module "USBX Device Class Mass Storage"
+  Module "USBX Device Configuration"
+    Composite Device: Disable
+    
+  Module "USBX on ux"
+  Module "USBX Interface Configuration Mass Storage Class"
+  Module "USBX Port DCD on sf_el_ux for USBFS"
+    Full Speed Interrupt Priority: Priority 3
+    LDO Regulator(Only for S3 and S1 part MCUs): Disable
+    
+  Module "Flash Driver on r_flash_lp"
+    Parameter Checking: Default (BSP)
+    Code Flash Programming Enable: Disabled
+    
+  HAL
+    Instance "g_cgc CGC Driver on r_cgc"
+      Name [Fixed]: g_cgc
+      
+    Instance "g_ioport I/O Port Driver on r_ioport"
+      Name [Fixed]: g_ioport
+      
+    Instance "g_fmi FMI Driver on r_fmi"
+      Name: g_fmi
+      
+    Instance "g_elc ELC Driver on r_elc"
+      Name [Fixed]: g_elc
+      
+    Instance "traceUART UART Driver on r_sci_uart"
+      Name: traceUART
+      Channel: 3
+      Baud Rate: 250000
+      Data Bits: 8bits
+      Parity: None
+      Stop Bits: 1bit
+      CTS/RTS Selection: RTS (CTS is disabled)
+      Name of UART callback function to be defined by user: trace_uart_callback
+      Name of UART callback function for the RTS external pin control to be defined by user: NULL
+      Clock Source: Internal Clock
+      Baudrate Clock Output from SCK pin: Disable
+      Start bit detection: Falling Edge
+      Noise Cancel: Disable
+      Bit Rate Modulation Enable: Enable
+      Receive FIFO Trigger Level: One
+      Receive Interrupt Priority: Priority 12
+      Transmit Interrupt Priority: Priority 12
+      Transmit End Interrupt Priority: Priority 12
+      Error Interrupt Priority: Disabled
+      Baudrate Percent Error: 2.0
+      UART Communication Mode: RS232
+      UART RS485 Communication Mode: Half Duplex
+      RS485 DE Port: 09
+      RS485 DE Pin: 14
+      
+      Instance "g_transfer0 Transfer Driver on r_dtc SCI3 TXI"
+        Name: g_transfer0
+        Mode: Normal
+        Transfer Size: 1 Byte
+        Destination Address Mode: Fixed
+        Source Address Mode: Incremented
+        Repeat Area (Unused in Normal Mode): Source
+        Interrupt Frequency: After all transfers have completed
+        Destination Pointer: NULL
+        Source Pointer: NULL
+        Number of Transfers: 0
+        Number of Blocks (Valid only in Block Mode): 0
+        Activation Source (Must enable IRQ): SCI3 TXI
+        Auto Enable: False
+        Callback (Only valid with Software start): NULL
+        ELC Software Event Interrupt Priority: Disabled
+        
+      Instance "g_transfer1 Transfer Driver on r_dtc SCI3 RXI"
+        Name: g_transfer1
+        Mode: Normal
+        Transfer Size: 1 Byte
+        Destination Address Mode: Incremented
+        Source Address Mode: Fixed
+        Repeat Area (Unused in Normal Mode): Destination
+        Interrupt Frequency: After all transfers have completed
+        Destination Pointer: NULL
+        Source Pointer: NULL
+        Number of Transfers: 0
+        Number of Blocks (Valid only in Block Mode): 0
+        Activation Source (Must enable IRQ): SCI3 RXI
+        Auto Enable: False
+        Callback (Only valid with Software start): NULL
+        ELC Software Event Interrupt Priority: Disabled
+        
+    Instance "iRTC RTC Driver on r_rtc"
+      Name: iRTC
+      Clock Source: LOCO
+      Configure RTC hardware in open() call: Yes
+      Error Adjustment Value [DEPRECATED]: 0
+      Error Adjustment Type [DEPRECATED]: None
+      Callback: NULL
+      Alarm Interrupt Priority: Disabled
+      Period Interrupt Priority: Disabled
+      Carry Interrupt Priority: Priority 15 (lowest - not valid if using ThreadX)
+      
+    Instance "cover_open_irq External IRQ Driver on r_icu"
+      Name: cover_open_irq
+      Channel: 0
+      Trigger: Falling
+      Digital Filtering: Disabled
+      Digital Filtering Sample Clock (Only valid when Digital Filtering is Enabled): PCLK / 64
+      Interrupt enabled after initialization: True
+      Callback: irq_callback
+      Pin Interrupt Priority: Priority 14
+      
+    Instance "on_off_irq External IRQ Driver on r_icu"
+      Name: on_off_irq
+      Channel: 1
+      Trigger: Falling
+      Digital Filtering: Disabled
+      Digital Filtering Sample Clock (Only valid when Digital Filtering is Enabled): PCLK / 64
+      Interrupt enabled after initialization: True
+      Callback: irq_callback
+      Pin Interrupt Priority: Priority 14
+      
+    Instance "commUART UART Driver on r_sci_uart"
+      Name: commUART
+      Channel: 2
+      Baud Rate: 9600
+      Data Bits: 8bits
+      Parity: None
+      Stop Bits: 1bit
+      CTS/RTS Selection: RTS (CTS is disabled)
+      Name of UART callback function to be defined by user: comm_uart_callback
+      Name of UART callback function for the RTS external pin control to be defined by user: NULL
+      Clock Source: Internal Clock
+      Baudrate Clock Output from SCK pin: Disable
+      Start bit detection: Falling Edge
+      Noise Cancel: Disable
+      Bit Rate Modulation Enable: Enable
+      Receive FIFO Trigger Level: Max
+      Receive Interrupt Priority: Priority 13
+      Transmit Interrupt Priority: Priority 13
+      Transmit End Interrupt Priority: Priority 13
+      Error Interrupt Priority: Disabled
+      Baudrate Percent Error: 2.0
+      UART Communication Mode: RS232
+      UART RS485 Communication Mode: Half Duplex
+      RS485 DE Port: 09
+      RS485 DE Pin: 14
+      
+      Instance "g_transfer2 Transfer Driver on r_dtc SCI2 TXI"
+        Name: g_transfer2
+        Mode: Normal
+        Transfer Size: 1 Byte
+        Destination Address Mode: Fixed
+        Source Address Mode: Incremented
+        Repeat Area (Unused in Normal Mode): Source
+        Interrupt Frequency: After all transfers have completed
+        Destination Pointer: NULL
+        Source Pointer: NULL
+        Number of Transfers: 0
+        Number of Blocks (Valid only in Block Mode): 0
+        Activation Source (Must enable IRQ): SCI2 TXI
+        Auto Enable: False
+        Callback (Only valid with Software start): NULL
+        ELC Software Event Interrupt Priority: Disabled
+        
+      Instance "g_transfer3 Transfer Driver on r_dtc SCI2 RXI"
+        Name: g_transfer3
+        Mode: Normal
+        Transfer Size: 1 Byte
+        Destination Address Mode: Incremented
+        Source Address Mode: Fixed
+        Repeat Area (Unused in Normal Mode): Destination
+        Interrupt Frequency: After all transfers have completed
+        Destination Pointer: NULL
+        Source Pointer: NULL
+        Number of Transfers: 0
+        Number of Blocks (Valid only in Block Mode): 0
+        Activation Source (Must enable IRQ): SCI2 RXI
+        Auto Enable: False
+        Callback (Only valid with Software start): NULL
+        ELC Software Event Interrupt Priority: Disabled
+        
+    Instance "iWDT Watchdog Driver on r_iwdt"
+      Name: iWDT
+      NMI callback: NULL
+      
+    Instance "g_flash0 Flash Driver on r_flash_lp"
+      Name: g_flash0
+      Data Flash Background Operation: Disabled
+      Callback: NULL
+      Flash Ready Interrupt Priority: Priority 4
+      
+  Thread "Thread Core"
+    Symbol: thread_core
+    Name: Thread Core
+    Stack size (bytes): 2048
+    Priority: 6
+    Auto start: Disabled
+    Time slicing interval (ticks): 1
+    
+    Instance "g_ux_device_class_storage USBX Device Class Mass Storage"
+      Name: g_ux_device_class_storage
+      Mass Storage Class Parameter Setup: Auto (Simple Auto Setup if LUN is 1)
+      User Setup Callback (Only valid if Parameter Setup is Manual): ux_device_class_storage_user_setup
+      Last LBA of Storage Media (Only valid if Parameter Setup is Auto): 15118335
+      Bytes Per Sector of Storage Media (Only valid if Parameter Setup is Auto): 512
+      Type of Storage Media (Only valid if Parameter Setup is Auto): 0
+      Removable Flag of Storage Media (Only valid if Parameter Setup is Auto): 0x80
+      Media Read Function Callback (Only valid if Parameter Setup is Auto): ux_device_msc_media_read
+      Media Write Function Callback (Only valid if Parameter Setup is Auto): ux_device_msc_media_write
+      Media Status Function Callback (Only valid if Parameter Setup is Auto): ux_device_msc_media_status
+      USBX Device Storage Instance Activate Callback Function: NULL
+      USBX Device Storage Instance Deactivate Callback Function: NULL
+      Vendor ID Name: NULL
+      Product ID Name: NULL
+      Product Revision Number: NULL
+      Product Serial Number: NULL
+      Name of generated initialization function: ux_device_class_storage_init0
+      Auto Initialization: Disable
+      
+      Instance "USBX Device Configuration"
+        Vendor ID: 0x045B
+        Product ID: 0x0000
+        Device Release Number: 0x0000
+        Index of Manufacturer String Descriptor: 0x00
+        Index of Product String Descriptor: 0x00
+        Index of Serial Number String Descriptor: 0x00
+        Class Code: Mass Storage
+        Index of String Descriptor describing this configuration: 0x00
+        Size of USB Descriptor in bytes for this configuration (Modify this value only for Vendor-specific Class, otherwise set zero): 0x00
+        Number of Interfaces (Modify this value only for Vendor-specific Class, otherwise set zero): 0x00
+        Self-Powered: Enable
+        Remote Wakeup: Disable
+        Maximum Power Consumption (in 2mA units): 150
+        Supported Language Code: 0x0409
+        Name of USBX String Framework: NULL
+        Total index number of USB String Descriptors in USBX String Framework: 0
+        Name of USBX Language Framework: NULL
+        Number of Languages to support (US English is applied if zero is set): 0
+        Name of generated initialization function: ux_device_init0
+        Auto Initialization: Disable
+        
+        Instance "g_sf_el_ux_dcd_fs_0 USBX Port DCD on sf_el_ux for USBFS"
+          Name: g_sf_el_ux_dcd_fs_0
+          USB Controller Selection: USBFS
+          
+        Instance "USBX on ux"
+          USBX Pool Memory Name: g_ux_pool_memory
+          USBX Pool Memory Size: 18432
+          User Callback for Host Event Notification(Only valid for USB Host): NULL
+          Name of generated initialization function: ux_common_init0
+          Auto Initialization: Disable
+          
+      Instance "g_usb_interface_descriptor_storage_0 USBX Interface Configuration Mass Storage Class"
+        Name: g_usb_interface_descriptor_storage_0
+        Interface Number of Bulk-Only Data Interface: 0x00
+        Endpoint Number to be used for Bulk Out transfer: Endpoint 1
+        Endpoint Number to be used for Bulk In transfer: Endpoint 2
+        
+    Object "trace_semaphore Semaphore"
+      Name: Trace Semaphore
+      Symbol: trace_semaphore
+      Initial count: 0
+      
+    Object "queue_core Queue"
+      Name: Queue Core
+      Symbol: queue_core
+      Message Size (Words): 1
+      Queue Size (Bytes): 20
+      
+    Object "g_cdcacm_activate_event_flags0 Event Flags"
+      Name: USB Device Connected
+      Symbol: g_cdcacm_activate_event_flags0
+      
+    Object "comm_semaphore Semaphore"
+      Name: Comm Semaphore
+      Symbol: comm_semaphore
+      Initial count: 0
+      
+  Thread "Thread DRD"
+    Symbol: thread_drd
+    Name: Thread DRD
+    Stack size (bytes): 1024
+    Priority: 8
+    Auto start: Disabled
+    Time slicing interval (ticks): 1
+    
+    Object "queue_drd Queue"
+      Name: Queue DRD
+      Symbol: queue_drd
+      Message Size (Words): 1
+      Queue Size (Bytes): 20
+      
+    Object "ev_drd_diag_ready Event Flags"
+      Name: DRD Diagnostic Ready
+      Symbol: ev_drd_diag_ready
+      
+  Thread "Thread PatMon"
+    Symbol: thread_patMon
+    Name: Thread PatMon
+    Stack size (bytes): 2048
+    Priority: 4
+    Auto start: Disabled
+    Time slicing interval (ticks): 1
+    
+    Instance "spi_patmon SPI Framework Device on sf_spi"
+      Name: spi_patmon
+      Clock Phase: Data sampling on even edge, data variation on odd edge
+      Clock Polarity: Low when idle
+      Chip Select Port: 01
+      Chip Select Pin: 03
+      Chip Select Active Level: Low
+      
+      Instance "spi_bus0 SPI Framework Shared Bus on sf_spi"
+        Name: spi_bus0
+        
+        Instance "g_spi0 SPI Driver on r_rspi"
+          Name: g_spi0
+          Channel: 0
+          Operating Mode: Master
+          Clock Phase: Data sampling on odd edge, data variation on even edge
+          Clock Polarity: Low when idle
+          Mode Fault Error: Disable
+          Bit Order: MSB First
+          Bitrate: 800000
+          Callback: NULL
+          SPI Mode: SPI Operation
+          Slave Select Polarity(SSL0): Active Low
+          Slave Select Polarity(SSL1): Active Low
+          Slave Select Polarity(SSL2): Active Low
+          Slave Select Polarity(SSL3): Active Low
+          Select Loopback1: Normal
+          Select Loopback2: Normal
+          Enable MOSI Idle: Disable
+          MOSI Idle State: MOSI Low
+          Enable Parity: Disable
+          Parity Mode: Parity Odd
+          Select SSL(Slave Select): SSL0
+          Select SSL Level After Transfer: SSL Level Keep
+          Clock Delay Enable: Clock Delay Disable
+          Clock Delay Count: Clock Delay 1 RSPCK
+          SSL Negation Delay Enable: Negation Delay Disable
+          Negation Delay Count: Negation Delay 1 RSPCK
+          Next Access Delay Enable: Next Access Delay Disable
+          Next Access Delay Count: Next Access Delay 1 RSPCK
+          Receive Interrupt Priority: Priority 4
+          Transmit Interrupt Priority: Priority 4
+          Transmit End Interrupt Priority: Priority 4
+          Error Interrupt Priority: Priority 4
+          Byte Swap(Only for S5 series MCU's): Disable
+          
+    Instance "g_dac0 DAC Driver on r_dac"
+      Name: g_dac0
+      Channel: 0
+      Synchronize with ADC: Disabled
+      Data Format: Left Justified
+      Output Amplifier: Disable
+      
+    Instance "g_external_irq External IRQ Driver on r_icu"
+      Name: g_external_irq
+      Channel: 8
+      Trigger: Falling
+      Digital Filtering: Disabled
+      Digital Filtering Sample Clock (Only valid when Digital Filtering is Enabled): PCLK / 64
+      Interrupt enabled after initialization: False
+      Callback: g_irq8_callback
+      Pin Interrupt Priority: Priority 7
+      
+    Object "g_events_PatMon Event Flags"
+      Name: Events_PatMon
+      Symbol: g_events_PatMon
+      
+  Thread "Thread HMI"
+    Symbol: thread_hmi
+    Name: Thread HMI
+    Stack size (bytes): 1024
+    Priority: 12
+    Auto start: Disabled
+    Time slicing interval (ticks): 1
+    
+  Thread "Thread SysMon"
+    Symbol: thread_sysMon
+    Name: Thread SysMon
+    Stack size (bytes): 5600
+    Priority: 20
+    Auto start: Enabled
+    Time slicing interval (ticks): 1
+    
+    Object "i2c_2_semaphore Semaphore"
+      Name: i2c_2_semaphore
+      Symbol: i2c_2_semaphore
+      Initial count: 0
+      
+    Object "i2c_1_semaphore Semaphore"
+      Name: i2c_1_semaphore
+      Symbol: i2c_1_semaphore
+      Initial count: 1
+      
+  Thread "Thread Recorder"
+    Symbol: thread_recorder
+    Name: Thread Recorder
+    Stack size (bytes): 4096
+    Priority: 10
+    Auto start: Disabled
+    Time slicing interval (ticks): 1
+    
+    Instance "sd_fx_media FileX on Block Media"
+      Name: sd_fx_media
+      Format media during initialization: Disabled
+      File System is on block media: True
+      Formatting Options: 
+          Volume Name: Volume 1
+          Number of FATs: 1
+          Directory Entries: 256
+          Hidden Sectors: 0
+          Total Sectors: 50000
+          Bytes per Sector: 512
+          Sectors per Cluster: 1
+      Working media memory size: 512
+      Name of generated initialization function: fx_media_init0
+      Auto Initialization: Disable
+      
+      Instance "g_sf_el_fx FileX Port Block Media Framework on sf_el_fx"
+        Name: g_sf_el_fx
+        
+        Instance "g_sf_block_media_sdmmc0 Block Media Framework on sf_block_media_sdmmc"
+          Name: g_sf_block_media_sdmmc0
+          Block size of media in bytes: 512
+          
+          Instance "g_sdmmc SD/MMC Driver on r_sdmmc"
+            Name: g_sdmmc
+            Channel: 0
+            Media Type: Card
+            Bus Width: 4 Bits
+            Block Size: 512
+            Card Detection: Not Used
+            Write Protection: WP Pin
+            Callback: NULL
+            Access Interrupt Priority: Priority 14
+            Card Interrupt Priority: Priority 14
+            DTC Interrupt Priority: Disabled
+            
+            Instance "g_transfer Transfer Driver on r_dmac ADC0 COMPARE MATCH"
+              Name: g_transfer
+              Channel: 2
+              Mode: Normal
+              Transfer Size: 1 Byte
+              Destination Address Mode: Fixed
+              Source Address Mode: Incremented
+              Repeat Area (Unused in Normal Mode): Source
+              Destination Pointer: NULL
+              Source Pointer: NULL
+              Number of Transfers: 0
+              Number of Blocks (Valid only in Repeat and Block Mode): 0
+              Activation Source: ADC0 COMPARE MATCH
+              Auto Enable: False
+              Callback: NULL
+              Transfer End Interrupt Priority: Priority 14
+              
+      Instance "FileX Common on fx"
+        Name of generated initialization function: fx_common_init0
+        Auto Initialization: Enable
+        
+    Object "queue_recorder Queue"
+      Name: Queue Recorder
+      Symbol: queue_recorder
+      Message Size (Words): 1
+      Queue Size (Bytes): 20
+      
+  Thread "Thread Audio"
+    Symbol: thread_audio
+    Name: Thread Audio
+    Stack size (bytes): 2048
+    Priority: 9
+    Auto start: Disabled
+    Time slicing interval (ticks): 1
+    
+    Instance "dac_audio DAC Driver on r_dac"
+      Name: dac_audio
+      Channel: 0
+      Synchronize with ADC: Disabled
+      Data Format: Left Justified
+      Output Amplifier: Disable
+      
+    Instance "timer_audio Timer Driver on r_gpt"
+      Name: timer_audio
+      Channel: 0
+      Mode: Periodic
+      Duty Cycle Range (only applicable in PWM mode): Shortest: 2 PCLK, Longest: (Period - 1) PCLK
+      Period Value: 11025
+      Period Unit: Hertz
+      Duty Cycle Value: 50
+      Duty Cycle Unit: Unit Raw Counts
+      Auto Start: True
+      GTIOCA Output Enabled: False
+      GTIOCA Stop Level: Pin Level Low
+      GTIOCB Output Enabled: False
+      GTIOCB Stop Level: Pin Level Low
+      Callback: NULL
+      Overflow Interrupt Priority: Priority 14
+      
+    Instance "dma_audio Transfer Driver on r_dmac GPT0 COUNTER OVERFLOW"
+      Name: dma_audio
+      Channel: 1
+      Mode: Normal
+      Transfer Size: 2 Bytes
+      Destination Address Mode: Fixed
+      Source Address Mode: Incremented
+      Repeat Area (Unused in Normal Mode): Source
+      Destination Pointer: &R_DAC->DADRn[0]
+      Source Pointer: NULL
+      Number of Transfers: 0
+      Number of Blocks (Valid only in Repeat and Block Mode): 0
+      Activation Source: GPT0 COUNTER OVERFLOW
+      Auto Enable: False
+      Callback: dma_audio_callback
+      Transfer End Interrupt Priority: Priority 14
+      
+    Object "audio_semaphore Semaphore"
+      Name: Audio Semaphore
+      Symbol: audio_semaphore
+      Initial count: 0
+      
+    Object "g_events_Audio Event Flags"
+      Name: Events Audio
+      Symbol: g_events_Audio
+      
+    Object "usd_mutex Mutex"
+      Name: uSD Mutex
+      Symbol: usd_mutex
+      Priority inheritance: Disabled
+      
+  Thread "Thread Defibrillator"
+    Symbol: thread_defibrillator
+    Name: Thread Defibrillator
+    Stack size (bytes): 1024
+    Priority: 14
+    Auto start: Disabled
+    Time slicing interval (ticks): 1
+    
+    Instance "gpt_charger Timer Driver on r_gpt"
+      Name: gpt_charger
+      Channel: 7
+      Mode: PWM
+      Duty Cycle Range (only applicable in PWM mode): Shortest: 2 PCLK, Longest: (Period - 1) PCLK
+      Period Value: 100
+      Period Unit: Microseconds
+      Duty Cycle Value: 5
+      Duty Cycle Unit: Unit Percent
+      Auto Start: False
+      GTIOCA Output Enabled: True
+      GTIOCA Stop Level: Pin Level Low
+      GTIOCB Output Enabled: True
+      GTIOCB Stop Level: Pin Level Low
+      Callback: NULL
+      Overflow Interrupt Priority: Disabled
+      
+    Instance "gpt_ovch Timer Driver on r_gpt"
+      Name: gpt_ovch
+      Channel: 3
+      Mode: PWM
+      Duty Cycle Range (only applicable in PWM mode): Shortest: 2 PCLK, Longest: (Period - 1) PCLK
+      Period Value: 100
+      Period Unit: Microseconds
+      Duty Cycle Value: 50
+      Duty Cycle Unit: Unit Percent
+      Auto Start: False
+      GTIOCA Output Enabled: True
+      GTIOCA Stop Level: Pin Level Low
+      GTIOCB Output Enabled: False
+      GTIOCB Stop Level: Pin Level Low
+      Callback: NULL
+      Overflow Interrupt Priority: Disabled
+      
+    Instance "adc_defib ADC Driver on r_adc"
+      Name: adc_defib
+      Unit: 0
+      Resolution: 12-Bit
+      Alignment: Right
+      Clear after read: Off
+      Mode: Single Scan
+      Internal Calibration During Open(): Disabled
+      Channel Scan Mask (channel availability varies by MCU): Select channels below
+          Channel 0: Use in Normal/Group A
+          Channel 1: Use in Normal/Group A
+          Channel 2: Use in Normal/Group A
+          Channel 3: Use in Normal/Group A
+          Channel 4: Use in Normal/Group A
+          Channel 5: Use in Normal/Group A
+          Channel 6: Unused
+          Channel 7: Unused
+          Channel 8: Unused
+          Channel 9: Unused
+          Channel 10: Unused
+          Channel 11: Unused
+          Channel 12: Unused
+          Channel 13: Unused
+          Channel 14 (S3 series Only): Unused
+          Channel 15 (S3A7/S3A3 Only): Unused
+          Channel 16: Unused
+          Channel 17: Unused
+          Channel 18: Unused
+          Channel 19: Unused
+          Channel 20: Unused
+          Channel 21 (Unit 0 Only): Unused
+          Channel 22: Unused
+          Channel 23: Unused
+          Channel 24: Unused
+          Channel 25 (S3 series only): Unused
+          Channel 26 (S3A7/S3A3 Only): Unused
+          Channel 27 (S3A7/S3A3 Only): Unused
+          Temperature Sensor: Unused
+          Voltage Sensor: Unused
+      Normal/Group A Trigger: Software
+      Group B Trigger (Valid only in Group Scan Mode): ELC Event (The only valid trigger for either group in Group Scan Mode)
+      Group Priority (Valid only in Group Scan Mode): Group A cannot interrupt Group B
+      Add/Average Count: Average four samples
+      Addition/Averaging Mask (channel availability varies by MCU): Select channels to perform addition/averaging below
+          Channel 0: Disabled
+          Channel 1: Enabled
+          Channel 2: Disabled
+          Channel 3: Enabled
+          Channel 4: Enabled
+          Channel 5: Enabled
+          Channel 6: Disabled
+          Channel 7: Disabled
+          Channel 8: Disabled
+          Channel 9: Disabled
+          Channel 10: Disabled
+          Channel 11: Disabled
+          Channel 12: Disabled
+          Channel 13: Disabled
+          Channel 14: Disabled
+          Channel 15: Disabled
+          Channel 16: Disabled
+          Channel 17: Disabled
+          Channel 18: Disabled
+          Channel 19: Disabled
+          Channel 20: Disabled
+          Channel 21: Disabled
+          Channel 22: Disabled
+          Channel 23: Disabled
+          Channel 24: Disabled
+          Channel 25: Disabled
+          Channel 26: Disabled
+          Channel 27: Disabled
+          Temperature Sensor: Disabled
+          Voltage Sensor: Disabled
+      Sample and Hold Mask (Available only on selected MCUs): Select channels for which individual sample and hold circuit is to be enabled
+          Channel 0: Disabled
+          Channel 1: Disabled
+          Channel 2: Disabled
+      Sample Hold States (Applies only to the 3 channels selected above): 24
+      Callback: NULL
+      Scan End Interrupt Priority: Disabled
+      Scan End Group B Interrupt Priority: Disabled
+      
+    Instance "gpt_shock_H Timer Driver on r_gpt"
+      Name: gpt_shock_H
+      Channel: 1
+      Mode: PWM
+      Duty Cycle Range (only applicable in PWM mode): Shortest: 2 PCLK, Longest: (Period - 1) PCLK
+      Period Value: 120
+      Period Unit: Kilohertz
+      Duty Cycle Value: 50
+      Duty Cycle Unit: Unit Percent
+      Auto Start: False
+      GTIOCA Output Enabled: True
+      GTIOCA Stop Level: Pin Level Low
+      GTIOCB Output Enabled: True
+      GTIOCB Stop Level: Pin Level Low
+      Callback: NULL
+      Overflow Interrupt Priority: Disabled
+      
+    Instance "gpt_shock_L Timer Driver on r_gpt"
+      Name: gpt_shock_L
+      Channel: 8
+      Mode: One Shot
+      Duty Cycle Range (only applicable in PWM mode): Shortest: 2 PCLK, Longest: (Period - 1) PCLK
+      Period Value: 20000
+      Period Unit: Microseconds
+      Duty Cycle Value: 0
+      Duty Cycle Unit: Unit Raw Counts
+      Auto Start: False
+      GTIOCA Output Enabled: True
+      GTIOCA Stop Level: Pin Level Low
+      GTIOCB Output Enabled: True
+      GTIOCB Stop Level: Pin Level Low
+      Callback: GPT_Shock_Callback
+      Overflow Interrupt Priority: Priority 10
+      
+    Object "queue_def Queue"
+      Name: Queue Defibrillator
+      Symbol: queue_def
+      Message Size (Words): 1
+      Queue Size (Bytes): 20
+      
+  Thread "Thread Comm"
+    Symbol: thread_comm
+    Name: Thread Comm
+    Stack size (bytes): 3200
+    Priority: 18
+    Auto start: Disabled
+    Time slicing interval (ticks): 1
+    
+    Object "queue_comm Queue"
+      Name: Queue Comm
+      Symbol: queue_comm
+      Message Size (Words): 1
+      Queue Size (Bytes): 20
+      
+  Thread "Thread Dummy"
+    Symbol: thread_dummy
+    Name: Thread Dummy
+    Stack size (bytes): 256
+    Priority: 30
+    Auto start: Enabled
+    Time slicing interval (ticks): 1
+    
+  Thread "Thread ACC"
+    Symbol: thread_acc
+    Name: Thread ACC
+    Stack size (bytes): 800
+    Priority: 17
+    Auto start: Disabled
+    Time slicing interval (ticks): 1
+    
+  Messaging

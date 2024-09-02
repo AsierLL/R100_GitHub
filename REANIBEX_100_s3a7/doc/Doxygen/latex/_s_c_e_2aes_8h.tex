@@ -1,0 +1,69 @@
+\doxysection{C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\+SCE/aes.h File Reference}
+\hypertarget{_s_c_e_2aes_8h}{}\label{_s_c_e_2aes_8h}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/SCE/aes.h@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/SCE/aes.h}}
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+Include dependency graph for aes.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=258pt]{_s_c_e_2aes_8h__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structencdec}{encdec}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{structencdec}{encdec}} \mbox{\hyperlink{_s_c_e_2aes_8h_aa5c0b2a155328a95fc72a58089727f0b}{encdec\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{_s_c_e_2aes_8h_a55c6eee7b0416e82a543c077dc0b5a20}{aes\+\_\+s\+\_\+encrypt}} (char \texorpdfstring{$\ast$}{*}encrypt, char \texorpdfstring{$\ast$}{*}encrypted, char \texorpdfstring{$\ast$}{*}key, int keylen, \mbox{\hyperlink{_s_c_e_2types__basic_8h_a2ba621978a511250f7250fb10e05ffbe}{int32\+\_\+t}} num)
+\item 
+int \mbox{\hyperlink{_s_c_e_2aes_8h_ae370d3b8b1380b2d845db155f6256524}{aes\+\_\+s\+\_\+decrypt}} (char \texorpdfstring{$\ast$}{*}decrypt, char \texorpdfstring{$\ast$}{*}decrypted, char \texorpdfstring{$\ast$}{*}key, int keylen, \mbox{\hyperlink{_s_c_e_2types__basic_8h_a2ba621978a511250f7250fb10e05ffbe}{int32\+\_\+t}} num)
+\item 
+int \mbox{\hyperlink{_s_c_e_2aes_8h_ae23fc094a0a21a891bfb6024b3554328}{user\+\_\+decrypt}} (\mbox{\hyperlink{_s_c_e_2aes_8h_aa5c0b2a155328a95fc72a58089727f0b}{encdec\+\_\+t}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{structencdec}{encdec}})
+\item 
+int \mbox{\hyperlink{_s_c_e_2aes_8h_a6407aecb31c22c399f3ca667df9d6a40}{user\+\_\+encrypt}} (\mbox{\hyperlink{_s_c_e_2aes_8h_aa5c0b2a155328a95fc72a58089727f0b}{encdec\+\_\+t}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{structencdec}{encdec}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{_s_c_e_2aes_8h_aa5c0b2a155328a95fc72a58089727f0b}\label{_s_c_e_2aes_8h_aa5c0b2a155328a95fc72a58089727f0b} 
+\index{aes.h@{aes.h}!encdec\_t@{encdec\_t}}
+\index{encdec\_t@{encdec\_t}!aes.h@{aes.h}}
+\doxysubsubsection{\texorpdfstring{encdec\_t}{encdec\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structencdec}{encdec}} \mbox{\hyperlink{_s_c_e_2aes_8h_aa5c0b2a155328a95fc72a58089727f0b}{encdec\+\_\+t}}}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_s_c_e_2aes_8h_ae370d3b8b1380b2d845db155f6256524}\label{_s_c_e_2aes_8h_ae370d3b8b1380b2d845db155f6256524} 
+\index{aes.h@{aes.h}!aes\_s\_decrypt@{aes\_s\_decrypt}}
+\index{aes\_s\_decrypt@{aes\_s\_decrypt}!aes.h@{aes.h}}
+\doxysubsubsection{\texorpdfstring{aes\_s\_decrypt()}{aes\_s\_decrypt()}}
+{\footnotesize\ttfamily int aes\+\_\+s\+\_\+decrypt (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{decrypt,  }\item[{char \texorpdfstring{$\ast$}{*}}]{decrypted,  }\item[{char \texorpdfstring{$\ast$}{*}}]{key,  }\item[{int}]{keylen,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a2ba621978a511250f7250fb10e05ffbe}{int32\+\_\+t}}}]{num }\end{DoxyParamCaption})}
+
+\Hypertarget{_s_c_e_2aes_8h_a55c6eee7b0416e82a543c077dc0b5a20}\label{_s_c_e_2aes_8h_a55c6eee7b0416e82a543c077dc0b5a20} 
+\index{aes.h@{aes.h}!aes\_s\_encrypt@{aes\_s\_encrypt}}
+\index{aes\_s\_encrypt@{aes\_s\_encrypt}!aes.h@{aes.h}}
+\doxysubsubsection{\texorpdfstring{aes\_s\_encrypt()}{aes\_s\_encrypt()}}
+{\footnotesize\ttfamily int aes\+\_\+s\+\_\+encrypt (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{encrypt,  }\item[{char \texorpdfstring{$\ast$}{*}}]{encrypted,  }\item[{char \texorpdfstring{$\ast$}{*}}]{key,  }\item[{int}]{keylen,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a2ba621978a511250f7250fb10e05ffbe}{int32\+\_\+t}}}]{num }\end{DoxyParamCaption})}
+
+\Hypertarget{_s_c_e_2aes_8h_ae23fc094a0a21a891bfb6024b3554328}\label{_s_c_e_2aes_8h_ae23fc094a0a21a891bfb6024b3554328} 
+\index{aes.h@{aes.h}!user\_decrypt@{user\_decrypt}}
+\index{user\_decrypt@{user\_decrypt}!aes.h@{aes.h}}
+\doxysubsubsection{\texorpdfstring{user\_decrypt()}{user\_decrypt()}}
+{\footnotesize\ttfamily int user\+\_\+decrypt (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2aes_8h_aa5c0b2a155328a95fc72a58089727f0b}{encdec\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{encdec }\end{DoxyParamCaption})}
+
+\Hypertarget{_s_c_e_2aes_8h_a6407aecb31c22c399f3ca667df9d6a40}\label{_s_c_e_2aes_8h_a6407aecb31c22c399f3ca667df9d6a40} 
+\index{aes.h@{aes.h}!user\_encrypt@{user\_encrypt}}
+\index{user\_encrypt@{user\_encrypt}!aes.h@{aes.h}}
+\doxysubsubsection{\texorpdfstring{user\_encrypt()}{user\_encrypt()}}
+{\footnotesize\ttfamily int user\+\_\+encrypt (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2aes_8h_aa5c0b2a155328a95fc72a58089727f0b}{encdec\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{encdec }\end{DoxyParamCaption})}
+

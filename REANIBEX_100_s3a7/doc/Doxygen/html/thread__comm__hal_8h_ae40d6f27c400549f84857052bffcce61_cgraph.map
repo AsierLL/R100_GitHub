@@ -1,0 +1,44 @@
+<map id="Comm_Wifi_Execute_Test" name="Comm_Wifi_Execute_Test">
+<area shape="rect" id="Node000001" title="Test of Wifi module." alt="" coords="5,132,181,159"/>
+<area shape="rect" id="Node000002" href="$thread__comm__hal_8c.html#acd0f72ce82a8c749fe1171bd48269e66" title="Reset Wifi, Sigfox or GPS module." alt="" coords="242,81,404,108"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="156,129,244,109,245,115,158,134"/>
+<area shape="rect" id="Node000011" href="$thread__comm__hal_8c.html#a63b3e38ecaf443421eb673e2342e2f08" title="Select Uart to send and receive data. This function sets the SN74CBT Multiplexer/Demultiplexer via th..." alt="" coords="485,31,619,57"/>
+<area shape="poly" id="edge15_Node000001_Node000011" title=" " alt="" coords="111,129,162,97,194,80,228,67,290,52,354,43,469,38,470,43,354,48,291,57,229,72,196,85,165,101,114,134"/>
+<area shape="rect" id="Node000012" href="$_comm_8c.html#ae40e9c681ca7b454e790d494b96c2284" title="Change SCI3 (UART) baud rate." alt="" coords="229,132,417,159"/>
+<area shape="poly" id="edge18_Node000001_Node000012" title=" " alt="" coords="181,143,213,143,213,148,181,148"/>
+<area shape="rect" id="Node000013" href="$bsp__wifi__silabs-_w_g_m110_8c.html#a49fb3f4209cc581931376a8782b66a49" title="Check Wifi module Status." alt="" coords="232,183,414,209"/>
+<area shape="poly" id="edge19_Node000001_Node000013" title=" " alt="" coords="158,157,245,176,244,181,156,162"/>
+<area shape="rect" id="Node000016" href="$bsp__wifi__silabs-_w_g_m110_8c.html#adb7a018f1bb07d857ad68f50ff060997" title="Initialize library,and provide output function." alt="" coords="253,233,393,260"/>
+<area shape="poly" id="edge22_Node000001_Node000016" title=" " alt="" coords="116,157,167,188,230,219,249,226,247,231,228,224,164,192,114,161"/>
+<area shape="rect" id="Node000003" href="$thread__comm__hal_8c.html#aba10912e5156af563d72a637fe9b7a78" title="Reset Wifi, Sigfox or GPS module." alt="" coords="481,132,624,159"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="387,106,474,125,473,131,386,111"/>
+<area shape="rect" id="Node000010" href="$thread__comm__hal_8c.html#a4e3f9bfdd5df0ab92a1713930d545237" title="Reset Wifi, Sigfox or GPS module." alt="" coords="480,81,624,108"/>
+<area shape="poly" id="edge12_Node000002_Node000010" title=" " alt="" coords="404,92,465,92,465,97,404,97"/>
+<area shape="rect" id="Node000004" href="$_i2_c__2_8c.html#aba3d08d9b33082a1c0aa61ae3e6b5e23" title="Function to read a byte data from a specific address." alt="" coords="717,56,829,83"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="606,129,638,118,686,92,704,85,706,90,688,97,640,122,608,134"/>
+<area shape="rect" id="Node000009" href="$_i2_c__2_8c.html#abb5323ebe9e05f1fe983ee0c53fa732e" title="Function to write a data byte at specific address." alt="" coords="717,107,829,133"/>
+<area shape="poly" id="edge8_Node000003_Node000009" title=" " alt="" coords="624,134,701,126,702,131,625,140"/>
+<area shape="rect" id="Node000005" href="$_i2_c__2_8c.html#aa504ef0b681fc32e47f923cc52b93067" title="Function to get a data byte from the i2C device." alt="" coords="923,5,1027,32"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="829,53,907,33,908,38,830,58"/>
+<area shape="rect" id="Node000006" href="$_i2_c__2_8c.html#afb25d38eef88c072ab6ce216e1965501" title="Generate the START condition in the i2C line." alt="" coords="907,56,1043,83"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="829,67,891,67,891,72,829,72"/>
+<area shape="rect" id="Node000007" href="$_i2_c__2_8c.html#a24d35a4dc09bc8d6c5be604be9a2102b" title="Generate the STOP condition in the i2C line." alt="" coords="907,107,1043,133"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="830,81,905,100,903,105,829,86"/>
+<area shape="rect" id="Node000008" href="$_i2_c__2_8c.html#a5a45bd2c0aa3fd6619ad4e682466200c" title="Function to send a data byte to the i2C device." alt="" coords="924,157,1026,184"/>
+<area shape="poly" id="edge7_Node000004_Node000008" title=" " alt="" coords="830,79,860,92,876,105,885,118,894,131,908,143,916,148,913,152,905,147,890,134,881,121,872,109,857,97,828,84"/>
+<area shape="poly" id="edge9_Node000009_Node000006" title=" " alt="" coords="829,103,903,84,905,90,830,109"/>
+<area shape="poly" id="edge10_Node000009_Node000007" title=" " alt="" coords="830,117,892,117,892,123,830,123"/>
+<area shape="poly" id="edge11_Node000009_Node000008" title=" " alt="" coords="830,131,909,152,908,157,829,137"/>
+<area shape="poly" id="edge13_Node000010_Node000004" title=" " alt="" coords="625,84,701,75,702,80,625,89"/>
+<area shape="poly" id="edge14_Node000010_Node000009" title=" " alt="" coords="625,100,701,109,701,114,625,106"/>
+<area shape="poly" id="edge16_Node000011_Node000004" title=" " alt="" coords="620,49,702,59,701,64,619,54"/>
+<area shape="poly" id="edge17_Node000011_Node000009" title=" " alt="" coords="608,55,640,67,688,92,706,99,704,104,686,97,638,72,606,60"/>
+<area shape="rect" id="Node000014" href="$bsp__wifi__silabs-_w_g_m110_8c.html#ab4402b6cb5049aeeb75bee03bdcb303b" title="Waits for a response to a given command." alt="" coords="465,183,639,209"/>
+<area shape="poly" id="edge20_Node000013_Node000014" title=" " alt="" coords="414,193,450,193,450,199,414,199"/>
+<area shape="rect" id="Node000015" href="$_comm_8c.html#a612240bf37db565f46ad4dc6c7298898" title="Get a received module response." alt="" coords="687,183,859,209"/>
+<area shape="poly" id="edge21_Node000014_Node000015" title=" " alt="" coords="640,193,672,193,672,199,640,199"/>
+<area shape="rect" id="Node000017" href="$bsp__wifi__silabs-_w_g_m110_8c.html#a7bf71780fcef8cecc8a18f5377b86e24" title="Function called when a message needs to be written to the serial port." alt="" coords="479,233,625,260"/>
+<area shape="poly" id="edge23_Node000016_Node000017" title=" " alt="" coords="393,244,463,244,463,249,393,249"/>
+<area shape="rect" id="Node000018" href="$_comm_8c.html#aab482bf1737ccffd871eaa85a6f25021" title="Send a string through the UART to the wifi module." alt="" coords="695,233,851,260"/>
+<area shape="poly" id="edge24_Node000017_Node000018" title=" " alt="" coords="626,244,679,244,679,249,626,249"/>
+</map>

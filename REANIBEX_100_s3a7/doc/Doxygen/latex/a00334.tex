@@ -1,0 +1,289 @@
+\doxysection{AED\+\_\+\+SETTINGS\+\_\+t Struct Reference}
+\hypertarget{a00334}{}\label{a00334}\index{AED\_SETTINGS\_t@{AED\_SETTINGS\_t}}
+
+
+AED settings.  
+
+
+
+
+{\ttfamily \#include $<$device\+\_\+init.\+h$>$}
+
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{a00334_a55d0cf3daaba1110c0b0cde4ee25c60c}{aed\+\_\+a\+CPR\+\_\+init}}
+\begin{DoxyCompactList}\small\item\em adult -\/\texorpdfstring{$>$}{>} Initial CPR time in seconds (can be 0) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{a00334_a2b8c264faf5f68fe7a9f11797c996887}{aed\+\_\+a\+CPR\+\_\+1}}
+\begin{DoxyCompactList}\small\item\em adult -\/\texorpdfstring{$>$}{>} After Shock Series CPR time in seconds (can be OFF) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{a00334_abf8524b6821f949b226657a03d3317a1}{aed\+\_\+a\+CPR\+\_\+2}}
+\begin{DoxyCompactList}\small\item\em adult -\/\texorpdfstring{$>$}{>} No Shock Advised CPR time in seconds (can be OFF) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{a00334_ac843c3b79a5128af899c187c66ad581d}{aed\+\_\+p\+CPR\+\_\+init}}
+\begin{DoxyCompactList}\small\item\em pediatric -\/\texorpdfstring{$>$}{>} Initial CPR time in seconds (can be 0) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{a00334_a9d0c7e80f82f48a4d8447e52e58d7f6f}{aed\+\_\+p\+CPR\+\_\+1}}
+\begin{DoxyCompactList}\small\item\em pediatric -\/\texorpdfstring{$>$}{>} After Shock Series CPR time in seconds (can be OFF) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{a00334_a7e2a24fcfb117789164bfc6591130e2e}{aed\+\_\+p\+CPR\+\_\+2}}
+\begin{DoxyCompactList}\small\item\em pediatric -\/\texorpdfstring{$>$}{>} No Shock Advised CPR time in seconds (can be OFF) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{a00334_a9ee9026d7516044fb22bce381f327bf7}{aed\+\_\+cpr\+\_\+msg\+\_\+long}}
+\begin{DoxyCompactList}\small\item\em Long/\+Short audio messages for CPR (0-\/Short; 1-\/Long) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{a00334_a701c9d38bea3aef3632451a7fbfd53b8}{aed\+\_\+analysis\+\_\+cpr}}
+\begin{DoxyCompactList}\small\item\em Enables start an analysis cycle in CPR (0-\/No; 1-\/Yes) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{a00334_a500e48b14745c701153026876142d65d}{aed\+\_\+asys\+\_\+detect}}
+\begin{DoxyCompactList}\small\item\em Enables Asystole warning message (0-\/No; 1-\/Yes) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{a00334_af1768aa6de38f8e09625bc4e47b47e86}{aed\+\_\+asys\+\_\+time}}
+\begin{DoxyCompactList}\small\item\em Time on asystole before emitting asystole warning message (minutes) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{a00334_a6943abb7e4e491b992f2eed9ee102eec}{aed\+\_\+metronome\+\_\+en}}
+\begin{DoxyCompactList}\small\item\em Enables metronome for marking compression pace (0-\/No; 1-\/Yes) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{a00334_a2c8bf8b6c9285ce72256d7049efbd2e0}{aed\+\_\+feedback\+\_\+en}}
+\begin{DoxyCompactList}\small\item\em Enables cpr feedback for marking compression pace (0-\/No; 1-\/Yes) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{a00334_adf1c72061faa25ea501a7749ed35c9bc}{aed\+\_\+consec\+\_\+shocks}}
+\begin{DoxyCompactList}\small\item\em Max Shocks in a Shock Series (1\+:4) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{a00334_abd5ba4452d8fbf02e415c91fc0897a9d}{aed\+\_\+energy\+\_\+shock1\+\_\+a}}
+\begin{DoxyCompactList}\small\item\em Energy for 1st shock in shock series for adult (150J, 175J, 200J) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{a00334_ad12d74137f9377090a28a9450bf3205a}{aed\+\_\+energy\+\_\+shock2\+\_\+a}}
+\begin{DoxyCompactList}\small\item\em Energy for 2nd shock in shock series for adult (150J, 175J, 200J) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{a00334_a00884eea8ee1588d866840fbad934691}{aed\+\_\+energy\+\_\+shock3\+\_\+a}}
+\begin{DoxyCompactList}\small\item\em Energy for 3rd shock in shock series for adult (150J, 175J, 200J) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{a00334_ae802ae673299bbe6b52dada0eb15524d}{aed\+\_\+metronome\+\_\+ratio\+\_\+a}}
+\begin{DoxyCompactList}\small\item\em Metronome pace for adult (0-\/15\+:2; 1-\/30\+:2; 2-\/Only compressions) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{a00334_abc8cf8e3dc9b885b10e605b22c87b257}{aed\+\_\+energy\+\_\+shock1\+\_\+p}}
+\begin{DoxyCompactList}\small\item\em Energy for 1st shock in shock series for pediatric (50J, 65J, 75J, 90J) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{a00334_a6050ee6eb4dbdfbf07337abe00f8fb30}{aed\+\_\+energy\+\_\+shock2\+\_\+p}}
+\begin{DoxyCompactList}\small\item\em Energy for 2nd shock in shock series for pediatric (50J, 65J, 75J, 90J) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{a00334_ada4eed5378f864fe947003a2420c2910}{aed\+\_\+energy\+\_\+shock3\+\_\+p}}
+\begin{DoxyCompactList}\small\item\em Energy for 3rd shock in shock series for pediatric (50J, 65J, 75J, 90J) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{a00334_a4893e549bb7c4c27399040b44d5986e1}{aed\+\_\+metronome\+\_\+ratio\+\_\+p}}
+\begin{DoxyCompactList}\small\item\em Metronome pace for pediatric (0-\/15\+:2; 1-\/30\+:2; 2-\/Only compressions) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{a00334_a526972e1d3a2c9c3a98afd913ce803da}{aed\+\_\+metronome\+\_\+rate}}
+\begin{DoxyCompactList}\small\item\em Metronome rate in compressions per minute (100; 110; 120;) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+AED settings. 
+
+\doxysubsection{Field Documentation}
+\Hypertarget{a00334_a2b8c264faf5f68fe7a9f11797c996887}\label{a00334_a2b8c264faf5f68fe7a9f11797c996887} 
+\index{AED\_SETTINGS\_t@{AED\_SETTINGS\_t}!aed\_aCPR\_1@{aed\_aCPR\_1}}
+\index{aed\_aCPR\_1@{aed\_aCPR\_1}!AED\_SETTINGS\_t@{AED\_SETTINGS\_t}}
+\doxysubsubsection{\texorpdfstring{aed\_aCPR\_1}{aed\_aCPR\_1}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} AED\+\_\+\+SETTINGS\+\_\+t\+::aed\+\_\+a\+CPR\+\_\+1}
+
+
+
+adult -\/\texorpdfstring{$>$}{>} After Shock Series CPR time in seconds (can be OFF) 
+
+\Hypertarget{a00334_abf8524b6821f949b226657a03d3317a1}\label{a00334_abf8524b6821f949b226657a03d3317a1} 
+\index{AED\_SETTINGS\_t@{AED\_SETTINGS\_t}!aed\_aCPR\_2@{aed\_aCPR\_2}}
+\index{aed\_aCPR\_2@{aed\_aCPR\_2}!AED\_SETTINGS\_t@{AED\_SETTINGS\_t}}
+\doxysubsubsection{\texorpdfstring{aed\_aCPR\_2}{aed\_aCPR\_2}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} AED\+\_\+\+SETTINGS\+\_\+t\+::aed\+\_\+a\+CPR\+\_\+2}
+
+
+
+adult -\/\texorpdfstring{$>$}{>} No Shock Advised CPR time in seconds (can be OFF) 
+
+\Hypertarget{a00334_a55d0cf3daaba1110c0b0cde4ee25c60c}\label{a00334_a55d0cf3daaba1110c0b0cde4ee25c60c} 
+\index{AED\_SETTINGS\_t@{AED\_SETTINGS\_t}!aed\_aCPR\_init@{aed\_aCPR\_init}}
+\index{aed\_aCPR\_init@{aed\_aCPR\_init}!AED\_SETTINGS\_t@{AED\_SETTINGS\_t}}
+\doxysubsubsection{\texorpdfstring{aed\_aCPR\_init}{aed\_aCPR\_init}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} AED\+\_\+\+SETTINGS\+\_\+t\+::aed\+\_\+a\+CPR\+\_\+init}
+
+
+
+adult -\/\texorpdfstring{$>$}{>} Initial CPR time in seconds (can be 0) 
+
+\Hypertarget{a00334_a701c9d38bea3aef3632451a7fbfd53b8}\label{a00334_a701c9d38bea3aef3632451a7fbfd53b8} 
+\index{AED\_SETTINGS\_t@{AED\_SETTINGS\_t}!aed\_analysis\_cpr@{aed\_analysis\_cpr}}
+\index{aed\_analysis\_cpr@{aed\_analysis\_cpr}!AED\_SETTINGS\_t@{AED\_SETTINGS\_t}}
+\doxysubsubsection{\texorpdfstring{aed\_analysis\_cpr}{aed\_analysis\_cpr}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} AED\+\_\+\+SETTINGS\+\_\+t\+::aed\+\_\+analysis\+\_\+cpr}
+
+
+
+Enables start an analysis cycle in CPR (0-\/No; 1-\/Yes) 
+
+\Hypertarget{a00334_a500e48b14745c701153026876142d65d}\label{a00334_a500e48b14745c701153026876142d65d} 
+\index{AED\_SETTINGS\_t@{AED\_SETTINGS\_t}!aed\_asys\_detect@{aed\_asys\_detect}}
+\index{aed\_asys\_detect@{aed\_asys\_detect}!AED\_SETTINGS\_t@{AED\_SETTINGS\_t}}
+\doxysubsubsection{\texorpdfstring{aed\_asys\_detect}{aed\_asys\_detect}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} AED\+\_\+\+SETTINGS\+\_\+t\+::aed\+\_\+asys\+\_\+detect}
+
+
+
+Enables Asystole warning message (0-\/No; 1-\/Yes) 
+
+\Hypertarget{a00334_af1768aa6de38f8e09625bc4e47b47e86}\label{a00334_af1768aa6de38f8e09625bc4e47b47e86} 
+\index{AED\_SETTINGS\_t@{AED\_SETTINGS\_t}!aed\_asys\_time@{aed\_asys\_time}}
+\index{aed\_asys\_time@{aed\_asys\_time}!AED\_SETTINGS\_t@{AED\_SETTINGS\_t}}
+\doxysubsubsection{\texorpdfstring{aed\_asys\_time}{aed\_asys\_time}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} AED\+\_\+\+SETTINGS\+\_\+t\+::aed\+\_\+asys\+\_\+time}
+
+
+
+Time on asystole before emitting asystole warning message (minutes) 
+
+\Hypertarget{a00334_adf1c72061faa25ea501a7749ed35c9bc}\label{a00334_adf1c72061faa25ea501a7749ed35c9bc} 
+\index{AED\_SETTINGS\_t@{AED\_SETTINGS\_t}!aed\_consec\_shocks@{aed\_consec\_shocks}}
+\index{aed\_consec\_shocks@{aed\_consec\_shocks}!AED\_SETTINGS\_t@{AED\_SETTINGS\_t}}
+\doxysubsubsection{\texorpdfstring{aed\_consec\_shocks}{aed\_consec\_shocks}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} AED\+\_\+\+SETTINGS\+\_\+t\+::aed\+\_\+consec\+\_\+shocks}
+
+
+
+Max Shocks in a Shock Series (1\+:4) 
+
+\Hypertarget{a00334_a9ee9026d7516044fb22bce381f327bf7}\label{a00334_a9ee9026d7516044fb22bce381f327bf7} 
+\index{AED\_SETTINGS\_t@{AED\_SETTINGS\_t}!aed\_cpr\_msg\_long@{aed\_cpr\_msg\_long}}
+\index{aed\_cpr\_msg\_long@{aed\_cpr\_msg\_long}!AED\_SETTINGS\_t@{AED\_SETTINGS\_t}}
+\doxysubsubsection{\texorpdfstring{aed\_cpr\_msg\_long}{aed\_cpr\_msg\_long}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} AED\+\_\+\+SETTINGS\+\_\+t\+::aed\+\_\+cpr\+\_\+msg\+\_\+long}
+
+
+
+Long/\+Short audio messages for CPR (0-\/Short; 1-\/Long) 
+
+\Hypertarget{a00334_abd5ba4452d8fbf02e415c91fc0897a9d}\label{a00334_abd5ba4452d8fbf02e415c91fc0897a9d} 
+\index{AED\_SETTINGS\_t@{AED\_SETTINGS\_t}!aed\_energy\_shock1\_a@{aed\_energy\_shock1\_a}}
+\index{aed\_energy\_shock1\_a@{aed\_energy\_shock1\_a}!AED\_SETTINGS\_t@{AED\_SETTINGS\_t}}
+\doxysubsubsection{\texorpdfstring{aed\_energy\_shock1\_a}{aed\_energy\_shock1\_a}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} AED\+\_\+\+SETTINGS\+\_\+t\+::aed\+\_\+energy\+\_\+shock1\+\_\+a}
+
+
+
+Energy for 1st shock in shock series for adult (150J, 175J, 200J) 
+
+\Hypertarget{a00334_abc8cf8e3dc9b885b10e605b22c87b257}\label{a00334_abc8cf8e3dc9b885b10e605b22c87b257} 
+\index{AED\_SETTINGS\_t@{AED\_SETTINGS\_t}!aed\_energy\_shock1\_p@{aed\_energy\_shock1\_p}}
+\index{aed\_energy\_shock1\_p@{aed\_energy\_shock1\_p}!AED\_SETTINGS\_t@{AED\_SETTINGS\_t}}
+\doxysubsubsection{\texorpdfstring{aed\_energy\_shock1\_p}{aed\_energy\_shock1\_p}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} AED\+\_\+\+SETTINGS\+\_\+t\+::aed\+\_\+energy\+\_\+shock1\+\_\+p}
+
+
+
+Energy for 1st shock in shock series for pediatric (50J, 65J, 75J, 90J) 
+
+\Hypertarget{a00334_ad12d74137f9377090a28a9450bf3205a}\label{a00334_ad12d74137f9377090a28a9450bf3205a} 
+\index{AED\_SETTINGS\_t@{AED\_SETTINGS\_t}!aed\_energy\_shock2\_a@{aed\_energy\_shock2\_a}}
+\index{aed\_energy\_shock2\_a@{aed\_energy\_shock2\_a}!AED\_SETTINGS\_t@{AED\_SETTINGS\_t}}
+\doxysubsubsection{\texorpdfstring{aed\_energy\_shock2\_a}{aed\_energy\_shock2\_a}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} AED\+\_\+\+SETTINGS\+\_\+t\+::aed\+\_\+energy\+\_\+shock2\+\_\+a}
+
+
+
+Energy for 2nd shock in shock series for adult (150J, 175J, 200J) 
+
+\Hypertarget{a00334_a6050ee6eb4dbdfbf07337abe00f8fb30}\label{a00334_a6050ee6eb4dbdfbf07337abe00f8fb30} 
+\index{AED\_SETTINGS\_t@{AED\_SETTINGS\_t}!aed\_energy\_shock2\_p@{aed\_energy\_shock2\_p}}
+\index{aed\_energy\_shock2\_p@{aed\_energy\_shock2\_p}!AED\_SETTINGS\_t@{AED\_SETTINGS\_t}}
+\doxysubsubsection{\texorpdfstring{aed\_energy\_shock2\_p}{aed\_energy\_shock2\_p}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} AED\+\_\+\+SETTINGS\+\_\+t\+::aed\+\_\+energy\+\_\+shock2\+\_\+p}
+
+
+
+Energy for 2nd shock in shock series for pediatric (50J, 65J, 75J, 90J) 
+
+\Hypertarget{a00334_a00884eea8ee1588d866840fbad934691}\label{a00334_a00884eea8ee1588d866840fbad934691} 
+\index{AED\_SETTINGS\_t@{AED\_SETTINGS\_t}!aed\_energy\_shock3\_a@{aed\_energy\_shock3\_a}}
+\index{aed\_energy\_shock3\_a@{aed\_energy\_shock3\_a}!AED\_SETTINGS\_t@{AED\_SETTINGS\_t}}
+\doxysubsubsection{\texorpdfstring{aed\_energy\_shock3\_a}{aed\_energy\_shock3\_a}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} AED\+\_\+\+SETTINGS\+\_\+t\+::aed\+\_\+energy\+\_\+shock3\+\_\+a}
+
+
+
+Energy for 3rd shock in shock series for adult (150J, 175J, 200J) 
+
+\Hypertarget{a00334_ada4eed5378f864fe947003a2420c2910}\label{a00334_ada4eed5378f864fe947003a2420c2910} 
+\index{AED\_SETTINGS\_t@{AED\_SETTINGS\_t}!aed\_energy\_shock3\_p@{aed\_energy\_shock3\_p}}
+\index{aed\_energy\_shock3\_p@{aed\_energy\_shock3\_p}!AED\_SETTINGS\_t@{AED\_SETTINGS\_t}}
+\doxysubsubsection{\texorpdfstring{aed\_energy\_shock3\_p}{aed\_energy\_shock3\_p}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} AED\+\_\+\+SETTINGS\+\_\+t\+::aed\+\_\+energy\+\_\+shock3\+\_\+p}
+
+
+
+Energy for 3rd shock in shock series for pediatric (50J, 65J, 75J, 90J) 
+
+\Hypertarget{a00334_a2c8bf8b6c9285ce72256d7049efbd2e0}\label{a00334_a2c8bf8b6c9285ce72256d7049efbd2e0} 
+\index{AED\_SETTINGS\_t@{AED\_SETTINGS\_t}!aed\_feedback\_en@{aed\_feedback\_en}}
+\index{aed\_feedback\_en@{aed\_feedback\_en}!AED\_SETTINGS\_t@{AED\_SETTINGS\_t}}
+\doxysubsubsection{\texorpdfstring{aed\_feedback\_en}{aed\_feedback\_en}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} AED\+\_\+\+SETTINGS\+\_\+t\+::aed\+\_\+feedback\+\_\+en}
+
+
+
+Enables cpr feedback for marking compression pace (0-\/No; 1-\/Yes) 
+
+\Hypertarget{a00334_a6943abb7e4e491b992f2eed9ee102eec}\label{a00334_a6943abb7e4e491b992f2eed9ee102eec} 
+\index{AED\_SETTINGS\_t@{AED\_SETTINGS\_t}!aed\_metronome\_en@{aed\_metronome\_en}}
+\index{aed\_metronome\_en@{aed\_metronome\_en}!AED\_SETTINGS\_t@{AED\_SETTINGS\_t}}
+\doxysubsubsection{\texorpdfstring{aed\_metronome\_en}{aed\_metronome\_en}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} AED\+\_\+\+SETTINGS\+\_\+t\+::aed\+\_\+metronome\+\_\+en}
+
+
+
+Enables metronome for marking compression pace (0-\/No; 1-\/Yes) 
+
+\Hypertarget{a00334_a526972e1d3a2c9c3a98afd913ce803da}\label{a00334_a526972e1d3a2c9c3a98afd913ce803da} 
+\index{AED\_SETTINGS\_t@{AED\_SETTINGS\_t}!aed\_metronome\_rate@{aed\_metronome\_rate}}
+\index{aed\_metronome\_rate@{aed\_metronome\_rate}!AED\_SETTINGS\_t@{AED\_SETTINGS\_t}}
+\doxysubsubsection{\texorpdfstring{aed\_metronome\_rate}{aed\_metronome\_rate}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} AED\+\_\+\+SETTINGS\+\_\+t\+::aed\+\_\+metronome\+\_\+rate}
+
+
+
+Metronome rate in compressions per minute (100; 110; 120;) 
+
+\Hypertarget{a00334_ae802ae673299bbe6b52dada0eb15524d}\label{a00334_ae802ae673299bbe6b52dada0eb15524d} 
+\index{AED\_SETTINGS\_t@{AED\_SETTINGS\_t}!aed\_metronome\_ratio\_a@{aed\_metronome\_ratio\_a}}
+\index{aed\_metronome\_ratio\_a@{aed\_metronome\_ratio\_a}!AED\_SETTINGS\_t@{AED\_SETTINGS\_t}}
+\doxysubsubsection{\texorpdfstring{aed\_metronome\_ratio\_a}{aed\_metronome\_ratio\_a}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} AED\+\_\+\+SETTINGS\+\_\+t\+::aed\+\_\+metronome\+\_\+ratio\+\_\+a}
+
+
+
+Metronome pace for adult (0-\/15\+:2; 1-\/30\+:2; 2-\/Only compressions) 
+
+\Hypertarget{a00334_a4893e549bb7c4c27399040b44d5986e1}\label{a00334_a4893e549bb7c4c27399040b44d5986e1} 
+\index{AED\_SETTINGS\_t@{AED\_SETTINGS\_t}!aed\_metronome\_ratio\_p@{aed\_metronome\_ratio\_p}}
+\index{aed\_metronome\_ratio\_p@{aed\_metronome\_ratio\_p}!AED\_SETTINGS\_t@{AED\_SETTINGS\_t}}
+\doxysubsubsection{\texorpdfstring{aed\_metronome\_ratio\_p}{aed\_metronome\_ratio\_p}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} AED\+\_\+\+SETTINGS\+\_\+t\+::aed\+\_\+metronome\+\_\+ratio\+\_\+p}
+
+
+
+Metronome pace for pediatric (0-\/15\+:2; 1-\/30\+:2; 2-\/Only compressions) 
+
+\Hypertarget{a00334_a9d0c7e80f82f48a4d8447e52e58d7f6f}\label{a00334_a9d0c7e80f82f48a4d8447e52e58d7f6f} 
+\index{AED\_SETTINGS\_t@{AED\_SETTINGS\_t}!aed\_pCPR\_1@{aed\_pCPR\_1}}
+\index{aed\_pCPR\_1@{aed\_pCPR\_1}!AED\_SETTINGS\_t@{AED\_SETTINGS\_t}}
+\doxysubsubsection{\texorpdfstring{aed\_pCPR\_1}{aed\_pCPR\_1}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} AED\+\_\+\+SETTINGS\+\_\+t\+::aed\+\_\+p\+CPR\+\_\+1}
+
+
+
+pediatric -\/\texorpdfstring{$>$}{>} After Shock Series CPR time in seconds (can be OFF) 
+
+\Hypertarget{a00334_a7e2a24fcfb117789164bfc6591130e2e}\label{a00334_a7e2a24fcfb117789164bfc6591130e2e} 
+\index{AED\_SETTINGS\_t@{AED\_SETTINGS\_t}!aed\_pCPR\_2@{aed\_pCPR\_2}}
+\index{aed\_pCPR\_2@{aed\_pCPR\_2}!AED\_SETTINGS\_t@{AED\_SETTINGS\_t}}
+\doxysubsubsection{\texorpdfstring{aed\_pCPR\_2}{aed\_pCPR\_2}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} AED\+\_\+\+SETTINGS\+\_\+t\+::aed\+\_\+p\+CPR\+\_\+2}
+
+
+
+pediatric -\/\texorpdfstring{$>$}{>} No Shock Advised CPR time in seconds (can be OFF) 
+
+\Hypertarget{a00334_ac843c3b79a5128af899c187c66ad581d}\label{a00334_ac843c3b79a5128af899c187c66ad581d} 
+\index{AED\_SETTINGS\_t@{AED\_SETTINGS\_t}!aed\_pCPR\_init@{aed\_pCPR\_init}}
+\index{aed\_pCPR\_init@{aed\_pCPR\_init}!AED\_SETTINGS\_t@{AED\_SETTINGS\_t}}
+\doxysubsubsection{\texorpdfstring{aed\_pCPR\_init}{aed\_pCPR\_init}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} AED\+\_\+\+SETTINGS\+\_\+t\+::aed\+\_\+p\+CPR\+\_\+init}
+
+
+
+pediatric -\/\texorpdfstring{$>$}{>} Initial CPR time in seconds (can be 0) 
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\mbox{\hyperlink{a00017}{device\+\_\+init.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,142 @@
+\doxysection{C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/thread\+\_\+pat\+Mon\+\_\+entry.c File Reference}
+\hypertarget{a00116}{}\label{a00116}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/thread\_patMon\_entry.c@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/thread\_patMon\_entry.c}}
+{\ttfamily \#include $<$device\+\_\+init.\+h$>$}\newline
+{\ttfamily \#include "{}Trace.\+h"{}}\newline
+{\ttfamily \#include "{}types\+\_\+app.\+h"{}}\newline
+{\ttfamily \#include "{}types\+\_\+basic.\+h"{}}\newline
+{\ttfamily \#include "{}R100\+\_\+\+Errors.\+h"{}}\newline
+{\ttfamily \#include "{}HAL/thread\+\_\+pat\+Mon\+\_\+hal.\+h"{}}\newline
+{\ttfamily \#include "{}thread\+\_\+pat\+Mon.\+h"{}}\newline
+{\ttfamily \#include "{}thread\+\_\+pat\+Mon\+\_\+entry.\+h"{}}\newline
+{\ttfamily \#include "{}thread\+\_\+audio\+\_\+entry.\+h"{}}\newline
+{\ttfamily \#include "{}thread\+\_\+core.\+h"{}}\newline
+{\ttfamily \#include "{}thread\+\_\+core\+\_\+entry.\+h"{}}\newline
+{\ttfamily \#include "{}event\+\_\+ids.\+h"{}}\newline
+Include dependency graph for thread\+\_\+pat\+Mon\+\_\+entry.\+c\+:
+% FIG 0
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{a00116_a75cf49618ddb08f4cfaa3af8225b18e3}{WIN\+\_\+\+FOR\+\_\+\+QRS\+\_\+\+SIZE}}~100
+\item 
+\#define \mbox{\hyperlink{a00116_a91a441e69579704a5f06e444322d7df7}{WIN\+\_\+\+FOR\+\_\+\+QRS\+\_\+\+INTERVAL}}~20
+\item 
+\#define \mbox{\hyperlink{a00116_aac731936eb249b5d57f2440cc38561db}{WIN\+\_\+\+FOR\+\_\+\+QRS\+\_\+\+TIME}}~40
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a00020_a610cd7de90c58acf8dfb3345f1e53697}{EVENT\+\_\+\+ID\+\_\+e}} \mbox{\hyperlink{a00116_ae01957c82315b5c82c3465cff9f341ec}{Check\+\_\+\+Impedance}} (void)
+\begin{DoxyCompactList}\small\item\em check the impedance segment to convert to an Event (this event is used in the AED state machine) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{a00116_a3a5aefe249d158bad59ef4e7f4ea7dbd}{Wait\+\_\+\+For\+\_\+\+Sync}} (\mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} timeout)
+\begin{DoxyCompactList}\small\item\em waits for a QRS-\/\+SYNC pulse. The ECG signal is downsampled to 500 Hz the maximum considered heart-\/rate is 300 ppm = 1 QRS in 200 msecs the analyzed windows are 50 samples wide (corresponding to 100 ms) every 20 ms (10 samples). The detection must be made in Real Time According to regulations, the delay from the QRS pulse to the shock MUST be less than 60 msecs. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a00116_acba6891b85ed8b43afb29b84f25a1162}{thread\+\_\+pat\+Mon\+\_\+entry}} (void)
+\begin{DoxyCompactList}\small\item\em A description of the function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVersion}{Version}
+v1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+16/01/2018 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+ltorres 
+\end{DoxyAuthor}
+\begin{DoxyWarning}{Warning}
+author date version .-\/ Edition 
+\end{DoxyWarning}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{a00257__bug000030}{Bug}}]\end{DoxyRefDesc}
+
+
+\begin{DoxyVersion}{Version}
+v1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+16/01/2018 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+ltorres 
+\end{DoxyAuthor}
+\begin{DoxyWarning}{Warning}
+author date version .-\/ Edition 
+\end{DoxyWarning}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{a00257__bug000062}{Bug}}]\end{DoxyRefDesc}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{a00116_a91a441e69579704a5f06e444322d7df7}\label{a00116_a91a441e69579704a5f06e444322d7df7} 
+\index{thread\_patMon\_entry.c@{thread\_patMon\_entry.c}!WIN\_FOR\_QRS\_INTERVAL@{WIN\_FOR\_QRS\_INTERVAL}}
+\index{WIN\_FOR\_QRS\_INTERVAL@{WIN\_FOR\_QRS\_INTERVAL}!thread\_patMon\_entry.c@{thread\_patMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{WIN\_FOR\_QRS\_INTERVAL}{WIN\_FOR\_QRS\_INTERVAL}}
+{\footnotesize\ttfamily \#define WIN\+\_\+\+FOR\+\_\+\+QRS\+\_\+\+INTERVAL~20}
+
+\Hypertarget{a00116_a75cf49618ddb08f4cfaa3af8225b18e3}\label{a00116_a75cf49618ddb08f4cfaa3af8225b18e3} 
+\index{thread\_patMon\_entry.c@{thread\_patMon\_entry.c}!WIN\_FOR\_QRS\_SIZE@{WIN\_FOR\_QRS\_SIZE}}
+\index{WIN\_FOR\_QRS\_SIZE@{WIN\_FOR\_QRS\_SIZE}!thread\_patMon\_entry.c@{thread\_patMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{WIN\_FOR\_QRS\_SIZE}{WIN\_FOR\_QRS\_SIZE}}
+{\footnotesize\ttfamily \#define WIN\+\_\+\+FOR\+\_\+\+QRS\+\_\+\+SIZE~100}
+
+\Hypertarget{a00116_aac731936eb249b5d57f2440cc38561db}\label{a00116_aac731936eb249b5d57f2440cc38561db} 
+\index{thread\_patMon\_entry.c@{thread\_patMon\_entry.c}!WIN\_FOR\_QRS\_TIME@{WIN\_FOR\_QRS\_TIME}}
+\index{WIN\_FOR\_QRS\_TIME@{WIN\_FOR\_QRS\_TIME}!thread\_patMon\_entry.c@{thread\_patMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{WIN\_FOR\_QRS\_TIME}{WIN\_FOR\_QRS\_TIME}}
+{\footnotesize\ttfamily \#define WIN\+\_\+\+FOR\+\_\+\+QRS\+\_\+\+TIME~40}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{a00116_ae01957c82315b5c82c3465cff9f341ec}\label{a00116_ae01957c82315b5c82c3465cff9f341ec} 
+\index{thread\_patMon\_entry.c@{thread\_patMon\_entry.c}!Check\_Impedance@{Check\_Impedance}}
+\index{Check\_Impedance@{Check\_Impedance}!thread\_patMon\_entry.c@{thread\_patMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Check\_Impedance()}{Check\_Impedance()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00020_a610cd7de90c58acf8dfb3345f1e53697}{EVENT\+\_\+\+ID\+\_\+e}} Check\+\_\+\+Impedance (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+check the impedance segment to convert to an Event (this event is used in the AED state machine) 
+
+\begin{DoxyReturn}{Returns}
+The impedance event ... 
+\end{DoxyReturn}
+\Hypertarget{a00116_acba6891b85ed8b43afb29b84f25a1162}\label{a00116_acba6891b85ed8b43afb29b84f25a1162} 
+\index{thread\_patMon\_entry.c@{thread\_patMon\_entry.c}!thread\_patMon\_entry@{thread\_patMon\_entry}}
+\index{thread\_patMon\_entry@{thread\_patMon\_entry}!thread\_patMon\_entry.c@{thread\_patMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{thread\_patMon\_entry()}{thread\_patMon\_entry()}}
+{\footnotesize\ttfamily void thread\+\_\+pat\+Mon\+\_\+entry (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+A description of the function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{a00258__todo000008}{Todo}}]pending things to be done\end{DoxyRefDesc}
+\Hypertarget{a00116_a3a5aefe249d158bad59ef4e7f4ea7dbd}\label{a00116_a3a5aefe249d158bad59ef4e7f4ea7dbd} 
+\index{thread\_patMon\_entry.c@{thread\_patMon\_entry.c}!Wait\_For\_Sync@{Wait\_For\_Sync}}
+\index{Wait\_For\_Sync@{Wait\_For\_Sync}!thread\_patMon\_entry.c@{thread\_patMon\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Wait\_For\_Sync()}{Wait\_For\_Sync()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} Wait\+\_\+\+For\+\_\+\+Sync (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}}}]{timeout }\end{DoxyParamCaption})}
+
+
+
+waits for a QRS-\/\+SYNC pulse. The ECG signal is downsampled to 500 Hz the maximum considered heart-\/rate is 300 ppm = 1 QRS in 200 msecs the analyzed windows are 50 samples wide (corresponding to 100 ms) every 20 ms (10 samples). The detection must be made in Real Time According to regulations, the delay from the QRS pulse to the shock MUST be less than 60 msecs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em timeout} & timeout for the wait process in system ticks\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if QRS pulse is detected ... 
+\end{DoxyReturn}

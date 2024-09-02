@@ -1,0 +1,33 @@
+<map id="NFC_Write_Device_ID" name="NFC_Write_Device_ID">
+<area shape="rect" id="Node000001" title="Write the device identifier." alt="" coords="5,157,155,184"/>
+<area shape="rect" id="Node000002" href="$thread__sys_mon__entry_8c.html#a33ca5a33ab10af89dcb290e9d052b724" title="Function that report if the devioce is in test mode montador or not." alt="" coords="214,56,378,83"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="98,155,144,124,202,92,219,85,221,90,204,97,147,128,101,159"/>
+<area shape="rect" id="Node000003" href="$device__init_8c.html#a182c93e57b9fff393b61642f2dd2d8a5" title="Read data from NFC memory." alt="" coords="254,107,338,133"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="140,154,238,131,239,136,141,159"/>
+<area shape="rect" id="Node000010" href="$device__init_8c.html#a20e74a2a8c6410c9013be9edd8a85408" title="Write device info in the NFC memory." alt="" coords="253,157,339,184"/>
+<area shape="poly" id="edge12_Node000001_Node000010" title=" " alt="" coords="155,168,238,168,238,173,155,173"/>
+<area shape="rect" id="Node000012" href="$thread__pat_mon__hal_8c.html#a9ba28eb3a7a634bf9a4a495d90a705b1" title="report the impedance value in ADCs (this value is not compensated !!!)" alt="" coords="219,208,373,235"/>
+<area shape="poly" id="edge17_Node000001_Node000012" title=" " alt="" coords="141,182,222,201,221,206,140,187"/>
+<area shape="rect" id="Node000013" href="$thread__pat_mon__hal_8c.html#ae98728fc9430398da8683e46653aac5b" title="report the calibration impedance value in ADCs" alt="" coords="203,259,389,285"/>
+<area shape="poly" id="edge18_Node000001_Node000013" title=" " alt="" coords="101,182,147,213,204,244,221,251,219,256,202,249,144,218,98,187"/>
+<area shape="rect" id="Node000004" href="$_i2_c__2_8c.html#ab2d6470085f0f13033eca2373bcf4b41" title="Function to read data from a specific address." alt="" coords="454,56,538,83"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="338,107,438,81,440,86,339,112"/>
+<area shape="rect" id="Node000009" href="$_i2_c__2_8c.html#abb5323ebe9e05f1fe983ee0c53fa732e" title="Function to write a data byte at specific address." alt="" coords="440,107,552,133"/>
+<area shape="poly" id="edge8_Node000003_Node000009" title=" " alt="" coords="339,117,424,117,424,123,339,123"/>
+<area shape="rect" id="Node000005" href="$_i2_c__2_8c.html#aa504ef0b681fc32e47f923cc52b93067" title="Function to get a data byte from the i2C device." alt="" coords="619,5,724,32"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="538,55,608,34,609,39,540,60"/>
+<area shape="rect" id="Node000006" href="$_i2_c__2_8c.html#afb25d38eef88c072ab6ce216e1965501" title="Generate the START condition in the i2C line." alt="" coords="603,56,740,83"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="539,67,588,67,588,72,539,72"/>
+<area shape="rect" id="Node000007" href="$_i2_c__2_8c.html#a24d35a4dc09bc8d6c5be604be9a2102b" title="Generate the STOP condition in the i2C line." alt="" coords="604,107,739,133"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="540,79,609,99,608,104,538,84"/>
+<area shape="rect" id="Node000008" href="$_i2_c__2_8c.html#a5a45bd2c0aa3fd6619ad4e682466200c" title="Function to send a data byte to the i2C device." alt="" coords="620,157,723,184"/>
+<area shape="poly" id="edge7_Node000004_Node000008" title=" " alt="" coords="537,81,557,93,572,106,581,119,590,131,605,143,613,148,610,152,602,147,587,134,577,122,568,109,554,97,534,86"/>
+<area shape="poly" id="edge9_Node000009_Node000006" title=" " alt="" coords="544,103,607,85,609,90,546,109"/>
+<area shape="poly" id="edge10_Node000009_Node000007" title=" " alt="" coords="553,117,588,117,588,123,553,123"/>
+<area shape="poly" id="edge11_Node000009_Node000008" title=" " alt="" coords="546,131,609,150,607,155,544,137"/>
+<area shape="rect" id="Node000011" href="$_i2_c__2_8c.html#a75998894ee4aceb2f03ebc36a0000d3f" title="Function to write data at specific address in the NTag memory." alt="" coords="437,157,555,184"/>
+<area shape="poly" id="edge13_Node000010_Node000011" title=" " alt="" coords="339,168,421,168,421,173,339,173"/>
+<area shape="poly" id="edge14_Node000011_Node000006" title=" " alt="" coords="534,154,554,143,568,131,577,118,587,106,602,93,610,88,613,92,605,97,590,109,581,121,572,134,557,147,537,159"/>
+<area shape="poly" id="edge15_Node000011_Node000007" title=" " alt="" coords="544,154,607,136,609,141,546,159"/>
+<area shape="poly" id="edge16_Node000011_Node000008" title=" " alt="" coords="556,168,605,168,605,173,556,173"/>
+</map>

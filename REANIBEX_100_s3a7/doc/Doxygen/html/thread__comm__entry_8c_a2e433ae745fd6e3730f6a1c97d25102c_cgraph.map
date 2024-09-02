@@ -1,0 +1,21 @@
+<map id="Process_Comm_ACC" name="Process_Comm_ACC">
+<area shape="rect" id="Node000001" title="Process events related to ACC COMM module." alt="" coords="5,111,154,137"/>
+<area shape="rect" id="Node000002" href="$thread__comm__hal_8c.html#ab3133b7277b4b2aea07d93088feddf95" title="Test of ACC module." alt="" coords="202,81,382,108"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="154,111,186,107,187,112,155,116"/>
+<area shape="rect" id="Node000009" href="$thread__sys_mon__entry_8c.html#ab5d13add30041382fa545103a702582f" title="Function that sets the non volatile data error." alt="" coords="215,132,369,175"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="155,132,200,138,199,143,154,137"/>
+<area shape="rect" id="Node000003" href="$bsp__acc___l_i_s3_d_h_8c.html#afcbc051f96e6f31f234a07674c2027f3" title="Checks for presence of accelerometer by checking who_am_i register." alt="" coords="430,81,597,108"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="382,92,415,92,415,97,382,97"/>
+<area shape="rect" id="Node000004" href="$_i2_c__1_8c.html#ace04072c3cee76dcb968024ef77224f6" title="Function to read data byte at specific register address." alt="" coords="645,81,812,108"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="598,92,630,92,630,97,598,97"/>
+<area shape="rect" id="Node000005" href="$_i2_c__1_8c.html#a8721bef7537e00756c8c6e8ec8b4c3b4" title="Function to get a data byte from the i2C device." alt="" coords="876,5,980,32"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="764,78,859,42,875,35,877,40,861,46,766,83"/>
+<area shape="rect" id="Node000006" href="$_i2_c__1_8c.html#a58c06ede2d56b3068be6703981e4030a" title="Generate the START condition in the i2C line." alt="" coords="860,56,996,83"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="812,81,844,77,845,83,812,87"/>
+<area shape="rect" id="Node000007" href="$_i2_c__1_8c.html#abe5880e856c1c213a8e0074d876f9b70" title="Generate the STOP condition in the i2C line." alt="" coords="860,107,996,133"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="812,103,845,107,845,112,812,108"/>
+<area shape="rect" id="Node000008" href="$_i2_c__1_8c.html#a3be7740fdada1288f4bf53c6f8a4c84a" title="Function to send a data byte to the i2C device." alt="" coords="877,157,979,184"/>
+<area shape="poly" id="edge7_Node000004_Node000008" title=" " alt="" coords="766,106,861,143,877,149,875,154,859,148,764,111"/>
+<area shape="rect" id="Node000010" href="$thread__sys_mon__entry_8c.html#a9c961ad97558f92f8f4d44373bca3702" title="Determine if an error requires a SAT service or not." alt="" coords="465,140,563,167"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="369,151,449,151,449,156,369,156"/>
+</map>

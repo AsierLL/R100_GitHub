@@ -1,0 +1,119 @@
+<map id="Defib_Get_State" name="Defib_Get_State">
+<area shape="rect" id="Node000001" title="report the current state of the defibrillator" alt="" coords="2416,189,2532,216"/>
+<area shape="rect" id="Node000002" href="$thread__core__entry_8c.html#a6459d7b439752990fec0e0dce5e26fc1" title="Manages AED operation mode. Sends all received events to the AED statechart." alt="" coords="1625,63,1712,89"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="2444,181,2409,156,2367,136,2310,122,2232,110,2044,93,1853,84,1712,80,1712,74,1853,78,2044,88,2233,105,2311,116,2369,131,2412,152,2447,177"/>
+<area shape="rect" id="Node000006" href="$thread__defibrillator__entry_8c.html#ad4231b9f523e235ed7306b2bf31ecea9" title="Command a shock." alt="" coords="2240,37,2368,64"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="2453,178,2415,132,2366,85,2337,67,2339,62,2370,81,2419,128,2457,175"/>
+<area shape="rect" id="Node000007" href="$_f_s_m___r100___a_e_d_8c.html#a66edf5039fb2a025f7fbcaa4ae27c0ee" title=" " alt="" coords="2056,37,2165,64"/>
+<area shape="poly" id="edge59_Node000001_Node000007" title=" " alt="" coords="2463,175,2451,139,2431,98,2403,58,2386,41,2367,28,2339,16,2309,10,2278,8,2248,11,2190,23,2144,39,2142,34,2188,18,2247,5,2278,3,2310,4,2340,11,2369,23,2390,37,2407,55,2436,95,2456,137,2468,173"/>
+<area shape="rect" id="Node000009" href="$thread__defibrillator__hal_8c.html#a3e86b71d391996bf2ffc968da01e5326" title="Read the Vbatt value from the main supply voltage." alt="" coords="2246,383,2362,409"/>
+<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="2453,230,2319,384,2315,381,2449,226"/>
+<area shape="rect" id="Node000016" href="$thread__sys_mon__entry_8c.html#a743a7940e667165b42c74a8c9ff51a1a" title="Startup to run the application and system monitoring." alt="" coords="446,416,592,443"/>
+<area shape="poly" id="edge64_Node000001_Node000016" title=" " alt="" coords="2400,189,2267,166,2189,158,2112,155,992,155,934,157,886,164,844,176,806,192,732,238,642,302,607,331,576,363,532,417,528,414,572,359,604,327,639,298,729,234,803,187,842,171,884,159,934,152,992,149,2112,149,2190,153,2267,161,2401,184"/>
+<area shape="rect" id="Node000035" href="$thread__sys_mon__entry_8c.html#a6211aaf23d16365e7f4a2989537f1f45" title="Function that executes the Defibrillator test." alt="" coords="2042,189,2179,216"/>
+<area shape="poly" id="edge57_Node000001_Node000035" title=" " alt="" coords="2400,205,2179,205,2179,200,2400,200"/>
+<area shape="rect" id="Node000036" href="$thread__sys_mon__entry_8c.html#aacd0a85f95141c68a25562ed7ea3bd53" title="Function that executes the GPS test." alt="" coords="2042,291,2179,333"/>
+<area shape="poly" id="edge58_Node000001_Node000036" title=" " alt="" coords="2413,224,2181,294,2179,289,2412,219"/>
+<area shape="rect" id="Node000039" href="$thread__defibrillator__entry_8c.html#a014514ab55b6ebfaf6275d3ed0867068" title="A description of the function." alt="" coords="2241,747,2367,789"/>
+<area shape="poly" id="edge60_Node000001_Node000039" title=" " alt="" coords="2467,232,2371,561,2314,747,2309,746,2365,559,2462,230"/>
+<area shape="rect" id="Node000043" href="$thread__pat_mon__hal_8c.html#ae36a2432d1f2717af0701ebbb4d60f86" title="Update the ZP value. This function is called in each sample capture at 1 Ksps. The function filters a..." alt="" coords="2241,521,2367,548"/>
+<area shape="poly" id="edge65_Node000001_Node000043" title=" " alt="" coords="2463,231,2370,423,2316,522,2311,520,2366,420,2458,229"/>
+<area shape="rect" id="Node000003" href="$thread__core__entry_8c.html#ad3dfeb7aa19371bdae2b4d20eee5a063" title="Main task. Executes both, AED and CFG, operation modes." alt="" coords="1372,63,1498,89"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="1609,79,1498,79,1498,73,1609,73"/>
+<area shape="rect" id="Node000004" href="$thread__core_8c.html#ab7ee7e4e1cbcc23a41de31999afb5e0a" title=" " alt="" coords="1154,63,1274,89"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="1357,79,1275,79,1275,73,1357,73"/>
+<area shape="rect" id="Node000005" href="$thread__core_8c.html#a3c740768c0ce9b83a965d53a605e4fe9" title=" " alt="" coords="892,63,1095,89"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="1139,79,1095,79,1095,73,1139,73"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="2224,53,2165,53,2165,48,2224,48"/>
+<area shape="rect" id="Node000008" href="$_f_s_m___r100___a_e_d_8c.html#a45cfcc998186af39961ade62a140bc31" title=" " alt="" coords="1831,37,1951,64"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="2041,53,1951,53,1951,48,2041,48"/>
+<area shape="poly" id="edge8_Node000008_Node000002" title=" " alt="" coords="1815,62,1713,74,1712,69,1814,57"/>
+<area shape="rect" id="Node000010" href="$thread__comm__entry_8c.html#a2b830ebc982c1f3df32402823b6bb3c0" title="Function to send the test result to Sigfox cloud." alt="" coords="2029,509,2192,552"/>
+<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="2280,422,2240,457,2193,493,2162,511,2159,507,2190,489,2237,453,2276,418"/>
+<area shape="poly" id="edge56_Node000009_Node000016" title=" " alt="" coords="2284,371,2245,323,2220,300,2190,281,2149,264,2112,253,2079,248,2047,247,1978,252,1892,256,992,256,922,261,853,276,786,296,722,321,614,375,542,418,540,413,611,370,720,317,784,291,852,270,922,256,992,251,1892,251,1978,247,2047,242,2079,243,2113,248,2151,259,2193,276,2223,295,2249,319,2288,368"/>
+<area shape="rect" id="Node000027" href="$thread__comm__entry_8c.html#ac00c8f1a401cbbc02b2e3ce72b020878" title="Function to send the test result using wifi connection." alt="" coords="1817,517,1965,560"/>
+<area shape="poly" id="edge31_Node000009_Node000027" title=" " alt="" coords="2256,418,2193,443,1963,519,1962,514,2191,438,2254,413"/>
+<area shape="rect" id="Node000029" href="$_d_b___episode_8c.html#a9c7992d33427de65e7c491a76d976754" title="Collects the episode block data and write to the episode file. This way, the write sizes are multiple..." alt="" coords="2045,712,2176,739"/>
+<area shape="poly" id="edge36_Node000009_Node000029" title=" " alt="" coords="2288,424,2264,464,2242,510,2233,538,2229,563,2227,607,2221,650,2211,672,2194,695,2168,714,2165,709,2190,692,2206,669,2216,648,2222,607,2224,562,2228,537,2237,508,2260,461,2283,421"/>
+<area shape="rect" id="Node000033" href="$thread__sys_mon__entry_8c.html#a3ad2403f07c6d8129531068c67827398" title="Function that executes the battery test." alt="" coords="1593,392,1744,419"/>
+<area shape="poly" id="edge40_Node000009_Node000033" title=" " alt="" coords="2230,400,1744,407,1744,402,2230,395"/>
+<area shape="poly" id="edge46_Node000009_Node000035" title=" " alt="" coords="2288,370,2249,304,2222,268,2190,237,2159,219,2161,214,2193,233,2226,265,2254,301,2292,367"/>
+<area shape="poly" id="edge48_Node000009_Node000036" title=" " alt="" coords="2256,379,2161,337,2163,332,2258,374"/>
+<area shape="rect" id="Node000037" href="$thread__sys_mon__entry_8c.html#a314477032fa47b8dd581908331045876" title="Function that executes the voltage test." alt="" coords="1592,341,1745,368"/>
+<area shape="poly" id="edge50_Node000009_Node000037" title=" " alt="" coords="2230,394,1745,362,1745,357,2230,389"/>
+<area shape="rect" id="Node000038" href="$thread__sys_mon__entry_8c.html#a04ed11e0e05f3e2222f714d33437f75b" title="Trace some items from the system monitor." alt="" coords="690,661,794,688"/>
+<area shape="poly" id="edge54_Node000009_Node000038" title=" " alt="" coords="2290,424,2242,503,2216,541,2193,566,2119,621,2087,640,2054,655,2021,666,1983,673,1892,677,1213,677,794,677,794,672,1213,672,1892,672,1983,667,2019,660,2052,650,2084,636,2116,616,2190,562,2212,538,2238,500,2285,422"/>
+<area shape="rect" id="Node000011" href="$sys_mon___r_f___comms_8c.html#a52792279d23bf557b0a177590981b506" title="Function that executes the sending of the Sigfox Test." alt="" coords="1800,467,1981,493"/>
+<area shape="poly" id="edge11_Node000010_Node000011" title=" " alt="" coords="2014,511,1951,497,1952,492,2015,506"/>
+<area shape="rect" id="Node000020" href="$sys_mon___r_f___comms_8c.html#a1b432e87a6e7499fdf47de62fcc25671" title="Function to send test results by Sigfox." alt="" coords="1605,611,1732,637"/>
+<area shape="poly" id="edge22_Node000010_Node000020" title=" " alt="" coords="2034,560,1982,575,1849,602,1732,619,1731,614,1848,596,1981,570,2033,555"/>
+<area shape="rect" id="Node000012" href="$sys_mon___r_f___comms_8c.html#abb685215a8f11633d11ffc4655d48de8" title="Function that executes the sending of the last performed test frame." alt="" coords="1585,493,1752,536"/>
+<area shape="poly" id="edge12_Node000011_Node000012" title=" " alt="" coords="1787,499,1753,504,1752,499,1786,494"/>
+<area shape="rect" id="Node000013" href="$sys_mon___r_f___comms_8c.html#a85880166a06c35e527a7d972684c1338" title="Function to check the wireless comms. devices." alt="" coords="1356,443,1514,469"/>
+<area shape="poly" id="edge21_Node000011_Node000013" title=" " alt="" coords="1785,477,1515,463,1515,458,1785,472"/>
+<area shape="poly" id="edge13_Node000012_Node000013" title=" " alt="" coords="1569,492,1536,484,1491,473,1492,467,1537,479,1570,487"/>
+<area shape="rect" id="Node000014" href="$thread__sys_mon__entry_8c.html#ad7a8a06d67cdd43cdd5bc7f5d4db0cd7" title="Function that executes the device test: .&#45; verify the resources memory (checksum) ...." alt="" coords="1164,384,1265,411"/>
+<area shape="poly" id="edge14_Node000013_Node000014" title=" " alt="" coords="1367,441,1265,413,1266,408,1368,436"/>
+<area shape="rect" id="Node000015" href="$thread__sys_mon__entry_8c.html#a563202ab53d918f96e7470c54ed5d009" title="Execute some startup functions:" alt="" coords="692,401,792,428"/>
+<area shape="poly" id="edge15_Node000014_Node000015" title=" " alt="" coords="1149,411,1095,417,929,423,792,420,792,414,929,417,1095,412,1148,406"/>
+<area shape="rect" id="Node000019" href="$thread__sys_mon__entry_8c.html#ab93dae7b1a69e3ba8c62412e0fce2a06" title="Process events related to acelerometer." alt="" coords="942,376,1045,403"/>
+<area shape="poly" id="edge19_Node000014_Node000019" title=" " alt="" coords="1148,398,1045,394,1046,389,1148,392"/>
+<area shape="poly" id="edge16_Node000015_Node000016" title=" " alt="" coords="676,422,593,427,593,422,676,416"/>
+<area shape="rect" id="Node000017" href="$thread__sys_mon_8c.html#ab6d8d40a8001798107e88dc8f7e24cee" title=" " alt="" coords="257,416,398,443"/>
+<area shape="poly" id="edge17_Node000016_Node000017" title=" " alt="" coords="431,432,399,432,399,427,431,427"/>
+<area shape="rect" id="Node000018" href="$thread__sys_mon_8c.html#a53239dfb58d918aa0b54988408427f6d" title=" " alt="" coords="5,416,209,443"/>
+<area shape="poly" id="edge18_Node000017_Node000018" title=" " alt="" coords="241,432,209,432,209,427,241,427"/>
+<area shape="poly" id="edge20_Node000019_Node000015" title=" " alt="" coords="926,399,793,412,792,407,926,394"/>
+<area shape="rect" id="Node000021" href="$thread__sys_mon__entry_8c.html#a72f7661ea341de8646b4b0241d87ed71" title="Call SAT service because a critical error is detected register and report the event." alt="" coords="1397,553,1473,580"/>
+<area shape="poly" id="edge23_Node000020_Node000021" title=" " alt="" coords="1596,609,1473,579,1474,573,1597,604"/>
+<area shape="rect" id="Node000022" href="$thread__sys_mon__entry_8c.html#a569e2a19584fea41c2c54780106f24d7" title="Function that executes the device startup test: .&#45; verify the resources memory (checksum) ...." alt="" coords="1360,493,1510,520"/>
+<area shape="poly" id="edge25_Node000020_Node000022" title=" " alt="" coords="1592,606,1583,601,1567,586,1558,572,1550,557,1535,544,1492,523,1495,518,1538,539,1554,554,1563,569,1571,583,1586,597,1595,602"/>
+<area shape="rect" id="Node000023" href="$thread__comm__entry_8c.html#a2a7698a33ddf0a8ca71b8e0baab53eb2" title="Process events related to WIFI COMM module." alt="" coords="1363,611,1507,637"/>
+<area shape="poly" id="edge27_Node000020_Node000023" title=" " alt="" coords="1589,627,1507,627,1507,621,1589,621"/>
+<area shape="poly" id="edge24_Node000021_Node000016" title=" " alt="" coords="1382,565,1067,532,855,503,640,465,564,446,565,441,641,460,855,498,1067,527,1382,560"/>
+<area shape="poly" id="edge26_Node000022_Node000016" title=" " alt="" coords="1344,502,640,443,593,439,593,433,641,437,1344,497"/>
+<area shape="rect" id="Node000024" href="$thread__comm__entry_8c.html#a88587ace521f9dcb7e701367eeec5824" title="Thread COMM entry function." alt="" coords="1146,611,1282,637"/>
+<area shape="poly" id="edge28_Node000023_Node000024" title=" " alt="" coords="1348,627,1283,627,1283,621,1348,621"/>
+<area shape="rect" id="Node000025" href="$thread__comm_8c.html#a4d0497fd082ea6ad8cce7e8437cfc816" title=" " alt="" coords="928,611,1059,637"/>
+<area shape="poly" id="edge29_Node000024_Node000025" title=" " alt="" coords="1130,627,1059,627,1059,621,1130,621"/>
+<area shape="rect" id="Node000026" href="$thread__comm_8c.html#a01a6aa5f9adb99b48c6e175a2cab1316" title=" " alt="" coords="640,611,844,637"/>
+<area shape="poly" id="edge30_Node000025_Node000026" title=" " alt="" coords="912,627,844,627,844,621,912,621"/>
+<area shape="poly" id="edge32_Node000027_Node000012" title=" " alt="" coords="1801,532,1752,526,1753,521,1801,527"/>
+<area shape="rect" id="Node000028" href="$sys_mon___r_f___comms_8c.html#a43b9cedf2ff4b0c5bb865aaf4b21bdc6" title="Function to send test results by Wifi." alt="" coords="1590,560,1747,587"/>
+<area shape="poly" id="edge33_Node000027_Node000028" title=" " alt="" coords="1802,555,1747,564,1747,559,1801,550"/>
+<area shape="poly" id="edge34_Node000028_Node000021" title=" " alt="" coords="1574,573,1473,571,1473,565,1575,568"/>
+<area shape="poly" id="edge35_Node000028_Node000022" title=" " alt="" coords="1603,558,1484,523,1485,518,1605,553"/>
+<area shape="rect" id="Node000030" href="$thread__recorder__entry_8c.html#a2e9d6e60485d7028bef687ee8e1a93a9" title="A description of the function." alt="" coords="1817,712,1964,739"/>
+<area shape="poly" id="edge37_Node000029_Node000030" title=" " alt="" coords="2029,728,1965,728,1965,723,2029,723"/>
+<area shape="rect" id="Node000031" href="$thread__recorder_8c.html#a65e0c00d6e6f8ba51209b23f9fabb6f2" title=" " alt="" coords="1597,712,1740,739"/>
+<area shape="poly" id="edge38_Node000030_Node000031" title=" " alt="" coords="1802,728,1740,728,1740,723,1802,723"/>
+<area shape="rect" id="Node000032" href="$thread__recorder_8c.html#a2503ccebc2e88e7138e7a60629c60277" title=" " alt="" coords="1333,712,1537,739"/>
+<area shape="poly" id="edge39_Node000031_Node000032" title=" " alt="" coords="1581,728,1537,728,1537,723,1581,723"/>
+<area shape="poly" id="edge43_Node000033_Node000014" title=" " alt="" coords="1578,407,1265,401,1265,396,1578,401"/>
+<area shape="poly" id="edge41_Node000033_Node000021" title=" " alt="" coords="1642,431,1587,483,1564,511,1538,534,1506,550,1474,561,1472,556,1504,546,1535,530,1560,507,1583,480,1638,427"/>
+<area shape="poly" id="edge42_Node000033_Node000022" title=" " alt="" coords="1636,430,1590,458,1538,484,1503,495,1502,490,1536,479,1588,453,1633,426"/>
+<area shape="rect" id="Node000034" href="$thread__sys_mon__entry_8c.html#a45e8a3b71abc5aaf4a3de43e37b2c426" title="Function that executes the device test: .&#45; verify the resources memory (checksum) ...." alt="" coords="1354,291,1516,317"/>
+<area shape="poly" id="edge44_Node000033_Node000034" title=" " alt="" coords="1602,389,1584,383,1515,351,1459,320,1462,316,1518,346,1586,378,1604,384"/>
+<area shape="poly" id="edge45_Node000034_Node000015" title=" " alt="" coords="1338,311,1132,328,1011,344,892,367,831,384,778,403,776,398,829,379,891,362,1011,339,1131,323,1338,306"/>
+<area shape="poly" id="edge47_Node000035_Node000014" title=" " alt="" coords="2026,196,1888,188,1803,188,1712,192,1616,203,1519,220,1424,246,1335,281,1299,304,1268,332,1226,385,1222,382,1264,329,1296,300,1332,276,1423,240,1518,215,1615,197,1711,187,1803,183,1889,183,2026,191"/>
+<area shape="poly" id="edge49_Node000036_Node000034" title=" " alt="" coords="2026,314,1516,308,1516,302,2026,308"/>
+<area shape="poly" id="edge52_Node000037_Node000014" title=" " alt="" coords="1577,364,1334,385,1266,393,1265,388,1333,380,1577,359"/>
+<area shape="poly" id="edge51_Node000037_Node000022" title=" " alt="" coords="1592,378,1586,382,1576,394,1569,406,1564,432,1558,458,1550,471,1538,484,1512,498,1509,494,1535,479,1546,468,1553,456,1558,431,1564,404,1571,391,1583,378,1588,374"/>
+<area shape="poly" id="edge53_Node000037_Node000034" title=" " alt="" coords="1588,340,1499,321,1500,315,1589,335"/>
+<area shape="poly" id="edge55_Node000038_Node000016" title=" " alt="" coords="674,669,639,652,613,628,591,601,557,541,534,485,521,444,526,443,539,483,561,539,595,598,617,624,642,647,677,664"/>
+<area shape="rect" id="Node000040" href="$thread__defibrillator_8c.html#a4f226b63bfe2cc5878b521a05e1c7df1" title=" " alt="" coords="2032,817,2189,844"/>
+<area shape="poly" id="edge61_Node000039_Node000040" title=" " alt="" coords="2226,796,2155,820,2153,814,2225,791"/>
+<area shape="rect" id="Node000041" href="$thread__defibrillator_8c.html#ac53134e0b01b26f788ab932e00360086" title=" " alt="" coords="1828,813,1954,856"/>
+<area shape="poly" id="edge62_Node000040_Node000041" title=" " alt="" coords="2016,835,1954,836,1954,831,2016,830"/>
+<area shape="rect" id="Node000042" href="$main_8c.html#af2e15798c128e90cab0c5d02b5bbf9a9" title=" " alt="" coords="1143,792,1285,819"/>
+<area shape="poly" id="edge63_Node000041_Node000042" title=" " alt="" coords="1812,834,1285,811,1286,806,1812,829"/>
+<area shape="rect" id="Node000044" href="$thread__pat_mon__hal_8c.html#abac6f6b7853d62b47ee192fba4833b4f" title="Read a single frame from the ADS (analog front end)" alt="" coords="2046,763,2175,789"/>
+<area shape="poly" id="edge66_Node000043_Node000044" title=" " alt="" coords="2298,564,2285,606,2264,656,2234,708,2215,732,2193,753,2175,765,2172,760,2190,749,2211,728,2229,705,2259,654,2280,604,2293,562"/>
+<area shape="rect" id="Node000045" href="$thread__pat_mon__entry_8c.html#acba6891b85ed8b43afb29b84f25a1162" title="A description of the function." alt="" coords="1819,763,1962,789"/>
+<area shape="poly" id="edge67_Node000044_Node000045" title=" " alt="" coords="2030,779,1963,779,1963,773,2030,773"/>
+<area shape="rect" id="Node000046" href="$thread__pat_mon_8c.html#af7843a5586e10a54c15edd3436330f3d" title=" " alt="" coords="1599,764,1738,791"/>
+<area shape="poly" id="edge68_Node000045_Node000046" title=" " alt="" coords="1804,779,1738,780,1738,774,1804,774"/>
+<area shape="rect" id="Node000047" href="$thread__pat_mon_8c.html#ab6734fa1c448b8736507139f71493b67" title=" " alt="" coords="1360,765,1510,792"/>
+<area shape="poly" id="edge69_Node000046_Node000047" title=" " alt="" coords="1584,781,1511,781,1511,776,1584,775"/>
+<area shape="poly" id="edge70_Node000047_Node000042" title=" " alt="" coords="1345,792,1286,800,1286,794,1344,787"/>
+</map>

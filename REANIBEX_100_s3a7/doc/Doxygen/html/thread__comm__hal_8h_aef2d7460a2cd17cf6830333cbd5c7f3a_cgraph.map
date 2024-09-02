@@ -1,0 +1,13 @@
+<map id="Comm_ACC_Get_Acceleration_Data" name="Comm_ACC_Get_Acceleration_Data">
+<area shape="rect" id="Node000001" title="Read XYZ axis acceleration values." alt="" coords="5,81,240,108"/>
+<area shape="rect" id="Node000002" href="$_i2_c__1_8c.html#ace04072c3cee76dcb968024ef77224f6" title="Function to read data byte at specific register address." alt="" coords="288,81,454,108"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="240,92,272,92,272,97,240,97"/>
+<area shape="rect" id="Node000003" href="$_i2_c__1_8c.html#a8721bef7537e00756c8c6e8ec8b4c3b4" title="Function to get a data byte from the i2C device." alt="" coords="518,5,622,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="406,78,501,42,517,35,519,40,503,46,408,83"/>
+<area shape="rect" id="Node000004" href="$_i2_c__1_8c.html#a58c06ede2d56b3068be6703981e4030a" title="Generate the START condition in the i2C line." alt="" coords="502,56,638,83"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="454,81,487,77,487,83,455,87"/>
+<area shape="rect" id="Node000005" href="$_i2_c__1_8c.html#abe5880e856c1c213a8e0074d876f9b70" title="Generate the STOP condition in the i2C line." alt="" coords="503,107,638,133"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="455,103,488,107,487,112,454,108"/>
+<area shape="rect" id="Node000006" href="$_i2_c__1_8c.html#a3be7740fdada1288f4bf53c6f8a4c84a" title="Function to send a data byte to the i2C device." alt="" coords="519,157,621,184"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="408,106,503,143,519,149,517,154,501,148,406,111"/>
+</map>

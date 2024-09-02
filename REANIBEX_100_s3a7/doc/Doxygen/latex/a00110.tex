@@ -1,0 +1,60 @@
+\doxysection{C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/thread\+\_\+hmi\+\_\+entry.c File Reference}
+\hypertarget{a00110}{}\label{a00110}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/thread\_hmi\_entry.c@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/thread\_hmi\_entry.c}}
+{\ttfamily \#include "{}thread\+\_\+defibrillator\+\_\+hal.\+h"{}}\newline
+{\ttfamily \#include "{}thread\+\_\+hmi.\+h"{}}\newline
+{\ttfamily \#include "{}thread\+\_\+core.\+h"{}}\newline
+{\ttfamily \#include "{}thread\+\_\+core\+\_\+entry.\+h"{}}\newline
+{\ttfamily \#include "{}thread\+\_\+comm.\+h"{}}\newline
+{\ttfamily \#include "{}Trace.\+h"{}}\newline
+{\ttfamily \#include "{}Keypad.\+h"{}}\newline
+{\ttfamily \#include "{}event\+\_\+ids.\+h"{}}\newline
+{\ttfamily \#include "{}types\+\_\+basic.\+h"{}}\newline
+Include dependency graph for thread\+\_\+hmi\+\_\+entry.\+c\+:
+% FIG 0
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{a00110_a1e504b5226ce074c028976ce3e4995e9}{Read\+\_\+\+Keys}} (void)
+\begin{DoxyCompactList}\small\item\em Check keys status to report to the core Assume that this function is called every 40 msecs. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a00110_aa9b1f4ba5d2ee3e201b1c5e9529a650a}{thread\+\_\+hmi\+\_\+entry}} (void)
+\begin{DoxyCompactList}\small\item\em Defines HMI thread behavior. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVersion}{Version}
+v1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+16/01/2018 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+ltorres 
+\end{DoxyAuthor}
+\begin{DoxyWarning}{Warning}
+author date version .-\/ Edition 
+\end{DoxyWarning}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{a00257__bug000028}{Bug}}]\end{DoxyRefDesc}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{a00110_a1e504b5226ce074c028976ce3e4995e9}\label{a00110_a1e504b5226ce074c028976ce3e4995e9} 
+\index{thread\_hmi\_entry.c@{thread\_hmi\_entry.c}!Read\_Keys@{Read\_Keys}}
+\index{Read\_Keys@{Read\_Keys}!thread\_hmi\_entry.c@{thread\_hmi\_entry.c}}
+\doxysubsubsection{\texorpdfstring{Read\_Keys()}{Read\_Keys()}}
+{\footnotesize\ttfamily static void Read\+\_\+\+Keys (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Check keys status to report to the core Assume that this function is called every 40 msecs. 
+
+\Hypertarget{a00110_aa9b1f4ba5d2ee3e201b1c5e9529a650a}\label{a00110_aa9b1f4ba5d2ee3e201b1c5e9529a650a} 
+\index{thread\_hmi\_entry.c@{thread\_hmi\_entry.c}!thread\_hmi\_entry@{thread\_hmi\_entry}}
+\index{thread\_hmi\_entry@{thread\_hmi\_entry}!thread\_hmi\_entry.c@{thread\_hmi\_entry.c}}
+\doxysubsubsection{\texorpdfstring{thread\_hmi\_entry()}{thread\_hmi\_entry()}}
+{\footnotesize\ttfamily void thread\+\_\+hmi\+\_\+entry (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Defines HMI thread behavior. 
+

@@ -1,0 +1,125 @@
+\doxysection{WIFI\+\_\+\+HEADER\+\_\+t Struct Reference}
+\hypertarget{struct_w_i_f_i___h_e_a_d_e_r__t}{}\label{struct_w_i_f_i___h_e_a_d_e_r__t}\index{WIFI\_HEADER\_t@{WIFI\_HEADER\_t}}
+
+
+{\ttfamily \#include $<$bsp\+\_\+wifi\+\_\+silabs-\/\+WGM110.\+h$>$}
+
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \mbox{\hyperlink{struct_w_i_f_i___h_e_a_d_e_r__t_a34398c9f6b80301402a73ccd84048378}{version}}
+\begin{DoxyCompactList}\small\item\em SW version. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{struct_w_i_f_i___h_e_a_d_e_r__t_a29a049eb6cffab59fae4d5ff2d14a9e1}{s\+\_\+n}} \mbox{[}16\mbox{]}
+\begin{DoxyCompactList}\small\item\em Device serial number. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{struct_w_i_f_i___h_e_a_d_e_r__t_ade9db099bd0814201dfdea4d760e5cd1}{id}}
+\begin{DoxyCompactList}\small\item\em Identifier(1-\/Test frame; 2-\/Alert frame; 3-\/ GPS frame) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{struct_w_i_f_i___h_e_a_d_e_r__t_ab4a92579a2a36993b9bfec8b43992412}{password}} \mbox{[}64\mbox{]}
+\begin{DoxyCompactList}\small\item\em Password. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\+\_\+t}} \mbox{\hyperlink{struct_w_i_f_i___h_e_a_d_e_r__t_ad3533b2a1738a2797d9a272536c11337}{file\+\_\+size}}
+\begin{DoxyCompactList}\small\item\em File size. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{struct_w_i_f_i___h_e_a_d_e_r__t_aea0a71866b53c53e7b6d0d69328fcd3c}{wifi\+\_\+cheksum}}
+\begin{DoxyCompactList}\small\item\em Data CRC. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{struct_w_i_f_i___h_e_a_d_e_r__t_a66d11c99e604cacf784fe5e204a015b0}{ssid}} \mbox{[}32\mbox{]}
+\begin{DoxyCompactList}\small\item\em WIFI SSID. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{struct_w_i_f_i___h_e_a_d_e_r__t_a16476d6cdea5af3dfa00dd455a6e8415}{rssid}}
+\begin{DoxyCompactList}\small\item\em WIFI RSSID. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{struct_w_i_f_i___h_e_a_d_e_r__t_a15fc9cf02a53c9aa29c76df0b7e8b97b}{must\+\_\+be\+\_\+0x55}}
+\begin{DoxyCompactList}\small\item\em Must be 0x55. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Field Documentation}
+\Hypertarget{struct_w_i_f_i___h_e_a_d_e_r__t_ad3533b2a1738a2797d9a272536c11337}\label{struct_w_i_f_i___h_e_a_d_e_r__t_ad3533b2a1738a2797d9a272536c11337} 
+\index{WIFI\_HEADER\_t@{WIFI\_HEADER\_t}!file\_size@{file\_size}}
+\index{file\_size@{file\_size}!WIFI\_HEADER\_t@{WIFI\_HEADER\_t}}
+\doxysubsubsection{\texorpdfstring{file\_size}{file\_size}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\+\_\+t}} WIFI\+\_\+\+HEADER\+\_\+t\+::file\+\_\+size}
+
+
+
+File size. 
+
+\Hypertarget{struct_w_i_f_i___h_e_a_d_e_r__t_ade9db099bd0814201dfdea4d760e5cd1}\label{struct_w_i_f_i___h_e_a_d_e_r__t_ade9db099bd0814201dfdea4d760e5cd1} 
+\index{WIFI\_HEADER\_t@{WIFI\_HEADER\_t}!id@{id}}
+\index{id@{id}!WIFI\_HEADER\_t@{WIFI\_HEADER\_t}}
+\doxysubsubsection{\texorpdfstring{id}{id}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} WIFI\+\_\+\+HEADER\+\_\+t\+::id}
+
+
+
+Identifier(1-\/Test frame; 2-\/Alert frame; 3-\/ GPS frame) 
+
+\Hypertarget{struct_w_i_f_i___h_e_a_d_e_r__t_a15fc9cf02a53c9aa29c76df0b7e8b97b}\label{struct_w_i_f_i___h_e_a_d_e_r__t_a15fc9cf02a53c9aa29c76df0b7e8b97b} 
+\index{WIFI\_HEADER\_t@{WIFI\_HEADER\_t}!must\_be\_0x55@{must\_be\_0x55}}
+\index{must\_be\_0x55@{must\_be\_0x55}!WIFI\_HEADER\_t@{WIFI\_HEADER\_t}}
+\doxysubsubsection{\texorpdfstring{must\_be\_0x55}{must\_be\_0x55}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} WIFI\+\_\+\+HEADER\+\_\+t\+::must\+\_\+be\+\_\+0x55}
+
+
+
+Must be 0x55. 
+
+\Hypertarget{struct_w_i_f_i___h_e_a_d_e_r__t_ab4a92579a2a36993b9bfec8b43992412}\label{struct_w_i_f_i___h_e_a_d_e_r__t_ab4a92579a2a36993b9bfec8b43992412} 
+\index{WIFI\_HEADER\_t@{WIFI\_HEADER\_t}!password@{password}}
+\index{password@{password}!WIFI\_HEADER\_t@{WIFI\_HEADER\_t}}
+\doxysubsubsection{\texorpdfstring{password}{password}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} WIFI\+\_\+\+HEADER\+\_\+t\+::password\mbox{[}64\mbox{]}}
+
+
+
+Password. 
+
+\Hypertarget{struct_w_i_f_i___h_e_a_d_e_r__t_a16476d6cdea5af3dfa00dd455a6e8415}\label{struct_w_i_f_i___h_e_a_d_e_r__t_a16476d6cdea5af3dfa00dd455a6e8415} 
+\index{WIFI\_HEADER\_t@{WIFI\_HEADER\_t}!rssid@{rssid}}
+\index{rssid@{rssid}!WIFI\_HEADER\_t@{WIFI\_HEADER\_t}}
+\doxysubsubsection{\texorpdfstring{rssid}{rssid}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} WIFI\+\_\+\+HEADER\+\_\+t\+::rssid}
+
+
+
+WIFI RSSID. 
+
+\Hypertarget{struct_w_i_f_i___h_e_a_d_e_r__t_a29a049eb6cffab59fae4d5ff2d14a9e1}\label{struct_w_i_f_i___h_e_a_d_e_r__t_a29a049eb6cffab59fae4d5ff2d14a9e1} 
+\index{WIFI\_HEADER\_t@{WIFI\_HEADER\_t}!s\_n@{s\_n}}
+\index{s\_n@{s\_n}!WIFI\_HEADER\_t@{WIFI\_HEADER\_t}}
+\doxysubsubsection{\texorpdfstring{s\_n}{s\_n}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} WIFI\+\_\+\+HEADER\+\_\+t\+::s\+\_\+n\mbox{[}16\mbox{]}}
+
+
+
+Device serial number. 
+
+\Hypertarget{struct_w_i_f_i___h_e_a_d_e_r__t_a66d11c99e604cacf784fe5e204a015b0}\label{struct_w_i_f_i___h_e_a_d_e_r__t_a66d11c99e604cacf784fe5e204a015b0} 
+\index{WIFI\_HEADER\_t@{WIFI\_HEADER\_t}!ssid@{ssid}}
+\index{ssid@{ssid}!WIFI\_HEADER\_t@{WIFI\_HEADER\_t}}
+\doxysubsubsection{\texorpdfstring{ssid}{ssid}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} WIFI\+\_\+\+HEADER\+\_\+t\+::ssid\mbox{[}32\mbox{]}}
+
+
+
+WIFI SSID. 
+
+\Hypertarget{struct_w_i_f_i___h_e_a_d_e_r__t_a34398c9f6b80301402a73ccd84048378}\label{struct_w_i_f_i___h_e_a_d_e_r__t_a34398c9f6b80301402a73ccd84048378} 
+\index{WIFI\_HEADER\_t@{WIFI\_HEADER\_t}!version@{version}}
+\index{version@{version}!WIFI\_HEADER\_t@{WIFI\_HEADER\_t}}
+\doxysubsubsection{\texorpdfstring{version}{version}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} WIFI\+\_\+\+HEADER\+\_\+t\+::version}
+
+
+
+SW version. 
+
+\Hypertarget{struct_w_i_f_i___h_e_a_d_e_r__t_aea0a71866b53c53e7b6d0d69328fcd3c}\label{struct_w_i_f_i___h_e_a_d_e_r__t_aea0a71866b53c53e7b6d0d69328fcd3c} 
+\index{WIFI\_HEADER\_t@{WIFI\_HEADER\_t}!wifi\_cheksum@{wifi\_cheksum}}
+\index{wifi\_cheksum@{wifi\_cheksum}!WIFI\_HEADER\_t@{WIFI\_HEADER\_t}}
+\doxysubsubsection{\texorpdfstring{wifi\_cheksum}{wifi\_cheksum}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} WIFI\+\_\+\+HEADER\+\_\+t\+::wifi\+\_\+cheksum}
+
+
+
+Data CRC. 
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\+BSP/\mbox{\hyperlink{bsp__wifi__silabs-_w_g_m110_8h}{bsp\+\_\+wifi\+\_\+silabs-\/\+WGM110.\+h}}\end{DoxyCompactItemize}

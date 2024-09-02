@@ -1,0 +1,1384 @@
+\doxysection{C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/sys\+Mon\+\_\+\+Battery.h File Reference}
+\hypertarget{sys_mon___battery_8h}{}\label{sys_mon___battery_8h}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/sysMon\_Battery.h@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/sysMon\_Battery.h}}
+
+
+Header with functions related to the battery services.  
+
+
+{\ttfamily \#include "{}R100\+\_\+\+Errors.\+h"{}}\newline
+{\ttfamily \#include "{}HAL/thread\+\_\+pat\+Mon\+\_\+hal.\+h"{}}\newline
+{\ttfamily \#include "{}HAL/thread\+\_\+comm\+\_\+hal.\+h"{}}\newline
+{\ttfamily \#include "{}DB\+\_\+\+Test.\+h"{}}\newline
+{\ttfamily \#include "{}secure\+\_\+crypto.\+h"{}}\newline
+{\ttfamily \#include "{}BSP/bsp\+\_\+wifi\+\_\+silabs-\/\+WGM110.\+h"{}}\newline
+{\ttfamily \#include "{}BSP/bsp\+\_\+gps\+\_\+quectel-\/\+L96.\+h"{}}\newline
+Include dependency graph for sys\+Mon\+\_\+\+Battery.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sys_mon___battery_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sys_mon___battery_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_b_a_t_t_e_r_y___i_n_f_o__t}{BATTERY\+\_\+\+INFO\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Battery info (stored in the battery pack) \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_b_a_t_t_e_r_y___s_t_a_t_i_s_t_i_c_s__t}{BATTERY\+\_\+\+STATISTICS\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Battery statistics (stored in the battery pack) \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_b_a_t_t_e_r_y___s_t_a_t_i_s_t_i_c_s___c_o_m_m_s__t}{BATTERY\+\_\+\+STATISTICS\+\_\+\+COMMS\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Comms Battery statistics (stored in the battery pack) \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_b_a_t_t_e_r_y___r_t_c__t}{BATTERY\+\_\+\+RTC\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Battery date/time (read from the battery pack) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{sys_mon___battery_8h_a808fa5efcfeeb56841902e17a7f61f2c}{VB\+\_\+25\+C\+\_\+\+SAFE\+\_\+\+BATTERY}}~10000
+\begin{DoxyCompactList}\small\item\em Security voltage. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{sys_mon___battery_8h_a99aa538a25a81d6d96e3e5b1a8effa2a}{VB\+\_\+00\+C\+\_\+\+SAFE\+\_\+\+BATTERY}}~9500
+\begin{DoxyCompactList}\small\item\em Security voltage. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{sys_mon___battery_8h_a048841899de50a17d0fe1b25d6122073}{VB\+\_\+\+SAFE\+\_\+\+BATTERY}}~9300
+\begin{DoxyCompactList}\small\item\em Security voltage. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{sys_mon___battery_8h_a88ce487b8dfa2af2b521a772f40aba9d}{SMON\+\_\+\+DCMAIN\+\_\+\+MAX}}~15500L
+\begin{DoxyCompactList}\small\item\em Maximun DC\+\_\+main voltage (milivolts) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{sys_mon___battery_8h_a4d97b79ccb1291f0249763523b0e666d}{SMON\+\_\+\+DCMAIN\+\_\+\+MIN}}~8500L
+\begin{DoxyCompactList}\small\item\em Minimun DC\+\_\+main voltage (milivolts) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{sys_mon___battery_8h_aea2e94b8fcd27ae63f8812b8e952b787}{SMON\+\_\+18\+V\+\_\+\+MAX}}~19000L
+\begin{DoxyCompactList}\small\item\em Maximun DC\+\_\+main voltage (milivolts) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{sys_mon___battery_8h_a770e90ec21157f40aade93791241687a}{SMON\+\_\+18\+V\+\_\+\+MIN}}~16000L
+\begin{DoxyCompactList}\small\item\em Minimun DC\+\_\+main voltage (milivolts) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{sys_mon___battery_8h_a428115dc7f0b6d244227d0294f8f3159}{BATTERY\+\_\+\+LOW\+\_\+\+CHARGE}}~15
+\begin{DoxyCompactList}\small\item\em Battery charge percent to advice low battery. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{sys_mon___battery_8h_ae1c4527aa849fe087e9b4b793f5a1ff3}{BATTERY\+\_\+\+REPLACE\+\_\+\+CHARGE}}~10
+\begin{DoxyCompactList}\small\item\em Battery charge percent to demand the battery replacement. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{sys_mon___battery_8h_ac6612b8d15646fc292e2ced38e524935}{BATTERY\+\_\+\+VERY\+\_\+\+LOW\+\_\+\+TEMP}}~(-\/25)
+\begin{DoxyCompactList}\small\item\em Battery minimum storage temperature limit. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{sys_mon___battery_8h_a5fd7f833f7db09a72714996d7455f5c6}{BATTERY\+\_\+\+VERY\+\_\+\+HIGH\+\_\+\+TEMP}}~(70)
+\begin{DoxyCompactList}\small\item\em Battery maximum storage temperature limit. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{sys_mon___battery_8h_a4b3011ea216e2b16cd3583e519344fa2}{BATTERY\+\_\+\+LOW\+\_\+\+TEMP}}~(0)
+\begin{DoxyCompactList}\small\item\em Battery minimum operation temperature limit. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{sys_mon___battery_8h_a62c1d97fd65525e19b11620492653ed6}{BATTERY\+\_\+\+HIGH\+\_\+\+TEMP}}~(50)
+\begin{DoxyCompactList}\small\item\em Battery maximum operation temperature limit. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{sys_mon___battery_8h_a34f8470077f67500a1a34f59f1463e61}{Inc\+\_\+\+Open\+Cover}} (void)
+\begin{DoxyCompactList}\small\item\em Increment the number of ticks with open cover. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{sys_mon___battery_8h_a9370c82144afbf2adc7d7aec6fd3a75b}{Inc\+\_\+\+Test\+Manual}} (void)
+\begin{DoxyCompactList}\small\item\em Increment the number of test manual. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{sys_mon___battery_8h_a0dadad284c2d7442cdf78c1bd2bd4b25}{Inc\+\_\+\+Full\+Charges}} (void)
+\begin{DoxyCompactList}\small\item\em Increment the number of Vc full charges. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{sys_mon___battery_8h_a3b4e8cdc5b59f991841d44e36105e40a}{Inc\+\_\+\+Test\+Charges}} (void)
+\begin{DoxyCompactList}\small\item\em Increment the number of Vc test charges. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{sys_mon___battery_8h_a48cee6f2846fe7b99b4fef1935e17f6a}{Inc\+\_\+\+Run\+Time}} (void)
+\begin{DoxyCompactList}\small\item\em Increment the number of running time. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{sys_mon___battery_8h_ad8fb2c1b917c628a847b4d7774462498}{Inc\+\_\+\+Run\+Time\+\_\+\+Update}} (void)
+\begin{DoxyCompactList}\small\item\em Increment the number of running time. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{sys_mon___battery_8h_aa25d224e6ec82f7d4415383329280b43}{Inc\+\_\+\+Daily\+Test}} (void)
+\begin{DoxyCompactList}\small\item\em Increment the number of daily test. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{sys_mon___battery_8h_ae6f5da5b6a59d66bc10b9fd02ac21024}{Inc\+\_\+\+RTCWarning}} (void)
+\begin{DoxyCompactList}\small\item\em Increment the number of alerts that have been said by audio in RTC(Close cover, Call SAT, BEEP-\/\+BEEP) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{sys_mon___battery_8h_ade8c46a19828833d3a5e77f1a5cd0ddb}{Inc\+\_\+\+Sigfox\+Cover}} (void)
+\begin{DoxyCompactList}\small\item\em Increment the number of alerts that have been sent with the open and close cover with Sigfox. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{sys_mon___battery_8h_a8f638455f7b258482dc0bc7ecf401e73}{Inc\+\_\+\+Sigfox\+Daily\+Test}} (void)
+\begin{DoxyCompactList}\small\item\em Increment the number of daily test that have been sent with Sigfox. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{sys_mon___battery_8h_a009157e2dfbc3db9566934dbf2fa403b}{Inc\+\_\+\+Sigfox\+Manual\+Test}} (void)
+\begin{DoxyCompactList}\small\item\em Increment the number of monthly test that have been sent with Sigfox. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{sys_mon___battery_8h_aee5a37e5ffddd98fcbb1453730f70022}{Inc\+\_\+\+Sigfox\+Manual\+Test\+GPS}} (void)
+\begin{DoxyCompactList}\small\item\em Increment the number of monthly test that have been sent with Sigfox + GPS. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{sys_mon___battery_8h_ab86359b6c3d0532e82bba6c8e97e4aea}{Inc\+\_\+\+Wifi\+Cover\+Connect}} (void)
+\begin{DoxyCompactList}\small\item\em Increment the number of alerts that have been sent with the open and close cover with Wifi. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{sys_mon___battery_8h_a65af812d4c2a7dcf19177d98902a8565}{Inc\+\_\+\+Wifi\+Cover\+No\+Connect}} (void)
+\begin{DoxyCompactList}\small\item\em Increment the number of of alerts that have no been sent with the open and close cover with Wifi. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{sys_mon___battery_8h_ae076f01939cc5ccb26fe79b89422d668}{Inc\+\_\+\+Wifi\+Test\+Connect}} (\mbox{\hyperlink{struct_w_i_f_i___t_e_s_t___r_e_s_u_l_t__t}{WIFI\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t}} \texorpdfstring{$\ast$}{*}pwifi\+\_\+test\+\_\+result)
+\begin{DoxyCompactList}\small\item\em Increment the number of times that Wi\+Fi has been connected successfully. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{sys_mon___battery_8h_a594be38d4cd3b72353313cedff768a9e}{Inc\+\_\+\+Wifi\+Test\+No\+Connect}} (\mbox{\hyperlink{struct_w_i_f_i___t_e_s_t___r_e_s_u_l_t__t}{WIFI\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t}} \texorpdfstring{$\ast$}{*}pwifi\+\_\+test\+\_\+result)
+\begin{DoxyCompactList}\small\item\em Increment the number of times that Wi\+Fi has not been connected successfully. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{sys_mon___battery_8h_a6a47bde1c84aa70dac8b2736880637e2}{Inc\+\_\+\+Wifi\+Test\+Connect\+GPS}} (void)
+\begin{DoxyCompactList}\small\item\em Increment the number of fully test that have been sent with Wifi + GPS. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{sys_mon___battery_8h_ad52d85e4fd7115f2dd306c49a71a2f82}{Inc\+\_\+\+Wifi\+Run\+Time}} (void)
+\begin{DoxyCompactList}\small\item\em Increment the number of run time. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{sys_mon___battery_8h_a743a4c0921f5224970196cca7f4e0eb5}{Battery\+\_\+\+Get\+\_\+\+Info}} (\mbox{\hyperlink{struct_b_a_t_t_e_r_y___i_n_f_o__t}{BATTERY\+\_\+\+INFO\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Data)
+\begin{DoxyCompactList}\small\item\em Get the battery information. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{sys_mon___battery_8h_a61570373ff3f5bee2e104f2f0ed715c9}{Battery\+\_\+\+Get\+\_\+\+Statistics}} (\mbox{\hyperlink{struct_b_a_t_t_e_r_y___s_t_a_t_i_s_t_i_c_s__t}{BATTERY\+\_\+\+STATISTICS\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Data)
+\begin{DoxyCompactList}\small\item\em Get the battery statistics. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{sys_mon___battery_8h_ab35bc2cbe2f74af341ba2664e6bce496}{Battery\+\_\+\+Get\+\_\+\+Statistics\+\_\+\+Comms}} (\mbox{\hyperlink{struct_b_a_t_t_e_r_y___s_t_a_t_i_s_t_i_c_s___c_o_m_m_s__t}{BATTERY\+\_\+\+STATISTICS\+\_\+\+COMMS\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Data)
+\begin{DoxyCompactList}\small\item\em Get the battery statistics. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{sys_mon___battery_8h_a6a908c00382961d78f2da4ee84cb4263}{Battery\+\_\+\+Get\+\_\+\+Charge}} (void)
+\begin{DoxyCompactList}\small\item\em Computes the remaining capacity in the battery. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_aef44329758059c91c76d334e8fc09700}{int8\+\_\+t}} \mbox{\hyperlink{sys_mon___battery_8h_aa6c128d869ee1d53d1902c4248f0c006}{Battery\+\_\+\+Get\+\_\+\+Temperature}} (void)
+\begin{DoxyCompactList}\small\item\em Get temperature value in battery. \end{DoxyCompactList}\item 
+ssp\+\_\+err\+\_\+t \mbox{\hyperlink{sys_mon___battery_8h_aacda44f15717d41d0e57207ef9f7d766}{Battery\+\_\+\+Write\+\_\+\+Statistics}} (\mbox{\hyperlink{struct_b_a_t_t_e_r_y___s_t_a_t_i_s_t_i_c_s__t}{BATTERY\+\_\+\+STATISTICS\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Statistics)
+\begin{DoxyCompactList}\small\item\em Write the battery statistics. \end{DoxyCompactList}\item 
+ssp\+\_\+err\+\_\+t \mbox{\hyperlink{sys_mon___battery_8h_ac64859eb7511e20eff22aae21d9594be}{Battery\+\_\+\+Write\+\_\+\+Statistics\+\_\+\+Comms}} (\mbox{\hyperlink{struct_b_a_t_t_e_r_y___s_t_a_t_i_s_t_i_c_s___c_o_m_m_s__t}{BATTERY\+\_\+\+STATISTICS\+\_\+\+COMMS\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Statistics\+\_\+comms)
+\begin{DoxyCompactList}\small\item\em Write the battery statistics. \end{DoxyCompactList}\item 
+ssp\+\_\+err\+\_\+t \mbox{\hyperlink{sys_mon___battery_8h_a2bc0c3d8d286f1d8c6a9f70e09121122}{Battery\+\_\+\+Read\+\_\+\+Statistics}} (\mbox{\hyperlink{struct_b_a_t_t_e_r_y___s_t_a_t_i_s_t_i_c_s__t}{BATTERY\+\_\+\+STATISTICS\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Statistics)
+\begin{DoxyCompactList}\small\item\em Read the battery statistics. \end{DoxyCompactList}\item 
+ssp\+\_\+err\+\_\+t \mbox{\hyperlink{sys_mon___battery_8h_acf22cd3802dfc3abc7559043660d80a8}{Battery\+\_\+\+Read\+\_\+\+Statistics\+\_\+\+Comms}} (\mbox{\hyperlink{struct_b_a_t_t_e_r_y___s_t_a_t_i_s_t_i_c_s___c_o_m_m_s__t}{BATTERY\+\_\+\+STATISTICS\+\_\+\+COMMS\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Statistics\+\_\+comms)
+\begin{DoxyCompactList}\small\item\em Read the battery statistics. \end{DoxyCompactList}\item 
+ssp\+\_\+err\+\_\+t \mbox{\hyperlink{sys_mon___battery_8h_a478330b379be96e504e4f945b4fb823b}{Battery\+\_\+\+Read\+\_\+\+Temperature}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_aef44329758059c91c76d334e8fc09700}{int8\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Temp)
+\item 
+ssp\+\_\+err\+\_\+t \mbox{\hyperlink{sys_mon___battery_8h_aa19967644b300db88bf94528f16a7e8e}{Battery\+\_\+\+Read\+\_\+\+RTC}} (\mbox{\hyperlink{struct_b_a_t_t_e_r_y___r_t_c__t}{BATTERY\+\_\+\+RTC\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+RTC)
+\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{sys_mon___battery_8h_ae0cfb30c811fc18d3bc3c8135aea700d}{Is\+\_\+\+Battery\+\_\+\+Mode\+\_\+\+Demo}} (void)
+\begin{DoxyCompactList}\small\item\em Function that report if the battery is DEMO or not. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{sys_mon___battery_8h_a4bd5ebb2611761cfe9f4d75a41fd6cdc}{Battery\+\_\+\+I2\+C\+\_\+\+Init}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \texorpdfstring{$\ast$}{*}pon\+Date, \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \texorpdfstring{$\ast$}{*}pon\+Time)
+\begin{DoxyCompactList}\small\item\em Initializes the battery i2c port to communicate with internals RTC and EEprom. \end{DoxyCompactList}\item 
+ssp\+\_\+err\+\_\+t \mbox{\hyperlink{sys_mon___battery_8h_ab90eec6eff79dd7fdd5142ab73af12d5}{Battery\+\_\+\+I2\+C\+\_\+\+Init\+\_\+\+RTC}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \texorpdfstring{$\ast$}{*}pon\+Date, \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \texorpdfstring{$\ast$}{*}pon\+Time)
+\begin{DoxyCompactList}\small\item\em Initializes the battery i2c port to communicate with internals RTC and EEprom. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \mbox{\hyperlink{sys_mon___battery_8h_af6e0839479117b02185cb5786de7d15b}{diff\+\_\+time\+\_\+days}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} date\+\_\+1, \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} date\+\_\+2)
+\begin{DoxyCompactList}\small\item\em Computes the difference time between two dates (in days) (date\+\_\+1 -\/ date\+\_\+2) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \mbox{\hyperlink{sys_mon___battery_8h_aad12288121f6273ac32046b4afd99864}{diff\+\_\+time\+\_\+seconds}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} time\+\_\+1, \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} time\+\_\+2)
+\begin{DoxyCompactList}\small\item\em Computes the difference time between two hours (in seconds) (time\+\_\+1 -\/ time\+\_\+2) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{sys_mon___battery_8h_acd37747fe0bd63798d8b15d239282796}{Get\+\_\+\+Date}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Year, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Month, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{_d_b___episode_8c_a2e103a2447fead44e4331b13d3f2bdd8}{p\+Date}})
+\begin{DoxyCompactList}\small\item\em Report the date information. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{sys_mon___battery_8h_a86b49a02be5d394a8090847285bb9105}{Get\+\_\+\+Time}} (\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Hour, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Min, \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Sec)
+\begin{DoxyCompactList}\small\item\em Report the time information. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{sys_mon___battery_8h_ad263ec1e82c36014bf82be38f3b86eb0}{Get\+\_\+\+Rem\+\_\+\+Charge}} (void)
+\begin{DoxyCompactList}\small\item\em Report the remaining battery charge. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{sys_mon___battery_8h_adffa4deeb197c85e4f9ed9eaa2fdbce8}{Get\+\_\+\+RTC\+\_\+\+Month}} (void)
+\begin{DoxyCompactList}\small\item\em Get RTC month. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{sys_mon___battery_8h_ad6b958727dcb96293dd2d1fc666c62b4}{Get\+\_\+\+RTC\+\_\+\+Year}} (void)
+\begin{DoxyCompactList}\small\item\em Get RTC year. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_b_a_t_t_e_r_y___i_n_f_o__t}{BATTERY\+\_\+\+INFO\+\_\+t}} \mbox{\hyperlink{sys_mon___battery_8h_aac6cdd0b09ff7f6bab3d59458076d2e1}{battery\+\_\+info}}
+\begin{DoxyCompactList}\small\item\em Battery information. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_b_a_t_t_e_r_y___s_t_a_t_i_s_t_i_c_s__t}{BATTERY\+\_\+\+STATISTICS\+\_\+t}} \mbox{\hyperlink{sys_mon___battery_8h_a7d6e331d276346962464b560f8b0c25f}{battery\+\_\+statistics}}
+\begin{DoxyCompactList}\small\item\em Battery statistics. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_b_a_t_t_e_r_y___s_t_a_t_i_s_t_i_c_s___c_o_m_m_s__t}{BATTERY\+\_\+\+STATISTICS\+\_\+\+COMMS\+\_\+t}} \mbox{\hyperlink{sys_mon___battery_8h_a940272d9e9216d5501e33092589b8a50}{battery\+\_\+statistics\+\_\+comms}}
+\begin{DoxyCompactList}\small\item\em battery statistics \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_b_a_t_t_e_r_y___r_t_c__t}{BATTERY\+\_\+\+RTC\+\_\+t}} \mbox{\hyperlink{sys_mon___battery_8h_a19f48a1259d3787c53974c341f4d2244}{battery\+\_\+\+RTC}}
+\begin{DoxyCompactList}\small\item\em Battery RTC. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header with functions related to the battery services. 
+
+\begin{DoxyVersion}{Version}
+v1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+24/11/2021 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+ilazkanoiturburu 
+\end{DoxyAuthor}
+\begin{DoxyWarning}{Warning}
+author date version .-\/ Edition 
+\end{DoxyWarning}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000067}{Bug}}]\end{DoxyRefDesc}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{sys_mon___battery_8h_a62c1d97fd65525e19b11620492653ed6}\label{sys_mon___battery_8h_a62c1d97fd65525e19b11620492653ed6} 
+\index{sysMon\_Battery.h@{sysMon\_Battery.h}!BATTERY\_HIGH\_TEMP@{BATTERY\_HIGH\_TEMP}}
+\index{BATTERY\_HIGH\_TEMP@{BATTERY\_HIGH\_TEMP}!sysMon\_Battery.h@{sysMon\_Battery.h}}
+\doxysubsubsection{\texorpdfstring{BATTERY\_HIGH\_TEMP}{BATTERY\_HIGH\_TEMP}}
+{\footnotesize\ttfamily \#define BATTERY\+\_\+\+HIGH\+\_\+\+TEMP~(50)}
+
+
+
+Battery maximum operation temperature limit. 
+
+\Hypertarget{sys_mon___battery_8h_a428115dc7f0b6d244227d0294f8f3159}\label{sys_mon___battery_8h_a428115dc7f0b6d244227d0294f8f3159} 
+\index{sysMon\_Battery.h@{sysMon\_Battery.h}!BATTERY\_LOW\_CHARGE@{BATTERY\_LOW\_CHARGE}}
+\index{BATTERY\_LOW\_CHARGE@{BATTERY\_LOW\_CHARGE}!sysMon\_Battery.h@{sysMon\_Battery.h}}
+\doxysubsubsection{\texorpdfstring{BATTERY\_LOW\_CHARGE}{BATTERY\_LOW\_CHARGE}}
+{\footnotesize\ttfamily \#define BATTERY\+\_\+\+LOW\+\_\+\+CHARGE~15}
+
+
+
+Battery charge percent to advice low battery. 
+
+\Hypertarget{sys_mon___battery_8h_a4b3011ea216e2b16cd3583e519344fa2}\label{sys_mon___battery_8h_a4b3011ea216e2b16cd3583e519344fa2} 
+\index{sysMon\_Battery.h@{sysMon\_Battery.h}!BATTERY\_LOW\_TEMP@{BATTERY\_LOW\_TEMP}}
+\index{BATTERY\_LOW\_TEMP@{BATTERY\_LOW\_TEMP}!sysMon\_Battery.h@{sysMon\_Battery.h}}
+\doxysubsubsection{\texorpdfstring{BATTERY\_LOW\_TEMP}{BATTERY\_LOW\_TEMP}}
+{\footnotesize\ttfamily \#define BATTERY\+\_\+\+LOW\+\_\+\+TEMP~(0)}
+
+
+
+Battery minimum operation temperature limit. 
+
+\Hypertarget{sys_mon___battery_8h_ae1c4527aa849fe087e9b4b793f5a1ff3}\label{sys_mon___battery_8h_ae1c4527aa849fe087e9b4b793f5a1ff3} 
+\index{sysMon\_Battery.h@{sysMon\_Battery.h}!BATTERY\_REPLACE\_CHARGE@{BATTERY\_REPLACE\_CHARGE}}
+\index{BATTERY\_REPLACE\_CHARGE@{BATTERY\_REPLACE\_CHARGE}!sysMon\_Battery.h@{sysMon\_Battery.h}}
+\doxysubsubsection{\texorpdfstring{BATTERY\_REPLACE\_CHARGE}{BATTERY\_REPLACE\_CHARGE}}
+{\footnotesize\ttfamily \#define BATTERY\+\_\+\+REPLACE\+\_\+\+CHARGE~10}
+
+
+
+Battery charge percent to demand the battery replacement. 
+
+\Hypertarget{sys_mon___battery_8h_a5fd7f833f7db09a72714996d7455f5c6}\label{sys_mon___battery_8h_a5fd7f833f7db09a72714996d7455f5c6} 
+\index{sysMon\_Battery.h@{sysMon\_Battery.h}!BATTERY\_VERY\_HIGH\_TEMP@{BATTERY\_VERY\_HIGH\_TEMP}}
+\index{BATTERY\_VERY\_HIGH\_TEMP@{BATTERY\_VERY\_HIGH\_TEMP}!sysMon\_Battery.h@{sysMon\_Battery.h}}
+\doxysubsubsection{\texorpdfstring{BATTERY\_VERY\_HIGH\_TEMP}{BATTERY\_VERY\_HIGH\_TEMP}}
+{\footnotesize\ttfamily \#define BATTERY\+\_\+\+VERY\+\_\+\+HIGH\+\_\+\+TEMP~(70)}
+
+
+
+Battery maximum storage temperature limit. 
+
+\Hypertarget{sys_mon___battery_8h_ac6612b8d15646fc292e2ced38e524935}\label{sys_mon___battery_8h_ac6612b8d15646fc292e2ced38e524935} 
+\index{sysMon\_Battery.h@{sysMon\_Battery.h}!BATTERY\_VERY\_LOW\_TEMP@{BATTERY\_VERY\_LOW\_TEMP}}
+\index{BATTERY\_VERY\_LOW\_TEMP@{BATTERY\_VERY\_LOW\_TEMP}!sysMon\_Battery.h@{sysMon\_Battery.h}}
+\doxysubsubsection{\texorpdfstring{BATTERY\_VERY\_LOW\_TEMP}{BATTERY\_VERY\_LOW\_TEMP}}
+{\footnotesize\ttfamily \#define BATTERY\+\_\+\+VERY\+\_\+\+LOW\+\_\+\+TEMP~(-\/25)}
+
+
+
+Battery minimum storage temperature limit. 
+
+\Hypertarget{sys_mon___battery_8h_aea2e94b8fcd27ae63f8812b8e952b787}\label{sys_mon___battery_8h_aea2e94b8fcd27ae63f8812b8e952b787} 
+\index{sysMon\_Battery.h@{sysMon\_Battery.h}!SMON\_18V\_MAX@{SMON\_18V\_MAX}}
+\index{SMON\_18V\_MAX@{SMON\_18V\_MAX}!sysMon\_Battery.h@{sysMon\_Battery.h}}
+\doxysubsubsection{\texorpdfstring{SMON\_18V\_MAX}{SMON\_18V\_MAX}}
+{\footnotesize\ttfamily \#define SMON\+\_\+18\+V\+\_\+\+MAX~19000L}
+
+
+
+Maximun DC\+\_\+main voltage (milivolts) 
+
+\Hypertarget{sys_mon___battery_8h_a770e90ec21157f40aade93791241687a}\label{sys_mon___battery_8h_a770e90ec21157f40aade93791241687a} 
+\index{sysMon\_Battery.h@{sysMon\_Battery.h}!SMON\_18V\_MIN@{SMON\_18V\_MIN}}
+\index{SMON\_18V\_MIN@{SMON\_18V\_MIN}!sysMon\_Battery.h@{sysMon\_Battery.h}}
+\doxysubsubsection{\texorpdfstring{SMON\_18V\_MIN}{SMON\_18V\_MIN}}
+{\footnotesize\ttfamily \#define SMON\+\_\+18\+V\+\_\+\+MIN~16000L}
+
+
+
+Minimun DC\+\_\+main voltage (milivolts) 
+
+\Hypertarget{sys_mon___battery_8h_a88ce487b8dfa2af2b521a772f40aba9d}\label{sys_mon___battery_8h_a88ce487b8dfa2af2b521a772f40aba9d} 
+\index{sysMon\_Battery.h@{sysMon\_Battery.h}!SMON\_DCMAIN\_MAX@{SMON\_DCMAIN\_MAX}}
+\index{SMON\_DCMAIN\_MAX@{SMON\_DCMAIN\_MAX}!sysMon\_Battery.h@{sysMon\_Battery.h}}
+\doxysubsubsection{\texorpdfstring{SMON\_DCMAIN\_MAX}{SMON\_DCMAIN\_MAX}}
+{\footnotesize\ttfamily \#define SMON\+\_\+\+DCMAIN\+\_\+\+MAX~15500L}
+
+
+
+Maximun DC\+\_\+main voltage (milivolts) 
+
+\Hypertarget{sys_mon___battery_8h_a4d97b79ccb1291f0249763523b0e666d}\label{sys_mon___battery_8h_a4d97b79ccb1291f0249763523b0e666d} 
+\index{sysMon\_Battery.h@{sysMon\_Battery.h}!SMON\_DCMAIN\_MIN@{SMON\_DCMAIN\_MIN}}
+\index{SMON\_DCMAIN\_MIN@{SMON\_DCMAIN\_MIN}!sysMon\_Battery.h@{sysMon\_Battery.h}}
+\doxysubsubsection{\texorpdfstring{SMON\_DCMAIN\_MIN}{SMON\_DCMAIN\_MIN}}
+{\footnotesize\ttfamily \#define SMON\+\_\+\+DCMAIN\+\_\+\+MIN~8500L}
+
+
+
+Minimun DC\+\_\+main voltage (milivolts) 
+
+\Hypertarget{sys_mon___battery_8h_a99aa538a25a81d6d96e3e5b1a8effa2a}\label{sys_mon___battery_8h_a99aa538a25a81d6d96e3e5b1a8effa2a} 
+\index{sysMon\_Battery.h@{sysMon\_Battery.h}!VB\_00C\_SAFE\_BATTERY@{VB\_00C\_SAFE\_BATTERY}}
+\index{VB\_00C\_SAFE\_BATTERY@{VB\_00C\_SAFE\_BATTERY}!sysMon\_Battery.h@{sysMon\_Battery.h}}
+\doxysubsubsection{\texorpdfstring{VB\_00C\_SAFE\_BATTERY}{VB\_00C\_SAFE\_BATTERY}}
+{\footnotesize\ttfamily \#define VB\+\_\+00\+C\+\_\+\+SAFE\+\_\+\+BATTERY~9500}
+
+
+
+Security voltage. 
+
+\Hypertarget{sys_mon___battery_8h_a808fa5efcfeeb56841902e17a7f61f2c}\label{sys_mon___battery_8h_a808fa5efcfeeb56841902e17a7f61f2c} 
+\index{sysMon\_Battery.h@{sysMon\_Battery.h}!VB\_25C\_SAFE\_BATTERY@{VB\_25C\_SAFE\_BATTERY}}
+\index{VB\_25C\_SAFE\_BATTERY@{VB\_25C\_SAFE\_BATTERY}!sysMon\_Battery.h@{sysMon\_Battery.h}}
+\doxysubsubsection{\texorpdfstring{VB\_25C\_SAFE\_BATTERY}{VB\_25C\_SAFE\_BATTERY}}
+{\footnotesize\ttfamily \#define VB\+\_\+25\+C\+\_\+\+SAFE\+\_\+\+BATTERY~10000}
+
+
+
+Security voltage. 
+
+\Hypertarget{sys_mon___battery_8h_a048841899de50a17d0fe1b25d6122073}\label{sys_mon___battery_8h_a048841899de50a17d0fe1b25d6122073} 
+\index{sysMon\_Battery.h@{sysMon\_Battery.h}!VB\_SAFE\_BATTERY@{VB\_SAFE\_BATTERY}}
+\index{VB\_SAFE\_BATTERY@{VB\_SAFE\_BATTERY}!sysMon\_Battery.h@{sysMon\_Battery.h}}
+\doxysubsubsection{\texorpdfstring{VB\_SAFE\_BATTERY}{VB\_SAFE\_BATTERY}}
+{\footnotesize\ttfamily \#define VB\+\_\+\+SAFE\+\_\+\+BATTERY~9300}
+
+
+
+Security voltage. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{sys_mon___battery_8h_a6a908c00382961d78f2da4ee84cb4263}\label{sys_mon___battery_8h_a6a908c00382961d78f2da4ee84cb4263} 
+\index{sysMon\_Battery.h@{sysMon\_Battery.h}!Battery\_Get\_Charge@{Battery\_Get\_Charge}}
+\index{Battery\_Get\_Charge@{Battery\_Get\_Charge}!sysMon\_Battery.h@{sysMon\_Battery.h}}
+\doxysubsubsection{\texorpdfstring{Battery\_Get\_Charge()}{Battery\_Get\_Charge()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} Battery\+\_\+\+Get\+\_\+\+Charge (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Computes the remaining capacity in the battery. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+remaining capacity (in \%) 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=341pt]{sys_mon___battery_8h_a6a908c00382961d78f2da4ee84cb4263_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sys_mon___battery_8h_a6a908c00382961d78f2da4ee84cb4263_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{sys_mon___battery_8h_a743a4c0921f5224970196cca7f4e0eb5}\label{sys_mon___battery_8h_a743a4c0921f5224970196cca7f4e0eb5} 
+\index{sysMon\_Battery.h@{sysMon\_Battery.h}!Battery\_Get\_Info@{Battery\_Get\_Info}}
+\index{Battery\_Get\_Info@{Battery\_Get\_Info}!sysMon\_Battery.h@{sysMon\_Battery.h}}
+\doxysubsubsection{\texorpdfstring{Battery\_Get\_Info()}{Battery\_Get\_Info()}}
+{\footnotesize\ttfamily void Battery\+\_\+\+Get\+\_\+\+Info (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_b_a_t_t_e_r_y___i_n_f_o__t}{BATTERY\+\_\+\+INFO\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Get the battery information. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Info} & pointer to battery info structure\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sys_mon___battery_8h_a743a4c0921f5224970196cca7f4e0eb5_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{sys_mon___battery_8h_a61570373ff3f5bee2e104f2f0ed715c9}\label{sys_mon___battery_8h_a61570373ff3f5bee2e104f2f0ed715c9} 
+\index{sysMon\_Battery.h@{sysMon\_Battery.h}!Battery\_Get\_Statistics@{Battery\_Get\_Statistics}}
+\index{Battery\_Get\_Statistics@{Battery\_Get\_Statistics}!sysMon\_Battery.h@{sysMon\_Battery.h}}
+\doxysubsubsection{\texorpdfstring{Battery\_Get\_Statistics()}{Battery\_Get\_Statistics()}}
+{\footnotesize\ttfamily void Battery\+\_\+\+Get\+\_\+\+Statistics (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_b_a_t_t_e_r_y___s_t_a_t_i_s_t_i_c_s__t}{BATTERY\+\_\+\+STATISTICS\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Get the battery statistics. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Data} & pointer to battery statistics structure\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sys_mon___battery_8h_a61570373ff3f5bee2e104f2f0ed715c9_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{sys_mon___battery_8h_ab35bc2cbe2f74af341ba2664e6bce496}\label{sys_mon___battery_8h_ab35bc2cbe2f74af341ba2664e6bce496} 
+\index{sysMon\_Battery.h@{sysMon\_Battery.h}!Battery\_Get\_Statistics\_Comms@{Battery\_Get\_Statistics\_Comms}}
+\index{Battery\_Get\_Statistics\_Comms@{Battery\_Get\_Statistics\_Comms}!sysMon\_Battery.h@{sysMon\_Battery.h}}
+\doxysubsubsection{\texorpdfstring{Battery\_Get\_Statistics\_Comms()}{Battery\_Get\_Statistics\_Comms()}}
+{\footnotesize\ttfamily void Battery\+\_\+\+Get\+\_\+\+Statistics\+\_\+\+Comms (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_b_a_t_t_e_r_y___s_t_a_t_i_s_t_i_c_s___c_o_m_m_s__t}{BATTERY\+\_\+\+STATISTICS\+\_\+\+COMMS\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Get the battery statistics. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Data} & pointer to comms battery statistics structure\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\Hypertarget{sys_mon___battery_8h_aa6c128d869ee1d53d1902c4248f0c006}\label{sys_mon___battery_8h_aa6c128d869ee1d53d1902c4248f0c006} 
+\index{sysMon\_Battery.h@{sysMon\_Battery.h}!Battery\_Get\_Temperature@{Battery\_Get\_Temperature}}
+\index{Battery\_Get\_Temperature@{Battery\_Get\_Temperature}!sysMon\_Battery.h@{sysMon\_Battery.h}}
+\doxysubsubsection{\texorpdfstring{Battery\_Get\_Temperature()}{Battery\_Get\_Temperature()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aef44329758059c91c76d334e8fc09700}{int8\+\_\+t}} Battery\+\_\+\+Get\+\_\+\+Temperature (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Get temperature value in battery. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+temperature in celsius degrees 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sys_mon___battery_8h_aa6c128d869ee1d53d1902c4248f0c006_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{sys_mon___battery_8h_a4bd5ebb2611761cfe9f4d75a41fd6cdc}\label{sys_mon___battery_8h_a4bd5ebb2611761cfe9f4d75a41fd6cdc} 
+\index{sysMon\_Battery.h@{sysMon\_Battery.h}!Battery\_I2C\_Init@{Battery\_I2C\_Init}}
+\index{Battery\_I2C\_Init@{Battery\_I2C\_Init}!sysMon\_Battery.h@{sysMon\_Battery.h}}
+\doxysubsubsection{\texorpdfstring{Battery\_I2C\_Init()}{Battery\_I2C\_Init()}}
+{\footnotesize\ttfamily void Battery\+\_\+\+I2\+C\+\_\+\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{pon\+Date,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{pon\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Initializes the battery i2c port to communicate with internals RTC and EEprom. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pon\+Date} & pointer to formatted date \\
+\hline
+{\em pon\+Time} & pointer to formatted time\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sys_mon___battery_8h_a4bd5ebb2611761cfe9f4d75a41fd6cdc_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sys_mon___battery_8h_a4bd5ebb2611761cfe9f4d75a41fd6cdc_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{sys_mon___battery_8h_ab90eec6eff79dd7fdd5142ab73af12d5}\label{sys_mon___battery_8h_ab90eec6eff79dd7fdd5142ab73af12d5} 
+\index{sysMon\_Battery.h@{sysMon\_Battery.h}!Battery\_I2C\_Init\_RTC@{Battery\_I2C\_Init\_RTC}}
+\index{Battery\_I2C\_Init\_RTC@{Battery\_I2C\_Init\_RTC}!sysMon\_Battery.h@{sysMon\_Battery.h}}
+\doxysubsubsection{\texorpdfstring{Battery\_I2C\_Init\_RTC()}{Battery\_I2C\_Init\_RTC()}}
+{\footnotesize\ttfamily ssp\+\_\+err\+\_\+t Battery\+\_\+\+I2\+C\+\_\+\+Init\+\_\+\+RTC (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{pon\+Date,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{pon\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Initializes the battery i2c port to communicate with internals RTC and EEprom. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pon\+Date} & pointer to formatted date \\
+\hline
+{\em pon\+Time} & pointer to formatted time\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sys_mon___battery_8h_ab90eec6eff79dd7fdd5142ab73af12d5_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sys_mon___battery_8h_ab90eec6eff79dd7fdd5142ab73af12d5_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{sys_mon___battery_8h_aa19967644b300db88bf94528f16a7e8e}\label{sys_mon___battery_8h_aa19967644b300db88bf94528f16a7e8e} 
+\index{sysMon\_Battery.h@{sysMon\_Battery.h}!Battery\_Read\_RTC@{Battery\_Read\_RTC}}
+\index{Battery\_Read\_RTC@{Battery\_Read\_RTC}!sysMon\_Battery.h@{sysMon\_Battery.h}}
+\doxysubsubsection{\texorpdfstring{Battery\_Read\_RTC()}{Battery\_Read\_RTC()}}
+{\footnotesize\ttfamily ssp\+\_\+err\+\_\+t Battery\+\_\+\+Read\+\_\+\+RTC (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_b_a_t_t_e_r_y___r_t_c__t}{BATTERY\+\_\+\+RTC\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+RTC }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sys_mon___battery_8h_aa19967644b300db88bf94528f16a7e8e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sys_mon___battery_8h_aa19967644b300db88bf94528f16a7e8e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{sys_mon___battery_8h_a2bc0c3d8d286f1d8c6a9f70e09121122}\label{sys_mon___battery_8h_a2bc0c3d8d286f1d8c6a9f70e09121122} 
+\index{sysMon\_Battery.h@{sysMon\_Battery.h}!Battery\_Read\_Statistics@{Battery\_Read\_Statistics}}
+\index{Battery\_Read\_Statistics@{Battery\_Read\_Statistics}!sysMon\_Battery.h@{sysMon\_Battery.h}}
+\doxysubsubsection{\texorpdfstring{Battery\_Read\_Statistics()}{Battery\_Read\_Statistics()}}
+{\footnotesize\ttfamily ssp\+\_\+err\+\_\+t Battery\+\_\+\+Read\+\_\+\+Statistics (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_b_a_t_t_e_r_y___s_t_a_t_i_s_t_i_c_s__t}{BATTERY\+\_\+\+STATISTICS\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Statistics }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Read the battery statistics. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Statistics} & pointer to the structure to fill\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+operation result (error code) 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sys_mon___battery_8h_a2bc0c3d8d286f1d8c6a9f70e09121122_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sys_mon___battery_8h_a2bc0c3d8d286f1d8c6a9f70e09121122_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{sys_mon___battery_8h_acf22cd3802dfc3abc7559043660d80a8}\label{sys_mon___battery_8h_acf22cd3802dfc3abc7559043660d80a8} 
+\index{sysMon\_Battery.h@{sysMon\_Battery.h}!Battery\_Read\_Statistics\_Comms@{Battery\_Read\_Statistics\_Comms}}
+\index{Battery\_Read\_Statistics\_Comms@{Battery\_Read\_Statistics\_Comms}!sysMon\_Battery.h@{sysMon\_Battery.h}}
+\doxysubsubsection{\texorpdfstring{Battery\_Read\_Statistics\_Comms()}{Battery\_Read\_Statistics\_Comms()}}
+{\footnotesize\ttfamily ssp\+\_\+err\+\_\+t Battery\+\_\+\+Read\+\_\+\+Statistics\+\_\+\+Comms (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_b_a_t_t_e_r_y___s_t_a_t_i_s_t_i_c_s___c_o_m_m_s__t}{BATTERY\+\_\+\+STATISTICS\+\_\+\+COMMS\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Statistics\+\_\+comms }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Read the battery statistics. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Statistics} & pointer to the structure to fill\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+operation result (error code) 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sys_mon___battery_8h_acf22cd3802dfc3abc7559043660d80a8_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sys_mon___battery_8h_acf22cd3802dfc3abc7559043660d80a8_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{sys_mon___battery_8h_a478330b379be96e504e4f945b4fb823b}\label{sys_mon___battery_8h_a478330b379be96e504e4f945b4fb823b} 
+\index{sysMon\_Battery.h@{sysMon\_Battery.h}!Battery\_Read\_Temperature@{Battery\_Read\_Temperature}}
+\index{Battery\_Read\_Temperature@{Battery\_Read\_Temperature}!sysMon\_Battery.h@{sysMon\_Battery.h}}
+\doxysubsubsection{\texorpdfstring{Battery\_Read\_Temperature()}{Battery\_Read\_Temperature()}}
+{\footnotesize\ttfamily ssp\+\_\+err\+\_\+t Battery\+\_\+\+Read\+\_\+\+Temperature (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aef44329758059c91c76d334e8fc09700}{int8\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Temp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sys_mon___battery_8h_a478330b379be96e504e4f945b4fb823b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sys_mon___battery_8h_a478330b379be96e504e4f945b4fb823b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{sys_mon___battery_8h_aacda44f15717d41d0e57207ef9f7d766}\label{sys_mon___battery_8h_aacda44f15717d41d0e57207ef9f7d766} 
+\index{sysMon\_Battery.h@{sysMon\_Battery.h}!Battery\_Write\_Statistics@{Battery\_Write\_Statistics}}
+\index{Battery\_Write\_Statistics@{Battery\_Write\_Statistics}!sysMon\_Battery.h@{sysMon\_Battery.h}}
+\doxysubsubsection{\texorpdfstring{Battery\_Write\_Statistics()}{Battery\_Write\_Statistics()}}
+{\footnotesize\ttfamily ssp\+\_\+err\+\_\+t Battery\+\_\+\+Write\+\_\+\+Statistics (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_b_a_t_t_e_r_y___s_t_a_t_i_s_t_i_c_s__t}{BATTERY\+\_\+\+STATISTICS\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Statistics }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Write the battery statistics. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Statistics} & pointer to the structure to fill\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+operation result (error code) 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sys_mon___battery_8h_aacda44f15717d41d0e57207ef9f7d766_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sys_mon___battery_8h_aacda44f15717d41d0e57207ef9f7d766_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{sys_mon___battery_8h_ac64859eb7511e20eff22aae21d9594be}\label{sys_mon___battery_8h_ac64859eb7511e20eff22aae21d9594be} 
+\index{sysMon\_Battery.h@{sysMon\_Battery.h}!Battery\_Write\_Statistics\_Comms@{Battery\_Write\_Statistics\_Comms}}
+\index{Battery\_Write\_Statistics\_Comms@{Battery\_Write\_Statistics\_Comms}!sysMon\_Battery.h@{sysMon\_Battery.h}}
+\doxysubsubsection{\texorpdfstring{Battery\_Write\_Statistics\_Comms()}{Battery\_Write\_Statistics\_Comms()}}
+{\footnotesize\ttfamily ssp\+\_\+err\+\_\+t Battery\+\_\+\+Write\+\_\+\+Statistics\+\_\+\+Comms (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_b_a_t_t_e_r_y___s_t_a_t_i_s_t_i_c_s___c_o_m_m_s__t}{BATTERY\+\_\+\+STATISTICS\+\_\+\+COMMS\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Statistics\+\_\+comms }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Write the battery statistics. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Statistics} & pointer to the structure to fill\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+operation result (error code) 
+\end{DoxyReturn}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sys_mon___battery_8h_ac64859eb7511e20eff22aae21d9594be_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sys_mon___battery_8h_ac64859eb7511e20eff22aae21d9594be_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{sys_mon___battery_8h_af6e0839479117b02185cb5786de7d15b}\label{sys_mon___battery_8h_af6e0839479117b02185cb5786de7d15b} 
+\index{sysMon\_Battery.h@{sysMon\_Battery.h}!diff\_time\_days@{diff\_time\_days}}
+\index{diff\_time\_days@{diff\_time\_days}!sysMon\_Battery.h@{sysMon\_Battery.h}}
+\doxysubsubsection{\texorpdfstring{diff\_time\_days()}{diff\_time\_days()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} diff\+\_\+time\+\_\+days (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}}}]{date\+\_\+1,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}}}]{date\+\_\+2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Computes the difference time between two dates (in days) (date\+\_\+1 -\/ date\+\_\+2) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em date\+\_\+1} & date 1 in (YYYY\+:\+MM\+:DD) format \\
+\hline
+{\em date\+\_\+2} & date 2 in (YYYY\+:\+MM\+:DD) format\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+difference in number of days 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sys_mon___battery_8h_af6e0839479117b02185cb5786de7d15b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{sys_mon___battery_8h_aad12288121f6273ac32046b4afd99864}\label{sys_mon___battery_8h_aad12288121f6273ac32046b4afd99864} 
+\index{sysMon\_Battery.h@{sysMon\_Battery.h}!diff\_time\_seconds@{diff\_time\_seconds}}
+\index{diff\_time\_seconds@{diff\_time\_seconds}!sysMon\_Battery.h@{sysMon\_Battery.h}}
+\doxysubsubsection{\texorpdfstring{diff\_time\_seconds()}{diff\_time\_seconds()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} diff\+\_\+time\+\_\+seconds (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}}}]{time\+\_\+1,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}}}]{time\+\_\+2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Computes the difference time between two hours (in seconds) (time\+\_\+1 -\/ time\+\_\+2) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em time\+\_\+1} & time 1 in (HH\+:\+MM\+:SS) format \\
+\hline
+{\em time\+\_\+2} & time 2 in (HH\+:\+MM\+:SS) format\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+difference in seconds 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sys_mon___battery_8h_aad12288121f6273ac32046b4afd99864_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{sys_mon___battery_8h_acd37747fe0bd63798d8b15d239282796}\label{sys_mon___battery_8h_acd37747fe0bd63798d8b15d239282796} 
+\index{sysMon\_Battery.h@{sysMon\_Battery.h}!Get\_Date@{Get\_Date}}
+\index{Get\_Date@{Get\_Date}!sysMon\_Battery.h@{sysMon\_Battery.h}}
+\doxysubsubsection{\texorpdfstring{Get\_Date()}{Get\_Date()}}
+{\footnotesize\ttfamily void Get\+\_\+\+Date (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Year,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Month,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Date }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Report the date information. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Year} & pointer to year \\
+\hline
+{\em p\+Month} & pointer to month \\
+\hline
+{\em p\+Date} & pointer to date\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sys_mon___battery_8h_acd37747fe0bd63798d8b15d239282796_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{sys_mon___battery_8h_ad263ec1e82c36014bf82be38f3b86eb0}\label{sys_mon___battery_8h_ad263ec1e82c36014bf82be38f3b86eb0} 
+\index{sysMon\_Battery.h@{sysMon\_Battery.h}!Get\_Rem\_Charge@{Get\_Rem\_Charge}}
+\index{Get\_Rem\_Charge@{Get\_Rem\_Charge}!sysMon\_Battery.h@{sysMon\_Battery.h}}
+\doxysubsubsection{\texorpdfstring{Get\_Rem\_Charge()}{Get\_Rem\_Charge()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} Get\+\_\+\+Rem\+\_\+\+Charge (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Report the remaining battery charge. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+remaining charge (\%) 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sys_mon___battery_8h_ad263ec1e82c36014bf82be38f3b86eb0_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{sys_mon___battery_8h_adffa4deeb197c85e4f9ed9eaa2fdbce8}\label{sys_mon___battery_8h_adffa4deeb197c85e4f9ed9eaa2fdbce8} 
+\index{sysMon\_Battery.h@{sysMon\_Battery.h}!Get\_RTC\_Month@{Get\_RTC\_Month}}
+\index{Get\_RTC\_Month@{Get\_RTC\_Month}!sysMon\_Battery.h@{sysMon\_Battery.h}}
+\doxysubsubsection{\texorpdfstring{Get\_RTC\_Month()}{Get\_RTC\_Month()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} Get\+\_\+\+RTC\+\_\+\+Month (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Get RTC month. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+month number 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sys_mon___battery_8h_adffa4deeb197c85e4f9ed9eaa2fdbce8_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{sys_mon___battery_8h_ad6b958727dcb96293dd2d1fc666c62b4}\label{sys_mon___battery_8h_ad6b958727dcb96293dd2d1fc666c62b4} 
+\index{sysMon\_Battery.h@{sysMon\_Battery.h}!Get\_RTC\_Year@{Get\_RTC\_Year}}
+\index{Get\_RTC\_Year@{Get\_RTC\_Year}!sysMon\_Battery.h@{sysMon\_Battery.h}}
+\doxysubsubsection{\texorpdfstring{Get\_RTC\_Year()}{Get\_RTC\_Year()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} Get\+\_\+\+RTC\+\_\+\+Year (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Get RTC year. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+year number 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sys_mon___battery_8h_ad6b958727dcb96293dd2d1fc666c62b4_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{sys_mon___battery_8h_a86b49a02be5d394a8090847285bb9105}\label{sys_mon___battery_8h_a86b49a02be5d394a8090847285bb9105} 
+\index{sysMon\_Battery.h@{sysMon\_Battery.h}!Get\_Time@{Get\_Time}}
+\index{Get\_Time@{Get\_Time}!sysMon\_Battery.h@{sysMon\_Battery.h}}
+\doxysubsubsection{\texorpdfstring{Get\_Time()}{Get\_Time()}}
+{\footnotesize\ttfamily void Get\+\_\+\+Time (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Hour,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Min,  }\item[{\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Sec }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Report the time information. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Hour} & pointer to hour \\
+\hline
+{\em p\+Min} & pointer to minutes \\
+\hline
+{\em p\+Sec} & pointer to seconds\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sys_mon___battery_8h_a86b49a02be5d394a8090847285bb9105_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{sys_mon___battery_8h_aa25d224e6ec82f7d4415383329280b43}\label{sys_mon___battery_8h_aa25d224e6ec82f7d4415383329280b43} 
+\index{sysMon\_Battery.h@{sysMon\_Battery.h}!Inc\_DailyTest@{Inc\_DailyTest}}
+\index{Inc\_DailyTest@{Inc\_DailyTest}!sysMon\_Battery.h@{sysMon\_Battery.h}}
+\doxysubsubsection{\texorpdfstring{Inc\_DailyTest()}{Inc\_DailyTest()}}
+{\footnotesize\ttfamily void Inc\+\_\+\+Daily\+Test (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}, {\ttfamily [inline]}}
+
+
+
+Increment the number of daily test. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sys_mon___battery_8h_aa25d224e6ec82f7d4415383329280b43_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{sys_mon___battery_8h_a0dadad284c2d7442cdf78c1bd2bd4b25}\label{sys_mon___battery_8h_a0dadad284c2d7442cdf78c1bd2bd4b25} 
+\index{sysMon\_Battery.h@{sysMon\_Battery.h}!Inc\_FullCharges@{Inc\_FullCharges}}
+\index{Inc\_FullCharges@{Inc\_FullCharges}!sysMon\_Battery.h@{sysMon\_Battery.h}}
+\doxysubsubsection{\texorpdfstring{Inc\_FullCharges()}{Inc\_FullCharges()}}
+{\footnotesize\ttfamily void Inc\+\_\+\+Full\+Charges (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}, {\ttfamily [inline]}}
+
+
+
+Increment the number of Vc full charges. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sys_mon___battery_8h_a0dadad284c2d7442cdf78c1bd2bd4b25_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{sys_mon___battery_8h_a34f8470077f67500a1a34f59f1463e61}\label{sys_mon___battery_8h_a34f8470077f67500a1a34f59f1463e61} 
+\index{sysMon\_Battery.h@{sysMon\_Battery.h}!Inc\_OpenCover@{Inc\_OpenCover}}
+\index{Inc\_OpenCover@{Inc\_OpenCover}!sysMon\_Battery.h@{sysMon\_Battery.h}}
+\doxysubsubsection{\texorpdfstring{Inc\_OpenCover()}{Inc\_OpenCover()}}
+{\footnotesize\ttfamily void Inc\+\_\+\+Open\+Cover (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}, {\ttfamily [inline]}}
+
+
+
+Increment the number of ticks with open cover. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sys_mon___battery_8h_a34f8470077f67500a1a34f59f1463e61_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{sys_mon___battery_8h_ae6f5da5b6a59d66bc10b9fd02ac21024}\label{sys_mon___battery_8h_ae6f5da5b6a59d66bc10b9fd02ac21024} 
+\index{sysMon\_Battery.h@{sysMon\_Battery.h}!Inc\_RTCWarning@{Inc\_RTCWarning}}
+\index{Inc\_RTCWarning@{Inc\_RTCWarning}!sysMon\_Battery.h@{sysMon\_Battery.h}}
+\doxysubsubsection{\texorpdfstring{Inc\_RTCWarning()}{Inc\_RTCWarning()}}
+{\footnotesize\ttfamily void Inc\+\_\+\+RTCWarning (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}, {\ttfamily [inline]}}
+
+
+
+Increment the number of alerts that have been said by audio in RTC(Close cover, Call SAT, BEEP-\/\+BEEP) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sys_mon___battery_8h_ae6f5da5b6a59d66bc10b9fd02ac21024_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{sys_mon___battery_8h_a48cee6f2846fe7b99b4fef1935e17f6a}\label{sys_mon___battery_8h_a48cee6f2846fe7b99b4fef1935e17f6a} 
+\index{sysMon\_Battery.h@{sysMon\_Battery.h}!Inc\_RunTime@{Inc\_RunTime}}
+\index{Inc\_RunTime@{Inc\_RunTime}!sysMon\_Battery.h@{sysMon\_Battery.h}}
+\doxysubsubsection{\texorpdfstring{Inc\_RunTime()}{Inc\_RunTime()}}
+{\footnotesize\ttfamily void Inc\+\_\+\+Run\+Time (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}, {\ttfamily [inline]}}
+
+
+
+Increment the number of running time. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sys_mon___battery_8h_a48cee6f2846fe7b99b4fef1935e17f6a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{sys_mon___battery_8h_ad8fb2c1b917c628a847b4d7774462498}\label{sys_mon___battery_8h_ad8fb2c1b917c628a847b4d7774462498} 
+\index{sysMon\_Battery.h@{sysMon\_Battery.h}!Inc\_RunTime\_Update@{Inc\_RunTime\_Update}}
+\index{Inc\_RunTime\_Update@{Inc\_RunTime\_Update}!sysMon\_Battery.h@{sysMon\_Battery.h}}
+\doxysubsubsection{\texorpdfstring{Inc\_RunTime\_Update()}{Inc\_RunTime\_Update()}}
+{\footnotesize\ttfamily void Inc\+\_\+\+Run\+Time\+\_\+\+Update (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}, {\ttfamily [inline]}}
+
+
+
+Increment the number of running time. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sys_mon___battery_8h_ad8fb2c1b917c628a847b4d7774462498_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{sys_mon___battery_8h_ade8c46a19828833d3a5e77f1a5cd0ddb}\label{sys_mon___battery_8h_ade8c46a19828833d3a5e77f1a5cd0ddb} 
+\index{sysMon\_Battery.h@{sysMon\_Battery.h}!Inc\_SigfoxCover@{Inc\_SigfoxCover}}
+\index{Inc\_SigfoxCover@{Inc\_SigfoxCover}!sysMon\_Battery.h@{sysMon\_Battery.h}}
+\doxysubsubsection{\texorpdfstring{Inc\_SigfoxCover()}{Inc\_SigfoxCover()}}
+{\footnotesize\ttfamily void Inc\+\_\+\+Sigfox\+Cover (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}, {\ttfamily [inline]}}
+
+
+
+Increment the number of alerts that have been sent with the open and close cover with Sigfox. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sys_mon___battery_8h_ade8c46a19828833d3a5e77f1a5cd0ddb_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{sys_mon___battery_8h_a8f638455f7b258482dc0bc7ecf401e73}\label{sys_mon___battery_8h_a8f638455f7b258482dc0bc7ecf401e73} 
+\index{sysMon\_Battery.h@{sysMon\_Battery.h}!Inc\_SigfoxDailyTest@{Inc\_SigfoxDailyTest}}
+\index{Inc\_SigfoxDailyTest@{Inc\_SigfoxDailyTest}!sysMon\_Battery.h@{sysMon\_Battery.h}}
+\doxysubsubsection{\texorpdfstring{Inc\_SigfoxDailyTest()}{Inc\_SigfoxDailyTest()}}
+{\footnotesize\ttfamily void Inc\+\_\+\+Sigfox\+Daily\+Test (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}, {\ttfamily [inline]}}
+
+
+
+Increment the number of daily test that have been sent with Sigfox. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sys_mon___battery_8h_a8f638455f7b258482dc0bc7ecf401e73_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{sys_mon___battery_8h_a009157e2dfbc3db9566934dbf2fa403b}\label{sys_mon___battery_8h_a009157e2dfbc3db9566934dbf2fa403b} 
+\index{sysMon\_Battery.h@{sysMon\_Battery.h}!Inc\_SigfoxManualTest@{Inc\_SigfoxManualTest}}
+\index{Inc\_SigfoxManualTest@{Inc\_SigfoxManualTest}!sysMon\_Battery.h@{sysMon\_Battery.h}}
+\doxysubsubsection{\texorpdfstring{Inc\_SigfoxManualTest()}{Inc\_SigfoxManualTest()}}
+{\footnotesize\ttfamily void Inc\+\_\+\+Sigfox\+Manual\+Test (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}, {\ttfamily [inline]}}
+
+
+
+Increment the number of monthly test that have been sent with Sigfox. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sys_mon___battery_8h_a009157e2dfbc3db9566934dbf2fa403b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{sys_mon___battery_8h_aee5a37e5ffddd98fcbb1453730f70022}\label{sys_mon___battery_8h_aee5a37e5ffddd98fcbb1453730f70022} 
+\index{sysMon\_Battery.h@{sysMon\_Battery.h}!Inc\_SigfoxManualTestGPS@{Inc\_SigfoxManualTestGPS}}
+\index{Inc\_SigfoxManualTestGPS@{Inc\_SigfoxManualTestGPS}!sysMon\_Battery.h@{sysMon\_Battery.h}}
+\doxysubsubsection{\texorpdfstring{Inc\_SigfoxManualTestGPS()}{Inc\_SigfoxManualTestGPS()}}
+{\footnotesize\ttfamily void Inc\+\_\+\+Sigfox\+Manual\+Test\+GPS (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}, {\ttfamily [inline]}}
+
+
+
+Increment the number of monthly test that have been sent with Sigfox + GPS. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sys_mon___battery_8h_aee5a37e5ffddd98fcbb1453730f70022_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{sys_mon___battery_8h_a3b4e8cdc5b59f991841d44e36105e40a}\label{sys_mon___battery_8h_a3b4e8cdc5b59f991841d44e36105e40a} 
+\index{sysMon\_Battery.h@{sysMon\_Battery.h}!Inc\_TestCharges@{Inc\_TestCharges}}
+\index{Inc\_TestCharges@{Inc\_TestCharges}!sysMon\_Battery.h@{sysMon\_Battery.h}}
+\doxysubsubsection{\texorpdfstring{Inc\_TestCharges()}{Inc\_TestCharges()}}
+{\footnotesize\ttfamily void Inc\+\_\+\+Test\+Charges (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}, {\ttfamily [inline]}}
+
+
+
+Increment the number of Vc test charges. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sys_mon___battery_8h_a3b4e8cdc5b59f991841d44e36105e40a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{sys_mon___battery_8h_a9370c82144afbf2adc7d7aec6fd3a75b}\label{sys_mon___battery_8h_a9370c82144afbf2adc7d7aec6fd3a75b} 
+\index{sysMon\_Battery.h@{sysMon\_Battery.h}!Inc\_TestManual@{Inc\_TestManual}}
+\index{Inc\_TestManual@{Inc\_TestManual}!sysMon\_Battery.h@{sysMon\_Battery.h}}
+\doxysubsubsection{\texorpdfstring{Inc\_TestManual()}{Inc\_TestManual()}}
+{\footnotesize\ttfamily void Inc\+\_\+\+Test\+Manual (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}, {\ttfamily [inline]}}
+
+
+
+Increment the number of test manual. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sys_mon___battery_8h_a9370c82144afbf2adc7d7aec6fd3a75b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{sys_mon___battery_8h_ab86359b6c3d0532e82bba6c8e97e4aea}\label{sys_mon___battery_8h_ab86359b6c3d0532e82bba6c8e97e4aea} 
+\index{sysMon\_Battery.h@{sysMon\_Battery.h}!Inc\_WifiCoverConnect@{Inc\_WifiCoverConnect}}
+\index{Inc\_WifiCoverConnect@{Inc\_WifiCoverConnect}!sysMon\_Battery.h@{sysMon\_Battery.h}}
+\doxysubsubsection{\texorpdfstring{Inc\_WifiCoverConnect()}{Inc\_WifiCoverConnect()}}
+{\footnotesize\ttfamily void Inc\+\_\+\+Wifi\+Cover\+Connect (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}, {\ttfamily [inline]}}
+
+
+
+Increment the number of alerts that have been sent with the open and close cover with Wifi. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sys_mon___battery_8h_ab86359b6c3d0532e82bba6c8e97e4aea_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{sys_mon___battery_8h_a65af812d4c2a7dcf19177d98902a8565}\label{sys_mon___battery_8h_a65af812d4c2a7dcf19177d98902a8565} 
+\index{sysMon\_Battery.h@{sysMon\_Battery.h}!Inc\_WifiCoverNoConnect@{Inc\_WifiCoverNoConnect}}
+\index{Inc\_WifiCoverNoConnect@{Inc\_WifiCoverNoConnect}!sysMon\_Battery.h@{sysMon\_Battery.h}}
+\doxysubsubsection{\texorpdfstring{Inc\_WifiCoverNoConnect()}{Inc\_WifiCoverNoConnect()}}
+{\footnotesize\ttfamily void Inc\+\_\+\+Wifi\+Cover\+No\+Connect (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}, {\ttfamily [inline]}}
+
+
+
+Increment the number of of alerts that have no been sent with the open and close cover with Wifi. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sys_mon___battery_8h_a65af812d4c2a7dcf19177d98902a8565_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{sys_mon___battery_8h_ad52d85e4fd7115f2dd306c49a71a2f82}\label{sys_mon___battery_8h_ad52d85e4fd7115f2dd306c49a71a2f82} 
+\index{sysMon\_Battery.h@{sysMon\_Battery.h}!Inc\_WifiRunTime@{Inc\_WifiRunTime}}
+\index{Inc\_WifiRunTime@{Inc\_WifiRunTime}!sysMon\_Battery.h@{sysMon\_Battery.h}}
+\doxysubsubsection{\texorpdfstring{Inc\_WifiRunTime()}{Inc\_WifiRunTime()}}
+{\footnotesize\ttfamily void Inc\+\_\+\+Wifi\+Run\+Time (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}, {\ttfamily [inline]}}
+
+
+
+Increment the number of run time. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sys_mon___battery_8h_ad52d85e4fd7115f2dd306c49a71a2f82_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{sys_mon___battery_8h_ae076f01939cc5ccb26fe79b89422d668}\label{sys_mon___battery_8h_ae076f01939cc5ccb26fe79b89422d668} 
+\index{sysMon\_Battery.h@{sysMon\_Battery.h}!Inc\_WifiTestConnect@{Inc\_WifiTestConnect}}
+\index{Inc\_WifiTestConnect@{Inc\_WifiTestConnect}!sysMon\_Battery.h@{sysMon\_Battery.h}}
+\doxysubsubsection{\texorpdfstring{Inc\_WifiTestConnect()}{Inc\_WifiTestConnect()}}
+{\footnotesize\ttfamily void Inc\+\_\+\+Wifi\+Test\+Connect (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_w_i_f_i___t_e_s_t___r_e_s_u_l_t__t}{WIFI\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{pwifi\+\_\+test\+\_\+result }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}, {\ttfamily [inline]}}
+
+
+
+Increment the number of times that Wi\+Fi has been connected successfully. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sys_mon___battery_8h_ae076f01939cc5ccb26fe79b89422d668_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{sys_mon___battery_8h_a6a47bde1c84aa70dac8b2736880637e2}\label{sys_mon___battery_8h_a6a47bde1c84aa70dac8b2736880637e2} 
+\index{sysMon\_Battery.h@{sysMon\_Battery.h}!Inc\_WifiTestConnectGPS@{Inc\_WifiTestConnectGPS}}
+\index{Inc\_WifiTestConnectGPS@{Inc\_WifiTestConnectGPS}!sysMon\_Battery.h@{sysMon\_Battery.h}}
+\doxysubsubsection{\texorpdfstring{Inc\_WifiTestConnectGPS()}{Inc\_WifiTestConnectGPS()}}
+{\footnotesize\ttfamily void Inc\+\_\+\+Wifi\+Test\+Connect\+GPS (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}, {\ttfamily [inline]}}
+
+
+
+Increment the number of fully test that have been sent with Wifi + GPS. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sys_mon___battery_8h_a6a47bde1c84aa70dac8b2736880637e2_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{sys_mon___battery_8h_a594be38d4cd3b72353313cedff768a9e}\label{sys_mon___battery_8h_a594be38d4cd3b72353313cedff768a9e} 
+\index{sysMon\_Battery.h@{sysMon\_Battery.h}!Inc\_WifiTestNoConnect@{Inc\_WifiTestNoConnect}}
+\index{Inc\_WifiTestNoConnect@{Inc\_WifiTestNoConnect}!sysMon\_Battery.h@{sysMon\_Battery.h}}
+\doxysubsubsection{\texorpdfstring{Inc\_WifiTestNoConnect()}{Inc\_WifiTestNoConnect()}}
+{\footnotesize\ttfamily void Inc\+\_\+\+Wifi\+Test\+No\+Connect (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_w_i_f_i___t_e_s_t___r_e_s_u_l_t__t}{WIFI\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{pwifi\+\_\+test\+\_\+result }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}, {\ttfamily [inline]}}
+
+
+
+Increment the number of times that Wi\+Fi has not been connected successfully. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{sys_mon___battery_8h_a594be38d4cd3b72353313cedff768a9e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{sys_mon___battery_8h_ae0cfb30c811fc18d3bc3c8135aea700d}\label{sys_mon___battery_8h_ae0cfb30c811fc18d3bc3c8135aea700d} 
+\index{sysMon\_Battery.h@{sysMon\_Battery.h}!Is\_Battery\_Mode\_Demo@{Is\_Battery\_Mode\_Demo}}
+\index{Is\_Battery\_Mode\_Demo@{Is\_Battery\_Mode\_Demo}!sysMon\_Battery.h@{sysMon\_Battery.h}}
+\doxysubsubsection{\texorpdfstring{Is\_Battery\_Mode\_Demo()}{Is\_Battery\_Mode\_Demo()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} Is\+\_\+\+Battery\+\_\+\+Mode\+\_\+\+Demo (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Function that report if the battery is DEMO or not. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+battery DEMO mode 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{sys_mon___battery_8h_ae0cfb30c811fc18d3bc3c8135aea700d_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{sys_mon___battery_8h_aac6cdd0b09ff7f6bab3d59458076d2e1}\label{sys_mon___battery_8h_aac6cdd0b09ff7f6bab3d59458076d2e1} 
+\index{sysMon\_Battery.h@{sysMon\_Battery.h}!battery\_info@{battery\_info}}
+\index{battery\_info@{battery\_info}!sysMon\_Battery.h@{sysMon\_Battery.h}}
+\doxysubsubsection{\texorpdfstring{battery\_info}{battery\_info}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_b_a_t_t_e_r_y___i_n_f_o__t}{BATTERY\+\_\+\+INFO\+\_\+t}} battery\+\_\+info\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Battery information. 
+
+\Hypertarget{sys_mon___battery_8h_a19f48a1259d3787c53974c341f4d2244}\label{sys_mon___battery_8h_a19f48a1259d3787c53974c341f4d2244} 
+\index{sysMon\_Battery.h@{sysMon\_Battery.h}!battery\_RTC@{battery\_RTC}}
+\index{battery\_RTC@{battery\_RTC}!sysMon\_Battery.h@{sysMon\_Battery.h}}
+\doxysubsubsection{\texorpdfstring{battery\_RTC}{battery\_RTC}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_b_a_t_t_e_r_y___r_t_c__t}{BATTERY\+\_\+\+RTC\+\_\+t}} battery\+\_\+\+RTC\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Battery RTC. 
+
+\Hypertarget{sys_mon___battery_8h_a7d6e331d276346962464b560f8b0c25f}\label{sys_mon___battery_8h_a7d6e331d276346962464b560f8b0c25f} 
+\index{sysMon\_Battery.h@{sysMon\_Battery.h}!battery\_statistics@{battery\_statistics}}
+\index{battery\_statistics@{battery\_statistics}!sysMon\_Battery.h@{sysMon\_Battery.h}}
+\doxysubsubsection{\texorpdfstring{battery\_statistics}{battery\_statistics}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_b_a_t_t_e_r_y___s_t_a_t_i_s_t_i_c_s__t}{BATTERY\+\_\+\+STATISTICS\+\_\+t}} battery\+\_\+statistics\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Battery statistics. 
+
+\Hypertarget{sys_mon___battery_8h_a940272d9e9216d5501e33092589b8a50}\label{sys_mon___battery_8h_a940272d9e9216d5501e33092589b8a50} 
+\index{sysMon\_Battery.h@{sysMon\_Battery.h}!battery\_statistics\_comms@{battery\_statistics\_comms}}
+\index{battery\_statistics\_comms@{battery\_statistics\_comms}!sysMon\_Battery.h@{sysMon\_Battery.h}}
+\doxysubsubsection{\texorpdfstring{battery\_statistics\_comms}{battery\_statistics\_comms}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_b_a_t_t_e_r_y___s_t_a_t_i_s_t_i_c_s___c_o_m_m_s__t}{BATTERY\+\_\+\+STATISTICS\+\_\+\+COMMS\+\_\+t}} battery\+\_\+statistics\+\_\+comms\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+battery statistics 
+
+battery statistics 

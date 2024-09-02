@@ -1,0 +1,276 @@
+\doxysection{C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\+DB\+\_\+\+Test.h File Reference}
+\hypertarget{a00011}{}\label{a00011}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/DB\_Test.h@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/DB\_Test.h}}
+
+
+Test File header file.  
+
+
+{\ttfamily \#include $<$device\+\_\+init.\+h$>$}\newline
+{\ttfamily \#include "{}types\+\_\+basic.\+h"{}}\newline
+Include dependency graph for DB\+\_\+\+Test.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{a00278}{TEST\+\_\+\+VOLTAGE\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Structure to report the voltages test result. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{a00282}{TEST\+\_\+\+BATTERY\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Structure to report the battery test result. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{a00286}{TEST\+\_\+\+ELECTRODES\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Structure to report the electrodes test result. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{a00290}{TEST\+\_\+\+PATMON\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Structure to report the patient monitor test result. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{a00294}{TEST\+\_\+\+COMMS\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Structure to report the external comms test result. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{a00298}{TEST\+\_\+\+MISC\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Structure to report the miscellaneous test result. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{a00302}{TEST\+\_\+\+DEFIB\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Structure to report the defibrillator test result. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{a00306}{TEST\+\_\+\+CERT\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{a00310}{DB\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Structure to hold data before writing to file in multiples of cluster size. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{a00011_a202bc61e8d4f8363f3aa02681681e2d2}{NUM\+\_\+\+BASIC\+\_\+\+TEST}}~30
+\item 
+\#define \mbox{\hyperlink{a00011_ab4a2c2fab4d60a9057c7bb130359e13b}{TEST\+\_\+\+FULL\+\_\+\+ID}}~(\mbox{\hyperlink{a00011_a202bc61e8d4f8363f3aa02681681e2d2}{NUM\+\_\+\+BASIC\+\_\+\+TEST}} -\/ 1)
+\item 
+\#define \mbox{\hyperlink{a00011_abe798edf5c8561486552873d05eb68fc}{TEST\+\_\+\+MANUAL\+\_\+\+ID}}~40
+\item 
+\#define \mbox{\hyperlink{a00011_a36c6d3ee0ce8cba46057366ece4e2824}{TEST\+\_\+\+INITIAL\+\_\+\+ID}}~50
+\item 
+\#define \mbox{\hyperlink{a00011_acd605a0881aa650b83909472937bfbe8}{TEST\+\_\+\+FUNC\+\_\+\+ID}}~60
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{a00011_a79c5749d54981e8a7af5556c10e14b7f}{TEST\+\_\+\+STATUS\+\_\+t}} \{ \mbox{\hyperlink{a00011_a79c5749d54981e8a7af5556c10e14b7fadfa70e7c4b36a5c5c6b70987b50fc36c}{TEST\+\_\+\+OK}} = 0
+, \mbox{\hyperlink{a00011_a79c5749d54981e8a7af5556c10e14b7fa8dc9508f81b5e1bb5d4ce0038de51f9f}{TEST\+\_\+\+NOT\+\_\+\+OK}}
+, \mbox{\hyperlink{a00011_a79c5749d54981e8a7af5556c10e14b7fad317e56e3862db4b62383c8e814cce3f}{TEST\+\_\+\+ABORTED}}
+ \}
+\begin{DoxyCompactList}\small\item\em Enum for test result status. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{a00011_a7ec87003cf7b1f13d7f71af99cbfe1f6}{Fill\+\_\+\+Generic\+\_\+\+Date}} (\mbox{\hyperlink{a00137_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Str, \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} my\+\_\+date)
+\begin{DoxyCompactList}\small\item\em Fill a string with a generic date. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a00011_ab7a2e6fc6e6d920610d4939bd63e4300}{Fill\+\_\+\+Generic\+\_\+\+Time}} (\mbox{\hyperlink{a00137_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Str, \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} my\+\_\+time)
+\begin{DoxyCompactList}\small\item\em Fill a string with a generic Time. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} \mbox{\hyperlink{a00011_a3c8767e0ac18450db5c82a07120864ae}{DB\+\_\+\+Test\+\_\+\+Generate\+\_\+\+Report}} (\mbox{\hyperlink{a00310}{DB\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t}} \texorpdfstring{$\ast$}{*}p\+Result, \mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} file\+\_\+report)
+\begin{DoxyCompactList}\small\item\em Collects the test results and generates the report in a JSON file. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{a00011_a5eb6a87ab980707d7c463c294699868c}{DB\+\_\+\+Test\+\_\+\+Get\+\_\+\+Filename}} (void)
+\begin{DoxyCompactList}\small\item\em Returns the. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a00011_a29b3330272af11e7475fe7645d1256ce}{DB\+\_\+\+Sigfox\+\_\+\+Store\+\_\+\+Info}} (\mbox{\hyperlink{a00137_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \texorpdfstring{$\ast$}{*}device\+\_\+id, \mbox{\hyperlink{a00137_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \texorpdfstring{$\ast$}{*}pac\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Stores Sigfox module info in a file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{a00011_a5fe6c18c1c2f842b420d557b7ab42887}{Power\+Off\+\_\+\+Write\+\_\+\+Batt\+\_\+\+Elec}} (void)
+\begin{DoxyCompactList}\small\item\em Before power off the device, write the last time the decive has been used in the test. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a00310}{DB\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t}} \mbox{\hyperlink{a00011_a27c2ed3e3011c92dce2bde0851728c0e}{R100\+\_\+test\+\_\+result}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Test File header file. 
+
+\begin{DoxyVersion}{Version}
+v1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+20/07/2020 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+lsanz 
+\end{DoxyAuthor}
+\begin{DoxyWarning}{Warning}
+author date version .-\/ Edition 
+\end{DoxyWarning}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{a00257__bug000004}{Bug}}]\end{DoxyRefDesc}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{a00011_a202bc61e8d4f8363f3aa02681681e2d2}\label{a00011_a202bc61e8d4f8363f3aa02681681e2d2} 
+\index{DB\_Test.h@{DB\_Test.h}!NUM\_BASIC\_TEST@{NUM\_BASIC\_TEST}}
+\index{NUM\_BASIC\_TEST@{NUM\_BASIC\_TEST}!DB\_Test.h@{DB\_Test.h}}
+\doxysubsubsection{\texorpdfstring{NUM\_BASIC\_TEST}{NUM\_BASIC\_TEST}}
+{\footnotesize\ttfamily \#define NUM\+\_\+\+BASIC\+\_\+\+TEST~30}
+
+\Hypertarget{a00011_ab4a2c2fab4d60a9057c7bb130359e13b}\label{a00011_ab4a2c2fab4d60a9057c7bb130359e13b} 
+\index{DB\_Test.h@{DB\_Test.h}!TEST\_FULL\_ID@{TEST\_FULL\_ID}}
+\index{TEST\_FULL\_ID@{TEST\_FULL\_ID}!DB\_Test.h@{DB\_Test.h}}
+\doxysubsubsection{\texorpdfstring{TEST\_FULL\_ID}{TEST\_FULL\_ID}}
+{\footnotesize\ttfamily \#define TEST\+\_\+\+FULL\+\_\+\+ID~(\mbox{\hyperlink{a00011_a202bc61e8d4f8363f3aa02681681e2d2}{NUM\+\_\+\+BASIC\+\_\+\+TEST}} -\/ 1)}
+
+\Hypertarget{a00011_acd605a0881aa650b83909472937bfbe8}\label{a00011_acd605a0881aa650b83909472937bfbe8} 
+\index{DB\_Test.h@{DB\_Test.h}!TEST\_FUNC\_ID@{TEST\_FUNC\_ID}}
+\index{TEST\_FUNC\_ID@{TEST\_FUNC\_ID}!DB\_Test.h@{DB\_Test.h}}
+\doxysubsubsection{\texorpdfstring{TEST\_FUNC\_ID}{TEST\_FUNC\_ID}}
+{\footnotesize\ttfamily \#define TEST\+\_\+\+FUNC\+\_\+\+ID~60}
+
+\Hypertarget{a00011_a36c6d3ee0ce8cba46057366ece4e2824}\label{a00011_a36c6d3ee0ce8cba46057366ece4e2824} 
+\index{DB\_Test.h@{DB\_Test.h}!TEST\_INITIAL\_ID@{TEST\_INITIAL\_ID}}
+\index{TEST\_INITIAL\_ID@{TEST\_INITIAL\_ID}!DB\_Test.h@{DB\_Test.h}}
+\doxysubsubsection{\texorpdfstring{TEST\_INITIAL\_ID}{TEST\_INITIAL\_ID}}
+{\footnotesize\ttfamily \#define TEST\+\_\+\+INITIAL\+\_\+\+ID~50}
+
+\Hypertarget{a00011_abe798edf5c8561486552873d05eb68fc}\label{a00011_abe798edf5c8561486552873d05eb68fc} 
+\index{DB\_Test.h@{DB\_Test.h}!TEST\_MANUAL\_ID@{TEST\_MANUAL\_ID}}
+\index{TEST\_MANUAL\_ID@{TEST\_MANUAL\_ID}!DB\_Test.h@{DB\_Test.h}}
+\doxysubsubsection{\texorpdfstring{TEST\_MANUAL\_ID}{TEST\_MANUAL\_ID}}
+{\footnotesize\ttfamily \#define TEST\+\_\+\+MANUAL\+\_\+\+ID~40}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{a00011_a79c5749d54981e8a7af5556c10e14b7f}\label{a00011_a79c5749d54981e8a7af5556c10e14b7f} 
+\index{DB\_Test.h@{DB\_Test.h}!TEST\_STATUS\_t@{TEST\_STATUS\_t}}
+\index{TEST\_STATUS\_t@{TEST\_STATUS\_t}!DB\_Test.h@{DB\_Test.h}}
+\doxysubsubsection{\texorpdfstring{TEST\_STATUS\_t}{TEST\_STATUS\_t}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{a00011_a79c5749d54981e8a7af5556c10e14b7f}{TEST\+\_\+\+STATUS\+\_\+t}}}
+
+
+
+Enum for test result status. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TEST\_OK@{TEST\_OK}!DB\_Test.h@{DB\_Test.h}}\index{DB\_Test.h@{DB\_Test.h}!TEST\_OK@{TEST\_OK}}}\Hypertarget{a00011_a79c5749d54981e8a7af5556c10e14b7fadfa70e7c4b36a5c5c6b70987b50fc36c}\label{a00011_a79c5749d54981e8a7af5556c10e14b7fadfa70e7c4b36a5c5c6b70987b50fc36c} 
+TEST\+\_\+\+OK&Test with no critical error. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TEST\_NOT\_OK@{TEST\_NOT\_OK}!DB\_Test.h@{DB\_Test.h}}\index{DB\_Test.h@{DB\_Test.h}!TEST\_NOT\_OK@{TEST\_NOT\_OK}}}\Hypertarget{a00011_a79c5749d54981e8a7af5556c10e14b7fa8dc9508f81b5e1bb5d4ce0038de51f9f}\label{a00011_a79c5749d54981e8a7af5556c10e14b7fa8dc9508f81b5e1bb5d4ce0038de51f9f} 
+TEST\+\_\+\+NOT\+\_\+\+OK&Test with critical error. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TEST\_ABORTED@{TEST\_ABORTED}!DB\_Test.h@{DB\_Test.h}}\index{DB\_Test.h@{DB\_Test.h}!TEST\_ABORTED@{TEST\_ABORTED}}}\Hypertarget{a00011_a79c5749d54981e8a7af5556c10e14b7fad317e56e3862db4b62383c8e814cce3f}\label{a00011_a79c5749d54981e8a7af5556c10e14b7fad317e56e3862db4b62383c8e814cce3f} 
+TEST\+\_\+\+ABORTED&Test aborted. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{a00011_a29b3330272af11e7475fe7645d1256ce}\label{a00011_a29b3330272af11e7475fe7645d1256ce} 
+\index{DB\_Test.h@{DB\_Test.h}!DB\_Sigfox\_Store\_Info@{DB\_Sigfox\_Store\_Info}}
+\index{DB\_Sigfox\_Store\_Info@{DB\_Sigfox\_Store\_Info}!DB\_Test.h@{DB\_Test.h}}
+\doxysubsubsection{\texorpdfstring{DB\_Sigfox\_Store\_Info()}{DB\_Sigfox\_Store\_Info()}}
+{\footnotesize\ttfamily void DB\+\_\+\+Sigfox\+\_\+\+Store\+\_\+\+Info (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00137_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{device\+\_\+id,  }\item[{\mbox{\hyperlink{a00137_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{pac\+\_\+id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Stores Sigfox module info in a file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em device\+\_\+id} & \+: sigfox device id \\
+\hline
+{\em pac\+\_\+id} & \+: sigfox pac id\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+operation result 
+\end{DoxyReturn}
+\Hypertarget{a00011_a3c8767e0ac18450db5c82a07120864ae}\label{a00011_a3c8767e0ac18450db5c82a07120864ae} 
+\index{DB\_Test.h@{DB\_Test.h}!DB\_Test\_Generate\_Report@{DB\_Test\_Generate\_Report}}
+\index{DB\_Test\_Generate\_Report@{DB\_Test\_Generate\_Report}!DB\_Test.h@{DB\_Test.h}}
+\doxysubsubsection{\texorpdfstring{DB\_Test\_Generate\_Report()}{DB\_Test\_Generate\_Report()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}} DB\+\_\+\+Test\+\_\+\+Generate\+\_\+\+Report (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00310}{DB\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Result,  }\item[{\mbox{\hyperlink{a00137_a449976458a084f880dc8e3d29e7eb6f5}{bool\+\_\+t}}}]{file\+\_\+report }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Collects the test results and generates the report in a JSON file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Result} & \+: pointer to a test result structure \\
+\hline
+{\em file\+\_\+report} & \+: if must generate a file report or not\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+operation result 
+\end{DoxyReturn}
+\Hypertarget{a00011_a5eb6a87ab980707d7c463c294699868c}\label{a00011_a5eb6a87ab980707d7c463c294699868c} 
+\index{DB\_Test.h@{DB\_Test.h}!DB\_Test\_Get\_Filename@{DB\_Test\_Get\_Filename}}
+\index{DB\_Test\_Get\_Filename@{DB\_Test\_Get\_Filename}!DB\_Test.h@{DB\_Test.h}}
+\doxysubsubsection{\texorpdfstring{DB\_Test\_Get\_Filename()}{DB\_Test\_Get\_Filename()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \texorpdfstring{$\ast$}{*} DB\+\_\+\+Test\+\_\+\+Get\+\_\+\+Filename (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Returns the. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to a test filename 
+\end{DoxyReturn}
+\Hypertarget{a00011_a7ec87003cf7b1f13d7f71af99cbfe1f6}\label{a00011_a7ec87003cf7b1f13d7f71af99cbfe1f6} 
+\index{DB\_Test.h@{DB\_Test.h}!Fill\_Generic\_Date@{Fill\_Generic\_Date}}
+\index{Fill\_Generic\_Date@{Fill\_Generic\_Date}!DB\_Test.h@{DB\_Test.h}}
+\doxysubsubsection{\texorpdfstring{Fill\_Generic\_Date()}{Fill\_Generic\_Date()}}
+{\footnotesize\ttfamily void Fill\+\_\+\+Generic\+\_\+\+Date (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00137_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Str,  }\item[{\mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}}}]{my\+\_\+date }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Fill a string with a generic date. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Str} & \+: pointer to a generic string \\
+\hline
+{\em p\+Date} & \+: Date to convert \\
+\hline
+\end{DoxyParams}
+\Hypertarget{a00011_ab7a2e6fc6e6d920610d4939bd63e4300}\label{a00011_ab7a2e6fc6e6d920610d4939bd63e4300} 
+\index{DB\_Test.h@{DB\_Test.h}!Fill\_Generic\_Time@{Fill\_Generic\_Time}}
+\index{Fill\_Generic\_Time@{Fill\_Generic\_Time}!DB\_Test.h@{DB\_Test.h}}
+\doxysubsubsection{\texorpdfstring{Fill\_Generic\_Time()}{Fill\_Generic\_Time()}}
+{\footnotesize\ttfamily void Fill\+\_\+\+Generic\+\_\+\+Time (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{a00137_a40bb5262bf908c328fbcfbe5d29d0201}{char\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{p\+Str,  }\item[{\mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}}}]{my\+\_\+time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Fill a string with a generic Time. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Str} & \+: pointer to a generic string \\
+\hline
+{\em p\+Time} & \+: Time to convert \\
+\hline
+\end{DoxyParams}
+\Hypertarget{a00011_a5fe6c18c1c2f842b420d557b7ab42887}\label{a00011_a5fe6c18c1c2f842b420d557b7ab42887} 
+\index{DB\_Test.h@{DB\_Test.h}!PowerOff\_Write\_Batt\_Elec@{PowerOff\_Write\_Batt\_Elec}}
+\index{PowerOff\_Write\_Batt\_Elec@{PowerOff\_Write\_Batt\_Elec}!DB\_Test.h@{DB\_Test.h}}
+\doxysubsubsection{\texorpdfstring{PowerOff\_Write\_Batt\_Elec()}{PowerOff\_Write\_Batt\_Elec()}}
+{\footnotesize\ttfamily void Power\+Off\+\_\+\+Write\+\_\+\+Batt\+\_\+\+Elec (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Before power off the device, write the last time the decive has been used in the test. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{a00011_a27c2ed3e3011c92dce2bde0851728c0e}\label{a00011_a27c2ed3e3011c92dce2bde0851728c0e} 
+\index{DB\_Test.h@{DB\_Test.h}!R100\_test\_result@{R100\_test\_result}}
+\index{R100\_test\_result@{R100\_test\_result}!DB\_Test.h@{DB\_Test.h}}
+\doxysubsubsection{\texorpdfstring{R100\_test\_result}{R100\_test\_result}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00310}{DB\+\_\+\+TEST\+\_\+\+RESULT\+\_\+t}} R100\+\_\+test\+\_\+result\hspace{0.3cm}{\ttfamily [extern]}}
+

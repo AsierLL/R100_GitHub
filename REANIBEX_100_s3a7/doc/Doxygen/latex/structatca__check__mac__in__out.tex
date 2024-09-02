@@ -1,0 +1,147 @@
+\doxysection{atca\+\_\+check\+\_\+mac\+\_\+in\+\_\+out Struct Reference}
+\hypertarget{structatca__check__mac__in__out}{}\label{structatca__check__mac__in__out}\index{atca\_check\_mac\_in\_out@{atca\_check\_mac\_in\_out}}
+
+
+Input/output parameters for function \doxylink{group__atcah_ga5b457cd0ccba73864eee4030b6079ba7}{atcah\+\_\+check\+\_\+mac()}.  
+
+
+
+
+{\ttfamily \#include $<$atca\+\_\+host.\+h$>$}
+
+
+
+Collaboration diagram for atca\+\_\+check\+\_\+mac\+\_\+in\+\_\+out\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{structatca__check__mac__in__out__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{structatca__check__mac__in__out_a0619aaead2b82313d761804f40c24926}{mode}}
+\begin{DoxyCompactList}\small\item\em \mbox{[}in\mbox{]} Check\+Mac command Mode \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} \mbox{\hyperlink{structatca__check__mac__in__out_a11807b6f83083ad17c66640c77c78973}{key\+\_\+id}}
+\begin{DoxyCompactList}\small\item\em \mbox{[}in\mbox{]} Check\+Mac command Key\+ID \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structatca__check__mac__in__out_a7d39142df3c468a8e1341f5f315c78f9}{sn}}
+\begin{DoxyCompactList}\small\item\em \mbox{[}in\mbox{]} Device serial number SN\mbox{[}0\+:8\mbox{]}. Only SN\mbox{[}0\+:1\mbox{]} and SN\mbox{[}8\mbox{]} are required though. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structatca__check__mac__in__out_a486c9fbb6f172aabbf5112541b835682}{client\+\_\+chal}}
+\begin{DoxyCompactList}\small\item\em \mbox{[}in\mbox{]} Client\+Chal data, 32 bytes. Can be NULL if mode\mbox{[}0\mbox{]} is 1. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structatca__check__mac__in__out_a7b8947bc09a84bee7a7bf3eb011bb558}{client\+\_\+resp}}
+\begin{DoxyCompactList}\small\item\em \mbox{[}out\mbox{]} Calculated Client\+Resp will be returned here. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structatca__check__mac__in__out_a59417d0d5b7a10d195b2791287fc1ae4}{other\+\_\+data}}
+\begin{DoxyCompactList}\small\item\em \mbox{[}in\mbox{]} Other\+Data, 13 bytes \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structatca__check__mac__in__out_ab48df556a22a0b26d76055fa3e7a8676}{otp}}
+\begin{DoxyCompactList}\small\item\em \mbox{[}in\mbox{]} First 8 bytes of the OTP zone data. Can be NULL is mode\mbox{[}5\mbox{]} is 0. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structatca__check__mac__in__out_a5e9d34c3ab496af3f5beb9437b61dca5}{slot\+\_\+key}}
+\item 
+const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structatca__check__mac__in__out_a036cc8ea587c5064388ea55c43a603a1}{target\+\_\+key}}
+\item 
+struct \mbox{\hyperlink{structatca__temp__key}{atca\+\_\+temp\+\_\+key}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structatca__check__mac__in__out_a079b29fc6bceac8b4ba67274052db7e4}{temp\+\_\+key}}
+\begin{DoxyCompactList}\small\item\em \mbox{[}in,out\mbox{]} Current state of Temp\+Key. Required if mode\mbox{[}0\mbox{]} or mode\mbox{[}1\mbox{]} are 1. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Input/output parameters for function \doxylink{group__atcah_ga5b457cd0ccba73864eee4030b6079ba7}{atcah\+\_\+check\+\_\+mac()}. 
+
+\doxysubsection{Field Documentation}
+\Hypertarget{structatca__check__mac__in__out_a486c9fbb6f172aabbf5112541b835682}\label{structatca__check__mac__in__out_a486c9fbb6f172aabbf5112541b835682} 
+\index{atca\_check\_mac\_in\_out@{atca\_check\_mac\_in\_out}!client\_chal@{client\_chal}}
+\index{client\_chal@{client\_chal}!atca\_check\_mac\_in\_out@{atca\_check\_mac\_in\_out}}
+\doxysubsubsection{\texorpdfstring{client\_chal}{client\_chal}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} atca\+\_\+check\+\_\+mac\+\_\+in\+\_\+out\+::client\+\_\+chal}
+
+
+
+\mbox{[}in\mbox{]} Client\+Chal data, 32 bytes. Can be NULL if mode\mbox{[}0\mbox{]} is 1. 
+
+\Hypertarget{structatca__check__mac__in__out_a7b8947bc09a84bee7a7bf3eb011bb558}\label{structatca__check__mac__in__out_a7b8947bc09a84bee7a7bf3eb011bb558} 
+\index{atca\_check\_mac\_in\_out@{atca\_check\_mac\_in\_out}!client\_resp@{client\_resp}}
+\index{client\_resp@{client\_resp}!atca\_check\_mac\_in\_out@{atca\_check\_mac\_in\_out}}
+\doxysubsubsection{\texorpdfstring{client\_resp}{client\_resp}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} atca\+\_\+check\+\_\+mac\+\_\+in\+\_\+out\+::client\+\_\+resp}
+
+
+
+\mbox{[}out\mbox{]} Calculated Client\+Resp will be returned here. 
+
+\Hypertarget{structatca__check__mac__in__out_a11807b6f83083ad17c66640c77c78973}\label{structatca__check__mac__in__out_a11807b6f83083ad17c66640c77c78973} 
+\index{atca\_check\_mac\_in\_out@{atca\_check\_mac\_in\_out}!key\_id@{key\_id}}
+\index{key\_id@{key\_id}!atca\_check\_mac\_in\_out@{atca\_check\_mac\_in\_out}}
+\doxysubsubsection{\texorpdfstring{key\_id}{key\_id}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}} atca\+\_\+check\+\_\+mac\+\_\+in\+\_\+out\+::key\+\_\+id}
+
+
+
+\mbox{[}in\mbox{]} Check\+Mac command Key\+ID 
+
+\Hypertarget{structatca__check__mac__in__out_a0619aaead2b82313d761804f40c24926}\label{structatca__check__mac__in__out_a0619aaead2b82313d761804f40c24926} 
+\index{atca\_check\_mac\_in\_out@{atca\_check\_mac\_in\_out}!mode@{mode}}
+\index{mode@{mode}!atca\_check\_mac\_in\_out@{atca\_check\_mac\_in\_out}}
+\doxysubsubsection{\texorpdfstring{mode}{mode}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} atca\+\_\+check\+\_\+mac\+\_\+in\+\_\+out\+::mode}
+
+
+
+\mbox{[}in\mbox{]} Check\+Mac command Mode 
+
+\Hypertarget{structatca__check__mac__in__out_a59417d0d5b7a10d195b2791287fc1ae4}\label{structatca__check__mac__in__out_a59417d0d5b7a10d195b2791287fc1ae4} 
+\index{atca\_check\_mac\_in\_out@{atca\_check\_mac\_in\_out}!other\_data@{other\_data}}
+\index{other\_data@{other\_data}!atca\_check\_mac\_in\_out@{atca\_check\_mac\_in\_out}}
+\doxysubsubsection{\texorpdfstring{other\_data}{other\_data}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} atca\+\_\+check\+\_\+mac\+\_\+in\+\_\+out\+::other\+\_\+data}
+
+
+
+\mbox{[}in\mbox{]} Other\+Data, 13 bytes 
+
+\Hypertarget{structatca__check__mac__in__out_ab48df556a22a0b26d76055fa3e7a8676}\label{structatca__check__mac__in__out_ab48df556a22a0b26d76055fa3e7a8676} 
+\index{atca\_check\_mac\_in\_out@{atca\_check\_mac\_in\_out}!otp@{otp}}
+\index{otp@{otp}!atca\_check\_mac\_in\_out@{atca\_check\_mac\_in\_out}}
+\doxysubsubsection{\texorpdfstring{otp}{otp}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} atca\+\_\+check\+\_\+mac\+\_\+in\+\_\+out\+::otp}
+
+
+
+\mbox{[}in\mbox{]} First 8 bytes of the OTP zone data. Can be NULL is mode\mbox{[}5\mbox{]} is 0. 
+
+\Hypertarget{structatca__check__mac__in__out_a5e9d34c3ab496af3f5beb9437b61dca5}\label{structatca__check__mac__in__out_a5e9d34c3ab496af3f5beb9437b61dca5} 
+\index{atca\_check\_mac\_in\_out@{atca\_check\_mac\_in\_out}!slot\_key@{slot\_key}}
+\index{slot\_key@{slot\_key}!atca\_check\_mac\_in\_out@{atca\_check\_mac\_in\_out}}
+\doxysubsubsection{\texorpdfstring{slot\_key}{slot\_key}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} atca\+\_\+check\+\_\+mac\+\_\+in\+\_\+out\+::slot\+\_\+key}
+
+\mbox{[}in\mbox{]} 32 byte key value in the slot specified by slot\+\_\+id. Can be NULL if mode\mbox{[}1\mbox{]} is 1. \Hypertarget{structatca__check__mac__in__out_a7d39142df3c468a8e1341f5f315c78f9}\label{structatca__check__mac__in__out_a7d39142df3c468a8e1341f5f315c78f9} 
+\index{atca\_check\_mac\_in\_out@{atca\_check\_mac\_in\_out}!sn@{sn}}
+\index{sn@{sn}!atca\_check\_mac\_in\_out@{atca\_check\_mac\_in\_out}}
+\doxysubsubsection{\texorpdfstring{sn}{sn}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} atca\+\_\+check\+\_\+mac\+\_\+in\+\_\+out\+::sn}
+
+
+
+\mbox{[}in\mbox{]} Device serial number SN\mbox{[}0\+:8\mbox{]}. Only SN\mbox{[}0\+:1\mbox{]} and SN\mbox{[}8\mbox{]} are required though. 
+
+\Hypertarget{structatca__check__mac__in__out_a036cc8ea587c5064388ea55c43a603a1}\label{structatca__check__mac__in__out_a036cc8ea587c5064388ea55c43a603a1} 
+\index{atca\_check\_mac\_in\_out@{atca\_check\_mac\_in\_out}!target\_key@{target\_key}}
+\index{target\_key@{target\_key}!atca\_check\_mac\_in\_out@{atca\_check\_mac\_in\_out}}
+\doxysubsubsection{\texorpdfstring{target\_key}{target\_key}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \texorpdfstring{$\ast$}{*} atca\+\_\+check\+\_\+mac\+\_\+in\+\_\+out\+::target\+\_\+key}
+
+\mbox{[}in\mbox{]} If this is not NULL, it assumes Check\+Mac copy is enabled for the specified key\+\_\+id (Read\+Key=0). If key\+\_\+id is even, this should be the 32-\/byte key value for the slot key\+\_\+id+1, otherwise this should be set to slot\+\_\+key. \Hypertarget{structatca__check__mac__in__out_a079b29fc6bceac8b4ba67274052db7e4}\label{structatca__check__mac__in__out_a079b29fc6bceac8b4ba67274052db7e4} 
+\index{atca\_check\_mac\_in\_out@{atca\_check\_mac\_in\_out}!temp\_key@{temp\_key}}
+\index{temp\_key@{temp\_key}!atca\_check\_mac\_in\_out@{atca\_check\_mac\_in\_out}}
+\doxysubsubsection{\texorpdfstring{temp\_key}{temp\_key}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structatca__temp__key}{atca\+\_\+temp\+\_\+key}} \texorpdfstring{$\ast$}{*} atca\+\_\+check\+\_\+mac\+\_\+in\+\_\+out\+::temp\+\_\+key}
+
+
+
+\mbox{[}in,out\mbox{]} Current state of Temp\+Key. Required if mode\mbox{[}0\mbox{]} or mode\mbox{[}1\mbox{]} are 1. 
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\+SCE/\mbox{\hyperlink{atca__host_8h}{atca\+\_\+host.\+h}}\item 
+C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\+SCE/host/\mbox{\hyperlink{host_2atca__host_8h}{atca\+\_\+host.\+h}}\end{DoxyCompactItemize}

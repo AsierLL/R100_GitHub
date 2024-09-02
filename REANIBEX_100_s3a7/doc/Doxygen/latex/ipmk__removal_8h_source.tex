@@ -1,0 +1,48 @@
+\doxysection{ipmk\+\_\+removal.\+h}
+\hypertarget{ipmk__removal_8h_source}{}\label{ipmk__removal_8h_source}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/IPMK/ipmk\_removal.h@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/IPMK/ipmk\_removal.h}}
+\mbox{\hyperlink{ipmk__removal_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ Name\ \ \ \ \ \ :\ R100\_S3A7\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ Copyright\ :\ Osatu\ S.\ Coop\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ Compiler\ \ :\ GNU\ ARM\ Embedded\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ Target\ \ \ \ :\ Reanibex\ Serie\ 100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ ******************************************************************************/}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#ifndef\ IPMK\_REMOVAL\_H}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#define\ IPMK\_REMOVAL\_H}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00025\ \textcolor{comment}{**Includes}}
+\DoxyCodeLine{00026\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00029\ \textcolor{comment}{**\ Defines}}
+\DoxyCodeLine{00030\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00033\ \textcolor{comment}{**\ Typedefs}}
+\DoxyCodeLine{00034\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00037\ \textcolor{comment}{**\ Globals}}
+\DoxyCodeLine{00038\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#include\ "{}types\_basic.h"{}}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{comment}{//\ type\ for\ the\ finite\ state\ machine\ for\ iPMK\ suppression}}
+\DoxyCodeLine{00043\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}}
+\DoxyCodeLine{00044\ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{ipmk__removal_8h_a9dc3aafc83813c325c5a972d9c07c5dba350bd0942eccd987e8b8e5396a69b1d2}{st\_searching}}\ =\ 0,}
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{ipmk__removal_8h_a9dc3aafc83813c325c5a972d9c07c5dbaec861b84897049b9e72d26fe4ccf8b54}{st\_onset\_neg\_detected}},}
+\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{ipmk__removal_8h_a9dc3aafc83813c325c5a972d9c07c5dbac829249c99963600b7e4a3d42ab72947}{st\_onset\_pos\_detected}},}
+\DoxyCodeLine{00048\ \ \ \ \ \mbox{\hyperlink{ipmk__removal_8h_a9dc3aafc83813c325c5a972d9c07c5dba462a95a528a2dcc86380439036b851a8}{st\_hold\_sample}},}
+\DoxyCodeLine{00049\ \ \ \ \ \mbox{\hyperlink{ipmk__removal_8h_a9dc3aafc83813c325c5a972d9c07c5dbacd030a0a4add9dbedd5673354bc89e7a}{st\_refractary\_period}}}
+\DoxyCodeLine{00050\ \}\ \mbox{\hyperlink{ipmk__removal_8h_a9dc3aafc83813c325c5a972d9c07c5db}{fsm\_ipmk\_st\_t}};}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{ipmk__removal_8h_a8e4edae281a93e76c81a61fe87984fee}{ipmk\_removal}}\ (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a269259c924dce846340ddbb810db2e3c}{int16\_t}}*\ pSamples,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ front\_porch\_size,\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\_t}}\ win\_size);}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ IPMK\_REMOVAL\_H}}
+
+\end{DoxyCode}

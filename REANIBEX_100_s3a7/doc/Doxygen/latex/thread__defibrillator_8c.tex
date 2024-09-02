@@ -1,0 +1,402 @@
+\doxysection{C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/synergy\+\_\+gen/thread\+\_\+defibrillator.c File Reference}
+\hypertarget{thread__defibrillator_8c}{}\label{thread__defibrillator_8c}\index{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/synergy\_gen/thread\_defibrillator.c@{C:/Users/ivicente/Desktop/BRANCH\_ACC\_WIFI/src/synergy\_gen/thread\_defibrillator.c}}
+{\ttfamily \#include "{}thread\+\_\+defibrillator.\+h"{}}\newline
+Include dependency graph for thread\+\_\+defibrillator.\+c\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__defibrillator_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{thread__defibrillator_8c_ac53134e0b01b26f788ab932e00360086}{thread\+\_\+defibrillator\+\_\+create}} (void)
+\item 
+static void \mbox{\hyperlink{thread__defibrillator_8c_a4f226b63bfe2cc5878b521a05e1c7df1}{thread\+\_\+defibrillator\+\_\+func}} (ULONG thread\+\_\+input)
+\item 
+static \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} thread\+\_\+defibrillator\+\_\+stack\mbox{[}1024\mbox{]} \mbox{\hyperlink{thread__defibrillator_8c_a8e389af59ddae3115162a29f5ff2849c}{BSP\+\_\+\+PLACE\+\_\+\+IN\+\_\+\+SECTION\+\_\+\+V2}} ("{}.stack.\+thread\+\_\+defibrillator"{})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+TX\+\_\+\+THREAD \mbox{\hyperlink{thread__defibrillator_8c_aaffb1ffbf562063332c47122f3685b31}{thread\+\_\+defibrillator}}
+\begin{DoxyCompactList}\small\item\em Thread descriptor. \end{DoxyCompactList}\item 
+static const timer\+\_\+cfg\+\_\+t \mbox{\hyperlink{thread__defibrillator_8c_ad735b7c613bf165ef7bd47ba4a7462ea}{gpt\+\_\+shock\+\_\+\+L\+\_\+cfg}}
+\item 
+const timer\+\_\+instance\+\_\+t \mbox{\hyperlink{thread__defibrillator_8c_a1ba09d931cbe298db55429203a2128c1}{gpt\+\_\+shock\+\_\+L}}
+\item 
+static gpt\+\_\+instance\+\_\+ctrl\+\_\+t \mbox{\hyperlink{thread__defibrillator_8c_aca1c6a28a0f9142009bcea7dbad4fe67}{gpt\+\_\+shock\+\_\+\+H\+\_\+ctrl}}
+\item 
+static const timer\+\_\+on\+\_\+gpt\+\_\+cfg\+\_\+t \mbox{\hyperlink{thread__defibrillator_8c_a3efaa33e5c65dba0ae278f6e43c23d74}{gpt\+\_\+shock\+\_\+\+H\+\_\+extend}}
+\item 
+static const timer\+\_\+cfg\+\_\+t \mbox{\hyperlink{thread__defibrillator_8c_ab41110dc849dff32141f7182c929d892}{gpt\+\_\+shock\+\_\+\+H\+\_\+cfg}}
+\item 
+const timer\+\_\+instance\+\_\+t \mbox{\hyperlink{thread__defibrillator_8c_a2d1dc8ad07b7b8b60a5ea1890aed1500}{gpt\+\_\+shock\+\_\+H}}
+\item 
+adc\+\_\+instance\+\_\+ctrl\+\_\+t \mbox{\hyperlink{thread__defibrillator_8c_aa498a4e0e1915586bf11f1ee4c56a9c6}{adc\+\_\+defib\+\_\+ctrl}}
+\item 
+const adc\+\_\+cfg\+\_\+t \mbox{\hyperlink{thread__defibrillator_8c_a07b0a9d3114ec4bfb4cd1ef964dd53e2}{adc\+\_\+defib\+\_\+cfg}}
+\item 
+const adc\+\_\+channel\+\_\+cfg\+\_\+t \mbox{\hyperlink{thread__defibrillator_8c_ad0de04afb076664b78f36cdfcccd21d3}{adc\+\_\+defib\+\_\+channel\+\_\+cfg}}
+\item 
+const adc\+\_\+instance\+\_\+t \mbox{\hyperlink{thread__defibrillator_8c_ac28851491325e2972e68dd5f7c65c373}{adc\+\_\+defib}}
+\item 
+static gpt\+\_\+instance\+\_\+ctrl\+\_\+t \mbox{\hyperlink{thread__defibrillator_8c_a1c085575f9a94e29905f70a5a1a06127}{gpt\+\_\+ovch\+\_\+ctrl}}
+\item 
+static const timer\+\_\+on\+\_\+gpt\+\_\+cfg\+\_\+t \mbox{\hyperlink{thread__defibrillator_8c_ac63a9f50f132ba311d2bf01f4cb690c0}{gpt\+\_\+ovch\+\_\+extend}}
+\item 
+static const timer\+\_\+cfg\+\_\+t \mbox{\hyperlink{thread__defibrillator_8c_a6cc6d3bac8c55e4848d2d12b940fc6b6}{gpt\+\_\+ovch\+\_\+cfg}}
+\item 
+const timer\+\_\+instance\+\_\+t \mbox{\hyperlink{thread__defibrillator_8c_a667c3652096caad3d5dbcd9a26f74992}{gpt\+\_\+ovch}}
+\item 
+static gpt\+\_\+instance\+\_\+ctrl\+\_\+t \mbox{\hyperlink{thread__defibrillator_8c_a6325124a1129449c123127826b866cd3}{gpt\+\_\+charger\+\_\+ctrl}}
+\item 
+static const timer\+\_\+on\+\_\+gpt\+\_\+cfg\+\_\+t \mbox{\hyperlink{thread__defibrillator_8c_a4e00f3137af35a963893438d5ba3a4a7}{gpt\+\_\+charger\+\_\+extend}}
+\item 
+static const timer\+\_\+cfg\+\_\+t \mbox{\hyperlink{thread__defibrillator_8c_a336e587b35f86373e622a3dbf6a1b210}{gpt\+\_\+charger\+\_\+cfg}}
+\item 
+const timer\+\_\+instance\+\_\+t \mbox{\hyperlink{thread__defibrillator_8c_af601d891d9eeeced2c813fcce9b3613e}{gpt\+\_\+charger}}
+\item 
+TX\+\_\+\+QUEUE \mbox{\hyperlink{thread__defibrillator_8c_acc8d4d9bf6f215acdea90e9e9629659b}{queue\+\_\+def}}
+\item 
+static \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{thread__defibrillator_8c_a882196bc91c14471ad199eed9adbad91}{queue\+\_\+memory\+\_\+queue\+\_\+def}} \mbox{[}20\mbox{]}
+\item 
+bool \mbox{\hyperlink{thread__defibrillator_8c_aaef7f0cb4b99eeac7cee1b472e370b7b}{g\+\_\+ssp\+\_\+common\+\_\+initialized}}
+\item 
+\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \mbox{\hyperlink{thread__defibrillator_8c_a00a0c803cac86fb4d0f23cdc5524b5ed}{g\+\_\+ssp\+\_\+common\+\_\+thread\+\_\+count}}
+\item 
+TX\+\_\+\+SEMAPHORE \mbox{\hyperlink{thread__defibrillator_8c_a1846945310283a1dc8b0adefd0e6be71}{g\+\_\+ssp\+\_\+common\+\_\+initialized\+\_\+semaphore}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{thread__defibrillator_8c_a8e389af59ddae3115162a29f5ff2849c}\label{thread__defibrillator_8c_a8e389af59ddae3115162a29f5ff2849c} 
+\index{thread\_defibrillator.c@{thread\_defibrillator.c}!BSP\_PLACE\_IN\_SECTION\_V2@{BSP\_PLACE\_IN\_SECTION\_V2}}
+\index{BSP\_PLACE\_IN\_SECTION\_V2@{BSP\_PLACE\_IN\_SECTION\_V2}!thread\_defibrillator.c@{thread\_defibrillator.c}}
+\doxysubsubsection{\texorpdfstring{BSP\_PLACE\_IN\_SECTION\_V2()}{BSP\_PLACE\_IN\_SECTION\_V2()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} thread\+\_\+defibrillator\+\_\+stack\mbox{[}1024\mbox{]} BSP\+\_\+\+PLACE\+\_\+\+IN\+\_\+\+SECTION\+\_\+\+V2 (\begin{DoxyParamCaption}\item[{"{}.stack.\+thread\+\_\+defibrillator"{}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{thread__defibrillator_8c_ac53134e0b01b26f788ab932e00360086}\label{thread__defibrillator_8c_ac53134e0b01b26f788ab932e00360086} 
+\index{thread\_defibrillator.c@{thread\_defibrillator.c}!thread\_defibrillator\_create@{thread\_defibrillator\_create}}
+\index{thread\_defibrillator\_create@{thread\_defibrillator\_create}!thread\_defibrillator.c@{thread\_defibrillator.c}}
+\doxysubsubsection{\texorpdfstring{thread\_defibrillator\_create()}{thread\_defibrillator\_create()}}
+{\footnotesize\ttfamily void thread\+\_\+defibrillator\+\_\+create (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__defibrillator_8c_ac53134e0b01b26f788ab932e00360086_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{thread__defibrillator_8c_ac53134e0b01b26f788ab932e00360086_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{thread__defibrillator_8c_a4f226b63bfe2cc5878b521a05e1c7df1}\label{thread__defibrillator_8c_a4f226b63bfe2cc5878b521a05e1c7df1} 
+\index{thread\_defibrillator.c@{thread\_defibrillator.c}!thread\_defibrillator\_func@{thread\_defibrillator\_func}}
+\index{thread\_defibrillator\_func@{thread\_defibrillator\_func}!thread\_defibrillator.c@{thread\_defibrillator.c}}
+\doxysubsubsection{\texorpdfstring{thread\_defibrillator\_func()}{thread\_defibrillator\_func()}}
+{\footnotesize\ttfamily static void thread\+\_\+defibrillator\+\_\+func (\begin{DoxyParamCaption}\item[{ULONG}]{thread\+\_\+input }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__defibrillator_8c_a4f226b63bfe2cc5878b521a05e1c7df1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{thread__defibrillator_8c_a4f226b63bfe2cc5878b521a05e1c7df1_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{thread__defibrillator_8c_ac28851491325e2972e68dd5f7c65c373}\label{thread__defibrillator_8c_ac28851491325e2972e68dd5f7c65c373} 
+\index{thread\_defibrillator.c@{thread\_defibrillator.c}!adc\_defib@{adc\_defib}}
+\index{adc\_defib@{adc\_defib}!thread\_defibrillator.c@{thread\_defibrillator.c}}
+\doxysubsubsection{\texorpdfstring{adc\_defib}{adc\_defib}}
+{\footnotesize\ttfamily const adc\+\_\+instance\+\_\+t adc\+\_\+defib}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{\ .p\_ctrl\ =\ \&\mbox{\hyperlink{thread__defibrillator_8c_aa498a4e0e1915586bf11f1ee4c56a9c6}{adc\_defib\_ctrl}},\ .p\_cfg\ =\ \&\mbox{\hyperlink{thread__defibrillator_8c_a07b0a9d3114ec4bfb4cd1ef964dd53e2}{adc\_defib\_cfg}},\ .p\_channel\_cfg\ =\ \&\mbox{\hyperlink{thread__defibrillator_8c_ad0de04afb076664b78f36cdfcccd21d3}{adc\_defib\_channel\_cfg}},\ .p\_api\ =\ \&g\_adc\_on\_adc\ \}}
+
+\end{DoxyCode}
+ADC on ADC Instance. \Hypertarget{thread__defibrillator_8c_a07b0a9d3114ec4bfb4cd1ef964dd53e2}\label{thread__defibrillator_8c_a07b0a9d3114ec4bfb4cd1ef964dd53e2} 
+\index{thread\_defibrillator.c@{thread\_defibrillator.c}!adc\_defib\_cfg@{adc\_defib\_cfg}}
+\index{adc\_defib\_cfg@{adc\_defib\_cfg}!thread\_defibrillator.c@{thread\_defibrillator.c}}
+\doxysubsubsection{\texorpdfstring{adc\_defib\_cfg}{adc\_defib\_cfg}}
+{\footnotesize\ttfamily const adc\+\_\+cfg\+\_\+t adc\+\_\+defib\+\_\+cfg}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{\ .unit\ =\ 0,\ .mode\ =\ ADC\_MODE\_SINGLE\_SCAN,\ .resolution\ =\ ADC\_RESOLUTION\_12\_BIT,\ .alignment\ =\ ADC\_ALIGNMENT\_RIGHT,}
+\DoxyCodeLine{\ \ .add\_average\_count\ =\ ADC\_ADD\_AVERAGE\_FOUR,\ .clearing\ =\ ADC\_CLEAR\_AFTER\_READ\_OFF,\ .trigger\ =\ ADC\_TRIGGER\_SOFTWARE,}
+\DoxyCodeLine{\ \ .trigger\_group\_b\ =\ ADC\_TRIGGER\_SYNC\_ELC,\ .p\_callback\ =\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}},\ .p\_context\ =\ \&\mbox{\hyperlink{thread__defibrillator_8c_ac28851491325e2972e68dd5f7c65c373}{adc\_defib}},\ .scan\_end\_ipl\ =}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ (BSP\_IRQ\_DISABLED),}
+\DoxyCodeLine{\ \ .scan\_end\_b\_ipl\ =\ (BSP\_IRQ\_DISABLED),\ .calib\_adc\_skip\ =\ \textcolor{keyword}{true},\ \}}
+
+\end{DoxyCode}
+\Hypertarget{thread__defibrillator_8c_ad0de04afb076664b78f36cdfcccd21d3}\label{thread__defibrillator_8c_ad0de04afb076664b78f36cdfcccd21d3} 
+\index{thread\_defibrillator.c@{thread\_defibrillator.c}!adc\_defib\_channel\_cfg@{adc\_defib\_channel\_cfg}}
+\index{adc\_defib\_channel\_cfg@{adc\_defib\_channel\_cfg}!thread\_defibrillator.c@{thread\_defibrillator.c}}
+\doxysubsubsection{\texorpdfstring{adc\_defib\_channel\_cfg}{adc\_defib\_channel\_cfg}}
+{\footnotesize\ttfamily const adc\+\_\+channel\+\_\+cfg\+\_\+t adc\+\_\+defib\+\_\+channel\+\_\+cfg}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{\ .scan\_mask\ =\ (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\_t}})\ (}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ ((\mbox{\hyperlink{_s_c_e_2types__basic_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\_t}})\ ADC\_MASK\_CHANNEL\_0)\ |\ ((\mbox{\hyperlink{_s_c_e_2types__basic_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\_t}})\ ADC\_MASK\_CHANNEL\_1)\ |\ ((\mbox{\hyperlink{_s_c_e_2types__basic_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\_t}})\ ADC\_MASK\_CHANNEL\_2)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |\ ((\mbox{\hyperlink{_s_c_e_2types__basic_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\_t}})\ ADC\_MASK\_CHANNEL\_3)\ |\ ((\mbox{\hyperlink{_s_c_e_2types__basic_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\_t}})\ ADC\_MASK\_CHANNEL\_4)\ |\ ((\mbox{\hyperlink{_s_c_e_2types__basic_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\_t}})\ ADC\_MASK\_CHANNEL\_5)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |\ ((\mbox{\hyperlink{_s_c_e_2types__basic_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\_t}})\ 0)\ |\ ((\mbox{\hyperlink{_s_c_e_2types__basic_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\_t}})\ 0)\ |\ ((\mbox{\hyperlink{_s_c_e_2types__basic_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\_t}})\ 0)\ |\ ((\mbox{\hyperlink{_s_c_e_2types__basic_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\_t}})\ 0)\ |\ ((\mbox{\hyperlink{_s_c_e_2types__basic_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\_t}})\ 0)\ |\ ((\mbox{\hyperlink{_s_c_e_2types__basic_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\_t}})\ 0)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |\ ((\mbox{\hyperlink{_s_c_e_2types__basic_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\_t}})\ 0)\ |\ ((\mbox{\hyperlink{_s_c_e_2types__basic_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\_t}})\ 0)\ |\ ((\mbox{\hyperlink{_s_c_e_2types__basic_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\_t}})\ 0)\ |\ ((\mbox{\hyperlink{_s_c_e_2types__basic_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\_t}})\ 0)\ |\ ((\mbox{\hyperlink{_s_c_e_2types__basic_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\_t}})\ 0)\ |\ ((\mbox{\hyperlink{_s_c_e_2types__basic_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\_t}})\ 0)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |\ ((\mbox{\hyperlink{_s_c_e_2types__basic_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\_t}})\ 0)\ |\ ((\mbox{\hyperlink{_s_c_e_2types__basic_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\_t}})\ 0)\ |\ ((\mbox{\hyperlink{_s_c_e_2types__basic_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\_t}})\ 0)\ |\ ((\mbox{\hyperlink{_s_c_e_2types__basic_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\_t}})\ 0)\ |\ ((\mbox{\hyperlink{_s_c_e_2types__basic_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\_t}})\ 0)\ |\ ((\mbox{\hyperlink{_s_c_e_2types__basic_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\_t}})\ 0)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |\ ((\mbox{\hyperlink{_s_c_e_2types__basic_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\_t}})\ 0)\ |\ ((\mbox{\hyperlink{_s_c_e_2types__basic_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\_t}})\ 0)\ |\ ((\mbox{\hyperlink{_s_c_e_2types__basic_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\_t}})\ 0)\ |\ ((\mbox{\hyperlink{_s_c_e_2types__basic_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\_t}})\ 0)\ |\ ((\mbox{\hyperlink{_s_c_e_2types__basic_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\_t}})\ 0)\ |\ (0)),}
+\DoxyCodeLine{\ \ }
+\DoxyCodeLine{\ \ .scan\_mask\_group\_b\ =\ (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\_t}})\ (}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ (((\mbox{\hyperlink{_s_c_e_2types__basic_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\_t}})\ ADC\_MASK\_CHANNEL\_0)\ |\ ((\mbox{\hyperlink{_s_c_e_2types__basic_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\_t}})\ ADC\_MASK\_CHANNEL\_1)\ |\ ((\mbox{\hyperlink{_s_c_e_2types__basic_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\_t}})\ ADC\_MASK\_CHANNEL\_2)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |\ ((\mbox{\hyperlink{_s_c_e_2types__basic_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\_t}})\ ADC\_MASK\_CHANNEL\_3)\ |\ ((\mbox{\hyperlink{_s_c_e_2types__basic_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\_t}})\ ADC\_MASK\_CHANNEL\_4)\ |\ ((\mbox{\hyperlink{_s_c_e_2types__basic_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\_t}})\ ADC\_MASK\_CHANNEL\_5)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |\ ((\mbox{\hyperlink{_s_c_e_2types__basic_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\_t}})\ 0)\ |\ ((\mbox{\hyperlink{_s_c_e_2types__basic_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\_t}})\ 0)\ |\ ((\mbox{\hyperlink{_s_c_e_2types__basic_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\_t}})\ 0)\ |\ ((\mbox{\hyperlink{_s_c_e_2types__basic_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\_t}})\ 0)\ |\ ((\mbox{\hyperlink{_s_c_e_2types__basic_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\_t}})\ 0)\ |\ ((\mbox{\hyperlink{_s_c_e_2types__basic_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\_t}})\ 0)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |\ ((\mbox{\hyperlink{_s_c_e_2types__basic_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\_t}})\ 0)\ |\ ((\mbox{\hyperlink{_s_c_e_2types__basic_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\_t}})\ 0)\ |\ ((\mbox{\hyperlink{_s_c_e_2types__basic_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\_t}})\ 0)\ |\ ((\mbox{\hyperlink{_s_c_e_2types__basic_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\_t}})\ 0)\ |\ ((\mbox{\hyperlink{_s_c_e_2types__basic_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\_t}})\ 0)\ |\ ((\mbox{\hyperlink{_s_c_e_2types__basic_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\_t}})\ 0)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |\ ((\mbox{\hyperlink{_s_c_e_2types__basic_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\_t}})\ 0)\ |\ ((\mbox{\hyperlink{_s_c_e_2types__basic_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\_t}})\ 0)\ |\ ((\mbox{\hyperlink{_s_c_e_2types__basic_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\_t}})\ 0)\ |\ ((\mbox{\hyperlink{_s_c_e_2types__basic_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\_t}})\ 0)\ |\ ((\mbox{\hyperlink{_s_c_e_2types__basic_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\_t}})\ 0)\ |\ ((\mbox{\hyperlink{_s_c_e_2types__basic_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\_t}})\ 0)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |\ ((\mbox{\hyperlink{_s_c_e_2types__basic_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\_t}})\ 0)\ |\ ((\mbox{\hyperlink{_s_c_e_2types__basic_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\_t}})\ 0)\ |\ ((\mbox{\hyperlink{_s_c_e_2types__basic_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\_t}})\ 0)\ |\ ((\mbox{\hyperlink{_s_c_e_2types__basic_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\_t}})\ 0)\ |\ ((\mbox{\hyperlink{_s_c_e_2types__basic_8h_aaa5d1cd013383c889537491c3cfd9aad}{uint64\_t}})\ 0)\ |\ (0))\ >>\ 32),}
+\DoxyCodeLine{\ \ .priority\_group\_a\ =\ ADC\_GROUP\_A\_PRIORITY\_OFF,\ .add\_mask\ =\ (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\_t}})\ (}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ (0)\ |\ (ADC\_MASK\_CHANNEL\_1)\ |\ (0)\ |\ (ADC\_MASK\_CHANNEL\_3)\ |\ (ADC\_MASK\_CHANNEL\_4)\ |\ (ADC\_MASK\_CHANNEL\_5)\ |\ (0)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |\ (0)\ |\ (0)\ |\ (0)\ |\ (0)\ |\ (0)\ |\ (0)\ |\ (0)\ |\ (0)\ |\ (0)\ |\ (0)\ |\ (0)\ |\ (0)\ |\ (0)\ |\ (0)\ |\ (0)\ |\ (0)\ |\ (0)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |\ (0)\ |\ (0)\ |\ (0)\ |\ (0)\ |\ (0)\ |\ (0)),}
+\DoxyCodeLine{\ \ .sample\_hold\_mask\ =\ (\mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\_t}})\ ((0)\ |\ (0)\ |\ (0)),\ .sample\_hold\_states\ =\ 24,\ \}}
+
+\end{DoxyCode}
+\Hypertarget{thread__defibrillator_8c_aa498a4e0e1915586bf11f1ee4c56a9c6}\label{thread__defibrillator_8c_aa498a4e0e1915586bf11f1ee4c56a9c6} 
+\index{thread\_defibrillator.c@{thread\_defibrillator.c}!adc\_defib\_ctrl@{adc\_defib\_ctrl}}
+\index{adc\_defib\_ctrl@{adc\_defib\_ctrl}!thread\_defibrillator.c@{thread\_defibrillator.c}}
+\doxysubsubsection{\texorpdfstring{adc\_defib\_ctrl}{adc\_defib\_ctrl}}
+{\footnotesize\ttfamily adc\+\_\+instance\+\_\+ctrl\+\_\+t adc\+\_\+defib\+\_\+ctrl}
+
+\Hypertarget{thread__defibrillator_8c_aaef7f0cb4b99eeac7cee1b472e370b7b}\label{thread__defibrillator_8c_aaef7f0cb4b99eeac7cee1b472e370b7b} 
+\index{thread\_defibrillator.c@{thread\_defibrillator.c}!g\_ssp\_common\_initialized@{g\_ssp\_common\_initialized}}
+\index{g\_ssp\_common\_initialized@{g\_ssp\_common\_initialized}!thread\_defibrillator.c@{thread\_defibrillator.c}}
+\doxysubsubsection{\texorpdfstring{g\_ssp\_common\_initialized}{g\_ssp\_common\_initialized}}
+{\footnotesize\ttfamily bool g\+\_\+ssp\+\_\+common\+\_\+initialized\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{thread__defibrillator_8c_a1846945310283a1dc8b0adefd0e6be71}\label{thread__defibrillator_8c_a1846945310283a1dc8b0adefd0e6be71} 
+\index{thread\_defibrillator.c@{thread\_defibrillator.c}!g\_ssp\_common\_initialized\_semaphore@{g\_ssp\_common\_initialized\_semaphore}}
+\index{g\_ssp\_common\_initialized\_semaphore@{g\_ssp\_common\_initialized\_semaphore}!thread\_defibrillator.c@{thread\_defibrillator.c}}
+\doxysubsubsection{\texorpdfstring{g\_ssp\_common\_initialized\_semaphore}{g\_ssp\_common\_initialized\_semaphore}}
+{\footnotesize\ttfamily TX\+\_\+\+SEMAPHORE g\+\_\+ssp\+\_\+common\+\_\+initialized\+\_\+semaphore\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{thread__defibrillator_8c_a00a0c803cac86fb4d0f23cdc5524b5ed}\label{thread__defibrillator_8c_a00a0c803cac86fb4d0f23cdc5524b5ed} 
+\index{thread\_defibrillator.c@{thread\_defibrillator.c}!g\_ssp\_common\_thread\_count@{g\_ssp\_common\_thread\_count}}
+\index{g\_ssp\_common\_thread\_count@{g\_ssp\_common\_thread\_count}!thread\_defibrillator.c@{thread\_defibrillator.c}}
+\doxysubsubsection{\texorpdfstring{g\_ssp\_common\_thread\_count}{g\_ssp\_common\_thread\_count}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} g\+\_\+ssp\+\_\+common\+\_\+thread\+\_\+count\hspace{0.3cm}{\ttfamily [extern]}}
+
+\Hypertarget{thread__defibrillator_8c_af601d891d9eeeced2c813fcce9b3613e}\label{thread__defibrillator_8c_af601d891d9eeeced2c813fcce9b3613e} 
+\index{thread\_defibrillator.c@{thread\_defibrillator.c}!gpt\_charger@{gpt\_charger}}
+\index{gpt\_charger@{gpt\_charger}!thread\_defibrillator.c@{thread\_defibrillator.c}}
+\doxysubsubsection{\texorpdfstring{gpt\_charger}{gpt\_charger}}
+{\footnotesize\ttfamily const timer\+\_\+instance\+\_\+t gpt\+\_\+charger}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{\ .p\_ctrl\ =\ \&\mbox{\hyperlink{thread__defibrillator_8c_a6325124a1129449c123127826b866cd3}{gpt\_charger\_ctrl}},\ .p\_cfg\ =\ \&\mbox{\hyperlink{thread__defibrillator_8c_a336e587b35f86373e622a3dbf6a1b210}{gpt\_charger\_cfg}},\ .p\_api\ =\ \&g\_timer\_on\_gpt\ \}}
+
+\end{DoxyCode}
+Timer on GPT Instance. \Hypertarget{thread__defibrillator_8c_a336e587b35f86373e622a3dbf6a1b210}\label{thread__defibrillator_8c_a336e587b35f86373e622a3dbf6a1b210} 
+\index{thread\_defibrillator.c@{thread\_defibrillator.c}!gpt\_charger\_cfg@{gpt\_charger\_cfg}}
+\index{gpt\_charger\_cfg@{gpt\_charger\_cfg}!thread\_defibrillator.c@{thread\_defibrillator.c}}
+\doxysubsubsection{\texorpdfstring{gpt\_charger\_cfg}{gpt\_charger\_cfg}}
+{\footnotesize\ttfamily const timer\+\_\+cfg\+\_\+t gpt\+\_\+charger\+\_\+cfg\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{\ .mode\ =\ TIMER\_MODE\_PWM,\ .period\ =\ 100,\ .unit\ =\ TIMER\_UNIT\_PERIOD\_USEC,\ .duty\_cycle\ =\ 5,\ .duty\_cycle\_unit\ =}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ TIMER\_PWM\_UNIT\_PERCENT,}
+\DoxyCodeLine{\ \ .channel\ =\ 7,\ .autostart\ =\ \textcolor{keyword}{false},\ .p\_callback\ =\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}},\ .p\_context\ =\ \&\mbox{\hyperlink{thread__defibrillator_8c_af601d891d9eeeced2c813fcce9b3613e}{gpt\_charger}},\ .p\_extend\ =\ \&\mbox{\hyperlink{thread__defibrillator_8c_a4e00f3137af35a963893438d5ba3a4a7}{gpt\_charger\_extend}},}
+\DoxyCodeLine{\ \ .irq\_ipl\ =\ (BSP\_IRQ\_DISABLED),\ \}}
+
+\end{DoxyCode}
+\Hypertarget{thread__defibrillator_8c_a6325124a1129449c123127826b866cd3}\label{thread__defibrillator_8c_a6325124a1129449c123127826b866cd3} 
+\index{thread\_defibrillator.c@{thread\_defibrillator.c}!gpt\_charger\_ctrl@{gpt\_charger\_ctrl}}
+\index{gpt\_charger\_ctrl@{gpt\_charger\_ctrl}!thread\_defibrillator.c@{thread\_defibrillator.c}}
+\doxysubsubsection{\texorpdfstring{gpt\_charger\_ctrl}{gpt\_charger\_ctrl}}
+{\footnotesize\ttfamily gpt\+\_\+instance\+\_\+ctrl\+\_\+t gpt\+\_\+charger\+\_\+ctrl\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{thread__defibrillator_8c_a4e00f3137af35a963893438d5ba3a4a7}\label{thread__defibrillator_8c_a4e00f3137af35a963893438d5ba3a4a7} 
+\index{thread\_defibrillator.c@{thread\_defibrillator.c}!gpt\_charger\_extend@{gpt\_charger\_extend}}
+\index{gpt\_charger\_extend@{gpt\_charger\_extend}!thread\_defibrillator.c@{thread\_defibrillator.c}}
+\doxysubsubsection{\texorpdfstring{gpt\_charger\_extend}{gpt\_charger\_extend}}
+{\footnotesize\ttfamily const timer\+\_\+on\+\_\+gpt\+\_\+cfg\+\_\+t gpt\+\_\+charger\+\_\+extend\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{\ .gtioca\ =}
+\DoxyCodeLine{\{\ .output\_enabled\ =\ \textcolor{keyword}{true},\ .stop\_level\ =\ GPT\_PIN\_LEVEL\_LOW\ \},}
+\DoxyCodeLine{\ \ .gtiocb\ =}
+\DoxyCodeLine{\ \ \{\ .output\_enabled\ =\ \textcolor{keyword}{true},\ .stop\_level\ =\ GPT\_PIN\_LEVEL\_LOW\ \},}
+\DoxyCodeLine{\ \ .shortest\_pwm\_signal\ =\ GPT\_SHORTEST\_LEVEL\_OFF,\ \}}
+
+\end{DoxyCode}
+\Hypertarget{thread__defibrillator_8c_a667c3652096caad3d5dbcd9a26f74992}\label{thread__defibrillator_8c_a667c3652096caad3d5dbcd9a26f74992} 
+\index{thread\_defibrillator.c@{thread\_defibrillator.c}!gpt\_ovch@{gpt\_ovch}}
+\index{gpt\_ovch@{gpt\_ovch}!thread\_defibrillator.c@{thread\_defibrillator.c}}
+\doxysubsubsection{\texorpdfstring{gpt\_ovch}{gpt\_ovch}}
+{\footnotesize\ttfamily const timer\+\_\+instance\+\_\+t gpt\+\_\+ovch}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{\ .p\_ctrl\ =\ \&\mbox{\hyperlink{thread__defibrillator_8c_a1c085575f9a94e29905f70a5a1a06127}{gpt\_ovch\_ctrl}},\ .p\_cfg\ =\ \&\mbox{\hyperlink{thread__defibrillator_8c_a6cc6d3bac8c55e4848d2d12b940fc6b6}{gpt\_ovch\_cfg}},\ .p\_api\ =\ \&g\_timer\_on\_gpt\ \}}
+
+\end{DoxyCode}
+Timer on GPT Instance. \Hypertarget{thread__defibrillator_8c_a6cc6d3bac8c55e4848d2d12b940fc6b6}\label{thread__defibrillator_8c_a6cc6d3bac8c55e4848d2d12b940fc6b6} 
+\index{thread\_defibrillator.c@{thread\_defibrillator.c}!gpt\_ovch\_cfg@{gpt\_ovch\_cfg}}
+\index{gpt\_ovch\_cfg@{gpt\_ovch\_cfg}!thread\_defibrillator.c@{thread\_defibrillator.c}}
+\doxysubsubsection{\texorpdfstring{gpt\_ovch\_cfg}{gpt\_ovch\_cfg}}
+{\footnotesize\ttfamily const timer\+\_\+cfg\+\_\+t gpt\+\_\+ovch\+\_\+cfg\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{\ .mode\ =\ TIMER\_MODE\_PWM,\ .period\ =\ 100,\ .unit\ =\ TIMER\_UNIT\_PERIOD\_USEC,\ .duty\_cycle\ =\ 50,\ .duty\_cycle\_unit\ =}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ TIMER\_PWM\_UNIT\_PERCENT,}
+\DoxyCodeLine{\ \ .channel\ =\ 3,\ .autostart\ =\ \textcolor{keyword}{false},\ .p\_callback\ =\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}},\ .p\_context\ =\ \&\mbox{\hyperlink{thread__defibrillator_8c_a667c3652096caad3d5dbcd9a26f74992}{gpt\_ovch}},\ .p\_extend\ =\ \&\mbox{\hyperlink{thread__defibrillator_8c_ac63a9f50f132ba311d2bf01f4cb690c0}{gpt\_ovch\_extend}},\ .irq\_ipl\ =}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ (BSP\_IRQ\_DISABLED),\ \}}
+
+\end{DoxyCode}
+\Hypertarget{thread__defibrillator_8c_a1c085575f9a94e29905f70a5a1a06127}\label{thread__defibrillator_8c_a1c085575f9a94e29905f70a5a1a06127} 
+\index{thread\_defibrillator.c@{thread\_defibrillator.c}!gpt\_ovch\_ctrl@{gpt\_ovch\_ctrl}}
+\index{gpt\_ovch\_ctrl@{gpt\_ovch\_ctrl}!thread\_defibrillator.c@{thread\_defibrillator.c}}
+\doxysubsubsection{\texorpdfstring{gpt\_ovch\_ctrl}{gpt\_ovch\_ctrl}}
+{\footnotesize\ttfamily gpt\+\_\+instance\+\_\+ctrl\+\_\+t gpt\+\_\+ovch\+\_\+ctrl\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{thread__defibrillator_8c_ac63a9f50f132ba311d2bf01f4cb690c0}\label{thread__defibrillator_8c_ac63a9f50f132ba311d2bf01f4cb690c0} 
+\index{thread\_defibrillator.c@{thread\_defibrillator.c}!gpt\_ovch\_extend@{gpt\_ovch\_extend}}
+\index{gpt\_ovch\_extend@{gpt\_ovch\_extend}!thread\_defibrillator.c@{thread\_defibrillator.c}}
+\doxysubsubsection{\texorpdfstring{gpt\_ovch\_extend}{gpt\_ovch\_extend}}
+{\footnotesize\ttfamily const timer\+\_\+on\+\_\+gpt\+\_\+cfg\+\_\+t gpt\+\_\+ovch\+\_\+extend\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{\ .gtioca\ =}
+\DoxyCodeLine{\{\ .output\_enabled\ =\ \textcolor{keyword}{true},\ .stop\_level\ =\ GPT\_PIN\_LEVEL\_LOW\ \},}
+\DoxyCodeLine{\ \ .gtiocb\ =}
+\DoxyCodeLine{\ \ \{\ .output\_enabled\ =\ \textcolor{keyword}{false},\ .stop\_level\ =\ GPT\_PIN\_LEVEL\_LOW\ \},}
+\DoxyCodeLine{\ \ .shortest\_pwm\_signal\ =\ GPT\_SHORTEST\_LEVEL\_OFF,\ \}}
+
+\end{DoxyCode}
+\Hypertarget{thread__defibrillator_8c_a2d1dc8ad07b7b8b60a5ea1890aed1500}\label{thread__defibrillator_8c_a2d1dc8ad07b7b8b60a5ea1890aed1500} 
+\index{thread\_defibrillator.c@{thread\_defibrillator.c}!gpt\_shock\_H@{gpt\_shock\_H}}
+\index{gpt\_shock\_H@{gpt\_shock\_H}!thread\_defibrillator.c@{thread\_defibrillator.c}}
+\doxysubsubsection{\texorpdfstring{gpt\_shock\_H}{gpt\_shock\_H}}
+{\footnotesize\ttfamily const timer\+\_\+instance\+\_\+t gpt\+\_\+shock\+\_\+H}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{\ .p\_ctrl\ =\ \&\mbox{\hyperlink{thread__defibrillator_8c_aca1c6a28a0f9142009bcea7dbad4fe67}{gpt\_shock\_H\_ctrl}},\ .p\_cfg\ =\ \&\mbox{\hyperlink{thread__defibrillator_8c_ab41110dc849dff32141f7182c929d892}{gpt\_shock\_H\_cfg}},\ .p\_api\ =\ \&g\_timer\_on\_gpt\ \}}
+
+\end{DoxyCode}
+Timer on GPT Instance. \Hypertarget{thread__defibrillator_8c_ab41110dc849dff32141f7182c929d892}\label{thread__defibrillator_8c_ab41110dc849dff32141f7182c929d892} 
+\index{thread\_defibrillator.c@{thread\_defibrillator.c}!gpt\_shock\_H\_cfg@{gpt\_shock\_H\_cfg}}
+\index{gpt\_shock\_H\_cfg@{gpt\_shock\_H\_cfg}!thread\_defibrillator.c@{thread\_defibrillator.c}}
+\doxysubsubsection{\texorpdfstring{gpt\_shock\_H\_cfg}{gpt\_shock\_H\_cfg}}
+{\footnotesize\ttfamily const timer\+\_\+cfg\+\_\+t gpt\+\_\+shock\+\_\+\+H\+\_\+cfg\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{\ .mode\ =\ TIMER\_MODE\_PWM,\ .period\ =\ 120,\ .unit\ =\ TIMER\_UNIT\_FREQUENCY\_KHZ,\ .duty\_cycle\ =\ 50,\ .duty\_cycle\_unit\ =}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ TIMER\_PWM\_UNIT\_PERCENT,}
+\DoxyCodeLine{\ \ .channel\ =\ 1,\ .autostart\ =\ \textcolor{keyword}{false},\ .p\_callback\ =\ \mbox{\hyperlink{_s_c_e_2types__basic_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}},\ .p\_context\ =\ \&\mbox{\hyperlink{thread__defibrillator_8c_a2d1dc8ad07b7b8b60a5ea1890aed1500}{gpt\_shock\_H}},\ .p\_extend\ =\ \&\mbox{\hyperlink{thread__defibrillator_8c_a3efaa33e5c65dba0ae278f6e43c23d74}{gpt\_shock\_H\_extend}},}
+\DoxyCodeLine{\ \ .irq\_ipl\ =\ (BSP\_IRQ\_DISABLED),\ \}}
+
+\end{DoxyCode}
+\Hypertarget{thread__defibrillator_8c_aca1c6a28a0f9142009bcea7dbad4fe67}\label{thread__defibrillator_8c_aca1c6a28a0f9142009bcea7dbad4fe67} 
+\index{thread\_defibrillator.c@{thread\_defibrillator.c}!gpt\_shock\_H\_ctrl@{gpt\_shock\_H\_ctrl}}
+\index{gpt\_shock\_H\_ctrl@{gpt\_shock\_H\_ctrl}!thread\_defibrillator.c@{thread\_defibrillator.c}}
+\doxysubsubsection{\texorpdfstring{gpt\_shock\_H\_ctrl}{gpt\_shock\_H\_ctrl}}
+{\footnotesize\ttfamily gpt\+\_\+instance\+\_\+ctrl\+\_\+t gpt\+\_\+shock\+\_\+\+H\+\_\+ctrl\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{thread__defibrillator_8c_a3efaa33e5c65dba0ae278f6e43c23d74}\label{thread__defibrillator_8c_a3efaa33e5c65dba0ae278f6e43c23d74} 
+\index{thread\_defibrillator.c@{thread\_defibrillator.c}!gpt\_shock\_H\_extend@{gpt\_shock\_H\_extend}}
+\index{gpt\_shock\_H\_extend@{gpt\_shock\_H\_extend}!thread\_defibrillator.c@{thread\_defibrillator.c}}
+\doxysubsubsection{\texorpdfstring{gpt\_shock\_H\_extend}{gpt\_shock\_H\_extend}}
+{\footnotesize\ttfamily const timer\+\_\+on\+\_\+gpt\+\_\+cfg\+\_\+t gpt\+\_\+shock\+\_\+\+H\+\_\+extend\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{\ .gtioca\ =}
+\DoxyCodeLine{\{\ .output\_enabled\ =\ \textcolor{keyword}{true},\ .stop\_level\ =\ GPT\_PIN\_LEVEL\_LOW\ \},}
+\DoxyCodeLine{\ \ .gtiocb\ =}
+\DoxyCodeLine{\ \ \{\ .output\_enabled\ =\ \textcolor{keyword}{true},\ .stop\_level\ =\ GPT\_PIN\_LEVEL\_LOW\ \},}
+\DoxyCodeLine{\ \ .shortest\_pwm\_signal\ =\ GPT\_SHORTEST\_LEVEL\_OFF,\ \}}
+
+\end{DoxyCode}
+\Hypertarget{thread__defibrillator_8c_a1ba09d931cbe298db55429203a2128c1}\label{thread__defibrillator_8c_a1ba09d931cbe298db55429203a2128c1} 
+\index{thread\_defibrillator.c@{thread\_defibrillator.c}!gpt\_shock\_L@{gpt\_shock\_L}}
+\index{gpt\_shock\_L@{gpt\_shock\_L}!thread\_defibrillator.c@{thread\_defibrillator.c}}
+\doxysubsubsection{\texorpdfstring{gpt\_shock\_L}{gpt\_shock\_L}}
+{\footnotesize\ttfamily const timer\+\_\+instance\+\_\+t gpt\+\_\+shock\+\_\+L}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{\ .p\_ctrl\ =\ \&gpt\_shock\_L\_ctrl,\ .p\_cfg\ =\ \&\mbox{\hyperlink{thread__defibrillator_8c_ad735b7c613bf165ef7bd47ba4a7462ea}{gpt\_shock\_L\_cfg}},\ .p\_api\ =\ \&g\_timer\_on\_gpt\ \}}
+
+\end{DoxyCode}
+Timer on GPT Instance. \Hypertarget{thread__defibrillator_8c_ad735b7c613bf165ef7bd47ba4a7462ea}\label{thread__defibrillator_8c_ad735b7c613bf165ef7bd47ba4a7462ea} 
+\index{thread\_defibrillator.c@{thread\_defibrillator.c}!gpt\_shock\_L\_cfg@{gpt\_shock\_L\_cfg}}
+\index{gpt\_shock\_L\_cfg@{gpt\_shock\_L\_cfg}!thread\_defibrillator.c@{thread\_defibrillator.c}}
+\doxysubsubsection{\texorpdfstring{gpt\_shock\_L\_cfg}{gpt\_shock\_L\_cfg}}
+{\footnotesize\ttfamily const timer\+\_\+cfg\+\_\+t gpt\+\_\+shock\+\_\+\+L\+\_\+cfg\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{\ .mode\ =\ TIMER\_MODE\_ONE\_SHOT,\ .period\ =\ 20000,\ .unit\ =\ TIMER\_UNIT\_PERIOD\_USEC,\ .duty\_cycle\ =\ 0,\ .duty\_cycle\_unit\ =}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ TIMER\_PWM\_UNIT\_RAW\_COUNTS,}
+\DoxyCodeLine{\ \ .channel\ =\ 8,\ .autostart\ =\ \textcolor{keyword}{false},\ .p\_callback\ =\ \mbox{\hyperlink{thread__defibrillator__hal_8c_ad3ddee68089f1a0009454b0ac3ce897a}{GPT\_Shock\_Callback}},\ .p\_context\ =\ \&\mbox{\hyperlink{thread__defibrillator_8c_a1ba09d931cbe298db55429203a2128c1}{gpt\_shock\_L}},\ .p\_extend\ =}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \&gpt\_shock\_L\_extend,}
+\DoxyCodeLine{\ \ .irq\_ipl\ =\ (10),\ \}}
+
+\end{DoxyCode}
+\Hypertarget{thread__defibrillator_8c_acc8d4d9bf6f215acdea90e9e9629659b}\label{thread__defibrillator_8c_acc8d4d9bf6f215acdea90e9e9629659b} 
+\index{thread\_defibrillator.c@{thread\_defibrillator.c}!queue\_def@{queue\_def}}
+\index{queue\_def@{queue\_def}!thread\_defibrillator.c@{thread\_defibrillator.c}}
+\doxysubsubsection{\texorpdfstring{queue\_def}{queue\_def}}
+{\footnotesize\ttfamily TX\+\_\+\+QUEUE queue\+\_\+def}
+
+\Hypertarget{thread__defibrillator_8c_a882196bc91c14471ad199eed9adbad91}\label{thread__defibrillator_8c_a882196bc91c14471ad199eed9adbad91} 
+\index{thread\_defibrillator.c@{thread\_defibrillator.c}!queue\_memory\_queue\_def@{queue\_memory\_queue\_def}}
+\index{queue\_memory\_queue\_def@{queue\_memory\_queue\_def}!thread\_defibrillator.c@{thread\_defibrillator.c}}
+\doxysubsubsection{\texorpdfstring{queue\_memory\_queue\_def}{queue\_memory\_queue\_def}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_s_c_e_2types__basic_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} queue\+\_\+memory\+\_\+queue\+\_\+def\mbox{[}20\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{thread__defibrillator_8c_aaffb1ffbf562063332c47122f3685b31}\label{thread__defibrillator_8c_aaffb1ffbf562063332c47122f3685b31} 
+\index{thread\_defibrillator.c@{thread\_defibrillator.c}!thread\_defibrillator@{thread\_defibrillator}}
+\index{thread\_defibrillator@{thread\_defibrillator}!thread\_defibrillator.c@{thread\_defibrillator.c}}
+\doxysubsubsection{\texorpdfstring{thread\_defibrillator}{thread\_defibrillator}}
+{\footnotesize\ttfamily TX\+\_\+\+THREAD thread\+\_\+defibrillator}
+
+
+
+Thread descriptor. 
+

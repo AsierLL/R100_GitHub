@@ -1,0 +1,133 @@
+\doxysection{BATTERY\+\_\+\+INFO\+\_\+t Struct Reference}
+\hypertarget{a00394}{}\label{a00394}\index{BATTERY\_INFO\_t@{BATTERY\_INFO\_t}}
+
+
+Battery info (stored in the battery pack)  
+
+
+
+
+{\ttfamily \#include $<$sys\+Mon\+\_\+\+Battery.\+h$>$}
+
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{a00394_ab7993169e9d312702ced5d19b4afe978}{sn}} \mbox{[}16\mbox{]}
+\begin{DoxyCompactList}\small\item\em Battery serial number -- format AAAA/21100001. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{a00394_ad1a2133cd32241a1c990aadf6eb81f59}{name}} \mbox{[}16\mbox{]}
+\begin{DoxyCompactList}\small\item\em Company name -- (default\+: BEXENCARDIO) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \mbox{\hyperlink{a00394_a1f99c0013d44ddb454baba87b9f17bea}{manufacture\+\_\+date}}
+\begin{DoxyCompactList}\small\item\em Manufacture date (YYYY.\+MM.\+DD) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \mbox{\hyperlink{a00394_adb40d5ad2a1f0998fd6dcd26ed99414c}{expiration\+\_\+date}}
+\begin{DoxyCompactList}\small\item\em Expiration date (YYYY.\+MM.\+DD) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} \mbox{\hyperlink{a00394_a551f13d172d70095db653295a3f58242}{nominal\+\_\+capacity}}
+\begin{DoxyCompactList}\small\item\em Battery nominal capacity (default\+: 4200 m\+Ah) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{a00394_aa3798c6ceb26695603d3e6a178e8cb7f}{version\+\_\+major}}
+\begin{DoxyCompactList}\small\item\em Battery version major. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{a00394_aa8a6f3251ff6f970b04ec7b6cbcb1af9}{version\+\_\+minor}}
+\begin{DoxyCompactList}\small\item\em Battery version minor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{a00394_a8c1c9da9988423daaaf05beb361f7105}{must\+\_\+be\+\_\+0x\+AA}}
+\begin{DoxyCompactList}\small\item\em Force to 0x\+AA. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{a00394_a453245746cf421cd921ad3910d03bdb4}{checksum\+\_\+add}}
+\begin{DoxyCompactList}\small\item\em Data checksum. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Battery info (stored in the battery pack) 
+
+\doxysubsection{Field Documentation}
+\Hypertarget{a00394_a453245746cf421cd921ad3910d03bdb4}\label{a00394_a453245746cf421cd921ad3910d03bdb4} 
+\index{BATTERY\_INFO\_t@{BATTERY\_INFO\_t}!checksum\_add@{checksum\_add}}
+\index{checksum\_add@{checksum\_add}!BATTERY\_INFO\_t@{BATTERY\_INFO\_t}}
+\doxysubsubsection{\texorpdfstring{checksum\_add}{checksum\_add}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} BATTERY\+\_\+\+INFO\+\_\+t\+::checksum\+\_\+add}
+
+
+
+Data checksum. 
+
+\Hypertarget{a00394_adb40d5ad2a1f0998fd6dcd26ed99414c}\label{a00394_adb40d5ad2a1f0998fd6dcd26ed99414c} 
+\index{BATTERY\_INFO\_t@{BATTERY\_INFO\_t}!expiration\_date@{expiration\_date}}
+\index{expiration\_date@{expiration\_date}!BATTERY\_INFO\_t@{BATTERY\_INFO\_t}}
+\doxysubsubsection{\texorpdfstring{expiration\_date}{expiration\_date}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} BATTERY\+\_\+\+INFO\+\_\+t\+::expiration\+\_\+date}
+
+
+
+Expiration date (YYYY.\+MM.\+DD) 
+
+\Hypertarget{a00394_a1f99c0013d44ddb454baba87b9f17bea}\label{a00394_a1f99c0013d44ddb454baba87b9f17bea} 
+\index{BATTERY\_INFO\_t@{BATTERY\_INFO\_t}!manufacture\_date@{manufacture\_date}}
+\index{manufacture\_date@{manufacture\_date}!BATTERY\_INFO\_t@{BATTERY\_INFO\_t}}
+\doxysubsubsection{\texorpdfstring{manufacture\_date}{manufacture\_date}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} BATTERY\+\_\+\+INFO\+\_\+t\+::manufacture\+\_\+date}
+
+
+
+Manufacture date (YYYY.\+MM.\+DD) 
+
+\Hypertarget{a00394_a8c1c9da9988423daaaf05beb361f7105}\label{a00394_a8c1c9da9988423daaaf05beb361f7105} 
+\index{BATTERY\_INFO\_t@{BATTERY\_INFO\_t}!must\_be\_0xAA@{must\_be\_0xAA}}
+\index{must\_be\_0xAA@{must\_be\_0xAA}!BATTERY\_INFO\_t@{BATTERY\_INFO\_t}}
+\doxysubsubsection{\texorpdfstring{must\_be\_0xAA}{must\_be\_0xAA}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} BATTERY\+\_\+\+INFO\+\_\+t\+::must\+\_\+be\+\_\+0x\+AA}
+
+
+
+Force to 0x\+AA. 
+
+\Hypertarget{a00394_ad1a2133cd32241a1c990aadf6eb81f59}\label{a00394_ad1a2133cd32241a1c990aadf6eb81f59} 
+\index{BATTERY\_INFO\_t@{BATTERY\_INFO\_t}!name@{name}}
+\index{name@{name}!BATTERY\_INFO\_t@{BATTERY\_INFO\_t}}
+\doxysubsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} BATTERY\+\_\+\+INFO\+\_\+t\+::name\mbox{[}16\mbox{]}}
+
+
+
+Company name -- (default\+: BEXENCARDIO) 
+
+\Hypertarget{a00394_a551f13d172d70095db653295a3f58242}\label{a00394_a551f13d172d70095db653295a3f58242} 
+\index{BATTERY\_INFO\_t@{BATTERY\_INFO\_t}!nominal\_capacity@{nominal\_capacity}}
+\index{nominal\_capacity@{nominal\_capacity}!BATTERY\_INFO\_t@{BATTERY\_INFO\_t}}
+\doxysubsubsection{\texorpdfstring{nominal\_capacity}{nominal\_capacity}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_a06896e8c53f721507066c079052171f8}{uint32\+\_\+t}} BATTERY\+\_\+\+INFO\+\_\+t\+::nominal\+\_\+capacity}
+
+
+
+Battery nominal capacity (default\+: 4200 m\+Ah) 
+
+\Hypertarget{a00394_ab7993169e9d312702ced5d19b4afe978}\label{a00394_ab7993169e9d312702ced5d19b4afe978} 
+\index{BATTERY\_INFO\_t@{BATTERY\_INFO\_t}!sn@{sn}}
+\index{sn@{sn}!BATTERY\_INFO\_t@{BATTERY\_INFO\_t}}
+\doxysubsubsection{\texorpdfstring{sn}{sn}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} BATTERY\+\_\+\+INFO\+\_\+t\+::sn\mbox{[}16\mbox{]}}
+
+
+
+Battery serial number -- format AAAA/21100001. 
+
+\Hypertarget{a00394_aa3798c6ceb26695603d3e6a178e8cb7f}\label{a00394_aa3798c6ceb26695603d3e6a178e8cb7f} 
+\index{BATTERY\_INFO\_t@{BATTERY\_INFO\_t}!version\_major@{version\_major}}
+\index{version\_major@{version\_major}!BATTERY\_INFO\_t@{BATTERY\_INFO\_t}}
+\doxysubsubsection{\texorpdfstring{version\_major}{version\_major}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} BATTERY\+\_\+\+INFO\+\_\+t\+::version\+\_\+major}
+
+
+
+Battery version major. 
+
+\Hypertarget{a00394_aa8a6f3251ff6f970b04ec7b6cbcb1af9}\label{a00394_aa8a6f3251ff6f970b04ec7b6cbcb1af9} 
+\index{BATTERY\_INFO\_t@{BATTERY\_INFO\_t}!version\_minor@{version\_minor}}
+\index{version\_minor@{version\_minor}!BATTERY\_INFO\_t@{BATTERY\_INFO\_t}}
+\doxysubsubsection{\texorpdfstring{version\_minor}{version\_minor}}
+{\footnotesize\ttfamily \mbox{\hyperlink{a00137_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} BATTERY\+\_\+\+INFO\+\_\+t\+::version\+\_\+minor}
+
+
+
+Battery version minor. 
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/ivicente/\+Desktop/\+BRANCH\+\_\+\+ACC\+\_\+\+WIFI/src/\mbox{\hyperlink{a00056}{sys\+Mon\+\_\+\+Battery.\+h}}\end{DoxyCompactItemize}
