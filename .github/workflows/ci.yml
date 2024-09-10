@@ -23,8 +23,8 @@ jobs:
 
     - name: Build project
       run: |
-        make -C "C:\Users\asier\OneDrive\Desktop\CUnit - Osatu\Apuntes\API\repo-github\R100_GitHub\REANIBEX_100_s3a7\Debug\makefile" all
+        make -C "C:\Users\asier\OneDrive\Desktop\CUnit - Osatu\Apuntes\API\repo-github\R100_GitHub\REANIBEX_100_s3a7\Debug" all
 
     - name: Run Unit Tests
       run: |
-        make -C "C:\Users\asier\OneDrive\Desktop\CUnit - Osatu\Apuntes\API\repo-github\R100_GitHub\REANIBEX_100_s3a7\Debug\makefile" test
+        make -C "C:\Users\asier\OneDrive\Desktop\CUnit - Osatu\Apuntes\API\repo-github\R100_GitHub\REANIBEX_100_s3a7\Debug" test
