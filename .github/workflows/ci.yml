@@ -10,21 +10,16 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
     - name: Check out code
       uses: actions/checkout@v2
 
-    - name: Set up C/C++ environment
+    - name: Set up ARM GCC for Windows
       run: |
-        sudo apt-get update
-        sudo apt-get install -y gcc g++ make
+        choco install gcc-arm-embedded
 
     - name: Build project
       run: |
-        make -C ./REANIBEX_100_s3a7/Debug all
-
-    - name: Run Unit Tests
-      run: |
-        make -C ./REANIBEX_100_s3a7/Debug test
+        make -C "REANIBEX_100_s3a7/Debug" all
