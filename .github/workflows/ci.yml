@@ -19,16 +19,12 @@ jobs:
     - name: Set up C/C++ environment
       run: |
         sudo apt-get update
-        sudo apt-get install -y gcc g++ make cmake
+        sudo apt-get install -y gcc g++ make
 
     - name: Build project
       run: |
-        mkdir build
-        cd build
-        cmake ..
-        make
+        make -C C:\Users\asier\OneDrive\Desktop\CUnit - Osatu\Apuntes\API\repo-github\R100_GitHub\REANIBEX_100_s3a7\Debug> make all
 
     - name: Run Unit Tests
       run: |
-        cd build
-        ctest --output-on-failure
+        make -C C:\Users\asier\OneDrive\Desktop\CUnit - Osatu\Apuntes\API\repo-github\R100_GitHub\REANIBEX_100_s3a7\Debug> test
