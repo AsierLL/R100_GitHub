@@ -20,6 +20,10 @@ jobs:
       run: |
         choco install gcc-arm-embedded
 
+    - name: Verify that all source files are present
+      run: |
+        ls REANIBEX_100_s3a7/synergy/ssp/src/framework/sf_spi/
+
     - name: Build project
       run: |
-        make -C "REANIBEX_100_s3a7/synergy/ssp/src/framework/sf_spi" all
+        make -C "REANIBEX_100_s3a7/Debug" all
