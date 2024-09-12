@@ -22,4 +22,4 @@ jobs:
 
     - name: Build project
       run: |
-        make -C "REANIBEX_100_s3a7/Debug" all
+        make -C "REANIBEX_100_s3a7/synergy/ssp/src/framework/sf_spi" all
