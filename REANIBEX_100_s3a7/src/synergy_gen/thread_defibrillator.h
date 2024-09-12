@@ -20,7 +20,7 @@ extern "C"
 /** Timer on GPT Instance. */
 extern const timer_instance_t gpt_shock_L;
 #ifndef GPT_Shock_Callback
-ssp_err_t GPT_Shock_Callback(timer_callback_args_t *p_args);
+void GPT_Shock_Callback(timer_callback_args_t *p_args);
 #endif
 /** Timer on GPT Instance. */
 extern const timer_instance_t gpt_shock_H;
