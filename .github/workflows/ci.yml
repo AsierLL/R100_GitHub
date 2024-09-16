@@ -26,7 +26,7 @@ jobs:
 
     - name: Crear archivos .o
       run: |
-        make -j8 all
+        make -C "REANIBEX_100_s3a7/Debug" -j8 all
 
     - name: Build project
       run: |
