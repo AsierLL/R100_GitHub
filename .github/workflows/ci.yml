@@ -10,7 +10,7 @@ on:
 
 jobs:
   build:
-    runs-on: self-hosted  # Usa el runner autohospedado
+    runs-on: windows-latest  # Usa el runner autohospedado
 
     steps:
     - name: Checkout code
@@ -23,4 +23,4 @@ jobs:
     # Compilar el código para la placa
     - name: Build firmware
       run: |
-        mingw32-make -C "C:\Users\asier\OneDrive\Desktop\CUnit - Osatu\Apuntes\API\repo-github\R100_GitHub\REANIBEX_100_s3a7\Debug" -j8 all
+        mingw32-make -C "REANIBEX_100_s3a7\Debug" -j8 all
