@@ -1,4 +1,4 @@
-name: CI for Renesas S3A7 Project
+name: CI for Renesas S3A7 with self-hosted runner
 
 on:
   push:
@@ -10,24 +10,13 @@ on:
 
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: self-hosted  # Usa el runner autohospedado
 
     steps:
-    - name: Check out code
+    - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Set up ARM GCC for Windows
+    # Compilar el código para la placa
+    - name: Build firmware
       run: |
-        choco install gcc-arm-embedded
-
-    - name: Verify that all source files are present
-      run: |
-        ls REANIBEX_100_s3a7/synergy/ssp/src/framework/sf_spi/
-
-    - name: Crear archivos .o
-      run: |
-        make -C "REANIBEX_100_s3a7/Debug" -j8 all
-
-    - name: Build project
-      run: |
-        make -C "REANIBEX_100_s3a7/Debug" all
+        mingw32-make -C "C:\Users\asier\OneDrive\Desktop\CUnit - Osatu\Apuntes\API\repo-github\R100_GitHub\REANIBEX_100_s3a7\Debug" -j8 all
