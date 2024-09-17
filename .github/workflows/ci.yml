@@ -19,9 +19,10 @@ jobs:
     - name: Install MinGW
       run: |
         choco install mingw
+        
     - name: Ruta actual
       run: |
-        cd
+        ls
         
     # Compilar el código para la placa
     - name: Build firmware
