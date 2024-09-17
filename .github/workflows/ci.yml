@@ -19,4 +19,4 @@ jobs:
     # Compilar el código para la placa
     - name: Build firmware
       run: |
-        make -C "C:\Users\asier\OneDrive\Desktop\CUnit - Osatu\Apuntes\API\repo-github\R100_GitHub\REANIBEX_100_s3a7\Debug" -j8 all
+        mingw32-make -C "C:\Users\asier\OneDrive\Desktop\CUnit - Osatu\Apuntes\API\repo-github\R100_GitHub\REANIBEX_100_s3a7\Debug" -j8 all
