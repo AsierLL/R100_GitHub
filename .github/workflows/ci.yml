@@ -22,7 +22,7 @@ jobs:
         
     - name: Ruta actual
       run: |
-        cd "REANIBEX_100_s3a7\Debug"
+        cd REANIBEX_100_s3a7\Debug
         
     # Compilar el código para la placa
     - name: Build firmware
