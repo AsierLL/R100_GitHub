@@ -20,11 +20,8 @@ jobs:
       run: |
         choco install mingw
         
-    - name: Ruta actual
-      run: |
-        cd REANIBEX_100_s3a7\Debug
-        
     # Compilar el código para la placa
     - name: Build firmware
       run: |
+        cd REANIBEX_100_s3a7\Debug
         mingw32-make -j8 all
