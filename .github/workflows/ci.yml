@@ -27,5 +27,4 @@ jobs:
     # Compilar el código para la placa
     - name: Build firmware
       run: |
-        cd "D:\a\R100_GitHub\R100_GitHub\REANIBEX_100_s3a7\Debug"
         dir ../synergy/ssp/src/framework/sf_spi
