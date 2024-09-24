@@ -49,8 +49,9 @@ int CUnit_main(void){
 
             // Run all tests in all registered suites
             //printf("Tests completed with return value %d.\n",
+
             //CU_basic_run_tests();
-            CU_basic_run_tests();
+            CU_automated_run_tests();
 
             // Clean up and release memory used by the framework
             CU_cleanup_registry();
