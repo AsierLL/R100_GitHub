@@ -27,4 +27,5 @@ jobs:
     # Compilar el código para la placa
     - name: Build firmware
       run: |
-        mingw32-make -C "REANIBEX_100_s3a7\Debug" -j8 all
+        cd "REANIBEX_100_s3a7\Debug"
+        mingw32-make -j8 all
