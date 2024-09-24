@@ -4,8 +4,9 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
-#../synergy/ssp/src/framework/sf_spi/sf_spi.c 
 ..\synergy\ssp\src\framework\sf_spi\sf_spi.c 
+#../synergy/ssp/src/framework/sf_spi/sf_spi.c 
+
 OBJS += \
 ./synergy/ssp/src/framework/sf_spi/sf_spi.o 
 
