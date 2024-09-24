@@ -64,7 +64,7 @@ typedef enum{
     CU_eDEFIB_STATE_IN_ERROR                = 28,
     CU_eDEFIB_STATE_OUT_OF_SERVICE          = 29,
 
-    PRUEBA5                                = 200,
+    PRUEBA6                                = 200,
 
 
 
