@@ -10,22 +10,23 @@ on:
 
 jobs:
   build:
-    runs-on: windows-latest  # Usa el runner autohospedado
+    runs-on: ubuntu-latest  # Cambiar a Linux (Ubuntu)
 
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
       
-    - name: Install MinGW
+    - name: Install dependencies
       run: |
-        choco install mingw
+        sudo apt-get update
+        sudo apt-get install -y gcc make  # Instalar GCC y Make en Linux
         
     - name: List files
       run: |
-        dir REANIBEX_100_s3a7\Debug
-
+        ls REANIBEX_100_s3a7/Debug  # Comando 'ls' en lugar de 'dir'
+        
     # Compilar el código para la placa
     - name: Build firmware
       run: |
-        cd "D:\a\R100_GitHub\R100_GitHub\REANIBEX_100_s3a7\Debug"
-        mingw32-make -C "D:\a\R100_GitHub\R100_GitHub\REANIBEX_100_s3a7\Debug" -j8 all
+        cd "REANIBEX_100_s3a7/Debug"
+        make -j8 all
