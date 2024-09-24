@@ -22,7 +22,7 @@ jobs:
         
     - name: List files
       run: |
-        dir REANIBEX_100_s3a7\Debug /s
+        dir REANIBEX_100_s3a7\Debug
 
     # Compilar el código para la placa
     - name: Build firmware
