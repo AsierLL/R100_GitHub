@@ -20,6 +20,10 @@ jobs:
       run: |
         choco install mingw
         
+    - name: List files
+      run: |
+        dir REANIBEX_100_s3a7\Debug /s
+
     # Compilar el código para la placa
     - name: Build firmware
       run: |
