@@ -21,12 +21,18 @@ jobs:
         sudo apt-get update
         sudo apt-get install -y gcc make  # Instalar GCC y Make en Linux
         
+    - name: Clean build directory
+      run: |
+        cd "REANIBEX_100_s3a7/Debug"
+        make clean  # Limpia archivos de compilaciones previas
+        
     - name: List files
       run: |
-        ls REANIBEX_100_s3a7/Debug  # Comando 'ls' en lugar de 'dir'
+        ls REANIBEX_100_s3a7/Debug
         
     # Compilar el código para la placa
     - name: Build firmware
       run: |
         cd "REANIBEX_100_s3a7/Debug"
         make -j8 all
+
