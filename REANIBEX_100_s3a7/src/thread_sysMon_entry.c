@@ -4952,7 +4952,7 @@ static uint32_t Check_Battery_Voltage (uint32_t my_vb, int8_t my_temperature, AU
 }
 
 extern CU_Check_Battery_Voltage (uint32_t my_vb, int8_t my_temperature, AUDIO_ID_e *pAudio_msg){
-    Check_Battery_Voltage(my_vb, my_temperature, pAudio_msg);
+    return Check_Battery_Voltage(my_vb, my_temperature, pAudio_msg);
 }
 /******************************************************************************
  ** Name:    R100_Program_Autotest

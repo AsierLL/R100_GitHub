@@ -302,7 +302,8 @@ static uint32_t Get_Phase1_Time (uint16_t my_zp)
  **
  ** @return  none
  ******************************************************************************/
-ssp_err_t GPT_Shock_Callback(timer_callback_args_t *p_args)
+//ssp_err_t GPT_Shock_Callback(timer_callback_args_t *p_args)
+void GPT_Shock_Callback(timer_callback_args_t *p_args)
 {
     ssp_err_t   ssp_error, result;      // ssp error code
 
@@ -379,7 +380,7 @@ ssp_err_t GPT_Shock_Callback(timer_callback_args_t *p_args)
             dd_shock.pulse_vc_middle = value_vc;
             break;
     }
-    return result;
+    //return result;
 }
 
 /******************************************************************************
