@@ -16,9 +16,9 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
       
- #   - name: Install MinGW
-  #    run: |
-   #     choco install mingw
+    - name: Install MinGW
+      run: |
+        choco install mingw
         
     - name: List files
       run: |
@@ -27,4 +27,5 @@ jobs:
     # Compilar el código para la placa
     - name: Build firmware
       run: |
-        dir ../synergy/ssp/src/framework/sf_spi
+        cd "D:\a\R100_GitHub\R100_GitHub\REANIBEX_100_s3a7\Debug"
+        mingw32-make -C "D:\a\R100_GitHub\R100_GitHub\REANIBEX_100_s3a7\Debug" -j8 all
