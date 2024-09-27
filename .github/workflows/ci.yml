@@ -18,19 +18,17 @@ jobs:
       
     - name: Install MinGW
       run: |
-        choco install mingw
-
+        choco install mingw -y
+    - name: Install ARM Toolchain
+      run: |
+        choco install gcc-arm-embedded -y
     - name: Set environment variables
       run: |
-        echo "PATH=$PATH;C:\ProgramData\chocolatey\lib\mingw\tools\install\mingw32\bin" >> $GITHUB_ENV
-
+        echo "PATH=$PATH;C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2020-q4-major\bin;C:\ProgramData\chocolatey\lib\mingw\tools\install\mingw32\bin" >> $GITHUB_ENV
     - name: Compile firmware
       run: |
         cd "C:\Users\asier\OneDrive\Desktop\CUnit - Osatu\Apuntes\API\repo-github\R100_GitHub\REANIBEX_100_s3a7\Debug"
         mingw32-make -j8 all
-
     - name: Load firmware to the board
       run: |
-        # Comando para cargar y ejecutar el firmware en la placa.
-        # Cambia esto según el método que utilices.
-        arm-none-eabi-gdb "C:\Users\asier\OneDrive\Desktop\CUnit - Osatu\Apuntes\API\repo-github\R100_GitHub\REANIBEX_100_s3a7\Debug\REANIBEX_100_s3a7.elf"
+        arm-none-eabi-gdb "C:\Users\asier\OneDrive\Desktop\CUnit - Osatu\Apuntes\API\repo-github\R100_GitHub\REANIBEX_100_s3a7\Debug\REANIBEX_100_s3a7.elf" -ex "target remote :3333" -ex "load" -ex "continue"
