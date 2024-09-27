@@ -18,10 +18,10 @@ jobs:
       
     - name: Install MinGW
       run: |
-        choco install mingw
+        choco install mingw -y
     - name: Install ARM Toolchain
       run: |
-        choco install gcc-arm-embedded
+        choco install gcc-arm-embedded -y
     - name: Set environment variables
       run: |
         echo "PATH=$PATH;C:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2020-q4-major\bin;C:\ProgramData\chocolatey\lib\mingw\tools\install\mingw32\bin" >> $GITHUB_ENV
