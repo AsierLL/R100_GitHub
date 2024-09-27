@@ -19,8 +19,18 @@ jobs:
     - name: Install MinGW
       run: |
         choco install mingw
-        
-    # Compilar el código para la placa
-    - name: Build firmware
+
+    - name: Set environment variables
       run: |
-        mingw32-make -C "C:\Users\asier\OneDrive\Desktop\CUnit - Osatu\Apuntes\API\repo-github\R100_GitHub\REANIBEX_100_s3a7\Debug" -j8 all
+        echo "PATH=$PATH;C:\ProgramData\chocolatey\lib\mingw\tools\install\mingw32\bin" >> $GITHUB_ENV
+
+    - name: Compile firmware
+      run: |
+        cd "C:\Users\asier\OneDrive\Desktop\CUnit - Osatu\Apuntes\API\repo-github\R100_GitHub\REANIBEX_100_s3a7\Debug"
+        mingw32-make -j8 all
+
+    - name: Load firmware to the board
+      run: |
+        # Comando para cargar y ejecutar el firmware en la placa.
+        # Cambia esto según el método que utilices.
+        arm-none-eabi-gdb "C:\Users\asier\OneDrive\Desktop\CUnit - Osatu\Apuntes\API\repo-github\R100_GitHub\REANIBEX_100_s3a7\Debug\REANIBEX_100_s3a7.elf"
