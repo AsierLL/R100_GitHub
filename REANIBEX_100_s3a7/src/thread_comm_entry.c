@@ -140,7 +140,7 @@ void thread_comm_entry(void)
 
     // get the device info
     memcpy(&my_Device_Info, Get_Device_Info(), sizeof(DEVICE_INFO_t));
-
+/*
     while (1)
     {
         ev = EV_COMM_MAX;
@@ -180,6 +180,7 @@ void thread_comm_entry(void)
 
         (void) tx_thread_sleep (OSTIME_50MSEC);
     }
+*/
 }
 
 /******************************************************************************

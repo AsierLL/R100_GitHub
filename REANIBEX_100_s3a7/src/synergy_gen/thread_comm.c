@@ -26,7 +26,7 @@ void thread_comm_create(void)
     {
         tx_startup_err_callback (&queue_comm, 0);
     }
-
+/*
     UINT err;
     err = tx_thread_create (&thread_comm, (CHAR *) "Thread Comm", thread_comm_func, (ULONG) NULL, &thread_comm_stack,
                             3200, 18, 18, 1, TX_DONT_START);
@@ -34,6 +34,8 @@ void thread_comm_create(void)
     {
         tx_startup_err_callback (&thread_comm, 0);
     }
+*/
+    thread_comm_func(NULL);
 }
 
 static void thread_comm_func(ULONG thread_input)
