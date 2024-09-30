@@ -31,4 +31,5 @@ jobs:
         mingw32-make -j8 all
     - name: Load firmware to the board
       run: |
-        arm-none-eabi-gdb "C:\Users\asier\OneDrive\Desktop\CUnit - Osatu\Apuntes\API\repo-github\R100_GitHub\REANIBEX_100_s3a7\Debug\REANIBEX_100_s3a7.elf" -ex "target remote :3333" -ex "load" -ex "continue"
+        arm-none-eabi-gdb "C:\Users\asier\OneDrive\Desktop\CUnit - Osatu\Apuntes\API\repo-github\R100_GitHub\REANIBEX_100_s3a7\Debug\REANIBEX_100_s3a7.elf" -ex "load" -ex "continue"
+
