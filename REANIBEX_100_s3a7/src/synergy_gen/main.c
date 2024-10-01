@@ -104,7 +104,7 @@ void tx_startup_err_callback_internal(void *p_instance, void *p_data)
     SSP_PARAMETER_NOT_USED (p_data);
 
     /** An error has occurred. Please check function arguments for more information. */
-    BSP_CFG_HANDLE_UNRECOVERABLE_ERROR (0);
+    //BSP_CFG_HANDLE_UNRECOVERABLE_ERROR (0);
 }
 
 void tx_startup_common_init(void);
