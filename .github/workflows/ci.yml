@@ -37,6 +37,6 @@ jobs:
     # Ejecutar el proyecto en la placa
     - name: Start GDB Server & Run project on board
       run: |
-        Start-Process "JLinkGDBServer" -ArgumentList "-device R7FS3A77C", "-if SWD", "-speed 4000", "-port 61234", "-nogui" -PassThru | Out-Null
+        Start-Process "JLinkGDBServer" -ArgumentList "-device R7FS3A77C", "-if SWD", "-speed 4000", "-port 61234", "-nogui"
         Start-Sleep -Seconds 2 # Esperar un momento para que el servidor GDB esté listo
         arm-none-eabi-gdb "C:\Users\asier\OneDrive\Desktop\CUnit - Osatu\Apuntes\API\repo-github\R100_GitHub\REANIBEX_100_s3a7\Debug\REANIBEX_100_s3a7.elf" -ex "handle SIGTRAP nostop noprint" -ex "target remote localhost:61234" -ex "load" -ex "continue" > output.txt
