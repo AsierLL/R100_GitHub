@@ -35,7 +35,7 @@ jobs:
         mingw32-make -j8 all
     - name: Start GDB Server
       run: |
-        JLinkGDBServer -device S3A7 -if SWD -speed 4000 -port 61234 -nogui &
+        start JLinkGDBServer -device S3A7 -if SWD -speed 4000 -port 61234 -nogui
         
     # Ejecutar el proyecto en la placa
     - name: Run project on board
