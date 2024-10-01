@@ -80,7 +80,6 @@ void tx_application_define(void *first_unused_memory)
     thread_acc_create ();
 */
     thread_sysMon_create ();
-    thread_comm_create ();
     CUnit_main();
 #ifdef TX_USER_ENABLE_TRACE
     TX_USER_ENABLE_TRACE;
