@@ -36,5 +36,6 @@ jobs:
         
     # Ejecutar el proyecto en la placa
     - name: Run project on board
-      run: |
-        "C:\Renesas\e2_studio\eclipse\eclipsec.exe" -nosplash -application org.eclipse.debug.core.DebugPlugin -launch "C:\Users\asier\OneDrive\Desktop\CUnit - Osatu\Apuntes\API\repo-github\R100_GitHub\REANIBEX_100_s3a7\REANIBEX_100_s3a7.elf.launch" -debug
+  run: |
+    & "C:\Renesas\e2_studio\eclipse\eclipsec.exe" "-nosplash" "-application" "org.eclipse.debug.core.DebugPlugin" "-launch" "C:\Users\asier\OneDrive\Desktop\CUnit - Osatu\Apuntes\API\repo-github\R100_GitHub\REANIBEX_100_s3a7\REANIBEX_100_s3a7.elf.launch" "-debug"
+
