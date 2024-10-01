@@ -31,7 +31,7 @@ void thread_sysMon_create(void)
     {
         tx_startup_err_callback (&i2c_1_semaphore, 0);
     }
-/*
+
     UINT err;
     err = tx_thread_create (&thread_sysMon, (CHAR *) "Thread SysMon", thread_sysMon_func, (ULONG) NULL,
                             &thread_sysMon_stack, 5600, 20, 20, 1, TX_AUTO_START);
@@ -39,8 +39,6 @@ void thread_sysMon_create(void)
     {
         tx_startup_err_callback (&thread_sysMon, 0);
     }
-*/
-    thread_sysMon_func(NULL);
 }
 
 static void thread_sysMon_func(ULONG thread_input)
