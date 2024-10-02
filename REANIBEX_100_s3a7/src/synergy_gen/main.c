@@ -66,7 +66,7 @@ void tx_application_define(void *first_unused_memory)
     {
         tx_startup_err_callback (&g_ssp_common_initialized_semaphore, 0);
     }
-/*
+
     thread_core_create ();
     thread_drd_create ();
     thread_patMon_create ();
@@ -78,9 +78,6 @@ void tx_application_define(void *first_unused_memory)
     thread_comm_create ();
     thread_dummy_create ();
     thread_acc_create ();
-*/
-    thread_sysMon_create ();
-    CUnit_main();
 
 #ifdef TX_USER_ENABLE_TRACE
     TX_USER_ENABLE_TRACE;
@@ -104,7 +101,7 @@ void tx_startup_err_callback_internal(void *p_instance, void *p_data)
     SSP_PARAMETER_NOT_USED (p_data);
 
     /** An error has occurred. Please check function arguments for more information. */
-    //BSP_CFG_HANDLE_UNRECOVERABLE_ERROR (0);
+    BSP_CFG_HANDLE_UNRECOVERABLE_ERROR (0);
 }
 
 void tx_startup_common_init(void);
