@@ -251,7 +251,7 @@ void thread_defibrillator_entry(void)
 
     // initializes the defibrillation controller
     Defib_Initialize ();
-
+/*
     // defibrillator Loop
     while (1)
     {
@@ -299,4 +299,5 @@ void thread_defibrillator_entry(void)
             }
         }
     }
+*/
 }

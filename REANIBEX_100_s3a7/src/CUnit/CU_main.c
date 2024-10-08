@@ -35,9 +35,9 @@ int CUnit_main(void){
         }
         else
         {
-            CU_test_sysMon();
+            //CU_test_sysMon();
             //CU_test_audio();
-            //CU_test_defibrillator();
+            CU_test_defibrillator();
             //CU_test_core();
             //CU_test_patMon();
 

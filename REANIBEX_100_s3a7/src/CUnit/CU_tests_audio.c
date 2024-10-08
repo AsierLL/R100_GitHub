@@ -146,8 +146,8 @@ void test_Load_Audio_Resources(){
 
 static CU_TestInfo tests_thread_audio[] = {
     {"test_Audio_Message", test_Audio_Message},
-    //{"test_Audio_Init", test_Audio_Init},
-    //{"test_Audio_Play_Start", test_Audio_Play_Start},
+    {"test_Audio_Init", test_Audio_Init},
+    {"test_Audio_Play_Start", test_Audio_Play_Start},
     //  CORREGIR    {"test_Load_Audio_Resources", test_Load_Audio_Resources},
 
     CU_TEST_INFO_NULL,

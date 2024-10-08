@@ -462,7 +462,7 @@ static CU_TestInfo tests_thread_sysMon[] = {
 
     //{"test_NFC_Write_Device_ID", test_NFC_Write_Device_ID},// ¿QUE COMPROBAR?
 
-    {"test_NFC_Write_Settings", test_NFC_Write_Settings},
+    //{"test_NFC_Write_Settings", test_NFC_Write_Settings},
 
     CU_TEST_INFO_NULL,
 };

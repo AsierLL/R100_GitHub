@@ -23,6 +23,9 @@ void test_Set_Ovch_Alarm(){
 void test_Defib_Shock(){
     CU_ERRORS err;
 
+    err = Defib_Shock(100); // La funcion recibe parametros de ente 15 - 300
+    CU_ASSERT_EQUAL(err , SSP_SUCCESS);
+
     //  defib_state == eDEFIB_STATE_IN_ERROR
     CU_set_defib_state(eDEFIB_STATE_IN_ERROR);
 
@@ -35,8 +38,6 @@ void test_Defib_Shock(){
     err = Defib_Shock(100);
     CU_ASSERT_EQUAL(err , CU_ERR_eDEFIB_STATE_OUT_OF_SERVICE);
 
-    err = Defib_Shock(100); // La funcion recibe parametros de ente 15 - 300
-    CU_ASSERT_EQUAL(err , SSP_SUCCESS);
 }
 
 void test_Defib_Start_Discharge(){
@@ -49,11 +50,12 @@ void test_GPT_Shock_Callback(){
 
     /*  TEST VIEJO  */
     CU_ERRORS err;
-    int result;
+
+    CU_set_defib_state(eDEFIB_STATE_STANDBY);
 
     // FASE 1
-    result = Defib_Shock(100);
-    CU_ASSERT_EQUAL(result, CU_SUCCESS)
+    err = Defib_Shock(100);                 // Falla
+    CU_ASSERT_EQUAL(err, CU_SUCCESS)
 
     // FASE 2
     err = GPT_Shock_Callback(100);

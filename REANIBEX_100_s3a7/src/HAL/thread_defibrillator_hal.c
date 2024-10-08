@@ -141,7 +141,7 @@ extern void CU_setDefib_state(DEFIB_STATE_e value){
  ******************************************************************************/
 static ssp_err_t Scan_Analog (void)
 {
-    ssp_err_t       ssp_error, result;      // ssp error code
+    ssp_err_t       ssp_error, result = SSP_SUCCESS;      // ssp error code
     uint16_t        my_adcs;        // conversion value in ADCs
     uint32_t        my_value;       // value in variable units
 
@@ -607,7 +607,7 @@ static void Defib_Stop_Charge(void)
  ******************************************************************************/
 static ssp_err_t Defib_Start_Discharge(uint16_t voltage)
 {
-    ssp_err_t   ssp_error, result;      // ssp error code
+    ssp_err_t   ssp_error, result = SSP_SUCCESS;      // ssp error code
 
     UNUSED(ssp_error);
 
