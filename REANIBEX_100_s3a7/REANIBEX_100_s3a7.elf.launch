@@ -40,11 +40,14 @@
 <stringAttribute key="com.renesas.cdt.launch.dsf.serverPath" value="${renesas.support.targetLoc:com.renesas.ide.supportfiles.synergy.debug.debugSupportFileTarget}\e2-server-gdb"/>
 <booleanAttribute key="com.renesas.hardwaredebug.arm.jlink.break.allowSimulation" value="false"/>
 <booleanAttribute key="com.renesas.hardwaredebug.arm.jlink.break.useFlashBreakpoints" value="false"/>
+<booleanAttribute key="com.renesas.hardwaredebug.arm.jlink.break.useFlashBreakpoints.resetorrepurposed" value="true"/>
 <booleanAttribute key="com.renesas.hardwaredebug.arm.jlink.cfiFlash.enable" value="false"/>
 <stringAttribute key="com.renesas.hardwaredebug.arm.jlink.cfiFlash.endAddr" value="0x0"/>
 <stringAttribute key="com.renesas.hardwaredebug.arm.jlink.cfiFlash.startAddr" value="0x0"/>
 <stringAttribute key="com.renesas.hardwaredebug.arm.jlink.cfiFlash.workRam.endAddr" value=""/>
 <stringAttribute key="com.renesas.hardwaredebug.arm.jlink.cfiFlash.workRam.startAddr" value=""/>
+<booleanAttribute key="com.renesas.hardwaredebug.arm.jlink.connection.id_code.format.big_endian" value="false"/>
+<intAttribute key="com.renesas.hardwaredebug.arm.jlink.connection.id_code.input_type" value="0"/>
 <stringAttribute key="com.renesas.hardwaredebug.arm.jlink.connection.id_code2" value="FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF"/>
 <stringAttribute key="com.renesas.hardwaredebug.arm.jlink.connection.jlinkScript" value=""/>
 <booleanAttribute key="com.renesas.hardwaredebug.arm.jlink.connection.registerInit" value="false"/>
@@ -84,7 +87,7 @@
 <stringAttribute key="org.eclipse.cdt.debug.gdbjtag.core.runCommands" value=""/>
 <booleanAttribute key="org.eclipse.cdt.debug.gdbjtag.core.setPcRegister" value="false"/>
 <booleanAttribute key="org.eclipse.cdt.debug.gdbjtag.core.setResume" value="false"/>
-<booleanAttribute key="org.eclipse.cdt.debug.gdbjtag.core.setStopAt" value="true"/>
+<booleanAttribute key="org.eclipse.cdt.debug.gdbjtag.core.setStopAt" value="false"/>
 <stringAttribute key="org.eclipse.cdt.debug.gdbjtag.core.stopAt" value="main"/>
 <stringAttribute key="org.eclipse.cdt.debug.gdbjtag.core.symbolsFileName" value="C:\Users\asier\OneDrive\Desktop\CUnit - Osatu\Apuntes\API\repo-github\R100_GitHub\REANIBEX_100_s3a7\Debug\REANIBEX_100_s3a7.elf"/>
 <stringAttribute key="org.eclipse.cdt.debug.gdbjtag.core.symbolsOffset" value=""/>
@@ -95,7 +98,7 @@
 <stringAttribute key="org.eclipse.cdt.dsf.gdb.DEBUG_NAME" value="arm-none-eabi-gdb"/>
 <booleanAttribute key="org.eclipse.cdt.dsf.gdb.NON_STOP" value="true"/>
 <intAttribute key="org.eclipse.cdt.launch.ATTR_BUILD_BEFORE_LAUNCH_ATTR" value="2"/>
-<booleanAttribute key="org.eclipse.cdt.launch.DEBUGGER_STOP_AT_MAIN" value="true"/>
+<booleanAttribute key="org.eclipse.cdt.launch.DEBUGGER_STOP_AT_MAIN" value="false"/>
 <stringAttribute key="org.eclipse.cdt.launch.DEBUGGER_STOP_AT_MAIN_SYMBOL" value="main"/>
 <stringAttribute key="org.eclipse.cdt.launch.PROGRAM_NAME" value="Debug/REANIBEX_100_s3a7.elf"/>
 <stringAttribute key="org.eclipse.cdt.launch.PROJECT_ATTR" value="REANIBEX_100_s3a7"/>
